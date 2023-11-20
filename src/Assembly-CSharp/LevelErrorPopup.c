@@ -17,43 +17,45 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_Initialize
                    );
     cRam_? = '\x01';
   }
-  pAVar1 = (Action_1_Object_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (pAVar1 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar1,(Object *)this,
-               MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BadgeManager);
-    }
-    BadgeManager::BadgeManager_GetBadgeTexture
-              (requiredLevel,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,
-               (MethodInfo *)0x0);
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_00 != (MVNetworkGame *)0x0) {
-      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-      if (pMVar2 != (MVLocalPlayer *)0x0) {
-        level = (pMVar2->fields)._.level;
-        pAVar1 = (Action_1_Object_ *)func_?();
-        if (pAVar1 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                    (pAVar1,(Object *)this,
-                     MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
-                     ,(MethodInfo *)0x0);
-          BadgeManager::BadgeManager_GetBadgeTexture
-                    (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,
-                     (MethodInfo *)0x0);
-          (this->fields).resultCallback = (UnityAction *)&UNK_?;
-          func_?();
-          return;
-        }
-      }
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)this,
+             MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__BadgeManager);
+  }
+  BadgeManager::BadgeManager_GetBadgeTexture
+            (requiredLevel,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,
+             (MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      pAStack3 = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
+      level = (UnityAction *)(pMVar2->fields)._.level;
+      pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar1,(Object *)this,
+                 MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      BadgeManager::BadgeManager_GetBadgeTexture
+                ((int32_t)level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,
+                 (MethodInfo *)0x0);
+      (this->fields).resultCallback = level;
+      func_?();
+      return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -94,12 +96,6 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnButtonPressed
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -121,8 +117,7 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnButtonPressed
   (this->fields).playerLevelTextureAsset = (Texture2D *)0x0;
   func_?(&(this->fields).playerLevelTextureAsset,0);
   if ((this->fields).resultCallback != (UnityAction *)0x0) {
-    pUVar2 = (this->fields).resultCallback;
-    (*(pUVar2->fields)._._.invoke_impl)((pUVar2->fields)._._.method_code);
+    (*(((this->fields).resultCallback)->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -145,33 +140,30 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  pAVar1 = (Action_1_Object_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (pAVar1 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar1,(Object *)this,
-               MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
-    object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-    pAVar1 = (Action_1_Object_ *)func_?();
-    if (pAVar1 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                (pAVar1,(Object *)object,
-                 MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
-                 ,(MethodInfo *)0x0);
-      BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-                ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar1,(MethodInfo *)0x0);
-      return;
-    }
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)this,
+             MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
+  object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)object,
+             MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
   return;
 }
 
@@ -213,7 +205,7 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnLevelRequirementLoa
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)StringLiteral_Badge_not_loaded_for_accessory_l,(MethodInfo *)0x0);
   return;
 }
@@ -256,7 +248,7 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnPlayerLevelLoaded
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)StringLiteral_Badge_not_loaded_for_accessory_l,(MethodInfo *)0x0);
   return;
 }

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 28: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 [assembly: AssemblyCompany("Google LLC")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCopyright("Copyright 2023 Google LLC. All Rights Reserved.")]
@@ -17,9 +17,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("GoogleMobileAds.Common")]
 [assembly: AssemblyTrademark("")]
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.None | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: InternalsVisibleTo("GoogleMobileAdsNative.iOS.unobfuscate")]
-[assembly: InternalsVisibleTo("GoogleMobileAdsNative.Android.unobfuscate")]
-[assembly: InternalsVisibleTo("GoogleMobileAdsNative.unobfuscate")]
 [assembly: InternalsVisibleTo("GoogleMobileAdsNative.iOS")]
 [assembly: InternalsVisibleTo("GoogleMobileAdsNative.Android")]
 [assembly: InternalsVisibleTo("GoogleMobileAdsNative")]
@@ -31,6 +28,9 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("GoogleMobileAds.iOS")]
 [assembly: InternalsVisibleTo("GoogleMobileAds.Unity")]
 [assembly: InternalsVisibleTo("GoogleMobileAdsNative")]
+[assembly: InternalsVisibleTo("GoogleMobileAdsNative.unobfuscate")]
+[assembly: InternalsVisibleTo("GoogleMobileAdsNative.Android.unobfuscate")]
+[assembly: InternalsVisibleTo("GoogleMobileAdsNative.iOS.unobfuscate")]
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 
 namespace GoogleMobileAds.Common
@@ -43,9 +43,6 @@ namespace GoogleMobileAds.Common
 		private IAdErrorClient _AdErrorClient_k__BackingField;
 	
 		// Properties
-		public IAdErrorClient AdErrorClient { [CompilerGenerated] get; [CompilerGenerated] set; }
-	
-		// Constructors
-		public AdErrorClientEventArgs();
+		public IAdErrorClient AdErrorClient { [CompilerGenerated] get; }
 	}
 }

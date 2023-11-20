@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::FirstTimeEventSetActiveOnEnable::FirstTimeEventSetActi
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)StringLiteral_This_class_does_not_implement_sk,(MethodInfo *)0x0);
   FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
             ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);

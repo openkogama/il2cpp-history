@@ -97,7 +97,6 @@ void Assembly-CSharp.dll::BundleTab+<LerpToSize>d__20::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__BundleTab___LerpToSize_d__20__System_Collections_IEnumerator_Reset__)

@@ -63,14 +63,14 @@ code_?:
         func_?();
       }
       if ((data != (MethodInfo *)0x0) &&
-         (((byte)data->methodPointer[0xb4] <
+         (((byte)data->methodPointer[0xb8] <
            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth ||
+           naturalAligment ||
           (*(Dictionary_2_System_Object_System_Object___Class **)
             (*(int *)(data->methodPointer + 100) + -4 +
             (uint)(
                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).typeHierarchyDepth * 4) !=
+                  ->_1).naturalAligment * 4) !=
            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
       goto code_?;
       bVar1 = WorldObjectDataValidator_ValidateForGivenData
@@ -83,37 +83,38 @@ code_?:
     if ((TypeInfo__WorldObjectDataValidator->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__WorldObjectDataValidator);
     }
-    this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-           TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData;
-    if (this == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData;
+    if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this,(Object *)key,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar3,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 != 0) {
       if ((TypeInfo__WorldObjectDataValidator->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__WorldObjectDataValidator);
       }
-      this_00 = TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData;
-      if (((this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-          (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                              (this_00,(Object *)key,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              ), pOVar3 == (Object *)0x0)) ||
-         (left._source = (CancellationTokenSource *)
-                         mscorlib.dll::System::Object::Object_GetType(pOVar3,(MethodInfo *)0x0),
-         value == (Object *)0x0)) goto code_?;
-      right._source =
-           (CancellationTokenSource *)
-           mscorlib.dll::System::Object::Object_GetType(value,(MethodInfo *)0x0);
+      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData;
+      if (((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+          (this = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar3,(Object *)key,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), this.m_Index == 0)) ||
+         (left = (XNamespace *)
+                 mscorlib.dll::System::Object::Object_GetType
+                           ((Object *)this.m_Index,(MethodInfo *)0x0), value == (Object *)0x0))
+      goto code_?;
+      right = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(value,(MethodInfo *)0x0);
       if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar1 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+      bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
                         (left,right,(MethodInfo *)0x0);
       if (bVar1 == 0) {
         return;
@@ -128,11 +129,11 @@ code_?:
     }
     if ((data == (MethodInfo *)0x0) ||
        (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth <= (byte)data->methodPointer[0xb4] &&
+         naturalAligment <= (byte)data->methodPointer[0xb8] &&
         (*(Dictionary_2_System_Object_System_Object___Class **)
           (*(int *)(data->methodPointer + 100) + -4 +
           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).typeHierarchyDepth * 4) ==
+                ->_1).naturalAligment * 4) ==
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
       bVar1 = WorldObjectDataValidator_ValidateForGivenData
                         ((Dictionary_2_System_Object_System_Object_ *)data,key,value,
@@ -154,9 +155,9 @@ code_?:
     uVar5 = *puVar4;
     func_?();
     func_?();
-    pOVar3 = (Object *)func_?(uVar5,key);
-    func_?(pOVar3);
-    arg1 = mscorlib.dll::System::Object::Object_GetType(pOVar3,(MethodInfo *)0x0);
+    this_00 = (Object *)func_?(uVar5,key);
+    func_?(this_00);
+    arg1 = mscorlib.dll::System::Object::Object_GetType(this_00,(MethodInfo *)0x0);
     func_?(value);
     arg2 = mscorlib.dll::System::Object::Object_GetType(value,(MethodInfo *)0x0);
     pSVar6 = (String *)func_?();
@@ -164,7 +165,6 @@ code_?:
                        (pSVar6,(Object *)key,(Object *)arg1,(Object *)arg2,(MethodInfo *)0x0);
     func_?();
     value = (Object *)func_?();
-    func_?();
     mscorlib.dll::System::Exception::Exception__ctor_1((Exception *)value,pSVar6,(MethodInfo *)0x0);
     func_?();
     func_?();
@@ -174,7 +174,6 @@ code_?:
   pSVar6 = mscorlib.dll::System::String::String_Format_1(pSVar6,(Object *)key,value,pMVar2);
   uVar5 = func_?(&TypeInfo__System__Exception);
   this_01 = (Exception *)func_?(uVar5);
-  func_?(this_01);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar6,(MethodInfo *)0x0);
   func_?(&
                   MethodInfo__WorldObjectDataValidator__Validate_MVWorldObjectClient__System__String__System__Object_
@@ -207,32 +206,35 @@ bool Assembly-CSharp.dll::WorldObjectDataValidator::WorldObjectDataValidator_Val
     cRam_? = '\x01';
   }
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,(Object *)key,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
+                       (Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
       return 0;
     }
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)key,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 != (Object *)0x0) {
+    this = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
+                      (Object *)key,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+    if (this.m_Index != 0) {
       key = (String *)0x0;
-      left._source = (CancellationTokenSource *)
-                     mscorlib.dll::System::Object::Object_GetType(pOVar2,(MethodInfo *)0x0);
+      left = (XNamespace *)
+             mscorlib.dll::System::Object::Object_GetType((Object *)this.m_Index,(MethodInfo *)0x0);
       if (value != (Object *)0x0) {
         dataName = (String *)mscorlib.dll::System::Object::Object_GetType(value,(MethodInfo *)0x0);
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         key = (String *)&UNK_?;
-        bVar1 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
-                          (left,(CancellationToken)dataName,(MethodInfo *)0x0);
+        bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
+                          (left,(XNamespace *)dataName,(MethodInfo *)0x0);
         if (bVar1 == 0) {
           return 1;
         }
@@ -243,51 +245,50 @@ bool Assembly-CSharp.dll::WorldObjectDataValidator::WorldObjectDataValidator_Val
   dataName = (String *)&UNK_?;
   func_?();
 code_?:
-  pSStack3 = (String *)0x4;
-  ppOStack4 = &TypeInfo__System__Object;
-  ppOStack4 = (Object__Array__Class **)func_?();
+  pSStack2 = (String *)0x4;
+  ppOStack3 = &TypeInfo__System__Object;
+  ppOStack3 = (Object__Array__Class **)func_?();
   args = (Object__Array *)func_?();
-  pOStack5 = args;
+  pOStack4 = args;
   func_?();
   func_?();
-  pSStack3 = dataName;
-  ppOStack4 = (Object__Array__Class **)0x0;
+  pSStack2 = dataName;
+  ppOStack3 = (Object__Array__Class **)0x0;
   func_?();
-  pOStack5 = args;
-  func_?();
-  func_?();
-  pOStack5 = (Object__Array *)key;
+  pOStack4 = args;
   func_?();
   func_?();
+  pOStack4 = (Object__Array *)key;
   func_?();
-  pOVar2 = (Object *)func_?();
-  func_?(pOVar2);
-  pTVar6 = mscorlib.dll::System::Object::Object_GetType(pOVar2,(MethodInfo *)0x0);
+  func_?();
+  func_?();
+  this_00 = (Object *)func_?();
+  func_?(this_00);
+  pTVar5 = mscorlib.dll::System::Object::Object_GetType(this_00,(MethodInfo *)0x0);
   func_?(args);
-  func_?(args,pTVar6);
-  pOStack5 = (Object__Array *)pTVar6;
+  func_?(args,pTVar5);
+  pOStack4 = (Object__Array *)pTVar5;
   func_?();
   func_?();
-  pTVar6 = mscorlib.dll::System::Object::Object_GetType
+  pTVar5 = mscorlib.dll::System::Object::Object_GetType
                      ((Object *)
                       &
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       ,(MethodInfo *)0x0);
   func_?();
   func_?();
-  pOStack5 = (Object__Array *)pTVar6;
+  pOStack4 = (Object__Array *)pTVar5;
   func_?();
-  pSVar7 = (String *)func_?();
-  pSVar7 = mscorlib.dll::System::String::String_Format_3(pSVar7,args,(MethodInfo *)0x0);
+  pSVar6 = (String *)func_?();
+  pSVar6 = mscorlib.dll::System::String::String_Format_3(pSVar6,args,(MethodInfo *)0x0);
   func_?();
-  this = (Exception *)func_?();
+  this_01 = (Exception *)func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar6,(MethodInfo *)0x0);
+  uStack7 = func_?();
+  pEStack8 = this_01;
   func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar7,(MethodInfo *)0x0);
-  uStack8 = func_?();
-  pEStack9 = this;
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar1 = (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  bVar1 = (*pcVar9)();
   return bVar1;
 }
 
@@ -322,69 +323,80 @@ void Assembly-CSharp.dll::WorldObjectDataValidator::WorldObjectDataValidator__cc
     func_?(&StringLiteral_team);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                         );
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    pOVar1 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  pOVar1 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_test,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_test,pOVar1
+               ,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Int32);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_levelAmount,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_levelAmount
+               ,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_gameCoinAmount,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_gameCoinAmount,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_starAmount,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_RequiredRank,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    puStack2 = &stack0xffffffe0;
+    puStack2 = &stack0xffffffe8;
     pIStack3 = TypeInfo__System__Int32;
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_team,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_starAmount,
+               pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_rewardedAd,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_RequiredRank,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)StringLiteral_Lives,pOVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_team,pOVar1
+               ,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData = this;
-    pWStack4 = TypeInfo__WorldObjectDataValidator->static_fields;
-    pDStack5 = this;
+    puStack4 = &stack0xfffffffb;
+    pBStack5 = TypeInfo__System__Boolean;
+    pOVar1 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_rewardedAd,
+               pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pOVar1 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Lives,
+               pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    TypeInfo__WorldObjectDataValidator->static_fields->lazyAddedData =
+         (Dictionary_2_System_Object_System_Object_ *)this;
     func_?();
     return;
   }

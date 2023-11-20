@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_ESAddLink_enter,(MethodInfo *)0x0);
   if (esm != (EditorStateMachine *)0x0) {
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
@@ -75,103 +75,100 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_state_started_with_multi_selecti,(MethodInfo *)0x0);
           FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
           return;
         }
         pLVar8 = (Link *)func_?();
-        if (pLVar8 != (Link *)0x0) {
-          MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(pLVar8,(MethodInfo *)0x0);
-          (this->fields).tempLink = pLVar8;
-          func_?(&(this->fields).tempLink);
-          if ((pMVar1->fields).selectedConnector == 1) {
-            pLVar8 = (this->fields).tempLink;
-            pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                               (esm,(MethodInfo *)0x0);
-            if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
-            goto code_?;
-            (pLVar8->fields).inputWOID = (pMVar9->fields)._.id;
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-            (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorBlueMaterial;
-            func_?(&(this->fields).materialToPulse);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-            pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial;
+        MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(pLVar8,(MethodInfo *)0x0);
+        (this->fields).tempLink = pLVar8;
+        func_?();
+        if ((pMVar1->fields).selectedConnector == 1) {
+          pLVar8 = (this->fields).tempLink;
+          pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                             (esm,(MethodInfo *)0x0);
+          if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+          goto code_?;
+          (pLVar8->fields).inputWOID = (pMVar9->fields)._.id;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
-          else {
-            if ((pMVar1->fields).selectedConnector != 2) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Debug);
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                        ((Object *)StringLiteral_Should_not_happen___links_can_on,(MethodInfo *)0x0)
-              ;
-              FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
+          pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+          (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorBlueMaterial;
+          func_?(&(this->fields).materialToPulse);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+          pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial;
+        }
+        else {
+          if ((pMVar1->fields).selectedConnector != 2) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__UnityEngine__Debug);
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                      ((Object *)StringLiteral_Should_not_happen___links_can_on,(MethodInfo *)0x0);
+            FSMEntity::FSMEntity_PopState((FSMEntity *)esm,(MethodInfo *)0x0);
+            return;
+          }
+          pLVar8 = (this->fields).tempLink;
+          pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                             (esm,(MethodInfo *)0x0);
+          if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+          goto code_?;
+          (pLVar8->fields).outputWOID = (pMVar9->fields)._.id;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+          (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorRedMaterial;
+          func_?(&(this->fields).materialToPulse);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar2 == (PrefabPool *)0x0) goto code_?;
+          pMVar3 = (pPVar2->fields).logicCubeConnectorRedMaterial;
+        }
+        if (pMVar3 != (Material *)0x0) {
+          pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                             ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
+          fVar5 = pCVar4->g;
+          fVar6 = pCVar4->b;
+          fVar7 = pCVar4->a;
+          (this->fields).endColor.r = pCVar4->r;
+          (this->fields).endColor.g = fVar5;
+          (this->fields).endColor.b = fVar6;
+          (this->fields).endColor.a = fVar7;
+          fVar5 = (this->fields).endColor.b;
+          (this->fields).startColor.r = (this->fields).endColor.r;
+          (this->fields).startColor.g = 0.6;
+          (this->fields).startColor.b = fVar5;
+          (this->fields).startColor.a = 1.0;
+          pMVar10 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                              ((MethodInfo *)0x0);
+          if ((pMVar10 != (MainCameraManager *)0x0) &&
+             (this_00 = (pMVar10->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
+            LineDrawManager::LineDrawManager_SetTempLink
+                      (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
+            (*(code *)(pMVar1->klass->vtable).HighlightConnector.method)();
+            this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (this_01 != (MVWorldObjectClientManager *)0x0) {
+              pWVar11 = MVWorldObjectClientManager::
+                        MVWorldObjectClientManager_GetWorldObjectClientRef
+                                  (this_01,(pMVar1->fields)._.id,(MethodInfo *)0x0);
+              (this->fields).woRef = pWVar11;
+              func_?(&(this->fields).woRef);
               return;
-            }
-            pLVar8 = (this->fields).tempLink;
-            pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                               (esm,(MethodInfo *)0x0);
-            if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
-            goto code_?;
-            (pLVar8->fields).outputWOID = (pMVar9->fields)._.id;
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-            (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorRedMaterial;
-            func_?(&(this->fields).materialToPulse);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-            pMVar3 = (pPVar2->fields).logicCubeConnectorRedMaterial;
-          }
-          if (pMVar3 != (Material *)0x0) {
-            pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                               ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
-            fVar5 = pCVar4->g;
-            fVar6 = pCVar4->b;
-            fVar7 = pCVar4->a;
-            (this->fields).endColor.r = pCVar4->r;
-            (this->fields).endColor.g = fVar5;
-            (this->fields).endColor.b = fVar6;
-            (this->fields).endColor.a = fVar7;
-            fVar5 = (this->fields).endColor.b;
-            (this->fields).startColor.r = (this->fields).endColor.r;
-            (this->fields).startColor.g = 0.6;
-            (this->fields).startColor.b = fVar5;
-            (this->fields).startColor.a = 1.0;
-            pMVar10 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                ((MethodInfo *)0x0);
-            if ((pMVar10 != (MainCameraManager *)0x0) &&
-               (this_00 = (pMVar10->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
-              LineDrawManager::LineDrawManager_SetTempLink
-                        (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
-              (*(pMVar1->klass->vtable).HighlightConnector.methodPtr)();
-              this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              if (this_01 != (MVWorldObjectClientManager *)0x0) {
-                pWVar11 = MVWorldObjectClientManager::
-                          MVWorldObjectClientManager_GetWorldObjectClientRef
-                                    (this_01,(pMVar1->fields)._.id,(MethodInfo *)0x0);
-                (this->fields).woRef = pWVar11;
-                func_?(&(this->fields).woRef);
-                return;
-              }
             }
           }
         }
@@ -308,8 +305,9 @@ code_?:
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
-        pVVar16 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                  StandaloneInput_MousePosition(&VStack_8,(StandaloneInput *)0x0,method_00);
+        pVVar16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                  DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition
+                            (&VStack_8,(DefaultEventSystem_Input *)0x0,method_00);
         bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
                           (this_04,*pVVar16,(MethodInfo *)0x0);
         if (bVar2 != 0) {
@@ -328,8 +326,9 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      pVVar16 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                StandaloneInput_MousePosition(&VStack_8,(StandaloneInput *)0x0,in_stack_18);
+      pVVar16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input
+                ::DefaultEventSystem_Input_get_mousePosition
+                          (&VStack_8,(DefaultEventSystem_Input *)0x0,in_stack_18);
       bVar2 = MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
                         (this_04,*pVVar16,(MethodInfo *)0x0);
       if (bVar2 != 0) {
@@ -381,7 +380,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Exit
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                        );
     if (pOVar2 == (Object *)0x0) goto code_?;
-    (*(code *)pOVar2->klass[3]._0.fields)(pOVar2);
+    (*(code *)pOVar2->klass[3]._0.klass)(pOVar2);
   }
   pMVar3 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if ((pMVar3 != (MainCameraManager *)0x0) &&
@@ -519,7 +518,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink__ctor(ESAddLink *this,MethodInfo 
   (this->fields)._.tintedWo = pWVar1;
   method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
   func_?(method_00,pWVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);

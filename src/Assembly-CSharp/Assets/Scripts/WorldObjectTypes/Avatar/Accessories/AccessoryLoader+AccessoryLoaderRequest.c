@@ -77,8 +77,9 @@ code_?:
     }
     pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)pTVar4,(Object **)pTVar6,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals
+                      ((Int32Enum__Enum)pTVar4,(Int32Enum__Enum)pTVar6,(MethodInfo *)0x0);
     method_00 = 
     AvatarAccessoryHat_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarAccessoryHat>__;
     if (bVar2 != 0) {
@@ -86,7 +87,7 @@ code_?:
       pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                          (this_00,method_00);
       if (pOVar3 != (Object *)0x0) {
-        (*(code *)pOVar3->klass[1]._0.fields)();
+        (*(code *)pOVar3->klass[1]._0.events)();
         if (method_00->name != (char *)0x0) {
           (**(code **)(method_00->name + 0xc))();
           method_00->name = (char *)0x0;
@@ -103,8 +104,9 @@ code_?:
     }
     pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)pTVar4,(Object **)pTVar4,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals
+                      ((Int32Enum__Enum)pTVar4,(Int32Enum__Enum)pTVar4,(MethodInfo *)0x0);
     method_00 = 
     AvatarAccessoryParticles_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarAccessoryParticles>__
     ;
@@ -116,8 +118,9 @@ code_?:
     }
     pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar5,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)pTVar4,(Object **)pTVar6,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals
+                      ((Int32Enum__Enum)pTVar4,(Int32Enum__Enum)pTVar6,(MethodInfo *)0x0);
     method_00 = 
     AvatarAccessoryBackAccessories_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarAccessoryBackAccessories>__
     ;
@@ -125,7 +128,6 @@ code_?:
   }
   func_?();
   pEVar7 = (Exception *)func_?();
-  func_?(pEVar7);
   pSVar1 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar7,pSVar1,(MethodInfo *)0x0);
   func_?();
@@ -133,7 +135,6 @@ code_?:
 code_?:
   func_?();
   pEVar7 = (Exception *)func_?();
-  func_?();
   pSVar1 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar7,pSVar1,(MethodInfo *)0x0);
   uStack8 = func_?();
@@ -177,7 +178,6 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Avatar::Accessories
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar3,(Object *)this,
@@ -212,32 +212,18 @@ code_?:
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__LoadAccessory__
-                 ,(MethodInfo *)0x0);
-      pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-      if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-             (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      }
-      else {
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,
+               MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__LoadAccessory__
+               ,(MethodInfo *)0x0);
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+code_?:
       func_?();
       if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -246,29 +232,36 @@ code_?:
       pSVar5 = mscorlib.dll::System::String::String_Concat_3
                          (pSVar5,(this->fields).subUrl,(MethodInfo *)0x0);
       pSVar5 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar5,(MethodInfo *)0x0);
-      this_00 = (Action_1_Object_ *)func_?();
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
-                   ,(MethodInfo *)0x0);
-        this_01 = (AssetBundleRequest *)func_?(TypeInfo__CachedAssetBundleRequest);
-        if (this_01 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_01,pSVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-          return;
-        }
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,pSVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+      return;
     }
-code_?:
-    func_?();
+    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar4 = pUVar2;
+    }
+    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
+    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar4 = pUVar2;
+    }
+    if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
   }
-code_?:
   func_?();
 code_?:
   func_?();
@@ -295,23 +288,19 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Avatar::Accessories
   }
   (this->fields).accessoryCreatedCallback = (Action_2_Int32_AvatarAccessory_ *)0x0;
   func_?(&(this->fields).accessoryCreatedCallback,0);
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 

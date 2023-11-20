@@ -63,23 +63,15 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
                    );
     cRam_? = '\x01';
   }
-  value = (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
-          func_?(
-                         TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
-                         );
-  if (value != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    method_00 = (MethodInfo *)&(this->fields).LaserCommands;
-    (this->fields).LaserCommands = value;
-    func_?(method_00,value);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_01 = TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager;
+  value = (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  method_00 = (MethodInfo *)&(this->fields).LaserCommands;
+  (this->fields).LaserCommands = value;
+  func_?(method_00,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

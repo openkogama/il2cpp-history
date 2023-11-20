@@ -18,22 +18,20 @@ bool Assembly-CSharp.dll::GNU::Gettext::CharsetInfoFinder::CharsetInfoFinder_OnE
     return 1;
   }
   this_00 = (Catalog *)func_?(TypeInfo__GNU__Gettext__Catalog);
-  if (this_00 != (Catalog *)0x0) {
-    Catalog::Catalog__ctor(this_00,(MethodInfo *)0x0);
-    if (translations != (String__Array *)0x0) {
-      if (translations->max_length != 0) {
-        Catalog::Catalog_ParseHeaderString(this_00,translations->vector[0],(MethodInfo *)0x0);
-        pSRam0000000c = (this_00->fields).Charset;
+  Catalog::Catalog__ctor(this_00,(MethodInfo *)0x0);
+  if (translations != (String__Array *)0x0) {
+    if (translations->max_length == 0) goto code_?;
+    if (this_00 != (Catalog *)0x0) {
+      Catalog::Catalog_ParseHeaderString(this_00,translations->vector[0],(MethodInfo *)0x0);
+      pSRam0000000c = (this_00->fields).Charset;
+      func_?();
+      bVar1 = mscorlib.dll::System::String::String_op_Equality
+                        (pSRam0000000c,StringLiteral_CHARSET,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        pSRam0000000c = StringLiteral_iso_8859_1;
         func_?();
-        bVar1 = mscorlib.dll::System::String::String_op_Equality
-                          (pSRam0000000c,StringLiteral_CHARSET,(MethodInfo *)0x0);
-        if (bVar1 != 0) {
-          pSRam0000000c = StringLiteral_iso_8859_1;
-          func_?();
-        }
-        return 0;
       }
-      goto code_?;
+      return 0;
     }
   }
   func_?();

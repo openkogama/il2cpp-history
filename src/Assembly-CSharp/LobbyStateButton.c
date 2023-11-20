@@ -27,90 +27,83 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateBriefing
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__LobbyStateButton____c__DisplayClass39_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    if ((this->fields).shouldPop != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass39_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if ((this->fields).shouldPop != 0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__LobbyStateButton____c);
+    }
+    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__39_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__LobbyStateButton____c);
       }
-      callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__39_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__LobbyStateButton____c);
-        }
-        object = TypeInfo__LobbyStateButton____c->static_fields->__9;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__LobbyStateButton____c___CreateBriefing_b__39_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__LobbyStateButton____c->static_fields->__9__39_0 = callbackFunction;
-        func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__39_0,callbackFunction)
-        ;
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                 ,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
+      object = TypeInfo__LobbyStateButton____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__LobbyStateButton____c___CreateBriefing_b__39_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__LobbyStateButton____c->static_fields->__9__39_0 = callbackFunction;
+      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__39_0,callbackFunction);
     }
-    original = (this->fields).winningConditionBriefingMenu;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        WinningConditionBriefing_MethodInfo__UnityEngine__Object__Instantiate<WinningConditionBriefing>_WinningConditionBriefing_
-                       );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              ((GameObject *)
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+               ,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+  }
+  original = (this->fields).winningConditionBriefingMenu;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      WinningConditionBriefing_MethodInfo__UnityEngine__Object__Instantiate<WinningConditionBriefing>_WinningConditionBriefing_
+                     );
+  if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
     func_?();
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction_00 =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                 MethodInfo__LobbyStateButton____c__DisplayClass39_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction_00,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if (value[1].klass != (Object__Class *)0x0) {
-        WinningConditionBriefing::WinningConditionBriefing_Initialize
-                  ((WinningConditionBriefing *)value[1].klass,winCon,(MethodInfo *)0x0);
-        return;
-      }
+    winConType = 
+    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+    ;
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+               MethodInfo__LobbyStateButton____c__DisplayClass39_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction_00,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (value[1].klass != (Object__Class *)0x0) {
+      WinningConditionBriefing::WinningConditionBriefing_Initialize
+                ((WinningConditionBriefing *)value[1].klass,(WinningConditionType__Enum)winConType,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -146,59 +139,56 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateSpawnRoleSele
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__LobbyStateButton____c__DisplayClass38_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    if ((this->fields).shouldPop != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass38_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if ((this->fields).shouldPop != 0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__LobbyStateButton____c);
+    }
+    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__38_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__LobbyStateButton____c);
       }
-      callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__38_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__LobbyStateButton____c);
-        }
-        object = TypeInfo__LobbyStateButton____c->static_fields->__9;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__LobbyStateButton____c->static_fields->__9__38_0 = callbackFunction;
-        func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__38_0,callbackFunction)
-        ;
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                 ,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
+      object = TypeInfo__LobbyStateButton____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__LobbyStateButton____c->static_fields->__9__38_0 = callbackFunction;
+      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__38_0,callbackFunction);
     }
-    original = (this->fields).spawnRoleMenuPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
-                       );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              ((GameObject *)
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+               ,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+  }
+  original = (this->fields).spawnRoleMenuPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
+                     );
+  if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
     func_?();
     pOVar1 = value[1].klass;
@@ -209,30 +199,23 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateSpawnRoleSele
       ;
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction_00 =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                   MethodInfo__LobbyStateButton____c__DisplayClass38_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
+      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                 MethodInfo__LobbyStateButton____c__DisplayClass38_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -266,92 +249,83 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateTeamMenu
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__LobbyStateButton____c__DisplayClass37_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    if ((this->fields).isInAd == 0) {
-      if ((this->fields).shouldPop != 0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                  ((Component *)this,(MethodInfo *)0x0);
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass37_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if ((this->fields).isInAd == 0) {
+    if ((this->fields).shouldPop != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__LobbyStateButton____c);
+      }
+      callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__37_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
         if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__LobbyStateButton____c);
         }
-        callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__37_0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__LobbyStateButton____c);
-          }
-          object = TypeInfo__LobbyStateButton____c->static_fields->__9;
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_IUIStack_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                              );
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-          goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
-                     MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__LobbyStateButton____c->static_fields->__9__37_0 = callbackFunction;
-          func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__37_0,
-                          callbackFunction);
-        }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  ((GameObject *)
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   ,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
+        object = TypeInfo__LobbyStateButton____c->static_fields->__9;
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__LobbyStateButton____c->static_fields->__9__37_0 = callbackFunction;
+        func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__37_0,callbackFunction)
+        ;
       }
-      original = (this->fields).teamMenuPrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pOVar1 = (Object__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
-                          TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_)
-      ;
-      value[1].klass = pOVar1;
-      func_?();
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction_00 =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-      goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                 MethodInfo__LobbyStateButton____c__DisplayClass37_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction_00,
+                ((GameObject *)
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 ,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
     }
-    return;
+    original = (this->fields).teamMenuPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pOStack1 =
+         (Object__Class *)
+         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                   ((Object *)original,
+                    TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
+    if (value == (Object *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    value[1].klass = pOStack1;
+    pOStack3 = value + 1;
+    func_?();
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+               MethodInfo__LobbyStateButton____c__DisplayClass37_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction_00,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
   }
-code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -444,10 +418,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_DoLockCursor
               if ((pGVar5 != (GameEventManager *)0x0) &&
                  (this_02 = (pGVar5->fields).AvatarCommandsPlayMode,
                  this_02 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-                GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-                RewardedInterstitialAd__RegisterAdEvents_m__2
-                          ((RewardedInterstitialAd *)this_02,(Object *)0x0,in_stack_6,
-                           in_stack_7);
+                GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
+                RewardedAd__RegisterAdEvents_m__9((RewardedAd *)this_02,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -457,10 +429,10 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_DoLockCursor
     }
   }
 code_?:
-  uVar8 = func_?(&stack0xfffffff4);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar6 = func_?(&stack0xfffffff4);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -618,15 +590,17 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnPressPlay
     func_?(&TypeInfo__LobbyStateButton____c__DisplayClass26_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__LobbyStateButton____c__DisplayClass26_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass26_0;
+  value = (LobbyStateButton *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (LobbyStateButton *)0x0) {
+    (value->fields)._._._._.m_CachedPtr = this;
+    func_?(&value->fields,this);
     bVar1 = WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
-                      ((WinningConditionType__Enum *)(value + 2),(MethodInfo *)0x0);
-    *(bool *)&value[1].monitor = bVar1;
+                      ((WinningConditionType__Enum *)&(value->fields).teamMenuPrefab,
+                       (MethodInfo *)0x0);
+    *(bool *)&(value->fields)._.m_CancellationTokenSource = bVar1;
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (((pMVar2 != (MVNetworkGame *)0x0) &&
         (this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
@@ -659,70 +633,54 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnPressPlay
            (this_00 = (pMVar2->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
           iVar6 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
           if (iVar6 < 2) {
-            if (*(char *)&value[1].monitor == '\0') {
-              pUVar7 = (UnityAction_1_System_Int32Enum_ *)
-                       func_?(
-                                      TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                                      );
+            if (*(char *)&(value->fields)._.m_CancellationTokenSource == '\0') {
+              this_03 = (UnityAction_1_System_Int32Enum_ *)
+                        func_?(
+                                       TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
+                                       );
+              value = this;
+              method_1 = 
+              MethodInfo__LobbyStateButton__OnShowAdFinishedSpawnRolesPresent_Assets__Scripts__AdIntegration__InterstitialAdResult_
+              ;
               if (iVar4 < 1) {
-                if (pUVar7 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]
-                  ::UnityAction_1_System_Int32Enum___ctor
-                            (pUVar7,(Object *)this,
-                             MethodInfo__LobbyStateButton__OnShowAdFinishedEnterPlaymode_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                             ,(MethodInfo *)0x0);
-                  LobbyStateButton_RequestAdWithCallback
-                            (this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)
-                                  pUVar7,(MethodInfo *)0x0);
-                  return;
-                }
+                method_1 = 
+                MethodInfo__LobbyStateButton__OnShowAdFinishedEnterPlaymode_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                ;
               }
-              else if (pUVar7 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-                UnityAction_1_System_Int32Enum___ctor
-                          (pUVar7,(Object *)this,
-                           MethodInfo__LobbyStateButton__OnShowAdFinishedSpawnRolesPresent_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                           ,(MethodInfo *)0x0);
-                LobbyStateButton_RequestAdWithCallback
-                          (this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)
-                                pUVar7,(MethodInfo *)0x0);
-                return;
-              }
-              goto code_?;
             }
-            pUVar7 = (UnityAction_1_System_Int32Enum_ *)
-                     func_?(
-                                    TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                                    );
-            method_1 = 
-            MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_
-            ;
+            else {
+              this_03 = (UnityAction_1_System_Int32Enum_ *)
+                        func_?(
+                                       TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
+                                       );
+              method_1 = 
+              MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_
+              ;
+            }
           }
           else {
-            pUVar7 = (UnityAction_1_System_Int32Enum_ *)
-                     func_?(
-                                    TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                                    );
+            this_03 = (UnityAction_1_System_Int32Enum_ *)
+                      func_?(
+                                     TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
+                                     );
             method_1 = 
             MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
             ;
           }
-          if (pUVar7 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-            UnityAction_1_System_Int32Enum___ctor(pUVar7,value,method_1,(MethodInfo *)0x0);
-            LobbyStateButton_RequestAdWithCallback
-                      (this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)pUVar7,
-                       (MethodInfo *)0x0);
-            return;
-          }
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+          UnityAction_1_System_Int32Enum___ctor(this_03,(Object *)value,method_1,(MethodInfo *)0x0);
+          LobbyStateButton_RequestAdWithCallback
+                    (this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)this_03,
+                     (MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -801,7 +759,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnShowAdFinishedSpa
         cRam_? = '\x01';
       }
       bVar3 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct
-                        ((bool *)0x98,0,
+                        ((bool *)0x9c,0,
                          bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
                         );
       if (bVar3 != 0) {
@@ -897,14 +855,13 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__LobbyStateButton____c___PopThenLockCursor_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__LobbyStateButton____c->static_fields->__9__30_0 = callbackFunction;
-    func_?();
+    func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__30_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -930,7 +887,6 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor
       return;
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -956,10 +912,11 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallba
     func_?(&TypeInfo__LobbyStateButton____c__DisplayClass27_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__LobbyStateButton____c__DisplayClass27_0);
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass27_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     value[1].monitor = (MonitorData *)callback;
@@ -988,29 +945,45 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallba
         if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
              (IEditModeUI *)0x0) && ((char)((uint)uStack_6 >> 0x10) != '\0')) {
           pIVar8 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-          this_01 = (UnityAction_1_System_Int32Enum_ *)
-                    func_?(
-                                   TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
-                                   );
-          if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-            UnityAction_1_System_Int32Enum___ctor
-                      (this_01,value,
-                       MethodInfo__LobbyStateButton____c__DisplayClass27_0___RequestAdWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                       ,(MethodInfo *)0x0);
-            if (pIVar8 != (IAdManager *)0x0) {
-              func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar8,this_01,
-                              7);
-              return;
+          pUStack_9 = (UnityAction_1_System_Int32Enum_ *)
+                      func_?(
+                                     TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
+                                     );
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+          UnityAction_1_System_Int32Enum___ctor
+                    (pUStack_9,value,
+                     MethodInfo__LobbyStateButton____c__DisplayClass27_0___RequestAdWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                     ,(MethodInfo *)0x0);
+          if (pIVar8 != (IAdManager *)0x0) {
+            pIVar10 = pIVar8->klass;
+            uVar11 = 0;
+            uVar12._0_1_ = (pIVar10->_1).rank;
+            uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
+            if (uVar12 != 0) {
+              do {
+                if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
+                    (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                  ppMVar13 = &(&(pIVar8->klass->vtable).RequestInterstitial)
+                             [pIVar8->klass->interfaceOffsets[uVar11].offset].method;
+                  goto code_?;
+                }
+                uVar11 = uVar11 + 1;
+              } while (uVar11 < uVar12);
             }
+            ppMVar13 = (MethodInfo **)
+                      func_?(pIVar8,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7)
+            ;
+code_?:
+            (*(code *)*ppMVar13)(pIVar8,pUStack_9,7,ppMVar13[1]);
+            return;
           }
           goto code_?;
         }
       }
       (this->fields).isInAd = 0;
-      pMVar9 = value[1].monitor;
-      if (pMVar9 != (MonitorData *)0x0) {
-        (**(code **)(pMVar9 + 0xc))(*(undefined4 *)(pMVar9 + 0x20),3,*(undefined4 *)(pMVar9 + 0x14))
+      pMVar14 = value[1].monitor;
+      if (pMVar14 != (MonitorData *)0x0) {
+        (**(code **)(pMVar14 + 0xc))(*(undefined4 *)(pMVar14 + 0x20),3,*(undefined4 *)(pMVar14 + 0x14))
         ;
         return;
       }
@@ -1018,8 +991,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_RequestAdWithCallba
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1075,7 +1048,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Start
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)StringLiteral_Lobby_state_button_interstitial_,(MethodInfo *)0x0);
           pIVar3 = (this->fields).countdownFill;
           if (pIVar3 != (Image *)0x0) {
@@ -1175,10 +1148,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_StartPlaying
           if ((pGVar3 != (GameEventManager *)0x0) &&
              (this_01 = (pGVar3->fields).AvatarCommandsPlayMode,
              this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-            GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-            RewardedInterstitialAd__RegisterAdEvents_m__2
-                      ((RewardedInterstitialAd *)this_01,(Object *)0x0,in_stack_4,
-                       in_stack_5);
+            GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
+                      ((RewardedAd *)this_01,(MethodInfo *)0x0);
             return;
           }
         }
@@ -1188,8 +1159,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_StartPlaying
 code_?:
   func_?();
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

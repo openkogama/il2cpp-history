@@ -171,29 +171,25 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_OnDestr
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  if (this_01 != (Action_2_Object_Int32Enum_ *)0x0) {
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              (this_01,(Object *)this,
-               MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-               ,(MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_01,(MethodInfo *)0x0);
-    pBVar1 = (this->fields).button;
-    if (pBVar1 != (Button *)0x0) {
-      this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_02,(Object *)this,MethodInfo__FirstTimeButtonClicked__Clicked__,
-                   (MethodInfo *)0x0);
-        if (this_00 != (UnityEvent *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                    (this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
-          return;
-        }
-      }
+  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+             ,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)this_01,(MethodInfo *)0x0);
+  pBVar1 = (this->fields).button;
+  if (pBVar1 != (Button *)0x0) {
+    this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_02,(Object *)this,MethodInfo__FirstTimeButtonClicked__Clicked__,
+               (MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                (this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -225,29 +221,25 @@ void Assembly-CSharp.dll::FirstTimeButtonClicked::FirstTimeButtonClicked_Start
     this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,MethodInfo__FirstTimeButtonClicked__Clicked__,
-                 (MethodInfo *)0x0);
-      if (this_00 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                  (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-        this_02 = (Action_2_Object_Int32Enum_ *)
-                  func_?(
-                                 TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                                 );
-        if (this_02 != (Action_2_Object_Int32Enum_ *)0x0) {
-          mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                    (this_02,(Object *)this,
-                     MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                     ,(MethodInfo *)0x0);
-          FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
-                    ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                      *)this_02,(MethodInfo *)0x0);
-          return;
-        }
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,MethodInfo__FirstTimeButtonClicked__Clicked__,
+               (MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+      this_02 = (Action_2_Object_Int32Enum_ *)
+                func_?(
+                               TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                               );
+      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+                (this_02,(Object *)this,
+                 MethodInfo__FirstTimeButtonClicked__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 ,(MethodInfo *)0x0);
+      FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
+                ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                  *)this_02,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();

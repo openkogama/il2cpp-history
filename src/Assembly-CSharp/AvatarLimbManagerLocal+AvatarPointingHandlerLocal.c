@@ -212,8 +212,12 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
                 ((pAVar13->fields)._._.method_code,0,(pAVar13->fields)._._.method);
     }
   }
-  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing
-            ((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
+  fVar1 = (this->fields)._.elapsedPointingTime;
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  (this->fields)._.prevLookDirection.x = localLookDirection.x;
+  (this->fields)._.prevLookDirection.y = localLookDirection.y;
+  (this->fields)._.elapsedPointingTime = fVar1 - fVar2;
+  (this->fields)._.prevLookDirection.z = localLookDirection.z;
   return;
 }
 
@@ -242,15 +246,36 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     cRam_? = '\x01';
   }
   pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields).pitchRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields).pitchRotation.y = fVar2;
-  (this->fields).pitchRotation.z = fVar3;
-  (this->fields).pitchRotation.w = fVar4;
-  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler__ctor
-            ((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
+  fVar2 = (pQVar1->identityQuaternion).x;
+  fVar3 = (pQVar1->identityQuaternion).y;
+  fVar4 = (pQVar1->identityQuaternion).z;
+  fVar5 = (pQVar1->identityQuaternion).w;
+  (this->fields)._.pointingDuration = 0.8;
+  (this->fields)._.shouldPoint = 1;
+  (this->fields)._.isActive = 1;
+  (this->fields).pitchRotation.x = fVar2;
+  (this->fields).pitchRotation.y = fVar3;
+  (this->fields).pitchRotation.z = fVar4;
+  (this->fields).pitchRotation.w = fVar5;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
+}
+
+
+/* Vector3 get_PointingDirection() */
+
+Vector3 * Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
+          AvatarLimbManagerLocal_AvatarPointingHandlerLocal_get_PointingDirection
+                    (Vector3 *__return_storage_ptr__,
+                    AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,MethodInfo *method)
+
+{
+  fVar1 = (this->fields)._.pointingDirection.y;
+  fVar2 = (this->fields)._.pointingDirection.z;
+  __return_storage_ptr__->x = (this->fields)._.pointingDirection.x;
+  __return_storage_ptr__->y = fVar1;
+  __return_storage_ptr__->z = fVar2;
+  return __return_storage_ptr__;
 }
 

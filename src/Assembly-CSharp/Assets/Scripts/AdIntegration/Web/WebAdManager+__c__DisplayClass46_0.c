@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)pSVar5,(MethodInfo *)0x0);
           pWVar1 = (this->fields).__4__this;
           if (pWVar1 != (WebAdManager *)0x0) {
@@ -48,17 +48,15 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
                       func_?(
                                      TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
                                      );
-            if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-              UnityAction_1_System_Int32Enum___ctor
-                        (this_00,(Object *)pWVar1,
-                         MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__RewardedAdShownSDKCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                         ,(MethodInfo *)0x0);
-              if (pIVar3 != (IAdManager *)0x0) {
-                func_?(6,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar3,
-                                this_00,(this->fields).context);
-                return;
-              }
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+            UnityAction_1_System_Int32Enum___ctor
+                      (this_00,(Object *)pWVar1,
+                       MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__RewardedAdShownSDKCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                       ,(MethodInfo *)0x0);
+            if (pIVar3 != (IAdManager *)0x0) {
+              func_?(6,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar3,this_00,
+                              (this->fields).context);
+              return;
             }
           }
           goto code_?;
@@ -72,7 +70,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar5,(MethodInfo *)0x0);
       message = StringLiteral_Allowing_fallback_ads__requestin;
       pSVar5 = StringLiteral_Fallback_ads_not_allowed__finish;
@@ -86,7 +84,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)pSVar5,(MethodInfo *)0x0);
           this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
@@ -110,7 +108,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)message,(MethodInfo *)0x0);
           pWVar1 = (this->fields).__4__this;
           if (pWVar1 != (WebAdManager *)0x0) {
@@ -132,27 +130,21 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager+<>c_
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)pSVar5,(MethodInfo *)0x0);
-            this_02 = (UnityAction_2_System_Boolean_System_Object_ *)
+            this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
                       func_?(TypeInfo__System__Action<bool,_System::String>);
-            if (this_02 != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System
-              ::Object]::UnityAction_2_System_Boolean_System_Object___ctor
-                        (this_02,(Object *)pWVar1,
-                         MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__OnRewardedAdShownCallback_bool__System__String_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
-                        (StringLiteral_showRewardedVideoAd,(Action_2_Boolean_String_ *)this_02,
-                         (MethodInfo *)0x0);
-              return;
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
+            Int32]::UnityAction_2_System_Int32_System_Int32___ctor
+                      (this_02,(Object *)pWVar1,
+                       MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__OnRewardedAdShownCallback_bool__System__String_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
-            func_?();
-            pcVar6 = (code *)swi(3);
-            (*pcVar6)();
+            BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1
+                      (StringLiteral_showRewardedVideoAd,(Action_2_Boolean_String_ *)this_02,
+                       (MethodInfo *)0x0);
             return;
           }
         }

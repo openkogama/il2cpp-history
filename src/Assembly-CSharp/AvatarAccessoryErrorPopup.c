@@ -14,12 +14,13 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_I
   }
   pTVar1 = (this->fields).buttonText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,buttonText,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,buttonText,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+    ;
     pTVar1 = (this->fields).header;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,header,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pGVar2 = (this->fields).loadingWheel;
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -34,23 +35,21 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_I
             pSVar3 = (this->fields).preview;
             this_01 = (NavMesh_OnNavMeshPreUpdate *)
                       func_?(TypeInfo__UnityEngine__Events__UnityAction);
-            if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-              NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_01,(Object *)this,
-                         MethodInfo__AvatarAccessoryErrorPopup__OnPreviewImageDownLoaded__,
-                         (MethodInfo *)0x0);
-              if (pSVar3 != (StreamedSpriteToImageManual *)0x0) {
-                StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
-                          (pSVar3,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
-                (this->fields).resultCallback = resultCallback;
-                func_?(&(this->fields).resultCallback,resultCallback);
-                this_00 = (this->fields).itemBackground;
-                if (this_00 != (AccessoryItemBackground *)0x0) {
-                  AccessoryItemBackground::AccessoryItemBackground_Initialize
-                            (this_00,accessoryData,(MethodInfo *)0x0);
-                  return;
-                }
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (this_01,(Object *)this,
+                       MethodInfo__AvatarAccessoryErrorPopup__OnPreviewImageDownLoaded__,
+                       (MethodInfo *)0x0);
+            if (pSVar3 != (StreamedSpriteToImageManual *)0x0) {
+              StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
+                        (pSVar3,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
+              (this->fields).resultCallback = resultCallback;
+              func_?(&(this->fields).resultCallback,resultCallback);
+              this_00 = (this->fields).itemBackground;
+              if (this_00 != (AccessoryItemBackground *)0x0) {
+                AccessoryItemBackground::AccessoryItemBackground_Initialize
+                          (this_00,accessoryData,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -101,12 +100,6 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_O
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -125,8 +118,7 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_O
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   if ((this->fields).resultCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    pUVar2 = (this->fields).resultCallback;
-    (*(pUVar2->fields)._._.invoke_impl)((pUVar2->fields)._._.method_code,_confirmed);
+    (*(((this->fields).resultCallback)->fields)._._.invoke_impl)();
   }
   return;
 }

@@ -92,30 +92,31 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
         func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,(int)&worldObjects + 3)
   ;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__get_Item
-                        (data,key,
+    this_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    if (this_00.m_Index != 0) {
       worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
       ;
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth) &&
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (this_00->klass->_1).typeHierarchy
-          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] ==
+           naturalAligment <= *(byte *)(*(int *)this_00.m_Index + 0xb8)) &&
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)this_00.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
         worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
         ;
-        bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          (this_00,(Object *)StringLiteral_itemData,
+        bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                           this_00.m_Index,(Object *)StringLiteral_itemData,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
         if (bVar1 == 0) {
@@ -128,7 +129,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
           worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_00.m_Index,
                      (Object *)StringLiteral_itemData,(Object *)value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );

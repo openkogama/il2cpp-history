@@ -13,8 +13,8 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup_Initialize
     pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(item->fields).priceGold,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if ((image != (RawImage *)0x0) &&
          (this_00 = (this->fields).avatarImage, this_00 != (RawImage *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
@@ -56,24 +56,18 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup_OnPurchaseCli
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseAvatar>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__AvatarPurchasePopup___OnPurchaseClicked_b__4_0_UnityEngine__EventSystems__IPurchaseAvatar__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPurchaseAvatar>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseAvatar>_
-              );
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__AvatarPurchasePopup___OnPurchaseClicked_b__4_0_UnityEngine__EventSystems__IPurchaseAvatar__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPurchaseAvatar>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseAvatar>_
+            );
   return;
 }
 
@@ -90,27 +84,31 @@ void Assembly-CSharp.dll::AvatarPurchasePopup::AvatarPurchasePopup__OnPurchaseCl
   }
   pAVar1 = (this->fields).item;
   if (x != (IPurchaseAvatar *)0x0) {
-    uVar2 = 0;
-    uVar3 = (x->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = x->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPurchaseAvatar) {
-          pIVar4 = &x->klass->vtable + x->klass->interfaceOffsets[uVar2].offset;
-          (*(pIVar4->PurchaseAvatar).methodPtr)(x,pAVar1,(pIVar4->PurchaseAvatar).method);
+          pIVar2 = x->klass;
+          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
+          (*(code *)(&pIVar2->vtable)[iVar5].PurchaseAvatar.method)
+                    (x,pAVar1,(&pIVar2[1]._0.image)[iVar5 * 2]);
           return;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar5 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IPurchaseAvatar,0)
+    puVar6 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IPurchaseAvatar,0)
     ;
-    (*(code *)*puVar5)(x,pAVar1,puVar5[1]);
+    (*(code *)*puVar6)(x,pAVar1,puVar6[1]);
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

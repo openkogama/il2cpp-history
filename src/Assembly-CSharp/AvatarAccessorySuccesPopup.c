@@ -62,14 +62,14 @@ void Assembly-CSharp.dll::AvatarAccessorySuccesPopup::AvatarAccessorySuccesPopup
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__AvatarAccessorySuccesPopup____c___OnButtonPressed_b__4_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__AvatarAccessorySuccesPopup____c->static_fields->__9__4_0 = callbackFunction;
-    func_?();
+    func_?(&TypeInfo__AvatarAccessorySuccesPopup____c->static_fields->__9__4_0,
+                    callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -81,13 +81,14 @@ void Assembly-CSharp.dll::AvatarAccessorySuccesPopup::AvatarAccessorySuccesPopup
             );
   pUVar1 = (this->fields).resultCallback;
   if (pUVar1 != (UnityAction *)0x0) {
+    puStack2 = (pUVar1->fields)._._.method;
+    pvStack3 = (pUVar1->fields)._._.method_code;
     (*(pUVar1->fields)._._.invoke_impl)();
     return;
   }
-code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

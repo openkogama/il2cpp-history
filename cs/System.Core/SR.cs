@@ -9,7 +9,7 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 10: System.Core.dll - Assembly: System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+// Image 7: System.Core.dll - Assembly: System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
 [assembly: AssemblyCompany("Mono development team")]
 [assembly: AssemblyCopyright("(c) Various Mono authors")]
 [assembly: AssemblyDefaultAlias("System.Core.dll")]
@@ -32,6 +32,9 @@ internal static class SR
 {
 	// Methods
 	internal static string GetString(string name);
+	internal static string Format(string resourceFormat, params object[] args);
 	internal static string Format(string resourceFormat, object p1);
+	internal static string Format(string resourceFormat, object p1, object p2);
+	internal static string Format(string resourceFormat, object p1, object p2, object p3);
 }
 

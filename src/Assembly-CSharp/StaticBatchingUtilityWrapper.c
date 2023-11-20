@@ -56,12 +56,13 @@ void Assembly-CSharp.dll::StaticBatchingUtilityWrapper::StaticBatchingUtilityWra
   if ((TypeInfo__StaticBatchingUtilityWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StaticBatchingUtilityWrapper);
   }
-  this = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-         TypeInfo__StaticBatchingUtilityWrapper->static_fields->staticGameObjects;
-  if (this != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    gos = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-          UnitySynchronizationContext+WorkRequest]::
-          List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+          *)TypeInfo__StaticBatchingUtilityWrapper->static_fields->staticGameObjects;
+  if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+               *)0x0) {
+    gos = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+          MultiColumnCollectionHeader+ViewState+ColumnState]::
+          List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                     (this,
                      MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__ToArray__
                     );
@@ -105,18 +106,13 @@ void Assembly-CSharp.dll::StaticBatchingUtilityWrapper::StaticBatchingUtilityWra
   }
   this = (List_1_UnityEngine_GameObject_ *)
          func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  if (this != (List_1_UnityEngine_GameObject_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-    TypeInfo__StaticBatchingUtilityWrapper->static_fields->staticGameObjects = this;
-    func_?(TypeInfo__StaticBatchingUtilityWrapper->static_fields,this);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  TypeInfo__StaticBatchingUtilityWrapper->static_fields->staticGameObjects = this;
+  func_?(TypeInfo__StaticBatchingUtilityWrapper->static_fields,this);
   return;
 }
 

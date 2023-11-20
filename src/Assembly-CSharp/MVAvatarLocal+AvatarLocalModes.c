@@ -6,35 +6,12 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLo
                MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pMStack_2 = (this->fields).currentMode;
   if (pMStack_2 != (MVAvatarLocal_AvatarMode *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).__unknown_1.method;
+    pIStack_1 = (pMStack_2->klass->vtable).__unknown_2.methodPtr;
     pIStack_3 = movementMap;
-    (*(pMStack_2->klass->vtable).__unknown_1.methodPtr)();
-    return;
-  }
-  uVar4 = func_?(&pMStack_2);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void FrameUpdate(InputToInGameAction) */
-
-void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLocalModes_FrameUpdate
-               (MVAvatarLocal_AvatarLocalModes *this,InputToInGameAction *interactionMap,
-               MethodInfo *method)
-
-{
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
-  pMStack_2 = (this->fields).currentMode;
-  if (pMStack_2 != (MVAvatarLocal_AvatarMode *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).__unknown_2.method;
-    pIStack_3 = interactionMap;
-    (*(pMStack_2->klass->vtable).__unknown_2.methodPtr)();
+    (*(code *)(pMStack_2->klass->vtable).__unknown_1.method)();
     return;
   }
   uVar4 = func_?(&pMStack_2);
@@ -105,16 +82,16 @@ bool Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLo
                            MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
                           );
     if (unaff_ESI != (Object *)0x0) {
-      if (((TypeInfo__MVAvatarLocal__DeadMode->_1).typeHierarchyDepth <=
-           (unaff_ESI->klass->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment <=
+           (unaff_ESI->klass->_1).naturalAligment) &&
          ((unaff_ESI->klass->_1).typeHierarchy
-          [(TypeInfo__MVAvatarLocal__DeadMode->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__MVAvatarLocal__DeadMode)) {
         pMVar1 = TypeInfo__MVAvatarLocal__DeadMode;
-        if (((unaff_ESI->klass->_1).typeHierarchyDepth <
-             (TypeInfo__MVAvatarLocal__DeadMode->_1).typeHierarchyDepth) ||
+        if (((unaff_ESI->klass->_1).naturalAligment <
+             (TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment) ||
            ((unaff_ESI->klass->_1).typeHierarchy
-            [(TypeInfo__MVAvatarLocal__DeadMode->_1).typeHierarchyDepth - 1] !=
+            [(TypeInfo__MVAvatarLocal__DeadMode->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__MVAvatarLocal__DeadMode)) goto code_?;
         if ((float)unaff_ESI[2].klass != _UNK_?) {
           return 1;
@@ -148,10 +125,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLo
     cRam_? = '\x01';
   }
   pMVar2 = (this->fields).currentMode;
-  this = (MVAvatarLocal_AvatarLocalModes *)CONCAT31(this._1_3_,(this->fields).currentState);
+  this = (MVAvatarLocal_AvatarLocalModes *)(uint)(this->fields).currentState;
   if (pMVar2 != (MVAvatarLocal_AvatarMode *)0x0) {
-    (*(pMVar2->klass->vtable).__unknown.methodPtr)
-              (pMVar2,mode,(pMVar2->klass->vtable).__unknown.method);
+    (*(code *)(pMVar2->klass->vtable).__unknown.method)
+              (pMVar2,mode,(pMVar2->klass->vtable).__unknown_1.methodPtr);
     this_00 = (pMVar1->fields).avatarModes;
     if (this_00 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
       pMVar2 = (MVAvatarLocal_AvatarMode *)
@@ -165,8 +142,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLo
       pMVar2 = (pMVar1->fields).currentMode;
       (pMVar1->fields).currentState = (uint8_t)mode;
       if (pMVar2 != (MVAvatarLocal_AvatarMode *)0x0) {
-        (*(pMVar2->klass->vtable).Activate.methodPtr)
-                  (pMVar2,this,(pMVar2->klass->vtable).Activate.method);
+        (*(code *)(pMVar2->klass->vtable).Activate.method)(pMVar2,this,pMVar2->klass[1]._0.image);
         return;
       }
     }
@@ -185,9 +161,42 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::
                (MVAvatarLocal_AvatarLocalModes *this,MethodInfo *method)
 
 {
-  AVar1 = MVAvatarLocal_AvatarLocalModes_GetStartState(this,(MethodInfo *)0x0);
-  uStack_2 = CONCAT31((int3)((uint)in_ECX >> 8),(char)AVar1);
-  MVAvatarLocal_AvatarLocalModes_SetMode(this,uStack_2,(MethodInfo *)0x0);
+  pMVar1 = this;
+  AVar2 = MVAvatarLocal_AvatarLocalModes_GetStartState(this,(MethodInfo *)0x0);
+  this = (MVAvatarLocal_AvatarLocalModes *)CONCAT31(this._1_3_,(uint8_t)AVar2);
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
+                   );
+    cRam_? = '\x01';
+  }
+  pMVar3 = (pMVar1->fields).currentMode;
+  uVar4 = (uint)(pMVar1->fields).currentState;
+  if (pMVar3 != (MVAvatarLocal_AvatarMode *)0x0) {
+    (*(code *)(pMVar3->klass->vtable).__unknown.method)
+              (pMVar3,this,(pMVar3->klass->vtable).__unknown_1.methodPtr,uVar4);
+    this_00 = (pMVar1->fields).avatarModes;
+    if (this_00 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
+      pMVar3 = (MVAvatarLocal_AvatarMode *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
+                          (ByteEnum__Enum)this,
+                          MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
+                         );
+      (pMVar1->fields).currentMode = pMVar3;
+      func_?(&(pMVar1->fields).currentMode,pMVar3);
+      pMVar3 = (pMVar1->fields).currentMode;
+      (pMVar1->fields).currentState = (uint8_t)AVar2;
+      if (pMVar3 != (MVAvatarLocal_AvatarMode *)0x0) {
+        (*(code *)(pMVar3->klass->vtable).Activate.method)(pMVar3,uVar4,pMVar3->klass[1]._0.image);
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -221,261 +230,241 @@ void Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MVAvatarLocal_AvatarLo
     func_?(&TypeInfo__MVAvatarLocal__WalkMode);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>
-                          );
-  if (pDVar1 == (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0)
-  goto code_?;
-  Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-  ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-            ((ParameterOverride_1_System_Object_ *)pDVar1,
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+  RuntimeEvents::ExplosionEvent+ExplosionValues]::
+  Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Dictionary__
             );
-  pMVar2 = (MethodInfo *)&this->fields;
-  (this->fields).avatarModes = pDVar1;
-  func_?(pMVar2,pDVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar2);
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  this_00 = (MVAvatarLocal_WalkMode *)func_?(TypeInfo__MVAvatarLocal__WalkMode);
-  if (this_00 == (MVAvatarLocal_WalkMode *)0x0) goto code_?;
-  MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode__ctor(this_00,avatar,(MethodInfo *)0x0);
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0x1,(Object *)this_00,
+  pMVar1 = (MethodInfo *)&this->fields;
+  (this->fields).avatarModes = (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)this_00;
+  func_?(pMVar1,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+  pDVar2 = (this->fields).avatarModes;
+  this_01 = (MVAvatarLocal_WalkMode *)func_?(TypeInfo__MVAvatarLocal__WalkMode);
+  MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode__ctor(this_01,avatar,(MethodInfo *)0x0);
+  if (pDVar2 == (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0)
+  goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,1,(Object *)this_01,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  this_01 = (MVAvatarLocal_DeadMode *)func_?(TypeInfo__MVAvatarLocal__DeadMode);
-  if (this_01 == (MVAvatarLocal_DeadMode *)0x0) goto code_?;
-  MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode__ctor(this_01,avatar,(MethodInfo *)0x0);
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0x4,(Object *)this_01,
+  pDVar2 = (this->fields).avatarModes;
+  this_02 = (MVAvatarLocal_DeadMode *)func_?();
+  MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode__ctor(this_02,avatar,(MethodInfo *)0x0);
+  if (pDVar2 == (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0)
+  goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,4,(Object *)this_02,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__ReviveMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
+  pOVar3 = (Object *)func_?();
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal_ReviveMode__AvatarInputControllerDead);
+    func_?();
     cRam_? = '\x01';
   }
-  pOVar4[2].monitor = (MonitorData *)0x41200000;
-  value = (Object *)func_?(TypeInfo__MVAvatarLocal_ReviveMode__AvatarInputControllerDead);
-  if (value == (Object *)0x0) goto code_?;
+  pOVar3[2].monitor = (MonitorData *)0x41200000;
+  value = (Object *)func_?();
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    func_?();
     cRam_? = '\x01';
   }
-  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  pMVar6 = (MonitorData *)(pQVar5->identityQuaternion).y;
-  pOVar7 = (Object__Class *)(pQVar5->identityQuaternion).z;
-  pMVar8 = (MonitorData *)(pQVar5->identityQuaternion).w;
-  value[1].klass = (Object__Class *)(pQVar5->identityQuaternion).x;
-  value[1].monitor = pMVar6;
-  value[2].klass = pOVar7;
-  value[2].monitor = pMVar8;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (value,ExceptionArgument__Enum_obj,unaff_EDI);
-  pOVar4[3].monitor = (MonitorData *)value;
-  pMVar2 = (MethodInfo *)&pOVar4[3].monitor;
-  func_?(pMVar2,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,pMVar2);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x2;
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0xa,pOVar4,
+  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  pMVar5 = (MonitorData *)(pQVar4->identityQuaternion).y;
+  pOVar6 = (Object__Class *)(pQVar4->identityQuaternion).z;
+  pMVar7 = (MonitorData *)(pQVar4->identityQuaternion).w;
+  value[1].klass = (Object__Class *)(pQVar4->identityQuaternion).x;
+  value[1].monitor = pMVar5;
+  value[2].klass = pOVar6;
+  value[2].monitor = pMVar7;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,in_stack_8);
+  pOVar3[3].monitor = (MonitorData *)value;
+  func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)&pOVar3[3].monitor);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x2;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)&UNK_?,10,pOVar3,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__ReviveWaitMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,unaff_EDI);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x4;
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0xb,pOVar4,
+  method_02 = TypeInfo__MVAvatarLocal__ReviveWaitMode;
+  pOVar3 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x4;
+  if (avatar == (MVAvatarLocal *)0x0) goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)avatar,0xb,pOVar3,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__LobbyMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,unaff_EDI);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x4;
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0x0,pOVar4,
+  method_01 = TypeInfo__MVAvatarLocal__LobbyMode;
+  pOVar3 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x4;
+  if (avatar == (MVAvatarLocal *)0x0) goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)avatar,0,pOVar3,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__TimeAttackFlagDebriefingMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
+  pDVar2 = (this->fields).avatarModes;
+  pOVar3 = (Object *)func_?();
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    func_?();
     cRam_? = '\x01';
   }
-  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  pOVar7 = (Object__Class *)(pQVar5->identityQuaternion).y;
-  pMVar6 = (MonitorData *)(pQVar5->identityQuaternion).z;
-  pOVar9 = (Object__Class *)(pQVar5->identityQuaternion).w;
-  pOVar4[3].monitor = (MonitorData *)(pQVar5->identityQuaternion).x;
-  pOVar4[4].klass = pOVar7;
-  pOVar4[4].monitor = pMVar6;
-  pOVar4[5].klass = pOVar9;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,unaff_EDI);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x1;
+  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  pOVar6 = (Object__Class *)(pQVar4->identityQuaternion).y;
+  pMVar5 = (MonitorData *)(pQVar4->identityQuaternion).z;
+  pOVar9 = (Object__Class *)(pQVar4->identityQuaternion).w;
+  pOVar3[3].monitor = (MonitorData *)(pQVar4->identityQuaternion).x;
+  pOVar3[4].klass = pOVar6;
+  pOVar3[4].monitor = pMVar5;
+  pOVar3[5].klass = pOVar9;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,ExceptionArgument__Enum_obj,in_stack_8);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x1;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInputControllerAndroid);
-    func_?(&TypeInfo__AvatarInputController);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar10 == MVGameMode__Enum_CharacterEditor) {
 code_?:
-    pOVar7 = (Object__Class *)func_?(TypeInfo__AvatarInputController);
-    if (pOVar7 == (Object__Class *)0x0) goto code_?;
+    pOVar6 = (Object__Class *)func_?();
     AvatarInputController::AvatarInputController__ctor
-              ((AvatarInputController *)pOVar7,(MethodInfo *)0x0);
+              ((AvatarInputController *)pOVar6,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      func_?();
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
-    pOVar7 = (Object__Class *)func_?(TypeInfo__AvatarInputControllerAndroid);
-    if (pOVar7 == (Object__Class *)0x0) goto code_?;
+    pOVar6 = (Object__Class *)func_?();
     AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor
-              ((AvatarInputControllerAndroid *)pOVar7,(MethodInfo *)0x0);
+              ((AvatarInputControllerAndroid *)pOVar6,(MethodInfo *)0x0);
   }
-  pOVar4[2].klass = pOVar7;
-  pMVar2 = (MethodInfo *)(pOVar4 + 2);
-  func_?(pMVar2,pOVar7);
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0x7,pOVar4,
+  pOVar3[2].klass = pOVar6;
+  func_?();
+  if (pDVar2 == (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0)
+  goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,7,pOVar3,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__WaitMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,pMVar2);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x4;
+  pMVar1 = (MethodInfo *)(this->fields).avatarModes;
+  pOVar3 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,(ExceptionArgument__Enum)pOVar3,pMVar1);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x4;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInputControllerAndroid);
-    func_?(&TypeInfo__AvatarInputController);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar10 == MVGameMode__Enum_CharacterEditor) {
 code_?:
-    pOVar7 = (Object__Class *)func_?(TypeInfo__AvatarInputController);
-    if (pOVar7 == (Object__Class *)0x0) goto code_?;
+    pAVar11 = (AvatarInputControllerAndroid *)func_?();
     AvatarInputController::AvatarInputController__ctor
-              ((AvatarInputController *)pOVar7,(MethodInfo *)0x0);
+              ((AvatarInputController *)pAVar11,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      func_?();
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
-    pOVar7 = (Object__Class *)func_?(TypeInfo__AvatarInputControllerAndroid);
-    if (pOVar7 == (Object__Class *)0x0) goto code_?;
-    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor
-              ((AvatarInputControllerAndroid *)pOVar7,(MethodInfo *)0x0);
+    pAVar11 = (AvatarInputControllerAndroid *)func_?();
+    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(pAVar11,(MethodInfo *)0x0);
   }
-  pOVar4[2].klass = pOVar7;
-  pMVar2 = (MethodInfo *)(pOVar4 + 2);
-  func_?(pMVar2,pOVar7);
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object__Add
-            (pDVar3,(Object *)0x8,pOVar4,
+  (avatar->fields)._._._._.itemId = (int32_t)pAVar11;
+  func_?();
+  if (pMVar1 == (MethodInfo *)0x0) goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+  Dictionary_2_System_ByteEnum_System_Object__Add
+            ((Dictionary_2_System_ByteEnum_System_Object_ *)pMVar1,8,(Object *)avatar,
              MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
             );
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarModes;
-  pOVar4 = (Object *)func_?(TypeInfo__MVAvatarLocal__GhostMode);
-  if (pOVar4 == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (pOVar4,ExceptionArgument__Enum_obj,pMVar2);
-  pOVar4[1].klass = (Object__Class *)avatar;
-  func_?(pOVar4 + 1,avatar);
-  pOVar4[1].monitor = (MonitorData *)0x4;
+  method_00 = TypeInfo__MVAvatarLocal__GhostMode;
+  pOVar3 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pOVar3[1].klass = (Object__Class *)avatar;
+  func_?();
+  pOVar3[1].monitor = (MonitorData *)0x4;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInputControllerAndroid);
-    func_?(&TypeInfo__AvatarInputController);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar10 == MVGameMode__Enum_CharacterEditor) {
 code_?:
-    this_03 = (AvatarInputController *)func_?(TypeInfo__AvatarInputController);
-    if (this_03 == (AvatarInputController *)0x0) goto code_?;
+    this_03 = (AvatarInputController *)func_?();
     AvatarInputController::AvatarInputController__ctor(this_03,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      func_?();
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0)
     goto code_?;
-    this_02 = (AvatarInputControllerAndroid *)
-              func_?(TypeInfo__AvatarInputControllerAndroid);
-    if (this_02 == (AvatarInputControllerAndroid *)0x0) goto code_?;
-    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(this_02,(MethodInfo *)0x0);
+    pAVar11 = (AvatarInputControllerAndroid *)func_?();
+    AvatarInputControllerAndroid::AvatarInputControllerAndroid__ctor(pAVar11,(MethodInfo *)0x0);
   }
-  if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar3,(Object *)0x9,pOVar4,
+  if (avatar != (MVAvatarLocal *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+    Dictionary_2_System_ByteEnum_System_Object__Add
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)avatar,9,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__Add_AvatarRuntimeState__MVAvatarLocal__AvatarMode_
               );
     key = MVAvatarLocal_AvatarLocalModes_GetStartState(this,(MethodInfo *)0x0);
-    pDVar1 = (this->fields).avatarModes;
+    pDVar2 = (this->fields).avatarModes;
     (this->fields).currentState = (uint8_t)key;
-    if (pDVar1 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
-      pMVar11 = (MVAvatarLocal_AvatarMode *)
+    if (pDVar2 != (Dictionary_2_AvatarRuntimeState_MVAvatarLocal_AvatarMode_ *)0x0) {
+      pMVar12 = (MVAvatarLocal_AvatarMode *)
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,key,
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,key,
                            MethodInfo__System__Collections__Generic__Dictionary<AvatarRuntimeState,_MVAvatarLocal::AvatarMode>__get_Item_AvatarRuntimeState_
                           );
-      (this->fields).currentMode = pMVar11;
+      (this->fields).currentMode = pMVar12;
       func_?();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -26,6 +26,13 @@ void Assembly-CSharp.dll::MutantHitPackage::MutantHitPackage_ParseAndHandlePacka
                InteractionData interactionStruct,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  }
   InteractionPackage::InteractionPackage_HandlePackage_2
             ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
              PlayerKilledByType__Enum_Mutant,(MethodInfo *)0x0);

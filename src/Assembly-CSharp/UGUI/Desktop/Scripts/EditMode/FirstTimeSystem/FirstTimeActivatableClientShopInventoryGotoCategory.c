@@ -52,7 +52,6 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>
                             );
-    if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
@@ -88,13 +87,6 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
     pFVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
              ->static_fields->__9;
     pEVar2 = (ExecuteEvents_EventFunction_1_InventoryController_ *)func_?();
-    if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) {
-code_?:
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
@@ -102,8 +94,7 @@ code_?:
                ,(MethodInfo *)0x0);
     TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
     ->static_fields->__9__5_1 = pEVar2;
-    func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-                     ->static_fields->__9__5_1,pEVar2);
+    func_?();
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -142,41 +133,29 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                (FirstTimeActivatableClientShopInventoryGotoCategory *this,MethodInfo *method)
 
 {
-  if ((this->fields).showing != 0) {
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_0_InventoryController__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_1_InventoryController__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-                   );
-    cRam_? = '\x01';
-  }
-  (this->fields).showing = 1;
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  if ((
-      TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-      ->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(
-                   TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-                   );
-  }
-  pEVar2 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-           ->static_fields->__9__5_0;
-  if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) {
+  if ((this->fields).showing == 0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>
+                     );
+      func_?(&
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
+                     );
+      func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      func_?(&
+                      MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_0_InventoryController__UnityEngine__EventSystems__BaseEventData_
+                     );
+      func_?(&
+                      MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_1_InventoryController__UnityEngine__EventSystems__BaseEventData_
+                     );
+      func_?(&
+                      TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+                     );
+      cRam_? = '\x01';
+    }
+    (this->fields).showing = 1;
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((
         TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
         ->_1).cctor_finished_or_no_cctor == 0) {
@@ -184,72 +163,75 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                      TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
                      );
     }
-    pFVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-             ->static_fields->__9;
-    pEVar2 = (ExecuteEvents_EventFunction_1_InventoryController_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>
-                            );
-    if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
-               MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_0_InventoryController__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-    ->static_fields->__9__5_0 = pEVar2;
-    func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-                     ->static_fields->__9__5_0,pEVar2);
-  }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
-            );
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  if ((
+    pEVar2 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+             ->static_fields->__9__5_0;
+    if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) {
+      if ((
+          TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+          ->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(
+                       TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+                       );
+      }
+      pFVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+               ->static_fields->__9;
+      pEVar2 = (ExecuteEvents_EventFunction_1_InventoryController_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>
+                              );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
+                 MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_0_InventoryController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
       TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-      ->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pEVar2 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-           ->static_fields->__9__5_1;
-  if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) {
+      ->static_fields->__9__5_0 = pEVar2;
+      func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+                       ->static_fields->__9__5_0,pEVar2);
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
+              );
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((
         TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
         ->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pFVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-             ->static_fields->__9;
-    pEVar2 = (ExecuteEvents_EventFunction_1_InventoryController_ *)func_?();
+    pEVar2 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+             ->static_fields->__9__5_1;
     if (pEVar2 == (ExecuteEvents_EventFunction_1_InventoryController_ *)0x0) {
-code_?:
+      if ((
+          TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+          ->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pFVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+               ->static_fields->__9;
+      pEVar2 = (ExecuteEvents_EventFunction_1_InventoryController_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
+                 MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_1_InventoryController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
+      ->static_fields->__9__5_1 = pEVar2;
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pFVar3,
-               MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c___DoShowing_b__5_1_InventoryController__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-    ->static_fields->__9__5_1 = pEVar2;
-    func_?(&TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableClientShopInventoryGotoCategory____c
-                     ->static_fields->__9__5_1,pEVar2);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
+              );
+    return;
   }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<InventoryController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<InventoryController>_
-            );
   return;
 }
 

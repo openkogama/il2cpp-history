@@ -6,6 +6,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoRotation
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__UI__ColorBlock);
     func_?(&
                     UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                    );
@@ -30,8 +31,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoRotation
   func_?(&(this->fields).gradient,pGVar2);
   pTVar3 = (this->fields).text;
   if (pTVar3 != (Text *)0x0) {
-    pfVar4 = (float *)(*(pTVar3->klass->vtable).get_color.methodPtr)
-                                 (auStack_5,pTVar3,(pTVar3->klass->vtable).get_color.method);
+    pfVar4 = (float *)(*(code *)(pTVar3->klass->vtable).get_color.method)
+                                 (auStack_5,pTVar3,(pTVar3->klass->vtable).set_color.methodPtr);
     fVar6 = pfVar4[1];
     fVar7 = pfVar4[2];
     fVar8 = pfVar4[3];
@@ -41,92 +42,115 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoRotation
     (this->fields).originalTextColor.b = fVar7;
     (this->fields).originalTextColor.a = fVar8;
     if (pBVar1 != (Button *)0x0) {
-      fVar6 = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
-      fVar7 = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
-      fVar8 = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
-      fVar9 = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
-      fVar10 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
-      fVar11 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
-      fVar12 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
-      fVar13 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
-      fVar14 = (pBVar1->fields)._.m_Colors.m_NormalColor.g;
-      fVar15 = (pBVar1->fields)._.m_Colors.m_NormalColor.b;
-      fVar16 = (pBVar1->fields)._.m_Colors.m_NormalColor.a;
-      fVar17 = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
-      fVar18 = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
-      fVar19 = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
-      fVar20 = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
-      fVar21 = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
-      fVar22 = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
-      fVar23 = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
-      fVar24 = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
-      uVar25 = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
-      uVar26 = (pBVar1->fields)._.m_Colors.m_FadeDuration;
-      (this->fields).originalColorBlock.m_NormalColor.r =
-           (pBVar1->fields)._.m_Colors.m_NormalColor.r;
-      (this->fields).originalColorBlock.m_NormalColor.g = fVar14;
-      (this->fields).originalColorBlock.m_NormalColor.b = fVar15;
-      (this->fields).originalColorBlock.m_NormalColor.a = fVar16;
-      fVar27 = _UNK_?;
-      fVar16 = _UNK_?;
-      fVar15 = _UNK_?;
-      fVar14 = _UNK_?;
-      (this->fields).originalColorBlock.m_HighlightedColor.r = fVar10;
-      (this->fields).originalColorBlock.m_HighlightedColor.g = fVar11;
-      (this->fields).originalColorBlock.m_HighlightedColor.b = fVar12;
-      (this->fields).originalColorBlock.m_HighlightedColor.a = fVar13;
-      (this->fields).originalColorBlock.m_PressedColor.r = fVar17;
-      (this->fields).originalColorBlock.m_PressedColor.g = fVar18;
-      (this->fields).originalColorBlock.m_PressedColor.b = fVar19;
-      (this->fields).originalColorBlock.m_PressedColor.a = fVar20;
-      (this->fields).originalColorBlock.m_SelectedColor.r = fVar21;
-      (this->fields).originalColorBlock.m_SelectedColor.g = fVar22;
-      (this->fields).originalColorBlock.m_SelectedColor.b = fVar23;
-      (this->fields).originalColorBlock.m_SelectedColor.a = fVar24;
-      (this->fields).originalColorBlock.m_DisabledColor.r = fVar6;
-      (this->fields).originalColorBlock.m_DisabledColor.g = fVar7;
-      (this->fields).originalColorBlock.m_DisabledColor.b = fVar8;
-      (this->fields).originalColorBlock.m_DisabledColor.a = fVar9;
-      (this->fields).originalColorBlock.m_ColorMultiplier = (float)uVar25;
-      fVar18 = _UNK_?;
-      fVar17 = _UNK_?;
-      fVar13 = _UNK_?;
-      fVar12 = _UNK_?;
-      (this->fields).originalColorBlock.m_FadeDuration = (float)uVar26;
-      fVar6 = (this->fields).originalColorBlock.m_DisabledColor.r;
-      fVar7 = (this->fields).originalColorBlock.m_DisabledColor.g;
-      fVar8 = (this->fields).originalColorBlock.m_DisabledColor.b;
-      fVar9 = (this->fields).originalColorBlock.m_DisabledColor.a;
-      fVar10 = (this->fields).originalColorBlock.m_ColorMultiplier;
-      fVar11 = (this->fields).originalColorBlock.m_FadeDuration;
-      (this->fields).selectedColorBlock.m_NormalColor.r = _UNK_?;
-      (this->fields).selectedColorBlock.m_NormalColor.g = fVar13;
-      (this->fields).selectedColorBlock.m_NormalColor.b = fVar17;
-      (this->fields).selectedColorBlock.m_NormalColor.a = fVar18;
-      (this->fields).selectedColorBlock.m_HighlightedColor.r = fVar14;
-      (this->fields).selectedColorBlock.m_HighlightedColor.g = fVar15;
-      (this->fields).selectedColorBlock.m_HighlightedColor.b = fVar16;
-      (this->fields).selectedColorBlock.m_HighlightedColor.a = fVar27;
-      (this->fields).selectedColorBlock.m_PressedColor.r = fVar12;
-      (this->fields).selectedColorBlock.m_PressedColor.g = fVar13;
-      (this->fields).selectedColorBlock.m_PressedColor.b = fVar17;
-      (this->fields).selectedColorBlock.m_PressedColor.a = fVar18;
-      (this->fields).selectedColorBlock.m_SelectedColor.r = fVar12;
-      (this->fields).selectedColorBlock.m_SelectedColor.g = fVar13;
-      (this->fields).selectedColorBlock.m_SelectedColor.b = fVar17;
-      (this->fields).selectedColorBlock.m_SelectedColor.a = fVar18;
-      (this->fields).selectedColorBlock.m_DisabledColor.r = fVar6;
-      (this->fields).selectedColorBlock.m_DisabledColor.g = fVar7;
-      (this->fields).selectedColorBlock.m_DisabledColor.b = fVar8;
-      (this->fields).selectedColorBlock.m_DisabledColor.a = fVar9;
-      (this->fields).selectedColorBlock.m_ColorMultiplier = fVar10;
-      (this->fields).selectedColorBlock.m_FadeDuration = fVar11;
-      return;
+      fStack_9 = (pBVar1->fields)._.m_Colors.m_NormalColor.r;
+      fStack_10 = (pBVar1->fields)._.m_Colors.m_NormalColor.g;
+      fStack_11 = (pBVar1->fields)._.m_Colors.m_NormalColor.b;
+      fStack_12 = (pBVar1->fields)._.m_Colors.m_NormalColor.a;
+      fStack_13 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
+      fStack_14 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
+      fStack_15 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
+      fStack_16 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
+      fStack_17 = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
+      fStack_18 = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
+      fStack_19 = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
+      fStack_20 = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
+      fStack_21 = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
+      fStack_22 = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
+      fStack_23 = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
+      fStack_24 = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
+      fStack_25 = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
+      fStack_26 = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
+      fStack_27 = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
+      fStack_28 = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
+      uStack_29._0_4_ = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
+      uStack_29._4_4_ = (pBVar1->fields)._.m_Colors.m_FadeDuration;
+      if ((TypeInfo__UnityEngine__UI__ColorBlock->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__UI__ColorBlock);
+      }
+      pBVar1 = (this->fields).button;
+      if (pBVar1 != (Button *)0x0) {
+        fVar6 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
+        fVar7 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
+        fVar8 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
+        fVar30 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
+        fVar31 = (pBVar1->fields)._.m_Colors.m_NormalColor.g;
+        fVar32 = (pBVar1->fields)._.m_Colors.m_NormalColor.b;
+        fVar33 = (pBVar1->fields)._.m_Colors.m_NormalColor.a;
+        fVar34 = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
+        fVar35 = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
+        fVar36 = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
+        fVar37 = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
+        fVar38 = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
+        fVar39 = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
+        fVar40 = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
+        fVar41 = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
+        fVar42 = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
+        fVar43 = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
+        fVar44 = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
+        fVar45 = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
+        uVar46 = (pBVar1->fields)._.m_Colors.m_FadeDuration;
+        (this->fields).originalColorBlock.m_NormalColor.r =
+             (pBVar1->fields)._.m_Colors.m_NormalColor.r;
+        (this->fields).originalColorBlock.m_NormalColor.g = fVar31;
+        (this->fields).originalColorBlock.m_NormalColor.b = fVar32;
+        (this->fields).originalColorBlock.m_NormalColor.a = fVar33;
+        (this->fields).originalColorBlock.m_HighlightedColor.r = fVar6;
+        (this->fields).originalColorBlock.m_HighlightedColor.g = fVar7;
+        (this->fields).originalColorBlock.m_HighlightedColor.b = fVar8;
+        (this->fields).originalColorBlock.m_HighlightedColor.a = fVar30;
+        (this->fields).originalColorBlock.m_PressedColor.r = fVar38;
+        (this->fields).originalColorBlock.m_PressedColor.g = fVar39;
+        (this->fields).originalColorBlock.m_PressedColor.b = fVar40;
+        (this->fields).originalColorBlock.m_PressedColor.a = fVar41;
+        (this->fields).originalColorBlock.m_SelectedColor.r = fVar42;
+        (this->fields).originalColorBlock.m_SelectedColor.g = fVar43;
+        (this->fields).originalColorBlock.m_SelectedColor.b = fVar44;
+        (this->fields).originalColorBlock.m_SelectedColor.a = fVar45;
+        (this->fields).originalColorBlock.m_DisabledColor.r = fVar34;
+        (this->fields).originalColorBlock.m_DisabledColor.g = fVar35;
+        (this->fields).originalColorBlock.m_DisabledColor.b = fVar36;
+        (this->fields).originalColorBlock.m_DisabledColor.a = fVar37;
+        (this->fields).originalColorBlock.m_ColorMultiplier = (float)(undefined4)uStack_29;
+        fVar36 = _UNK_?;
+        fVar35 = _UNK_?;
+        fVar34 = _UNK_?;
+        fVar33 = _UNK_?;
+        (this->fields).originalColorBlock.m_FadeDuration = (float)uVar46;
+        fVar6 = (this->fields).originalColorBlock.m_DisabledColor.r;
+        fVar7 = (this->fields).originalColorBlock.m_DisabledColor.g;
+        fVar8 = (this->fields).originalColorBlock.m_DisabledColor.b;
+        fVar30 = (this->fields).originalColorBlock.m_DisabledColor.a;
+        fVar31 = (this->fields).originalColorBlock.m_ColorMultiplier;
+        fVar32 = (this->fields).originalColorBlock.m_FadeDuration;
+        (this->fields).selectedColorBlock.m_NormalColor.r = _UNK_?;
+        (this->fields).selectedColorBlock.m_NormalColor.g = fVar34;
+        (this->fields).selectedColorBlock.m_NormalColor.b = fVar35;
+        (this->fields).selectedColorBlock.m_NormalColor.a = fVar36;
+        (this->fields).selectedColorBlock.m_HighlightedColor.r = fVar33;
+        (this->fields).selectedColorBlock.m_HighlightedColor.g = fVar34;
+        (this->fields).selectedColorBlock.m_HighlightedColor.b = fVar35;
+        (this->fields).selectedColorBlock.m_HighlightedColor.a = fVar36;
+        (this->fields).selectedColorBlock.m_PressedColor.r = fVar33;
+        (this->fields).selectedColorBlock.m_PressedColor.g = fVar34;
+        (this->fields).selectedColorBlock.m_PressedColor.b = fVar35;
+        (this->fields).selectedColorBlock.m_PressedColor.a = fVar36;
+        (this->fields).selectedColorBlock.m_SelectedColor.r = fVar33;
+        (this->fields).selectedColorBlock.m_SelectedColor.g = fVar34;
+        (this->fields).selectedColorBlock.m_SelectedColor.b = fVar35;
+        (this->fields).selectedColorBlock.m_SelectedColor.a = fVar36;
+        (this->fields).selectedColorBlock.m_DisabledColor.r = fVar6;
+        (this->fields).selectedColorBlock.m_DisabledColor.g = fVar7;
+        (this->fields).selectedColorBlock.m_DisabledColor.b = fVar8;
+        (this->fields).selectedColorBlock.m_DisabledColor.a = fVar30;
+        (this->fields).selectedColorBlock.m_ColorMultiplier = fVar31;
+        (this->fields).selectedColorBlock.m_FadeDuration = fVar32;
+        return;
+      }
     }
   }
   func_?();
-  pcVar28 = (code *)swi(3);
-  (*pcVar28)();
+  pcVar47 = (code *)swi(3);
+  (*pcVar47)();
   return;
 }
 
@@ -143,7 +167,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoRotation
               ((Behaviour *)this_00,0,(MethodInfo *)0x0);
     pTVar1 = (this->fields).text;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_color.methodPtr)
+      (*(code *)(pTVar1->klass->vtable).set_color.method)
                 (pTVar1,(this->fields).selectedTextColor.r,(this->fields).selectedTextColor.g,
                  (this->fields).selectedTextColor.b,(this->fields).selectedTextColor.a);
       this_01 = (this->fields).button;
@@ -217,7 +241,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoRotation
               ((Behaviour *)this_00,1,(MethodInfo *)0x0);
     pTVar1 = (this->fields).text;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_color.methodPtr)
+      (*(code *)(pTVar1->klass->vtable).set_color.method)
                 (pTVar1,(this->fields).originalTextColor.r,(this->fields).originalTextColor.g,
                  (this->fields).originalTextColor.b,(this->fields).originalTextColor.a);
       this_01 = (this->fields).button;

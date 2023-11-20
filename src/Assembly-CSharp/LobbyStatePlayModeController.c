@@ -187,154 +187,145 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
     pIVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_LockCursorManager
                        ((MethodInfo *)0x0);
     if (pIVar1 == (ILockCursorManager *)0x0) goto code_?;
-    uVar2 = 0;
-    uVar3 = (pIVar1->klass->_1).interface_offsets_count;
-    pIVar4 = pIVar1;
-    if (uVar3 != 0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__ILockCursorManager) {
-          pVVar5 = &(pIVar1->klass->vtable).get_OnCursorLockChanged +
-                   pIVar1->klass->interfaceOffsets[uVar2].offset;
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_OnCursorLockChanged)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    pVVar5 = (VirtualInvokeData *)func_?(pIVar1,TypeInfo__ILockCursorManager,0);
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__ILockCursorManager,0);
 code_?:
-    a = (Delegate *)(*pVVar5->methodPtr)(pIVar1,pVVar5->method);
-    this_00 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
-    unaff_EDI = (ILockCursorManager__Class *)0x0;
-    if (this_00 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-    UnityAction_1_System_ByteEnum___ctor
+    pDVar6 = (Delegate *)(*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,
                MethodInfo__LobbyStatePlayModeController__OnCursorLockChanged_bool_,(MethodInfo *)0x0
               );
-    unaff_EDI = (ILockCursorManager__Class *)
-                mscorlib.dll::System::Delegate::Delegate_Combine
-                          (a,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (unaff_EDI == (ILockCursorManager__Class *)0x0) {
-      puVar6 = (undefined *)0x0;
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       (pDVar6,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar6 == (Delegate *)0x0) {
+      this = (LobbyStatePlayModeController *)0x0;
 code_?:
-      unaff_EDI = TypeInfo__ILockCursorManager;
-      uVar2 = 0;
-      uVar3 = (pIVar1->klass->_1).interface_offsets_count;
-      pIVar7 = pIVar1;
+      pIVar2 = pIVar1->klass;
+      uVar4 = 0;
+      uVar3._0_1_ = (pIVar2->_1).rank;
+      uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
       if (uVar3 != 0) {
         do {
-          if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
+          if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__ILockCursorManager) {
-            pVVar5 = &(pIVar4->klass->vtable).set_OnCursorLockChanged +
-                     pIVar4->klass->interfaceOffsets[uVar2].offset;
+            ppMVar5 = &(&(pIVar1->klass->vtable).set_OnCursorLockChanged)
+                       [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
-          uVar2 = uVar2 + 1;
-          pIVar7 = pIVar4;
-        } while (uVar2 < uVar3);
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar3);
       }
-      pIVar4 = pIVar7;
-      puVar6 = &UNK_?;
-      pVVar5 = (VirtualInvokeData *)func_?(pIVar4,TypeInfo__ILockCursorManager);
+      ppMVar5 = (MethodInfo **)func_?();
 code_?:
-      (*pVVar5->methodPtr)(pIVar4,puVar6);
+      (*(code *)*ppMVar5)();
       goto code_?;
     }
-    pIVar4 = (ILockCursorManager *)&UNK_?;
-    puVar6 = (undefined *)func_?(unaff_EDI);
-    if (puVar6 != (undefined *)0x0) goto code_?;
+    this = (LobbyStatePlayModeController *)func_?();
+    if (this != (LobbyStatePlayModeController *)0x0) goto code_?;
   }
   else {
 code_?:
-    pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar8 != (GameEventManager *)0x0) &&
-       (pGVar9 = (pGVar8->fields).GameState, pGVar9 != (GameEventManager_GameStateManager *)0x0)) {
-      pAVar10 = (pGVar9->fields).OnEnableLobbyState;
-      unaff_EDI = (ILockCursorManager__Class *)func_?(TypeInfo__System__Action);
-      if (unaff_EDI != (ILockCursorManager__Class *)0x0) {
+    pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if ((pGVar7 != (GameEventManager *)0x0) &&
+       (pGVar8 = (pGVar7->fields).GameState, pGVar8 != (GameEventManager_GameStateManager *)0x0)) {
+      pAVar9 = (pGVar8->fields).OnEnableLobbyState;
+      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar10,(Object *)this,MethodInfo__LobbyStatePlayModeController__EnableLobbyState__,
+                 (MethodInfo *)0x0);
+      pAVar9 = (Action *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+      if (pAVar9 == (Action *)0x0) {
+        (pGVar8->fields).OnEnableLobbyState = (Action *)0x0;
+      }
+      else {
+        pAVar11 = (Action *)0x0;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar11 = pAVar9;
+        }
+        if (pAVar11 == (Action *)0x0) goto code_?;
+        (pGVar8->fields).OnEnableLobbyState = pAVar11;
+        pAVar11 = (Action *)0x0;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar11 = pAVar9;
+        }
+        if (pAVar11 == (Action *)0x0) goto code_?;
+      }
+      func_?();
+      pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar7 != (GameEventManager *)0x0) &&
+         (pGVar12 = (pGVar7->fields).GameState, pGVar12 != (GameEventManager_GameStateManager *)0x0))
+      {
+        pAVar9 = (pGVar12->fields).OnDisableLobbyState;
+        pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  ((NavMesh_OnNavMeshPreUpdate *)unaff_EDI,(Object *)this,
-                   MethodInfo__LobbyStatePlayModeController__EnableLobbyState__,(MethodInfo *)0x0);
-        pAVar10 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar10,(Delegate *)unaff_EDI,(MethodInfo *)0x0);
-        if (pAVar10 == (Action *)0x0) {
-          (pGVar9->fields).OnEnableLobbyState = (Action *)0x0;
-        }
-        else {
-          pAVar11 = (Action *)0x0;
-          if (pAVar10->klass == TypeInfo__System__Action) {
-            pAVar11 = pAVar10;
-          }
-          if (pAVar11 == (Action *)0x0) goto code_?;
-          (pGVar9->fields).OnEnableLobbyState = pAVar11;
-          pAVar11 = (Action *)0x0;
-          if (pAVar10->klass == TypeInfo__System__Action) {
-            pAVar11 = pAVar10;
-          }
-          if (pAVar11 == (Action *)0x0) goto code_?;
-        }
-        func_?(&pGVar9->fields);
-        pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-        if ((pGVar8 != (GameEventManager *)0x0) &&
-           (pGVar9 = (pGVar8->fields).GameState, pGVar9 != (GameEventManager_GameStateManager *)0x0)
-           ) {
-          pAVar10 = (pGVar9->fields).OnDisableLobbyState;
-          this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-          unaff_EDI = (ILockCursorManager__Class *)0x0;
-          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__LobbyStatePlayModeController__DisableLobbyState__,
-                       (MethodInfo *)0x0);
-            pAVar10 = (Action *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pAVar10,(Delegate *)this_01,(MethodInfo *)0x0);
-            if (pAVar10 == (Action *)0x0) {
-              (pGVar9->fields).OnDisableLobbyState = (Action *)0x0;
+                  (pNVar10,(Object *)&pGVar8->fields,
+                   MethodInfo__LobbyStatePlayModeController__DisableLobbyState__,(MethodInfo *)0x0);
+        pAVar11 = (Action *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+        pAVar9 = (Action *)0x0;
+        if (pAVar11 == (Action *)0x0) {
+          (pGVar12->fields).OnDisableLobbyState = (Action *)0x0;
 code_?:
-              func_?(&(pGVar9->fields).OnDisableLobbyState);
-              (this->fields).inGameController = inGameController;
-              func_?(&(this->fields).inGameController,inGameController);
-              (this->fields).lobbyState = lobbyState;
-              func_?(&(this->fields).lobbyState,lobbyState);
-              (this->fields).inGameMenu = inGameMenu;
-              func_?(&(this->fields).inGameMenu,inGameMenu);
-              (this->fields).chatController = chatController;
-              func_?(&(this->fields).chatController,chatController);
-              LobbyStatePlayModeController_SetObjectToLobbyState
-                        (this,(this->fields).isInLobbyState,(MethodInfo *)0x0);
-              (this->fields).shouldOpenLobbyMenu = 0;
-              return;
-            }
-            pAVar11 = (Action *)0x0;
-            if (pAVar10->klass == TypeInfo__System__Action) {
-              pAVar11 = pAVar10;
-            }
-            if (pAVar11 != (Action *)0x0) {
-              (pGVar9->fields).OnDisableLobbyState = pAVar11;
-              pAVar11 = (Action *)0x0;
-              if (pAVar10->klass == TypeInfo__System__Action) {
-                pAVar11 = pAVar10;
-              }
-              if (pAVar11 != (Action *)0x0) goto code_?;
-            }
-            goto code_?;
-          }
+          func_?();
+          pGVar12[1].fields.OnDisableLobbyState = pAVar9;
+          func_?(&pGVar12[1].fields.OnDisableLobbyState);
+          pGVar12[1].fields.gameStateType =
+               (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
+               lobbyState;
+          func_?(&pGVar12[1].fields.gameStateType,lobbyState);
+          pGVar12[2].klass = (GameEventManager_GameStateManager__Class *)inGameMenu;
+          func_?(pGVar12 + 2,inGameMenu);
+          pGVar12[2].monitor = (MonitorData *)chatController;
+          func_?(&pGVar12[2].monitor,chatController);
+          LobbyStatePlayModeController_SetObjectToLobbyState
+                    ((LobbyStatePlayModeController *)&(pGVar12->fields).OnDisableLobbyState,
+                     *(bool *)&pGVar12[1].fields.OnEnableLobbyState,(MethodInfo *)0x0);
+          *(undefined1 *)((int)&pGVar12[1].fields.OnEnableLobbyState + 2) = 0;
+          return;
         }
+        if (pAVar11->klass == TypeInfo__System__Action) {
+          pAVar9 = pAVar11;
+        }
+        if (pAVar9 != (Action *)0x0) {
+          (pGVar12->fields).OnDisableLobbyState = pAVar9;
+          pAVar9 = (Action *)0x0;
+          if (pAVar11->klass == TypeInfo__System__Action) {
+            pAVar9 = pAVar11;
+          }
+          if (pAVar9 != (Action *)0x0) goto code_?;
+        }
+        goto code_?;
       }
     }
 code_?:
     func_?();
   }
-  pAVar10 = (Action *)func_?(unaff_EDI);
+  func_?();
 code_?:
-  func_?(pAVar10);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -398,10 +389,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                         if (pGVar2 != (GameObject *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                                     (pGVar2,bVar8 ^ 1,(MethodInfo *)0x0);
-                          this_01 = (in_stack_5->fields).scrollRect;
-                          if (this_01 != (ScrollRect *)0x0) {
+                          this_00 = (in_stack_5->fields).scrollRect;
+                          if (this_00 != (ScrollRect *)0x0) {
                             UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
-                            ScrollRect_SetVerticalNormalizedPosition(this_01,0.0,(MethodInfo *)0x0);
+                            ScrollRect_SetVerticalNormalizedPosition(this_00,0.0,(MethodInfo *)0x0);
                             return;
                           }
                         }
@@ -440,10 +431,10 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
             if (pGVar2 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar2,0,(MethodInfo *)0x0);
-              this_00 = (this->fields).chatController;
-              if (this_00 != (ChatControllerUGUI *)0x0) {
+              this_01 = (this->fields).chatController;
+              if (this_01 != (ChatControllerUGUI *)0x0) {
                 ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
-                          (this_00,0,(MethodInfo *)0x0);
+                          (this_01,0,(MethodInfo *)0x0);
                 (this->fields).shouldOpenLobbyMenu = 0;
                 return;
               }
@@ -497,10 +488,8 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
       if ((pGVar3 == (GameEventManager *)0x0) ||
          (this_01 = (pGVar3->fields).AvatarCommandsPlayMode,
          this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-      RewardedInterstitialAd__RegisterAdEvents_m__2
-                ((RewardedInterstitialAd *)this_01,(Object *)0x0,in_stack_4,in_stack_5
-                );
+      GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
+                ((RewardedAd *)this_01,(MethodInfo *)0x0);
     }
   }
   pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
@@ -523,18 +512,18 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
           (IPlayModeUI *)0x0) {
 code_?:
         func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
-      cVar7 = func_?();
-      if (cVar7 == '\0') {
+      cVar5 = func_?();
+      if (cVar5 == '\0') {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_This_happens_when_playmode_avata,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Bad_state,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();

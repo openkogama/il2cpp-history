@@ -32,37 +32,37 @@ bool MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_AllWinCondition
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
   DStack_6._current.value = (Object *)0x0;
   DStack_6._getEnumeratorRetType = 0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.winnerConditions;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields)._.winnerConditions;
+  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        (&DStack_8,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__GetEnumerator__
                        );
     uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar7->_dictionary;
+    DStack_6._dictionary = pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;
     DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (int32_t)(pDVar7->_current).key;
+    DStack_6._current.key = (pDVar7->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
     pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                         (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__
@@ -72,10 +72,10 @@ bool MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_AllWinCondition
       }
       if (DStack_6._current.value == (Object *)0x0) break;
       method_00 = TypeInfo__IWinningCondition;
-      cVar12 = func_?(5,TypeInfo__IWinningCondition,DStack_6._current.value);
+      cVar12 = func_?(3,TypeInfo__IWinningCondition,DStack_6._current.value);
       if (cVar12 == '\0') {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__
@@ -123,11 +123,11 @@ String * MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_ToString
     cRam_? = '\x01';
   }
   pSVar4 = ::StringLiteral__;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.winnerConditions;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields)._.winnerConditions;
+  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffa4,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__GetEnumerator__
                        );
@@ -135,9 +135,9 @@ String * MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_ToString
     uStack_1 = 1;
     while( true ) {
       bVar7 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                          &stack0xffffffbc,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__MoveNext__
                         );
@@ -153,7 +153,7 @@ String * MVWorldObject.dll::WinningConditionAnd::WinningConditionAnd_ToString
                          ((Object *)pSVar4,pOStack_8,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffbc,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_IWinningCondition>__Dispose__
@@ -197,21 +197,17 @@ void MVWorldObject.dll::WinningConditionAnd::
   }
   bVar1 = WinningConditionAnd_AllWinConditionForfilled(this,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__System__EventArgs);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     (this->fields)._._.forfilled = 1;
     (this->fields)._._.instigatorCounterTypeChangedEvent = (OnCounterTypeChangedArgs *)0x0;
     func_?(&(this->fields)._._.instigatorCounterTypeChangedEvent,0);
     if ((this->fields)._._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
-      pEVar3 = (this->fields)._._.OnWinningConditionChanged;
-      (*(pEVar3->fields)._._.invoke_impl)((pEVar3->fields)._._.method_code,this,this_00);
+      pEVar2 = (this->fields)._._.OnWinningConditionChanged;
+      (*(pEVar2->fields)._._.invoke_impl)((pEVar2->fields)._._.method_code,this,this_00);
     }
   }
   return;

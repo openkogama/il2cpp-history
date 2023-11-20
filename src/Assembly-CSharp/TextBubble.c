@@ -40,32 +40,19 @@ float Assembly-CSharp.dll::TextBubble::TextBubble_CalculatePivotNearEdgeOffset
 
 {
   fStack_1 = 0.0;
-  DStack_2._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)0x0;
-  DStack_2._index = 0;
-  DStack_2._version = 0;
-  DStack_2._currentValue = 0.0;
-  fStack_3 = (float)(int)((uint)(_UNK_? < pivot) * 2 + -1);
-  fVar4 = (pivot - _UNK_?) * fStack_3;
-  if (_UNK_? < fVar4) {
+  fStack_2 = (float)(int)((uint)(_UNK_? < pivot) * 2 + -1);
+  fVar3 = (pivot - _UNK_?) * fStack_2;
+  if (_UNK_? < fVar3) {
     this_00 = (this->fields).tail;
     if (this_00 == (RectTransform *)0x0) {
       func_?();
-      pcVar5 = (code *)swi(3);
-      fVar6 = (float10)(*pcVar5)();
-      return (float)fVar6;
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float10)(*pcVar4)();
+      return (float)fVar5;
     }
-    pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       (&RStack_8,this_00,(MethodInfo *)0x0);
-    DStack_2._dictionary = (Dictionary_2_System_Int32Enum_System_Single_ *)pRVar7->m_XMin;
-    DStack_2._index = (int32_t)pRVar7->m_YMin;
-    DStack_2._version = (int32_t)pRVar7->m_Width;
-    DStack_2._currentValue = pRVar7->m_Height;
-    fVar9 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-            Int32Enum,System::Single]::
-            Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__get_Current
-                      (&DStack_2,(MethodInfo *)0x0);
-    fStack_1 = fVar9 * (_UNK_? / fVar4) * fStack_3;
+    pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                       (&RStack_7,this_00,(MethodInfo *)0x0);
+    fStack_1 = (_UNK_? / fVar3) * pRVar6->m_Height * fStack_2;
   }
   return fStack_1;
 }
@@ -169,7 +156,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnDestroy(TextBubble *this,Meth
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_Bubble_not_removed_from_controll,(MethodInfo *)0x0);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
@@ -178,12 +165,6 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnDestroy(TextBubble *this,Meth
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -214,7 +195,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnRemoved(TextBubble *this,Meth
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_OnRemoved,(MethodInfo *)0x0);
   (this->fields).bubbleId = -1;
   return;
@@ -277,7 +258,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
   pTVar3 = (Transform *)(this->fields).tail;
   if (pTVar3 == (Transform *)0x0) goto code_?;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
   uVar5 = pVVar4->x;
   uVar6 = pVVar4->y;
   fVar1 = fVar1 - (float)uVar5;
@@ -294,25 +275,19 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
     pTVar3 = (Transform *)(this->fields).tail;
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
     fVar1 = pVVar4->y;
     iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
     TextBubble_CalculatePivotNearEdgeOffset(this,fVar1 / (float)iVar8,(MethodInfo *)0x0);
     pRVar9 = (this->fields).tail;
     if (pRVar9 == (RectTransform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              ((Rect *)&stack0xffffffcc,pRVar9,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Int32Enum,System::
-    Single]::
-    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__get_Current
-              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single_
-                *)&stack0xffffffbc,(MethodInfo *)0x0);
+              ((Rect *)&stack0xffffffc8,pRVar9,(MethodInfo *)0x0);
     fVar1 = 0.0;
-    pTVar10 = this;
+    puVar10 = &UNK_?;
     pRVar9 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
     if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    value.y = (float)pTVar10;
+    value.y = (float)puVar10;
     value.x = (float)(iVar7 < 1);
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
               (pRVar9,value,(MethodInfo *)0x0);
@@ -320,64 +295,51 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
     pTVar3 = (Transform *)(this->fields).tail;
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
     uVar11 = pVVar4->x;
     uVar12 = pVVar4->y;
-    fVar2 = (float)uVar11 + (float)this;
+    fVar2 = (float)uVar11 + 3.6225214e-29;
     fVar1 = (float)uVar12 + fVar1;
   }
   else {
-    fVar1 = (float)(int)((uint)(fVar2 - (float)uVar6 <= 0.0) * 2 + -1);
     if (pTVar3 == (Transform *)0x0) goto code_?;
     auVar13._4_8_ = 0;
-    auVar13._0_4_ = fVar1;
+    auVar13._0_4_ = (float)(int)((uint)(fVar2 - (float)uVar6 <= 0.0) * 2 + -1);
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
               (pTVar3,(Vector3)(auVar13 << 0x20),(MethodInfo *)0x0);
     pTVar3 = (Transform *)(this->fields).tail;
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
     fVar2 = pVVar4->x;
     iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
     TextBubble_CalculatePivotNearEdgeOffset(this,fVar2 / (float)iVar8,(MethodInfo *)0x0);
     pRVar9 = (this->fields).tail;
     if (pRVar9 == (RectTransform *)0x0) goto code_?;
+    __return_storage_ptr__ = (Rect *)&stack0xffffffc8;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              ((Rect *)&stack0xffffffcc,pRVar9,(MethodInfo *)0x0);
-    iVar7 = 0;
-    this_01 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single_
-               *)&stack0xffffffbc;
-    mscorlib.dll::System::Collections::Generic::
-    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Int32Enum,System::
-    Single]::
-    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__get_Current
-              (this_01,(MethodInfo *)0x0);
+              (__return_storage_ptr__,pRVar9,(MethodInfo *)0x0);
     pRVar9 = (this->fields).tail;
     if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              ((Rect *)&stack0xffffffcc,pRVar9,(MethodInfo *)0x0);
-    fVar14 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-             Int32Enum,System::Single]::
-             Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__get_Current
-                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single_
-                         *)&stack0xffffffbc,(MethodInfo *)0x0);
-    puVar15 = &UNK_?;
+    puVar10 = &UNK_?;
+    pRVar14 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                        ((Rect *)&stack0xffffffc8,pRVar9,(MethodInfo *)0x0);
+    fVar1 = pRVar14->m_Height * 0.0;
     pRVar9 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
     if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    value_00.y = (float)((float)iVar7 <= 0.0);
-    value_00.x = (float)puVar15;
+    value_00.y = 1.0;
+    value_00.x = (float)puVar10;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
               (pRVar9,value_00,(MethodInfo *)0x0);
     this_00 = (Transform *)TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
     pTVar3 = (Transform *)(this->fields).tail;
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
-    uVar16 = pVVar4->x;
-    uVar17 = pVVar4->y;
-    fVar2 = (float)uVar16 + (float)this_01;
-    fVar1 = (float)uVar17 + fVar14 * fVar1;
+                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
+    uVar15 = pVVar4->x;
+    uVar16 = pVVar4->y;
+    fVar2 = (float)uVar15 + (float)__return_storage_ptr__;
+    fVar1 = (float)uVar16 + fVar1;
   }
   if (this_00 != (Transform *)0x0) {
     value_01.y = fVar1;
@@ -389,8 +351,8 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -406,47 +368,52 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionWithScreenCollisi
     cRam_? = '\x01';
   }
   TextBubble_RecalcPositionAndSize(this,1,(MethodInfo *)0x0);
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
-            ((Vector4 *)&stack0xffffffec,0.0,0.0,(float)iVar1,(float)iVar2,(MethodInfo *)0x0);
-  fourCornersArray = (Vector3__Array *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+  fourCornersArray = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,4);
   this_00 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-  if ((this_00 == (RectTransform *)0x0) ||
-     (UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_GetWorldCorners
-                (this_00,fourCornersArray,(MethodInfo *)0x0),
-     fourCornersArray == (Vector3__Array *)0x0)) {
-    func_?();
-  }
-  else if (fourCornersArray->max_length != 0) {
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                      ((Rect *)&stack0xffffffec,fourCornersArray->vector[0],(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      if (fourCornersArray->max_length < 2) goto code_?;
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                        ((Rect *)&stack0xffffffec,fourCornersArray->vector[1],(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        if (fourCornersArray->max_length < 3) goto code_?;
-        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                          ((Rect *)&stack0xffffffec,fourCornersArray->vector[2],(MethodInfo *)0x0);
-        if (bVar3 != 0) {
-          if (fourCornersArray->max_length < 4) goto code_?;
-          bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                            ((Rect *)&stack0xffffffec,fourCornersArray->vector[3],(MethodInfo *)0x0)
-          ;
-          if (bVar3 != 0) {
-            return;
+  if (this_00 != (RectTransform *)0x0) {
+    fVar1 = 0.0;
+    pVVar2 = fourCornersArray;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_GetWorldCorners
+              (this_00,fourCornersArray,(MethodInfo *)0x0);
+    if (fourCornersArray != (Vector3__Array *)0x0) {
+      if (fourCornersArray->max_length != 0) {
+        uVar3 = fourCornersArray->vector[0].x;
+        uVar4 = fourCornersArray->vector[0].y;
+        if ((((0.0 <= (float)uVar3) && ((float)uVar3 < fVar1 + 0.0)) && (0.0 <= (float)uVar4)) &&
+           ((float)uVar4 < (float)pVVar2 + 0.0)) {
+          if (fourCornersArray->max_length < 2) goto code_?;
+          uVar5 = fourCornersArray->vector[1].x;
+          uVar6 = fourCornersArray->vector[1].y;
+          if (((0.0 <= (float)uVar5) && ((float)uVar5 < fVar1 + 0.0)) &&
+             ((0.0 <= (float)uVar6 && ((float)uVar6 < (float)pVVar2 + 0.0)))) {
+            if (fourCornersArray->max_length < 3) goto code_?;
+            uVar7 = fourCornersArray->vector[2].x;
+            uVar8 = fourCornersArray->vector[2].y;
+            if (((0.0 <= (float)uVar7) && ((float)uVar7 < fVar1 + 0.0)) &&
+               ((0.0 <= (float)uVar8 && ((float)uVar8 < (float)pVVar2 + 0.0)))) {
+              if (fourCornersArray->max_length < 4) goto code_?;
+              uVar9 = fourCornersArray->vector[3].x;
+              uVar10 = fourCornersArray->vector[3].y;
+              if ((((0.0 <= (float)uVar9) && ((float)uVar9 < fVar1 + 0.0)) && (0.0 <= (float)uVar10)
+                  ) && ((float)uVar10 < (float)pVVar2 + 0.0)) {
+                return;
+              }
+            }
           }
         }
+        TextBubble_RecalcPositionAndSize(this,-1,(MethodInfo *)0x0);
+        return;
       }
+      goto code_?;
     }
-    TextBubble_RecalcPositionAndSize(this,-1,(MethodInfo *)0x0);
-    return;
   }
+  func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -496,7 +463,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__16_0
                (TextBubble *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
 
 {
-  key = (Object *)(this->fields).bubbleId;
+  key = (this->fields).bubbleId;
   if (x != (TextBubbleController *)0x0) {
     if (cRam_? == '\0') {
       func_?(&
@@ -510,64 +477,57 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__16_0
                      );
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(x->fields).textBubbles;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (this_00,key,
+    pDVar1 = (x->fields).textBubbles;
+    if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
+              ::Dictionary_2_System_Int32_System_Single__ContainsKey
+                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,key,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
                         );
-      if (bVar1 == 0) {
+      if (bVar2 == 0) {
         return;
       }
-      pDVar2 = (x->fields).textBubbles;
-      if ((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,
-                              (Int32Enum__Enum)key,
+      pDVar1 = (x->fields).textBubbles;
+      if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
                               MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                              ), pOVar3 != (Object *)0x0)) {
         pOVar3[1].klass = (Object__Class *)0x0;
-        pDVar2 = (x->fields).textBubbles;
-        if (pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+        pDVar1 = (x->fields).textBubbles;
+        if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
           pTVar4 = (TextBubbleController_BubbleTracker *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,
-                              (Int32Enum__Enum)key,
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
                               MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                              );
           TextBubbleController::TextBubbleController_UpdateBubble(x,pTVar4,(MethodInfo *)0x0);
-          pDVar2 = (x->fields).textBubbles;
-          if (((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+          pDVar1 = (x->fields).textBubbles;
+          if (((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
               (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32Enum,System::Object]::
-                        Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,
-                                   (Int32Enum__Enum)key,
+                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                                   ), pOVar3 != (Object *)0x0)) &&
              (pOVar3[2].klass != (Object__Class *)0x0)) {
             TextBubble_OnRemoved((TextBubble *)pOVar3[2].klass,(MethodInfo *)0x0);
-            pDVar2 = (x->fields).textBubbles;
-            if ((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+            pDVar1 = (x->fields).textBubbles;
+            if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
                (pTVar4 = (TextBubbleController_BubbleTracker *)
                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32Enum,System::Object]::
-                         Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,
-                                    (Int32Enum__Enum)key,
+                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
                                     MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                                    ), pTVar4 != (TextBubbleController_BubbleTracker *)0x0)) {
               TextBubbleController+BubbleTracker::TextBubbleController_BubbleTracker_Clear
                         (pTVar4,(MethodInfo *)0x0);
-              pDVar2 = (x->fields).textBubbles;
-              if (pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+              pDVar1 = (x->fields).textBubbles;
+              if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Object]::Dictionary_2_System_Int32_System_Object__Remove
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(int32_t)key,
+                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
                           );
                 return;
@@ -597,21 +557,16 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__ctor(TextBubble *this,MethodIn
   }
   this_00 = (List_1_UnityEngine_Object_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Object>);
-  if (this_00 != (List_1_UnityEngine_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__List__);
-    (this->fields).content = this_00;
-    func_?(&(this->fields).content,this_00);
-    (this->fields).bubbleId = -1;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__List__);
+  (this->fields).content = this_00;
+  func_?(&(this->fields).content,this_00);
+  (this->fields).bubbleId = -1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -731,68 +686,18 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_set_Position
                (TextBubble *this,Vector2 value,MethodInfo *method)
 
 {
-  this_01 = this;
   this_00 = (Transform *)(this->fields).tail;
   if (this_00 != (Transform *)0x0) {
-    VVar1.z = 0.0;
-    VVar1._0_8_ = value;
+    value_00.z = 0.0;
+    value_00._0_8_ = value;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (this_00,VVar1,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    TextBubble_RecalcPositionAndSize((TextBubble *)0x0,0,(MethodInfo *)0x0);
-    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
-              ((Vector4 *)&stack0xffffffec,0.0,0.0,(float)iVar2,(float)iVar3,(MethodInfo *)0x0);
-    fourCornersArray = (Vector3__Array *)func_?();
-    this_02 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-    if ((this_02 != (RectTransform *)0x0) &&
-       (UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_GetWorldCorners
-                  (this_02,fourCornersArray,(MethodInfo *)0x0),
-       fourCornersArray != (Vector3__Array *)0x0)) {
-      if (fourCornersArray->max_length != 0) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                          ((Rect *)&stack0xffffffec,fourCornersArray->vector[0],(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          if (fourCornersArray->max_length < 2) goto code_?;
-          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                            ((Rect *)&stack0xffffffec,fourCornersArray->vector[1],(MethodInfo *)0x0)
-          ;
-          if (bVar4 != 0) {
-            if (fourCornersArray->max_length < 3) goto code_?;
-            uVar5 = fourCornersArray->vector[2].x;
-            uVar6 = fourCornersArray->vector[2].y;
-            this = (TextBubble *)fourCornersArray->vector[2].z;
-            fVar7 = (float)uVar6;
-            VVar1.x = (float)uVar5;
-            VVar1 = (Vector3)CONCAT84(uVar8,VVar1.x);
-            bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                              ((Rect *)&stack0xffffffec,VVar1,(MethodInfo *)0x0);
-            if (bVar4 != 0) {
-              if (fourCornersArray->max_length < 4) goto code_?;
-              bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_Contains
-                                ((Rect *)&stack0xffffffec,fourCornersArray->vector[3],
-                                 (MethodInfo *)0x0);
-              if (bVar4 != 0) {
-                return;
-              }
-            }
-          }
-        }
-        TextBubble_RecalcPositionAndSize(this_01,-1,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
-    }
+              (this_00,value_00,(MethodInfo *)0x0);
+    TextBubble_RecalcPositionWithScreenCollision(this,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -27,34 +27,33 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupMovementHeight::
       if (index < 0) {
         return;
       }
-      pLVar1 = (this->fields).controlImages;
-      if (pLVar1 == (List_1_FirstTimeSystemPopupMovementHeight_ControlImage_ *)0x0)
+      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                (this->fields).controlImages;
+      if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
       goto code_?;
-      pUVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-               UnitySynchronizationContext+WorkRequest]::
-               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item
-                         (&UStack_3,
-                          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pLVar1,
-                          index,
+      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+UsingEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                         (&VStack_3,this_00,index,
                           MethodInfo__System__Collections__Generic__List<FirstTimeSystemPopupMovementHeight::ControlImage>__get_Item_int_
                          );
-      uStack_4._0_4_ = pUVar2->m_DelagateCallback;
-      uStack_4._4_4_ = pUVar2->m_DelagateState;
+      uStack_4._0_4_ = pVVar2->alias;
+      uStack_4._4_4_ = pVVar2->path;
     } while (control != (undefined4)uStack_4);
     pLVar1 = (this->fields).controlImages;
     if (pLVar1 != (List_1_FirstTimeSystemPopupMovementHeight_ControlImage_ *)0x0) {
-      UStack_3.m_DelagateCallback =
-           (SendOrPostCallback *)
+      VStack_3.alias =
+           (String *)
            MethodInfo__System__Collections__Generic__List<FirstTimeSystemPopupMovementHeight::ControlImage>__get_Item_int_
       ;
-      iVar5 = func_?(&UStack_3,pLVar1,index);
+      iVar5 = func_?(&VStack_3,pLVar1,index);
       if (*(int *)(iVar5 + 4) != 0) {
         func_?(0x17,*(int *)(iVar5 + 4),(this->fields).deactivated.r,
                         (this->fields).deactivated.g,(this->fields).deactivated.b,
                         (this->fields).deactivated.a);
         pLVar1 = (this->fields).controlImages;
         if (pLVar1 != (List_1_FirstTimeSystemPopupMovementHeight_ControlImage_ *)0x0) {
-          iVar5 = func_?(&UStack_3,pLVar1,index,
+          iVar5 = func_?(&VStack_3,pLVar1,index,
                                   MethodInfo__System__Collections__Generic__List<FirstTimeSystemPopupMovementHeight::ControlImage>__get_Item_int_
                                  );
           if (*(GameObject **)(iVar5 + 8) != (GameObject *)0x0) {
@@ -155,8 +154,6 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupMovementHeight::
           }
           object = TypeInfo__FirstTimeSystemPopupMovementHeight____c->static_fields->__9;
           callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-          goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object

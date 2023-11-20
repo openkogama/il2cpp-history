@@ -224,7 +224,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
         this = (GamePassesHighScoreList *)GVar2.scoreList;
         iVar5 = 0;
         if (this != (GamePassesHighScoreList *)0x0) {
-          for (; iVar5 < (int)(this->fields).highScoreElementPrefab; iVar5 = iVar5 + 1) {
+          for (; iVar5 < (int)(this->fields)._.m_CancellationTokenSource; iVar5 = iVar5 + 1) {
             RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -415,93 +415,94 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
               func_?(
                              TypeInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>
                              );
-    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
-                );
-      iVar3 = 0;
-      if (pLStack_2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
+              );
+    iVar3 = 0;
+    if (pLStack_2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
-        if (iVar3 < (pLStack_2->fields)._size) {
-          index = 0;
-          while( true ) {
-            if ((this_01->fields)._size <= index) break;
-            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLStack_2,iVar3,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                              );
-            if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            iStack_5 = *(int *)((int)RVar4 + 0x10);
-            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_01,index,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                              );
-            if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            if (*(int *)((int)RVar4 + 0x10) < iStack_5) {
-              RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (pLStack_2,iVar3,
-                                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                                );
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Insert
-                        ((List_1_System_Object_ *)this_01,index,(Object *)RVar4,
-                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
-                        );
-              iVar3 = iVar3 + 1;
-              goto code_?;
-            }
-            index = index + 1;
-          }
+      if (iVar3 < (pLStack_2->fields)._size) {
+        index = 0;
+        if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        while( true ) {
+          if ((this_01->fields)._size <= index) break;
           RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                             (pLStack_2,iVar3,
                              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                             );
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_01,(Object *)RVar4,
-                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
-                    );
-          iVar3 = iVar3 + 1;
-          goto code_?;
+          if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          iStack_5 = *(int *)((int)RVar4 + 0x10);
+          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_01,index,
+                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                            );
+          if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          if (*(int *)((int)RVar4 + 0x10) < iStack_5) {
+            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLStack_2,iVar3,
+                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                              );
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Insert
+                      ((List_1_System_Object_ *)this_01,index,(Object *)RVar4,
+                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+                      );
+            iVar3 = iVar3 + 1;
+            goto code_?;
+          }
+          index = index + 1;
         }
-        iVar3 = (newHighScoreData->fields).topRank;
-        if (iVar3 == 1) {
-          value = (Object *)0x1;
-        }
-        else {
-          iVar6 = GamePassesHighScoreList_GetPlayerPosition
-                            (this,(List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_01,
-                             (MethodInfo *)0x0);
-          value = (Object *)(iVar3 - iVar6);
-        }
-        uStack_1 = CONCAT44(uStack_1._4_4_,this_01);
-        func_?(&uStack_1,this_01);
-        this_00 = (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
-                   *)(this->fields).highScoreListDatas;
-        uStack_1 = CONCAT44(value,(String *)uStack_1);
-        if (this_00 !=
-            (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
-             *)0x0) {
-          key.TypeName = (String *)uStack_1;
-          key.AssemblyName = (String *)(this->fields).currentState;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
-          DefaultSerializationBinder+TypeNameKey,System::Object]::
-          Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__Add
-                    (this_00,key,value,
-                     MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__Add_GamePassesHighScoreList__GamePassesHighScoreListState__GamePassesHighScoreList__HighScoreListData_
-                    );
-          return;
-        }
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLStack_2,iVar3,
+                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                          );
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_01,(Object *)RVar4,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
+                  );
+        iVar3 = iVar3 + 1;
+        goto code_?;
+      }
+      iVar3 = (newHighScoreData->fields).topRank;
+      if (iVar3 == 1) {
+        iVar6 = 1;
+      }
+      else {
+        iVar6 = GamePassesHighScoreList_GetPlayerPosition
+                          (this,(List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_01,
+                           (MethodInfo *)0x0);
+        iVar6 = iVar3 - iVar6;
+      }
+      uStack_1 = CONCAT44(uStack_1._4_4_,this_01);
+      func_?(&uStack_1,this_01);
+      this_00 = (this->fields).highScoreListDatas;
+      uStack_1 = CONCAT44(iVar6,(List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)uStack_1);
+      if (this_00 !=
+          (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
+           *)0x0) {
+        value.topRank = iVar6;
+        value.scoreList = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)uStack_1;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+        Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+        Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__Add
+                  ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                   this_00,(this->fields).currentState,value,
+                   MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__Add_GamePassesHighScoreList__GamePassesHighScoreListState__GamePassesHighScoreList__HighScoreListData_
+                  );
+        return;
       }
     }
   }
@@ -549,12 +550,6 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Exit
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -754,7 +749,8 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_LoadL
               (this_00,1,(MethodInfo *)0x0);
     pTVar1 = (this->fields).loadingText;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,StringLiteral_Loading_High_Scores___);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,StringLiteral_Loading_High_Scores___);
       (this->fields).currentState = 1;
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame_OperationRequests *)0x0) {
@@ -767,29 +763,27 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_LoadL
           cRam_? = '\x01';
         }
         piVar3 = *(int **)(in_stack_4 + 0x10);
-        this_01 = (ParameterOverride_1_System_Object_ *)
+        this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                  );
-        if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                    );
-          if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0
-             ) {
-            func_?();
-          }
-          pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-          uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
-          uVar6._1_1_ = (pSVar5->SendReliable).Channel;
-          uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
-          if (piVar3 != (int *)0x0) {
-            (**(code **)(*piVar3 + 0x134))
-                      (piVar3,0x68,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6);
-            return;
-          }
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                  );
+        if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0)
+        {
+          func_?();
+        }
+        pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+        uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
+        uVar6._1_1_ = (pSVar5->SendReliable).Channel;
+        uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
+        if (piVar3 != (int *)0x0) {
+          (**(code **)(*piVar3 + 0x110))
+                    (piVar3,0x68,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6);
+          return;
         }
         func_?();
         pcVar7 = (code *)swi(3);
@@ -821,7 +815,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_LoadT
               (this_00,1,(MethodInfo *)0x0);
     pTVar1 = (this->fields).loadingText;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
                 (pTVar1,StringLiteral_Loading_Top_Players_Scores___);
       (this->fields).currentState = 2;
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
@@ -835,29 +829,27 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_LoadT
           cRam_? = '\x01';
         }
         piVar3 = *(int **)(in_stack_4 + 0x10);
-        this_01 = (ParameterOverride_1_System_Object_ *)
+        this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                  );
-        if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                    );
-          if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0
-             ) {
-            func_?();
-          }
-          pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-          uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
-          uVar6._1_1_ = (pSVar5->SendReliable).Channel;
-          uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
-          if (piVar3 != (int *)0x0) {
-            (**(code **)(*piVar3 + 0x134))
-                      (piVar3,0x6c,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6);
-            return;
-          }
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                  );
+        if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0)
+        {
+          func_?();
+        }
+        pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+        uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
+        uVar6._1_1_ = (pSVar5->SendReliable).Channel;
+        uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
+        if (piVar3 != (int *)0x0) {
+          (**(code **)(*piVar3 + 0x110))
+                    (piVar3,0x6c,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6);
+          return;
         }
         func_?();
         pcVar7 = (code *)swi(3);
@@ -887,47 +879,43 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_OnDes
     func_?(&TypeInfo__GamePassesHighScoreUpdateManager);
     cRam_? = '\x01';
   }
-  source = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)
-           TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate;
-  this_00 = (Action_1_Object_ *)
-            func_?(
-                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
-                           );
-  if (this_00 == (Action_1_Object_ *)0x0) {
-    func_?();
-  }
-  else {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__GamePassesHighScoreList__OnHighScoreUpdate_MV__WorldObject__GamePassSystem__HighScoreDatas_
-               ,(MethodInfo *)0x0);
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
-    source = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-    if (pDVar1 == (Delegate *)0x0) {
-      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate =
-           (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0;
-      pAStack2 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)0x0;
+  pAVar1 = TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(
+                              TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
+                              );
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__GamePassesHighScoreList__OnHighScoreUpdate_MV__WorldObject__GamePassSystem__HighScoreDatas_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar3 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate =
+         (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0;
+    pAStack4 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)0x0;
 code_?:
-      func_?();
-      return;
-    }
-    pAStack2 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-    pAVar3 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)func_?();
-    if (pAVar3 != (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0) {
-      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate = pAVar3;
-      source = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-      pAStack2 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-      pAStack2 =
-           (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)func_?();
-      if (pAStack2 != (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)0x0)
-      goto code_?;
-    }
+    func_?();
+    return;
   }
-  pAStack2 = source;
+  pAStack4 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+  pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)func_?();
+  if (pAVar1 != (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0) {
+    TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate = pAVar1;
+    pAVar3 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+    pAStack4 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+    pAStack4 =
+         (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)func_?();
+    if (pAStack4 != (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)0x0)
+    goto code_?;
+  }
+  pAStack4 = pAVar3;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -974,15 +962,18 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
   }
   pTVar1 = (this->fields).headerText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,StringLiteral_High_Scores,(pTVar1->klass->vtable).set_text.method);
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-              (this->fields).highScoreListDatas;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,StringLiteral_High_Scores,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    this_00 = (this->fields).highScoreListDatas;
+    if (this_00 !=
+        (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
+         *)0x0) {
       bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (this_00,(Object *)0x3,
+              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
+                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *
+                         )this_00,3,
                          MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
                         );
       if (bVar2 == 0) {
@@ -997,7 +988,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
           pTVar1 = (this->fields).loadingText;
           if (pTVar1 != (Text *)0x0) {
             pSVar4 = StringLiteral_Loading_High_Scores___;
-            (*(pTVar1->klass->vtable).set_text.methodPtr)
+            (*(code *)(pTVar1->klass->vtable).set_text.method)
                       (pTVar1,StringLiteral_Loading_High_Scores___);
             (this->fields).currentState = 1;
             pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -1014,30 +1005,28 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
                 cRam_? = '\x01';
               }
               pPVar6 = (pMVar5->fields).peer;
-              this_01 = (ParameterOverride_1_System_Object_ *)
+              this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                         func_?(
                                        TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                        );
-              if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-                Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-                ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                          (this_01,
-                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                          );
-                if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
-                }
-                pSVar7 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-                uVar8._0_1_ = (pSVar7->SendReliable).Encrypt;
-                uVar8._1_1_ = (pSVar7->SendReliable).Channel;
-                uVar8._2_2_ = *(undefined2 *)&(pSVar7->SendReliable).field_0x6;
-                if (pPVar6 != (PhotonPeer *)0x0) {
-                  (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                            (pPVar6,0x68,this_01,(pSVar7->SendReliable).DeliveryMode,uVar8,
-                             (pPVar6->klass->vtable).SendOperation.method);
-                  return;
-                }
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object___ctor
+                        (this_01,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                        );
+              if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor
+                  == 0) {
+                func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+              }
+              pSVar7 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+              uVar8._0_1_ = (pSVar7->SendReliable).Encrypt;
+              uVar8._1_1_ = (pSVar7->SendReliable).Channel;
+              uVar8._2_2_ = *(undefined2 *)&(pSVar7->SendReliable).field_0x6;
+              if (pPVar6 != (PhotonPeer *)0x0) {
+                (*(code *)(pPVar6->klass->vtable).SendOperation.method)
+                          (pPVar6,0x68,this_01,(pSVar7->SendReliable).DeliveryMode,uVar8,
+                           pPVar6->klass[1]._0.image);
+                return;
               }
               func_?();
               pcVar9 = (code *)swi(3);
@@ -1081,15 +1070,18 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
   }
   pTVar1 = (this->fields).headerText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,StringLiteral_Top_Players,(pTVar1->klass->vtable).set_text.method);
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-              (this->fields).highScoreListDatas;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,StringLiteral_Top_Players,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    this_00 = (this->fields).highScoreListDatas;
+    if (this_00 !=
+        (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
+         *)0x0) {
       bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (this_00,(Object *)0x4,
+              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
+                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *
+                         )this_00,4,
                          MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
                         );
       if (bVar2 == 0) {
@@ -1104,7 +1096,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
           pTVar1 = (this->fields).loadingText;
           if (pTVar1 != (Text *)0x0) {
             pSVar4 = StringLiteral_Loading_Top_Players_Scores___;
-            (*(pTVar1->klass->vtable).set_text.methodPtr)
+            (*(code *)(pTVar1->klass->vtable).set_text.method)
                       (pTVar1,StringLiteral_Loading_Top_Players_Scores___);
             (this->fields).currentState = 2;
             pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -1121,30 +1113,28 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SetTo
                 cRam_? = '\x01';
               }
               pPVar6 = (pMVar5->fields).peer;
-              this_01 = (ParameterOverride_1_System_Object_ *)
+              this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                         func_?(
                                        TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                        );
-              if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-                Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-                ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                          (this_01,
-                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                          );
-                if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
-                }
-                pSVar7 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-                uVar8._0_1_ = (pSVar7->SendReliable).Encrypt;
-                uVar8._1_1_ = (pSVar7->SendReliable).Channel;
-                uVar8._2_2_ = *(undefined2 *)&(pSVar7->SendReliable).field_0x6;
-                if (pPVar6 != (PhotonPeer *)0x0) {
-                  (*(pPVar6->klass->vtable).SendOperation.methodPtr)
-                            (pPVar6,0x6c,this_01,(pSVar7->SendReliable).DeliveryMode,uVar8,
-                             (pPVar6->klass->vtable).SendOperation.method);
-                  return;
-                }
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object___ctor
+                        (this_01,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                        );
+              if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor
+                  == 0) {
+                func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+              }
+              pSVar7 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+              uVar8._0_1_ = (pSVar7->SendReliable).Encrypt;
+              uVar8._1_1_ = (pSVar7->SendReliable).Channel;
+              uVar8._2_2_ = *(undefined2 *)&(pSVar7->SendReliable).field_0x6;
+              if (pPVar6 != (PhotonPeer *)0x0) {
+                (*(code *)(pPVar6->klass->vtable).SendOperation.method)
+                          (pPVar6,0x6c,this_01,(pSVar7->SendReliable).DeliveryMode,uVar8,
+                           pPVar6->klass[1]._0.image);
+                return;
               }
               func_?();
               pcVar9 = (code *)swi(3);
@@ -1207,56 +1197,24 @@ Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SortHighSc
             func_?(
                            TypeInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>
                            );
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
-              );
-    index = 0;
-    if (listToSort != (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
+            );
+  index = 0;
+  if (listToSort != (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
 code_?:
-      do {
-        if ((listToSort->fields)._size <= index) {
-          return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
-        }
-        index_00 = 0;
-        while( true ) {
-          if ((this_00->fields)._size <= index_00) break;
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             listToSort,index,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                            );
-          if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          iVar2 = *(int *)((int)RVar1 + 0x10);
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,index_00,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                            );
-          if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          if (*(int *)((int)RVar1 + 0x10) < iVar2) {
-            RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               listToSort,index,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                              );
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Insert
-                      ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar1,
-                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
-                      );
-            index = index + 1;
-            goto code_?;
-          }
-          index_00 = index_00 + 1;
-        }
+    do {
+      if ((listToSort->fields)._size <= index) {
+        return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
+      }
+      index_00 = 0;
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      break;
+      while( true ) {
+        if ((this_00->fields)._size <= index_00) break;
         RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -1264,14 +1222,46 @@ code_?:
                            listToSort,index,
                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                           );
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_00,(Object *)RVar1,
-                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
-                  );
-        index = index + 1;
-      } while( true );
-    }
+        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        iVar2 = *(int *)((int)RVar1 + 0x10);
+        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,index_00,
+                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                          );
+        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if (*(int *)((int)RVar1 + 0x10) < iVar2) {
+          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             listToSort,index,
+                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                            );
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Insert
+                    ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar1,
+                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+                    );
+          index = index + 1;
+          goto code_?;
+        }
+        index_00 = index_00 + 1;
+      }
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         listToSort,index,
+                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                        );
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_00,(Object *)RVar1,
+                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
+                );
+      index = index + 1;
+    } while( true );
   }
 code_?:
   func_?();
@@ -1310,229 +1300,206 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Start
     func_?(&TypeInfo__GamePassesHighScoreList____c__DisplayClass15_0);
     cRam_? = '\x01';
   }
-  a = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)
-      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate;
-  this_01 = (Action_1_Object_ *)
-            func_?(
-                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
-                           );
-  value = (Delegate *)0x0;
-  if (this_01 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__GamePassesHighScoreList__OnHighScoreUpdate_MV__WorldObject__GamePassSystem__HighScoreDatas_
-               ,(MethodInfo *)0x0);
-    value = mscorlib.dll::System::Delegate::Delegate_Combine
-                      ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    a = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-    if (value == (Delegate *)0x0) {
-      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate =
-           (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0;
-      iVar1 = 0;
-    }
-    else {
-      pAVar2 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)
-               func_?(value,
-                               TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
+  pAVar1 = TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate;
+  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(
+                              TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
                               );
-      if (pAVar2 == (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0)
-      goto code_?;
-      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate = pAVar2;
-      a = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
-      iVar1 = func_?(value,
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_01,(Object *)this,
+             MethodInfo__GamePassesHighScoreList__OnHighScoreUpdate_MV__WorldObject__GamePassSystem__HighScoreDatas_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+  pAVar3 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+  if (pDVar2 != (Delegate *)0x0) {
+    pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)
+             func_?(pDVar2,
+                             TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
+                            );
+    if (pAVar1 != (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0) {
+      TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate = pAVar1;
+      pAVar3 = TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>;
+      iVar4 = func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::GamePassSystem::HighScoreDatas>
                              );
-      if (iVar1 == 0) goto code_?;
+      if (iVar4 != 0) goto code_?;
     }
-    func_?(TypeInfo__GamePassesHighScoreUpdateManager->static_fields,iVar1);
+    func_?(pDVar2,pAVar3);
+    goto code_?;
+  }
+  TypeInfo__GamePassesHighScoreUpdateManager->static_fields->OnHighScoreUpdate =
+       (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas_ *)0x0;
+  iVar4 = 0;
+code_?:
+  func_?(TypeInfo__GamePassesHighScoreUpdateManager->static_fields,iVar4);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar5 == (GameSessionData *)0x0) goto code_?;
+  if ((pGVar5->fields).gameMode == 0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
+                     );
+      func_?(&StringLiteral_Top_Players);
       cRam_? = '\x01';
     }
-    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar3 != (GameSessionData *)0x0) {
-      if ((pGVar3->fields).gameMode == 0) {
-        if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
-                         );
-          func_?(&StringLiteral_Top_Players);
-          cRam_? = '\x01';
-        }
-        pTVar4 = (this->fields).headerText;
-        if (pTVar4 != (Text *)0x0) {
-          (*(pTVar4->klass->vtable).set_text.methodPtr)
-                    (pTVar4,StringLiteral_Top_Players,(pTVar4->klass->vtable).set_text.method);
-          pDVar5 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                   (this->fields).highScoreListDatas;
-          if (pDVar5 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,GUILoginHandler+PlanetData]::
-                    Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                              (pDVar5,(Object *)0x4,
-                               MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
-                              );
-            if (bVar6 != 0) {
-              (this->fields).currentState = 4;
-              goto code_?;
-            }
-            if (cRam_? == '\0') {
-              func_?(&StringLiteral_Loading_Top_Players_Scores___);
-              cRam_? = '\x01';
-            }
-            pGVar7 = (this->fields).waitForHighScore;
-            if (pGVar7 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar7,1,(MethodInfo *)0x0);
-              unaff_EDI = (this->fields).loadingText;
-              if (unaff_EDI != (Text *)0x0) {
-                (*(unaff_EDI->klass->vtable).set_text.methodPtr)
-                          (unaff_EDI,StringLiteral_Loading_Top_Players_Scores___,
-                           (unaff_EDI->klass->vtable).set_text.method);
-                (this->fields).currentState = 2;
-                pMVar8 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                   ((MethodInfo *)0x0);
-                if (pMVar8 != (MVNetworkGame_OperationRequests *)0x0) {
-                  MVNetworkGame+OperationRequests::
-                  MVNetworkGame_OperationRequests_GetTopHighScoreList(pMVar8,(MethodInfo *)0x0);
-                  goto code_?;
-                }
-              }
-            }
-          }
-        }
+    pTVar6 = (this->fields).headerText;
+    if (pTVar6 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)
+              (pTVar6,StringLiteral_Top_Players,
+               (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pDVar7 = (this->fields).highScoreListDatas;
+    if (pDVar7 == (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
+                   *)0x0) goto code_?;
+    method_00 = (MethodInfo *)0x4;
+    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+            Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                       pDVar7,4,
+                       MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
+                      );
+    if (bVar8 != 0) {
+      (this->fields).currentState = 4;
+      goto code_?;
+    }
+    if (cRam_? == '\0') {
+      func_?(&StringLiteral_Loading_Top_Players_Scores___);
+      cRam_? = '\x01';
+    }
+    pGVar9 = (this->fields).waitForHighScore;
+    if (pGVar9 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar9,1,(MethodInfo *)0x0);
+    pTVar6 = (this->fields).loadingText;
+    if (pTVar6 == (Text *)0x0) goto code_?;
+    pLStack_10 = (List_1_System_String_ *)StringLiteral_Loading_Top_Players_Scores___;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)(pTVar6);
+    method_00 = (MethodInfo *)0x0;
+    (this->fields).currentState = 2;
+    pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    if (pMVar11 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetTopHighScoreList
+              (pMVar11,(MethodInfo *)0x0);
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
+                     );
+      func_?(&StringLiteral_High_Scores);
+      cRam_? = '\x01';
+    }
+    pTVar6 = (this->fields).headerText;
+    if (pTVar6 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)
+              (pTVar6,StringLiteral_High_Scores,
+               (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pDVar7 = (this->fields).highScoreListDatas;
+    if (pDVar7 == (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
+                   *)0x0) goto code_?;
+    method_00 = (MethodInfo *)0x3;
+    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+            Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                       pDVar7,3,
+                       MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
+                      );
+    if (bVar8 == 0) {
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_Loading_High_Scores___);
+        cRam_? = '\x01';
       }
-      else {
-        if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
-                         );
-          func_?(&StringLiteral_High_Scores);
-          cRam_? = '\x01';
-        }
-        pTVar4 = (this->fields).headerText;
-        if (pTVar4 != (Text *)0x0) {
-          (*(pTVar4->klass->vtable).set_text.methodPtr)
-                    (pTVar4,StringLiteral_High_Scores,(pTVar4->klass->vtable).set_text.method);
-          pDVar5 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                   (this->fields).highScoreListDatas;
-          if (pDVar5 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,GUILoginHandler+PlanetData]::
-                    Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                              (pDVar5,(Object *)0x3,
-                               MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__ContainsKey_GamePassesHighScoreList__GamePassesHighScoreListState_
-                              );
-            if (bVar6 == 0) {
-              if (cRam_? == '\0') {
-                func_?(&StringLiteral_Loading_High_Scores___);
-                cRam_? = '\x01';
-              }
-              pGVar7 = (this->fields).waitForHighScore;
-              if (pGVar7 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar7,1,(MethodInfo *)0x0);
-                unaff_EDI = (this->fields).loadingText;
-                if (unaff_EDI != (Text *)0x0) {
-                  (*(unaff_EDI->klass->vtable).set_text.methodPtr)
-                            (unaff_EDI,StringLiteral_Loading_High_Scores___,
-                             (unaff_EDI->klass->vtable).set_text.method);
-                  (this->fields).currentState = 1;
-                  pMVar8 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                     ((MethodInfo *)0x0);
-                  if (pMVar8 != (MVNetworkGame_OperationRequests *)0x0) {
-                    MVNetworkGame+OperationRequests::
-                    MVNetworkGame_OperationRequests_GetHighScoreList(pMVar8,(MethodInfo *)0x0);
-                    goto code_?;
-                  }
-                }
-              }
-            }
-            else {
-              (this->fields).currentState = 3;
+      pGVar9 = (this->fields).waitForHighScore;
+      if (pGVar9 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar9,1,(MethodInfo *)0x0);
+      pTVar6 = (this->fields).loadingText;
+      if (pTVar6 == (Text *)0x0) goto code_?;
+      pLStack_10 = (List_1_System_String_ *)StringLiteral_Loading_High_Scores___;
+      (*(code *)(pTVar6->klass->vtable).set_text.method)(pTVar6);
+      (this->fields).currentState = 1;
+      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (pMVar11 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+      method_00 = (MethodInfo *)&UNK_?;
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetHighScoreList
+                (pMVar11,(MethodInfo *)0x0);
+    }
+    else {
+      (this->fields).currentState = 3;
 code_?:
-              pGVar7 = (this->fields).waitForHighScore;
-              if (pGVar7 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar7,0,(MethodInfo *)0x0);
-                GamePassesHighScoreList_CreateHighScoreList(this,(MethodInfo *)0x0);
-code_?:
-                this_00 = (this->fields).embeddedPlayerConfig;
-                if (this_00 != (EmbeddedPlayerConfig *)0x0) {
-                  pEVar9 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                                      (&EStack_10,this_00,(MethodInfo *)0x0);
-                  if ((pEVar9->allowsModals == 0) && (pEVar9->allowsOpenInNewTab == 0)) {
-                    uVar11._0_1_ = pEVar9->showTouristPromotion;
-                    uVar11._1_1_ = pEVar9->allowsOpenInNewTab;
-                    uVar11._2_1_ = pEVar9->allowsRedirectToWebpage;
-                    uVar11._3_1_ = pEVar9->allowsModals;
-                    uVar11 = uVar11 >> 0x10 & 0xff;
-                  }
-                  else {
-                    uVar11 = 1;
-                  }
-                  bVar6 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession
-                                    ((MethodInfo *)0x0);
-                  if ((uVar11 != 0 & bVar6) == 0) {
-                    return;
-                  }
-                  value = (Delegate *)
-                          func_?(TypeInfo__GamePassesHighScoreList____c__DisplayClass15_0);
-                  if (value != (Delegate *)0x0) {
-                    mscorlib.dll::System::ThrowHelper::
-                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)unaff_EDI);
-                    pGVar7 = (this->fields).touristInformationPopup;
-                    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__UnityEngine__Object);
-                    }
-                    pOVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                              Object_1_Instantiate_4
-                                        ((Object *)pGVar7,
-                                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                                        );
-                    (value->fields).method_ptr = pOVar12;
-                    func_?(&value->fields,pOVar12);
-                    a = (Action_1_MV_WorldObject_GamePassSystem_HighScoreDatas___Class *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-                    callbackFunction =
-                         (ExecuteEvents_EventFunction_1_System_Object_ *)
-                         func_?(
-                                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                        );
-                    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                                 (Object *)value,
-                                 MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                                 ,(MethodInfo *)0x0);
-                      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                          cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-                      }
-                      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                      ExecuteEvents_ExecuteHierarchy
-                                ((GameObject *)a,(BaseEventData *)0x0,callbackFunction,
-                                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                                );
-                      return;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      pGVar9 = (this->fields).waitForHighScore;
+      if (pGVar9 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar9,0,(MethodInfo *)0x0);
+      GamePassesHighScoreList_CreateHighScoreList(this,(MethodInfo *)0x0);
     }
   }
-  func_?();
+  this_00 = (this->fields).embeddedPlayerConfig;
+  if (this_00 != (EmbeddedPlayerConfig *)0x0) {
+    pEVar12 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                        ((EmbeddedSiteConfigData *)&pLStack_10,this_00,(MethodInfo *)0x0);
+    if ((pEVar12->allowsModals == 0) && (pEVar12->allowsOpenInNewTab == 0)) {
+      uVar13._0_1_ = pEVar12->showTouristPromotion;
+      uVar13._1_1_ = pEVar12->allowsOpenInNewTab;
+      uVar13._2_1_ = pEVar12->allowsRedirectToWebpage;
+      uVar13._3_1_ = pEVar12->allowsModals;
+      uVar13 = uVar13 >> 0x10 & 0xff;
+    }
+    else {
+      uVar13 = 1;
+    }
+    bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if ((uVar13 != 0 & bVar8) != 0) {
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,method_00);
+      pGVar9 = (this->fields).touristInformationPopup;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pOVar14 = (Object__Class *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)pGVar9,
+                           UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                          );
+      if (value == (Object *)0x0) goto code_?;
+      value[1].klass = pOVar14;
+      func_?(value + 1,pOVar14);
+      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar9,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+    }
+    return;
+  }
 code_?:
-  func_?(value,a);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1560,23 +1527,16 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList__ctor
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>
                               );
-  if (this_00 !=
-      (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
-       *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__Dictionary__
-              );
-    (this->fields).highScoreListDatas = this_00;
-    func_?(&(this->fields).highScoreListDatas,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__Dictionary__
+            );
+  (this->fields).highScoreListDatas = this_00;
+  func_?(&(this->fields).highScoreListDatas,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

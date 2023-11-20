@@ -54,27 +54,32 @@ bool Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_AddLogToLogContext
        (type != LogType__Enum_Log)) {
       return 0;
     }
-    this_01 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
-                             );
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
-                );
-      iStack_2 = (this->fields).timeFrameCount;
-      value = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
+    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_01,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
+              );
+    iStack_2 = (this->fields).timeFrameCount;
+    value = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
+    if (this_01 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)StringLiteral_Frame,value,
+                ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)StringLiteral_Frame,
+                 value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       key = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)key,(Object *)logString,
+                ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)key,
+                 (Object *)logString,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       pQVar3 = (this->fields).logContextQueue;
@@ -117,38 +122,32 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_CleanStackTrace
     cRam_? = '\x01';
   }
   pSVar1 = (String__Array *)func_?(TypeInfo__System__String,1);
-  if (pSVar1 == (String__Array *)0x0) {
-code_?:
-    func_?();
-  }
-  else if ((StringLiteral_UnityEngine_Debug_LogError_Objec == (String *)0x0) ||
-          (iVar2 = func_?(StringLiteral_UnityEngine_Debug_LogError_Objec,
-                                   (pSVar1->klass->_0).element_class), iVar2 != 0)) {
-    pSVar3 = StringLiteral_UnityEngine_Debug_LogError_Objec;
+  pSVar2 = StringLiteral_UnityEngine_Debug_LogError_Objec;
+  if (pSVar1 != (String__Array *)0x0) {
     if (pSVar1->max_length == 0) goto code_?;
     pSVar1->vector[0] = StringLiteral_UnityEngine_Debug_LogError_Objec;
-    func_?(pSVar1->vector,pSVar3);
-    if ((stackTrace != (String *)0x0) &&
-       (pSVar1 = mscorlib.dll::System::String::String_Split_4
-                           (stackTrace,pSVar1,StringSplitOptions__Enum_RemoveEmptyEntries,
-                            (MethodInfo *)0x0), pSVar1 != (String__Array *)0x0)) {
-      if (pSVar1->max_length != 2) {
-        return stackTrace;
+    func_?(pSVar1->vector,pSVar2);
+    if (stackTrace != (String *)0x0) {
+      pSVar1 = mscorlib.dll::System::String::String_Split_4
+                         (stackTrace,pSVar1,StringSplitOptions__Enum_RemoveEmptyEntries,
+                          (MethodInfo *)0x0);
+      if (pSVar1 != (String__Array *)0x0) {
+        if (pSVar1->max_length != 2) {
+          return stackTrace;
+        }
+        if (1 < pSVar1->max_length) {
+          return pSVar1->vector[1];
+        }
+        goto code_?;
       }
-      if (1 < pSVar1->max_length) {
-        return pSVar1->vector[1];
-      }
-      goto code_?;
     }
-    goto code_?;
   }
-  uVar4 = func_?(0);
-  func_?(uVar4);
+  func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar5)();
-  return pSVar3;
+  pcVar3 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar3)();
+  return pSVar2;
 }
 
 
@@ -162,9 +161,8 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Destroy
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffd8;
-  puVar5 = &stack0xffffffd8;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&
                     MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
                    );
@@ -177,30 +175,42 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Destroy
                     MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Clear__
                    );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   this_00 = (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)
             (this->fields).logContextQueue;
   (this->fields).errorCount = 0;
   (this->fields).logErrorHasBeenSendOnce = 0;
-  if (this_00 == (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0)
-  goto code_?;
-  mscorlib.dll::System::Collections::Generic::
-  Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
-  Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
-            (this_00,
-             MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Clear__
-            );
-  (this->fields).isSampling = 0;
-  if ((this->fields).isInBrokenState != 0) {
-    (this->fields).isInBrokenState = 0;
-    *unaff_FS_OFFSET = uStack_3;
-    return;
-  }
-  uStack_1 = 0;
-  if ((this->fields).kogamaLogHandler != (ProxyLogHandler *)0x0) {
-    pPVar6 = (this->fields).kogamaLogHandler;
+  if (this_00 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::
+    Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
+    Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Clear
+              (this_00,
+               MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Clear__
+              );
+    (this->fields).isSampling = 0;
+    if ((this->fields).isInBrokenState != 0) {
+      (this->fields).isInBrokenState = 0;
+      *unaff_FS_OFFSET = uStack_3;
+      return;
+    }
+    uStack_1 = 0;
+    if ((this->fields).kogamaLogHandler == (ProxyLogHandler *)0x0) {
+code_?:
+      this_02 = (Application_LogCallback *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::
+      Application_LogCallback__ctor
+                (this_02,(Object *)this,
+                 MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_remove_logMessageReceived
+                (this_02,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
+      return;
+    }
+    pPVar4 = (this->fields).kogamaLogHandler;
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -216,40 +226,31 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Destroy
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-    if (pIVar7 == (ILogger_1 *)0x0) goto code_?;
-    func_?(1,TypeInfo__UnityEngine__ILogger,pIVar7,(pPVar6->fields).defaultLogHandler);
-    pPVar6 = (this->fields).kogamaLogHandler;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)
-              func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-    if (this_01 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
-               ,(MethodInfo *)0x0);
-    if (pPVar6 == (ProxyLogHandler *)0x0) goto code_?;
-    ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
-              (pPVar6,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0);
-    (this->fields).kogamaLogHandler = (ProxyLogHandler *)0x0;
-    func_?();
+    pIVar5 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar5 != (ILogger_1 *)0x0) {
+      func_?(1,TypeInfo__UnityEngine__ILogger,pIVar5,(pPVar4->fields).defaultLogHandler);
+      pPVar4 = (this->fields).kogamaLogHandler;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
+                 ,(MethodInfo *)0x0);
+      if (pPVar4 != (ProxyLogHandler *)0x0) {
+        ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
+                  (pPVar4,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0
+                  );
+        (this->fields).kogamaLogHandler = (ProxyLogHandler *)0x0;
+        func_?();
+        goto code_?;
+      }
+    }
   }
-  this_02 = (Application_LogCallback *)func_?();
-  if (this_02 != (Application_LogCallback *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
-              (this_02,(Object *)this,
-               MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
-               ,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_remove_logMessageReceived
-              (this_02,(MethodInfo *)0x0);
-    *unaff_FS_OFFSET = uStack_3;
-    return;
-  }
-code_?:
-  uStack_8 = func_?();
-  func_?(&uStack_8,&UNK_?);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  func_?(&stack0xffffffe8,&UNK_?);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -300,17 +301,17 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GenerateSystemInf
   DStack_7._index = 0;
   DStack_7._current.key = (Object *)0x0;
   if (systemInfo != (Dictionary_2_System_String_System_String_ *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                        &stack0xffffffac,(Dictionary_2_System_Object_System_Object_ *)systemInfo,
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffffac,(Dictionary_2_System_UInt32_System_Object_ *)systemInfo,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__GetEnumerator__
                        );
     uStack_10 = 0;
-    DStack_7._dictionary = pDVar9->_dictionary;
+    DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar9->_dictionary;
     DStack_7._version = pDVar9->_version;
     DStack_7._index = pDVar9->_index;
-    DStack_7._current.key = (pDVar9->_current).key;
+    DStack_7._current.key = (Object *)(pDVar9->_current).key;
     DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
     pDStack_11 = &DStack_7;
@@ -330,7 +331,7 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GenerateSystemInf
       pSStack_8 = pSVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
@@ -391,6 +392,7 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetExtraSentryData
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&MethodInfo__DebugLogHandler__GetBrowserInfo__);
     func_?(&MethodInfo__DebugLogHandler__GetGameMode__);
     func_?(&MethodInfo__DebugLogHandler__GetIsTouristSession__);
@@ -430,225 +432,182 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetExtraSentryData
     func_?(&StringLiteral_JoinState);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_String_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
-              );
-    iStack_2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount
-                         ((MethodInfo *)0x0);
-    value = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
+            );
+  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
+  value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
                (Object *)StringLiteral_Time_frameCount,value,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
               );
-    pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-             func_?(TypeInfo__System__Func<System::String>);
-    if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-      mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-      RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetBrowserInfo__,
-                 (MethodInfo *)0x0);
+    pFVar1 = (Func_1_Object_ *)func_?(TypeInfo__System__Func<System::String>);
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetBrowserInfo__,(MethodInfo *)0x0)
+    ;
+    if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_BrowserInfo,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetGameMode__,(MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    object = 
+    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+    ;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_GameMode
+               ,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetJoinState__,(MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_JoinState,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetPlayersCount__,(MethodInfo *)0x0
+              );
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_PlayersCount,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetPendingPlayersCount__,
+               (MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_PendingPlayersCount,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetIsTouristSession__,
+               (MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_Is_tourist_session,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetProfileID__,(MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_ProfileID,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetPlanetID__,(MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_PlanetID
+               ,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_platform
+              ((MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_RuntimePlatform,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)0x0,MethodInfo__DebugLogHandler__GetSystemInfo__,(MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_SystemInfo,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    pFVar1 = (Func_1_Object_ *)func_?();
+    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+              (pFVar1,(Object *)object,MethodInfo__DebugLogHandler__GetLogContext__,
+               (MethodInfo *)0x0);
+    pSVar2 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pFVar1,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_Log_Context,(Object *)pSVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+              );
+    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                      ((String *)object[1].methodPointer,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      if ((String *)object[1].methodPointer == (String *)0x0) goto code_?;
+      mscorlib.dll::System::String::String_Trim((String *)object[1].methodPointer,(MethodInfo *)0x0)
+      ;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (Object *)StringLiteral_Sanitized_Error_Data,(Object *)object[1].methodPointer,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+                );
+    }
+    if (object->token == 0x32) {
       if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pSVar4 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                 (Object *)StringLiteral_BrowserInfo,(Object *)pSVar4,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (Object *)StringLiteral_First_Error,
+                 (Object *)TypeInfo__DebugLogHandler->static_fields->firstError,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
-      pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)func_?();
-      if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-        mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-        RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                  (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetGameMode__,(MethodInfo *)0x0
-                  );
-        pSVar4 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_GameMode,(Object *)pSVar4,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                  );
-        pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                 func_?(TypeInfo__System__Func<System::String>);
-        if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-          mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-          RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                    (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetJoinState__,
-                     (MethodInfo *)0x0);
-          pSVar4 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                     (Object *)StringLiteral_JoinState,(Object *)pSVar4,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                    );
-          pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                   func_?(TypeInfo__System__Func<System::String>);
-          if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-            mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-            RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                      (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetPlayersCount__,
-                       (MethodInfo *)0x0);
-            pSVar4 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                       (Object *)StringLiteral_PlayersCount,(Object *)pSVar4,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                      );
-            pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                     func_?(TypeInfo__System__Func<System::String>);
-            if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-              mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-              RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                        (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetPendingPlayersCount__,
-                         (MethodInfo *)0x0);
-              pSVar4 = DebugLogHandler_TryGetExtraString((Func_1_String_ *)pRVar3,(MethodInfo *)0x0)
-              ;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                         (Object *)StringLiteral_PendingPlayersCount,(Object *)pSVar4,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                        );
-              pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                       func_?(TypeInfo__System__Func<System::String>);
-              if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-                mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]
-                ::RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                          (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetIsTouristSession__,
-                           (MethodInfo *)0x0);
-                pSVar4 = DebugLogHandler_TryGetExtraString
-                                   ((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                           (Object *)StringLiteral_Is_tourist_session,(Object *)pSVar4,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                          );
-                pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                         func_?(TypeInfo__System__Func<System::String>);
-                if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-                  mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::
-                  Object]::RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                            (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetProfileID__,
-                             (MethodInfo *)0x0);
-                  pSVar4 = DebugLogHandler_TryGetExtraString
-                                     ((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                             (Object *)StringLiteral_ProfileID,(Object *)pSVar4,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                            );
-                  pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                           func_?(TypeInfo__System__Func<System::String>);
-                  if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-                    mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::
-                    Object]::RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                              (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetPlanetID__,
-                               (MethodInfo *)0x0);
-                    pSVar4 = DebugLogHandler_TryGetExtraString
-                                       ((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__Add
-                              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                               (Object *)StringLiteral_PlanetID,(Object *)pSVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                              );
-                    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_platform
-                              ((MethodInfo *)0x0);
-                    pSVar4 = mscorlib.dll::System::Enum::Enum_ToString
-                                       ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__Add
-                              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                               (Object *)StringLiteral_RuntimePlatform,(Object *)pSVar4,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                              );
-                    pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)func_?();
-                    if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-                      mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::
-                      Object]::RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                                (pRVar3,(Object *)0x0,MethodInfo__DebugLogHandler__GetSystemInfo__,
-                                 (MethodInfo *)0x0);
-                      pSVar4 = DebugLogHandler_TryGetExtraString
-                                         ((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__Add
-                                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                                 (Object *)StringLiteral_SystemInfo,(Object *)pSVar4,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                                );
-                      pRVar3 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                               func_?(TypeInfo__System__Func<System::String>);
-                      if (pRVar3 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-                        mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System
-                        ::Object]::RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                                  (pRVar3,(Object *)this,
-                                   MethodInfo__DebugLogHandler__GetLogContext__,(MethodInfo *)0x0);
-                        pSVar4 = DebugLogHandler_TryGetExtraString
-                                           ((Func_1_String_ *)pRVar3,(MethodInfo *)0x0);
-                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                                   (Object *)StringLiteral_Log_Context,(Object *)pSVar4,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                                  );
-                        bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                                          ((this->fields).sanitizedString,(MethodInfo *)0x0);
-                        if (bVar5 == 0) {
-                          pSVar4 = (this->fields).sanitizedString;
-                          if (pSVar4 == (String *)0x0) goto code_?;
-                          mscorlib.dll::System::String::String_Trim(pSVar4,(MethodInfo *)0x0);
-                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                                     (Object *)StringLiteral_Sanitized_Error_Data,
-                                     (Object *)(this->fields).sanitizedString,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                                    );
-                        }
-                        if ((this->fields).errorCount == 0x32) {
-                          if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
-                            func_?(TypeInfo__DebugLogHandler);
-                          }
-                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                                     (Object *)StringLiteral_First_Error,
-                                     (Object *)TypeInfo__DebugLogHandler->static_fields->firstError,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                                    );
-                        }
-                        return pDVar1;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
+    return (Dictionary_2_System_String_System_Object_ *)this_00;
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_String_System_Object_ *)(*pcVar6)();
-  return pDVar1;
+  pcVar4 = (code *)swi(3);
+  pDVar5 = (Dictionary_2_System_String_System_Object_ *)(*pcVar4)();
+  return pDVar5;
 }
 
 
@@ -675,11 +634,17 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetIsTouristSessi
                    (MethodInfo *method)
 
 {
-  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  pSVar2 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                     ((Boolean *)&stack0xfffffffb,(IFormatProvider *)0x0,
-                      (MethodInfo *)CONCAT13(bVar1,(int3)extraout_var));
-  return pSVar2;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
+    cRam_? = '\x01';
+  }
+  MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Boolean);
+  }
+  pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString
+                     ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
@@ -798,24 +763,24 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
         *unaff_FS_OFFSET = uStack_3;
         return pSVar6;
       }
-      this_01 = (Dictionary_2_System_Object_System_Object_ *)
+      this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
                 mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
                 Queue_1_T_Enumerator_System_Object__get_Current
                           (&QStack_7,
                            MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__get_Current__
                           );
-      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
-      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+      if (this_01 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) break;
+      pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+               Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                           &stack0xffffff88,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__GetEnumerator__
                          );
       QStack_11._index = 0;
-      DStack_9._dictionary = pDVar15->_dictionary;
+      DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar15->_dictionary;
       DStack_9._version = pDVar15->_version;
       DStack_9._index = pDVar15->_index;
-      DStack_9._current.key = (pDVar15->_current).key;
+      DStack_9._current.key = (Object *)(pDVar15->_current).key;
       DStack_9._16_8_ = *(undefined8 *)&(pDVar15->_current).value;
       uStack_1._0_1_ = 3;
       QStack_11._currentElement = (Object *)&DStack_9;
@@ -835,7 +800,7 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
         pSStack_8 = pSVar6;
       }
       uStack_1._0_1_ = 1;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&DStack_9,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__Dispose__
@@ -970,6 +935,7 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetSystemInfo(Met
   puStack_4 = &stack0xffffff8c;
   puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__DebugLogHandler);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
@@ -996,7 +962,6 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetSystemInfo(Met
     func_?(&StringLiteral_supportedRenderTargetCount);
     func_?(&StringLiteral_processorType);
     func_?(&StringLiteral_graphicsDeviceVendorID);
-    func_?(&StringLiteral_supportsImageEffects);
     func_?(&StringLiteral_graphicsDeviceVersion);
     func_?(&StringLiteral_graphicsDeviceID);
     func_?(&StringLiteral_operatingSystem);
@@ -1010,169 +975,166 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetSystemInfo(Met
   puStack_4 = puVar5;
   pIStack_6 = (IEnumerator *)0x0;
   iStack_7 = 0;
-  systemInfo = (Dictionary_2_System_String_System_String_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                              );
-  pDStack_8 = systemInfo;
-  if (systemInfo != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)systemInfo,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  pDStack_8 = this;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+            );
+  pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
+                     ((MethodInfo *)0x0);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_operatingSystem,(Object *)pSVar9,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pDStack_9 = systemInfo;
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
+    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
                        ((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_operatingSystem,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_processorType,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
-                       ((MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_processorType,(Object *)pSVar10,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-              );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorCount
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_processorCount,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_processorCount,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_systemMemorySize,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_systemMemorySize,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsMemorySize
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsMemorySize,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsMemorySize,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceName
+    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceName
+                       ((MethodInfo *)0x0);
+    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)&UNK_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsDeviceName,(Object *)pSVar9,
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+              );
+    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
                        ((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsDeviceName,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsDeviceVendor,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
-                       ((MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsDeviceVendor,(Object *)pSVar10,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-              );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceID
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsDeviceID,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsDeviceID,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendorID
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsDeviceVendorID,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsDeviceVendorID,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
              SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsDeviceVersion,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsDeviceVersion,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_graphicsShaderLevel,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_graphicsShaderLevel,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    BStack_12.m_value =
+    BStack_11.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_SupportsShadows
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                       (&BStack_12,(IFormatProvider *)0x0,in_stack_13);
+    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pSVar9 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_11,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_supportsShadows,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_supportsShadows,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    BStack_12.m_value =
-         System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-         Single,System::Object]::
-         SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__get_IsReadOnly
-                   ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                    in_stack_14);
-    pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                       (&BStack_12,(IFormatProvider *)0x0,in_stack_15);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_supportsImageEffects,(Object *)pSVar10,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-              );
-    IStack_11.m_value =
+    IStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_SupportedRenderTargetCount
                    ((MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_11,(MethodInfo *)0x0);
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)systemInfo,
-               (Object *)StringLiteral_supportedRenderTargetCount,(Object *)pSVar10,
+              ((Dictionary_2_System_Object_System_Object_ *)this,
+               (Object *)StringLiteral_supportedRenderTargetCount,(Object *)pSVar9,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
+    pDStack_12 = this;
+    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
                        ((MethodInfo *)0x0);
-    bVar16 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar10,StringLiteral_Vivante_Corporation,(MethodInfo *)0x0);
-    pSVar10 = ::StringLiteral__;
+    bVar13 = mscorlib.dll::System::String::String_op_Equality
+                      (pSVar9,StringLiteral_Vivante_Corporation,(MethodInfo *)0x0);
+    pSVar9 = ::StringLiteral__;
     handle = TypeRef__UnityEngine__RenderTextureFormat;
-    if (bVar16 == 0) {
+    if (bVar13 == 0) {
 code_?:
       if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pSVar10 = DebugLogHandler_GenerateSystemInfoString(systemInfo,(MethodInfo *)0x0);
+      pSVar9 = DebugLogHandler_GenerateSystemInfoString
+                         ((Dictionary_2_System_String_System_String_ *)this,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
-      return pSVar10;
+      return pSVar9;
     }
-    pSStack_17 = ::StringLiteral__;
+    pSStack_14 = ::StringLiteral__;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -1181,86 +1143,88 @@ code_?:
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-    if (this != (Array *)0x0) {
-      pIStack_6 = mscorlib.dll::System::Array::Array_GetEnumerator(this,(MethodInfo *)0x0);
-      piStack_18 = &iStack_7;
-      ppIStack_19 = &pIStack_6;
-      uStack_20 = 0;
+    this_00 = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
+    if (this_00 != (Array *)0x0) {
+      pIStack_6 = mscorlib.dll::System::Array::Array_GetEnumerator(this_00,(MethodInfo *)0x0);
+      piStack_15 = &iStack_7;
+      ppIStack_16 = &pIStack_6;
+      uStack_17 = 0;
       uStack_1 = 1;
       while (pIStack_6 != (IEnumerator *)0x0) {
-        cVar21 = func_?();
-        if (cVar21 == '\0') {
+        cVar18 = func_?();
+        if (cVar18 == '\0') {
           uStack_1 = 0xffffffff;
           iStack_7 = func_?();
           if (iStack_7 != 0) {
             func_?();
           }
-          systemInfo = pDStack_8;
+          this = pDStack_8;
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
                     ((Dictionary_2_System_Object_System_Object_ *)pDStack_8,
-                     (Object *)StringLiteral_supportedRenderTextureFormats,(Object *)pSVar10,
+                     (Object *)StringLiteral_supportedRenderTextureFormats,(Object *)pSVar9,
                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                     );
           goto code_?;
         }
         if (pIStack_6 == (IEnumerator *)0x0) break;
-        uVar22 = 0;
-        uVar23 = (pIStack_6->klass->_1).interface_offsets_count;
-        if (uVar23 != 0) {
+        pIVar19 = pIStack_6->klass;
+        uVar20 = 0;
+        uVar21._0_1_ = (pIVar19->_1).rank;
+        uVar21._1_1_ = (pIVar19->_1).minimumAlignment;
+        if (uVar21 != 0) {
           do {
-            if (pIStack_6->klass->interfaceOffsets[uVar22].interfaceType ==
+            if (pIVar19->interfaceOffsets[uVar20].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              pVVar24 = &(pIStack_6->klass->vtable).get_Current +
-                       pIStack_6->klass->interfaceOffsets[uVar22].offset;
+              ppMVar22 = &(&(pIStack_6->klass->vtable).get_Current)
+                         [pIStack_6->klass->interfaceOffsets[uVar20].offset].method;
               goto code_?;
             }
-            uVar22 = uVar22 + 1;
-          } while (uVar22 < uVar23);
+            uVar20 = uVar20 + 1;
+          } while (uVar20 < uVar21);
         }
-        pVVar24 = (VirtualInvokeData *)func_?();
+        ppMVar22 = (MethodInfo **)func_?();
 code_?:
-        piVar25 = (int *)(*pVVar24->methodPtr)();
-        if (piVar25 == (int *)0x0) break;
-        if (*(Il2CppClass **)(*piVar25 + 0x20) !=
+        piVar23 = (int *)(*(code *)*ppMVar22)();
+        if (piVar23 == (int *)0x0) break;
+        if (*(Il2CppClass **)(*piVar23 + 0x20) !=
             (TypeInfo__UnityEngine__RenderTextureFormat->_0).element_class) {
           func_?();
           break;
         }
-        pRVar26 = (RenderTextureFormat__Enum *)func_?();
-        format = *pRVar26;
-        bVar16 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+        pRVar24 = (RenderTextureFormat__Enum *)func_?();
+        format = *pRVar24;
+        bVar13 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
                 SystemInfo_SupportsRenderTextureFormat(format,(MethodInfo *)0x0);
-        if (bVar16 != 0) {
-          bVar16 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar10,(MethodInfo *)0x0);
-          if (bVar16 == 0) {
-            EStack_27.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
-            EStack_27.monitor = (MonitorData *)0xffffffff;
-            RStack_28 = format;
-            pSVar29 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_27,(MethodInfo *)0x0);
-            pSVar10 = mscorlib.dll::System::String::String_Concat_4
-                               (pSVar10,::StringLiteral__,pSVar29,(MethodInfo *)0x0);
-            pSStack_17 = pSVar10;
+        if (bVar13 != 0) {
+          bVar13 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar9,(MethodInfo *)0x0);
+          if (bVar13 == 0) {
+            EStack_25.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
+            EStack_25.monitor = (MonitorData *)0xffffffff;
+            RStack_26 = format;
+            pSVar27 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_25,(MethodInfo *)0x0);
+            pSVar9 = mscorlib.dll::System::String::String_Concat_4
+                               (pSVar9,::StringLiteral__,pSVar27,(MethodInfo *)0x0);
+            pSStack_14 = pSVar9;
           }
           else {
-            EStack_30.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
-            EStack_30.monitor = (MonitorData *)0xffffffff;
-            RStack_31 = format;
-            pSVar29 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_30,(MethodInfo *)0x0);
-            pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar29,(MethodInfo *)0x0)
+            EStack_28.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
+            EStack_28.monitor = (MonitorData *)0xffffffff;
+            RStack_29 = format;
+            pSVar27 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_28,(MethodInfo *)0x0);
+            pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar27,(MethodInfo *)0x0)
             ;
-            pSStack_17 = pSVar10;
+            pSStack_14 = pSVar9;
           }
         }
       }
     }
   }
   func_?();
-  pcVar32 = (code *)swi(3);
-  pSVar10 = (String *)(*pcVar32)();
-  return pSVar10;
+  pcVar30 = (code *)swi(3);
+  pSVar9 = (String *)(*pcVar30)();
+  return pSVar9;
 }
 
 
@@ -1289,34 +1253,36 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetTags(MethodInfo *method
     func_?(&StringLiteral_JoinState);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_String_System_String_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                          );
-  if (pDVar1 != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-              );
-    pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-    if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-      pSVar3 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString
-                         (pKVar2,(MethodInfo *)0x0);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                        );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+            );
+  pKVar1 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
+  if (pKVar1 != (KoGaMaSettingsContainer *)0x0) {
+    pSVar2 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString
+                       (pKVar1,(MethodInfo *)0x0);
+    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Version
-                 ,(Object *)pSVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Version,
+                 (Object *)pSVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                 );
-      pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-      if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-        pSVar3 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_ReleaseName
-                           (pKVar2,(MethodInfo *)0x0);
+      pKVar1 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
+      if (pKVar1 != (KoGaMaSettingsContainer *)0x0) {
+        pSVar2 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_ReleaseName
+                           (pKVar1,(MethodInfo *)0x0);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_ReleaseName,(Object *)pSVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,
+                   (Object *)StringLiteral_ReleaseName,(Object *)pSVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                   );
         MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
@@ -1324,25 +1290,25 @@ Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetTags(MethodInfo *method
                           ((Enum *)&stack0xffffffd4,(MethodInfo *)0x0);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,
                    (Object *)StringLiteral_JoinState,(Object *)value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                   );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_Source,(Object *)StringLiteral_standalone,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_Source,
+                   (Object *)StringLiteral_standalone,
                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                   );
-        *unaff_FS_OFFSET = pSVar3;
-        return pDVar1;
+        *unaff_FS_OFFSET = pSVar2;
+        return (Dictionary_2_System_String_System_String_ *)this;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_String_System_String_ *)(*pcVar4)();
-  return pDVar1;
+  pcVar3 = (code *)swi(3);
+  pDVar4 = (Dictionary_2_System_String_System_String_ *)(*pcVar3)();
+  return pDVar4;
 }
 
 
@@ -1353,49 +1319,39 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_HandleLog
                MethodInfo *method)
 
 {
-  puStack_1 = (undefined *)0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffd4;
-  puVar5 = &stack0xffffffd4;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&
                     MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
                    );
     func_?(&TypeInfo__UnityEngine__Application__LogCallback);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  pAVar6 = (Application_LogCallback *)
+  pAVar1 = (Application_LogCallback *)
            func_?(TypeInfo__UnityEngine__Application__LogCallback);
-  if (pAVar6 != (Application_LogCallback *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
-              (pAVar6,(Object *)this,
-               MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
-               ,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_remove_logMessageReceived
-              (pAVar6,(MethodInfo *)0x0);
-    puStack_1 = (undefined *)0x0;
-    DebugLogHandler_HandleLogExecute(this,logString,stackTrace,type,(MethodInfo *)0x0);
-    pAVar6 = (Application_LogCallback *)func_?();
-    if (pAVar6 != (Application_LogCallback *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::
-      Application_LogCallback__ctor
-                (pAVar6,(Object *)this,
-                 MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
-                 ,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_add_logMessageReceived
-                (pAVar6,(MethodInfo *)0x0);
-      *unaff_FS_OFFSET = uStack_3;
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
+            (pAVar1,(Object *)this,
+             MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  auStack_7[0] = func_?();
-  func_?(auStack_7,&UNK_?);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  UnityEngine.CoreModule.dll::UnityEngine::Application::Application_remove_logMessageReceived
+            (pAVar1,(MethodInfo *)0x0);
+  DebugLogHandler_HandleLogExecute(this,logString,stackTrace,type,(MethodInfo *)0x0);
+  this_00 = (Application_LogCallback *)func_?();
+  pAVar1 = this_00;
+  UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
+            (this_00,(Object *)this,
+             MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Application::Application_add_logMessageReceived
+            (this_00,(MethodInfo *)0x0);
+  *unaff_FS_OFFSET = pAVar1;
   return;
 }
 
@@ -1426,32 +1382,29 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_HandleLogExecute
       cRam_? = '\x01';
     }
     type = func_?(TypeInfo__System__String,1);
-    if ((String__Array *)type == (String__Array *)0x0) goto code_?;
-    if ((StringLiteral_UnityEngine_Debug_LogError_Objec == (String *)0x0) ||
-       (iVar2 = func_?(), iVar2 != 0)) {
+    if ((String__Array *)type != (String__Array *)0x0) {
       if (((String__Array *)type)->max_length == 0) goto code_?;
       ((String__Array *)type)->vector[0] = StringLiteral_UnityEngine_Debug_LogError_Objec;
       func_?();
       if (stackTrace != (String *)0x0) {
         logString = (String *)&UNK_?;
-        pSVar3 = mscorlib.dll::System::String::String_Split_4
+        pSVar2 = mscorlib.dll::System::String::String_Split_4
                            (stackTrace,(String__Array *)type,
                             StringSplitOptions__Enum_RemoveEmptyEntries,(MethodInfo *)0x0);
-        if (pSVar3 != (String__Array *)0x0) {
-          if (pSVar3->max_length == 2) {
-            if (pSVar3->max_length < 2) goto code_?;
-            stackTrace = pSVar3->vector[1];
+        if (pSVar2 != (String__Array *)0x0) {
+          if (pSVar2->max_length == 2) {
+            if (pSVar2->max_length < 2) goto code_?;
+            stackTrace = pSVar2->vector[1];
           }
           goto code_?;
         }
       }
-      goto code_?;
     }
   }
   else {
 code_?:
-    piVar4 = &(this->fields).errorCount;
-    *piVar4 = *piVar4 + 1;
+    piVar3 = &(this->fields).errorCount;
+    *piVar3 = *piVar3 + 1;
     if ((this->fields).logErrorHasBeenSendOnce == 0) {
       if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__DebugLogHandler);
@@ -1484,15 +1437,12 @@ code_?:
                 (this_00,bVar1,onGoingErrorDetected,(MethodInfo *)0x0);
       return;
     }
-code_?:
-    func_?();
   }
   func_?();
-  func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1505,6 +1455,7 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&
                     MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
                    );
@@ -1519,14 +1470,12 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
   (this->fields).maxLogContextQueueCount = debugLogHandlerConfig.maxLogContextQueueCount;
   if (debugLogHandlerConfig.useProxyLogHandler != 0) {
     pPVar1 = (ProxyLogHandler *)func_?(TypeInfo__ProxyLogHandler);
-    if (pPVar1 == (ProxyLogHandler *)0x0) goto code_?;
     ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
     (this->fields).kogamaLogHandler = pPVar1;
     func_?(&(this->fields).kogamaLogHandler,pPVar1);
     pPVar1 = (this->fields).kogamaLogHandler;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-    if (this_01 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (this_01,(Object *)this,
@@ -1545,18 +1494,19 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
   (this->fields).isSampling = 1;
   this_02 = (Application_LogCallback *)
             func_?(TypeInfo__UnityEngine__Application__LogCallback);
-  if (this_02 != (Application_LogCallback *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
-              (this_02,(Object *)this,
-               MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
-               ,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_add_logMessageReceived
-              (this_02,(MethodInfo *)0x0);
-    this_00 = (this->fields).sentrySdk;
-    if (this_00 != (SentrySdk *)0x0) {
-      SentrySdk::SentrySdk_Initialize(this_00,sentryConfig,(MethodInfo *)0x0);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::Application_LogCallback__ctor
+            (this_02,(Object *)this,
+             MethodInfo__DebugLogHandler__HandleLog_System__String__System__String__UnityEngine__LogType_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Application);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Application::Application_add_logMessageReceived
+            (this_02,(MethodInfo *)0x0);
+  this_00 = (this->fields).sentrySdk;
+  if (this_00 != (SentrySdk *)0x0) {
+    SentrySdk::SentrySdk_Initialize(this_00,sentryConfig,(MethodInfo *)0x0);
+    return;
   }
 code_?:
   func_?();
@@ -1614,34 +1564,30 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_KogamaLogHandlerOnOnL
   pPVar1 = (this->fields).kogamaLogHandler;
   pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
            func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-  if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar2,(Object *)this,
-               MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
-               ,(MethodInfo *)0x0);
-    if (pPVar1 != (ProxyLogHandler *)0x0) {
-      ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
-                (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,(MethodInfo *)0x0);
-      if (e != (ProxyLogHandler_LogFormatData *)0x0) {
-        logString = mscorlib.dll::System::String::String_Format_3
-                              ((e->fields).format,(e->fields).args,(MethodInfo *)0x0);
-        DebugLogHandler_AddLogToLogContext(this,logString,(e->fields).LogType,(MethodInfo *)0x0);
-        pPVar1 = (this->fields).kogamaLogHandler;
-        pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar2,(Object *)this,
-                     MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
-                     ,(MethodInfo *)0x0);
-          if (pPVar1 != (ProxyLogHandler *)0x0) {
-            ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
-                      (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,
-                       (MethodInfo *)0x0);
-            return;
-          }
-        }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (pUVar2,(Object *)this,
+             MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
+             ,(MethodInfo *)0x0);
+  if (pPVar1 != (ProxyLogHandler *)0x0) {
+    ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
+              (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,(MethodInfo *)0x0);
+    if (e != (ProxyLogHandler_LogFormatData *)0x0) {
+      logString = mscorlib.dll::System::String::String_Format_3
+                            ((e->fields).format,(e->fields).args,(MethodInfo *)0x0);
+      DebugLogHandler_AddLogToLogContext(this,logString,(e->fields).LogType,(MethodInfo *)0x0);
+      pPVar1 = (this->fields).kogamaLogHandler;
+      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar2,(Object *)this,
+                 MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
+                 ,(MethodInfo *)0x0);
+      if (pPVar1 != (ProxyLogHandler *)0x0) {
+        ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
+                  (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,(MethodInfo *)0x0)
+        ;
+        return;
       }
     }
   }
@@ -1839,17 +1785,18 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_SanitizeLogString
   startIndex = mscorlib.dll::System::String::String_IndexOf_3
                          (logString,(String *)value,(MethodInfo *)0x0);
   if (value != (RegexCharClass_SingleRange)0x0) {
-    pSVar3 = mscorlib.dll::System::String::String_Remove
+    pSVar3 = (String__Class *)
+             mscorlib.dll::System::String::String_Remove
                        (logString,startIndex,*(int32_t *)((int)value + 8),(MethodInfo *)0x0);
-    *(String **)&logString[2].fields._firstChar = pSVar3;
+    logString[3].klass = pSVar3;
     func_?();
     return (String *)value;
   }
 code_?:
   func_?();
   pcVar4 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar4)();
-  return pSVar3;
+  pSVar5 = (String *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -1944,11 +1891,12 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler__cctor(MethodInfo *me
   }
   this = (List_1_System_String_ *)
          func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             MethodInfo__System__Collections__Generic__List<System::String>__List__);
   if (this != (List_1_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__List<System::String>__List__);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
               ((List_1_System_Object_ *)this,
                (Object *)StringLiteral_Could_not_allocate_memory__Syste,
@@ -1961,23 +1909,22 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler__cctor(MethodInfo *me
                (Object *)StringLiteral_Screen_position_out_of_view_frus,
                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     TypeInfo__DebugLogHandler->static_fields->sanitizeLogSubstrings = this;
-    func_?(TypeInfo__DebugLogHandler->static_fields,this);
-    this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+    func_?(TypeInfo__DebugLogHandler->static_fields);
+    this_00 = (HashSet_1_System_String_ *)
               func_?(TypeInfo__System__Collections__Generic__HashSet<System::String>);
-    if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_00,
-                 MethodInfo__System__Collections__Generic__HashSet<System::String>__HashSet__);
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+    HashSet_1_System_Object___ctor
+              ((HashSet_1_System_Object_ *)this_00,
+               MethodInfo__System__Collections__Generic__HashSet<System::String>__HashSet__);
+    if (this_00 != (HashSet_1_System_String_ *)0x0) {
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-      HashSet_1_System_Object__Add
+      HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
                 ((HashSet_1_System_Object_ *)this_00,
                  (Object *)StringLiteral_Fullscreen_mode_can_only_be_enab,
                  MethodInfo__System__Collections__Generic__HashSet<System::String>__Add_System__String_
                 );
-      TypeInfo__DebugLogHandler->static_fields->ignoreLogStrings =
-           (HashSet_1_System_String_ *)this_00;
-      func_?(&TypeInfo__DebugLogHandler->static_fields->ignoreLogStrings,this_00);
+      TypeInfo__DebugLogHandler->static_fields->ignoreLogStrings = this_00;
+      func_?(&TypeInfo__DebugLogHandler->static_fields->ignoreLogStrings);
       TypeInfo__DebugLogHandler->static_fields->didConnectToGameServer = 0;
       TypeInfo__DebugLogHandler->static_fields->firstError = ::StringLiteral__;
       func_?(&TypeInfo__DebugLogHandler->static_fields->firstError,::StringLiteral__);
@@ -2008,33 +1955,24 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler__ctor
     cRam_? = '\x01';
   }
   (this->fields).maxLogContextQueueCount = 4;
-  value = (DebugLogHandler_StatHatErrorCount *)
-          func_?(TypeInfo__DebugLogHandler__StatHatErrorCount);
-  if (value != (DebugLogHandler_StatHatErrorCount *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).statHatErrorCount = value;
-    func_?(&(this->fields).statHatErrorCount,value);
-    this_00 = (Queue_1_Dictionary_2_System_String_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>
-                             );
-    if (this_00 != (Queue_1_Dictionary_2_System_String_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-      Stack_1_System_Object___ctor
-                ((Stack_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Queue__
-                );
-      (this->fields).logContextQueue = this_00;
-      func_?(&(this->fields).logContextQueue,this_00);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__DebugLogHandler__StatHatErrorCount;
+  value = (DebugLogHandler_StatHatErrorCount *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).statHatErrorCount = value;
+  func_?(&(this->fields).statHatErrorCount,value);
+  this_00 = (Queue_1_Dictionary_2_System_String_System_Object_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>
+                           );
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)this_00,
+             MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Queue__
+            );
+  (this->fields).logContextQueue = this_00;
+  func_?(&(this->fields).logContextQueue,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

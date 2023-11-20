@@ -5,10 +5,9 @@ void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputS
                (MVInputWrapper_InputSuppression *this,bool a,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (*(this->klass->vtable).set_IsSuppressed.methodPtr)
-            (this,_a,(this->klass->vtable).set_IsSuppressed.method);
+  (*(code *)(this->klass->vtable).set_IsSuppressed.method)(this,_a,this->klass[1]._0.image);
   return;
 }
 
@@ -46,19 +45,13 @@ Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppre
     func_?(&TypeInfo__MVInputWrapper__InputSuppression);
     cRam_? = '\x01';
   }
-  pMVar1 = (MVInputWrapper_InputSuppression *)
-           func_?(TypeInfo__MVInputWrapper__InputSuppression);
-  if (pMVar1 != (MVInputWrapper_InputSuppression *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pMVar1,ExceptionArgument__Enum_obj,unaff_ESI);
-    (*(pMVar1->klass->vtable).set_IsSuppressed.methodPtr)
-              (pMVar1,_a,(pMVar1->klass->vtable).set_IsSuppressed.method);
-    return pMVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pMVar1 = (MVInputWrapper_InputSuppression *)(*pcVar2)();
-  return pMVar1;
+  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
+  value = (MVInputWrapper_InputSuppression *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (*(code *)(value->klass->vtable).set_IsSuppressed.method)
+            (value,_a,((_union_86 *)&value->klass[1]._0)->dummy);
+  return value;
 }
 
 
@@ -69,11 +62,11 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
                (MVInputWrapper_InputSuppression *a,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (a != (MVInputWrapper_InputSuppression *)0x0) {
-    pMStack_1 = (a->klass->vtable).get_IsSuppressed.method;
+    pIStack_1 = (a->klass->vtable).set_IsSuppressed.methodPtr;
     pMStack_2 = a;
-    bVar3 = (*(a->klass->vtable).get_IsSuppressed.methodPtr)();
+    bVar3 = (*(code *)(a->klass->vtable).get_IsSuppressed.method)();
     return bVar3;
   }
   uVar4 = func_?(&puStack_5);

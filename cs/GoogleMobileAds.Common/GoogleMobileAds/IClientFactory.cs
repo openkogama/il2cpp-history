@@ -8,19 +8,15 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Common;
 
-// Image 28: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds
 {
 	public interface IClientFactory
 	{
 		// Methods
-		IAppStateEventClient BuildAppStateEventClient();
-		IAppOpenAdClient BuildAppOpenAdClient();
-		IBannerClient BuildBannerClient();
 		IInterstitialClient BuildInterstitialClient();
 		IRewardedAdClient BuildRewardedAdClient();
-		IRewardedInterstitialAdClient BuildRewardedInterstitialAdClient();
 		IMobileAdsClient MobileAdsInstance();
 	}
 }

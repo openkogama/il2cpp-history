@@ -84,22 +84,20 @@ code_?:
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
         (IEditModeUI *)0x0) {
       pDVar3 = (Delegate *)func_?(2,TypeInfo__IEditModeUI);
-      this_01 = (UnityAction_1_System_ByteEnum_ *)
+      this_01 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_01,(Object *)this,MethodInfo__MVFire__OnEditModeChange_EditModeChangeArgs_,
-                   (MethodInfo *)0x0);
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-        if ((pDVar3 == (Delegate *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
-          uStack5 = 3;
-          func_?();
-          return;
-        }
-        goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_01,(Object *)this,MethodInfo__MVFire__OnEditModeChange_EditModeChangeArgs_,
+                 (MethodInfo *)0x0);
+      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+      if ((pDVar3 == (Delegate *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
+        uStack5 = 3;
+        func_?();
+        return;
       }
+      goto code_?;
     }
 code_?:
     func_?();
@@ -109,7 +107,6 @@ code_?:
     if (pFVar1 == (FireObject *)0x0) goto code_?;
     pAVar6 = (pFVar1->fields).OnFireObjectCreated;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,(MethodInfo *)0x0);
@@ -151,17 +148,13 @@ Bounds * Assembly-CSharp.dll::MVFire::MVFire_GetLocalBounds
                    MethodInfo *method)
 
 {
-  size.y = (float)_UNK_?;
-  size.x = (float)_UNK_?;
   (__return_storage_ptr__->m_Center).x = 0.0;
+  uVar1 = _UNK_?;
   (__return_storage_ptr__->m_Center).y = 0.0;
   (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  size.z = 1.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-            (__return_storage_ptr__,(Vector3)ZEXT812(0),size,(MethodInfo *)0x0);
+  (__return_storage_ptr__->m_Extents).x = (float)uVar1;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar1;
+  (__return_storage_ptr__->m_Extents).z = 0.5;
   return __return_storage_ptr__;
 }
 
@@ -188,176 +181,104 @@ void Assembly-CSharp.dll::MVFire::MVFire_Initialize(MVFire *this,MethodInfo *met
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pFVar1 = (this->fields).fireObject;
-  if (pFVar1 == (FireObject *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
+  if (pFVar1 != (FireObject *)0x0) {
     this_00 = (pFVar1->fields).fireCollider;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    if (this_00 == (Collider *)0x0) goto code_?;
-    UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-              (this_00,TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-                       (IEditModeUI *)0x0,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-        (IEditModeUI *)0x0) {
-code_?:
+    if (this_00 != (Collider *)0x0) {
+      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
+                (this_00,TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField
+                         == (IEditModeUI *)0x0,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+          (IEditModeUI *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVGameControllerBase);
+          cRam_? = '\x01';
+        }
+        pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+        if (pIVar2 == (IEditModeUI *)0x0) goto code_?;
+        pDVar3 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar2);
+        this_01 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?(TypeInfo__System__Action<EditModeChangeArgs>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_01,(Object *)this,MethodInfo__MVFire__OnEditModeChange_EditModeChangeArgs_,
+                   (MethodInfo *)0x0);
+        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           (pDVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+        if (pDVar3 != (Delegate *)0x0) {
+          iVar4 = func_?();
+          if (iVar4 == 0) goto code_?;
+        }
+        func_?();
+      }
       pFVar1 = (this->fields).fireObject;
       if (pFVar1 != (FireObject *)0x0) {
         MVLogicObject::MVLogicObject_SetupCulling
                   ((MVLogicObject *)this,(pFVar1->fields).visualObject,2.0,(MethodInfo *)0x0);
-        MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar2 == MVGameMode__Enum_Edit) {
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-          if (pPVar3 != (PrefabPool *)0x0) {
-            pSVar4 = (pPVar3->fields).rangeVisualizationObject;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
-            }
-            pSVar4 = (SphereVolumeIndicator *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)pSVar4,
-                                SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
-                               );
-            (this->fields).rangeVis = pSVar4;
-            func_?(&(this->fields).rangeVis,pSVar4);
-            pSVar4 = (this->fields).rangeVis;
-            if (pSVar4 != (SphereVolumeIndicator *)0x0) {
-              pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pSVar4,(MethodInfo *)0x0);
-              pFVar1 = (this->fields).fireObject;
-              if ((pFVar1 != (FireObject *)0x0) &&
-                 (value = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pFVar1,(MethodInfo *)0x0),
-                 pTVar5 != (Transform *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                          (pTVar5,value,(MethodInfo *)0x0);
-                pSVar4 = (this->fields).rangeVis;
-                if (pSVar4 != (SphereVolumeIndicator *)0x0) {
-                  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_transform((Component *)pSVar4,(MethodInfo *)0x0);
-                  if (cRam_? == '\0') {
-                    func_?(&TypeInfo__UnityEngine__Vector3);
-                    cRam_? = '\x01';
-                  }
-                  if (pTVar5 != (Transform *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                              (pTVar5,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                               (MethodInfo *)0x0);
-                    pSVar4 = (this->fields).rangeVis;
-                    if (pSVar4 != (SphereVolumeIndicator *)0x0) {
-                      SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
-                                (pSVar4,(this->fields).damageRadius,(MethodInfo *)0x0);
-                      goto code_?;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        else {
-code_?:
+        MVar5 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar5 != MVGameMode__Enum_Edit) {
           MVFire_SetFireToData(this,(MethodInfo *)0x0);
           MVFire_SetFireHitBoxYOffset
                     (this,((this->fields).damageRadius / _UNK_?) * _UNK_? *
                           _UNK_?,(MethodInfo *)0x0);
-          this_02 = (Action_2_Int32Enum_Object_ *)func_?();
-          if (this_02 != (Action_2_Int32Enum_Object_ *)0x0) {
-            mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                      (this_02,(Object *)this,
-                       MethodInfo__MVFire__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
-                       (MethodInfo *)0x0);
-            pIVar6 = LogicClientsideFactory::
-                      LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                                ((MVWorldObject *)this,1,
-                                 (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                                 (Action_2_LogicInputState_LogicObjectManager_ *)this_02,
-                                 (MethodInfo *)0x0);
-            (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
-            func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar6);
-            pIVar6 = (this->fields)._InputSignalReceiver_k__BackingField;
-            if (pIVar6 != (IInputSignalReceiver *)0x0) {
-              activeFlag = func_?(1,TypeInfo__IInputSignalReceiver,pIVar6);
-              MVFire_ToggleEmitter(this,activeFlag,(MethodInfo *)0x0);
-              pFVar1 = (this->fields).fireObject;
-              if (pFVar1 != (FireObject *)0x0) {
-                pAVar7 = (pFVar1->fields).OnFireObjectCreated;
-                this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-                if (this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                  NavMesh_OnNavMeshPreUpdate__ctor
-                            (this_03,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,
-                             (MethodInfo *)0x0);
-                  pAVar7 = (Action *)
-                            mscorlib.dll::System::Delegate::Delegate_Combine
-                                      ((Delegate *)pAVar7,(Delegate *)this_03,(MethodInfo *)0x0);
-                  if (pAVar7 == (Action *)0x0) {
-                    (pFVar1->fields).OnFireObjectCreated = (Action *)0x0;
-                    func_?();
-                    return;
-                  }
-                  pAVar8 = (Action *)0x0;
-                  if (pAVar7->klass == TypeInfo__System__Action) {
-                    pAVar8 = pAVar7;
-                  }
-                  if (pAVar8 != (Action *)0x0) {
-                    (pFVar1->fields).OnFireObjectCreated = pAVar8;
-                    pAVar8 = (Action *)0x0;
-                    if (pAVar7->klass == TypeInfo__System__Action) {
-                      pAVar8 = pAVar7;
-                    }
-                    if (pAVar8 != (Action *)0x0) {
-                      func_?();
-                      return;
-                    }
-                  }
-                  goto code_?;
-                }
-              }
-            }
+          this_02 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
+          Int32]::UnityAction_2_System_Int32_System_Int32___ctor
+                    (this_02,(Object *)this,
+                     MethodInfo__MVFire__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
+                     (MethodInfo *)0x0);
+          pSVar6 = (SphereVolumeIndicator *)
+                   LogicClientsideFactory::
+                   LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                             ((MVWorldObject *)this,1,
+                              (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                              (Action_2_LogicInputState_LogicObjectManager_ *)this_02,
+                              (MethodInfo *)0x0);
+          (this->fields)._InputSignalReceiver_k__BackingField = (IInputSignalReceiver *)pSVar6;
+          ppSVar7 = (SphereVolumeIndicator **)&(this->fields)._InputSignalReceiver_k__BackingField;
+          puVar8 = &UNK_?;
+code_?:
+          func_?(ppSVar7,&stack0xfffffffc,puVar8,ppSVar7,pSVar6);
+          return;
+        }
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pPVar9 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar9 != (PrefabPool *)0x0) {
+          pSVar6 = (pPVar9->fields).rangeVisualizationObject;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
           }
+          pSVar6 = (SphereVolumeIndicator *)
+                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                             ((Object *)pSVar6,
+                              SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
+                             );
+          (this->fields).rangeVis = pSVar6;
+          ppSVar7 = &(this->fields).rangeVis;
+          puVar8 = &UNK_?;
+          goto code_?;
         }
       }
-      goto code_?;
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
-      cRam_? = '\x01';
-    }
-    pIVar9 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (pIVar9 == (IEditModeUI *)0x0) goto code_?;
-    pDVar10 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar9);
-    this_01 = (UnityAction_1_System_ByteEnum_ *)
-              func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-    if (this_01 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-    UnityAction_1_System_ByteEnum___ctor
-              (this_01,(Object *)this,MethodInfo__MVFire__OnEditModeChange_EditModeChangeArgs_,
-               (MethodInfo *)0x0);
-    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       (pDVar10,(Delegate *)this_01,(MethodInfo *)0x0);
-    if ((pDVar10 == (Delegate *)0x0) || (iVar11 = func_?(), iVar11 != 0)) {
-      func_?();
-      goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -454,41 +375,39 @@ void Assembly-CSharp.dll::MVFire::MVFire_OnFireObjectPlaced(MVFire *this,MethodI
   if (pFVar1 != (FireObject *)0x0) {
     pAVar2 = (pFVar1->fields).OnFireObjectCreated;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,(MethodInfo *)0x0);
-      pAVar2 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pAVar2 == (Action *)0x0) {
-        (pFVar1->fields).OnFireObjectCreated = (Action *)0x0;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__MVFire__OnFireObjectPlaced__,(MethodInfo *)0x0);
+    pAVar2 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar2 == (Action *)0x0) {
+      (pFVar1->fields).OnFireObjectCreated = (Action *)0x0;
+    }
+    else {
+      pAVar3 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar2;
       }
-      else {
-        pAVar3 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar2;
-        }
-        if (pAVar3 == (Action *)0x0) goto code_?;
-        (pFVar1->fields).OnFireObjectCreated = pAVar3;
-        pAVar3 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar2;
-        }
-        if (pAVar3 == (Action *)0x0) goto code_?;
+      if (pAVar3 == (Action *)0x0) goto code_?;
+      (pFVar1->fields).OnFireObjectCreated = pAVar3;
+      pAVar3 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar2;
       }
-      func_?();
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_is_active_now_after_subscribing,(MethodInfo *)0x0);
-      pIVar4 = (this->fields)._InputSignalReceiver_k__BackingField;
-      if (pIVar4 != (IInputSignalReceiver *)0x0) {
-        activeFlag = func_?(1,TypeInfo__IInputSignalReceiver,pIVar4);
-        MVFire_ToggleEmitter(this,activeFlag,(MethodInfo *)0x0);
-        return;
-      }
+      if (pAVar3 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_is_active_now_after_subscribing,(MethodInfo *)0x0);
+    pIVar4 = (this->fields)._InputSignalReceiver_k__BackingField;
+    if (pIVar4 != (IInputSignalReceiver *)0x0) {
+      activeFlag = func_?(1,TypeInfo__IInputSignalReceiver,pIVar4);
+      MVFire_ToggleEmitter(this,activeFlag,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -532,7 +451,7 @@ void Assembly-CSharp.dll::MVFire::MVFire_OnUpdate(MVFire *this,MethodInfo *metho
     func_?();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) &&
      (cVar1 = func_?(), cVar1 != '\0')) {
@@ -577,7 +496,7 @@ joined_?:
           bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                             ((Object_1 *)pIStack_9,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar8 == 0) {
-            IStack_7.damage = 3.64338e-44;
+            IStack_7.damage = 3.50325e-44;
             IStack_7.impulse.x = (float)this_03;
             puVar10 = (undefined8 *)func_?();
             uStack_11 = *puVar10;
@@ -593,7 +512,7 @@ joined_?:
                               (pOVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar8 != 0) {
               this_01 = *(Collider **)((int)this_03 + 0x8c);
-              pVVar13 = (Vector3 *)func_?(auStack_14,0x1a,this_02);
+              pVVar13 = (Vector3 *)func_?(auStack_14,0x19,this_02);
               if (this_01 == (Collider *)0x0) goto code_?;
               pVVar13 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::
                        Collider_ClosestPointOnBounds(&VStack_15,this_01,*pVVar13,(MethodInfo *)0x0);
@@ -658,32 +577,33 @@ void Assembly-CSharp.dll::MVFire::MVFire_RenewCullingSize(MVFire *this,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__CullingSubscriberBase);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields)._.cullingSubscriberBase;
   if (pCVar1 != (CullingSubscriberBase *)0x0) {
     CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar1,(MethodInfo *)0x0);
     radius = (this->fields).damageRadius;
-    pVVar2 = (Vector3 *)(*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
+    pVVar2 = (Vector3 *)
+             (*(code *)(this->klass->vtable).get_WorldPosition_1.method)
+                       (&stack0xffffffe4,this,(this->klass->vtable).set_WorldPosition.methodPtr);
     position = *pVVar2;
-    this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-    if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-      UnityAction_1_UnityEngine_Vector2___ctor
-                (this_00,(Object *)this,(this->klass->vtable).OnStateChanged.method,
-                 (MethodInfo *)0x0);
-      pCVar1 = (CullingSubscriberBase *)func_?();
-      if (pCVar1 != (CullingSubscriberBase *)0x0) {
-        CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                  (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
-                   (MethodInfo *)0x0);
-        (this->fields)._.cullingSubscriberBase = pCVar1;
-        func_?();
-        return;
-      }
-    }
+    this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
+              func_?(
+                             TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                             );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+    UnityAction_1_UnityEngine_Vector2___ctor
+              (this_00,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
+               (MethodInfo *)0x0);
+    pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+    CullingSubscriberBase::CullingSubscriberBase__ctor_2
+              (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
+               (MethodInfo *)0x0);
+    (this->fields)._.cullingSubscriberBase = pCVar1;
+    func_?();
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -734,30 +654,34 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetCandleAnimation(MVFire *this,MethodI
           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
           ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
           this_00 = (AnimationCurve *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
+                    (this_00,(MethodInfo *)0x0);
           if (this_00 != (AnimationCurve *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
-                      (this_00,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
                       (this_00,0.0,0.5,(MethodInfo *)0x0);
-            method = (MethodInfo *)0x3f000000;
-            this = (MVFire *)0x3f19999a;
-            puVar3 = &UNK_?;
-            pAVar4 = this_00;
+            fVar3 = 0.5;
+            iVar4 = 0x3f19999a;
             UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
                       (this_00,0.6,0.5,(MethodInfo *)0x0);
-            uVar5._4_4_ = (float)this_00;
-            uVar5._0_4_ = (float)&UNK_?;
+            uVar5._0_4_ = 1.0;
+            uVar5._4_4_ = 0.1;
+            pAVar6 = (AnimationCurve *)&UNK_?;
+            pAVar7 = this_00;
             UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
                       (this_00,1.0,0.1,(MethodInfo *)0x0);
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxCurve::
             ParticleSystem_MinMaxCurve__ctor_1
                       ((ParticleSystem_MinMaxCurve *)&stack0xffffffd4,1.0,this_00,(MethodInfo *)0x0)
             ;
-            fVar6 = (float)pAVar4;
-            auVar7._12_4_ = (float)uVar5;
-            stack0x00000010 = SUB84(uVar5,4);
-            value.m_Mode = (int32_t)puVar3;
-            value = (ParticleSystem_MinMaxCurve)CONCAT204(auVar7,value.m_Mode);
+            fVar8 = fVar3;
+            iVar9 = iVar4;
+            uVar10 = CONCAT44(fVar8,iVar9);
+            pAVar11 = pAVar6;
+            auVar12 = CONCAT48(pAVar11,uVar10);
+            this = (MVFire *)(float)uVar5;
+            method = (MethodInfo *)SUB84(uVar5,4);
+            pAVar13 = pAVar7;
+            value = (ParticleSystem_MinMaxCurve)CONCAT1212(auVar14,auVar12);
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+SizeOverLifetimeModule
             ::ParticleSystem_SizeOverLifetimeModule_set_size
                       ((ParticleSystem_SizeOverLifetimeModule *)&stack0xffffffec,value,
@@ -769,8 +693,8 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetCandleAnimation(MVFire *this,MethodI
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -818,339 +742,349 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetFireToData(MVFire *this,MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    func_?(&TypeInfo__System__Single);
+    func_?(&TypeInfo__System__Single);
+    func_?(&StringLiteral_I);
     func_?(&StringLiteral_C);
     cRam_? = '\x01';
   }
-  this_02 = this;
-  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
+  pMVar1 = this;
   PStack_2.m_ParticleSystem = (ParticleSystem *)0x0;
-  pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (pDVar3 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+  PStack_3.m_ParticleSystem = (ParticleSystem *)0x0;
+  pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
   goto code_?;
-  bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-           Object,GUILoginHandler+PlanetData]::
-           Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                     (pDVar3,(Object *)StringLiteral_C,
+  bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                     (pDVar4,(Object *)StringLiteral_C,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                      );
-  if (bVar4 == 0) {
+  if (bVar5 == 0) {
 code_?:
-    pFVar5 = (this_02->fields).fireObject;
-    if ((pFVar5 == (FireObject *)0x0) ||
-       (pPVar6 = (pFVar5->fields).fireParticleSystem, pPVar6 == (ParticleSystem *)0x0))
+    pFVar6 = (pMVar1->fields).fireObject;
+    if ((pFVar6 == (FireObject *)0x0) ||
+       (pPVar7 = (pFVar6->fields).fireParticleSystem, pPVar7 == (ParticleSystem *)0x0))
     goto code_?;
-    PStack_7.m_ParticleSystem =
+    PStack_8.m_ParticleSystem =
          (ParticleSystem *)
          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-         ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-    this = (MVFire *)
-           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-           ParticleSystem_MainModule_get_startSizeMultiplier_Injected(&PStack_7,(MethodInfo *)0x0);
+         ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+    fVar9 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+             ParticleSystem_MainModule_get_startSizeMultiplier_Injected(&PStack_8,(MethodInfo *)0x0)
+    ;
     MVFire_SetFireHitBoxYOffset
-              (this_02,(float)((uint)((((float)this * _UNK_? * _UNK_?) / _UNK_?
-                                      ) * _UNK_?) ^
+              (pMVar1,(float)((uint)(((fVar9 * _UNK_? * _UNK_?) / _UNK_?) *
+                                     _UNK_?) ^
                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                               ) * _UNK_?,(MethodInfo *)0x0);
-    pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this_02->fields)._._._.data;
-    if (pDVar3 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (pMVar1->fields)._._._.data;
+    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-             Object,GUILoginHandler+PlanetData]::
-             Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                       (pDVar3,(Object *)StringLiteral_I,
+    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                       (pDVar4,(Object *)StringLiteral_I,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                        );
-    if (bVar4 != 0) {
-      pFVar5 = (this_02->fields).fireObject;
-      if ((pFVar5 == (FireObject *)0x0) ||
-         (pPVar6 = (pFVar5->fields).fireParticleSystem, pPVar6 == (ParticleSystem *)0x0))
+    if (bVar5 != 0) {
+      pFVar6 = (pMVar1->fields).fireObject;
+      if ((pFVar6 == (FireObject *)0x0) ||
+         (pPVar7 = (pFVar6->fields).fireParticleSystem, pPVar7 == (ParticleSystem *)0x0))
       goto code_?;
-      PStack_2.m_ParticleSystem =
+      PStack_3.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-      pDVar8 = (this_02->fields)._._._.data;
-      if (pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (pDVar8,(Object *)StringLiteral_I,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-      if (pOVar9 == (Object *)0x0) goto code_?;
-      if ((pOVar9->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+           ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+      pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (pMVar1->fields)._._._.data;
+      if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      pfVar10 = (float *)func_?();
+      TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (pDVar4,(Object *)StringLiteral_I,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      uVar11 = CONCAT44(TypeInfo__System__Single,TVar10.m_Index);
+      if (TVar10.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar12 = (float *)func_?();
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                (&PStack_2,*pfVar10,(MethodInfo *)0x0);
+                (&PStack_3,*pfVar12,(MethodInfo *)0x0);
     }
-    pFVar5 = (this_02->fields).fireObject;
-    if ((pFVar5 != (FireObject *)0x0) &&
-       (pPVar6 = (pFVar5->fields).fireParticleSystem, pPVar6 != (ParticleSystem *)0x0)) {
-      PStack_7.m_ParticleSystem =
+    pFVar6 = (pMVar1->fields).fireObject;
+    if ((pFVar6 != (FireObject *)0x0) &&
+       (pPVar7 = (pFVar6->fields).fireParticleSystem, pPVar7 != (ParticleSystem *)0x0)) {
+      PStack_8.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-      this = (MVFire *)
-             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-             ParticleSystem_MainModule_get_startSizeMultiplier_Injected(&PStack_7,(MethodInfo *)0x0)
-      ;
-      (this_02->fields).damageRadius = (float)this * _UNK_? * _UNK_?;
-      MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar11 == MVGameMode__Enum_Edit) {
-        this_00 = (this_02->fields).rangeVis;
+           ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+      PStack_13.m_ParticleSystem =
+           (ParticleSystem *)
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+           ParticleSystem_MainModule_get_startSizeMultiplier_Injected(&PStack_8,(MethodInfo *)0x0);
+      (pMVar1->fields).damageRadius =
+           (float)PStack_13.m_ParticleSystem * _UNK_? * _UNK_?;
+      MVar14 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar14 == MVGameMode__Enum_Edit) {
+        this_00 = (pMVar1->fields).rangeVis;
         if (this_00 == (SphereVolumeIndicator *)0x0) goto code_?;
         SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
-                  (this_00,(this_02->fields).damageRadius,(MethodInfo *)0x0);
+                  (this_00,(pMVar1->fields).damageRadius,(MethodInfo *)0x0);
       }
-      PStack_12.m_ParticleSystem =
-           (ParticleSystem *)(((this_02->fields).damageRadius / _UNK_?) * _UNK_?);
+      PVar15.m_ParticleSystem =
+           (ParticleSystem *)(((pMVar1->fields).damageRadius / _UNK_?) * _UNK_?);
       MVFire_SetFireHitBoxYOffset
-                (this_02,(float)PStack_12.m_ParticleSystem * _UNK_?,(MethodInfo *)0x0);
-      pFVar5 = (this_02->fields).fireObject;
-      if ((pFVar5 != (FireObject *)0x0) &&
-         (pTVar13 = (pFVar5->fields).triggerBoxEvents, pTVar13 != (TriggerBoxEvents *)0x0)) {
-        pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pTVar13,(MethodInfo *)0x0);
-        if (pTVar14 != (Transform *)0x0) {
+                (pMVar1,(float)PVar15.m_ParticleSystem * _UNK_?,(MethodInfo *)0x0);
+      pFVar6 = (pMVar1->fields).fireObject;
+      if ((pFVar6 != (FireObject *)0x0) &&
+         (pTVar16 = (pFVar6->fields).triggerBoxEvents, pTVar16 != (TriggerBoxEvents *)0x0)) {
+        pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pTVar16,(MethodInfo *)0x0);
+        if (pTVar17 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                    ((Vector3 *)&stack0xffffffcc,pTVar14,(MethodInfo *)0x0);
-          pFVar5 = (this_02->fields).fireObject;
-          if ((pFVar5 != (FireObject *)0x0) &&
-             (pTVar13 = (pFVar5->fields).triggerBoxEvents, pTVar13 != (TriggerBoxEvents *)0x0)) {
-            PVar15.m_ParticleSystem = PStack_12.m_ParticleSystem;
-            PVar16.m_ParticleSystem = PStack_12.m_ParticleSystem;
-            PVar17.m_ParticleSystem = PStack_12.m_ParticleSystem;
-            pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pTVar13,(MethodInfo *)0x0);
-            if (pTVar14 != (Transform *)0x0) {
-              value_00.y = (float)PVar16.m_ParticleSystem;
+                    ((Vector3 *)&stack0xffffffcc,pTVar17,(MethodInfo *)0x0);
+          pFVar6 = (pMVar1->fields).fireObject;
+          if ((pFVar6 != (FireObject *)0x0) &&
+             (pTVar16 = (pFVar6->fields).triggerBoxEvents, pTVar16 != (TriggerBoxEvents *)0x0)) {
+            PVar18.m_ParticleSystem = PVar15.m_ParticleSystem;
+            PVar19.m_ParticleSystem = PVar15.m_ParticleSystem;
+            pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pTVar16,(MethodInfo *)0x0);
+            if (pTVar17 != (Transform *)0x0) {
+              value_00.y = (float)PVar18.m_ParticleSystem;
               value_00.x = (float)PVar15.m_ParticleSystem;
-              value_00.z = (float)PVar17.m_ParticleSystem;
+              value_00.z = (float)PVar19.m_ParticleSystem;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                        (pTVar14,value_00,(MethodInfo *)0x0);
+                        (pTVar17,value_00,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
-                func_?();
-                func_?();
+                func_?(&TypeInfo__CullingSubscriberBase);
+                func_?(&
+                                TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                               );
                 cRam_? = '\x01';
               }
-              pCVar18 = (this_02->fields)._.cullingSubscriberBase;
-              if (pCVar18 != (CullingSubscriberBase *)0x0) {
-                CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar18,(MethodInfo *)0x0);
-                radius.m_ParticleSystem = (ParticleSystem *)(this_02->fields).damageRadius;
-                puVar19 = (undefined8 *)(*(this_02->klass->vtable).get_WorldPosition_1.methodPtr)();
-                PVar20.m_ParticleSystem = *(ParticleSystem **)(puVar19 + 1);
-                uVar21 = (undefined4)*puVar19;
-                uVar22 = (undefined4)((ulonglong)*puVar19 >> 0x20);
-                PStack_12.m_ParticleSystem = (ParticleSystem *)func_?();
-                if ((UnityAction_1_UnityEngine_Vector2_ *)PStack_12.m_ParticleSystem !=
-                    (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
-                  Vector2]::UnityAction_1_UnityEngine_Vector2___ctor
-                            ((UnityAction_1_UnityEngine_Vector2_ *)PStack_12.m_ParticleSystem,
-                             (Object *)this_02,(this_02->klass->vtable).OnStateChanged.method,
-                             (MethodInfo *)0x0);
-                  pCVar18 = (CullingSubscriberBase *)func_?();
-                  if (pCVar18 != (CullingSubscriberBase *)0x0) {
-                    position.y = (float)uVar22;
-                    position.x = (float)uVar21;
-                    position.z = (float)PVar20.m_ParticleSystem;
-                    CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                              (pCVar18,(float)radius.m_ParticleSystem,position,
-                               (UnityAction_1_UnityEngine_CullingGroupEvent_ *)
-                               PStack_12.m_ParticleSystem,(MethodInfo *)0x0);
-                    (this_02->fields)._.cullingSubscriberBase = pCVar18;
-                    func_?();
-                    pFVar5 = (this_02->fields).fireObject;
-                    if (pFVar5 != (FireObject *)0x0) {
-                      this_01 = (pFVar5->fields).audioSource;
-                      pAVar23 = (((this_02->fields).fireObject)->fields).soundIntensityScale;
-                      if (pAVar23 != (AnimationCurve *)0x0) {
-                        fVar24 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                 AnimationCurve_Evaluate(pAVar23,(float)this,(MethodInfo *)0x0);
-                        if (this_01 != (AudioSource *)0x0) {
-                          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                          AudioSource_set_volume(this_01,fVar24,(MethodInfo *)0x0);
-                          if ((float)this < _UNK_?) {
-                            if (cRam_? == '\0') {
-                              func_?();
-                              cRam_? = '\x01';
-                            }
-                            pFVar5 = (this_02->fields).fireObject;
-                            if ((pFVar5 != (FireObject *)0x0) &&
-                               (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                               pPVar6 != (ParticleSystem *)0x0)) {
+              pCVar20 = (pMVar1->fields)._.cullingSubscriberBase;
+              if (pCVar20 != (CullingSubscriberBase *)0x0) {
+                CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar20,(MethodInfo *)0x0);
+                radius.m_ParticleSystem = (ParticleSystem *)(pMVar1->fields).damageRadius;
+                puVar21 = (undefined8 *)
+                          (*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)
+                                    (&stack0xffffffcc,pMVar1,
+                                     (pMVar1->klass->vtable).set_WorldPosition.methodPtr);
+                PVar15.m_ParticleSystem = *(ParticleSystem **)(puVar21 + 1);
+                uVar22 = (undefined4)*puVar21;
+                uVar23 = (undefined4)((ulonglong)*puVar21 >> 0x20);
+                this_02 = (UnityAction_1_UnityEngine_Vector2_ *)
+                          func_?(
+                                         TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                                         );
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]
+                ::UnityAction_1_UnityEngine_Vector2___ctor
+                          (this_02,(Object *)pMVar1,
+                           (pMVar1->klass->vtable).UpdateControllerUpdate_1.methodPtr,
+                           (MethodInfo *)0x0);
+                pCVar20 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+                position.y = (float)uVar23;
+                position.x = (float)uVar22;
+                position.z = (float)PVar15.m_ParticleSystem;
+                CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                          (pCVar20,(float)radius.m_ParticleSystem,position,
+                           (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_02,(MethodInfo *)0x0
+                          );
+                pMVar1 = this;
+                (this->fields)._.cullingSubscriberBase = pCVar20;
+                func_?();
+                pFVar6 = (pMVar1->fields).fireObject;
+                if (pFVar6 != (FireObject *)0x0) {
+                  this_01 = (pFVar6->fields).audioSource;
+                  pAVar24 = (((pMVar1->fields).fireObject)->fields).soundIntensityScale;
+                  if (pAVar24 != (AnimationCurve *)0x0) {
+                    this = (MVFire *)
+                           UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                           AnimationCurve_Evaluate
+                                     (pAVar24,(float)PStack_13.m_ParticleSystem,(MethodInfo *)0x0);
+                    if (this_01 != (AudioSource *)0x0) {
+                      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
+                                (this_01,(float)this,(MethodInfo *)0x0);
+                      if ((float)PStack_13.m_ParticleSystem < _UNK_?) {
+                        if (cRam_? == '\0') {
+                          func_?(&TypeInfo__UnityEngine__AnimationCurve);
+                          cRam_? = '\x01';
+                        }
+                        pFVar6 = (pMVar1->fields).fireObject;
+                        if ((pFVar6 != (FireObject *)0x0) &&
+                           (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                           pPVar7 != (ParticleSystem *)0x0)) {
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                          ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                          ParticleSystem+EmissionModule::
+                          ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected
+                                    ((ParticleSystem_EmissionModule *)&stack0xffffffe4,10.0,
+                                     (MethodInfo *)0x0);
+                          pFVar6 = (pMVar1->fields).fireObject;
+                          if ((pFVar6 != (FireObject *)0x0) &&
+                             (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                             pPVar7 != (ParticleSystem *)0x0)) {
+                            this = (MVFire *)
+                                   UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem
+                                   ::ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+                            UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                            ParticleSystem+MainModule::
+                            ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
+                                      ((ParticleSystem_MainModule *)&this,0.4,(MethodInfo *)0x0);
+                            UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                            ParticleSystem+MainModule::
+                            ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
+                                      ((ParticleSystem_MainModule *)&this,0.5,(MethodInfo *)0x0);
+                            pFVar6 = (pMVar1->fields).fireObject;
+                            if ((pFVar6 != (FireObject *)0x0) &&
+                               (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                               pPVar7 != (ParticleSystem *)0x0)) {
                               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                              ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
+                              ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
                               UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                              ParticleSystem+EmissionModule::
-                              ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected
-                                        ((ParticleSystem_EmissionModule *)&stack0xffffffe4,10.0,
+                              ParticleSystem+ShapeModule::
+                              ParticleSystem_ShapeModule_set_randomDirectionAmount_Injected
+                                        ((ParticleSystem_ShapeModule *)&stack0xffffffe8,0.0,
                                          (MethodInfo *)0x0);
-                              pFVar5 = (this_02->fields).fireObject;
-                              if ((pFVar5 != (FireObject *)0x0) &&
-                                 (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                 pPVar6 != (ParticleSystem *)0x0)) {
-                                this = (MVFire *)
-                                       UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                       ParticleSystem::ParticleSystem_get_collision
-                                                 (pPVar6,(MethodInfo *)0x0);
-                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                ParticleSystem+MainModule::
-                                ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
-                                          ((ParticleSystem_MainModule *)&this,0.4,(MethodInfo *)0x0)
-                                ;
-                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                ParticleSystem+MainModule::
-                                ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
-                                          ((ParticleSystem_MainModule *)&this,0.5,(MethodInfo *)0x0)
-                                ;
-                                pFVar5 = (this_02->fields).fireObject;
-                                if ((pFVar5 != (FireObject *)0x0) &&
-                                   (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                   pPVar6 != (ParticleSystem *)0x0)) {
-                                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem
-                                  ::ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
+                              pFVar6 = (pMVar1->fields).fireObject;
+                              if ((pFVar6 != (FireObject *)0x0) &&
+                                 (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                                 pPVar7 != (ParticleSystem *)0x0)) {
+                                PStack_13.m_ParticleSystem =
+                                     (ParticleSystem *)
+                                     UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                     ParticleSystem::ParticleSystem_get_collision
+                                               (pPVar7,(MethodInfo *)0x0);
+                                pAVar24 = (AnimationCurve *)func_?();
+                                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                AnimationCurve__ctor_1(pAVar24,(MethodInfo *)0x0);
+                                if (pAVar24 != (AnimationCurve *)0x0) {
+                                  UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                  AnimationCurve_AddKey(pAVar24,0.0,0.5,(MethodInfo *)0x0);
+                                  UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                  AnimationCurve_AddKey(pAVar24,0.6,0.5,(MethodInfo *)0x0);
+                                  UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                  AnimationCurve_AddKey(pAVar24,1.0,0.1,(MethodInfo *)0x0);
+                                  this_03 = (ParticleSystem_MinMaxCurve *)&stack0xffffffc0;
+                                  pAVar25 = (AnimationCurve *)0x3f800000;
+                                  puVar26 = &UNK_?;
                                   UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                  ParticleSystem+ShapeModule::
-                                  ParticleSystem_ShapeModule_set_randomDirectionAmount_Injected
-                                            ((ParticleSystem_ShapeModule *)&stack0xffffffe8,0.0,
-                                             (MethodInfo *)0x0);
-                                  pFVar5 = (this_02->fields).fireObject;
-                                  if ((pFVar5 != (FireObject *)0x0) &&
-                                     (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                     pPVar6 != (ParticleSystem *)0x0)) {
-                                    PStack_12.m_ParticleSystem =
-                                         (ParticleSystem *)
-                                         UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                         ParticleSystem::ParticleSystem_get_collision
-                                                   (pPVar6,(MethodInfo *)0x0);
-                                    pAVar23 = (AnimationCurve *)func_?();
-                                    if (pAVar23 != (AnimationCurve *)0x0) {
-                                      UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                      AnimationCurve__ctor_1(pAVar23,(MethodInfo *)0x0);
-                                      UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                      AnimationCurve_AddKey(pAVar23,0.0,0.5,(MethodInfo *)0x0);
-                                      UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                      AnimationCurve_AddKey(pAVar23,0.6,0.5,(MethodInfo *)0x0);
-                                      fVar25 = 0.1;
-                                      fVar24 = 1.0;
-                                      UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                      AnimationCurve_AddKey(pAVar23,1.0,0.1,(MethodInfo *)0x0);
-                                      this_03 = (ParticleSystem_MinMaxCurve *)&stack0xffffffc0;
-                                      pAVar26 = (AnimationCurve *)&UNK_?;
-                                      UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                      ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_1
-                                                (this_03,1.0,pAVar23,(MethodInfo *)0x0);
-                                      value_02.m_CurveMultiplier = fVar25;
-                                      value_02.m_Mode = (int32_t)fVar24;
-                                      value_02.m_CurveMin = pAVar26;
-                                      value_02.m_CurveMax = (AnimationCurve *)this_03;
-                                      value_02.m_ConstantMin = fVar24;
-                                      value_02.m_ConstantMax = fVar25;
-                                      UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                      ParticleSystem+SizeOverLifetimeModule::
-                                      ParticleSystem_SizeOverLifetimeModule_set_size
-                                                ((ParticleSystem_SizeOverLifetimeModule *)&PStack_12
-                                                 ,value_02,(MethodInfo *)0x0);
-                                      return;
-                                    }
-                                  }
+                                  ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_1
+                                            (this_03,1.0,pAVar24,(MethodInfo *)0x0);
+                                  value_02.m_CurveMultiplier = (float)this_03;
+                                  value_02.m_Mode = (int32_t)puVar26;
+                                  value_02.m_CurveMin = pAVar25;
+                                  value_02.m_CurveMax = pAVar24;
+                                  value_02.m_ConstantMin = (float)pAVar25;
+                                  value_02.m_ConstantMax = (float)pAVar24;
+                                  UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                  ParticleSystem+SizeOverLifetimeModule::
+                                  ParticleSystem_SizeOverLifetimeModule_set_size
+                                            ((ParticleSystem_SizeOverLifetimeModule *)&PStack_13,
+                                             value_02,(MethodInfo *)0x0);
+                                  return;
                                 }
                               }
                             }
                           }
-                          else {
-                            if (cRam_? == '\0') {
-                              func_?();
-                              cRam_? = '\x01';
-                            }
-                            pFVar5 = (this_02->fields).fireObject;
-                            if ((pFVar5 != (FireObject *)0x0) &&
-                               (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                               pPVar6 != (ParticleSystem *)0x0)) {
+                        }
+                      }
+                      else {
+                        if (cRam_? == '\0') {
+                          func_?(&TypeInfo__UnityEngine__AnimationCurve);
+                          cRam_? = '\x01';
+                        }
+                        pFVar6 = (pMVar1->fields).fireObject;
+                        if ((pFVar6 != (FireObject *)0x0) &&
+                           (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                           pPVar7 != (ParticleSystem *)0x0)) {
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                          ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+                          UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                          ParticleSystem+EmissionModule::
+                          ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected
+                                    ((ParticleSystem_EmissionModule *)&stack0xffffffe4,22.0,
+                                     (MethodInfo *)0x0);
+                          pFVar6 = (pMVar1->fields).fireObject;
+                          if ((pFVar6 != (FireObject *)0x0) &&
+                             (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                             pPVar7 != (ParticleSystem *)0x0)) {
+                            this = (MVFire *)
+                                   UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem
+                                   ::ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+                            UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                            ParticleSystem+MainModule::
+                            ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
+                                      ((ParticleSystem_MainModule *)&this,0.6,(MethodInfo *)0x0);
+                            _unity_self = (ParticleSystem_MainModule *)&this;
+                            pAVar24 = (AnimationCurve *)0x0;
+                            fVar9 = 1.6;
+                            UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                            ParticleSystem+MainModule::
+                            ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
+                                      (_unity_self,1.6,(MethodInfo *)0x0);
+                            pFVar6 = (pMVar1->fields).fireObject;
+                            if ((pFVar6 != (FireObject *)0x0) &&
+                               (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                               pPVar7 != (ParticleSystem *)0x0)) {
+                              pAVar27 = (AnimationCurve *)&UNK_?;
                               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                              ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-                              UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                              ParticleSystem+EmissionModule::
-                              ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected
-                                        ((ParticleSystem_EmissionModule *)&stack0xffffffe4,22.0,
-                                         (MethodInfo *)0x0);
-                              pFVar5 = (this_02->fields).fireObject;
-                              if ((pFVar5 != (FireObject *)0x0) &&
-                                 (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                 pPVar6 != (ParticleSystem *)0x0)) {
-                                this = (MVFire *)
+                              ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+                              puVar26 = &UNK_?;
+                              pAVar28 = TypeInfo__UnityEngine__AnimationCurve;
+                              pAVar25 = (AnimationCurve *)func_?();
+                              UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                              AnimationCurve__ctor_1(pAVar25,(MethodInfo *)0x0);
+                              if (pAVar25 != (AnimationCurve *)0x0) {
+                                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                AnimationCurve_AddKey(pAVar25,0.0,0.4,(MethodInfo *)0x0);
+                                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                AnimationCurve_AddKey(pAVar25,0.6,1.0,(MethodInfo *)0x0);
+                                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                AnimationCurve_AddKey(pAVar25,1.0,0.1,(MethodInfo *)0x0);
+                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_1
+                                          ((ParticleSystem_MinMaxCurve *)&stack0xffffffc0,1.0,
+                                           pAVar25,(MethodInfo *)0x0);
+                                value.m_CurveMultiplier = fVar9;
+                                value.m_Mode = (int32_t)_unity_self;
+                                value.m_CurveMin = pAVar24;
+                                value.m_CurveMax = pAVar27;
+                                value.m_ConstantMin = (float)puVar26;
+                                value.m_ConstantMax = (float)pAVar28;
+                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                ParticleSystem+SizeOverLifetimeModule::
+                                ParticleSystem_SizeOverLifetimeModule_set_size
+                                          ((ParticleSystem_SizeOverLifetimeModule *)&stack0xffffffe8
+                                           ,value,(MethodInfo *)0x0);
+                                pFVar6 = (pMVar1->fields).fireObject;
+                                if ((pFVar6 != (FireObject *)0x0) &&
+                                   (pPVar7 = (pFVar6->fields).fireParticleSystem,
+                                   pPVar7 != (ParticleSystem *)0x0)) {
+                                  PStack_13.m_ParticleSystem =
+                                       (ParticleSystem *)
                                        UnityEngine.ParticleSystemModule.dll::UnityEngine::
                                        ParticleSystem::ParticleSystem_get_collision
-                                                 (pPVar6,(MethodInfo *)0x0);
-                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                ParticleSystem+MainModule::
-                                ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
-                                          ((ParticleSystem_MainModule *)&this,0.6,(MethodInfo *)0x0)
-                                ;
-                                _unity_self = (ParticleSystem_MainModule *)&this;
-                                pAVar23 = (AnimationCurve *)0x0;
-                                fVar24 = 1.6;
-                                UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                ParticleSystem+MainModule::
-                                ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
-                                          (_unity_self,1.6,(MethodInfo *)0x0);
-                                pFVar5 = (this_02->fields).fireObject;
-                                if ((pFVar5 != (FireObject *)0x0) &&
-                                   (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                   pPVar6 != (ParticleSystem *)0x0)) {
-                                  pAVar27 = (AnimationCurve *)&UNK_?;
-                                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem
-                                  ::ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-                                  puVar28 = &UNK_?;
-                                  pAVar29 = TypeInfo__UnityEngine__AnimationCurve;
-                                  pAVar26 = (AnimationCurve *)func_?();
-                                  if (pAVar26 != (AnimationCurve *)0x0) {
-                                    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                    AnimationCurve__ctor_1(pAVar26,(MethodInfo *)0x0);
-                                    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                    AnimationCurve_AddKey(pAVar26,0.0,0.4,(MethodInfo *)0x0);
-                                    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                    AnimationCurve_AddKey(pAVar26,0.6,1.0,(MethodInfo *)0x0);
-                                    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                    AnimationCurve_AddKey(pAVar26,1.0,0.1,(MethodInfo *)0x0);
-                                    UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                    ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_1
-                                              ((ParticleSystem_MinMaxCurve *)&stack0xffffffc0,1.0,
-                                               pAVar26,(MethodInfo *)0x0);
-                                    value.m_CurveMultiplier = fVar24;
-                                    value.m_Mode = (int32_t)_unity_self;
-                                    value.m_CurveMin = pAVar23;
-                                    value.m_CurveMax = pAVar27;
-                                    value.m_ConstantMin = (float)puVar28;
-                                    value.m_ConstantMax = (float)pAVar29;
-                                    UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                    ParticleSystem+SizeOverLifetimeModule::
-                                    ParticleSystem_SizeOverLifetimeModule_set_size
-                                              ((ParticleSystem_SizeOverLifetimeModule *)
-                                               &stack0xffffffe8,value,(MethodInfo *)0x0);
-                                    pFVar5 = (this_02->fields).fireObject;
-                                    if ((pFVar5 != (FireObject *)0x0) &&
-                                       (pPVar6 = (pFVar5->fields).fireParticleSystem,
-                                       pPVar6 != (ParticleSystem *)0x0)) {
-                                      PStack_12.m_ParticleSystem =
-                                           (ParticleSystem *)
-                                           UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                           ParticleSystem::ParticleSystem_get_collision
-                                                     (pPVar6,(MethodInfo *)0x0);
-                                      UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                                      ParticleSystem+ShapeModule::
-                                      ParticleSystem_ShapeModule_set_randomDirectionAmount_Injected
-                                                (&PStack_12,1.0,(MethodInfo *)0x0);
-                                      return;
-                                    }
-                                  }
+                                                 (pPVar7,(MethodInfo *)0x0);
+                                  UnityEngine.ParticleSystemModule.dll::UnityEngine::
+                                  ParticleSystem+ShapeModule::
+                                  ParticleSystem_ShapeModule_set_randomDirectionAmount_Injected
+                                            (&PStack_13,1.0,(MethodInfo *)0x0);
+                                  return;
                                 }
                               }
                             }
@@ -1168,78 +1102,78 @@ code_?:
     }
   }
   else {
-    pDVar8 = (this_02->fields)._._._.data;
-    if (pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    PStack_12.m_ParticleSystem =
-         (ParticleSystem *)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-         Dictionary_2_System_Object_System_Object__get_Item
-                   (pDVar8,(Object *)StringLiteral_C,
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    this = (MVFire *)TypeInfo__System__Single;
-    if ((UnityAction_1_UnityEngine_Vector2_ *)PStack_12.m_ParticleSystem ==
-        (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-      iVar30 = 0;
+    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (pMVar1->fields)._._._.data;
+    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar4,(Object *)StringLiteral_C,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    PStack_13.m_ParticleSystem = (ParticleSystem *)TypeInfo__System__Single;
+    if (TVar10.m_Index == 0) {
+      iVar29 = 0;
 code_?:
-      pFVar5 = (this_02->fields).fireObject;
-      if ((pFVar5 == (FireObject *)0x0) ||
-         (pPVar6 = (pFVar5->fields).fireParticleSystem, pPVar6 == (ParticleSystem *)0x0))
+      pFVar6 = (pMVar1->fields).fireObject;
+      if ((pFVar6 == (FireObject *)0x0) ||
+         (pPVar7 = (pFVar6->fields).fireParticleSystem, pPVar7 == (ParticleSystem *)0x0))
       goto code_?;
-      PStack_1.m_ParticleSystem =
+      PStack_2.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar6,(MethodInfo *)0x0);
-      if (iVar30 == 0) goto code_?;
-      if (((*(int *)(iVar30 + 0xc) != 0) && (1 < *(uint *)(iVar30 + 0xc))) &&
-         (2 < *(uint *)(iVar30 + 0xc))) {
-        color.g = (float)*(undefined4 *)(iVar30 + 0x14);
-        color.r = (float)*(undefined4 *)(iVar30 + 0x10);
-        color.b = (float)*(undefined4 *)(iVar30 + 0x18);
+           ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+      if (iVar29 == 0) goto code_?;
+      if (((*(int *)(iVar29 + 0xc) != 0) && (1 < *(uint *)(iVar29 + 0xc))) &&
+         (2 < *(uint *)(iVar29 + 0xc))) {
+        color.g = (float)*(undefined4 *)(iVar29 + 0x14);
+        color.r = (float)*(undefined4 *)(iVar29 + 0x10);
+        color.b = (float)*(undefined4 *)(iVar29 + 0x18);
         color.a = 1.0;
-        pPVar31 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+        pPVar30 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                   ParticleSystem_MinMaxGradient_op_Implicit
                             ((ParticleSystem_MinMaxGradient *)&stack0xffffffac,color,
                              (MethodInfo *)0x0);
-        uVar32 = (pPVar31->m_ColorMax).b;
-        uVar33 = pPVar31->m_Mode;
-        uVar34 = pPVar31->m_GradientMin;
-        uVar35 = pPVar31->m_GradientMax;
-        uVar36 = (pPVar31->m_ColorMin).r;
-        uVar37 = (pPVar31->m_ColorMin).g;
-        uVar38 = (pPVar31->m_ColorMin).b;
-        uVar39 = (pPVar31->m_ColorMin).a;
-        value_01.m_ColorMin.a = (float)uVar39;
-        value_01.m_ColorMin.b = (float)uVar38;
-        value_01.m_ColorMin.g = (float)uVar37;
-        value_01.m_ColorMin.r = (float)uVar36;
-        uVar40 = (pPVar31->m_ColorMax).r;
-        uVar41 = (pPVar31->m_ColorMax).g;
-        value_01.m_ColorMax.g = (float)uVar41;
-        value_01.m_ColorMax.r = (float)uVar40;
-        value_01.m_GradientMax = (Gradient *)uVar35;
-        value_01.m_GradientMin = (Gradient *)uVar34;
-        value_01.m_Mode = uVar33;
-        value_01.m_ColorMax.b = (float)uVar32;
-        value_01.m_ColorMax.a = (pPVar31->m_ColorMax).a;
+        uVar31 = (pPVar30->m_ColorMax).b;
+        uVar32 = pPVar30->m_Mode;
+        uVar33 = pPVar30->m_GradientMin;
+        uVar34 = pPVar30->m_GradientMax;
+        uVar35 = (pPVar30->m_ColorMin).r;
+        uVar36 = (pPVar30->m_ColorMin).g;
+        uVar37 = (pPVar30->m_ColorMin).b;
+        uVar38 = (pPVar30->m_ColorMin).a;
+        value_01.m_ColorMin.a = (float)uVar38;
+        value_01.m_ColorMin.b = (float)uVar37;
+        value_01.m_ColorMin.g = (float)uVar36;
+        value_01.m_ColorMin.r = (float)uVar35;
+        uVar39 = (pPVar30->m_ColorMax).r;
+        uVar40 = (pPVar30->m_ColorMax).g;
+        value_01.m_ColorMax.g = (float)uVar40;
+        value_01.m_ColorMax.r = (float)uVar39;
+        value_01.m_GradientMax = (Gradient *)uVar34;
+        value_01.m_GradientMin = (Gradient *)uVar33;
+        value_01.m_Mode = uVar32;
+        value_01.m_ColorMax.b = (float)uVar31;
+        value_01.m_ColorMax.a = (pPVar30->m_ColorMax).a;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-        ParticleSystem_MainModule_set_startColor(&PStack_1,value_01,(MethodInfo *)0x0);
+        ParticleSystem_MainModule_set_startColor(&PStack_2,value_01,(MethodInfo *)0x0);
         goto code_?;
       }
       func_?();
     }
     else {
-      iVar30 = func_?();
-      if (iVar30 != 0) goto code_?;
+      iVar29 = func_?();
+      if (iVar29 != 0) goto code_?;
     }
-    func_?();
+    uVar11 = func_?(TVar10.m_Index,PStack_13.m_ParticleSystem);
 code_?:
-    func_?();
+    func_?(uVar11);
   }
 code_?:
   func_?();
-  pcVar42 = (code *)swi(3);
-  (*pcVar42)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -1287,9 +1221,9 @@ void Assembly-CSharp.dll::MVFire::MVFire_SetOriginalAnimation(MVFire *this,Metho
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
         ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
         this_00 = (AnimationCurve *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
+                  (this_00,(MethodInfo *)0x0);
         if (this_00 != (AnimationCurve *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
-                    (this_00,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
                     (this_00,0.0,0.4,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
@@ -1410,19 +1344,39 @@ void Assembly-CSharp.dll::MVFire::MVFire_TriggerAreaEnter
   this_00 = (this->fields).woList;
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((e != (TriggerEventArgs *)0x0) && (this_01 != (MVWorldObjectClientManager *)0x0)) {
-    item = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+    item = (MVWorldObjectClient *)
+           MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                      (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0);
+    pMVar1 = 
+    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_;
     if (this_00 != (List_1_MVWorldObjectClient_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)item,
-                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                );
-      return;
+      piVar2 = &(this_00->fields)._version;
+      *piVar2 = *piVar2 + 1;
+      pMVar3 = (this_00->fields)._items;
+      if (pMVar3 != (MVWorldObjectClient__Array *)0x0) {
+        uVar4 = (this_00->fields)._size;
+        if (pMVar3->max_length <= uVar4) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__AddWithResize
+                    ((List_1_System_Object_ *)this_00,(Object *)item,
+                     pMVar1->klass->rgctx_data[0xe].method);
+          return;
+        }
+        (this_00->fields)._size = uVar4 + 1;
+        if (uVar4 < pMVar3->max_length) {
+          pMVar3->vector[uVar4] = item;
+          func_?(pMVar3->vector + uVar4);
+          return;
+        }
+        goto code_?;
+      }
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1439,18 +1393,15 @@ void Assembly-CSharp.dll::MVFire::MVFire_TriggerAreaExit
                    );
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).woList;
+  this_00 = (this->fields).woList;
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((e != (TriggerEventArgs *)0x0) && (this_01 != (MVWorldObjectClientManager *)0x0)) {
-    item = (RegexCharClass_SingleRange)
-           MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+    item = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                      (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0);
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove
-                (this_00,item,
+    if (this_00 != (List_1_MVWorldObjectClient_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__Remove
+                ((List_1_System_Object_ *)this_00,(Object *)item,
                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Remove_MVWorldObjectClient_
                 );
       return;
@@ -1568,90 +1519,82 @@ void Assembly-CSharp.dll::MVFire::MVFire__ctor
     func_?(&MethodInfo__MVFire__TriggerAreaExit_System__Object__TriggerEventArgs_);
     cRam_? = '\x01';
   }
-  this_00 = (FireObject__Class *)
+  this_01 = (List_1_MVWorldObjectClient_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
-  if (this_00 != (FireObject__Class *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-    (this->fields).woList = (List_1_MVWorldObjectClient_ *)this_00;
-    func_?(&(this->fields).woList,this_00);
-    (this->fields).damageRadius = 2.5;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
-      cRam_? = '\x01';
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+  (this->fields).woList = this_01;
+  func_?(&(this->fields).woList,this_01);
+  (this->fields).damageRadius = 2.5;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    MVLogicObject::MVLogicObject__ctor
+              ((MVLogicObject *)this,data,(pPVar1->fields).mvFirePrefab,worldObjects,
+               (MethodInfo *)0x0);
+    uVar2 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    pFVar3 = (FireObject *)(this->fields)._._.component;
+    *(uint *)&(this->fields)._._.interactionFlags =
+         (uint)(this->fields)._._.interactionFlags | 0x18000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar2;
+    if (pFVar3 == (FireObject *)0x0) {
+      (this->fields).fireObject = (FireObject *)0x0;
     }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar1 != (PrefabPool *)0x0) {
-      MVLogicObject::MVLogicObject__ctor
-                ((MVLogicObject *)this,data,(pPVar1->fields).mvFirePrefab,worldObjects,
-                 (MethodInfo *)0x0);
-      uVar2 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-      pFVar3 = (FireObject *)(this->fields)._._.component;
-      *(uint *)&(this->fields)._._.interactionFlags =
-           (uint)(this->fields)._._.interactionFlags | 0x18000;
-      *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar2;
-      this_00 = TypeInfo__FireObject;
-      if (pFVar3 == (FireObject *)0x0) {
-        (this->fields).fireObject = (FireObject *)0x0;
-      }
-      else {
-        if (((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchyDepth <
-             (TypeInfo__FireObject->_1).typeHierarchyDepth) ||
-           ((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchy
-            [(TypeInfo__FireObject->_1).typeHierarchyDepth - 1] !=
-            (Il2CppClass *)TypeInfo__FireObject)) goto code_?;
-        (this->fields).fireObject = pFVar3;
-        this_00 = TypeInfo__FireObject;
-        if (((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchyDepth <
-             (TypeInfo__FireObject->_1).typeHierarchyDepth) ||
-           ((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchy
-            [(TypeInfo__FireObject->_1).typeHierarchyDepth - 1] !=
-            (Il2CppClass *)TypeInfo__FireObject)) goto code_?;
-      }
-      func_?(&(this->fields).fireObject,pFVar3);
-      pFVar3 = (this->fields).fireObject;
-      if (pFVar3 != (FireObject *)0x0) {
-        this_00 = (FireObject__Class *)(pFVar3->fields).audioSource;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                          (-0.2,0.2,(MethodInfo *)0x0);
-        if (this_00 != (FireObject__Class *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                    ((AudioSource *)this_00,fVar4 + _UNK_?,(MethodInfo *)0x0);
-          pFVar3 = (this->fields).fireObject;
-          if (pFVar3 != (FireObject *)0x0) {
-            pTVar5 = (pFVar3->fields).triggerBoxEvents;
-            this_00 = (FireObject__Class *)
-                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            if (this_00 != (FireObject__Class *)0x0) {
+    else {
+      if (((((ObjectPrefab__Class *)pFVar3->klass)->_1).naturalAligment <
+           (TypeInfo__FireObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__FireObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__FireObject))
+      goto code_?;
+      (this->fields).fireObject = pFVar3;
+      if (((((ObjectPrefab__Class *)pFVar3->klass)->_1).naturalAligment <
+           (TypeInfo__FireObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pFVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__FireObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__FireObject))
+      goto code_?;
+    }
+    func_?();
+    pFVar3 = (this->fields).fireObject;
+    if (pFVar3 != (FireObject *)0x0) {
+      this_00 = (pFVar3->fields).audioSource;
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+                        (-0.2,0.2,(MethodInfo *)0x0);
+      if (this_00 != (AudioSource *)0x0) {
+        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
+                  (this_00,fVar4 + _UNK_?,(MethodInfo *)0x0);
+        pFVar3 = (this->fields).fireObject;
+        if (pFVar3 != (FireObject *)0x0) {
+          pTVar5 = (pFVar3->fields).triggerBoxEvents;
+          pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar6,(Object *)this,
+                     MethodInfo__MVFire__TriggerAreaEnter_System__Object__TriggerEventArgs_,
+                     (MethodInfo *)0x0);
+          if (pTVar5 != (TriggerBoxEvents *)0x0) {
+            TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                      (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+            pFVar3 = (this->fields).fireObject;
+            if (pFVar3 != (FireObject *)0x0) {
+              pTVar5 = (pFVar3->fields).triggerBoxEvents;
+              pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+                       func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
               Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)this_00,(Object *)this,
-                         MethodInfo__MVFire__TriggerAreaEnter_System__Object__TriggerEventArgs_,
+                        (pUVar6,(Object *)this,
+                         MethodInfo__MVFire__TriggerAreaExit_System__Object__TriggerEventArgs_,
                          (MethodInfo *)0x0);
               if (pTVar5 != (TriggerBoxEvents *)0x0) {
-                TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                          (pTVar5,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
-                pFVar3 = (this->fields).fireObject;
-                if (pFVar3 != (FireObject *)0x0) {
-                  pTVar5 = (pFVar3->fields).triggerBoxEvents;
-                  this_00 = (FireObject__Class *)
-                            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                  if (this_00 != (FireObject__Class *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              ((UnityAction_2_System_Object_System_Object_ *)this_00,(Object *)this,
-                               MethodInfo__MVFire__TriggerAreaExit_System__Object__TriggerEventArgs_
-                               ,(MethodInfo *)0x0);
-                    if (pTVar5 != (TriggerBoxEvents *)0x0) {
-                      TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                (pTVar5,(EventHandler_1_TriggerEventArgs_ *)this_00,
-                                 (MethodInfo *)0x0);
-                      return;
-                    }
-                  }
-                }
+                TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                          (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -1660,22 +1603,11 @@ void Assembly-CSharp.dll::MVFire::MVFire__ctor
     }
   }
   func_?();
-  pFVar3 = extraout_EDX;
 code_?:
-  func_?(pFVar3,this_00);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVFire::MVFire_get_DocumentationType(MVFire *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_Fire;
 }
 
 

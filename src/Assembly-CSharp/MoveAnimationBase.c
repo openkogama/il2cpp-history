@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::MoveAnimationBase::MoveAnimationBase_SetTarget
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
     return;
   }

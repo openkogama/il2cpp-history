@@ -10,12 +10,12 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     cRam_? = '\x01';
   }
   if ((ass != (Assembly *)0x0) &&
-     (iVar1 = (*(ass->klass->vtable).GetName_1.methodPtr)(ass,(ass->klass->vtable).GetName_1.method)
-     , iVar1 != 0)) {
+     (iVar1 = (*(code *)(ass->klass->vtable).GetName_1.method)
+                        (ass,(ass->klass->vtable).GetModulesInternal.methodPtr), iVar1 != 0)) {
     b = *(String **)(iVar1 + 8);
     this_00 = (AssemblyName *)
-              (*(ass->klass->vtable).GetName_1.methodPtr)(ass,(ass->klass->vtable).GetName_1.method)
-    ;
+              (*(code *)(ass->klass->vtable).GetName_1.method)
+                        (ass,(ass->klass->vtable).GetModulesInternal.methodPtr);
     if ((this_00 != (AssemblyName *)0x0) &&
        (pBVar2 = mscorlib.dll::System::Reflection::AssemblyName::AssemblyName_GetPublicKeyToken
                            (this_00,(MethodInfo *)0x0), pBVar2 != (Byte__Array *)0x0)) {
@@ -118,10 +118,10 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector);
     cRam_? = '\x01';
   }
-  cVar1 = (*(this->klass->vtable).Init.methodPtr)
+  cVar1 = (*(code *)(this->klass->vtable).Init.method)
                     (this,TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector->
                           static_fields->_Instance_k__BackingField,StringLiteral_Injection_Detector,
-                     (this->klass->vtable).Init.method);
+                     (this->klass->vtable).DisposeInternal.methodPtr);
   if (cVar1 != '\0') {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector);
@@ -136,26 +136,18 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
             func_?(
                            TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::SceneManagement::Scene,_UnityEngine::SceneManagement::LoadSceneMode>
                            );
-  if (this_00 != (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
-    Scene,System::Int32Enum]::
-    UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnLevelWasLoadedNew_UnityEngine__SceneManagement__Scene__UnityEngine__SceneManagement__LoadSceneMode_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0)
-    {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
-    SceneManager_add_sceneLoaded
-              ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_LoadSceneMode_
-                *)this_00,(MethodInfo *)0x0);
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::
+  Scene,System::Int32Enum]::UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor
+            (this_00,(Object *)this,
+             MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnLevelWasLoadedNew_UnityEngine__SceneManagement__Scene__UnityEngine__SceneManagement__LoadSceneMode_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+  SceneManager_add_sceneLoaded
+            ((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_LoadSceneMode_
+              *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -196,8 +188,9 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
       return;
     }
     pIVar5 = pIVar1->klass;
-    ppIStack3 = (InjectionDetector__Class **)(pIVar5->vtable).DisposeInternal.method;
-    (*(pIVar5->vtable).DisposeInternal.methodPtr)();
+    ppIStack3 =
+         (InjectionDetector__Class **)(pIVar5->vtable).DetectorHasAdditionalCallbacks.methodPtr;
+    (*(code *)(pIVar5->vtable).DisposeInternal.method)();
   }
   return;
 }
@@ -285,7 +278,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
         ppAVar4 = ppAVar4 + 1;
       }
       if (ass != (Assembly *)0x0) {
-        pSVar6 = (String *)func_?(8,ass);
+        pSVar6 = (String *)func_?(9,ass);
         *cause = pSVar6;
         func_?(cause,pSVar6);
         return 1;
@@ -309,8 +302,8 @@ int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::Injectio
 {
   if (ass != (Assembly *)0x0) {
     this_00 = (AssemblyName *)
-              (*(ass->klass->vtable).GetName_1.methodPtr)(ass,(ass->klass->vtable).GetName_1.method)
-    ;
+              (*(code *)(ass->klass->vtable).GetName_1.method)
+                        (ass,(ass->klass->vtable).GetModulesInternal.methodPtr);
     if (this_00 != (AssemblyName *)0x0) {
       pBVar1 = mscorlib.dll::System::Reflection::AssemblyName::AssemblyName_GetPublicKeyToken
                          (this_00,(MethodInfo *)0x0);
@@ -394,128 +387,125 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
   systemTypeInstance =
        mscorlib.dll::System::Type::Type_GetTypeFromHandle
                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  this_00 = (TextAsset *)
-            UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
-                      (StringLiteral_fndid,systemTypeInstance,(MethodInfo *)0x0);
-  if (this_00 == (TextAsset *)0x0) {
-    this_00 = (TextAsset *)0x0;
+  pTStack_2 = (TextAsset *)
+               UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
+                         (StringLiteral_fndid,systemTypeInstance,(MethodInfo *)0x0);
+  if (pTStack_2 == (TextAsset *)0x0) {
+    pTStack_2 = (TextAsset *)0x0;
 code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pTStack_2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
       (this->fields).signaturesAreNotGenuine = 1;
       return;
     }
-    pSVar3 = (String__Array *)func_?(TypeInfo__System__String,1);
-    if (pSVar3 == (String__Array *)0x0) goto code_?;
-    if ((::StringLiteral__ != (String *)0x0) &&
-       (iVar4 = func_?(::StringLiteral__,(pSVar3->klass->_0).element_class), iVar4 == 0))
-    goto code_?;
+    iVar4 = func_?(TypeInfo__System__String,1);
     pSVar5 = ::StringLiteral__;
-    if (pSVar3->max_length != 0) {
-      pSVar3->vector[0] = ::StringLiteral__;
-      func_?(pSVar3->vector,pSVar5);
-      if (this_00 != (TextAsset *)0x0) {
+    if (iVar4 == 0) goto code_?;
+    if (*(int *)(iVar4 + 0xc) != 0) {
+      *(String **)(iVar4 + 0x10) = ::StringLiteral__;
+      func_?(iVar4 + 0x10,pSVar5);
+      if (pTStack_2 != (TextAsset *)0x0) {
         buffer = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_get_bytes
-                           (this_00,(MethodInfo *)0x0);
-        this_01 = (MemoryStream *)func_?(TypeInfo__System__IO__MemoryStream);
-        if (this_01 != (MemoryStream *)0x0) {
-          mscorlib.dll::System::IO::MemoryStream::MemoryStream__ctor_2
-                    (this_01,buffer,(MethodInfo *)0x0);
-          this_02 = (InjectionDetector_AllowedAssembly__Class *)
-                    func_?(TypeInfo__System__IO__BinaryReader);
-          if (this_02 != (InjectionDetector_AllowedAssembly__Class *)0x0) {
-            mscorlib.dll::System::IO::BinaryReader::BinaryReader__ctor
-                      ((BinaryReader *)this_02,(Stream *)this_01,(MethodInfo *)0x0);
-            pIVar6 = (this_02->_0).image;
-            iVar7 = (*(code *)pIVar6[7].name)(this_02,pIVar6[7].nameNoExt);
-            iVar4 = iVar7;
-            pIVar8 = (InjectionDetector_AllowedAssembly__Array *)func_?(iVar7,iVar7);
-            (this->fields).allowedAssemblies = pIVar8;
-            func_?(&(this->fields).allowedAssemblies,pIVar8);
-            if (0 < iVar7) {
-              do {
-                pIVar6 = (this_02->_0).image;
-                uVar9 = pIVar6[8].exportedTypeCount;
-                pSVar5 = (String *)(*(code *)pIVar6[8].typeCount)(this_02);
-                if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
-                }
-                pSVar5 = ObscuredTypes::ObscuredString::ObscuredString_EncryptDecrypt_1
-                                    (pSVar5,StringLiteral_Elina,(MethodInfo *)0x0);
-                if ((pSVar5 == (String *)0x0) ||
-                   (pSVar3 = mscorlib.dll::System::String::String_Split_4
-                                       (pSVar5,pSVar3,StringSplitOptions__Enum_RemoveEmptyEntries,
-                                        (MethodInfo *)0x0), pSVar3 == (String__Array *)0x0))
-                goto code_?;
-                iVar10 = pSVar3->max_length;
-                if ((int)iVar10 < 2) {
-                  (this->fields).signaturesAreNotGenuine = 1;
-                  func_?(6,this_02);
-                  func_?(0xd,this_01);
+                           (pTStack_2,(MethodInfo *)0x0);
+        this_00 = (MemoryStream *)func_?(TypeInfo__System__IO__MemoryStream);
+        mscorlib.dll::System::IO::MemoryStream::MemoryStream__ctor_2
+                  (this_00,buffer,(MethodInfo *)0x0);
+        this_01 = (BinaryReader *)func_?(TypeInfo__System__IO__BinaryReader);
+        mscorlib.dll::System::IO::BinaryReader::BinaryReader__ctor
+                  (this_01,(Stream *)this_00,(MethodInfo *)0x0);
+        if (this_01 != (BinaryReader *)0x0) {
+          iVar4 = (*(code *)(this_01->klass->vtable).ReadInt32.method)
+                            (this_01,(this_01->klass->vtable).ReadUInt32.methodPtr);
+          pIVar6 = (InjectionDetector_AllowedAssembly__Array *)
+                   func_?(TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
+                                   ,iVar4);
+          (this->fields).allowedAssemblies = pIVar6;
+          func_?(&(this->fields).allowedAssemblies,pIVar6);
+          iStack_7 = 0;
+          if (0 < iVar4) {
+            do {
+              pSVar8 = (String__Array *)(this_01->klass->vtable).ReadChars.methodPtr;
+              pSVar5 = (String *)(*(code *)(this_01->klass->vtable).ReadString.method)(this_01);
+              if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
+                  cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
+              }
+              pSVar5 = ObscuredTypes::ObscuredString::ObscuredString_EncryptDecrypt_1
+                                 (pSVar5,StringLiteral_Elina,(MethodInfo *)0x0);
+              if ((pSVar5 == (String *)0x0) ||
+                 (pSVar8 = mscorlib.dll::System::String::String_Split_4
+                                     (pSVar5,pSVar8,StringSplitOptions__Enum_RemoveEmptyEntries,
+                                      (MethodInfo *)0x0), pSVar8 == (String__Array *)0x0))
+              goto code_?;
+              iVar9 = pSVar8->max_length;
+              if ((int)iVar9 < 2) {
+                (this->fields).signaturesAreNotGenuine = 1;
+                func_?(6,this_01);
+                if (this_00 != (MemoryStream *)0x0) {
+                  func_?(0x12,this_00);
                   return;
                 }
-                if (iVar10 == 0) goto code_?;
-                iVar7 = iVar10 - 1;
-                item2 = (Object *)func_?(TypeInfo__System__Int32);
-                ppSVar11 = pSVar3->vector;
-                uVar12 = 1;
-                pOVar13 = item2 + 2;
-                do {
-                  ppSVar11 = ppSVar11 + 1;
-                  if (*(uint *)(iVar7 + 0xc) <= uVar12) goto code_?;
-                  iVar7 = 0;
-                  pSVar5 = *ppSVar11;
-                  item1 = (Object *)&UNK_?;
-                  pOVar14 = (Object__Class *)
-                            mscorlib.dll::System::Int32::Int32_Parse(pSVar5,(MethodInfo *)0x0);
-                  if (item2 == (Object *)0x0) goto code_?;
-                  if (item2[1].monitor <= (MonitorData *)(uVar12 - 1)) goto code_?;
-                  pOVar13->klass = pOVar14;
-                  uVar12 = uVar12 + 1;
-                  pOVar13 = (Object *)&pOVar13->monitor;
-                } while ((int)uVar12 < (int)pSVar5);
-                pIVar8 = (this->fields).allowedAssemblies;
-                this_02 = 
-                TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly;
-                this_03 = (Tuple_2_Object_Object_ *)func_?();
-                if (this_03 == (Tuple_2_Object_Object_ *)0x0) goto code_?;
-                pSVar3 = (String__Array *)0x0;
-                mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
-                          (this_03,item1,item2,(MethodInfo *)0x0);
-                if (pIVar8 == (InjectionDetector_AllowedAssembly__Array *)0x0)
                 goto code_?;
-                iVar7 = func_?(this_03,(pIVar8->klass->_0).element_class);
-                if (iVar7 == 0) goto code_?;
-                func_?(uVar9,this_03);
-              } while ((int)(uVar9 + 1) < iVar4);
-            }
-            pIVar6 = (this_02->_0).image;
-            (*(code *)pIVar6[5].exportedTypeCount)(this_02,pIVar6[5].customAttributeCount);
-            assetToUnload = (this_01->klass->vtable).Close.method;
-            (*(this_01->klass->vtable).Close.methodPtr)(this_01);
+              }
+              if (iVar9 == 0) goto code_?;
+              pIVar10 = TypeInfo__System__Int32;
+              item2 = (Object *)func_?(TypeInfo__System__Int32,iVar9 - 1);
+              ppSVar11 = pSVar8->vector;
+              pcVar12 = (char *)0x1;
+              pOVar13 = item2 + 2;
+              do {
+                ppSVar11 = ppSVar11 + 1;
+                if ((pIVar10->_0).namespaze <= pcVar12) goto code_?;
+                iVar4 = 0;
+                pSVar5 = *ppSVar11;
+                puVar14 = &UNK_?;
+                pOVar15 = (Object__Class *)
+                         mscorlib.dll::System::Int32::Int32_Parse(pSVar5,(MethodInfo *)0x0);
+                if (item2 == (Object *)0x0) goto code_?;
+                if (item2[1].monitor <= (MonitorData *)(pcVar12 + -1)) goto code_?;
+                pOVar13->klass = pOVar15;
+                pcVar12 = pcVar12 + 1;
+                pOVar13 = (Object *)&pOVar13->monitor;
+              } while ((int)pcVar12 < iVar4);
+              pIVar6 = (this->fields).allowedAssemblies;
+              this_02 = (Tuple_2_Object_Object_ *)
+                        func_?(
+                                       TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
+                                       );
+              mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
+                        (this_02,(Object *)pSVar5,item2,(MethodInfo *)0x0);
+              if (pIVar6 == (InjectionDetector_AllowedAssembly__Array *)0x0) goto code_?;
+              if ((this_02 != (Tuple_2_Object_Object_ *)0x0) &&
+                 (iVar4 = func_?(this_02,(pIVar6->klass->_0).element_class), iVar4 == 0))
+              goto code_?;
+              func_?(iStack_7,this_02);
+              iStack_7 = iStack_7 + 1;
+            } while (iStack_7 < (int)puVar14);
+          }
+          (*(code *)(this_01->klass->vtable).Close.method)
+                    (this_01,(this_01->klass->vtable).Dispose_1.methodPtr);
+          if (this_00 != (MemoryStream *)0x0) {
+            (*(code *)(this_00->klass->vtable).Close.method)
+                      (this_00,(this_00->klass->vtable).Dispose_1.methodPtr);
             UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_UnloadAsset
-                      ((Object_1 *)assetToUnload,(MethodInfo *)0x0);
-            pSVar3 = (String__Array *)func_?(TypeInfo__System__String,0x100);
-            (this->fields).hexTable = pSVar3;
-            func_?(&(this->fields).hexTable,pSVar3);
+                      ((Object_1 *)pTStack_2,(MethodInfo *)0x0);
+            pSVar8 = (String__Array *)func_?(TypeInfo__System__String,0x100);
+            (this->fields).hexTable = pSVar8;
+            func_?(&(this->fields).hexTable,pSVar8);
             IStack_1.m_value = 0;
             while( true ) {
-              IVar15.m_value = IStack_1.m_value;
-              pSVar3 = (this->fields).hexTable;
+              IVar16.m_value = IStack_1.m_value;
+              pSVar8 = (this->fields).hexTable;
               pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1
-                                  (&IStack_1,StringLiteral_x2,(MethodInfo *)0x0);
-              if (pSVar3 == (String__Array *)0x0) break;
-              if ((pSVar5 != (String *)0x0) &&
-                 (iVar4 = func_?(pSVar5,(pSVar3->klass->_0).element_class), iVar4 == 0))
-              goto code_?;
-              if (pSVar3->max_length <= (uint)IVar15.m_value) goto code_?;
-              pSVar3->vector[IVar15.m_value] = pSVar5;
-              func_?(pSVar3->vector + IVar15.m_value,pSVar5);
+                                 (&IStack_1,StringLiteral_x2,(MethodInfo *)0x0);
+              if (pSVar8 == (String__Array *)0x0) break;
+              if (pSVar8->max_length <= (uint)IVar16.m_value) goto code_?;
+              pSVar8->vector[IVar16.m_value] = pSVar5;
+              func_?(pSVar8->vector + IVar16.m_value,pSVar5);
               IStack_1.m_value = IStack_1.m_value + 1;
               if (0xff < IStack_1.m_value) {
                 return;
@@ -528,22 +518,22 @@ code_?:
     }
   }
   else {
-    if (((TypeInfo__UnityEngine__TextAsset->_1).typeHierarchyDepth <=
-         (this_00->klass->_1).typeHierarchyDepth) &&
-       ((this_00->klass->_1).typeHierarchy
-        [(TypeInfo__UnityEngine__TextAsset->_1).typeHierarchyDepth - 1] ==
+    if (((TypeInfo__UnityEngine__TextAsset->_1).naturalAligment <=
+         (pTStack_2->klass->_1).naturalAligment) &&
+       ((pTStack_2->klass->_1).typeHierarchy
+        [(TypeInfo__UnityEngine__TextAsset->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__UnityEngine__TextAsset)) goto code_?;
-    func_?(this_00,TypeInfo__UnityEngine__TextAsset);
+    func_?(pTStack_2,TypeInfo__UnityEngine__TextAsset);
 code_?:
-    uVar16 = func_?(0);
-    func_?(uVar16);
+    uVar17 = func_?(0);
+    func_?(uVar17);
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -577,11 +567,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
   }
   pIVar4 = this->klass;
   if ((this->fields)._.autoDispose == 0) {
-    (*(pIVar4->vtable).StopDetectionInternal.methodPtr)
-              (this,(pIVar4->vtable).StopDetectionInternal.method);
+    (*(code *)(pIVar4->vtable).StopDetectionInternal.method)
+              (this,(pIVar4->vtable).PauseDetector.methodPtr);
     return;
   }
-  (*(pIVar4->vtable).DisposeInternal.methodPtr)(this,(pIVar4->vtable).DisposeInternal.method);
+  (*(code *)(pIVar4->vtable).DisposeInternal.method)
+            (this,(pIVar4->vtable).DetectorHasAdditionalCallbacks.methodPtr);
   return;
 }
 
@@ -607,20 +598,20 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     func_?(&StringLiteral_Anti_Cheat_Toolkit_Detectors);
     cRam_? = '\x01';
   }
-  (*(this->klass->vtable).StopDetectionInternal.methodPtr)
-            (this,(this->klass->vtable).StopDetectionInternal.method);
+  (*(code *)(this->klass->vtable).StopDetectionInternal.method)
+            (this,(this->klass->vtable).PauseDetector.methodPtr);
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 == (Transform *)0x0) goto code_?;
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                     (this_00,(MethodInfo *)0x0);
   if (iVar1 == 0) {
-    pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         UnityEngine__Component__MethodInfo__UnityEngine__Component__GetComponentsInChildren<MethodInfo::UnityEngine::Component>______
                        );
-    if (pIVar2 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
-    if (2 < (int)pIVar2[1].monitor) goto code_?;
+    if (pOVar2 == (Object__Array *)0x0) goto code_?;
+    if (2 < (int)pOVar2->max_length) goto code_?;
   }
   else {
 code_?:
@@ -629,18 +620,18 @@ code_?:
     bVar3 = mscorlib.dll::System::String::String_op_Equality
                       (a,StringLiteral_Anti_Cheat_Toolkit_Detectors,(MethodInfo *)0x0);
     if (bVar3 == 0) goto code_?;
-    pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         CodeStage__AntiCheat__Detectors__ActDetectorBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<CodeStage::AntiCheat::Detectors::ActDetectorBase>______
                        );
-    if (pIVar2 == (IEnumerable_1_System_Object_ *)0x0) {
+    if (pOVar2 == (Object__Array *)0x0) {
 code_?:
       func_?();
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    if (1 < (int)pIVar2[1].monitor) goto code_?;
+    if (1 < (int)pOVar2->max_length) goto code_?;
   }
   obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                   ((Component *)this,(MethodInfo *)0x0);
@@ -694,8 +685,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
       return;
     }
   }
-  (*(this->klass->vtable).DisposeInternal.methodPtr)
-            (this,(this->klass->vtable).DisposeInternal.method);
+  (*(code *)(this->klass->vtable).DisposeInternal.method)
+            (this,(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr);
   return;
 }
 
@@ -714,7 +705,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     if (bVar1 == 0) {
       pAVar2 = (args->fields)._LoadedAssembly_k__BackingField;
       if (pAVar2 == (Assembly *)0x0) goto code_?;
-      cause = (String *)(*(pAVar2->klass->vtable).get_FullName.methodPtr)(pAVar2);
+      cause = (String *)(*(code *)(pAVar2->klass->vtable).get_FullName.method)(pAVar2);
       InjectionDetector_OnCheatingDetected(this,cause,(MethodInfo *)0x0);
     }
     return;
@@ -744,17 +735,15 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
   this_00 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
   this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__AssemblyLoadEventHandler);
-  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
-               ,(MethodInfo *)0x0);
-    if (this_00 != (AppDomain *)0x0) {
-      mscorlib.dll::System::AppDomain::AppDomain_remove_AssemblyLoad
-                (this_00,(AssemblyLoadEventHandler *)this_01,(MethodInfo *)0x0);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
+             ,(MethodInfo *)0x0);
+  if (this_00 != (AppDomain *)0x0) {
+    mscorlib.dll::System::AppDomain::AppDomain_remove_AssemblyLoad
+              (this_00,(AssemblyLoadEventHandler *)this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -813,28 +802,27 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
                    );
     cRam_? = '\x01';
   }
-  if ((((this->fields)._.detectionAction == (UnityAction *)0x0) &&
-      ((this->fields).detectionActionWithArgument == (UnityAction_1_System_String_ *)0x0)) &&
-     ((this->fields)._.detectionEventHasListener == 0)) {
-    return;
-  }
-  (this->fields)._.isRunning = 1;
-  this_00 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
-            func_?(TypeInfo__System__AssemblyLoadEventHandler);
-  if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-     (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
-                 ,(MethodInfo *)0x0), this_00 != (AppDomain *)0x0)) {
+  if ((((this->fields)._.detectionAction != (UnityAction *)0x0) ||
+      ((this->fields).detectionActionWithArgument != (UnityAction_1_System_String_ *)0x0)) ||
+     ((this->fields)._.detectionEventHasListener != 0)) {
+    (this->fields)._.isRunning = 1;
+    this_00 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+              func_?(TypeInfo__System__AssemblyLoadEventHandler);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 == (AppDomain *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
     mscorlib.dll::System::AppDomain::AppDomain_add_AssemblyLoad
               (this_00,(AssemblyLoadEventHandler *)this_01,(MethodInfo *)0x0);
-    return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -866,7 +854,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral__ACTk__Injection_Detector__can_t,(MethodInfo *)0x0);
     return;
   }
@@ -925,7 +913,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
               ((Object *)StringLiteral__ACTk__Injection_Detector__alrea,(Object_1 *)this,
                (MethodInfo *)0x0);
     return;
@@ -936,7 +924,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
               ((Object *)StringLiteral__ACTk__Injection_Detector__disab,(Object_1 *)this,
                (MethodInfo *)0x0);
     return;
@@ -947,7 +935,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
                 ((Object *)StringLiteral__ACTk__Injection_Detector__has_p,(Object_1 *)this,
                  (MethodInfo *)0x0);
     }
@@ -958,7 +946,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
               ((Object *)StringLiteral__ACTk__Injection_Detector__was_s,(Object_1 *)this,
                (MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
@@ -1016,17 +1004,15 @@ code_?:
       }
       pAVar2 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
       this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pAVar2 != (AppDomain *)0x0) {
-          mscorlib.dll::System::AppDomain::AppDomain_add_AssemblyLoad
-                    (pAVar2,(AssemblyLoadEventHandler *)this_00,(MethodInfo *)0x0);
-          return;
-        }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pAVar2 != (AppDomain *)0x0) {
+        mscorlib.dll::System::AppDomain::AppDomain_add_AssemblyLoad
+                  (pAVar2,(AssemblyLoadEventHandler *)this_00,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -1113,8 +1099,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
       return;
     }
     pIVar5 = pIVar1->klass;
-    ppIStack3 = (InjectionDetector__Class **)(pIVar5->vtable).StopDetectionInternal.method;
-    (*(pIVar5->vtable).StopDetectionInternal.methodPtr)();
+    ppIStack3 = (InjectionDetector__Class **)(pIVar5->vtable).PauseDetector.methodPtr;
+    (*(code *)(pIVar5->vtable).StopDetectionInternal.method)();
   }
   return;
 }
@@ -1133,18 +1119,21 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
                    );
     cRam_? = '\x01';
   }
-  if ((this->fields)._.started == 0) {
-    return;
-  }
-  this_00 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
-            func_?(TypeInfo__System__AssemblyLoadEventHandler);
-  if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-     (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
-                 ,(MethodInfo *)0x0), this_00 != (AppDomain *)0x0)) {
+  if ((this->fields)._.started != 0) {
+    this_00 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+              func_?(TypeInfo__System__AssemblyLoadEventHandler);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 == (AppDomain *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
     mscorlib.dll::System::AppDomain::AppDomain_remove_AssemblyLoad
               (this_00,(AssemblyLoadEventHandler *)this_01,(MethodInfo *)0x0);
     (this->fields)._.detectionAction = (UnityAction *)0x0;
@@ -1153,11 +1142,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     func_?(&(this->fields).detectionActionWithArgument,0);
     (this->fields)._.isRunning = 0;
     (this->fields)._.started = 0;
-    return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -1220,7 +1205,6 @@ InjectionDetector_get_GetOrCreateInstance(MethodInfo *method)
                       ((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       pGVar3 = (GameObject *)func_?();
-      if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
                 (pGVar3,StringLiteral_Anti_Cheat_Toolkit_Detectors,(MethodInfo *)0x0);
       TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->detectorsContainer
@@ -1230,7 +1214,6 @@ InjectionDetector_get_GetOrCreateInstance(MethodInfo *method)
     pGVar3 = TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->
              detectorsContainer;
     if (pGVar3 == (GameObject *)0x0) {
-code_?:
       func_?();
       pcVar4 = (code *)swi(3);
       pIVar1 = (InjectionDetector *)(*pcVar4)();

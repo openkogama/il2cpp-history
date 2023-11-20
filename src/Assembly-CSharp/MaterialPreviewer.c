@@ -42,31 +42,31 @@ void Assembly-CSharp.dll::MaterialPreviewer::MaterialPreviewer_Initialize
       if (pCVar1 != (Camera *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)pCVar1,1,(MethodInfo *)0x0);
+        pRVar2 = TypeInfo__UnityEngine__RenderTexture;
         width = (this->fields).previewResolution;
-        pRVar2 = (RenderTexture *)func_?();
-        if (pRVar2 != (RenderTexture *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
-                    (pRVar2,width,width,0x10,(MethodInfo *)0x0);
-          (this->fields).renderTexture = pRVar2;
-          func_?();
-          pRVar2 = (this->fields).renderTexture;
-          if (pRVar2 != (RenderTexture *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                      ((Texture *)pRVar2,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
-            pRVar2 = (this->fields).renderTexture;
-            if (pRVar2 != (RenderTexture *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-                        ((Object_1 *)pRVar2,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
-              pRVar2 = (this->fields).renderTexture;
-              if (pRVar2 != (RenderTexture *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
-                RenderTexture_set_antiAliasing(pRVar2,2,(MethodInfo *)0x0);
-                pCVar1 = (this->fields).pictureCamera;
-                if (pCVar1 != (Camera *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                            (pCVar1,(this->fields).renderTexture,(MethodInfo *)0x0);
-                  return;
-                }
+        pRVar3 = (RenderTexture *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
+                  (pRVar3,width,width,0x10,(MethodInfo *)0x0);
+        (pRVar2->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)pRVar3;
+        func_?(&(pRVar2->_0).byval_arg);
+        this_01 = (Texture *)(pRVar2->_0).byval_arg.data.typeHandle;
+        if (this_01 != (Texture *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                    (this_01,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
+          this_02 = (Object_1 *)(pRVar2->_0).byval_arg.data.typeHandle;
+          if (this_02 != (Object_1 *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
+                      (this_02,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
+            pRVar3 = (RenderTexture *)(pRVar2->_0).byval_arg.data.typeHandle;
+            if (pRVar3 != (RenderTexture *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_antiAliasing
+                        (pRVar3,2,(MethodInfo *)0x0);
+              this_03 = (pRVar2->_0).element_class;
+              if (this_03 != (Il2CppClass *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
+                          ((Camera *)this_03,(RenderTexture *)(pRVar2->_0).byval_arg.data.typeHandle
+                           ,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -75,8 +75,8 @@ void Assembly-CSharp.dll::MaterialPreviewer::MaterialPreviewer_Initialize
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

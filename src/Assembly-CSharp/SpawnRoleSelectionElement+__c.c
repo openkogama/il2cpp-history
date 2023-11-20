@@ -96,27 +96,31 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    uVar1 = 0;
-    uVar2 = (x->klass->_1).interface_offsets_count;
-    if (uVar2 != 0) {
+    pIVar1 = x->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
       do {
-        if (x->klass->interfaceOffsets[uVar1].interfaceType ==
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-          pVVar3 = &(x->klass->vtable).Create_1 + x->klass->interfaceOffsets[uVar1].offset;
-          (*pVVar3->methodPtr)(x,pVVar3->method);
+          pIVar1 = x->klass;
+          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
+          (*(code *)(&(pIVar1->vtable).Create_1)[iVar4].method)
+                    (x,(&(pIVar1->vtable).Create_2)[iVar4].methodPtr);
           return;
         }
-        uVar1 = uVar1 + 1;
-      } while (uVar1 < uVar2);
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
     }
-    puVar4 = (undefined4 *)
+    puVar5 = (undefined4 *)
              func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2);
-    (*(code *)*puVar4)(x,puVar4[1]);
+    (*(code *)*puVar5)(x,puVar5[1]);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -191,32 +195,34 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    uVar2 = 0;
-    uVar3 = (pIVar1->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          pVVar4 = &(pIVar1->klass->vtable).get_RewardedAdNotAvailableText +
-                   pIVar1->klass->interfaceOffsets[uVar2].offset;
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    pVVar4 = (VirtualInvokeData *)
-             func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,0);
+    ppMVar5 = (MethodInfo **)
+              func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,0);
 code_?:
-    uVar5 = (*pVVar4->methodPtr)(pIVar1,pVVar4->method);
-    pSVar6 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
+    uVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    pSVar7 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
     if (x != (IModalPopupCreator *)0x0) {
-      func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,uVar5,pSVar6);
+      func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,uVar6,pSVar7);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -257,17 +263,12 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement+<>c::SpawnRoleSelectionEleme
     func_?(&TypeInfo__SpawnRoleSelectionElement____c);
     cRam_? = '\x01';
   }
-  value = (SpawnRoleSelectionElement_c *)func_?(TypeInfo__SpawnRoleSelectionElement____c);
-  if (value != (SpawnRoleSelectionElement_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9 = value;
-    func_?(TypeInfo__SpawnRoleSelectionElement____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__SpawnRoleSelectionElement____c;
+  value = (SpawnRoleSelectionElement_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__SpawnRoleSelectionElement____c->static_fields->__9 = value;
+  func_?(TypeInfo__SpawnRoleSelectionElement____c->static_fields,value);
   return;
 }
 

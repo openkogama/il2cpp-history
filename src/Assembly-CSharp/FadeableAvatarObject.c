@@ -21,10 +21,11 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_AddMaterial
     func_?(&TypeInfo__FadeableAvatarObject____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FadeableAvatarObject____c__DisplayClass4_0);
+  method_00 = TypeInfo__FadeableAvatarObject____c__DisplayClass4_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     value[1].monitor = (MonitorData *)0x0;
@@ -40,7 +41,6 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_AddMaterial
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>
                             );
-        if (callbackFunction == (Object__Class *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
@@ -106,10 +106,11 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_OnDestroy
     func_?(&TypeInfo__FadeableAvatarObject____c__DisplayClass5_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FadeableAvatarObject____c__DisplayClass5_0);
+  method_00 = TypeInfo__FadeableAvatarObject____c__DisplayClass5_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     pGVar1 = (this->fields).avatarObject;
@@ -145,7 +146,6 @@ code_?:
                func_?(
                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>
                               );
-          if (callbackFunction == (Object__Class *)0x0) break;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
@@ -190,19 +190,19 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject_Start
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                     ((Component *)this,
                       UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                      );
-  pMVar2 = (MonitorData *)0x0;
-  if (pIVar1 == (IEnumerable_1_System_Object_ *)0x0) {
+  uVar2 = 0;
+  if (pOVar1 == (Object__Array *)0x0) {
 code_?:
     func_?();
   }
   else {
-    pIVar3 = pIVar1 + 2;
+    ppOVar3 = pOVar1->vector;
     while( true ) {
-      if ((int)pIVar1[1].monitor <= (int)pMVar2) {
+      if ((int)pOVar1->max_length <= (int)uVar2) {
         x = (this->fields).avatarObject;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
@@ -214,13 +214,13 @@ code_?:
         }
         return;
       }
-      if (pIVar1[1].monitor <= pMVar2) break;
-      if (pIVar3->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+      if (pOVar1->max_length <= uVar2) break;
+      if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
       pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                         ((Renderer *)pIVar3->klass,(MethodInfo *)0x0);
+                         ((Renderer *)*ppOVar3,(MethodInfo *)0x0);
       ppMVar6 = pMVar5->vector;
       uVar7 = 0;
-      pIVar1 = unaff_ESI;
+      pOVar1 = unaff_ESI;
       if (pMVar5 == (Material__Array *)0x0) goto code_?;
       for (; (int)uVar7 < (int)pMVar5->max_length; uVar7 = uVar7 + 1) {
         if (pMVar5->max_length <= uVar7) goto code_?;
@@ -233,9 +233,9 @@ code_?:
                   );
         ppMVar6 = ppMVar6 + 1;
       }
-      pMVar2 = pMVar2 + 1;
-      pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
-      unaff_ESI = pIVar1;
+      uVar2 = uVar2 + 1;
+      ppOVar3 = ppOVar3 + 1;
+      unaff_ESI = pOVar1;
     }
   }
 code_?:
@@ -259,20 +259,15 @@ void Assembly-CSharp.dll::FadeableAvatarObject::FadeableAvatarObject__ctor
   }
   this_00 = (List_1_UnityEngine_Material_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Material>);
-  if (this_00 != (List_1_UnityEngine_Material_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
-    (this->fields).materials = this_00;
-    func_?(&(this->fields).materials,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
+  (this->fields).materials = this_00;
+  func_?(&(this->fields).materials,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

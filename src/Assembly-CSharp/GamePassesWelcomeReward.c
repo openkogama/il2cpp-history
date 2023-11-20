@@ -85,33 +85,31 @@ void Assembly-CSharp.dll::GamePassesWelcomeReward::GamePassesWelcomeReward_Initi
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)StringLiteral_ClaimGamePointWelcomeReward_bein,(MethodInfo *)0x0);
           return;
         }
         piVar7 = *(int **)(in_stack_6 + 0x10);
         *(undefined1 *)(in_stack_6 + 0x18) = 1;
-        this_01 = (ParameterOverride_1_System_Object_ *)
+        this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                  );
-        if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                    );
-          if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0
-             ) {
-            func_?();
-          }
-          if (piVar7 != (int *)0x0) {
-            (**(code **)(*piVar7 + 0x134))
-                      (piVar7,0x6d,this_01,
-                       (TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
-                       SendReliable).DeliveryMode);
-            return;
-          }
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                  );
+        if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0)
+        {
+          func_?();
+        }
+        if (piVar7 != (int *)0x0) {
+          (**(code **)(*piVar7 + 0x110))
+                    (piVar7,0x6d,this_01,
+                     (TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable)
+                     .DeliveryMode);
+          return;
         }
         func_?();
         pcVar8 = (code *)swi(3);

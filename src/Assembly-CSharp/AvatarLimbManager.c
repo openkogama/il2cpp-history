@@ -71,52 +71,33 @@ void Assembly-CSharp.dll::AvatarLimbManager::AvatarLimbManager_Initialize
   }
   (this->fields).avatarWO = avatarWO;
   func_?(&(this->fields).avatarWO,avatarWO);
-  pAVar1 = (AvatarLimbManager_AvatarLookDirectionHandler *)
-           func_?(TypeInfo__AvatarLimbManager__AvatarLookDirectionHandler);
+  method_00 = TypeInfo__AvatarLimbManager__AvatarLookDirectionHandler;
+  pAVar1 = (AvatarLimbManager_AvatarLookDirectionHandler *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pAVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).lookDirectionHandler = pAVar1;
+  func_?(&(this->fields).lookDirectionHandler,pAVar1);
+  pAVar1 = (this->fields).lookDirectionHandler;
   if (pAVar1 != (AvatarLimbManager_AvatarLookDirectionHandler *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pAVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).lookDirectionHandler = pAVar1;
-    func_?(&(this->fields).lookDirectionHandler,pAVar1);
-    pAVar1 = (this->fields).lookDirectionHandler;
-    if (pAVar1 != (AvatarLimbManager_AvatarLookDirectionHandler *)0x0) {
-      (pAVar1->fields).avatarWO = avatarWO;
-      func_?(&(pAVar1->fields).avatarWO,avatarWO);
-      pAVar2 = (AvatarLimbManager_LimbRotator *)
-               func_?(TypeInfo__AvatarLimbManager__LimbRotator);
-      if (pAVar2 != (AvatarLimbManager_LimbRotator *)0x0) {
-        (pAVar2->fields).isActive = 1;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)pAVar2,ExceptionArgument__Enum_obj,unaff_EDI);
-        (this->fields).limbRotator = pAVar2;
-        func_?(&(this->fields).limbRotator,pAVar2);
-        pAVar2 = (this->fields).limbRotator;
-        if (pAVar2 != (AvatarLimbManager_LimbRotator *)0x0) {
-          AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_Initialize
-                    (pAVar2,avatarWO,body,this,(MethodInfo *)0x0);
-          return;
-        }
-      }
+    (pAVar1->fields).avatarWO = avatarWO;
+    func_?(&(pAVar1->fields).avatarWO,avatarWO);
+    method_01 = TypeInfo__AvatarLimbManager__LimbRotator;
+    pAVar2 = (AvatarLimbManager_LimbRotator *)func_?();
+    (pAVar2->fields).isActive = 1;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)pAVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    (this->fields).limbRotator = pAVar2;
+    func_?(&(this->fields).limbRotator,pAVar2);
+    pAVar2 = (this->fields).limbRotator;
+    if (pAVar2 != (AvatarLimbManager_LimbRotator *)0x0) {
+      AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_Initialize
+                (pAVar2,avatarWO,body,this,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Void OnStartEmote(String) */
-
-void Assembly-CSharp.dll::AvatarLimbManager::AvatarLimbManager_OnStartEmote
-               (AvatarLimbManager *this,String *newAnimation,MethodInfo *method)
-
-{
-  if ((this->fields).OnEmoteStart != (Action_1_String_ *)0x0) {
-    pAVar1 = (this->fields).OnEmoteStart;
-    (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,newAnimation,(pAVar1->fields)._._.method);
-  }
   return;
 }
 

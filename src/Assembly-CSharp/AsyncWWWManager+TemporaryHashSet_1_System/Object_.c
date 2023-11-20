@@ -6,17 +6,18 @@ void Assembly-CSharp.dll::AsyncWWWManager+TemporaryHashSet`1[System::Object]::
                (AsyncWWWManager_TemporaryHashSet_1_System_Object_ *this,MethodInfo *method)
 
 {
-  IStack_1.rgctxDataDummy = &stack0xfffffffc;
   if (this != (AsyncWWWManager_TemporaryHashSet_1_System_Object_ *)0x0) {
-    IStack_1 = *method->klass->rgctx_data;
-    pAStack_2 = this;
-    (*method->klass->rgctx_data->method->virtualMethodPointer)();
+    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
+              ((HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+               method->klass->rgctx_data->method);
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar1 = func_?(&puStack_2);
+  func_?(uVar1);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -28,8 +29,9 @@ void Assembly-CSharp.dll::AsyncWWWManager+TemporaryHashSet`1[System::Object]::
                (AsyncWWWManager_TemporaryHashSet_1_System_Object_ *this,MethodInfo *method)
 
 {
-  (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
-            (this,method->klass->rgctx_data[1].rgctxDataDummy);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+  HashSet_1_System_Object___ctor
+            ((HashSet_1_System_Object_ *)this,method->klass->rgctx_data[1].method);
   return;
 }
 

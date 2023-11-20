@@ -55,17 +55,12 @@ void Assembly-CSharp.dll::AvatarModifierPackages+<>c::AvatarModifierPackages_c__
     func_?(&TypeInfo__AvatarModifierPackages____c);
     cRam_? = '\x01';
   }
-  value = (AvatarModifierPackages_c *)func_?(TypeInfo__AvatarModifierPackages____c);
-  if (value != (AvatarModifierPackages_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__AvatarModifierPackages____c->static_fields->__9 = value;
-    func_?(TypeInfo__AvatarModifierPackages____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__AvatarModifierPackages____c;
+  value = (AvatarModifierPackages_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__AvatarModifierPackages____c->static_fields->__9 = value;
+  func_?(TypeInfo__AvatarModifierPackages____c->static_fields,value);
   return;
 }
 

@@ -64,8 +64,8 @@ code_?:
           pSStack7 = (this->fields).slider;
           if (pSStack7 != (Slider *)0x0) {
             fStack8 = (this->fields).settingValue;
-            pMStack9 = (pSStack7->klass->vtable).set_value.method;
-            (*(pSStack7->klass->vtable).set_value.methodPtr)();
+            pIStack9 = (pSStack7->klass->vtable).SetValueWithoutNotify.methodPtr;
+            (*(code *)(pSStack7->klass->vtable).set_value.method)();
             SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
                       ((SkillSettingInt *)this,(MethodInfo *)0x0);
             (this->fields).isInitialized = 1;
@@ -78,23 +78,23 @@ code_?:
   else {
     if (((
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).typeHierarchyDepth <= (skillSetting->klass->_1).typeHierarchyDepth) &&
+         ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
        ((skillSetting->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).typeHierarchyDepth - 1] ==
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
        )) {
       (this->fields).skillPercentageSetting = (AttributeSettingFloat *)skillSetting;
       if (((
            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).typeHierarchyDepth <= (skillSetting->klass->_1).typeHierarchyDepth) &&
+           ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
          (pKVar1 = skillSetting,
          (skillSetting->klass->_1).typeHierarchy
          [(
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-          ->_1).typeHierarchyDepth - 1] ==
+          ->_1).naturalAligment - 1] ==
          (Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
          )) goto code_?;
@@ -159,19 +159,19 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_InputFieldChange
     pSVar3 = (this->fields).slider;
     if (pSVar3 != (Slider *)0x0) {
       pSStack_4 = pSStack_1;
-      pSStack_1 = (Slider *)(pSVar3->klass->vtable).set_value.method;
-      (*(pSVar3->klass->vtable).set_value.methodPtr)(pSVar3);
+      pSStack_1 = (Slider *)(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr;
+      (*(code *)(pSVar3->klass->vtable).set_value.method)(pSVar3);
       SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
                 ((SkillSettingInt *)this,(MethodInfo *)0x0);
       pSVar3 = (this->fields).slider;
       if (pSVar3 != (Slider *)0x0) {
-        pSStack_1 = (Slider *)(pSVar3->klass->vtable).get_value.method;
+        pSStack_1 = (Slider *)(pSVar3->klass->vtable).set_value.methodPtr;
         pSStack_4 = pSVar3;
-        fVar5 = (float10)(*(pSVar3->klass->vtable).get_value.methodPtr)();
+        fVar5 = (float10)(*(code *)(pSVar3->klass->vtable).get_value.method)();
         pSStack_4 = (Slider *)(float)fVar5;
         uVar6 = func_?(TypeInfo__System__Single,&pSStack_4);
-        (*(this->klass->vtable).UpdateSkillData.methodPtr)
-                  (this,uVar6,(this->klass->vtable).UpdateSkillData.method);
+        (*(code *)(this->klass->vtable).UpdateSkillData.method)
+                  (this,uVar6,(this->klass->vtable).InitializeInfoButton.methodPtr);
         return;
       }
     }
@@ -195,21 +195,21 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_SliderValueChange
   }
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     fVar2 = (float10)func_?((double)fVar2);
-    (*(pSVar1->klass->vtable).set_value.methodPtr)
-              (pSVar1,(float)fVar2,(pSVar1->klass->vtable).set_value.method);
+    (*(code *)(pSVar1->klass->vtable).set_value.method)
+              (pSVar1,(float)fVar2,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
     SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
               ((SkillSettingInt *)this,(MethodInfo *)0x0);
     pSVar1 = (this->fields).slider;
     if (pSVar1 != (Slider *)0x0) {
-      fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                                 (pSVar1,(pSVar1->klass->vtable).get_value.method);
+      fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                                 (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
       fStack_3 = (float)fVar2;
       uVar4 = func_?(TypeInfo__System__Single,&fStack_3);
-      (*(this->klass->vtable).UpdateSkillData.methodPtr)
-                (this,uVar4,(this->klass->vtable).UpdateSkillData.method);
+      (*(code *)(this->klass->vtable).UpdateSkillData.method)
+                (this,uVar4,(this->klass->vtable).InitializeInfoButton.methodPtr);
       return;
     }
   }
@@ -306,8 +306,8 @@ code_?:
                     );
           pSVar7 = (this->fields).slider;
           if (pSVar7 != (Slider *)0x0) {
-            (*(pSVar7->klass->vtable).set_value.methodPtr)
-                      (pSVar7,value,(pSVar7->klass->vtable).set_value.method);
+            (*(code *)(pSVar7->klass->vtable).set_value.method)
+                      (pSVar7,value,(pSVar7->klass->vtable).SetValueWithoutNotify.methodPtr);
             SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
                       ((SkillSettingInt *)this,(MethodInfo *)0x0);
             pUVar8 = (this->fields)._.cantUpdateSkillCallback;

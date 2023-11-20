@@ -43,39 +43,39 @@ code_?:
                    RectTransform_get_sizeDelta((RectTransform *)pTVar3,(MethodInfo *)0x0);
           pLVar5 = (layoutElement->fields).layoutGroup;
           if (pLVar5 != (LayoutGroup *)0x0) {
-            if (((TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth <=
-                 (pLVar5->klass->_1).typeHierarchyDepth) &&
+            if (((TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment <=
+                 (pLVar5->klass->_1).naturalAligment) &&
                (ppIVar6 = (pLVar5->klass->_1).typeHierarchy,
                (HorizontalLayoutGroup__Class *)
-               ppIVar6[(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth - 1
-                      ] == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup)) {
+               ppIVar6[(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment - 1]
+               == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup)) {
               pLVar7 = (LayoutGroup *)0x0;
               if ((HorizontalLayoutGroup__Class *)
-                  ppIVar6[(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth
-                          - 1] == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup) {
+                  ppIVar6[(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment - 1
+                         ] == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup) {
                 pLVar7 = pLVar5;
               }
-              (*(pLVar1->klass->vtable).set_minHeight.methodPtr)
+              (*(code *)(pLVar1->klass->vtable).set_minHeight.method)
                         (pLVar1,(VVar4.x - (float)pLVar7[1].monitor) /
                                 (this->fields).groupAspectRatio,
-                         (pLVar1->klass->vtable).set_minHeight.method);
+                         (pLVar1->klass->vtable).get_preferredWidth_1.methodPtr);
               fVar8 = (this->fields).defaultSpacing;
               pHVar9 = (HorizontalOrVerticalLayoutGroup *)(layoutElement->fields).layoutGroup;
               fVar10 = (this->fields).referenceRes.y;
               iVar11 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
                                 ((MethodInfo *)0x0);
               if (pHVar9 != (HorizontalOrVerticalLayoutGroup *)0x0) {
-                if (((TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth <=
-                     (pHVar9->klass->_1).typeHierarchyDepth) &&
+                if (((TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment <=
+                     (pHVar9->klass->_1).naturalAligment) &&
                    ((HorizontalLayoutGroup__Class *)
                     (pHVar9->klass->_1).typeHierarchy
-                    [(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth - 1]
-                    == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup)) {
+                    [(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment - 1] ==
+                    TypeInfo__UnityEngine__UI__HorizontalLayoutGroup)) {
                   this_01 = (HorizontalOrVerticalLayoutGroup *)0x0;
                   if ((HorizontalLayoutGroup__Class *)
                       (pHVar9->klass->_1).typeHierarchy
-                      [(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).typeHierarchyDepth - 1
-                      ] == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup) {
+                      [(TypeInfo__UnityEngine__UI__HorizontalLayoutGroup->_1).naturalAligment - 1]
+                      == TypeInfo__UnityEngine__UI__HorizontalLayoutGroup) {
                     this_01 = pHVar9;
                   }
                   UnityEngine.UI.dll::UnityEngine::UI::HorizontalOrVerticalLayoutGroup::
@@ -130,14 +130,14 @@ code_?:
                     fVar8 = (layoutElement->fields).elementAspectRatio;
                     pLVar1 = (layoutElement->fields).group;
                     if (pLVar1 == (LayoutElement *)0x0) break;
-                    fVar14 = (float10)(*(pLVar1->klass->vtable).get_minHeight_1.methodPtr)();
+                    fVar14 = (float10)(*(code *)(pLVar1->klass->vtable).get_minHeight_1.method)();
                     fVar15 = fVar10 / fVar8;
                     if ((float)fVar14 <= fVar10 / fVar8) {
                       fVar15 = (float)fVar14;
                     }
                     if (RVar13 == (RegexCharClass_SingleRange)0x0) break;
-                    (**(code **)(*(int *)RVar13 + 0x1cc))
-                              (RVar13,fVar15,*(undefined4 *)(*(int *)RVar13 + 0x1d0));
+                    (**(code **)(*(int *)RVar13 + 0x1d0))
+                              (RVar13,fVar15,*(undefined4 *)(*(int *)RVar13 + 0x1d4));
                     index = (RectTransform__Class *)((int)&(index->_0).image + 1);
                   }
                 }
@@ -176,8 +176,8 @@ void Assembly-CSharp.dll::WinningConditionBriefingLayoutFitter::
   }
   pVVar1 = (this->fields).layoutGroup;
   if (pVVar1 != (VerticalLayoutGroup *)0x0) {
-    (*(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.methodPtr)
-              (pVVar1,(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.method);
+    (*(code *)(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.method)
+              (pVVar1,(pVVar1->klass->vtable).get_minWidth_1.methodPtr);
     fVar2 = (this->fields).defaultSpacing;
     pVVar1 = (this->fields).layoutGroup;
     fVar3 = (this->fields).referenceRes.y;
@@ -189,8 +189,8 @@ void Assembly-CSharp.dll::WinningConditionBriefingLayoutFitter::
                  (MethodInfo *)0x0);
       pVVar1 = (this->fields).layoutGroup;
       if (pVVar1 != (VerticalLayoutGroup *)0x0) {
-        (*(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.methodPtr)
-                  (pVVar1,(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.method);
+        (*(code *)(pVVar1->klass->vtable).CalculateLayoutInputVertical_1.method)
+                  (pVVar1,(pVVar1->klass->vtable).get_minWidth_1.methodPtr);
         index = 0;
         pLVar5 = (this->fields).elements;
         while (pLVar5 != (List_1_WinningConditionBriefingLayoutFitter_LayoutGroupAspectFitterDef_ *)
@@ -208,7 +208,7 @@ void Assembly-CSharp.dll::WinningConditionBriefingLayoutFitter::
                                      MethodInfo__System__Collections__Generic__List<WinningConditionBriefingLayoutFitter::LayoutGroupAspectFitterDef>__get_Item_int_
                                     ), RVar7 == (RegexCharClass_SingleRange)0x0)) ||
              (piVar8 = *(int **)((int)RVar7 + 8), piVar8 == (int *)0x0)) break;
-          (**(code **)(*piVar8 + 0x19c))(piVar8,*(undefined4 *)(*piVar8 + 0x1a0));
+          (**(code **)(*piVar8 + 0x1a0))(piVar8,*(undefined4 *)(*piVar8 + 0x1a4));
           pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (this->fields).elements;
           if (pLVar6 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)

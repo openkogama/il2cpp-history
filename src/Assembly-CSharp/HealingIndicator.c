@@ -76,10 +76,10 @@ void Assembly-CSharp.dll::HealingIndicator::HealingIndicator_Update
               (this_00,fVar2,(MethodInfo *)0x0);
     pIVar3 = (this->fields).healthOverlay;
     if (pIVar3 != (Image *)0x0) {
-      puVar4 = (undefined4 *)(*(pIVar3->klass->vtable).get_color.methodPtr)();
+      puVar4 = (undefined4 *)(*(code *)(pIVar3->klass->vtable).get_color.method)();
       pIVar3 = (this->fields).healthOverlay;
       if (pIVar3 != (Image *)0x0) {
-        (*(pIVar3->klass->vtable).set_color.methodPtr)(pIVar3,*puVar4,puVar4[1]);
+        (*(code *)(pIVar3->klass->vtable).set_color.method)(pIVar3,*puVar4,puVar4[1]);
         if ((this->fields).targetTime <= (this->fields).timer) {
           (this->fields).timer = 0.0;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled

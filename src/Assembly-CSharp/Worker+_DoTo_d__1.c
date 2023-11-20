@@ -10,15 +10,14 @@ bool Assembly-CSharp.dll::Worker+<DoTo>d__1::Worker_DoTo_d_1_MoveNext
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
-  this_00 = (this->fields).__4__this;
+  this_00 = (MonoBehaviour *)(this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
     routine = pTween::pTween_To((this->fields).duration,(this->fields).startValue,
                                 (this->fields).endValue,(this->fields).callback,(MethodInfo *)0x0);
-    if (this_00 != (Worker *)0x0) {
+    if (this_00 != (MonoBehaviour *)0x0) {
       pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,routine,(MethodInfo *)0x0)
-      ;
+               MonoBehaviour_StartCoroutine_Auto(this_00,routine,(MethodInfo *)0x0);
       (this->fields).__2__current = (Object *)pCVar2;
       func_?();
       (this->fields).__1__state = 1;
@@ -32,7 +31,7 @@ code_?:
   }
   if (iVar1 == 1) {
     (this->fields).__1__state = -1;
-    if (this_00 == (Worker *)0x0) goto code_?;
+    if (this_00 == (MonoBehaviour *)0x0) goto code_?;
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                     ((Component *)this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -53,7 +52,6 @@ void Assembly-CSharp.dll::Worker+<DoTo>d__1::Worker_DoTo_d_1_System_Collections_
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__Worker___DoTo_d__1__System_Collections_IEnumerator_Reset__);

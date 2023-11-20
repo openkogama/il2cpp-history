@@ -68,21 +68,16 @@ Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Fader
     func_?(&TypeInfo__AudioOnOffComponent___Fader_d__13);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__AudioOnOffComponent___Fader_d__13);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    value[2].monitor = (MonitorData *)minEndPoint;
-    value[3].klass = (Object__Class *)maxEndPoint;
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)minEndPoint;
+  value[3].klass = (Object__Class *)maxEndPoint;
+  return (IEnumerator *)value;
 }
 
 
@@ -143,19 +138,31 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Start
 {
   iVar1 = (this->fields).startLoop;
   if (iVar1 == 1) {
-    pMVar2 = (this->klass->vtable).TurnOff.method;
-    pIVar3 = (this->klass->vtable).TurnOff.methodPtr;
+    pIVar2 = this->klass[1]._0.image;
+    pMVar3 = (this->klass->vtable).TurnOff.method;
   }
   else {
     if (iVar1 != 2) goto code_?;
-    pMVar2 = (this->klass->vtable).TurnOn.method;
-    pIVar3 = (this->klass->vtable).TurnOn.methodPtr;
+    pIVar2 = (Il2CppImage *)(this->klass->vtable).TurnOff.methodPtr;
+    pMVar3 = (this->klass->vtable).TurnOn.method;
   }
-  (*pIVar3)(this,pMVar2);
+  (*(code *)pMVar3)(this,pIVar2);
 code_?:
-  routine = AudioOnOffComponent_Fader(this,0.0,1.0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__AudioOnOffComponent___Fader_d__13);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__AudioOnOffComponent___Fader_d__13;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)0x0;
+  value[3].klass = (Object__Class *)0x3f800000;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-            ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+            ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
   return;
 }
 

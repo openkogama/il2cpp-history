@@ -12,7 +12,8 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_Awake
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (*(this->klass->vtable).ResetAmmo.methodPtr)(this,(this->klass->vtable).ResetAmmo.method);
+  (*(code *)(this->klass->vtable).ResetAmmo.method)
+            (this,(this->klass->vtable).OnLeaveVehicleWithWeapon.methodPtr);
   pGVar1 = (this->fields).primaryCursor;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
@@ -164,42 +165,48 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_DoLineOfFireCheck
     fVar3 = (pMVar1->fields).lookOrigin.z;
     pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection
                        (&VStack_5,(this->fields)._._.owner,(MethodInfo *)0x0);
-    origin.z = fVar3;
-    origin.x = (float)(undefined4)uStack_2;
-    origin.y = (float)uStack_2._4_4_;
-    UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
-              ((Ray *)&stack0xffffffd0,origin,*pVVar4,(MethodInfo *)0x0);
-    iVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+    uStack_6._0_4_ = pVVar4->x;
+    uStack_6._4_4_ = pVVar4->y;
+    fStack_7 = pVVar4->z;
+    puVar8 = (undefined8 *)func_?(&VStack_5,&uStack_6,0);
+    fVar9 = *(float *)(puVar8 + 1);
+    uStack_10 = (undefined4)*puVar8;
+    uStack_11 = (undefined4)((ulonglong)*puVar8 >> 0x20);
+    iVar12 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                       (StringLiteral_Default,(MethodInfo *)0x0);
-    source = (Void *)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                               ((Void *)(1 << ((byte)iVar6 & 0x1f)),(MethodInfo *)0x0);
-    fVar3 = (this->fields).range;
-    this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+    p_Var10 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+              UnsafeUtility_AsRef_1((Void *)(1 << ((byte)iVar12 & 0x1f)),(MethodInfo *)0x0);
+    distance = (this->fields).range;
+    this_00 = (HashSet_1_System_Int32_ *)
               func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      pMVar1 = (this->fields)._._.owner;
-      if ((pMVar1 != (MVPickupOwner *)0x0) &&
-         (pMVar7 = (pMVar1->fields)._.worldObjectParent, pMVar7 != (MVWorldObjectClient *)0x0)) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-        HashSet_1_System_Object__Add
-                  ((HashSet_1_System_Object_ *)this_00,(Object *)(pMVar7->fields)._.id,
-                   MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-        layerMask = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                              (source,(MethodInfo *)0x0);
-        bVar8 = CollisionDetection::CollisionDetection_MVHit_1
-                          ((Ray)ZEXT424(layerMask),hit,fVar3,(HashSet_1_System_Int32_ *)this_00,
-                           (int32_t)layerMask,(MethodInfo *)0x0);
-        return bVar8;
-      }
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32___ctor
+              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    pMVar1 = (this->fields)._._.owner;
+    if (((pMVar1 != (MVPickupOwner *)0x0) &&
+        (pMVar13 = (pMVar1->fields)._.worldObjectParent, pMVar13 != (MVWorldObjectClient *)0x0)) &&
+       (this_00 != (HashSet_1_System_Int32_ *)0x0)) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+      HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                (this_00,(pMVar13->fields)._.id,
+                 MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+      p_Var10 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                UnsafeUtility_AsRef_1((Void *)p_Var10,(MethodInfo *)0x0);
+      ray.m_Origin.y = 0.0;
+      ray.m_Origin.x = (float)p_Var10;
+      ray.m_Origin.z = fVar3;
+      ray.m_Direction.x = (float)uStack_10;
+      ray.m_Direction.y = (float)uStack_11;
+      ray.m_Direction.z = fVar9;
+      bVar14 = CollisionDetection::CollisionDetection_MVHit_1
+                        (ray,hit,distance,this_00,(int32_t)p_Var10,(MethodInfo *)0x0);
+      return bVar14;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar15 = (code *)swi(3);
+  bVar14 = (*pcVar15)();
+  return bVar14;
 }
 
 
@@ -239,9 +246,9 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_Execute
     if ((this->fields).fireMain != 0) {
       pMVar7 = (this->fields)._._.owner;
       if (pMVar7 == (MVPickupOwner *)0x0) goto code_?;
-      (*(this->klass->vtable).OnFire.methodPtr)
-                (this,(uint)(pMVar7->fields)._IsLocal_k__BackingField,
-                 (this->klass->vtable).OnFire.method);
+      (*(code *)(this->klass->vtable).OnFire.method)
+                (this,(pMVar7->fields)._IsLocal_k__BackingField,
+                 (this->klass->vtable).OnDestroy.methodPtr);
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       (this->fields).prevFireTime = fVar2;
     }
@@ -399,11 +406,11 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_GetCubePosFromFin
     pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this,voxelHit.woId,(MethodInfo *)0x0);
     if (((pMVar2 == (MVWorldObject *)0x0) ||
-        ((pMVar2->klass->_1).typeHierarchyDepth <
-         (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth)) ||
+        ((pMVar2->klass->_1).naturalAligment <
+         (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment)) ||
        ((MVCubeModelFineGrainedTerrain__Class *)
         (pMVar2->klass->_1).typeHierarchy
-        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelFineGrainedTerrain)) {
 code_?:
       *unaff_FS_OFFSET = (int)puVar1;
@@ -475,8 +482,8 @@ code_?:
               if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              iVar17 = 0x5021;
-              uStack_18 = 0x1053;
+              iVar17 = -0x173f;
+              uStack_18 = 0x1054;
               pTVar14 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                                   ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);
               if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
@@ -504,7 +511,7 @@ code_?:
                   pMVar2 = pMVar24;
                   face = method_00;
                   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                    uStack_18 = 0x1053;
+                    uStack_18 = 0x1054;
                     func_?();
                   }
                   pIVar16 = (IEnumerator *)0x0;
@@ -603,7 +610,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7c4);
+    func_?(0xdbf0);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -720,11 +727,11 @@ code_?:
       pMVar31 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (pMVar29,in_stack_16,(MethodInfo *)0x0);
       if (((pMVar31 == (MVWorldObject *)0x0) ||
-          ((pMVar31->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth)) ||
+          ((pMVar31->klass->_1).naturalAligment <
+           (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment)) ||
          ((MVCubeModelFineGrainedTerrain__Class *)
           (pMVar31->klass->_1).typeHierarchy
-          [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
           TypeInfo__MVCubeModelFineGrainedTerrain)) goto code_?;
       pGVar2 = (this->fields).secondaryCursor;
       if (pGVar2 == (GUICellCursor *)0x0) goto code_?;
@@ -820,30 +827,35 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnEquip
   pMVar2 = (pPVar1->fields)._._.owner;
   if (pMVar2 != (MVPickupOwner *)0x0) {
     if ((pMVar2->fields)._IsLocal_k__BackingField != 0) {
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)
+      this_00 = (MethodInfo *)
                 func_?(
                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                );
-      if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)this_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       this = (PickupItemCubeGun *)CONCAT13(1,this._0_3_);
       key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
       value = TM::TM__(StringLiteral_Hold_shoot_button_to_remove_cube,(MethodInfo *)0x0);
+      if (this_00 == (MethodInfo *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_00,key,(Object *)value,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,key,(Object *)value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
+      this = (PickupItemCubeGun *)0xf;
+      method = this_00;
       NotificationController::NotificationController_PushNotification_2
-                (NotificationType__Enum_PlayerTip,this_00,NotificationLifetime__Enum_High,
-                 (MethodInfo *)0x0);
+                (NotificationType__Enum_PlayerTip,
+                 (Dictionary_2_System_Object_System_Object_ *)this_00,
+                 NotificationLifetime__Enum_High,(MethodInfo *)0x0);
     }
     return;
   }
@@ -866,116 +878,108 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnFire
     cRam_? = '\x01';
   }
   func_?(&fStack_1,0,0x48);
-  fVar2 = 0.0;
   if ((((this->fields).hasLeftVehicle == 0) && ((this->fields).fireSecondary == 0)) &&
-     (cVar3 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
-                         (this,(this->klass->vtable).get_IsAmmoDepleted.method), cVar3 == '\0')) {
-    bVar4 = PickupItemCubeGun_DoLineOfFireCheck(this,(VoxelHit *)&fStack_1,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+     (cVar2 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
+                        (this,(this->klass->vtable).get_Quantity.methodPtr), cVar2 == '\0')) {
+    bVar3 = PickupItemCubeGun_DoLineOfFireCheck(this,(VoxelHit *)&fStack_1,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
       voxelHit.point.y = fStack_1;
       voxelHit.point.x = (float)&stack0xfffffff4;
-      voxelHit.point.z = fStack_5;
-      voxelHit.normal.x = fStack_6;
-      voxelHit.normal.y = fStack_7;
-      voxelHit.normal.z = fStack_8;
-      voxelHit.cubePos._0_4_ = fStack_9;
-      voxelHit.cubePos.z = IStack_10.x;
-      voxelHit._30_2_ = IStack_10.y;
+      voxelHit.point.z = fStack_4;
+      voxelHit.normal.x = fStack_5;
+      voxelHit.normal.y = fStack_6;
+      voxelHit.normal.z = fStack_7;
+      voxelHit.cubePos._0_4_ = fStack_8;
+      voxelHit.cubePos.z = IStack_9.x;
+      voxelHit._30_2_ = IStack_9.y;
       voxelHit.face = stack0xffffff94;
-      voxelHit._36_4_ = iStack_11;
-      voxelHit.woId = uStack_12;
-      voxelHit.cube = (Cube *)iStack_13;
-      voxelHit.distance = (float)pCStack_14;
-      voxelHit.collider = (Collider *)in_stack_15;
-      voxelHit.transform = (Transform *)in_stack_16;
-      voxelHit._60_4_ = in_stack_17;
-      voxelHit.interactionFlags._0_4_ = in_stack_18;
-      voxelHit.interactionFlags._4_4_ = in_stack_19;
-      IVar20 = PickupItemCubeGun_GetCubePos
+      voxelHit._36_4_ = iStack_10;
+      voxelHit.woId = uStack_11;
+      voxelHit.cube = (Cube *)iStack_12;
+      voxelHit.distance = (float)pCStack_13;
+      voxelHit.collider = (Collider *)in_stack_14;
+      voxelHit.transform = (Transform *)in_stack_15;
+      voxelHit._60_4_ = in_stack_16;
+      voxelHit.interactionFlags._0_4_ = in_stack_17;
+      voxelHit.interactionFlags._4_4_ = in_stack_18;
+      IVar19 = PickupItemCubeGun_GetCubePos
                          (voxelHit,(MethodInfo *)
-                                   (CONCAT26(in_stack_21,
-                                             CONCAT24(in_stack_22,in_stack_19)) >> 0x20)
+                                   (CONCAT26(in_stack_20,
+                                             CONCAT24(in_stack_21,in_stack_18)) >> 0x20)
                          );
-      fVar2 = 0.0;
-      bVar4 = PickupItemCubeGun_CanInsertCubeAtCubePos(this,*IVar20._0_4_,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
+      bVar3 = PickupItemCubeGun_CanInsertCubeAtCubePos(this,*IVar19._0_4_,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
         return;
       }
     }
     this_00 = (this->fields)._._.muzzlePoint;
-    owner = (this->fields)._._.owner;
+    pMVar22 = (this->fields)._._.owner;
     if (this_00 != (Transform *)0x0) {
       pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffe8,this_00,(MethodInfo *)0x0);
-      fVar24 = pVVar23->x;
-      fVar25 = pVVar23->y;
-      fVar26 = pVVar23->z;
-      puVar27 = &UNK_?;
-      pCVar28 = CubeGunBulletObject::CubeGunBulletObject_Create
-                          (owner,*pVVar23,(this->fields).material,(MethodInfo *)0x0);
-      pMVar29 = (this->fields)._._.owner;
-      if (pMVar29 != (MVPickupOwner *)0x0) {
-        method_00 = (pMVar29->fields).lookOrigin.x;
-        fVar30 = (pMVar29->fields).lookOrigin.z;
-        pVVar23 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                            ((Vector3 *)&stack0xffffffe8,(this->fields)._._.owner,
-                             (MethodInfo *)method_00);
-        uVar31 = pVVar23->x;
-        uVar32 = pVVar23->y;
-        origin.y = (float)uVar32;
-        origin.x = (float)uVar31;
-        origin.z = fVar30;
-        UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
-                  ((Ray *)&stack0xffffffc0,origin,*pVVar23,(MethodInfo *)0x0);
-        if (pCVar28 != (CubeGunBulletObject *)0x0) {
-          pMVar29 = (this->fields)._._.owner;
-          this_01 = (pCVar28->fields).bullet;
-          if (pMVar29 != (MVPickupOwner *)0x0) {
+                         ((Vector3 *)&puStack_24,this_00,(MethodInfo *)0x0);
+      pCVar25 = CubeGunBulletObject::CubeGunBulletObject_Create
+                          (pMVar22,*pVVar23,(this->fields).material,(MethodInfo *)0x0);
+      pMVar22 = (this->fields)._._.owner;
+      if (pMVar22 != (MVPickupOwner *)0x0) {
+        method_00 = (pMVar22->fields).lookOrigin.x;
+        uVar26 = (pMVar22->fields).lookOrigin.y;
+        fVar27 = (pMVar22->fields).lookOrigin.z;
+        MVPickupOwner::MVPickupOwner_get_LookDirection
+                  ((Vector3 *)&stack0xffffffc4,(this->fields)._._.owner,(MethodInfo *)method_00);
+        puVar28 = (undefined8 *)func_?();
+        fVar29 = *(float *)(puVar28 + 1);
+        uVar30 = (undefined4)*puVar28;
+        uStack_31 = (undefined4)((ulonglong)*puVar28 >> 0x20);
+        if (pCVar25 != (CubeGunBulletObject *)0x0) {
+          pMVar22 = (this->fields)._._.owner;
+          this_01 = (pCVar25->fields).bullet;
+          if (pMVar22 != (MVPickupOwner *)0x0) {
             speed = MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpeed
-                              (pMVar29,(this->fields).speed,(MethodInfo *)0x0);
-            fVar30 = (this->fields).range;
-            pMVar29 = (this->fields)._._.owner;
-            if ((pMVar29 != (MVPickupOwner *)0x0) &&
-               (ignoreWoIDs = (HashSet_1_System_Int32_ *)
-                              (*(pMVar29->klass->vtable).get_IgnoreWOIDs.methodPtr)(),
-               this_01 != (Bullet *)0x0)) {
-              lineOfFire.m_Origin.y = (float)puVar27;
-              lineOfFire.m_Origin.x = fVar2;
-              lineOfFire.m_Origin.z._0_2_ = (short)owner;
-              lineOfFire.m_Origin.z._2_2_ = (short)((uint)owner >> 0x10);
-              lineOfFire.m_Direction.x = fVar24;
-              lineOfFire.m_Direction.y = fVar25;
-              lineOfFire.m_Direction.z = fVar26;
-              Bullet::Bullet_Fire(this_01,speed,fVar30,lineOfFire,ignoreWoIDs,(MethodInfo *)0x0);
-              iVar33 = (this->fields).currentAmmo.currentCryptoKey;
-              iVar34 = (this->fields).currentAmmo.hiddenValue;
-              iVar35 = (this->fields).currentAmmo.fakeValue;
-              uVar36._0_1_ = (this->fields).currentAmmo.inited;
-              uVar36._1_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
-              if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
+                              (pMVar22,(this->fields).speed,(MethodInfo *)0x0);
+            fVar32 = (this->fields).range;
+            pMVar22 = (this->fields)._._.owner;
+            if (pMVar22 != (MVPickupOwner *)0x0) {
+              pMVar33 = pMVar22->klass;
+              pIVar34 = pMVar33[1]._0.image;
+              ignoreWoIDs = (HashSet_1_System_Int32_ *)
+                            (*(code *)(pMVar33->vtable).get_IgnoreWOIDs.method)();
+              if (this_01 != (Bullet *)0x0) {
+                lineOfFire.m_Origin.y = (float)uVar26;
+                lineOfFire.m_Origin.x = (float)pIVar34;
+                lineOfFire.m_Origin.z._0_2_ = SUB42(fVar27,0);
+                lineOfFire.m_Origin.z._2_2_ = (short)((uint)fVar27 >> 0x10);
+                lineOfFire.m_Direction.x = (float)uVar30;
+                lineOfFire.m_Direction.y = (float)uStack_31;
+                lineOfFire.m_Direction.z = fVar29;
+                Bullet::Bullet_Fire(this_01,speed,fVar32,lineOfFire,ignoreWoIDs,(MethodInfo *)0x0);
+                iVar35 = (this->fields).currentAmmo.currentCryptoKey;
+                fVar27 = (float)(this->fields).currentAmmo.hiddenValue;
+                fVar29 = (float)(this->fields).currentAmmo.fakeValue;
+                fVar32 = *(float *)&(this->fields).currentAmmo.inited;
+                if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                value.hiddenValue = (int32_t)fVar27;
+                value.currentCryptoKey = iVar35;
+                value.fakeValue = (int32_t)fVar29;
+                value._12_4_ = fVar32;
+                iVar35 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                         ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+                pOVar36 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                          ObscuredInt::ObscuredInt_op_Implicit
+                                    ((ObscuredInt *)&stack0xffffffc0,iVar35 + -1,(MethodInfo *)0x0);
+                iVar35 = pOVar36->hiddenValue;
+                iVar37 = pOVar36->fakeValue;
+                bVar3 = pOVar36->inited;
+                uVar38 = *(undefined3 *)&pOVar36->field_0xd;
+                (this->fields).currentAmmo.currentCryptoKey = pOVar36->currentCryptoKey;
+                (this->fields).currentAmmo.hiddenValue = iVar35;
+                (this->fields).currentAmmo.fakeValue = iVar37;
+                (this->fields).currentAmmo.inited = bVar3;
+                *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar38;
+                return;
               }
-              value.hiddenValue = iVar34;
-              value.currentCryptoKey = iVar33;
-              value.fakeValue = iVar35;
-              value.inited = (bool)uVar36;
-              value._13_3_ = SUB43(uVar36,1);
-              iVar33 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-              pOVar37 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                        ObscuredInt::ObscuredInt_op_Implicit
-                                  ((ObscuredInt *)&stack0xffffffd8,iVar33 + -1,(MethodInfo *)0x0);
-              iVar33 = pOVar37->hiddenValue;
-              iVar34 = pOVar37->fakeValue;
-              bVar4 = pOVar37->inited;
-              uVar38 = *(undefined3 *)&pOVar37->field_0xd;
-              (this->fields).currentAmmo.currentCryptoKey = pOVar37->currentCryptoKey;
-              (this->fields).currentAmmo.hiddenValue = iVar33;
-              (this->fields).currentAmmo.fakeValue = iVar34;
-              (this->fields).currentAmmo.inited = bVar4;
-              *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar38;
-              return;
             }
           }
         }
@@ -989,7 +993,272 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnFire
   return;
 }
 
-/* decompilation failed: Low-level Error: Symbol offset is incompatible with VariableGroup */
+
+/* Void OnFireSecondary(Boolean) */
+
+void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnFireSecondary
+               (PickupItemCubeGun *this,bool isLocal,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&RailRay_MethodInfo__EnumPoolManager__Instantiate<RailRay>_PoolEnums_);
+    func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    func_?(&StringLiteral_CubeGun);
+    func_?(&StringLiteral_Player);
+    func_?(&StringLiteral_Logic);
+    cRam_? = '\x01';
+  }
+  RStack_1.m_Direction.z = 0.0;
+  RStack_1.m_Direction.x = 0.0;
+  RStack_1.m_Direction.y = 0.0;
+  func_?(&stack0xffffff60,0,0x48);
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
+  pTVar2 = (this->fields)._._.muzzlePoint;
+  audioSource = (this->fields).audioSource;
+  if ((pTVar2 == (Transform *)0x0) ||
+     (pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          (&VStack_4,pTVar2,(MethodInfo *)0x0), this_02 == (AudioManager *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
+    fVar5 = 0.0;
+    AudioManager::AudioManager_Play_2
+              (this_02,StringLiteral_CubeGun,audioSource,*pVVar3,(MethodInfo *)0x0);
+    pMVar6 = (this->fields)._._.owner;
+    if (pMVar6 == (MVPickupOwner *)0x0) goto code_?;
+    auStack_7._0_4_ = (pMVar6->fields).lookOrigin.x;
+    auStack_7._4_4_ = (pMVar6->fields).lookOrigin.y;
+    fVar8 = (pMVar6->fields).lookOrigin.z;
+    pVVar3 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                        (&VStack_9,(this->fields)._._.owner,(MethodInfo *)0x0);
+    uVar10 = pVVar3->x;
+    uVar11 = pVVar3->y;
+    VStack_4.z = pVVar3->z;
+    pVVar3 = &VStack_4;
+    pVVar12 = &VStack_9;
+    RStack_1.m_Origin.x = (float)auStack_7._0_4_;
+    RStack_1.m_Origin.y = (float)auStack_7._4_4_;
+    puVar13 = &UNK_?;
+    RStack_1.m_Origin.z = fVar8;
+    VStack_4.x = (float)uVar10;
+    VStack_4.y = (float)uVar11;
+    puVar14 = (undefined8 *)func_?();
+    RStack_1.m_Direction.x = (float)*puVar14;
+    RStack_1.m_Direction.y = (float)((ulonglong)*puVar14 >> 0x20);
+    RStack_1.m_Direction.z = *(float *)(puVar14 + 1);
+    uVar15 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                       (StringLiteral_Player,(MethodInfo *)0x0);
+    uVar16 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                       (StringLiteral_Logic,(MethodInfo *)0x0);
+    ray.m_Origin.z = RStack_1.m_Origin.z;
+    ray.m_Origin.x = RStack_1.m_Origin.x;
+    ray.m_Origin.y = RStack_1.m_Origin.y;
+    ray.m_Direction.x = RStack_1.m_Direction.x;
+    ray.m_Direction.y = RStack_1.m_Direction.y;
+    ray.m_Direction.z = RStack_1.m_Direction.z;
+    method_00 = (MethodInfo *)RStack_1.m_Direction.y;
+    bVar17 = CollisionDetection::CollisionDetection_MVHit_1
+                       (ray,(VoxelHit *)&stack0xffffff60,(this->fields).range,
+                        (HashSet_1_System_Int32_ *)0x0,
+                        ~(1 << (uVar15 & 0x1f)) & 0xfffffffbU & ~(1 << (uVar16 & 0x1f)),
+                        (MethodInfo *)0x0);
+    if (bVar17 == 0) {
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                          (&VStack_9,&RStack_1,(this->fields).range,(MethodInfo *)0x0);
+      fStack_18 = pVVar3->x;
+      VStack_4.x = pVVar3->y;
+      in_stack_19 = pVVar3->z;
+      VStack_4.y = 0.0;
+      VStack_4.z = 0.0;
+code_?:
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pPVar20 = TypeInfo__PrefabPool->static_fields->instance;
+      if (((pPVar20 != (PrefabPool *)0x0) &&
+          (this_01 = (pPVar20->fields).enumPoolManager, this_01 != (EnumPoolManager *)0x0)) &&
+         (this_05 = (RailRay *)
+                    EnumPoolManager::EnumPoolManager_Instantiate
+                              (this_01,PoolEnums__Enum_CubeGunRay,
+                               RailRay_MethodInfo__EnumPoolManager__Instantiate<RailRay>_PoolEnums_)
+         , this_05 != (RailRay *)0x0)) {
+        (this_05->fields).target.x = fStack_18;
+        (this_05->fields).target.y = VStack_4.x;
+        (this_05->fields).target.z = in_stack_19;
+        this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_05,(MethodInfo *)0x0);
+        pTVar2 = (this->fields)._._.muzzlePoint;
+        if ((pTVar2 != (Transform *)0x0) &&
+           (pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                (&VStack_9,pTVar2,(MethodInfo *)0x0), this_06 != (Transform *)0x0)
+           ) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                    (this_06,*pVVar3,(MethodInfo *)0x0);
+          RailRay::RailRay_Reset(this_05,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      goto code_?;
+    }
+    VStack_4.x = fStack_21;
+    fVar8 = in_stack_19;
+    fStack_18 = fVar5;
+    VStack_4.y = in_stack_19;
+    VStack_4.z = in_stack_22;
+    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    iVar23 = 0;
+    uVar24._0_1_ = 0;
+    uVar24._1_3_ = 0;
+    puVar25 = &UNK_?;
+    this_04 = (MVCubeModelBase *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_03,0,(MethodInfo *)0x0);
+    if ((bool)uVar24 == 0) goto code_?;
+    pMVar26 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar26 == (MVNetworkGame *)0x0) ||
+        (this_07 = (pMVar26->fields)._MaterialRepository_k__BackingField,
+        in_stack_27 == (Cube *)0x0)) ||
+       (pBVar28 = (in_stack_27->fields)._.faceMaterials, pBVar28 == (Byte__Array *)0x0))
+    goto code_?;
+    if (pBVar28->max_length != 0) {
+      if (this_07 != (MVMaterialRepository *)0x0) {
+        pTVar2 = (Transform *)0x0;
+        auStack_7[4] = pBVar28->vector[0];
+        pCVar29 = (Cube *)&UNK_?;
+        pCVar30 = (Collider *)auStack_7._4_4_;
+        pMVar31 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                            (this_07,pBVar28->vector[0],(MethodInfo *)0x0);
+        if (pMVar31 != (MVMaterial *)0x0) {
+          fVar5 = (pMVar31->fields)._PhysicalProperties_k__BackingField.toughness;
+          if (fVar5 != 0.0) {
+            auStack_7._8_4_ = (this->fields).currentAmmo.currentCryptoKey;
+            VStack_9.x = (float)(this->fields).currentAmmo.hiddenValue;
+            VStack_9.y = (float)(this->fields).currentAmmo.fakeValue;
+            VStack_9.z = *(float *)&(this->fields).currentAmmo.inited;
+            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+                cctor_finished_or_no_cctor == 0) {
+              pOStack_32 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
+              func_?();
+            }
+            value.hiddenValue = (int32_t)VStack_9.x;
+            value.currentCryptoKey = auStack_7._8_4_;
+            value.fakeValue = (int32_t)VStack_9.y;
+            value._12_4_ = VStack_9.z;
+            iVar33 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt
+                     ::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+            pOVar34 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                      ObscuredInt::ObscuredInt_op_Implicit
+                                ((ObscuredInt *)(auStack_7 + 8),iVar33 + 1,(MethodInfo *)0x0);
+            iVar33 = pOVar34->hiddenValue;
+            iVar35 = pOVar34->fakeValue;
+            bVar17 = pOVar34->inited;
+            uVar36 = *(undefined3 *)&pOVar34->field_0xd;
+            (this->fields).currentAmmo.currentCryptoKey = pOVar34->currentCryptoKey;
+            (this->fields).currentAmmo.hiddenValue = iVar33;
+            (this->fields).currentAmmo.fakeValue = iVar35;
+            (this->fields).currentAmmo.inited = bVar17;
+            *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar36;
+            if (isLocal != 0) {
+              pMVar26 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (((pMVar26 == (MVNetworkGame *)0x0) ||
+                  (pWVar37 = (pMVar26->fields).worldNetwork, pWVar37 == (WorldNetwork *)0x0)) ||
+                 (this_00 = (RuntimeEventManager *)(pWVar37->fields)._.runtimeEventManagerNetwork,
+                 this_00 == (RuntimeEventManager *)0x0)) goto code_?;
+              voxelHit.point.y = fVar8;
+              voxelHit.point.x = fStack_21;
+              voxelHit.point.z = in_stack_22;
+              voxelHit.normal.x = (float)puVar13;
+              voxelHit.normal.y = (float)pVVar12;
+              voxelHit.normal.z = (float)pVVar3;
+              voxelHit.cubePos._0_4_ = puVar25;
+              voxelHit._28_4_ = this_03;
+              voxelHit.face = uVar24;
+              voxelHit._36_4_ = iVar23;
+              voxelHit.woId = (int32_t)pCVar29;
+              voxelHit.cube = (Cube *)this_07;
+              voxelHit.distance = (float)pCVar30;
+              voxelHit.collider = (Collider *)pTVar2;
+              voxelHit.transform = (Transform *)in_stack_38;
+              voxelHit._60_4_ = puStack_39;
+              voxelHit.interactionFlags._0_4_ = pOStack_32;
+              voxelHit.interactionFlags._4_4_ = 0x7f800000;
+              RuntimeEventManager::RuntimeEventManager_SendRemoveOneFineGrainedCube
+                        (this_00,voxelHit,0.0,method_00);
+            }
+          }
+          iVar40 = (int16_t)puVar25;
+          if (((fVar5 == 0.0) && (this_04 != (MVCubeModelBase *)0x0)) &&
+             (((TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment <=
+               (this_04->klass->_1).naturalAligment &&
+              ((MVCubeModelFineGrainedTerrain__Class *)
+               (this_04->klass->_1).typeHierarchy
+               [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] ==
+               TypeInfo__MVCubeModelFineGrainedTerrain)))) {
+            auStack_7._8_4_ = (this->fields).currentAmmo.currentCryptoKey;
+            VStack_9.x = (float)(this->fields).currentAmmo.hiddenValue;
+            VStack_9.y = (float)(this->fields).currentAmmo.fakeValue;
+            VStack_9.z = *(float *)&(this->fields).currentAmmo.inited;
+            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            value_00.hiddenValue = (int32_t)VStack_9.x;
+            value_00.currentCryptoKey = auStack_7._8_4_;
+            value_00.fakeValue = (int32_t)VStack_9.y;
+            value_00._12_4_ = VStack_9.z;
+            iVar23 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt
+                     ::ObscuredInt_op_Implicit_1(value_00,(MethodInfo *)0x0);
+            pOVar34 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                      ObscuredInt::ObscuredInt_op_Implicit
+                                ((ObscuredInt *)(auStack_7 + 8),iVar23 + 1,(MethodInfo *)0x0);
+            iVar23 = pOVar34->hiddenValue;
+            iVar33 = pOVar34->fakeValue;
+            bVar17 = pOVar34->inited;
+            uVar36 = *(undefined3 *)&pOVar34->field_0xd;
+            (this->fields).currentAmmo.currentCryptoKey = pOVar34->currentCryptoKey;
+            (this->fields).currentAmmo.hiddenValue = iVar23;
+            (this->fields).currentAmmo.fakeValue = iVar33;
+            (this->fields).currentAmmo.inited = bVar17;
+            *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar36;
+            if (isLocal != 0) {
+              if (((this_04->klass->_1).naturalAligment <
+                   (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment) ||
+                 ((MVCubeModelFineGrainedTerrain__Class *)
+                  (this_04->klass->_1).typeHierarchy
+                  [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
+                  TypeInfo__MVCubeModelFineGrainedTerrain)) goto code_?;
+              pos.z = iVar40;
+              pos._0_4_ = pVVar3;
+              MVCubeModelBase::MVCubeModelBase_RemoveCube(this_04,pos,(MethodInfo *)0x0);
+              MVCubeModelBase::MVCubeModelBase_HandleDelta(this_04,(MethodInfo *)0x0);
+            }
+            RStack_1.m_Direction.y = 0.0;
+            RStack_1.m_Direction.x = (float)&UNK_?;
+            iVar41 = func_?();
+            if (iVar41 == 0) goto code_?;
+            position.y = VStack_4.x;
+            position.x = fStack_18;
+            position.z = in_stack_19;
+            SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
+                      (*(ParticleSystem **)(iVar41 + 0x214),position,1.0,(MethodInfo *)0x0);
+          }
+          goto code_?;
+        }
+      }
+      goto code_?;
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar42 = (code *)swi(3);
+  (*pcVar42)();
+  return;
+}
 
 
 /* Void OnHolstered() */
@@ -998,7 +1267,8 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnHolstered
                (PickupItemCubeGun *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).TriggerEnd.methodPtr)(this,(this->klass->vtable).TriggerEnd.method);
+  (*(code *)(this->klass->vtable).TriggerEnd.method)
+            (this,(this->klass->vtable).OnStateChanged.methodPtr);
   pGVar1 = (this->fields).primaryCursor;
   (this->fields).showingCursors = 0;
   if (pGVar1 != (GUICellCursor *)0x0) {
@@ -1087,31 +1357,31 @@ code_?:
     func_?();
   }
   else {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                        (Object *)StringLiteral_itemData,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
 code_?:
       (this->fields).material = 0x18;
-      pCVar2 = (this->fields).cubeBullet;
+      pSVar2 = (String__Class *)(this->fields).cubeBullet;
 joined_?:
-      if (pCVar2 != (CubeBullet *)0x0) {
-        this_00 = *(MeshFilter **)(in_stack_3 + 0xc);
-        *(undefined1 *)(in_stack_3 + 0x14) = in_stack_4;
+      if (pSVar2 != (String__Class *)0x0) {
+        this_00 = *(MeshFilter **)(in_stack_3 + 0x10);
+        *(undefined1 *)(in_stack_3 + 0x18) = in_stack_4;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((((pMVar5 != (MVNetworkGame *)0x0) &&
              (this_01 = (pMVar5->fields)._MaterialRepository_k__BackingField,
              this_01 != (MVMaterialRepository *)0x0)) &&
             (pMVar6 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                                (this_01,*(uint8_t *)(in_stack_3 + 0x14),(MethodInfo *)0x0),
+                                (this_01,*(uint8_t *)(in_stack_3 + 0x18),(MethodInfo *)0x0),
             pMVar6 != (MVMaterial *)0x0)) && (this_00 != (MeshFilter *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
                     (this_00,(pMVar6->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
-          this_02 = *(Renderer **)(in_stack_3 + 0x10);
+          this_02 = *(Renderer **)(in_stack_3 + 0x14);
           pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
           if ((pMVar7 != (MaterialLoader *)0x0) && (this_02 != (Renderer *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
@@ -1127,43 +1397,45 @@ joined_?:
       }
       goto code_?;
     }
-    this_03 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__get_Item
-                        (newState,(Object *)StringLiteral_itemData,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-    pSVar9 = StringLiteral_material;
-    if (this_03 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-    goto code_?;
-    if (((this_03->klass->_1).typeHierarchyDepth <
+    TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
+                       (Object *)StringLiteral_itemData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    pSVar10 = StringLiteral_material;
+    if (TVar9.m_Index == 0) goto code_?;
+    if ((*(byte *)(*(int *)TVar9.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (this_03->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] !=
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar9.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
     this = (PickupItemCubeGun *)StringLiteral_material;
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_03,(Object *)StringLiteral_material,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)TVar9.m_Index
+                       ,(Object *)StringLiteral_material,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) goto code_?;
-    pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)this_03,
-                        (Object *)StringLiteral_material,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar10 == (Object *)0x0) goto code_?;
-    if ((pOVar10->klass->_0).element_class == (TypeInfo__System__Byte->_0).element_class) {
+    TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (TVar9.m_Index,(Object *)StringLiteral_material,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar9.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar9.m_Index + 0x20) ==
+        (TypeInfo__System__Byte->_0).element_class) {
       puVar11 = (undefined1 *)func_?();
-      *(undefined1 *)&pSVar9[0xf].monitor = *puVar11;
-      pCVar2 = *(CubeBullet **)&pSVar9[0xe].fields._firstChar;
+      *(undefined1 *)&pSVar10[0xf].fields._stringLength = *puVar11;
+      pSVar2 = pSVar10[0xf].klass;
       goto joined_?;
     }
   }
@@ -1256,8 +1528,8 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_ResetAmmo
   value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
   iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar4 = (*(this->klass->vtable).GetAmmoMultiplier.methodPtr)
-                    (this,iVar1,(this->klass->vtable).GetAmmoMultiplier.method);
+  iVar4 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
   iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
           ObscuredInt_op_Implicit_1((this->fields).currentAmmo,(MethodInfo *)0x0);
   if (iVar1 < iVar4) {
@@ -1345,16 +1617,16 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_ShowCursors
     if (((pMVar1->fields)._IsLocal_k__BackingField != 0) &&
        (pMVar4 = (pMVar1->fields)._.worldObjectParent, pMVar4 != (MVWorldObjectClient *)0x0)) {
       pMVar5 = pMVar4->klass;
-      if (((pMVar5->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
+      if (((pMVar5->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
          ((MVAvatarLocal__Class *)
-          (pMVar5->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] !=
+          (pMVar5->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
           TypeInfo__MVAvatarLocal)) {
         pMVar5 = ((((this->fields)._._.owner)->fields)._.worldObjectParent)->klass;
-        if ((pMVar5->_1).typeHierarchyDepth < (TypeInfo__MVVehicleBase->_1).typeHierarchyDepth) {
+        if ((pMVar5->_1).naturalAligment < (TypeInfo__MVVehicleBase->_1).naturalAligment) {
           return 0;
         }
         if ((MVVehicleBase__Class *)
-            (pMVar5->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).typeHierarchyDepth - 1] !=
+            (pMVar5->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] !=
             TypeInfo__MVVehicleBase) {
           return 0;
         }
@@ -1551,9 +1823,9 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_TriggerEnd
     if ((this->fields).fireMain != 0) {
       pMVar7 = (this->fields)._._.owner;
       if (pMVar7 == (MVPickupOwner *)0x0) goto code_?;
-      (*(this->klass->vtable).OnFire.methodPtr)
-                (this,(uint)(pMVar7->fields)._IsLocal_k__BackingField,
-                 (this->klass->vtable).OnFire.method);
+      (*(code *)(this->klass->vtable).OnFire.method)
+                (this,(pMVar7->fields)._IsLocal_k__BackingField,
+                 (this->klass->vtable).OnDestroy.methodPtr);
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       (this->fields).prevFireTime = fVar2;
     }
@@ -1600,8 +1872,8 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_Update
   if ((this->fields).showingCursors != 0) {
     PickupItemCubeGun_HandleCursors(this,(MethodInfo *)0x0);
   }
-  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
-                    (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if (cVar1 != '\0') {
     pCVar2 = (this->fields).cubeBullet;
     if ((pCVar2 == (CubeBullet *)0x0) ||
@@ -1620,7 +1892,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_Update
       goto code_?;
     }
   }
-  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)();
+  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)();
   if (cVar1 != '\0') {
     return;
   }
@@ -1797,8 +2069,8 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_get_IsAmmoDeplete
   if (0 < iVar3) {
     return 0;
   }
-  cVar5 = (*(this->klass->vtable).get_HasUnlimitedAmmo.methodPtr)
-                    (this,(this->klass->vtable).get_HasUnlimitedAmmo.method);
+  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
+                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
 }
 

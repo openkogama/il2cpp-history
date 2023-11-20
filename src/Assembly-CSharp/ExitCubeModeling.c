@@ -35,12 +35,6 @@ void Assembly-CSharp.dll::ExitCubeModeling::ExitCubeModeling_Exit
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IHandleCubeModelEdit>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IHandleCubeModelEdit_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,

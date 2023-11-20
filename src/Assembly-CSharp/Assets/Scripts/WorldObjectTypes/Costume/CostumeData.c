@@ -54,33 +54,37 @@ CostumeData_DefaultData(MethodInfo *method)
     func_?(&StringLiteral_itemType);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    value = CostumeData_DefaultItemData((MethodInfo *)0x0);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pDVar1 = CostumeData_DefaultItemData((MethodInfo *)0x0);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_itemData,(Object *)value,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemData,
+               (Object *)pDVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    value_00 = (Object *)func_?(TypeInfo__MV__Common__AvatarItemType);
+    value = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_itemType,value_00,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemType,
+               value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    return pDVar1;
+    return (Dictionary_2_System_Object_System_Object_ *)this;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -110,27 +114,18 @@ CostumeData_DefaultItemData(MethodInfo *method)
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
-  pDVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
-           defaultItemValues;
-  this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+  dictionary = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
+               defaultItemValues;
+  this = (Dictionary_2_System_Object_System_Object_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                         );
-  if (this != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
-              (this,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                     *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-              );
-    return (Dictionary_2_System_Object_System_Object_ *)this;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-  return pDVar1;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object___ctor_1
+            (this,(IDictionary_2_System_Object_System_Object_ *)dictionary,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+            );
+  return this;
 }
 
 
@@ -369,55 +364,64 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDat
     func_?(&StringLiteral_Box);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (pDVar1,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Name,(Object *)StringLiteral_Box,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Name,
+               (Object *)StringLiteral_Box,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Health,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Health,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_MovementSpeed,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_MovementSpeed,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_PlayerInvisible,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_PlayerInvisible,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_PlayersCanCollide,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_PlayersCanCollide,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_TrailEnabled,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_TrailEnabled,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_TrailLength,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_TrailLength,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     array = (Array *)func_?();
@@ -427,69 +431,82 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDat
                (MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_TrailColor,(Object *)array,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_TrailColor,(Object *)array,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
-    defaultItemValues = pDVar1;
+    defaultItemValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
     func_?();
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)pDVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe8);
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (pDVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    pOVar2 = (Object *)func_?();
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)StringLiteral_Health,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Health,
+                 pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe4);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)StringLiteral_MovementSpeed,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_MovementSpeed,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe0);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)StringLiteral_TrailLength,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_TrailLength,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->minValues =
-           pDVar1;
+           (Dictionary_2_System_Object_System_Object_ *)pDVar1;
       func_?();
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)pDVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffdc);
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (pDVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      pOVar2 = (Object *)func_?();
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)StringLiteral_Health,pOVar2,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_Health,pOVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         puStack_3 = (undefined *)0x41f00000;
         pOVar2 = (Object *)func_?(TypeInfo__System__Single,&puStack_3);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)StringLiteral_MovementSpeed,pOVar2,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_MovementSpeed,pOVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         uStack_4 = 0x40a00000;
         pOVar2 = (Object *)func_?(TypeInfo__System__Single,&uStack_4);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)StringLiteral_TrailLength,pOVar2,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_TrailLength,pOVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->maxValues
-             = pDVar1;
+             = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
         func_?();
         return;
       }

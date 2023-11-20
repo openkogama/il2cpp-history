@@ -22,42 +22,42 @@ bool Assembly-CSharp.dll::OperationResponsePendingManager::
                    );
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
-  if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+  pHVar1 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+  if (pHVar1 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
             HashSet_1_System_ByteEnum__Contains
-                      (this_00,operationCode,
+                      (pHVar1,operationCode,
                        MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Contains_MV__Common__MVOperationCodes_
                       );
-    if (bVar1 != 0) {
+    if (bVar2 != 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_Operation_is_already_pending_,(MethodInfo *)0x0);
       return 0;
     }
-    this_01 = (HashSet_1_System_Object_ *)(this->fields).pendingOperations;
-    if (this_01 != (HashSet_1_System_Object_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-      HashSet_1_System_Object__Add
-                (this_01,(Object *)operationCode,
+    pHVar1 = (HashSet_1_System_ByteEnum_ *)(this->fields).pendingOperations;
+    if (pHVar1 != (HashSet_1_System_ByteEnum_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+      HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
+                (pHVar1,operationCode,
                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__Add_MV__Common__MVOperationCodes_
                 );
-      pPVar2 = (this->fields).peer;
+      pPVar3 = (this->fields).peer;
       if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      if (pPVar2 != (PhotonPeer *)0x0) {
-        (*(pPVar2->klass->vtable).SendOperation.methodPtr)(pPVar2,operationCode,data);
+      if (pPVar3 != (PhotonPeer *)0x0) {
+        (*(code *)(pPVar3->klass->vtable).SendOperation.method)(pPVar3,operationCode,data);
         return 1;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 
 
@@ -146,28 +146,22 @@ void Assembly-CSharp.dll::OperationResponsePendingManager::OperationResponsePend
     func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+  this_00 = (HashSet_1_System_ByteEnum_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>
                            );
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this_00,
-               MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__
-              );
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields).peer = peer;
-    func_?(&(this->fields).peer,peer);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+  HashSet_1_System_ByteEnum___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__
+            );
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).peer = peer;
+  func_?(&(this->fields).peer,peer);
   return;
 }
 

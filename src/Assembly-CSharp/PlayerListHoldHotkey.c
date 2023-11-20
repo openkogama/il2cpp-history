@@ -27,28 +27,29 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_CreatePlaye
     func_?(&TypeInfo__PlayerListHoldHotkey____c);
     cRam_? = '\x01';
   }
-  typeToDisplay = in_stack_1 & 0xffffff00;
-  value = (Object *)func_?(TypeInfo__PlayerListHoldHotkey____c__DisplayClass4_0);
+  GStack_1 = GStack_1 & 0xffffff00;
+  method_00 = TypeInfo__PlayerListHoldHotkey____c__DisplayClass4_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).playerListsPrefab;
+  (this->fields).isActive = 1;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar2 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      PlayerListsLayout_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsLayout>_PlayerListsLayout_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).playerListsPrefab;
-    (this->fields).isActive = 1;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        PlayerListsLayout_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsLayout>_PlayerListsLayout_
-                       );
     value[1].klass = pOVar2;
     func_?(value + 1,pOVar2);
     WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
-              ((GameStatCounterType__Enum *)&stack0xfffffff8,(MethodInfo *)0x0);
+              (&GStack_1,(MethodInfo *)0x0);
     if (value[1].klass != (Object__Class *)0x0) {
       PlayerListsLayout::PlayerListsLayout_Initialize
-                ((PlayerListsLayout *)value[1].klass,(this->fields).playerListsPrefab,typeToDisplay,
+                ((PlayerListsLayout *)value[1].klass,(this->fields).playerListsPrefab,GStack_1,
                  UIPushOption__Enum_None,(MethodInfo *)0x0);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
@@ -62,16 +63,13 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_CreatePlaye
         }
         object = TypeInfo__PlayerListHoldHotkey____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__PlayerListHoldHotkey____c___CreatePlayerList_b__4_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__4_0 = callbackFunction;
-        func_?(&TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__4_0,
-                        callbackFunction);
+        func_?();
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -85,21 +83,18 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_CreatePlaye
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                   MethodInfo__PlayerListHoldHotkey____c__DisplayClass4_0___CreatePlayerList_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
-      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                 MethodInfo__PlayerListHoldHotkey____c__DisplayClass4_0___CreatePlayerList_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -143,12 +138,6 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_DestroyPlay
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -218,7 +207,6 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_OnDestroy
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pPVar2,
@@ -248,15 +236,14 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_OnDestroy
       }
       pPVar2 = TypeInfo__PlayerListHoldHotkey____c->static_fields->__9;
       pEVar3 = (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)func_?();
-      if (pEVar3 == (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pPVar2,
                  MethodInfo__PlayerListHoldHotkey____c___OnDestroy_b__6_1_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__6_1 = pEVar3;
-      func_?(&TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__6_1,pEVar3);
+      pGVar1 = (GameObject *)&TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__6_1;
+      func_?();
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -277,20 +264,13 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_OnDestroy
       }
       pPVar2 = TypeInfo__PlayerListHoldHotkey____c->static_fields->__9;
       pEVar3 = (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)func_?();
-      if (pEVar3 == (ExecuteEvents_EventFunction_1_IShortcutKeyUnRegister_ *)0x0) {
-code_?:
-        func_?();
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pPVar2,
                  MethodInfo__PlayerListHoldHotkey____c___OnDestroy_b__6_2_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__6_2 = pEVar3;
-      func_?(&TypeInfo__PlayerListHoldHotkey____c->static_fields->__9__6_2,pEVar3);
+      func_?();
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -343,12 +323,6 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_OnDisable
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        func_?();
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
-      }
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -401,38 +375,30 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey_Start
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
                           );
-  if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
-               MethodInfo__PlayerListHoldHotkey___Start_b__3_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,pEVar2,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-              );
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-    if (pEVar2 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
-                 MethodInfo__PlayerListHoldHotkey___Start_b__3_1_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,pEVar2,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-                );
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
+             MethodInfo__PlayerListHoldHotkey___Start_b__3_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,pEVar2,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+            );
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)this,
+             MethodInfo__PlayerListHoldHotkey___Start_b__3_1_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,pEVar2,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+            );
   return;
 }
 
@@ -452,15 +418,13 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey__Start_b__3
   }
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__PlayerListHoldHotkey__CreatePlayerList__,
-               (MethodInfo *)0x0);
-    if (x != (IShortcutKeyRegister *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x12);
-      return;
-    }
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__PlayerListHoldHotkey__CreatePlayerList__,
+             (MethodInfo *)0x0);
+  if (x != (IShortcutKeyRegister *)0x0) {
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x12);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -484,15 +448,13 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey::PlayerListHoldHotkey__Start_b__3
   }
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__PlayerListHoldHotkey__DestroyPlayerList__,
-               (MethodInfo *)0x0);
-    if (x != (IShortcutKeyRegister *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x12);
-      return;
-    }
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__PlayerListHoldHotkey__DestroyPlayerList__,
+             (MethodInfo *)0x0);
+  if (x != (IShortcutKeyRegister *)0x0) {
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,0x12);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

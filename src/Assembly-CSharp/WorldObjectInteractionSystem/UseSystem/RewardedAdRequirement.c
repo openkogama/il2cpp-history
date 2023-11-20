@@ -321,8 +321,6 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -366,9 +364,9 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
                           ((Dictionary_2_System_Int32Enum_System_Single_ *)this_01,5,
                            MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__get_Item_UseRequirementType_
                           );
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
-        Dictionary_2_System_Int32Enum_System_Single__set_Item
-                  ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,key,fVar3 + fVar2,
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+        Dictionary_2_System_Int32_System_Single__set_Item
+                  ((Dictionary_2_System_Int32_System_Single_ *)this_00,key,fVar3 + fVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
                   );
         if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -380,7 +378,6 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
       }
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -420,23 +417,26 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   worldObjectID = ownerID;
   (this->fields).worldObjectID = ownerID;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                        (Object *)StringLiteral_rewardedAd,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
       return;
     }
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)StringLiteral_rewardedAd,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 != (Object *)0x0) {
-      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
+                       (Object *)StringLiteral_rewardedAd,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
         pbVar3 = (bool *)func_?();
         pRVar4 = (this->fields).displayObject;
         (this->fields).requiresRewardedAd = *pbVar3;
@@ -500,21 +500,25 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
         if ((this->fields).requiresRewardedAd != 0) {
           return;
         }
-        this_01 = (Dictionary_2_System_Object_System_Object_ *)
-                  func_?(
-                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                 );
-        if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          ownerID = ownerID & 0xffffff;
-          pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,(int)&ownerID + 3);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?(
+                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                    );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        ownerID = ownerID & 0xffffff;
+        value = (Object *)func_?(TypeInfo__System__Boolean,(int)&ownerID + 3);
+        if (this_01 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (this_01,(Object *)StringLiteral_rewardedAd,pOVar2,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                     (Object *)StringLiteral_rewardedAd,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -522,7 +526,8 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
           if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                      (this_02,worldObjectID,this_01,(MethodInfo *)0x0);
+                      (this_02,worldObjectID,(Dictionary_2_System_Object_System_Object_ *)this_01,
+                       (MethodInfo *)0x0);
             pRVar4 = (this->fields).displayObject;
             if (pRVar4 != (RewardedAdDisplayObject *)0x0) {
               pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -589,14 +594,14 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
     if (pMVar1 != (MVLocalPlayer *)0x0) {
       pWVar2 = (pMVar1->fields)._WorldObjectUseRequirementTracker_k__BackingField;
       worldObjectID = (this->fields).worldObjectID;
-      this_00 = (UnityAction_1_System_ByteEnum_ *)
+      this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
-      if ((this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-          UnityAction_1_System_ByteEnum___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnAdFinished_bool_
-                     ,(MethodInfo *)0x0), pWVar2 != (WorldObjectUseRequirementTracker *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnAdFinished_bool_
+                 ,(MethodInfo *)0x0);
+      if (pWVar2 != (WorldObjectUseRequirementTracker *)0x0) {
         WorldObjectTypes::Avatar::Local::WorldObjectUseRequirementTracker::
         WorldObjectUseRequirementTracker_PayUse
                   (pWVar2,UseRequirementType__Enum_RewardedAd,worldObjectID,
@@ -652,8 +657,10 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).worldObjectID = -1;
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   return;
@@ -672,8 +679,10 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).worldObjectID = -1;
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   (this->fields).checkNoCost = action;
@@ -695,8 +704,10 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).worldObjectID = -1;
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   uVar1 = (this->fields).displayObjectOffset.x;
@@ -721,8 +732,10 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).worldObjectID = -1;
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   (this->fields).checkNoCost = action;

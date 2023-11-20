@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)StringLiteral_This_class_does_not_implement_sk,(MethodInfo *)0x0);
   pCVar1 = (this->fields).popupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -46,7 +46,12 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
   }
   if ((this->fields).destroyCreatedPopup != 0) {
     this_00 = (this->fields).createdPopup;
-    if (this_00 == (CanvasGroup *)0x0) goto code_?;
+    if (this_00 == (CanvasGroup *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                     ((Component *)this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -64,19 +69,11 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   this_01 = (Action_2_Object_Int32Enum_ *)func_?();
-  if (this_01 != (Action_2_Object_Int32Enum_ *)0x0) {
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              (this_01,(Object *)this,(this->klass->vtable).OnFirstTimeState.method,
-               (MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_01,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+            (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)this_01,(MethodInfo *)0x0);
   return;
 }
 
@@ -136,11 +133,11 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
     func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0)
-  ;
+  method_00 = TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EBX);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     value[1].monitor = (MonitorData *)0x0;
@@ -156,51 +153,46 @@ code_?:
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                             );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                     MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                   MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
         }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        return;
       }
-      else {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar1,0,
+                         MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
+                        );
+      value[1].monitor = (MonitorData *)RVar2;
+      index = 1;
+      pLVar3 = (this->fields).pushOptions;
+      while (pLVar3 != (List_1_UIPushOption_ *)0x0) {
+        if ((pLVar3->fields)._size <= index) goto code_?;
+        pMVar4 = value[1].monitor;
+        pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).pushOptions;
+        if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        break;
         RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,0,
+                          (pLVar1,index,
                            MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                           );
-        value[1].monitor = (MonitorData *)RVar2;
-        index = 1;
+        index = index + 1;
+        value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar4);
         pLVar3 = (this->fields).pushOptions;
-        while (pLVar3 != (List_1_UIPushOption_ *)0x0) {
-          if ((pLVar3->fields)._size <= index) goto code_?;
-          pMVar4 = value[1].monitor;
-          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).pushOptions;
-          if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          break;
-          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar1,index,
-                             MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
-                            );
-          index = index + 1;
-          value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar4);
-          pLVar3 = (this->fields).pushOptions;
-        }
       }
     }
   }
@@ -260,11 +252,11 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
     func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0)
-  ;
+  method_00 = TypeInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     value[1].monitor = (MonitorData *)0x0;
@@ -280,51 +272,46 @@ code_?:
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                             );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                     MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                   MethodInfo__FirstTimeActivatablePopupTimed____c__DisplayClass20_0___PushToStack_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
         }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        return;
       }
-      else {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar1,0,
+                         MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
+                        );
+      value[1].monitor = (MonitorData *)RVar2;
+      index = 1;
+      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).pushOptions;
+      while (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        if ((pLVar1->fields)._size <= index) goto code_?;
+        pMVar3 = value[1].monitor;
+        if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        break;
         RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,0,
+                          (pLVar1,index,
                            MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
                           );
-        value[1].monitor = (MonitorData *)RVar2;
-        index = 1;
+        index = index + 1;
+        value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar3);
         pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).pushOptions;
-        while (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          if ((pLVar1->fields)._size <= index) goto code_?;
-          pMVar3 = value[1].monitor;
-          if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          break;
-          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar1,index,
-                             MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_
-                            );
-          index = index + 1;
-          value[1].monitor = (MonitorData *)((uint)RVar2 | (uint)pMVar3);
-          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).pushOptions;
-        }
       }
     }
   }
@@ -391,8 +378,6 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
             }
             object = TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9;
             callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-            goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
@@ -401,7 +386,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
                        ,(MethodInfo *)0x0);
             TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9__15_0 =
                  callbackFunction;
-            func_?();
+            func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9__15_0
+                           );
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
@@ -431,7 +417,6 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
           (this->fields).isFading = 1;
           return;
         }
-code_?:
         func_?();
         pcVar3 = (code *)swi(3);
         (*pcVar3)();

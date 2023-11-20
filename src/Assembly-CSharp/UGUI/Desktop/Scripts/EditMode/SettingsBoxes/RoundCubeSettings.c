@@ -121,17 +121,19 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Round
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_03,woID,(MethodInfo *)0x0);
       if ((pMVar1 != (MVWorldObject *)0x0) &&
-         (this_01 = (pMVar1->fields).data,
-         this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
+         (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                    (pMVar1->fields).data,
+         this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (this_01,(Object *)StringLiteral_interval,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        value_00 = mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+        value_00 = mscorlib.dll::System::Convert::Convert_ToInt32(value.m_Index,(MethodInfo *)0x0);
         this_02 = (this->fields).slider;
         if (this_02 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize_1
@@ -227,9 +229,9 @@ code_?:
       if ((pSVar6 != (SettingsSlider *)0x0) &&
          (pSVar7 = (pSVar6->fields).slider, pSVar7 != (Slider *)0x0)) {
         pSVar8 = pSVar7->klass;
-        method = (pSVar8->vtable).set_value.method;
+        method = (MethodInfo *)(pSVar8->vtable).SetValueWithoutNotify.methodPtr;
         this = (RoundCubeSettings *)(float)(IVar5.m_value + (int)this * 0x3c);
-        (*(pSVar8->vtable).set_value.methodPtr)();
+        (*(code *)(pSVar8->vtable).set_value.method)();
         return;
       }
     }
@@ -257,8 +259,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Round
   pSVar1 = (this->fields).slider;
   if ((pSVar1 != (SettingsSlider *)0x0) &&
      (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
-    fVar3 = (float10)(*(pSVar2->klass->vtable).get_value.methodPtr)
-                               (pSVar2,(pSVar2->klass->vtable).get_value.method);
+    fVar3 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)
+                               (pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
     pIVar4 = (this->fields).minutes;
     _uStack_10 = CONCAT44((int)fVar3,SUB84((double)fVar3,0));
     IStack_5.m_value = (int)fVar3 / 0x3c;

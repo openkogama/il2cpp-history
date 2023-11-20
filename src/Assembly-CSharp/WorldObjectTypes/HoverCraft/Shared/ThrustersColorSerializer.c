@@ -49,14 +49,16 @@ ThrustersColorSerializer_Deserialize
   pSVar6 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
   if (dict != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (dict,(Object *)pSVar6,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar10 != (Object *)0x0) {
-      if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
+    TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)dict,
+                       (Object *)pSVar6,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar10.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
       pcVar11 = (char *)func_?();
       pSVar6 = StringLiteral__colors;
       if (*pcVar11 == '\0') {
@@ -79,14 +81,16 @@ code_?:
       }
       pSVar6 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-      pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (dict,(Object *)pSVar6,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pOVar10 != (Object *)0x0) {
-        if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
+      TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)dict,
+                         (Object *)pSVar6,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar10.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
         piVar13 = (int *)func_?();
         pSVar6 = StringLiteral__alphas;
         iStack_14 = *piVar13;
@@ -96,13 +100,16 @@ code_?:
         }
         pSVar6 = mscorlib.dll::System::String::String_Concat_3
                            (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (dict,(Object *)pSVar6,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if (pOVar10 != (Object *)0x0) {
-          if ((pOVar10->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)dict,
+                           (Object *)pSVar6,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if (TVar10.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) ==
+              (TypeInfo__System__Int32->_0).element_class) {
             piVar13 = (int *)func_?();
             iVar15 = iStack_14;
             iStack_16 = *piVar13;
@@ -118,14 +125,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               puVar19 = (undefined4 *)func_?();
               pSStack_20 = (String__Class *)*puVar19;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
@@ -137,14 +146,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               puVar19 = (undefined4 *)func_?();
               pMStack_21 = (MonitorData *)*puVar19;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
@@ -156,14 +167,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar22 = (float *)func_?();
               fStack_23 = *pfVar22;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
@@ -176,14 +189,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSVar6,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               puVar19 = (undefined4 *)func_?();
               uVar24 = *puVar19;
               if (pSStack_17 == (String *)0x0) goto code_?;
@@ -217,14 +232,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSStack_17,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar22 = (float *)func_?();
               fStack_23 = *pfVar22;
               pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
@@ -237,14 +254,16 @@ code_?:
               }
               pSVar6 = mscorlib.dll::System::String::String_Concat_3
                                  (StringLiteral_thrustersColor,pSStack_17,(MethodInfo *)0x0);
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (dict,(Object *)pSVar6,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 dict,(Object *)pSVar6,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              if (TVar10.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
               pfVar22 = (float *)func_?();
               fVar27 = *pfVar22;
               if (pTVar25 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
@@ -322,16 +341,16 @@ void Assembly-CSharp.dll::WorldObjectTypes::HoverCraft::Shared::ThrustersColorSe
   DStack_6._index = 0;
   DStack_6._current.key = (Object *)0x0;
   if (toAdd != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       (&DStack_8,toAdd,
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)toAdd,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
     uStack_9 = 0;
-    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;
     DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._current.key = (Object *)(pDVar7->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
     pDStack_10 = &DStack_6;
@@ -344,7 +363,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::HoverCraft::Shared::ThrustersColorSe
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
@@ -399,18 +418,17 @@ ThrustersColorSerializer_Serialize(ThrustersColor thrustersColor,MethodInfo *met
     func_?(&StringLiteral__alphas);
     cRam_? = '\x01';
   }
-  if (((thrustersColor.colors == (ThrustersColorColorKey__Array *)0x0) ||
-      (thrustersColor.alphas == (ThrustersColorAlphaKey__Array *)0x0)) ||
-     (pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              ), pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    func_?();
-  }
-  else {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
+  IVar1.m_value = 0;
+  if ((thrustersColor.colors != (ThrustersColorColorKey__Array *)0x0) &&
+     (thrustersColor.alphas != (ThrustersColorAlphaKey__Array *)0x0)) {
+    this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
     pSVar2 = ::StringLiteral__;
@@ -420,167 +438,173 @@ ThrustersColorSerializer_Serialize(ThrustersColor thrustersColor,MethodInfo *met
     }
     pSVar2 = mscorlib.dll::System::String::String_Concat_3
                        (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffb);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)pSVar2,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pSVar2 = StringLiteral__colors;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)pSVar2,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pSVar2 = StringLiteral__alphas;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    key.m_value = (int32_t)mscorlib.dll::System::String::String_Concat_3
-                                     (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?();
-    pDVar4 = pDVar1;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)key.m_value,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    IVar5.m_value = 0;
-    if (0 < (int)pDVar4) {
-      do {
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-        pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral__color_,pSVar2,StringLiteral__R,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-        if ((undefined *)(thrustersColor.colors)->max_length <= (uint)IVar5.m_value)
-        goto code_?;
-        pOVar3 = (Object *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-        IVar5.m_value = (int32_t)&UNK_?;
-        pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral__color_,pSVar2,StringLiteral__G,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-        if ((undefined *)(thrustersColor.colors)->max_length <= (uint)IVar5.m_value)
-        goto code_?;
-        pOVar3 = (Object *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-        IVar5.m_value = (int32_t)&UNK_?;
-        pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral__color_,pSVar2,StringLiteral__B,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-        if ((undefined *)(thrustersColor.colors)->max_length <= (uint)IVar5.m_value)
-        goto code_?;
-        pOVar3 = (Object *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-        IVar5.m_value = (int32_t)&UNK_?;
-        pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral__color_,pSVar2,StringLiteral__time,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-        if ((undefined *)(thrustersColor.colors)->max_length <= (uint)IVar5.m_value)
-        goto code_?;
-        pOVar3 = (Object *)func_?();
-        IVar5.m_value = (int32_t)&UNK_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        IVar5.m_value = IVar5.m_value + 1;
-      } while (IVar5.m_value < (int)pDVar4);
-    }
-    while( true ) {
-      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                         (StringLiteral__alpha_,pSVar2,StringLiteral__a,(MethodInfo *)0x0);
+    uStack_3 = (undefined *)CONCAT13(1,(undefined3)uStack_3);
+    pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&uStack_3 + 3);
+    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pSVar2 = StringLiteral__colors;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
       pSVar2 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-      if ((String *)(thrustersColor.alphas)->max_length <= (uint)key.m_value) break;
-      pOVar3 = (Object *)func_?();
+      pOVar4 = (Object *)func_?(TypeInfo__System__Int32);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                         (StringLiteral__alpha_,pSVar2,StringLiteral__time,(MethodInfo *)0x0);
+      pSVar2 = StringLiteral__alphas;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
       pSVar2 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
-      if ((String *)(thrustersColor.alphas)->max_length <= (uint)key.m_value) break;
-      pOVar3 = (Object *)func_?();
+      puVar5 = &stack0xffffffe0;
+      key = TypeInfo__System__Int32;
+      pOVar4 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      key.m_value = key.m_value + 1;
-      if (0xADDR < key.m_value) {
-        return pDVar1;
+      IStack_6.m_value = 0;
+      if (0 < (int)puVar5) {
+        do {
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
+          thrustersColor.alphas = (ThrustersColorAlphaKey__Array *)0x0;
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__color_,pSVar2,StringLiteral__R,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((thrustersColor.colors)->max_length <= (uint)IStack_6.m_value) goto code_?;
+          pOVar4 = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__color_,pSVar2,StringLiteral__G,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((thrustersColor.colors)->max_length <= (uint)IStack_6.m_value) goto code_?;
+          pOVar4 = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__color_,pSVar2,StringLiteral__B,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((thrustersColor.colors)->max_length <= (uint)IStack_6.m_value) goto code_?;
+          pOVar4 = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__color_,pSVar2,StringLiteral__time,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          key = (Int32__Class *)
+                mscorlib.dll::System::String::String_Concat_3
+                          (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((thrustersColor.colors)->max_length <= (uint)IStack_6.m_value) goto code_?;
+          pOVar4 = (Object *)func_?();
+          IVar1.m_value =
+               (int32_t)
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+          ;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          IStack_6.m_value = IStack_6.m_value + 1;
+        } while (IStack_6.m_value < (int)pOVar4);
       }
+      if (0 < (int)key) {
+        do {
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+                             ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__alpha_,pSVar2,StringLiteral__a,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((MethodInfo *)(thrustersColor.alphas)->max_length <= (uint)IVar1.m_value)
+          goto code_?;
+          pOVar4 = (Object *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+                             ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
+          IVar1.m_value = 0;
+          pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral__alpha_,pSVar2,StringLiteral__time,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_thrustersColor,pSVar2,(MethodInfo *)0x0);
+          if ((thrustersColor.alphas)->max_length <= (uint)IVar1.m_value) goto code_?;
+          pOVar4 = (Object *)func_?();
+          IVar1.m_value =
+               (int32_t)
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+          ;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pSVar2,pOVar4,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    );
+          IVar1.m_value = IVar1.m_value + 1;
+        } while (IVar1.m_value < (int)pSVar2);
+      }
+      return (Dictionary_2_System_Object_System_Object_ *)this;
     }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar6)();
-  return pDVar1;
+  pcVar7 = (code *)swi(3);
+  pDVar8 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar7)();
+  return pDVar8;
 }
 
 

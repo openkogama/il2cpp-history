@@ -23,23 +23,25 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_Initial
     func_?(&StringLiteral_No_TabDef_exists_for_accessory_c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__TabMenuButtonAccessory____c__DisplayClass11_0);
+  method_00 = TypeInfo__TabMenuButtonAccessory____c__DisplayClass11_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     value[1].monitor = (MonitorData *)tabId;
     pLVar1 = (this->fields).layoutElement;
     (this->fields).category = tabId;
     if (pLVar1 != (LayoutElement *)0x0) {
-      fVar2 = (float10)(*(pLVar1->klass->vtable).get_minHeight_1.methodPtr)
-                                 (pLVar1,(pLVar1->klass->vtable).get_minHeight_1.method);
+      fVar2 = (float10)(*(code *)(pLVar1->klass->vtable).get_minHeight_1.method)
+                                 (pLVar1,(pLVar1->klass->vtable).set_minHeight.methodPtr);
       (this->fields).defaultHeight = (float)fVar2;
       TabMenuButtonAccessory_UpdateHighlightState(this,(MethodInfo *)0x0);
-      pLVar3 = (this->fields).tabDefs;
+      pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+               (this->fields).tabDefs;
       index = 0;
-      while (pLVar3 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+      while (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
         if ((pLVar3->fields)._size <= index) {
           pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
                              ((Int32 *)&value[1].monitor,(MethodInfo *)0x0);
@@ -47,40 +49,44 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_Initial
                              (StringLiteral_No_TabDef_exists_for_accessory_c,pSVar4,
                               (MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Debug);
+            func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)pSVar4,(MethodInfo *)0x0);
           return;
         }
-        pMVar5 = value[1].monitor;
-        pLVar3 = (this->fields).tabDefs;
-        if (pLVar3 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) break;
-        TVar6 = mscorlib.dll::System::Collections::Generic::
-                List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-                List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+        pXVar5 = (XmlQualifiedName *)value[1].monitor;
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                 (this->fields).tabDefs;
+        if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+        break;
+        XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                           (pLVar3,index,
                            MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
                           );
-        pLVar3 = (this->fields).tabDefs;
-        if (pMVar5 == (MonitorData *)TVar6.tabID) {
-          if (pLVar3 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
-            TVar6 = mscorlib.dll::System::Collections::Generic::
-                    List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-                    List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                 (this->fields).tabDefs;
+        if (pXVar5 == XVar6.qname) {
+          if (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+          {
+            XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                    XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                    List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                               (pLVar3,index,
                                MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
                               );
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
+              func_?();
             }
             pGVar7 = (Graphic *)
                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)TVar6.streamedImagePrefab,
+                               ((Object *)XVar6.xso,
                                 UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Graphic>_UnityEngine__UI__Graphic_
                                );
             (this->fields).icon = pGVar7;
-            func_?(&(this->fields).icon,pGVar7);
+            func_?();
             pGVar7 = (this->fields).icon;
             if (pGVar7 != (Graphic *)0x0) {
               pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -102,12 +108,12 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_Initial
                     this_00 = (UnityEvent *)(pBVar9->fields).m_OnClick;
                     this_01 = (NavMesh_OnNavMeshPreUpdate *)
                               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-                    if ((this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
-                       (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                        NavMesh_OnNavMeshPreUpdate__ctor
-                                  (this_01,value,
-                                   MethodInfo__TabMenuButtonAccessory____c__DisplayClass11_0___Initialize_b__0__
-                                   ,(MethodInfo *)0x0), this_00 != (UnityEvent *)0x0)) {
+                    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                    NavMesh_OnNavMeshPreUpdate__ctor
+                              (this_01,value,
+                               MethodInfo__TabMenuButtonAccessory____c__DisplayClass11_0___Initialize_b__0__
+                               ,(MethodInfo *)0x0);
+                    if (this_00 != (UnityEvent *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::
                       UnityEvent_AddListener(this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
                       return;
@@ -141,20 +147,15 @@ Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_LerpToSize
     func_?(&TypeInfo__TabMenuButtonAccessory___LerpToSize_d__15);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__TabMenuButtonAccessory___LerpToSize_d__15);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    value[2].monitor = (MonitorData *)size;
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__TabMenuButtonAccessory___LerpToSize_d__15;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)size;
+  return (IEnumerator *)value;
 }
 
 
@@ -175,18 +176,30 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_SetAsDe
   pCVar2 = Styles::Styles_GetColor
                      ((Color *)&stack0xffffffec,ColorStyle__Enum_OffWhite,(MethodInfo *)0x0);
   if (pGVar1 != (Graphic *)0x0) {
-    (*(pGVar1->klass->vtable).set_color.methodPtr)(pGVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a);
+    (*(code *)(pGVar1->klass->vtable).set_color.method)
+              (pGVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
               ((MonoBehaviour *)this,(MethodInfo *)0x0);
-    routine = TabMenuButtonAccessory_LerpToSize(this,(this->fields).defaultHeight,(MethodInfo *)0x0)
-    ;
+    pMVar3 = (MonitorData *)(this->fields).defaultHeight;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    method_00 = TypeInfo__TabMenuButtonAccessory___LerpToSize_d__15;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?();
+    value[2].monitor = pMVar3;
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -219,57 +232,63 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_SetAsSe
     func_?(TypeInfo__Styles);
   }
   pCVar2 = Styles::Styles_GetColor
-                     ((Color *)&stack0xffffffec,ColorStyle__Enum_SelectedTab,(MethodInfo *)0x0);
+                     ((Color *)&puStack_3,ColorStyle__Enum_SelectedTab,(MethodInfo *)0x0);
   if (pGVar1 != (Graphic *)0x0) {
-    (*(pGVar1->klass->vtable).set_color.methodPtr)
+    (*(code *)(pGVar1->klass->vtable).set_color.method)
               (pGVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a,
-               (pGVar1->klass->vtable).set_color.method);
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+               (pGVar1->klass->vtable).get_raycastTarget.methodPtr);
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+    pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>
                             );
-    if (pEVar4 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar4,(Object *)this,
-                 MethodInfo__TabMenuButtonAccessory___SetAsSelected_b__13_0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,pEVar4,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>_
-                );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      if (pEVar4 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar4,(Object *)this,
-                   MethodInfo__TabMenuButtonAccessory___SetAsSelected_b__13_1_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar3,(BaseEventData *)0x0,pEVar4,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>_
-                  );
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
-                  ((MonoBehaviour *)this,(MethodInfo *)0x0);
-        routine = TabMenuButtonAccessory_LerpToSize
-                            (this,(this->fields).selectedTabHeight,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)pEVar5,(Object *)this,
+               MethodInfo__TabMenuButtonAccessory___SetAsSelected_b__13_0_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar4,(BaseEventData *)0x0,pEVar5,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>_
+              );
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)pEVar5,(Object *)this,
+               MethodInfo__TabMenuButtonAccessory___SetAsSelected_b__13_1_UnityEngine__EventSystems__IAccessoryClicked__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar4,(BaseEventData *)0x0,pEVar5,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAccessoryClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>_
+              );
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
+              ((MonoBehaviour *)this,(MethodInfo *)0x0);
+    pMVar6 = (MonitorData *)(this->fields).selectedTabHeight;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    method_00 = TypeInfo__TabMenuButtonAccessory___LerpToSize_d__15;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?();
+    value[2].monitor = pMVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -370,7 +389,7 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_UpdateH
       mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
       if (pTVar7 != (Text *)0x0) {
         IStack_2.m_value = (int32_t)&UNK_?;
-        (*(pTVar7->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar7->klass->vtable).set_text.method)();
         return;
       }
     }

@@ -123,38 +123,40 @@ void Assembly-CSharp.dll::ThemeSettingsMenuBase::ThemeSettingsMenuBase_Refresh
       pRStack_16 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
       uVar17 = 0;
       pRStack_18 = (RectTransform *)0x0;
-      uVar19 = (pRStack_16->_1).interface_offsets_count;
+      uVar19._0_1_ = (pRStack_16->_1).rank;
+      uVar19._1_1_ = (pRStack_16->_1).minimumAlignment;
       pRStack_12 = (RectTransform__Array *)(uint)uVar19;
       if (uVar19 != 0) {
         do {
           if (pRStack_16->interfaceOffsets[uVar17].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
             pIVar20 = ((RStack_3.klass)->_0).image;
-            puVar21 = &pIVar20[4].customAttributeCount +
-                     *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            pp_Var9 = &pIVar20[4].metadataHandle +
+                      *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
             goto code_?;
           }
           uVar17 = uVar17 + 1;
         } while (uVar17 < uVar19);
       }
-      puVar21 = (uint32_t *)
-               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
+      pp_Var9 = (Il2CppMetadataImageHandle *)
+                func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-      pCVar22 = (Component *)(*(code *)*puVar21)(pRVar10,(Il2CppMetadataImageHandle)puVar21[1]);
-      if (pCVar22 == (Component *)0x0) break;
-      pCVar23 = (Component *)0x0;
-      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
-        pCVar23 = pCVar22;
+      pCVar21 = (Component *)
+                (*(code *)*pp_Var9)(pRVar10,(Il2CppNameToTypeHandleHashTable *)pp_Var9[1]);
+      if (pCVar21 == (Component *)0x0) break;
+      pCVar22 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar21->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar22 = pCVar21;
       }
       pRVar10 = TypeInfo__UnityEngine__RectTransform;
-      if (pCVar23 == (Component *)0x0) goto code_?;
-      pCVar23 = (Component *)0x0;
-      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
-        pCVar23 = pCVar22;
+      if (pCVar22 == (Component *)0x0) goto code_?;
+      pCVar22 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar21->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar22 = pCVar21;
       }
       unaff_EDI = (MethodInfo *)
                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            (pCVar23,(MethodInfo *)0x0);
+                            (pCVar22,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -186,25 +188,27 @@ code_?:
     while (pRVar10 = RStack_3.klass, pRStack_16 = RStack_3.klass,
           RStack_3.klass != (RectTransform__Class *)0x0) {
       pRStack_15 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
-      uVar17 = 0;
+      uVar23 = 0;
       pRStack_12 = (RectTransform__Array *)0x0;
-      uVar19 = (pRStack_15->_1).interface_offsets_count;
-      pRStack_18 = (RectTransform *)(uint)uVar19;
-      if (uVar19 != 0) {
+      uVar17._0_1_ = (pRStack_15->_1).rank;
+      uVar17._1_1_ = (pRStack_15->_1).minimumAlignment;
+      pRStack_18 = (RectTransform *)(uint)uVar17;
+      if (uVar17 != 0) {
         do {
-          if (pRStack_15->interfaceOffsets[uVar17].interfaceType ==
+          if (pRStack_15->interfaceOffsets[uVar23].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
             pIVar20 = ((RStack_3.klass)->_0).image;
-            puVar21 = &pIVar20[4].typeCount + *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            puVar24 = &pIVar20[4].exportedTypeCount +
+                      *(int *)(pIVar20[2].name + (uint)uVar23 * 8 + 4) * 2;
             goto code_?;
           }
-          uVar17 = uVar17 + 1;
-        } while (uVar17 < uVar19);
+          uVar23 = uVar23 + 1;
+        } while (uVar23 < uVar17);
       }
-      puVar21 = (uint32_t *)
-               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,0);
+      puVar24 = (uint32_t *)
+                func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,0);
 code_?:
-      cVar9 = (*(code *)*puVar21)(pRVar10,puVar21[1]);
+      cVar9 = (*(code *)*puVar24)(pRVar10,puVar24[1]);
       pRVar10 = RStack_3.klass;
       if (cVar9 == '\0') {
         pRStack_1 = (RectTransform *)0xffffffff;
@@ -217,31 +221,31 @@ code_?:
         pTVar11 = (this->fields).theme;
         if ((pTVar11 != (Theme *)0x0) &&
            (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      (*(pTVar11->klass->vtable).get_Controllers.methodPtr)
-                                (pTVar11,(pTVar11->klass->vtable).get_Controllers.method),
+                      (*(code *)(pTVar11->klass->vtable).get_Controllers.method)
+                                (pTVar11,(pTVar11->klass->vtable).ThemeReset.methodPtr),
            this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-          pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                               (&LStack_8,this_01,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__GetEnumerator__
                               );
-          pRStack_25 = (RectTransform *)0x0;
-          LStack_6._list = (List_1_System_Object_ *)pLVar24->_list;
-          LStack_6._index = pLVar24->_index;
-          LStack_6._version = pLVar24->_version;
-          LStack_6._current = *(Object **)&pLVar24->_current;
+          pRStack_26 = (RectTransform *)0x0;
+          LStack_6._list = (List_1_System_Object_ *)pLVar25->_list;
+          LStack_6._index = pLVar25->_index;
+          LStack_6._version = pLVar25->_version;
+          LStack_6._current = *(Object **)&pLVar25->_current;
           pRStack_1 = (RectTransform *)0x7;
           pRStack_12 = (RectTransform__Array *)&LStack_6;
           while( true ) {
-            bVar26 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar27 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
                               (&LStack_6,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__MoveNext__
                               );
-            if (bVar26 == 0) {
+            if (bVar27 == 0) {
               pRStack_1 = (RectTransform *)0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                         ((Object *)&LStack_6,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::RectTransform>__Dispose__
@@ -263,37 +267,39 @@ code_?:
       pRStack_15 = (RectTransform__Class *)((RStack_3.klass)->_0).image;
       uVar17 = 0;
       pRStack_12 = (RectTransform__Array *)0x0;
-      uVar19 = (pRStack_15->_1).interface_offsets_count;
-      pRStack_18 = (RectTransform *)(uint)uVar19;
-      if (uVar19 != 0) {
+      uVar23._0_1_ = (pRStack_15->_1).rank;
+      uVar23._1_1_ = (pRStack_15->_1).minimumAlignment;
+      pRStack_18 = (RectTransform *)(uint)uVar23;
+      if (uVar23 != 0) {
         do {
           if (pRStack_15->interfaceOffsets[uVar17].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
             pIVar20 = ((RStack_3.klass)->_0).image;
-            puVar21 = &pIVar20[4].customAttributeCount +
-                     *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
+            pp_Var9 = &pIVar20[4].metadataHandle +
+                      *(int *)(pIVar20[2].name + (uint)uVar17 * 8 + 4) * 2;
             goto code_?;
           }
           uVar17 = uVar17 + 1;
-        } while (uVar17 < uVar19);
+        } while (uVar17 < uVar23);
       }
-      puVar21 = (uint32_t *)
-               func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
+      pp_Var9 = (Il2CppMetadataImageHandle *)
+                func_?(RStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-      pCVar22 = (Component *)(*(code *)*puVar21)(pRVar10,(Il2CppMetadataImageHandle)puVar21[1]);
-      if (pCVar22 == (Component *)0x0) goto code_?;
-      pCVar23 = (Component *)0x0;
-      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
-        pCVar23 = pCVar22;
+      pCVar21 = (Component *)
+                (*(code *)*pp_Var9)(pRVar10,(Il2CppNameToTypeHandleHashTable *)pp_Var9[1]);
+      if (pCVar21 == (Component *)0x0) goto code_?;
+      pCVar22 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar21->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar22 = pCVar21;
       }
       pRVar10 = TypeInfo__UnityEngine__RectTransform;
-      if (pCVar23 == (Component *)0x0) goto code_?;
-      pCVar23 = (Component *)0x0;
-      if ((RectTransform__Class *)pCVar22->klass == TypeInfo__UnityEngine__RectTransform) {
-        pCVar23 = pCVar22;
+      if (pCVar22 == (Component *)0x0) goto code_?;
+      pCVar22 = (Component *)0x0;
+      if ((RectTransform__Class *)pCVar21->klass == TypeInfo__UnityEngine__RectTransform) {
+        pCVar22 = pCVar21;
       }
       obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      (pCVar23,(MethodInfo *)0x0);
+                      (pCVar22,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -303,16 +309,16 @@ code_?:
   }
 code_?:
   func_?();
-  pCVar22 = extraout_ECX;
+  pCVar21 = extraout_ECX;
   pRVar10 = extraout_EDX;
 code_?:
-  func_?(pCVar22,pRVar10);
+  func_?(pCVar21,pRVar10);
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 

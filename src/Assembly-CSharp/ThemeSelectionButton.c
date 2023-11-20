@@ -9,16 +9,16 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
   pTVar2 = (this->fields).selectionMenu;
   if ((pTVar1 != (Theme *)0x0) &&
      (pSVar3 = (String *)
-               (*(pTVar1->klass->vtable).__unknown_2.methodPtr)
-                         (pTVar1,(pTVar1->klass->vtable).__unknown_2.method),
+               (*(code *)(pTVar1->klass->vtable).__unknown_2.method)
+                         (pTVar1,(pTVar1->klass->vtable).__unknown_3.methodPtr),
      pTVar2 != (ThemeSelection *)0x0)) {
     (pTVar2->fields).currentDescription = pSVar3;
     func_?(&(pTVar2->fields).currentDescription,pSVar3);
     pTVar4 = (pTVar2->fields).themeDescription;
     pSVar3 = TM::TM__((pTVar2->fields).currentDescription,(MethodInfo *)0x0);
     if (pTVar4 != (Text *)0x0) {
-      (*(pTVar4->klass->vtable).set_text.methodPtr)
-                (pTVar4,pSVar3,(pTVar4->klass->vtable).set_text.method);
+      (*(code *)(pTVar4->klass->vtable).set_text.method)
+                (pTVar4,pSVar3,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if ((this->fields).themeInUse != 0) {
         return;
       }
@@ -28,10 +28,10 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
                   (this_00,1,(MethodInfo *)0x0);
         pRVar5 = (this->fields).background;
         if (pRVar5 != (RawImage *)0x0) {
-          (*(pRVar5->klass->vtable).set_color.methodPtr)
+          (*(code *)(pRVar5->klass->vtable).set_color.method)
                     (pRVar5,(this->fields).selectedColor.r,(this->fields).selectedColor.g,
                      (this->fields).selectedColor.b,(this->fields).selectedColor.a,
-                     (pRVar5->klass->vtable).set_color.method);
+                     (pRVar5->klass->vtable).get_raycastTarget.methodPtr);
           return;
         }
       }
@@ -62,8 +62,8 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
     pTVar3 = (pTVar2->fields).themeDescription;
     pSVar1 = TM::TM__((pTVar2->fields).currentDescription,(MethodInfo *)0x0);
     if (pTVar3 != (Text *)0x0) {
-      (*(pTVar3->klass->vtable).set_text.methodPtr)
-                (pTVar3,pSVar1,(pTVar3->klass->vtable).set_text.method);
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
+                (pTVar3,pSVar1,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if ((this->fields).themeInUse != 0) {
         return;
       }
@@ -73,10 +73,10 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
                   (this_00,0,(MethodInfo *)0x0);
         pRVar4 = (this->fields).background;
         if (pRVar4 != (RawImage *)0x0) {
-          (*(pRVar4->klass->vtable).set_color.methodPtr)
+          (*(code *)(pRVar4->klass->vtable).set_color.method)
                     (pRVar4,(this->fields).normalColor.r,(this->fields).normalColor.g,
                      (this->fields).normalColor.b,(this->fields).normalColor.a,
-                     (pRVar4->klass->vtable).set_color.method);
+                     (pRVar4->klass->vtable).get_raycastTarget.methodPtr);
           return;
         }
       }
@@ -124,54 +124,53 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_Initialize
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                 (this_02,(Transform *)(this->fields).previewImageArea,0,(MethodInfo *)0x0);
       pSVar1 = (String *)
-               (*(themePrefab->klass->vtable).__unknown_1.methodPtr)
-                         (themePrefab,(themePrefab->klass->vtable).__unknown_1.method);
+               (*(code *)(themePrefab->klass->vtable).__unknown_1.method)
+                         (themePrefab,(themePrefab->klass->vtable).__unknown_2.methodPtr);
       (this->fields).themeName = pSVar1;
       func_?(&(this->fields).themeName,pSVar1);
       pTVar2 = (this->fields)._.text;
       pSVar1 = TM::TM__((this->fields).themeName,(MethodInfo *)0x0);
       if (pTVar2 != (Text *)0x0) {
-        (*(pTVar2->klass->vtable).set_text.methodPtr)
-                  (pTVar2,pSVar1,(pTVar2->klass->vtable).set_text.method);
+        (*(code *)(pTVar2->klass->vtable).set_text.method)
+                  (pTVar2,pSVar1,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-        if (this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (this_03,(Object *)this,
-                     MethodInfo__ThemeSelectionButton__LocalizeAndSetThemeName__,(MethodInfo *)0x0);
-          TM::TM_LanguageChanged((Action *)this_03,(MethodInfo *)0x0);
-          pRVar3 = (this->fields).background;
-          if (pRVar3 != (RawImage *)0x0) {
-            pfVar4 = (float *)(*(pRVar3->klass->vtable).get_color.methodPtr)
-                                        (auStack_5,pRVar3,(pRVar3->klass->vtable).get_color.method)
-            ;
-            fVar6 = pfVar4[1];
-            fVar7 = pfVar4[2];
-            fVar8 = pfVar4[3];
-            (this->fields).normalColor.r = *pfVar4;
-            (this->fields).normalColor.g = fVar6;
-            (this->fields).normalColor.b = fVar7;
-            (this->fields).normalColor.a = fVar8;
-            if (alreadyInUse != 0) {
-              pRVar3 = (this->fields).background;
-              if (pRVar3 == (RawImage *)0x0) goto code_?;
-              (*(pRVar3->klass->vtable).set_color.methodPtr)
-                        (pRVar3,(this->fields).selectedColor.r,(this->fields).selectedColor.g,
-                         (this->fields).selectedColor.b,(this->fields).selectedColor.a,
-                         (pRVar3->klass->vtable).set_color.method);
-            }
-            pBVar9 = (this->fields)._.button;
-            if ((pBVar9 != (Button *)0x0) &&
-               (this_00 = (UnityEvent *)(pBVar9->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                        (this_00,buttonClickedCB,(MethodInfo *)0x0);
-              this_01 = (this->fields).nameLabel;
-              (this->fields).themeInUse = alreadyInUse;
-              if (this_01 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (this_01,alreadyInUse,(MethodInfo *)0x0);
-                return;
-              }
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_03,(Object *)this,
+                   MethodInfo__ThemeSelectionButton__LocalizeAndSetThemeName__,(MethodInfo *)0x0);
+        TM::TM_LanguageChanged((Action *)this_03,(MethodInfo *)0x0);
+        pRVar3 = (this->fields).background;
+        if (pRVar3 != (RawImage *)0x0) {
+          pfVar4 = (float *)(*(code *)(pRVar3->klass->vtable).get_color.method)
+                                      (auStack_5,pRVar3,(pRVar3->klass->vtable).set_color.methodPtr
+                                      );
+          fVar6 = pfVar4[1];
+          fVar7 = pfVar4[2];
+          fVar8 = pfVar4[3];
+          (this->fields).normalColor.r = *pfVar4;
+          (this->fields).normalColor.g = fVar6;
+          (this->fields).normalColor.b = fVar7;
+          (this->fields).normalColor.a = fVar8;
+          if (alreadyInUse != 0) {
+            pRVar3 = (this->fields).background;
+            if (pRVar3 == (RawImage *)0x0) goto code_?;
+            (*(code *)(pRVar3->klass->vtable).set_color.method)
+                      (pRVar3,(this->fields).selectedColor.r,(this->fields).selectedColor.g,
+                       (this->fields).selectedColor.b,(this->fields).selectedColor.a,
+                       (pRVar3->klass->vtable).get_raycastTarget.methodPtr);
+          }
+          pBVar9 = (this->fields)._.button;
+          if ((pBVar9 != (Button *)0x0) &&
+             (this_00 = (UnityEvent *)(pBVar9->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                      (this_00,buttonClickedCB,(MethodInfo *)0x0);
+            this_01 = (this->fields).nameLabel;
+            (this->fields).themeInUse = alreadyInUse;
+            if (this_01 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (this_01,alreadyInUse,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -195,8 +194,8 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_LocalizeAnd
   pTVar1 = (this->fields)._.text;
   pSVar2 = TM::TM__((this->fields).themeName,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();

@@ -24,9 +24,9 @@ void Assembly-CSharp.dll::PickupItemHand::PickupItemHand_Awake
                       ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                (this_00,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
       if (this_00 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                  (this_00,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (this_00,(MethodInfo *)0x0);
         p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -75,150 +75,132 @@ void Assembly-CSharp.dll::PickupItemHand::PickupItemHand_DoRemoveCubes
     func_?(&StringLiteral_Default);
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff68,0,0x48);
-  pTVar1 = (this->fields)._._.muzzlePoint;
-  if (pTVar1 != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&RStack_3,pTVar1,(MethodInfo *)0x0);
-    uVar4 = pVVar2->x;
-    uVar5 = pVVar2->y;
-    fVar6 = pVVar2->z;
-    pMVar7 = (this->fields)._._.owner;
-    if (pMVar7 != (MVPickupOwner *)0x0) {
-      pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                          ((Vector3 *)&RStack_3,pMVar7,(MethodInfo *)0x0);
-      VStack_8.x = pVVar2->x;
-      VStack_8.y = pVVar2->y;
-      VStack_8.z = pVVar2->z;
-      RStack_3._cultureKey = (String *)((float)uVar5 - VStack_8.y);
-      RStack_3._options = (int32_t)((float)uVar4 - VStack_8.x);
-      RStack_3._pattern = (String *)(fVar6 - VStack_8.z);
-      pMVar7 = (this->fields)._._.owner;
-      if (pMVar7 != (MVPickupOwner *)0x0) {
-        pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                            (&VStack_8,pMVar7,(MethodInfo *)0x0);
-        fVar6 = RStack_3._options;
-        origin.z = (float)RStack_3._pattern;
-        origin.x = (float)RStack_3._options;
-        origin.y = (float)RStack_3._cultureKey;
-        UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
-                  ((Ray *)&stack0xffffffc0,origin,*pVVar2,(MethodInfo *)0x0);
-        pRVar9 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                            (&RStack_3,
-                             (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&stack0xffffffc0,(MethodInfo *)0x0);
-        pCVar10 = (Collider *)pRVar9->_options;
-        pTVar1 = (Transform *)pRVar9->_cultureKey;
-        pSVar11 = pRVar9->_pattern;
-        start = *pRVar9;
-        pRVar9 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                            (&RStack_3,
-                             (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&stack0xffffffc0,(MethodInfo *)0x0);
-        uVar12._0_2_ = 0;
-        uVar12._2_2_ = 0;
-        VStack_8.x = (float)pRVar9->_options;
-        VStack_8.y = (float)pRVar9->_cultureKey;
-        VStack_8.z = (float)pRVar9->_pattern;
-        this_03 = (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                   *)&stack0xffffffc0;
-        method_00 = (MethodInfo *)&stack0xffffffb4;
-        pRVar9 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)method_00,this_03,(MethodInfo *)0x0);
-        uVar13 = pRVar9->_options;
-        uVar14 = pRVar9->_cultureKey;
-        RStack_3._cultureKey = (String *)(VStack_8.y + (float)uVar14 * _UNK_?);
-        RStack_3._options = (int32_t)(VStack_8.x + (float)uVar13 * _UNK_?);
-        RStack_3._pattern = (String *)(VStack_8.z + (float)pRVar9->_pattern * _UNK_?);
+  func_?(&stack0xffffff50,0,0x48);
+  fStack_1 = 0.0;
+  fStack_2 = 0.0;
+  fStack_3 = 0.0;
+  this_00 = (this->fields)._._.muzzlePoint;
+  if (this_00 != (Transform *)0x0) {
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       (&VStack_5,this_00,(MethodInfo *)0x0);
+    uVar6 = pVVar4->x;
+    uVar7 = pVVar4->y;
+    fStack_8 = pVVar4->z;
+    pMVar9 = (this->fields)._._.owner;
+    fStack_10 = (float)uVar6;
+    fStack_11 = (float)uVar7;
+    if (pMVar9 != (MVPickupOwner *)0x0) {
+      pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection(&VStack_12,pMVar9,(MethodInfo *)0x0);
+      VStack_5.x = pVVar4->x;
+      VStack_5.y = pVVar4->y;
+      fStack_13 = fStack_10 - VStack_5.x;
+      fStack_14 = fStack_11 - VStack_5.y;
+      fStack_15 = fStack_8 - pVVar4->z;
+      pMVar9 = (this->fields)._._.owner;
+      VStack_5.z = fStack_15;
+      if (pMVar9 != (MVPickupOwner *)0x0) {
+        pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection(&VStack_12,pMVar9,(MethodInfo *)0x0)
+        ;
+        fVar16 = VStack_5.z;
+        fStack_17 = fStack_13;
+        fStack_10 = fStack_14;
+        fStack_11 = 0.0;
+        fStack_8 = 0.0;
+        uStack_18 = CONCAT44(fStack_14,fStack_13);
+        fStack_19 = VStack_5.z;
+        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                           (&VStack_12,*pVVar4,(MethodInfo *)0x0);
+        uVar20 = pVVar4->x;
+        uVar21 = pVVar4->y;
+        fStack_1 = pVVar4->z;
+        VStack_5.z = fStack_1 * _UNK_? + fStack_15;
+        VStack_5.y = (float)uVar21 * _UNK_? + fStack_14;
+        VStack_5.x = fStack_13 + (float)uVar20 * _UNK_?;
+        fStack_2 = (float)uVar20;
+        fStack_3 = (float)uVar21;
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar15 = (String *)0x0;
-        pIVar16 = (Il2CppClass *)0x41200000;
-        end.z = (float)RStack_3._pattern;
-        end.x = (float)RStack_3._options;
-        end.y = (float)RStack_3._cultureKey;
-        color.g = (float)_UNK_?;
-        color.r = (float)_UNK_?;
+        fVar22 = VStack_5.x;
+        method_00 = VStack_5.y;
+        start.y = fStack_10;
+        start.x = fStack_17;
+        start.z = fVar16;
+        end.z = VStack_5.z;
+        end.x = VStack_5.x;
+        end.y = VStack_5.y;
+        color.g = _UNK_?;
+        color.r = _UNK_?;
         color.b = (float)_UNK_?;
-        color.a = (float)_UNK_?;
-        iVar17 = RStack_3._0_8_;
-        pDVar18 = _UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine
-                  ((Vector3)start,end,color,10.0,(MethodInfo *)0x0);
-        pIVar19 = (InvokerMethod)0x0;
-        this_01 = (HashSet_1_UnityEngine_Vector3_ *)func_?();
-        if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-          HashSet_1_UnityEngine_Vector3___ctor
-                    (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-          iVar20 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                             (StringLiteral_Default,(MethodInfo *)0x0);
-          ray.m_Origin.y = (float)pIVar16;
-          ray.m_Origin.x = (float)pDVar18;
-          ray.m_Origin.z = (float)pSVar15;
-          ray.m_Direction.x = (float)pIVar19;
-          ray.m_Direction.y = 0.0;
-          ray.m_Direction.z = 0.0;
-          bVar21 = CollisionDetection::CollisionDetection_MVHit_1
-                             (ray,(VoxelHit *)&stack0xffffff68,2.0,
-                              (HashSet_1_System_Int32_ *)this_01,1 << ((byte)iVar20 & 0x1f),
-                              (MethodInfo *)0x0);
-          if (bVar21 == 0) {
-            return;
+        color.a = _UNK_?;
+        fVar16 = VStack_5.z;
+        fVar23 = _UNK_?;
+        fVar24 = _UNK_?;
+        uVar25 = _UNK_?;
+        fVar26 = _UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
+                  (start,end,color,10.0,(MethodInfo *)0x0);
+        puVar27 = &UNK_?;
+        pHVar28 = TypeInfo__System__Collections__Generic__HashSet<int>;
+        this_02 = (HashSet_1_System_Int32_ *)func_?();
+        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+        HashSet_1_System_Int32___ctor
+                  (this_02,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+        iVar29 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                           (StringLiteral_Default,(MethodInfo *)0x0);
+        ray.m_Origin.z = fStack_19;
+        ray.m_Origin.x = (float)(undefined4)uStack_18;
+        ray.m_Origin.y = (float)uStack_18._4_4_;
+        ray.m_Direction.x = fStack_2;
+        ray.m_Direction.y = fStack_3;
+        ray.m_Direction.z = fStack_1;
+        bVar30 = CollisionDetection::CollisionDetection_MVHit_1
+                          (ray,(VoxelHit *)&stack0xffffff50,2.0,this_02,1 << ((byte)iVar29 & 0x1f),
+                           (MethodInfo *)0x0);
+        if (bVar30 == 0) {
+          return;
+        }
+        this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if ((this_03 != (MVWorldObjectClientManager *)0x0) &&
+           (pMVar31 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                (this_03,iStack_32,(MethodInfo *)0x0),
+           pMVar31 != (MVWorldObject *)0x0)) {
+          if (((pMVar31->fields).type == 8) || ((pMVar31->fields).type == 0x20)) {
+            pMVar33 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (((pMVar33 == (MVNetworkGame *)0x0) ||
+                (pWVar34 = (pMVar33->fields).worldNetwork, pWVar34 == (WorldNetwork *)0x0)) ||
+               (this_01 = (RuntimeEventManager *)(pWVar34->fields)._.runtimeEventManagerNetwork,
+               this_01 == (RuntimeEventManager *)0x0)) goto code_?;
+            voxelHit.point.y = (float)method_00;
+            voxelHit.point.x = fVar22;
+            voxelHit.point.z = fVar16;
+            voxelHit.normal.x = fVar23;
+            voxelHit.normal.y = fVar24;
+            voxelHit.normal.z = (float)uVar25;
+            voxelHit.cubePos._0_4_ = fVar26;
+            voxelHit._28_4_ = puVar27;
+            voxelHit.face = (int32_t)pHVar28;
+            voxelHit._36_4_ = iStack_32;
+            voxelHit.woId = (int32_t)pCStack_35;
+            voxelHit.cube = (Cube *)fStack_36;
+            voxelHit.distance = (float)pCStack_37;
+            voxelHit.collider = (Collider *)pTStack_38;
+            voxelHit.transform = (Transform *)uStack_39;
+            voxelHit._60_4_ = (int)iStack_40;
+            voxelHit.interactionFlags._0_4_ = (int)((ulonglong)iStack_40 >> 0x20);
+            voxelHit.interactionFlags._4_4_ = 0x41a00000;
+            RuntimeEventManager::RuntimeEventManager_SendRemoveOneFineGrainedCube
+                      (this_01,voxelHit,0.0,method_00);
           }
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          if ((this_02 != (MVWorldObjectClientManager *)0x0) &&
-             (pMVar22 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                  (this_02,iStack_23,(MethodInfo *)0x0),
-             pMVar22 != (MVWorldObject *)0x0)) {
-            if (((pMVar22->fields).type == 8) || ((pMVar22->fields).type == 0x20)) {
-              fVar24 = 0.0;
-              puVar25 = &UNK_?;
-              pMVar26 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (((pMVar26 == (MVNetworkGame *)0x0) ||
-                  (pWVar27 = (pMVar26->fields).worldNetwork, pWVar27 == (WorldNetwork *)0x0)) ||
-                 (this_00 = (RuntimeEventManager *)(pWVar27->fields)._.runtimeEventManagerNetwork,
-                 this_00 == (RuntimeEventManager *)0x0)) goto code_?;
-              voxelHit.point.y = (float)puVar25;
-              voxelHit.point.x = fVar6;
-              voxelHit.point.z = fVar24;
-              voxelHit.normal.x = 0.0;
-              voxelHit.normal.y = (float)method_00;
-              voxelHit.normal.z = (float)this_03;
-              voxelHit.cubePos.x = (int16_t)uVar12;
-              voxelHit.cubePos.y = SUB42(uVar12,2);
-              voxelHit._28_4_ = iStack_28;
-              voxelHit.face = uStack_29;
-              voxelHit._36_4_ = iStack_23;
-              voxelHit.woId = (int32_t)pCStack_30;
-              voxelHit.cube = (Cube *)&UNK_?;
-              voxelHit.distance = (float)pCVar10;
-              voxelHit.collider = (Collider *)pTVar1;
-              voxelHit.transform = (Transform *)pSVar11;
-              voxelHit._60_4_ = (float)iVar17;
-              voxelHit.interactionFlags._0_4_ = (String *)((ulonglong)iVar17 >> 0x20);
-              voxelHit.interactionFlags._4_4_ = 0x41a00000;
-              RuntimeEventManager::RuntimeEventManager_SendRemoveOneFineGrainedCube
-                        (this_00,voxelHit,0.0,method_00);
-            }
-            return;
-          }
+          return;
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 

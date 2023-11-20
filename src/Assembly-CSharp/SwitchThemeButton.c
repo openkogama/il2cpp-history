@@ -2,14 +2,14 @@
 /* Void Initialize(Int32, Int32) */
 
 void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
-               (SwitchThemeButton *this,int32_t levelReq,int32_t goldReq,MethodInfo *method)
+               (SwitchThemeButton *this,int32_t levelRequirement,int32_t goldReq,MethodInfo *method)
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (MVLocalPlayer *)0x0) {
-      if ((pMVar2->fields)._.level < levelReq) {
+      if ((pMVar2->fields)._.level < levelRequirement) {
         if (cRam_? == '\0') {
           func_?();
           func_?(&TypeInfo__BadgeManager);
@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
           cRam_? = '\x01';
         }
         pGVar3 = (this->fields).levelReq;
-        if (levelReq < 1) {
+        if (levelRequirement < 1) {
           if (pGVar3 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar3,0,(MethodInfo *)0x0);
@@ -28,17 +28,20 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
           if (pGVar3 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar3,1,(MethodInfo *)0x0);
-          this_01 = (Action_1_Object_ *)func_?();
-          if (this_01 == (Action_1_Object_ *)0x0) goto code_?;
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+          this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                     (this_01,(Object *)this,
                      MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__BadgeManager);
           }
           BadgeManager::BadgeManager_GetBadgeTexture
-                    (levelReq,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+                    (levelRequirement,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
                      (MethodInfo *)0x0);
         }
         pGVar3 = (this->fields).levelReq;
@@ -66,16 +69,16 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
         if (bVar4 == 0) {
           mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
           if (piVar5 != (int *)0x0) {
-            (**(code **)(*piVar5 + 0x314))();
-            if (pGRam0000000c != (GameObject *)0x0) {
+            (**(code **)(*piVar5 + 0x318))();
+            if (pGRam00000010 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGRam0000000c,0,(MethodInfo *)0x0);
-              if (pGRam00000014 != (GameObject *)0x0) {
+                        (pGRam00000010,0,(MethodInfo *)0x0);
+              if (pGRam00000018 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGRam00000014,1,(MethodInfo *)0x0);
-                if (pGRam0000001c != (GameObject *)0x0) {
+                          (pGRam00000018,1,(MethodInfo *)0x0);
+                if (pGRam00000020 != (GameObject *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGRam0000001c,0,(MethodInfo *)0x0);
+                            (pGRam00000020,0,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -83,13 +86,13 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Initialize
           }
           goto code_?;
         }
-        if (pGRam0000000c == (GameObject *)0x0) goto code_?;
+        if (pGRam00000010 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGRam0000000c,0,(MethodInfo *)0x0);
-        if (pGRam00000014 == (GameObject *)0x0) goto code_?;
+                  (pGRam00000010,0,(MethodInfo *)0x0);
+        if (pGRam00000018 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGRam00000014,0,(MethodInfo *)0x0);
-        pGVar3 = pGRam0000001c;
+                  (pGRam00000018,0,(MethodInfo *)0x0);
+        pGVar3 = pGRam00000020;
       }
       if (pGVar3 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -115,35 +118,24 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_OnDestroy
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__BadgeManager);
-    func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
                     MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    obj = (this->fields).levelRequirementTextureAsset;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -159,13 +151,13 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_OnLevelTextureRec
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      pTRam00000024 =
+      pTRam00000028 =
            UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
            DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
       func_?();
-      if (pRRam00000010 == (RawImage *)0x0) goto code_?;
+      if (pRRam00000014 == (RawImage *)0x0) goto code_?;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (pRRam00000010,(Texture *)pTRam00000024,(MethodInfo *)0x0);
+                (pRRam00000014,(Texture *)pTRam00000028,(MethodInfo *)0x0);
     }
     return;
   }
@@ -218,8 +210,8 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_set_GoldRequireme
   pTVar1 = (this->fields).priceTagNumber;
   pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&value,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();
@@ -256,21 +248,22 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_set_LevelRequirem
   else if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,1,(MethodInfo *)0x0);
-    this_01 = (Action_1_Object_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    if (this_01 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      BadgeManager::BadgeManager_GetBadgeTexture
-                (value,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0
-                );
-      return;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
+    ;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__SwitchThemeButton__OnLevelTextureReceived_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    BadgeManager::BadgeManager_GetBadgeTexture
+              ((int32_t)this_01,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+               (MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

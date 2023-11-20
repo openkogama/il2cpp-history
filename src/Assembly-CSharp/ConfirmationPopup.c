@@ -32,12 +32,12 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Initialize
   }
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,text,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,text,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pTVar1 = (this->fields).header;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,header,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       (this->fields).resultCallback = resultCallback;
       func_?(&(this->fields).resultCallback,resultCallback);
       pBVar2 = (this->fields).okButton;
@@ -45,29 +45,25 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Initialize
         pUVar3 = (UnityEvent *)(pBVar2->fields).m_OnClick;
         pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
                  func_?(TypeInfo__UnityEngine__Events__UnityAction);
-        if (pNVar4 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Ok__,(MethodInfo *)0x0);
-          if (pUVar3 != (UnityEvent *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                      (pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
-            pBVar2 = (this->fields).cancelButton;
-            if (pBVar2 != (Button *)0x0) {
-              pUVar3 = (UnityEvent *)(pBVar2->fields).m_OnClick;
-              pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
-                       func_?(TypeInfo__UnityEngine__Events__UnityAction);
-              if (pNVar4 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                NavMesh_OnNavMeshPreUpdate__ctor
-                          (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Cancel__,
-                           (MethodInfo *)0x0);
-                if (pUVar3 != (UnityEvent *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::
-                  UnityEvent_AddListener(pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Ok__,(MethodInfo *)0x0);
+        if (pUVar3 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                    (pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
+          pBVar2 = (this->fields).cancelButton;
+          if (pBVar2 != (Button *)0x0) {
+            pUVar3 = (UnityEvent *)(pBVar2->fields).m_OnClick;
+            pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
+                     func_?(TypeInfo__UnityEngine__Events__UnityAction);
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Cancel__,
+                       (MethodInfo *)0x0);
+            if (pUVar3 != (UnityEvent *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                        (pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -134,12 +130,6 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Pop
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,

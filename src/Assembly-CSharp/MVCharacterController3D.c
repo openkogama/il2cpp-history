@@ -93,11 +93,11 @@ Vector3 * Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_
     pVVar4 = MathFunctions::MathFunctions_MultiplyVector
                        (&VStack_6,(Vector3 *)&stack0xffffffd4,&(this->fields)._.elipsoidRadius,
                         (MethodInfo *)0x0);
-    pMVar7 = (MethodInfo *)pVVar4->y;
-    pMVar8 = (MethodInfo *)pVVar4->z;
-    pMVar9 = (MethodInfo *)0x0;
-    pMVar10 = pMVar7;
-    pMVar11 = pMVar8;
+    pIVar7 = (Il2CppMethodPointer)pVVar4->y;
+    pIVar8 = (Il2CppMethodPointer)pVVar4->z;
+    pIVar9 = (Il2CppMethodPointer)0x0;
+    pIVar10 = pIVar7;
+    pIVar11 = pIVar8;
     bVar12 = MvCharacterController::MvCharacterController_OverlapCheckCollision
                       ((MvCharacterController *)this,*pVVar4,(MethodInfo *)0x0);
     puStack_13 = (undefined *)0x0;
@@ -106,20 +106,20 @@ Vector3 * Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_
     if (bVar12 != 0) {
       unique0x1000022a = R3Vel.y;
       puStack_1 = (undefined *)R3Vel.x;
-      pMVar10 = (this->klass->vtable).NoOverlapPosition.method;
+      pIVar10 = (this->klass->vtable).RecalcDirectionMoveAway.methodPtr;
       puVar14 = &UNK_?;
       pMVar15 = this;
-      cVar16 = (*(this->klass->vtable).NoOverlapPosition.methodPtr)();
-      pMVar11 = pMVar7;
-      pMVar9 = pMVar8;
+      cVar16 = (*(code *)(this->klass->vtable).NoOverlapPosition.method)();
+      pIVar11 = pIVar7;
+      pIVar9 = pIVar8;
       if (cVar16 != '\0') {
         bVar12 = 0;
       }
     }
     if ((bStack_3 != 0) && (bVar12 == 0)) {
-      VStack_5.y = (float)pMVar11;
-      VStack_5.x = (float)pMVar10;
-      VStack_5.z = (float)pMVar9;
+      VStack_5.y = (float)pIVar11;
+      VStack_5.x = (float)pIVar10;
+      VStack_5.z = (float)pIVar9;
     }
     stack0xffffffe4 = (float)&VStack_6;
     pVVar4 = MathFunctions::MathFunctions_MultiplyVector
@@ -170,20 +170,20 @@ Vector3 * Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_
   slidePlaneNormal->z = eNewBasePoint.z - ePoint.z;
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
             (slidePlaneNormal,(MethodInfo *)0x0);
-  inPoint.z = VStack_1.z;
-  inPoint.x = VStack_1.x;
-  inPoint.y = VStack_1.y;
-  UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor
-            ((Plane *)&stack0xffffffe0,*slidePlaneNormal,inPoint,(MethodInfo *)0x0);
-  dVar2 = MathFunctions::MathFunctions_SignedDistanceTo
-                    ((Plane *)&stack0xffffffe0,&VStack_1,&eDestinationPoint,(MethodInfo *)0x0);
-  uVar3 = slidePlaneNormal->x;
-  uVar4 = slidePlaneNormal->y;
-  fVar5 = slidePlaneNormal->z;
-  fVar6 = (float)dVar2;
-  __return_storage_ptr__->x = (eDestinationPoint.x - (float)uVar3 * fVar6) - ePoint.x;
-  __return_storage_ptr__->y = (eDestinationPoint.y - (float)uVar4 * fVar6) - ePoint.y;
-  __return_storage_ptr__->z = (eDestinationPoint.z - fVar5 * fVar6) - ePoint.z;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_3,*slidePlaneNormal,(MethodInfo *)0x0);
+  uStack_4._0_4_ = pVVar2->x;
+  uStack_4._4_4_ = pVVar2->y;
+  fStack_5 = pVVar2->z;
+  dVar6 = MathFunctions::MathFunctions_SignedDistanceTo
+                    ((Plane *)&stack0xffffffc8,&VStack_1,&eDestinationPoint,(MethodInfo *)0x0);
+  uVar7 = slidePlaneNormal->x;
+  uVar8 = slidePlaneNormal->y;
+  fVar9 = slidePlaneNormal->z;
+  fVar10 = (float)dVar6;
+  __return_storage_ptr__->x = (eDestinationPoint.x - (float)uVar7 * fVar10) - ePoint.x;
+  __return_storage_ptr__->y = (eDestinationPoint.y - (float)uVar8 * fVar10) - ePoint.y;
+  __return_storage_ptr__->z = (eDestinationPoint.z - fVar9 * fVar10) - ePoint.z;
   return __return_storage_ptr__;
 }
 
@@ -202,9 +202,9 @@ void Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_Move
     uVar3 = (this->fields)._.center.y;
     VStack_2.z = (this->fields)._.center.z;
     VStack_2.y = (float)uVar3;
-    VStack_2.x = (float)(this->klass->vtable).CollideAndSlide.method;
+    VStack_2.x = (float)this->klass[1]._0.image;
     puVar4 = (undefined8 *)
-             (*(this->klass->vtable).CollideAndSlide.methodPtr)
+             (*(code *)(this->klass->vtable).CollideAndSlide.method)
                        (&stack0xffffffe4,this,motion.x,motion.y,motion.z);
     fVar5 = *(float *)(puVar4 + 1);
     motion.x = (float)*puVar4;
@@ -252,160 +252,192 @@ bool Assembly-CSharp.dll::MVCharacterController3D::MVCharacterController3D_NoOve
   uVar2 = (pVVar1->upVector).x;
   uVar3 = (pVVar1->upVector).y;
   fVar4 = R3Direction.y * (float)uVar3 + R3Direction.x * (float)uVar2 +
-          R3Direction.z * (pVVar1->upVector).z;
+           R3Direction.z * (pVVar1->upVector).z;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  if (((_UNK_? < fVar4) || (fVar4 < _UNK_?)) && (cRam_? == '\0')) {
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    cRam_? = '\x01';
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar5 = (pVVar1->upVector).x;
+  fVar6 = (pVVar1->upVector).y;
+  fVar7 = (pVVar1->upVector).z;
+  if ((_UNK_? < fVar4) || (fVar4 < _UNK_?)) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar8 = (pVVar1->rightVector).x;
+    uVar9 = (pVVar1->rightVector).y;
+    fVar7 = (pVVar1->rightVector).z;
+    fVar5 = (float)uVar8;
+    fVar6 = (float)uVar9;
   }
-  puVar5 = (undefined8 *)func_?(&stack0xffffffe0,&stack0xffffffbc,0);
-  fVar4 = *(float *)(puVar5 + 1);
-  fVar6 = (float)*puVar5;
-  fVar7 = (float)((ulonglong)*puVar5 >> 0x20);
-  fVar8 = fVar6;
-  fVar9 = fVar7;
-  puVar5 = (undefined8 *)func_?(&stack0xffffffe0,&stack0xffffffbc,0);
-  fVar4 = fVar4 * _UNK_?;
-  fVar8 = fVar8 * _UNK_?;
-  fVar9 = fVar9 * _UNK_?;
-  fVar10 = 0.0;
-  fVar11 = 0.0;
-  fVar12 = 0.0;
-  fVar13 = (float)*puVar5;
-  fVar14 = *(float *)(puVar5 + 1) * _UNK_?;
-  offset->x = fVar8;
-  offset->y = fVar9;
-  offset->z = fVar4;
-  R3Position_02.y = fVar9 + R3Position.y;
-  R3Position_02.x = fVar8 + R3Position.x;
-  R3Position_02.z = fVar4 + R3Position.z;
-  bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                    ((MvCharacterController *)this,R3Position_02,(MethodInfo *)0x0);
-  if (bVar15 != 0) {
-    fVar6 = (float)((uint)fVar6 ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    fVar8 = (float)((uint)this ^
-                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    fVar14 = (float)((uint)fVar14 ^
-                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    offset->x = fVar8;
-    offset->y = fVar14;
-    offset->z = fVar6;
-    R3Position_03.y = fVar14 + R3Position.y;
-    R3Position_03.x = fVar8 + R3Position.x;
-    R3Position_03.z = fVar6 + R3Position.z;
-    bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                      ((MvCharacterController *)this,R3Position_03,(MethodInfo *)0x0);
-    if (bVar15 != 0) {
-      offset->x = fVar7;
-      offset->y = fVar4;
-      offset->z = in_stack_16;
-      R3Position_04.y = fVar4 + R3Position.y;
-      R3Position_04.x = fVar7 + R3Position.x;
-      R3Position_04.z = fVar13 + R3Position.z;
-      bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                        ((MvCharacterController *)this,R3Position_04,(MethodInfo *)0x0);
-      if (bVar15 != 0) {
-        fVar4 = (float)(in_stack_17 ^
+  VVar10.y = fVar7 * R3Direction.x - fVar5 * R3Direction.z;
+  VVar10.x = fVar6 * R3Direction.z - fVar7 * R3Direction.y;
+  VVar10.z = fVar5 * R3Direction.y - fVar6 * R3Direction.x;
+  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xfffffff0,VVar10,(MethodInfo *)0x0);
+  uVar12 = pVVar11->x;
+  uVar13 = pVVar11->y;
+  value.y = R3Direction.x * pVVar11->z - R3Direction.z * (float)uVar12;
+  value.x = R3Direction.z * (float)uVar13 - R3Direction.y * pVVar11->z;
+  value.z = R3Direction.y * (float)uVar12 - R3Direction.x * (float)uVar13;
+  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&this,value,(MethodInfo *)0x0);
+  fVar6 = R3Direction.x * _UNK_?;
+  fVar4 = R3Position.y * _UNK_?;
+  fVar5 = R3Position.z * _UNK_?;
+  uVar14 = pVVar11->x;
+  uVar15 = pVVar11->y;
+  puVar16 = (undefined8 *)(pVVar11->z * _UNK_?);
+  *puVar16 = CONCAT44(fVar5,fVar4);
+  *(float *)(puVar16 + 1) = fVar6;
+  uVar17 = 0;
+  this = (MVCharacterController3D *)0x0;
+  R3Direction.x = (float)uVar15 + fVar6;
+  R3Position_04.y = (float)uVar14 + fVar5;
+  R3Position_04.x = R3Position.x + fVar4;
+  R3Position_04.z = R3Direction.x;
+  R3Position.y = (float)uVar14;
+  R3Position.z = (float)uVar15;
+  bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                     ((MvCharacterController *)0x0,R3Position_04,(MethodInfo *)0x0);
+  if (bVar18 != 0) {
+    fVar6 = (float)((uint)this ^
+                   (uint)__0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+    fVar4 = (float)(uVar17 ^ (uint)
+                              __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                    );
+    fVar5 = R3Position.y + __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
+    *puVar16 = CONCAT44(__0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field,
+                        fVar4);
+    fStack19 = R3Position.z + fVar6;
+    *(float *)(puVar16 + 1) = fVar6;
+    R3Position_05.y = fVar5;
+    R3Position_05.x = R3Position.y + fVar4;
+    R3Position_05.z = fStack19;
+    bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                       ((MvCharacterController *)0x0,R3Position_05,(MethodInfo *)0x0);
+    if (bVar18 != 0) {
+      *puVar16 = CONCAT44(R3Position.x,this);
+      fVar4 = R3Position.z + R3Position.y;
+      *(undefined4 *)(puVar16 + 1) = in_stack_20;
+      R3Position_06.y = R3Position.y + R3Position.x;
+      R3Position_06.x = (float)puVar16 + (float)this;
+      R3Position_06.z = fVar4;
+      bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                         ((MvCharacterController *)0x0,R3Position_06,(MethodInfo *)0x0);
+      if (bVar18 != 0) {
+        fVar7 = (float)((uint)puVar16 ^
+                        (uint)
+                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+        fVar5 = (float)((uint)R3Direction.y ^
+                       (uint)
                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-        fVar9 = (float)(in_stack_18 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-        fVar8 = (float)(in_stack_19 ^
-                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-        R3Direction.y = fVar4 + R3Position.z;
-        offset->x = fVar9;
-        offset->y = fVar8;
-        offset->z = fVar4;
-        R3Position_05.y = fVar8 + R3Position.y;
-        R3Position_05.x = fVar9 + R3Position.x;
-        R3Position_05.z = R3Direction.y;
-        bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                          ((MvCharacterController *)this,R3Position_05,(MethodInfo *)0x0);
-        if (bVar15 != 0) {
-          fVar4 = (fVar12 + fVar13 + R3Position.z) / R3Position.x;
-          fVar9 = (fVar10 + in_stack_20) / R3Position.x;
-          fVar8 = (fVar11 + unaff_retaddr) / R3Position.x;
-          puStack21 = (undefined *)(fVar4 + R3Position.z);
-          offset->x = fVar9;
-          offset->y = fVar8;
-          offset->z = fVar4;
-          R3Position_06.y = fVar8 + R3Position.y;
-          R3Position_06.x = fVar9 + R3Position.x;
-          R3Position_06.z = (float)puStack21;
-          bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                            ((MvCharacterController *)this,R3Position_06,(MethodInfo *)0x0);
-          if (bVar15 != 0) {
-            uVar22._0_4_ = offset->x;
-            uVar22._4_4_ = offset->y;
-            fVar9 = (float)((undefined4)uVar22 ^
+        fVar6 = (float)((uint)R3Direction.z ^
+                       (uint)
+                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+        *puVar16 = CONCAT44(fVar6,fVar5);
+        this = (MVCharacterController3D *)(R3Position.z + fVar7);
+        *(float *)(puVar16 + 1) = fVar7;
+        R3Position.x = 0.0;
+        fVar21 = R3Position.y + fVar6;
+        fVar22 = in_stack_23 + fVar5;
+        VVar10 = (Vector3)CONCAT84(VVar10._0_8_,fVar22);
+        pMStack24 = this;
+        bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                           ((MvCharacterController *)0x0,VVar10,(MethodInfo *)0x0);
+        if (bVar18 != 0) {
+          fVar7 = (in_stack_23 + in_stack_25) / in_stack_26;
+          fVar5 = (in_stack_27 + in_stack_28) / in_stack_26;
+          fVar6 = (in_stack_29 + in_stack_30) / in_stack_26;
+          fVar4 = fVar4 + fVar5;
+          R3Direction.x = R3Position.y + fVar6;
+          *puVar16 = CONCAT44(fVar6,fVar5);
+          R3Direction.y = R3Position.z + fVar7;
+          *(float *)(puVar16 + 1) = fVar7;
+          R3Direction.z = 0.0;
+          R3Position.y = 0.0;
+          R3Position.x = (float)&UNK_?;
+          R3Position_00.y = R3Direction.x;
+          R3Position_00.x = fVar4;
+          R3Position_00.z = R3Direction.y;
+          R3Position.z = fVar4;
+          bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                             ((MvCharacterController *)0x0,R3Position_00,(MethodInfo *)0x0);
+          if (bVar18 != 0) {
+            uStack31 = *(uint *)(puVar16 + 1);
+            method_00 = (MethodInfo *)*puVar16;
+            uStack32 = (uint)((ulonglong)*puVar16 >> 0x20);
+            fVar4 = (float)((uint)method_00 ^
+                            (uint)
                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                             );
-            fVar8 = (float)(uVar22._4_4_ ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                            );
-            fVar4 = (float)((uint)offset->z ^
+            fVar5 = (float)(uStack31 ^
+                           (uint)
                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
             ;
-            offset->x = fVar9;
-            offset->y = fVar8;
-            offset->z = fVar4;
-            R3Position_07.y = fVar8 + R3Position.y;
-            R3Position_07.x = fVar9 + R3Position.x;
-            R3Position_07.z = fVar4 + R3Position.z;
-            bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                              ((MvCharacterController *)this,R3Position_07,(MethodInfo *)0x0);
-            method_00 = (MethodInfo *)uVar22;
-            if (bVar15 != 0) {
-              fVar8 = ((float)puStack21 - (float)method) / in_stack_23;
-              fVar4 = (in_stack_24 - R3Direction.z) / in_stack_23;
-              fVar14 = (in_stack_25 - (float)offset) / in_stack_23;
-              fVar9 = fVar8 + R3Position.z;
-              offset->x = fVar4;
-              offset->y = fVar14;
-              offset->z = fVar8;
-              R3Position_00.y = fVar14 + R3Position.y;
-              R3Position_00.x = fVar4 + R3Position.x;
-              R3Position_00.z = fVar9;
-              fStack26 = fVar9;
-              bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                                ((MvCharacterController *)this,R3Position_00,(MethodInfo *)0x0);
-              if (bVar15 != 0) {
-                uStack27._0_4_ = offset->x;
-                uStack27._4_4_ = offset->y;
-                fVar8 = (float)(uStack27._4_4_ ^
+            fStack19 =
+                 R3Position.y +
+                 (float)(uStack32 ^
+                        (uint)
+                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+            *puVar16 = CONCAT44(uStack32 ^
+                                (uint)
+                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                ,fVar4);
+            fStack33 = R3Position.z + fVar5;
+            *(float *)(puVar16 + 1) = fVar5;
+            R3Direction.z = (float)&UNK_?;
+            R3Position_01.y = fStack19;
+            R3Position_01.x = (float)pMStack24 + fVar4;
+            R3Position_01.z = fStack33;
+            bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                               ((MvCharacterController *)0x0,R3Position_01,(MethodInfo *)0x0);
+            if (bVar18 != 0) {
+              fVar6 = (in_stack_34 - (float)pMStack24) / in_stack_35;
+              fVar4 = (in_stack_36 - in_stack_37) / in_stack_35;
+              fVar5 = (in_stack_38 - in_stack_39) / in_stack_35;
+              *puVar16 = CONCAT44(fVar5,fVar4);
+              *(float *)(puVar16 + 1) = fVar6;
+              R3Position_02.y = R3Position.y + fVar5;
+              R3Position_02.x = (float)method_00 + fVar4;
+              R3Position_02.z = R3Position.z + fVar6;
+              bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                                 ((MvCharacterController *)0x0,R3Position_02,(MethodInfo *)0x0);
+              if (bVar18 != 0) {
+                uStack40 = *(uint *)(puVar16 + 1);
+                uStack41 = (uint)*puVar16;
+                uStack42 = (uint)((ulonglong)*puVar16 >> 0x20);
+                fVar4 = (float)(uStack41 ^
+                                (uint)
                                 __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                 );
-                fVar4 = (float)((uint)offset->z ^
+                fVar5 = (float)(uStack42 ^
+                               (uint)
                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                );
-                R3Direction.z = fVar4 + R3Position.z;
-                R3Direction.x =
-                     (float)((undefined4)uStack27 ^
+                fStack43 =
+                     (float)(uStack40 ^
+                            (uint)
                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                            ) + fVar9;
-                R3Direction.y = fVar8 + 0.0;
-                offset->x = (float)((undefined4)uStack27 ^
-                                   __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                                   );
-                offset->y = fVar8;
-                offset->z = fVar4;
-                R3Position_01.y = R3Direction.y;
-                R3Position_01.x = R3Direction.x;
-                R3Position_01.z = R3Direction.z;
-                bVar15 = MvCharacterController::MvCharacterController_OverlapCheckCollision
-                                  ((MvCharacterController *)this,R3Position_01,(MethodInfo *)0x0);
-                if (bVar15 != 0) {
-                  pVVar28 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
-                           MVWorldObject_get_WorldPosition
-                                     ((Vector3 *)&stack0x00000080,(MVWorldObject *)0x0,method_00);
-                  fVar8 = pVVar28->y;
-                  fVar4 = pVVar28->z;
-                  offset->x = pVVar28->x;
-                  offset->y = fVar8;
-                  offset->z = fVar4;
+                            );
+                *puVar16 = CONCAT44(fVar5,fVar4);
+                *(float *)(puVar16 + 1) = fStack43;
+                fStack43 = R3Position.z + fStack43;
+                R3Position_03.y = R3Position.y + fVar5;
+                R3Position_03.x = fStack33 + fVar4;
+                R3Position_03.z = fStack43;
+                bVar18 = MvCharacterController::MvCharacterController_OverlapCheckCollision
+                                   ((MvCharacterController *)0x0,R3Position_03,(MethodInfo *)0x0);
+                if (bVar18 != 0) {
+                  pVVar11 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
+                            MVWorldObject_get_WorldPosition
+                                      ((Vector3 *)&stack0x000000b8,(MVWorldObject *)0x0,method_00);
+                  fVar4 = pVVar11->z;
+                  *puVar16 = *(undefined8 *)pVVar11;
+                  *(float *)(puVar16 + 1) = fVar4;
                   return 0;
                 }
               }
@@ -429,29 +461,25 @@ Vector3 * Assembly-CSharp.dll::MVCharacterController3D::
 {
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&eDir,(MethodInfo *)0x0);
   fVar1 = ePos.x + eDir.x * distance;
-  fStack_2 = ePos.z + eDir.z * distance;
+  fVar2 = ePos.z + eDir.z * distance;
   eDir.z = ePos.y + eDir.y * distance;
-  ePoint.z = fStack_2 - ePoint.z;
-  ePoint.y = eDir.z - ePoint.y;
-  ePoint.x = fVar1 - ePoint.x;
-  fStack_3 = ePoint.z;
-  puVar4 = (undefined8 *)func_?(auStack_5,&ePoint,0);
-  uVar6 = *puVar4;
-  fStack_3 = *(float *)(puVar4 + 1);
-  uStack_7._0_4_ = (float)uVar6;
-  uStack_7._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
-  ePos.z = (fStack_3 * _UNK_? + fStack_2) - ePos.z;
-  ePoint.x = ((float)uStack_7 * _UNK_? + fVar1) - ePos.x;
-  ePoint.y = (uStack_7._4_4_ * _UNK_? + eDir.z) - ePos.y;
-  ePoint.z = ePos.z;
-  uStack_7 = uVar6;
-  puVar4 = (undefined8 *)func_?(&ePos,&ePoint,0);
-  uVar6 = *puVar4;
-  fVar1 = *(float *)(puVar4 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar6;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar6 >> 0x20);
-  __return_storage_ptr__->z = fVar1;
-  return __return_storage_ptr__;
+  value.y = eDir.z - ePoint.y;
+  value.x = fVar1 - ePoint.x;
+  value.z = fVar2 - ePoint.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffec,value,(MethodInfo *)0x0);
+  uVar4 = pVVar3->x;
+  uVar5 = pVVar3->y;
+  ePos.z = (pVVar3->z * _UNK_? + fVar2) - ePos.z;
+  value_00.y = ((float)uVar5 * _UNK_? + eDir.z) - ePos.y;
+  value_00.x = ((float)uVar4 * _UNK_? + fVar1) - ePos.x;
+  value_00.z = ePos.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&ePos,value_00,(MethodInfo *)0x0);
+  uRam_?._0_4_ = pVVar3->x;
+  uRam_?._4_4_ = pVVar3->y;
+  fRam00000008 = pVVar3->z;
+  return (Vector3 *)0x0;
 }
 
 

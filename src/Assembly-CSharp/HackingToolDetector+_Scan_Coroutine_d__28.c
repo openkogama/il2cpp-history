@@ -63,16 +63,14 @@ bool Assembly-CSharp.dll::HackingToolDetector+<Scan_Coroutine>d__28::
     if (pHVar2 != (HackingToolDetector *)0x0) {
       ProcessScanner::ProcessScanner_StartScan((pHVar2->fields).banList,(MethodInfo *)0x0);
       fVar3 = (this->fields)._waitDuration_5__2;
-      this_00 = (SubscribableVariableBase_1_System_Single_ *)
+      this_00 = (SubscribableVariable_1_System_Single_ *)
                 func_?(TypeInfo__UnityEngine__WaitForSeconds);
-      if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-        SubscribableVariableBase`1[System::Single]::SubscribableVariableBase_1_System_Single___ctor
-                  (this_00,fVar3,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)this_00;
-        func_?(&(this->fields).__2__current,this_00);
-        (this->fields).__1__state = 1;
-        return 1;
-      }
+      SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
+                (this_00,fVar3,(MethodInfo *)0x0);
+      (this->fields).__2__current = (Object *)this_00;
+      func_?(&(this->fields).__2__current,this_00);
+      (this->fields).__1__state = 1;
+      return 1;
     }
   }
 code_?:
@@ -92,7 +90,6 @@ void Assembly-CSharp.dll::HackingToolDetector+<Scan_Coroutine>d__28::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

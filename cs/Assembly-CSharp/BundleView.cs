@@ -48,6 +48,28 @@ public class BundleView : MonoBehaviour
 	private int originalPrice;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IBundleController> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPurchaseBundleConfirmation_b__19_0(IUIStack x, BaseEventData y);
+		internal void _ProductPurchaseResponseHandler_b__20_0(IUIStack x, BaseEventData y);
+		internal void _OnPop_b__21_0(IBundleController x, BaseEventData y);
+		internal void _OnInsufficientResourceCallback_b__22_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass18_0
 	{
@@ -85,28 +107,6 @@ public class BundleView : MonoBehaviour
 
 		// Methods
 		internal void _OnBundlePurchaseClicked_b__2(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
-		public static ExecuteEvents.EventFunction<IBundleController> __9__21_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _OnPurchaseBundleConfirmation_b__19_0(IUIStack x, BaseEventData y);
-		internal void _ProductPurchaseResponseHandler_b__20_0(IUIStack x, BaseEventData y);
-		internal void _OnPop_b__21_0(IBundleController x, BaseEventData y);
-		internal void _OnInsufficientResourceCallback_b__22_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

@@ -36,17 +36,12 @@ void Assembly-CSharp.dll::TouristAdController+<>c::TouristAdController_c__cctor(
     func_?(&TypeInfo__TouristAdController____c);
     cRam_? = '\x01';
   }
-  value = (TouristAdController_c *)func_?(TypeInfo__TouristAdController____c);
-  if (value != (TouristAdController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__TouristAdController____c->static_fields->__9 = value;
-    func_?(TypeInfo__TouristAdController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__TouristAdController____c;
+  value = (TouristAdController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__TouristAdController____c->static_fields->__9 = value;
+  func_?(TypeInfo__TouristAdController____c->static_fields,value);
   return;
 }
 

@@ -1,106 +1,4 @@
 
-/* Boolean ContainsSubDictionary(Dictionary`2[System.Object,System.Object], List`1[System.String])
-    */
-
-bool MVWorldObject.dll::MV::WorldObject::HashtableFunctions::
-     HashtableFunctions_ContainsSubDictionary
-               (Dictionary_2_System_Object_System_Object_ *data,
-               List_1_System_String_ *subDictionaryPath,MethodInfo *method)
-
-{
-  pDStack_1 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  bVar2 = HashtableFunctions_TryGetSubDictionary
-                    (&pDStack_1,data,subDictionaryPath,(MethodInfo *)0x0);
-  return bVar2;
-}
-
-
-/* Dictionary`2[System.Object,System.Object] CreateDictionaryUpdate(String, Object,
-   List`1[System.String]) */
-
-Dictionary_2_System_Object_System_Object_ *
-MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_CreateDictionaryUpdate
-          (String *key,Object *value,List_1_System_String_ *dictionaryBasePath,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-    cRam_? = '\x01';
-  }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar2 = pDVar1;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    index = 0;
-    if (dictionaryBasePath != (List_1_System_String_ *)0x0) {
-      while( true ) {
-        if ((dictionaryBasePath->fields)._size <= index) {
-          return pDVar2;
-        }
-        this = (Dictionary_2_System_Object_System_Object_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
-        if (this == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        key_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            dictionaryBasePath,index,
-                            MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                           );
-        if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)key_00,(Object *)this,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pDVar1 = this;
-        if (index == (dictionaryBasePath->fields)._size + -1) {
-          pDVar2 = (Dictionary_2_System_Object_System_Object_ *)key;
-          pDVar1 = (Dictionary_2_System_Object_System_Object_ *)value;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    (this,(Object *)key,value,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-        }
-        index = index + 1;
-      }
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar3)();
-  return pDVar1;
-}
-
-
 /* Dictionary`2[System.Object,System.Object]
    DeepCopyHashTable(Dictionary`2[System.Object,System.Object],
    Dictionary`2[System.Object,System.Object]) */
@@ -174,13 +72,13 @@ code_?:
     pDVar9 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
     return pDVar9;
   }
-  pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-           Dictionary_2_System_Object_System_Object__GetEnumerator
-                     ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                      &stack0xffffff98,from,
+  pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
+           Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                      &stack0xffffff98,(Dictionary_2_System_UInt32_System_Object_ *)from,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                      );
-  pOVar11 = (pDVar10->_current).key;
+  pOVar11 = (Object *)(pDVar10->_current).key;
   uVar12 = *(undefined8 *)&(pDVar10->_current).value;
   uStack_1 = 1;
 code_?:
@@ -193,7 +91,7 @@ code_?:
                     );
   if (bVar13 == 0) {
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffb0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
@@ -213,8 +111,8 @@ code_?:
   pDVar9 = (Dictionary_2_System_Object_System_Object_ *)
            mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)in_stack_4,(MethodInfo *)0x0);
-  pIVar6 = (Int32__Array__Class *)TypeInfo__System__Single;
   pIVar14 = TypeRef__System__Int32;
+  pIVar6 = (Int32__Array__Class *)TypeInfo__System__Single;
   unaff_ESI = pBStack_5;
   if (from != pDVar9) {
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -223,8 +121,8 @@ code_?:
     pDVar9 = (Dictionary_2_System_Object_System_Object_ *)
              mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar14,(MethodInfo *)0x0);
-    pIVar6 = TypeInfo__System__Int32;
     pIVar14 = TypeRef__System__Byte;
+    pIVar6 = TypeInfo__System__Int32;
     if (from == pDVar9) {
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Int32;
       if (pBStack_5 == (Byte__Array__Class *)0x0) goto code_?;
@@ -305,7 +203,6 @@ code_?:
                                   (pOVar11,(Object *)arg1,(MethodInfo *)0x0);
               func_?();
               pBStack_5 = (Byte__Array__Class *)func_?();
-              func_?();
               mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
                         ((ArgumentException *)pBStack_5,message,(MethodInfo *)0x0);
               func_?();
@@ -410,63 +307,19 @@ MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_DeepC
                    );
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    pDVar1 = HashtableFunctions_DeepCopyHashTable(from,pDVar1,(MethodInfo *)0x0);
-    return pDVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  pDVar1 = HashtableFunctions_DeepCopyHashTable
+                     (from,(Dictionary_2_System_Object_System_Object_ *)this,(MethodInfo *)0x0);
   return pDVar1;
-}
-
-
-/* Dictionary`2[System.Object,System.Object]
-   GetSettingsSubDictionary(Dictionary`2[System.Object,System.Object], List`1[System.String]) */
-
-Dictionary_2_System_Object_System_Object_ *
-MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_GetSettingsSubDictionary
-          (Dictionary_2_System_Object_System_Object_ *data,List_1_System_String_ *subDictionaryPath,
-          MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    cRam_? = '\x01';
-  }
-  pDStack_1 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  bVar2 = HashtableFunctions_TryGetSubDictionary
-                    (&pDStack_1,data,subDictionaryPath,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pDVar3 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)pDVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      return pDVar3;
-    }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar4)();
-    return pDVar3;
-  }
-  return pDStack_1;
 }
 
 
@@ -527,10 +380,10 @@ String * MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFuncti
   }
   pSVar4 = ::StringLiteral__;
   if (dictionary != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                        &pDStack_6,dictionary,
+    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &pDStack_6,(Dictionary_2_System_UInt32_System_Object_ *)dictionary,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
     uVar7 = *(undefined8 *)&(pDVar5->_current).value;
@@ -547,7 +400,7 @@ String * MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFuncti
                           );
         if (bVar8 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc0,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
@@ -558,11 +411,11 @@ String * MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFuncti
         pOStack_9 = (Object *)uVar7;
         if ((((pOStack_9 != (Object *)0x0) &&
              ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).typeHierarchyDepth <= (pOStack_9->klass->_1).typeHierarchyDepth)) &&
+              _1).naturalAligment <= (pOStack_9->klass->_1).naturalAligment)) &&
             ((Dictionary_2_System_Object_System_Object___Class *)
              (pOStack_9->klass->_1).typeHierarchy
              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).typeHierarchyDepth - 1] ==
+              _1).naturalAligment - 1] ==
              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
            (pOStack_9 != (Object *)0x0)) break;
         if (::StringLiteral__ == (String *)0x0) goto code_?;
@@ -605,96 +458,5 @@ code_?:
   pcVar13 = (code *)swi(3);
   pSVar4 = (String *)(*pcVar13)();
   return pSVar4;
-}
-
-
-/* Boolean TryGetSubDictionary(Dictionary`2[System.Object,System.Object] ByRef,
-   Dictionary`2[System.Object,System.Object], List`1[System.String]) */
-
-bool MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_TryGetSubDictionary
-               (Dictionary_2_System_Object_System_Object_ **subDictionary,
-               Dictionary_2_System_Object_System_Object_ *data,
-               List_1_System_String_ *subDictionaryPath,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-    cRam_? = '\x01';
-  }
-  index = 0;
-  this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data;
-  if (subDictionaryPath != (List_1_System_String_ *)0x0) {
-    while( true ) {
-      if ((subDictionaryPath->fields)._size <= index) {
-        *subDictionary = (Dictionary_2_System_Object_System_Object_ *)this;
-        func_?(subDictionary,this);
-        return 1;
-      }
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         subDictionaryPath,index,
-                         MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                        );
-      if (this == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) break;
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (this,(Object *)RVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar2 == 0) {
-        *subDictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        func_?();
-        return 0;
-      }
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         subDictionaryPath,index,
-                         MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                        );
-      subDictionary =
-           (Dictionary_2_System_Object_System_Object_ **)
-           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-      ;
-      data = (Dictionary_2_System_Object_System_Object_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)RVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-      if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0;
-        index = index + 1;
-      }
-      else {
-        this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)func_?();
-        if (this == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-        goto code_?;
-        index = index + 1;
-      }
-    }
-  }
-  func_?();
-code_?:
-  func_?(data,
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 );
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
 }
 

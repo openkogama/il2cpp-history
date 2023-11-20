@@ -18,8 +18,9 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
     }
     pMVar2 = (this->fields)._.worldObject;
     if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      pfVar3 = (float *)(*(pMVar2->klass->vtable).get_Rotation.methodPtr)
-                                  (&MStack_4,pMVar2,(pMVar2->klass->vtable).get_Rotation.method);
+      pfVar3 = (float *)(*(code *)(pMVar2->klass->vtable).get_Rotation.method)
+                                  (&MStack_4,pMVar2,(pMVar2->klass->vtable).set_Rotation.methodPtr)
+      ;
       MStack_4.position.x = *pfVar3;
       MStack_4.position.y = pfVar3[1];
       pfVar5 = pfVar3 + 2;
@@ -42,9 +43,9 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
       cStack_9 = '\x01';
       if (pMVar2 != (MVWorldObjectClient *)0x0) {
         puVar10 = (undefined8 *)
-                 (*(pMVar2->klass->vtable).get_Position.methodPtr)
-                           (&MStack_4.position.y,pMVar2,(pMVar2->klass->vtable).get_Position.method
-                           );
+                 (*(code *)(pMVar2->klass->vtable).get_Position.method)
+                           (&MStack_4.position.y,pMVar2,
+                            (pMVar2->klass->vtable).set_Position.methodPtr);
         fVar11 = (float)*puVar10;
         fVar12 = (float)((ulonglong)*puVar10 >> 0x20);
         fVar6 = *(float *)(puVar10 + 1);
@@ -72,17 +73,19 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
         (this->fields).prevSendTransformData.position.z = fVar6;
         (this->fields).prevSendTransformData.rotation = pBVar7;
         func_?(&(this->fields).prevSendTransformData.rotation);
-        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
-        ;
+        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
         pMVar2 = (this->fields)._.worldObject;
         pMStack_15 = pMVar14;
         if (pMVar2 != (MVWorldObjectClient *)0x0) {
-          iStack_16 = (pMVar2->fields)._.id;
+          pMVar16 = (this->fields)._.worldObject;
+          iStack_17 = (pMVar2->fields)._.id;
+          pMVar18 = pMVar16->klass;
           puVar10 = (undefined8 *)
-                   (*(pMVar2->klass->vtable).get_Position.methodPtr)
-                             (auStack_17,pMVar2,(pMVar2->klass->vtable).get_Position.method);
+                   (*(code *)(pMVar18->vtable).get_Position.method)
+                             (auStack_19,pMVar16,(pMVar18->vtable).set_Position.methodPtr);
           MStack_4._8_8_ = *puVar10;
-          fStack_18 = *(float *)(puVar10 + 1);
+          fStack_20 = *(float *)(puVar10 + 1);
           if (pMVar14 != (MVNetworkGame_OperationRequests *)0x0) {
             if (cRam_? == '\0') {
               func_?(&TypeInfo__System__Byte);
@@ -96,73 +99,78 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
                               TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                              );
               func_?(&TypeInfo__System__Int32);
+              func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
               cRam_? = '\x01';
             }
-            MVar19 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
-            if (MVar19 != MVJoinState__Enum_Playing) {
+            MVar21 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
+            if (MVar21 != MVJoinState__Enum_Playing) {
 code_?:
-              iVar20 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+              iVar22 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
                                  (game,(MethodInfo *)0x0);
-              *(int32_t *)&(this->fields).lastUpdateTimestamp = iVar20;
-              *(int32_t *)((int)&(this->fields).lastUpdateTimestamp + 4) = iVar20 >> 0x1f;
+              *(int32_t *)&(this->fields).lastUpdateTimestamp = iVar22;
+              *(int32_t *)((int)&(this->fields).lastUpdateTimestamp + 4) = iVar22 >> 0x1f;
               return;
             }
-            this_01 = (Dictionary_2_System_Object_System_Object_ *)
+            this_01 = (Dictionary_2_System_Byte_System_Object_ *)
                       func_?(
                                      TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                                      );
-            if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-              Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-              ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                        ((ParameterOverride_1_System_Object_ *)this_01,
-                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                        );
-              iStack_21 = iStack_16;
-              pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&iStack_21);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        (this_01,(Object *)0x16,pOVar22,
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+            Dictionary_2_System_Byte_System_Object___ctor
+                      (this_01,
+                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                      );
+            iStack_23 = iStack_17;
+            pOVar24 = (Object *)func_?(TypeInfo__System__Int32,&iStack_23);
+            if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object__Add
+                        (this_01,0x16,pOVar24,
                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                         );
               this_00 = (pMStack_15->fields).networkGame;
               if (this_00 != (MVNetworkGame *)0x0) {
-                iStack_23 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                iStack_25 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
                                       (this_00,(MethodInfo *)0x0);
-                pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&iStack_23);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (this_01,(Object *)0x23,pOVar22,
+                pOVar24 = (Object *)func_?(TypeInfo__System__Int32,&iStack_25);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__Add
+                          (this_01,0x23,pOVar24,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                           );
-                position.z = fStack_18;
+                position.z = fStack_20;
                 position.x = MStack_4.position.z;
                 position.y = (float)MStack_4.rotation;
-                MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_SetPosition_1
-                          (position,(Dictionary_2_System_Byte_System_Object_ *)this_01,
-                           (MethodInfo *)0x0);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (this_01,(Object *)0x9d,(Object *)pBStack_8,
+                MVWorldObject.dll::MV::WorldObject::TransformHelper::TransformHelper_SetPosition
+                          (position,this_01,(MethodInfo *)0x0);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__Add
+                          (this_01,0x9d,(Object *)pBStack_8,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                           );
-                cStack_24 = cStack_9;
-                pOVar22 = (Object *)func_?(TypeInfo__System__Byte);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (this_01,(Object *)0x24,pOVar22,
+                cStack_26 = cStack_9;
+                pOVar24 = (Object *)func_?(TypeInfo__System__Byte);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__Add
+                          (this_01,0x24,pOVar24,
                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                           );
-                SStack_25.DeliveryMode = 0;
-                SStack_25.Encrypt = 0;
-                SStack_25.Channel = 0;
-                SStack_25._6_2_ = 0;
+                SStack_27.DeliveryMode = 0;
+                SStack_27.Encrypt = 0;
+                SStack_27.Channel = 0;
+                SStack_27._6_2_ = 0;
+                fStack_20 = (float)CONCAT31(fStack_20._1_3_,cStack_9 == '\x02');
+                if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+                }
                 Photon3Unity3D.dll::ExitGames::Client::Photon::SendOptions::
-                SendOptions_set_Reliability(&SStack_25,cStack_9 == '\x02',(MethodInfo *)0x0);
-                pPVar26 = (pMStack_15->fields).peer;
-                if (pPVar26 != (PhotonPeer *)0x0) {
-                  (*(pPVar26->klass->vtable).SendOperation.methodPtr)
-                            (pPVar26,2,this_01,SStack_25.DeliveryMode,SStack_25._4_4_,
-                             (pPVar26->klass->vtable).SendOperation.method);
+                SendOptions_set_Reliability(&SStack_27,SUB41(fStack_20,0),(MethodInfo *)0x0);
+                pPVar28 = (pMStack_15->fields).peer;
+                if (pPVar28 != (PhotonPeer *)0x0) {
+                  (*(code *)(pPVar28->klass->vtable).SendOperation.method)
+                            (pPVar28,2,this_01,SStack_27.DeliveryMode,SStack_27._4_4_,
+                             pPVar28->klass[1]._0.image);
                   goto code_?;
                 }
               }
@@ -173,8 +181,8 @@ code_?:
     }
   }
   func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 
@@ -210,7 +218,7 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter__ctor
   (this->fields).prevSendTransformData.position.z = fVar3;
   (this->fields).prevSendTransformData.rotation = pBStack_4;
   func_?(method_00,0);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.worldObject = owner;
   func_?(&this->fields,owner);

@@ -200,14 +200,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::SubscriberCooldownsMana
   if (pSVar1 != (String__Array *)0x0) {
     TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->static_fields->
     nrOfCooldownTypes = pSVar1->max_length;
-    this = (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)func_?()
-    ;
-    if (this != (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this,
-                 MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__Dictionary__
-                );
+    this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+           func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+    Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+    Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+              (this,
+               MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__Dictionary__
+              );
+    if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
       Dictionary_2_System_Int32Enum_System_Single__Add
                 ((Dictionary_2_System_Int32Enum_System_Single_ *)this,0,15.0,
@@ -249,7 +250,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::SubscriberCooldownsMana
                  MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__Add_Assets__Scripts__Subscription__CooldownType__float_
                 );
       TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->static_fields->
-      cooldownTimes = this;
+      cooldownTimes = (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)this;
       func_?();
       return;
     }
@@ -282,8 +283,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::SubscriberCooldownsMana
                             static_fields->nrOfCooldownTypes);
   (this->fields).cooldowns = pSVar1;
   func_?(&(this->fields).cooldowns,pSVar1);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -87,653 +87,536 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_InitializeAttributes
   }
   pSVar1 = (this->fields)._._Settings_k__BackingField;
   pBVar2 = (this->fields).useDayNightCycle;
-  pUVar3 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
-  if (pUVar3 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-    UnityAction_1_System_ByteEnum___ctor
-              (pUVar3,(Object *)this,MethodInfo__CloudyThemeBase__ToggleDayNightCycle_bool_,
-               (MethodInfo *)0x0);
+  pUVar3 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (pUVar3,(Object *)this,MethodInfo__CloudyThemeBase__ToggleDayNightCycle_bool_,
+             (MethodInfo *)0x0);
+  if (pBVar2 != (BoolAttribute *)0x0) {
+    (*(code *)(pBVar2->klass->vtable).Initialize_1.method)
+              (pBVar2,pSVar1,StringLiteral_useDayNightCycle,0,pUVar3,
+               (pBVar2->klass->vtable).OnSettingsChanged.methodPtr);
+    pSVar1 = (this->fields)._._Settings_k__BackingField;
+    pBVar2 = (this->fields).useServerTime;
+    pUVar3 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (pUVar3,(Object *)this,
+               MethodInfo__CloudyThemeBase__ToggleDayNightCycleUseServerTime_bool_,(MethodInfo *)0x0
+              );
     if (pBVar2 != (BoolAttribute *)0x0) {
-      (*(pBVar2->klass->vtable).Initialize_1.methodPtr)
-                (pBVar2,pSVar1,StringLiteral_useDayNightCycle,0,pUVar3,
-                 (pBVar2->klass->vtable).Initialize_1.method);
+      (*(code *)(pBVar2->klass->vtable).Initialize_1.method)
+                (pBVar2,pSVar1,StringLiteral_useServerTime,1,pUVar3,
+                 (pBVar2->klass->vtable).OnSettingsChanged.methodPtr);
       pSVar1 = (this->fields)._._Settings_k__BackingField;
-      pBVar2 = (this->fields).useServerTime;
-      pUVar3 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
-      if (pUVar3 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (pUVar3,(Object *)this,
-                   MethodInfo__CloudyThemeBase__ToggleDayNightCycleUseServerTime_bool_,
+      pIVar4 = (this->fields).colorPreset;
+      pUVar3 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (pUVar3,(Object *)this,
+                 MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_0_int_,(MethodInfo *)0x0);
+      if (pIVar4 != (IntAttribute *)0x0) {
+        (*(code *)(pIVar4->klass->vtable).Initialize_1.method)
+                  (pIVar4,pSVar1,StringLiteral_colorPresetIndex,1,pUVar3,
+                   (pIVar4->klass->vtable).OnSettingsChanged.methodPtr);
+        pSVar1 = (this->fields)._._Settings_k__BackingField;
+        pFVar5 = (this->fields).gameStartTime;
+        pUVar6 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+        UnityAction_1_System_Single___ctor
+                  (pUVar6,(Object *)this,
+                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_1_float_,
                    (MethodInfo *)0x0);
-        if (pBVar2 != (BoolAttribute *)0x0) {
-          (*(pBVar2->klass->vtable).Initialize_1.methodPtr)
-                    (pBVar2,pSVar1,StringLiteral_useServerTime,1,pUVar3,
-                     (pBVar2->klass->vtable).Initialize_1.method);
+        if (pFVar5 != (FloatAttribute *)0x0) {
+          (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                    (pFVar5,pSVar1,StringLiteral_gameStartTime,9,pUVar6,
+                     (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
           pSVar1 = (this->fields)._._Settings_k__BackingField;
-          pIVar4 = (this->fields).colorPreset;
-          this_00 = (UnityAction_1_System_Int32Enum_ *)
-                    func_?(TypeInfo__System__Action<int>);
-          if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-            UnityAction_1_System_Int32Enum___ctor
-                      (this_00,(Object *)this,
-                       MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_0_int_,
-                       (MethodInfo *)0x0);
-            if (pIVar4 != (IntAttribute *)0x0) {
-              (*(pIVar4->klass->vtable).Initialize_1.methodPtr)
-                        (pIVar4,pSVar1,StringLiteral_colorPresetIndex,1,this_00,
-                         (pIVar4->klass->vtable).Initialize_1.method);
+          pFVar5 = (this->fields).cycleLength;
+          pUVar6 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+          UnityAction_1_System_Single___ctor
+                    (pUVar6,(Object *)this,
+                     MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_2_float_,
+                     (MethodInfo *)0x0);
+          if (pFVar5 != (FloatAttribute *)0x0) {
+            (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                      (pFVar5,pSVar1,StringLiteral_cycleLength,9,pUVar6,
+                       (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
+            pSVar1 = (this->fields)._._Settings_k__BackingField;
+            pCVar7 = (this->fields).topColor;
+            pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
+                     func_?(TypeInfo__System__Action<UnityEngine::Color>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+            UnityAction_1_UnityEngine_Color___ctor
+                      (pUVar8,(Object *)this,
+                       MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_3_UnityEngine__Color_
+                       ,(MethodInfo *)0x0);
+            if (pCVar7 != (ColorAttribute *)0x0) {
+              (*(code *)(pCVar7->klass->vtable).Initialize_1.method)
+                        (pCVar7,pSVar1,StringLiteral_topColor,2,pUVar8,
+                         (pCVar7->klass->vtable).OnSettingsChanged.methodPtr);
               pSVar1 = (this->fields)._._Settings_k__BackingField;
-              pFVar5 = (this->fields).gameStartTime;
-              pUVar6 = (UnityAction_1_System_Single_ *)
-                       func_?(TypeInfo__System__Action<float>);
-              if (pUVar6 != (UnityAction_1_System_Single_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-                UnityAction_1_System_Single___ctor
-                          (pUVar6,(Object *)this,
-                           MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_1_float_,
-                           (MethodInfo *)0x0);
-                if (pFVar5 != (FloatAttribute *)0x0) {
-                  (*(pFVar5->klass->vtable).Initialize_1.methodPtr)
-                            (pFVar5,pSVar1,StringLiteral_gameStartTime,9,pUVar6,
-                             (pFVar5->klass->vtable).Initialize_1.method);
+              pCVar7 = (this->fields).bottomColor;
+              pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
+                       func_?(TypeInfo__System__Action<UnityEngine::Color>);
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+              UnityAction_1_UnityEngine_Color___ctor
+                        (pUVar8,(Object *)this,
+                         MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_4_UnityEngine__Color_
+                         ,(MethodInfo *)0x0);
+              if (pCVar7 != (ColorAttribute *)0x0) {
+                (*(code *)(pCVar7->klass->vtable).Initialize_1.method)
+                          (pCVar7,pSVar1,StringLiteral_bottomColor,2,pUVar8,
+                           (pCVar7->klass->vtable).OnSettingsChanged.methodPtr);
+                pSVar1 = (this->fields)._._Settings_k__BackingField;
+                pCVar7 = (this->fields).starsTint;
+                pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
+                         func_?(TypeInfo__System__Action<UnityEngine::Color>);
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+                UnityAction_1_UnityEngine_Color___ctor
+                          (pUVar8,(Object *)this,
+                           MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_5_UnityEngine__Color_
+                           ,(MethodInfo *)0x0);
+                if (pCVar7 != (ColorAttribute *)0x0) {
+                  (*(code *)(pCVar7->klass->vtable).Initialize_1.method)
+                            (pCVar7,pSVar1,StringLiteral_starsTint,2,pUVar8,
+                             (pCVar7->klass->vtable).OnSettingsChanged.methodPtr);
                   pSVar1 = (this->fields)._._Settings_k__BackingField;
-                  pFVar5 = (this->fields).cycleLength;
+                  pFVar5 = (this->fields).starsExtinction;
                   pUVar6 = (UnityAction_1_System_Single_ *)
                            func_?(TypeInfo__System__Action<float>);
-                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+                  UnityAction_1_System_Single___ctor
+                            (pUVar6,(Object *)this,
+                             MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_6_float_,
+                             (MethodInfo *)0x0);
+                  if (pFVar5 != (FloatAttribute *)0x0) {
+                    (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                              (pFVar5,pSVar1,StringLiteral_starsExtinction,0,pUVar6,
+                               (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
+                    pSVar1 = (this->fields)._._Settings_k__BackingField;
+                    pFVar5 = (this->fields).starsTwinkilingSpeed;
+                    pUVar6 = (UnityAction_1_System_Single_ *)
+                             func_?(TypeInfo__System__Action<float>);
                     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
                     UnityAction_1_System_Single___ctor
                               (pUVar6,(Object *)this,
-                               MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_2_float_,
+                               MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_7_float_,
                                (MethodInfo *)0x0);
                     if (pFVar5 != (FloatAttribute *)0x0) {
-                      (*(pFVar5->klass->vtable).Initialize_1.methodPtr)
-                                (pFVar5,pSVar1,StringLiteral_cycleLength,9,pUVar6,
-                                 (pFVar5->klass->vtable).Initialize_1.method);
+                      (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                (pFVar5,pSVar1,StringLiteral_starsTwinklingSpeed,0,pUVar6,
+                                 (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
                       pSVar1 = (this->fields)._._Settings_k__BackingField;
-                      pCVar7 = (this->fields).topColor;
+                      pCVar7 = (this->fields).sunTint;
                       pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
                                func_?(TypeInfo__System__Action<UnityEngine::Color>);
-                      if (pUVar8 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
-                        Color]::UnityAction_1_UnityEngine_Color___ctor
-                                  (pUVar8,(Object *)this,
-                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_3_UnityEngine__Color_
+                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
+                      Color]::UnityAction_1_UnityEngine_Color___ctor
+                                (pUVar8,(Object *)this,
+                                 MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_8_UnityEngine__Color_
+                                 ,(MethodInfo *)0x0);
+                      if (pCVar7 != (ColorAttribute *)0x0) {
+                        (*(code *)(pCVar7->klass->vtable).Initialize_1.method)
+                                  (pCVar7,pSVar1,StringLiteral_sunTint,2,pUVar8,
+                                   (pCVar7->klass->vtable).OnSettingsChanged.methodPtr);
+                        pSVar1 = (this->fields)._._Settings_k__BackingField;
+                        pFVar5 = (this->fields).sunSize;
+                        pUVar6 = (UnityAction_1_System_Single_ *)
+                                 func_?(TypeInfo__System__Action<float>);
+                        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                        Single]::UnityAction_1_System_Single___ctor
+                                  (pUVar6,(Object *)this,
+                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_9_float_
                                    ,(MethodInfo *)0x0);
-                        if (pCVar7 != (ColorAttribute *)0x0) {
-                          (*(pCVar7->klass->vtable).Initialize_1.methodPtr)
-                                    (pCVar7,pSVar1,StringLiteral_topColor,2,pUVar8,
-                                     (pCVar7->klass->vtable).Initialize_1.method);
+                        if (pFVar5 != (FloatAttribute *)0x0) {
+                          (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                    (pFVar5,pSVar1,StringLiteral_sunSize,0,pUVar6,
+                                     (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
                           pSVar1 = (this->fields)._._Settings_k__BackingField;
-                          pCVar7 = (this->fields).bottomColor;
-                          pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
-                                   func_?(TypeInfo__System__Action<UnityEngine::Color>);
-                          if (pUVar8 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Events::
-                            UnityAction`1[UnityEngine::Color]::
-                            UnityAction_1_UnityEngine_Color___ctor
-                                      (pUVar8,(Object *)this,
-                                       MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_4_UnityEngine__Color_
+                          pFVar5 = (this->fields).sunHeight;
+                          pUVar6 = (UnityAction_1_System_Single_ *)
+                                   func_?(TypeInfo__System__Action<float>);
+                          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                          Single]::UnityAction_1_System_Single___ctor
+                                    (pUVar6,(Object *)this,
+                                     MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_10_float_
+                                     ,(MethodInfo *)0x0);
+                          if (pFVar5 != (FloatAttribute *)0x0) {
+                            (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                      (pFVar5,pSVar1,StringLiteral_sunHeight,2,pUVar6,
+                                       (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
+                            pSVar1 = (this->fields)._._Settings_k__BackingField;
+                            pFVar5 = (this->fields).sunAxis;
+                            pUVar6 = (UnityAction_1_System_Single_ *)
+                                     func_?(TypeInfo__System__Action<float>);
+                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                            Single]::UnityAction_1_System_Single___ctor
+                                      (pUVar6,(Object *)this,
+                                       MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_11_float_
                                        ,(MethodInfo *)0x0);
-                            if (pCVar7 != (ColorAttribute *)0x0) {
-                              (*(pCVar7->klass->vtable).Initialize_1.methodPtr)
-                                        (pCVar7,pSVar1,StringLiteral_bottomColor,2,pUVar8,
-                                         (pCVar7->klass->vtable).Initialize_1.method);
+                            if (pFVar5 != (FloatAttribute *)0x0) {
+                              (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                        (pFVar5,pSVar1,StringLiteral_sunAxis,2,pUVar6,
+                                         (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
                               pSVar1 = (this->fields)._._Settings_k__BackingField;
-                              pCVar7 = (this->fields).starsTint;
-                              pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
-                                       func_?(TypeInfo__System__Action<UnityEngine::Color>)
-                              ;
-                              if (pUVar8 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
+                              pFVar5 = (this->fields).sunAltitude;
+                              pUVar6 = (UnityAction_1_System_Single_ *)
+                                       func_?(TypeInfo__System__Action<float>);
+                              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System
+                              ::Single]::UnityAction_1_System_Single___ctor
+                                        (pUVar6,(Object *)this,
+                                         MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_12_float_
+                                         ,(MethodInfo *)0x0);
+                              if (pFVar5 != (FloatAttribute *)0x0) {
+                                (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                          (pFVar5,pSVar1,StringLiteral_sunAltitude,1,pUVar6,
+                                           (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
+                                pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                pFVar5 = (this->fields).sunLongitude;
+                                pUVar6 = (UnityAction_1_System_Single_ *)
+                                         func_?(TypeInfo__System__Action<float>);
                                 UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                UnityAction`1[UnityEngine::Color]::
-                                UnityAction_1_UnityEngine_Color___ctor
-                                          (pUVar8,(Object *)this,
-                                           MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_5_UnityEngine__Color_
+                                UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor
+                                          (pUVar6,(Object *)this,
+                                           MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_13_float_
                                            ,(MethodInfo *)0x0);
-                                if (pCVar7 != (ColorAttribute *)0x0) {
-                                  (*(pCVar7->klass->vtable).Initialize_1.methodPtr)
-                                            (pCVar7,pSVar1,StringLiteral_starsTint,2,pUVar8,
-                                             (pCVar7->klass->vtable).Initialize_1.method);
+                                if (pFVar5 != (FloatAttribute *)0x0) {
+                                  (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                            (pFVar5,pSVar1,StringLiteral_sunLongitude,1,pUVar6,
+                                             (pFVar5->klass->vtable).OnSettingsChanged.methodPtr);
                                   pSVar1 = (this->fields)._._Settings_k__BackingField;
-                                  pFVar5 = (this->fields).starsExtinction;
+                                  pFVar5 = (this->fields).sunLightContrast;
                                   pUVar6 = (UnityAction_1_System_Single_ *)
                                            func_?(TypeInfo__System__Action<float>);
-                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0) {
+                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                  UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor
+                                            (pUVar6,(Object *)this,
+                                             MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_14_float_
+                                             ,(MethodInfo *)0x0);
+                                  if (pFVar5 != (FloatAttribute *)0x0) {
+                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                              (pFVar5,pSVar1,StringLiteral_sunLightContrast,2,pUVar6
+                                               ,(pFVar5->klass->vtable).OnSettingsChanged.methodPtr)
+                                    ;
+                                    pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                    pFVar5 = (this->fields).sunLightIntensity;
+                                    pUVar6 = (UnityAction_1_System_Single_ *)
+                                             func_?(TypeInfo__System__Action<float>);
                                     UnityEngine.CoreModule.dll::UnityEngine::Events::
                                     UnityAction`1[System::Single]::
                                     UnityAction_1_System_Single___ctor
                                               (pUVar6,(Object *)this,
-                                               MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_6_float_
+                                               MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_15_float_
                                                ,(MethodInfo *)0x0);
                                     if (pFVar5 != (FloatAttribute *)0x0) {
-                                      (*(pFVar5->klass->vtable).Initialize_1.methodPtr)
-                                                (pFVar5,pSVar1,StringLiteral_starsExtinction,0,
-                                                 pUVar6,(pFVar5->klass->vtable).Initialize_1.method)
-                                      ;
+                                      (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                                (pFVar5,pSVar1,StringLiteral_sunLightIntensity,2,
+                                                 pUVar6,(pFVar5->klass->vtable).OnSettingsChanged.
+                                                        methodPtr);
                                       pSVar1 = (this->fields)._._Settings_k__BackingField;
-                                      pFVar5 = (this->fields).starsTwinkilingSpeed;
+                                      pFVar5 = (this->fields).sunFlareBrightness;
                                       pUVar6 = (UnityAction_1_System_Single_ *)
                                                func_?(TypeInfo__System__Action<float>);
-                                      if (pUVar6 != (UnityAction_1_System_Single_ *)0x0) {
-                                        UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                        UnityAction`1[System::Single]::
-                                        UnityAction_1_System_Single___ctor
-                                                  (pUVar6,(Object *)this,
-                                                                                                      
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_7_float_
-                                                  ,(MethodInfo *)0x0);
-                                        if (pFVar5 != (FloatAttribute *)0x0) {
-                                          (*(pFVar5->klass->vtable).Initialize_1.methodPtr)
-                                                    (pFVar5,pSVar1,StringLiteral_starsTwinklingSpeed
-                                                     ,0,pUVar6,
-                                                     (pFVar5->klass->vtable).Initialize_1.method);
-                                          pSVar1 = (this->fields)._._Settings_k__BackingField;
-                                          pCVar7 = (this->fields).sunTint;
-                                          pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
-                                                   func_?(
+                                      UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                      UnityAction`1[System::Single]::
+                                      UnityAction_1_System_Single___ctor
+                                                (pUVar6,(Object *)this,
+                                                 MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_16_float_
+                                                 ,(MethodInfo *)0x0);
+                                      if (pFVar5 != (FloatAttribute *)0x0) {
+                                        (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                                  (pFVar5,pSVar1,StringLiteral_sunFlareBrightness,0,
+                                                   pUVar6,(pFVar5->klass->vtable).OnSettingsChanged.
+                                                          methodPtr);
+                                        pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                        pCVar7 = (this->fields).moonTint;
+                                        pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
+                                                 func_?(
                                                   TypeInfo__System__Action<UnityEngine::Color>);
-                                          if (pUVar8 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
-                                            UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                            UnityAction`1[UnityEngine::Color]::
-                                            UnityAction_1_UnityEngine_Color___ctor
-                                                      (pUVar8,(Object *)this,
-                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_8_UnityEngine__Color_
+                                        UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                        UnityAction`1[UnityEngine::Color]::
+                                        UnityAction_1_UnityEngine_Color___ctor
+                                                  (pUVar8,(Object *)this,
+                                                                                                      
+                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_17_UnityEngine__Color_
                                                   ,(MethodInfo *)0x0);
-                                            if (pCVar7 != (ColorAttribute *)0x0) {
-                                              (*(pCVar7->klass->vtable).Initialize_1.methodPtr)
-                                                        (pCVar7,pSVar1,StringLiteral_sunTint,2,
-                                                         pUVar8,(pCVar7->klass->vtable).Initialize_1
-                                                                .method);
+                                        if (pCVar7 != (ColorAttribute *)0x0) {
+                                          (*(code *)(pCVar7->klass->vtable).Initialize_1.method)
+                                                    (pCVar7,pSVar1,StringLiteral_moonTint,2,pUVar8,
+                                                     (pCVar7->klass->vtable).OnSettingsChanged.
+                                                     methodPtr);
+                                          pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                          pFVar5 = (this->fields).moonSize;
+                                          pUVar6 = (UnityAction_1_System_Single_ *)
+                                                   func_?(TypeInfo__System__Action<float>);
+                                          UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                          UnityAction`1[System::Single]::
+                                          UnityAction_1_System_Single___ctor
+                                                    (pUVar6,(Object *)this,
+                                                                                                          
+                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_18_float_
+                                                  ,(MethodInfo *)0x0);
+                                          if (pFVar5 != (FloatAttribute *)0x0) {
+                                            (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                                      (pFVar5,pSVar1,StringLiteral_moonSize,0,pUVar6
+                                                       ,(pFVar5->klass->vtable).OnSettingsChanged.
+                                                        methodPtr);
+                                            pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                            pFVar5 = (this->fields).moonHeight;
+                                            pUVar6 = (UnityAction_1_System_Single_ *)
+                                                     func_?(TypeInfo__System__Action<float>
+                                                                    );
+                                            UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                            UnityAction`1[System::Single]::
+                                            UnityAction_1_System_Single___ctor
+                                                      (pUVar6,(Object *)this,
+                                                                                                              
+                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_19_float_
+                                                  ,(MethodInfo *)0x0);
+                                            if (pFVar5 != (FloatAttribute *)0x0) {
+                                              (*(code *)(pFVar5->klass->vtable).Initialize_1.method)
+                                                        (pFVar5,pSVar1,StringLiteral_moonHeight,2,
+                                                         pUVar6,(pFVar5->klass->vtable).
+                                                                OnSettingsChanged.methodPtr);
                                               pSVar1 = (this->fields)._._Settings_k__BackingField;
-                                              pFVar5 = (this->fields).sunSize;
+                                              pFVar5 = (this->fields).moonAxis;
                                               pUVar6 = (UnityAction_1_System_Single_ *)
                                                        func_?(
                                                   TypeInfo__System__Action<float>);
-                                              if (pUVar6 != (UnityAction_1_System_Single_ *)0x0) {
+                                              UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                              UnityAction`1[System::Single]::
+                                              UnityAction_1_System_Single___ctor
+                                                        (pUVar6,(Object *)this,
+                                                                                                                  
+                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_20_float_
+                                                  ,(MethodInfo *)0x0);
+                                              if (pFVar5 != (FloatAttribute *)0x0) {
+                                                (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                          method)(pFVar5,pSVar1,
+                                                                  StringLiteral_moonAxis,2,pUVar6,
+                                                                  (pFVar5->klass->vtable).
+                                                                  OnSettingsChanged.methodPtr);
+                                                pSVar1 = (this->fields)._._Settings_k__BackingField;
+                                                pFVar5 = (this->fields).moonAltitude;
+                                                pUVar6 = (UnityAction_1_System_Single_ *)
+                                                         func_?(
+                                                  TypeInfo__System__Action<float>);
                                                 UnityEngine.CoreModule.dll::UnityEngine::Events::
                                                 UnityAction`1[System::Single]::
                                                 UnityAction_1_System_Single___ctor
                                                           (pUVar6,(Object *)this,
                                                                                                                       
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_9_float_
+                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_21_float_
                                                   ,(MethodInfo *)0x0);
                                                 if (pFVar5 != (FloatAttribute *)0x0) {
-                                                  (*(pFVar5->klass->vtable).Initialize_1.methodPtr)
-                                                            (pFVar5,pSVar1,StringLiteral_sunSize,0,
-                                                             pUVar6,(pFVar5->klass->vtable).
-                                                                    Initialize_1.method);
+                                                  (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                            method)(pFVar5,pSVar1,
+                                                                    StringLiteral_moonAltitude,1,
+                                                                    pUVar6,(pFVar5->klass->vtable).
+                                                                           OnSettingsChanged.
+                                                                           methodPtr);
                                                   pSVar1 = (this->fields)._.
                                                            _Settings_k__BackingField;
-                                                  pFVar5 = (this->fields).sunHeight;
+                                                  pFVar5 = (this->fields).moonLongitude;
                                                   pUVar6 = (UnityAction_1_System_Single_ *)
                                                            func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_10_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunHeight,2,pUVar6
-                                                      ,(pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunAxis;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_11_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunAxis,2,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunAltitude;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_12_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunAltitude,1,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunLongitude;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_13_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunLongitude,1,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunLightContrast;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_14_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunLightContrast,2
-                                                      ,pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                              method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunLightIntensity;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_15_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunLightIntensity,
-                                                      2,pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                               method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).sunFlareBrightness;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_16_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_sunFlareBrightness
-                                                      ,0,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pCVar7 = (this->fields).moonTint;
-                                                    pUVar8 = (UnityAction_1_UnityEngine_Color_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<UnityEngine::Color>);
-                                                  if (pUVar8 != (UnityAction_1_UnityEngine_Color_ *)
-                                                                0x0) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[UnityEngine::Color]::
-                                                    UnityAction_1_UnityEngine_Color___ctor
-                                                              (pUVar8,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_17_UnityEngine__Color_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pCVar7 != (ColorAttribute *)0x0) {
-                                                    (*(pCVar7->klass->vtable).Initialize_1.methodPtr
-                                                    )(pCVar7,pSVar1,StringLiteral_moonTint,2,pUVar8,
-                                                      (pCVar7->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonSize;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_18_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonSize,0,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonHeight;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_19_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonHeight,2,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonAxis;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_20_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonAxis,2,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonAltitude;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
-                                                  MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_21_float_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonAltitude,1,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonLongitude;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
-                                                  TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_22_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonLongitude,1,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                      StringLiteral_moonLongitude,1,
+                                                                      pUVar6,(pFVar5->klass->vtable)
+                                                                             .OnSettingsChanged.
+                                                                             methodPtr);
                                                     pSVar1 = (this->fields)._.
                                                              _Settings_k__BackingField;
                                                     pFVar5 = (this->fields).moonLightContrast;
                                                     pUVar6 = (UnityAction_1_System_Single_ *)
                                                              func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_23_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonLightContrast,
-                                                      2,pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                               method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonLightIntensity;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                                                                                            
+                                                  StringLiteral_moonLightContrast,2,pUVar6,
+                                                  (pFVar5->klass->vtable).OnSettingsChanged.
+                                                  methodPtr);
+                                                  pSVar1 = (this->fields)._.
+                                                           _Settings_k__BackingField;
+                                                  pFVar5 = (this->fields).moonLightIntensity;
+                                                  pUVar6 = (UnityAction_1_System_Single_ *)
+                                                           func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_24_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_moonLightIntensity
-                                                      ,2,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).moonFlareBrightness;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                                                                                            
+                                                  StringLiteral_moonLightIntensity,2,pUVar6,
+                                                  (pFVar5->klass->vtable).OnSettingsChanged.
+                                                  methodPtr);
+                                                  pSVar1 = (this->fields)._.
+                                                           _Settings_k__BackingField;
+                                                  pFVar5 = (this->fields).moonFlareBrightness;
+                                                  pUVar6 = (UnityAction_1_System_Single_ *)
+                                                           func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_25_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,
-                                                      StringLiteral_moonFlareBrightness,0,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pFVar5 = (this->fields).cloudsHeight;
-                                                    pUVar6 = (UnityAction_1_System_Single_ *)
-                                                             func_?(
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                                                                                            
+                                                  StringLiteral_moonFlareBrightness,0,pUVar6,
+                                                  (pFVar5->klass->vtable).OnSettingsChanged.
+                                                  methodPtr);
+                                                  pSVar1 = (this->fields)._.
+                                                           _Settings_k__BackingField;
+                                                  pFVar5 = (this->fields).cloudsHeight;
+                                                  pUVar6 = (UnityAction_1_System_Single_ *)
+                                                           func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_26_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_cloudsHeight,0,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                      StringLiteral_cloudsHeight,0,
+                                                                      pUVar6,(pFVar5->klass->vtable)
+                                                                             .OnSettingsChanged.
+                                                                             methodPtr);
                                                     pSVar1 = (this->fields)._.
                                                              _Settings_k__BackingField;
                                                     pFVar5 = (this->fields).cloudsOffset;
                                                     pUVar6 = (UnityAction_1_System_Single_ *)
                                                              func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_27_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_cloudsOffset,0,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                      StringLiteral_cloudsOffset,0,
+                                                                      pUVar6,(pFVar5->klass->vtable)
+                                                                             .OnSettingsChanged.
+                                                                             methodPtr);
                                                     pSVar1 = (this->fields)._.
                                                              _Settings_k__BackingField;
                                                     pFVar5 = (this->fields).cloudsRotationSpeed;
                                                     pUVar6 = (UnityAction_1_System_Single_ *)
                                                              func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_28_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,
-                                                      StringLiteral_cloudsRotationSpeed,0,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
-                                                    pSVar1 = (this->fields)._.
-                                                             _Settings_k__BackingField;
-                                                    pBVar2 = (this->fields).useFog;
-                                                    pUVar3 = (UnityAction_1_System_ByteEnum_ *)
-                                                             func_?(
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                                                                                            
+                                                  StringLiteral_cloudsRotationSpeed,0,pUVar6,
+                                                  (pFVar5->klass->vtable).OnSettingsChanged.
+                                                  methodPtr);
+                                                  pSVar1 = (this->fields)._.
+                                                           _Settings_k__BackingField;
+                                                  pBVar2 = (this->fields).useFog;
+                                                  pUVar3 = (UnityAction_1_System_Int32Enum_ *)
+                                                           func_?(
                                                   TypeInfo__System__Action<bool>);
-                                                  if (pUVar3 != (UnityAction_1_System_ByteEnum_ *)
-                                                                0x0) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::ByteEnum]::
-                                                    UnityAction_1_System_ByteEnum___ctor
-                                                              (pUVar3,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Int32Enum]::
+                                                  UnityAction_1_System_Int32Enum___ctor
+                                                            (pUVar3,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase__ToggleFog_bool_,
                                                   (MethodInfo *)0x0);
                                                   if (pBVar2 != (BoolAttribute *)0x0) {
-                                                    (*(pBVar2->klass->vtable).Initialize_1.methodPtr
-                                                    )(pBVar2,pSVar1,StringLiteral_useFog,0,pUVar3,
-                                                      (pBVar2->klass->vtable).Initialize_1.method);
+                                                    (*(code *)(pBVar2->klass->vtable).Initialize_1.
+                                                              method)(pBVar2,pSVar1,
+                                                                      StringLiteral_useFog,0,pUVar3,
+                                                                      (pBVar2->klass->vtable).
+                                                                      OnSettingsChanged.methodPtr);
                                                     pSVar1 = (this->fields)._.
                                                              _Settings_k__BackingField;
                                                     pFVar5 = (this->fields).fogDensity;
                                                     pUVar6 = (UnityAction_1_System_Single_ *)
                                                              func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_29_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_fogDensity,0x10,
-                                                      pUVar6,(pFVar5->klass->vtable).Initialize_1.
-                                                             method);
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                      StringLiteral_fogDensity,0x10,
+                                                                      pUVar6,(pFVar5->klass->vtable)
+                                                                             .OnSettingsChanged.
+                                                                             methodPtr);
                                                     pSVar1 = (this->fields)._.
                                                              _Settings_k__BackingField;
                                                     pFVar5 = (this->fields).exposure;
                                                     pUVar6 = (UnityAction_1_System_Single_ *)
                                                              func_?(
                                                   TypeInfo__System__Action<float>);
-                                                  if (pUVar6 != (UnityAction_1_System_Single_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`1[System::Single]::
-                                                    UnityAction_1_System_Single___ctor
-                                                              (pUVar6,(Object *)this,
-                                                                                                                              
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Single]::
+                                                  UnityAction_1_System_Single___ctor
+                                                            (pUVar6,(Object *)this,
+                                                                                                                          
                                                   MethodInfo__CloudyThemeBase___InitializeAttributes_b__44_30_float_
                                                   ,(MethodInfo *)0x0);
                                                   if (pFVar5 != (FloatAttribute *)0x0) {
-                                                    (*(pFVar5->klass->vtable).Initialize_1.methodPtr
-                                                    )(pFVar5,pSVar1,StringLiteral_exposure,0,pUVar6,
-                                                      (pFVar5->klass->vtable).Initialize_1.method);
+                                                    (*(code *)(pFVar5->klass->vtable).Initialize_1.
+                                                              method)(pFVar5,pSVar1,
+                                                                      StringLiteral_exposure,0,
+                                                                      pUVar6,(pFVar5->klass->vtable)
+                                                                             .OnSettingsChanged.
+                                                                             methodPtr);
                                                     return;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
                                                   }
                                                   }
                                                   }
@@ -782,95 +665,96 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_InitializeComponents
 
 {
   item = (this->fields).skybox;
-  if (item == (ThemeSkybox *)0x0) {
-code_?:
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ThemeComponent>__Add_ThemeComponent_
-                   );
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields)._.components;
-  if (this_00 == (List_1_ThemeComponent_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-            ((List_1_System_Object_ *)this_00,(Object *)item,
-             MethodInfo__System__Collections__Generic__List<ThemeComponent>__Add_ThemeComponent_);
-  if ((this->fields).dayNightCycle == (DayNightCycle *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeTimers__SystemTimer,unaff_retaddr,this);
-    func_?(&TypeInfo__ThemeTimers__Timer);
-    cRam_? = '\x01';
-  }
-  fVar2 = *(float *)(in_stack_3 + 0x10);
-  fVar4 = *(float *)(in_stack_3 + 0xc);
-  if (fVar2 <= fVar4) {
-    fVar2 = fVar2 + (_UNK_? - fVar4);
-  }
-  else {
-    fVar2 = fVar2 - fVar4;
-  }
-  *(float *)(in_stack_3 + 0x44) = fVar2;
-  fVar2 = *(float *)(in_stack_3 + 0x14) * _UNK_?;
-  dVar5 = (double)fVar2;
-  func_?();
-  dVar6 = (double)fVar2;
-  func_?();
-  fVar2 = *(float *)(in_stack_3 + 0x24);
-  *(ulonglong *)(in_stack_3 + 0x48) = CONCAT44((float)dVar6,(float)dVar5);
-  fVar4 = *(float *)(in_stack_3 + 0x28);
-  *(undefined4 *)(in_stack_3 + 0x50) = 0;
-  if (fVar4 <= fVar2) {
-    fVar4 = fVar4 + (_UNK_? - fVar2);
-  }
-  else {
-    fVar4 = fVar4 - fVar2;
-  }
-  *(float *)(in_stack_3 + 0x54) = fVar4;
-  fVar2 = *(float *)(in_stack_3 + 0x2c) * _UNK_?;
-  dVar5 = (double)fVar2;
-  func_?();
-  dVar6 = (double)fVar2;
-  func_?();
-  *(ulonglong *)(in_stack_3 + 0x58) = CONCAT44((float)dVar6,(float)dVar5);
-  *(undefined4 *)(in_stack_3 + 0x60) = 0;
-  if (*(int *)(in_stack_3 + 0x78) == 0) {
-    if (*(DayNightCycleColorPresets **)(in_stack_3 + 0x40) ==
-        (DayNightCycleColorPresets *)0x0) goto code_?;
-    in_stack_7 = &UNK_?;
-    pDVar8 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
-                       (*(DayNightCycleColorPresets **)(in_stack_3 + 0x40),0,
-                        (MethodInfo *)0x0);
-    *(DayNightCycleColorPresets_Preset **)(in_stack_3 + 0x78) = pDVar8;
-    func_?(in_stack_3 + 0x78,pDVar8);
-  }
-  if (*(char *)(in_stack_3 + 100) == '\0') {
-    uVar9 = *(undefined4 *)(in_stack_3 + 0x68);
-    this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_01 == (Timer_1 *)0x0) {
-code_?:
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+  if (item != (ThemeSkybox *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<ThemeComponent>__Add_ThemeComponent_
+                     );
+      cRam_? = '\x01';
     }
-    method_00 = (MethodInfo *)&UNK_?;
-    fVar10 = (float10)func_?(uVar9,0);
-    ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar10,(float)in_stack_7,method_00);
+    this_00 = (this->fields)._.components;
+    if (this_00 != (List_1_ThemeComponent_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_00,(Object *)item,
+                 MethodInfo__System__Collections__Generic__List<ThemeComponent>__Add_ThemeComponent_
+                );
+      if ((this->fields).dayNightCycle != (DayNightCycle *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__ThemeTimers__SystemTimer,unaff_retaddr,this);
+          func_?(&TypeInfo__ThemeTimers__Timer);
+          cRam_? = '\x01';
+        }
+        fVar1 = *(float *)(in_stack_2 + 0x14);
+        fVar3 = *(float *)(in_stack_2 + 0x10);
+        if (fVar1 <= fVar3) {
+          fVar1 = fVar1 + (_UNK_? - fVar3);
+        }
+        else {
+          fVar1 = fVar1 - fVar3;
+        }
+        *(float *)(in_stack_2 + 0x48) = fVar1;
+        fVar1 = *(float *)(in_stack_2 + 0x18) * _UNK_?;
+        dVar4 = (double)fVar1;
+        func_?();
+        dVar5 = (double)fVar1;
+        func_?();
+        fVar1 = *(float *)(in_stack_2 + 0x28);
+        *(ulonglong *)(in_stack_2 + 0x4c) = CONCAT44((float)dVar5,(float)dVar4);
+        fVar3 = *(float *)(in_stack_2 + 0x2c);
+        *(undefined4 *)(in_stack_2 + 0x54) = 0;
+        if (fVar3 <= fVar1) {
+          fVar3 = fVar3 + (_UNK_? - fVar1);
+        }
+        else {
+          fVar3 = fVar3 - fVar1;
+        }
+        *(float *)(in_stack_2 + 0x58) = fVar3;
+        fVar1 = *(float *)(in_stack_2 + 0x30) * _UNK_?;
+        dVar4 = (double)fVar1;
+        func_?();
+        dVar5 = (double)fVar1;
+        func_?();
+        *(ulonglong *)(in_stack_2 + 0x5c) = CONCAT44((float)dVar5,(float)dVar4);
+        *(undefined4 *)(in_stack_2 + 100) = 0;
+        if (*(int *)(in_stack_2 + 0x7c) == 0) {
+          if (*(DayNightCycleColorPresets **)(in_stack_2 + 0x44) ==
+              (DayNightCycleColorPresets *)0x0) {
+            func_?();
+            pcVar6 = (code *)swi(3);
+            (*pcVar6)();
+            return;
+          }
+          pDVar7 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
+                             (*(DayNightCycleColorPresets **)(in_stack_2 + 0x44),0,
+                              (MethodInfo *)0x0);
+          *(DayNightCycleColorPresets_Preset **)(in_stack_2 + 0x7c) = pDVar7;
+          func_?(in_stack_2 + 0x7c,pDVar7);
+        }
+        if (*(char *)(in_stack_2 + 0x68) == '\0') {
+          fVar1 = *(float *)(in_stack_2 + 0x6c);
+          this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
+          method_00 = (MethodInfo *)0x0;
+          fVar8 = (float10)func_?();
+          ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar8,fVar1,method_00);
+        }
+        else {
+          this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
+          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+          UxmlObjectListAttributeDescription`1[System::Object]::
+          UxmlObjectListAttributeDescription_1_System_Object___ctor
+                    ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,
+                     (MethodInfo *)0x0);
+        }
+        *(Timer_1 **)(in_stack_2 + 0x70) = this_01;
+        func_?(in_stack_2 + 0x70,this_01);
+        *(undefined1 *)(in_stack_2 + 0x78) = 1;
+        return;
+      }
+    }
   }
-  else {
-    this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
-    if (this_01 == (Timer_1 *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_01,(MethodInfo *)0x0);
-  }
-  *(Timer_1 **)(in_stack_3 + 0x6c) = this_01;
-  func_?(in_stack_3 + 0x6c,this_01);
-  *(undefined1 *)(in_stack_3 + 0x74) = 1;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -891,14 +775,12 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ThemeReset
       initialTime = (pDVar1->fields).cycleStartTime;
       cycleLength = (pDVar1->fields).cycleLength;
       this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-      if (this_00 == (Timer_1 *)0x0) goto code_?;
       ThemeTimers::Timer::Timer_1__ctor(this_00,initialTime,cycleLength,(MethodInfo *)0x0);
       (pDVar1->fields).timer = (ITimer *)this_00;
       func_?(&(pDVar1->fields).timer,this_00);
     }
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -914,6 +796,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
 {
   this_00 = (this->fields).dayNightCycle;
   if (this_00 != (DayNightCycle *)0x0) {
+    method_00.genericMethod = (Il2CppGenericMethod *)&UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)this_00,b,(MethodInfo *)0x0);
     pSVar1 = (this->fields)._._Settings_k__BackingField;
@@ -922,24 +805,20 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
       ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                 (pSVar1,1,(MethodInfo *)0x0);
       pSVar1 = (this->fields)._._Settings_k__BackingField;
-      iVar2 = in_stack_3;
     }
     else {
       if (pSVar1 == (SettingsWrapper *)0x0) goto code_?;
       ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                 (pSVar1,2,(MethodInfo *)0x0);
       pSVar1 = (this->fields)._._Settings_k__BackingField;
-      iVar2 = in_stack_3;
     }
     if (pSVar1 != (SettingsWrapper *)0x0) {
-      uStack4 = 0;
-      method_00 = (MethodInfo *)((uint)in_stack_5 | *(uint *)(iVar2 + 0x10));
-      uStack6 = 0xffffffff;
+      uStack2 = 0;
+      in_stack_3 = in_stack_3 | *(uint *)(in_stack_4 + 0x10);
+      uStack5 = 0xffffffff;
       method = (MethodInfo *)&DAT_?;
       _b = *unaff_FS_OFFSET;
       *unaff_FS_OFFSET = &b;
-      in_stack_3 = iVar2;
-      in_stack_5 = method_00;
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
@@ -965,109 +844,115 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
                        );
         cRam_? = '\x01';
       }
-      pOStack_7 = (Object__Class *)0x0;
-      this_01 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
-                               );
-      if (this_01 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        pLVar8 = this_01;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-        UnitySynchronizationContext+WorkRequest]::
-        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-                  (this_01,2,
-                   MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-                  );
-        if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(iVar2 + 0xc) !=
-            (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffe0,
-                              *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **
-                               )(iVar2 + 0xc),
-                              MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                             );
-          RVar10 = pLVar9->_current;
-          uStack6 = 1;
-          while( true ) {
-            bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
-                    ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_7,
-                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-                              );
-            if (bVar11 == 0) break;
-            if (RVar10 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            uVar12 = *(uint *)((int)RVar10 + 0xc);
-            this_01 = pLVar8;
-            if ((uVar12 & (uint)method_00) == *(uint *)((int)RVar10 + 0xc) &&
-                (*(uint *)(in_stack_3 + 0x10) & uVar12) != uVar12) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLVar8,(Object *)RVar10,
-                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
-                        );
-            }
+      pOStack_6 = (Object__Class *)0x0;
+      this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)func_?(
+                                  TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
+                                  );
+      pLVar7 = this_01;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+      MultiColumnCollectionHeader+ViewState+ColumnState]::
+      List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+                (this_01,2,
+                 MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                );
+      if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+           (in_stack_4 + 0xc) !=
+          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                           ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                             *)&stack0xffffffe4,
+                            *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+                             (in_stack_4 + 0xc),
+                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                           );
+        RVar9 = pLVar8->_current;
+        uStack5 = 1;
+        while( true ) {
+          bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                            );
+          if (bVar10 == 0) break;
+          if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          uVar11 = *(uint *)((int)RVar9 + 0xc);
+          this_01 = pLVar7;
+          if ((uVar11 & in_stack_3) == *(uint *)((int)RVar9 + 0xc) &&
+              (*(uint *)(in_stack_4 + 0x10) & uVar11) != uVar11) {
+            if (pLVar7 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pLVar7,(Object *)RVar9,
+                       MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                      );
           }
-          uStack6 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)&pOStack_7,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
-                     ,in_stack_13);
-          uStack6 = 0xffffffff;
-          *(MethodInfo **)(in_stack_3 + 0x10) = method_00;
-          pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        }
+        uStack5 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&pOStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   ,(MethodInfo *)method_00.genericMethod);
+        uStack5 = 0xffffffff;
+        *(uint *)(in_stack_4 + 0x10) = in_stack_3;
+        if (this_01 !=
+            (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)0x0) {
+          pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffe0,
+                               *)&stack0xffffffe4,
                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               this_01,
                               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                              );
-          pOStack_7 = (Object__Class *)pLVar9->_list;
-          RVar10 = pLVar9->_current;
-          uStack6 = 4;
+          pOStack_6 = (Object__Class *)pLVar8->_list;
+          RVar9 = pLVar8->_current;
+          uStack5 = 4;
           while( true ) {
-            bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_7,
+                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                               );
-            if (bVar11 == 0) {
-              uStack6 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        ((Object *)&pOStack_7,
+            if (bVar10 == 0) {
+              uStack5 = 0xffffffff;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                        ((Object *)&pOStack_6,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
-                         ,method_00);
-              uStack6 = 0xffffffff;
-              if (*(int *)(in_stack_3 + 0x14) != 0) {
+                         ,(MethodInfo *)&stack0xffffffc8);
+              uStack5 = 0xffffffff;
+              if (*(int *)(in_stack_4 + 0x14) != 0) {
+                _b = *(undefined4 *)(in_stack_4 + 0x14);
                 func_?();
               }
               *unaff_FS_OFFSET = _b;
               return;
             }
-            if (RVar10 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar10 + 0xec))();
+            if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
+            (**(code **)(*(int *)RVar9 + 0xf0))();
           }
         }
       }
 code_?:
       func_?();
       func_?();
-      pcVar14 = (code *)swi(3);
-      (*pcVar14)();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
       return;
     }
   }
 code_?:
   method = (MethodInfo *)&UNK_?;
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1078,6 +963,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
                (CloudyThemeBase *this,bool b,MethodInfo *method)
 
 {
+  bVar1 = b;
   this_00 = (this->fields).dayNightCycle;
   if (this_00 != (DayNightCycle *)0x0) {
     if (cRam_? == '\0') {
@@ -1090,19 +976,18 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
     if (b == 0) {
       initialTime = (this_00->fields).cycleStartTime;
       cycleLength = (this_00->fields).cycleLength;
-      this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-      if (this_01 == (Timer_1 *)0x0) goto code_?;
-      ThemeTimers::Timer::Timer_1__ctor(this_01,initialTime,cycleLength,(MethodInfo *)0x0);
+      _b = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
+      ThemeTimers::Timer::Timer_1__ctor(_b,initialTime,cycleLength,(MethodInfo *)0x0);
     }
     else {
-      this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
-      if (this_01 == (Timer_1 *)0x0) goto code_?;
-      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-      TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_01,(MethodInfo *)0x0);
+      _b = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor
+                ((UxmlObjectListAttributeDescription_1_System_Object_ *)_b,(MethodInfo *)0x0);
     }
-    ppIVar1 = &(this_00->fields).timer;
-    *ppIVar1 = (ITimer *)this_01;
-    func_?(ppIVar1,this_01);
+    (this_00->fields).timer = (ITimer *)_b;
+    func_?(&(this_00->fields).timer,_b);
     if ((this_00->fields).initialized != 0) {
       pIVar2 = (this_00->fields).timer;
       if (pIVar2 == (ITimer *)0x0) goto code_?;
@@ -1110,7 +995,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
       DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar3,(MethodInfo *)0x0);
     }
     pSVar4 = (this->fields)._._Settings_k__BackingField;
-    if (b == 0) {
+    if (bVar1 == 0) {
       if (pSVar4 != (SettingsWrapper *)0x0) {
         ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                   (pSVar4,4,(MethodInfo *)0x0);
@@ -1160,24 +1045,22 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
       ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                 (pSVar4,0x10,(MethodInfo *)0x0);
       pSVar4 = (pCVar2->fields)._._Settings_k__BackingField;
-      iVar5 = in_stack_6;
     }
     else {
       if (pSVar4 == (SettingsWrapper *)0x0) goto code_?;
       ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                 (pSVar4,0x20,(MethodInfo *)0x0);
       pSVar4 = (pCVar2->fields)._._Settings_k__BackingField;
-      iVar5 = in_stack_6;
     }
     if (pSVar4 != (SettingsWrapper *)0x0) {
-      uStack7 = 0;
-      in_stack_8 = (MethodInfo *)((uint)in_stack_8 | *(uint *)(iVar5 + 0x10));
+      uStack5 = 0;
+      in_stack_6 = in_stack_6 | *(uint *)(in_stack_7 + 0x10);
       method = (MethodInfo *)0xffffffff;
       _b = &DAT_?;
       this = (CloudyThemeBase *)*unaff_FS_OFFSET;
       *unaff_FS_OFFSET = &this;
-      in_stack_6 = iVar5;
-      method_00 = in_stack_8;
+      pMVar8 = (MethodInfo *)&stack0xffffffc4;
+      method_00 = (MethodInfo *)&stack0xffffffc4;
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
@@ -1202,65 +1085,72 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
                         TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                        );
         cRam_? = '\x01';
+        method_00 = pMVar8;
       }
       pOStack_9 = (Object__Class *)0x0;
-      this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
-                               );
-      if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        pLVar10 = this_00;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-        UnitySynchronizationContext+WorkRequest]::
-        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-                  (this_00,2,
-                   MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
-                  );
-        if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(iVar5 + 0xc) !=
-            (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffdc,
-                              *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **
-                               )(iVar5 + 0xc),
-                              MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
-                             );
-          RVar12 = pLVar11->_current;
-          method = (MethodInfo *)0x1;
-          while( true ) {
-            bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
-                    ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
-                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
-                              );
-            if (bVar1 == 0) break;
-            if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            uVar13 = *(uint *)((int)RVar12 + 0xc);
-            this_00 = pLVar10;
-            if ((uVar13 & (uint)method_00) == *(uint *)((int)RVar12 + 0xc) &&
-                (*(uint *)(in_stack_6 + 0x10) & uVar13) != uVar13) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLVar10,(Object *)RVar12,
-                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
-                        );
-            }
+      this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)func_?(
+                                  TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
+                                  );
+      pLVar10 = this_00;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+      MultiColumnCollectionHeader+ViewState+ColumnState]::
+      List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+                (this_00,2,
+                 MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__List_int_
+                );
+      if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+           (in_stack_7 + 0xc) !=
+          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                           ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                             *)&stack0xffffffe0,
+                            *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+                             (in_stack_7 + 0xc),
+                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
+                           );
+        RVar12 = pLVar11->_current;
+        method = (MethodInfo *)0x1;
+        while( true ) {
+          bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
+                            );
+          if (bVar1 == 0) break;
+          if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          uVar13 = *(uint *)((int)RVar12 + 0xc);
+          this_00 = pLVar10;
+          if ((uVar13 & in_stack_6) == *(uint *)((int)RVar12 + 0xc) &&
+              (*(uint *)(in_stack_7 + 0x10) & uVar13) != uVar13) {
+            if (pLVar10 ==
+                (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pLVar10,(Object *)RVar12,
+                       MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
+                      );
           }
-          method = (MethodInfo *)0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)&pOStack_9,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
-                     ,in_stack_14);
-          method = (MethodInfo *)0xffffffff;
-          *(MethodInfo **)(in_stack_6 + 0x10) = method_00;
+        }
+        method = (MethodInfo *)0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&pOStack_9,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
+                   ,(MethodInfo *)in_stack_14.genericMethod);
+        method = (MethodInfo *)0xffffffff;
+        *(uint *)(in_stack_7 + 0x10) = in_stack_6;
+        if (this_00 !=
+            (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)0x0) {
           pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffdc,
+                               *)&stack0xffffffe0,
                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               this_00,
                               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
@@ -1276,20 +1166,21 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
                               );
             if (bVar1 == 0) {
               method = (MethodInfo *)0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                         ((Object *)&pOStack_9,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                          ,method_00);
               method = (MethodInfo *)0xffffffff;
-              if (*(int *)(in_stack_6 + 0x14) != 0) {
+              if (*(int *)(in_stack_7 + 0x14) != 0) {
+                this = *(CloudyThemeBase **)(in_stack_7 + 0x14);
                 func_?();
               }
               *unaff_FS_OFFSET = this;
               return;
             }
             if (RVar12 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar12 + 0xec))();
+            (**(code **)(*(int *)RVar12 + 0xf0))();
           }
         }
       }
@@ -1359,23 +1250,20 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
     }
     fVar1 = (float10)func_?();
     (this_00->fields).cycleStartTime = (float)fVar1;
-    if ((this_00->fields).initialized == 0) {
-      return;
-    }
-    cycleLength = (this_00->fields).cycleLength;
-    this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_01 != (Timer_1 *)0x0) {
+    if ((this_00->fields).initialized != 0) {
+      cycleLength = (this_00->fields).cycleLength;
+      this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
       ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar1,cycleLength,(MethodInfo *)0x0);
       (this_00->fields).timer = (ITimer *)this_01;
       func_?(&(this_00->fields).timer,this_01);
       pIVar2 = (this_00->fields).timer;
-      if (pIVar2 != (ITimer *)0x0) {
-        fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
-        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar1,(MethodInfo *)0x0);
-        return;
-      }
+      if (pIVar2 == (ITimer *)0x0) goto code_?;
+      fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+      DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar1,(MethodInfo *)0x0);
     }
+    return;
   }
+code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -1785,16 +1673,14 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
       fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
       cycleLength = (this_00->fields).cycleLength;
       this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-      if (this_01 != (Timer_1 *)0x0) {
-        ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar2,cycleLength,(MethodInfo *)0x0);
-        (this_00->fields).timer = (ITimer *)this_01;
-        func_?(&(this_00->fields).timer,this_01);
-        pIVar1 = (this_00->fields).timer;
-        if (pIVar1 != (ITimer *)0x0) {
-          fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
-          DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar2,(MethodInfo *)0x0);
-          return;
-        }
+      ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar2,cycleLength,(MethodInfo *)0x0);
+      (this_00->fields).timer = (ITimer *)this_01;
+      func_?(&(this_00->fields).timer,this_01);
+      pIVar1 = (this_00->fields).timer;
+      if (pIVar1 != (ITimer *)0x0) {
+        fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
+        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar2,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -2362,20 +2248,15 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__ctor
   }
   this_00 = (List_1_ThemeComponent_ *)
             func_?(TypeInfo__System__Collections__Generic__List<ThemeComponent>);
-  if (this_00 != (List_1_ThemeComponent_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
-    (this->fields)._.components = this_00;
-    func_?(&(this->fields)._.components,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
+  (this->fields)._.components = this_00;
+  func_?(&(this->fields)._.components,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -2403,47 +2284,50 @@ Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_get_Controllers
     func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<bool>__get_Value__);
     cRam_? = '\x01';
   }
-  this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::RectTransform>
-                           );
-  if (this_02 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-              (this_02,0,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__List_int_
-              );
-    pBVar1 = (this->fields).useDayNightCycle;
+  this_02 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__List<UnityEngine::RectTransform>
+                              );
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_02,0,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__List_int_);
+  pBVar1 = (this->fields).useDayNightCycle;
+  if (pBVar1 != (BoolAttribute *)0x0) {
+    if ((pBVar1->fields)._._.value == 0) {
+      return (List_1_UnityEngine_RectTransform_ *)this_02;
+    }
+    pBVar1 = (this->fields).useServerTime;
     if (pBVar1 != (BoolAttribute *)0x0) {
-      if ((pBVar1->fields)._._.value == 0) {
+      if ((pBVar1->fields)._._.value != 0) {
         return (List_1_UnityEngine_RectTransform_ *)this_02;
       }
-      pBVar1 = (this->fields).useServerTime;
-      if (pBVar1 != (BoolAttribute *)0x0) {
-        if ((pBVar1->fields)._._.value != 0) {
-          return (List_1_UnityEngine_RectTransform_ *)this_02;
-        }
-        original = (this->fields).cycleControllerPrefab;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        this_03 = (Component *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)original,
-                             DayNightCycleController_MethodInfo__UnityEngine__Object__Instantiate<DayNightCycleController>_DayNightCycleController_
-                            );
-        if (this_03 != (Component *)0x0) {
-          pDVar2 = (this->fields).dayNightCycle;
-          this_03[2].fields._.m_CachedPtr = pDVar2;
-          func_?(&this_03[2].fields,pDVar2);
-          this_00 = this_03[1].klass;
-          if ((this_00 != (Component__Class *)0x0) && (pDVar2 != (DayNightCycle *)0x0)) {
-            if (*(bool *)&(this_00->vtable).Equals.method == (pDVar2->fields).isPaused) {
-              UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn
-                        ((Toggle *)this_00,(pDVar2->fields).isPaused == 0,(MethodInfo *)0x0);
+      original = (this->fields).cycleControllerPrefab;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      this_03 = (Component *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)original,
+                           DayNightCycleController_MethodInfo__UnityEngine__Object__Instantiate<DayNightCycleController>_DayNightCycleController_
+                          );
+      if (this_03 != (Component *)0x0) {
+        pCVar2 = (Component__Class *)(this->fields).dayNightCycle;
+        this_03[3].klass = pCVar2;
+        func_?(this_03 + 3);
+        this_00 = (Toggle *)this_03[1].monitor;
+        if ((this_00 != (Toggle *)0x0) && (pCVar2 != (Component__Class *)0x0)) {
+          if ((this_00->fields).m_IsOn == *(undefined1 *)((int)&(pCVar2->_1).cctor_thread + 1)) {
+            UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn
+                      (this_00,*(undefined1 *)((int)&(pCVar2->_1).cctor_thread + 1) == '\0',
+                       (MethodInfo *)0x0);
 code_?:
-              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 (this_03,(MethodInfo *)0x0);
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               (this_03,(MethodInfo *)0x0);
+            if (this_02 !=
+                (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)0x0) {
               item = (Transform *)0x0;
               if (pTVar3 == (Transform *)0x0) {
 code_?:
@@ -2460,17 +2344,18 @@ code_?:
               if (item != (Transform *)0x0) goto code_?;
               goto code_?;
             }
-            if ((Behaviour *)this_03[1].monitor != (Behaviour *)0x0) {
-              value = *(bool *)&(this_00->vtable).Equals.method;
+          }
+          else {
+            this_01 = this_03[1].fields._.m_CachedPtr;
+            if (this_01 != (Behaviour *)0x0) {
+              value = (this_00->fields).m_IsOn;
               UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                        ((Behaviour *)this_03[1].monitor,value == 0,(MethodInfo *)0x0);
-              this_01 = this_03[1].fields._.m_CachedPtr;
-              if (this_01 != (Behaviour *)0x0) {
+                        (this_01,value == 0,(MethodInfo *)0x0);
+              if (this_03[2].klass != (Component__Class *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          (this_01,value,(MethodInfo *)0x0);
-                pvVar4 = this_03[2].fields._.m_CachedPtr;
-                if (pvVar4 != (void *)0x0) {
-                  *(bool *)((int)pvVar4 + 0x75) = value == 0;
+                          ((Behaviour *)this_03[2].klass,value,(MethodInfo *)0x0);
+                if (this_03[3].klass != (Component__Class *)0x0) {
+                  *(bool *)((int)&((this_03[3].klass)->_1).cctor_thread + 1) = value == 0;
                   goto code_?;
                 }
               }
@@ -2481,22 +2366,12 @@ code_?:
     }
   }
   func_?();
+  pTVar3 = extraout_ECX;
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pLVar6 = (List_1_UnityEngine_RectTransform_ *)(*pcVar5)();
-  return pLVar6;
-}
-
-
-/* ThemeSkybox get_Skybox() */
-
-ThemeSkybox *
-Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_get_Skybox
-          (CloudyThemeBase *this,MethodInfo *method)
-
-{
-  return (this->fields).skybox;
+  func_?(pTVar3);
+  pcVar4 = (code *)swi(3);
+  pLVar5 = (List_1_UnityEngine_RectTransform_ *)(*pcVar4)();
+  return pLVar5;
 }
 
 

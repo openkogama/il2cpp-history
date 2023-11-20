@@ -36,10 +36,11 @@ code_?:
     pDVar2 = extraout_EDX;
   }
   else {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)returnData,pOVar1,
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
+                       pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar3 == 0) {
@@ -49,49 +50,53 @@ code_?:
     pOVar1 = (Object *)
              func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
                              (byte *)((int)&dataType + 3));
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (returnData,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    func_?(pOVar1);
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
+                       pOVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar5 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    func_?(TVar4.m_Index);
     if ((this->fields).onWorldObjectExtracted == (ARepository_OnWorldObjectTypeExtracted *)0x0) {
       return;
     }
-    pAVar5 = (this->fields).onWorldObjectExtracted;
+    pAVar6 = (this->fields).onWorldObjectExtracted;
     dataType = CONCAT13(7,(undefined3)dataType);
     pOVar1 = (Object *)
              func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
                              (byte *)((int)&dataType + 3));
     returnData = (Dictionary_2_System_Object_System_Object_ *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (returnData,pOVar1,
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                            returnData,pOVar1,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
     if ((returnData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
        ((pDVar2 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
         , (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          typeHierarchyDepth <= (returnData->klass->_1).typeHierarchyDepth &&
-        ((Dictionary_2_System_Object_System_Object___Class *)
-         (returnData->klass->_1).typeHierarchy
-         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          typeHierarchyDepth - 1] ==
+          naturalAligment <= *(byte *)(*(int *)returnData + 0xb8) &&
+        (*(Dictionary_2_System_Object_System_Object___Class **)
+          (*(int *)(*(int *)returnData + 100) + -4 +
+          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment * 4) ==
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-      (*(pAVar5->fields)._._.invoke_impl)
-                ((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method,returnData);
+      (*(pAVar6->fields)._._.invoke_impl)
+                ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method,returnData);
       return;
     }
   }
-  uVar4 = func_?(returnData,pDVar2);
+  uVar5 = func_?(returnData,pDVar2);
 code_?:
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

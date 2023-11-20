@@ -35,9 +35,10 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-               StandaloneInput_MousePosition
-                         ((Vector3 *)&stack0x00000000,(StandaloneInput *)0x0,in_stack_3);
+      pVVar2 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+               DefaultEventSystem_Input_get_mousePosition
+                         ((Vector3 *)&stack0x00000000,(DefaultEventSystem_Input *)0x0,
+                          in_stack_3);
       uVar4 = pVVar2->x;
       uVar5 = pVVar2->y;
       method = (MethodInfo *)(this->fields).mousePos.x;
@@ -60,9 +61,9 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
         dVar10 = SQRT(dVar10);
       }
       (this->fields).mouseMoved = (float)dVar10 + in_stack_11;
-      pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-               StandaloneInput_MousePosition
-                         ((Vector3 *)&method,(StandaloneInput *)0x0,in_stack_12);
+      pVVar2 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+               DefaultEventSystem_Input_get_mousePosition
+                         ((Vector3 *)&method,(DefaultEventSystem_Input *)0x0,in_stack_12);
       fVar8 = pVVar2->y;
       fVar7 = pVVar2->z;
       (this->fields).mousePos.x = pVVar2->x;
@@ -74,9 +75,9 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
-    pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-             StandaloneInput_MousePosition
-                       ((Vector3 *)&stack0xfffffff0,(StandaloneInput *)0x0,unaff_EBX);
+    pVVar2 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+             DefaultEventSystem_Input_get_mousePosition
+                       ((Vector3 *)&stack0xfffffff0,(DefaultEventSystem_Input *)0x0,unaff_EBX);
     fVar8 = pVVar2->y;
     fVar7 = pVVar2->z;
     (this->fields).mousePos.x = pVVar2->x;
@@ -123,7 +124,7 @@ code_?:
               (this_00,_UNK_? - (fVar7 + in_stack_14) / (this->fields).fadeDuration,
                (MethodInfo *)0x0);
     if ((this->fields).fadeDuration <= (this->fields).currentFade) {
-      _method = CONCAT44(&UNK_?,method);
+      in_stack_6 = (float)&UNK_?;
       pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__FirstTimeSystemPopupCamera____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -136,15 +137,13 @@ code_?:
         }
         object = TypeInfo__FirstTimeSystemPopupCamera____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
-        _method = _method & 0xffffffff00000000;
+        in_stack_6 = (float)callbackFunction;
+        method = (MethodInfo *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__FirstTimeSystemPopupCamera____c___Update_b__8_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
-        _method = CONCAT44(in_stack_6,callbackFunction);
         TypeInfo__FirstTimeSystemPopupCamera____c->static_fields->__9__8_0 = callbackFunction;
         func_?();
       }
@@ -175,8 +174,8 @@ void Assembly-CSharp.dll::FirstTimeSystemPopupCamera::FirstTimeSystemPopupCamera
   (this->fields).mouseMoveDistance = 30.0;
   (this->fields).fadeDuration = 0.4;
   (this->fields).mousePos.z = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

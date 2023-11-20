@@ -20,8 +20,8 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::MVNetworkGameStateListener
     if ((fromGameSnapshot == 0) &&
        ((this->fields).OnGameStateChanged != (EventHandler_1_GameStateChangeEventArgs_ *)0x0)) {
       pEVar2 = (this->fields).OnGameStateChanged;
-      this_01 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__GameStateChangeEventArgs);
-      if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__GameStateChangeEventArgs);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__EventArgs);
         cRam_? = '\x01';
@@ -29,14 +29,14 @@ void Assembly-CSharp.dll::MVNetworkGameStateListener::MVNetworkGameStateListener
       if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__EventArgs);
       }
-      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-      TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
       (*(pEVar2->fields)._._.invoke_impl)
                 ((pEVar2->fields)._._.method_code,this,this_01,(pEVar2->fields)._._.method);
     }
     return;
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();

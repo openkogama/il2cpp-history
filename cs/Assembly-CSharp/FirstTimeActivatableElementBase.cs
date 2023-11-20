@@ -48,6 +48,36 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 	protected bool IsBlocked { get; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __9__37_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _UnRegister_b__37_1(IFirstTimeElementActivator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass35_0
+	{
+		// Fields
+		public bool isBlocked;
+		public FirstTimeActivatableElementBase __4__this;
+
+		// Constructors
+		public __c__DisplayClass35_0();
+
+		// Methods
+		internal void _get_IsBlocked_b__0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class _ShowDelay_d__26 : IEnumerator<object>
 	{
@@ -70,36 +100,6 @@ public abstract class FirstTimeActivatableElementBase : FirstTimeEventHandler, I
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass35_0
-	{
-		// Fields
-		public bool isBlocked;
-		public FirstTimeActivatableElementBase __4__this;
-
-		// Constructors
-		public __c__DisplayClass35_0();
-
-		// Methods
-		internal void _get_IsBlocked_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IFirstTimeElementActivator> __9__37_1;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _UnRegister_b__37_1(IFirstTimeElementActivator x, BaseEventData y);
 	}
 
 	// Constructors

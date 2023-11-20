@@ -40,43 +40,30 @@ void Assembly-CSharp.dll::BulletThrowingStar+OnHitDelegate::BulletThrowingStar_O
                MethodInfo *method)
 
 {
-  pvVar1 = (void *)func_?(method_1);
-  (this->fields)._._.method_ptr = pvVar1;
+  (this->fields)._._.method_ptr = *(void **)((int)method_1 + 4);
   (this->fields)._._.method = method_1;
   (this->fields)._._.m_target = object;
   func_?(&(this->fields)._._.m_target,object);
-  cVar2 = *(char *)((int)method_1 + 0x2e);
+  cVar1 = *(char *)((int)method_1 + 0x2e);
   (this->fields)._._.method_code = this;
-  cVar3 = func_?(method_1);
-  if (cVar3 == '\0') {
-    if (object != (Object *)0x0) {
-      (this->fields)._._.invoke_impl = (this->fields)._._.method_ptr;
-      (this->fields)._._.method_code = (this->fields)._._.m_target;
-      (this->fields)._._.extra_arg = &UNK_?;
+  cVar2 = func_?(method_1);
+  if (cVar2 == '\0') {
+    if (object == (Object *)0x0) {
+      uVar3 = func_?(0,&UNK_?,0);
+      func_?(uVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    uVar4 = func_?(0,&UNK_?,0);
-    func_?(uVar4);
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
   }
-  if ((*(byte *)((int)method_1 + 0x2f) & 0x10) != 0) {
-    puVar6 = &UNK_?;
-    if (cVar2 != '\x02') {
-      puVar6 = &UNK_?;
-    }
-    (this->fields)._._.invoke_impl = puVar6;
-    (this->fields)._._.extra_arg = &UNK_?;
-    return;
-  }
-  if (cVar2 == '\x02') {
-    (this->fields)._._.invoke_impl = &UNK_?;
-    (this->fields)._._.extra_arg = &UNK_?;
-    return;
+  else if (cVar1 == '\x02') {
+    puVar5 = &UNK_?;
+    goto code_?;
   }
   (this->fields)._._.method_code = (this->fields)._._.m_target;
-  (this->fields)._._.invoke_impl = (this->fields)._._.method_ptr;
+  puVar5 = (this->fields)._._.method_ptr;
+code_?:
+  (this->fields)._._.invoke_impl = puVar5;
   (this->fields)._._.extra_arg = &UNK_?;
   return;
 }

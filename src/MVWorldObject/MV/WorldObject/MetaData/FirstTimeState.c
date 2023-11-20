@@ -91,31 +91,38 @@ String * MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTime
     cRam_? = '\x01';
   }
   this_00 = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
-  if (this_00 != (StringBuilder *)0x0) {
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this_00,(MethodInfo *)0x0);
-    index = 0;
-    pBVar1 = (this->fields).bitArray;
-    while (pBVar1 != (BitArray *)0x0) {
-      if ((pBVar1->fields).m_length <= index) {
-        pSVar2 = (String *)
-                 (*(this_00->klass->vtable).ToString.methodPtr)
-                           (this_00,(this_00->klass->vtable).ToString.method);
-        return pSVar2;
-      }
-      pBVar1 = (this->fields).bitArray;
-      if (pBVar1 == (BitArray *)0x0) break;
-      bVar3 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                        (pBVar1,index,(MethodInfo *)0x0);
-      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
-                (this_00,(bVar3 != 0) + 0x30,(MethodInfo *)0x0);
-      index = index + 1;
-      pBVar1 = (this->fields).bitArray;
+  mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this_00,(MethodInfo *)0x0);
+  index = 0;
+  pBVar1 = (this->fields).bitArray;
+  do {
+    if (pBVar1 == (BitArray *)0x0) {
+code_?:
+      func_?();
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar2)();
+      return pSVar3;
     }
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar4)();
-  return pSVar2;
+    if ((pBVar1->fields).m_length <= index) {
+      if (this_00 != (StringBuilder *)0x0) {
+        pSVar3 = (String *)
+                 (*(code *)(this_00->klass->vtable).ToString.method)
+                           (this_00,(this_00->klass->vtable).
+                                    System_Runtime_Serialization_ISerializable_GetObjectData.
+                                    methodPtr);
+        return pSVar3;
+      }
+      goto code_?;
+    }
+    pBVar1 = (this->fields).bitArray;
+    if (pBVar1 == (BitArray *)0x0) goto code_?;
+    bVar4 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
+                      (pBVar1,index,(MethodInfo *)0x0);
+    if (this_00 == (StringBuilder *)0x0) goto code_?;
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
+              (this_00,(bVar4 != 0) + 0x30,(MethodInfo *)0x0);
+    pBVar1 = (this->fields).bitArray;
+    index = index + 1;
+  } while( true );
 }
 
 
@@ -130,18 +137,12 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTimeStat
     cRam_? = '\x01';
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  if (this_00 != (BitArray *)0x0) {
-    mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).bitArray = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).bitArray = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -186,15 +187,9 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTimeStat
     cRam_? = '\x01';
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  if (this_00 != (BitArray *)0x0) {
-    mscorlib.dll::System::Collections::BitArray::BitArray__ctor_2(this_00,value,(MethodInfo *)0x0);
-    (this->fields).bitArray = this_00;
-    func_?(&this->fields,this_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor_2(this_00,value,(MethodInfo *)0x0);
+  (this->fields).bitArray = this_00;
+  func_?(&this->fields,this_00);
   return;
 }
 

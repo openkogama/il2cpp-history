@@ -69,21 +69,16 @@ Assembly-CSharp.dll::RailRay::RailRay_DoShowRay(RailRay *this,Vector3 hit,Method
     func_?(&TypeInfo__RailRay___DoShowRay_d__20);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__RailRay___DoShowRay_d__20);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    *(undefined8 *)&value[2].monitor = hit._0_8_;
-    value[3].monitor = (MonitorData *)hit.z;
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__RailRay___DoShowRay_d__20;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  *(undefined8 *)&value[2].monitor = hit._0_8_;
+  value[3].monitor = (MonitorData *)hit.z;
+  return (IEnumerator *)value;
 }
 
 

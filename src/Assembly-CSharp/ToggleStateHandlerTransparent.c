@@ -17,8 +17,8 @@ void Assembly-CSharp.dll::ToggleStateHandlerTransparent::
   }
   if (pIVar1 != (Image *)0x0) {
     puVar2 = (undefined4 *)
-             (*(pIVar1->klass->vtable).get_color.methodPtr)
-                       (&uStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+             (*(code *)(pIVar1->klass->vtable).get_color.method)
+                       (&uStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
     uStack_3 = *puVar2;
     uStack_4 = puVar2[1];
     uStack_5 = puVar2[2];
@@ -28,9 +28,9 @@ void Assembly-CSharp.dll::ToggleStateHandlerTransparent::
     else {
       fStack_6 = (this->fields).toggled;
     }
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
-              (pIVar1,uStack_3,uStack_4,uStack_5,fStack_6,(pIVar1->klass->vtable).set_color.method
-              );
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
+              (pIVar1,uStack_3,uStack_4,uStack_5,fStack_6,
+               (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
     return;
   }
 code_?:

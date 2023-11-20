@@ -9,6 +9,7 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
     func_?();
     func_?();
     func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
@@ -47,7 +48,7 @@ code_?:
             goto code_?;
             MVTeamManager::MVTeamManager_TeamCount(pMVar5,(MethodInfo *)0x0);
           }
-          (*(this_02->klass->vtable).GetTargetPosition.methodPtr)();
+          (*(code *)(this_02->klass->vtable).GetTargetPosition.method)();
           this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
           if ((this_04 != (GameObject *)0x0) &&
@@ -57,18 +58,17 @@ code_?:
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                       ((Vector3 *)&stack0xffffffd8,this_05,(MethodInfo *)0x0);
             puVar7 = (undefined8 *)func_?();
-            fVar8 = (this->fields).impulseStrength;
-            fVar9 = (this->fields).factor;
-            impulse.y = (float)((ulonglong)*puVar7 >> 0x20) * fVar8 * fVar9;
-            impulse.x = (float)*puVar7 * fVar8 * fVar9;
-            impulse.z = *(float *)(puVar7 + 1) * fVar8 * fVar9;
-            pIVar10 = AdvancedGhostBodyRotateWeaponPackage::
+            fVar8 = (this->fields).factor;
+            impulse.y = (float)(MonitorData *)((ulonglong)*puVar7 >> 0x20) * _UNK_? * fVar8;
+            impulse.x = (float)(Enum__Class *)*puVar7 * _UNK_? * fVar8;
+            impulse.z = *(float *)(puVar7 + 1) * _UNK_? * fVar8;
+            pIVar9 = AdvancedGhostBodyRotateWeaponPackage::
                       AdvancedGhostBodyRotateWeaponPackage_Create
                                 ((InteractionData *)&stack0xffffffd0,(float)this_02,impulse,
                                  (MethodInfo *)0x0);
             if (this_03 != (InteractionDataHandlerBase *)0x0) {
               bVar3 = InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
-                                (this_03,*pIVar10,1,(MethodInfo *)0x0);
+                                (this_03,*pIVar9,1,(MethodInfo *)0x0);
               if (bVar3 == 0) {
                 return;
               }
@@ -87,11 +87,15 @@ code_?:
         }
         goto code_?;
       }
+      pSVar10 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffe4,(MethodInfo *)0x0)
+      ;
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_WorldObject_does_not_have_intera,pSVar10,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_WorldObject_does_not_have_intera,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar10,(MethodInfo *)0x0);
     }
   }
   return;
@@ -101,8 +105,8 @@ code_?:
 /* Void Init(AudioSource, MVCubeModelBase) */
 
 void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotateWeapon_Init
-               (AdvancedGhostBodyRotateWeapon *this,AudioSource *weaponHitSound,
-               MVCubeModelBase *body,MethodInfo *method)
+               (AdvancedGhostBodyRotateWeapon *this,AudioSource *hitSound,MVCubeModelBase *body,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -112,37 +116,38 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
                    );
     cRam_? = '\x01';
   }
-  (this->fields).weaponHitSound = weaponHitSound;
-  func_?(&(this->fields).weaponHitSound,weaponHitSound);
-  if (body != (MVCubeModelBase *)0x0) {
+  (this->fields).weaponHitSound = hitSound;
+  func_?(&(this->fields).weaponHitSound,hitSound);
+  if (body == (MVCubeModelBase *)0x0) {
+    func_?();
+  }
+  else {
     pAVar1 = (body->fields).Changed;
-    this_00 = (Action_1_Object_ *)
-              func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_,
-                 (MethodInfo *)0x0);
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar2 == (Delegate *)0x0) {
-        (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)this,
+               MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_,
+               (MethodInfo *)0x0);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
 code_?:
-        func_?();
-        AdvancedGhostBodyRotateWeapon_SetupWeaponCollision(this,(MethodInfo *)0x0);
-        return;
-      }
-      pAVar1 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
-      if (pAVar1 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-        (body->fields).Changed = pAVar1;
-        iVar3 = func_?();
-        if (iVar3 != 0) goto code_?;
-      }
-      goto code_?;
+      func_?();
+      AdvancedGhostBodyRotateWeapon_SetupWeaponCollision
+                ((AdvancedGhostBodyRotateWeapon *)&(body->fields).Changed,(MethodInfo *)0x0);
+      return;
+    }
+    pAVar1 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
+    if (pAVar1 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+      (body->fields).Changed = pAVar1;
+      iVar3 = func_?();
+      if (iVar3 != 0) goto code_?;
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -223,30 +228,31 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::
         if (CStack_3.klass == (Component__Class *)0x0) break;
         pIVar10 = (IEnumerator__Class *)((CStack_3.klass)->_0).image;
         uVar11 = 0;
-        uVar12 = (pIVar10->_1).interface_offsets_count;
+        uVar12._0_1_ = (pIVar10->_1).rank;
+        uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
         if (uVar12 != 0) {
           do {
             if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
               pIVar10 = (IEnumerator__Class *)((CStack_3.klass)->_0).image;
-              ppIVar13 = &(&(pIVar10->vtable).get_Current)[pIVar10->interfaceOffsets[uVar11].offset].
-                          methodPtr;
+              ppMVar13 = &(&(pIVar10->vtable).get_Current)[pIVar10->interfaceOffsets[uVar11].offset].
+                          method;
               goto code_?;
             }
             uVar11 = uVar11 + 1;
           } while (uVar11 < uVar12);
         }
-        ppIVar13 = (Il2CppMethodPointer *)
+        ppMVar13 = (MethodInfo **)
                    func_?(CStack_3.klass,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-        this_01 = (Component *)(**ppIVar13)(pCVar9,(MethodInfo *)ppIVar13[1]);
+        this_01 = (Component *)(*(code *)*ppMVar13)(pCVar9,ppMVar13[1]);
         unaff_EDI = this_01;
         if (this_01 == (Component *)0x0) break;
         pTVar14 = TypeInfo__UnityEngine__Transform;
-        if (((this_01->klass->_1).typeHierarchyDepth <
-             (TypeInfo__UnityEngine__Transform->_1).typeHierarchyDepth) ||
+        if (((this_01->klass->_1).naturalAligment <
+             (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
            ((this_01->klass->_1).typeHierarchy
-            [(TypeInfo__UnityEngine__Transform->_1).typeHierarchyDepth - 1] !=
+            [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
         unaff_EDI = (Component *)
                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
@@ -379,8 +385,8 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
             func_?();
             cRam_? = '\x01';
           }
-          pIStack_11 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray_1
-                                 (*(IEnumerable_1_System_Int32_ **)((int)pOVar10 + 0xc),
+          pIStack_11 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray
+                                 (*(IEnumerable_1_System_Int32_ **)((int)pOVar10 + 0x10),
                                   System__Int32__MethodInfo__System__Linq__Enumerable__ToArray<int>_System__Collections__Generic__IEnumerable<int>_____
                                  );
           uVar12 = 0;
@@ -394,7 +400,7 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
           }
         }
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AdvancedGhostTriggerBase>__Dispose__
@@ -428,33 +434,23 @@ void Assembly-CSharp.dll::AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotate
     func_?(&TypeInfo__TimeoutMap);
     cRam_? = '\x01';
   }
-  (this->fields).damage = 55.0;
-  (this->fields).impulseStrength = 2500.0;
   (this->fields).factor = 1.0;
   this_00 = (TimeoutMap *)func_?(TypeInfo__TimeoutMap);
-  if (this_00 != (TimeoutMap *)0x0) {
-    TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
-    (this->fields).timeoutMap = this_00;
-    func_?(&(this->fields).timeoutMap,this_00);
-    (this->fields).alliedTeam = 4;
-    this_01 = (List_1_AdvancedGhostTriggerBase_ *)
-              func_?(TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>
-                             );
-    if (this_01 != (List_1_AdvancedGhostTriggerBase_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__);
-      (this->fields).ghostTriggers = this_01;
-      func_?(&(this->fields).ghostTriggers,this_01);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
+  (this->fields).timeoutMap = this_00;
+  func_?(&(this->fields).timeoutMap,this_00);
+  (this->fields).alliedTeam = 4;
+  this_01 = (List_1_AdvancedGhostTriggerBase_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             MethodInfo__System__Collections__Generic__List<AdvancedGhostTriggerBase>__List__);
+  (this->fields).ghostTriggers = this_01;
+  func_?(&(this->fields).ghostTriggers,this_01);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

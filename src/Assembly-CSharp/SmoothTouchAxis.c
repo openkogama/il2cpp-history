@@ -124,15 +124,17 @@ Vector3 * Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis_UpdateSmoothVelo
                                    ((Queue_1_T_Enumerator_UnityEngine_Vector3_ *)&QStack_8,
                                     MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                                    ), bVar18 != 0) {
-            pVVar19 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[UnityEngine::
-                     Vector3]::Queue_1_T_Enumerator_UnityEngine_Vector3__get_Current
-                               ((Vector3 *)(auStack_15 + 8),
-                                (Queue_1_T_Enumerator_UnityEngine_Vector3_ *)&QStack_8,
+            pNVar19 = mscorlib.dll::System::Collections::Generic::
+                     Queue`1[T]+Enumerator[NotificationAreaSingleInstanceQueue+NotificationQueueData]
+                     ::
+                     Queue_1_T_Enumerator_NotificationAreaSingleInstanceQueue_NotificationQueueData__get_Current
+                               ((NotificationAreaSingleInstanceQueue_NotificationQueueData *)
+                                (auStack_15 + 8),&QStack_8,
                                 MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
                                );
-            uStack_20._0_4_ = pVVar19->x;
-            uStack_20._4_4_ = pVVar19->y;
-            fStack_21 = pVVar19->z;
+            uStack_20._0_4_ = pNVar19->notificationType;
+            uStack_20._4_4_ = pNVar19->data;
+            fStack_21 = pNVar19->startTime;
             VStack_22.z = fStack_10 + fStack_21;
             uStack_11 = CONCAT44(uStack_11._4_4_ + (float)uStack_20._4_4_,
                                  (float)uStack_11 + (float)(undefined4)uStack_20);
@@ -157,7 +159,7 @@ Vector3 * Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis_UpdateSmoothVelo
             pQStack_17 = (Queue_1_T_Enumerator_NotificationAreaSingleInstanceQueue_NotificationQueueData_
                           *)(fStack_10 / fVar23);
             fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                              ((MethodInfo *)0x0);
+                               ((MethodInfo *)0x0);
             __return_storage_ptr__->x = (float)auStack_15._0_4_ * fVar23;
             __return_storage_ptr__->y = fStack_25 * fVar23;
             __return_storage_ptr__->z = (float)pQStack_17 * fVar23;
@@ -178,8 +180,8 @@ Vector3 * Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis_UpdateSmoothVelo
   func_?();
   func_?();
   pcVar26 = (code *)swi(3);
-  pVVar19 = (Vector3 *)(*pcVar26)();
-  return pVVar19;
+  pVVar27 = (Vector3 *)(*pcVar26)();
+  return pVVar27;
 }
 
 
@@ -197,22 +199,15 @@ void Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis__ctor
   }
   this_00 = (Queue_1_UnityEngine_Vector3_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
-  if (this_00 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-    Stack_1_System_Object___ctor
-              ((Stack_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
-    method_00 = (MethodInfo *)&(this->fields).prevVelocities;
-    (this->fields).prevVelocities = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields).sampleLength = sampleLength;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)this_00,
+             MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
+  method_00 = (MethodInfo *)&(this->fields).prevVelocities;
+  (this->fields).prevVelocities = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).sampleLength = sampleLength;
   return;
 }
 

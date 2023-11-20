@@ -14,47 +14,39 @@ void Assembly-CSharp.dll::PlayerTipNotification::PlayerTipNotification_Initializ
     func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  pPVar1 = this;
-  this = (PlayerTipNotification *)CONCAT13(1,this._0_3_);
-  pTVar2 = (pPVar1->fields).tipText;
-  (pPVar1->fields)._.timeSinceStart = 0.0;
-  pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,pOVar3,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar4 = CONCAT44(TypeInfo__System__String,pOVar3);
-    if (pTVar2 != (Text *)0x0) {
-      pOVar5 = (Object *)0x0;
-      if (pOVar3 != (Object *)0x0) {
-        if ((String__Class *)pOVar3->klass == TypeInfo__System__String) {
-          pOVar5 = pOVar3;
+  this_01 = data;
+  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
+  pTVar1 = (this->fields).tipText;
+  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
+  key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
+  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (pTVar1 != (Text *)0x0) {
+      if (TVar2.m_Index != 0) {
+        TVar3.m_Index = 0;
+        if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+          TVar3 = TVar2;
         }
-        if (pOVar5 == (Object *)0x0) goto code_?;
+        if (TVar3.m_Index == 0) goto code_?;
       }
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pOVar5,(pTVar2->klass->vtable).set_text.method);
-      pNVar6 = (pPVar1->fields).fader;
-      if (pNVar6 != (NotificationFade *)0x0) {
-        (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
-        this_00 = (pNVar6->fields).group;
-        (pNVar6->fields).playing = 1;
-        if (this_00 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (this_00,0.0,(MethodInfo *)0x0);
-          (pNVar6->fields).currentTime = 0.0;
-          return;
-        }
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
+      this_00 = (this->fields).fader;
+      if (this_00 != (NotificationFade *)0x0) {
+        NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  uVar4 = func_?();
+  func_?();
 code_?:
-  func_?(uVar4);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

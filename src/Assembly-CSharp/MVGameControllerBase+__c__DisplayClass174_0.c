@@ -7,18 +7,18 @@ void Assembly-CSharp.dll::MVGameControllerBase+<>c__DisplayClass174_0::
 
 {
   if (cRam_? == '\0') {
-    pMStack_1 = (MethodInfo *)&TypeInfo__MVGameControllerBase;
+    ppMStack_1 = &TypeInfo__MVGameControllerBase;
     func_?();
     cRam_? = '\x01';
   }
   pMStack_2 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMStack_2 != (MVGameControllerBase *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).__unknown_2.method;
+    ppMStack_1 = (MVGameControllerBase__Class **)(pMStack_2->klass->vtable).CleanUp.methodPtr;
     pQStack_3 = (this->fields).applicationQuitObject;
-    (*(pMStack_2->klass->vtable).__unknown_2.methodPtr)();
+    (*(code *)(pMStack_2->klass->vtable).__unknown_2.method)();
     return;
   }
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  ppMStack_1 = (MVGameControllerBase__Class **)&stack0xfffffffc;
   uVar4 = func_?(&pMStack_2);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);

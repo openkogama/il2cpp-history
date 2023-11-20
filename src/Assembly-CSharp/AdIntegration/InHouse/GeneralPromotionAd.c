@@ -16,50 +16,39 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).promotionActionType;
-  if (iVar1 == 0) {
-    pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-    if (pUVar2 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::
-      Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor
-                (pUVar2,(Object *)0x0,
-                 MethodInfo__BrowserCommGotoRequests__GotoPurchaseGold_bool__bool_,(MethodInfo *)0x0
-                );
-      GeneralPromotionAd_PerformAction
-                (this,StringLiteral_InHouseAd_Kogama_Gold,pUVar2,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  else if (iVar1 == 1) {
-    pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-    if (pUVar2 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::
-      Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor
-                (pUVar2,(Object *)0x0,
-                 MethodInfo__BrowserCommGotoRequests__GotoEliteUpgrade_bool__bool_,(MethodInfo *)0x0
-                );
-      GeneralPromotionAd_PerformAction
-                (this,StringLiteral_InHouseAd_Kogama_Elite,pUVar2,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  else {
-    pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-    if (pUVar2 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::
-      Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor
+  if (iVar1 != 0) {
+    if (iVar1 != 1) {
+      pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+               func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+      UnityAction_2_System_Int32_System_Int32___ctor
                 (pUVar2,(Object *)0x0,MethodInfo__BrowserCommGotoRequests__GotoSignup_bool__bool_,
                  (MethodInfo *)0x0);
       GeneralPromotionAd_PerformAction
-                (this,StringLiteral_InHouseAd_Kogama_Signup,pUVar2,(MethodInfo *)0x0);
+                (this,StringLiteral_InHouseAd_Kogama_Signup,
+                 (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
       return;
     }
+    pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+    UnityAction_2_System_Int32_System_Int32___ctor
+              (pUVar2,(Object *)0x0,
+               MethodInfo__BrowserCommGotoRequests__GotoEliteUpgrade_bool__bool_,(MethodInfo *)0x0);
+    GeneralPromotionAd_PerformAction
+              (this,StringLiteral_InHouseAd_Kogama_Elite,
+               (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+           func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (pUVar2,(Object *)0x0,MethodInfo__BrowserCommGotoRequests__GotoPurchaseGold_bool__bool_,
+             (MethodInfo *)0x0);
+  GeneralPromotionAd_PerformAction
+            (this,StringLiteral_InHouseAd_Kogama_Gold,
+             (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
   return;
 }
 
@@ -76,14 +65,14 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
   if (pSVar1 == (String *)0x0) {
     if (pTVar2 == (Text *)0x0) goto code_?;
     pSVar1 = (String *)
-             (*(pTVar2->klass->vtable).get_text.methodPtr)
-                       (pTVar2,(pTVar2->klass->vtable).get_text.method);
+             (*(code *)(pTVar2->klass->vtable).get_text.method)
+                       (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
     (this->fields).startContinueText = pSVar1;
     func_?(&(this->fields).startContinueText,pSVar1);
   }
   else if (pTVar2 == (Text *)0x0) goto code_?;
-  (*(pTVar2->klass->vtable).set_text.methodPtr)
-            (pTVar2,pSVar1,(pTVar2->klass->vtable).set_text.method);
+  (*(code *)(pTVar2->klass->vtable).set_text.method)
+            (pTVar2,pSVar1,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
   this_00 = (this->fields).continueButton;
   if (this_00 != (Button *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
@@ -109,21 +98,14 @@ Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPromotio
     func_?(&TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37
-                         );
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -148,20 +130,22 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
     }
     pLVar2 = (promotionLooksData->fields).promotionData;
     if (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-      pPVar3 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-               PromotionLooksData+LooksData]::
-               List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                         (&PStack_4,pLVar2,(promotionLooksData->fields).promotionIndex,
+      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+AssetEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                         (&VStack_4,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)pLVar2,
+                          (promotionLooksData->fields).promotionIndex,
                           MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                          );
-      pIVar5 = (Image *)TM::TM__(pPVar3->promotionText,(MethodInfo *)0x0);
+      pSVar5 = TM::TM__(pVVar3->typeFullName,(MethodInfo *)0x0);
       if (pOVar1 != (Object_1__Class *)0x0) {
         pIVar6 = (pOVar1->_0).image;
-        PStack_4.promotionText = (String *)pIVar6[0x12].name;
-        auStack_7._8_4_ = &UNK_?;
-        pOStack_8 = pOVar1;
-        PStack_4.promotionImage = pIVar5;
-        (**(code **)&pIVar6[0x11].dynamic)();
+        VStack_4.typeFullName = (String *)pIVar6[0x12].nameNoExt;
+        VStack_7.asset = (Object_1 *)&UNK_?;
+        VStack_7.m_CachedType = (Type *)pOVar1;
+        VStack_4.path = pSVar5;
+        (*(code *)pIVar6[0x12].name)();
         if (cRam_? == '\0') {
           func_?(&
                           MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
@@ -174,27 +158,26 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
         }
         pLVar2 = (promotionLooksData->fields).promotionData;
         if (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-          pPVar3 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-                   PromotionLooksData+LooksData]::
-                   List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                             ((PromotionLooksData_LooksData *)auStack_7,pLVar2,
+          pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                   VisualTreeAsset+AssetEntry]::
+                   List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                             (&VStack_7,
+                              (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)pLVar2,
                               (promotionLooksData->fields).promotionIndex,
                               MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                              );
-          PStack_4.promotionImage = pPVar3->promotionImage;
-          PStack_4.promotionText = pPVar3->promotionText;
-          PStack_4.validOnKogamaPortal = pPVar3->validOnKogamaPortal;
-          PStack_4.validOnAnonymousExternalPortal = pPVar3->validOnAnonymousExternalPortal;
-          PStack_4._10_2_ = *(undefined2 *)&pPVar3->field_0xa;
-          PStack_4.promotionActionType = pPVar3->promotionActionType;
+          VStack_4.path = pVVar3->path;
+          VStack_4.typeFullName = pVVar3->typeFullName;
+          VStack_4.asset = pVVar3->asset;
+          VStack_4.m_CachedType = pVVar3->m_CachedType;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            pOStack_8 = TypeInfo__UnityEngine__Object;
-            auStack_7._8_4_ = &UNK_?;
+            VStack_7.m_CachedType = (Type *)TypeInfo__UnityEngine__Object;
+            VStack_7.asset = (Object_1 *)&UNK_?;
             func_?();
           }
           this_00 = (Component *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)PStack_4.promotionImage,
+                              ((Object *)VStack_4.path,
                                UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
                               );
           if ((this_00 != (Component *)0x0) &&
@@ -211,41 +194,44 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
             }
             pLVar2 = (promotionLooksData->fields).promotionData;
             if (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-              pPVar3 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-                       PromotionLooksData+LooksData]::
-                       List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                                 ((PromotionLooksData_LooksData *)auStack_7,pLVar2,
-                                  (promotionLooksData->fields).promotionIndex,
+              pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                       VisualTreeAsset+AssetEntry]::
+                       List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                                 (&VStack_7,
+                                  (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)
+                                  pLVar2,(promotionLooksData->fields).promotionIndex,
                                   MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                                  );
-              pTVar9 = (this->fields).actionText;
-              bVar10 = cRam_? == '\0';
-              iVar11 = pPVar3->promotionActionType;
-              (this->fields).promotionActionType = iVar11;
-              if (bVar10) {
-                pOStack_8 = (Object_1__Class *)&StringLiteral_JOIN_THE_ELITE;
-                auStack_7._8_4_ = &UNK_?;
+              pTVar8 = (this->fields).actionText;
+              bVar9 = cRam_? == '\0';
+              pTVar10 = pVVar3->m_CachedType;
+              (this->fields).promotionActionType = (int32_t)pTVar10;
+              if (bVar9) {
+                VStack_7.m_CachedType = (Type *)&StringLiteral_JOIN_THE_ELITE;
+                VStack_7.asset = (Object_1 *)&UNK_?;
                 func_?();
-                auStack_7._8_4_ = &StringLiteral_SIGN_UP;
-                auStack_7._4_4_ = &UNK_?;
+                VStack_7.asset = (Object_1 *)&StringLiteral_SIGN_UP;
+                VStack_7.typeFullName = (String *)&UNK_?;
                 func_?();
-                auStack_7._4_4_ = &StringLiteral_BUY_GOLD;
-                auStack_7._0_4_ = &UNK_?;
+                VStack_7.typeFullName = (String *)&StringLiteral_BUY_GOLD;
+                VStack_7.path = (String *)&UNK_?;
                 func_?();
                 cRam_? = '\x01';
               }
-              pSVar12 = StringLiteral_BUY_GOLD;
-              if ((iVar11 != 0) && (pSVar12 = StringLiteral_JOIN_THE_ELITE, iVar11 != 1)) {
-                pSVar12 = StringLiteral_SIGN_UP;
+              pSVar5 = StringLiteral_BUY_GOLD;
+              if ((pTVar10 != (Type *)0x0) &&
+                 (pSVar5 = StringLiteral_JOIN_THE_ELITE, pTVar10 != (Type *)0x1)) {
+                pSVar5 = StringLiteral_SIGN_UP;
               }
-              pSVar12 = TM::TM__(pSVar12,(MethodInfo *)0x0);
-              if (pTVar9 != (Text *)0x0) {
-                (*(pTVar9->klass->vtable).set_text.methodPtr)
-                          (pTVar9,pSVar12,(pTVar9->klass->vtable).set_text.method);
-                pTVar9 = (this->fields).whySeeingThisText;
-                if ((pTVar9 != (Text *)0x0) &&
+              pSVar5 = TM::TM__(pSVar5,(MethodInfo *)0x0);
+              if (pTVar8 != (Text *)0x0) {
+                (*(code *)(pTVar8->klass->vtable).set_text.method)
+                          (pTVar8,pSVar5,
+                           (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                pTVar8 = (this->fields).whySeeingThisText;
+                if ((pTVar8 != (Text *)0x0) &&
                    (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject((Component *)pTVar9,(MethodInfo *)0x0),
+                              Component_get_gameObject((Component *)pTVar8,(MethodInfo *)0x0),
                    this_02 != (GameObject *)0x0)) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (this_02,showWhyText,(MethodInfo *)0x0);
@@ -259,8 +245,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -346,7 +332,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
       pSVar2 = StringLiteral_InHouseAd_Kogama_Elite;
       StatHatWrapper::StatHatWrapper_Count(StringLiteral_InHouseAd_Kogama_Elite,1,(MethodInfo *)0x0)
       ;
-      if (*(char *)&pSVar2[7].klass == '\0') {
+      if (*(char *)&pSVar2[7].monitor == '\0') {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -357,41 +343,40 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
           func_?();
           cRam_? = '\x01';
         }
+        method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0;
         value = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        original = in_stack_3[3].klass;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pOVar4 = (Object__Class *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)original,
+                            UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                           );
         if (value != (Object *)0x0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    (value,ExceptionArgument__Enum_obj,unaff_EDI);
-          original = in_stack_3[2].fields._.m_CachedPtr;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pOVar4 = (Object__Class *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             (original,
-                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                             );
           value[1].klass = pOVar4;
           func_?();
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (in_stack_3,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                       MethodInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
         func_?();
         pcVar5 = (code *)swi(3);
@@ -449,12 +434,6 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ITouristAdController>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
-        func_?();
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
-      }
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -476,24 +455,16 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
     return;
   }
   if ((this->fields).popped == 0) {
-    bVar2 = cRam_? == '\0';
+    bVar1 = cRam_? == '\0';
     (this->fields).popped = 1;
-    if (bVar2) {
+    if (bVar1) {
       func_?(&TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37);
       cRam_? = '\x01';
     }
-    value = (Object *)
-            func_?(
-                           TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37
-                           );
-    if (value == (Object *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
     func_?(value + 2,this);
@@ -518,47 +489,47 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    unaff_EBX = (Action_1_IWinningCondition___Class *)(pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    unaff_EDI = (Delegate *)0x0;
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                (this_00,(Object *)0x0,
-                 MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-      if (unaff_EDI == (Delegate *)0x0) {
-        (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        pDStack2 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
-        pAStack3 = (Action_1_IWinningCondition___Class *)unaff_EDI;
+  if (pMVar1 == (MVNetworkGame *)0x0) {
+    func_?();
+  }
+  else {
+    pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)0x0,
+               MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
+               ,(MethodInfo *)0x0);
+    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove
+                          ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+    if (unaff_ESI == (Delegate *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pDStack3 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
+      pAStack4 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+      func_?();
+      return;
+    }
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack3 = unaff_ESI;
+    pAVar2 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+      pDStack3 = unaff_ESI;
+      pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
+        pDStack3 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
         func_?();
         return;
       }
-      pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack2 = unaff_EDI;
-      pAVar4 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar4 != (Action_1_IWinningCondition_ *)0x0) {
-        (pMVar1->fields).OnWinningConditionFulfilled = pAVar4;
-        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-        pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-        pDStack2 = unaff_EDI;
-        pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-        if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) {
-          pDStack2 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  func_?();
-code_?:
-  pDStack2 = unaff_EDI;
-  pAStack3 = unaff_EBX;
+  pDStack3 = unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -604,8 +575,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_action_not_permitted_for_site_,(MethodInfo *)0x0);
         return;
       }
@@ -643,18 +614,10 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
       func_?(&TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37);
       cRam_? = '\x01';
     }
-    value = (Object *)
-            func_?(
-                           TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37
-                           );
-    if (value == (Object *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
+    method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_d__37;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
     func_?(value + 2,this);
@@ -689,22 +652,20 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
     func_?(&TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(
-                         TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0
-                         );
+  method_00 = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pGVar1 = (this->fields).goToKogamaPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar2 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)pGVar1,
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pGVar1 = (this->fields).goToKogamaPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pGVar1,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                       );
     value[1].klass = pOVar2;
     func_?(value + 1,pOVar2);
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -714,22 +675,19 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__AdIntegration__InHouse__GeneralPromotionAd____c__DisplayClass32_0___ShowGoToKogamaPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -761,7 +719,11 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
   }
   StatHatWrapper::StatHatWrapper_Count(StringLiteral_InHouseAd_Kogama,1,(MethodInfo *)0x0);
   this_00 = (this->fields).embeddedPlayerConfig;
-  if (this_00 != (EmbeddedPlayerConfig *)0x0) {
+  if (this_00 == (EmbeddedPlayerConfig *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     pEVar1 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                         ((EmbeddedSiteConfigData *)&stack0xffffffe8,this_00,(MethodInfo *)0x0);
     iVar2 = pEVar1->siteEnum;
@@ -795,86 +757,78 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
       cRam_? = '\x01';
     }
     pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar14 != (GameSessionData *)0x0) {
-      bVar3 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System
-               ::Single,System::Object]::
-               SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__get_IsReadOnly
-                         ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)pGVar14,
-                          (MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        bVar3 = 0;
+    if (pGVar14 == (GameSessionData *)0x0) goto code_?;
+    bVar3 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+             VerticalVirtualizationController`1[System::Object]::
+             VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
+                       ((VerticalVirtualizationController_1_System_Object_ *)pGVar14,
+                        (MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      bVar3 = 0;
+    }
+    else {
+      bVar3 = 1;
+      if ((this->fields).embeddedSiteConfigData.allowsRedirectToWebpage == 0) {
+        bVar3 = (this->fields).embeddedSiteConfigData.allowsOpenInNewTab;
       }
-      else {
-        bVar3 = 1;
-        if ((this->fields).embeddedSiteConfigData.allowsRedirectToWebpage == 0) {
-          bVar3 = (this->fields).embeddedSiteConfigData.allowsOpenInNewTab;
-        }
+    }
+    (this->fields).redirectAllowed = bVar3 != 0;
+    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar15 == (MVNetworkGame *)0x0) goto code_?;
+    a = (pMVar15->fields).OnWinningConditionFulfilled;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)0x0,
+               MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
+               ,(MethodInfo *)0x0);
+    pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar16 == (Delegate *)0x0) {
+      (pMVar15->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+code_?:
+      func_?();
+      pGVar17 = (this->fields).redirectButton;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
       }
-      (this->fields).redirectAllowed = bVar3 != 0;
-      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar15 != (MVNetworkGame *)0x0) {
-        pAVar16 = (pMVar15->fields).OnWinningConditionFulfilled;
-        this_01 = (Action_1_Object_ *)func_?();
-        if (this_01 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                    (this_01,(Object *)0x0,
-                     MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
-                     ,(MethodInfo *)0x0);
-          pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar16,(Delegate *)this_01,(MethodInfo *)0x0);
-          if (pDVar17 == (Delegate *)0x0) {
-            (pMVar15->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-          }
-          else {
-            pAVar16 = (Action_1_IWinningCondition_ *)func_?();
-            if (pAVar16 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-            (pMVar15->fields).OnWinningConditionFulfilled = pAVar16;
-            iVar18 = func_?();
-            if (iVar18 == 0) goto code_?;
-          }
-          func_?();
-          pGVar19 = (this->fields).redirectButton;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-          if ((pGVar14 != (GameSessionData *)0x0) && (pGVar19 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar19,(pGVar14->fields).embedded,(MethodInfo *)0x0);
-            pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar15 != (MVNetworkGame *)0x0) {
-              pSVar20 = (pMVar15->fields)._KogamaMainpageURL_k__BackingField;
-              this_02 = (Uri *)func_?();
-              if (this_02 != (Uri *)0x0) {
-                System.dll::System::Uri::Uri__ctor(this_02,pSVar20,(MethodInfo *)0x0);
-                pTVar21 = (this->fields).redirectButtonURLText;
-                pSVar20 = System.dll::System::Uri::Uri_get_Host(this_02,(MethodInfo *)0x0);
-                if (pSVar20 != (String *)0x0) {
-                  pSVar20 = mscorlib.dll::System::String::String_Replace_1
-                                      (pSVar20,StringLiteral_www_,::StringLiteral__,
-                                       (MethodInfo *)0x0);
-                  if (pSVar20 != (String *)0x0) {
-                    mscorlib.dll::System::String::String_ToUpper(pSVar20,(MethodInfo *)0x0);
-                    if (pTVar21 != (Text *)0x0) {
-                      (*(pTVar21->klass->vtable).set_text.methodPtr)(pTVar21);
-                      pGVar19 = (this->fields).actionButton;
-                      if (((this->fields).embeddedSiteConfigData.allowsRedirectToWebpage == 0) &&
-                         ((this->fields).embeddedSiteConfigData.allowsOpenInNewTab == 0)) {
-                        bVar3 = (this->fields).embeddedSiteConfigData.allowsModals;
-                      }
-                      else {
-                        bVar3 = 1;
-                      }
-                      if (pGVar19 != (GameObject *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                  (pGVar19,bVar3 != 0,(MethodInfo *)0x0);
-                        fVar22 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                           ((MethodInfo *)0x0);
-                        (this->fields).startTime = fVar22;
-                        return;
-                      }
-                    }
+      pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if ((pGVar14 != (GameSessionData *)0x0) && (pGVar17 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar17,(pGVar14->fields).embedded,(MethodInfo *)0x0);
+        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar15 != (MVNetworkGame *)0x0) {
+          pSVar18 = (pMVar15->fields)._KogamaMainpageURL_k__BackingField;
+          this_02 = (Uri *)func_?();
+          System.dll::System::Uri::Uri__ctor(this_02,pSVar18,(MethodInfo *)0x0);
+          pTVar19 = (this->fields).redirectButtonURLText;
+          if (this_02 != (Uri *)0x0) {
+            pSVar18 = System.dll::System::Uri::Uri_get_Host(this_02,(MethodInfo *)0x0);
+            if (pSVar18 != (String *)0x0) {
+              pSVar18 = mscorlib.dll::System::String::String_Replace_1
+                                  (pSVar18,StringLiteral_www_,::StringLiteral__,(MethodInfo *)0x0);
+              if (pSVar18 != (String *)0x0) {
+                mscorlib.dll::System::String::String_ToUpper(pSVar18,(MethodInfo *)0x0);
+                if (pTVar19 != (Text *)0x0) {
+                  (*(code *)(pTVar19->klass->vtable).set_text.method)(pTVar19);
+                  pGVar17 = (this->fields).actionButton;
+                  if (((this->fields).embeddedSiteConfigData.allowsRedirectToWebpage == 0) &&
+                     ((this->fields).embeddedSiteConfigData.allowsOpenInNewTab == 0)) {
+                    bVar3 = (this->fields).embeddedSiteConfigData.allowsModals;
+                  }
+                  else {
+                    bVar3 = 1;
+                  }
+                  if (pGVar17 != (GameObject *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                              (pGVar17,bVar3 != 0,(MethodInfo *)0x0);
+                    fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                       ((MethodInfo *)0x0);
+                    (this->fields).startTime = fVar20;
+                    return;
                   }
                 }
               }
@@ -882,13 +836,19 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
           }
         }
       }
+      goto code_?;
     }
+    iVar21 = func_?();
+    if (iVar21 == 0) goto code_?;
+    _UNK_? = iVar21;
+    iVar21 = func_?();
+    if (iVar21 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -928,8 +888,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
                 (str0,::StringLiteral___,str2,::StringLiteral__,(MethodInfo *)0x0);
       if (pTVar5 != (Text *)0x0) {
         pTVar6 = pTVar5->klass;
-        pMStack7 = (pTVar6->vtable).set_text.method;
-        (*(pTVar6->vtable).set_text.methodPtr)();
+        pIStack7 = (pTVar6->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar6->vtable).set_text.method)();
         return;
       }
       func_?();
@@ -986,8 +946,6 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
         }
         object = TypeInfo__AdIntegration__InHouse__GeneralPromotionAd____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -1052,8 +1010,8 @@ String * Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
       return pSVar1;
     }
     pSVar1 = (String *)
-             (*(pTVar2->klass->vtable).get_text.methodPtr)
-                       (pTVar2,(pTVar2->klass->vtable).get_text.method);
+             (*(code *)(pTVar2->klass->vtable).get_text.method)
+                       (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
     (this->fields).startContinueText = pSVar1;
     func_?(&(this->fields).startContinueText,pSVar1);
   }

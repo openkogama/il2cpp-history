@@ -10,18 +10,17 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Enter_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth <
-         (TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth) ||
-       ((e->klass->_1).typeHierarchy
-        [(TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth - 1] !=
-        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Enter_1.methodPtr)(this,e,(this->klass->vtable).Enter_1.method);
+  (*(code *)(this->klass->vtable).Enter_1.method)(this,e,(this->klass->vtable).Execute_1.methodPtr);
   return;
 }
 
@@ -61,18 +60,17 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth <
-         (TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth) ||
-       ((e->klass->_1).typeHierarchy
-        [(TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth - 1] !=
-        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Execute_1.methodPtr)(this,e,(this->klass->vtable).Execute_1.method);
+  (*(code *)(this->klass->vtable).Execute_1.method)(this,e,(this->klass->vtable).Exit_1.methodPtr);
   return;
 }
 
@@ -88,18 +86,17 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Exit_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth <
-         (TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth) ||
-       ((e->klass->_1).typeHierarchy
-        [(TypeInfo__CubeModelingStateMachine->_1).typeHierarchyDepth - 1] !=
-        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Exit_1.methodPtr)(this,e,(this->klass->vtable).Exit_1.method);
+  (*(code *)(this->klass->vtable).Exit_1.method)(this,e,(this->klass->vtable).HideCursor.methodPtr);
   return;
 }
 

@@ -23,16 +23,16 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_GetDefaultConfiguratio
   }
   this_00 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)
             func_?(TypeInfo__PickupItemCostume__CostumeConfiguration);
+  PickupItemMeleeWeapon+MeleeWeaponConfiguration::
+  PickupItemMeleeWeapon_MeleeWeaponConfiguration__ctor(this_00,(MethodInfo *)0x0);
+  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pSVar1 = (String *)
+           Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                     (StringLiteral_Name,(MethodInfo *)0x0);
   if (this_00 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-    PickupItemMeleeWeapon+MeleeWeaponConfiguration::
-    PickupItemMeleeWeapon_MeleeWeaponConfiguration__ctor(this_00,(MethodInfo *)0x0);
-    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pSVar1 = (String *)
-             Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                       (StringLiteral_Name,(MethodInfo *)0x0);
     if (pSVar1 == (String *)0x0) {
       (this_00->fields)._.name = (String *)0x0;
     }
@@ -135,11 +135,11 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
     if (pMVar2 == (MVAvatarLocal *)0x0) {
       return;
     }
-    if ((pMVar2->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatar->_1).typeHierarchyDepth) {
+    if ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) {
       return;
     }
     if ((MVAvatar__Class *)
-        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).typeHierarchyDepth - 1] !=
+        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
         TypeInfo__MVAvatar) {
       return;
     }
@@ -148,12 +148,11 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
       if ((pPVar3->fields).isPlayerInvisible != 0) {
         PickupItemCostume_SetAvatarInvisibility(this,0,(MVAvatar *)pMVar2,(MethodInfo *)0x0);
       }
-      if ((pMVar2->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth)
-      {
+      if ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
         return;
       }
       if ((MVAvatarLocal__Class *)
-          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] !=
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
           TypeInfo__MVAvatarLocal) {
         return;
       }
@@ -174,22 +173,22 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
             if ((pPVar3->fields).playersCanCollide == 0) {
               return;
             }
-            source = (this->fields)._.cubeModelObject;
-            if (source != (GameObject *)0x0) {
-              pIVar4 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                                 ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+            this_01 = (this->fields)._.cubeModelObject;
+            if (this_01 != (GameObject *)0x0) {
+              pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                       GameObject_GetComponentsInChildren
+                                 (this_01,
                                   UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
                                  );
-              pMVar5 = (MonitorData *)0x0;
-              if (pIVar4 != (IEnumerable_1_System_Object_ *)0x0) {
-                pIVar6 = pIVar4 + 2;
-                for (; (int)pMVar5 < (int)pIVar4[1].monitor; pMVar5 = pMVar5 + 1) {
-                  if (pIVar4[1].monitor <= pMVar5) goto code_?;
-                  if (pIVar6->klass == (IEnumerable_1_System_Object___Class *)0x0)
-                  goto code_?;
+              uVar5 = 0;
+              if (pOVar4 != (Object__Array *)0x0) {
+                ppOVar6 = pOVar4->vector;
+                for (; (int)uVar5 < (int)pOVar4->max_length; uVar5 = uVar5 + 1) {
+                  if (pOVar4->max_length <= uVar5) goto code_?;
+                  if ((Collider *)*ppOVar6 == (Collider *)0x0) goto code_?;
                   UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                            ((Collider *)pIVar6->klass,0,(MethodInfo *)0x0);
-                  pIVar6 = (IEnumerable_1_System_Object_ *)&pIVar6->monitor;
+                            ((Collider *)*ppOVar6,0,(MethodInfo *)0x0);
+                  ppOVar6 = ppOVar6 + 1;
                 }
                 pBVar7 = (this->fields).costumeTriggerCollider;
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -204,17 +203,17 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
                 if ((pMVar1 != (MVPickupOwner *)0x0) &&
                    (pMVar2 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent,
                    pMVar2 != (MVAvatarLocal *)0x0)) {
-                  if (((pMVar2->klass->_1).typeHierarchyDepth <
-                       (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
+                  if (((pMVar2->klass->_1).naturalAligment <
+                       (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
                      ((MVAvatarLocal__Class *)
                       (pMVar2->klass->_1).typeHierarchy
-                      [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] !=
-                      TypeInfo__MVAvatarLocal)) goto code_?;
-                  this_01 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
+                      [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal
+                     )) goto code_?;
+                  this_02 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
                                       (pMVar2,(MethodInfo *)0x0);
-                  if (this_01 != (ColliderCollection *)0x0) {
+                  if (this_02 != (ColliderCollection *)0x0) {
                     Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                              (this_01,(Collider *)(this->fields).costumeTriggerCollider,
+                              (this_02,(Collider *)(this->fields).costumeTriggerCollider,
                                (MethodInfo *)0x0);
                     pBVar7 = (this->fields).costumeTriggerCollider;
                     if (pBVar7 != (BoxCollider *)0x0) {
@@ -446,39 +445,38 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnArcTrailStateCh
         }
         fVar3 = _UNK_? / fVar3;
         this_00 = (Gradient *)func_?();
-        if (this_00 != (Gradient *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor
-                    (this_00,(MethodInfo *)0x0);
-          value = (GradientAlphaKey__Array *)func_?();
-          VStack_4.Item1 = 0.0;
-          VStack_4.Item2 = 0.0;
-          mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                    (&VStack_4,0.0,fVar3 * _UNK_?,(MethodInfo *)0x0);
-          if (value != (GradientAlphaKey__Array *)0x0) {
-            if (value->max_length == 0) goto code_?;
-            value->vector[0].alpha = VStack_4.Item1;
-            value->vector[0].time = VStack_4.Item2;
-            pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-            if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-              VStack_5.Item1 = 0.0;
-              VStack_5.Item2 = 0.0;
-              mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                        (&VStack_5,(pPVar2->fields).trailColor.a,fVar3 * _UNK_?,
-                         (MethodInfo *)0x0);
-              if (value->max_length < 2) goto code_?;
-              value->vector[1].alpha = VStack_5.Item1;
-              value->vector[1].time = VStack_5.Item2;
-              VStack_6.Item1 = 0.0;
-              VStack_6.Item2 = 0.0;
-              mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                        (&VStack_6,0.0,1.0,(MethodInfo *)0x0);
-              if (value->max_length < 3) goto code_?;
-              value->vector[2].alpha = VStack_6.Item1;
-              value->vector[2].time = VStack_6.Item2;
+        UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(this_00,(MethodInfo *)0x0)
+        ;
+        value = (GradientAlphaKey__Array *)func_?();
+        VStack_4.Item1 = 0.0;
+        VStack_4.Item2 = 0.0;
+        mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
+                  (&VStack_4,0.0,fVar3 * _UNK_?,(MethodInfo *)0x0);
+        if (value != (GradientAlphaKey__Array *)0x0) {
+          if (value->max_length == 0) goto code_?;
+          value->vector[0].alpha = VStack_4.Item1;
+          value->vector[0].time = VStack_4.Item2;
+          pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+            VStack_5.Item1 = 0.0;
+            VStack_5.Item2 = 0.0;
+            mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
+                      (&VStack_5,(pPVar2->fields).trailColor.a,fVar3 * _UNK_?,
+                       (MethodInfo *)0x0);
+            if (value->max_length < 2) goto code_?;
+            value->vector[1].alpha = VStack_5.Item1;
+            value->vector[1].time = VStack_5.Item2;
+            VStack_6.Item1 = 0.0;
+            VStack_6.Item2 = 0.0;
+            mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
+                      (&VStack_6,0.0,1.0,(MethodInfo *)0x0);
+            if (value->max_length < 3) goto code_?;
+            value->vector[2].alpha = VStack_6.Item1;
+            value->vector[2].time = VStack_6.Item2;
+            if (this_00 != (Gradient *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys
                         (this_00,value,(MethodInfo *)0x0);
-              value_00 = (GradientColorKey__Array *)
-                         func_?(TypeInfo__UnityEngine__GradientColorKey,2);
+              value_00 = (GradientColorKey__Array *)func_?();
               pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
               if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
                 fVar3 = 0.0;
@@ -498,15 +496,16 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnArcTrailStateCh
                     fVar3 = 0.0;
                     fVar8 = 0.0;
                     fVar9 = 0.0;
+                    fVar10 = 0.0;
                     UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::
                     GradientColorKey__ctor
                               ((GradientColorKey *)&stack0xffffffb4,(pPVar2->fields).trailColor,1.0,
                                (MethodInfo *)0x0);
                     if (value_00->max_length < 2) goto code_?;
                     value_00->vector[1].color.r = fVar3;
-                    value_00->vector[1].color.g = 0.0;
-                    value_00->vector[1].color.b = fVar8;
-                    value_00->vector[1].color.a = fVar9;
+                    value_00->vector[1].color.g = fVar8;
+                    value_00->vector[1].color.b = fVar9;
+                    value_00->vector[1].color.a = fVar10;
                     value_00->vector[1].time = fVar7;
                     UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys
                               (this_00,value_00,(MethodInfo *)0x0);
@@ -536,8 +535,8 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnArcTrailStateCh
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -566,12 +565,11 @@ code_?:
       return;
     }
     pMVar4 = (MVWorldObjectClient__Class *)(wo->_0).image;
-    if ((pMVar4->_1).typeHierarchyDepth < (TypeInfo__MVAvatar->_1).typeHierarchyDepth) {
+    if ((pMVar4->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) {
       return;
     }
-    if ((MVAvatar__Class *)
-        (pMVar4->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).typeHierarchyDepth - 1] !=
-        TypeInfo__MVAvatar) {
+    if ((MVAvatar__Class *)(pMVar4->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
+        != TypeInfo__MVAvatar) {
       return;
     }
     pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
@@ -592,48 +590,49 @@ code_?:
     MVBody::MVBody_set_ForceHidden(pMVar7,value_00,(MethodInfo *)0x0);
     pMVar7 = wo[1]._1.unity_user_data;
     if ((pMVar7 == (MVBody *)0x0) ||
-       (this_02 = MVBody::MVBody_get_BlobShadow(pMVar7,(MethodInfo *)0x0),
-       this_02 == (AvatarBlobShadowController *)0x0)) goto code_?;
+       (this_03 = MVBody::MVBody_get_BlobShadow(pMVar7,(MethodInfo *)0x0),
+       this_03 == (AvatarBlobShadowController *)0x0)) goto code_?;
     this = (PickupItemCostume *)0x0;
     AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
-              (this_02,(bool)pMVar7,(MethodInfo *)0x0);
-    if (((((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchyDepth <
-         (TypeInfo__MVAvatarRemote->_1).typeHierarchyDepth) ||
+              (this_03,(bool)pMVar7,(MethodInfo *)0x0);
+    if (((((MVWorldObjectClient__Class *)(wo->_0).image)->_1).naturalAligment <
+         (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
        ((MVAvatarRemote__Class *)
         (((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchy
-        [(TypeInfo__MVAvatarRemote->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarRemote)) {
+        [(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] != TypeInfo__MVAvatarRemote)) {
 code_?:
       if (bVar6 == 0) {
         return;
       }
-      source = (pPVar1->fields)._.cubeModelParent;
-      if (source != (Transform *)0x0) {
-        pIVar8 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                           ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+      this_00 = (pPVar1->fields)._.cubeModelParent;
+      if (this_00 != (Transform *)0x0) {
+        pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                 Component_GetComponentsInChildren
+                           ((Component *)this_00,
                             UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                            );
         wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
-        if (pIVar8 != (IEnumerable_1_System_Object_ *)0x0) {
-          pIVar9 = pIVar8 + 2;
-          for (; (int)wo < (int)pIVar8[1].monitor;
+        if (pOVar8 != (Object__Array *)0x0) {
+          ppOVar9 = pOVar8->vector;
+          for (; (int)wo < (int)pOVar8->max_length;
               wo = (PickupItemCostume_CostumeConfiguration__Class *)((int)&(wo->_0).image + 1)) {
-            if ((PickupItemCostume_CostumeConfiguration__Class *)pIVar8[1].monitor <= wo)
+            if ((PickupItemCostume_CostumeConfiguration__Class *)pOVar8->max_length <= wo)
             goto code_?;
-            this_00 = pIVar9->klass;
-            if (this_00 == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+            this_01 = (Renderer *)*ppOVar9;
+            if (this_01 == (Renderer *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                      ((Renderer *)this_00,1,(MethodInfo *)0x0);
+                      (this_01,1,(MethodInfo *)0x0);
             this = (PickupItemCostume *)
                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this_00,(MethodInfo *)0x0);
+                             ((Component *)this_01,(MethodInfo *)0x0);
             value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                               (StringLiteral_Default,(MethodInfo *)0x0);
             if (this == (PickupItemCostume *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                       ((GameObject *)this,value,(MethodInfo *)0x0);
-            pIVar9 = (IEnumerable_1_System_Object_ *)&pIVar9->monitor;
+            ppOVar9 = ppOVar9 + 1;
           }
-          this_01 = (this->fields).trailRenderer;
+          this_02 = (this->fields).trailRenderer;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
             cRam_? = '\x01';
@@ -641,15 +640,15 @@ code_?:
           pPVar10 = (this->fields)._._Configuration_k__BackingField;
           wo = TypeInfo__PickupItemCostume__CostumeConfiguration;
           if (pPVar10 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-            if (((pPVar10->klass->_1).typeHierarchyDepth <
-                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth) ||
+            if (((pPVar10->klass->_1).naturalAligment <
+                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
                ((pPVar10->klass->_1).typeHierarchy
-                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth - 1] !=
+                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
                 (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
             goto code_?;
-            if (this_01 != (TrailRenderer *)0x0) {
+            if (this_02 != (TrailRenderer *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_01,*(bool *)((int)&pPVar10[1].fields.cubeModelId + 2),
+                        ((Renderer *)this_02,*(bool *)((int)&pPVar10[1].fields.cubeModelId + 2),
                          (MethodInfo *)0x0);
               return;
             }
@@ -658,22 +657,22 @@ code_?:
       }
       goto code_?;
     }
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_03 == (MVNetworkGame *)0x0) ||
-       (this_04 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
-       this_04 == (MVLocalPlayer *)0x0)) goto code_?;
+    this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((this_04 == (MVNetworkGame *)0x0) ||
+       (this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0),
+       this_05 == (MVLocalPlayer *)0x0)) goto code_?;
     isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
-                           ((MVPlayer *)this_04,(MVWorldObjectClient *)wo,(MethodInfo *)0x0);
+                           ((MVPlayer *)this_05,(MVWorldObjectClient *)wo,(MethodInfo *)0x0);
     iVar11 = (((MVWorldObjectClient__Fields *)&wo[1]._0.gc_desc)->_).id;
     wo = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
     if ((iVar11 == 0) ||
-       (wo = *(PickupItemCostume_CostumeConfiguration__Class **)(iVar11 + 0x40),
+       (wo = *(PickupItemCostume_CostumeConfiguration__Class **)(iVar11 + 0x44),
        wo == (PickupItemCostume_CostumeConfiguration__Class *)0x0)) goto code_?;
     pAVar3 = TypeInfo__AvatarUIHandlerRemote;
-    if (((TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth <=
-         (((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
+         (((MVWorldObjectClient__Class *)(wo->_0).image)->_1).naturalAligment) &&
        ((((MVWorldObjectClient__Class *)(wo->_0).image)->_1).typeHierarchy
-        [(TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
       AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
                 ((AvatarUIHandlerRemote *)wo,isFriendly == 0 & bVar6,(MethodInfo *)0x0);
@@ -738,49 +737,48 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnCollisionStateC
     fStack_12 = _UNK_?;
     if ((pPVar2->fields).playersCanCollide == 0) {
       if (pGVar3 != (GameObject *)0x0) {
-        pBStack_13 = (BoxCollider *)
-                     Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                               ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar3,
+        pOStack_13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                     GameObject_GetComponentsInChildren
+                               (pGVar3,
                                 UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
                                );
-        pBVar14 = (BoxCollider__Class *)0x0;
-        if (pBStack_13 != (BoxCollider *)0x0) {
-          pBVar15 = pBStack_13 + 1;
-          for (; pBVar15 = (BoxCollider *)&pBVar15->monitor, (int)pBVar14 < (int)pBStack_13[1].klass;
-              pBVar14 = (BoxCollider__Class *)((int)&(pBVar14->_0).image + 1)) {
-            if (pBStack_13[1].klass <= pBVar14) goto code_?;
-            if (*(Collider **)pBVar15 == (Collider *)0x0) goto code_?;
+        uVar14 = 0;
+        if (pOStack_13 != (Object__Array *)0x0) {
+          ppOVar15 = pOStack_13->vector;
+          for (; (int)uVar14 < (int)pOStack_13->max_length; uVar14 = uVar14 + 1) {
+            if (pOStack_13->max_length <= uVar14) goto code_?;
+            if ((Collider *)*ppOVar15 == (Collider *)0x0) goto code_?;
             UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                      (*(Collider **)pBVar15,0,(MethodInfo *)0x0);
+                      ((Collider *)*ppOVar15,0,(MethodInfo *)0x0);
+            ppOVar15 = ppOVar15 + 1;
           }
-          pBVar15 = (this->fields).costumeTriggerCollider;
+          pBVar16 = (this->fields).costumeTriggerCollider;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pBVar15,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar16 == 0) {
+          bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                            ((Object_1 *)pBVar16,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar17 == 0) {
             return;
           }
-          pMVar17 = (this->fields)._._._.owner;
-          if ((pMVar17 != (MVPickupOwner *)0x0) &&
-             (pMVar18 = (MVAvatarLocal *)(pMVar17->fields)._.worldObjectParent,
-             pMVar18 != (MVAvatarLocal *)0x0)) {
-            if (((pMVar18->klass->_1).typeHierarchyDepth <
-                 (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
-               ((MVAvatarLocal__Class *)
-                (pMVar18->klass->_1).typeHierarchy
-                [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
-            goto code_?;
-            pCVar19 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(pMVar18,(MethodInfo *)0x0);
-            if (pCVar19 != (ColliderCollection *)0x0) {
+          pMVar18 = (this->fields)._._._.owner;
+          if ((pMVar18 != (MVPickupOwner *)0x0) &&
+             (pMVar19 = (MVAvatarLocal *)(pMVar18->fields)._.worldObjectParent,
+             pMVar19 != (MVAvatarLocal *)0x0)) {
+            if (((pMVar19->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment
+                ) || ((MVAvatarLocal__Class *)
+                      (pMVar19->klass->_1).typeHierarchy
+                      [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal
+                     )) goto code_?;
+            pCVar20 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(pMVar19,(MethodInfo *)0x0);
+            if (pCVar20 != (ColliderCollection *)0x0) {
               Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                        (pCVar19,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0)
+                        (pCVar20,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0)
               ;
-              pBVar15 = (this->fields).costumeTriggerCollider;
-              if (pBVar15 != (BoxCollider *)0x0) {
+              pBVar16 = (this->fields).costumeTriggerCollider;
+              if (pBVar16 != (BoxCollider *)0x0) {
                 UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                          ((Collider *)pBVar15,0,(MethodInfo *)0x0);
+                          ((Collider *)pBVar16,0,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -789,27 +787,25 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnCollisionStateC
       }
     }
     else if (pGVar3 != (GameObject *)0x0) {
-      pBStack_20 = (BoxCollider *)
-                   Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar3,
+      pOStack_21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                   GameObject_GetComponentsInChildren
+                             (pGVar3,
                               UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                              );
-      pBVar14 = (BoxCollider__Class *)0x0;
-      if (pBStack_20 != (BoxCollider *)0x0) {
-        pBStack_13 = pBStack_20 + 1;
-        for (; pBStack_13 = (BoxCollider *)&pBStack_13->monitor,
-            (int)pBVar14 < (int)pBStack_20[1].klass;
-            pBVar14 = (BoxCollider__Class *)((int)&(pBVar14->_0).image + 1)) {
-          if (pBStack_20[1].klass <= pBVar14) goto code_?;
-          this_00 = *(Component **)pBStack_13;
-          if (this_00 == (Component *)0x0) goto code_?;
-          bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_TryGetComponent
-                            (this_00,(Object **)&pMStack_1,
+      uVar14 = 0;
+      if (pOStack_21 != (Object__Array *)0x0) {
+        pOStack_13 = (Object__Array *)pOStack_21->vector;
+        for (; (int)uVar14 < (int)pOStack_21->max_length; uVar14 = uVar14 + 1) {
+          if (pOStack_21->max_length <= uVar14) goto code_?;
+          this_00 = pOStack_13->klass;
+          if (this_00 == (Object__Array__Class *)0x0) goto code_?;
+          bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_TryGetComponent_1
+                            ((Component *)this_00,(Object **)&pMStack_1,
                              bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
                             );
-          if (bVar16 == 0) {
+          if (bVar17 == 0) {
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               (this_00,(MethodInfo *)0x0);
+                               ((Component *)this_00,(MethodInfo *)0x0);
             if ((pGVar3 == (GameObject *)0x0) ||
                (pMStack_1 = (MeshCollider *)
                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
@@ -823,158 +819,159 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnCollisionStateC
           if (pMStack_1 == (MeshCollider *)0x0) goto code_?;
           UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
                     ((Collider *)pMStack_1,1,(MethodInfo *)0x0);
-          pBVar15 = (BoxCollider *)
+          pBVar16 = (BoxCollider *)
                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                             (this_00,
+                             ((Component *)this_00,
                               UnityEngine__BoxCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::BoxCollider>__
                              );
-          if (pBVar15 == (BoxCollider *)0x0) goto code_?;
-          pVVar21 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size
-                             ((Vector3 *)&stack0xffffff18,pBVar15,(MethodInfo *)0x0);
-          uStack_22._0_4_ = pVVar21->x;
-          uStack_22._4_4_ = pVVar21->y;
-          fStack_23 = pVVar21->z;
-          fStack_24 = fStack_23 * _UNK_?;
-          fStack_25 = (float)(undefined4)uStack_22 * _UNK_?;
-          fStack_26 = (float)uStack_22._4_4_ * _UNK_?;
-          value_00.y = fStack_26;
-          value_00.x = fStack_25;
-          value_00.z = fStack_24;
+          if (pBVar16 == (BoxCollider *)0x0) goto code_?;
+          pVVar22 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size
+                             ((Vector3 *)&stack0xffffff18,pBVar16,(MethodInfo *)0x0);
+          uStack_23._0_4_ = pVVar22->x;
+          uStack_23._4_4_ = pVVar22->y;
+          fStack_24 = pVVar22->z;
+          fStack_25 = fStack_24 * _UNK_?;
+          fStack_26 = (float)(undefined4)uStack_23 * _UNK_?;
+          fStack_27 = (float)uStack_23._4_4_ * _UNK_?;
+          value_00.y = fStack_27;
+          value_00.x = fStack_26;
+          value_00.z = fStack_25;
           UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_size
-                    (pBVar15,value_00,(MethodInfo *)0x0);
-          pVVar21 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
-                             ((Vector3 *)&stack0xffffff08,pBVar15,(MethodInfo *)0x0);
-          uStack_27._0_4_ = pVVar21->x;
-          uStack_27._4_4_ = pVVar21->y;
-          fStack_28 = pVVar21->z;
-          if ((float)(undefined4)uStack_27 - fStack_25 <= fStack_5) {
-            fStack_5 = (float)(undefined4)uStack_27 - fStack_25;
+                    (pBVar16,value_00,(MethodInfo *)0x0);
+          pVVar22 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
+                             ((Vector3 *)&stack0xffffff08,pBVar16,(MethodInfo *)0x0);
+          uStack_28._0_4_ = pVVar22->x;
+          uStack_28._4_4_ = pVVar22->y;
+          fStack_29 = pVVar22->z;
+          if ((float)(undefined4)uStack_28 - fStack_26 <= fStack_5) {
+            fStack_5 = (float)(undefined4)uStack_28 - fStack_26;
           }
-          fVar29 = fStack_4;
-          if ((float)uStack_27._4_4_ - fStack_26 <= fStack_4) {
-            fVar29 = (float)uStack_27._4_4_ - fStack_26;
+          fVar30 = fStack_4;
+          if ((float)uStack_28._4_4_ - fStack_27 <= fStack_4) {
+            fVar30 = (float)uStack_28._4_4_ - fStack_27;
           }
-          fStack_30 = fStack_6;
-          if (fStack_28 - fStack_24 <= fStack_6) {
-            fStack_30 = fStack_28 - fStack_24;
+          fStack_31 = fStack_6;
+          if (fStack_29 - fStack_25 <= fStack_6) {
+            fStack_31 = fStack_29 - fStack_25;
           }
-          uStack_31 = CONCAT44(fVar29,fStack_5);
-          pVVar21 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
-                             (&VStack_32,pBVar15,(MethodInfo *)0x0);
-          uStack_33._0_4_ = pVVar21->x;
-          uStack_33._4_4_ = pVVar21->y;
-          fStack_34 = pVVar21->z;
-          if (fStack_7 <= (float)(undefined4)uStack_33 + fStack_25) {
-            fStack_7 = (float)(undefined4)uStack_33 + fStack_25;
+          uStack_32 = CONCAT44(fVar30,fStack_5);
+          pVVar22 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
+                             (&VStack_33,pBVar16,(MethodInfo *)0x0);
+          uStack_34._0_4_ = pVVar22->x;
+          uStack_34._4_4_ = pVVar22->y;
+          fStack_35 = pVVar22->z;
+          if (fStack_7 <= (float)(undefined4)uStack_34 + fStack_26) {
+            fStack_7 = (float)(undefined4)uStack_34 + fStack_26;
           }
-          if (fStack_11 <= (float)uStack_33._4_4_ + fStack_26) {
-            fStack_11 = (float)uStack_33._4_4_ + fStack_26;
+          if (fStack_11 <= (float)uStack_34._4_4_ + fStack_27) {
+            fStack_11 = (float)uStack_34._4_4_ + fStack_27;
           }
-          fStack_35 = fStack_12;
-          if (fStack_12 <= fStack_34 + fStack_24) {
-            fStack_35 = fStack_34 + fStack_24;
+          fStack_36 = fStack_12;
+          if (fStack_12 <= fStack_35 + fStack_25) {
+            fStack_36 = fStack_35 + fStack_25;
           }
-          uStack_36 = CONCAT44(fStack_11,fStack_7);
-          fStack_6 = fStack_30;
-          fStack_4 = uStack_31._4_4_;
-          fStack_5 = (float)uStack_31;
+          uStack_37 = CONCAT44(fStack_11,fStack_7);
+          pOStack_13 = (Object__Array *)&pOStack_13->monitor;
+          fStack_6 = fStack_31;
+          fStack_4 = uStack_32._4_4_;
+          fStack_5 = (float)uStack_32;
           uStack_8 = 0;
           uStack_9 = 0;
           uStack_10 = 0;
-          fStack_12 = fStack_35;
+          fStack_12 = fStack_36;
         }
-        pMVar17 = (this->fields)._._._.owner;
-        if (pMVar17 != (MVPickupOwner *)0x0) {
-          pMVar18 = (MVAvatarLocal *)(pMVar17->fields)._.worldObjectParent;
-          if (pMVar18 == (MVAvatarLocal *)0x0) {
+        pMVar18 = (this->fields)._._._.owner;
+        if (pMVar18 != (MVPickupOwner *)0x0) {
+          pMVar19 = (MVAvatarLocal *)(pMVar18->fields)._.worldObjectParent;
+          if (pMVar19 == (MVAvatarLocal *)0x0) {
             return;
           }
-          if ((pMVar18->klass->_1).typeHierarchyDepth <
-              (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) {
+          if ((pMVar19->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
             return;
           }
           if ((MVAvatarLocal__Class *)
-              (pMVar18->klass->_1).typeHierarchy
-              [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal) {
+              (pMVar19->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1]
+              != TypeInfo__MVAvatarLocal) {
             return;
           }
-          pBStack_20 = (this->fields).costumeTriggerCollider;
+          pOStack_21 = (Object__Array *)(this->fields).costumeTriggerCollider;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pBStack_20,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar16 != 0) {
-            pCVar19 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(pMVar18,(MethodInfo *)0x0);
-            if (pCVar19 == (ColliderCollection *)0x0) goto code_?;
+          bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                            ((Object_1 *)pOStack_21,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar17 != 0) {
+            pCVar20 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(pMVar19,(MethodInfo *)0x0);
+            if (pCVar20 == (ColliderCollection *)0x0) goto code_?;
             Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                      (pCVar19,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0);
-            pBStack_20 = (this->fields).costumeTriggerCollider;
+                      (pCVar20,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0);
+            pOStack_21 = (Object__Array *)(this->fields).costumeTriggerCollider;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                      ((Object_1 *)pBStack_20,(MethodInfo *)0x0);
+                      ((Object_1 *)pOStack_21,(MethodInfo *)0x0);
           }
           pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if (pGVar3 != (GameObject *)0x0) {
-            pBVar15 = (BoxCollider *)
+            pBVar16 = (BoxCollider *)
                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                                (pGVar3,
                                 UnityEngine__BoxCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::BoxCollider>__
                                );
-            (this->fields).costumeTriggerCollider = pBVar15;
+            (this->fields).costumeTriggerCollider = pBVar16;
             func_?();
             pGVar3 = (this->fields)._.cubeModelObject;
             if ((pGVar3 != (GameObject *)0x0) &&
-               (pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+               (pTVar38 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                           GameObject_get_transform(pGVar3,(MethodInfo *)0x0),
-               pTVar37 != (Transform *)0x0)) {
-              pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                                 (&VStack_32,pTVar37,(MethodInfo *)0x0);
-              pBStack_20 = (BoxCollider *)pVVar21->x;
-              pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+               pTVar38 != (Transform *)0x0)) {
+              pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                                 (&VStack_33,pTVar38,(MethodInfo *)0x0);
+              pOStack_21 = (Object__Array *)pVVar22->x;
+              pTVar38 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   ((Component *)this,(MethodInfo *)0x0);
-              if (pTVar37 != (Transform *)0x0) {
+              if (pTVar38 != (Transform *)0x0) {
                 fStack_7 = fStack_7 - fStack_5;
                 fStack_11 = fStack_11 - fStack_4;
                 fStack_12 = fStack_12 - fStack_6;
-                pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                         Transform_get_lossyScale(&VStack_32,pTVar37,(MethodInfo *)0x0);
-                fVar29 = (float)pBStack_20 / pVVar21->x;
-                uStack_36 = CONCAT44(fStack_11 * fVar29,fStack_7 * fVar29);
-                fStack_35 = fStack_12 * fVar29;
-                pBVar15 = (this->fields).costumeTriggerCollider;
-                if (pBVar15 != (BoxCollider *)0x0) {
-                  value.y = fStack_11 * fVar29;
-                  value.x = fStack_7 * fVar29;
-                  value.z = fStack_35;
+                pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                         Transform_get_lossyScale(&VStack_33,pTVar38,(MethodInfo *)0x0);
+                fVar30 = (float)pOStack_21 / pVVar22->x;
+                uStack_37 = CONCAT44(fStack_11 * fVar30,fStack_7 * fVar30);
+                fStack_36 = fStack_12 * fVar30;
+                pBVar16 = (this->fields).costumeTriggerCollider;
+                if (pBVar16 != (BoxCollider *)0x0) {
+                  value.y = fStack_11 * fVar30;
+                  value.x = fStack_7 * fVar30;
+                  value.z = fStack_36;
                   UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_size
-                            (pBVar15,value,(MethodInfo *)0x0);
-                  pBStack_20 = (this->fields).costumeTriggerCollider;
+                            (pBVar16,value,(MethodInfo *)0x0);
+                  pOStack_21 = (Object__Array *)(this->fields).costumeTriggerCollider;
                   if (cRam_? == '\0') {
                     func_?();
                     cRam_? = '\x01';
                   }
-                  if (pBStack_20 != (BoxCollider *)0x0) {
+                  if (pOStack_21 != (Object__Array *)0x0) {
                     UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_center
-                              (pBStack_20,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                              ((BoxCollider *)pOStack_21,
+                               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                                (MethodInfo *)0x0);
-                    pBVar15 = (this->fields).costumeTriggerCollider;
-                    if (pBVar15 != (BoxCollider *)0x0) {
+                    pBVar16 = (this->fields).costumeTriggerCollider;
+                    if (pBVar16 != (BoxCollider *)0x0) {
                       UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
-                                ((Collider *)pBVar15,1,(MethodInfo *)0x0);
-                      pBVar15 = (this->fields).costumeTriggerCollider;
-                      if (pBVar15 != (BoxCollider *)0x0) {
+                                ((Collider *)pBVar16,1,(MethodInfo *)0x0);
+                      pBVar16 = (this->fields).costumeTriggerCollider;
+                      if (pBVar16 != (BoxCollider *)0x0) {
                         UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                                  ((Collider *)pBVar15,1,(MethodInfo *)0x0);
-                        pCVar19 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
-                                           (pMVar18,(MethodInfo *)0x0);
-                        if (pCVar19 != (ColliderCollection *)0x0) {
+                                  ((Collider *)pBVar16,1,(MethodInfo *)0x0);
+                        pCVar20 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
+                                           (pMVar19,(MethodInfo *)0x0);
+                        if (pCVar20 != (ColliderCollection *)0x0) {
                           Assets::Scripts::Tools::ColliderCollection::
                           ColliderCollection_SetActiveCollider
-                                    (pCVar19,(Collider *)(this->fields).costumeTriggerCollider,
+                                    (pCVar20,(Collider *)(this->fields).costumeTriggerCollider,
                                      (MethodInfo *)0x0);
                           return;
                         }
@@ -995,8 +992,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar39 = (code *)swi(3);
+  (*pcVar39)();
   return;
 }
 
@@ -1026,10 +1023,10 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnHealthStateChan
   if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
   this_00 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
   if (this_00 != (MVAvatarLocal *)0x0) {
-    if (((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth
-        ) && ((MVAvatarLocal__Class *)
-              (this_00->klass->_1).typeHierarchy
-              [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] == TypeInfo__MVAvatarLocal)) {
+    if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+       ((MVAvatarLocal__Class *)
+        (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+        TypeInfo__MVAvatarLocal)) {
       iVar2 = (this_00->fields).defaultBaseMaxHealth;
       pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar3 == (PickupItemCostume_CostumeConfiguration *)0x0) {
@@ -1065,18 +1062,18 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnSpeedStateChang
   if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = (pMVar1->fields)._.worldObjectParent;
     if (((pMVar2 == (MVWorldObjectClient *)0x0) ||
-        ((pMVar2->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth))
-       || ((MVAvatarLocal__Class *)
-           (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1]
-           != TypeInfo__MVAvatarLocal)) {
+        ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
+       ((MVAvatarLocal__Class *)
+        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatarLocal)) {
       return;
     }
     pSVar3 = pMVar2[1].fields.name;
     if (pSVar3 != (String *)0x0) {
-      fVar4 = *(float *)&pSVar3[2].fields._firstChar;
+      pSVar4 = pSVar3[3].klass;
       pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        if (fVar4 == (float)(int)(pPVar5->fields).movementSpeed) {
+        if ((float)pSVar4 == (float)(int)(pPVar5->fields).movementSpeed) {
           return;
         }
         this_00 = (AvatarMotor *)pMVar2[1].fields.name;
@@ -1125,7 +1122,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
                         ((PickupItemEditable *)unaff_ESI,itemData,(MethodInfo *)0x0), bVar1 != 0)) {
     return;
   }
-  (*(unaff_ESI->klass->vtable).SetConfiguration.methodPtr)();
+  (*(code *)(unaff_ESI->klass->vtable).SetConfiguration.method)();
   PickupItemEditable::PickupItemEditable_OnCubeModelStateChanged
             ((PickupItemEditable *)unaff_ESI,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
@@ -1136,10 +1133,10 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
   if (pMVar2 != (MVPickupOwner *)0x0) {
     this_00 = (MVAvatarLocal *)(pMVar2->fields)._.worldObjectParent;
     if (((this_00 != (MVAvatarLocal *)0x0) &&
-        ((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth
-        )) && ((MVAvatarLocal__Class *)
-               (this_00->klass->_1).typeHierarchy
-               [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] == TypeInfo__MVAvatarLocal)) {
+        ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_00->klass->_1).naturalAligment)) &&
+       ((MVAvatarLocal__Class *)
+        (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+        TypeInfo__MVAvatarLocal)) {
       iVar3 = (this_00->fields).defaultBaseMaxHealth;
       pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
       if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
@@ -1158,17 +1155,16 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
     if (pMVar2 != (MVPickupOwner *)0x0) {
       pMVar5 = (pMVar2->fields)._.worldObjectParent;
       if (((pMVar5 == (MVWorldObjectClient *)0x0) ||
-          ((pMVar5->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth
-          )) || ((MVAvatarLocal__Class *)
-                 (pMVar5->klass->_1).typeHierarchy
-                 [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
-      goto code_?;
+          ((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
+         ((MVAvatarLocal__Class *)
+          (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal)) goto code_?;
       pSVar6 = pMVar5[1].fields.name;
       if (pSVar6 != (String *)0x0) {
-        fVar7 = *(float *)&pSVar6[2].fields._firstChar;
+        pSVar7 = pSVar6[3].klass;
         pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
         if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          if (fVar7 != (float)(int)(pPVar4->fields).movementSpeed) {
+          if ((float)pSVar7 != (float)(int)(pPVar4->fields).movementSpeed) {
             this_01 = (AvatarMotor *)pMVar5[1].fields.name;
             pPVar4 = PickupItemCostume_get_Configuration(unaff_ESI,(MethodInfo *)0x0);
             if ((pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) ||
@@ -1216,45 +1212,46 @@ code_?:
     MVBody::MVBody_set_ForceHidden(pMVar1,isInvisible,(MethodInfo *)0x0);
     pMVar1 = (avatar->fields).body;
     if ((pMVar1 == (MVBody *)0x0) ||
-       (this_02 = MVBody::MVBody_get_BlobShadow(pMVar1,(MethodInfo *)0x0),
-       this_02 == (AvatarBlobShadowController *)0x0)) goto code_?;
+       (this_03 = MVBody::MVBody_get_BlobShadow(pMVar1,(MethodInfo *)0x0),
+       this_03 == (AvatarBlobShadowController *)0x0)) goto code_?;
     AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
-              (this_02,isInvisible,(MethodInfo *)0x0);
-    if (((avatar->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarRemote->_1).typeHierarchyDepth)
-       || ((MVAvatarRemote__Class *)
-           (avatar->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).typeHierarchyDepth - 1]
-           != TypeInfo__MVAvatarRemote)) {
+              (this_03,isInvisible,(MethodInfo *)0x0);
+    if (((avatar->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
+       ((MVAvatarRemote__Class *)
+        (avatar->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatarRemote)) {
 code_?:
       if (isInvisible == 0) {
         return;
       }
-      source = (this->fields)._.cubeModelParent;
-      if (source != (Transform *)0x0) {
-        pIVar2 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                           ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+      this_00 = (this->fields)._.cubeModelParent;
+      if (this_00 != (Transform *)0x0) {
+        pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                 Component_GetComponentsInChildren
+                           ((Component *)this_00,
                             UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                            );
         avatar = (MVAvatar *)0x0;
-        if (pIVar2 != (IEnumerable_1_System_Object_ *)0x0) {
-          pIVar3 = pIVar2 + 2;
-          for (; (int)avatar < (int)pIVar2[1].monitor;
+        if (pOVar2 != (Object__Array *)0x0) {
+          ppOVar3 = pOVar2->vector;
+          for (; (int)avatar < (int)pOVar2->max_length;
               avatar = (MVAvatar *)((int)&((Il2CppClass_0 *)&avatar->klass)->image + 1)) {
-            if ((MVAvatar *)pIVar2[1].monitor <= avatar) goto code_?;
-            this_00 = pIVar3->klass;
-            if (this_00 == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+            if ((MVAvatar *)pOVar2->max_length <= avatar) goto code_?;
+            this_01 = (Renderer *)*ppOVar3;
+            if (this_01 == (Renderer *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                      ((Renderer *)this_00,1,(MethodInfo *)0x0);
-            this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this_00,(MethodInfo *)0x0);
+                      (this_01,1,(MethodInfo *)0x0);
+            this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)this_01,(MethodInfo *)0x0);
             this = (PickupItemCostume *)
                    UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                              (StringLiteral_Default,(MethodInfo *)0x0);
-            if (this_05 == (GameObject *)0x0) goto code_?;
+            if (this_06 == (GameObject *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      (this_05,(int32_t)this,(MethodInfo *)0x0);
-            pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
+                      (this_06,(int32_t)this,(MethodInfo *)0x0);
+            ppOVar3 = ppOVar3 + 1;
           }
-          this_01 = (this->fields).trailRenderer;
+          this_02 = (this->fields).trailRenderer;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
             cRam_? = '\x01';
@@ -1262,15 +1259,15 @@ code_?:
           pPVar4 = (this->fields)._._Configuration_k__BackingField;
           avatar = (MVAvatar *)TypeInfo__PickupItemCostume__CostumeConfiguration;
           if (pPVar4 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-            if (((pPVar4->klass->_1).typeHierarchyDepth <
-                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth) ||
+            if (((pPVar4->klass->_1).naturalAligment <
+                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
                ((pPVar4->klass->_1).typeHierarchy
-                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth - 1] !=
+                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
                 (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
             goto code_?;
-            if (this_01 != (TrailRenderer *)0x0) {
+            if (this_02 != (TrailRenderer *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_01,*(bool *)((int)&pPVar4[1].fields.cubeModelId + 2),
+                        ((Renderer *)this_02,*(bool *)((int)&pPVar4[1].fields.cubeModelId + 2),
                          (MethodInfo *)0x0);
               return;
             }
@@ -1279,22 +1276,21 @@ code_?:
       }
       goto code_?;
     }
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_03 == (MVNetworkGame *)0x0) ||
-       (this_04 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
-       this_04 == (MVLocalPlayer *)0x0)) goto code_?;
+    this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((this_04 == (MVNetworkGame *)0x0) ||
+       (this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0),
+       this_05 == (MVLocalPlayer *)0x0)) goto code_?;
     isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
-                           ((MVPlayer *)this_04,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0);
+                           ((MVPlayer *)this_05,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0);
     pAVar5 = (avatar->fields).avatar;
     avatar = (MVAvatar *)0x0;
     if ((pAVar5 == (Avatar *)0x0) ||
        (avatar = (MVAvatar *)(pAVar5->fields).avatarUIHandler, avatar == (MVAvatar *)0x0))
     goto code_?;
     pAVar6 = (AvatarUIHandlerRemote__Class *)((Il2CppClass_0 *)&avatar->klass)->image;
-    if (((TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth <= (pAVar6->_1).typeHierarchyDepth
-        ) && ((pAVar6->_1).typeHierarchy
-              [(TypeInfo__AvatarUIHandlerRemote->_1).typeHierarchyDepth - 1] ==
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+    if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <= (pAVar6->_1).naturalAligment) &&
+       ((pAVar6->_1).typeHierarchy[(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
       value = 0;
       if (isFriendly == 0) {
         value = isInvisible;
@@ -1353,16 +1349,16 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetConfiguration
   pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
   pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-    iVar3 = (pPVar2->fields)._.cubeModelId;
+    IVar3 = (pPVar2->fields)._.cubeModelId;
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    iVar3 = Extensions::Extensions_GetValueOrDefault_1
-                      (itemData,StringLiteral_CubeModelId,iVar3,
+    IVar3 = Extensions::Extensions_GetValueOrDefault_2
+                      (itemData,StringLiteral_CubeModelId,IVar3,
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
     if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-      (pPVar1->fields)._.cubeModelId = iVar3;
+      (pPVar1->fields)._.cubeModelId = IVar3;
       pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
@@ -1548,10 +1544,10 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_get_Configuration
   if (pPVar1 == (PickupItemCostume_CostumeConfiguration *)0x0) {
     return (PickupItemCostume_CostumeConfiguration *)0x0;
   }
-  if (((TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth <=
-       (pPVar1->klass->_1).typeHierarchyDepth) &&
+  if (((TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment <=
+       (pPVar1->klass->_1).naturalAligment) &&
      ((pPVar1->klass->_1).typeHierarchy
-      [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).typeHierarchyDepth - 1] ==
+      [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] ==
       (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration)) {
     return pPVar1;
   }

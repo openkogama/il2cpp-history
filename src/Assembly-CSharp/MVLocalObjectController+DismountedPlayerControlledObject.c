@@ -33,7 +33,7 @@ void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObje
                ILocalObject *playerControlledObject,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).playerControlledObject = playerControlledObject;
   func_?(&(this->fields).playerControlledObject,playerControlledObject);

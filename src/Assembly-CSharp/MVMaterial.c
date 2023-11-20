@@ -126,83 +126,83 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_GenerateCube
                (MVMaterial *this,int32_t materialId,MethodInfo *method)
 
 {
+  this_00 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Mesh);
     func_?(&TypeInfo__TextureAtlas);
     cRam_? = '\x01';
   }
   pMVar1 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
-  if (pMVar1 != (Mesh *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar1,(MethodInfo *)0x0);
-    (this->fields)._Mesh_k__BackingField = pMVar1;
-    func_?(&(this->fields)._Mesh_k__BackingField,pMVar1);
-    MeshDataPool::MeshDataPool_Reset((MethodInfo *)0x0);
-    if ((TypeInfo__TextureAtlas->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlas);
-    }
-    VVar2 = TextureAtlas::TextureAtlas_GetAtlasPoint(materialId,(MethodInfo *)0x0);
-    direction = 0;
-    fStack_3 = VVar2.y;
-    iVar4 = -3;
+  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar1,(MethodInfo *)0x0);
+  (this->fields)._Mesh_k__BackingField = pMVar1;
+  func_?(&(this->fields)._Mesh_k__BackingField,pMVar1);
+  MeshDataPool::MeshDataPool_Reset((MethodInfo *)0x0);
+  if ((TypeInfo__TextureAtlas->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__TextureAtlas);
+  }
+  VVar2 = TextureAtlas::TextureAtlas_GetAtlasPoint(materialId,(MethodInfo *)0x0);
+  direction = 0;
+  this = (MVMaterial *)0xfffffffd;
+  fStack_3 = VVar2.y;
+  uStack_4 = 0;
+  do {
+    MVMaterial_AddVertices(this_00,direction,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)((int)&this->klass + 3),(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)&this->monitor,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)((int)&this->monitor + 1),(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)&this->monitor,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)((int)&this->monitor + 2),(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex((int32_t)((int)&this->monitor + 1),(MethodInfo *)0x0);
+    uVar5 = 0;
+    uVar6 = uStack_4;
+    MeshDataPool::MeshDataPool_AddUv((Vector2)0x0,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f800000,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f80000000000000,(MethodInfo *)0x0);
+    this = (MVMaterial *)&UNK_?;
+    MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f8000003f800000,(MethodInfo *)0x0);
+    iVar7 = 4;
     do {
-      index = iVar4 + 4;
-      MVMaterial_AddVertices(this,direction,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(iVar4 + 3,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(index,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(iVar4 + 5,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(index,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(iVar4 + 6,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddIndex(iVar4 + 5,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddUv((Vector2)0x0,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f800000,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f80000000000000,(MethodInfo *)0x0);
-      MeshDataPool::MeshDataPool_AddUv((Vector2)0x3f8000003f800000,(MethodInfo *)0x0);
-      iVar4 = 4;
-      do {
-        color.g = (float)uStack_5;
-        color.r = 1.0;
-        color.b = fStack_3;
-        color.a = 1.0;
-        MeshDataPool::MeshDataPool_AddColor(color,(MethodInfo *)0x0);
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
-      direction = direction + 1;
-      iVar4 = index;
-    } while (direction < 6);
-    pMVar1 = (this->fields)._Mesh_k__BackingField;
-    value = MeshDataPool::MeshDataPool_GetVertices((MethodInfo *)0x0);
+      color.g = (float)uVar5;
+      color.r = (float)uVar6;
+      color.b = fStack_3;
+      color.a = 1.0;
+      MeshDataPool::MeshDataPool_AddColor(color,(MethodInfo *)0x0);
+      iVar7 = iVar7 + -1;
+    } while (iVar7 != 0);
+    direction = direction + 1;
+  } while (direction < 6);
+  pMVar1 = (this_00->fields)._Mesh_k__BackingField;
+  value = MeshDataPool::MeshDataPool_GetVertices((MethodInfo *)0x0);
+  if (pMVar1 != (Mesh *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar1,value,(MethodInfo *)0x0)
+    ;
+    pMVar1 = (this_00->fields)._Mesh_k__BackingField;
+    value_00 = MeshDataPool::MeshDataPool_GetUvs((MethodInfo *)0x0);
     if (pMVar1 != (Mesh *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                (pMVar1,value,(MethodInfo *)0x0);
-      pMVar1 = (this->fields)._Mesh_k__BackingField;
-      value_00 = MeshDataPool::MeshDataPool_GetUvs((MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv(pMVar1,value_00,(MethodInfo *)0x0);
+      pMVar1 = (this_00->fields)._Mesh_k__BackingField;
+      value_01 = MeshDataPool::MeshDataPool_GetIndices((MethodInfo *)0x0);
       if (pMVar1 != (Mesh *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
-                  (pMVar1,value_00,(MethodInfo *)0x0);
-        pMVar1 = (this->fields)._Mesh_k__BackingField;
-        value_01 = MeshDataPool::MeshDataPool_GetIndices((MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
+                  (pMVar1,value_01,(MethodInfo *)0x0);
+        pMVar1 = (this_00->fields)._Mesh_k__BackingField;
+        value_02 = MeshDataPool::MeshDataPool_GetColors((MethodInfo *)0x0);
         if (pMVar1 != (Mesh *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
-                    (pMVar1,value_01,(MethodInfo *)0x0);
-          pMVar1 = (this->fields)._Mesh_k__BackingField;
-          value_02 = MeshDataPool::MeshDataPool_GetColors((MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
+                    (pMVar1,value_02,(MethodInfo *)0x0);
+          pMVar1 = (this_00->fields)._Mesh_k__BackingField;
           if (pMVar1 != (Mesh *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-                      (pMVar1,value_02,(MethodInfo *)0x0);
-            pMVar1 = (this->fields)._Mesh_k__BackingField;
-            if (pMVar1 != (Mesh *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateNormals
-                        (pMVar1,(MethodInfo *)0x0);
-              return;
-            }
+            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateNormals
+                      (pMVar1,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -221,7 +221,7 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
   (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
@@ -277,7 +277,7 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_2
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
   (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;

@@ -17,18 +17,16 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_Initialize
     this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
-                 ,(MethodInfo *)0x0);
-      if (this_00 != (WinningConditionManager *)0x0) {
-        MVWorldObject.dll::WinningConditionManager::
-        WinningConditionManager_add_OnWinningConditionReset
-                  (this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (WinningConditionManager *)0x0) {
+      MVWorldObject.dll::WinningConditionManager::
+      WinningConditionManager_add_OnWinningConditionReset
+                (this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -60,12 +58,12 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_OnDestroy
       this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField;
       this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_01,unaff_ESI,
-                     MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
-                     ,(MethodInfo *)0x0), this_00 != (WinningConditionManager *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,unaff_ESI,
+                 MethodInfo__GameMeterOculus__OnVictoryConditionMet_System__Object__System__EventArgs_
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (WinningConditionManager *)0x0) {
         MVWorldObject.dll::WinningConditionManager::
         WinningConditionManager_remove_OnWinningConditionReset
                   (this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
@@ -87,7 +85,8 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_OnVictoryConditionMet
                (GameMeterOculus *this,Object *sender,EventArgs *args,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).UpdateValue.methodPtr)(this,(this->klass->vtable).UpdateValue.method);
+  (*(code *)(this->klass->vtable).UpdateValue.method)
+            (this,(this->klass->vtable).SetGameMeterVisibility.methodPtr);
   return;
 }
 
@@ -194,7 +193,7 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_UpdateValue
                             (this_00,index,
                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      (**(code **)(*(int *)RVar3 + 0xdc))();
+      (**(code **)(*(int *)RVar3 + 0xe0))();
       index = index + 1;
       pLVar2 = (this->fields)._._.gameMeterVisualEffects;
     }

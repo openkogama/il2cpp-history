@@ -1,23 +1,4 @@
 
-/* BytePacker GetBytePackerFromKogamaDataPackage(Int32, KogamaDataPackage, Boolean) */
-
-BytePacker *
-MVWorldObject.dll::MV::WorldObject::KogamaDataHandlerWrapper::
-KogamaDataHandlerWrapper_GetBytePackerFromKogamaDataPackage
-          (int32_t serializeVersion,KogamaDataPackage *kogamaDataPackage,bool writeRuntimeData,
-          MethodInfo *method)
-
-{
-  if (serializeVersion != 0xb) {
-    return (BytePacker *)0x0;
-  }
-  pBVar1 = BytePackerFunctions::BytePackerFunctionsVersion11::
-           BytePackerFunctionsVersion11_GetBytePackerFromKogamaDataPackage
-                     (kogamaDataPackage,writeRuntimeData,(MethodInfo *)0x0);
-  return pBVar1;
-}
-
-
 /* Dictionary`2[System.Object,System.Object] GetDataParameters(Int32, BytePacker, KogamaDataType,
    Boolean) */
 

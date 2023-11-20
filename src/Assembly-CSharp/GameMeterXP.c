@@ -18,35 +18,39 @@ void Assembly-CSharp.dll::GameMeterXP::GameMeterXP_Init(GameMeterXP *this,Method
      pMVar2 == (MVLocalPlayer *)0x0)) {
 code_?:
     func_?();
+code_?:
+    func_?();
   }
   else {
     pXVar3 = (pMVar2->fields).OnXPProgressData;
-    this_01 = (Action_1_Object_ *)func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
-    if (this_01 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+    this_01 = (UnityAction_1_System_Object_ *)
+              func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
               (this_01,(Object *)this,MethodInfo__GameMeterXP__OnProgressUpdate_XPProgressData_,
                (MethodInfo *)0x0);
     pXVar3 = (XPProgress_OnXPProgressDataDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pXVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pXVar3 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+    if (pXVar3 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
+      (pMVar2->fields).OnXPProgressData = (XPProgress_OnXPProgressDataDelegate *)0x0;
+    }
+    else {
       pXVar4 = (XPProgress_OnXPProgressDataDelegate *)0x0;
       if (pXVar3->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
         pXVar4 = pXVar3;
       }
-      if (pXVar4 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
-        (pMVar2->fields).OnXPProgressData = pXVar4;
-        pXVar4 = (XPProgress_OnXPProgressDataDelegate *)0x0;
-        if (pXVar3->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-          pXVar4 = pXVar3;
-        }
-        if (pXVar4 != (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
+      if (pXVar4 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
+        func_?();
+        goto code_?;
       }
-      func_?();
-      goto code_?;
+      (pMVar2->fields).OnXPProgressData = pXVar4;
+      pXVar4 = (XPProgress_OnXPProgressDataDelegate *)0x0;
+      if (pXVar3->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
+        pXVar4 = pXVar3;
+      }
+      if (pXVar4 == (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
     }
-    (pMVar2->fields).OnXPProgressData = (XPProgress_OnXPProgressDataDelegate *)0x0;
-code_?:
     func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)this,1,(MethodInfo *)0x0);
@@ -55,7 +59,6 @@ code_?:
     }
     pUVar5 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_02 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_02,(Object *)this,MethodInfo__GameMeterXP__Init__,(MethodInfo *)0x0);
@@ -70,7 +73,9 @@ code_?:
       if ((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
          pMVar2 != (MVLocalPlayer *)0x0)) {
-        this_03 = MVLocalPlayer::MVLocalPlayer_get_XPProgressData(pMVar2,(MethodInfo *)0x0);
+        this_03 = (SparselyPopulatedArrayFragment_1_System_Object_ *)
+                  DayNightCycle::DayNightCycle_get__skyParamsList
+                            ((DayNightCycle *)pMVar2,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&
                           MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
@@ -94,18 +99,17 @@ code_?:
                                          MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                                         ), RVar8 == (RegexCharClass_SingleRange)0x0))
             goto code_?;
-            (**(code **)(*(int *)RVar8 + 0xdc))(RVar8);
+            (**(code **)(*(int *)RVar8 + 0xe0))(RVar8);
             pLVar6 = (this->fields)._.gameMeterVisualEffects;
             iVar7 = iVar7 + 1;
             if (pLVar6 == (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0)
             goto code_?;
           }
-          if (this_03 != (XPProgressData *)0x0) {
-            iVar7 = (this_03->fields).playerCurrentXP;
+          if (this_03 != (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0) {
+            iVar7 = (this_03->fields)._freeCount;
             iVar9 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::
                     Object]::SparselyPopulatedArrayFragment_1_System_Object__get_Length
-                              ((SparselyPopulatedArrayFragment_1_System_Object_ *)this_03,
-                               (MethodInfo *)0x0);
+                              (this_03,(MethodInfo *)0x0);
             (this->fields).elapsedInterpolationTime = 0.0;
             (this->fields).interpolateTowardsXPProgress = (float)(iVar7 / iVar9);
             return;
@@ -118,13 +122,15 @@ code_?:
     if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
       pUVar10 = pUVar5;
     }
-    if (pUVar10 == (UnityAction *)0x0) goto code_?;
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar10;
-    pUVar10 = (UnityAction *)0x0;
-    if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar10 = pUVar5;
+    if (pUVar10 != (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar10;
+      pUVar10 = (UnityAction *)0x0;
+      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar10 = pUVar5;
+      }
+      if (pUVar10 != (UnityAction *)0x0) goto code_?;
+      goto code_?;
     }
-    if (pUVar10 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
 code_?:
@@ -164,178 +170,180 @@ code_?:
     pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
     pNVar2 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar2 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
-code_?:
-      func_?();
-      pUStack3 = extraout_EDX;
-    }
-    else {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar2,(Object *)0x0,MethodInfo__GameMeterXP__Init__,(MethodInfo *)0x0);
-      pUVar1 = (UnityAction *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
-      if (pUVar1 == (UnityAction *)0x0) {
-        TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-        pUStack3 = (UnityAction__Class *)0x0;
-        func_?();
-        return;
-      }
-      pUVar4 = (UnityAction *)0x0;
-      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUVar1;
-      }
-      pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUVar4 == (UnityAction *)0x0) goto code_?;
-      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar4;
-      pUVar4 = (UnityAction *)0x0;
-      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUVar1;
-      }
-      pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUVar4 != (UnityAction *)0x0) {
-        pUStack3 = (UnityAction__Class *)pUVar4;
-        func_?();
-        return;
-      }
-    }
-    pUStack3 = (UnityAction__Class *)func_?();
-code_?:
-    func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
-  }
-  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar6 == (MVNetworkGame *)0x0) ||
-     (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
-     pMVar7 == (MVLocalPlayer *)0x0)) goto code_?;
-  bVar8 = MVLocalPlayer::MVLocalPlayer_get_CanGetXPProgressData(pMVar7,(MethodInfo *)0x0);
-  if (bVar8 == 0) goto code_?;
-  pXStack9 = extraout_ECX;
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&TypeInfo__XPProgress__OnXPProgressDataDelegate);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
-    cRam_? = '\x01';
-  }
-  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar6 == (MVNetworkGame *)0x0) ||
-     (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
-     pMVar7 == (MVLocalPlayer *)0x0)) {
-code_?:
-    func_?();
-  }
-  else {
-    pXStack9 = (pMVar7->fields).OnXPProgressData;
-    this_00 = (Action_1_Object_ *)func_?();
-    if (this_00 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)in_stack_10,
-               MethodInfo__GameMeterXP__OnProgressUpdate_XPProgressData_,(MethodInfo *)0x0);
-    pXVar11 = (XPProgress_OnXPProgressDataDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pXStack9,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pXVar11 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
-      pXVar12 = (XPProgress_OnXPProgressDataDelegate *)0x0;
-      if (pXVar11->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-        pXVar12 = pXVar11;
-      }
-      if (pXVar12 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
-        (pMVar7->fields).OnXPProgressData = pXVar12;
-        pXVar12 = (XPProgress_OnXPProgressDataDelegate *)0x0;
-        if (pXVar11->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-          pXVar12 = pXVar11;
-        }
-        if (pXVar12 != (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
-      }
-      func_?();
-      goto code_?;
-    }
-    (pMVar7->fields).OnXPProgressData = (XPProgress_OnXPProgressDataDelegate *)0x0;
-code_?:
-    func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              (in_stack_10,1,(MethodInfo *)0x0);
-    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
-    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (pNVar2 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar2,(Object *)in_stack_10,MethodInfo__GameMeterXP__Init__,(MethodInfo *)0x0)
-    ;
+              (pNVar2,(Object *)this,MethodInfo__GameMeterXP__Init__,(MethodInfo *)0x0);
     pUVar1 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
+             mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pUVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
     if (pUVar1 == (UnityAction *)0x0) {
       TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-code_?:
       func_?();
-      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar6 != (MVNetworkGame *)0x0) &&
-         (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
-         pMVar7 != (MVLocalPlayer *)0x0)) {
-        this_01 = MVLocalPlayer::MVLocalPlayer_get_XPProgressData(pMVar7,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          func_?();
-          cRam_? = '\x01';
-        }
-        pBVar13 = in_stack_10[1].klass;
-        iVar14 = 0;
-        if (pBVar13 != (Behaviour__Class *)0x0) {
-          while (iVar14 < (int)(pBVar13->_0).namespaze) {
-            if ((in_stack_10[1].klass == (Behaviour__Class *)0x0) ||
-               (RVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                    *)in_stack_10[1].klass,iVar14,
-                                   MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                                  ), RVar15 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            (**(code **)(*(int *)RVar15 + 0xdc))();
-            pBVar13 = in_stack_10[1].klass;
-            iVar14 = iVar14 + 1;
-            if (pBVar13 == (Behaviour__Class *)0x0) goto code_?;
-          }
-          if (this_01 != (XPProgressData *)0x0) {
-            iVar14 = (this_01->fields).playerCurrentXP;
-            iVar16 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::
-                    Object]::SparselyPopulatedArrayFragment_1_System_Object__get_Length
-                              ((SparselyPopulatedArrayFragment_1_System_Object_ *)this_01,
-                               (MethodInfo *)0x0);
-            in_stack_10[3].klass = (Behaviour__Class *)0x0;
-            in_stack_10[2].monitor = (MonitorData *)(float)(iVar14 / iVar16);
-            return;
-          }
-        }
+      return;
+    }
+    pUVar3 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar3 = pUVar1;
+    }
+    if (pUVar3 != (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
+      pUVar3 = (UnityAction *)0x0;
+      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar3 = pUVar1;
+      }
+      if (pUVar3 != (UnityAction *)0x0) {
+        func_?();
+        return;
       }
       goto code_?;
     }
-    pUVar4 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUVar1;
+    func_?();
+  }
+  else {
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 != (MVNetworkGame *)0x0) &&
+       (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+       pMVar5 != (MVLocalPlayer *)0x0)) {
+      this = (GameMeterXP *)0x0;
+      bVar6 = MVLocalPlayer::MVLocalPlayer_get_CanGetXPProgressData(pMVar5,(MethodInfo *)0x0);
+      if (bVar6 == 0) goto code_?;
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?(&TypeInfo__XPProgress__OnXPProgressDataDelegate);
+        func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+        cRam_? = '\x01';
+      }
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar4 == (MVNetworkGame *)0x0) ||
+         (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+         pMVar5 == (MVLocalPlayer *)0x0)) {
+code_?:
+        func_?();
+code_?:
+        func_?();
+      }
+      else {
+        pXVar7 = (pMVar5->fields).OnXPProgressData;
+        this_00 = (UnityAction_1_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+        UnityAction_1_System_Object___ctor
+                  (this_00,(Object *)in_stack_8,
+                   MethodInfo__GameMeterXP__OnProgressUpdate_XPProgressData_,(MethodInfo *)0x0);
+        pXVar7 = (XPProgress_OnXPProgressDataDelegate *)
+                 mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pXVar7,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (pXVar7 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
+          (pMVar5->fields).OnXPProgressData = (XPProgress_OnXPProgressDataDelegate *)0x0;
+        }
+        else {
+          pXVar9 = (XPProgress_OnXPProgressDataDelegate *)0x0;
+          if (pXVar7->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
+            pXVar9 = pXVar7;
+          }
+          if (pXVar9 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
+            func_?();
+            goto code_?;
+          }
+          (pMVar5->fields).OnXPProgressData = pXVar9;
+          pXVar9 = (XPProgress_OnXPProgressDataDelegate *)0x0;
+          if (pXVar7->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
+            pXVar9 = pXVar7;
+          }
+          if (pXVar9 == (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
+        }
+        func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  (in_stack_8,1,(MethodInfo *)0x0);
+        if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+        pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar2,(Object *)in_stack_8,MethodInfo__GameMeterXP__Init__,
+                   (MethodInfo *)0x0);
+        pUVar1 = (UnityAction *)
+                 mscorlib.dll::System::Delegate::Delegate_Remove
+                           ((Delegate *)pUVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+        if (pUVar1 == (UnityAction *)0x0) {
+          TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+code_?:
+          func_?();
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar4 != (MVNetworkGame *)0x0) &&
+             (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+             pMVar5 != (MVLocalPlayer *)0x0)) {
+            this_01 = (SparselyPopulatedArrayFragment_1_System_Object_ *)
+                      DayNightCycle::DayNightCycle_get__skyParamsList
+                                ((DayNightCycle *)pMVar5,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              func_?();
+              func_?();
+              cRam_? = '\x01';
+            }
+            pMVar10 = in_stack_8[1].monitor;
+            iVar11 = 0;
+            if (pMVar10 != (MonitorData *)0x0) {
+              while (iVar11 < *(int *)(pMVar10 + 0xc)) {
+                if (((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                     in_stack_8[1].monitor ==
+                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+                   (RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                            RegularExpressions::RegexCharClass+SingleRange]::
+                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                        *)in_stack_8[1].monitor,iVar11,
+                                       MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
+                                      ), RVar12 == (RegexCharClass_SingleRange)0x0))
+                goto code_?;
+                (**(code **)(*(int *)RVar12 + 0xe0))();
+                pMVar10 = in_stack_8[1].monitor;
+                iVar11 = iVar11 + 1;
+                if (pMVar10 == (MonitorData *)0x0) goto code_?;
+              }
+              if (this_01 != (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0) {
+                iVar11 = (this_01->fields)._freeCount;
+                iVar13 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::
+                        Object]::SparselyPopulatedArrayFragment_1_System_Object__get_Length
+                                  (this_01,(MethodInfo *)0x0);
+                in_stack_8[3].monitor = (MonitorData *)0x0;
+                in_stack_8[2].fields._._.m_CachedPtr = (void *)(float)(iVar11 / iVar13);
+                return;
+              }
+            }
+          }
+          goto code_?;
+        }
+        pUVar3 = (UnityAction *)0x0;
+        if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar3 = pUVar1;
+        }
+        if (pUVar3 != (UnityAction *)0x0) {
+          TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
+          pUVar3 = (UnityAction *)0x0;
+          if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUVar3 = pUVar1;
+          }
+          if (pUVar3 != (UnityAction *)0x0) goto code_?;
+          goto code_?;
+        }
+      }
+      func_?();
+code_?:
+      func_?();
+      pcVar14 = (code *)swi(3);
+      (*pcVar14)();
+      return;
     }
-    if (pUVar4 == (UnityAction *)0x0) goto code_?;
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar4;
-    pUVar4 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUVar1;
-    }
-    if (pUVar4 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -368,7 +376,7 @@ void Assembly-CSharp.dll::GameMeterXP::GameMeterXP_OnProgressUpdate
                             (this_00,iVar1,
                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0xdc))(RVar3,*(undefined4 *)(*(int *)RVar3 + 0xe0));
+      (**(code **)(*(int *)RVar3 + 0xe0))(RVar3,*(undefined4 *)(*(int *)RVar3 + 0xe4));
       pLVar2 = (this->fields)._.gameMeterVisualEffects;
       iVar1 = iVar1 + 1;
       if (pLVar2 == (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) goto code_?;
@@ -439,7 +447,7 @@ void Assembly-CSharp.dll::GameMeterXP::GameMeterXP_Update(GameMeterXP *this,Meth
                           (this_00,index,
                            MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                           ), RVar4 == (RegexCharClass_SingleRange)0x0)) break;
-    (**(code **)(*(int *)RVar4 + 0xdc))(RVar4);
+    (**(code **)(*(int *)RVar4 + 0xe0))(RVar4);
     index = index + 1;
     pLVar3 = (this->fields)._.gameMeterVisualEffects;
   }
@@ -469,22 +477,17 @@ void Assembly-CSharp.dll::GameMeterXP::GameMeterXP__ctor(GameMeterXP *this,Metho
             func_?(
                            TypeInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>
                            );
-  if (this_00 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
-              );
-    (this->fields)._.gameMeterVisualEffects = this_00;
-    func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
-    (this->fields)._.meterActive = 1;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
+            );
+  (this->fields)._.gameMeterVisualEffects = this_00;
+  func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
+  (this->fields)._.meterActive = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

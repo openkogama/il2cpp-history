@@ -44,33 +44,31 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_Awake(SkyboxManager *this
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__MVGameControllerBase__OnPostGameInitDelegate);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__SkyboxManager___Awake_b__24_0__,(MethodInfo *)0x0);
+  pMStack2 =
+       (MVGameControllerBase_OnPostGameInitDelegate *)
+       mscorlib.dll::System::Delegate::Delegate_Combine
+                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMStack2 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
+    TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit =
+         (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
+  if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
+    pMVar1 = pMStack2;
+  }
+  if (pMVar1 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
+    pMStack3 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
     func_?();
     pMStack2 = extraout_ECX;
     pMStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__SkyboxManager___Awake_b__24_0__,(MethodInfo *)0x0)
-    ;
-    pMStack2 =
-         (MVGameControllerBase_OnPostGameInitDelegate *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMStack2 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) {
-      TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit =
-           (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
-    if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
-    if (pMVar1 == (MVGameControllerBase_OnPostGameInitDelegate *)0x0) goto code_?;
     TypeInfo__MVGameControllerBase->static_fields->OnPostGameInit = pMVar1;
     pMVar1 = (MVGameControllerBase_OnPostGameInitDelegate *)0x0;
     if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnPostGameInitDelegate) {
@@ -79,9 +77,6 @@ code_?:
     pMStack3 = TypeInfo__MVGameControllerBase__OnPostGameInitDelegate;
     if (pMVar1 != (MVGameControllerBase_OnPostGameInitDelegate *)0x0) goto code_?;
   }
-  pMStack3 = (MVGameControllerBase_OnPostGameInitDelegate__Class *)func_?();
-  pMStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -150,34 +145,33 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_ComputeSkyboxSettings
     }
     pSVar4 = TypeInfo__SkyboxManager____c->static_fields->__9;
     this_00 = (Func_2_MVSkybox_Boolean_ *)func_?(TypeInfo__System__Func<MVSkybox,_bool>);
-    if (this_00 == (Func_2_MVSkybox_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
               ((Func_2_Object_Boolean_ *)this_00,(Object *)pSVar4,
                MethodInfo__SkyboxManager____c___ComputeSkyboxSettings_b__30_0_MVSkybox_,
                (MethodInfo *)0x0);
     TypeInfo__SkyboxManager____c->static_fields->__9__30_0 = this_00;
-    func_?();
+    func_?(&TypeInfo__SkyboxManager____c->static_fields->__9__30_0,this_00);
   }
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_4
-                        ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_00,
-                         System__Collections__Generic__IEnumerable<MVSkybox>_MethodInfo__System__Linq__Enumerable__Where<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_bool>_
-                        );
-  iVar5 = System.Core.dll::System::Linq::Enumerable::Enumerable_Count_1
-                    (source_00,
+  pIVar5 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_2
+                     ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_00,
+                      System__Collections__Generic__IEnumerable<MVSkybox>_MethodInfo__System__Linq__Enumerable__Where<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_bool>_
+                     );
+  iVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Count_2
+                    ((IEnumerable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pIVar5,
                      int_MethodInfo__System__Linq__Enumerable__Count<MVSkybox>_System__Collections__Generic__IEnumerable<MVSkybox>_
                     );
-  if (iVar5 == 0) {
+  if (iVar6 == 0) {
     if ((TypeInfo__SkyboxManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar6 = TypeInfo__SkyboxManager->static_fields;
-    fVar7 = (pSVar6->defaultColor).g;
-    fVar8 = (pSVar6->defaultColor).b;
-    fVar9 = (pSVar6->defaultColor).a;
-    color->r = (pSVar6->defaultColor).r;
-    color->g = fVar7;
-    color->b = fVar8;
-    color->a = fVar9;
+    pSVar7 = TypeInfo__SkyboxManager->static_fields;
+    fVar8 = (pSVar7->defaultColor).g;
+    fVar9 = (pSVar7->defaultColor).b;
+    fVar10 = (pSVar7->defaultColor).a;
+    color->r = (pSVar7->defaultColor).r;
+    color->g = fVar8;
+    color->b = fVar9;
+    color->a = fVar10;
     *fogDensity = 0.007;
     *sunAngle = 80.0;
     *unaff_FS_OFFSET = uStack_3;
@@ -186,89 +180,91 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_ComputeSkyboxSettings
   if ((TypeInfo__SkyboxManager____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pFVar10 = TypeInfo__SkyboxManager____c->static_fields->__9__30_1;
-  if (pFVar10 == (Func_2_MVSkybox_Single_ *)0x0) {
+  pFVar11 = TypeInfo__SkyboxManager____c->static_fields->__9__30_1;
+  if (pFVar11 == (Func_2_MVSkybox_Single_ *)0x0) {
     if ((TypeInfo__SkyboxManager____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     pSVar4 = TypeInfo__SkyboxManager____c->static_fields->__9;
-    pFVar10 = (Func_2_MVSkybox_Single_ *)func_?();
-    if (pFVar10 == (Func_2_MVSkybox_Single_ *)0x0) goto code_?;
+    pFVar11 = (Func_2_MVSkybox_Single_ *)func_?();
     mscorlib.dll::System::Func`2[Object,Single]::Func_2_Object_Single___ctor
-              ((Func_2_Object_Single_ *)pFVar10,(Object *)pSVar4,
+              ((Func_2_Object_Single_ *)pFVar11,(Object *)pSVar4,
                MethodInfo__SkyboxManager____c___ComputeSkyboxSettings_b__30_1_MVSkybox_,
                (MethodInfo *)0x0);
-    TypeInfo__SkyboxManager____c->static_fields->__9__30_1 = pFVar10;
+    TypeInfo__SkyboxManager____c->static_fields->__9__30_1 = pFVar11;
     func_?();
   }
-  pIVar11 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_4
-                      (source_00,(Func_2_Object_Single_ *)pFVar10,
-                       System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_
-                      );
-  fVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_Average(pIVar11,(MethodInfo *)0x0);
-  *sunAngle = fVar7;
-  if (source_00 != (IEnumerable_1_System_Object_ *)0x0) {
+  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
+                        ((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)pIVar5,
+                         (Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)pFVar11,
+                         System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_
+                        );
+  fVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Average
+                     ((IEnumerable_1_System_Single_ *)source_00,(MethodInfo *)0x0);
+  *sunAngle = fVar8;
+  if (pIVar5 != (IEnumerable_1_System_Object_ *)0x0) {
     piVar12 = (int *)func_?();
     uStack_1 = 1;
     while (piVar12 != (int *)0x0) {
-      fVar7 = 0.0;
+      fVar8 = 0.0;
       pIVar13 = TypeInfo__System__Collections__IEnumerator;
       piVar14 = piVar12;
       cVar15 = func_?();
       if (cVar15 == '\0') {
         uStack_1 = 0xffffffff;
         if (piVar12 != (int *)0x0) {
-          fVar7 = 0.0;
+          fVar8 = 0.0;
           pIVar13 = (IEnumerator__Class *)TypeInfo__System__IDisposable;
           func_?();
           piVar14 = piVar12;
         }
         uStack_1 = 0xffffffff;
-        color->r = fVar7;
+        color->r = fVar8;
         color->g = (float)pIVar13;
         color->b = (float)piVar14;
         color->a = 1.0;
         if ((TypeInfo__SkyboxManager____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pFVar10 = TypeInfo__SkyboxManager____c->static_fields->__9__30_2;
-        if (pFVar10 == (Func_2_MVSkybox_Single_ *)0x0) {
+        pFVar11 = TypeInfo__SkyboxManager____c->static_fields->__9__30_2;
+        if (pFVar11 == (Func_2_MVSkybox_Single_ *)0x0) {
           if ((TypeInfo__SkyboxManager____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           pSVar4 = TypeInfo__SkyboxManager____c->static_fields->__9;
-          pFVar10 = (Func_2_MVSkybox_Single_ *)func_?();
-          if (pFVar10 == (Func_2_MVSkybox_Single_ *)0x0) break;
+          pFVar11 = (Func_2_MVSkybox_Single_ *)func_?();
           mscorlib.dll::System::Func`2[Object,Single]::Func_2_Object_Single___ctor
-                    ((Func_2_Object_Single_ *)pFVar10,(Object *)pSVar4,
+                    ((Func_2_Object_Single_ *)pFVar11,(Object *)pSVar4,
                      MethodInfo__SkyboxManager____c___ComputeSkyboxSettings_b__30_2_MVSkybox_,
                      (MethodInfo *)0x0);
-          TypeInfo__SkyboxManager____c->static_fields->__9__30_2 = pFVar10;
+          TypeInfo__SkyboxManager____c->static_fields->__9__30_2 = pFVar11;
           func_?();
         }
-        pIVar11 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_4
-                            (source_00,(Func_2_Object_Single_ *)pFVar10,
-                             System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_
-                            );
-        fVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_Average
-                           (pIVar11,(MethodInfo *)0x0);
-        *fogDensity = fVar7;
+        pIVar5 = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
+                           ((IEnumerable_1_UnityEngine_UIElements_StyleSelectorPart_ *)pIVar5,
+                            (Func_2_UnityEngine_UIElements_StyleSelectorPart_Object_ *)pFVar11,
+                            System__Collections__Generic__IEnumerable<float>_MethodInfo__System__Linq__Enumerable__Select<MVSkybox,_float>_System__Collections__Generic__IEnumerable<MVSkybox>__System__Func<MVSkybox,_float>_
+                           );
+        fVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Average
+                           ((IEnumerable_1_System_Single_ *)pIVar5,(MethodInfo *)0x0);
+        *fogDensity = fVar8;
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       if (piVar12 == (int *)0x0) break;
       iVar16 = *piVar12;
       uVar17 = 0;
-      if (*(ushort *)(iVar16 + 0xb2) != 0) {
+      if (*(ushort *)(iVar16 + 0xb6) != 0) {
         do {
           if (*(IEnumerator_1_MVSkybox___Class **)(*(int *)(iVar16 + 0x58) + (uint)uVar17 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<MVSkybox>) {
             puVar18 = (undefined4 *)
-                      (*(int *)(*(int *)(iVar16 + 0x58) + 4 + (uint)uVar17 * 8) * 8 + 0xbc + iVar16);
+                      (iVar16 + (*(int *)(*(int *)(iVar16 + 0x58) + 4 + (uint)uVar17 * 8) + 0x18) * 8)
+            ;
             goto code_?;
           }
           uVar17 = uVar17 + 1;
-        } while (uVar17 < *(ushort *)(iVar16 + 0xb2));
+        } while (uVar17 < *(ushort *)(iVar16 + 0xb6));
       }
       puVar18 = (undefined4 *)func_?();
 code_?:
@@ -277,7 +273,6 @@ code_?:
       MVSkybox::MVSkybox_get_SkyboxColor((Color *)&stack0xffffff98,this_01,(MethodInfo *)0x0);
     }
   }
-code_?:
   func_?();
   func_?();
   pcVar19 = (code *)swi(3);
@@ -347,7 +342,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_Disable
                           );
         if (bVar8 == 0) {
           _Stack_8 = (_union_155)0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&LStack_4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVSkybox>__Dispose__
@@ -383,19 +378,14 @@ Assembly-CSharp.dll::SkyboxManager::SkyboxManager_DoAnimate(SkyboxManager *this,
     func_?(&TypeInfo__SkyboxManager___DoAnimate_d__23);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SkyboxManager___DoAnimate_d__23);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__SkyboxManager___DoAnimate_d__23;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -461,7 +451,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_OnEnable
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVSkybox>__MoveNext__
                           );
         if (bVar4 == 0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVSkybox>__Dispose__
@@ -534,13 +524,10 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_Remove
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).mvSkyboxes;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove
-              (this_00,(RegexCharClass_SingleRange)skybox,
+  this_00 = (this->fields).mvSkyboxes;
+  if (this_00 != (List_1_MVSkybox_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Remove
+              ((List_1_System_Object_ *)this_00,(Object *)skybox,
                MethodInfo__System__Collections__Generic__List<MVSkybox>__Remove_MVSkybox_);
     return;
   }
@@ -683,7 +670,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor
                        __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       }
       fVar6 = (this->fields).skyContrast;
-      if (_UNK_? < 3.074889e-29) {
+      if (_UNK_? < 3.232998e-29) {
         fVar6 = (float)((uint)fVar6 ^
                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       }
@@ -696,7 +683,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor
       fVar9 = fVar3 + fVar4;
       if (this_04 != (Camera *)0x0) {
         puVar14 = &UNK_?;
-        value_02.g = 3.074889e-29 - fVar6;
+        value_02.g = 3.232998e-29 - fVar6;
         value_02.r = fVar3 - fVar4;
         value_02.b = fVar11 - fVar7;
         value_02.a = color.a;
@@ -816,20 +803,15 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager__ctor(SkyboxManager *this
   (this->fields).currentColor.a = fVar5;
   this_00 = (List_1_MVSkybox_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVSkybox>);
-  if (this_00 != (List_1_MVSkybox_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVSkybox>__List__);
-    (this->fields).mvSkyboxes = this_00;
-    func_?(&(this->fields).mvSkyboxes,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVSkybox>__List__);
+  (this->fields).mvSkyboxes = this_00;
+  func_?(&(this->fields).mvSkyboxes,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

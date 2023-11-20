@@ -26,25 +26,19 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableSpawnRoleMessage___Register_b__4_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
-              );
-    (this->fields)._._.isRegistered = 1;
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableSpawnRoleMessage___Register_b__4_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
+            );
+  (this->fields)._._.isRegistered = 1;
   return;
 }
 
@@ -92,22 +86,15 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                    );
     cRam_? = '\x01';
   }
-  value = (WorldObjectTypeInShopChecker *)
-          func_?(
-                         TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__WorldObjectTypeInShopChecker
-                         );
-  if (value != (WorldObjectTypeInShopChecker *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).inShopChecker = value;
-    func_?(&(this->fields).inShopChecker,value);
-    FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor
-              ((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = 
+  TypeInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__WorldObjectTypeInShopChecker;
+  value = (WorldObjectTypeInShopChecker *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).inShopChecker = value;
+  func_?(&(this->fields).inShopChecker,value);
+  FirstTimeActivatableGotItPointer::FirstTimeActivatableGotItPointer__ctor
+            ((FirstTimeActivatableGotItPointer *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -137,18 +124,13 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                        );
         cRam_? = '\x01';
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
            (ExecuteEvents_EventFunction_1_System_Object_ *)
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                           );
-      root = 
-      MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableSpawnRoleMessage___Register_b__4_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
-      ;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -156,35 +138,34 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)root,(BaseEventData *)0x0,callbackFunction,
+                (pGVar2,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
                 );
       (this->fields)._._.isRegistered = 1;
     }
     FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
               ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    cVar2 = '\0';
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        (this_01,(MethodInfo *)0x0);
-      bVar4 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
+    cVar3 = '\0';
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pGVar2 != (GameObject *)0x0) {
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                        (pGVar2,(MethodInfo *)0x0);
+      bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                         ((this->fields).inventoryButton,(MethodInfo *)0x0);
-      bVar5 = 0;
-      if (cVar2 == '\0') {
-        bVar5 = bVar4 & bVar3 & bVar1;
+      bVar6 = 0;
+      if (cVar3 == '\0') {
+        bVar6 = bVar5 & bVar4 & bVar1;
       }
-      return bVar5;
+      return bVar6;
     }
   }
-code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar1 = (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  bVar1 = (*pcVar7)();
   return bVar1;
 }
 

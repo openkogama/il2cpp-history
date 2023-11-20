@@ -10,20 +10,22 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::V
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).bluePrintData;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,key,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    return pOVar1;
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields).bluePrintData;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    return (Object *)TVar1.m_Index;
   }
   uVar2 = func_?(&stack0xfffffff0);
   func_?(uVar2);
   pcVar3 = (code *)swi(3);
-  pOVar1 = (Object *)(*pcVar3)();
-  return pOVar1;
+  pOVar4 = (Object *)(*pcVar3)();
+  return pOVar4;
 }
 
 
@@ -49,139 +51,128 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     func_?(&StringLiteral_BlueprintData);
     cRam_? = '\x01';
   }
-  pMStack_1 = (MVVehicleBase__Class *)0x0;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-    pMStack_1 = (MVVehicleBase__Class *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar2,woID,(MethodInfo *)0x0);
-    unaff_EDI = (MVVehicleBase__Class *)TypeInfo__MVWorldObjectSpawnerVehicle;
-    if (pMStack_1 == (MVVehicleBase__Class *)0x0) {
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
+    pMVar2 = (MVWorldObjectSpawnerVehicle *)
+             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (pMVar1,woID,(MethodInfo *)0x0);
+    if (pMVar2 == (MVWorldObjectSpawnerVehicle *)0x0) {
       (this->fields).spawnerVehicle = (MVWorldObjectSpawnerVehicle *)0x0;
     }
     else {
-      pMVar3 = (MVWorldObjectSpawnerVehicle__Class *)(pMStack_1->_0).image;
-      if (((pMVar3->_1).typeHierarchyDepth <
-           (TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth) ||
+      if (((pMVar2->klass->_1).naturalAligment <
+           (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) ||
          ((MVWorldObjectSpawnerVehicle__Class *)
-          (pMVar3->_1).typeHierarchy
-          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth - 1] !=
+          (pMVar2->klass->_1).typeHierarchy
+          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] !=
           TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
-      (this->fields).spawnerVehicle = (MVWorldObjectSpawnerVehicle *)pMStack_1;
-      pMVar3 = (MVWorldObjectSpawnerVehicle__Class *)(pMStack_1->_0).image;
-      unaff_EDI = (MVVehicleBase__Class *)TypeInfo__MVWorldObjectSpawnerVehicle;
-      if (((pMVar3->_1).typeHierarchyDepth <
-           (TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth) ||
+      (this->fields).spawnerVehicle = pMVar2;
+      if (((pMVar2->klass->_1).naturalAligment <
+           (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) ||
          ((MVWorldObjectSpawnerVehicle__Class *)
-          (pMVar3->_1).typeHierarchy
-          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth - 1] !=
+          (pMVar2->klass->_1).typeHierarchy
+          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] !=
           TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
     }
     func_?(&(this->fields).spawnerVehicle);
-    pMVar4 = (this->fields).spawnerVehicle;
-    if (pMVar4 != (MVWorldObjectSpawnerVehicle *)0x0) {
-      (this->fields).vehicleWoID = (pMVar4->fields)._.spawnWorldObjectID;
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-        pMStack_1 = (MVVehicleBase__Class *)
-                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar2,(this->fields).vehicleWoID,(MethodInfo *)0x0);
-        if (pMStack_1 == (MVVehicleBase__Class *)0x0) {
+    pMVar2 = (this->fields).spawnerVehicle;
+    if (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0) {
+      (this->fields).vehicleWoID = (pMVar2->fields)._.spawnWorldObjectID;
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
+        pMVar2 = (MVWorldObjectSpawnerVehicle *)
+                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (pMVar1,(this->fields).vehicleWoID,(MethodInfo *)0x0);
+        if (pMVar2 == (MVWorldObjectSpawnerVehicle *)0x0) {
           (this->fields).vehicleBase = (MVVehicleBase *)0x0;
         }
         else {
-          pMVar3 = (MVWorldObjectSpawnerVehicle__Class *)(pMStack_1->_0).image;
-          unaff_EDI = TypeInfo__MVVehicleBase;
-          if (((pMVar3->_1).typeHierarchyDepth < (TypeInfo__MVVehicleBase->_1).typeHierarchyDepth)
+          if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVVehicleBase->_1).naturalAligment)
              || ((MVVehicleBase__Class *)
-                 (pMVar3->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).typeHierarchyDepth - 1] !=
-                 TypeInfo__MVVehicleBase)) goto code_?;
-          (this->fields).vehicleBase = (MVVehicleBase *)pMStack_1;
-          pMVar3 = (MVWorldObjectSpawnerVehicle__Class *)(pMStack_1->_0).image;
-          unaff_EDI = TypeInfo__MVVehicleBase;
-          if (((pMVar3->_1).typeHierarchyDepth < (TypeInfo__MVVehicleBase->_1).typeHierarchyDepth)
+                 (pMVar2->klass->_1).typeHierarchy
+                 [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] != TypeInfo__MVVehicleBase))
+          goto code_?;
+          (this->fields).vehicleBase = (MVVehicleBase *)pMVar2;
+          if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVVehicleBase->_1).naturalAligment)
              || ((MVVehicleBase__Class *)
-                 (pMVar3->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).typeHierarchyDepth - 1] !=
-                 TypeInfo__MVVehicleBase)) goto code_?;
+                 (pMVar2->klass->_1).typeHierarchy
+                 [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] != TypeInfo__MVVehicleBase))
+          goto code_?;
         }
         func_?(&(this->fields).vehicleBase);
-        pMVar4 = (this->fields).spawnerVehicle;
-        unaff_EDI = (MVVehicleBase__Class *)(this->fields).settingsBase;
-        if (pMVar4 != (MVWorldObjectSpawnerVehicle *)0x0) {
-          pMVar5 = (this->fields).vehicleBase;
-          woID_00 = (pMVar4->fields)._.spawnWorldObjectID;
-          if ((pMVar5 != (MVVehicleBase *)0x0) &&
+        pMVar3 = (this->fields).spawnerVehicle;
+        this_00 = (this->fields).settingsBase;
+        if (pMVar3 != (MVWorldObjectSpawnerVehicle *)0x0) {
+          pMVar4 = (this->fields).vehicleBase;
+          woID_00 = (pMVar3->fields)._.spawnWorldObjectID;
+          if ((pMVar4 != (MVVehicleBase *)0x0) &&
              (documentationType =
-                   (*(pMVar5->klass->vtable).get_DocumentationType.methodPtr)
-                             (pMVar5,(pMVar5->klass->vtable).get_DocumentationType.method),
-             unaff_EDI != (MVVehicleBase__Class *)0x0)) {
+                   (*(code *)(pMVar4->klass->vtable).get_DocumentationType.method)
+                             (pMVar4,(pMVar4->klass->vtable).TraverseRecursiveTail.methodPtr),
+             this_00 != (SettingsBase *)0x0)) {
             SettingsBase::SettingsBase_Initialize
-                      ((SettingsBase *)unaff_EDI,woID_00,root,documentationType,(MethodInfo *)0x0);
+                      (this_00,woID_00,root,documentationType,(MethodInfo *)0x0);
             (this->fields).bluePrintData = (Dictionary_2_System_Object_System_Object_ *)0x0;
             func_?(&(this->fields).bluePrintData,0);
-            pMVar4 = (this->fields).spawnerVehicle;
-            if (pMVar4 != (MVWorldObjectSpawnerVehicle *)0x0) {
-              if ((pMVar4->fields)._.spawnWorldObjectID == -1) {
-                pDVar6 = (Dictionary_2_System_Object_System_Object_ *)
-                         (*(this->klass->vtable).__unknown_1.methodPtr)
-                                   (this,(this->klass->vtable).__unknown_1.method);
-                (this->fields).bluePrintData = pDVar6;
-                func_?(&(this->fields).bluePrintData,pDVar6);
-                goto code_?;
+            pMVar3 = (this->fields).spawnerVehicle;
+            if (pMVar3 != (MVWorldObjectSpawnerVehicle *)0x0) {
+              if ((pMVar3->fields)._.spawnWorldObjectID == -1) {
+                pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
+                         (*(code *)(this->klass->vtable).__unknown_1.method)
+                                   (this,(this->klass->vtable).__unknown_2.methodPtr);
+                (this->fields).bluePrintData = pDVar5;
+                func_?(&(this->fields).bluePrintData,pDVar5);
+code_?:
+                (*(code *)(this->klass->vtable).__unknown.method)(this);
+                pAVar6 = (this->fields).OnInitialized;
+                if (pAVar6 != (Action *)0x0) {
+                  (*(pAVar6->fields)._._.invoke_impl)();
+                }
+                return;
               }
-              pMVar5 = (this->fields).vehicleBase;
-              if ((pMVar5 != (MVVehicleBase *)0x0) &&
-                 (pDVar6 = (pMVar5->fields)._._._._.data,
-                 pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+              pMVar4 = (this->fields).vehicleBase;
+              if ((pMVar4 != (MVVehicleBase *)0x0) &&
+                 (pDVar5 = (pMVar4->fields)._._._._.data,
+                 pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
                 bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Object,System::Object]::
                         Dictionary_2_System_Object_System_Object__TryGetValue
-                                  (pDVar6,(Object *)StringLiteral_BlueprintData,
-                                   (Object **)&pMStack_1,
+                                  (pDVar5,(Object *)StringLiteral_BlueprintData,
+                                   (Object **)&stack0xfffffff8,
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                                   );
                 if (((bVar7 != 0) &&
-                    (((pMStack_1 != (MVVehicleBase__Class *)0x0 &&
-                      (pMVar3 = (MVWorldObjectSpawnerVehicle__Class *)(pMStack_1->_0).image,
-                      (
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                      ->_1).typeHierarchyDepth <= (pMVar3->_1).typeHierarchyDepth)) &&
+                    (((pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0 &&
+                      ((
+                       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                       ->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)) &&
                      ((Dictionary_2_System_Object_System_Object___Class *)
-                      (pMVar3->_1).typeHierarchy
+                      (pMVar2->klass->_1).typeHierarchy
                       [(
                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                       ->_1).typeHierarchyDepth - 1] ==
+                       ->_1).naturalAligment - 1] ==
                       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     )))) && (pMStack_1 != (MVVehicleBase__Class *)0x0)) {
-                  (this->fields).bluePrintData =
-                       (Dictionary_2_System_Object_System_Object_ *)pMStack_1;
-                  pMStack_1 = (MVVehicleBase__Class *)&(this->fields).bluePrintData;
+                     )))) && (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0)) {
+                  (this->fields).bluePrintData = (Dictionary_2_System_Object_System_Object_ *)pMVar2
+                  ;
                   func_?();
                 }
                 if ((this->fields).bluePrintData == (Dictionary_2_System_Object_System_Object_ *)0x0
                    ) {
-                  pDVar6 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-                  unaff_EDI = (MVVehicleBase__Class *)0x0;
-                  if (pDVar6 == (Dictionary_2_System_Object_System_Object_ *)0x0)
-                  goto code_?;
-                  Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-                  ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                            ((ParameterOverride_1_System_Object_ *)pDVar6,
+                  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                             *)func_?();
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                            (this_01,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                             );
-                  (this->fields).bluePrintData = pDVar6;
-                  func_?(&(this->fields).bluePrintData,pDVar6);
+                  (this->fields).bluePrintData =
+                       (Dictionary_2_System_Object_System_Object_ *)this_01;
+                  func_?(&(this->fields).bluePrintData);
                 }
-                pMStack_1 = (MVVehicleBase__Class *)this;
-                (*(this->klass->vtable).__unknown_2.methodPtr)();
-code_?:
-                pMStack_1 = (MVVehicleBase__Class *)root;
-                (*(this->klass->vtable).__unknown.methodPtr)(this);
-                pAVar8 = (this->fields).OnInitialized;
-                if (pAVar8 != (Action *)0x0) {
-                  (*(pAVar8->fields)._._.invoke_impl)();
-                }
-                return;
+                (*(code *)(this->klass->vtable).__unknown_2.method)();
+                goto code_?;
               }
             }
           }
@@ -189,15 +180,12 @@ code_?:
       }
     }
   }
-code_?:
   func_?();
-  pMStack_1 = extraout_EDX;
+  pMVar2 = extraout_EDX;
 code_?:
-  pMVar9 = pMStack_1;
-  pMStack_1 = unaff_EDI;
-  func_?(pMVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?(pMVar2);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -251,8 +239,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
 
 {
   this_00 = (this->fields).canvas;
-  value = (Vector2)(*(this->klass->vtable).get_DefaultCanvasSize.methodPtr)
-                             (this,(this->klass->vtable).get_DefaultCanvasSize.method);
+  value = (Vector2)(*(code *)(this->klass->vtable).get_DefaultCanvasSize.method)
+                             (this,(this->klass->vtable).__unknown.methodPtr);
   if (this_00 != (RectTransform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
               (this_00,value,(MethodInfo *)0x0);

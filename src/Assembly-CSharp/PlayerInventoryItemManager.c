@@ -29,24 +29,22 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
                      );
   if (pOVar1 != (Object__Class *)0x0) {
     pOVar2 = (Object__Class *)(pOVar1->_0).image;
-    (*(code *)pOVar2[1]._0.image)(pOVar1,categoryIndex,categoryName,pOVar2[1]._0.gc_desc);
-    value = (Object *)func_?(TypeInfo__PlayerInventoryItemManager__ItemManagePageDef);
-    if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,unaff_retaddr);
-      value[1].klass = pOVar1;
-      func_?(value + 1,pOVar1);
-      value[1].monitor = (MonitorData *)pageItem;
-      func_?(&value[1].monitor,pageItem);
-      this_00 = (this->fields).tabList;
-      if (this_00 != (List_1_PlayerInventoryItemManager_ItemManagePageDef_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_00,value,
-                   MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__Add_PlayerInventoryItemManager__ItemManagePageDef_
-                  );
-        return;
-      }
+    (*pOVar2[1]._0.gc_desc)(pOVar1,categoryIndex,categoryName,pOVar2[1]._0.name);
+    method_00 = TypeInfo__PlayerInventoryItemManager__ItemManagePageDef;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    value[1].monitor = (MonitorData *)pageItem;
+    func_?(&value[1].monitor,pageItem);
+    this_00 = (this->fields).tabList;
+    if (this_00 != (List_1_PlayerInventoryItemManager_ItemManagePageDef_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_00,value,
+                 MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__Add_PlayerInventoryItemManager__ItemManagePageDef_
+                );
+      return;
     }
   }
   func_?();
@@ -147,10 +145,10 @@ code_?:
       if (bVar11 == 0) break;
       if ((RVar10 == (RegexCharClass_SingleRange)0x0) ||
          (piVar12 = *(int **)((int)RVar10 + 8), piVar12 == (int *)0x0)) goto code_?;
-      (**(code **)(*piVar12 + 0xe4))(piVar12,*(undefined4 *)(*piVar12 + 0xe8));
+      (**(code **)(*piVar12 + 0xe8))(piVar12,*(undefined4 *)(*piVar12 + 0xec));
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffc8,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__Dispose__
@@ -166,7 +164,7 @@ code_?:
                          MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__get_Item_int_
                         );
       if ((RVar10 != (RegexCharClass_SingleRange)0x0) && (*(int **)((int)RVar10 + 8) != (int *)0x0)) {
-        (**(code **)(**(int **)((int)RVar10 + 8) + 0xec))();
+        (**(code **)(**(int **)((int)RVar10 + 8) + 0xf0))();
         PlayerInventoryItemManager_UpdateContent(this,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
@@ -248,10 +246,10 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
         if (((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0) ||
            (piVar12 = *(int **)((int)LStack_7._current + 8), piVar12 == (int *)0x0))
         goto code_?;
-        (**(code **)(*piVar12 + 0xe4))(piVar12,*(undefined4 *)(*piVar12 + 0xe8));
+        (**(code **)(*piVar12 + 0xe8))(piVar12,*(undefined4 *)(*piVar12 + 0xec));
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&LStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__Dispose__
@@ -268,7 +266,7 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
                           );
         if ((RVar13 != (RegexCharClass_SingleRange)0x0) &&
            (piVar12 = *(int **)((int)RVar13 + 8), piVar12 != (int *)0x0)) {
-          (**(code **)(*piVar12 + 0xec))(piVar12,*(undefined4 *)(*piVar12 + 0xf0));
+          (**(code **)(*piVar12 + 0xf0))(piVar12,*(undefined4 *)(*piVar12 + 0xf4));
           PlayerInventoryItemManager_UpdateContent(this,(MethodInfo *)0x0);
           goto code_?;
         }
@@ -344,7 +342,7 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
       func_?();
       pMVar1 = (this->fields).currentManageItemPage;
       if (pMVar1 != (ManageItemPage *)0x0) {
-        (*(pMVar1->klass->vtable).__unknown.methodPtr)();
+        (*(code *)(pMVar1->klass->vtable).__unknown.method)();
         return;
       }
     }
@@ -376,21 +374,16 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
             func_?(
                            TypeInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>
                            );
-  if (this_00 != (List_1_PlayerInventoryItemManager_ItemManagePageDef_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__List__
-              );
-    (this->fields).tabList = this_00;
-    func_?(&(this->fields).tabList,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__List__
+            );
+  (this->fields).tabList = this_00;
+  func_?(&(this->fields).tabList,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

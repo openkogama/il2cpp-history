@@ -36,41 +36,40 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_T
 
 {
   pDVar1 = (this->fields).presets;
-  uVar2 = 0;
+  this = (DayNightCycleColorPresets *)0x0;
   if (pDVar1 != (DayNightCycleColorPresets_Preset__Array *)0x0) {
-    ppDVar3 = pDVar1->vector;
+    ppDVar2 = pDVar1->vector;
     while( true ) {
-      if ((int)pDVar1->max_length <= (int)uVar2) {
+      if ((int)pDVar1->max_length <= (int)this) {
         return;
       }
-      if (pDVar1->max_length <= uVar2) break;
-      object = *ppDVar3;
+      if ((DayNightCycleColorPresets *)pDVar1->max_length <= this) break;
+      object = *ppDVar2;
       if (object == (DayNightCycleColorPresets_Preset *)0x0) goto code_?;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__Action);
         func_?(&MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__);
         cRam_? = '\x01';
       }
-      pSVar4 = TM::TM__((object->fields).name,(MethodInfo *)0x0);
-      (object->fields).name = pSVar4;
-      func_?(&object->fields,pSVar4);
+      pSVar3 = TM::TM__((object->fields).name,(MethodInfo *)0x0);
+      (object->fields).name = pSVar3;
+      func_?(&object->fields,pSVar3);
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_00,(Object *)object,
                  MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__,
                  (MethodInfo *)0x0);
       TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-      uVar2 = uVar2 + 1;
-      ppDVar3 = ppDVar3 + 1;
+      this = (DayNightCycleColorPresets *)((int)&this->klass + 1);
+      ppDVar2 = ppDVar2 + 1;
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

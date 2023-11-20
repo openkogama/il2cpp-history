@@ -11,10 +11,10 @@ void Assembly-CSharp.dll::LobbyStateController+<>c__DisplayClass15_0::
     func_?();
     cRam_? = '\x01';
   }
-  source = (this->fields).startGoldRewardPopup;
-  if (source != (GameObject *)0x0) {
-    mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-              ((Void *)source,(MethodInfo *)0x0);
+  ptr = (this->fields).startGoldRewardPopup;
+  if (ptr != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+    UnsafeUtility_AsRef_1((Void *)ptr,(MethodInfo *)0x0);
     if (x != (IUIStack *)0x0) {
       pIStack_1 = x;
       func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack);

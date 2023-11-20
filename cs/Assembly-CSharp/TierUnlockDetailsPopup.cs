@@ -46,32 +46,6 @@ public class TierUnlockDetailsPopup : MonoBehaviour
 	private bool isSubscribed;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass16_0
-	{
-		// Fields
-		public GamePassesShop gamePassesShop;
-
-		// Constructors
-		public __c__DisplayClass16_0();
-
-		// Methods
-		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass17_0
-	{
-		// Fields
-		public TierPurchaseNotEnoughGoldErrorPopup tierErrorPopup;
-
-		// Constructors
-		public __c__DisplayClass17_0();
-
-		// Methods
-		internal void _Purchase_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -106,6 +80,32 @@ public class TierUnlockDetailsPopup : MonoBehaviour
 		internal void _PreviewTier_b__29_1(IModalPopupCreator x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__30_0(IUIStack x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__30_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass16_0
+	{
+		// Fields
+		public GamePassesShop gamePassesShop;
+
+		// Constructors
+		public __c__DisplayClass16_0();
+
+		// Methods
+		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass17_0
+	{
+		// Fields
+		public TierPurchaseNotEnoughGoldErrorPopup tierErrorPopup;
+
+		// Constructors
+		public __c__DisplayClass17_0();
+
+		// Methods
+		internal void _Purchase_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

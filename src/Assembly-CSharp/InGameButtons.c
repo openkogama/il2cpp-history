@@ -25,13 +25,13 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                        ((MethodInfo *)0x0);
     if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
-    pOVar3 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-             SpawnRoleVariable`1[System::Object]::SpawnRoleVariable_1_System_Object__op_Implicit
-                       ((SpawnRoleVariable_1_System_Object_ *)(pSVar2->fields).pickupItemIsInHand,
-                        MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                       );
+    BVar3 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+            SpawnRoleVariable`1[System::ByteEnum]::SpawnRoleVariable_1_System_ByteEnum__op_Implicit
+                      ((SpawnRoleVariable_1_System_ByteEnum_ *)(pSVar2->fields).pickupItemIsInHand,
+                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
+                      );
     method_00 = (MethodInfo *)(this->fields).fire;
-    if ((char)pOVar3 == '\0') {
+    if ((char)BVar3 == '\0') {
       if ((method_00 != (MethodInfo *)0x0) &&
          (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)method_00,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0
@@ -51,7 +51,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
       goto code_?;
     }
     if (method_00 == (MethodInfo *)0x0) goto code_?;
-    value = 0x59;
+    value = 0xb9;
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)method_00,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;
@@ -91,17 +91,18 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleInPlayMode
   pGVar1 = (this->fields).respawnButton;
   if ((pGVar1 != (GameObject *)0x0) &&
      (pGVar1 = (GameObject *)
-               mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                         ((Void *)pGVar1,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)) {
+               UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+               UnsafeUtility_AsRef_1((Void *)pGVar1,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)
+     ) {
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar1,(MethodInfo *)0x0);
     if (bVar2 == 0) {
       pGVar1 = (this->fields).respawnButton;
       if ((pGVar1 == (GameObject *)0x0) ||
          (pGVar1 = (GameObject *)
-                   mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                             ((Void *)pGVar1,(MethodInfo *)0x0), pGVar1 == (GameObject *)0x0))
-      goto code_?;
+                   UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                   UnsafeUtility_AsRef_1((Void *)pGVar1,(MethodInfo *)0x0),
+         pGVar1 == (GameObject *)0x0)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,1,(MethodInfo *)0x0);
     }
@@ -220,17 +221,17 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
             pGVar2 = (this->fields).respawnButton;
             if ((pGVar2 != (GameObject *)0x0) &&
                (pGVar2 = (GameObject *)
-                         mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                   ((Void *)pGVar2,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
-            {
+                         UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                         UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+               pGVar2 != (GameObject *)0x0)) {
               bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                                 (pGVar2,(MethodInfo *)0x0);
               if (bVar3 != 0) {
                 pGVar2 = (this->fields).respawnButton;
                 if ((pGVar2 == (GameObject *)0x0) ||
                    (pGVar2 = (GameObject *)
-                             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                       ((Void *)pGVar2,(MethodInfo *)0x0),
+                             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                             UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
                    pGVar2 == (GameObject *)0x0)) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar2,0,(MethodInfo *)0x0);
@@ -424,15 +425,15 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_Update
         pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                            ((MethodInfo *)0x0);
         if (pSVar4 == (SpawnRoleDataMediator *)0x0) goto code_?;
-        pOVar5 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
-                 ::SpawnRoleVariable`1[System::Object]::
-                 SpawnRoleVariable_1_System_Object__op_Implicit
-                           ((SpawnRoleVariable_1_System_Object_ *)(pSVar4->fields).isSeated,
-                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                           );
+        BVar5 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
+                ::SpawnRoleVariable`1[System::ByteEnum]::
+                SpawnRoleVariable_1_System_ByteEnum__op_Implicit
+                          ((SpawnRoleVariable_1_System_ByteEnum_ *)(pSVar4->fields).isSeated,
+                           MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
+                          );
         if (pGVar3 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,(bool)pOVar5,(MethodInfo *)0x0);
+                  (pGVar3,(bool)BVar5,(MethodInfo *)0x0);
       }
       pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
@@ -459,17 +460,18 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_Update
           pGVar3 = (this_00->fields).respawnButton;
           if ((pGVar3 != (GameObject *)0x0) &&
              (pGVar3 = (GameObject *)
-                       mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                 ((Void *)pGVar3,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
+                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                       UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar3,(MethodInfo *)0x0),
+             pGVar3 != (GameObject *)0x0)) {
             bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                               (pGVar3,(MethodInfo *)0x0);
             if (bVar2 == 0) {
               pGVar3 = (this_00->fields).respawnButton;
               if ((pGVar3 == (GameObject *)0x0) ||
                  (pGVar3 = (GameObject *)
-                           mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                     ((Void *)pGVar3,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0
-                 )) goto code_?;
+                           UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                           UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar3,(MethodInfo *)0x0),
+                 pGVar3 == (GameObject *)0x0)) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar3,1,(MethodInfo *)0x0);
             }

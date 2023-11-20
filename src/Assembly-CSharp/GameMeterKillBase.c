@@ -52,18 +52,18 @@ void Assembly-CSharp.dll::GameMeterKillBase::GameMeterKillBase_Initialize
 
 {
   if (cRam_? == '\0') {
-    pMStack_1 = (MethodInfo *)&::StringLiteral__;
+    ppSStack_1 = &::StringLiteral__;
     func_?();
     cRam_? = '\x01';
   }
   pTStack_2 = (this->fields).killsText;
   if (pTStack_2 != (Text *)0x0) {
-    pMStack_1 = (pTStack_2->klass->vtable).set_text.method;
+    ppSStack_1 = (String **)(pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     pSStack_3 = ::StringLiteral__;
-    (*(pTStack_2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
     return;
   }
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  ppSStack_1 = (String **)&stack0xfffffffc;
   uVar4 = func_?(&pTStack_2);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -121,8 +121,8 @@ void Assembly-CSharp.dll::GameMeterKillBase::GameMeterKillBase_SetCount
                  ((String *)str0,::StringLiteral__,str2,(MethodInfo *)0x0);
   pTStack5 = (this->fields).killsText;
   if (pTStack5 != (Text *)0x0) {
-    pMStack6 = (pTStack5->klass->vtable).set_text.method;
-    (*(pTStack5->klass->vtable).set_text.methodPtr)();
+    pIStack6 = (pTStack5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+    (*(code *)(pTStack5->klass->vtable).set_text.method)();
     return;
   }
 code_?:

@@ -6,7 +6,8 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                bool wasTempUnlocked,MethodInfo *method)
 
 {
-  this_00 = this;
+  bVar1 = wasTempUnlocked;
+  _wasTempUnlocked = (TierUnlockedPopupContentXP *)(uint)wasTempUnlocked;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
@@ -50,20 +51,19 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
     func_?(&TypeInfo__TierUnlockedPopupController);
     cRam_? = '\x01';
   }
-  uVar1 = (uint8_t)unlockedTier;
-  (this->fields).unlockedTier = uVar1;
+  (this->fields).unlockedTier = (uint8_t)unlockedTier;
   pLVar2 = (List_1_TierUnlockedPopupContentBase_ *)
            func_?(
                           TypeInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>
                           );
-  if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-  LowLevelList_1_System_Object___ctor
-            ((LowLevelList_1_System_Object_ *)pLVar2,
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
              MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__List__);
   (this->fields).popupContentList = pLVar2;
   func_?(&(this->fields).popupContentList,pLVar2);
-  if (wasTempUnlocked == 0) {
+  if (bVar1 == 0) {
     original_00 = (this->fields).PopupContentTierUnlockedPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
@@ -83,13 +83,16 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
               (pTVar4,pTVar5,0,(MethodInfo *)0x0);
     pLVar2 = (this->fields).popupContentList;
     if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
+    unlockedTier = (GamePassTier__Enum)&UNK_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
               ((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,
                MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
               );
+    _wasTempUnlocked = (this->fields).PopupContentXPPrefab;
+    wasPurchased = 0x94;
     pCVar3 = (Component *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)(this->fields).PopupContentXPPrefab,
+                       ((Object *)_wasTempUnlocked,
                         TierUnlockedPopupContentXP_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentXP>_TierUnlockedPopupContentXP_
                        );
     if (pCVar3 == (Component *)0x0) goto code_?;
@@ -105,7 +108,6 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
     if (pGVar6 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,0,(MethodInfo *)0x0);
-    RVar7 = in_stack_8;
   }
   else {
     original = (this->fields).popupContentTierTempUnlockPrefab;
@@ -125,10 +127,8 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
     if (pTVar4 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
               (pTVar4,pTVar5,0,(MethodInfo *)0x0);
-    RVar7 = in_stack_8;
   }
   pLVar2 = (this->fields).popupContentList;
-  in_stack_8 = RVar7;
   if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
             ((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,
@@ -137,284 +137,238 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
   if (wasPurchased != 0) {
     original_01 = (this->fields).PopupContentCreatorSupportPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+      func_?();
     }
-    pCVar3 = (Component *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_01,
-                        TierUnlockedPopupContentBase_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentBase>_TierUnlockedPopupContentBase_
-                       );
-    in_stack_8 = RVar7;
-    if (pCVar3 == (Component *)0x0) goto code_?;
+    _wasTempUnlocked =
+         (TierUnlockedPopupContentXP *)
+         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                   ((Object *)original_01,
+                    TierUnlockedPopupContentBase_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentBase>_TierUnlockedPopupContentBase_
+                   );
+    if (_wasTempUnlocked == (TierUnlockedPopupContentXP *)0x0) goto code_?;
+    unlockedTier = (GamePassTier__Enum)
+                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)_wasTempUnlocked,(MethodInfo *)0x0);
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       (pCVar3,(MethodInfo *)0x0);
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    in_stack_8 = RVar7;
-    if (pTVar4 == (Transform *)0x0) goto code_?;
+    if ((Transform *)unlockedTier == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar4,pTVar5,0,(MethodInfo *)0x0);
+              ((Transform *)unlockedTier,pTVar4,0,(MethodInfo *)0x0);
     pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       (pCVar3,(MethodInfo *)0x0);
-    in_stack_8 = RVar7;
+                       ((Component *)_wasTempUnlocked,(MethodInfo *)0x0);
     if (pGVar6 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,0,(MethodInfo *)0x0);
     pLVar2 = (this->fields).popupContentList;
-    in_stack_8 = RVar7;
     if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,
+              ((List_1_System_Object_ *)pLVar2,(Object *)_wasTempUnlocked,
                MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
               );
   }
   if (wasTempUnlocked != 0) {
     original_02 = (this->fields).popupContentTempUnlockInformationPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+      func_?();
     }
     pCVar3 = (Component *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)original_02,
                         TierTempUnlockedInformationPopupContent_MethodInfo__UnityEngine__Object__Instantiate<TierTempUnlockedInformationPopupContent>_TierTempUnlockedInformationPopupContent_
                        );
-    in_stack_8 = RVar7;
     if (pCVar3 == (Component *)0x0) goto code_?;
+    unlockedTier = (GamePassTier__Enum)
+                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             (pCVar3,(MethodInfo *)0x0);
     pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       (pCVar3,(MethodInfo *)0x0);
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    in_stack_8 = RVar7;
-    if (pTVar4 == (Transform *)0x0) goto code_?;
+    if ((Transform *)unlockedTier == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar4,pTVar5,0,(MethodInfo *)0x0);
+              ((Transform *)unlockedTier,pTVar4,0,(MethodInfo *)0x0);
     pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        (pCVar3,(MethodInfo *)0x0);
-    in_stack_8 = RVar7;
     if (pGVar6 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,0,(MethodInfo *)0x0);
     pLVar2 = (this->fields).popupContentList;
-    in_stack_8 = RVar7;
     if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
               ((List_1_System_Object_ *)pLVar2,(Object *)pCVar3,
                MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
               );
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  in_stack_8 = RVar7;
-  if (((this_01 == (MVNetworkGame *)0x0) ||
-      (this_02 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                           (this_01,(MethodInfo *)0x0), in_stack_8 = RVar7,
-      this_02 == (MVWorldObjectClientManager *)0x0)) ||
-     (pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-                         (this_02,WorldObjectType__Enum_AvatarSpawnRoleCreator,(MethodInfo *)0x0),
-     in_stack_8 = RVar7,
-     pLVar9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((this_00 == (MVNetworkGame *)0x0) ||
+      (this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                           (this_00,(MethodInfo *)0x0), this_01 == (MVWorldObjectClientManager *)0x0
+      )) || (pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                                (this_01,WorldObjectType__Enum_AvatarSpawnRoleCreator,
+                                 (MethodInfo *)0x0),
+            pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
   goto code_?;
-  if (0 < (pLVar9->fields)._size) {
-    for (iVar10 = 0; in_stack_8 = RVar7, iVar10 < (pLVar9->fields)._size;
-        iVar10 = iVar10 + 1) {
-      RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  if (0 < (pLVar7->fields)._size) {
+    for (iVar8 = 0; iVar8 < (pLVar7->fields)._size; iVar8 = iVar8 + 1) {
+      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar9,iVar10,
+                         (pLVar7,iVar8,
                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                          );
-      if (((RVar11 != (RegexCharClass_SingleRange)0x0) &&
-          (this = *(TierUnlockedPopupController **)RVar11,
-          (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth <= this[1].fields.unlockedTier
-          )) && (*(MVAvatarSpawnRoleCreator__Class **)
-                  ((int)(this->fields).bounceEffectStartTime + -4 +
-                  (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth * 4) ==
-                 TypeInfo__MVAvatarSpawnRoleCreator)) {
-        this = (TierUnlockedPopupController *)
-               mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar9,iVar10,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                         );
-        in_stack_8 = RVar7;
-        if ((RegexCharClass_SingleRange)this == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        iVar12 = func_?(this,TypeInfo__MVAvatarSpawnRoleCreator);
-        in_stack_8 = (RegexCharClass_SingleRange)this;
-        if (iVar12 == 0) goto code_?;
-        pMVar13 = (MVAvatarSpawnRoleCreator *)
-                  func_?(this,TypeInfo__MVAvatarSpawnRoleCreator);
-        if (pMVar13 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
-        GVar14 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
-                           (pMVar13,(MethodInfo *)0x0);
-        if ((uint8_t)GVar14 == uVar1) {
-          original_03 = (this_00->fields).popupContentSpawnRolePrefab;
+      if (((RVar9 != (RegexCharClass_SingleRange)0x0) &&
+          ((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
+           *(byte *)(*(int *)RVar9 + 0xb8))) &&
+         (*(MVAvatarSpawnRoleCreator__Class **)
+           (*(int *)(*(int *)RVar9 + 100) + -4 +
+           (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment * 4) ==
+          TypeInfo__MVAvatarSpawnRoleCreator)) {
+        RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           (pLVar7,iVar8,
+                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                           );
+        if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        iVar10 = func_?();
+        if (iVar10 == 0) goto code_?;
+        pMVar11 = (MVAvatarSpawnRoleCreator *)func_?();
+        if (pMVar11 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
+        GVar12 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
+                           (pMVar11,(MethodInfo *)0x0);
+        if ((char)GVar12 == (undefined1)unlockedTier) {
+          pTVar13 = (this->fields).popupContentSpawnRolePrefab;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
+            func_?();
           }
-          pCVar3 = (Component *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)original_03,
-                              TierUnlockedPopupContentSpawnRole_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentSpawnRole>_TierUnlockedPopupContentSpawnRole_
-                             );
-          in_stack_8 = RVar7;
-          if (pCVar3 == (Component *)0x0) goto code_?;
+          pTVar13 = (TierUnlockedPopupContentSpawnRole *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                              ((Object *)pTVar13,
+                               TierUnlockedPopupContentSpawnRole_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupContentSpawnRole>_TierUnlockedPopupContentSpawnRole_
+                              );
+          if (pTVar13 == (TierUnlockedPopupContentSpawnRole *)0x0) goto code_?;
           pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             (pCVar3,(MethodInfo *)0x0);
+                             ((Component *)pTVar13,(MethodInfo *)0x0);
           pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)this_00,(MethodInfo *)0x0);
-          in_stack_8 = RVar7;
+                             ((Component *)this,(MethodInfo *)0x0);
           if (pTVar4 == (Transform *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                     (pTVar4,pTVar5,0,(MethodInfo *)0x0);
-          RVar11 = (RegexCharClass_SingleRange)
-                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             (pCVar3,(MethodInfo *)0x0);
-          in_stack_8 = RVar7;
-          if (RVar11 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          in_stack_15.First = 0;
-          in_stack_15.Last = 0;
-          RVar7.First = 0;
-          RVar7.Last = 0;
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar13,(MethodInfo *)0x0);
+          if (pGVar6 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    ((GameObject *)RVar11,0,(MethodInfo *)0x0);
-          iVar10 = 0;
+                    (pGVar6,0,(MethodInfo *)0x0);
+          this_02 = (GamePassesSpawnRoleRewardInfo *)0x0;
           goto code_?;
         }
       }
     }
   }
 code_?:
-  TierUnlockedPopupController_StartNewPopupContent(this_00,0,(MethodInfo *)0x0);
-  pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this_00->fields).popupContentList;
-  pIVar16 = (this_00->fields).Background;
-  if (((pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-      (RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+  TierUnlockedPopupController_StartNewPopupContent(this,0,(MethodInfo *)0x0);
+  pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).popupContentList;
+  pIVar14 = (this->fields).Background;
+  if (((pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+      (RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar9,0,
+                          (pLVar7,0,
                            MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                          ), RVar7 != (RegexCharClass_SingleRange)0x0)) && (pIVar16 != (Image *)0x0)
+                          ), RVar9 != (RegexCharClass_SingleRange)0x0)) && (pIVar14 != (Image *)0x0)
      ) {
-    (*(pIVar16->klass->vtable).set_color.methodPtr)
-              (pIVar16,*(undefined4 *)((int)RVar7 + 0xc),*(undefined4 *)((int)RVar7 + 0x10),
-               *(undefined4 *)((int)RVar7 + 0x14),*(undefined4 *)((int)RVar7 + 0x18),
-               (pIVar16->klass->vtable).set_color.method);
-    TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown = uVar1;
+    (*(code *)(pIVar14->klass->vtable).set_color.method)();
+    TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown =
+         (uint8_t)unlockedTier;
     return;
   }
 code_?:
   func_?();
 code_?:
-  func_?(in_stack_8,TypeInfo__MVAvatarSpawnRoleCreator);
+  func_?();
 code_?:
-  func_?(in_stack_15,TypeInfo__MVAvatarSpawnRoleCreator);
+  func_?();
 code_?:
-  func_?(this,TypeInfo__MVAvatarSpawnRoleCreator);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 code_?:
-  if ((pLVar9->fields)._size <= iVar10) goto code_?;
-  RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  GVar12 = unlockedTier;
+  if ((pLVar7->fields)._size <= (int)this_02) goto code_?;
+  RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar9,iVar10,
+                     (pLVar7,(int32_t)this_02,
                       MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                      );
-  if (((RVar18 != (RegexCharClass_SingleRange)0x0) &&
-      (this = *(TierUnlockedPopupController **)RVar18,
-      (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth <= this[1].fields.unlockedTier))
-     && (*(MVAvatarSpawnRoleCreator__Class **)
-          ((int)(this->fields).bounceEffectStartTime + -4 +
-          (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth * 4) ==
-         TypeInfo__MVAvatarSpawnRoleCreator)) {
-    this = (TierUnlockedPopupController *)
-           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar9,iVar10,
-                      MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                     );
-    in_stack_8 = RVar11;
-    if ((RegexCharClass_SingleRange)this == (RegexCharClass_SingleRange)0x0) goto code_?;
-    RVar11 = (RegexCharClass_SingleRange)&UNK_?;
-    RVar7 = (RegexCharClass_SingleRange)this;
-    in_stack_15 = (RegexCharClass_SingleRange)TypeInfo__MVAvatarSpawnRoleCreator;
-    iVar12 = func_?(this,TypeInfo__MVAvatarSpawnRoleCreator);
-    in_stack_8 = (RegexCharClass_SingleRange)this;
-    if (iVar12 == 0) goto code_?;
-    pMVar13 = (MVAvatarSpawnRoleCreator *)func_?(this,TypeInfo__MVAvatarSpawnRoleCreator);
-    if (pMVar13 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
-    GVar14 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier(pMVar13,(MethodInfo *)0x0);
-    if ((uint8_t)GVar14 == uVar1) {
-      original_04 = (this_00->fields).spawnRoleInfoPrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      this = (TierUnlockedPopupController *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_04,
-                        GamePassesSpawnRoleRewardInfo_MethodInfo__UnityEngine__Object__Instantiate<GamePassesSpawnRoleRewardInfo>_GamePassesSpawnRoleRewardInfo_
+  if (((RVar9 != (RegexCharClass_SingleRange)0x0) &&
+      ((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <= *(byte *)(*(int *)RVar9 + 0xb8))
+      ) && (*(MVAvatarSpawnRoleCreator__Class **)
+             (*(int *)(*(int *)RVar9 + 100) + -4 +
+             (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment * 4) ==
+            TypeInfo__MVAvatarSpawnRoleCreator)) {
+    RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                       (pLVar7,(int32_t)this_02,
+                        MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                        );
-      in_stack_15 =
-           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar9,iVar10,
-                      MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                     );
-      in_stack_8 = RVar11;
-      if (in_stack_15 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      in_stack_8 = in_stack_15;
-      iVar12 = func_?(in_stack_15,TypeInfo__MVAvatarSpawnRoleCreator);
-      in_stack_15 = in_stack_8;
-      if (iVar12 == 0) goto code_?;
-      pMVar13 = (MVAvatarSpawnRoleCreator *)
-                func_?(in_stack_8,TypeInfo__MVAvatarSpawnRoleCreator);
-      in_stack_15 = in_stack_8;
-      if (pMVar13 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
-      in_stack_15 =
-           (RegexCharClass_SingleRange)
-           MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_GetSpawnRolePreviewObject
-                     (pMVar13,(MethodInfo *)0x0);
-      in_stack_8 =
-           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar9,iVar10,
-                      MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                     );
-      if ((GamePassesSpawnRoleRewardInfo *)this == (GamePassesSpawnRoleRewardInfo *)0x0)
-      goto code_?;
-      pMVar13 = (MVAvatarSpawnRoleCreator *)0x0;
-      RVar11 = in_stack_8;
-      if ((in_stack_8 != (RegexCharClass_SingleRange)0x0) &&
-         (pMVar13 = (MVAvatarSpawnRoleCreator *)
-                    func_?(in_stack_8,TypeInfo__MVAvatarSpawnRoleCreator),
-         RVar11 = in_stack_8, pMVar13 == (MVAvatarSpawnRoleCreator *)0x0))
-      goto code_?;
+    if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
+    iVar8 = func_?();
+    if (iVar8 == 0) goto code_?;
+    pMVar11 = (MVAvatarSpawnRoleCreator *)func_?();
+    if (pMVar11 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
+    GVar16 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier(pMVar11,(MethodInfo *)0x0);
+    if ((char)GVar16 == (undefined1)unlockedTier) {
+      original_03 = (this->fields).spawnRoleInfoPrefab;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)original_03,
+                           GamePassesSpawnRoleRewardInfo_MethodInfo__UnityEngine__Object__Instantiate<GamePassesSpawnRoleRewardInfo>_GamePassesSpawnRoleRewardInfo_
+                          );
+      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (pLVar7,(int32_t)this_02,
+                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                         );
+      if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      iVar8 = func_?();
+      if (iVar8 == 0) goto code_?;
+      pMVar11 = (MVAvatarSpawnRoleCreator *)func_?();
+      if (pMVar11 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
+      pGVar6 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_GetSpawnRolePreviewObject
+                         (pMVar11,(MethodInfo *)0x0);
+      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (pLVar7,(int32_t)this_02,
+                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                         );
+      if (pOVar17 == (Object *)0x0) goto code_?;
+      pMVar11 = (MVAvatarSpawnRoleCreator *)0x0;
+      if ((RVar9 != (RegexCharClass_SingleRange)0x0) &&
+         (pMVar11 = (MVAvatarSpawnRoleCreator *)func_?(),
+         pMVar11 == (MVAvatarSpawnRoleCreator *)0x0)) goto code_?;
+      unlockedTier = (GamePassTier__Enum)&UNK_?;
       GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewardInfo_Initialize
-                ((GamePassesSpawnRoleRewardInfo *)this,iVar10,(GameObject *)in_stack_15,
-                 pMVar13,unlockedTier,(MethodInfo *)0x0);
+                (this_02,(int32_t)this_02,pGVar6,pMVar11,GVar12,(MethodInfo *)0x0);
       TierUnlockedPopupContentSpawnRole::TierUnlockedPopupContentSpawnRole_AddSpawnRoleRewardInfo
-                ((TierUnlockedPopupContentSpawnRole *)RVar7,(GamePassesSpawnRoleRewardInfo *)this,
-                 (MethodInfo *)0x0);
+                (pTVar13,this_02,(MethodInfo *)0x0);
     }
   }
-  iVar10 = iVar10 + 1;
+  this_02 = (GamePassesSpawnRoleRewardInfo *)((int)&this_02->klass + 1);
   goto code_?;
 code_?:
-  pLVar2 = (this_00->fields).popupContentList;
-  in_stack_8 = RVar11;
+  pLVar2 = (this->fields).popupContentList;
   if (pLVar2 == (List_1_TierUnlockedPopupContentBase_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-            ((List_1_System_Object_ *)pLVar2,(Object *)RVar7,
+            ((List_1_System_Object_ *)pLVar2,(Object *)pTVar13,
              MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
             );
-  in_stack_8 = RVar11;
   goto code_?;
 }
 
@@ -494,90 +448,85 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::
                             );
           index = (int32_t)(this->fields).unlockedTier;
           this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__TierUnlockedPopupController__OnStartingToDissappear__,
-                       (MethodInfo *)0x0);
-            if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-              (**(code **)(*(int *)RVar2 + 0xdc))
-                        (RVar2,index,this_01,*(undefined4 *)(*(int *)RVar2 + 0xe0));
-              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                ((MethodInfo *)0x0);
-              (this->fields).interpolateColorStartTime = fVar3;
-              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                ((MethodInfo *)0x0);
-              (this->fields).bounceEffectStartTime = fVar3;
-              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                ((MethodInfo *)0x0);
-              pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       (this->fields).popupContentList;
-              if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
-                 ) {
-                RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  (pLVar1,index_00,
-                                   MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                                  );
-                if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-                  pAVar4 = (this->fields).bounceEffect;
-                  (this->fields).fadeEffectStartTime =
-                       (*(float *)((int)RVar2 + 0x1c) - (this->fields).fadeDuration) + fVar3;
-                  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                    ((MethodInfo *)0x0);
-                  if (pAVar4 != (AnimationCurve *)0x0) {
-                    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                            AnimationCurve_Evaluate
-                                      (pAVar4,(fVar3 - (this->fields).bounceEffectStartTime) /
-                                              (this->fields).bounceEffectDuration,(MethodInfo *)0x0)
-                    ;
-                    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields).popupContentList;
-                    if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                   *)0x0) {
-                      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                              RegularExpressions::RegexCharClass+SingleRange]::
-                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        (pLVar1,(this->fields).currentContentBeingShowed,
-                                         MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                                        );
-                      if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-                        if (*(Transform **)((int)RVar2 + 0x28) != (Transform *)0x0) {
-                          value.y = fVar3;
-                          value.x = fVar3;
-                          value.z = 1.0;
-                          UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_set_localScale
-                                    (*(Transform **)((int)RVar2 + 0x28),value,(MethodInfo *)0x0);
-                          pAVar4 = (this->fields).fadeEffect;
-                          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                            ((MethodInfo *)0x0);
-                          if (pAVar4 != (AnimationCurve *)0x0) {
-                            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                                    AnimationCurve_Evaluate
-                                              (pAVar4,(fVar3 - (this->fields).fadeEffectStartTime) /
-                                                      (this->fields).fadeDuration,(MethodInfo *)0x0)
-                            ;
-                            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)(this->fields).popupContentList;
-                            if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)0x0) {
-                              RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::
-                                      Text::RegularExpressions::RegexCharClass+SingleRange]::
-                                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                (pLVar1,(this->fields).currentContentBeingShowed,
-                                                 MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                                                );
-                              if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
-                                 (*(CanvasGroup **)((int)RVar2 + 0x2c) != (CanvasGroup *)0x0)) {
-                                UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::
-                                CanvasGroup_set_alpha
-                                          (*(CanvasGroup **)((int)RVar2 + 0x2c),fVar3,
-                                           (MethodInfo *)0x0);
-                                return;
-                              }
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (this_01,(Object *)this,
+                     MethodInfo__TierUnlockedPopupController__OnStartingToDissappear__,
+                     (MethodInfo *)0x0);
+          if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+            (**(code **)(*(int *)RVar2 + 0xe0))
+                      (RVar2,index,this_01,*(undefined4 *)(*(int *)RVar2 + 0xe4));
+            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+            (this->fields).interpolateColorStartTime = fVar3;
+            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+            (this->fields).bounceEffectStartTime = fVar3;
+            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              ((MethodInfo *)0x0);
+            pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                     (this->fields).popupContentList;
+            if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            {
+              RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                (pLVar1,index_00,
+                                 MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
+                                );
+              if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+                pAVar4 = (this->fields).bounceEffect;
+                (this->fields).fadeEffectStartTime =
+                     (*(float *)((int)RVar2 + 0x20) - (this->fields).fadeDuration) + fVar3;
+                fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                  ((MethodInfo *)0x0);
+                if (pAVar4 != (AnimationCurve *)0x0) {
+                  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                          AnimationCurve_Evaluate
+                                    (pAVar4,(fVar3 - (this->fields).bounceEffectStartTime) /
+                                            (this->fields).bounceEffectDuration,(MethodInfo *)0x0);
+                  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           (this->fields).popupContentList;
+                  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )0x0) {
+                    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                            RegularExpressions::RegexCharClass+SingleRange]::
+                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                      (pLVar1,(this->fields).currentContentBeingShowed,
+                                       MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
+                                      );
+                    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+                      if (*(Transform **)((int)RVar2 + 0x2c) != (Transform *)0x0) {
+                        value.y = fVar3;
+                        value.x = fVar3;
+                        value.z = 1.0;
+                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                                  (*(Transform **)((int)RVar2 + 0x2c),value,(MethodInfo *)0x0);
+                        pAVar4 = (this->fields).fadeEffect;
+                        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                          ((MethodInfo *)0x0);
+                        if (pAVar4 != (AnimationCurve *)0x0) {
+                          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                  AnimationCurve_Evaluate
+                                            (pAVar4,(fVar3 - (this->fields).fadeEffectStartTime) /
+                                                    (this->fields).fadeDuration,(MethodInfo *)0x0);
+                          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    *)(this->fields).popupContentList;
+                          if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                         *)0x0) {
+                            RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text
+                                    ::RegularExpressions::RegexCharClass+SingleRange]::
+                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                              (pLVar1,(this->fields).currentContentBeingShowed,
+                                               MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
+                                              );
+                            if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
+                               (*(CanvasGroup **)((int)RVar2 + 0x30) != (CanvasGroup *)0x0)) {
+                              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::
+                              CanvasGroup_set_alpha
+                                        (*(CanvasGroup **)((int)RVar2 + 0x30),fVar3,
+                                         (MethodInfo *)0x0);
+                              return;
                             }
                           }
                         }
@@ -644,7 +593,6 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -683,9 +631,9 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                           (pLVar5,(this->fields).currentContentBeingShowed + -1,
                            MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
                           ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    fVar9 = *(float *)((int)RVar8 + 0x10);
-    fVar10 = *(float *)((int)RVar8 + 0x14);
-    fVar11 = *(float *)((int)RVar8 + 0x18);
+    fVar9 = *(float *)((int)RVar8 + 0x14);
+    fVar10 = *(float *)((int)RVar8 + 0x18);
+    fVar11 = *(float *)((int)RVar8 + 0x1c);
     pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).popupContentList;
     if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
@@ -705,12 +653,12 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
       fVar7 = _UNK_?;
     }
     if (pIVar6 == (Image *)0x0) goto code_?;
-    (*(pIVar6->klass->vtable).set_color.methodPtr)
-              (pIVar6,(*(float *)((int)RVar8 + 0xc) - (float)pMVar12) * fVar7 + (float)pMVar12,
-               (*(float *)((int)RVar8 + 0x10) - fVar9) * fVar7 + fVar9,
-               (*(float *)((int)RVar8 + 0x14) - fVar10) * fVar7 + fVar10,
-               (*(float *)((int)RVar8 + 0x18) - fVar11) * fVar7 + fVar11,
-               (pIVar6->klass->vtable).set_color.method);
+    (*(code *)(pIVar6->klass->vtable).set_color.method)
+              (pIVar6,(*(float *)((int)RVar8 + 0x10) - (float)pMVar12) * fVar7 + (float)pMVar12,
+               (*(float *)((int)RVar8 + 0x14) - fVar9) * fVar7 + fVar9,
+               (*(float *)((int)RVar8 + 0x18) - fVar10) * fVar7 + fVar10,
+               (*(float *)((int)RVar8 + 0x1c) - fVar11) * fVar7 + fVar11,
+               (pIVar6->klass->vtable).get_raycastTarget.methodPtr);
   }
   pAVar13 = (this->fields).bounceEffect;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
@@ -727,12 +675,12 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                            (pLVar5,(this->fields).currentContentBeingShowed,
                             MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
                            ), RVar8 != (RegexCharClass_SingleRange)0x0)) &&
-       (*(Transform **)((int)RVar8 + 0x28) != (Transform *)0x0)) {
+       (*(Transform **)((int)RVar8 + 0x2c) != (Transform *)0x0)) {
       value.y = fVar1;
       value.x = fVar1;
       value.z = 1.0;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (*(Transform **)((int)RVar8 + 0x28),value,(MethodInfo *)0x0);
+                (*(Transform **)((int)RVar8 + 0x2c),value,(MethodInfo *)0x0);
       pAVar13 = (this->fields).fadeEffect;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       if (pAVar13 != (AnimationCurve *)0x0) {
@@ -750,9 +698,9 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                                (pLVar5,(this->fields).currentContentBeingShowed,
                                 MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
                                ), RVar8 != (RegexCharClass_SingleRange)0x0)) &&
-           (*(CanvasGroup **)((int)RVar8 + 0x2c) != (CanvasGroup *)0x0)) {
+           (*(CanvasGroup **)((int)RVar8 + 0x30) != (CanvasGroup *)0x0)) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (*(CanvasGroup **)((int)RVar8 + 0x2c),(float)pMVar12,(MethodInfo *)0x0);
+                    (*(CanvasGroup **)((int)RVar8 + 0x30),(float)pMVar12,(MethodInfo *)0x0);
           return;
         }
       }

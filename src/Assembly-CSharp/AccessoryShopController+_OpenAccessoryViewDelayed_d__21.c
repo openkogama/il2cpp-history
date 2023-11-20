@@ -18,27 +18,26 @@ bool Assembly-CSharp.dll::AccessoryShopController+<OpenAccessoryViewDelayed>d__2
   pAVar2 = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    this_01 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__UnityEngine__WaitForEndOfFrame)
-    ;
-    if (this_01 != (TweenRunner_1_FloatTween_ *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-      TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)this_01;
-      func_?(&(this->fields).__2__current,this_01);
-      (this->fields).__1__state = 1;
-      return 1;
-    }
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    bVar4 = (*pcVar3)();
-    return bVar4;
+    this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+    (this->fields).__2__current = (Object *)this_01;
+    func_?(&(this->fields).__2__current,this_01);
+    (this->fields).__1__state = 1;
+    return 1;
   }
   if (iVar1 == 1) {
     (this->fields).__1__state = -1;
     if ((pAVar2 == (AccessoryShopController *)0x0) ||
-       (this_00 = (pAVar2->fields).inventoryController, this_00 == (InventoryController *)0x0))
-    goto code_?;
+       (this_00 = (pAVar2->fields).inventoryController, this_00 == (InventoryController *)0x0)) {
+code_?:
+      func_?();
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
     pAVar5 = (AccessoryViewController *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this_00,
@@ -74,7 +73,6 @@ void Assembly-CSharp.dll::AccessoryShopController+<OpenAccessoryViewDelayed>d__2
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

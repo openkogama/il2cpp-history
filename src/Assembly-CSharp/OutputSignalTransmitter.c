@@ -54,7 +54,7 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send
                         );
       if (bVar7 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffb8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -72,16 +72,16 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send
       goto code_?;
       iVar8 = *piVar9;
       uVar10 = 0;
-      if (*(ushort *)(iVar8 + 0xb2) != 0) {
+      if (*(ushort *)(iVar8 + 0xb6) != 0) {
         do {
           if (*(ILogicWorldObject__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__ILogicWorldObject) {
             puVar11 = (undefined4 *)
-                     (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xbc + iVar8);
+                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb2));
+        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
       }
       puVar11 = (undefined4 *)func_?();
 code_?:
@@ -89,16 +89,16 @@ code_?:
       if (piVar9 == (int *)0x0) break;
       iVar8 = *piVar9;
       uVar10 = 0;
-      if (*(ushort *)(iVar8 + 0xb2) != 0) {
+      if (*(ushort *)(iVar8 + 0xb6) != 0) {
         do {
           if (*(IInputSignalReceiver__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__IInputSignalReceiver) {
             puVar11 = (undefined4 *)
-                     (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xbc + iVar8);
+                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb2));
+        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
       }
       puVar11 = (undefined4 *)func_?();
 code_?:

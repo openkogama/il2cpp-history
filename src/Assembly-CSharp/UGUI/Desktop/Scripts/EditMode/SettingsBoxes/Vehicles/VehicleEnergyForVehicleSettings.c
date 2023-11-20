@@ -60,7 +60,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     pVVar1 = (this->fields).vehicleBaseSettings;
     if (pVVar1 != (VehicleBaseSettings *)0x0) {
       this_00 = (pVVar1->fields).canvas;
-      value = (Vector2)(*(pVVar1->klass->vtable).get_DefaultCanvasSize.methodPtr)();
+      value = (Vector2)(*(code *)(pVVar1->klass->vtable).get_DefaultCanvasSize.method)();
       if (this_00 != (RectTransform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                   (this_00,value,(MethodInfo *)0x0);
@@ -92,14 +92,14 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   }
   pVVar1 = (this->fields).vehicleBaseSettings;
   if (pVVar1 != (VehicleBaseSettings *)0x0) {
-    puVar2 = (undefined4 *)
-             (*(pVVar1->klass->vtable).__unknown_3.methodPtr)
-                       (&pOStack_3,pVVar1,(pVVar1->klass->vtable).__unknown_3.method);
+    piVar2 = (int32_t *)
+             (*(code *)(pVVar1->klass->vtable).__unknown_3.method)
+                       (&iStack_3,pVVar1,pVVar1->klass[1]._0.image);
     pSVar4 = StringLiteral_vehicleEnergyUse;
-    pOStack_3 = (Object *)*puVar2;
-    iStack_5 = puVar2[1];
-    iStack_6 = puVar2[2];
-    iStack_7 = puVar2[3];
+    iStack_3 = *piVar2;
+    iStack_5 = piVar2[1];
+    iStack_6 = piVar2[2];
+    iStack_7 = piVar2[3];
     this_00 = (this->fields).vehicleEnergyOnToggle;
     if (cRam_? == '\0') {
       func_?(&StringLiteral_BlueprintData_);
@@ -116,18 +116,20 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                        );
         cRam_? = '\x01';
       }
-      pDVar9 = (pVVar1->fields).bluePrintData;
-      if (pDVar9 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (pDVar9,(Object *)pSVar4,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        uVar11 = CONCAT44(TypeInfo__System__Boolean,pOVar10);
-        if ((this_00 != (SettingsToggle *)0x0) && (pOVar10 != (Object *)0x0)) {
-          if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-          goto code_?;
-          pOStack_3 = pOVar10;
+      pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (pVVar1->fields).bluePrintData;
+      if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar9,(Object *)pSVar4,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        uVar11 = CONCAT44(TypeInfo__System__Boolean,TVar10.m_Index);
+        if ((this_00 != (SettingsToggle *)0x0) && (TVar10.m_Index != 0)) {
+          if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+          iStack_3 = TVar10.m_Index;
           pbVar12 = (bool *)func_?();
           SettingsToggle::SettingsToggle_Initialize(this_00,pSStack_8,*pbVar12,(MethodInfo *)0x0);
           pSVar4 = StringLiteral_vehicleEnergyStorage;
@@ -139,42 +141,44 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                              );
               cRam_? = '\x01';
             }
-            pDVar9 = (pVVar1->fields).bluePrintData;
-            if (pDVar9 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (pDVar9,(Object *)pSVar4,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              uVar11 = CONCAT44(TypeInfo__System__Int32,pOVar10);
-              if (pOVar10 != (Object *)0x0) {
-                if ((pOVar10->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class
-                   ) goto code_?;
-                pOStack_3 = pOVar10;
-                piVar13 = (int32_t *)func_?();
+            pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                     (pVVar1->fields).bluePrintData;
+            if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+              TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                (pDVar9,(Object *)pSVar4,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                );
+              uVar11 = CONCAT44(TypeInfo__System__Int32,TVar10.m_Index);
+              if (TVar10.m_Index != 0) {
+                if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                    (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                iStack_3 = TVar10.m_Index;
+                piVar2 = (int32_t *)func_?();
                 pSVar4 = StringLiteral_vehicleEnergyStorage;
-                pSVar14 = (this->fields).storageSlider;
-                iVar15 = *piVar13;
+                pSVar13 = (this->fields).storageSlider;
+                iVar14 = *piVar2;
                 if (cRam_? == '\0') {
                   func_?(&StringLiteral_BlueprintData_);
                   cRam_? = '\x01';
                 }
                 pSVar4 = mscorlib.dll::System::String::String_Concat_3
                                     (StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
-                if (pSVar14 != (SettingsSlider *)0x0) {
+                if (pSVar13 != (SettingsSlider *)0x0) {
                   SettingsSlider::SettingsSlider_Initialize_1
-                            (pSVar14,pSVar4,iVar15,(int32_t)pOStack_3,iStack_5,(MethodInfo *)0x0);
+                            (pSVar13,pSVar4,iVar14,iStack_3,iStack_5,(MethodInfo *)0x0);
                   pSVar4 = StringLiteral_vehicleEnergyStorage;
-                  pSVar16 = (this->fields).storageInputField;
+                  pSVar15 = (this->fields).storageInputField;
                   if (cRam_? == '\0') {
                     func_?(&StringLiteral_BlueprintData_);
                     cRam_? = '\x01';
                   }
                   pSVar4 = mscorlib.dll::System::String::String_Concat_3
                                       (StringLiteral_BlueprintData_,pSVar4,(MethodInfo *)0x0);
-                  if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                  if (pSVar15 != (SettingsInputFieldSlider *)0x0) {
                     SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                              (pSVar16,pSVar4,iVar15,(MethodInfo *)0x0);
+                              (pSVar15,pSVar4,iVar14,(MethodInfo *)0x0);
                     pSVar4 = StringLiteral_vehicleEnergyConsumption;
                     pVVar1 = (this->fields).vehicleBaseSettings;
                     if (pVVar1 != (VehicleBaseSettings *)0x0) {
@@ -184,23 +188,25 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                        );
                         cRam_? = '\x01';
                       }
-                      pDVar9 = (pVVar1->fields).bluePrintData;
-                      if (pDVar9 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                 Object,System::Object]::
-                                 Dictionary_2_System_Object_System_Object__get_Item
-                                           (pDVar9,(Object *)pSVar4,
-                                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                           );
-                        uVar11 = CONCAT44(TypeInfo__System__Int32,pOVar10);
-                        if (pOVar10 != (Object *)0x0) {
-                          if ((pOVar10->klass->_0).element_class !=
+                      pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               (pVVar1->fields).bluePrintData;
+                      if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                    0x0) {
+                        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,UnityEngine::UIElements::TextureId]::
+                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                          (pDVar9,(Object *)pSVar4,
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                          );
+                        uVar11 = CONCAT44(TypeInfo__System__Int32,TVar10.m_Index);
+                        if (TVar10.m_Index != 0) {
+                          if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
                               (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                          pOStack_3 = pOVar10;
-                          piVar13 = (int32_t *)func_?();
+                          iStack_3 = TVar10.m_Index;
+                          piVar2 = (int32_t *)func_?();
                           pSVar4 = StringLiteral_vehicleEnergyConsumption;
-                          pSVar14 = (this->fields).consumptionSlider;
-                          iVar15 = *piVar13;
+                          pSVar13 = (this->fields).consumptionSlider;
+                          iVar14 = *piVar2;
                           if (cRam_? == '\0') {
                             func_?(&StringLiteral_BlueprintData_);
                             cRam_? = '\x01';
@@ -208,11 +214,11 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                           pSVar4 = mscorlib.dll::System::String::String_Concat_3
                                               (StringLiteral_BlueprintData_,pSVar4,
                                                (MethodInfo *)0x0);
-                          if (pSVar14 != (SettingsSlider *)0x0) {
+                          if (pSVar13 != (SettingsSlider *)0x0) {
                             SettingsSlider::SettingsSlider_Initialize_1
-                                      (pSVar14,pSVar4,iVar15,iStack_6,iStack_7,(MethodInfo *)0x0);
+                                      (pSVar13,pSVar4,iVar14,iStack_6,iStack_7,(MethodInfo *)0x0);
                             pSVar4 = StringLiteral_vehicleEnergyConsumption;
-                            pSVar16 = (this->fields).consumptionInputField;
+                            pSVar15 = (this->fields).consumptionInputField;
                             if (cRam_? == '\0') {
                               func_?(&StringLiteral_BlueprintData_);
                               cRam_? = '\x01';
@@ -220,9 +226,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                             pSVar4 = mscorlib.dll::System::String::String_Concat_3
                                                 (StringLiteral_BlueprintData_,pSVar4,
                                                  (MethodInfo *)0x0);
-                            if (pSVar16 != (SettingsInputFieldSlider *)0x0) {
+                            if (pSVar15 != (SettingsInputFieldSlider *)0x0) {
                               SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                        (pSVar16,pSVar4,iVar15,(MethodInfo *)0x0);
+                                        (pSVar15,pSVar4,iVar14,(MethodInfo *)0x0);
                               return;
                             }
                           }
@@ -241,8 +247,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   uVar11 = func_?();
 code_?:
   func_?(uVar11);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

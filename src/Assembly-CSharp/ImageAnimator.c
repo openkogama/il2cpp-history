@@ -19,17 +19,6 @@ float Assembly-CSharp.dll::ImageAnimator::ImageAnimator_GetCurrentAlpha
 }
 
 
-/* Void OnDisable() */
-
-void Assembly-CSharp.dll::ImageAnimator::ImageAnimator_OnDisable
-               (ImageAnimator *this,MethodInfo *method)
-
-{
-  (this->fields).time = 0.0;
-  return;
-}
-
-
 /* Void SetColor(Color, Color) */
 
 void Assembly-CSharp.dll::ImageAnimator::ImageAnimator_SetColor
@@ -80,9 +69,9 @@ void Assembly-CSharp.dll::ImageAnimator::ImageAnimator_Update
     fVar5 = (fVar9 - fVar5) * fVar2 + fVar5;
     fVar6 = (fVar10 - fVar6) * fVar2 + fVar6;
     if (pIVar3 != (Image *)0x0) {
-      (*(pIVar3->klass->vtable).set_color.methodPtr)
+      (*(code *)(pIVar3->klass->vtable).set_color.method)
                 (pIVar3,(fVar7 - fVar1) * fVar2 + fVar1,(fVar8 - fVar4) * fVar2 + fVar4,fVar5,
-                 fVar6,(pIVar3->klass->vtable).set_color.method);
+                 fVar6,(pIVar3->klass->vtable).get_raycastTarget.methodPtr);
       return;
     }
   }

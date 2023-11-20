@@ -28,46 +28,49 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_I
 {
   if (cRam_? == '\0') {
     func_?();
-    func_?();
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__
+                   );
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
     func_?(&StringLiteral_CamRotateTarget);
     cRam_? = '\x01';
   }
   (this->fields).targetCubeModelBase = targetCubeModelBase;
-  func_?();
+  func_?(&(this->fields).targetCubeModelBase);
   (this->fields)._.targetCamera = targetCamera;
-  func_?(&(this->fields)._.targetCamera);
+  func_?(&(this->fields)._.targetCamera,targetCamera);
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
   (this->fields)._.layerMask = iVar1;
   (this->fields)._.blinkMaterial = material;
   func_?(&(this->fields)._.blinkMaterial,material);
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__)
+  ;
+  m = (this->fields)._.blinkMaterial;
+  this_01 = (Blinker *)func_?(TypeInfo__Blinker);
+  color.g = (float)_UNK_?;
+  color.r = (float)_UNK_?;
+  color.b = (float)_UNK_?;
+  color.a = _UNK_?;
+  Blinker::Blinker__ctor(this_01,2.0,m,color,(MethodInfo *)0x0);
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,7,(Object *)this_01,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
               );
-    m = (this->fields)._.blinkMaterial;
-    this_01 = (Blinker *)func_?();
-    if (this_01 != (Blinker *)0x0) {
-      color.g = (float)_UNK_?;
-      color.r = (float)_UNK_?;
-      color.b = (float)_UNK_?;
-      color.a = _UNK_?;
-      Blinker::Blinker__ctor(this_01,2.0,m,color,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x7,(Object *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                );
-      (this->fields)._.blinkers = (Dictionary_2_BlinkType_Blinker_ *)this_00;
-      func_?();
-      return;
-    }
+    (this->fields)._.blinkers = (Dictionary_2_BlinkType_Blinker_ *)this_00;
+    func_?();
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::TierUnlockedItemsRewardIn
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xf2,(MethodInfo *)0x0);
+                  (pGVar1,0xd2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -128,19 +128,20 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
     func_?(&TypeInfo__TierUnlockedItemsRewardInfo____c__DisplayClass8_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__TierUnlockedItemsRewardInfo____c__DisplayClass8_0);
+  method_00 = TypeInfo__TierUnlockedItemsRewardInfo____c__DisplayClass8_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).tierUnlockedItemsPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      TierUnlockedItemsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemsPopup>_TierUnlockedItemsPopup_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).tierUnlockedItemsPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        TierUnlockedItemsPopup_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemsPopup>_TierUnlockedItemsPopup_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -150,26 +151,23 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__TierUnlockedItemsRewardInfo____c__DisplayClass8_0___OnSeeItemsButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if (value[1].klass != (Object__Class *)0x0) {
-        TierUnlockedItemsPopup::TierUnlockedItemsPopup_Initialize
-                  ((TierUnlockedItemsPopup *)value[1].klass,(uint)(this->fields).tier,
-                   (this->fields).tierShopData,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__TierUnlockedItemsRewardInfo____c__DisplayClass8_0___OnSeeItemsButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (value[1].klass != (Object__Class *)0x0) {
+      TierUnlockedItemsPopup::TierUnlockedItemsPopup_Initialize
+                ((TierUnlockedItemsPopup *)value[1].klass,(uint)(this->fields).tier,
+                 (this->fields).tierShopData,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -217,32 +215,33 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_7._index = 0;
   DStack_7._version = 0;
   DStack_7._currentValue = (Object *)0x0;
   IStack_8.m_value = 0;
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).tierShopData;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).tierShopData;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Values__
                         );
     if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
       pDVar9 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-               Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                          (&DStack_10,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
                          );
-      DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar9->_dictionary;
+      DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar9->_dictionary;
       DStack_7._index = pDVar9->_index;
       DStack_7._version = pDVar9->_version;
       DStack_7._currentValue = pDVar9->_currentValue;
@@ -252,8 +251,8 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
       while( true ) {
         bVar11 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                Object,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           (&DStack_7,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
                           );
@@ -262,7 +261,7 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
         IStack_8.m_value = (int32_t)(DStack_7._currentValue[1].monitor + IStack_8.m_value);
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
@@ -273,8 +272,9 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::
       pSVar13 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_x,pSVar13,(MethodInfo *)0x0);
       if (pTVar12 != (Text *)0x0) {
-        (*(pTVar12->klass->vtable).set_text.methodPtr)
-                  (pTVar12,pSVar13,(pTVar12->klass->vtable).set_text.method);
+        (*(code *)(pTVar12->klass->vtable).set_text.method)
+                  (pTVar12,pSVar13,(pTVar12->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         *unaff_FS_OFFSET = uStack_3;
         return;
       }

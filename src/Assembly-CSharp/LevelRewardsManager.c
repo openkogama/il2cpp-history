@@ -35,38 +35,38 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_AddClaimedLev
   }
   puStack_4 = puVar5;
   DStack_6._16_8_ = 0;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
   if (levelRewards != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
     method_00 = (MethodInfo *)auStack_7;
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                        method_00,(Dictionary_2_System_Object_System_Object_ *)levelRewards,
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)levelRewards,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
                        );
     uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar8->_dictionary;
+    DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar8->_dictionary;
     DStack_6._version = pDVar8->_version;
     DStack_6._index = pDVar8->_index;
-    DStack_6._current.key = (int32_t)(pDVar8->_current).key;
+    DStack_6._current.key = (pDVar8->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
     pOStack_10 = (Object *)(auStack_7 + 0x18);
     while( true ) {
       do {
         bVar11 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
-                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum_ *
-                           )(auStack_7 + 0x18),
+                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Int32]::
+                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32_ *)
+                           (auStack_7 + 0x18),
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
                           );
         if (bVar11 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)(auStack_7 + 0x18),
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
@@ -81,24 +81,21 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_AddClaimedLev
           return;
         }
         value = DStack_6._current.value;
-        this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                  (this->fields).unseenLevelRewards;
+        this_00 = (Dictionary_2_System_Int32_System_Single_ *)(this->fields).unseenLevelRewards;
         pMStack_13 = (MethodInfo *)DStack_6._current.key;
-        if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-        goto code_?;
-        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          (this_00,(Object *)DStack_6._current.key,
+        if (this_00 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
+        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
+                          (this_00,DStack_6._current.key,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
                           );
       } while (bVar11 != 0);
-      this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).unseenLevelRewards;
-      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
+      this_01 = (this->fields).unseenLevelRewards;
+      if (this_01 == (Dictionary_2_System_Int32_System_Int32_ *)0x0) break;
       method_00 = pMStack_13;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)pMStack_13,(Object *)value,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+      Dictionary_2_System_Int32_System_Int32__Add
+                (this_01,(int32_t)pMStack_13,value,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
     }
   }
@@ -121,13 +118,14 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_ClearRewards
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).unseenLevelRewards;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).unseenLevelRewards;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
+    StyleSheetCache+SheetHandleKey,System::Object]::
+    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
               (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Clear__);
     return;
   }
@@ -167,12 +165,12 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_SetNextLevelR
   method = (MethodInfo *)0x0;
   level = (int32_t)&UNK_?;
   gold = (int32_t)pSVar1;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   method = MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_;
   VStack_2.Item1 = 0;
-  VStack_2.Item2 = 0;
-  mscorlib.dll::System::ValueTuple`2[Int32,Int32]::ValueTuple_2_Int32_Int32___ctor
-            (&VStack_2,level,gold,
+  VStack_2.Item2 = (void *)0x0;
+  mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
+            (&VStack_2,level,(void *)gold,
              MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
             );
   return;
@@ -190,23 +188,17 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager__ctor
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_System_Int32_ *)
-            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  if (this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).unseenLevelRewards = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).unseenLevelRewards = (Dictionary_2_System_Int32_System_Int32_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

@@ -15,7 +15,7 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Preview_theme_created,(MethodInfo *)0x0);
   pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
   if (pTVar1 == (ThemeWorldObject *)0x0) {
@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_DestroyTemporary
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Preview_theme_destroyed,(MethodInfo *)0x0);
   if (theme != (Theme *)0x0) {
     Theme::Theme_Deactivate(theme,(MethodInfo *)0x0);
@@ -133,64 +133,50 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_GetThemePrefab
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__ContainsKey_System__String_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__get_Item_System__String_
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__TryGetValue_System__String__Theme__
                    );
     func_?(&MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
     func_?(&StringLiteral_Theme_is_missing);
     func_?(&StringLiteral__is_not_present_in_theme_reposit);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-            (this->fields).IdentifierToTheme;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)identifier,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__ContainsKey_System__String_
+  pTVar1 = (Theme *)0x0;
+  this_00 = (this->fields).IdentifierToTheme;
+  if (this_00 != (Dictionary_2_System_String_Theme_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)identifier,
+                       (Object **)&stack0xfffffff8,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__TryGetValue_System__String__Theme__
                       );
-    if (bVar1 == 0) {
-      message = mscorlib.dll::System::String::String_Concat_3
-                          (identifier,StringLiteral__is_not_present_in_theme_reposit,
-                           (MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)message,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_Theme_is_missing,(MethodInfo *)0x0);
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).themePrefabs;
-      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_01,0,
-                           MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
-        return (Theme *)RVar2;
-      }
+    if (bVar2 != 0) {
+      return pTVar1;
     }
-    else {
-      this_02 = (this->fields).IdentifierToTheme;
-      if (this_02 != (Dictionary_2_System_String_Theme_ *)0x0) {
-        pTVar3 = (Theme *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                    ((Dictionary_2_System_Object_System_Object_ *)this_02,
-                                     (Object *)identifier,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__get_Item_System__String_
-                                    );
-        return pTVar3;
-      }
+    message = mscorlib.dll::System::String::String_Concat_3
+                        (identifier,StringLiteral__is_not_present_in_theme_reposit,(MethodInfo *)0x0
+                        );
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
+    ;
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)StringLiteral_Theme_is_missing,(MethodInfo *)0x0);
+    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).themePrefabs;
+    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_01,0,
+                         MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
+      return (Theme *)RVar3;
     }
   }
   func_?();
   pcVar4 = (code *)swi(3);
-  pTVar3 = (Theme *)(*pcVar4)();
-  return pTVar3;
+  pTVar1 = (Theme *)(*pcVar4)();
+  return pTVar1;
 }
 
 
@@ -251,7 +237,7 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_Initialize
                         );
       if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__Dispose__
@@ -261,7 +247,7 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_Initialize
       }
       pDStack_9 = (this->fields).IdentifierToTheme;
       if (value == (RegexCharClass_SingleRange)0x0) break;
-      key = (Object *)(**(code **)(*(int *)value + 0xdc))();
+      key = (Object *)(**(code **)(*(int *)value + 0xe0))();
       if (pDStack_9 == (Dictionary_2_System_String_Theme_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__set_Item
@@ -290,25 +276,20 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository__ctor
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_Theme_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>
-                           );
-  if (this_00 != (Dictionary_2_System_String_Theme_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
-              );
-    (this->fields).IdentifierToTheme = this_00;
-    func_?(&(this->fields).IdentifierToTheme,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
-              ((ScriptableObject *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
+            );
+  (this->fields).IdentifierToTheme = (Dictionary_2_System_String_Theme_ *)this_00;
+  func_?(&(this->fields).IdentifierToTheme,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
+            ((ScriptableObject *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -354,12 +335,11 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
             return (ThemeWorldObject *)0x0;
           }
           pTStack4 = TypeInfo__ThemeWorldObject;
-          if (((TypeInfo__ThemeWorldObject->_1).typeHierarchyDepth <=
-               *(byte *)(*(int *)RVar3 + 0xb4)) &&
-             (*(ThemeWorldObject__Class **)
-               (*(int *)(*(int *)RVar3 + 100) + -4 +
-               (uint)(TypeInfo__ThemeWorldObject->_1).typeHierarchyDepth * 4) ==
-              TypeInfo__ThemeWorldObject)) {
+          if (((TypeInfo__ThemeWorldObject->_1).naturalAligment <= *(byte *)(*(int *)RVar3 + 0xb8))
+             && (*(ThemeWorldObject__Class **)
+                  (*(int *)(*(int *)RVar3 + 100) + -4 +
+                  (uint)(TypeInfo__ThemeWorldObject->_1).naturalAligment * 4) ==
+                 TypeInfo__ThemeWorldObject)) {
             return (ThemeWorldObject *)RVar3;
           }
           goto code_?;
@@ -395,36 +375,36 @@ String * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentThemeI
       func_?();
       cRam_? = '\x01';
     }
-    if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_2 + 0x58) !=
-        (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pSStack3 =
-           (String *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-           Dictionary_2_System_Object_System_Object__get_Item
-                     (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_2 + 0x58),
-                      (Object *)StringLiteral_identifier,
+    if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)(in_stack_2 + 0x58)
+        != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TStack3 =
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
+                       (in_stack_2 + 0x58),(Object *)StringLiteral_identifier,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                      );
-      pSVar4 = (String *)0x0;
-      if (pSStack3 != (String *)0x0) {
-        if (pSStack3->klass == TypeInfo__System__String) {
-          pSVar4 = pSStack3;
+      TVar4.m_Index = 0;
+      if (TStack3.m_Index != 0) {
+        if (*(String__Class **)TStack3.m_Index == TypeInfo__System__String) {
+          TVar4 = TStack3;
         }
-        if (pSVar4 == (String *)0x0) {
+        if ((String *)TVar4.m_Index == (String *)0x0) {
           func_?();
           pcVar5 = (code *)swi(3);
-          pSVar4 = (String *)(*pcVar5)();
-          return pSVar4;
+          pSVar6 = (String *)(*pcVar5)();
+          return pSVar6;
         }
       }
-      return pSVar4;
+      return (String *)TVar4.m_Index;
     }
   }
   func_?();
   func_?();
   pcVar5 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar5)();
-  return pSVar4;
+  pSVar6 = (String *)(*pcVar5)();
+  return pSVar6;
 }
 
 

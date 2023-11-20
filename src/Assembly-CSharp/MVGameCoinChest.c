@@ -31,39 +31,35 @@ code_?:
       pUVar4 = (this->fields).useInteractor;
       pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar5,(Object *)pUVar4,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pTVar3 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-          pMVar2 = (this->fields).chestObject;
-          if (pMVar2 != (MVGameCoinChestObject *)0x0) {
-            pTVar3 = (pMVar2->fields).triggerBoxEvents;
-            object = (Object *)&UNK_?;
-            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        (pUVar5,object,
-                         MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                         ,(MethodInfo *)0x0);
-              if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                          (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-                pUVar4 = (this->fields).useInteractor;
-                if (pUVar4 != (UseInteractor *)0x0) {
-                  UseInteractor::UseInteractor_OnDestroy
-                            (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
-                  (this->fields).useInteractor = (UseInteractor *)0x0;
-                  func_?(&(this->fields).useInteractor,0);
-                  goto code_?;
-                }
-              }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar5,(Object *)pUVar4,
+                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pTVar3 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+        pMVar2 = (this->fields).chestObject;
+        if (pMVar2 != (MVGameCoinChestObject *)0x0) {
+          pTVar3 = (pMVar2->fields).triggerBoxEvents;
+          pUVar4 = (this->fields).useInteractor;
+          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar5,(Object *)pUVar4,
+                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pTVar3 != (TriggerBoxEvents *)0x0) {
+            TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
+                      (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+            pUVar4 = (this->fields).useInteractor;
+            if (pUVar4 != (UseInteractor *)0x0) {
+              UseInteractor::UseInteractor_OnDestroy
+                        (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
+              (this->fields).useInteractor = (UseInteractor *)0x0;
+              func_?(&(this->fields).useInteractor,0);
+              goto code_?;
             }
           }
         }
@@ -201,12 +197,12 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_InitializeInventory
   pMVar1 = (this->fields).chestObject;
   if ((pMVar1 != (MVGameCoinChestObject *)0x0) &&
      ((pMVar1->fields).modelSelector != (GameCoinChestModelSelector *)0x0)) {
-    if (*(Renderer **)(in_stack_2 + 0x10) != (Renderer *)0x0) {
+    if (*(Renderer **)(in_stack_2 + 0x14) != (Renderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                (*(Renderer **)(in_stack_2 + 0x10),0,(MethodInfo *)0x0);
-      if (*(Renderer **)(in_stack_2 + 0xc) != (Renderer *)0x0) {
+                (*(Renderer **)(in_stack_2 + 0x14),0,(MethodInfo *)0x0);
+      if (*(Renderer **)(in_stack_2 + 0x10) != (Renderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  (*(Renderer **)(in_stack_2 + 0xc),1,(MethodInfo *)0x0);
+                  (*(Renderer **)(in_stack_2 + 0x10),1,(MethodInfo *)0x0);
         return;
       }
     }
@@ -242,7 +238,7 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_OnDataUpdate
   this_00 = (this->fields).useInteractor;
   if (this_00 != (UseInteractor *)0x0) {
     UseInteractor::UseInteractor_UpdateData(this_00,(this->fields)._._._.data,(MethodInfo *)0x0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
     return;
   }
@@ -310,17 +306,19 @@ bool Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_OpenChest
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar4 != (MVNetworkGame *)0x0) {
           this_02 = (pMVar4->fields)._GameCoinManager_k__BackingField;
-          this_03 = (this->fields)._._._.data;
-          if (this_03 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               (this_03,(Object *)StringLiteral_gameCoinAmount,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            uVar6 = CONCAT44(TypeInfo__System__Int32,pOVar5);
-            if ((this_02 != (MVGameCoinManager *)0x0) && (pOVar5 != (Object *)0x0)) {
-              if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-              goto code_?;
+          this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                    (this->fields)._._._.data;
+          if (this_03 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+            TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (this_03,(Object *)StringLiteral_gameCoinAmount,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+            uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
+            if ((this_02 != (MVGameCoinManager *)0x0) && (TVar5.m_Index != 0)) {
+              if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+                  (TypeInfo__System__Int32->_0).element_class) goto code_?;
               piVar7 = (int32_t *)func_?();
               MVGameCoinManager::MVGameCoinManager_GameCoinChestCollect
                         (this_02,*piVar7,(MethodInfo *)0x0);
@@ -355,6 +353,30 @@ code_?:
 }
 
 
+/* Void Reset() */
+
+void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_Reset
+               (MVGameCoinChest *this,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  if (((this->fields).state == 2) || ((this->fields).state == 1)) {
+    pMVar1 = (this->fields).chestObject;
+    if ((pMVar1 == (MVGameCoinChestObject *)0x0) ||
+       (this_00 = (pMVar1->fields).modelSelector, this_00 == (GameCoinChestModelSelector *)0x0)) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    GameCoinChestModelSelector::GameCoinChestModelSelector_Close(this_00,(MethodInfo *)0x0);
+    (this->fields).state = 0;
+  }
+  return;
+}
+
+
 /* Void SetupUseInteractor() */
 
 void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_SetupUseInteractor
@@ -377,84 +399,60 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_SetupUseInteractor
                    );
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).chestObject;
-  if (pMVar1 != (MVGameCoinChestObject *)0x0) {
-    pGVar2 = (pMVar1->fields).useInteractionRotator;
-    pTVar3 = (((this->fields).chestObject)->fields).triggerBoxEvents;
-    if (pTVar3 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar3,(MethodInfo *)0x0);
-      this_00 = (Predicate_1_Int32Enum_ *)func_?(TypeInfo__System__Func<int,_bool>);
-      if (this_00 != (Predicate_1_Int32Enum_ *)0x0) {
-        mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
-                  (this_00,(Object *)this,MethodInfo__MVGameCoinChest__OpenChest_int_,
-                   (MethodInfo *)0x0);
-        this_01 = (Func_3_Int32_Object_Boolean_ *)
-                  func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
-        if (this_01 != (Func_3_Int32_Object_Boolean_ *)0x0) {
-          mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVGameCoinChest__IsUsable_int__MVInteractableBase_,
-                     (MethodInfo *)0x0);
-          pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-          if (pUVar4 != (UseInteractor *)0x0) {
-            UseInteractor::UseInteractor__ctor
-                      (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
-                       (Func_2_Int32_Boolean_ *)this_00,
-                       (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-            (this->fields).useInteractor = pUVar4;
-            func_?(&(this->fields).useInteractor,pUVar4);
-            pMVar1 = (this->fields).chestObject;
-            if (pMVar1 != (MVGameCoinChestObject *)0x0) {
-              pGVar2 = (pMVar1->fields).useInteractionRotator;
-              this_02 = (LevelBasedUseRequirement *)
-                        func_?(TypeInfo__LevelBasedUseRequirement);
-              if (this_02 != (LevelBasedUseRequirement *)0x0) {
-                LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                          (this_02,pGVar2,0,(MethodInfo *)0x0);
-                pUVar4 = (this->fields).useInteractor;
-                if (pUVar4 != (UseInteractor *)0x0) {
-                  UseInteractor::UseInteractor_AddRequirement
-                            (pUVar4,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                  pMVar1 = (this->fields).chestObject;
-                  if (pMVar1 != (MVGameCoinChestObject *)0x0) {
-                    pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                    pUVar4 = (this->fields).useInteractor;
-                    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                    if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                (pUVar5,(Object *)pUVar4,
-                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                                 ,(MethodInfo *)0x0);
-                      if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                   (MethodInfo *)0x0);
-                        pMVar1 = (this->fields).chestObject;
-                        if (pMVar1 != (MVGameCoinChestObject *)0x0) {
-                          pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                          pUVar4 = (this->fields).useInteractor;
-                          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>)
-                          ;
-                          if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                            Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                      (pUVar5,(Object *)pUVar4,
-                                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                                       ,(MethodInfo *)0x0);
-                            if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                         (MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+  if ((this->fields).chestObject != (MVGameCoinChestObject *)0x0) {
+    pTVar1 = (((this->fields).chestObject)->fields).triggerBoxEvents;
+    if (pTVar1 != (TriggerBoxEvents *)0x0) {
+      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
+      this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                (this_00,(Object *)this,MethodInfo__MVGameCoinChest__OpenChest_int_,
+                 (MethodInfo *)0x0);
+      this_01 = (Func_3_Int32_Object_Boolean_ *)
+                func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
+      mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__MVGameCoinChest__IsUsable_int__MVInteractableBase_,(MethodInfo *)0x0);
+      pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      UseInteractor::UseInteractor__ctor
+                (pUVar2,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,
+                 (Func_2_Int32_Boolean_ *)this_00,
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
+      pURam40200100 = pUVar2;
+      func_?();
+      if (iRam_? != 0) {
+        root = *(GameObject **)(iRam_? + 0x2c);
+        this_02 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
+        LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_02,root,0,(MethodInfo *)0x0);
+        if (pURam40200100 != (UseInteractor *)0x0) {
+          UseInteractor::UseInteractor_AddRequirement
+                    (pURam40200100,(UseRequirement *)this_02,(MethodInfo *)0x0);
+          pUVar2 = pURam40200100;
+          if (iRam_? != 0) {
+            pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x20);
+            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar3,(Object *)pUVar2,
+                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if (pTVar1 != (TriggerBoxEvents *)0x0) {
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                        (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+              pUVar2 = pURam40200100;
+              if (iRam_? != 0) {
+                pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x20);
+                pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          (pUVar3,(Object *)pUVar2,
+                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                           ,(MethodInfo *)0x0);
+                if (pTVar1 != (TriggerBoxEvents *)0x0) {
+                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                            (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -464,8 +462,8 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest_SetupUseInteractor
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -504,16 +502,16 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest__ctor
       (this->fields).chestObject = (MVGameCoinChestObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVGameCoinChestObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVGameCoinChestObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGameCoinChestObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVGameCoinChestObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVGameCoinChestObject)) goto code_?;
       (this->fields).chestObject = pMVar2;
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVGameCoinChestObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVGameCoinChestObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGameCoinChestObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVGameCoinChestObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVGameCoinChestObject)) goto code_?;
     }
     func_?(&(this->fields).chestObject);
@@ -529,15 +527,15 @@ void Assembly-CSharp.dll::MVGameCoinChest::MVGameCoinChest__ctor
         pTVar5 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
         if (pTVar5 != (Type *)0x0) {
           pSVar6 = (String *)
-                   (*(pTVar5->klass->vtable).__unknown.methodPtr)
-                             (pTVar5,(pTVar5->klass->vtable).__unknown.method);
+                   (*(code *)(pTVar5->klass->vtable).__unknown.method)
+                             (pTVar5,(pTVar5->klass->vtable).get_DeclaringType.methodPtr);
           pSVar6 = mscorlib.dll::System::String::String_Concat_3
                              (StringLiteral_A_TriggerBoxEvents_object_is_mis,pSVar6,
                               (MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)pSVar6,(MethodInfo *)0x0);
 code_?:
           piVar7 = &(this->fields)._._.interactionFlags;
@@ -562,17 +560,15 @@ code_?:
           pTVar3 = (pMVar2->fields).triggerBoxEvents;
           this_01 = (UnityAction_2_System_Object_System_Object_ *)
                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__MVGameCoinChest__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                       ,(MethodInfo *)0x0);
-            if (pTVar3 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)this_01,(MethodInfo *)0x0);
-              goto code_?;
-            }
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (this_01,(Object *)this,
+                     MethodInfo__MVGameCoinChest__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pTVar3 != (TriggerBoxEvents *)0x0) {
+            TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                      (pTVar3,(EventHandler_1_TriggerEventArgs_ *)this_01,(MethodInfo *)0x0);
+            goto code_?;
           }
         }
       }

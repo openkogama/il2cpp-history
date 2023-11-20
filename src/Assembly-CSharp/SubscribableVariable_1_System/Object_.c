@@ -1,17 +1,4 @@
 
-/* SubscribableVariable`1[System.Object](Object) */
-
-void Assembly-CSharp.dll::SubscribableVariable`1[System::Object]::
-     SubscribableVariable_1_System_Object___ctor
-               (SubscribableVariable_1_System_Object_ *this,Object *value,MethodInfo *method)
-
-{
-  (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
-            (this,value,method->klass->rgctx_data[1].rgctxDataDummy);
-  return;
-}
-
-
 /* Void set_ValueSet(Object) */
 
 void Assembly-CSharp.dll::SubscribableVariable`1[System::Object]::
@@ -21,8 +8,11 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::Object]::
 {
   (this->fields)._.value = value;
   func_?(&this->fields,value);
-  (*method->klass->rgctx_data->method->virtualMethodPointer)
-            (this,method->klass->rgctx_data->rgctxDataDummy);
+  if ((this->fields)._.OnChange != (Action_1_Object_ *)0x0) {
+    pAVar1 = (this->fields)._.OnChange;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(this->fields)._.value,(pAVar1->fields)._._.method);
+  }
   return;
 }
 

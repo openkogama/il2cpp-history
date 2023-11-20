@@ -41,7 +41,7 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_CalculateHeadRotation
   pQVar3 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
                      ((Quaternion *)&stack0xffffffec,(float)this,
                       TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  MVGroundState::MVGroundState_GetGradientAngle(localLookDirection,(MethodInfo *)pQVar3->z);
+  MathFunctions::MathFunctions_PitchFromLocalDirection(localLookDirection,(MethodInfo *)pQVar3->z);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -79,7 +79,7 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_GetClampedPitchRotation
           MethodInfo *method)
 
 {
-  fVar1 = MVGroundState::MVGroundState_GetGradientAngle(localDirection,(MethodInfo *)0x0);
+  fVar1 = MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
   localDirection.z = 0.0;
   fVar2 = fVar1;
   if ((0.0 < fVar1) && ((fVar1 <= 0.0 || (fVar2 = localDirection.z, _UNK_? <= fVar1)))) {

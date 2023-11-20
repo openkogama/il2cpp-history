@@ -8,11 +8,9 @@ bool Assembly-CSharp.dll::NotificationArea::NotificationArea_CanInstantiateNotif
   pNVar1 = (this->fields).objectPool;
   if (pNVar1 != (NotificationObjectPool *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<Notification>__Find_System__Predicate<Notification>_
-                     );
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&TypeInfo__System__Predicate<Notification>);
+      func_?();
+      func_?();
+      func_?();
       func_?(&
                       MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__0_Notification_
                      );
@@ -23,61 +21,59 @@ bool Assembly-CSharp.dll::NotificationArea::NotificationArea_CanInstantiateNotif
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__NotificationObjectPool____c__DisplayClass6_0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,unaff_ESI);
     if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,unaff_EDI);
       value[1].klass = (Object__Class *)notificationType;
-      pLVar2 = (pNVar1->fields).Instances;
-      pPVar3 = (Predicate_1_Object_ *)func_?(TypeInfo__System__Predicate<Notification>);
-      if ((pPVar3 != (Predicate_1_Object_ *)0x0) &&
-         (mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                    (pPVar3,value,
-                     MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__0_Notification_
-                     ,(MethodInfo *)0x0), pLVar2 != (List_1_Notification_ *)0x0)) {
-        pOVar4 = (Object_1 *)
-                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                 List_1_System_Object__Find
-                           ((List_1_System_Object_ *)pLVar2,pPVar3,
+      this_00 = (pNVar1->fields).Instances;
+      pPVar2 = (Predicate_1_Object_ *)func_?();
+      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                (pPVar2,value,
+                 MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__0_Notification_
+                 ,(MethodInfo *)0x0);
+      if (this_00 != (List_1_Notification_ *)0x0) {
+        pOVar3 = (Object_1 *)
+                 mscorlib.dll::System::Collections::Generic::List`1[System::UInt32]::
+                 List_1_System_UInt32__Find
+                           ((List_1_System_UInt32_ *)this_00,(Predicate_1_UInt32_ *)pPVar2,
                             MethodInfo__System__Collections__Generic__List<Notification>__Find_System__Predicate<Notification>_
                            );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
+          func_?();
         }
-        bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                          (pOVar4,(MethodInfo *)0x0);
-        if (bVar5 != 0) {
+        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                          (pOVar3,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
           return 1;
         }
-        pLVar2 = (pNVar1->fields).ActiveInstances;
-        pPVar3 = (Predicate_1_Object_ *)func_?();
-        if ((pPVar3 != (Predicate_1_Object_ *)0x0) &&
-           (mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                      (pPVar3,value,
-                       MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__1_Notification_
-                       ,(MethodInfo *)0x0), pLVar2 != (List_1_Notification_ *)0x0)) {
-          pOVar4 = (Object_1 *)
-                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                   List_1_System_Object__Find
-                             ((List_1_System_Object_ *)pLVar2,pPVar3,
+        this_01 = pOVar3[2].klass;
+        pPVar2 = (Predicate_1_Object_ *)func_?();
+        mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                  (pPVar2,value,
+                   MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__1_Notification_
+                   ,(MethodInfo *)0x0);
+        if (this_01 != (Object_1__Class *)0x0) {
+          pOVar3 = (Object_1 *)
+                   mscorlib.dll::System::Collections::Generic::List`1[System::UInt32]::
+                   List_1_System_UInt32__Find
+                             ((List_1_System_UInt32_ *)this_01,(Predicate_1_UInt32_ *)pPVar2,
                               MethodInfo__System__Collections__Generic__List<Notification>__Find_System__Predicate<Notification>_
                              );
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
+            func_?();
           }
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                            (pOVar4,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            return 1;
-          }
-          return 0;
+          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                            (pOVar3,(MethodInfo *)0x0);
+          return bVar4 != 0;
         }
       }
     }
   }
-  func_?();
+  uVar5 = func_?(&stack0xfffffff0);
+  func_?(uVar5);
   pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  bVar4 = (*pcVar6)();
+  return bVar4;
 }
 
 
@@ -107,7 +103,7 @@ void Assembly-CSharp.dll::NotificationArea::NotificationArea_InstantiateNotifica
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_Notification_is_null,(MethodInfo *)0x0);
       return;
     }
@@ -122,7 +118,7 @@ void Assembly-CSharp.dll::NotificationArea::NotificationArea_InstantiateNotifica
           cRam_? = '\x01';
         }
         if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-          (*(this_01->klass->vtable).Initialize.methodPtr)();
+          (*(code *)(this_01->klass->vtable).Initialize.method)();
           return;
         }
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform

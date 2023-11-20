@@ -8,12 +8,13 @@ void Assembly-CSharp.dll::BundleErrorPopUp::BundleErrorPopUp_Initialize
 {
   pTVar1 = (this->fields).buttonText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,buttonText,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,buttonText,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+    ;
     pTVar1 = (this->fields).header;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,header,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       (this->fields).resultCallback = resultCallback;
       func_?(&(this->fields).resultCallback,resultCallback);
       return;

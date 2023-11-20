@@ -21,17 +21,18 @@ void Assembly-CSharp.dll::FirstTimePlayModeWelcome::FirstTimePlayModeWelcome_Sta
       pSStack3 =
            mscorlib.dll::System::String::String_Concat_4
                      (str0,::StringLiteral__,str2,(MethodInfo *)0x0);
-      piStack4 = *(int **)&(str2->fields)._firstChar;
-      if (piStack4 != (int *)0x0) {
-        puStack5 = *(undefined **)(*piStack4 + 0x318);
-        (**(code **)(*piStack4 + 0x314))();
+      pSStack4 = str2[1].klass;
+      if (pSStack4 != (String__Class *)0x0) {
+        pIVar5 = (pSStack4->_0).image;
+        pcStack6 = pIVar5[0x12].nameNoExt;
+        (*(code *)pIVar5[0x12].name)();
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

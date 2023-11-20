@@ -131,6 +131,19 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_OnPointer
 }
 
 
+/* Void SetNewStartPosition(Vector3) */
+
+void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_SetNewStartPosition
+               (SlideOnClick *this,Vector3 newPos,MethodInfo *method)
+
+{
+  (this->fields).targetPos.x = newPos.x;
+  (this->fields).targetPos.y = newPos.y;
+  (this->fields).targetPos.z = newPos.z;
+  return;
+}
+
+
 /* Void SetToPosition(Vector2) */
 
 void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_SetToPosition
@@ -174,20 +187,14 @@ Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_SlideTowardsPo
     func_?(&TypeInfo__GameMeterVisuals__SlideOnClick___SlideTowardsPosition_d__14);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__GameMeterVisuals__SlideOnClick___SlideTowardsPosition_d__14);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__GameMeterVisuals__SlideOnClick___SlideTowardsPosition_d__14;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -228,19 +235,6 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick__ctor
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  return;
-}
-
-
-/* Void set_StartPos(Vector3) */
-
-void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_set_StartPos
-               (SlideOnClick *this,Vector3 value,MethodInfo *method)
-
-{
-  (this->fields)._StartPos_k__BackingField.x = value.x;
-  (this->fields)._StartPos_k__BackingField.y = value.y;
-  (this->fields)._StartPos_k__BackingField.z = value.z;
   return;
 }
 

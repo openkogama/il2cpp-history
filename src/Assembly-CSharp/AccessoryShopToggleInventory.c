@@ -43,7 +43,7 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::AccessoryShopToggleInven
           fVar5 = (this->fields).toggleOnColor.g;
           fVar6 = (this->fields).toggleOnColor.b;
         }
-        (*(pIVar3->klass->vtable).set_color.methodPtr)(pIVar3,fVar4,fVar5,fVar6);
+        (*(code *)(pIVar3->klass->vtable).set_color.method)(pIVar3,fVar4,fVar5,fVar6);
         this_00 = (this->fields).canvasGroup;
         if (this_00 != (CanvasGroup *)0x0) {
           bVar7 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_interactable
@@ -56,8 +56,6 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::AccessoryShopToggleInven
                  func_?(
                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryInventoryControl>
                                 );
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-            goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this
@@ -66,7 +64,7 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::AccessoryShopToggleInven
                        ,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
                 == 0) {
-              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+              func_?();
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
@@ -132,29 +130,32 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::
   if (pTVar1 != (Toggle *)0x0) {
     bVar2 = (pTVar1->fields).m_IsOn;
     if (x != (IAccessoryInventoryControl *)0x0) {
-      uVar3 = 0;
-      uVar4 = (x->klass->_1).interface_offsets_count;
-      if (uVar4 != 0) {
+      pIVar3 = x->klass;
+      uVar4 = 0;
+      uVar5._0_1_ = (pIVar3->_1).rank;
+      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      if (uVar5 != 0) {
         do {
-          if (x->klass->interfaceOffsets[uVar3].interfaceType ==
+          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl) {
-            pVVar5 = &(x->klass->vtable).DisplayPurchasableItems +
-                     x->klass->interfaceOffsets[uVar3].offset;
+            ppMVar6 = &(&(x->klass->vtable).DisplayPurchasableItems)
+                       [x->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
-          uVar3 = uVar3 + 1;
-        } while (uVar3 < uVar4);
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
       }
-      pVVar5 = (VirtualInvokeData *)
-               func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl,0);
+      ppMVar6 = (MethodInfo **)
+                func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl,0)
+      ;
 code_?:
-      (*pVVar5->methodPtr)(x,(uint)(bVar2 == 0),pVVar5->method);
+      (*(code *)*ppMVar6)(x,bVar2 == 0,ppMVar6[1]);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

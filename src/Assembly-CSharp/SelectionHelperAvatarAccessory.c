@@ -33,16 +33,19 @@ String * Assembly-CSharp.dll::SelectionHelperAvatarAccessory::
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_AvatarBodyWoID_,pSVar1,(MethodInfo *)0x0);
   pMVar2 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
-  pIVar3 = ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
-           rgctx_data)->klass;
-  if (pIVar3->initialized_and_no_error == 0) {
+  if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+      rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?();
+  }
+  pIVar3 = (pMVar2->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
     pIVar3 = (Il2CppClass *)func_?();
   }
   if (pIVar3->cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pIVar3 = ((pMVar2->field7_0x1c).rgctx_data)->klass;
-  if (pIVar3->initialized_and_no_error == 0) {
+  pIVar3 = (pMVar2->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
     pIVar3 = (Il2CppClass *)func_?();
   }
   pSVar1 = mscorlib.dll::System::String::String_Format_3

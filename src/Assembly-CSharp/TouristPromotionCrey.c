@@ -28,8 +28,7 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_Continue
     }
     StatHatWrapper::StatHatWrapper_Count
               (StringLiteral_TouristPromotion_CreyGames_Conti,1,(MethodInfo *)0x0);
-    (*(this->klass->vtable).OnContinueClicked.methodPtr)
-              (this,(this->klass->vtable).OnContinueClicked.method);
+    (*(code *)(this->klass->vtable).OnContinueClicked.method)(this,this->klass[1]._0.image);
     return;
   }
   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -49,19 +48,13 @@ void Assembly-CSharp.dll::TouristPromotionCrey::TouristPromotionCrey_Continue
     }
     object = TypeInfo__TouristPromotionCrey____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_ITouristAdController_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__TouristPromotionCrey____c___Continue_b__2_0_ITouristAdController__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0 = callbackFunction;
-    func_?(&TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0);
+    func_?(&TypeInfo__TouristPromotionCrey____c->static_fields->__9__2_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();

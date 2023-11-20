@@ -64,20 +64,21 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_Initialize
     pSVar2 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
                        (skillDataManager,skill,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar1 = (this->fields).skillCostText;
       pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         pTVar1 = (this->fields).skillCostText;
         pCVar3 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
                            (&CStack_4,skillCost,(MethodInfo *)0x0);
         if (pTVar1 != (Text *)0x0) {
-          (*(pTVar1->klass->vtable).set_color.methodPtr)
+          (*(code *)(pTVar1->klass->vtable).set_color.method)
                     (pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
-                     (pTVar1->klass->vtable).set_color.method);
+                     (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
           pSVar5 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
                              (skillDataManager,skill,(this->fields).iconColor,
                               (this->fields).iconBackgroundColor,(this->fields).iconWidth,
@@ -95,9 +96,8 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_Initialize
               if (pSVar5 != (SpawnRoleSkillIconController *)0x0) {
                 SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
                           (pSVar5,skillCost,(MethodInfo *)0x0);
-                (*(this->klass->vtable).InitializeInfoButton.methodPtr)
-                          (this,skill,skillCost,skillDataManager,
-                           (this->klass->vtable).InitializeInfoButton.method);
+                (*(code *)(this->klass->vtable).InitializeInfoButton.method)
+                          (this,skill,skillCost,skillDataManager,this->klass[1]._0.image);
                 return;
               }
             }
@@ -225,8 +225,9 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillCost
     pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(this->fields).currentSkillCost,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pSVar6,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,pSVar6,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+      ;
       this_00 = (this->fields).skillIcon;
       if (this_00 != (SpawnRoleSkillIconController *)0x0) {
         SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
@@ -239,9 +240,9 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillCost
                              (&CStack_10,(this->fields).currentSkillCost,(MethodInfo *)0x0);
           pTVar2 = (Text *)0x0;
           if (pTVar8 != (Text *)0x0) {
-            (*(pTVar8->klass->vtable).set_color.methodPtr)
+            (*(code *)(pTVar8->klass->vtable).set_color.method)
                       (pTVar8,pCVar9->r,pCVar9->g,pCVar9->b,pCVar9->a,
-                       (pTVar8->klass->vtable).set_color.method);
+                       (pTVar8->klass->vtable).get_raycastTarget.methodPtr);
             return;
           }
         }
@@ -276,6 +277,17 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillData
   func_?(uVar4);
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
+  return;
+}
+
+
+/* Void UpdateSpawnRoleTier(GamePassTier) */
+
+void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSpawnRoleTier
+               (SkillSettingBase *this,GamePassTier__Enum newTier,MethodInfo *method)
+
+{
+  (this->fields).spawnRoleTier = (undefined1)newTier;
   return;
 }
 

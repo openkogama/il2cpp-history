@@ -34,9 +34,9 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_GetPickingI
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pVVar2 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-             StandaloneInput_MousePosition
-                       (&RStack_3.m_Direction,(StandaloneInput *)0x0,
+    pVVar2 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+             DefaultEventSystem_Input_get_mousePosition
+                       (&RStack_3.m_Direction,(DefaultEventSystem_Input *)0x0,
                         (MethodInfo *)CONCAT22(in_stack_4,in_stack_5));
     if (this_00 != (Camera *)0x0) {
       pos_00.z._2_2_ = (short)((uint)pVVar2->z >> 0x10);
@@ -177,8 +177,8 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_Pick
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffe8c;
-  puVar5 = &stack0xfffffe8c;
+  puStack_4 = &stack0xfffffe9c;
+  puVar5 = &stack0xfffffe9c;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VoxelHit>__Dispose__
@@ -198,71 +198,69 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_Pick
   }
   puStack_4 = puVar5;
   VStack_6.z = 0.0;
-  uStack_7 = 0;
-  KStack_8.key._options = 0;
-  KStack_8.key._cultureKey = (String *)0x0;
-  KStack_8.key._pattern = (String *)0x0;
-  KStack_8.value = (Object *)0x0;
   VStack_6.x = 0.0;
   VStack_6.y = 0.0;
-  func_?(auStack_9,0,0x58);
+  func_?(auStack_7,0,0x58);
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  bVar10 = MVInputWrapper::MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
-  if (bVar10 == 0) {
+  bVar8 = MVInputWrapper::MVInputWrapper_get_IsAllInputSuppressed((MethodInfo *)0x0);
+  if (bVar8 == 0) {
     if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pEVar11 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
+    pEVar9 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
                        ((MethodInfo *)0x0);
-    if (pEVar11 != (EventSystem *)0x0) {
-      bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-              EventSystem_IsPointerOverGameObject(pEVar11,(MethodInfo *)0x0);
-      if (bVar10 != 0) goto code_?;
+    if (pEVar9 != (EventSystem *)0x0) {
+      bVar8 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+              EventSystem_IsPointerOverGameObject(pEVar9,(MethodInfo *)0x0);
+      if (bVar8 != 0) goto code_?;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (pMVar12 != (MVGameControllerBase *)0x0) {
-        if ((pMVar12->fields)._joinState != 3) goto code_?;
-        uVar13 = 0xADDR;
+      pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (pMVar10 != (MVGameControllerBase *)0x0) {
+        if ((pMVar10->fields)._joinState != 3) goto code_?;
+        method_00 = (MethodInfo *)&UNK_?;
         this_00 = EditModeObjectPicker_get_MainCamera((MethodInfo *)0x0);
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          uVar13 = uVar13 & 0xffffffff;
           func_?();
         }
-        pVVar14 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                 StandaloneInput_MousePosition(&VStack_15,(StandaloneInput *)0x0,in_stack_16);
-        fStack_17 = pVVar14->x;
-        pVVar14 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                 StandaloneInput_MousePosition(&VStack_15,(StandaloneInput *)0x0,in_stack_16);
-        VStack_15.y = pVVar14->y;
-        VStack_15.x = fStack_17;
+        pVVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input
+                 ::DefaultEventSystem_Input_get_mousePosition
+                           (&VStack_12,(DefaultEventSystem_Input *)0x0,in_stack_13);
+        fStack_14 = pVVar11->x;
+        pVVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input
+                 ::DefaultEventSystem_Input_get_mousePosition
+                           (&VStack_12,(DefaultEventSystem_Input *)0x0,in_stack_13);
+        fStack_15 = fStack_14;
+        fStack_16 = 0.0;
+        fStack_17 = pVVar11->y;
         fStack_18 = 0.0;
-        VStack_15.z = 0.0;
         if (this_00 != (Camera *)0x0) {
-          pos.y = VStack_15.y;
-          pos.x = fStack_17;
+          pos.y = fStack_17;
+          pos.x = fStack_14;
           pos.z = 0.0;
           pRVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                             (&RStack_20,this_00,pos,(MethodInfo *)0x0);
+                              (&RStack_20,this_00,pos,(MethodInfo *)0x0);
           cStack_21 = '\0';
-          KStack_8.key._options = (int32_t)(pRVar19->m_Origin).x;
-          KStack_8.key._cultureKey = (String *)(pRVar19->m_Origin).y;
-          KStack_8.key._pattern = (String *)(pRVar19->m_Origin).z;
-          KStack_8.value = (Object *)(pRVar19->m_Direction).x;
-          uStack_7._0_4_ = (pRVar19->m_Direction).y;
-          uStack_7._4_4_ = (pRVar19->m_Direction).z;
-          bVar10 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
-          if (bVar10 != 0) {
-            pVVar14 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
+          pMStack_22 = (MethodInfo *)(pRVar19->m_Origin).x;
+          fStack_23 = (pRVar19->m_Origin).y;
+          uVar24._0_4_ = (pRVar19->m_Origin).x;
+          uVar24._4_4_ = (pRVar19->m_Origin).y;
+          fStack_25 = (pRVar19->m_Origin).z;
+          fStack_26 = (pRVar19->m_Direction).x;
+          lStack_27._0_4_ = (pRVar19->m_Direction).y;
+          lStack_27._4_4_ = (pRVar19->m_Direction).z;
+          bVar8 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
+          if (bVar8 != 0) {
+            pVVar11 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
                      MVWorldObject_get_WorldPosition
-                               (&VStack_15,(MVWorldObject *)0x0,in_stack_22);
-            VStack_6.x = pVVar14->x;
-            VStack_6.y = pVVar14->y;
-            VStack_6.z = pVVar14->z;
+                               (&VStack_12,(MVWorldObject *)0x0,in_stack_28);
+            VStack_6.x = pVVar11->x;
+            VStack_6.y = pVVar11->y;
+            VStack_6.z = pVVar11->z;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__DrawPlane);
               func_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
@@ -272,165 +270,148 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_Pick
                 0) {
               func_?(TypeInfo__UnityEngine__EventSystems__EventSystem);
             }
-            pEVar11 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+            pEVar9 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                      EventSystem_get_current((MethodInfo *)0x0);
-            if (pEVar11 == (EventSystem *)0x0) goto code_?;
-            bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-                    EventSystem_IsPointerOverGameObject(pEVar11,(MethodInfo *)0x0);
-            if (bVar10 == 0) {
-              pDVar23 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
-              if ((pDVar23 == (DrawPlaneControllerUUI *)0x0) ||
-                 (this = (pDVar23->fields).worldEditorDrawPlane, this == (WorldEditorDrawPlane *)0x0)
+            if (pEVar9 == (EventSystem *)0x0) goto code_?;
+            bVar8 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                    EventSystem_IsPointerOverGameObject(pEVar9,(MethodInfo *)0x0);
+            if (bVar8 == 0) {
+              pDVar29 = TypeInfo__DrawPlane->static_fields->drawPlaneController;
+              if ((pDVar29 == (DrawPlaneControllerUUI *)0x0) ||
+                 (this = (pDVar29->fields).worldEditorDrawPlane, this == (WorldEditorDrawPlane *)0x0)
                  ) goto code_?;
-              bVar10 = WorldEditorDrawPlane::WorldEditorDrawPlane_Pick
+              bVar8 = WorldEditorDrawPlane::WorldEditorDrawPlane_Pick
                                 (this,&VStack_6,(MethodInfo *)0x0);
-              if (bVar10 != 0) {
-                VStack_15.z = VStack_6.z;
-                VStack_15.x = VStack_6.x;
-                VStack_15.y = VStack_6.y;
-                pRVar24 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                          RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                          KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                                    (&RStack_25,&KStack_8,(MethodInfo *)0x0);
-                uStack_26._0_4_ = pRVar24->_options;
-                uStack_26._4_4_ = pRVar24->_cultureKey;
-                VStack_15.y = VStack_15.y - (float)uStack_26._4_4_;
-                VStack_15.x = VStack_15.x - (float)(undefined4)uStack_26;
-                pOStack_27 = (Object *)(VStack_15.z - (float)pRVar24->_pattern);
-                VStack_15.z = (float)pOStack_27;
-                fVar28 = (float10)func_?(&VStack_15,0);
-                fStack_18 = (float)fVar28;
+              if (bVar8 != 0) {
+                VStack_12.z = VStack_6.z - fStack_25;
+                fStack_17 = VStack_6.y - fStack_23;
+                fStack_15 = VStack_6.x - (float)pMStack_22;
+                fStack_16 = VStack_12.z;
+                fVar30 = (float10)func_?(&fStack_15,0);
+                fStack_18 = (float)fVar30;
                 cStack_21 = '\x01';
               }
             }
           }
-          fStack_17 = _UNK_?;
-          ray.m_Origin.y = (float)KStack_8.key._cultureKey;
-          ray.m_Origin.x = (float)KStack_8.key._options;
-          ray.m_Origin.z = (float)KStack_8.key._pattern;
-          ray.m_Direction.x = (float)KStack_8.value;
-          ray.m_Direction.y = (float)(int)uStack_7;
-          ray.m_Direction.z = (float)((ulonglong)uStack_7 >> 0x20);
+          fStack_14 = _UNK_?;
+          ray.m_Origin.y = fStack_23;
+          ray.m_Origin.x = (float)pMStack_22;
+          ray.m_Origin.z = fStack_25;
+          ray.m_Direction.x = fStack_26;
+          ray.m_Direction.y = (float)(int)lStack_27;
+          ray.m_Direction.z = (float)((ulonglong)lStack_27 >> 0x20);
           this_01 = CollisionDetection::CollisionDetection_MVHitAll
                               (ray,INFINITY,ignoreWoIds,layerMask,(MethodInfo *)0x0);
           if (this_01 != (List_1_VoxelHit_ *)0x0) {
             if ((this_01->fields)._size == 0) goto code_?;
-            bStack_29 = 0;
-            pLVar30 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::
+            bStack_31 = 0;
+            pLVar32 = mscorlib.dll::System::Collections::Generic::List`1[VoxelHit]::
                       List_1_VoxelHit__GetEnumerator
-                                ((List_1_T_Enumerator_VoxelHit_ *)&stack0xfffffe98,this_01,
+                                ((List_1_T_Enumerator_VoxelHit_ *)&stack0xfffffea8,this_01,
                                  MethodInfo__System__Collections__Generic__List<VoxelHit>__GetEnumerator__
                                 );
-            uStack_26 = uStack_26 & 0xffffffff;
-            auStack_9._0_4_ = pLVar30->_list;
-            auStack_9._4_4_ = pLVar30->_index;
-            auStack_9._8_4_ = pLVar30->_version;
-            auStack_9._12_4_ = *(undefined4 *)&pLVar30->field_0xc;
-            auStack_9._16_4_ = (pLVar30->_current).point.x;
-            auStack_9._20_4_ = (pLVar30->_current).point.y;
-            auStack_9._24_4_ = (pLVar30->_current).point.z;
-            auStack_9._28_4_ = (pLVar30->_current).normal.x;
-            auStack_9._32_4_ = (pLVar30->_current).normal.y;
-            auStack_9._36_4_ = (pLVar30->_current).normal.z;
-            auStack_9._40_2_ = (pLVar30->_current).cubePos.x;
-            auStack_9._42_2_ = (pLVar30->_current).cubePos.y;
-            auStack_9._44_4_ = *(undefined4 *)&(pLVar30->_current).cubePos.z;
-            auStack_9._48_4_ = (pLVar30->_current).face;
-            auStack_9[0x34] = (pLVar30->_current).isCubeHit;
-            auStack_9._53_3_ = *(undefined3 *)&(pLVar30->_current).field_0x25;
-            auStack_9._56_4_ = (pLVar30->_current).woId;
-            auStack_9._60_4_ = (pLVar30->_current).cube;
-            auStack_9._64_4_ = (pLVar30->_current).distance;
-            auStack_9._68_4_ = (pLVar30->_current).collider;
-            auStack_9._72_4_ = (pLVar30->_current).transform;
-            auStack_9._76_4_ = *(undefined4 *)&(pLVar30->_current).field_0x3c;
-            iStack_31 = (pLVar30->_current).interactionFlags;
+            lStack_27 = ZEXT48((Object *)auStack_7) << 0x20;
+            auStack_7._0_4_ = pLVar32->_list;
+            auStack_7._4_4_ = pLVar32->_index;
+            auStack_7._8_4_ = pLVar32->_version;
+            auStack_7._12_4_ = *(undefined4 *)&pLVar32->field_0xc;
+            auStack_7._16_4_ = (pLVar32->_current).point.x;
+            auStack_7._20_4_ = (pLVar32->_current).point.y;
+            auStack_7._24_4_ = (pLVar32->_current).point.z;
+            auStack_7._28_4_ = (pLVar32->_current).normal.x;
+            auStack_7._32_4_ = (pLVar32->_current).normal.y;
+            auStack_7._36_4_ = (pLVar32->_current).normal.z;
+            auStack_7._40_4_ = *(undefined4 *)&(pLVar32->_current).cubePos;
+            fStack_33 = *(float *)&(pLVar32->_current).cubePos.z;
+            iStack_34 = (pLVar32->_current).face;
+            bStack_35 = (pLVar32->_current).isCubeHit;
+            uStack_36 = *(undefined3 *)&(pLVar32->_current).field_0x25;
+            iStack_37 = (pLVar32->_current).woId;
+            pCStack_38 = (pLVar32->_current).cube;
+            fStack_39 = (pLVar32->_current).distance;
+            pCStack_40 = (pLVar32->_current).collider;
+            pTStack_41 = (pLVar32->_current).transform;
+            fStack_42 = *(float *)&(pLVar32->_current).field_0x3c;
+            iStack_43 = (pLVar32->_current).interactionFlags;
             uStack_1 = 1;
-            uVar32 = IStack_33._0_4_;
-            pOStack_27 = (Object *)auStack_9;
+            uVar44 = _bStack_cc;
             while( true ) {
               do {
-                IStack_33._0_4_ = uVar32;
-                bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[VoxelHit]::
+                _bStack_cc = uVar44;
+                bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[VoxelHit]::
                         List_1_T_Enumerator_VoxelHit__MoveNext
-                                  ((List_1_T_Enumerator_VoxelHit_ *)auStack_9,
+                                  ((List_1_T_Enumerator_VoxelHit_ *)auStack_7,
                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VoxelHit>__MoveNext__
                                   );
-                if (bVar10 == 0) {
+                if (bVar8 == 0) {
                   uStack_1 = 0xffffffff;
                   mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                            ((Object *)auStack_9,
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                            ((Object *)auStack_7,
                              (ExceptionArgument__Enum)
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<VoxelHit>__Dispose__
-                             ,(MethodInfo *)uVar13);
+                             ,method_00);
                   *unaff_FS_OFFSET = uStack_3;
-                  return bStack_29;
+                  return bStack_31;
                 }
-                fStack_34 = (float)auStack_9._16_4_;
-                fStack_35 = (float)auStack_9._20_4_;
-                fStack_36 = (float)auStack_9._24_4_;
-                fStack_37 = (float)auStack_9._28_4_;
-                fStack_38 = (float)auStack_9._32_4_;
-                fStack_39 = (float)auStack_9._36_4_;
-                uVar32._0_2_ = auStack_9._40_2_;
-                uVar32._2_2_ = auStack_9._42_2_;
-                unique0x10000691 = auStack_9._44_4_;
-                VStack_15.y = (float)iStack_31;
-                VStack_15.z = (float)((ulonglong)iStack_31 >> 0x20);
-                IStack_33.x = auStack_9._40_2_;
-                IStack_33.y = auStack_9._42_2_;
-                iStack_40 = auStack_9._48_4_;
-                _bStack_f4 = auStack_9._52_4_;
-                iStack_41 = auStack_9._56_4_;
-                pCStack_42 = (Cube *)auStack_9._60_4_;
-                RStack_20.m_Origin.z = (float)auStack_9._64_4_;
-                RStack_20.m_Direction.x = (float)auStack_9._68_4_;
-                RStack_20.m_Direction.y = (float)auStack_9._72_4_;
-                RStack_20.m_Direction.z = (float)auStack_9._76_4_;
-              } while ((fStack_18 <= (float)auStack_9._64_4_) && (cStack_21 != '\0'));
-              if ((Transform *)auStack_9._72_4_ == (Transform *)0x0) break;
-              this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)auStack_9._72_4_,(MethodInfo *)0x0);
-              if (this_02 == (GameObject *)0x0) break;
-              uVar13 = ZEXT48(this_02);
-              bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
-              uVar32 = IStack_33._0_4_;
-              if (bVar10 != 0) {
-                pRVar24 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                          RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                          KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                                    (&RStack_25,&KStack_8,(MethodInfo *)0x0);
-                uVar13._0_4_ = pRVar24->_options;
-                uVar13._4_4_ = pRVar24->_cultureKey;
-                fVar28 = (float10)func_?();
-                fStack_43 = (float)fVar28;
-                uVar32 = IStack_33._0_4_;
-                if (fStack_43 < fStack_17) {
-                  (hit->point).x = fStack_34;
-                  (hit->point).y = fStack_35;
-                  (hit->point).z = fStack_36;
-                  (hit->normal).x = fStack_37;
-                  (hit->normal).y = fStack_38;
-                  (hit->normal).z = fStack_39;
-                  (hit->cubePos).x = IStack_33.x;
-                  (hit->cubePos).y = IStack_33.y;
-                  *(undefined4 *)&(hit->cubePos).z = stack0xffffff24;
-                  hit->face = iStack_40;
-                  hit->isCubeHit = bStack_44;
-                  *(undefined3 *)&hit->field_0x25 = uStack_45;
-                  hit->woId = iStack_41;
-                  hit->cube = pCStack_42;
+                pMStack_22 = (MethodInfo *)auStack_7._16_4_;
+                fStack_23 = (float)auStack_7._20_4_;
+                fStack_25 = (float)auStack_7._24_4_;
+                fStack_26 = (float)auStack_7._28_4_;
+                fStack_45 = (float)auStack_7._32_4_;
+                VStack_12.x = (float)auStack_7._36_4_;
+                VStack_12.y = (float)auStack_7._40_4_;
+                VStack_12.z = fStack_33;
+                fStack_17 = (float)iStack_43;
+                fStack_16 = (float)((ulonglong)iStack_43 >> 0x20);
+                iStack_46 = iStack_34;
+                uVar44._0_1_ = bStack_35;
+                uVar44._1_3_ = uStack_36;
+                iStack_47 = iStack_37;
+                pCStack_48 = pCStack_38;
+                bStack_49 = bStack_35;
+                uStack_50 = uStack_36;
+                RStack_20.m_Origin.z = fStack_39;
+                RStack_20.m_Direction.x = (float)pCStack_40;
+                RStack_20.m_Direction.y = (float)pTStack_41;
+                RStack_20.m_Direction.z = fStack_42;
+              } while ((fStack_18 <= fStack_39) && (cStack_21 != '\0'));
+              if (pTStack_41 == (Transform *)0x0) break;
+              method_00 = (MethodInfo *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)pTStack_41,(MethodInfo *)0x0);
+              if (method_00 == (MethodInfo *)0x0) break;
+              bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                      GameObject_get_activeInHierarchy((GameObject *)method_00,(MethodInfo *)0x0);
+              uVar44 = _bStack_cc;
+              if (bVar8 != 0) {
+                method_00 = pMStack_22;
+                fVar30 = (float10)func_?(uVar24);
+                fStack_51 = (float)fVar30;
+                uVar44 = _bStack_cc;
+                if (fStack_51 < fStack_14) {
+                  (hit->point).x = (float)pMStack_22;
+                  (hit->point).y = fStack_23;
+                  (hit->point).z = fStack_25;
+                  (hit->normal).x = fStack_26;
+                  (hit->normal).y = fStack_45;
+                  (hit->normal).z = VStack_12.x;
+                  *(float *)&hit->cubePos = VStack_12.y;
+                  *(float *)&(hit->cubePos).z = VStack_12.z;
+                  hit->face = iStack_46;
+                  hit->isCubeHit = bStack_49;
+                  *(undefined3 *)&hit->field_0x25 = uStack_50;
+                  hit->woId = iStack_47;
+                  hit->cube = pCStack_48;
                   hit->distance = RStack_20.m_Origin.z;
                   hit->collider = (Collider *)RStack_20.m_Direction.x;
                   hit->transform = (Transform *)RStack_20.m_Direction.y;
                   *(float *)&hit->field_0x3c = RStack_20.m_Direction.z;
-                  hit->interactionFlags = CONCAT44(VStack_15.z,VStack_15.y);
-                  fStack_17 = fStack_43;
+                  hit->interactionFlags = CONCAT44(fStack_16,fStack_17);
+                  fStack_14 = fStack_51;
                   func_?(&hit->cube,0);
-                  bStack_29 = 1;
-                  uVar32 = IStack_33._0_4_;
+                  bStack_31 = 1;
+                  uVar44 = _bStack_cc;
                 }
               }
             }
@@ -441,9 +422,9 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_Pick
 code_?:
     func_?();
     func_?();
-    pcVar46 = (code *)swi(3);
-    bVar10 = (*pcVar46)();
-    return bVar10;
+    pcVar52 = (code *)swi(3);
+    bVar8 = (*pcVar52)();
+    return bVar8;
   }
 code_?:
   *unaff_FS_OFFSET = uStack_3;

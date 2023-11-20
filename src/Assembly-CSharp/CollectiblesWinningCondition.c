@@ -32,7 +32,7 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
     }
     else {
@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::
         mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0)
         ;
         if (pTVar9 != (Text *)0x0) {
-          (*(pTVar9->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar9->klass->vtable).set_text.method)();
           this_02 = (ProgressBarAndroid *)(this->fields).progressBar;
           if (this_02 != (ProgressBarAndroid *)0x0) {
             ProgressBarAndroid::ProgressBarAndroid_set_Progress
@@ -123,7 +123,7 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
                    ((Int32 *)&(this->fields).amountOfStars,(MethodInfo *)0x0);
   mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar2->klass->vtable).set_text.method)();
     this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
     if (this_00 != (ProgressBarAndroid *)0x0) {
       ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,0.0,(MethodInfo *)0x0);
@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Failed_to_determine_collectibles,(MethodInfo *)0x0);
     }
     else if (pOVar2[2].klass != (Object__Class *)(this->fields).amountOfStars) {
@@ -180,7 +180,7 @@ void Assembly-CSharp.dll::CollectiblesWinningCondition::CollectiblesWinningCondi
     mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0);
     if (pTVar3 != (Text *)0x0) {
       method = (MethodInfo *)&UNK_?;
-      (*(pTVar3->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar3->klass->vtable).set_text.method)();
       this_01 = (ProgressBarAndroid *)(this->fields).progressBar;
       if (this_01 != (ProgressBarAndroid *)0x0) {
         method = (MethodInfo *)&UNK_?;

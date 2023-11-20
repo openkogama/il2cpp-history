@@ -26,22 +26,6 @@ public class CubeModelPopup : MonoBehaviour
 	private int woID;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass7_0
-	{
-		// Fields
-		public CubeModelPopup __4__this;
-		public float scale;
-
-		// Constructors
-		public __c__DisplayClass7_0();
-
-		// Methods
-		internal void _OnModelScalePressed_b__0(IMaterialClicked x, BaseEventData y);
-		internal void _OnModelScalePressed_b__1(ICreateNewPrototype x, BaseEventData y);
-		internal void _OnModelScalePressed_b__2(IChangePrototypeScale x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -56,6 +40,22 @@ public class CubeModelPopup : MonoBehaviour
 
 		// Methods
 		internal void _OnModelScalePressed_b__7_3(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public CubeModelPopup __4__this;
+		public float scale;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _OnModelScalePressed_b__0(IMaterialClicked x, BaseEventData y);
+		internal void _OnModelScalePressed_b__1(ICreateNewPrototype x, BaseEventData y);
+		internal void _OnModelScalePressed_b__2(IChangePrototypeScale x, BaseEventData y);
 	}
 
 	// Constructors

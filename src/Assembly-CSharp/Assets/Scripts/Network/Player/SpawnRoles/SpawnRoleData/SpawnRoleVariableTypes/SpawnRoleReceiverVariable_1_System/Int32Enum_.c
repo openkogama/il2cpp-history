@@ -1,4 +1,78 @@
 
+/* Void OnChange(Int32Enum) */
+
+void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+     SpawnRoleVariableTypes::SpawnRoleReceiverVariable`1[System::Int32Enum]::
+     SpawnRoleReceiverVariable_1_System_Int32Enum__OnChange
+               (SpawnRoleReceiverVariable_1_System_Int32Enum_ *this,Int32Enum__Enum newValue,
+               MethodInfo *method)
+
+{
+  this_00 = (this->fields).subscribableVariableExternal;
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum__set_ValueSet
+              (this_00,newValue,method->klass->rgctx_data[5].method);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* SpawnRoleReceiverVariable`1[System.Int32Enum](SubscribableVariable`1[System.Int32Enum],
+   SpawnRoleDataReceiver) */
+
+void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+     SpawnRoleVariableTypes::SpawnRoleReceiverVariable`1[System::Int32Enum]::
+     SpawnRoleReceiverVariable_1_System_Int32Enum___ctor
+               (SpawnRoleReceiverVariable_1_System_Int32Enum_ *this,
+               SubscribableVariable_1_System_Int32Enum_ *subscribableVariableExternal,
+               SpawnRoleDataReceiver *spawnRoleDataReceiver,MethodInfo *method)
+
+{
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  (this->fields).subscribableVariableExternal = subscribableVariableExternal;
+  func_?(&(this->fields).subscribableVariableExternal,subscribableVariableExternal);
+  if (subscribableVariableExternal != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    value = (subscribableVariableExternal->fields)._.value;
+    pIVar1 = method->klass->rgctx_data[1].klass;
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
+    }
+    this_01 = (SubscribableVariable_1_System_Int32Enum_ *)func_?(pIVar1);
+    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+              (this_01,value,method->klass->rgctx_data[6].method);
+    (this->fields).subscribableVariable = this_01;
+    func_?(&(this->fields).subscribableVariable,this_01);
+    this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
+    if (((uint)(method->klass->rgctx_data[8].klass)->vtable[0].methodPtr & 0x100) == 0) {
+      func_?();
+    }
+    this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_02,(Object *)this,method->klass->rgctx_data[7].rgctxDataDummy,
+               method->klass->rgctx_data[9].method);
+    if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+      SubscribableVariableBase`1[System::Single]::
+      SubscribableVariableBase_1_System_Single__add_OnChange
+                (this_00,(Action_1_Single_ *)this_02,method->klass->rgctx_data[10].method);
+      (this->fields).spawnRoleDataReceiver = spawnRoleDataReceiver;
+      func_?(&this->fields,spawnRoleDataReceiver);
+      return;
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void set_Value(Int32Enum) */
 
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
@@ -11,27 +85,24 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   pSVar1 = (this->fields).spawnRoleDataReceiver;
   if (pSVar1 != (SpawnRoleDataReceiver *)0x0) {
     if ((pSVar1->fields).isActive == 0) goto code_?;
-    pSVar2 = (this->fields).subscribableVariable;
-    if (pSVar2 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-                (pSVar2,value,method->klass->rgctx_data[3].rgctxDataDummy);
+    this_00 = (this->fields).subscribableVariable;
+    if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+      SubscribableVariable`1[System::Int32Enum]::
+      SubscribableVariable_1_System_Int32Enum__set_ValueSet
+                (this_00,value,method->klass->rgctx_data[5].method);
       return;
     }
   }
   func_?();
 code_?:
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  this_00 = (Exception *)func_?(uVar3);
-  func_?(this_00);
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  this_01 = (Exception *)func_?(uVar2);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_SpawnRole_receiver_not_active__P);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<System::Int32Enum>__set_Value_System__Int32Enum_
-                 );
-  func_?(this_00);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
+  func_?(this_01);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

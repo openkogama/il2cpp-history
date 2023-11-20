@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::CustomTouristPromotionSettings::CustomTouristPromotion
                bool shouldRedirect,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._FrequencyPercent_k__BackingField = frequency;
   (this->fields)._URL_k__BackingField = url;

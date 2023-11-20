@@ -27,7 +27,6 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Initialize
     object = TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9;
     this_01 = (Action_1_UnityEngine_Color_ *)
               func_?(TypeInfo__System__Action<UnityEngine::Color>);
-    if (this_01 == (Action_1_UnityEngine_Color_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
     UnityAction_1_UnityEngine_Color___ctor
               ((UnityAction_1_UnityEngine_Color_ *)this_01,(Object *)object,
@@ -53,7 +52,6 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Initialize
       }
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -82,8 +80,9 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_OnSettingCh
           pRVar6 = (this->fields)._.previewImage;
           if (pRVar6 != (RawImage *)0x0) {
             puVar7 = &UNK_?;
-            (*(pRVar6->klass->vtable).set_color.methodPtr)
-                      (pRVar6,fVar2,fVar3,fVar4,fVar5,(pRVar6->klass->vtable).set_color.method);
+            (*(code *)(pRVar6->klass->vtable).set_color.method)
+                      (pRVar6,fVar2,fVar3,fVar4,fVar5,
+                       (pRVar6->klass->vtable).get_raycastTarget.methodPtr);
             pAVar8 = (this->fields)._.onChange;
             if (pAVar8 != (Action_1_UnityEngine_Color_ *)0x0) {
               (*(pAVar8->fields)._._.invoke_impl)
@@ -121,32 +120,32 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Reset
                    );
     cRam_? = '\x01';
   }
-  pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                     ((Component *)this,
                       SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
                      );
-  if (pIVar1 != (IEnumerable_1_System_Object_ *)0x0) {
-    if (pIVar1[1].monitor == (MonitorData *)0x0) goto code_?;
-    pIVar2 = pIVar1[2].klass;
-    (this->fields)._.sliderR = (SettingsSlider *)pIVar2;
-    func_?(&(this->fields)._.sliderR,pIVar2);
-    if (pIVar1[1].monitor < (MonitorData *)0x2) goto code_?;
-    pSVar3 = (SettingsSlider *)pIVar1[2].monitor;
-    (this->fields)._.sliderG = pSVar3;
-    func_?(&(this->fields)._.sliderG,pSVar3);
-    if (pIVar1[1].monitor < (MonitorData *)0x3) goto code_?;
-    pIVar2 = pIVar1[3].klass;
-    (this->fields)._.sliderB = (SettingsSlider *)pIVar2;
-    func_?(&(this->fields)._.sliderB,pIVar2);
-    pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+  if (pOVar1 != (Object__Array *)0x0) {
+    if (pOVar1->max_length == 0) goto code_?;
+    pSVar2 = (SettingsSlider *)pOVar1->vector[0];
+    (this->fields)._.sliderR = pSVar2;
+    func_?(&(this->fields)._.sliderR,pSVar2);
+    if (pOVar1->max_length < 2) goto code_?;
+    pSVar2 = (SettingsSlider *)pOVar1->vector[1];
+    (this->fields)._.sliderG = pSVar2;
+    func_?(&(this->fields)._.sliderG,pSVar2);
+    if (pOVar1->max_length < 3) goto code_?;
+    pSVar2 = (SettingsSlider *)pOVar1->vector[2];
+    (this->fields)._.sliderB = pSVar2;
+    func_?(&(this->fields)._.sliderB,pSVar2);
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
                        );
-    if (pIVar1 != (IEnumerable_1_System_Object_ *)0x0) {
-      if ((MonitorData *)0x3 < pIVar1[1].monitor) {
-        pSVar3 = (SettingsSlider *)pIVar1[3].monitor;
-        (this->fields).sliderA = pSVar3;
-        func_?(&(this->fields).sliderA,pSVar3);
+    if (pOVar1 != (Object__Array *)0x0) {
+      if (3 < pOVar1->max_length) {
+        pSVar2 = (SettingsSlider *)pOVar1->vector[3];
+        (this->fields).sliderA = pSVar2;
+        func_?(&(this->fields).sliderA,pSVar2);
         return;
       }
       goto code_?;
@@ -155,8 +154,8 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Reset
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

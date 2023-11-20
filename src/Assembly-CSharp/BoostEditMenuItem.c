@@ -21,18 +21,17 @@ int32_t Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_GetBoostEarnin
                    );
     cRam_? = '\x01';
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((((this_01 != (MVNetworkGame *)0x0) &&
-       (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((((this_00 != (MVNetworkGame *)0x0) &&
+       (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
        pMVar1 != (MVLocalPlayer *)0x0)) && (projectEarningsReport != (ProjectEarningsReport *)0x0))
-     && (pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                  (projectEarningsReport->fields).projectMemberEarningsReports,
-        pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-    pOVar3 = (Object *)(pMVar1->fields)._._ProfileID_k__BackingField;
-    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (pDVar2,pOVar3,
+     && (pDVar2 = (projectEarningsReport->fields).projectMemberEarningsReports,
+        pDVar2 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+                   *)0x0)) {
+    iVar3 = (pMVar1->fields)._._ProfileID_k__BackingField;
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+            Dictionary_2_System_Int32_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar2,iVar3,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
                       );
     pMVar5 = 
@@ -41,57 +40,56 @@ int32_t Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_GetBoostEarnin
     if (bVar4 == 0) {
       return 0;
     }
-    pDVar6 = (projectEarningsReport->fields).projectMemberEarningsReports;
-    if (((pDVar6 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+    pDVar2 = (projectEarningsReport->fields).projectMemberEarningsReports;
+    if (((pDVar2 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                      *)0x0) &&
-        (pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
-                             (Int32Enum__Enum)pOVar3,
+        (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                            ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,iVar3,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                            ), pOVar7 != (Object *)0x0)) &&
-       ((pOVar7[1].klass != (Object__Class *)0x0 &&
-        ((pIVar8 = pMVar5[1].methodPointer, pIVar8 != (Il2CppMethodPointer)0x0 &&
-         (pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                   ((pOVar7[1].klass)->_0).namespaze,
-         pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)))))) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (pDVar2,*(Object **)(pIVar8 + 0xc),
+                            ), pOVar6 != (Object *)0x0)) &&
+       ((pOVar6[1].klass != (Object__Class *)0x0 &&
+        ((pIVar7 = pMVar5[1].virtualMethodPointer, pIVar7 != (Il2CppMethodPointer)0x0 &&
+         (pDVar8 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                   ((pOVar6[1].klass)->_0).namespaze,
+         pDVar8 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)))))) {
+      bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        (pDVar8,*(Object **)(pIVar7 + 0xc),
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
                         );
       if (bVar4 == 0) {
         return 0;
       }
-      pDVar6 = (projectEarningsReport->fields).projectMemberEarningsReports;
-      if ((((pDVar6 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+      pDVar2 = (projectEarningsReport->fields).projectMemberEarningsReports;
+      if ((((pDVar2 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                         *)0x0) &&
-           (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Int32Enum,System::Object]::
-                     Dictionary_2_System_Int32Enum_System_Object__get_Item
-                               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
-                                (Int32Enum__Enum)pOVar3,
+           (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,iVar3,
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                               ), pOVar3 != (Object *)0x0)) &&
-          (pOVar3[1].klass != (Object__Class *)0x0)) &&
-         (pIVar8 = pMVar5[1].methodPointer, pIVar8 != (Il2CppMethodPointer)0x0)) {
-        this_00 = (Dictionary_2_System_Object_System_Object_ *)((pOVar3[1].klass)->_0).namespaze;
-        if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (this_00,*(Object **)(pIVar8 + 0xc),
-                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                             );
-          return (int32_t)pOVar3;
+                               ), pOVar6 != (Object *)0x0)) &&
+          (pOVar6[1].klass != (Object__Class *)0x0)) &&
+         (pIVar7 = pMVar5[1].virtualMethodPointer, pIVar7 != (Il2CppMethodPointer)0x0)) {
+        pDVar8 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                 ((pOVar6[1].klass)->_0).namespaze;
+        if (pDVar8 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar8,*(Object **)(pIVar7 + 0xc),
+                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
+                            );
+          return TVar9.m_Index;
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  iVar10 = (*pcVar9)();
-  return iVar10;
+  pcVar10 = (code *)swi(3);
+  iVar3 = (*pcVar10)();
+  return iVar3;
 }
 
 
@@ -138,8 +136,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
     arg0 = Boost::Boost_get_Value(boost,(MethodInfo *)0x0);
     pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,arg0,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar4 = (this->fields).activeToggleButton;
       if (pTVar4 != (ToggleButtonAnimation *)0x0) {
         ToggleButtonAnimation::ToggleButtonAnimation_Initialize(pTVar4,(MethodInfo *)0x0);
@@ -200,7 +198,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
               }
               iVar6 = 0;
               if (this != (BoostEditMenuItem *)0x0) {
-                for (; iVar6 < (int)(this->fields).boostTypeImageParent; iVar6 = iVar6 + 1) {
+                for (; iVar6 < (int)(this->fields)._.m_CancellationTokenSource; iVar6 = iVar6 + 1
+                    ) {
                   RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                           RegularExpressions::RegexCharClass+SingleRange]::
                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -230,28 +229,30 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                     func_?();
                   }
                 }
-                pLVar9 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)
+                pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                          (pBVar1->fields).boosterList;
                 iVar6 = 0;
-                if (pLVar9 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+                if (pLVar9 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
+                              )0x0) {
                   while (iVar6 < (pLVar9->fields)._size) {
-                    pLVar9 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)
+                    pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                              (pBVar1->fields).boosterList;
-                    if (pLVar9 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0)
-                    goto code_?;
-                    TVar10 = mscorlib.dll::System::Collections::Generic::
-                             List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-                             List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+                    if (pLVar9 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                   *)0x0) goto code_?;
+                    XVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema
+                             ::XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                        (pLVar9,iVar6,
                                         MethodInfo__System__Collections__Generic__List<BoostEditMenuItem::BoosterDef>__get_Item_int_
                                        );
-                    pLVar9 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)
+                    pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                              (pBVar1->fields).boosterList;
-                    if (TVar10.tabID == (boost->fields)._Type_k__BackingField) {
-                      if (pLVar9 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
-                        TVar10 = mscorlib.dll::System::Collections::Generic::
-                                 List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-                                 List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+                    if (XVar10.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
+                      if (pLVar9 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                     *)0x0) {
+                        XVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::
+                                 Schema::XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                            (pLVar9,iVar6,
                                             MethodInfo__System__Collections__Generic__List<BoostEditMenuItem::BoosterDef>__get_Item_int_
                                            );
@@ -261,7 +262,7 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                         this_04 = (GameObject *)
                                   UnityEngine.CoreModule.dll::UnityEngine::Object::
                                   Object_1_Instantiate_4
-                                            ((Object *)TVar10.streamedImagePrefab,
+                                            ((Object *)XVar10.xso,
                                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                             );
                         if ((this_04 != (GameObject *)0x0) &&
@@ -277,8 +278,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                       goto code_?;
                     }
                     iVar6 = iVar6 + 1;
-                    if (pLVar9 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0)
-                    goto code_?;
+                    if (pLVar9 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                   *)0x0) goto code_?;
                   }
                   this_00 = (pBVar1->fields).boosterSetting;
                   if ((this_00 != (GameBoosterSettingWithGoldSetting *)0x0) &&
@@ -290,9 +291,9 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                      this_06 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) {
                     pSVar3 = (String *)
                              MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore
-                             ::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Object]::
-                             KogamaSettingNumericBase_1_System_Object__get_NumericValue
-                                       ((KogamaSettingNumericBase_1_System_Object_ *)this_06,
+                             ::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
+                             KogamaSettingNumericBase_1_System_Int32__get_NumericValue
+                                       (this_06,
                                         MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
                                        );
                     pTVar2 = (pBVar1->fields).goldPriceText;
@@ -303,9 +304,10 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                              mscorlib.dll::System::String::String_Replace_1
                                        (pSVar3,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0
                                        ), pTVar2 != (Text *)0x0)) {
-                      pMStack12 = (pTVar2->klass->vtable).set_text.method;
+                      pIStack12 =
+                           (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
                       pTStack13 = pTVar2;
-                      (*(pTVar2->klass->vtable).set_text.methodPtr)();
+                      (*(code *)(pTVar2->klass->vtable).set_text.method)();
                       return;
                     }
                   }
@@ -409,32 +411,32 @@ code_?:
              GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
              GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
     if (pKVar2 != (KogamaSettingValueWrapperBase *)0x0) {
-      if (((pKVar2->klass->_1).typeHierarchyDepth <
+      if (((pKVar2->klass->_1).naturalAligment <
            (
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth) ||
+           ->_1).naturalAligment) ||
          ((pKVar2->klass->_1).typeHierarchy
           [(
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth - 1] !=
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
       pGVar1 = (this->fields).boosterSetting;
       if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-      this_03 = (KogamaSettingNumericBase_1_System_Object_ *)
+      this_03 = (KogamaSettingNumericBase_1_System_Int32_ *)
                 MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
                 GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
                 GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
-      if (this_03 == (KogamaSettingNumericBase_1_System_Object_ *)0x0) goto code_?;
-      if (((this_03->klass->_1).typeHierarchyDepth <
+      if (this_03 == (KogamaSettingNumericBase_1_System_Int32_ *)0x0) goto code_?;
+      if (((this_03->klass->_1).naturalAligment <
            (
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth) ||
+           ->_1).naturalAligment) ||
          ((this_03->klass->_1).typeHierarchy
           [(
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth - 1] !=
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
@@ -444,21 +446,21 @@ code_?:
       pMVar3 = 
       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__set_NumericValue_int_
       ;
-      puVar4 = (undefined4 *)func_?();
-      if (((this_03->klass->_1).typeHierarchyDepth <
+      piVar4 = (int32_t *)func_?();
+      if (((this_03->klass->_1).naturalAligment <
            (
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth) ||
+           ->_1).naturalAligment) ||
          ((this_03->klass->_1).typeHierarchy
           [(
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-           ->_1).typeHierarchyDepth - 1] !=
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
       MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-      KogamaSettingNumericBase`1[System::Object]::
-      KogamaSettingNumericBase_1_System_Object__set_NumericValue(this_03,(Object *)*puVar4,pMVar3);
+      KogamaSettingNumericBase`1[System::Int32]::
+      KogamaSettingNumericBase_1_System_Int32__set_NumericValue(this_03,*piVar4,pMVar3);
 code_?:
       if (this_02 != (MVGameOptionDataObject *)0x0) {
         MVGameOptionDataObject::MVGameOptionDataObject_UpdateSetting
@@ -484,22 +486,22 @@ code_?:
         pSStack6 = mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0)
         ;
         if (pTVar5 != (Text *)0x0) {
-          pMStack7 = (pTVar5->klass->vtable).set_text.method;
+          pIStack7 = (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
           pTStack8 = pTVar5;
-          (*(pTVar5->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar5->klass->vtable).set_text.method)();
           return;
         }
       }
       goto code_?;
     }
-    if (((pKVar2->klass->_1).typeHierarchyDepth <
+    if (((pKVar2->klass->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth) ||
+         ->_1).naturalAligment) ||
        ((pKVar2->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth - 1] !=
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) goto code_?;
@@ -512,11 +514,11 @@ code_?:
     if (this_04 == (KogamaSettingNumericBase_1_System_Single_ *)0x0) goto code_?;
     if (((
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth <= (this_04->klass->_1).typeHierarchyDepth) &&
+         ->_1).naturalAligment <= (this_04->klass->_1).naturalAligment) &&
        ((this_04->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth - 1] ==
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) {
@@ -529,11 +531,11 @@ code_?:
       pfVar9 = (float *)func_?();
       if (((
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-           ->_1).typeHierarchyDepth <= (this_04->klass->_1).typeHierarchyDepth) &&
+           ->_1).naturalAligment <= (this_04->klass->_1).naturalAligment) &&
          ((this_04->klass->_1).typeHierarchy
           [(
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-           ->_1).typeHierarchyDepth - 1] ==
+           ->_1).naturalAligment - 1] ==
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
          )) {
@@ -586,9 +588,9 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_OnPriceSettingCha
                 GameBoosterSettingWithGoldSetting_get_GoldPrice(this_00,(MethodInfo *)0x0);
       if (this_03 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0) {
         MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-        KogamaSettingNumericBase`1[System::Object]::
-        KogamaSettingNumericBase_1_System_Object__set_NumericValue
-                  ((KogamaSettingNumericBase_1_System_Object_ *)this_03,(Object *)newPrice,
+        KogamaSettingNumericBase`1[System::Int32]::
+        KogamaSettingNumericBase_1_System_Int32__set_NumericValue
+                  (this_03,newPrice,
                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__set_NumericValue_int_
                   );
         if (this_02 != (MVGameOptionDataObject *)0x0) {
@@ -606,9 +608,9 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_OnPriceSettingCha
                  mscorlib.dll::System::String::String_Replace_1
                            (this_04,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0);
             if (pTVar1 != (Text *)0x0) {
-              pMStack3 = (pTVar1->klass->vtable).set_text.method;
+              pIStack3 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
               pTStack4 = pTVar1;
-              (*(pTVar1->klass->vtable).set_text.methodPtr)();
+              (*(code *)(pTVar1->klass->vtable).set_text.method)();
               return;
             }
           }
@@ -707,42 +709,93 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
   }
   pGVar1 = (this->fields).boosterSetting;
   if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-  pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+  pMVar2 = (MethodInfo *)&UNK_?;
+  pKVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
            GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
            GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
-  if (((pKVar2 == (KogamaSettingValueWrapperBase *)0x0) ||
-      ((pKVar2->klass->_1).typeHierarchyDepth <
-       (
-       TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-       ->_1).typeHierarchyDepth)) ||
-     ((pKVar2->klass->_1).typeHierarchy
-      [(
-       TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-       ->_1).typeHierarchyDepth - 1] !=
-      (Il2CppClass *)
-      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-     )) {
-    pGVar1 = (this->fields).boosterSetting;
-    if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-    pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-             GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
-             GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
-    if (((pKVar2 != (KogamaSettingValueWrapperBase *)0x0) &&
-        ((
+  if (pKVar3 != (KogamaSettingValueWrapperBase *)0x0) {
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).naturalAligment <= (pKVar3->klass->_1).naturalAligment) &&
+       ((pKVar3->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).naturalAligment - 1] ==
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+       )) {
+      value = (Object *)func_?(TypeInfo__BoostEditMenuItem____c__DisplayClass14_0);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,pMVar2);
+      original = (this->fields).boostEditIntPopupPrefab;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pOVar4 = (Object__Class *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)original,
+                          BoostEditIntPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditIntPopup>_BoostEditIntPopup_
+                         );
+      if (value == (Object *)0x0) goto code_?;
+      value[1].klass = pOVar4;
+      func_?(value + 1,pOVar4);
+      pBVar5 = (this->fields).boost;
+      pOVar4 = value[1].klass;
+      pGVar1 = (this->fields).boosterSetting;
+      pUVar6 = (UnityAction_1_System_Object_ *)
+               func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar6,(Object *)this,
+                 MethodInfo__BoostEditMenuItem__OnBoostSettingChange_System__Object_,
+                 (MethodInfo *)0x0);
+      pUVar7 = (UnityAction_1_System_Int32Enum_ *)
+               func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
+                 (MethodInfo *)0x0);
+      pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
+               func_?(TypeInfo__UnityEngine__Events__UnityAction);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
+                 (MethodInfo *)0x0);
+      if (pOVar4 == (Object__Class *)0x0) goto code_?;
+      pIVar9 = (pOVar4->_0).image;
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      pMVar2 = 
+      MethodInfo__BoostEditMenuItem____c__DisplayClass14_0___ShowEditPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+      ;
+      goto code_?;
+    }
+  }
+  pGVar1 = (this->fields).boosterSetting;
+  if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
+  pKVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+           GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
+           GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
+  if (pKVar3 != (KogamaSettingValueWrapperBase *)0x0) {
+    if (((
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth <= (pKVar2->klass->_1).typeHierarchyDepth)) &&
-       ((pKVar2->klass->_1).typeHierarchy
+         ->_1).naturalAligment <= (pKVar3->klass->_1).naturalAligment) &&
+       ((pKVar3->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-         ->_1).typeHierarchyDepth - 1] ==
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) {
-      pMVar3 = (MethodInfo *)&UNK_?;
       value = (Object *)func_?(TypeInfo__BoostEditMenuItem____c__DisplayClass14_1);
-      if (value == (Object *)0x0) goto code_?;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,pMVar3);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,pMVar2);
       original_00 = (this->fields).boostEditFloatPopupPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -752,14 +805,14 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
                          ((Object *)original_00,
                           BoostEditFloatPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditFloatPopup>_BoostEditFloatPopup_
                          );
+      if (value == (Object *)0x0) goto code_?;
       value[1].klass = pOVar4;
       func_?(value + 1,pOVar4);
-      pOVar4 = value[1].klass;
       pBVar5 = (this->fields).boost;
+      pOVar4 = value[1].klass;
       pGVar1 = (this->fields).boosterSetting;
       pUVar6 = (UnityAction_1_System_Object_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
-      if (pUVar6 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
                 (pUVar6,(Object *)this,
@@ -767,20 +820,19 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
                  (MethodInfo *)0x0);
       pUVar7 = (UnityAction_1_System_Int32Enum_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-      if (pUVar7 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
                 (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
                  (MethodInfo *)0x0);
       pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if ((pNVar8 == (NavMesh_OnNavMeshPreUpdate *)0x0) ||
-         (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
-                     (MethodInfo *)0x0), pOVar4 == (Object__Class *)0x0)) goto code_?;
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
+                 (MethodInfo *)0x0);
+      if (pOVar4 == (Object__Class *)0x0) goto code_?;
       pIVar9 = (pOVar4->_0).image;
-      (*(code *)pIVar9[5].name)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].nameNoExt);
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -788,35 +840,32 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      pMVar3 = 
+      pMVar2 = 
       MethodInfo__BoostEditMenuItem____c__DisplayClass14_1___ShowEditPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
       ;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-      goto code_?;
       goto code_?;
     }
-    pMVar3 = (MethodInfo *)&UNK_?;
-    value = (Object *)func_?(TypeInfo__BoostEditMenuItem____c__DisplayClass14_2);
-    if (value == (Object *)0x0) goto code_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,pMVar3);
-    original_01 = (this->fields).boostEditPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar4 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_01,
-                        BoostEditPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditPopup>_BoostEditPopup_
-                       );
+  }
+  value = (Object *)func_?(TypeInfo__BoostEditMenuItem____c__DisplayClass14_2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,pMVar2);
+  original_01 = (this->fields).boostEditPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar4 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original_01,
+                      BoostEditPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditPopup>_BoostEditPopup_
+                     );
+  if (value != (Object *)0x0) {
     value[1].klass = pOVar4;
     func_?(value + 1,pOVar4);
-    pOVar4 = value[1].klass;
     pBVar5 = (this->fields).boost;
+    pOVar4 = value[1].klass;
     pGVar1 = (this->fields).boosterSetting;
     pUVar6 = (UnityAction_1_System_Object_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
-    if (pUVar6 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
     UnityAction_1_System_Object___ctor
               (pUVar6,(Object *)this,
@@ -824,106 +873,49 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
               );
     pUVar7 = (UnityAction_1_System_Int32Enum_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-    if (pUVar7 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
                (MethodInfo *)0x0);
     pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if ((pNVar8 == (NavMesh_OnNavMeshPreUpdate *)0x0) ||
-       (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
-                   (MethodInfo *)0x0), pOVar4 == (Object__Class *)0x0)) goto code_?;
-    pIVar9 = (pOVar4->_0).image;
-    (*(code *)pIVar9[5].name)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].nameNoExt);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    pMVar3 = 
-    MethodInfo__BoostEditMenuItem____c__DisplayClass14_2___ShowEditPopup_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-    ;
-  }
-  else {
-    value = (Object *)func_?(TypeInfo__BoostEditMenuItem____c__DisplayClass14_0);
-    if (value == (Object *)0x0) goto code_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EBX);
-    original = (this->fields).boostEditIntPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar4 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        BoostEditIntPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditIntPopup>_BoostEditIntPopup_
-                       );
-    value[1].klass = pOVar4;
-    pOVar10 = value + 1;
-    func_?(pOVar10,pOVar4);
-    pOVar4 = value[1].klass;
-    pBVar5 = (this->fields).boost;
-    pGVar1 = (this->fields).boosterSetting;
-    pUVar6 = (UnityAction_1_System_Object_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>,pOVar10,
-                             pBVar5,pGVar1);
-    if (pUVar6 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (pUVar6,(Object *)this,
-               MethodInfo__BoostEditMenuItem__OnBoostSettingChange_System__Object_,(MethodInfo *)0x0
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,(MethodInfo *)0x0
               );
-    pUVar7 = (UnityAction_1_System_Int32Enum_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-    if (pUVar7 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
-               (MethodInfo *)0x0);
-    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if ((pNVar8 == (NavMesh_OnNavMeshPreUpdate *)0x0) ||
-       (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
-                   (MethodInfo *)0x0), pOVar4 == (Object__Class *)0x0)) goto code_?;
-    pIVar9 = (pOVar4->_0).image;
-    (*(code *)pIVar9[5].name)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].nameNoExt);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    pMVar3 = 
-    MethodInfo__BoostEditMenuItem____c__DisplayClass14_0___ShowEditPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-    ;
-  }
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    if (pOVar4 != (Object__Class *)0x0) {
+      pIVar9 = (pOVar4->_0).image;
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      pMVar2 = 
+      MethodInfo__BoostEditMenuItem____c__DisplayClass14_2___ShowEditPopup_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+      ;
 code_?:
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,pMVar3,
-               (MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,pMVar2,
+                 (MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    return;
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -962,77 +954,75 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_UpdateEarningsTex
     if ((((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
          pMVar2 != (MVLocalPlayer *)0x0)) && (projectEarningsReport != (ProjectEarningsReport *)0x0)
-        ) && (pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                       (projectEarningsReport->fields).projectMemberEarningsReports,
-             pDVar3 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-      pOVar4 = (Object *)(pMVar2->fields)._._ProfileID_k__BackingField;
-      bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (pDVar3,pOVar4,
+        ) && (pDVar3 = (projectEarningsReport->fields).projectMemberEarningsReports,
+             pDVar3 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+                        *)0x0)) {
+      key = (pMVar2->fields)._._ProfileID_k__BackingField;
+      bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
+              ::Dictionary_2_System_Int32_System_Single__ContainsKey
+                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,key,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
                         );
-      if (bVar5 != 0) {
-        pDVar6 = (projectEarningsReport->fields).projectMemberEarningsReports;
-        if (((pDVar6 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+      if (bVar4 != 0) {
+        pDVar3 = (projectEarningsReport->fields).projectMemberEarningsReports;
+        if (((pDVar3 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                          *)0x0) ||
-            (pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Int32Enum,System::Object]::
-                      Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
-                                 (Int32Enum__Enum)pOVar4,
+            (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+                      ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                ), pOVar7 == (Object *)0x0)) ||
-           ((pOVar7[1].klass == (Object__Class *)0x0 ||
-            ((*(int *)(unaff_EDI + 0x30) == 0 ||
-             (pDVar3 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                       ((pOVar7[1].klass)->_0).namespaze,
-             pDVar3 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0))))))
+                                ), pOVar5 == (Object *)0x0)) ||
+           ((pOVar5[1].klass == (Object__Class *)0x0 ||
+            ((*(int *)(unaff_EDI + 0x34) == 0 ||
+             (pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       ((pOVar5[1].klass)->_0).namespaze,
+             pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))))))
         goto code_?;
-        bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          (pDVar3,*(Object **)(*(int *)(unaff_EDI + 0x30) + 0xc),
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                          (pDVar6,*(Object **)(*(int *)(unaff_EDI + 0x34) + 0xc),
                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
                           );
-        if (bVar5 != 0) {
-          pDVar6 = (projectEarningsReport->fields).projectMemberEarningsReports;
-          if ((((pDVar6 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+        if (bVar4 != 0) {
+          pDVar3 = (projectEarningsReport->fields).projectMemberEarningsReports;
+          if ((((pDVar3 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                             *)0x0) ||
-               (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32Enum,System::Object]::
-                         Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar6,
-                                    (Int32Enum__Enum)pOVar4,
+               (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
                                     MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                   ), pOVar4 == (Object *)0x0)) ||
-              (pOVar4[1].klass == (Object__Class *)0x0)) || (*(int *)(unaff_EDI + 0x30) == 0))
+                                   ), pOVar5 == (Object *)0x0)) ||
+              (pOVar5[1].klass == (Object__Class *)0x0)) || (*(int *)(unaff_EDI + 0x34) == 0))
           goto code_?;
-          this_00 = (Dictionary_2_System_Object_System_Object_ *)((pOVar4[1].klass)->_0).namespaze;
-          if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__get_Item
-                    (this_00,*(Object **)(*(int *)(unaff_EDI + 0x30) + 0xc),
+          pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                   ((pOVar5[1].klass)->_0).namespaze;
+          if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+          goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    (pDVar6,*(Object **)(*(int *)(unaff_EDI + 0x34) + 0xc),
                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
                     );
         }
       }
-      piVar8 = *(int **)(unaff_EDI + 0x18);
-      pSVar9 = mscorlib.dll::System::Int32::Int32_ToString_1
-                          ((Int32 *)&stack0xfffffff8,StringLiteral_N0,(MethodInfo *)0x0);
-      if ((pSVar9 != (String *)0x0) &&
-         (pSVar9 = mscorlib.dll::System::String::String_Replace_1
-                              (pSVar9,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
-         piVar8 != (int *)0x0)) {
-        (**(code **)(*piVar8 + 0x314))(piVar8,pSVar9);
+      piVar7 = *(int **)(unaff_EDI + 0x1c);
+      pSVar8 = mscorlib.dll::System::Int32::Int32_ToString_1
+                         ((Int32 *)&stack0xfffffff8,StringLiteral_N0,(MethodInfo *)0x0);
+      if ((pSVar8 != (String *)0x0) &&
+         (pSVar8 = mscorlib.dll::System::String::String_Replace_1
+                             (pSVar8,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
+         piVar7 != (int *)0x0)) {
+        (**(code **)(*piVar7 + 0x318))(piVar7,pSVar8);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

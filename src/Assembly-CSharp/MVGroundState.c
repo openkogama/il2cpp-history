@@ -53,24 +53,24 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
     pMVar16 = (this->fields).groundMaterial;
     if (pMVar16 != (MVMaterial *)0x0) {
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        pIStack_17 = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
-        fVar18 = (float10)(*pIStack_17)(interactableLocal,0xc,
-                                        (pMVar16->fields)._PhysicalProperties_k__BackingField.
-                                        friction,(interactableLocal->klass->vtable).__unknown_6.
-                                                 method,
-                                        (pMVar16->fields)._PhysicalProperties_k__BackingField.
-                                        bouncyness,
-                                        (pMVar16->fields)._PhysicalProperties_k__BackingField.
-                                        softness,(pMVar16->fields).
-                                                 _PhysicalProperties_k__BackingField.staticFriction,
-                                        (pMVar16->fields)._PhysicalProperties_k__BackingField.
-                                        toughness);
-        pIStack_17 = (Il2CppMethodPointer)(float)fVar18;
-        fVar19 = MathFunctions::MathFunctions_Pow2((float)pIStack_17,(MethodInfo *)0x0);
-        pIStack_17 = (Il2CppMethodPointer)(1.0 - fVar19);
-        fVar14 = fVar14 * (float)pIStack_17;
-        fStack_15 = fStack_15 * (float)pIStack_17;
-        fStack_13 = fStack_13 * (float)pIStack_17;
+        pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+        fVar18 = (float10)(*(code *)pMStack_17)
+                                    (interactableLocal,0xc,
+                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.friction,
+                                     (interactableLocal->klass->vtable).__unknown_7.methodPtr,
+                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.bouncyness
+                                     ,(pMVar16->fields)._PhysicalProperties_k__BackingField.softness,
+                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.
+                                     staticFriction,
+                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.toughness)
+        ;
+        pMStack_17 = (MethodInfo *)(float)fVar18;
+        fVar19 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
+                 Easing_InQuad((float)pMStack_17,(MethodInfo *)0x0);
+        pMStack_17 = (MethodInfo *)(1.0 - fVar19);
+        fVar14 = fVar14 * (float)pMStack_17;
+        fStack_15 = fStack_15 * (float)pMStack_17;
+        fStack_13 = fStack_13 * (float)pMStack_17;
         if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVPhysics);
         }
@@ -102,15 +102,15 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
                  ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
         fStack_15 = fStack_15 * fVar19;
         fStack_13 = fStack_13 * fVar19;
-        pIStack_17 = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
+        pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
         fStack_7 = density;
         fStack_6 = 0.0;
         pMStack_12 = interactableLocal;
-        fVar18 = (float10)(*pIStack_17)();
-        pIStack_17 = (Il2CppMethodPointer)(float)fVar18;
-        fStack_7 = fStack_13 * (float)pIStack_17;
-        pMVar24 = (MVInteractableBase *)(fVar14 * fVar19 * (float)pIStack_17);
-        fStack_6 = fStack_15 * (float)pIStack_17;
+        fVar18 = (float10)(*(code *)pMStack_17)();
+        pMStack_17 = (MethodInfo *)(float)fVar18;
+        fStack_7 = fStack_13 * (float)pMStack_17;
+        pMVar24 = (MVInteractableBase *)(fVar14 * fVar19 * (float)pMStack_17);
+        fStack_6 = fStack_15 * (float)pMStack_17;
         pMStack_12 = pMVar24;
         fStack_13 = fStack_7;
         fStack_15 = fStack_6;
@@ -118,13 +118,14 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
         pMVar16 = (this->fields).groundMaterial;
         fStack_7 = (float)fVar18;
         if (pMVar16 != (MVMaterial *)0x0) {
-          pIStack_17 = (interactableLocal->klass->vtable).__unknown_6.methodPtr;
-          fVar18 = (float10)(*pIStack_17)(interactableLocal,0x10,
-                                          (pMVar16->fields)._PhysicalProperties_k__BackingField.
-                                          staticFriction,
-                                          (interactableLocal->klass->vtable).__unknown_6.method);
-          pIStack_17 = (Il2CppMethodPointer)(float)fVar18;
-          if ((float)pIStack_17 < fStack_7) {
+          pMStack_17 = (interactableLocal->klass->vtable).__unknown_6.method;
+          fVar18 = (float10)(*(code *)pMStack_17)
+                                      (interactableLocal,0x10,
+                                       (pMVar16->fields)._PhysicalProperties_k__BackingField.
+                                       staticFriction,
+                                       (interactableLocal->klass->vtable).__unknown_7.methodPtr);
+          pMStack_17 = (MethodInfo *)(float)fVar18;
+          if ((float)pMStack_17 < fStack_7) {
             fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                ((MethodInfo *)0x0);
             __return_storage_ptr__->x = velocity.x + (float)pMVar24 * fVar14;
@@ -160,11 +161,42 @@ float Assembly-CSharp.dll::MVGroundState::MVGroundState_GetGradientAngle
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar2._0_4_ = (pVVar1->upVector).x;
-  uVar2._4_4_ = (pVVar1->upVector).y;
-  fVar3 = (float10)func_?(uVar2,(pVVar1->upVector).z,gradientDirection._0_8_,
-                                   gradientDirection.z,0);
-  return (float)(fVar3 - (float10)_UNK_?);
+  uVar2 = (pVVar1->upVector).x;
+  uVar3 = (pVVar1->upVector).y;
+  fVar4 = (pVVar1->upVector).z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  pMVar5 = TypeInfo__System__Math;
+  dVar6 = (double)((gradientDirection.x * gradientDirection.x +
+                    gradientDirection.y * gradientDirection.y +
+                   gradientDirection.z * gradientDirection.z) *
+                  ((float)uVar2 * (float)uVar2 + (float)uVar3 * (float)uVar3 + fVar4 * fVar4));
+  if (dVar6 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar6 = SQRT(dVar6);
+  }
+  if (_UNK_? <= (float)dVar6) {
+    fStack_7 = (gradientDirection.x * (float)uVar2 + gradientDirection.y * (float)uVar3 +
+                gradientDirection.z * fVar4) / (float)dVar6;
+    fVar4 = _UNK_?;
+    if ((fStack_7 < _UNK_?) || (fVar4 = _UNK_?, _UNK_? < fStack_7)) {
+      fStack_7 = fVar4;
+    }
+    if ((pMVar5->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pMVar5);
+    }
+    dVar6 = (double)fStack_7;
+    func_?();
+    return (float)dVar6 * _UNK_? - _UNK_?;
+  }
+  return 0.0 - _UNK_?;
 }
 
 
@@ -370,7 +402,6 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState_UpdateGroundData
                MVControllerColliderHit groundHit,MethodInfo *method)
 
 {
-  MVar1 = groundHit;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     cRam_? = '\x01';
@@ -379,20 +410,20 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState_UpdateGroundData
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar2->zeroVector).y;
-  fVar4 = (pVVar2->zeroVector).z;
-  (this->fields).groundNormal.x = (pVVar2->zeroVector).x;
-  (this->fields).groundNormal.y = fVar3;
-  (this->fields).groundNormal.z = fVar4;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).groundNormal.x = (pVVar1->zeroVector).x;
+  (this->fields).groundNormal.y = fVar2;
+  (this->fields).groundNormal.z = fVar3;
   if (foundGroundHit == 0) {
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar5 != (MVNetworkGame *)0x0) &&
-       (pMVar6 = (pMVar5->fields)._MaterialRepository_k__BackingField,
-       pMVar6 != (MVMaterialRepository *)0x0)) {
-      pMVar7 = (pMVar6->fields).inAirMaterial;
-      (this->fields).groundMaterial = pMVar7;
-      func_?(&this->fields,pMVar7);
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 != (MVNetworkGame *)0x0) &&
+       (pMVar5 = (pMVar4->fields)._MaterialRepository_k__BackingField,
+       pMVar5 != (MVMaterialRepository *)0x0)) {
+      pMVar6 = (pMVar5->fields).inAirMaterial;
+      (this->fields).groundMaterial = pMVar6;
+      func_?(&this->fields,pMVar6);
       return;
     }
   }
@@ -401,46 +432,42 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState_UpdateGroundData
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    (this->fields).groundNormal.x = groundHit.elipsoidNormal.z;
-    (this->fields).groundNormal.y = groundHit.slopeNormal.x;
+    (this->fields).groundNormal.x = (float)(int)groundHit._32_8_;
+    (this->fields).groundNormal.y = (float)(int)((ulonglong)groundHit._32_8_ >> 0x20);
     (this->fields).groundNormal.z = groundHit.slopeNormal.y;
     if (controller != (MvCharacterController *)0x0) {
-      pVVar8 = MvCharacterController::MvCharacterController_GetGradientDirection
-                         (&VStack_9,controller,MVar1._60_72_,(MethodInfo *)0x0);
-      uStack_10._0_4_ = pVVar8->x;
-      uStack_10._4_4_ = pVVar8->y;
-      fVar4 = pVVar8->z;
-      (this->fields).gradientDirection.x = (float)(undefined4)uStack_10;
-      (this->fields).gradientDirection.y = (float)uStack_10._4_4_;
-      (this->fields).gradientDirection.z = fVar4;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      fVar11 = (float10)func_?();
-      (this->fields).gradientAngle = (float)(fVar11 - (float10)_UNK_?);
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar5 != (MVNetworkGame *)0x0) {
-        pMVar6 = (pMVar5->fields)._MaterialRepository_k__BackingField;
+      pVVar7 = MvCharacterController::MvCharacterController_GetGradientDirection
+                         (&VStack_8,controller,groundHit._60_72_,(MethodInfo *)0x0);
+      fVar2 = pVVar7->y;
+      fVar3 = pVVar7->z;
+      gradientDirection = *pVVar7;
+      (this->fields).gradientDirection.x = pVVar7->x;
+      (this->fields).gradientDirection.y = fVar2;
+      (this->fields).gradientDirection.z = fVar3;
+      fVar3 = MVGroundState_GetGradientAngle(gradientDirection,(MethodInfo *)0x0);
+      (this->fields).gradientAngle = fVar3;
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar4 != (MVNetworkGame *)0x0) {
+        pMVar5 = (pMVar4->fields)._MaterialRepository_k__BackingField;
         if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MV__WorldObject__CubeBase);
+          func_?();
         }
         materialId = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetMaterial
                                ((CubeBase *)groundHit.hit.woId,groundHit.hit._28_4_,
                                 (MethodInfo *)0x0);
-        if (pMVar6 != (MVMaterialRepository *)0x0) {
-          pMVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                             (pMVar6,materialId,(MethodInfo *)0x0);
-          (this->fields).groundMaterial = pMVar7;
-          func_?(&this->fields,pMVar7);
+        if (pMVar5 != (MVMaterialRepository *)0x0) {
+          pMVar6 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                             (pMVar5,materialId,(MethodInfo *)0x0);
+          (this->fields).groundMaterial = pMVar6;
+          func_?(&this->fields,pMVar6);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -453,7 +480,7 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState_UpdateGroundStateWithHit
 
 {
   puVar1 = (undefined4 *)&stack0x00000010;
-  puVar2 = (undefined4 *)&stack0xffffff60;
+  puVar2 = (undefined4 *)&stack0xffffff6c;
   for (iVar3 = 0x24; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar2 = *puVar1;
     puVar1 = puVar1 + 1;
@@ -485,54 +512,53 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState_UpdateGroundStateWithHit
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    (this->fields).groundNormal.x = (float)uStack_10;
-    (this->fields).groundNormal.y = (float)uStack_11;
-    (this->fields).groundNormal.z = fStack_12;
+    (this->fields).groundNormal.x = (float)(undefined4)uStack_10;
+    (this->fields).groundNormal.y = (float)uStack_10._4_4_;
+    (this->fields).groundNormal.z = fStack_11;
     if (controller == (MvCharacterController *)0x0) {
 code_?:
       func_?();
-      pcVar13 = (code *)swi(3);
-      (*pcVar13)();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
       return;
     }
-    elipsoidHit.point.y = (float)uStack_14;
-    elipsoidHit.point.x = (float)uStack_15;
-    elipsoidHit.point.z = (float)uStack_16;
-    elipsoidHit.normal.x = (float)uStack_17;
-    elipsoidHit.normal.y = (float)uStack_18;
-    elipsoidHit.normal.z = (float)uStack_19;
-    elipsoidHit.cubePos._0_4_ = uStack_20;
-    elipsoidHit._28_4_ = uStack_21;
-    elipsoidHit.face = FStack_22;
-    elipsoidHit._36_4_ = uStack_23;
-    elipsoidHit.woId = uStack_24;
-    elipsoidHit.cube = (Cube *)pCStack_25;
-    elipsoidHit.distance = (float)uStack_26;
-    elipsoidHit.collider = (Collider *)uStack_27;
-    elipsoidHit.transform = (Transform *)uStack_28;
-    elipsoidHit._60_4_ = uStack_29;
-    elipsoidHit.interactionFlags._0_4_ = (int)uStack_30;
-    elipsoidHit.interactionFlags._4_4_ = (int)((ulonglong)uStack_30 >> 0x20);
-    pVVar31 = MvCharacterController::MvCharacterController_GetGradientDirection
-                        (&VStack_32,controller,elipsoidHit,(MethodInfo *)0x0);
-    groundHit._132_8_ = *(undefined8 *)pVVar31;
-    fVar6 = pVVar31->z;
-    *(undefined8 *)&(this->fields).gradientDirection = groundHit._132_8_;
+    elipsoidHit.point.y = (float)in_stack_13;
+    elipsoidHit.point.x = (float)in_stack_14;
+    elipsoidHit.point.z = (float)uStack_15;
+    elipsoidHit.normal.x = (float)uStack_16;
+    elipsoidHit.normal.y = (float)uStack_17;
+    elipsoidHit.normal.z = (float)uStack_18;
+    elipsoidHit.cubePos._0_4_ = uStack_19;
+    elipsoidHit._28_4_ = uStack_20;
+    elipsoidHit.face = FStack_21;
+    elipsoidHit._36_4_ = uStack_22;
+    elipsoidHit.woId = uStack_23;
+    elipsoidHit.cube = (Cube *)pCStack_24;
+    elipsoidHit.distance = (float)uStack_25;
+    elipsoidHit.collider = (Collider *)uStack_26;
+    elipsoidHit.transform = (Transform *)uStack_27;
+    elipsoidHit._60_4_ = uStack_28;
+    elipsoidHit.interactionFlags._0_4_ = (int)uStack_29;
+    elipsoidHit.interactionFlags._4_4_ = (int)((ulonglong)uStack_29 >> 0x20);
+    pVVar30 = MvCharacterController::MvCharacterController_GetGradientDirection
+                        ((Vector3 *)&groundHit.hit.interactionFlags,controller,elipsoidHit,
+                         (MethodInfo *)0x0);
+    fVar5 = pVVar30->y;
+    fVar6 = pVVar30->z;
+    gradientDirection = *pVVar30;
+    (this->fields).gradientDirection.x = pVVar30->x;
+    (this->fields).gradientDirection.y = fVar5;
     (this->fields).gradientDirection.z = fVar6;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    fVar33 = (float10)func_?();
-    (this->fields).gradientAngle = (float)(fVar33 - (float10)_UNK_?);
+    fVar6 = MVGroundState_GetGradientAngle(gradientDirection,(MethodInfo *)0x0);
+    (this->fields).gradientAngle = fVar6;
     pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar7 == (MVNetworkGame *)0x0) goto code_?;
     pMVar8 = (pMVar7->fields)._MaterialRepository_k__BackingField;
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeBase);
+      func_?();
     }
     materialId = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetMaterial
-                           (pCStack_25,FStack_22,(MethodInfo *)0x0);
+                           (pCStack_24,FStack_21,(MethodInfo *)0x0);
     if (pMVar8 == (MVMaterialRepository *)0x0) goto code_?;
     pMVar9 = MVMaterialRepository::MVMaterialRepository_GetMaterial
                         (pMVar8,materialId,(MethodInfo *)0x0);
@@ -544,44 +570,44 @@ code_?:
     cRam_? = '\x01';
   }
   groundHit._132_8_ = *(undefined8 *)&(this->fields).grounded;
-  uVar34 = (this->fields).grounded.fakeValue;
-  uVar35 = (this->fields).grounded.fakeValueChanged;
-  uVar36 = (this->fields).grounded.inited;
-  uVar37 = (this->fields).grounded.field_0xb;
-  value._11_1_ = uVar37;
-  value.inited = uVar36;
-  value.fakeValueChanged = uVar35;
-  value.fakeValue = uVar34;
+  uVar31 = (this->fields).grounded.fakeValue;
+  uVar32 = (this->fields).grounded.fakeValueChanged;
+  uVar33 = (this->fields).grounded.inited;
+  uVar34 = (this->fields).grounded.field_0xb;
+  value._11_1_ = uVar34;
+  value.inited = uVar33;
+  value.fakeValueChanged = uVar32;
+  value.fakeValue = uVar31;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
   }
   value._0_8_ = groundHit._132_8_;
-  bVar38 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+  bVar35 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
            ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-  if ((bVar38 == 0) || (_UNK_? < (this->fields).groundNormal.y)) {
+  if ((bVar35 == 0) || (_UNK_? < (this->fields).groundNormal.y)) {
     groundHit._132_8_ = *(undefined8 *)&(this->fields).grounded;
-    uVar39 = (this->fields).grounded.fakeValue;
-    uVar40 = (this->fields).grounded.fakeValueChanged;
-    uVar41 = (this->fields).grounded.inited;
-    uVar42 = (this->fields).grounded.field_0xb;
-    value_00._11_1_ = uVar42;
-    value_00.inited = uVar41;
-    value_00.fakeValueChanged = uVar40;
-    value_00.fakeValue = uVar39;
+    uVar36 = (this->fields).grounded.fakeValue;
+    uVar37 = (this->fields).grounded.fakeValueChanged;
+    uVar38 = (this->fields).grounded.inited;
+    uVar39 = (this->fields).grounded.field_0xb;
+    value_00._11_1_ = uVar39;
+    value_00.inited = uVar38;
+    value_00.fakeValueChanged = uVar37;
+    value_00.fakeValue = uVar36;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?();
     }
     value_00._0_8_ = groundHit._132_8_;
-    bVar38 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+    bVar35 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
              ObscuredBool_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    if ((bVar38 != 0) || ((this->fields).groundNormal.y <= _UNK_?)) goto code_?;
+    if ((bVar35 != 0) || ((this->fields).groundNormal.y <= _UNK_?)) goto code_?;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?();
     }
-    pOVar43 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+    pOVar40 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
               ObscuredBool_op_Implicit
                         ((ObscuredBool *)&groundHit.hit.interactionFlags,1,(MethodInfo *)0x0);
   }
@@ -590,23 +616,23 @@ code_?:
         == 0) {
       func_?();
     }
-    pOVar43 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+    pOVar40 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
               ObscuredBool_op_Implicit
                         ((ObscuredBool *)&groundHit.hit.interactionFlags,0,(MethodInfo *)0x0);
   }
-  uVar44 = *(undefined3 *)&pOVar43->field_0x1;
-  iVar45 = pOVar43->hiddenValue;
-  bVar38 = pOVar43->fakeValue;
-  bVar46 = pOVar43->fakeValueChanged;
-  bVar47 = pOVar43->inited;
-  uVar48 = pOVar43->field_0xb;
-  (this->fields).grounded.currentCryptoKey = pOVar43->currentCryptoKey;
-  *(undefined3 *)&(this->fields).grounded.field_0x1 = uVar44;
-  (this->fields).grounded.hiddenValue = iVar45;
-  (this->fields).grounded.fakeValue = bVar38;
-  (this->fields).grounded.fakeValueChanged = bVar46;
-  (this->fields).grounded.inited = bVar47;
-  (this->fields).grounded.field_0xb = uVar48;
+  uVar41 = *(undefined3 *)&pOVar40->field_0x1;
+  iVar42 = pOVar40->hiddenValue;
+  bVar35 = pOVar40->fakeValue;
+  bVar43 = pOVar40->fakeValueChanged;
+  bVar44 = pOVar40->inited;
+  uVar45 = pOVar40->field_0xb;
+  (this->fields).grounded.currentCryptoKey = pOVar40->currentCryptoKey;
+  *(undefined3 *)&(this->fields).grounded.field_0x1 = uVar41;
+  (this->fields).grounded.hiddenValue = iVar42;
+  (this->fields).grounded.fakeValue = bVar35;
+  (this->fields).grounded.fakeValueChanged = bVar43;
+  (this->fields).grounded.inited = bVar44;
+  (this->fields).grounded.field_0xb = uVar45;
 code_?:
   if ((this->fields).OnGroundChange != (Action_1_GroundChange_ *)0x0) {
     (*(((this->fields).OnGroundChange)->fields)._._.invoke_impl)();
@@ -693,47 +719,43 @@ void Assembly-CSharp.dll::MVGroundState::MVGroundState__ctor(MVGroundState *this
     cRam_? = '\x01';
   }
   this_00 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
-  if (this_00 != (MVMaterial *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).groundMaterial = this_00;
-    func_?(&this->fields,this_00);
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
-        == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
-    }
-    pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
-              ObscuredBool_op_Implicit((ObscuredBool *)&puStack_2,0,(MethodInfo *)0x0);
-    uVar3 = *(undefined3 *)&pOVar1->field_0x1;
-    iVar4 = pOVar1->hiddenValue;
-    bVar5 = pOVar1->fakeValue;
-    bVar6 = pOVar1->fakeValueChanged;
-    bVar7 = pOVar1->inited;
-    uVar8 = pOVar1->field_0xb;
-    (this->fields).grounded.currentCryptoKey = pOVar1->currentCryptoKey;
-    *(undefined3 *)&(this->fields).grounded.field_0x1 = uVar3;
-    (this->fields).grounded.hiddenValue = iVar4;
-    (this->fields).grounded.fakeValue = bVar5;
-    (this->fields).grounded.fakeValueChanged = bVar6;
-    (this->fields).grounded.inited = bVar7;
-    (this->fields).grounded.field_0xb = uVar8;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar10 = (pVVar9->zeroVector).y;
-    fVar11 = (pVVar9->zeroVector).z;
-    (this->fields).groundNormal.x = (pVVar9->zeroVector).x;
-    (this->fields).groundNormal.y = fVar10;
-    (this->fields).groundNormal.z = fVar11;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
-    return;
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
+  (this->fields).groundMaterial = this_00;
+  func_?(&this->fields,this_00);
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
+            ObscuredBool_op_Implicit((ObscuredBool *)&puStack_2,0,(MethodInfo *)0x0);
+  uVar3 = *(undefined3 *)&pOVar1->field_0x1;
+  iVar4 = pOVar1->hiddenValue;
+  bVar5 = pOVar1->fakeValue;
+  bVar6 = pOVar1->fakeValueChanged;
+  bVar7 = pOVar1->inited;
+  uVar8 = pOVar1->field_0xb;
+  (this->fields).grounded.currentCryptoKey = pOVar1->currentCryptoKey;
+  *(undefined3 *)&(this->fields).grounded.field_0x1 = uVar3;
+  (this->fields).grounded.hiddenValue = iVar4;
+  (this->fields).grounded.fakeValue = bVar5;
+  (this->fields).grounded.fakeValueChanged = bVar6;
+  (this->fields).grounded.inited = bVar7;
+  (this->fields).grounded.field_0xb = uVar8;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar10 = (pVVar9->zeroVector).y;
+  fVar11 = (pVVar9->zeroVector).z;
+  (this->fields).groundNormal.x = (pVVar9->zeroVector).x;
+  (this->fields).groundNormal.y = fVar10;
+  (this->fields).groundNormal.z = fVar11;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   return;
 }
 

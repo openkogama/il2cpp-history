@@ -29,13 +29,14 @@ code_?:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Entering_attack_without_valid_at,(MethodInfo *)0x0);
   }
   else {
     pVVar2 = (Vector3 *)
-             (*(pMStack_1->klass->vtable).GetTargetPosition.methodPtr)
-                       (apMStack_3,pMStack_1,(pMStack_1->klass->vtable).GetTargetPosition.method);
+             (*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)
+                       (apIStack_3,pMStack_1,
+                        (pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr);
     bVar4 = AdvancedGhostBehaviour+AdvancedGhostPerception::
             AdvancedGhostBehaviour_AdvancedGhostPerception_IsWithinRoamRadius
                       (this_00,*pVVar2,(MethodInfo *)0x0);
@@ -73,10 +74,10 @@ code_?:
         if (pAVar7 != (AdvancedGhostVisualizaton *)0x0) {
           this_02 = (pAVar7->fields).ghostEye;
           if (pMStack_1 != (MVWorldObjectClient *)0x0) {
-            apMStack_3[0] = (pMStack_1->klass->vtable).GetTargetPosition.method;
+            apIStack_3[0] = (Il2CppClass *)(pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr;
             pVVar2 = (Vector3 *)
-                     (*(pMStack_1->klass->vtable).GetTargetPosition.methodPtr)
-                               (apMStack_3,pMStack_1);
+                     (*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)
+                               (apIStack_3,pMStack_1);
             if (this_02 != (GhostEye *)0x0) {
               GhostEye::GhostEye_UpdateLookAtTarget(this_02,*pVVar2,(MethodInfo *)0x0);
               return;
@@ -129,31 +130,33 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Attack::AdvancedGhostBehaviour_
                              (pDVar3,0,
                               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
                              ), pOVar4 != (Object *)0x0)) {
-        uVar5 = 0;
-        uVar6 = (pOVar4->klass->_1).interface_offsets_count;
-        if (uVar6 != 0) {
+        pOVar5 = pOVar4->klass;
+        uVar6 = 0;
+        uVar7._0_1_ = (pOVar5->_1).rank;
+        uVar7._1_1_ = (pOVar5->_1).minimumAlignment;
+        if (uVar7 != 0) {
           do {
-            if (pOVar4->klass->interfaceOffsets[uVar5].interfaceType ==
+            if (pOVar5->interfaceOffsets[uVar6].interfaceType ==
                 (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-              pVVar7 = &(pOVar4->klass->vtable).Equals +
-                       pOVar4->klass->interfaceOffsets[uVar5].offset;
+              ppMVar8 = &(&(pOVar4->klass->vtable).Equals)
+                         [pOVar4->klass->interfaceOffsets[uVar6].offset].method;
               goto code_?;
             }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
+            uVar6 = uVar6 + 1;
+          } while (uVar6 < uVar7);
         }
-        pVVar7 = (VirtualInvokeData *)func_?();
+        ppMVar8 = (MethodInfo **)func_?();
 code_?:
-        (*pVVar7->methodPtr)();
+        (*(code *)*ppMVar8)();
         (pGVar2->fields).currentEyeState = 0;
         return;
       }
     }
   }
-  uVar8 = func_?(&stack0xffffffe0);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar9 = func_?(&stack0xffffffe0);
+  func_?(uVar9);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -208,8 +211,9 @@ code_?:
   }
   else {
     pVVar5 = (Vector3 *)
-             (*(pMStack_2->klass->vtable).GetTargetPosition.methodPtr)
-                       (auStack_6,pMStack_2,(pMStack_2->klass->vtable).GetTargetPosition.method);
+             (*(code *)(pMStack_2->klass->vtable).GetTargetPosition.method)
+                       (auStack_6,pMStack_2,(pMStack_2->klass->vtable).DrawTransformGizmo.methodPtr
+                       );
     bVar3 = AdvancedGhostBehaviour+AdvancedGhostPerception::
             AdvancedGhostBehaviour_AdvancedGhostPerception_IsWithinRoamRadius
                       (pAVar1,*pVVar5,(MethodInfo *)0x0);
@@ -233,17 +237,18 @@ code_?:
   }
   if (pMStack_2 != (MVWorldObjectClient *)0x0) {
     pVVar5 = (Vector3 *)
-             (*(pMStack_2->klass->vtable).GetTargetPosition.methodPtr)
-                       (auStack_6,pMStack_2,(pMStack_2->klass->vtable).GetTargetPosition.method);
+             (*(code *)(pMStack_2->klass->vtable).GetTargetPosition.method)
+                       (auStack_6,pMStack_2,(pMStack_2->klass->vtable).DrawTransformGizmo.methodPtr
+                       );
     pAVar8 = (ghostBehaviour->fields).GhostVisualization;
     if ((pAVar8 != (AdvancedGhostVisualizaton *)0x0) &&
        (this_01 = (pAVar8->fields).ghostEye, this_01 != (GhostEye *)0x0)) {
       GhostEye::GhostEye_UpdateLookAtTarget(this_01,*pVVar5,(MethodInfo *)0x0);
       if (pMStack_2 != (MVWorldObjectClient *)0x0) {
         puVar9 = (undefined8 *)
-                 (*(pMStack_2->klass->vtable).GetTargetPosition.methodPtr)
-                           (auStack_6,pMStack_2,(pMStack_2->klass->vtable).GetTargetPosition.method
-                           );
+                 (*(code *)(pMStack_2->klass->vtable).GetTargetPosition.method)
+                           (auStack_6,pMStack_2,
+                            (pMStack_2->klass->vtable).DrawTransformGizmo.methodPtr);
         uVar10 = *puVar9;
         fVar11 = *(float *)(puVar9 + 1);
         (ghostBehaviour->fields).nextPosition.x = (float)(int)uVar10;
@@ -262,5 +267,16 @@ code_?:
   pcVar12 = (code *)swi(3);
   pTVar4 = (Type *)(*pcVar12)();
   return pTVar4;
+}
+
+
+/* AdvancedGhostBehaviour+Attack() */
+
+void Assembly-CSharp.dll::AdvancedGhostBehaviour+Attack::AdvancedGhostBehaviour_Attack__ctor
+               (AdvancedGhostBehaviour_Attack *this,MethodInfo *method)
+
+{
+  (this->fields).attackRotationSpeed = 1.0;
+  return;
 }
 

@@ -60,19 +60,6 @@ namespace AdIntegration.InHouse
 		private string StartContinueText { get; }
 	
 		// Nested types
-		[CompilerGenerated]
-		private sealed class __c__DisplayClass32_0
-		{
-			// Fields
-			public GameObject popUp;
-	
-			// Constructors
-			public __c__DisplayClass32_0();
-	
-			// Methods
-			internal void _ShowGoToKogamaPopup_b__0(IUIStack x, BaseEventData _);
-		}
-	
 		[Serializable]
 		[CompilerGenerated]
 		private sealed class __c
@@ -89,6 +76,19 @@ namespace AdIntegration.InHouse
 			// Methods
 			internal void _OnContinueClicked_b__35_0(ITouristAdController x, BaseEventData _);
 			internal void _FadeOutAndPop_b__37_1(IUIStack x, BaseEventData _);
+		}
+	
+		[CompilerGenerated]
+		private sealed class __c__DisplayClass32_0
+		{
+			// Fields
+			public GameObject popUp;
+	
+			// Constructors
+			public __c__DisplayClass32_0();
+	
+			// Methods
+			internal void _ShowGoToKogamaPopup_b__0(IUIStack x, BaseEventData _);
 		}
 	
 		[CompilerGenerated]

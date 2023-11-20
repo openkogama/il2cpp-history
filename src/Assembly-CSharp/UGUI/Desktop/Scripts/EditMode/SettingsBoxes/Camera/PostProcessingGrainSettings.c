@@ -36,21 +36,21 @@ code_?:
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppGrainInt,0,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->intensity = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->intensity = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppGrainSize,10,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->size = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->size = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppGrainLumCon,8,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->luminanceContribution = iVar4;
+      this->luminanceContribution = IVar4;
       return;
     }
     if (pOVar1 != (Object *)0x0) {

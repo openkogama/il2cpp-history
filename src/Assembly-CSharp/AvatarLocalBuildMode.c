@@ -49,12 +49,12 @@ void Assembly-CSharp.dll::AvatarLocalBuildMode::AvatarLocalBuildMode_Initialize
   pAVar1 = (this->fields).avatarCamerasDesktop;
   if ((pAVar1 != (AvatarCamerasDesktopBuildMode *)0x0) &&
      (pJVar2 = (pAVar1->fields).jetPackCamera, pJVar2 != (JetPackCamera *)0x0)) {
-    (*(pJVar2->klass->vtable).Initialize.methodPtr)
-              (pJVar2,buildModeAvatar,(pJVar2->klass->vtable).Initialize.method);
+    (*(code *)(pJVar2->klass->vtable).Initialize.method)
+              (pJVar2,buildModeAvatar,pJVar2->klass[1]._0.image);
     pAVar3 = (pAVar1->fields).avatarEditModeCamera;
     if (pAVar3 != (AvatarEditModeCamera *)0x0) {
-      (*(pAVar3->klass->vtable).Initialize.methodPtr)
-                (pAVar3,buildModeAvatar,(pAVar3->klass->vtable).Initialize.method);
+      (*(code *)(pAVar3->klass->vtable).Initialize.method)
+                (pAVar3,buildModeAvatar,pAVar3->klass[1]._0.image);
       pAVar4 = (pAVar1->fields).avatarCamerasWrapper;
       if (pAVar4 != (AvatarCamerasWrapper *)0x0) {
         AvatarCamerasWrapper::AvatarCamerasWrapper_Add
@@ -75,8 +75,9 @@ void Assembly-CSharp.dll::AvatarLocalBuildMode::AvatarLocalBuildMode_Initialize
               pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                                  ((MethodInfo *)0x0);
               if (pMVar5 != (MainCameraManager *)0x0) {
-                bVar6 = MainCameraManager::MainCameraManager_IsCameraControllerSet
-                                  (pMVar5,(MethodInfo *)0x0);
+                bVar6 = mscorlib.dll::System::Runtime::Serialization::ObjectHolder::
+                        ObjectHolder_get_TypeLoadExceptionReachable
+                                  ((ObjectHolder *)pMVar5,(MethodInfo *)0x0);
                 if (bVar6 == 0) {
                   pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                                      ((MethodInfo *)0x0);

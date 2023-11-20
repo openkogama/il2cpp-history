@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup_Start
   arg0 = (Object *)func_?(TypeInfo__System__Int32,&puStack_3);
   mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar2->klass->vtable).set_text.method)();
     return;
   }
   func_?();
@@ -80,8 +80,8 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup__ctor
   }
   (this->fields).titleString = StringLiteral__0__GOLD_CLAIMED_;
   func_?(&(this->fields).titleString,StringLiteral__0__GOLD_CLAIMED_);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

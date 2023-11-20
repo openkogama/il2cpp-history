@@ -97,10 +97,10 @@ code_?:
                                            ((Quaternion *)&stack0xffffffec,pTVar6,(MethodInfo *)0x0)
                         ;
                         if (this_00 != (LobbyStateCamera *)0x0) {
-                          if (((this_00->klass->_1).typeHierarchyDepth <
-                               (TypeInfo__LobbyStateCamera->_1).typeHierarchyDepth) ||
+                          if (((this_00->klass->_1).naturalAligment <
+                               (TypeInfo__LobbyStateCamera->_1).naturalAligment) ||
                              ((this_00->klass->_1).typeHierarchy
-                              [(TypeInfo__LobbyStateCamera->_1).typeHierarchyDepth - 1] !=
+                              [(TypeInfo__LobbyStateCamera->_1).naturalAligment - 1] !=
                               (Il2CppClass *)TypeInfo__LobbyStateCamera)) goto code_?;
                           LobbyStateCamera::LobbyStateCamera_SetRotation
                                     (this_00,*pQVar7,(MethodInfo *)0x0);

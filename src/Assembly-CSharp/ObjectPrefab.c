@@ -15,8 +15,8 @@ void Assembly-CSharp.dll::ObjectPrefab::ObjectPrefab_OnValidate
     cRam_? = '\x01';
   }
   pRVar1 = (Renderer__Array *)
-           Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                     ((Component *)this,
                       UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                      );
   (this->fields).meshRenderers = pRVar1;

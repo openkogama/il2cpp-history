@@ -25,18 +25,17 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<CollisionCheckCorout
       if (pMVar2 == (MVAvatarLocal *)0x0) {
         (this->fields)._localAvatar_5__2 = (MVAvatarLocal *)0x0;
       }
-      else if (((((pMVar2->klass->_1).typeHierarchyDepth <
-                  (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
+      else if (((((pMVar2->klass->_1).naturalAligment <
+                  (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
                 ((MVAvatarLocal__Class *)
                  (pMVar2->klass->_1).typeHierarchy
-                 [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
-               || ((this->fields)._localAvatar_5__2 = pMVar2,
-                  (pMVar2->klass->_1).typeHierarchyDepth <
-                  (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth)) ||
-              ((MVAvatarLocal__Class *)
-               (pMVar2->klass->_1).typeHierarchy
-               [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
-      goto code_?;
+                 [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal)) ||
+               ((this->fields)._localAvatar_5__2 = pMVar2,
+               (pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)
+               ) || ((MVAvatarLocal__Class *)
+                     (pMVar2->klass->_1).typeHierarchy
+                     [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal)
+              ) goto code_?;
       func_?();
       (this->fields)._foundIntersection_5__3 = 1;
       goto code_?;
@@ -102,7 +101,6 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<CollisionCheckCorout
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

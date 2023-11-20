@@ -50,8 +50,8 @@ void Assembly-CSharp.dll::GUIPromotionalLoginHandler::
     cRam_? = '\x01';
   }
   this_00 = this;
-  pDVar1 = (this->fields).gameSessionData;
   this = (GUIPromotionalLoginHandler *)0x0;
+  pDVar1 = (this_00->fields).gameSessionData;
   pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&this);
   if (pDVar1 != (Dictionary_2_System_String_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -106,31 +106,29 @@ void Assembly-CSharp.dll::GUIPromotionalLoginHandler::
                         );
               pDVar1 = (this_00->fields).gameSessionData;
               this_01 = (GameSessionData *)func_?(TypeInfo__GameSessionData);
-              if (this_01 != (GameSessionData *)0x0) {
-                GameSessionData::GameSessionData__ctor_1(this_01,pDVar1,(MethodInfo *)0x0);
-                MVGameControllerBase::MVGameControllerBase_SetGameSessionData
-                          (this_01,(MethodInfo *)0x0);
-                this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
-                if (this_02 != (GameObject *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (this_02,0,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__UnityEngine__Debug);
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                            ((Object *)this_01,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
-                      cctor_finished_or_no_cctor == 0) {
-                    this = (GUIPromotionalLoginHandler *)
-                           TypeInfo__UnityEngine__SceneManagement__SceneManager;
-                    func_?();
-                  }
-                  this = (GUIPromotionalLoginHandler *)0x0;
-                  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
-                  SceneManager_LoadScene(StringLiteral_BaseLegacyUI,(MethodInfo *)0x0);
-                  return;
+              GameSessionData::GameSessionData__ctor_1(this_01,pDVar1,(MethodInfo *)0x0);
+              MVGameControllerBase::MVGameControllerBase_SetGameSessionData
+                        (this_01,(MethodInfo *)0x0);
+              this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)this_00,(MethodInfo *)0x0);
+              if (this_02 != (GameObject *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (this_02,0,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__UnityEngine__Debug);
                 }
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)this_01,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  this = (GUIPromotionalLoginHandler *)
+                         TypeInfo__UnityEngine__SceneManagement__SceneManager;
+                  func_?();
+                }
+                this = (GUIPromotionalLoginHandler *)0x0;
+                UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+                SceneManager_LoadScene(StringLiteral_BaseLegacyUI,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -170,16 +168,19 @@ void Assembly-CSharp.dll::GUIPromotionalLoginHandler::GUIPromotionalLoginHandler
     func_?(&StringLiteral_isSoftLaunch);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_String_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
-              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
+            );
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_newToken
@@ -201,24 +202,22 @@ void Assembly-CSharp.dll::GUIPromotionalLoginHandler::GUIPromotionalLoginHandler
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
               );
     uStack_1._0_3_ = (uint3)(ushort)uStack_1;
-    iStack3 = (int)&uStack_1 + 2;
-    pBStack4 = TypeInfo__System__Boolean;
-    pOVar2 = (Object *)func_?();
+    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,(int)&uStack_1 + 2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_embedded
                ,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
               );
-    (this->fields).gameSessionData = this_00;
+    (this->fields).gameSessionData = (Dictionary_2_System_String_System_Object_ *)this_00;
     func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+              ((MonoBehaviour *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

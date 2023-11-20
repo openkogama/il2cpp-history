@@ -1,24 +1,4 @@
 
-/* Void ResetScaleAnimation() */
-
-void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_ResetScaleAnimation
-               (ScaleAnimationBase *this,MethodInfo *method)
-
-{
-  this_00 = (this->fields).target;
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_00,(this->fields).originalScale,(MethodInfo *)0x0);
-    (this->fields).state = 1;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
 /* Void SetTarget(Transform) */
 
 void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_SetTarget
@@ -41,7 +21,7 @@ void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_SetTarget
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
     return;
   }
@@ -60,6 +40,26 @@ void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_SetTarget
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
+  return;
+}
+
+
+/* Void Stop() */
+
+void Assembly-CSharp.dll::ScaleAnimationBase::ScaleAnimationBase_Stop
+               (ScaleAnimationBase *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).target;
+  if (this_00 != (Transform *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+              (this_00,(this->fields).originalScale,(MethodInfo *)0x0);
+    (this->fields).state = 1;
+    return;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

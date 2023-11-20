@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
          (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) &&
         (this_01 = (pMVar3->fields).teamNames,
         this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
-       (team != (Object *)0x0)) {
+       (this = (TeamRequirementPanel *)team, team != (Object *)0x0)) {
       if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
       {
         pIVar4 = (Int32Enum__Enum *)func_?(team);
@@ -35,8 +35,9 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,*pIVar4,
                             method_00);
         if (pTVar1 == (Text *)0x0) goto code_?;
-        (*(pTVar1->klass->vtable).set_text.methodPtr)
-                  (pTVar1,pOVar5,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pOVar5,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
            ) {
           func_?(team);
@@ -48,10 +49,12 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   func_?();
-  *(char *)(extraout_ECX + -0x56efcb4e) =
-       *(char *)(extraout_ECX + -0x56efcb4e) + (char)((uint)extraout_ECX >> 8);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  puVar6 = (uint *)((int)&this[1].fields._.checkmark + 1);
+  puVar7 = (undefined1 *)*puVar6;
+  *puVar6 = *puVar6 - (int)&stack0x00000000;
+  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + (puVar7 < &stack0x00000000);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

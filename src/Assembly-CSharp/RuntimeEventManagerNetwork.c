@@ -40,12 +40,12 @@ code_?:
                         ((RuntimeEventType__Enum)in_stack_5,(MethodInfo *)0x0);
       if ((char)RVar7 == '\x01') {
         pSVar1 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-        if (((unaff_ESI->klass->_1).typeHierarchyDepth <
+        if (((unaff_ESI->klass->_1).naturalAligment <
              (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-             typeHierarchyDepth) ||
+             naturalAligment) ||
            ((unaff_ESI->klass->_1).typeHierarchy
             [(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-             typeHierarchyDepth - 1] !=
+             naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent))
         goto code_?;
         pRVar6 = this;
@@ -56,11 +56,11 @@ code_?:
       else if ((char)RVar7 == '\x02') {
         pSVar1 = (SingleCubeFineGrainedEvent__Class *)
                  TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-        if (((unaff_ESI->klass->_1).typeHierarchyDepth <
-             (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).typeHierarchyDepth) ||
+        if (((unaff_ESI->klass->_1).naturalAligment <
+             (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment) ||
            ((unaff_ESI->klass->_1).typeHierarchy
-            [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).typeHierarchyDepth - 1]
-            != (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent))
+            [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment - 1] !=
+            (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent))
         goto code_?;
         pRVar6 = this;
         RuntimeEventManager::RuntimeEventManager_HandleEvent_1
@@ -96,12 +96,12 @@ void Assembly-CSharp.dll::RuntimeEventManagerNetwork::RuntimeEventManagerNetwork
                       ((RuntimeEventType__Enum)runtimeEvent,(MethodInfo *)0x0);
     if ((char)RVar1 == '\x01') {
       pSVar2 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-      if (((singleCubeFineGrainedEvent->klass->_1).typeHierarchyDepth <
+      if (((singleCubeFineGrainedEvent->klass->_1).naturalAligment <
            (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-           typeHierarchyDepth) ||
+           naturalAligment) ||
          ((singleCubeFineGrainedEvent->klass->_1).typeHierarchy
           [(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-           typeHierarchyDepth - 1] !=
+           naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent))
       goto code_?;
       RuntimeEventManager::RuntimeEventManager_HandleEvent
@@ -111,10 +111,10 @@ void Assembly-CSharp.dll::RuntimeEventManagerNetwork::RuntimeEventManagerNetwork
     else if ((char)RVar1 == '\x02') {
       pSVar2 = (SingleCubeFineGrainedEvent__Class *)
                TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-      if (((TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).typeHierarchyDepth <=
-           (singleCubeFineGrainedEvent->klass->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment <=
+           (singleCubeFineGrainedEvent->klass->_1).naturalAligment) &&
          ((singleCubeFineGrainedEvent->klass->_1).typeHierarchy
-          [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent)) {
         RuntimeEventManager::RuntimeEventManager_HandleEvent_1
                   ((RuntimeEventManager *)this,(ExplosionEvent *)singleCubeFineGrainedEvent,
@@ -149,55 +149,48 @@ void Assembly-CSharp.dll::RuntimeEventManagerNetwork::RuntimeEventManagerNetwork
   }
   value = (RuntimeEventManager_AccumulatedCubeDamages *)
           func_?(TypeInfo__RuntimeEventManager__AccumulatedCubeDamages);
-  if (value != (RuntimeEventManager_AccumulatedCubeDamages *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
-                     );
-      func_?(&TypeInfo__UpdateController);
-      cRam_? = '\x01';
-    }
-    this_00 = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-               *)func_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
-                                );
-    if (this_00 !=
-        (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-         *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
-                );
-      pMVar1 = (MethodInfo *)&value->fields;
-      (value->fields).accumulatedCubeDamages = this_00;
-      func_?(pMVar1,this_00);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UpdateController::UpdateController_AddUpdateObject
-                ((IUpdatecontrollerSubscriberUpdate *)value,
-                 UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
-      pMVar1 = (MethodInfo *)&(this->fields)._.localAccumulatedCubeDamages;
-      (this->fields)._.localAccumulatedCubeDamages = value;
-      func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
-      (this->fields)._.cubeModelPrototypeTerrain = cubeModelPrototypeTerrain;
-      func_?(&this->fields,cubeModelPrototypeTerrain);
-      (this->fields)._.cubeModelFineGrainedTerrain = cubeModelFineGrainedTerrain;
-      func_?(&(this->fields)._.cubeModelFineGrainedTerrain,cubeModelFineGrainedTerrain);
-      return;
-    }
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
+                   );
+    func_?(&TypeInfo__UpdateController);
+    cRam_? = '\x01';
   }
+  this_00 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
+                           );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+  IntVector,ChunkInstances+ChunkInstanceVariables]::
+  Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
+            );
+  pMVar1 = (MethodInfo *)&value->fields;
+  (value->fields).accumulatedCubeDamages =
+       (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
+        *)this_00;
+  func_?(pMVar1,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UpdateController::UpdateController_AddUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)value,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1
+             ,(MethodInfo *)0x0);
+  pMVar1 = (MethodInfo *)&(this->fields)._.localAccumulatedCubeDamages;
+  (this->fields)._.localAccumulatedCubeDamages = value;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
+  (this->fields)._.cubeModelPrototypeTerrain = cubeModelPrototypeTerrain;
+  func_?(&this->fields,cubeModelPrototypeTerrain);
+  (this->fields)._.cubeModelFineGrainedTerrain = cubeModelFineGrainedTerrain;
+  func_?(&(this->fields)._.cubeModelFineGrainedTerrain,cubeModelFineGrainedTerrain);
   return;
 }
 

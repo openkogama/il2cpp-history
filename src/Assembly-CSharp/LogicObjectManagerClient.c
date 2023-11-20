@@ -9,13 +9,14 @@ void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient_Cle
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields)._.logicWorldObjects;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields)._.logicWorldObjects;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
+    StyleSheetCache+SheetHandleKey,System::Object]::
+    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Clear__
               );
@@ -85,37 +86,30 @@ void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient__ct
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_IInputSignalReceiver_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
-              );
-    (this->fields)._.logicWorldObjects = this_00;
-    func_?(&this->fields,this_00);
-    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-              func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      method_00 = (MethodInfo *)&(this->fields)._.updatedIds;
-      (this->fields)._.updatedIds = (HashSet_1_System_Int32_ *)this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields)._.trackLoops = trackLoops;
-      (this->fields)._._TimeStamp_k__BackingField = timeStamp;
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
+            );
+  (this->fields)._.logicWorldObjects = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)this_00;
+  func_?(&this->fields,this_00);
+  this_01 = (HashSet_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  method_00 = (MethodInfo *)&(this->fields)._.updatedIds;
+  (this->fields)._.updatedIds = this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields)._.trackLoops = trackLoops;
+  (this->fields)._._TimeStamp_k__BackingField = timeStamp;
   return;
 }
 

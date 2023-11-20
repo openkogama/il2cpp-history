@@ -18,9 +18,9 @@ bool Assembly-CSharp.dll::ShopRepository+<>c__DisplayClass8_0::
       return 1;
     }
     if (p.value != (MVItem *)0x0) {
-      bVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_Contains_2
-                        ((IEnumerable_1_System_Object_ *)(this->fields).itemCategories,
-                         (Object *)((p.value)->fields).itemCategoryID,
+      bVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_Contains
+                        ((IEnumerable_1_System_Int32_ *)(this->fields).itemCategories,
+                         ((p.value)->fields).itemCategoryID,
                          bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
                         );
       return bVar2;

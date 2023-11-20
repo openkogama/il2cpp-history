@@ -28,57 +28,62 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsSerialized::SettingsSerialized_
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     worldObjectID = *(int32_t *)(in_stack_2 + 8);
-    this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_02,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      if (cRam_? == '\0') {
+    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_02,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)(in_stack_2 + 0x58)
+        != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
+                          (in_stack_2 + 0x58),(Object *)StringLiteral_settings,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if ((value.m_Index != 0) &&
+         ((*(byte *)(*(int *)value.m_Index + 0xb8) <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment ||
+          (*(Dictionary_2_System_Object_System_Object___Class **)
+            (*(int *)(*(int *)value.m_Index + 100) + -4 +
+            (uint)(
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment * 4) !=
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
         func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
       }
-      if (*(Dictionary_2_System_Object_System_Object_ **)(in_stack_2 + 0x58) !=
-          (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (*(Dictionary_2_System_Object_System_Object_ **)
-                             (in_stack_2 + 0x58),(Object *)StringLiteral_settings,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if ((pOVar1 != (Object *)0x0) &&
-           (((pOVar1->klass->_1).typeHierarchyDepth <
-             (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).typeHierarchyDepth ||
-            ((Dictionary_2_System_Object_System_Object___Class *)
-             (pOVar1->klass->_1).typeHierarchy
-             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).typeHierarchyDepth - 1] !=
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-        {
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_02,(Object *)StringLiteral_settings,pOVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::
-          MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
-                    (this_01,worldObjectID,this_02,(MethodInfo *)0x0);
-          return;
-        }
+      if ((this_02 !=
+           (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)0x0) &&
+         (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__Add
+                    ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                     (Object *)StringLiteral_settings,(Object *)value.m_Index,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    ), this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
+        MVNetworkGame+OperationRequests::
+        MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
+                  (this_01,worldObjectID,(Dictionary_2_System_Object_System_Object_ *)this_02,
+                   (MethodInfo *)0x0);
+        return;
       }
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
+  uVar4 = func_?(&puStack_5);
   func_?(uVar4);
   pcVar3 = (code *)swi(3);
   (*pcVar3)();

@@ -53,21 +53,21 @@ void Assembly-CSharp.dll::WaterState::WaterState_Destroy(WaterState *this,Method
   pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
-    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar2->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                           );
-    if ((value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) &&
-       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-        UnityAction_1_System_Int32Enum___ctor
-                  ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                   MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
-                   (MethodInfo *)0x0), this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0))
-    {
+    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (pSVar2->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
+               (MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[UnityEngine::Vector3]::
-      SpawnRoleVariable_1_UnityEngine_Vector3__remove_OnChange
+      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__remove_OnChange
                 (this_00,value,
                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                 );
@@ -146,12 +146,12 @@ void Assembly-CSharp.dll::WaterState::WaterState_Update
     bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       if (avatarInteractable == (MVInteractableBase *)0x0) goto code_?;
-      (*(avatarInteractable->klass->vtable).__unknown_2.methodPtr)(avatarInteractable);
+      (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)(avatarInteractable);
       pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
       if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
       bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsLethal(pWVar2,(MethodInfo *)0x0);
       if (bVar4 != 0) {
-        (*(avatarInteractable->klass->vtable).__unknown_2.methodPtr)
+        (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
                   (avatarInteractable,0x14,0xffffffff);
       }
       goto code_?;
@@ -164,10 +164,11 @@ code_?:
     (*pcVar5)();
     return;
   }
-  cVar6 = (*(avatarInteractable->klass->vtable).__unknown_3.methodPtr)
-                    (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_3.method);
+  cVar6 = (*(code *)(avatarInteractable->klass->vtable).__unknown_3.method)
+                    (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_4.methodPtr)
+  ;
   if (cVar6 != '\0') {
-    (*(avatarInteractable->klass->vtable).__unknown_4.methodPtr)(avatarInteractable,9);
+    (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)(avatarInteractable,9);
   }
 code_?:
   fVar1 = WaterState_ComputeAvatarWaterProximity
@@ -178,14 +179,14 @@ code_?:
   else {
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.179443e-29 - fVar3) {
-      fVar1 = 3.179443e-29 - fVar3;
+    if (0.0 <= 3.329266e-29 - fVar3) {
+      fVar1 = 3.329266e-29 - fVar3;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      pMStack7 = (avatarInteractable->klass->vtable).__unknown.method;
-      (*(avatarInteractable->klass->vtable).__unknown.methodPtr)();
+      pIStack7 = (avatarInteractable->klass->vtable).__unknown_1.methodPtr;
+      (*(code *)(avatarInteractable->klass->vtable).__unknown.method)();
       return;
     }
   }
@@ -207,14 +208,14 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateLocalAvatarOxygen
   else {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     fVar1 = 0.0;
-    if (0.0 <= 3.179218e-29 - fVar2) {
-      fVar1 = 3.179218e-29 - fVar2;
+    if (0.0 <= 3.329041e-29 - fVar2) {
+      fVar1 = 3.329041e-29 - fVar2;
     }
     (this->fields).oxygen = fVar1;
     if (fVar1 <= 0.0) {
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      uStack3 = *(undefined4 *)(_UNK_? + 0xe8);
-      (**(code **)(_UNK_? + 0xe4))();
+      uStack3 = *(undefined4 *)(_UNK_? + 0xec);
+      (**(code **)(_UNK_? + 0xe8))();
       return;
     }
   }
@@ -238,7 +239,7 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
     bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       if (avatarInteractable != (MVInteractableBase *)0x0) {
-        (*(avatarInteractable->klass->vtable).__unknown_2.methodPtr)
+        (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
                   (avatarInteractable,9,0xffffffff);
         pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0)
         ;
@@ -247,7 +248,7 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
           if (bVar4 == 0) {
             return;
           }
-          (*(avatarInteractable->klass->vtable).__unknown_2.methodPtr)
+          (*(code *)(avatarInteractable->klass->vtable).__unknown_2.method)
                     (avatarInteractable,0x14,0xffffffff);
           return;
         }
@@ -256,14 +257,15 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
     }
   }
   if (avatarInteractable != (MVInteractableBase *)0x0) {
-    cVar5 = (*(avatarInteractable->klass->vtable).__unknown_3.methodPtr)
-                      (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_3.method);
+    cVar5 = (*(code *)(avatarInteractable->klass->vtable).__unknown_3.method)
+                      (avatarInteractable,9,
+                       (avatarInteractable->klass->vtable).__unknown_4.methodPtr);
     if (cVar5 == '\0') {
       return;
     }
-    (*(avatarInteractable->klass->vtable).__unknown_4.methodPtr)
+    (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
               (avatarInteractable,9,0xffffffff,
-               (avatarInteractable->klass->vtable).__unknown_4.method);
+               (avatarInteractable->klass->vtable).__unknown_5.methodPtr);
     return;
   }
 code_?:
@@ -308,79 +310,81 @@ void Assembly-CSharp.dll::WaterState::WaterState__ctor
   (this->fields).worldPosition.x = (pVVar1->zeroVector).x;
   (this->fields).worldPosition.y = fVar2;
   (this->fields).worldPosition.z = fVar3;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBX);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pAVar4 = (AvatarModifierPackage_AvatarModifier__Array *)
            func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,2);
   pFVar5 = (Func_1_Single_ *)func_?(TypeInfo__System__Func<float>);
-  if (pFVar5 != (Func_1_Single_ *)0x0) {
+  mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
+            (pFVar5,(Object *)this,MethodInfo__WaterState__UnderwaterModifierCallback__,
+             (MethodInfo *)0x0);
+  pFVar6 = (Func_1_Single_ *)0x0;
+  uVar7._0_4_ = 0;
+  uVar7._4_4_ = 0;
+  mscorlib.dll::System::ValueTuple`3[Int32Enum,Int32Enum,Object]::
+  ValueTuple_3_Int32Enum_Int32Enum_Object___ctor
+            ((ValueTuple_3_Int32Enum_Int32Enum_Object_ *)&stack0xfffffff0,0,3,(Object *)pFVar5,
+             (MethodInfo *)0x0);
+  if (pAVar4 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+    if (pAVar4->max_length == 0) goto code_?;
+    pAVar4->vector[0].avatarModifierType = (int32_t)uVar7;
+    pAVar4->vector[0].avatarModifierEffect = SUB84(uVar7,4);
+    pAVar4->vector[0].value = pFVar6;
+    func_?();
+    pFVar5 = (Func_1_Single_ *)func_?();
     mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
-              (pFVar5,(Object *)this,MethodInfo__WaterState__UnderwaterModifierCallback__,
+              (pFVar5,(Object *)this,MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__,
                (MethodInfo *)0x0);
     pFVar6 = (Func_1_Single_ *)0x0;
-    mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
-              ((MemoryHandle *)&stack0xfffffff0,(Void *)0x0,(GCHandle)0x3,(IPinnable *)pFVar5,
+    uStack_8._0_4_ = 0;
+    uStack_8._4_4_ = 0;
+    mscorlib.dll::System::ValueTuple`3[Int32Enum,Int32Enum,Object]::
+    ValueTuple_3_Int32Enum_Int32Enum_Object___ctor
+              ((ValueTuple_3_Int32Enum_Int32Enum_Object_ *)&uStack_8,0,2,(Object *)pFVar5,
                (MethodInfo *)0x0);
-    if (pAVar4 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
-      if (pAVar4->max_length == 0) goto code_?;
-      pAVar4->vector[0].avatarModifierType = 0;
-      pAVar4->vector[0].avatarModifierEffect = 0;
-      pAVar4->vector[0].value = pFVar6;
-      func_?();
-      pFVar5 = (Func_1_Single_ *)func_?();
-      if (pFVar5 != (Func_1_Single_ *)0x0) {
-        mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
-                  (pFVar5,(Object *)this,
-                   MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__,(MethodInfo *)0x0);
-        pFVar6 = (Func_1_Single_ *)0x0;
-        pVStack_7 = (Void *)0x0;
-        stack0xffffffe8 = (void *)0x0;
-        mscorlib.dll::System::Buffers::MemoryHandle::MemoryHandle__ctor
-                  ((MemoryHandle *)&pVStack_7,(Void *)0x0,(GCHandle)0x2,(IPinnable *)pFVar5,
-                   (MethodInfo *)0x0);
-        if (pAVar4->max_length < 2) goto code_?;
-        pAVar4->vector[1].avatarModifierType = (int32_t)pVStack_7;
-        pAVar4->vector[1].avatarModifierEffect = (int32_t)stack0xffffffe8;
-        pAVar4->vector[1].value = pFVar6;
-        func_?();
-        (this->fields).additionalUnderWaterModifiers = pAVar4;
-        func_?();
-        stack0xffffffe8 = &UNK_?;
-        pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                           ((MethodInfo *)0x0);
-        if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
-          this_00.handle = (pSVar8->fields).spawnRoleMode;
-          value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
-          if ((value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) &&
-             (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-              UnityAction_1_System_Int32Enum___ctor
-                        ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                         MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
-                         (MethodInfo *)0x0),
-             this_00.handle != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0)) {
-            stack0xffffffe8 = this_00.handle;
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[UnityEngine::Vector3]::
-            SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                      (this_00.handle,value,
-                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                      );
-            if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
-              bVar9 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
-              fVar3 = _UNK_?;
-              if (bVar9 != 0) {
-                fVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillFloatValue
-                                  (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
-              }
-              (this->fields).oxygenMax = fVar3;
-              (this->fields).oxygen = (this->fields).oxygenMax;
-              bVar9 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                                (skillDataManager,StringLiteral_BreathesWater,(MethodInfo *)0x0);
-              (this->fields).hasGillsNoLungs = bVar9;
-              return;
-            }
+    if (pAVar4->max_length < 2) goto code_?;
+    pAVar4->vector[1].avatarModifierType = (int32_t)uStack_8;
+    pAVar4->vector[1].avatarModifierEffect = uStack_8._4_4_;
+    pAVar4->vector[1].value = pFVar6;
+    func_?();
+    (this->fields).additionalUnderWaterModifiers = pAVar4;
+    func_?();
+    uStack_8._4_4_ = (int32_t)&UNK_?;
+    pSVar9 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                       ((MethodInfo *)0x0);
+    if (pSVar9 != (SpawnRoleDataMediator *)0x0) {
+      this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                (pSVar9->fields).spawnRoleMode;
+      value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+                 MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
+                 (MethodInfo *)0x0);
+      if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
+      {
+        uStack_8._4_4_ = (int32_t)&UNK_?;
+        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+        SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
+                  (this_00,value,
+                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                  );
+        if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
+          bVar10 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                            (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
+          fVar3 = _UNK_?;
+          if (bVar10 != 0) {
+            fVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillFloatValue
+                              (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
           }
+          (this->fields).oxygenMax = fVar3;
+          (this->fields).oxygen = (this->fields).oxygenMax;
+          bVar10 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                            (skillDataManager,StringLiteral_BreathesWater,(MethodInfo *)0x0);
+          (this->fields).hasGillsNoLungs = bVar10;
+          return;
         }
       }
     }
@@ -388,8 +392,8 @@ void Assembly-CSharp.dll::WaterState::WaterState__ctor
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

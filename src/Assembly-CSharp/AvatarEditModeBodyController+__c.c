@@ -11,10 +11,10 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVSpawnPointRed->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth)
-       && ((MVSpawnPointRed__Class *)
-           (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointRed->_1).typeHierarchyDepth - 1] ==
-           TypeInfo__MVSpawnPointRed)) {
+    if (((TypeInfo__MVSpawnPointRed->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+       ((MVSpawnPointRed__Class *)
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointRed->_1).naturalAligment - 1] ==
+        TypeInfo__MVSpawnPointRed)) {
       return wo != (MVWorldObjectClient *)0x0;
     }
     return 0;
@@ -35,10 +35,9 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVBody->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth) &&
-       ((MVBody__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).typeHierarchyDepth - 1] ==
-        TypeInfo__MVBody)) {
+    if (((TypeInfo__MVBody->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+       ((MVBody__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
+        == TypeInfo__MVBody)) {
       bVar1 = MVBody::MVBody_get_IsPlayerBody((MVBody *)wo,(MethodInfo *)0x0);
       return bVar1 == 0;
     }
@@ -402,18 +401,12 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::AvatarEditModeBodyCo
     func_?(&TypeInfo__AvatarEditModeBodyController____c);
     cRam_? = '\x01';
   }
-  value = (AvatarEditModeBodyController_c *)
-          func_?(TypeInfo__AvatarEditModeBodyController____c);
-  if (value != (AvatarEditModeBodyController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__AvatarEditModeBodyController____c->static_fields->__9 = value;
-    func_?(TypeInfo__AvatarEditModeBodyController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__AvatarEditModeBodyController____c;
+  value = (AvatarEditModeBodyController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__AvatarEditModeBodyController____c->static_fields->__9 = value;
+  func_?(TypeInfo__AvatarEditModeBodyController____c->static_fields,value);
   return;
 }
 

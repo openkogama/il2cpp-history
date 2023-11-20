@@ -12,20 +12,19 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]
     cRam_? = '\x01';
   }
   if (this != (NamedThemeAttribute_1_System_Single_ *)0x0) {
-    (*method->klass->rgctx_data->method->virtualMethodPointer)
-              (this,settings,key,groups,onChange,method->klass->rgctx_data->rgctxDataDummy);
+    ThemeAttribute`1[System::Single]::ThemeAttribute_1_System_Single__Initialize
+              ((ThemeAttribute_1_System_Single_ *)this,settings,key,groups,onChange,
+               method->klass->rgctx_data[2].method);
     pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
     (this->fields).name = pSVar1;
     func_?(&(this->fields).name,pSVar1);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,method->klass->rgctx_data[1].rgctxDataDummy,
-                 (MethodInfo *)0x0);
-      TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-      return;
-    }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,method->klass->rgctx_data[3].rgctxDataDummy,(MethodInfo *)0x0)
+    ;
+    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -55,11 +54,47 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]
                (NamedThemeAttribute_1_System_Single_ *this,MethodInfo *method)
 
 {
-  pSVar1 = (String *)
-           (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)
-                     (this,(this->fields).name,method->klass->rgctx_data[2].rgctxDataDummy);
-  (this->fields).name = pSVar1;
-  func_?(&(this->fields).name,pSVar1);
+  this_00 = (this->fields).name;
+  if (cRam_? == '\0') {
+    func_?(&::StringLiteral___);
+    func_?(&::StringLiteral____);
+    cRam_? = '\x01';
+  }
+  if ((this_00 == (String *)0x0) || (::StringLiteral____ == (String *)0x0)) goto code_?;
+  if ((this_00->fields)._stringLength < (::StringLiteral____->fields)._stringLength) {
+code_?:
+    this_00 = mscorlib.dll::System::String::String_Concat_3
+                        (::StringLiteral____,this_00,(MethodInfo *)0x0);
+    if (this_00 == (String *)0x0) goto code_?;
+  }
+  else {
+    pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                       (this_00,0,(::StringLiteral____->fields)._stringLength,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
+    if (bVar2 != 0) goto code_?;
+  }
+  if (::StringLiteral___ == (String *)0x0) {
+code_?:
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  iVar4 = (this_00->fields)._stringLength;
+  if ((::StringLiteral___->fields)._stringLength <= iVar4) {
+    pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                       (this_00,iVar4 - (::StringLiteral___->fields)._stringLength,
+                        (::StringLiteral___->fields)._stringLength,(MethodInfo *)0x0);
+    bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
+  }
+  this_00 = mscorlib.dll::System::String::String_Concat_3
+                      (this_00,::StringLiteral___,(MethodInfo *)0x0);
+code_?:
+  (this->fields).name = this_00;
+  func_?(&(this->fields).name,this_00);
   return;
 }
 
@@ -113,13 +148,17 @@ code_?:
 }
 
 
-/* String get_Name() */
+/* NamedThemeAttribute`1[System.Single]() */
 
-String * Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]::
-         NamedThemeAttribute_1_System_Single__get_Name
-                   (NamedThemeAttribute_1_System_Single_ *this,MethodInfo *method)
+void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Single]::
+     NamedThemeAttribute_1_System_Single___ctor
+               (NamedThemeAttribute_1_System_Single_ *this,MethodInfo *method)
 
 {
-  return (this->fields).name;
+  ThemeAttribute`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             method->klass->rgctx_data[5].method);
+  return;
 }
 

@@ -40,10 +40,11 @@ Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_CreateCurPosTransformP
     func_?(&TypeInfo__NetworkTransformPackage);
     cRam_? = '\x01';
   }
-  pNVar1 = (NetworkTransformPackage *)func_?(TypeInfo__NetworkTransformPackage);
+  method_00 = TypeInfo__NetworkTransformPackage;
+  pNVar1 = (NetworkTransformPackage *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pNVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pNVar1 != (NetworkTransformPackage *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pNVar1,ExceptionArgument__Enum_obj,unaff_ESI);
     (pNVar1->fields).packageType = 1;
     this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_00 != (MVNetworkGame *)0x0) {
@@ -51,7 +52,7 @@ Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_CreateCurPosTransformP
       (pNVar1->fields).timestamp = iVar2 + -200;
       pMVar3 = (this->fields)._.worldObject;
       if (pMVar3 != (MVWorldObjectClient *)0x0) {
-        puVar4 = (undefined8 *)(*(pMVar3->klass->vtable).get_Position.methodPtr)();
+        puVar4 = (undefined8 *)(*(code *)(pMVar3->klass->vtable).get_Position.method)();
         uVar5 = *puVar4;
         fVar6 = *(float *)(puVar4 + 1);
         (pNVar1->fields).position.x = (float)(int)uVar5;
@@ -59,7 +60,7 @@ Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_CreateCurPosTransformP
         (pNVar1->fields).position.z = fVar6;
         pMVar3 = (this->fields)._.worldObject;
         if (pMVar3 != (MVWorldObjectClient *)0x0) {
-          pfVar7 = (float *)(*(pMVar3->klass->vtable).get_Rotation.methodPtr)();
+          pfVar7 = (float *)(*(code *)(pMVar3->klass->vtable).get_Rotation.method)();
           fVar6 = pfVar7[1];
           fVar8 = pfVar7[2];
           fVar9 = pfVar7[3];
@@ -252,15 +253,15 @@ code_?:
       pMVar13 = pMVar12->klass;
       uVar14._0_4_ = (pNVar6->fields).position.x;
       uVar14._4_4_ = (pNVar6->fields).position.y;
-      (*(pMVar13->vtable).set_Position.methodPtr)
+      (*(code *)(pMVar13->vtable).set_Position.method)
                 ((this->fields)._.worldObject,uVar14,(pNVar6->fields).position.z,
-                 (pMVar13->vtable).set_Position.method);
+                 (pMVar13->vtable).get_Rotation.methodPtr);
       pMVar12 = (this->fields)._.worldObject;
       if (pMVar12 != (MVWorldObjectClient *)0x0) {
-        (*(pMVar12->klass->vtable).set_Rotation.methodPtr)
+        (*(code *)(pMVar12->klass->vtable).set_Rotation.method)
                   (pMVar12,(pNVar6->fields).rotation.x,(pNVar6->fields).rotation.y,
                    (pNVar6->fields).rotation.z,(pNVar6->fields).rotation.w,
-                   (pMVar12->klass->vtable).set_Rotation.method);
+                   (pMVar12->klass->vtable).get_Scale.methodPtr);
         goto code_?;
       }
     }
@@ -395,9 +396,9 @@ code_?:
     if (pMVar4 != (MVWorldObjectClient *)0x0) {
       uVar5._0_4_ = (pNVar3->fields).position.x;
       uVar5._4_4_ = (pNVar3->fields).position.y;
-      (*(pMVar4->klass->vtable).set_Position.methodPtr)
+      (*(code *)(pMVar4->klass->vtable).set_Position.method)
                 (pMVar4,uVar5,(pNVar3->fields).position.z,
-                 (pMVar4->klass->vtable).set_Position.method);
+                 (pMVar4->klass->vtable).get_Rotation.methodPtr);
       pNVar3 = (pMVar1->fields).currentPackage;
       if ((pNVar3 != (NetworkTransformPackage *)0x0) &&
          (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
@@ -406,8 +407,8 @@ code_?:
         fVar8 = (pNVar3->fields).rotation.z;
         fVar9 = (pNVar3->fields).rotation.w;
 code_?:
-        (*(pMVar4->klass->vtable).set_Rotation.methodPtr)
-                  (pMVar4,fVar6,fVar7,fVar8,fVar9,(pMVar4->klass->vtable).set_Rotation.method)
+        (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
+                  (pMVar4,fVar6,fVar7,fVar8,fVar9,(pMVar4->klass->vtable).get_Scale.methodPtr)
         ;
         return;
       }
@@ -470,7 +471,7 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_Interpolation_INTERVAL_IS_ZERO__,(MethodInfo *)0x0);
       this = _UNK_?;
       pMVar12 = _UNK_?;
@@ -512,8 +513,8 @@ code_?:
                                (float)(undefined4)uStack_19 + fVar7 * fVar6);
           fStack_18 = fStack_20 + fVar9 * fVar6;
           if (pMVar4 == (MVWorldObjectClient *)0x0) goto code_?;
-          (*(pMVar4->klass->vtable).set_Position.methodPtr)
-                    (pMVar4,uStack_17,fStack_18,(pMVar4->klass->vtable).set_Position.method);
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
+                    (pMVar4,uStack_17,fStack_18,(pMVar4->klass->vtable).get_Rotation.methodPtr);
           pMVar4 = (pMVar1->fields)._.worldObject;
           pNVar3 = (pMVar1->fields).nextPackage;
           if ((pNVar3 == (NetworkTransformPackage *)0x0) || (pMVar4 == (MVWorldObjectClient *)0x0)
@@ -529,16 +530,16 @@ code_?:
            (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
           uVar21._0_4_ = (pNVar3->fields).position.x;
           uVar21._4_4_ = (pNVar3->fields).position.y;
-          (*(pMVar4->klass->vtable).set_Position.methodPtr)
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
                     (pMVar4,uVar21,(pNVar3->fields).position.z,
-                     (pMVar4->klass->vtable).set_Position.method);
+                     (pMVar4->klass->vtable).get_Rotation.methodPtr);
           pNVar3 = (pMVar1->fields).nextPackage;
           if ((pNVar3 != (NetworkTransformPackage *)0x0) &&
              (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
-            (*(pMVar4->klass->vtable).set_Rotation.methodPtr)
+            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
                       (pMVar4,(pNVar3->fields).rotation.x,(pNVar3->fields).rotation.y,
                        (pNVar3->fields).rotation.z,(pNVar3->fields).rotation.w,
-                       (pMVar4->klass->vtable).set_Rotation.method);
+                       (pMVar4->klass->vtable).get_Scale.methodPtr);
             (pMVar1->fields).currentPackage = (NetworkTransformPackage *)0x0;
             func_?(&(pMVar1->fields).currentPackage,0);
             (pMVar1->fields).nextPackage = (NetworkTransformPackage *)0x0;
@@ -573,9 +574,9 @@ code_?:
                       (float)uStack_17._4_4_;
         QStack_22.w = (fStack_20 - fStack_18) * (float)pMVar12 + fStack_18;
         if (pMVar4 != (MVWorldObjectClient *)0x0) {
-          (*(pMVar4->klass->vtable).set_Position.methodPtr)
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
                     (pMVar4,CONCAT44(QStack_22.z,QStack_22.y),QStack_22.w,
-                     (pMVar4->klass->vtable).set_Position.method);
+                     (pMVar4->klass->vtable).get_Rotation.methodPtr);
           pNVar3 = (pMVar1->fields).currentPackage;
           pMVar4 = (pMVar1->fields)._.worldObject;
           if (((pNVar3 != (NetworkTransformPackage *)0x0) &&
@@ -584,9 +585,9 @@ code_?:
                                   (&QStack_22,(pNVar3->fields).rotation,(pNVar13->fields).rotation,
                                    (float)this,(MethodInfo *)0x0),
              pMVar4 != (MVWorldObjectClient *)0x0)) {
-            (*(pMVar4->klass->vtable).set_Rotation.methodPtr)
+            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
                       (pMVar4,pQVar23->x,pQVar23->y,pQVar23->z,pQVar23->w,
-                       (pMVar4->klass->vtable).set_Rotation.method);
+                       (pMVar4->klass->vtable).get_Scale.methodPtr);
             return;
           }
         }
@@ -621,43 +622,36 @@ void Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener__ctor
     func_?(&TypeInfo__System__Collections__Generic__Queue<NetworkTransformPackage>);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+  this_00 = (HashSet_1_System_Object_ *)
             func_?(TypeInfo__System__Collections__Generic__HashSet<INetworkUpdateListener>)
   ;
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this_00,
-               MethodInfo__System__Collections__Generic__HashSet<INetworkUpdateListener>__HashSet__)
-    ;
-    (this->fields).updateListenerList = (HashSet_1_INetworkUpdateListener_ *)this_00;
-    func_?(&(this->fields).updateListenerList,this_00);
-    pQVar1 = (Queue_1_NetworkTransformPackage_ *)
-             func_?(TypeInfo__System__Collections__Generic__Queue<NetworkTransformPackage>)
-    ;
-    if (pQVar1 != (Queue_1_NetworkTransformPackage_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-      Stack_1_System_Object___ctor
-                ((Stack_1_System_Object_ *)pQVar1,
-                 MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Queue__);
-      method_00 = (MethodInfo *)&(this->fields).transformQueue;
-      (this->fields).transformQueue = pQVar1;
-      func_?(method_00,pQVar1);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields)._.worldObject = owner;
-      func_?(&this->fields,owner);
-      item = MVNetworkListener_CreateCurPosTransformPackage(this,(MethodInfo *)0x0);
-      pQVar1 = (this->fields).transformQueue;
-      if (pQVar1 != (Queue_1_NetworkTransformPackage_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-        Queue_1_System_Object__Enqueue
-                  ((Queue_1_System_Object_ *)pQVar1,(Object *)item,
-                   MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Enqueue_NetworkTransformPackage_
-                  );
-        return;
-      }
-    }
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+  HashSet_1_System_Object___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__HashSet<INetworkUpdateListener>__HashSet__);
+  (this->fields).updateListenerList = (HashSet_1_INetworkUpdateListener_ *)this_00;
+  func_?(&(this->fields).updateListenerList,this_00);
+  pQVar1 = (Queue_1_NetworkTransformPackage_ *)
+           func_?(TypeInfo__System__Collections__Generic__Queue<NetworkTransformPackage>);
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)pQVar1,
+             MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Queue__);
+  method_00 = (MethodInfo *)&(this->fields).transformQueue;
+  (this->fields).transformQueue = pQVar1;
+  func_?(method_00,pQVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields)._.worldObject = owner;
+  func_?(&this->fields,owner);
+  item = MVNetworkListener_CreateCurPosTransformPackage(this,(MethodInfo *)0x0);
+  pQVar1 = (this->fields).transformQueue;
+  if (pQVar1 != (Queue_1_NetworkTransformPackage_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+    Queue_1_System_Object__Enqueue
+              ((Queue_1_System_Object_ *)pQVar1,(Object *)item,
+               MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Enqueue_NetworkTransformPackage_
+              );
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

@@ -18,22 +18,20 @@ bool Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd+<FadeOutAnd
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
     this_01 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
-    if (this_01 != (UnityAction_1_System_Single_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-      UnityAction_1_System_Single___ctor
-                (this_01,(Object *)this_00,
-                 MethodInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_b__37_0_float_
-                 ,(MethodInfo *)0x0);
-      routine = pTween::pTween_To(0.5,1.0,0.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
-      if (this_00 != (GeneralPromotionAd *)0x0) {
-        pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                 MonoBehaviour_StartCoroutine_Auto
-                           ((MonoBehaviour *)this_00,routine,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)pCVar2;
-        func_?();
-        (this->fields).__1__state = 1;
-        return 1;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+    UnityAction_1_System_Single___ctor
+              (this_01,(Object *)this_00,
+               MethodInfo__AdIntegration__InHouse__GeneralPromotionAd___FadeOutAndPop_b__37_0_float_
+               ,(MethodInfo *)0x0);
+    routine = pTween::pTween_To(0.5,1.0,0.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
+    if (this_00 != (GeneralPromotionAd *)0x0) {
+      pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,routine,(MethodInfo *)0x0)
+      ;
+      (this->fields).__2__current = (Object *)pCVar2;
+      func_?();
+      (this->fields).__1__state = 1;
+      return 1;
     }
     func_?();
     pcVar3 = (code *)swi(3);
@@ -56,7 +54,6 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd+<FadeOutAnd
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

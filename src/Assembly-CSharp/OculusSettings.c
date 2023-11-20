@@ -33,15 +33,16 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
       func_?();
       pMVar1 = (this->fields).target;
       if (pMVar1 != (MVWorldObjectClient *)0x0) {
-        this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields)._.data;
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (pMVar1->fields)._.data;
         pSVar2 = (this->fields).rangeSlider;
-        if (this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                              (Object *)StringLiteral_Radius,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
+        if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (this_01,(Object *)StringLiteral_Radius,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
           if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__System__Globalization__CultureInfo);
           }
@@ -51,42 +52,43 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_Initialize
             func_?(TypeInfo__System__Convert);
           }
           fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle
-                            (pOVar3,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+                            ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
           if (pSVar2 != (SettingsSlider *)0x0) {
             SettingsSlider::SettingsSlider_Initialize
                       (pSVar2,StringLiteral_Radius,fVar5,5.0,40.0,(MethodInfo *)0x0);
             pSVar2 = (this->fields).aggresionSlider;
-            pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                                (Object *)StringLiteral_Speed,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
+            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (this_01,(Object *)StringLiteral_Speed,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
             pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::
                      CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
             fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle
-                              (pOVar3,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
+                              ((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
             if (pSVar2 != (SettingsSlider *)0x0) {
               SettingsSlider::SettingsSlider_Initialize
                         (pSVar2,StringLiteral_Speed,fVar5,10.0,50.0,(MethodInfo *)0x0);
               value = 100;
               bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,GUILoginHandler+PlanetData]::
-                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                 (this_01,(Object *)StringLiteral_Lives,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                 );
               if (bVar6 != 0) {
-                pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                   ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                                    (Object *)StringLiteral_Lives,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
+                TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  (this_01,(Object *)StringLiteral_Lives,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
                 if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__System__Convert);
                 }
-                value = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
+                value = mscorlib.dll::System::Convert::Convert_ToInt32
+                                  (TVar3.m_Index,(MethodInfo *)0x0);
               }
               pSVar2 = (this->fields).numOfLivesSlider;
               if (pSVar2 != (SettingsSlider *)0x0) {
@@ -171,18 +173,23 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_OnSettingChanged
       if (this_00 != (SettingsInputFieldSlider *)0x0) {
         SettingsInputFieldSlider::SettingsInputFieldSlider_SetText
                   (this_00,StringLiteral_u221E,(MethodInfo *)0x0);
-        this_01 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          key = (String *)0x64;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        key = (String *)0x64;
+        pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&key);
+        if (this_01 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (this_01,(Object *)StringLiteral_Lives,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                     (Object *)StringLiteral_Lives,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -192,7 +199,8 @@ void Assembly-CSharp.dll::OculusSettings::OculusSettings_OnSettingChanged
              (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                      (this_02,(pMVar5->fields)._.id,this_01,(MethodInfo *)0x0);
+                      (this_02,(pMVar5->fields)._.id,
+                       (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
             pSVar2 = (this->fields).settingsBase;
             if (pSVar2 != (SettingsBase *)0x0) {
               SettingsBase::SettingsBase_RemoveData(pSVar2,key_00,(MethodInfo *)0x0);

@@ -11,10 +11,10 @@ int32_t Assembly-CSharp.dll::ImpactState+ImpactDamageRuntimeEventType::
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
-    if (((TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).typeHierarchyDepth <=
-         (obj->klass->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).naturalAligment <=
+         (obj->klass->_1).naturalAligment) &&
        ((obj->klass->_1).typeHierarchy
-        [(TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__ImpactState__ImpactDamageRuntimeEventType->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__ImpactState__ImpactDamageRuntimeEventType)) {
       iVar1 = mscorlib.dll::System::Single::Single_CompareTo_1
                         ((Single *)&this->fields,(float)obj[1].klass,(MethodInfo *)0x0);
@@ -22,7 +22,6 @@ int32_t Assembly-CSharp.dll::ImpactState+ImpactDamageRuntimeEventType::
     }
     uVar2 = func_?(&TypeInfo__System__ArgumentException);
     this_00 = (ArgumentException *)func_?(uVar2);
-    func_?(this_00);
     method_00 = (MethodInfo *)0x0;
     message = (String *)func_?(&StringLiteral_Object_is_not_a_ImpactDamageRunt);
     mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(this_00,message,method_00);
@@ -71,7 +70,7 @@ void Assembly-CSharp.dll::ImpactState+ImpactDamageRuntimeEventType::
                RuntimeEventType__Enum runtimeEventType,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).damageThreshold = damageThreshold;
   (this->fields).runtimeEventType = (undefined1)runtimeEventType;

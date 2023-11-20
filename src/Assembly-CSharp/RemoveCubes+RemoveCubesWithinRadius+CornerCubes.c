@@ -57,7 +57,7 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
     func_?(&TypeInfo__System__Byte);
     func_?(&TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes);
     func_?(&_910B8605B36FADCEA4E73E93069C6CF3C267517EB35F1F1EDCBCAA766B91ABC1_Field);
-    func_?(&CA66B4132C71AA567724432EE944896F3FB783BD66199A48BD185469C486F6F6_Field);
+    func_?(&::CA66B4132C71AA567724432EE944896F3FB783BD66199A48BD185469C486F6F6_Field);
     func_?(&DA31D4A621FF6B9CEF190E1E3120AC4475BEED9AE301BCA7D911603382372ABB_Field);
     func_?(&F3251C4424AE7E75C326B098E00FF103D1693D5A68F69A1CC5077575B51FCCD6_Field);
     cRam_? = '\x01';
@@ -70,25 +70,8 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+CornerCubes::
              (MethodInfo *)0x0);
   if (pBVar1 == (Byte__Array__Array *)0x0) {
     func_?();
-code_?:
-    uVar3 = func_?();
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?();
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?();
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?();
-    func_?(uVar3);
   }
-  else {
-    if (pBVar2 != (Byte__Array *)0x0) {
-      iVar4 = func_?(pBVar2);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (pBVar1->max_length == 0) goto code_?;
+  else if (pBVar1->max_length != 0) {
     pBVar1->vector[0] = pBVar2;
     func_?(pBVar1->vector);
     pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
@@ -97,50 +80,39 @@ code_?:
               ((Array *)pBVar2,
                _DA31D4A621FF6B9CEF190E1E3120AC4475BEED9AE301BCA7D911603382372ABB_Field,
                (MethodInfo *)0x0);
-    if (pBVar2 != (Byte__Array *)0x0) {
-      iVar4 = func_?(pBVar2);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (pBVar1->max_length < 2) goto code_?;
-    pBVar1->vector[1] = pBVar2;
-    func_?(pBVar1->vector + 1);
-    pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
-    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-    RuntimeHelpers_InitializeArray_1
-              ((Array *)pBVar2,
-               _F3251C4424AE7E75C326B098E00FF103D1693D5A68F69A1CC5077575B51FCCD6_Field,
-               (MethodInfo *)0x0);
-    if (pBVar2 != (Byte__Array *)0x0) {
-      iVar4 = func_?(pBVar2);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (pBVar1->max_length < 3) goto code_?;
-    pBVar1->vector[2] = pBVar2;
-    func_?(pBVar1->vector + 2);
-    pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
-    mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-    RuntimeHelpers_InitializeArray_1
-              ((Array *)pBVar2,
-               _CA66B4132C71AA567724432EE944896F3FB783BD66199A48BD185469C486F6F6_Field,
-               (MethodInfo *)0x0);
-    if (pBVar2 != (Byte__Array *)0x0) {
-      iVar4 = func_?(pBVar2);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (3 < pBVar1->max_length) {
-      pBVar1->vector[3] = pBVar2;
-      func_?(pBVar1->vector + 3);
-      TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->static_fields->cornerCubes =
-           pBVar1;
-      func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->static_fields,
-                      pBVar1);
-      return;
+    if (1 < pBVar1->max_length) {
+      pBVar1->vector[1] = pBVar2;
+      func_?(pBVar1->vector + 1);
+      pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
+      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+      RuntimeHelpers_InitializeArray_1
+                ((Array *)pBVar2,
+                 _F3251C4424AE7E75C326B098E00FF103D1693D5A68F69A1CC5077575B51FCCD6_Field,
+                 (MethodInfo *)0x0);
+      if (2 < pBVar1->max_length) {
+        pBVar1->vector[2] = pBVar2;
+        func_?(pBVar1->vector + 2);
+        pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
+        mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+        RuntimeHelpers_InitializeArray_1
+                  ((Array *)pBVar2,
+                   _CA66B4132C71AA567724432EE944896F3FB783BD66199A48BD185469C486F6F6_Field,
+                   (MethodInfo *)0x0);
+        if (3 < pBVar1->max_length) {
+          pBVar1->vector[3] = pBVar2;
+          func_?(pBVar1->vector + 3);
+          TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->static_fields->cornerCubes =
+               pBVar1;
+          func_?(TypeInfo__RemoveCubes_RemoveCubesWithinRadius__CornerCubes->static_fields,
+                          pBVar1);
+          return;
+        }
+      }
     }
   }
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

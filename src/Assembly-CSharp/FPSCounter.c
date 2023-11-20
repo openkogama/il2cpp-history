@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::FPSCounter::FPSCounter_Update(FPSCounter *this,MethodI
       return;
     }
     SStack_5.m_value = (float)pTVar4;
-    (*(pTVar4->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar4->klass->vtable).set_text.method)();
     (this->fields).currTime = 0.0;
   }
   return;

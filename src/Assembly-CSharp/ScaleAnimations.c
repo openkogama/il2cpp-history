@@ -36,135 +36,142 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Awake
   LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).scaleAnimations;
-  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-code_?:
-    func_?();
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
-    return;
-  }
-  pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                       *)auStack_9,this_00,
-                      MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
-                     );
-  uStack_10 = 0;
-  LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-  LStack_6._index = pLVar8->_index;
-  LStack_6._version = pLVar8->_version;
-  LStack_6._current = *(Object **)&pLVar8->_current;
-  uStack_1 = 1;
-  pLStack_11 = &LStack_6;
-code_?:
-  do {
-    bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-            List_1_T_Enumerator_System_Object__MoveNext
-                      (&LStack_6,
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
-                      );
-    pOVar13 = LStack_6._current;
-    if (bVar12 == 0) {
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
-                 ,unaff_EDI);
-      *unaff_FS_OFFSET = uStack_3;
-      return;
-    }
-    RStack_14 = (RegexCharClass_SingleRange)LStack_6._current;
-    pMStack_15 = (MethodInfo *)(this->fields)._.target;
-    if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-    goto code_?;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&StringLiteral_Target_already_set);
-      cRam_? = '\x01';
-    }
-    pDStack_16 = *(Delegate **)((int)pOVar13 + 0x1c);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pDStack_16,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar12 == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                         *)auStack_8,this_00,
+                        MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
+                       );
+    uStack_9 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    uStack_1 = 1;
+    pLStack_10 = &LStack_6;
+    while( true ) {
+      while( true ) {
+        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          (&LStack_6,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                          );
+        pOVar12 = LStack_6._current;
+        if (bVar11 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)&LStack_6,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
+                     ,(MethodInfo *)unaff_EDI);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
+        }
+        RStack_13 = (RegexCharClass_SingleRange)LStack_6._current;
+        pDStack_14 = (Delegate *)(this->fields)._.target;
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+        goto code_?;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__Debug);
+          func_?(&TypeInfo__UnityEngine__Object);
+          func_?(&StringLiteral_Target_already_set);
+          cRam_? = '\x01';
+        }
+        pMStack_15 = *(MethodInfo **)((int)pOVar12 + 0x20);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                          ((Object_1 *)pMStack_15,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar11 == 0) {
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                    ((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
+        }
+        else {
+          *(Delegate **)((int)pOVar12 + 0x20) = pDStack_14;
+          func_?((int)pOVar12 + 0x20);
+          if (pDStack_14 == (Delegate *)0x0) goto code_?;
+          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                             ((Vector3 *)(auStack_8 + 4),(Transform *)pDStack_14,(MethodInfo *)0x0)
+          ;
+          fVar17 = pVVar16->z;
+          *(undefined8 *)((int)pOVar12 + 0x14) = *(undefined8 *)pVVar16;
+          *(float *)((int)pOVar12 + 0x1c) = fVar17;
+        }
+        pDStack_14 = *(Delegate **)((int)pOVar12 + 0x28);
+        b = (Delegate *)func_?();
+        pMStack_15 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
+        pIVar18 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_->virtualMethodPointer;
+        (b->fields).method = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
+        (b->fields).m_target = (Object *)this;
+        (b->fields).method_ptr = pIVar18;
+        func_?();
+        uStack_19 = pMStack_15->parameters_count;
+        (b->fields).method_code = b;
+        cVar20 = func_?();
+        if ((cVar20 == '\0') || (uStack_19 != 1)) {
+          (b->fields).method_code = (b->fields).m_target;
+          puVar21 = (b->fields).method_ptr;
+        }
+        else {
+          puVar21 = &UNK_?;
+        }
+        (b->fields).invoke_impl = puVar21;
+        (b->fields).extra_arg = &UNK_?;
+        unaff_EDI = pDStack_14;
+        LStack_6._index =
+             (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
+                                (pDStack_14,b,(MethodInfo *)0x0);
+        if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index !=
+            (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) break;
+        LStack_6._version = 0;
+        *(undefined4 *)((int)RStack_13 + 0x28) = 0;
+        LStack_6._index = (int)RStack_13 + 0x28;
+        LStack_6._list = (List_1_System_Object_ *)&UNK_?;
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
-    }
-    else {
-      *(MethodInfo **)((int)pOVar13 + 0x1c) = pMStack_15;
-      func_?((int)pOVar13 + 0x1c);
-      if (pMStack_15 == (MethodInfo *)0x0) goto code_?;
-      pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                         ((Vector3 *)(auStack_9 + 4),(Transform *)pMStack_15,(MethodInfo *)0x0);
-      fVar18 = pVVar17->z;
-      *(undefined8 *)((int)pOVar13 + 0x10) = *(undefined8 *)pVVar17;
-      *(float *)((int)pOVar13 + 0x18) = fVar18;
-    }
-    pDStack_16 = *(Delegate **)((int)pOVar13 + 0x24);
-    pDVar19 = (Delegate *)func_?();
-    if (pDVar19 == (Delegate *)0x0) goto code_?;
-    pMStack_15 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
-    pvVar20 = (void *)func_?(MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_);
-    (pDVar19->fields).method_ptr = pvVar20;
-    (pDVar19->fields).method = pMStack_15;
-    (pDVar19->fields).m_target = (Object *)this;
-    func_?(&(pDVar19->fields).m_target,this);
-    uStack_21 = pMStack_15->parameters_count;
-    (pDVar19->fields).method_code = pDVar19;
-    cVar22 = func_?(pMStack_15);
-    if (cVar22 == '\0') {
-code_?:
-      (pDVar19->fields).method_code = (pDVar19->fields).m_target;
-      puVar23 = (pDVar19->fields).method_ptr;
-    }
-    else if (pMStack_15->indirect_call_via_invokers == 0) {
-      if (uStack_21 != 1) goto code_?;
-      puVar23 = &UNK_?;
-    }
-    else {
-      puVar23 = &UNK_?;
-      if (uStack_21 != 1) {
-        puVar23 = &UNK_?;
+      pSVar22 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0;
+      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)
+          (((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index)->_0).
+          image == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        pSVar22 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index;
       }
-    }
-    (pDVar19->fields).invoke_impl = puVar23;
-    (pDVar19->fields).extra_arg = &UNK_?;
-    pDVar19 = mscorlib.dll::System::Delegate::Delegate_Combine(pDStack_16,pDVar19,(MethodInfo *)0x0);
-    if (pDVar19 != (Delegate *)0x0) {
-      pDVar24 = (Delegate *)0x0;
-      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)pDVar19->klass ==
-          TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-        pDVar24 = pDVar19;
+      LStack_6._version = (int32_t)TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
+      if (pSVar22 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) break;
+      *(ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class **)((int)RStack_13 + 0x28) =
+           pSVar22;
+      LStack_6._version = (int32_t)(ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0
+      ;
+      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)
+          (((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index)->_0).
+          image == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        LStack_6._version = LStack_6._index;
       }
-      if (pDVar24 != (Delegate *)0x0) {
-        *(Delegate **)((int)RStack_14 + 0x24) = pDVar24;
-        pDVar24 = (Delegate *)0x0;
-        if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)pDVar19->klass ==
-            TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-          pDVar24 = pDVar19;
-        }
-        if (pDVar24 != (Delegate *)0x0) {
-          unaff_EDI = (MethodInfo *)&UNK_?;
-          func_?();
-          goto code_?;
-        }
-        func_?();
+      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._version ==
+          (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) {
+        LStack_6._version = (int32_t)TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
+        LStack_6._list = (List_1_System_Object_ *)&UNK_?;
+        LStack_6._version = func_?();
+        LStack_6._index = (int32_t)extraout_ECX;
+        break;
       }
+      LStack_6._index = (int)RStack_13 + 0x28;
+      LStack_6._list = (List_1_System_Object_ *)&UNK_?;
       func_?();
-      goto code_?;
     }
-    *(undefined4 *)((int)RStack_14 + 0x24) = 0;
-    unaff_EDI = (MethodInfo *)&UNK_?;
+    LStack_6._list = (List_1_System_Object_ *)&UNK_?;
     func_?();
-  } while( true );
+  }
+code_?:
+  func_?();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
+  return;
 }
 
 
@@ -184,19 +191,17 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_OnScaleAnimationDone
   (this->fields).index = iVar2;
   if (pLVar1 != (List_1_ScaleAnimationBase_ *)0x0) {
     if (iVar2 < (pLVar1->fields)._size) {
-      (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
-      if ((this->fields).OnIntermediateScaleAnimationStopped !=
-          (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        pSVar3 = (this->fields).OnIntermediateScaleAnimationStopped;
+      (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
+      pSVar3 = (this->fields).OnIntermediateScaleAnimationStopped;
+      if (pSVar3 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
         (*(pSVar3->fields)._._.invoke_impl)
                   ((pSVar3->fields)._._.method_code,extraTime,(pSVar3->fields)._._.method);
         return;
       }
     }
     else {
-      if ((this->fields)._.OnScaleAnimationStopped !=
-          (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        pSVar3 = (this->fields)._.OnScaleAnimationStopped;
+      pSVar3 = (this->fields)._.OnScaleAnimationStopped;
+      if (pSVar3 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
         (*(pSVar3->fields)._._.invoke_impl)
                   ((pSVar3->fields)._._.method_code,extraTime,(pSVar3->fields)._._.method);
       }
@@ -217,28 +222,93 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Play
                (ScaleAnimations *this,float offsetTime,MethodInfo *method)
 
 {
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffbc;
+  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__get_Current__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
+                   );
+    in_stack_6 =
+         &MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Item_int_;
     func_?();
     cRam_? = '\x01';
+    puVar5 = puStack_4;
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).scaleAnimations;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,(this->fields).index,
-                       MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Item_int_
-                      );
-    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
-      (**(code **)(*(int *)RVar1 + 0xdc))();
-      return;
+  puStack_4 = puVar5;
+  LStack_7._list = (List_1_System_Object_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current = (Object *)0x0;
+  pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).scaleAnimations;
+  if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_10,pLVar8,
+                        MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
+                       );
+    LStack_7._list = (List_1_System_Object_ *)pLVar9->_list;
+    LStack_7._index = pLVar9->_index;
+    LStack_7._version = pLVar9->_version;
+    LStack_7._current = *(Object **)&pLVar9->_current;
+    LStack_10._version = 0;
+    uStack_1 = 1;
+    LStack_10._current = (RegexCharClass_SingleRange)&LStack_7;
+    while( true ) {
+      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_7,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                        );
+      if (bVar11 == 0) break;
+      if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      if (*(int *)((int)LStack_7._current + 0x10) == 2) {
+        func_?(4,LStack_7._current);
+      }
+    }
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&LStack_7,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
+               ,(MethodInfo *)in_stack_6);
+    uStack_1 = 0xffffffff;
+    pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).scaleAnimations;
+    if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar8,(this->fields).index,
+                         MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Item_int_
+                        );
+      if (RVar12 != (RegexCharClass_SingleRange)0x0) {
+        (**(code **)(*(int *)RVar12 + 0xe8))(RVar12,0,*(undefined4 *)(*(int *)RVar12 + 0xec));
+        *unaff_FS_OFFSET = uStack_3;
+        return;
+      }
     }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  uVar13 = func_?();
+  func_?(uVar13);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -250,7 +320,7 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Update
 
 {
   if ((this->fields)._.testState == 2) {
-    (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
+    (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
     (this->fields)._.testState = 0;
   }
   return;

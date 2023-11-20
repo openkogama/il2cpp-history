@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Api;
 
-// Image 28: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common
 {
@@ -55,10 +55,7 @@ namespace GoogleMobileAds.Common
 		// Methods
 		void CreateRewardedAd();
 		void LoadAd(string adUnitID, AdRequest request);
-		Reward GetRewardItem();
 		void Show();
-		void SetServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions);
-		IResponseInfoClient GetResponseInfoClient();
 		void DestroyRewardedAd();
 	}
 }

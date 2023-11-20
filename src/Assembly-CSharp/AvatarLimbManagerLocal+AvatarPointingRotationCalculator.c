@@ -42,7 +42,8 @@ AvatarLimbManagerLocal_AvatarPointingRotationCalculator_CalculateRotation
                      ((Quaternion *)&stack0xffffffec,(float)this,
                       TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
   this = (AvatarLimbManagerLocal_AvatarPointingRotationCalculator *)
-         MVGroundState::MVGroundState_GetGradientAngle(pointingDirection,(MethodInfo *)pQVar4->z);
+         MathFunctions::MathFunctions_PitchFromLocalDirection
+                   (pointingDirection,(MethodInfo *)pQVar4->z);
   pAVar2 = _UNK_?;
   if (((float)this < (float)_UNK_?) ||
      (pAVar2 = _UNK_?, (float)_UNK_? < (float)this)) {
@@ -84,8 +85,8 @@ AvatarLimbManagerLocal_AvatarPointingRotationCalculator_GetClampedPitchRotation
           MethodInfo *method)
 
 {
-  localDirection.z = MVGroundState::MVGroundState_GetGradientAngle(localDirection,(MethodInfo *)0x0)
-  ;
+  localDirection.z =
+       MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
   fVar1 = _UNK_?;
   if ((localDirection.z < _UNK_?) ||
      (fVar1 = _UNK_?, _UNK_? < localDirection.z)) {

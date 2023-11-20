@@ -5,7 +5,7 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
                (SizeModifier_DoForSeconds_d_17 *this,MethodInfo *method)
 
 {
-  fStack_1 = in_ECX;
+  pMStack_1 = in_ECX;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
@@ -23,7 +23,7 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
     if (bVar3 == 0) {
       pSVar4 = (this->fields).body;
       if (pSVar4 == (SizeModifier_ActionDelegate *)0x0) goto code_?;
-      fStack_1 = (this_00->fields).timeToSize;
+      pMStack_1 = (MonitorData *)(this_00->fields).timeToSize;
       (*(pSVar4->fields)._._.invoke_impl)((pSVar4->fields)._._.method_code);
     }
     (this->fields)._t_5__2 = 0.0;
@@ -54,9 +54,9 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
       fVar5 = (this->fields)._t_5__2;
       fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
-      fStack_1 = 0.0;
+      pMStack_1 = (MonitorData *)0x0;
       (this->fields)._t_5__2 = fVar7 + fVar5;
-      pOVar8 = (Object *)func_?(TypeInfo__System__Single,&fStack_1);
+      pOVar8 = (Object *)func_?(TypeInfo__System__Single,&pMStack_1);
       (this->fields).__2__current = pOVar8;
       func_?(&(this->fields).__2__current,pOVar8);
       (this->fields).__1__state = 1;
@@ -80,7 +80,6 @@ void Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

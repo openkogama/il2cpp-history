@@ -42,21 +42,21 @@ code_?:
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Extensions);
       }
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppBloomInty,0,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->intensity = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->intensity = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppBloomSKnee,5,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->softKnee = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->softKnee = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppBloomDiff,7,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->diffusion = iVar4;
+      this->diffusion = IVar4;
       fVar5 = Extensions::Extensions_GetValueOrDefault_4
                         (data,StringLiteral_ppBloomColR,1.0,
                          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_

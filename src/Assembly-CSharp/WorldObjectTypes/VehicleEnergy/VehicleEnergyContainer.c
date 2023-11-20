@@ -193,32 +193,35 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
   (this->fields).counter = iVar6;
   if (0x32 < iVar6) {
     (this->fields).counter = 0;
-    this_00 = (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)
-              System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_1
-                        ((IEnumerable_1_KeyValuePair_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
-                          *)(this->fields).predictions,
-                         System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_
-                        );
-    if (this_00 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) {
+    this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+               *)System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_1
+                           ((IEnumerable_1_KeyValuePair_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
+                             *)(this->fields).predictions,
+                            System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_
+                           );
+    if (this_00 ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) {
       func_?();
       func_?();
       pcVar7 = (code *)swi(3);
       (*pcVar7)();
       return;
     }
-    pLVar8 = mscorlib.dll::System::Collections::Generic::
-             List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-             List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__GetEnumerator
-                       (&LStack_9,this_00,
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__GetEnumerator
+                       ((List_1_T_Enumerator_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)auStack_9,this_00,
                         MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>__GetEnumerator__
                        );
     uStack_10 = 0;
-    method_00 = (MethodInfo *)(pLVar8->_current).buttonNotSelected;
-    pTVar11 = (pLVar8->_current).buttonSelectedText;
-    pTVar12 = (pLVar8->_current).buttonNotSelectedText;
-    fVar13 = (float)(pLVar8->_current).team;
+    method_00 = (MethodInfo *)(pLVar8->_current).name;
+    fVar11 = (pLVar8->_current).actualWidth;
+    fVar12 = (pLVar8->_current).width;
+    fVar13 = *(float *)&(pLVar8->_current).visible;
     uStack_1 = 1;
-    pTVar14 = (Text *)(pLVar8->_current).buttonSelected;
+    fVar14 = (float)(pLVar8->_current).index;
     pOStack_15 = (Object *)&stack0xffffffa0;
     while( true ) {
       bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[TranslateSoundData]::
@@ -227,27 +230,26 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>__MoveNext__
                         );
       if (bVar16 == 0) break;
-      pTVar17 = (Text *)0x0;
-      LStack_9._current.buttonSelected = (GameObject *)pTVar14;
-      LStack_9._current.buttonNotSelected = (GameObject *)method_00;
-      LStack_9._current.buttonSelectedText = pTVar11;
-      LStack_9._current.buttonNotSelectedText = pTVar12;
-      LStack_9._current.team = (int32_t)fVar13;
+      fVar17 = 0.0;
+      auStack_9._12_4_ = fVar14;
+      auStack_9._16_4_ = method_00;
+      auStack_9._20_4_ = fVar11;
+      auStack_9._24_4_ = fVar12;
+      auStack_9._28_4_ = fVar13;
       fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pTVar14 = pTVar17;
-      if (_UNK_? < fVar18 - (float)LStack_9._current.team) {
+      fVar14 = fVar17;
+      if (_UNK_? < fVar18 - (float)auStack_9._28_4_) {
         method_00 = (MethodInfo *)0x0;
-        vehicleEnergyRefill._4_4_ = LStack_9._current.buttonSelectedText;
-        vehicleEnergyRefill.spawnerId = (int32_t)LStack_9._current.buttonNotSelected;
-        vehicleEnergyRefill.amount = (float)LStack_9._current.buttonNotSelectedText;
-        pTVar14 = LStack_9._current.buttonNotSelectedText;
+        vehicleEnergyRefill._4_4_ = auStack_9._20_4_;
+        vehicleEnergyRefill.spawnerId = auStack_9._16_4_;
+        vehicleEnergyRefill.amount = (float)auStack_9._24_4_;
+        fVar14 = (float)auStack_9._24_4_;
         VehicleEnergyContainer_DoRollback
-                  (this,(int32_t)LStack_9._current.buttonSelected,vehicleEnergyRefill,
-                   (MethodInfo *)0x0);
+                  (this,auStack_9._12_4_,vehicleEnergyRefill,(MethodInfo *)0x0);
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffa0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>__Dispose__
@@ -353,11 +355,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
   }
   else if (pDVar6 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                       *)0x0) {
-    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)pDVar6,
-                       (Object *)vehicleEnergyRefill.spawnerId,
+    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,WorldObjectTypes
+            ::VehicleEnergy::VehicleEnergyRefillPrediction]::
+            Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction__ContainsKey
+                      (pDVar6,vehicleEnergyRefill.spawnerId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__ContainsKey_int_
                       );
     if (bVar7 == 0) {
@@ -495,27 +496,22 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>
-                              );
-  if (this_00 !=
-      (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_ *)0x0
-     ) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Dictionary__
-              );
-    (this->fields).predictions = this_00;
-    func_?(&(this->fields).predictions,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Dictionary__
+            );
+  (this->fields).predictions =
+       (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_ *)
+       this_00;
+  func_?(&(this->fields).predictions,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -32,16 +32,16 @@ void Assembly-CSharp.dll::AccessoryItemBackground::AccessoryItemBackground_Initi
     }
     if ((pRVar2 != (RarityStylesDef *)0x0) &&
        (pIVar3 = (this->fields).rarityImage, pIVar3 != (Image *)0x0)) {
-      (*(pIVar3->klass->vtable).set_color.methodPtr)
+      (*(code *)(pIVar3->klass->vtable).set_color.method)
                 (pIVar3,(pRVar2->fields).backgroundColor.r,(pRVar2->fields).backgroundColor.g,
                  (pRVar2->fields).backgroundColor.b,(pRVar2->fields).backgroundColor.a,
-                 (pIVar3->klass->vtable).set_color.method);
+                 (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
       pIVar3 = (this->fields).glowImage;
       if (pIVar3 != (Image *)0x0) {
-        (*(pIVar3->klass->vtable).set_color.methodPtr)
+        (*(code *)(pIVar3->klass->vtable).set_color.method)
                   (pIVar3,(pRVar2->fields).glowColor.r,(pRVar2->fields).glowColor.g,
                    (pRVar2->fields).glowColor.b,(pRVar2->fields).glowColor.a,
-                   (pIVar3->klass->vtable).set_color.method);
+                   (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
         pIVar3 = (this->fields).backgroundRay;
         if ((pIVar3 != (Image *)0x0) &&
            (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

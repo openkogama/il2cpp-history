@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-// Image 2: System.dll - Assembly: System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+// Image 4: System.dll - Assembly: System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
 [assembly: AssemblyCompany("Mono development team")]
 [assembly: AssemblyCopyright("(c) Various Mono authors")]
 [assembly: AssemblyDefaultAlias("System.dll")]
@@ -69,8 +69,10 @@ namespace Internal.Cryptography
 		static OidLookup();
 	
 		// Methods
+		public static string ToFriendlyName(string oid, OidGroup oidGroup, bool fallBackToAllGroups);
 		public static string ToOid(string friendlyName, OidGroup oidGroup, bool fallBackToAllGroups);
 		private static bool ShouldUseCache(OidGroup oidGroup);
+		private static string NativeOidToFriendlyName(string oid, OidGroup oidGroup, bool fallBackToAllGroups);
 		private static string NativeFriendlyNameToOid(string friendlyName, OidGroup oidGroup, bool fallBackToAllGroups);
 	}
 }

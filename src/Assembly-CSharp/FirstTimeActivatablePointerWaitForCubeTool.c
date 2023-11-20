@@ -17,30 +17,25 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   pAVar1 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_00 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-    func_?();
-  }
-  else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
-               ,(MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
 code_?:
-      func_?();
-      return;
-    }
-    pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
-    if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
-    }
+    func_?();
+    return;
+  }
+  pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
+  if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
+    iVar3 = func_?();
+    if (iVar3 != 0) goto code_?;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -71,41 +66,40 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   pAVar1 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_01 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_01,(Object *)this,
-               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
-               ,(MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
-    }
-    else {
-      pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
-      if (pAVar1 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_01,(Object *)this,
+             MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
+code_?:
     func_?();
-    if ((this->fields).completed != 0) {
-      return;
-    }
-    this_00 = (this->fields).popup;
-    this_02 = (Action_1_Object_ *)func_?();
-    if ((this_02 != (Action_1_Object_ *)0x0) &&
-       (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_02,(Object *)this,
-                   MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
-                   ,(MethodInfo *)0x0), this_00 != (FirstTimeEventPopupWithProgress *)0x0)) {
+    if ((this->fields).completed == 0) {
+      this_00 = (this->fields).popup;
+      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_02,(Object *)this,
+                 MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
+                 ,(MethodInfo *)0x0);
+      if (this_00 == (FirstTimeEventPopupWithProgress *)0x0) goto code_?;
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade
                 ((FirstTimeEventPopup *)this_00,(Action_1_UnityEngine_GameObject_ *)this_02,
                  (MethodInfo *)0x0);
-      return;
     }
+    return;
+  }
+  pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
+  if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
+    iVar3 = func_?();
+    if (iVar3 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -184,7 +178,6 @@ code_?:
   pAVar6 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_01 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
   UnityAction_2_System_Int32_System_Int32___ctor
             (this_01,(Object *)this,
@@ -198,12 +191,15 @@ code_?:
 code_?:
     func_?();
     pFVar5 = (this->fields).popup;
-    this_02 = (Action_1_Object_ *)func_?();
-    if ((this_02 != (Action_1_Object_ *)0x0) &&
-       (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_02,(Object *)this,
-                   MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
-                   ,(MethodInfo *)0x0), pFVar5 != (FirstTimeEventPopupWithProgress *)0x0)) {
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_02,(Object *)this,
+               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
+               ,(MethodInfo *)0x0);
+    if (pFVar5 != (FirstTimeEventPopupWithProgress *)0x0) {
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade
                 ((FirstTimeEventPopup *)pFVar5,(Action_1_UnityEngine_GameObject_ *)this_02,
                  (MethodInfo *)0x0);
@@ -247,30 +243,25 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   pAVar1 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_00 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-    func_?();
-  }
-  else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
-               ,(MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
 code_?:
-      func_?();
-      return;
-    }
-    pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
-    if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
-    }
+    func_?();
+    return;
+  }
+  pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
+  if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
+    iVar3 = func_?();
+    if (iVar3 != 0) goto code_?;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -302,47 +293,41 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
     func_?(&TypeInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(
-                         TypeInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0
-                         );
+  method_00 = TypeInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)popupGameObject;
     func_?(value + 1,popupGameObject);
     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
               ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         (UnityAction_2_System_Object_System_Object_ *)
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0___OnPopupRemoved_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                 ,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)this,(MethodInfo *)0x0);
-      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (callbackFunction,value,
+               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool____c__DisplayClass18_0___OnPopupRemoved_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              ((GameObject *)callbackFunction,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+              ((Object_1 *)this,(MethodInfo *)0x0);
+    FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+              ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -406,24 +391,21 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this
-                       ,
-                       MethodInfo__FirstTimeActivatablePointerWaitForCubeTool___OnShow_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                     MethodInfo__FirstTimeActivatablePointerWaitForCubeTool___OnShow_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
       }
     }
@@ -435,7 +417,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)StringLiteral_Shown_called_more_than_once,(MethodInfo *)0x0);
   return;
 }
@@ -465,43 +447,43 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
   pAVar1 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_01 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_01,(Object *)this,
-               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
-               ,(MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
-    }
-    else {
-      pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
-      if (pAVar1 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_01,(Object *)this,
+             MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnCubeChanged_int__EditCubeChange_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
+code_?:
     func_?();
     this_00 = (this->fields).popup;
-    this_02 = (Action_1_Object_ *)func_?();
-    if (this_02 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                (this_02,(Object *)this,
-                 MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
-                 ,(MethodInfo *)0x0);
-      if (this_00 != (FirstTimeEventPopupWithProgress *)0x0) {
-        FirstTimeEventPopup::FirstTimeEventPopup_StartFade
-                  ((FirstTimeEventPopup *)this_00,(Action_1_UnityEngine_GameObject_ *)this_02,
-                   (MethodInfo *)0x0);
-        return;
-      }
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_02,(Object *)this,
+               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnPopupRemoved_UnityEngine__GameObject_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (FirstTimeEventPopupWithProgress *)0x0) {
+      FirstTimeEventPopup::FirstTimeEventPopup_StartFade
+                ((FirstTimeEventPopup *)this_00,(Action_1_UnityEngine_GameObject_ *)this_02,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-code_?:
+  else {
+    pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
+    if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
+      iVar3 = func_?();
+      if (iVar3 != 0) goto code_?;
+    }
+    func_?();
+  }
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -529,16 +511,14 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
                        ((Component *)this_00,(MethodInfo *)0x0);
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,
-                 MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnClosed__,
-                 (MethodInfo *)0x0);
-      if (x != (IUIStack *)0x0) {
-        func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,0,this_01,0x20);
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,
+               MethodInfo__FirstTimeActivatablePointerWaitForCubeTool__OnClosed__,(MethodInfo *)0x0)
+    ;
+    if (x != (IUIStack *)0x0) {
+      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,0,this_01,0x20);
+      return;
     }
   }
   func_?();

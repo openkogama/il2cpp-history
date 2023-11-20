@@ -73,7 +73,6 @@ void MVCommon.dll::MV::Common::Urls::Urls_ValidateGet(String *value,MethodInfo *
   }
   uVar2 = func_?(&TypeInfo__System__Exception);
   this = (Exception *)func_?(uVar2);
-  func_?(this);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Url_not_set);
   mscorlib.dll::System::Exception::Exception__ctor_1(this,message,method_00);
@@ -115,36 +114,22 @@ String * MVCommon.dll::MV::Common::Urls::Urls_get_API(MethodInfo *method)
   if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__Common__Urls);
   }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
-  return TypeInfo__MV__Common__Urls->static_fields->api;
-}
-
-
-/* String get_Badges() */
-
-String * MVCommon.dll::MV::Common::Urls::Urls_get_Badges(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    func_?(&StringLiteral_xp_level_badges_);
-    cRam_? = '\x01';
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                    (TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return TypeInfo__MV__Common__Urls->static_fields->api;
   }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,StringLiteral_xp_level_badges_,
-                      (MethodInfo *)0x0);
-  return pSVar1;
+  uVar2 = func_?();
+  this = (Exception *)func_?(uVar2);
+  method_00 = (MethodInfo *)0x0;
+  pSVar3 = (String *)func_?(&StringLiteral_Url_not_set);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar3,method_00);
+  uStack4 = func_?();
+  pEStack5 = this;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar6)();
+  return pSVar3;
 }
 
 
@@ -181,17 +166,9 @@ String * MVCommon.dll::MV::Common::Urls::Urls_get_Level(MethodInfo *method)
   if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__Common__Urls);
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
+  pSVar1 = Urls_get_API((MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,
-                      StringLiteral_xp_level_level__profile_id_,(MethodInfo *)0x0);
+                     (pSVar1,StringLiteral_xp_level_level__profile_id_,(MethodInfo *)0x0);
   return pSVar1;
 }
 
@@ -208,92 +185,22 @@ String * MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets(MethodInfo *me
   if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__Common__Urls);
   }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->streamingAssets,(MethodInfo *)0x0);
-  return TypeInfo__MV__Common__Urls->static_fields->streamingAssets;
-}
-
-
-/* String get_UpdateXP() */
-
-String * MVCommon.dll::MV::Common::Urls::Urls_get_UpdateXP(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    func_?(&StringLiteral_xp_level_xp_);
-    cRam_? = '\x01';
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                    (TypeInfo__MV__Common__Urls->static_fields->streamingAssets,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    return TypeInfo__MV__Common__Urls->static_fields->streamingAssets;
   }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,StringLiteral_xp_level_xp_,
-                      (MethodInfo *)0x0);
-  return pSVar1;
-}
-
-
-/* String get_XP() */
-
-String * MVCommon.dll::MV::Common::Urls::Urls_get_XP(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    func_?(&StringLiteral_xp_level_xp__profile_id_);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,
-                      StringLiteral_xp_level_xp__profile_id_,(MethodInfo *)0x0);
-  return pSVar1;
-}
-
-
-/* String get_XPData() */
-
-String * MVCommon.dll::MV::Common::Urls::Urls_get_XPData(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    func_?(&StringLiteral_xp_level_xp_data_);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,StringLiteral_xp_level_xp_data_
-                      ,(MethodInfo *)0x0);
-  return pSVar1;
+  uVar2 = func_?();
+  this = (Exception *)func_?(uVar2);
+  method_00 = (MethodInfo *)0x0;
+  pSVar3 = (String *)func_?(&StringLiteral_Url_not_set);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar3,method_00);
+  uStack4 = func_?();
+  pEStack5 = this;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar6)();
+  return pSVar3;
 }
 
 
@@ -310,17 +217,9 @@ String * MVCommon.dll::MV::Common::Urls::Urls_get_XPLimit(MethodInfo *method)
   if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__Common__Urls);
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
-  }
-  Urls_ValidateGet(TypeInfo__MV__Common__Urls->static_fields->api,(MethodInfo *)0x0);
+  pSVar1 = Urls_get_API((MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (TypeInfo__MV__Common__Urls->static_fields->api,
-                      StringLiteral_xp_level_xp_limits_data__level_,(MethodInfo *)0x0);
+                     (pSVar1,StringLiteral_xp_level_xp_limits_data__level_,(MethodInfo *)0x0);
   return pSVar1;
 }
 

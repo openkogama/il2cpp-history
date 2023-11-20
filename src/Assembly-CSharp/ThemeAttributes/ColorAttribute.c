@@ -79,64 +79,75 @@ Color * Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_Con
   }
   if (value == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
+    TStack1.m_Index = (int32_t)&UNK_?;
     func_?();
-    pSStack1 = extraout_ECX;
+    TStack1.m_Index = (int32_t)extraout_ECX;
 code_?:
     func_?();
-    pSStack1 = extraout_ECX_00;
+    TStack1.m_Index = (int32_t)extraout_ECX_00;
 code_?:
     func_?();
-    pSStack1 = extraout_ECX_01;
+    TStack1.m_Index = (int32_t)extraout_ECX_01;
   }
   else {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (value,(Object *)StringLiteral_Red,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (value,(Object *)StringLiteral_Green,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (value,(Object *)StringLiteral_Blue,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    pSStack1 =
-         (Single__Class *)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-         Dictionary_2_System_Object_System_Object__get_Item
-                   (value,(Object *)StringLiteral_Alpha,
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)value,
+                       (Object *)StringLiteral_Red,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)value,
+                       (Object *)StringLiteral_Green,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)value,
+                       (Object *)StringLiteral_Blue,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    TStack1 =
+         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+         UIElements::TextureId]::
+         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                   ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)value,
+                    (Object *)StringLiteral_Alpha,
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                    );
     __return_storage_ptr__->r = 0.0;
     __return_storage_ptr__->g = 0.0;
     __return_storage_ptr__->b = 0.0;
     __return_storage_ptr__->a = 0.0;
-    if (pSStack1 == (Single__Class *)0x0) goto code_?;
+    if (TStack1.m_Index == 0) goto code_?;
     pSVar5 = TypeInfo__System__Single;
-    if ((((Object *)pSStack1)->klass->_0).element_class !=
+    if (*(Il2CppClass **)(*(int *)TStack1.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar6 = (float *)func_?();
     fVar7 = *pfVar6;
-    if (pOVar4 == (Object *)0x0) goto code_?;
-    pSStack1 = TypeInfo__System__Single;
-    if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pSStack1 = (Single__Class *)pOVar4;
+    if (TVar4.m_Index == 0) goto code_?;
+    TStack1.m_Index = (int32_t)TypeInfo__System__Single;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      TStack1 = TVar4;
       pfVar6 = (float *)func_?();
       fVar8 = *pfVar6;
-      if (pOVar3 == (Object *)0x0) goto code_?;
-      pSStack1 = TypeInfo__System__Single;
-      if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pSStack1 = (Single__Class *)pOVar3;
+      if (TVar3.m_Index == 0) goto code_?;
+      TStack1.m_Index = (int32_t)TypeInfo__System__Single;
+      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
+        TStack1 = TVar3;
         pfVar6 = (float *)func_?();
         fVar9 = *pfVar6;
-        if (pOVar2 == (Object *)0x0) goto code_?;
-        pSStack1 = TypeInfo__System__Single;
-        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-          pSStack1 = (Single__Class *)pOVar2;
+        if (TVar2.m_Index == 0) goto code_?;
+        TStack1.m_Index = (int32_t)TypeInfo__System__Single;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+            (TypeInfo__System__Single->_0).element_class) {
+          TStack1 = TVar2;
           pfVar6 = (float *)func_?();
           fVar10 = *pfVar6;
           __return_storage_ptr__->g = fVar9;
@@ -153,7 +164,7 @@ code_?:
   func_?();
   pSVar5 = extraout_ECX_02;
 code_?:
-  pSStack1 = pSVar5;
+  TStack1.m_Index = (int32_t)pSVar5;
   func_?();
   pcVar11 = (code *)swi(3);
   pCVar12 = (Color *)(*pcVar11)();
@@ -188,27 +199,24 @@ Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_GetSettings
                       );
   this_01 = (UnityAction_1_UnityEngine_Color_ *)
             func_?(TypeInfo__System__Action<UnityEngine::Color>);
-  if (this_01 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-    UnityAction_1_UnityEngine_Color___ctor
-              (this_01,(Object *)this,(this->klass->vtable).OnSettingsChanged.method,
-               (MethodInfo *)0x0);
-    if (this_00 != (Component *)0x0) {
-      (*(code *)this_00->klass[1]._0.image)(this_00,this);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         (this_00,(MethodInfo *)0x0);
-      pTVar2 = (Transform *)0x0;
-      if (pTVar1 != (Transform *)0x0) {
-        if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-          pTVar2 = pTVar1;
-        }
-        if (pTVar2 == (Transform *)0x0) {
-          func_?();
-          goto code_?;
-        }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+  UnityAction_1_UnityEngine_Color___ctor
+            (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+  if (this_00 != (Component *)0x0) {
+    (*this_00->klass[1]._0.gc_desc)(this_00,this);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       (this_00,(MethodInfo *)0x0);
+    pTVar2 = (Transform *)0x0;
+    if (pTVar1 != (Transform *)0x0) {
+      if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+        pTVar2 = pTVar1;
       }
-      return (RectTransform *)pTVar2;
+      if (pTVar2 == (Transform *)0x0) {
+        func_?();
+        goto code_?;
+      }
     }
+    return (RectTransform *)pTVar2;
   }
 code_?:
   func_?();
@@ -352,48 +360,57 @@ Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_ToSerializa
     func_?(&StringLiteral_Green);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff8);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  fStack_1 = c.r;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Single,&fStack_1);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Red,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Red,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack_3 = (undefined *)c.g;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&puStack_3);
+    fStack_3 = c.g;
+    pOVar2 = (Object *)func_?(TypeInfo__System__Single);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Green,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Green,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     fStack_4 = c.b;
     pOVar2 = (Object *)func_?(TypeInfo__System__Single,&fStack_4);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Blue,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Blue,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
+    puStack5 = &stack0xffffffec;
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Alpha,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Alpha,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    return pDVar1;
+    return (Dictionary_2_System_Object_System_Object_ *)this_00;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar5)();
-  return pDVar1;
+  pcVar6 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar6)();
+  return pDVar7;
 }
 
 
@@ -409,9 +426,8 @@ void Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute__ctor
                    );
     cRam_? = '\x01';
   }
-  StreamedAssetToCallback`2[System::Object,System::Object]::
-  StreamedAssetToCallback_2_System_Object_System_Object___ctor
-            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+  NamedThemeAttribute`1[System::Single]::NamedThemeAttribute_1_System_Single___ctor
+            ((NamedThemeAttribute_1_System_Single_ *)this,
              MethodInfo__ThemeAttributes__NamedThemeAttribute<UnityEngine::Color>__NamedThemeAttribute__
             );
   return;

@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class WinningConditionManager
 {
@@ -30,19 +30,11 @@ public class WinningConditionManager
 	public bool WinningConditionFound { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Events
-	public event EventHandler<EventArgs> OnWinningConditionChanged {
-		add;
-		remove;
-	}
 	public event EventHandler<EventArgs> OnWinningConditionReset {
 		add;
 		remove;
 	}
 	public event EventHandler<EventArgs> OnWinningConditionAddedOrRemoved {
-		add;
-		remove;
-	}
-	public event EventHandler<EventArgs> OnWinningConditionStateChangedEditMode {
 		add;
 		remove;
 	}
@@ -75,20 +67,6 @@ public class WinningConditionManager
 		public bool _GetWinnerConditionsByType_b__2(IWinningCondition winnerCondtion);
 	}
 
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass6
-	{
-		// Fields
-		public WinningCondition winnerConditionBookkeeping;
-		public int id;
-
-		// Constructors
-		public __c__DisplayClass6();
-
-		// Methods
-		public bool _GetWinnerConditionByID_b__5(IWinningCondition returnWinnerCondition);
-	}
-
 	// Constructors
 	public WinningConditionManager();
 
@@ -96,21 +74,15 @@ public class WinningConditionManager
 	public void Initialize(GameStatCounterManager gameStatCounterManager);
 	public void Reset();
 	public void Traverse(Func<IWinningCondition, bool> callBack);
-	public void PublishWinningConditionLimitChanged();
 	public List<IWinningCondition> GetForfilledWinningConditions();
 	public T CreateWinnerCondition<T>(params object[] args)
 		where T : WinningCondition;
 	public T CreateWinnerConditionWithParent<T>(WinningCondition parent, params object[] args)
 		where T : WinningCondition;
 	public void RemoveWinnerCondition(int id);
-	public void SetLimitForSingletonWinningConditionWithRoundReset<T>(int limit)
-		where T : WinningCondition;
 	public List<T> GetWinnerConditionsByType<T>()
 		where T : WinningCondition;
 	public T GetSingletonWinnerConditionByType<T>()
-		where T : WinningCondition;
-	public WinningCondition GetWinnerConditionByID(int id);
-	public T GetWinnerConditionByTypeAndID<T>(int id)
 		where T : WinningCondition;
 	public override string ToString();
 	private void AddWinnerConditionToNode(WinningCondition parent, WinningCondition winnerCondition);

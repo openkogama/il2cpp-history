@@ -58,7 +58,7 @@ Assembly-CSharp.dll::ItemDataController::ItemDataController_GetItemData
       pOVar10 = LStack_6._current;
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<InventoryItemData>__Dispose__
@@ -69,7 +69,7 @@ Assembly-CSharp.dll::ItemDataController::ItemDataController_GetItemData
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
       if (*(int *)((int)LStack_6._current + 0x14) == slot) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<InventoryItemData>__Dispose__
@@ -92,12 +92,12 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_InitializeTestD
                (ItemDataController *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff88;
-  puVar5 = &stack0xffffff88;
+  pPStack_1 = (PropertyInfo *)0xffffffff;
+  pEStack_2 = (EventInfo *)&DAT_?;
+  pFStack_3 = (FieldInfo *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &pFStack_3;
+  pIStack_4 = (Il2CppClass *)&stack0xffffff8c;
+  pIVar5 = (Il2CppClass *)&stack0xffffff8c;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_
@@ -135,156 +135,138 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_InitializeTestD
     func_?(&StringLiteral_Category_);
     func_?(&StringLiteral_ItemId___0___SlotIndex___1___Cat);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    pIVar5 = pIStack_4;
   }
-  puStack_4 = puVar5;
-  pOVar6 = (Object__Class *)0x0;
-  DStack_7.klass = (Dictionary_2_System_Object_System_Object___Class *)0x0;
-  DStack_7.monitor = (MonitorData *)0x0;
-  DStack_7.fields._buckets = (Int32__Array *)0x0;
-  DStack_7.fields._entries =
-       (Dictionary_2_TKey_TValue_Entry_System_Object_System_Object___Array *)0x0;
-  DStack_7.fields._count = 0;
-  DStack_7.fields._freeList = 0;
+  pIStack_4 = pIVar5;
+  pIVar5 = (Il2CppClass *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._16_8_ = (Il2CppType)0x0;
   do {
-    DStack_7.fields._values =
-         (Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ *)((int)pOVar6 % 3);
-    pOStack_8 = pOVar6;
-    IStack_9.m_value = (int32_t)DStack_7.fields._values;
-    DStack_7.fields._syncRoot = (Object *)func_?(TypeInfo__System__Int32,&pOStack_8);
-    pOStack_10 = pOVar6;
-    pOVar11 = (Object *)func_?(TypeInfo__System__Int32,&pOStack_10);
-    pOStack_12 = (Object__Class *)IStack_9.m_value;
-    arg2 = (Object *)func_?(TypeInfo__System__Int32,&pOStack_12);
-    DStack_7.fields._syncRoot =
-         (Object *)
-         mscorlib.dll::System::String::String_Format_2
-                   (StringLiteral_ItemId___0___SlotIndex___1___Cat,DStack_7.fields._syncRoot,pOVar11
-                    ,arg2,(MethodInfo *)0x0);
-    pOVar11 = (Object *)func_?(TypeInfo__InventoryItemData);
-    if (pOVar11 == (Object *)0x0) goto code_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (pOVar11,ExceptionArgument__Enum_obj,unaff_EDI);
-    pOVar11[2].klass = (Object__Class *)DStack_7.fields._values;
-    pOVar11[1].monitor = (MonitorData *)DStack_7.fields._syncRoot;
-    pOVar11[2].monitor = (MonitorData *)pOVar6;
-    func_?(&pOVar11[1].monitor,DStack_7.fields._syncRoot);
-    pOVar11[1].klass = pOVar6;
+    pIStack_7 = (Il2CppClass *)((int)pIVar5 % 3);
+    pIStack_8 = pIVar5;
+    IStack_9.m_value = (int32_t)pIStack_7;
+    pDStack_10 = (Dictionary_2_System_Int32_TabState_ *)
+                 func_?(TypeInfo__System__Int32,&pIStack_8);
+    pIStack_11 = pIVar5;
+    pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_11);
+    pIStack_13 = (Il2CppClass *)IStack_9.m_value;
+    arg2 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_13);
+    pDVar14 = (Dictionary_2_TKey_TValue_Entry_System_Int32_TabState___Array *)
+             mscorlib.dll::System::String::String_Format_2
+                       (StringLiteral_ItemId___0___SlotIndex___1___Cat,(Object *)pDStack_10,pOVar12,
+                        arg2,(MethodInfo *)0x0);
+    method_00 = TypeInfo__InventoryItemData;
+    pDStack_10 = (Dictionary_2_System_Int32_TabState_ *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)pDStack_10,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (pDStack_10->fields)._count = (int32_t)pIStack_7;
+    (pDStack_10->fields)._freeList = (int32_t)pIVar5;
+    (pDStack_10->fields)._entries = pDVar14;
+    func_?(&(pDStack_10->fields)._entries,pDVar14);
+    (pDStack_10->fields)._buckets = (Int32__Array *)pIVar5;
     this_00 = (this->fields).inventoryItemDatas;
     if (this_00 == (List_1_InventoryItemData_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this_00,pOVar11,
+              ((List_1_System_Object_ *)this_00,(Object *)pDStack_10,
                MethodInfo__System__Collections__Generic__List<InventoryItemData>__Add_InventoryItemData_
               );
-    this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).categories;
-    if (this_01 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-    goto code_?;
-    bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_01,(Object *)IStack_9.m_value,
+    pDVar15 = (this->fields).categories;
+    if (pDVar15 == (Dictionary_2_System_Int32_TabState_ *)0x0) goto code_?;
+    bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+            Dictionary_2_System_Int32_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar15,IStack_9.m_value,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__ContainsKey_int_
                       );
-    if (bVar13 == 0) {
-      DStack_7.fields._keys =
-           (Dictionary_2_TKey_TValue_KeyCollection_System_Object_System_Object_ *)
-           (this->fields).categories;
-      pOStack_8 = (Object__Class *)IStack_9.m_value;
+    if (bVar16 == 0) {
+      pDStack_10 = (this->fields).categories;
+      pIStack_8 = (Il2CppClass *)IStack_9.m_value;
       str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
-      DStack_7.fields._syncRoot =
-           (Object *)
-           mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_Category_,str1,(MethodInfo *)0x0);
-      DStack_7.fields._values =
-           (Dictionary_2_TKey_TValue_ValueCollection_System_Object_System_Object_ *)
-           (this->fields).numberOfSlots;
-      DStack_7.fields._version = func_?(TypeInfo__TabState);
-      if ((TabState *)DStack_7.fields._version == (TabState *)0x0) goto code_?;
+      pIStack_7 = (Il2CppClass *)
+                   mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_Category_,str1,(MethodInfo *)0x0);
+      slotsPrPage = (this->fields).numberOfSlots;
+      pTStack_17 = (TabState *)func_?(TypeInfo__TabState);
+      key = pIStack_8;
       TabState::TabState__ctor
-                ((TabState *)DStack_7.fields._version,(int32_t)pOStack_8,
-                 (String *)DStack_7.fields._syncRoot,(int32_t)DStack_7.fields._values,
-                 (MethodInfo *)0x0);
-      if ((Dictionary_2_System_Object_System_Object_ *)DStack_7.fields._keys ==
-          (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)DStack_7.fields._keys,
-                 (Object *)pOStack_8,(Object *)DStack_7.fields._version,
+                (pTStack_17,(int32_t)pIStack_8,(String *)pIStack_7,slotsPrPage,(MethodInfo *)0x0);
+      if (pDStack_10 == (Dictionary_2_System_Int32_TabState_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__Add
+                ((Dictionary_2_System_Int32_System_Object_ *)pDStack_10,(int32_t)key,
+                 (Object *)pTStack_17,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_
                 );
     }
-    this_02 = (this->fields).categories;
-    if (this_02 == (Dictionary_2_System_Int32_TabState_ *)0x0) goto code_?;
-    pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,IStack_9.m_value,
+    pDVar15 = (this->fields).categories;
+    if (pDVar15 == (Dictionary_2_System_Int32_TabState_ *)0x0) goto code_?;
+    pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+             ::Dictionary_2_System_Int32_System_Object__get_Item
+                       ((Dictionary_2_System_Int32_System_Object_ *)pDVar15,IStack_9.m_value,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                        );
-    if (pOVar11 == (Object *)0x0) goto code_?;
-    if ((int)pOVar11[2].klass < (int)pOVar6) {
+    if (pOVar12 == (Object *)0x0) goto code_?;
+    if ((int)pOVar12[2].klass < (int)pIVar5) {
       unaff_EDI = (MethodInfo *)(this->fields).categories;
       if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
-      pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)unaff_EDI,
-                          IStack_9.m_value,
+      pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+               Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                         ((Dictionary_2_System_Int32_System_Object_ *)unaff_EDI,IStack_9.m_value,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                          );
-      if (pOVar11 == (Object *)0x0) goto code_?;
-      pOVar11[2].klass = pOVar6;
+      if (pOVar12 == (Object *)0x0) goto code_?;
+      pOVar12[2].klass = (Object__Class *)pIVar5;
     }
-    pOVar6 = (Object__Class *)((int)&(pOVar6->_0).image + 1);
-  } while ((int)pOVar6 < 0x14);
-  this_03 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).categories;
-  if (this_03 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       (&DStack_15,this_03,
+    pIVar5 = (Il2CppClass *)((int)&((Il2CppClass_0 *)&pIVar5->image)->image + 1);
+  } while ((int)pIVar5 < 0x14);
+  this_01 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).categories;
+  if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       (&DStack_19,this_01,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__GetEnumerator__
                        );
-    DStack_7.fields._comparer = (IEqualityComparer_1_System_Object_ *)0x0;
-    DStack_7.klass = (Dictionary_2_System_Object_System_Object___Class *)pDVar14->_dictionary;
-    DStack_7.monitor = (MonitorData *)pDVar14->_version;
-    DStack_7.fields._buckets = (Int32__Array *)pDVar14->_index;
-    DStack_7.fields._entries =
-         (Dictionary_2_TKey_TValue_Entry_System_Object_System_Object___Array *)
-         (pDVar14->_current).key;
-    DStack_7.fields._8_8_ = *(undefined8 *)&(pDVar14->_current).value;
-    uStack_1 = 1;
-    DStack_7.fields._keys =
-         (Dictionary_2_TKey_TValue_KeyCollection_System_Object_System_Object_ *)&DStack_7;
+    pIStack_20 = (Il2CppClass *)0x0;
+    DStack_6._dictionary = pDVar18->_dictionary;
+    DStack_6._version = pDVar18->_version;
+    DStack_6._index = pDVar18->_index;
+    DStack_6._current.key = (pDVar18->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar18->_current).value;
+    pPStack_1 = (PropertyInfo *)0x1;
+    pIStack_7 = (Il2CppClass *)&DStack_6;
     while( true ) {
-      bVar13 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
-                         &DStack_7,
+      bVar16 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__MoveNext__
                         );
-      if (bVar13 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)&DStack_7,
+      if (bVar16 == 0) {
+        pPStack_1 = (PropertyInfo *)0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__Dispose__
                    ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
+        *unaff_FS_OFFSET = pFStack_3;
         return;
       }
-      pIVar16 = (this->fields).inventoryController;
-      if (((DStack_7.fields._count == 0) ||
-          (DStack_7.fields._version = *(int32_t *)(DStack_7.fields._count + 0xc),
-          pIVar16 == (InventoryController *)0x0)) ||
-         (pTVar17 = (pIVar16->fields).tabMenu, pTVar17 == (TabMenuBase *)0x0)) break;
-      (*(pTVar17->klass->vtable).__unknown.methodPtr)
-                (pTVar17,DStack_7.fields._entries,DStack_7.fields._version,
-                 (pTVar17->klass->vtable).__unknown.method);
+      pIVar21 = (this->fields).inventoryController;
+      if (((DStack_6._current.value == (void *)0x0) ||
+          (pTStack_17 = *(TabState **)&((Il2CppType *)(DStack_6._current.value + 1))->attrs,
+          pIVar21 == (InventoryController *)0x0)) ||
+         (pTVar22 = (pIVar21->fields).tabMenu, pTVar22 == (TabMenuBase *)0x0)) break;
+      (*(code *)(pTVar22->klass->vtable).__unknown.method)
+                (pTVar22,DStack_6._current.key,pTStack_17,
+                 (pTVar22->klass->vtable).__unknown_1.methodPtr);
     }
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -304,9 +286,9 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_PageTurned
   this_00 = (this->fields).categories;
   if (this_00 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
     this_01 = (TabState *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__get_Item
+                        ((Dictionary_2_System_Int32_System_Object_ *)this_00,
                          (this->fields).currentTab,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                         );
@@ -378,138 +360,93 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_Start
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).inventoryController;
-  pvVar2 = (void *)(this->fields).numberOfSlots;
-  this_01 = (Delegate *)0x0;
   if (pIVar1 == (InventoryController *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
 code_?:
     func_?();
   }
   else {
-    (pIVar1->fields).numberOfSlots = (int32_t)pvVar2;
-    this_01 = (Delegate *)(pIVar1->fields).inventorySlots;
-    if (this_01 == (Delegate *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                     );
-      func_?(&
-                      InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                     );
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    unaff_EDI = (Delegate *)0x0;
-    (this_01->fields).method = pvVar2;
-    if (0 < (int)pvVar2) {
-      do {
-        pOVar3 = (this_01->fields).m_target;
-        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_01,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                           (pOVar3,parent,0,
-                            InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                           );
-        this_00 = (this_01->fields).invoke_impl;
-        if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)unaff_EDI,pOVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                  );
-        unaff_EDI = (Delegate *)((int)&unaff_EDI->klass + 1);
-      } while ((int)unaff_EDI < (int)pvVar2);
-    }
-    unaff_EDI = (Delegate *)(this->fields).inventoryController;
-    if (unaff_EDI == (Delegate *)0x0) goto code_?;
-    pDVar4 = (unaff_EDI->fields).extra_arg;
-    pUVar5 = (UnityAction_1_System_Int32Enum_ *)
+    InventoryController::InventoryController_Initialize
+              (pIVar1,(this->fields).numberOfSlots,(MethodInfo *)0x0);
+    pIVar1 = (this->fields).inventoryController;
+    if (pIVar1 == (InventoryController *)0x0) goto code_?;
+    pUVar2 = (pIVar1->fields).OnPageTurned;
+    pUVar3 = (UnityAction_1_System_Int32Enum_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-    this_01 = (Delegate *)0x0;
-    if (pUVar5 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar5,(Object *)this,MethodInfo__ItemDataController__PageTurned_int_,
+              (pUVar3,(Object *)this,MethodInfo__ItemDataController__PageTurned_int_,
                (MethodInfo *)0x0);
-    this_01 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        (pDVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-    if (this_01 == (Delegate *)0x0) {
-      (unaff_EDI->fields).extra_arg = (void *)0x0;
-    }
-    else {
-      pvVar2 = (void *)func_?(this_01);
-      if (pvVar2 == (void *)0x0) goto code_?;
-      (unaff_EDI->fields).extra_arg = pvVar2;
-      iVar6 = func_?(this_01);
-      if (iVar6 == 0) goto code_?;
-    }
-    func_?(&(unaff_EDI->fields).extra_arg);
-    this_01 = (Delegate *)(this->fields).inventoryController;
-    if (this_01 == (Delegate *)0x0) goto code_?;
-    pDVar4 = (this_01->fields).method_code;
-    pUVar5 = (UnityAction_1_System_Int32Enum_ *)
-             func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-    unaff_EDI = (Delegate *)0x0;
-    if (pUVar5 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (pUVar5,(Object *)this,MethodInfo__ItemDataController__TabSelected_int_,
-               (MethodInfo *)0x0);
-    unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          (pDVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-    if (unaff_EDI == (Delegate *)0x0) {
-      (this_01->fields).method_code = (void *)0x0;
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (pIVar1->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
-      func_?(&(this_01->fields).method_code);
-      this_01 = (Delegate *)(this->fields).inventoryController;
-      if (this_01 != (Delegate *)0x0) {
-        pDVar4 = (this_01->fields).interp_method;
-        this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
-                  func_?(TypeInfo__UnityEngine__Events__UnityAction<int,_int>);
-        unaff_EDI = (Delegate *)0x0;
-        if (this_02 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
-          Int32]::UnityAction_2_System_Int32_System_Int32___ctor
-                    (this_02,(Object *)this,MethodInfo__ItemDataController__SlotChanged_int__int_,
-                     (MethodInfo *)0x0);
-          unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                                (pDVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-          if (unaff_EDI == (Delegate *)0x0) {
-            (this_01->fields).interp_method = (void *)0x0;
+      func_?();
+      pIVar1 = (this->fields).inventoryController;
+      if (pIVar1 == (InventoryController *)0x0) goto code_?;
+      pUVar2 = (pIVar1->fields).OnTabSelected;
+      pUVar3 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (pUVar3,(Object *)this,MethodInfo__ItemDataController__TabSelected_int_,
+                 (MethodInfo *)0x0);
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+      if (pDVar4 != (Delegate *)0x0) {
+        pUVar2 = (UnityAction_1_System_Int32_ *)func_?();
+        if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+        (pIVar1->fields).OnTabSelected = pUVar2;
+        iVar5 = func_?();
+        if (iVar5 != 0) goto code_?;
+        goto code_?;
+      }
+      (pIVar1->fields).OnTabSelected = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
-            func_?(&(this_01->fields).interp_method);
-            ItemDataController_InitializeTestData(this,(MethodInfo *)0x0);
-            iVar6 = (this->fields).defaultCategoryID;
-            if (iVar6 != (this->fields).currentTab) {
-              (this->fields).currentTab = iVar6;
-              ItemDataController_UpdateContent(this,(MethodInfo *)0x0);
-            }
-            return;
-          }
-          pvVar2 = (void *)func_?(unaff_EDI);
-          if (pvVar2 != (void *)0x0) {
-            (this_01->fields).interp_method = pvVar2;
-            iVar6 = func_?(unaff_EDI);
-            if (iVar6 != 0) goto code_?;
-          }
-          goto code_?;
+      func_?();
+      pIVar1 = (this->fields).inventoryController;
+      if (pIVar1 == (InventoryController *)0x0) goto code_?;
+      pUVar6 = (pIVar1->fields).OnSlotChanged;
+      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+      UnityAction_2_System_Int32_System_Int32___ctor
+                (this_00,(Object *)this,MethodInfo__ItemDataController__SlotChanged_int__int_,
+                 (MethodInfo *)0x0);
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar6,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (pIVar1->fields).OnSlotChanged = (UnityAction_2_System_Int32_System_Int32_ *)0x0;
+code_?:
+        func_?();
+        ItemDataController_InitializeTestData(this,(MethodInfo *)0x0);
+        iVar5 = (this->fields).defaultCategoryID;
+        if (iVar5 != (this->fields).currentTab) {
+          (this->fields).currentTab = iVar5;
+          ItemDataController_UpdateContent(this,(MethodInfo *)0x0);
         }
+        return;
+      }
+      pUVar6 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+      if (pUVar6 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+        (pIVar1->fields).OnSlotChanged = pUVar6;
+        iVar5 = func_?();
+        if (iVar5 != 0) goto code_?;
+        goto code_?;
       }
       goto code_?;
     }
-    pvVar2 = (void *)func_?(unaff_EDI);
-    if (pvVar2 != (void *)0x0) {
-      (this_01->fields).method_code = pvVar2;
-      iVar6 = func_?(unaff_EDI);
-      if (iVar6 != 0) goto code_?;
-    }
+    pUVar2 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+    (pIVar1->fields).OnPageTurned = pUVar2;
+    iVar5 = func_?();
+    if (iVar5 != 0) goto code_?;
   }
+  func_?();
 code_?:
-  func_?(unaff_EDI);
-code_?:
-  func_?(this_01);
+  func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -567,9 +504,9 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_UpdateContent
   this_00 = (this->fields).categories;
   if (this_00 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
     pTStack_6 = (TabState *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                           ((Dictionary_2_System_Int32_System_Object_ *)this_00,
                             (this->fields).currentTab,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                            );
@@ -585,7 +522,7 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_UpdateContent
                      TabState::TabState_get_MaxPages(pTStack_6,(MethodInfo *)0x0);
         if ((pIVar7 != (InventoryController *)0x0) &&
            (pTVar12 = (pIVar7->fields).tabMenu, pTVar12 != (TabMenuBase *)0x0)) {
-          (*(pTVar12->klass->vtable).__unknown_1.methodPtr)();
+          (*(code *)(pTVar12->klass->vtable).__unknown_1.method)();
           pIVar8 = (pIVar7->fields).inventorySlots;
           if (pIVar8 != (InventorySlots *)0x0) {
             InventorySlots::InventorySlots_UpdateAbsoluteSlotValues
@@ -616,7 +553,7 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_UpdateContent
                     if (bVar16 == 0) {
                       uStack_1 = 0xffffffff;
                       mscorlib.dll::System::ThrowHelper::
-                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                                 ((Object *)&stack0xffffffb8,
                                  (ExceptionArgument__Enum)
                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<InventoryItemData>__Dispose__
@@ -691,30 +628,24 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController__ctor
   (this->fields).currentTab = -1;
   this_00 = (List_1_InventoryItemData_ *)
             func_?(TypeInfo__System__Collections__Generic__List<InventoryItemData>);
-  if (this_00 != (List_1_InventoryItemData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<InventoryItemData>__List__);
-    (this->fields).inventoryItemDatas = this_00;
-    func_?(&(this->fields).inventoryItemDatas,this_00);
-    this_01 = (Dictionary_2_System_Int32_TabState_ *)
-              func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_TabState>);
-    if (this_01 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Dictionary__);
-      (this->fields).categories = this_01;
-      func_?(&(this->fields).categories,this_01);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<InventoryItemData>__List__);
+  (this->fields).inventoryItemDatas = this_00;
+  func_?(&(this->fields).inventoryItemDatas,this_00);
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_TabState>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Dictionary__);
+  (this->fields).categories = (Dictionary_2_System_Int32_TabState_ *)this_01;
+  func_?(&(this->fields).categories,this_01);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

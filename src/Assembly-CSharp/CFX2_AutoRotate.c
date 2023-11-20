@@ -36,8 +36,8 @@ void Assembly-CSharp.dll::CFX2_AutoRotate::CFX2_AutoRotate__ctor
   (this->fields).speed.x = (float)(int)(uVar1 << 0x20);
   (this->fields).speed.y = (float)(int)((uVar1 << 0x20) >> 0x20);
   (this->fields).speed.z = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

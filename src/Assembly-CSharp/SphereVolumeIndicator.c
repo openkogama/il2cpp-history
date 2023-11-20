@@ -11,25 +11,23 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_CopyMater
   }
   source = (this->fields).lineDotMaterial;
   this_00 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-  if (this_00 != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-              (this_00,source,(MethodInfo *)0x0);
-    (this->fields).materialCopy = this_00;
-    func_?(&(this->fields).materialCopy,this_00);
-    pLVar1 = (this->fields).rangeIndicatorXY;
+  UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+            (this_00,source,(MethodInfo *)0x0);
+  (this->fields).materialCopy = this_00;
+  func_?(&(this->fields).materialCopy,this_00);
+  pLVar1 = (this->fields).rangeIndicatorXY;
+  if (pLVar1 != (LineRenderer *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+              ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
+    pLVar1 = (this->fields).rangeIndicatorYZ;
     if (pLVar1 != (LineRenderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                 ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).rangeIndicatorYZ;
+      pLVar1 = (this->fields).rangeIndicatorZX;
       if (pLVar1 != (LineRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                   ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-        pLVar1 = (this->fields).rangeIndicatorZX;
-        if (pLVar1 != (LineRenderer *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                    ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-          return;
-        }
+        return;
       }
     }
   }

@@ -21,19 +21,6 @@ public class TeamMenuButton : MonoBehaviour
 	private GameObject buttonEnabler;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass7_0
-	{
-		// Fields
-		public TeamMenu newTeamMenu;
-
-		// Constructors
-		public __c__DisplayClass7_0();
-
-		// Methods
-		internal void _ShowTeamMenu_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -48,6 +35,19 @@ public class TeamMenuButton : MonoBehaviour
 
 		// Methods
 		internal void _ShowTeamMenu_b__7_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public TeamMenu newTeamMenu;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _ShowTeamMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -104,7 +104,8 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
 
 {
   if ((this->fields).isDragging == 0) {
-    (*(this->klass->vtable).Select.methodPtr)(this,(this->klass->vtable).Select.method);
+    (*(code *)(this->klass->vtable).Select.method)
+              (this,(this->klass->vtable).OnSelctionHighlight.methodPtr);
   }
   return;
 }
@@ -132,7 +133,7 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
     func_?();
     cRam_? = '\x01';
   }
-  x = *(Object_1 **)(in_stack_2 + 0x38);
+  x = *(Object_1 **)(in_stack_2 + 0x3c);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
@@ -146,8 +147,8 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
   this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_02 != (MVNetworkGame *)0x0) {
     iVar5 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0);
-    if ((*(int *)(in_stack_2 + 0x38) != 0) &&
-       (this_00 = *(BoneAnimation **)(*(int *)(in_stack_2 + 0x38) + 0x14),
+    if ((*(int *)(in_stack_2 + 0x3c) != 0) &&
+       (this_00 = *(BoneAnimation **)(*(int *)(in_stack_2 + 0x3c) + 0x18),
        this_00 != (BoneAnimation *)0x0)) {
       BoneAnimation::BoneAnimation_StartAnimation
                 (this_00,StringLiteral_Idle,(iVar5 - iVar4) + -500,(MethodInfo *)0x0);
@@ -178,40 +179,41 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
     cRam_? = '\x01';
   }
   if (avatarObject != (GameObject *)0x0) {
-    pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)avatarObject,
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
+                       (avatarObject,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    pMVar2 = (MonitorData *)0x0;
-    if (pIVar1 != (IEnumerable_1_System_Object_ *)0x0) {
-      pIVar3 = pIVar1 + 2;
-      for (; (int)pMVar2 < (int)pIVar1[1].monitor; pMVar2 = pMVar2 + 1) {
-        if (pIVar1[1].monitor <= pMVar2) goto code_?;
-        if (pIVar3->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+    uVar2 = 0;
+    if (pOVar1 != (Object__Array *)0x0) {
+      ppOVar3 = pOVar1->vector;
+      for (; (int)uVar2 < (int)pOVar1->max_length; uVar2 = uVar2 + 1) {
+        if (pOVar1->max_length <= uVar2) goto code_?;
+        if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)pIVar3->klass,1,(MethodInfo *)0x0);
-        pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
+                  ((Renderer *)*ppOVar3,1,(MethodInfo *)0x0);
+        ppOVar3 = ppOVar3 + 1;
       }
-      pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)avatarObject,
+      pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+               GameObject_GetComponentsInChildren
+                         (avatarObject,
                           PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
                          );
-      pMVar2 = (MonitorData *)0x0;
-      if (pIVar1 != (IEnumerable_1_System_Object_ *)0x0) {
-        pIVar3 = pIVar1 + 2;
+      uVar2 = 0;
+      if (pOVar1 != (Object__Array *)0x0) {
+        ppOVar3 = pOVar1->vector;
         while( true ) {
-          if ((int)pIVar1[1].monitor <= (int)pMVar2) {
+          if ((int)pOVar1->max_length <= (int)uVar2) {
             return;
           }
-          if (pIVar1[1].monitor <= pMVar2) break;
-          if (pIVar3->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+          if (pOVar1->max_length <= uVar2) break;
+          if ((Component *)*ppOVar3 == (Component *)0x0) goto code_?;
           this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pIVar3->klass,(MethodInfo *)0x0);
+                              ((Component *)*ppOVar3,(MethodInfo *)0x0);
           if (this_00 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (this_00,0,(MethodInfo *)0x0);
-          pMVar2 = pMVar2 + 1;
-          pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
+          uVar2 = uVar2 + 1;
+          ppOVar3 = ppOVar3 + 1;
         }
 code_?:
         func_?();
@@ -300,36 +302,37 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
     cRam_? = '\x01';
   }
   if (this_01 != (GameObject *)0x0) {
-    pIVar2 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this_01,
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
+                       (this_01,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    pMVar3 = (MonitorData *)0x0;
-    if (pIVar2 != (IEnumerable_1_System_Object_ *)0x0) {
-      pIVar4 = pIVar2 + 2;
-      for (; (int)pMVar3 < (int)pIVar2[1].monitor; pMVar3 = pMVar3 + 1) {
-        if (pIVar2[1].monitor <= pMVar3) goto code_?;
-        if (pIVar4->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+    uVar3 = 0;
+    if (pOVar2 != (Object__Array *)0x0) {
+      ppOVar4 = pOVar2->vector;
+      for (; (int)uVar3 < (int)pOVar2->max_length; uVar3 = uVar3 + 1) {
+        if (pOVar2->max_length <= uVar3) goto code_?;
+        if ((Renderer *)*ppOVar4 == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)pIVar4->klass,1,(MethodInfo *)0x0);
-        pIVar4 = (IEnumerable_1_System_Object_ *)&pIVar4->monitor;
+                  ((Renderer *)*ppOVar4,1,(MethodInfo *)0x0);
+        ppOVar4 = ppOVar4 + 1;
       }
-      pIVar2 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this_01,
+      pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+               GameObject_GetComponentsInChildren
+                         (this_01,
                           PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
                          );
-      pMVar3 = (MonitorData *)0x0;
-      if (pIVar2 != (IEnumerable_1_System_Object_ *)0x0) {
-        pIVar4 = pIVar2 + 2;
-        for (; (int)pMVar3 < (int)pIVar2[1].monitor; pMVar3 = pMVar3 + 1) {
-          if (pIVar2[1].monitor <= pMVar3) goto code_?;
-          if (pIVar4->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
+      uVar3 = 0;
+      if (pOVar2 != (Object__Array *)0x0) {
+        ppOVar4 = pOVar2->vector;
+        for (; (int)uVar3 < (int)pOVar2->max_length; uVar3 = uVar3 + 1) {
+          if (pOVar2->max_length <= uVar3) goto code_?;
+          if ((Component *)*ppOVar4 == (Component *)0x0) goto code_?;
           pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pIVar4->klass,(MethodInfo *)0x0);
+                             ((Component *)*ppOVar4,(MethodInfo *)0x0);
           if (pGVar5 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar5,0,(MethodInfo *)0x0);
-          pIVar4 = (IEnumerable_1_System_Object_ *)&pIVar4->monitor;
+          ppOVar4 = ppOVar4 + 1;
         }
         pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (this_01,(MethodInfo *)0x0);
@@ -343,9 +346,9 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
                      (MethodInfo *)0x0);
           pGVar7 = TypeInfo__UnityEngine__GameObject;
           pGVar5 = (GameObject *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                    (pGVar5,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
           if (pGVar5 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                      (pGVar5,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
             pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                (pGVar5,(MethodInfo *)0x0);
             pSVar1 = (this->fields).spawnRolePreviewer;
@@ -382,18 +385,6 @@ code_?:
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
-  return;
-}
-
-
-/* Void set_IsDragging(Boolean) */
-
-void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
-     DefaultSpawnRoleSelectionElement_set_IsDragging
-               (DefaultSpawnRoleSelectionElement *this,bool value,MethodInfo *method)
-
-{
-  (this->fields).isDragging = value;
   return;
 }
 

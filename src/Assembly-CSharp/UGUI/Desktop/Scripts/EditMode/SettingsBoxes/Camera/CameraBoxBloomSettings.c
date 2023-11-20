@@ -142,8 +142,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
         pIVar5 = (this->fields).colorImage;
         if (pIVar5 != (Image *)0x0) {
-          (*(pIVar5->klass->vtable).set_color.methodPtr)
-                    (pIVar5,fVar2,fVar3,fVar4,0x3f800000,(pIVar5->klass->vtable).set_color.method);
+          (*(code *)(pIVar5->klass->vtable).set_color.method)
+                    (pIVar5,fVar2,fVar3,fVar4,0x3f800000,
+                     (pIVar5->klass->vtable).get_raycastTarget.methodPtr);
           this_00 = (this->fields).colorPicker;
           if (this_00 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -176,8 +177,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
   }
   pIVar1 = (this->fields).colorImage;
   if (pIVar1 != (Image *)0x0) {
-    pfVar2 = (float *)(*(pIVar1->klass->vtable).get_color.methodPtr)
-                                (&fStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    pfVar2 = (float *)(*(code *)(pIVar1->klass->vtable).get_color.method)
+                                (&fStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
     fStack_4 = *pfVar2;
     fStack_5 = pfVar2[1];
     fStack_6 = pfVar2[2];
@@ -200,9 +201,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
             fStack_9 = fStack_5;
             fStack_10 = fStack_6;
             uStack_11 = 0x3f800000;
-            (*(pIVar1->klass->vtable).set_color.methodPtr)
+            (*(code *)(pIVar1->klass->vtable).set_color.method)
                       (pIVar1,fStack_4,fStack_5,fStack_6,0x3f800000,
-                       (pIVar1->klass->vtable).set_color.method);
+                       (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
             this_00 = (this->fields).colorPicker;
             if (this_00 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -243,130 +244,276 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
   }
   pCVar1 = this;
   this = (CameraBoxBloomSettings *)((uint)this & 0xffffff);
-  this_00 = (pCVar1->fields).featureOnToggle;
-  pCVar2 = (pCVar1->fields).cameraBoxSettings;
-  pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  if (pCVar2 != (CameraBoxSettings *)0x0) {
-    pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                       (pCVar2,StringLiteral_ppBloomOn,pOVar3,(MethodInfo *)0x0);
-    uVar4 = CONCAT44(TypeInfo__System__Boolean,pOVar3);
-    if ((this_00 != (SettingsToggle *)0x0) && (pOVar3 != (Object *)0x0)) {
-      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
-      pbVar5 = (bool *)func_?(pOVar3);
-      SettingsToggle::SettingsToggle_Initialize
-                (this_00,StringLiteral_ppBloomOn,*pbVar5,(MethodInfo *)0x0);
-      pCVar2 = (pCVar1->fields).cameraBoxSettings;
-      uStack_6 = 0;
-      pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
-      if (pCVar2 != (CameraBoxSettings *)0x0) {
-        pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                           (pCVar2,StringLiteral_ppBloomInty,pOVar3,(MethodInfo *)0x0);
-        uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-        if (pOVar3 != (Object *)0x0) {
-          if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-          goto code_?;
-          piVar7 = (int32_t *)func_?(pOVar3);
-          pSVar8 = (pCVar1->fields).intensitySlider;
-          if (pSVar8 != (SettingsSlider *)0x0) {
-            iVar9 = *piVar7;
-            SettingsSlider::SettingsSlider_Initialize_1
-                      (pSVar8,StringLiteral_ppBloomInty,iVar9,0,7,(MethodInfo *)0x0);
-            pSVar10 = (pCVar1->fields).intensityInputField;
-            if (pSVar10 != (SettingsInputFieldSlider *)0x0) {
-              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                        (pSVar10,StringLiteral_ppBloomInty,iVar9,(MethodInfo *)0x0);
-              pCVar2 = (pCVar1->fields).cameraBoxSettings;
-              uStack_11 = 5;
-              pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&uStack_11);
-              if (pCVar2 != (CameraBoxSettings *)0x0) {
-                pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                                   (pCVar2,StringLiteral_ppBloomSKnee,pOVar3,(MethodInfo *)0x0);
-                uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-                if (pOVar3 != (Object *)0x0) {
-                  if ((pOVar3->klass->_0).element_class !=
-                      (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                  piVar7 = (int32_t *)func_?(pOVar3);
-                  pSVar8 = (pCVar1->fields).softKneeSlider;
-                  if (pSVar8 != (SettingsSlider *)0x0) {
-                    iVar9 = *piVar7;
-                    SettingsSlider::SettingsSlider_Initialize_1
-                              (pSVar8,StringLiteral_ppBloomSKnee,iVar9,0,10,(MethodInfo *)0x0);
-                    pSVar10 = (pCVar1->fields).softKneeInputField;
-                    if (pSVar10 != (SettingsInputFieldSlider *)0x0) {
-                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                (pSVar10,StringLiteral_ppBloomSKnee,iVar9,(MethodInfo *)0x0);
-                      pCVar2 = (pCVar1->fields).cameraBoxSettings;
-                      uStack_12 = 7;
-                      pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&uStack_12);
-                      if (pCVar2 != (CameraBoxSettings *)0x0) {
-                        pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                                           (pCVar2,StringLiteral_ppBloomDiff,pOVar3,
-                                            (MethodInfo *)0x0);
-                        uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-                        if (pOVar3 != (Object *)0x0) {
-                          if ((pOVar3->klass->_0).element_class !=
-                              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                          piVar7 = (int32_t *)func_?(pOVar3);
-                          pSVar8 = (pCVar1->fields).diffusionSlider;
-                          if (pSVar8 != (SettingsSlider *)0x0) {
-                            iVar9 = *piVar7;
-                            SettingsSlider::SettingsSlider_Initialize_1
-                                      (pSVar8,StringLiteral_ppBloomDiff,iVar9,1,10,(MethodInfo *)0x0
-                                      );
-                            pSVar10 = (pCVar1->fields).diffusionInputField;
-                            if (pSVar10 != (SettingsInputFieldSlider *)0x0) {
-                              SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                                        (pSVar10,StringLiteral_ppBloomDiff,iVar9,(MethodInfo *)0x0);
-                              pCVar2 = (pCVar1->fields).cameraBoxSettings;
-                              uStack_13 = 0x3f800000;
-                              pOVar3 = (Object *)
-                                       func_?(TypeInfo__System__Single,&uStack_13);
-                              if (pCVar2 != (CameraBoxSettings *)0x0) {
-                                pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                                                   (pCVar2,StringLiteral_ppBloomColR,pOVar3,
-                                                    (MethodInfo *)0x0);
-                                uVar4 = CONCAT44(TypeInfo__System__Single,pOVar3);
-                                if (pOVar3 != (Object *)0x0) {
-                                  if ((pOVar3->klass->_0).element_class !=
-                                      (TypeInfo__System__Single->_0).element_class)
+  pSStack_2 = (pCVar1->fields).featureOnToggle;
+  pCVar3 = (pCVar1->fields).cameraBoxSettings;
+  value = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
+  if (pCVar3 != (CameraBoxSettings *)0x0) {
+    pSStack_4 = StringLiteral_ppBloomOn;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                     );
+      cRam_? = '\x01';
+    }
+    pDVar5 = (pCVar3->fields).woData;
+    pOStack_6 = (Object *)0x0;
+    if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                        (pDVar5,(Object *)pSStack_4,&pOStack_6,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                        );
+      this_00 = pSStack_2;
+      if (bVar7 != 0) {
+        value = pOStack_6;
+      }
+      if ((pSStack_2 != (SettingsToggle *)0x0) && (value != (Object *)0x0)) {
+        pIVar8 = (Int32__Class *)TypeInfo__System__Boolean;
+        if ((value->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+        goto code_?;
+        pbVar9 = (bool *)func_?(value);
+        SettingsToggle::SettingsToggle_Initialize
+                  (this_00,StringLiteral_ppBloomOn,*pbVar9,(MethodInfo *)0x0);
+        pCVar3 = (pCVar1->fields).cameraBoxSettings;
+        uStack_10 = 0;
+        value = (Object *)func_?(TypeInfo__System__Int32,&uStack_10);
+        if (pCVar3 != (CameraBoxSettings *)0x0) {
+          pSStack_2 = (SettingsToggle *)StringLiteral_ppBloomInty;
+          if (cRam_? == '\0') {
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                           );
+            cRam_? = '\x01';
+          }
+          pDVar5 = (pCVar3->fields).woData;
+          pOStack_6 = (Object *)0x0;
+          if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                              (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                              );
+            if (bVar7 != 0) {
+              value = pOStack_6;
+            }
+            if (value != (Object *)0x0) {
+              pIVar8 = TypeInfo__System__Int32;
+              if ((value->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+              goto code_?;
+              piVar11 = (int32_t *)func_?(value);
+              pSVar12 = (pCVar1->fields).intensitySlider;
+              if (pSVar12 != (SettingsSlider *)0x0) {
+                value = (Object *)*piVar11;
+                SettingsSlider::SettingsSlider_Initialize_1
+                          (pSVar12,StringLiteral_ppBloomInty,(int32_t)value,0,7,(MethodInfo *)0x0);
+                pSVar13 = (pCVar1->fields).intensityInputField;
+                if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                            (pSVar13,StringLiteral_ppBloomInty,(int32_t)value,(MethodInfo *)0x0);
+                  pCVar3 = (pCVar1->fields).cameraBoxSettings;
+                  uStack_14 = 5;
+                  value = (Object *)func_?(TypeInfo__System__Int32,&uStack_14);
+                  if (pCVar3 != (CameraBoxSettings *)0x0) {
+                    pSStack_2 = (SettingsToggle *)StringLiteral_ppBloomSKnee;
+                    if (cRam_? == '\0') {
+                      func_?(&
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                     );
+                      cRam_? = '\x01';
+                    }
+                    pDVar5 = (pCVar3->fields).woData;
+                    pOStack_6 = (Object *)0x0;
+                    if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,System::Object]::
+                              Dictionary_2_System_Object_System_Object__TryGetValue
+                                        (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                        );
+                      if (bVar7 != 0) {
+                        value = pOStack_6;
+                      }
+                      if (value != (Object *)0x0) {
+                        pIVar8 = TypeInfo__System__Int32;
+                        if ((value->klass->_0).element_class !=
+                            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                        piVar11 = (int32_t *)func_?(value);
+                        pSVar12 = (pCVar1->fields).softKneeSlider;
+                        if (pSVar12 != (SettingsSlider *)0x0) {
+                          value = (Object *)*piVar11;
+                          SettingsSlider::SettingsSlider_Initialize_1
+                                    (pSVar12,StringLiteral_ppBloomSKnee,(int32_t)value,0,10,
+                                     (MethodInfo *)0x0);
+                          pSVar13 = (pCVar1->fields).softKneeInputField;
+                          if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
+                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                                      (pSVar13,StringLiteral_ppBloomSKnee,(int32_t)value,
+                                       (MethodInfo *)0x0);
+                            pCVar3 = (pCVar1->fields).cameraBoxSettings;
+                            uStack_15 = 7;
+                            value = (Object *)func_?(TypeInfo__System__Int32,&uStack_15);
+                            if (pCVar3 != (CameraBoxSettings *)0x0) {
+                              pSStack_2 = (SettingsToggle *)StringLiteral_ppBloomDiff;
+                              if (cRam_? == '\0') {
+                                func_?(&
+                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                               );
+                                cRam_? = '\x01';
+                              }
+                              pDVar5 = (pCVar3->fields).woData;
+                              pOStack_6 = (Object *)0x0;
+                              if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                bVar7 = mscorlib.dll::System::Collections::Generic::
+                                        Dictionary`2[System::Object,System::Object]::
+                                        Dictionary_2_System_Object_System_Object__TryGetValue
+                                                  (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                                                                                                      
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                if (bVar7 != 0) {
+                                  value = pOStack_6;
+                                }
+                                if (value != (Object *)0x0) {
+                                  pIVar8 = TypeInfo__System__Int32;
+                                  if ((value->klass->_0).element_class !=
+                                      (TypeInfo__System__Int32->_0).element_class)
                                   goto code_?;
-                                  func_?(pOVar3);
-                                  pCVar2 = (pCVar1->fields).cameraBoxSettings;
-                                  uStack_14 = 0x3f800000;
-                                  pOVar3 = (Object *)
-                                           func_?(TypeInfo__System__Single,&uStack_14);
-                                  if (pCVar2 != (CameraBoxSettings *)0x0) {
-                                    pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                                                       (pCVar2,StringLiteral_ppBloomColG,pOVar3,
-                                                        (MethodInfo *)0x0);
-                                    uVar4 = CONCAT44(TypeInfo__System__Single,pOVar3);
-                                    if (pOVar3 != (Object *)0x0) {
-                                      if ((pOVar3->klass->_0).element_class !=
-                                          (TypeInfo__System__Single->_0).element_class)
-                                      goto code_?;
-                                      puVar15 = (undefined4 *)func_?(pOVar3);
-                                      pCVar2 = (pCVar1->fields).cameraBoxSettings;
-                                      uVar16 = *puVar15;
-                                      uStack_17 = 0x3f800000;
-                                      pOVar3 = (Object *)
-                                               func_?(TypeInfo__System__Single,&uStack_17);
-                                      if (pCVar2 != (CameraBoxSettings *)0x0) {
-                                        pOVar3 = CameraBoxSettings::CameraBoxSettings_GetSetting
-                                                           (pCVar2,StringLiteral_ppBloomColB,pOVar3,
-                                                            (MethodInfo *)0x0);
-                                        uVar4 = CONCAT44(TypeInfo__System__Single,pOVar3);
-                                        if (pOVar3 != (Object *)0x0) {
-                                          if ((pOVar3->klass->_0).element_class !=
-                                              (TypeInfo__System__Single->_0).element_class)
-                                          goto code_?;
-                                          puVar15 = (undefined4 *)func_?(pOVar3);
-                                          pIVar18 = (pCVar1->fields).colorImage;
-                                          if (pIVar18 != (Image *)0x0) {
-                                            (*(pIVar18->klass->vtable).set_color.methodPtr)
-                                                      (pIVar18,(pIVar18->klass->vtable).set_color.
-                                                              method,uVar16,*puVar15,0x3f800000);
-                                            return;
+                                  piVar11 = (int32_t *)func_?(value);
+                                  pSVar12 = (pCVar1->fields).diffusionSlider;
+                                  if (pSVar12 != (SettingsSlider *)0x0) {
+                                    value = (Object *)*piVar11;
+                                    SettingsSlider::SettingsSlider_Initialize_1
+                                              (pSVar12,StringLiteral_ppBloomDiff,(int32_t)value,1,10,
+                                               (MethodInfo *)0x0);
+                                    pSVar13 = (pCVar1->fields).diffusionInputField;
+                                    if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
+                                      SettingsInputFieldSlider::
+                                      SettingsInputFieldSlider_Initialize_1
+                                                (pSVar13,StringLiteral_ppBloomDiff,(int32_t)value,
+                                                 (MethodInfo *)0x0);
+                                      pCVar3 = (pCVar1->fields).cameraBoxSettings;
+                                      uStack_16 = 0x3f800000;
+                                      value = (Object *)
+                                              func_?(TypeInfo__System__Single,&uStack_16);
+                                      if (pCVar3 != (CameraBoxSettings *)0x0) {
+                                        pSStack_2 = (SettingsToggle *)StringLiteral_ppBloomColR;
+                                        if (cRam_? == '\0') {
+                                          func_?(&
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                          cRam_? = '\x01';
+                                        }
+                                        pDVar5 = (pCVar3->fields).woData;
+                                        pOStack_6 = (Object *)0x0;
+                                        if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)
+                                                      0x0) {
+                                          bVar7 = mscorlib.dll::System::Collections::Generic::
+                                                  Dictionary`2[System::Object,System::Object]::
+                                                  Dictionary_2_System_Object_System_Object__TryGetValue
+                                                            (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                          if (bVar7 != 0) {
+                                            value = pOStack_6;
+                                          }
+                                          if (value != (Object *)0x0) {
+                                            pIVar8 = (Int32__Class *)TypeInfo__System__Single;
+                                            if ((value->klass->_0).element_class !=
+                                                (TypeInfo__System__Single->_0).element_class)
+                                            goto code_?;
+                                            puVar17 = (undefined4 *)func_?(value);
+                                            pCVar3 = (pCVar1->fields).cameraBoxSettings;
+                                            pSStack_4 = (String *)*puVar17;
+                                            uStack_18 = 0x3f800000;
+                                            value = (Object *)
+                                                    func_?(TypeInfo__System__Single,
+                                                                    &uStack_18);
+                                            if (pCVar3 != (CameraBoxSettings *)0x0) {
+                                              pSStack_2 = (SettingsToggle *)
+                                                           StringLiteral_ppBloomColG;
+                                              if (cRam_? == '\0') {
+                                                func_?(&
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                                cRam_? = '\x01';
+                                              }
+                                              pDVar5 = (pCVar3->fields).woData;
+                                              pOStack_6 = (Object *)0x0;
+                                              if (pDVar5 != (
+                                                  Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                bVar7 = mscorlib.dll::System::Collections::Generic::
+                                                        Dictionary`2[System::Object,System::Object]
+                                                        ::
+                                                  Dictionary_2_System_Object_System_Object__TryGetValue
+                                                            (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                                if (bVar7 != 0) {
+                                                  value = pOStack_6;
+                                                }
+                                                if (value != (Object *)0x0) {
+                                                  pIVar8 = (Int32__Class *)TypeInfo__System__Single
+                                                  ;
+                                                  if ((value->klass->_0).element_class !=
+                                                      (TypeInfo__System__Single->_0).element_class)
+                                                  goto code_?;
+                                                  puVar17 = (undefined4 *)func_?(value);
+                                                  pCVar3 = (pCVar1->fields).cameraBoxSettings;
+                                                  uVar19 = *puVar17;
+                                                  uStack_20 = 0x3f800000;
+                                                  value = (Object *)
+                                                          func_?(TypeInfo__System__Single,
+                                                                          &uStack_20);
+                                                  if (pCVar3 != (CameraBoxSettings *)0x0) {
+                                                    pSStack_2 = (SettingsToggle *)
+                                                                 StringLiteral_ppBloomColB;
+                                                    if (cRam_? == '\0') {
+                                                      func_?(&
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pDVar5 = (pCVar3->fields).woData;
+                                                  pOStack_6 = (Object *)0x0;
+                                                  if (pDVar5 != (
+                                                  Dictionary_2_System_Object_System_Object_ *)0x0) {
+                                                    bVar7 = mscorlib.dll::System::Collections::
+                                                            Generic::Dictionary`2[System::
+                                                            Object,System::Object]::
+                                                                                                                        
+                                                  Dictionary_2_System_Object_System_Object__TryGetValue
+                                                            (pDVar5,(Object *)pSStack_2,&pOStack_6,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                                  );
+                                                  if (bVar7 != 0) {
+                                                    value = pOStack_6;
+                                                  }
+                                                  if (value != (Object *)0x0) {
+                                                    pIVar8 = (Int32__Class *)
+                                                              TypeInfo__System__Single;
+                                                    if ((value->klass->_0).element_class !=
+                                                        (TypeInfo__System__Single->_0).element_class
+                                                       ) goto code_?;
+                                                    puVar17 = (undefined4 *)func_?(value);
+                                                    pIVar21 = (pCVar1->fields).colorImage;
+                                                    if (pIVar21 != (Image *)0x0) {
+                                                      (*(code *)(pIVar21->klass->vtable).set_color.
+                                                                method)(pIVar21,pSStack_4,uVar19,
+                                                                        *puVar17,0x3f800000,
+                                                                        (pIVar21->klass->vtable).
+                                                                        get_raycastTarget.methodPtr)
+                                                      ;
+                                                      return;
+                                                    }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                            }
                                           }
                                         }
                                       }
@@ -388,11 +535,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       }
     }
   }
-  uVar4 = func_?();
+  func_?();
+  pIVar8 = (Int32__Class *)extraout_ECX;
 code_?:
-  func_?(uVar4);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  func_?(value,pIVar8);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -446,9 +594,9 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::C
           pIVar3 = (this->fields).colorPickerPreview;
           if (pIVar3 != (Image *)0x0) {
             pIVar4 = pIVar3->klass;
-            pMStack5 = (pIVar4->vtable).set_color.method;
+            pIStack5 = (pIVar4->vtable).get_raycastTarget.methodPtr;
             uStack6 = 0x3f800000;
-            (*(pIVar4->vtable).set_color.methodPtr)();
+            (*(code *)(pIVar4->vtable).set_color.method)();
             return value;
           }
         }

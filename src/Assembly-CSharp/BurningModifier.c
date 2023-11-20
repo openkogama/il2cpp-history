@@ -33,19 +33,14 @@ Assembly-CSharp.dll::BurningModifier::BurningModifier_DoFadeAndDestroy
     func_?(&TypeInfo__BurningModifier___DoFadeAndDestroy_d__7);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__BurningModifier___DoFadeAndDestroy_d__7);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__BurningModifier___DoFadeAndDestroy_d__7;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -74,24 +69,22 @@ void Assembly-CSharp.dll::BurningModifier::BurningModifier_OnDeactivated
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_02 != (Transform *)0x0) {
-        method_00 = (MethodInfo *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_02,(Transform *)0x0,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
+        method_00 = TypeInfo__BurningModifier___DoFadeAndDestroy_d__7;
         value = (Object *)func_?();
-        if (value != (Object *)0x0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    (value,ExceptionArgument__Enum_obj,method_00);
-          value[1].klass = (Object__Class *)0x0;
-          value[2].klass = (Object__Class *)this;
-          func_?(value + 2,this);
-          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-          return;
-        }
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = (Object__Class *)this;
+        func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                  ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+        return;
       }
     }
   }

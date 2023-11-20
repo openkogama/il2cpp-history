@@ -21,14 +21,12 @@ void Assembly-CSharp.dll::BundleView+<>c__DisplayClass20_1::
       object = (pBVar2->fields).__4__this;
       this_01 = (NavMesh_OnNavMeshPreUpdate *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_01,(Object *)object,MethodInfo__BundleView__OnPop__,(MethodInfo *)0x0);
-        if (x != (IUIStack *)0x0) {
-          func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,1,this_01,0x20);
-          return;
-        }
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)object,MethodInfo__BundleView__OnPop__,(MethodInfo *)0x0);
+      if (x != (IUIStack *)0x0) {
+        func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,1,this_01,0x20);
+        return;
       }
     }
   }

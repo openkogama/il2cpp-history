@@ -70,61 +70,59 @@ void Assembly-CSharp.dll::PurchaseSoundManager::PurchaseSoundManager_Start
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    unaff_EBX = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-                 *)(pMVar1->fields).PurchaseProductResponseHandler;
-    this_00 = (Action_2_Int32Enum_Object_ *)
+  if (pMVar1 == (MVNetworkGame *)0x0) {
+    func_?();
+  }
+  else {
+    pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
+    this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(
                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
-    if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__PurchaseSoundManager__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                 ,(MethodInfo *)0x0);
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = 
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+    UnityAction_2_System_Int32_System_Int32___ctor
+              (this_00,(Object *)this,
+               MethodInfo__PurchaseSoundManager__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+               ,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    unaff_EDI = 
+    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+    ;
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).PurchaseProductResponseHandler =
+           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+           0x0;
+      pAStack4 =
+           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
+            *)0x0;
+code_?:
+      func_?();
+      return;
+    }
+    pAStack4 =
+         TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+    ;
+    pAVar2 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?();
+    if (pAVar2 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                   *)0x0) {
+      (pMVar1->fields).PurchaseProductResponseHandler = pAVar2;
+      unaff_EDI = 
       TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
       ;
-      if (pDVar2 == (Delegate *)0x0) {
-        (pMVar1->fields).PurchaseProductResponseHandler =
-             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             0x0;
-        pAStack3 =
-             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-              *)0x0;
-code_?:
-        func_?();
-        return;
-      }
-      pAStack3 =
+      pAStack4 =
            TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
       ;
-      pAVar4 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                *)func_?();
-      if (pAVar4 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                     *)0x0) {
-        (pMVar1->fields).PurchaseProductResponseHandler = pAVar4;
-        unaff_EBX = 
-        TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-        ;
-        pAStack3 =
-             TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-        ;
-        pAStack3 =
-             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-              *)func_?();
-        if (pAStack3 !=
-            (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-             *)0x0) goto code_?;
-      }
-      goto code_?;
+      pAStack4 =
+           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
+            *)func_?();
+      if (pAStack4 !=
+          (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
+           *)0x0) goto code_?;
     }
   }
-  func_?();
-code_?:
-  pAStack3 = unaff_EBX;
+  pAStack4 = unaff_EDI;
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

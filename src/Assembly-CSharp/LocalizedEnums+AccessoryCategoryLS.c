@@ -48,39 +48,39 @@ void Assembly-CSharp.dll::LocalizedEnums+AccessoryCategoryLS::
   }
   pSVar1 = TM::TM__(StringLiteral_HATS,(MethodInfo *)0x0);
   if (map != (Dictionary_2_System_Int32_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0x1,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,1,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_PARTICLES,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0x2,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,2,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_BACK_ACCESSORIES,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0x3,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,3,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_BUNDLE,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0xfe,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0xfe,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_FEATURED,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0xff,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,0xff,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_LEVEL_UNLOCKS,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)map,(Object *)0x4,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)map,4,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
               );
     return;
@@ -109,30 +109,22 @@ void Assembly-CSharp.dll::LocalizedEnums+AccessoryCategoryLS::
     func_?(&TypeInfo__Localize__EnumLocalizeBookkeeping);
     cRam_? = '\x01';
   }
-  this = (Action_1_Object_ *)
-         func_?(
-                        TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::String>_>
-                        );
-  if (this != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this,(Object *)0x0,
-               MethodInfo__LocalizedEnums__AccessoryCategoryLS__Init_System__Collections__Generic__Dictionary<int,_System::String>_
-               ,(MethodInfo *)0x0);
-    this_00 = (EnumLocalizeBookkeeping *)
-              func_?(TypeInfo__Localize__EnumLocalizeBookkeeping);
-    if (this_00 != (EnumLocalizeBookkeeping *)0x0) {
-      Localize::EnumLocalizeBookkeeping::EnumLocalizeBookkeeping__ctor
-                (this_00,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_System_String_
-                          *)this,(MethodInfo *)0x0);
-      TypeInfo__LocalizedEnums__AccessoryCategoryLS->static_fields->enumLocalizeBookkeeping =
-           this_00;
-      func_?(TypeInfo__LocalizedEnums__AccessoryCategoryLS->static_fields,this_00);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(
+                           TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_System::String>_>
+                           );
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this,(Object *)0x0,
+             MethodInfo__LocalizedEnums__AccessoryCategoryLS__Init_System__Collections__Generic__Dictionary<int,_System::String>_
+             ,(MethodInfo *)0x0);
+  this_00 = (EnumLocalizeBookkeeping *)func_?(TypeInfo__Localize__EnumLocalizeBookkeeping);
+  Localize::EnumLocalizeBookkeeping::EnumLocalizeBookkeeping__ctor
+            (this_00,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_System_String_ *
+                     )this,(MethodInfo *)0x0);
+  TypeInfo__LocalizedEnums__AccessoryCategoryLS->static_fields->enumLocalizeBookkeeping = this_00;
+  func_?(TypeInfo__LocalizedEnums__AccessoryCategoryLS->static_fields,this_00);
   return;
 }
 

@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c__DisplayClass26_0::
         }
         bVar4 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::
                 SetPropertyUtility_SetStruct
-                          ((bool *)0x98,0,
+                          ((bool *)0x9c,0,
                            bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
                           );
         if (bVar4 != 0) {

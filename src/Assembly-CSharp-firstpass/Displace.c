@@ -81,17 +81,16 @@ void Assembly-CSharp-firstpass.dll::Displace::Displace_Start(Displace *this,Meth
       return;
     }
     handle = TypeInfo__WaterBase;
-    if (((TypeInfo__WaterBase->_1).typeHierarchyDepth <=
-         (((Component__Class *)pWStack2->klass)->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__WaterBase->_1).naturalAligment <=
+         (((Component__Class *)pWStack2->klass)->_1).naturalAligment) &&
        ((((Component__Class *)pWStack2->klass)->_1).typeHierarchy
-        [(TypeInfo__WaterBase->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__WaterBase)) {
+        [(TypeInfo__WaterBase->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__WaterBase)) {
       (this->fields).waterBase = pWStack2;
       handle = TypeInfo__WaterBase;
-      if (((TypeInfo__WaterBase->_1).typeHierarchyDepth <=
-           (((Component__Class *)pWStack2->klass)->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__WaterBase->_1).naturalAligment <=
+           (((Component__Class *)pWStack2->klass)->_1).naturalAligment) &&
          ((((Component__Class *)pWStack2->klass)->_1).typeHierarchy
-          [(TypeInfo__WaterBase->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__WaterBase))
-      {
+          [(TypeInfo__WaterBase->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__WaterBase)) {
         pWStack2 = (WaterBase *)&(this->fields).waterBase;
         func_?();
         return;

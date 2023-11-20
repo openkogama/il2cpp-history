@@ -36,15 +36,18 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
   if (pSVar2 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_Initialize_1(pSVar2,woID,root,pSVar3,(MethodInfo *)0x0);
     if (woID == -1) {
-      this_04 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)func_?();
-      if (this_04 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-      goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_04,
+      this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_04,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      pOVar4 = (Object *)func_?();
+      pOVar4 = (Object *)func_?(TypeInfo__System__Int32);
+      if (this_04 ==
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
                 ((Dictionary_2_System_Object_System_Object_ *)this_04,
@@ -57,14 +60,17 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
       if (((this_03 == (MVWorldObjectClientManager *)0x0) ||
           (pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                               (this_03,woID,(MethodInfo *)0x0), pMVar5 == (MVWorldObject *)0x0)) ||
-         (this_04 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar5->fields).data,
-         this_04 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0))
-      goto code_?;
+         (this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)(pMVar5->fields).data,
+         this_04 ==
+         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         0x0)) goto code_?;
     }
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_04,(Object *)StringLiteral_starAmount,
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                       (Object *)StringLiteral_starAmount,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar6 == 0) {
@@ -76,16 +82,17 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                 );
     }
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)this_04,
-                        (Object *)StringLiteral_starAmount,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+    value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                       (Object *)StringLiteral_starAmount,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    value = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar4,(MethodInfo *)0x0);
+    value_00 = mscorlib.dll::System::Convert::Convert_ToInt32(value.m_Index,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -111,7 +118,7 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
         cRam_? = '\x01';
       }
       if ((this->fields).maxValue < 1) {
-        if (0 < value) {
+        if (0 < value_00) {
           root = (GameObject *)func_?();
           pSVar3 = StringLiteral_starAmount;
           if (cRam_? == '\0') {
@@ -132,18 +139,18 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
         pGVar9 = (this->fields).message;
         if ((pGVar9 == (GameObject *)0x0) ||
            (pGVar9 = (GameObject *)
-                      mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                ((Void *)pGVar9,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
-        goto code_?;
+                      UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar9,(MethodInfo *)0x0),
+           pGVar9 == (GameObject *)0x0)) goto code_?;
         this._0_1_ = 1;
       }
       else {
         pGVar9 = (this->fields).message;
         if ((pGVar9 == (GameObject *)0x0) ||
            (pGVar9 = (GameObject *)
-                      mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                ((Void *)pGVar9,(MethodInfo *)0x0), pGVar9 == (GameObject *)0x0))
-        goto code_?;
+                      UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar9,(MethodInfo *)0x0),
+           pGVar9 == (GameObject *)0x0)) goto code_?;
         this._0_1_ = 0;
       }
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -151,12 +158,12 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
       this_01 = (pSVar1->fields).slider;
       if (this_01 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize_1
-                  (this_01,StringLiteral_starAmount,value,0,(pSVar1->fields).maxValue,
+                  (this_01,StringLiteral_starAmount,value_00,0,(pSVar1->fields).maxValue,
                    (MethodInfo *)0x0);
         this_02 = (pSVar1->fields).inputField;
         if (this_02 != (SettingsInputFieldSlider *)0x0) {
           SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                    (this_02,StringLiteral_starAmount,value,(MethodInfo *)0x0);
+                    (this_02,StringLiteral_starAmount,value_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -269,8 +276,8 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Upd
     pGVar3 = (pSVar1->fields).message;
     if (pGVar3 != (GameObject *)0x0) {
       pGVar3 = (GameObject *)
-               mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                         ((Void *)pGVar3,(MethodInfo *)0x0);
+               UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+               UnsafeUtility_AsRef_1((Void *)pGVar3,(MethodInfo *)0x0);
       if (pGVar3 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar3,1,(MethodInfo *)0x0);
@@ -282,8 +289,8 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Upd
     pGVar3 = (this->fields).message;
     if (pGVar3 != (GameObject *)0x0) {
       pGVar3 = (GameObject *)
-               mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                         ((Void *)pGVar3,(MethodInfo *)0x0);
+               UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+               UnsafeUtility_AsRef_1((Void *)pGVar3,(MethodInfo *)0x0);
       if (pGVar3 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar3,0,(MethodInfo *)0x0);

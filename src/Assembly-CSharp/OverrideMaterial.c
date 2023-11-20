@@ -231,8 +231,8 @@ void Assembly-CSharp.dll::OverrideMaterial::OverrideMaterial__ctor
   (this->fields).path = StringLiteral_Cube_Materials_scarletred00;
   func_?(&(this->fields).path,StringLiteral_Cube_Materials_scarletred00);
   (this->fields).isUnlocked = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -15,22 +15,22 @@ public class RuntimePrototypeCubeModel
 {
 	// Fields
 	private ILogger logger;
-	private HashSet<IntVector> dirtyChunks;
+	private readonly HashSet<IntVector> dirtyChunks;
 	private MeshGeneratePriority meshGeneratePriority;
 	private bool useMeshGeneratePrioritySystem;
 	private int chunkSize;
 	public Action<IntVector> OnChunkRebuilt;
 	public float? PendingScaleUpdate;
 	private PrototypeState prototypeState;
-	private List<byte> pendingDeltaCubes;
+	private readonly List<byte> pendingDeltaCubes;
 	[CompilerGenerated]
 	private float _Scale_k__BackingField;
 	protected int prototypeId;
 	[CompilerGenerated]
 	private int _AuthorProfileID_k__BackingField;
 	private DeltaCubes deltaCubes;
-	private Dictionary<IntVector, CubeModelChunk> chunks;
-	private HashSet<int> instances;
+	private readonly Dictionary<IntVector, CubeModelChunk> chunks;
+	private readonly HashSet<int> instances;
 	public Action<HashSet<IntVector>> DirtyChunksRegenerated;
 
 	// Properties
@@ -101,5 +101,7 @@ public class RuntimePrototypeCubeModel
 	public bool CompareGeometry(RuntimePrototypeCubeModel rpcm);
 	public void CompareGeometryDetailed(RuntimePrototypeCubeModel rpcm, bool visibleCubesOnly, ref int matchingCubeCount, ref int investigatedCubeCount);
 	public void Destroy();
+	public void RebuildChunks();
+	public string Guids();
 }
 

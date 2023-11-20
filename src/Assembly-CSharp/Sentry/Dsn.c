@@ -11,15 +11,14 @@ void Assembly-CSharp.dll::Sentry::Dsn::Dsn__ctor(Dsn *this,String *dsn,MethodInf
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   bVar1 = mscorlib.dll::System::String::String_op_Equality(dsn,::StringLiteral__,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     pUVar2 = (Uri *)func_?();
-    if (pUVar2 == (Uri *)0x0) goto code_?;
     System.dll::System::Uri::Uri__ctor(pUVar2,dsn,(MethodInfo *)0x0);
     (this->fields)._uri = pUVar2;
-    func_?(&this->fields);
+    func_?(&this->fields,pUVar2);
     pUVar2 = (this->fields)._uri;
     if (pUVar2 == (Uri *)0x0) goto code_?;
     pSVar3 = System.dll::System::Uri::Uri_get_UserInfo(pUVar2,(MethodInfo *)0x0);
@@ -34,16 +33,16 @@ void Assembly-CSharp.dll::Sentry::Dsn::Dsn__ctor(Dsn *this,String *dsn,MethodInf
     if (pSVar4 == (String__Array *)0x0) goto code_?;
     if (pSVar4->max_length != 0) {
       (this->fields).publicKey = pSVar4->vector[0];
-      func_?(&(this->fields).publicKey);
+      func_?();
       bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                         ((this->fields).publicKey,(MethodInfo *)0x0);
       if (bVar1 != 0) goto code_?;
       (this->fields).secretKey = (String *)0x0;
-      func_?(&(this->fields).secretKey);
+      func_?();
       if (1 < (int)pSVar4->max_length) {
         if (pSVar4->max_length < 2) goto code_?;
         (this->fields).secretKey = pSVar4->vector[1];
-        func_?(&(this->fields).secretKey);
+        func_?();
       }
       pUVar2 = (this->fields)._uri;
       if (pUVar2 == (Uri *)0x0) goto code_?;
@@ -54,44 +53,44 @@ void Assembly-CSharp.dll::Sentry::Dsn::Dsn__ctor(Dsn *this,String *dsn,MethodInf
       if (pSVar5 == (String *)0x0) goto code_?;
       iVar6 = mscorlib.dll::System::String::String_LastIndexOf(pSVar5,0x2f,(MethodInfo *)0x0);
       if (pSVar3 == (String *)0x0) goto code_?;
-      pSVar3 = mscorlib.dll::System::String::String_Substring_1(pSVar3,0,iVar6,(MethodInfo *)0x0);
+      mscorlib.dll::System::String::String_Substring_1(pSVar3,0,iVar6,(MethodInfo *)0x0);
+      pUVar2 = (this->fields)._uri;
+      if (pUVar2 == (Uri *)0x0) goto code_?;
+      pSVar3 = System.dll::System::Uri::Uri_get_AbsoluteUri(pUVar2,(MethodInfo *)0x0);
       pUVar2 = (this->fields)._uri;
       if (pUVar2 == (Uri *)0x0) goto code_?;
       pSVar5 = System.dll::System::Uri::Uri_get_AbsoluteUri(pUVar2,(MethodInfo *)0x0);
-      pUVar2 = (this->fields)._uri;
-      if (pUVar2 == (Uri *)0x0) goto code_?;
-      pSVar7 = System.dll::System::Uri::Uri_get_AbsoluteUri(pUVar2,(MethodInfo *)0x0);
-      if (pSVar7 == (String *)0x0) goto code_?;
-      iVar6 = mscorlib.dll::System::String::String_LastIndexOf(pSVar7,0x2f,(MethodInfo *)0x0);
       if (pSVar5 == (String *)0x0) goto code_?;
-      pSVar5 = mscorlib.dll::System::String::String_Substring(pSVar5,iVar6 + 1,(MethodInfo *)0x0);
-      bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar5,(MethodInfo *)0x0);
+      iVar6 = mscorlib.dll::System::String::String_LastIndexOf(pSVar5,0x2f,(MethodInfo *)0x0);
+      if (pSVar3 == (String *)0x0) goto code_?;
+      pSVar3 = mscorlib.dll::System::String::String_Substring(pSVar3,iVar6 + 1,(MethodInfo *)0x0);
+      bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar3,(MethodInfo *)0x0);
       if (bVar1 == 0) {
         this_00 = (UriBuilder *)func_?();
-        if (this_00 != (UriBuilder *)0x0) {
-          System.dll::System::UriBuilder::UriBuilder__ctor(this_00,(MethodInfo *)0x0);
-          pUVar2 = (this->fields)._uri;
-          if (pUVar2 != (Uri *)0x0) {
-            pSVar7 = System.dll::System::Uri::Uri_get_Scheme(pUVar2,(MethodInfo *)0x0);
-            System.dll::System::UriBuilder::UriBuilder_set_Scheme(this_00,pSVar7,(MethodInfo *)0x0);
+        System.dll::System::UriBuilder::UriBuilder__ctor(this_00,(MethodInfo *)0x0);
+        pUVar2 = (this->fields)._uri;
+        if (pUVar2 != (Uri *)0x0) {
+          pSVar5 = System.dll::System::Uri::Uri_get_Scheme(pUVar2,(MethodInfo *)0x0);
+          if (this_00 != (UriBuilder *)0x0) {
+            System.dll::System::UriBuilder::UriBuilder_set_Scheme(this_00,pSVar5,(MethodInfo *)0x0);
             pUVar2 = (this->fields)._uri;
             if (pUVar2 != (Uri *)0x0) {
-              pSVar7 = System.dll::System::Uri::Uri_get_DnsSafeHost(pUVar2,(MethodInfo *)0x0);
-              System.dll::System::UriBuilder::UriBuilder_set_Host(this_00,pSVar7,(MethodInfo *)0x0);
+              pSVar5 = System.dll::System::Uri::Uri_get_DnsSafeHost(pUVar2,(MethodInfo *)0x0);
+              System.dll::System::UriBuilder::UriBuilder_set_Host(this_00,pSVar5,(MethodInfo *)0x0);
               pUVar2 = (this->fields)._uri;
               if (pUVar2 != (Uri *)0x0) {
                 iVar6 = System.dll::System::Uri::Uri_get_Port(pUVar2,(MethodInfo *)0x0);
                 System.dll::System::UriBuilder::UriBuilder_set_Port(this_00,iVar6,(MethodInfo *)0x0)
                 ;
                 pSVar3 = mscorlib.dll::System::String::String_Format_1
-                                   (StringLiteral__0__api__1__store_,(Object *)pSVar3,
-                                    (Object *)pSVar5,(MethodInfo *)0x0);
+                                   (StringLiteral__0__api__1__store_,(Object *)&UNK_?,
+                                    (Object *)pSVar3,(MethodInfo *)0x0);
                 System.dll::System::UriBuilder::UriBuilder_set_Path
                           (this_00,pSVar3,(MethodInfo *)0x0);
                 pUVar2 = System.dll::System::UriBuilder::UriBuilder_get_Uri
                                    (this_00,(MethodInfo *)0x0);
                 (this->fields).callUri = pUVar2;
-                func_?(&(this->fields).callUri);
+                func_?();
                 return;
               }
             }
@@ -103,30 +102,27 @@ void Assembly-CSharp.dll::Sentry::Dsn::Dsn__ctor(Dsn *this,String *dsn,MethodInf
     }
   }
   else {
-    uVar8 = func_?();
-    pAVar9 = (ArgumentException *)func_?(uVar8);
-    func_?(pAVar9);
-    pMVar10 = (MethodInfo *)0x0;
+    uVar7 = func_?();
+    pAVar8 = (ArgumentException *)func_?(uVar7);
+    method_00 = (MethodInfo *)0x0;
     pSVar3 = (String *)func_?(&StringLiteral_invalid_argument___DSN_cannot_be);
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar9,pSVar3,pMVar10);
+    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar8,pSVar3,method_00);
     func_?();
     func_?();
 code_?:
     func_?();
-    pAVar9 = (ArgumentException *)func_?();
-    func_?();
+    pAVar8 = (ArgumentException *)func_?();
     pSVar3 = (String *)func_?();
     mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-              (pAVar9,pSVar3,(MethodInfo *)0x0);
+              (pAVar8,pSVar3,(MethodInfo *)0x0);
     func_?();
     func_?();
 code_?:
-    uVar8 = func_?();
-    pAVar9 = (ArgumentException *)func_?(uVar8);
-    func_?(pAVar9);
-    pMVar10 = (MethodInfo *)0x0;
-    pSVar3 = (String *)func_?(&StringLiteral_Invalid_DSN__No_public_key_provi);
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar9,pSVar3,pMVar10);
+    func_?();
+    pAVar8 = (ArgumentException *)func_?();
+    pSVar3 = (String *)func_?();
+    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
+              (pAVar8,pSVar3,(MethodInfo *)0x0);
     func_?();
     func_?();
   }
@@ -134,8 +130,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -12,49 +12,47 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
     cRam_? = '\x01';
   }
   pNVar1 = (this->fields)._.objectPool;
-  if (pNVar1 != (NotificationObjectPool *)0x0) {
-    pAVar2 = (pNVar1->fields).OnActiveInstancesChanged;
+  if (pNVar1 == (NotificationObjectPool *)0x0) {
+    uVar2 = func_?();
+  }
+  else {
+    pAVar3 = (pNVar1->fields).OnActiveInstancesChanged;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,
-                 MethodInfo__NotificationAreaSingleInstanceQueue__OnActiveInstancesChanged__,
-                 (MethodInfo *)0x0);
-      pAVar2 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-      if (pAVar2 == (Action *)0x0) {
-        (pNVar1->fields).OnActiveInstancesChanged = (Action *)0x0;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,
+               MethodInfo__NotificationAreaSingleInstanceQueue__OnActiveInstancesChanged__,
+               (MethodInfo *)0x0);
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+    if (pAVar3 == (Action *)0x0) {
+      (pNVar1->fields).OnActiveInstancesChanged = (Action *)0x0;
+      ppAStack4 = &(pNVar1->fields).OnActiveInstancesChanged;
+      pAStack5 = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar6 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar3;
+    }
+    if (pAVar6 != (Action *)0x0) {
+      (pNVar1->fields).OnActiveInstancesChanged = pAVar6;
+      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      pAStack5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAStack5 = pAVar3;
+      }
+      if (pAStack5 != (Action *)0x0) {
         ppAStack4 = &(pNVar1->fields).OnActiveInstancesChanged;
-        pAStack5 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar6 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar6 = pAVar2;
-      }
-      if (pAVar6 != (Action *)0x0) {
-        (pNVar1->fields).OnActiveInstancesChanged = pAVar6;
-        uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-        pAStack5 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAStack5 = pAVar2;
-        }
-        if (pAStack5 != (Action *)0x0) {
-          ppAStack4 = &(pNVar1->fields).OnActiveInstancesChanged;
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  uVar3 = func_?();
-code_?:
-  _ppAStack0000000c = uVar3;
+  _ppAStack0000000c = uVar2;
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -85,41 +83,44 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
   pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_1);
   this_01 = data;
   if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,pOVar2,
+  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
   if (bVar3 != 0) {
     data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(0x12,data._0_3_);
     pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_01,pOVar2,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class) {
-      func_?(pOVar2,TypeInfo__System__Boolean);
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                       pOVar2,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        (TypeInfo__System__Boolean->_0).element_class) {
+      func_?(TVar4.m_Index,TypeInfo__System__Boolean);
       goto code_?;
     }
-    pcVar4 = (char *)func_?(pOVar2);
-    if (*pcVar4 != '\0') {
+    pcVar5 = (char *)func_?(TVar4.m_Index);
+    if (*pcVar5 != '\0') {
       NotificationAreaSingleInstanceQueue_ShowNotification
                 (this,notificationType,this_01,(MethodInfo *)0x0);
       return;
     }
   }
-  pNVar5 = (this->fields)._.objectPool;
-  if (pNVar5 != (NotificationObjectPool *)0x0) {
+  pNVar6 = (this->fields)._.objectPool;
+  if (pNVar6 != (NotificationObjectPool *)0x0) {
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<Notification>__get_Count__);
       cRam_? = '\x01';
     }
-    pLVar6 = (pNVar5->fields).ActiveInstances;
-    if (pLVar6 != (List_1_Notification_ *)0x0) {
-      if ((pLVar6->fields)._size < 1) {
+    pLVar7 = (pNVar6->fields).ActiveInstances;
+    if (pLVar7 != (List_1_Notification_ *)0x0) {
+      if ((pLVar7->fields)._size < 1) {
         NotificationAreaSingleInstanceQueue_ShowNotification
                   (this,notificationType,this_01,(MethodInfo *)0x0);
         return;
@@ -130,15 +131,15 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
                        );
         cRam_? = '\x01';
       }
-      fStack_7 = 0.0;
-      pDStack_8 = this_01;
-      func_?(&pDStack_8,this_01);
-      fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      fStack_8 = 0.0;
+      pDStack_9 = this_01;
+      func_?(&pDStack_9,this_01);
+      fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       this_00 = (this->fields).enqueuedNotifications;
       if (this_00 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
-        item.data = pDStack_8;
+        item.data = pDStack_9;
         item.notificationType = notificationType;
-        item.startTime = fStack_7;
+        item.startTime = fStack_8;
         mscorlib.dll::System::Collections::Generic::
         Queue`1[NotificationAreaSingleInstanceQueue+NotificationQueueData]::
         Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData__Enqueue
@@ -151,8 +152,8 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -302,7 +303,7 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_Notification_is_null,(MethodInfo *)0x0);
         return;
       }
@@ -318,8 +319,8 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
             cRam_? = '\x01';
           }
           if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-            (*(this_00->klass->vtable).Initialize.methodPtr)
-                      (this_00,data,(this_00->klass->vtable).Initialize.method);
+            (*(code *)(this_00->klass->vtable).Initialize.method)
+                      (this_00,data,(this_00->klass->vtable).Update.methodPtr);
             return;
           }
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -360,21 +361,14 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstanceQueue::
             func_?(
                            TypeInfo__System__Collections__Generic__Queue<NotificationAreaSingleInstanceQueue::NotificationQueueData>
                            );
-  if (this_00 != (Queue_1_NotificationAreaSingleInstanceQueue_NotificationQueueData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-    Stack_1_System_Object___ctor
-              ((Stack_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Queue<NotificationAreaSingleInstanceQueue::NotificationQueueData>__Queue__
-              );
-    (this->fields).enqueuedNotifications = this_00;
-    func_?(&(this->fields).enqueuedNotifications,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)this_00,
+             MethodInfo__System__Collections__Generic__Queue<NotificationAreaSingleInstanceQueue::NotificationQueueData>__Queue__
+            );
+  (this->fields).enqueuedNotifications = this_00;
+  func_?(&(this->fields).enqueuedNotifications,this_00);
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }
 

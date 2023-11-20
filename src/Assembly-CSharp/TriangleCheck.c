@@ -13,265 +13,241 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
     func_?(&StringLiteral_Found_negativ_distance__this_sho);
     cRam_? = '\x01';
   }
-  b = p3;
-  a = p2;
-  KStack_1.key._options = 0;
-  KStack_1.key._cultureKey = (String *)0x0;
-  KStack_1.key._pattern = (String *)0x0;
-  KStack_1.value = (Object *)0x0;
-  puStack_2 = (undefined *)0x0;
-  stack0xffffff64 = 0.0;
-  VStack_3.x = 0.0;
-  VStack_3.y = 0.0;
-  puStack_4 = (undefined *)0x0;
-  stack0xffffff7c = 0.0;
-  fStack_5 = 0.0;
-  puStack_6 = (undefined *)0x0;
-  VStack_3.z = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_1
-            ((Plane *)&KStack_1,*p1,*p2,*p3,(MethodInfo *)0x0);
-  mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::
-  Regex+CachedCodeEntryKey,System::Object]::
-  KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-            ((Regex_CachedCodeEntryKey *)&stack0xffffff9c,&KStack_1,(MethodInfo *)0x0);
-  fVar7 = distance * localDirection->x;
-  fVar8 = distance * localDirection->y;
-  fVar9 = distance * localDirection->z;
-  VStack_10.x = p1->x;
-  VStack_10.y = p1->y;
-  VStack_10.z = p1->z;
-  p3 = (Vector3 *)
-       MathFunctions::MathFunctions_DotProduct
-                 ((Vector3 *)&stack0xffffffb4,localDirection,(MethodInfo *)0x0);
-  if (0.0 < (float)p3) {
+  uStack_1._0_4_ = 0.0;
+  uStack_1._4_4_ = 0.0;
+  uVar2 = p2->x;
+  uVar3 = p2->y;
+  uVar4 = p1->x;
+  uVar5 = p1->y;
+  fVar6 = p2->z - p1->z;
+  puStack_7 = (undefined *)p3->x;
+  unique0x0000a404 = p3->y;
+  uVar8 = p1->x;
+  uVar9 = p1->y;
+  fVar10 = p3->z - p1->z;
+  value.y = fVar6 * ((float)puStack_7 - (float)uVar8) - fVar10 * ((float)uVar2 - (float)uVar4);
+  value.x = fVar10 * ((float)uVar3 - (float)uVar5) - (unique0x0000a404 - (float)uVar9) * fVar6;
+  value.z = (unique0x0000a404 - (float)uVar9) * ((float)uVar2 - (float)uVar4) -
+            ((float)uVar3 - (float)uVar5) * ((float)puStack_7 - (float)uVar8);
+  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&puStack_7,value,(MethodInfo *)0x0);
+  uVar12._0_4_ = pVVar11->x;
+  uVar12._4_4_ = pVVar11->y;
+  fVar10 = pVVar11->z;
+  fVar6 = distance * localDirection->x;
+  fVar13 = distance * localDirection->y;
+  fVar14 = distance * localDirection->z;
+  fStack_15 = p1->x;
+  puStack_16 = (undefined *)p1->y;
+  fVar17 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffff9c,localDirection,(MethodInfo *)0x0);
+  if (0.0 < fVar17) {
     return 0;
   }
-  stack0xffffff64 = (float)&stack0xffffffb4;
-  dVar11 = MathFunctions::MathFunctions_SignedDistanceTo_1
-                     ((Vector3 *)&stack0xffffffb4,&VStack_10,localOrigin,(MethodInfo *)0x0);
-  stack0xffffff64 = (float)&UNK_?;
-  p3 = (Vector3 *)
-       MathFunctions::MathFunctions_DotProduct
-                 ((Vector3 *)&stack0xffffffb4,(Vector3 *)&stack0xffffffcc,(MethodInfo *)0x0);
-  if ((float)p3 == _UNK_?) {
+  dVar18 = MathFunctions::MathFunctions_SignedDistanceTo_1
+                     ((Vector3 *)&stack0xffffff9c,(Vector3 *)&fStack_15,localOrigin,
+                      (MethodInfo *)0x0);
+  fVar17 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffff9c,(Vector3 *)&stack0xffffffc0,(MethodInfo *)0x0);
+  if (fVar17 == _UNK_?) {
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
+    dStack_19 = _UNK_?;
     if (_UNK_? <=
-        (double)CONCAT44((uint)((ulonglong)dVar11 >> 0x20) & _UNK_?,
-                         SUB84(dVar11,0) & _UNK_?)) {
-      return 0;
-    }
-    p3 = (Vector3 *)((uint)p3 & 0xffffff);
-  }
-  else {
-    dVar12 = (_UNK_? - dVar11) / (double)(float)p3;
-    dVar13 = (_UNK_? - dVar11) / (double)(float)p3;
-    dVar11 = dVar13;
-    if (dVar13 < dVar12) {
-      dVar11 = dVar12;
-      dVar12 = dVar13;
-    }
-    if (_UNK_? < dVar12) {
-      return 0;
-    }
-    if (dVar11 < 0.0) {
-      return 0;
-    }
-    dVar11 = 0.0;
-    if (0.0 <= dVar12) {
-      dVar11 = dVar12;
-    }
-    dVar12 = _UNK_?;
-    if (dVar11 <= _UNK_?) {
-      dVar12 = dVar11;
-    }
-    p3 = (Vector3 *)((uint)p3 & 0xffffff);
-    stack0xffffff7c = (float)&stack0xffffff9c;
-    bVar14 = TriangleCheck_SameSide((Vector3 *)&stack0xffffff9c,p1,a,b,(MethodInfo *)0x0);
-    if ((bVar14 != 0) &&
-       (pSVar15 = (String__Class *)b,
-       bVar14 = TriangleCheck_SameSide((Vector3 *)&stack0xffffff9c,a,p1,b,(MethodInfo *)0x0),
-       bVar14 != 0)) {
-      p1_00 = (String *)&stack0xffffff9c;
-      pSVar16 = (String *)&UNK_?;
-      bVar14 = TriangleCheck_SameSide((Vector3 *)p1_00,b,p1,a,(MethodInfo *)0x0);
-      if (bVar14 != 0) {
-        uVar17 = CONCAT44(pSVar16,pSVar15);
-        goto code_?;
-      }
-    }
-  }
-  p2 = (Vector3 *)0x0;
-  fVar18 = p1->y - localOrigin->y;
-  a_00 = (Vector3 *)(fVar8 * fVar8 + fVar7 * fVar7 + fVar9 * fVar9);
-  fVar8 = p1->x - localOrigin->x;
-  fVar7 = p1->z - localOrigin->z;
-  fVar7 = fVar18 * fVar18 + fVar8 * fVar8 + fVar7 * fVar7;
-  distance = MathFunctions::MathFunctions_DotProduct
-                       ((Vector3 *)&stack0xffffffcc,(Vector3 *)&stack0xffffff6c,(MethodInfo *)0x0);
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)a_00,distance + distance,fVar7 - _UNK_?,1.0,(float *)&p2,
-                     (MethodInfo *)0x0);
-  if (bVar14 != 0) {
-    p3 = (Vector3 *)CONCAT13(1,p3._0_3_);
-  }
-  fVar18 = a->y - localOrigin->y;
-  fVar9 = a->x - localOrigin->x;
-  stack0xffffff64 = localOrigin->y - a->y;
-  puStack_2 = (undefined *)(localOrigin->x - a->x);
-  fVar8 = a->z - localOrigin->z;
-  dVar11 = (double)ZEXT48((Vector3 *)&puStack_2);
-  fVar9 = fVar18 * fVar18 + fVar9 * fVar9 + fVar8 * fVar8;
-  distance = MathFunctions::MathFunctions_DotProduct
-                       ((Vector3 *)&stack0xffffffcc,(Vector3 *)&puStack_2,(MethodInfo *)0x0);
-  root = &p2;
-  fVar8 = (float)dVar11;
-  p1_00 = (String *)0x0;
-  dVar12 = (double)CONCAT44(fVar9 - _UNK_?,distance + distance);
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)a_00,distance + distance,fVar9 - _UNK_?,fVar8,(float *)root,
-                     (MethodInfo *)0x0);
-  pVVar19 = localOrigin;
-  if (bVar14 != 0) {
-    dVar12 = (double)(float)p2;
-    fVar8 = a->x;
-    root = (Vector3 **)a->y;
-    p1_00 = (String *)a->z;
-  }
-  localOrigin = (Vector3 *)0x0;
-  register0x00001280 = b->y - pVVar19->y;
-  puStack_4 = (undefined *)(b->x - pVVar19->x);
-  VStack_3.y = pVVar19->y - b->y;
-  VStack_3.x = pVVar19->x - b->x;
-  VStack_3.z = pVVar19->z - b->z;
-  fVar18 = b->z - pVVar19->z;
-  p3 = &VStack_3;
-  p2 = (Vector3 *)&stack0xffffffcc;
-  fVar18 = register0x00001280 * register0x00001280 + (float)puStack_4 * (float)puStack_4 +
-           fVar18 * fVar18;
-  distance = MathFunctions::MathFunctions_DotProduct(p2,p3,(MethodInfo *)0x0);
-  localDirection = (Vector3 *)(float)dVar12;
-  voxelHit = (VoxelHit *)0x0;
-  localOrigin = (Vector3 *)(fVar18 - _UNK_?);
-  p3 = (Vector3 *)(distance + distance);
-  p2 = a_00;
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)a_00,(float)p3,(float)localOrigin,(float)localDirection,
-                     (float *)distance,(MethodInfo *)0x0);
-  if (bVar14 != 0) {
-    dVar12 = (double)(float)p2;
-    p3 = (Vector3 *)CONCAT13(1,p3._0_3_);
-    fVar8 = b->x;
-    root = (Vector3 **)b->y;
-    p1_00 = (String *)b->z;
-  }
-  puStack_6 = (undefined *)(a->y - _UNK_?);
-  fStack_5 = a->x - _UNK_?;
-  fVar20 = a->z - _UNK_?;
-  fVar21 = (float)puStack_6 * (float)puStack_6 + fStack_5 * fStack_5 + fVar20 * fVar20;
-  in_stack_22 = &UNK_?;
-  distance = MathFunctions::MathFunctions_DotProduct
-                       ((Vector3 *)&fStack_5,(Vector3 *)&stack0xffffffcc,(MethodInfo *)0x0);
-  in_stack_22 = &UNK_?;
-  localDirection =
-       (Vector3 *)
-       MathFunctions::MathFunctions_DotProduct
-                 ((Vector3 *)&fStack_5,(Vector3 *)&stack0xffffff90,(MethodInfo *)0x0);
-  in_stack_22 = &UNK_?;
-  fVar23 = MathFunctions::MathFunctions_DotProduct
-                     ((Vector3 *)&stack0xffffffcc,(Vector3 *)&stack0xffffff90,(MethodInfo *)0x0);
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)((uint)a_00 ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                            ) * fVar21 + distance * distance,
-                     (fVar23 + fVar23) * fVar21 - distance * _UNK_? * (float)localDirection,
-                     (_UNK_? - fVar7) * fVar21 +
-                     (float)localDirection * (float)localDirection,(float)dVar12,(float *)&p2,
-                     (MethodInfo *)0x0);
-  if (((bVar14 != 0) &&
-      (fVar21 = (distance * (float)p2 - (float)localDirection) / fVar21, _UNK_? <= fVar21))
-     && (fVar21 <= _UNK_?)) {
-    dVar12 = (double)(float)p2;
-    p3 = (Vector3 *)CONCAT13(1,p3._0_3_);
-    fVar8 = fStack_5 * fVar21 + _UNK_?;
-    root = (Vector3 **)((float)puStack_6 * fVar21 + _UNK_?);
-    p1_00 = (String *)(fVar20 * fVar21 + _UNK_?);
-  }
-  puStack_6 = (undefined *)(b->y - a->y);
-  fStack_5 = b->x - a->x;
-  fVar7 = b->z - a->z;
-  fVar20 = (float)puStack_6 * (float)puStack_6 + fStack_5 * fStack_5 + fVar7 * fVar7;
-  distance = MathFunctions::MathFunctions_DotProduct
-                       ((Vector3 *)&fStack_5,(Vector3 *)&stack0xffffffcc,(MethodInfo *)0x0);
-  localDirection =
-       (Vector3 *)
-       MathFunctions::MathFunctions_DotProduct
-                 ((Vector3 *)&fStack_5,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
-  fVar21 = MathFunctions::MathFunctions_DotProduct
-                     ((Vector3 *)&stack0xffffffcc,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)((uint)a_00 ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                            ) * fVar20 + distance * distance,
-                     (fVar21 + fVar21) * fVar20 - distance * _UNK_? * (float)localDirection,
-                     (_UNK_? - fVar9) * fVar20 + (float)localDirection * (float)localDirection
-                     ,(float)dVar12,(float *)&p2,(MethodInfo *)0x0);
-  if (((bVar14 != 0) &&
-      (fVar20 = (distance * (float)p2 - (float)localDirection) / fVar20, _UNK_? <= fVar20)) &&
-     (fVar20 <= _UNK_?)) {
-    dVar12 = (double)(float)p2;
-    p3 = (Vector3 *)CONCAT13(1,p3._0_3_);
-    fVar8 = fStack_5 * fVar20 + a->x;
-    root = (Vector3 **)((float)puStack_6 * fVar20 + a->y);
-    p1_00 = (String *)(fVar7 * fVar20 + a->z);
-  }
-  puStack_6 = (undefined *)(_UNK_? - b->y);
-  fStack_5 = _UNK_? - b->x;
-  fVar7 = _UNK_? - b->z;
-  fVar9 = (float)puStack_6 * (float)puStack_6 + fStack_5 * fStack_5 + fVar7 * fVar7;
-  distance = MathFunctions::MathFunctions_DotProduct
-                       ((Vector3 *)&fStack_5,(Vector3 *)&stack0xffffffcc,(MethodInfo *)0x0);
-  localDirection =
-       (Vector3 *)
-       MathFunctions::MathFunctions_DotProduct
-                 ((Vector3 *)&fStack_5,(Vector3 *)&puStack_4,(MethodInfo *)0x0);
-  fVar20 = MathFunctions::MathFunctions_DotProduct
-                    ((Vector3 *)&stack0xffffffcc,(Vector3 *)&puStack_4,(MethodInfo *)0x0);
-  bVar14 = TriangleCheck_GetLowestRoot
-                    ((float)((uint)a_00 ^
-                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                            ) * fVar9 + distance * distance,
-                     (fVar20 + fVar20) * fVar9 - distance * _UNK_? * (float)localDirection,
-                     (_UNK_? - fVar18) * fVar9 +
-                     (float)localDirection * (float)localDirection,(float)dVar12,(float *)&p2,
-                     (MethodInfo *)0x0);
-  if (((bVar14 == 0) ||
-      (fVar9 = (distance * (float)p2 - (float)localDirection) / fVar9, fVar9 < _UNK_?)) ||
-     (_UNK_? < fVar9)) {
-    if (p3._3_1_ == '\0') {
+        (double)CONCAT44((uint)((ulonglong)dVar18 >> 0x20) & _UNK_?,
+                         SUB84(dVar18,0) & _UNK_?)) {
       return 0;
     }
   }
   else {
-    dVar12 = (double)(float)p2;
-    fVar8 = fStack_5 * fVar9 + b->x;
-    root = (Vector3 **)((float)puStack_6 * fVar9 + b->y);
-    p1_00 = (String *)(fVar7 * fVar9 + b->z);
+    dVar20 = (_UNK_? - dVar18) / (double)fVar17;
+    dVar21 = (_UNK_? - dVar18) / (double)fVar17;
+    dVar18 = dVar21;
+    if (dVar21 < dVar20) {
+      dVar18 = dVar20;
+      dVar20 = dVar21;
+    }
+    if (_UNK_? < dVar20) {
+      return 0;
+    }
+    if (dVar18 < 0.0) {
+      return 0;
+    }
+    dVar18 = 0.0;
+    if (0.0 <= dVar20) {
+      dVar18 = dVar20;
+    }
+    dVar20 = _UNK_?;
+    if (dVar18 <= _UNK_?) {
+      dVar20 = dVar18;
+    }
+    dStack_19 = _UNK_?;
+    fVar17 = (float)dVar20;
+    stack0xffffffd0 = (localOrigin->y - SUB84(uVar12,4)) + fVar13 * fVar17;
+    puStack_7 = (undefined *)((localOrigin->x - (float)uVar12) + fVar6 * fVar17);
+    b = (Transform *)((localOrigin->z - fVar10) + fVar14 * fVar17);
+    uStack_1._4_4_ = (float)&UNK_?;
+    bVar22 = TriangleCheck_SameSide((Vector3 *)&puStack_7,p1,p2,p3,(MethodInfo *)0x0);
+    if (((bVar22 != 0) &&
+        (bVar22 = TriangleCheck_SameSide((Vector3 *)&puStack_7,p2,p1,p3,(MethodInfo *)0x0),
+        bVar22 != 0)) &&
+       (bVar22 = TriangleCheck_SameSide((Vector3 *)&puStack_7,p3,p1,p2,(MethodInfo *)0x0),
+       _puStack_10 = _puStack_34, bVar22 != 0)) goto code_?;
   }
-  uVar17 = CONCAT44(root,fVar8);
+  distance = 0.0;
+  fVar17 = p1->y - localOrigin->y;
+  fVar6 = fVar13 * fVar13 + fVar6 * fVar6 + fVar14 * fVar14;
+  fVar13 = p1->x - localOrigin->x;
+  fVar10 = p1->z - localOrigin->z;
+  pVVar11 = (Vector3 *)(fVar17 * fVar17 + fVar13 * fVar13 + fVar10 * fVar10);
+  fVar10 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffc0,pVVar11,(MethodInfo *)0x0);
+  fVar10 = fVar10 + fVar10;
+  bVar22 = TriangleCheck_GetLowestRoot
+                    (fVar6,fVar10,(float)pVVar11 - _UNK_?,1.0,&distance,(MethodInfo *)0x0);
+  if (bVar22 != 0) {
+    dStack_19 = (double)distance;
+  }
+  fVar14 = p2->y - localOrigin->y;
+  fVar13 = p2->x - localOrigin->x;
+  uStack_1._4_4_ = localOrigin->y - p2->y;
+  uStack_1._0_4_ = localOrigin->x - p2->x;
+  fVar6 = p2->z - localOrigin->z;
+  fVar13 = fVar14 * fVar14 + fVar13 * fVar13 + fVar6 * fVar6;
+  stack0xffffffd0 = (float)&stack0xffffffc0;
+  fVar14 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffc0,(Vector3 *)&uStack_1,(MethodInfo *)0x0);
+  fVar6 = fVar13 - _UNK_?;
+  stack0xffffffd0 = fVar6;
+  bVar23 = TriangleCheck_GetLowestRoot
+                     (fVar6,fVar14 + fVar14,fVar6,(float)dStack_19,&distance,(MethodInfo *)0x0);
+  if (bVar23 != 0) {
+    dStack_19 = (double)distance;
+  }
+  fVar24 = p3->y - localOrigin->y;
+  fVar17 = p3->x - localOrigin->x;
+  fVar14 = p3->z - localOrigin->z;
+  fVar14 = fVar24 * fVar24 + fVar17 * fVar17 + fVar14 * fVar14;
+  fVar17 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffc0,(Vector3 *)&stack0xffffff54,(MethodInfo *)0x0);
+  b = (Transform *)(fVar17 + fVar17);
+  stack0xfffffff4 = fVar6;
+  bVar25 = TriangleCheck_GetLowestRoot
+                     (fVar6,(float)b,fVar14 - _UNK_?,(float)dStack_19,&distance,
+                      (MethodInfo *)0x0);
+  if (bVar25 != 0) {
+    dStack_19 = (double)distance;
+    puStack_26 = (undefined *)p3->x;
+    unique0x10001012 = p3->y;
+    b = (Transform *)p3->z;
+  }
+  bVar27 = bVar25 != 0 || (bVar23 != 0 || bVar22 != 0);
+  method = (MethodInfo *)0x0;
+  fVar28 = fRam00000004 - (float)voxelHit;
+  fVar24 = fRam00000000 - distance;
+  voxelHit = (VoxelHit *)&stack0xffffffc0;
+  fVar17 = fRam00000008 - 0.0;
+  distance = (float)&stack0xffffffdc;
+  pCVar29 = (Cube *)(fVar28 * fVar28 + fVar24 * fVar24 + fVar17 * fVar17);
+  fVar30 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)distance,(Vector3 *)voxelHit,(MethodInfo *)0x0);
+  method = (MethodInfo *)0x0;
+  voxelHit = (VoxelHit *)&stack0xffffff90;
+  distance = (float)&stack0xffffffdc;
+  MathFunctions::MathFunctions_DotProduct((Vector3 *)distance,(Vector3 *)voxelHit,(MethodInfo *)0x0)
+  ;
+  method = (MethodInfo *)0x0;
+  voxelHit = (VoxelHit *)&stack0xffffff90;
+  distance = (float)&stack0xffffffc0;
+  fVar31 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)distance,(Vector3 *)voxelHit,(MethodInfo *)0x0);
+  in_stack_32 = &UNK_?;
+  bVar22 = TriangleCheck_GetLowestRoot
+                    ((float)((uint)fVar6 ^
+                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            ) * (float)pCVar29 + fVar30 * fVar30,
+                     (fVar31 + fVar31) * (float)pCVar29 - fVar30 * _UNK_? * 3.2943754e-29,
+                     (_UNK_? - fVar10) * (float)pCVar29 + 0.0,(float)dStack_19,&distance,
+                     (MethodInfo *)0x0);
+  if (((bVar22 != 0) &&
+      (fVar10 = (fVar30 * distance - 3.2943754e-29) / (float)pCVar29, _UNK_? <= fVar10)) &&
+     (fVar10 <= _UNK_?)) {
+    dStack_19 = (double)distance;
+    bVar27 = true;
+    stack0xfffffff4 = fVar28 * fVar10 + (float)voxelHit;
+    puStack_26 = (undefined *)(fVar24 * fVar10 + distance);
+    b = (Transform *)(fVar17 * fVar10 + (float)method);
+  }
+  fVar24 = p3->y - fRam00000004;
+  fVar17 = p3->x - fRam00000000;
+  fVar10 = p3->z - fRam00000008;
+  pCVar29 = (Cube *)(fVar24 * fVar24 + fVar17 * fVar17 + fVar10 * fVar10);
+  fVar28 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffffc0,(MethodInfo *)0x0);
+  fVar30 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
+  fVar31 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffc0,(Vector3 *)&stack0xffffff84,(MethodInfo *)0x0);
+  bVar22 = TriangleCheck_GetLowestRoot
+                    ((float)((uint)fVar6 ^
+                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            ) * (float)pCVar29 + fVar28 * fVar28,
+                     (fVar31 + fVar31) * (float)pCVar29 - fVar28 * _UNK_? * fVar30,
+                     (_UNK_? - fVar13) * (float)pCVar29 + fVar30 * fVar30,(float)dStack_19,
+                     &distance,(MethodInfo *)0x0);
+  if (((bVar22 != 0) &&
+      (fVar13 = (fVar28 * distance - fVar30) / (float)pCVar29, _UNK_? <= fVar13)) &&
+     (fVar13 <= _UNK_?)) {
+    dStack_19 = (double)distance;
+    bVar27 = true;
+    stack0xfffffff4 = fVar24 * fVar13 + fRam00000004;
+    puStack_26 = (undefined *)(fVar17 * fVar13 + fRam00000000);
+    b = (Transform *)(fVar10 * fVar13 + fRam00000008);
+  }
+  fVar24 = (float)voxelHit - p3->y;
+  fVar13 = distance - p3->x;
+  fVar10 = (float)method - p3->z;
+  fVar17 = fVar24 * fVar24 + fVar13 * fVar13 + fVar10 * fVar10;
+  fVar28 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffffc0,(MethodInfo *)0x0);
+  fVar30 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffdc,(Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
+  fVar31 = MathFunctions::MathFunctions_DotProduct
+                     ((Vector3 *)&stack0xffffffc0,(Vector3 *)&stack0xffffff78,(MethodInfo *)0x0);
+  bVar22 = TriangleCheck_GetLowestRoot
+                    ((float)((uint)fVar6 ^
+                            __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                            ) * fVar17 + fVar28 * fVar28,
+                     (fVar31 + fVar31) * fVar17 - fVar28 * _UNK_? * fVar30,
+                     (_UNK_? - fVar14) * fVar17 + fVar30 * fVar30,(float)dStack_19,&distance,
+                     (MethodInfo *)0x0);
+  if (((bVar22 == 0) || (fVar17 = (fVar28 * distance - fVar30) / fVar17, fVar17 < _UNK_?)) ||
+     (_UNK_? < fVar17)) {
+    dVar20 = dStack_19;
+    if (!bVar27) {
+      return 0;
+    }
+  }
+  else {
+    stack0xfffffff4 = fVar24 * fVar17 + p3->y;
+    puStack_26 = (undefined *)(fVar13 * fVar17 + p3->x);
+    b = (Transform *)(fVar10 * fVar17 + p3->z);
+    dVar20 = (double)distance;
+  }
 code_?:
-  pVVar24 = voxelHit;
-  (voxelHit->point).x = (float)(int)uVar17;
-  (voxelHit->point).y = (float)(int)((ulonglong)uVar17 >> 0x20);
-  (voxelHit->point).z = (float)p1_00;
-  fVar25 = (float10)func_?();
-  pVVar24->distance = (float)(fVar25 * (float10)(float)dVar12);
-  if ((float)(fVar25 * (float10)(float)dVar12) < 0.0) {
+  dStack_19 = dVar20;
+  pVVar33 = voxelHit;
+  (voxelHit->point).x = (float)_puStack_10;
+  (voxelHit->point).y = SUB84(_puStack_10,4);
+  (voxelHit->point).z = (float)b;
+  fVar34 = (float10)func_?();
+  pVVar33->distance = (float)(fVar34 * (float10)(float)dStack_19);
+  if ((float)(fVar34 * (float10)(float)dStack_19) < 0.0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_Found_negativ_distance__this_sho,(MethodInfo *)0x0);
   }
   return 1;
@@ -322,20 +298,11 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_IsFrontFacingTo
                (Plane *plane,Vector3 *direction,MethodInfo *method)
 
 {
-  VStack_1.z = 0.0;
-  VStack_1.x = 0.0;
-  VStack_1.y = 0.0;
-  pRVar2 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-           RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-           KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                     (&RStack_3,
-                      (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                       *)plane,(MethodInfo *)0x0);
-  VStack_1.x = (float)pRVar2->_options;
-  VStack_1.y = (float)pRVar2->_cultureKey;
-  VStack_1.z = (float)pRVar2->_pattern;
-  fVar4 = MathFunctions::MathFunctions_DotProduct(&VStack_1,direction,(MethodInfo *)0x0);
-  return fVar4 <= 0.0;
+  VStack_1.x = (plane->m_Normal).x;
+  VStack_1.y = (plane->m_Normal).y;
+  VStack_1.z = (plane->m_Normal).z;
+  fVar2 = MathFunctions::MathFunctions_DotProduct(&VStack_1,direction,(MethodInfo *)0x0);
+  return fVar2 <= 0.0;
 }
 
 

@@ -34,33 +34,33 @@ String * MVWorldObject.dll::MV::WorldObject::GoldRewardedForLevelCollection::
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)0x0;
   DStack_7._version = 0;
   DStack_7._index = 0;
   DStack_7._current.key = 0;
   pSStack_8 = ::StringLiteral__;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).levelGoldRewards;
+  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).levelGoldRewards;
   DStack_7._current.value = 0;
   DStack_7._getEnumeratorRetType = 0;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff9c,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
                        );
     uStack_10 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar9->_dictionary;
+    DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar9->_dictionary;
     DStack_7._version = pDVar9->_version;
     DStack_7._index = pDVar9->_index;
-    DStack_7._current.key = (int32_t)(pDVar9->_current).key;
+    DStack_7._current.key = (pDVar9->_current).key;
     DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
     pDStack_11 = &DStack_7;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Int32]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32__MoveNext
                         (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
                         );
@@ -76,7 +76,7 @@ String * MVWorldObject.dll::MV::WorldObject::GoldRewardedForLevelCollection::
       pSStack_8 = pSVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
@@ -107,26 +107,17 @@ void MVWorldObject.dll::MV::WorldObject::GoldRewardedForLevelCollection::
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
-              (this_00,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                        *)levelGoldRewards,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary_System__Collections__Generic__IDictionary<int,_int>_
-              );
-    (this->fields).levelGoldRewards = (Dictionary_2_System_Int32_System_Int32_ *)this_00;
-    func_?(&this->fields,this_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+  Dictionary_2_System_Int32_System_Int32___ctor_1
+            (this_00,(IDictionary_2_System_Int32_System_Int32_ *)levelGoldRewards,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary_System__Collections__Generic__IDictionary<int,_int>_
+            );
+  (this->fields).levelGoldRewards = this_00;
+  func_?(&this->fields,this_00);
   return;
 }
 

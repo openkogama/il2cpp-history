@@ -48,17 +48,17 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_CheckAndResolvePendingKick
                           (StringLiteral_Kicked__Idle_for__0__min_,arg0,(MethodInfo *)0x0);
       MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
                 (MVGameMsgType__Enum_AdminMsg,message,(MethodInfo *)0x0);
-      this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__QuitIdle);
-      if (this_00 != (TweenRunner_1_FloatTween_ *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-        TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
-        MVGameControllerBase::MVGameControllerBase_ApplicationQuit
-                  ((QuitBaseCallback *)this_00,(MethodInfo *)0x0);
-        pAVar2 = TypeInfo__AwayMonitor->static_fields->instance;
-        if (pAVar2 != (AwayMonitor *)0x0) {
-          (pAVar2->fields).state = 3;
-          return;
-        }
+      this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__QuitIdle);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+      MVGameControllerBase::MVGameControllerBase_ApplicationQuit
+                ((QuitBaseCallback *)this_00,(MethodInfo *)0x0);
+      pAVar2 = TypeInfo__AwayMonitor->static_fields->instance;
+      if (pAVar2 != (AwayMonitor *)0x0) {
+        (pAVar2->fields).state = 3;
+        return;
       }
     }
   }
@@ -189,7 +189,6 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_Initialize
     cRam_? = '\x01';
   }
   pAVar1 = (AwayMonitor *)func_?(TypeInfo__AwayMonitor);
-  if (pAVar1 == (AwayMonitor *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__DateTime);
     cRam_? = '\x01';
@@ -199,65 +198,60 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_Initialize
   }
   DVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (pAVar1->fields).latestResetAFKTime._dateData = DVar2._dateData;
-  TStack_3._ticks = 0;
-  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2(&TStack_3,0,0,0,0x3b,(MethodInfo *)0x0);
-  *(AwayMonitor_IdleKickTimes **)&(pAVar1->fields).awayCheckFrequency._ticks =
-       (AwayMonitor_IdleKickTimes *)TStack_3._ticks;
-  *(MVGameMode__Enum *)((int)&(pAVar1->fields).awayCheckFrequency._ticks + 4) =
-       TStack_3._ticks._4_4_;
+  uStack_3 = 0;
+  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
+            ((TimeSpan *)&uStack_3,0,0,0,0x3b,(MethodInfo *)0x0);
+  *(MonitorData **)&(pAVar1->fields).awayCheckFrequency._ticks = (MonitorData *)uStack_3;
+  *(undefined **)((int)&(pAVar1->fields).awayCheckFrequency._ticks + 4) = uStack_3._4_4_;
   (pAVar1->fields).idleKickEnabled = 1;
   DVar2 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (pAVar1->fields).latestMouseMoveTime._dateData = DVar2._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)pAVar1,ExceptionArgument__Enum_obj,unaff_EDI);
   TypeInfo__AwayMonitor->static_fields->instance = pAVar1;
   func_?(TypeInfo__AwayMonitor->static_fields,pAVar1);
-  if (mode == MVGameMode__Enum_Edit) {
-code_?:
-    pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;
-    this = (AwayMonitor_IdleKickTimes *)func_?();
-    if (this == (AwayMonitor_IdleKickTimes *)0x0) goto code_?;
-    kickAfterMinutes = 0x1e;
-    warnAfterMinutes = 0xf;
-  }
-  else {
-    if (mode != MVGameMode__Enum_Play) {
-      if (mode != MVGameMode__Enum_CharacterEditor) {
-        auStack_4 = (undefined1  [4])TypeInfo__MV__Common__MVGameMode;
-        TStack_3._ticks._4_4_ = mode;
-        TStack_3._ticks._0_4_ = (AwayMonitor_IdleKickTimes *)0xffffffff;
-        pSVar5 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)auStack_4,(MethodInfo *)0x0);
-        pSVar5 = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral_GameMode__,pSVar5,StringLiteral___is_not_accounted,
-                            (MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)pSVar5,(MethodInfo *)0x0);
-        return;
-      }
+  if (mode != MVGameMode__Enum_Edit) {
+    if (mode == MVGameMode__Enum_Play) {
+      pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;
+      this = (AwayMonitor_IdleKickTimes *)func_?();
+      mode = 0xf;
+      warnAfterMinutes = 5;
       goto code_?;
     }
-    pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;
-    this = (AwayMonitor_IdleKickTimes *)func_?();
-    if (this == (AwayMonitor_IdleKickTimes *)0x0) goto code_?;
-    kickAfterMinutes = 0xf;
-    warnAfterMinutes = 5;
+    if (mode != MVGameMode__Enum_CharacterEditor) {
+      auStack_4 = (undefined1  [4])TypeInfo__MV__Common__MVGameMode;
+      uStack_3._4_4_ = (undefined *)mode;
+      uStack_3._0_4_ = (MonitorData *)0xffffffff;
+      pSVar5 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)auStack_4,(MethodInfo *)0x0);
+      pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                         (StringLiteral_GameMode__,pSVar5,StringLiteral___is_not_accounted,
+                          (MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar5,(MethodInfo *)0x0);
+      return;
+    }
   }
+  pAVar1 = TypeInfo__AwayMonitor->static_fields->instance;
+  this = (AwayMonitor_IdleKickTimes *)func_?();
+  mode = 0x1e;
+  warnAfterMinutes = 0xf;
+code_?:
+  uStack_3._4_4_ = &UNK_?;
   AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__ctor
-            (this,warnAfterMinutes,kickAfterMinutes,(MethodInfo *)0x0);
+            (this,warnAfterMinutes,mode,(MethodInfo *)0x0);
   if (pAVar1 != (AwayMonitor *)0x0) {
-    auStack_4 = (undefined1  [4])&(pAVar1->fields).idleKickTimes;
+    ppAStack6 = &(pAVar1->fields).idleKickTimes;
     (pAVar1->fields).idleKickTimes = this;
-    TStack_3._ticks._0_4_ = this;
+    pAStack7 = this;
     func_?();
     return;
   }
-code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -630,7 +624,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor__ctor(AwayMonitor *this,Metho
   (this->fields).idleKickEnabled = 1;
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields).latestMouseMoveTime._dateData = DVar1._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
 }

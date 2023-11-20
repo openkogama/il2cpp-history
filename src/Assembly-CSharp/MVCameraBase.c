@@ -11,16 +11,10 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact
     cRam_? = '\x01';
   }
   this_00 = (CameraImpact *)func_?(TypeInfo__CameraImpact);
-  if (this_00 != (CameraImpact *)0x0) {
-    CameraImpact::CameraImpact__ctor
-              (this_00,impactDirection,impactCurve,forceMultiplier,impactSpace,(MethodInfo *)0x0);
-    (this->fields).cameraImpact = this_00;
-    func_?(&(this->fields).cameraImpact,this_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  CameraImpact::CameraImpact__ctor
+            (this_00,impactDirection,impactCurve,forceMultiplier,impactSpace,(MethodInfo *)0x0);
+  (this->fields).cameraImpact = this_00;
+  func_?(&(this->fields).cameraImpact,this_00);
   return;
 }
 

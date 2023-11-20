@@ -29,21 +29,20 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Continu
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_Custom_promotion__Continue___wit,(MethodInfo *)0x0);
     if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__StatHatWrapper);
     }
     StatHatWrapper::StatHatWrapper_Count
               (StringLiteral_TouristPromotion_Custom_Continue,1,(MethodInfo *)0x0);
-    (*(this->klass->vtable).OnContinueClicked.methodPtr)
-              (this,(this->klass->vtable).OnContinueClicked.method);
+    (*(code *)(this->klass->vtable).OnContinueClicked.method)(this,this->klass[1]._0.image);
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Custom_promotion__Continue___wit,(MethodInfo *)0x0);
   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__StatHatWrapper);
@@ -62,12 +61,6 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Continu
     }
     object = TypeInfo__CustomTouristPromotion____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_ITouristAdController_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_ITouristAdController_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -104,7 +97,7 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_CustomR
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Custom_promotion__CustomRedirect,(MethodInfo *)0x0);
   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -148,7 +141,7 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Signup
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Custom_promotion__Signup__,(MethodInfo *)0x0);
   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -199,7 +192,7 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Start
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Custom_promotion__Start__,(MethodInfo *)0x0);
   this_00 = (this->fields).adContinueButton;
   if (this_00 != (GameObject *)0x0) {
@@ -215,29 +208,28 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Start
        pCVar3 != (CustomTouristPromotionSettings *)0x0)) {
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
                          (pSVar1,(pCVar3->fields)._AssetURL_k__BackingField,(MethodInfo *)0x0);
-      this_01 = (Action_1_Object_ *)func_?();
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__CustomTouristPromotion__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-                   ,(MethodInfo *)0x0);
-        this_02 = (AssetBundleRequest *)func_?();
-        if (this_02 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_02,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
-                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_02,(MethodInfo *)0x0);
-          if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          StatHatWrapper::StatHatWrapper_Count
-                    (StringLiteral_TouristPromotion_Custom,1,(MethodInfo *)0x0);
-          return;
-        }
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__CustomTouristPromotion__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      this_02 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_02,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_02,(MethodInfo *)0x0);
+      if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      StatHatWrapper::StatHatWrapper_Count
+                (StringLiteral_TouristPromotion_Custom,1,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -266,33 +258,34 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Streami
       UVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
               UnityWebRequest_get_result(www,(MethodInfo *)0x0);
       if (UVar1 != UnityWebRequest_Result__Enum_ProtocolError) {
-        this_01 = (DownloadHandler *)
-                  mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
-                  ValueListBuilder_1_System_Object__1_get_Length
-                            ((ValueListBuilder_1_System_Object__1 *)www,(MethodInfo *)0x0);
-        if (this_01 != (DownloadHandler *)0x0) {
+        this_01 = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+                  __Il2CppFullySharedGenericType]::
+                  WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                            ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                              *)www,(MethodInfo *)0x0);
+        if (this_01 !=
+            (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            0x0) {
           data = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
-                 DownloadHandler_get_data(this_01,(MethodInfo *)0x0);
-          this_02 = (Texture2D *)func_?();
+                 DownloadHandler_get_data((DownloadHandler *)this_01,(MethodInfo *)0x0);
+          this_02 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
+          UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_4
+                    (this_02,2,2,(MethodInfo *)0x0);
+          UnityEngine.ImageConversionModule.dll::UnityEngine::ImageConversion::
+          ImageConversion_LoadImage_1(this_02,data,(MethodInfo *)0x0);
+          this_00 = (this->fields).graphics;
           if (this_02 != (Texture2D *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
-                      (this_02,2,2,(MethodInfo *)0x0);
-            UnityEngine.ImageConversionModule.dll::UnityEngine::ImageConversion::
-            ImageConversion_LoadImage_1(this_02,data,(MethodInfo *)0x0);
-            this_00 = (this->fields).graphics;
-            iVar2 = (*(this_02->klass->vtable).get_width.methodPtr)();
-            iVar3 = (*(this_02->klass->vtable).get_height.methodPtr)(this_02);
-            fVar4 = 0.0;
-            fVar5 = 0.0;
-            fVar6 = 0.0;
-            UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
-                      ((Vector4 *)&stack0xffffffe4,0.0,0.0,(float)iVar2,(float)iVar3,
-                       (MethodInfo *)0x0);
-            rect.m_YMin = fVar5;
-            rect.m_XMin = fVar4;
-            rect.m_Width = fVar6;
-            rect.m_Height = 0.0;
-            value = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_Create_5
+            iVar2 = (*(code *)(this_02->klass->vtable).get_width.method)
+                              (this_02,(this_02->klass->vtable).set_width.methodPtr);
+            pIVar3 = (this_02->klass->vtable).set_height.methodPtr;
+            fVar4 = (float)iVar2;
+            pTVar5 = this_02;
+            iVar2 = (*(code *)(this_02->klass->vtable).get_height.method)();
+            rect.m_YMin = (float)pIVar3;
+            rect.m_XMin = (float)pTVar5;
+            rect.m_Width = fVar4;
+            rect.m_Height = (float)iVar2;
+            value = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_Create_6
                               (this_02,rect,(Vector2)0x3f0000003f000000,(MethodInfo *)0x0);
             if (this_00 != (Image *)0x0) {
               UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
@@ -302,20 +295,20 @@ void Assembly-CSharp.dll::CustomTouristPromotion::CustomTouristPromotion_Streami
           }
         }
         func_?();
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
     }
-    pSVar8 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    pSVar7 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
              UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-    pSVar8 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_PNG_get_request_callback_failed_,pSVar8,(MethodInfo *)0x0);
+    pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_PNG_get_request_callback_failed_,pSVar7,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-              ((Object *)pSVar8,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+              ((Object *)pSVar7,(MethodInfo *)0x0);
   }
   return;
 }

@@ -15,80 +15,58 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
   MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObjectsBase_Destroy
             ((MVVehicleBase_LocalObjectsBase *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).owner;
-  if ((pMVar1 != (MVJetPack *)0x0) &&
-     (pMVar2 = (pMVar1->fields).Health, pMVar2 != (MVRuntimeDataVariableClampedFloat *)0x0)) {
-    pMVar3 = (pMVar2->fields)._._.OnChange;
-    this_00 = (UnityAction_1_System_Object_ *)
-              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-    if (this_00 != (UnityAction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-      UnityAction_1_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__MVVehicleBase__LocalObjectsBase__OnHealthChange_System__Object_,
-                 (MethodInfo *)0x0);
-      pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pMVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pMVar3 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-        (pMVar2->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      }
-      else {
-        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-          pMVar4 = pMVar3;
-        }
-        if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-        (pMVar2->fields)._._.OnChange = pMVar4;
-        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-          pMVar4 = pMVar3;
-        }
-        if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-      }
-      func_?();
-      pMVar5 = (this->fields).avatarPickupOwner;
-      if (pMVar5 != (MVPickupOwner *)0x0) {
-        pMVar6 = (pMVar5->fields).onHandleFiring;
-        this_01 = (UnityAction_1_System_ByteEnum_ *)
-                  func_?(TypeInfo__MVPickupOwner__OnHandleFiringDelegate);
-        if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-          UnityAction_1_System_ByteEnum___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVJetPack__LocalObjectsJetPack__OnFiring_bool_,(MethodInfo *)0x0);
-          pMVar6 = (MVPickupOwner_OnHandleFiringDelegate *)
-                   mscorlib.dll::System::Delegate::Delegate_Remove
-                             ((Delegate *)pMVar6,(Delegate *)this_01,(MethodInfo *)0x0);
-          if (pMVar6 == (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-            (pMVar5->fields).onHandleFiring = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-            func_?();
-            return;
-          }
-          pMVar7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-          if (pMVar6->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-            pMVar7 = pMVar6;
-          }
-          if (pMVar7 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-            (pMVar5->fields).onHandleFiring = pMVar7;
-            pMVar7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-            if (pMVar6->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-              pMVar7 = pMVar6;
-            }
-            if (pMVar7 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-              func_?();
-              return;
-            }
-          }
-          goto code_?;
-        }
-      }
-    }
+  if (pMVar1 == (MVJetPack *)0x0) {
+code_?:
+    pMStack2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
   }
-  func_?();
+  else {
+    pMVar3 = (pMVar1->fields).Health;
+    if (pMVar3 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    pMVar4 = (pMVar3->fields)._._.OnChange;
+    this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVVehicleBase__LocalObjectsBase__OnHealthChange_System__Object_,
+               (MethodInfo *)0x0);
+    pMStack2 =
+         (MVRuntimeDataVariable_OnChangeDelegate *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pMVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+    pMStack5 = (MVRuntimeDataVariable_OnChangeDelegate__Class *)0x0;
+    if (pMStack2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+      (pMVar3->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+code_?:
+      pMStack2 = (MVRuntimeDataVariable_OnChangeDelegate *)&(pMVar3->fields)._._.OnChange;
+      func_?();
+      return;
+    }
+    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)pMStack5;
+    if (pMStack2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar4 = pMStack2;
+    }
+    pMStack5 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (pMVar3->fields)._._.OnChange = pMVar4;
+    pMStack5 =
+         (MVRuntimeDataVariable_OnChangeDelegate__Class *)
+         (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMStack2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMStack5 = (MVRuntimeDataVariable_OnChangeDelegate__Class *)pMStack2;
+    }
+    unaff_ESI = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pMStack5 != (MVRuntimeDataVariable_OnChangeDelegate__Class *)0x0)
+    goto code_?;
+  }
+  pMStack5 = unaff_ESI;
+  pMStack2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
+  pMStack5 = extraout_ECX;
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -106,72 +84,62 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
   }
   MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObjectsBase_Enter
             ((MVVehicleBase_LocalObjectsBase *)this,(MethodInfo *)0x0);
-  pJVar1 = (this->fields).vehicleMotor;
+  this_00 = (this->fields).vehicleMotor;
   (this->fields).leaveMode = 0;
-  if (pJVar1 != (JetPackMotor *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Action<MVControllerColliderHit>);
-      func_?(&TypeInfo__IMoveHitHandler);
-      cRam_? = '\x01';
-    }
-    (pJVar1->fields).leaveMode = 0;
-    this_00 = (this->fields).triggerHandler;
-    if (this_00 != (MVTriggerHandler *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)this_00,1,(MethodInfo *)0x0);
-      pMVar2 = (this->fields).vehicleUser;
-      if (pMVar2 != (MVAvatarLocal *)0x0) {
-        (pMVar2->fields)._ForceRotateAvatarToFiringDirection_k__BackingField = 1;
-        pMVar3 = (this->fields).avatarPickupOwner;
-        if (pMVar3 != (MVPickupOwner *)0x0) {
-          pMVar4 = (pMVar3->fields).onHandleFiring;
-          this_01 = (UnityAction_1_System_ByteEnum_ *)func_?();
-          if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-            UnityAction_1_System_ByteEnum___ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__MVJetPack__LocalObjectsJetPack__OnFiring_bool_,(MethodInfo *)0x0)
-            ;
-            pMVar4 = (MVPickupOwner_OnHandleFiringDelegate *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pMVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-            uVar5 = CONCAT44(TypeInfo__MVPickupOwner__OnHandleFiringDelegate,pMVar4);
-            if (pMVar4 == (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-              (pMVar3->fields).onHandleFiring = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-              ppMStack6 = &(pMVar3->fields).onHandleFiring;
-              pMStack7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-              func_?();
-              return;
-            }
-            pMVar8 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-            if (pMVar4->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-              pMVar8 = pMVar4;
-            }
-            if (pMVar8 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-              (pMVar3->fields).onHandleFiring = pMVar8;
-              uVar5 = CONCAT44(TypeInfo__MVPickupOwner__OnHandleFiringDelegate,pMVar4);
-              pMStack7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-              if (pMVar4->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-                pMStack7 = pMVar4;
-              }
-              if (pMStack7 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-                ppMStack6 = &(pMVar3->fields).onHandleFiring;
-                func_?();
-                return;
-              }
-            }
-            goto code_?;
-          }
-        }
-      }
-    }
-  }
-  uVar5 = func_?();
+  if (this_00 == (JetPackMotor *)0x0) {
 code_?:
-  _ppMStack0000000c = uVar5;
+    pDStack1 = (Delegate *)func_?();
+    pMStack2 = unaff_ESI;
+  }
+  else {
+    JetPackMotor::JetPackMotor_set_LeaveMode(this_00,0,(MethodInfo *)0x0);
+    this_01 = (this->fields).triggerHandler;
+    if (this_01 == (MVTriggerHandler *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)this_01,1,(MethodInfo *)0x0);
+    pMVar3 = (this->fields).vehicleUser;
+    if (pMVar3 == (MVAvatarLocal *)0x0) goto code_?;
+    (pMVar3->fields)._ForceRotateAvatarToFiringDirection_k__BackingField = 1;
+    pMVar4 = (this->fields).avatarPickupOwner;
+    if (pMVar4 == (MVPickupOwner *)0x0) goto code_?;
+    pMStack5 = TypeInfo__MVPickupOwner__OnHandleFiringDelegate;
+    a = (pMVar4->fields).onHandleFiring;
+    this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_02,(Object *)this,MethodInfo__MVJetPack__LocalObjectsJetPack__OnFiring_bool_,
+               (MethodInfo *)0x0);
+    pDStack1 =
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pDStack1 == (Delegate *)0x0) {
+      this_02[1].monitor = (MonitorData *)0x0;
+code_?:
+      func_?();
+      return;
+    }
+    pDVar6 = (Delegate *)0x0;
+    if ((MVPickupOwner_OnHandleFiringDelegate__Class *)pDStack1->klass ==
+        TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
+      pDVar6 = pDStack1;
+    }
+    pMStack2 = TypeInfo__MVPickupOwner__OnHandleFiringDelegate;
+    if (pDVar6 == (Delegate *)0x0) goto code_?;
+    this_02[1].monitor = (MonitorData *)pDVar6;
+    pDVar6 = (Delegate *)0x0;
+    if ((MVPickupOwner_OnHandleFiringDelegate__Class *)pDStack1->klass ==
+        TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
+      pDVar6 = pDStack1;
+    }
+    pMStack2 = TypeInfo__MVPickupOwner__OnHandleFiringDelegate;
+    if (pDVar6 != (Delegate *)0x0) goto code_?;
+  }
+  pDStack1 = (Delegate *)func_?();
+  pMStack2 = extraout_ECX;
+code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -185,24 +153,28 @@ bool Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::
 {
   pJVar1 = (this->fields).vehicleMotor;
   if (pJVar1 != (JetPackMotor *)0x0) {
-    if (_UNK_? < (pJVar1->fields).waterProximity) {
+    bVar2 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar1,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
       thrust = 0;
     }
-    bVar2 = thrust;
-    if (((this->fields).leaveMode != 0) &&
-       (bVar2 = 1, _UNK_? < (((this->fields).vehicleMotor)->fields).waterProximity)) {
-      bVar2 = thrust;
+    if ((this->fields).leaveMode != 0) {
+      pJVar1 = (this->fields).vehicleMotor;
+      if (pJVar1 == (JetPackMotor *)0x0) goto code_?;
+      bVar2 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar1,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        thrust = 1;
+      }
     }
     pMVar3 = (this->fields).owner;
     if (pMVar3 != (MVJetPack *)0x0) {
-      cVar4 = (*(pMVar3->klass->vtable).get_IsDead.methodPtr)
-                        (pMVar3,(pMVar3->klass->vtable).get_IsDead.method);
+      cVar4 = (*(code *)(pMVar3->klass->vtable).get_IsDead.method)(pMVar3);
       if (cVar4 != '\0') {
-        bVar2 = 0;
+        thrust = 0;
       }
-      return bVar2;
+      return thrust;
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   bVar2 = (*pcVar5)();
@@ -258,172 +230,170 @@ Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPac
     func_?(&TypeInfo__IInputToPlayerMovement);
     cRam_? = '\x01';
   }
-  pIVar1 = (Il2CppType *)
-            MVJetPack_LocalObjectsJetPack_HandleWalkMode(this,movementMap,(MethodInfo *)0x0);
+  pIVar1 = MVJetPack_LocalObjectsJetPack_HandleWalkMode(this,movementMap,(MethodInfo *)0x0);
   uVar2 = 0;
   pIStack_3 = pIVar1;
-  if (pIVar1 != (Il2CppType *)0x0) {
-    uVar2 = func_?(1,TypeInfo__IInputToPlayerMovement,pIVar1);
+  if (pIVar1 != (IInputToPlayerMovement *)0x0) {
+    bVar4 = func_?(1,TypeInfo__IInputToPlayerMovement,pIVar1);
+    uVar2 = (uint)bVar4;
   }
-  pJVar4 = (this->fields).vehicleMotor;
-  if (pJVar4 != (JetPackMotor *)0x0) {
-    fVar5 = (pJVar4->fields).waterProximity;
-    pcVar6 = (char *)(uVar2 & 0xff);
-    if (_UNK_? < fVar5) {
-      pcVar6 = (char *)0x0;
+  pJVar5 = (this->fields).vehicleMotor;
+  if (pJVar5 != (JetPackMotor *)0x0) {
+    bVar6 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar5,(MethodInfo *)0x0);
+    if (bVar6 != 0) {
+      uVar2 = 0;
     }
     if ((this->fields).leaveMode != 0) {
-      bVar7 = 1;
-      if (_UNK_? < fVar5) {
-        bVar7 = (byte)pcVar6;
+      pJVar5 = (this->fields).vehicleMotor;
+      if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
+      bVar6 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar5,(MethodInfo *)0x0);
+      if (bVar6 == 0) {
+        uVar2 = 1;
       }
-      pcVar6 = (char *)(uint)bVar7;
     }
-    pMVar8 = (this->fields).owner;
-    if (pMVar8 != (MVJetPack *)0x0) {
-      cVar9 = (*(pMVar8->klass->vtable).get_IsDead.methodPtr)
-                         (pMVar8,(pMVar8->klass->vtable).get_IsDead.method);
-      if (cVar9 != '\0') {
-        pcVar6 = (char *)0x0;
+    pMVar7 = (this->fields).owner;
+    if (pMVar7 != (MVJetPack *)0x0) {
+      cVar8 = (*(code *)(pMVar7->klass->vtable).get_IsDead.method)
+                         (pMVar7,(pMVar7->klass->vtable).get_IsInSpawner.methodPtr);
+      if (cVar8 != '\0') {
+        uVar2 = 0;
       }
-      pcStack_10 = pcVar6;
-      MVJetPack_LocalObjectsJetPack_OverheatUpdate(this,(bool)pcVar6,(MethodInfo *)0x0);
+      uStack_9 = uVar2;
+      MVJetPack_LocalObjectsJetPack_OverheatUpdate(this,(bool)uVar2,(MethodInfo *)0x0);
       if ((this->fields).walkMode == 0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Quaternion);
           cRam_? = '\x01';
         }
         movementMap._0_1_ = 0;
-        bVar11 = (bool)movementMap;
+        bVar6 = (bool)movementMap;
         movementMap._0_1_ = 0;
-        pQVar12 = TypeInfo__UnityEngine__Quaternion->static_fields;
-        pIVar13 = (Il2CppType *)(pQVar12->identityQuaternion).x;
-        pMVar14 = (MethodInfo *)(pQVar12->identityQuaternion).y;
-        fVar5 = (pQVar12->identityQuaternion).z;
-        fVar15 = (pQVar12->identityQuaternion).w;
-        if (pIVar1 != (Il2CppType *)0x0) {
+        pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        pIVar11 = (IInputToPlayerMovement *)(pQVar10->identityQuaternion).x;
+        puVar12 = (undefined8 *)(pQVar10->identityQuaternion).y;
+        fVar13 = (pQVar10->identityQuaternion).z;
+        fVar14 = (pQVar10->identityQuaternion).w;
+        if (pIVar1 != (IInputToPlayerMovement *)0x0) {
           this_00 = (this->fields).mainCamera;
           if (this_00 == (Camera *)0x0) goto code_?;
-          pIStack_16 = (Il2CppClass *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          pTStack_15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                  ((Component *)this_00,(MethodInfo *)0x0);
-          uVar17 = 0;
-          _Var6 = (_union_154)(pIVar1->data).__klassIndex;
-          uStack_18._4_4_ = _Var6.rgctx_data;
-          _Stack_8.genericMethod = (Il2CppGenericMethod *)0x0;
-          if (*(uint16_t *)((int)_Var6.rgctx_data + 0xb2) != 0) {
+          uVar16 = 0;
+          pIVar17 = pIVar1->klass;
+          uStack_18 = CONCAT44(pIVar17,(undefined4)uStack_18);
+          uStack_19 = 0;
+          uVar20._0_1_ = (pIVar17->_1).rank;
+          uVar20._1_1_ = (pIVar17->_1).minimumAlignment;
+          if (uVar20 != 0) {
             do {
               pIVar1 = pIStack_3;
-              if (_Var6.rgctx_data[0x16].type[uVar17].data.dummy ==
+              if (pIVar17->interfaceOffsets[uVar16].interfaceType ==
                   (Il2CppClass *)TypeInfo__IInputToPlayerMovement) {
-                pVVar19 = &(((IInputToPlayerMovement__Class *)(pIStack_3->data).__klassIndex)->
-                           vtable).get_Direction +
-                          ((IInputToPlayerMovement__Class *)(pIStack_3->data).__klassIndex)->
-                          interfaceOffsets[uVar17].offset;
+                ppMVar21 = &(&(pIStack_3->klass->vtable).get_Direction)
+                            [pIStack_3->klass->interfaceOffsets[uVar16].offset].method;
                 goto code_?;
               }
-              uVar17 = uVar17 + 1;
-            } while (uVar17 < *(uint16_t *)((int)_Var6.rgctx_data + 0xb2));
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar20);
           }
-          pVVar19 = (VirtualInvokeData *)func_?(pIVar1);
+          ppMVar21 = (MethodInfo **)func_?(pIVar1);
 code_?:
-          pMVar14 = pVVar19->method;
-          pIVar13 = pIVar1;
-          puVar20 = (ulonglong *)(*pVVar19->methodPtr)(auStack_21 + 4);
-          uStack_22 = *puVar20;
-          pIVar23 = *(InvokerMethod *)(puVar20 + 1);
-          pIStack_24 = pIVar23;
-          uStack_18 = uStack_22;
-          fVar25 = (float10)func_?(&uStack_22,0);
-          pIStack_3 = (Il2CppType *)(float)fVar25;
+          puVar12 = (undefined8 *)ppMVar21[1];
+          pIVar11 = pIVar1;
+          puVar22 = (ulonglong *)(*(code *)*ppMVar21)(auStack_23 + 4);
+          uStack_24 = *puVar22;
+          fVar25 = *(float *)(puVar22 + 1);
+          fStack_26 = fVar25;
+          uStack_18 = uStack_24;
+          fVar27 = (float10)func_?(&uStack_24,0);
+          pIStack_3 = (IInputToPlayerMovement *)(float)fVar27;
           if (0.0 < (float)pIStack_3) {
-            if (pIStack_16 == (Il2CppClass *)0x0) goto code_?;
-            pQVar26 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                ((Quaternion *)auStack_21,(Transform *)pIStack_16,(MethodInfo *)0x0)
-            ;
-            point.z = (float)pIVar23;
-            point.x = (float)(Il2CppType **)uStack_18;
+            if (pTStack_15 == (Transform *)0x0) goto code_?;
+            pQVar28 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                ((Quaternion *)auStack_23,pTStack_15,(MethodInfo *)0x0);
+            point.z = fVar25;
+            point.x = (float)(undefined4)uStack_18;
             point.y = (float)uStack_18._4_4_;
-            pVVar27 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                                ((Vector3 *)(auStack_21 + 4),*pQVar26,point,(MethodInfo *)0x0);
-            fVar5 = 0.0;
-            uVar28._0_4_ = pVVar27->x;
-            uVar28._4_4_ = pVVar27->y;
-            pIStack_24 = (InvokerMethod)pVVar27->z;
-            pMVar14 = (MethodInfo *)&uStack_22;
-            pIVar13 = (Il2CppType *)(auStack_21 + 4);
-            uStack_22 = uVar28 & 0xffffffff;
-            puVar20 = (ulonglong *)func_?();
-            uStack_18 = *puVar20;
-            pIVar23 = *(InvokerMethod *)(puVar20 + 1);
+            pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                                ((Vector3 *)(auStack_23 + 4),*pQVar28,point,(MethodInfo *)0x0);
+            fVar13 = 0.0;
+            uVar30._0_4_ = pVVar29->x;
+            uVar30._4_4_ = pVVar29->y;
+            fStack_26 = pVVar29->z;
+            puVar12 = &uStack_24;
+            pIVar11 = (IInputToPlayerMovement *)(auStack_23 + 4);
+            uStack_24 = uVar30 & 0xffffffff;
+            puVar22 = (ulonglong *)func_?();
+            uStack_18 = *puVar22;
+            fVar25 = *(float *)(puVar22 + 1);
           }
-          pJVar4 = (this->fields).vehicleMotor;
-          if (pJVar4 == (JetPackMotor *)0x0) goto code_?;
-          puVar20 = (ulonglong *)
-                    (*(pJVar4->klass->vtable).get_Velocity.methodPtr)
-                              (auStack_21 + 4,pJVar4,(pJVar4->klass->vtable).get_Velocity.method);
-          uVar28 = *puVar20;
-          pIStack_24 = *(InvokerMethod *)(puVar20 + 1);
-          uStack_22._0_4_ = (Il2CppMethodPointer)uVar28;
-          uStack_22._4_4_ = (Il2CppMethodPointer)(uVar28 >> 0x20);
-          uStack_22 = uVar28;
+          pJVar5 = (this->fields).vehicleMotor;
+          if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
+          puVar22 = (ulonglong *)
+                    (*(code *)(pJVar5->klass->vtable).get_Velocity.method)
+                              (auStack_23 + 4,pJVar5,
+                               (pJVar5->klass->vtable).get_IsMovementLocked.methodPtr);
+          uVar30 = *puVar22;
+          fStack_26 = *(float *)(puVar22 + 1);
+          uStack_24._0_4_ = (float)uVar30;
+          uStack_24._4_4_ = (float)(uVar30 >> 0x20);
+          uStack_24 = uVar30;
           if ((_UNK_? <
-               (float)uStack_22._4_4_ * (float)uStack_22._4_4_ +
-               (float)(Il2CppMethodPointer)uStack_22 * (float)(Il2CppMethodPointer)uStack_22 +
-               (float)pIStack_24 * (float)pIStack_24) ||
-             (movementMap._0_1_ = bVar11, (this->fields).wasFiring != 0)) {
+               uStack_24._4_4_ * uStack_24._4_4_ + (float)uStack_24 * (float)uStack_24 +
+               fStack_26 * fStack_26) || (movementMap._0_1_ = bVar6, (this->fields).wasFiring != 0)
+             ) {
             this_01 = (this->fields).avatarPickupOwner;
             if (this_01 == (MVPickupOwner *)0x0) goto code_?;
-            pVVar27 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                                ((Vector3 *)(auStack_21 + 4),this_01,(MethodInfo *)0x0);
-            uVar29._0_4_ = pVVar27->x;
-            uVar29._4_4_ = pVVar27->y;
-            uStack_22 = uVar29 & 0xffffffff;
-            forward.z = pVVar27->z;
-            forward.x = (float)(int)(uVar29 & 0xffffffff);
-            forward.y = (float)(int)((uVar29 & 0xffffffff) >> 0x20);
-            pQVar26 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+            pVVar29 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                                ((Vector3 *)(auStack_23 + 4),this_01,(MethodInfo *)0x0);
+            uVar31._0_4_ = pVVar29->x;
+            uVar31._4_4_ = pVVar29->y;
+            uStack_24 = uVar31 & 0xffffffff;
+            forward.z = pVVar29->z;
+            forward.x = (float)(int)(uVar31 & 0xffffffff);
+            forward.y = (float)(int)((uVar31 & 0xffffffff) >> 0x20);
+            pQVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                                 ((Quaternion *)&stack0xffffffb8,forward,(MethodInfo *)0x0);
             movementMap._0_1_ = 1;
-            pIVar13 = (Il2CppType *)pQVar26->x;
-            pMVar14 = (MethodInfo *)pQVar26->y;
-            fVar5 = pQVar26->z;
-            fVar15 = pQVar26->w;
+            pIVar11 = (IInputToPlayerMovement *)pQVar28->x;
+            puVar12 = (undefined8 *)pQVar28->y;
+            fVar13 = pQVar28->z;
+            fVar14 = pQVar28->w;
           }
-          pJVar4 = (this->fields).vehicleMotor;
-          if (pJVar4 == (JetPackMotor *)0x0) goto code_?;
-          (pJVar4->fields)._InputMoveDirection_k__BackingField.x = (float)(Il2CppType **)uStack_18;
-          (pJVar4->fields)._InputMoveDirection_k__BackingField.y = (float)uStack_18._4_4_;
-          (pJVar4->fields)._InputMoveDirection_k__BackingField.z = (float)pIVar23;
-          pcVar6 = pcStack_10;
+          pJVar5 = (this->fields).vehicleMotor;
+          if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
+          (pJVar5->fields)._InputMoveDirection_k__BackingField.x = (float)(undefined4)uStack_18;
+          (pJVar5->fields)._InputMoveDirection_k__BackingField.y = (float)uStack_18._4_4_;
+          (pJVar5->fields)._InputMoveDirection_k__BackingField.z = fVar25;
+          uVar2 = uStack_9;
         }
-        pJVar4 = (this->fields).vehicleMotor;
-        if (pJVar4 != (JetPackMotor *)0x0) {
-          (pJVar4->fields)._Thrust_k__BackingField = (bool)pcVar6;
-          pJVar4 = (this->fields).vehicleMotor;
-          if (pJVar4 != (JetPackMotor *)0x0) {
-            setQuaternion.y = (float)pMVar14;
-            setQuaternion.x = (float)pIVar13;
-            setQuaternion.z = fVar5;
-            setQuaternion.w = fVar15;
+        pJVar5 = (this->fields).vehicleMotor;
+        if (pJVar5 != (JetPackMotor *)0x0) {
+          (pJVar5->fields)._Thrust_k__BackingField = (bool)uVar2;
+          pJVar5 = (this->fields).vehicleMotor;
+          if (pJVar5 != (JetPackMotor *)0x0) {
+            setQuaternion.y = (float)puVar12;
+            setQuaternion.x = (float)pIVar11;
+            setQuaternion.z = fVar13;
+            setQuaternion.w = fVar14;
             JetPackMotor::JetPackMotor_FixedUpdateFunction
-                      (pJVar4,setQuaternion,(bool)movementMap,(MethodInfo *)0x0);
-            return (IInputToPlayerMovement *)pIVar1;
+                      (pJVar5,setQuaternion,(bool)movementMap,(MethodInfo *)0x0);
+            return pIVar1;
           }
         }
       }
       else {
-        pMVar30 = (this->fields).vehicleUser;
-        if (pMVar30 != (MVAvatarLocal *)0x0) {
-          this_02 = (pMVar30->fields).avatarMotor;
-          pJVar4 = (this->fields).vehicleMotor;
-          if ((pJVar4 != (JetPackMotor *)0x0) &&
-             (pVVar27 = JetPackMotor::JetPackMotor_get_Impulses
-                                  ((Vector3 *)(auStack_21 + 4),pJVar4,(MethodInfo *)0x0),
+        pMVar32 = (this->fields).vehicleUser;
+        if (pMVar32 != (MVAvatarLocal *)0x0) {
+          this_02 = (pMVar32->fields).avatarMotor;
+          pJVar5 = (this->fields).vehicleMotor;
+          if ((pJVar5 != (JetPackMotor *)0x0) &&
+             (pVVar29 = JetPackMotor::JetPackMotor_get_Impulses
+                                  ((Vector3 *)(auStack_23 + 4),pJVar5,(MethodInfo *)0x0),
              this_02 != (AvatarMotor *)0x0)) {
             MVRigidBody::MVRigidBody_AddImpulse_1
-                      ((MVRigidBody *)this_02,*pVVar27,0,(MethodInfo *)0x0);
-            return (IInputToPlayerMovement *)pIVar1;
+                      ((MVRigidBody *)this_02,*pVVar29,0,(MethodInfo *)0x0);
+            return pIVar1;
           }
         }
       }
@@ -431,9 +401,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  pIVar32 = (IInputToPlayerMovement *)(*pcVar31)();
-  return pIVar32;
+  pcVar33 = (code *)swi(3);
+  pIVar1 = (IInputToPlayerMovement *)(*pcVar33)();
+  return pIVar1;
 }
 
 
@@ -462,13 +432,13 @@ Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPac
     pMVar3 = (this->fields).vehicleUser;
     if ((pMVar3 == (MVAvatarLocal *)0x0) ||
        (pAVar4 = (pMVar3->fields).avatarMotor, pAVar4 == (AvatarMotor *)0x0)) goto code_?;
-    cVar1 = (*(pAVar4->klass->vtable).get_Grounded.methodPtr)
-                      (pAVar4,(pAVar4->klass->vtable).get_Grounded.method);
+    cVar1 = (*(code *)(pAVar4->klass->vtable).get_Grounded.method)
+                      (pAVar4,(pAVar4->klass->vtable).get_Velocity.methodPtr);
     if ((cVar1 == '\0') && ((this->fields).walkMode != 0)) goto code_?;
     pJVar5 = (this->fields).vehicleMotor;
     if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
-    cVar1 = (*(pJVar5->klass->vtable).get_Grounded.methodPtr)
-                      (pJVar5,(pJVar5->klass->vtable).get_Grounded.method);
+    cVar1 = (*(code *)(pJVar5->klass->vtable).get_Grounded.method)
+                      (pJVar5,(pJVar5->klass->vtable).get_Velocity.methodPtr);
     if (cVar1 == '\0') goto code_?;
     if ((this->fields).framesGrounded <= (this->fields).framesGroundedThreshold)
     goto code_?;
@@ -498,16 +468,13 @@ code_?:
     }
     if ((this->fields).walkMode == 0) {
       pJVar5 = (this->fields).vehicleMotor;
-      if ((pJVar5 == (JetPackMotor *)0x0) ||
-         (this_00 = (pJVar5->fields).stuckEvaluator, this_00 == (MVRigidBody_StuckEvaluator *)0x0))
-      goto code_?;
-      bVar6 = MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator_Update
-                        (this_00,(MethodInfo *)0x0);
+      if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
+      bVar6 = JetPackMotor::JetPackMotor_IsStuck(pJVar5,(MethodInfo *)0x0);
       if (bVar6 != 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_Vehicle_is_stuck,(MethodInfo *)0x0);
       }
     }
@@ -550,56 +517,16 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
         if (pMVar2 != (MVJetPack *)0x0) {
           (pMVar2->fields)._._._._.interactionDataHandlerBase = (InteractionDataHandlerBase *)0x0;
           func_?();
-          pMVar3 = (this->fields).avatarPickupOwner;
-          if (pMVar3 != (MVPickupOwner *)0x0) {
-            this_01 = (UnityAction_1_System_ByteEnum_ *)func_?();
-            if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-              UnityAction_1_System_ByteEnum___ctor
-                        (this_01,(Object *)this,
-                         MethodInfo__MVJetPack__LocalObjectsJetPack__OnFiring_bool_,
-                         (MethodInfo *)0x0);
-              pMVar4 = (MVPickupOwner_OnHandleFiringDelegate *)
-                       mscorlib.dll::System::Delegate::Delegate_Remove
-                                 ((Delegate *)this,(Delegate *)this_01,(MethodInfo *)0x0);
-              uVar5 = CONCAT44(TypeInfo__MVPickupOwner__OnHandleFiringDelegate,pMVar4);
-              if (pMVar4 == (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-                (pMVar3->fields).onHandleFiring = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-                ppMStack6 = &(pMVar3->fields).onHandleFiring;
-                pMStack7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-                func_?();
-                return;
-              }
-              pMVar8 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-              if (pMVar4->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-                pMVar8 = pMVar4;
-              }
-              if (pMVar8 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-                (pMVar3->fields).onHandleFiring = pMVar8;
-                uVar5 = CONCAT44(TypeInfo__MVPickupOwner__OnHandleFiringDelegate,pMVar4);
-                pMStack7 = (MVPickupOwner_OnHandleFiringDelegate *)0x0;
-                if (pMVar4->klass == TypeInfo__MVPickupOwner__OnHandleFiringDelegate) {
-                  pMStack7 = pMVar4;
-                }
-                if (pMStack7 != (MVPickupOwner_OnHandleFiringDelegate *)0x0) {
-                  ppMStack6 = &(pMVar3->fields).onHandleFiring;
-                  func_?();
-                  return;
-                }
-              }
-              goto code_?;
-            }
-          }
+          return;
         }
       }
     }
   }
-  uVar5 = func_?();
-code_?:
-  _ppMStack00000024 = uVar5;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -619,120 +546,125 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::
   }
   pMVar1 = this;
   pMVar2 = (this->fields).owner;
-  if (((pMVar2 == (MVJetPack *)0x0) ||
-      (pMVar3 = (pMVar2->fields).JetMode, pMVar3 == (MVRuntimeDataVariable *)0x0)) ||
-     (pOVar4 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar3,(MethodInfo *)0x0),
-     pOVar4 == (Object *)0x0)) goto code_?;
-  if ((pOVar4->klass->_0).element_class != (TypeInfo__MVJetPack__JetModeType->_0).element_class) {
-    func_?(pOVar4,TypeInfo__MVJetPack__JetModeType);
-    pMVar5 = extraout_ECX;
-code_?:
-    func_?(pOVar4,pMVar5);
-    goto code_?;
-  }
-  pbVar6 = (byte *)func_?(pOVar4);
-  bVar7 = *pbVar6;
+  if ((pMVar2 == (MVJetPack *)0x0) ||
+     (pMVar3 = (pMVar2->fields).JetMode, pMVar3 == (MVRuntimeDataVariable *)0x0))
+  goto code_?;
+  pOVar4 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar3,(MethodInfo *)0x0);
   if (thrust == 0) {
-    pMVar5 = TypeInfo__MVJetPack__JetModeType;
+    if (pOVar4 == (Object *)0x0) goto code_?;
+    unaff_EDI = TypeInfo__MVJetPack__JetModeType;
     if ((pOVar4->klass->_0).element_class != (TypeInfo__MVJetPack__JetModeType->_0).element_class)
-    goto code_?;
-    pbVar6 = (byte *)func_?(pOVar4);
-    iVar8 = (uint)*pbVar6 << 8;
-    fVar9 = (pMVar1->fields).thrustTime;
+    {
+code_?:
+      func_?(pOVar4,unaff_EDI);
+      goto code_?;
+    }
+    pbVar5 = (byte *)func_?(pOVar4);
+    iVar6 = (uint)*pbVar5 << 8;
+    fVar7 = (pMVar1->fields).thrustTime;
     this = (MVJetPack_LocalObjectsJetPack *)
            UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (pMVar1->fields).thrustTime = fVar9 - (float)this * (pMVar1->fields).coolDownFactor;
+    (pMVar1->fields).thrustTime = fVar7 - (float)this * (pMVar1->fields).coolDownFactor;
   }
   else {
+    if (pOVar4 == (Object *)0x0) goto code_?;
+    if ((pOVar4->klass->_0).element_class != (TypeInfo__MVJetPack__JetModeType->_0).element_class)
+    {
+      func_?(pOVar4,TypeInfo__MVJetPack__JetModeType);
+      pOVar4 = extraout_EDX;
+      goto code_?;
+    }
+    pbVar5 = (byte *)func_?(pOVar4);
     this = (MVJetPack_LocalObjectsJetPack *)(pMVar1->fields).thrustTime;
-    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    iVar8 = CONCAT31((uint3)bVar7,1);
-    (pMVar1->fields).thrustTime = fVar9 + (float)this;
+    bVar8 = *pbVar5;
+    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    iVar6 = CONCAT31((uint3)bVar8,1);
+    (pMVar1->fields).thrustTime = fVar7 + (float)this;
   }
-  uVar10 = (undefined2)iVar8;
-  fVar9 = (pMVar1->fields).thrustTime;
-  if (fVar9 < 0.0) {
-    fVar9 = 0.0;
+  uVar9 = (undefined2)iVar6;
+  fVar7 = (pMVar1->fields).thrustTime;
+  if (fVar7 < 0.0) {
+    fVar7 = 0.0;
   }
-  else if (_UNK_? < fVar9) {
-    fVar9 = _UNK_?;
+  else if (_UNK_? < fVar7) {
+    fVar7 = _UNK_?;
   }
-  pfVar11 = &(pMVar1->fields).thrustTimeOverheatThreshold;
-  (pMVar1->fields).thrustTime = fVar9;
-  if (*pfVar11 <= fVar9 && fVar9 != *pfVar11) {
+  pfVar10 = &(pMVar1->fields).thrustTimeOverheatThreshold;
+  (pMVar1->fields).thrustTime = fVar7;
+  if (*pfVar10 <= fVar7 && fVar7 != *pfVar10) {
     pMVar2 = (pMVar1->fields).owner;
     if ((pMVar2 == (MVJetPack *)0x0) ||
-       (pMVar12 = (pMVar2->fields).Health, pMVar12 == (MVRuntimeDataVariableClampedFloat *)0x0))
+       (pMVar11 = (pMVar2->fields).Health, pMVar11 == (MVRuntimeDataVariableClampedFloat *)0x0))
     goto code_?;
-    this = (MVJetPack_LocalObjectsJetPack *)(pMVar12->klass->vtable).get_Value.methodPtr;
-    fVar13 = (float10)(*(code *)this)(pMVar12,(pMVar12->klass->vtable).get_Value.method);
+    this = (MVJetPack_LocalObjectsJetPack *)(pMVar11->klass->vtable).get_Value.method;
+    fVar12 = (float10)(*(code *)this)(pMVar11,(pMVar11->klass->vtable).set_Value.methodPtr);
     pMVar2 = (pMVar1->fields).owner;
-    fVar9 = (float)fVar13;
+    fVar7 = (float)fVar12;
     if ((pMVar2 == (MVJetPack *)0x0) ||
-       (pMVar14 = (pMVar2->fields).Health, pMVar14 == (MVRuntimeDataVariableClampedFloat *)0x0))
+       (pMVar13 = (pMVar2->fields).Health, pMVar13 == (MVRuntimeDataVariableClampedFloat *)0x0))
     goto code_?;
-    this = (MVJetPack_LocalObjectsJetPack *)(pMVar14->klass->vtable).get_Value.methodPtr;
-    fVar13 = (float10)(*(code *)this)(pMVar14,(pMVar14->klass->vtable).get_Value.method);
-    this = (MVJetPack_LocalObjectsJetPack *)(float)fVar13;
-    (*(pMVar12->klass->vtable).set_Value.methodPtr)
-              (pMVar12,fVar9 - (float)this,(pMVar12->klass->vtable).set_Value.method);
+    this = (MVJetPack_LocalObjectsJetPack *)(pMVar13->klass->vtable).get_Value.method;
+    fVar12 = (float10)(*(code *)this)(pMVar13,(pMVar13->klass->vtable).set_Value.methodPtr);
+    this = (MVJetPack_LocalObjectsJetPack *)(float)fVar12;
+    (*(code *)(pMVar11->klass->vtable).set_Value.method)
+              (pMVar11,fVar7 - (float)this,pMVar11->klass[1]._0.image);
   }
   else if ((pMVar1->fields).thrustTimeOverheatThreshold - (pMVar1->fields).thrustTimeWarning <
-           fVar9) {
-    pMVar15 = (pMVar1->fields).avatarPickupOwner;
-    uVar10 = (undefined2)CONCAT31((int3)((uint)iVar8 >> 8),2);
-    if (pMVar15 == (MVPickupOwner *)0x0) goto code_?;
-    pPVar16 = (pMVar15->fields).currentItem;
+           fVar7) {
+    pMVar14 = (pMVar1->fields).avatarPickupOwner;
+    uVar9 = (undefined2)CONCAT31((int3)((uint)iVar6 >> 8),2);
+    if (pMVar14 == (MVPickupOwner *)0x0) goto code_?;
+    pPVar15 = (pMVar14->fields).currentItem;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                       ((Object_1 *)pPVar16,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar17 != 0) {
-      pMVar15 = (pMVar1->fields).avatarPickupOwner;
-      if ((pMVar15 == (MVPickupOwner *)0x0) ||
-         (pPVar16 = (pMVar15->fields).currentItem, pPVar16 == (PickupItem *)0x0))
+    bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                       ((Object_1 *)pPVar15,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar16 != 0) {
+      pMVar14 = (pMVar1->fields).avatarPickupOwner;
+      if ((pMVar14 == (MVPickupOwner *)0x0) ||
+         (pPVar15 = (pMVar14->fields).currentItem, pPVar15 == (PickupItem *)0x0))
       goto code_?;
-      cVar18 = (*(pPVar16->klass->vtable).get_ActivateGunModeOnEquip.methodPtr)
-                         (pPVar16,(pPVar16->klass->vtable).get_ActivateGunModeOnEquip.method);
-      if (cVar18 != '\0') {
-        pMVar15 = (pMVar1->fields).avatarPickupOwner;
-        if ((pMVar15 == (MVPickupOwner *)0x0) ||
-           (pPVar16 = (pMVar15->fields).currentItem, pPVar16 == (PickupItem *)0x0))
+      cVar17 = (*(code *)(pPVar15->klass->vtable).get_ActivateGunModeOnEquip.method)
+                         (pPVar15,(pPVar15->klass->vtable).get_CanHolster.methodPtr);
+      if (cVar17 != '\0') {
+        pMVar14 = (pMVar1->fields).avatarPickupOwner;
+        if ((pMVar14 == (MVPickupOwner *)0x0) ||
+           (pPVar15 = (pMVar14->fields).currentItem, pPVar15 == (PickupItem *)0x0))
         goto code_?;
-        if ((pPVar16->fields)._IsHolstered_k__BackingField == 0) goto code_?;
+        if ((pPVar15->fields)._IsHolstered_k__BackingField == 0) goto code_?;
       }
-      pJVar19 = (pMVar1->fields).jetPackVisualization;
-      if ((pJVar19 == (JetPackVisualization *)0x0) ||
-         (this_00 = (pJVar19->fields).vehicleBlinker, this_00 == (VehicleBlinker *)0x0))
+      pJVar18 = (pMVar1->fields).jetPackVisualization;
+      if ((pJVar18 == (JetPackVisualization *)0x0) ||
+         (this_00 = (pJVar18->fields).vehicleBlinker, this_00 == (VehicleBlinker *)0x0))
       goto code_?;
       BlinkerBase::BlinkerBase_StartBlinking
                 ((BlinkerBase *)this_00,BlinkType__Enum_Damage,0.3,(MethodInfo *)0x0);
     }
 code_?:
-    pJVar20 = (pMVar1->fields).vehicleMotor;
-    if (pJVar20 == (JetPackMotor *)0x0) goto code_?;
-    if ((pJVar20->fields).leaveMode == 0) {
+    pJVar19 = (pMVar1->fields).vehicleMotor;
+    if (pJVar19 == (JetPackMotor *)0x0) goto code_?;
+    if ((pJVar19->fields).leaveMode == 0) {
       this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if ((this_01 == (MainCameraManager *)0x0) ||
-         (pMVar21 = MainCameraManager::MainCameraManager_get_CurrentCamera
-                              (this_01,(MethodInfo *)0x0), pMVar21 == (MVCameraBase *)0x0))
+         (pMVar20 = MainCameraManager::MainCameraManager_get_CurrentCamera
+                              (this_01,(MethodInfo *)0x0), pMVar20 == (MVCameraBase *)0x0))
       goto code_?;
-      iVar8 = (*(pMVar21->klass->vtable).__unknown.methodPtr)
-                         (pMVar21,(pMVar21->klass->vtable).__unknown.method);
-      if (iVar8 == 0x10) {
-        pJVar19 = (pMVar1->fields).jetPackVisualization;
-        if (pJVar19 == (JetPackVisualization *)0x0) goto code_?;
+      iVar6 = (*(code *)(pMVar20->klass->vtable).__unknown.method)
+                         (pMVar20,(pMVar20->klass->vtable).Awake.methodPtr);
+      if (iVar6 == 0x10) {
+        pJVar18 = (pMVar1->fields).jetPackVisualization;
+        if (pJVar18 == (JetPackVisualization *)0x0) goto code_?;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__NotificationController);
           cRam_? = '\x01';
         }
         this = (MVJetPack_LocalObjectsJetPack *)
                UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        if (_UNK_? < (float)this - (pJVar19->fields).lastOverHeatNotificationTime) {
-          fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
+        if (_UNK_? < (float)this - (pJVar18->fields).lastOverHeatNotificationTime) {
+          fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
           ;
-          (pJVar19->fields).lastOverHeatNotificationTime = fVar9;
+          (pJVar18->fields).lastOverHeatNotificationTime = fVar7;
           if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__NotificationController);
           }
@@ -743,13 +675,13 @@ code_?:
       }
     }
   }
-  if ((char)((ushort)uVar10 >> 8) == (char)uVar10) {
+  if ((char)((ushort)uVar9 >> 8) == (char)uVar9) {
     return;
   }
   pMVar2 = (pMVar1->fields).owner;
   if (pMVar2 != (MVJetPack *)0x0) {
     pMVar3 = (pMVar2->fields).JetMode;
-    this = (MVJetPack_LocalObjectsJetPack *)CONCAT13((char)uVar10,this._0_3_);
+    this = (MVJetPack_LocalObjectsJetPack *)CONCAT13((char)uVar9,this._0_3_);
     pOVar4 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
     if (pMVar3 != (MVRuntimeDataVariable *)0x0) {
       MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value(pMVar3,pOVar4,(MethodInfo *)0x0);
@@ -758,8 +690,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -771,18 +703,15 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
                MethodInfo *method)
 
 {
-  pJVar1 = (this->fields).vehicleMotor;
-  if ((pJVar1 != (JetPackMotor *)0x0) &&
-     (this_00 = (pJVar1->fields).vehicleEnergyContainer, this_00 != (VehicleEnergyContainer *)0x0))
-  {
-    WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::VehicleEnergyContainer_RefillEnergy
-              (this_00,vehicleEnergyRefill,(MethodInfo *)0x0);
+  this_00 = (this->fields).vehicleMotor;
+  if (this_00 != (JetPackMotor *)0x0) {
+    JetPackMotor::JetPackMotor_RefillEnergy(this_00,vehicleEnergyRefill,(MethodInfo *)0x0);
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -852,16 +781,15 @@ Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPac
 
 {
   if ((this->fields).walkMode == 0) {
-    pJVar1 = (this->fields).vehicleMotor;
-    if ((pJVar1 == (JetPackMotor *)0x0) ||
-       (this_00 = (pJVar1->fields).smoothController, this_00 == (SmoothCharacterController *)0x0)) {
-      uVar2 = func_?(&puStack_3);
-      func_?(uVar2);
-      pcVar4 = (code *)swi(3);
-      pIVar5 = (InputToInGameAction *)(*pcVar4)();
-      return pIVar5;
+    this_00 = (this->fields).vehicleMotor;
+    if (this_00 == (JetPackMotor *)0x0) {
+      uVar1 = func_?(&puStack_2);
+      func_?(uVar1);
+      pcVar3 = (code *)swi(3);
+      pIVar4 = (InputToInGameAction *)(*pcVar3)();
+      return pIVar4;
     }
-    SmoothCharacterController::SmoothCharacterController_SmoothMove(this_00,(MethodInfo *)0x0);
+    JetPackMotor::JetPackMotor_FrameUpdate(this_00,(MethodInfo *)0x0);
   }
   return interactionInput;
 }
@@ -873,12 +801,12 @@ bool Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
                (MVJetPack_LocalObjectsJetPack *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pJVar2 = (this->fields).vehicleMotor;
-  if ((pJVar2 != (JetPackMotor *)0x0) &&
-     (pVVar3 = (pJVar2->fields).vehicleEnergyContainer, pVVar3 != (VehicleEnergyContainer *)0x0)) {
-    return (pVVar3->fields)._UsingEnergy_k__BackingField;
+  pJVar1 = (this->fields).vehicleMotor;
+  if ((pJVar1 != (JetPackMotor *)0x0) &&
+     (pVVar2 = (pJVar1->fields).vehicleEnergyContainer, pVVar2 != (VehicleEnergyContainer *)0x0)) {
+    return (pVVar2->fields)._UsingEnergy_k__BackingField;
   }
+  puStack_3 = &stack0xfffffffc;
   uVar4 = func_?(auStack_5);
   func_?(uVar4);
   pcVar6 = (code *)swi(3);
@@ -902,15 +830,15 @@ code_?:
   pMVar1 = (this->fields).vehicleUser;
   if ((pMVar1 != (MVAvatarLocal *)0x0) &&
      (pAVar2 = (pMVar1->fields).avatarMotor, pAVar2 != (AvatarMotor *)0x0)) {
-    cVar3 = (*(pAVar2->klass->vtable).get_Grounded.methodPtr)
-                      (pAVar2,(pAVar2->klass->vtable).get_Grounded.method);
+    cVar3 = (*(code *)(pAVar2->klass->vtable).get_Grounded.method)
+                      (pAVar2,(pAVar2->klass->vtable).get_Velocity.methodPtr);
     if ((cVar3 == '\0') && ((this->fields).walkMode != 0)) {
       return 0;
     }
     pJVar4 = (this->fields).vehicleMotor;
     if (pJVar4 != (JetPackMotor *)0x0) {
-      cVar3 = (*(pJVar4->klass->vtable).get_Grounded.methodPtr)
-                        (pJVar4,(pJVar4->klass->vtable).get_Grounded.method);
+      cVar3 = (*(code *)(pJVar4->klass->vtable).get_Grounded.method)
+                        (pJVar4,(pJVar4->klass->vtable).get_Velocity.methodPtr);
       if (cVar3 != '\0') {
         return (this->fields).framesGroundedThreshold < (this->fields).framesGrounded;
       }
@@ -974,188 +902,195 @@ void Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJ
   (this->fields).framesGroundedThreshold = 2;
   MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObjectsBase__ctor
             ((MVVehicleBase_LocalObjectsBase *)this,(MethodInfo *)0x0);
+  pMVar1 = vehicleUser;
   if ((vehicleUser == (MVAvatarLocal *)0x0) ||
-     (pGVar1 = (vehicleUser->fields)._._._.gameObject, pGVar1 == (GameObject *)0x0)) {
+     (pGVar2 = (vehicleUser->fields)._._._.gameObject, pGVar2 == (GameObject *)0x0)) {
 code_?:
-    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
+    pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
   }
   else {
-    pSVar3 = (SmoothCharacterController *)
+    pSVar4 = (SmoothCharacterController *)
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                        (pGVar1,
+                        (pGVar2,
                          SmoothCharacterController_MethodInfo__UnityEngine__GameObject__GetComponent<SmoothCharacterController>__
                         );
-    (this->fields).avatarController = pSVar3;
-    func_?(&(this->fields).avatarController,pSVar3);
-    pGVar1 = (vehicleUser->fields)._._._.gameObject;
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
-    pOStack_4 = (Object_1 *)
+    (this->fields).avatarController = pSVar4;
+    func_?(&(this->fields).avatarController,pSVar4);
+    pGVar2 = (vehicleUser->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pOStack_5 = (Object_1 *)
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                          (pGVar1,
+                          (pGVar2,
                            AvatarInteractable_MethodInfo__UnityEngine__GameObject__GetComponent<AvatarInteractable>__
                           );
-    pGVar1 = (vehicleUser->fields)._._._.gameObject;
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
-    x = (Object_1 *)
+    pGVar2 = (vehicleUser->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    x = (Object__Class *)
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                  (pGVar1,
+                  (pGVar2,
                    MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    pGVar1 = (vehicleUser->fields)._._._.gameObject;
-    pOStack_5 = x;
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
-    pMVar6 = (MVPickupOwner *)
+    pGVar2 = (vehicleUser->fields)._._._.gameObject;
+    pOStack_6 = x;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pMVar7 = (MVPickupOwner *)
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                        (pGVar1,
+                        (pGVar2,
                          MVPickupOwner_MethodInfo__UnityEngine__GameObject__GetComponent<MVPickupOwner>__
                         );
-    (this->fields).avatarPickupOwner = pMVar6;
-    func_?(&(this->fields).avatarPickupOwner,pMVar6);
-    pSVar3 = (this->fields).avatarController;
+    (this->fields).avatarPickupOwner = pMVar7;
+    func_?(&(this->fields).avatarPickupOwner,pMVar7);
+    pSVar4 = (this->fields).avatarController;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pSVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
+    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)pSVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar8 != 0) {
 code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Failed_to_get_component__Cant_cr,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      (pOStack_4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) goto code_?;
+    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       (pOStack_5,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) goto code_?;
-    pMVar6 = (this->fields).avatarPickupOwner;
+    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
+    pMVar7 = (this->fields).avatarPickupOwner;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pMVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) goto code_?;
-    pSVar3 = (this->fields).avatarController;
+    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)pMVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
+    pSVar4 = (this->fields).avatarController;
     if (vehicleBase == (MVJetPack *)0x0) goto code_?;
-    pSStack_8 = (SmoothCharacterController *)(vehicleBase->fields)._._._._.gameObject;
+    pSStack_9 = (SmoothCharacterController *)(vehicleBase->fields)._._._._.gameObject;
     if (seat == (VehicleSeatBase *)0x0) goto code_?;
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)seat,(MethodInfo *)0x0);
-    if (pSVar3 == (SmoothCharacterController *)0x0) goto code_?;
-    pSStack_8 = SmoothCharacterController::SmoothCharacterController_Clone
-                           (pSVar3,(GameObject *)pSStack_8,pGVar1,(CullingSubscriberBase *)0x0,
+    if (pSVar4 == (SmoothCharacterController *)0x0) goto code_?;
+    pSStack_9 = SmoothCharacterController::SmoothCharacterController_Clone
+                           (pSVar4,(GameObject *)pSStack_9,pGVar2,(CullingSubscriberBase *)0x0,
                             (MVWorldObjectClient *)vehicleBase,(MethodInfo *)0x0);
-    MVAvatarLocal::MVAvatarLocal_SetCharacterController(vehicleUser,pSStack_8,(MethodInfo *)0x0);
+    MVAvatarLocal::MVAvatarLocal_SetCharacterController(vehicleUser,pSStack_9,(MethodInfo *)0x0);
     if (jetPackTypeParameters == (JetPackParameters *)0x0) goto code_?;
     (this->fields).thrustTimeOverheatThreshold =
          (jetPackTypeParameters->fields).thrustTimeOverheatThreshold;
     (this->fields).coolDownFactor = (jetPackTypeParameters->fields).coolDownFactor;
-    pMVar9 = (vehicleBase->fields).Health;
-    if (pMVar9 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-    pMStack_10 = (pMVar9->fields)._._.OnChange;
-    pUStack_11 = (UnityAction_1_System_Object_ *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-    if (pUStack_11 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (pUStack_11,(Object *)this,
+    pMVar10 = (vehicleBase->fields).Health;
+    if (pMVar10 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    pMVar11 = (pMVar10->fields)._._.OnChange;
+    this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_00,(Object *)this,
                MethodInfo__MVVehicleBase__LocalObjectsBase__OnHealthChange_System__Object_,
                (MethodInfo *)0x0);
-    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+    pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pMStack_10,(Delegate *)pUStack_11,(MethodInfo *)0x0);
-    pMVar12 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-      (pMVar9->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+                        ((Delegate *)pMVar11,(Delegate *)this_00,(MethodInfo *)0x0);
+    pMVar11 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar3 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+      (pMVar10->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
-      uStack_13 = CONCAT44(uStack_13._4_4_,pMVar12);
-      uStack_14 = CONCAT44(&(pMVar9->fields)._._.OnChange,&UNK_?);
+      uStack_12 = CONCAT44(uStack_12._4_4_,pMVar11);
+      uStack_13 = CONCAT44(&(pMVar10->fields)._._.OnChange,&UNK_?);
       func_?();
-      pGVar1 = (vehicleBase->fields)._._._._.gameObject;
-      if (pGVar1 != (GameObject *)0x0) {
-        pJVar15 = (JetPackVisualization *)
-                  Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                            ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,
+      pGVar2 = (vehicleBase->fields)._._._._.gameObject;
+      pMVar1 = (MVAvatarLocal *)vehicleBase;
+      if (pGVar2 != (GameObject *)0x0) {
+        pJVar14 = (JetPackVisualization *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_GetComponentInChildren_1
+                            (pGVar2,
                              JetPackVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<JetPackVisualization>__
                             );
-        (this->fields).jetPackVisualization = pJVar15;
-        func_?(&(this->fields).jetPackVisualization,pJVar15);
-        pUStack_11 = (UnityAction_1_System_Object_ *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                              (pGVar1,
-                               VehicleInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<VehicleInteractable>__
-                              );
-        if (pUStack_11 != (UnityAction_1_System_Object_ *)0x0) {
-          (*(code *)pUStack_11->klass[1]._0.image)
-                    (pUStack_11,(vehicleBase->fields).Modifiers,(vehicleBase->fields).Health,0,
-                     (vehicleBase->fields).shield,0,pUStack_11->klass[1]._0.gc_desc);
-          this_00 = (JetPackMotor *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                              (pGVar1,
-                               JetPackMotor_MethodInfo__UnityEngine__GameObject__AddComponent<JetPackMotor>__
-                              );
-          pOStack_16 = pOStack_4;
+        (this->fields).jetPackVisualization = pJVar14;
+        func_?(&(this->fields).jetPackVisualization,pJVar14);
+        item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                         (pGVar2,
+                          VehicleInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<VehicleInteractable>__
+                         );
+        pMVar1 = (MVAvatarLocal *)vehicleBase;
+        if (item != (Object *)0x0) {
+          (*(code *)item->klass[1]._0.methods)
+                    (item,(vehicleBase->fields).Modifiers,(vehicleBase->fields).Health,0,
+                     (vehicleBase->fields).shield,0,item->klass[1]._0.nestedTypes);
+          pJStack_15 = (JetPackMotor *)
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                                (pGVar2,
+                                 JetPackMotor_MethodInfo__UnityEngine__GameObject__AddComponent<JetPackMotor>__
+                                );
+          pOStack_16 = pOStack_5;
           uStack_17 = 0;
-          uStack_14 = 0;
           uStack_13 = 0;
+          uStack_12 = 0;
           uStack_18 = 0;
-          func_?(&pOStack_16,pOStack_4);
-          uStack_17 = CONCAT44(uStack_17._4_4_,pUStack_11);
-          func_?(&uStack_17,pUStack_11);
-          uStack_17 = CONCAT44(pSStack_8,(undefined4)uStack_17);
-          func_?((int)&uStack_17 + 4,pSStack_8);
+          func_?(&pOStack_16,pOStack_5);
+          uStack_17 = CONCAT44(uStack_17._4_4_,item);
+          func_?(&uStack_17,item);
+          uStack_17 = CONCAT44(pSStack_9,(undefined4)uStack_17);
+          func_?((int)&uStack_17 + 4,pSStack_9);
           iVar19 = (vehicleBase->fields)._._VehicleEnergyContainerConfig_k__BackingField.consumption;
           fVar20 = (jetPackTypeParameters->fields).thrustStrength;
           fVar21 = (jetPackTypeParameters->fields).density;
-          uStack_14 = CONCAT44(fVar21,fVar20);
-          uStack_13._0_1_ =
+          uStack_13 = CONCAT44(fVar21,fVar20);
+          uStack_12._0_1_ =
                (vehicleBase->fields)._._VehicleEnergyContainerConfig_k__BackingField.usingEnergy;
-          uStack_13._1_3_ =
+          uStack_12._1_3_ =
                *(undefined3 *)
                 &(vehicleBase->fields)._._VehicleEnergyContainerConfig_k__BackingField.field_0x1;
-          uStack_13._4_4_ =
+          uStack_12._4_4_ =
                (vehicleBase->fields)._._VehicleEnergyContainerConfig_k__BackingField.storage;
           fVar22 = (jetPackTypeParameters->fields).outOfEnergyThrustMax;
           uStack_18 = CONCAT44(fVar22,iVar19);
-          if (this_00 != (JetPackMotor *)0x0) {
+          pMVar1 = (MVAvatarLocal *)vehicleBase;
+          if (pJStack_15 != (JetPackMotor *)0x0) {
             jetPackMotorConfig.vehicleInteractable = (VehicleInteractable *)(undefined4)uStack_17;
             jetPackMotorConfig.interactableLocal = (AvatarInteractable *)pOStack_16;
             jetPackMotorConfig.avatarController = (SmoothCharacterController *)uStack_17._4_4_;
             jetPackMotorConfig.thrustStrength = fVar20;
             jetPackMotorConfig.density = fVar21;
-            jetPackMotorConfig.vehicleEnergyContainerConfig._0_4_ = (undefined4)uStack_13;
-            jetPackMotorConfig.vehicleEnergyContainerConfig.storage = uStack_13._4_4_;
+            jetPackMotorConfig.vehicleEnergyContainerConfig._0_4_ = (undefined4)uStack_12;
+            jetPackMotorConfig.vehicleEnergyContainerConfig.storage = uStack_12._4_4_;
             jetPackMotorConfig.vehicleEnergyContainerConfig.consumption = iVar19;
             jetPackMotorConfig.outOfEnergyThrustMax = fVar22;
             JetPackMotor::JetPackMotor_Init
-                      (this_00,(vehicleBase->fields).JetMode,jetPackMotorConfig,(MethodInfo *)0x0);
-            pMStack_10 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_AddComponent_1
-                                   (pGVar1,
-                                    MVEquipableProxy_MethodInfo__UnityEngine__GameObject__AddComponent<MVEquipableProxy>__
-                                   );
-            if (pMStack_10 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-              (pMStack_10->fields)._._.method = pOStack_5;
-              func_?(&(pMStack_10->fields)._._.method,pOStack_5);
+                      (pJStack_15,(vehicleBase->fields).JetMode,jetPackMotorConfig,(MethodInfo *)0x0)
+            ;
+            pOStack_5 = (Object_1 *)
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_AddComponent_1
+                                  (pGVar2,
+                                   MVEquipableProxy_MethodInfo__UnityEngine__GameObject__AddComponent<MVEquipableProxy>__
+                                  );
+            pMVar1 = (MVAvatarLocal *)vehicleBase;
+            if (pOStack_5 != (Object_1 *)0x0) {
+              pOStack_5[2].klass = (Object_1__Class *)pOStack_6;
+              func_?(pOStack_5 + 2,pOStack_6);
               pMVar23 = (MVTriggerHandler *)
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                         GameObject_AddComponent_1
-                                  (pGVar1,
+                                  (pGVar2,
                                    MVTriggerHandler_MethodInfo__UnityEngine__GameObject__AddComponent<MVTriggerHandler>__
                                   );
               (this->fields).triggerHandler = pMVar23;
               func_?(&(this->fields).triggerHandler,pMVar23);
               pLVar24 = (this->fields)._.localComponents;
+              pMVar1 = (MVAvatarLocal *)vehicleBase;
               if (pLVar24 != (List_1_UnityEngine_Component_ *)0x0) {
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
@@ -1163,51 +1098,57 @@ code_?:
                            MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__Add_UnityEngine__Component_
                           );
                 pLVar24 = (this->fields)._.localComponents;
+                pMVar1 = (MVAvatarLocal *)vehicleBase;
                 if (pLVar24 != (List_1_UnityEngine_Component_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                   List_1_System_Object__Add
-                            ((List_1_System_Object_ *)pLVar24,(Object *)pUStack_11,
+                            ((List_1_System_Object_ *)pLVar24,item,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__Add_UnityEngine__Component_
                             );
+                  pJVar25 = pJStack_15;
                   pLVar24 = (this->fields)._.localComponents;
+                  pMVar1 = (MVAvatarLocal *)vehicleBase;
                   if (pLVar24 != (List_1_UnityEngine_Component_ *)0x0) {
                     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                     List_1_System_Object__Add
-                              ((List_1_System_Object_ *)pLVar24,(Object *)this_00,
+                              ((List_1_System_Object_ *)pLVar24,(Object *)pJStack_15,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__Add_UnityEngine__Component_
                               );
                     pLVar24 = (this->fields)._.localComponents;
+                    pMVar1 = (MVAvatarLocal *)vehicleBase;
                     if (pLVar24 != (List_1_UnityEngine_Component_ *)0x0) {
                       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                       List_1_System_Object__Add
-                                ((List_1_System_Object_ *)pLVar24,(Object *)pSStack_8,
+                                ((List_1_System_Object_ *)pLVar24,(Object *)pSStack_9,
                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__Add_UnityEngine__Component_
                                 );
                       pLVar24 = (this->fields)._.localComponents;
+                      pMVar1 = (MVAvatarLocal *)vehicleBase;
                       if (pLVar24 != (List_1_UnityEngine_Component_ *)0x0) {
                         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                         List_1_System_Object__Add
-                                  ((List_1_System_Object_ *)pLVar24,(Object *)pMStack_10,
+                                  ((List_1_System_Object_ *)pLVar24,(Object *)pOStack_5,
                                    MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__Add_UnityEngine__Component_
                                   );
-                        (this->fields).vehicleMotor = this_00;
-                        func_?(&(this->fields).vehicleMotor,this_00);
+                        (this->fields).vehicleMotor = pJVar25;
+                        func_?(&(this->fields).vehicleMotor,pJVar25);
                         (this->fields).owner = vehicleBase;
                         func_?(&(this->fields).owner,vehicleBase);
                         (this->fields).vehicleUser = vehicleUser;
                         func_?(&(this->fields).vehicleUser,vehicleUser);
-                        pCVar25 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+                        pCVar26 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                                             ((MethodInfo *)0x0);
-                        (this->fields).mainCamera = pCVar25;
-                        func_?(&(this->fields).mainCamera,pCVar25);
-                        pMVar26 = (this->fields).owner;
-                        pIVar27 = MVWorldObjectClient::
+                        (this->fields).mainCamera = pCVar26;
+                        func_?(&(this->fields).mainCamera,pCVar26);
+                        pMVar27 = (this->fields).owner;
+                        pIVar28 = MVWorldObjectClient::
                                   MVWorldObjectClient_get_InteractionDataHandlerBase
                                             ((MVWorldObjectClient *)vehicleUser,(MethodInfo *)0x0);
-                        if (pMVar26 != (MVJetPack *)0x0) {
-                          (pMVar26->fields)._._._._.interactionDataHandlerBase = pIVar27;
-                          func_?(&(pMVar26->fields)._._._._.interactionDataHandlerBase,
-                                          pIVar27);
+                        pMVar1 = vehicleUser;
+                        if (pMVar27 != (MVJetPack *)0x0) {
+                          (pMVar27->fields)._._._._.interactionDataHandlerBase = pIVar28;
+                          func_?(&(pMVar27->fields)._._._._.interactionDataHandlerBase,
+                                          pIVar28);
                           return;
                         }
                       }
@@ -1221,28 +1162,29 @@ code_?:
       }
       goto code_?;
     }
-    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar12 = pMVar2;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar11 = pMVar3;
     }
-    pMVar28 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-    if (pMVar12 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-    (pMVar9->fields)._._.OnChange = pMVar12;
-    pMVar12 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar12 = pMVar2;
+    pMVar29 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pMVar11 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (pMVar10->fields)._._.OnChange = pMVar11;
+    pMVar11 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar11 = pMVar3;
     }
-    if (pMVar12 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    pMVar1 = (MVAvatarLocal *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pMVar11 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
   }
-  uStack_13 = CONCAT44(uStack_13._4_4_,TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-  uStack_14 = CONCAT44(pMVar2,&UNK_?);
-  pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
-  pMVar28 = extraout_ECX;
+  uStack_12 = CONCAT44(uStack_12._4_4_,pMVar1);
+  uStack_13 = CONCAT44(pMVar3,&UNK_?);
+  pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)func_?();
+  pMVar29 = extraout_ECX;
 code_?:
-  uStack_13 = CONCAT44(uStack_13._4_4_,pMVar28);
-  uStack_14 = CONCAT44(pMVar2,&UNK_?);
+  uStack_12 = CONCAT44(uStack_12._4_4_,pMVar29);
+  uStack_13 = CONCAT44(pMVar3,&UNK_?);
   func_?();
-  pcVar29 = (code *)swi(3);
-  (*pcVar29)();
+  pcVar30 = (code *)swi(3);
+  (*pcVar30)();
   return;
 }
 

@@ -37,6 +37,24 @@ public class AvatarModifierPackages
 	// Nested types
 	public delegate void OnModifierExpiredDelegate(AvatarModifierPackage modifier);
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__27_0;
+		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__29_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal int _HandleModifierEffect_b__27_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
+		internal int _ComputeModifierEffectGroupedById_b__29_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass19_0
 	{
@@ -74,24 +92,6 @@ public class AvatarModifierPackages
 
 		// Methods
 		internal bool _RemoveModifierPackage_b__0(AvatarModifierPackage x);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__27_0;
-		public static Comparison<AvatarModifierPackage.AvatarModifier> __9__29_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal int _HandleModifierEffect_b__27_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
-		internal int _ComputeModifierEffectGroupedById_b__29_0(AvatarModifierPackage.AvatarModifier x, AvatarModifierPackage.AvatarModifier y);
 	}
 
 	// Constructors

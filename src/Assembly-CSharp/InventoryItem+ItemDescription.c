@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
   (this->fields).cameraPreviewerOffset.x = 0.0;
   (this->fields).cameraPreviewerOffset.y = 0.0;
   (this->fields).cameraPreviewerOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
   func_?(&this->fields,name);
@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
   (this->fields).cameraPreviewerOffset.x = 0.0;
   (this->fields).cameraPreviewerOffset.y = 0.0;
   (this->fields).cameraPreviewerOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).name = name;
   func_?(&this->fields,name);
@@ -43,23 +43,6 @@ void Assembly-CSharp.dll::InventoryItem+ItemDescription::InventoryItem_ItemDescr
   (this->fields).cameraPreviewerOffset.y = cameraPreviewerOffset.y;
   (this->fields).cameraPreviewerOffset.z = cameraPreviewerOffset.z;
   return;
-}
-
-
-/* Vector3 get_CameraPreviewerOffset() */
-
-Vector3 * Assembly-CSharp.dll::InventoryItem+ItemDescription::
-          InventoryItem_ItemDescription_get_CameraPreviewerOffset
-                    (Vector3 *__return_storage_ptr__,InventoryItem_ItemDescription *this,
-                    MethodInfo *method)
-
-{
-  fVar1 = (this->fields).cameraPreviewerOffset.y;
-  fVar2 = (this->fields).cameraPreviewerOffset.z;
-  __return_storage_ptr__->x = (this->fields).cameraPreviewerOffset.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
 }
 
 

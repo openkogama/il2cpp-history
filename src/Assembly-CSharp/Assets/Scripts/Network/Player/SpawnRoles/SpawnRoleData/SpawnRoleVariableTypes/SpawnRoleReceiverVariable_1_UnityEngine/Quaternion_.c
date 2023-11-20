@@ -8,14 +8,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).subscribableVariableExternal;
-  if (pSVar1 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-    (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-              (pSVar1,newValue.x,newValue.y,newValue.z,newValue.w,
-               method->klass->rgctx_data[3].rgctxDataDummy);
+  this_00 = (this->fields).subscribableVariableExternal;
+  if (this_00 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
+    SubscribableVariable`1[UnityEngine::Quaternion]::
+    SubscribableVariable_1_UnityEngine_Quaternion__set_ValueSet
+              (this_00,newValue,method->klass->rgctx_data[5].method);
     return;
   }
-  func_?();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -33,53 +34,46 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                SpawnRoleDataReceiver *spawnRoleDataReceiver,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).subscribableVariableExternal = subscribableVariableExternal;
   func_?(&(this->fields).subscribableVariableExternal,subscribableVariableExternal);
   if (subscribableVariableExternal != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-    puVar1 = (undefined4 *)
-             (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
-                       (&uStack_2,subscribableVariableExternal,
-                        method->klass->rgctx_data[1].rgctxDataDummy);
-    uStack_2 = *puVar1;
-    uStack_3 = puVar1[1];
-    uStack_4 = puVar1[2];
-    uStack_5 = puVar1[3];
-    pvVar6 = method->klass->rgctx_data[2].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-      pvVar6 = (void *)func_?(pvVar6);
+    value = (subscribableVariableExternal->fields)._.value;
+    pIVar1 = method->klass->rgctx_data[1].klass;
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    pSVar7 = (SubscribableVariable_1_UnityEngine_Quaternion_ *)func_?(pvVar6);
-    if (pSVar7 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-      (*(method->klass->rgctx_data[4].method)->virtualMethodPointer)
-                (pSVar7,uStack_2,uStack_3,uStack_4,uStack_5,
-                 method->klass->rgctx_data[4].rgctxDataDummy);
-      (this->fields).subscribableVariable = pSVar7;
-      func_?(&(this->fields).subscribableVariable,pSVar7);
-      pSVar7 = (this->fields).subscribableVariable;
-      pvVar6 = method->klass->rgctx_data[6].rgctxDataDummy;
-      if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-        pvVar6 = (void *)func_?(pvVar6);
-      }
-      iVar8 = func_?(pvVar6);
-      if (iVar8 != 0) {
-        (*(method->klass->rgctx_data[7].method)->virtualMethodPointer)
-                  (iVar8,this,method->klass->rgctx_data[5].rgctxDataDummy,
-                   method->klass->rgctx_data[7].rgctxDataDummy);
-        if (pSVar7 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-          (*(method->klass->rgctx_data[8].method)->virtualMethodPointer)
-                    (pSVar7,iVar8,method->klass->rgctx_data[8].rgctxDataDummy);
-          (this->fields).spawnRoleDataReceiver = spawnRoleDataReceiver;
-          func_?(&this->fields,spawnRoleDataReceiver);
-          return;
-        }
-      }
+    this_01 = (SubscribableVariable_1_UnityEngine_Quaternion_ *)func_?(pIVar1);
+    SubscribableVariable`1[UnityEngine::Quaternion]::
+    SubscribableVariable_1_UnityEngine_Quaternion___ctor
+              (this_01,value,method->klass->rgctx_data[6].method);
+    (this->fields).subscribableVariable = this_01;
+    func_?(&(this->fields).subscribableVariable,this_01);
+    this_00 = (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)
+              (this->fields).subscribableVariable;
+    pIVar1 = method->klass->rgctx_data[8].klass;
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
+    }
+    this_02 = (UnityAction_1_UnityEngine_Color_ *)func_?(pIVar1);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+    UnityAction_1_UnityEngine_Color___ctor
+              (this_02,(Object *)this,method->klass->rgctx_data[7].rgctxDataDummy,
+               method->klass->rgctx_data[9].method);
+    if (this_00 != (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0) {
+      SubscribableVariableBase`1[UnityEngine::Quaternion]::
+      SubscribableVariableBase_1_UnityEngine_Quaternion__add_OnChange
+                (this_00,(Action_1_UnityEngine_Quaternion_ *)this_02,
+                 method->klass->rgctx_data[10].method);
+      (this->fields).spawnRoleDataReceiver = spawnRoleDataReceiver;
+      func_?(&this->fields,spawnRoleDataReceiver);
+      return;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -94,23 +88,23 @@ SpawnRoleReceiverVariable_1_UnityEngine_Quaternion__get_Value
           SpawnRoleReceiverVariable_1_UnityEngine_Quaternion_ *this,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).subscribableVariable;
-  if (pSVar1 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-    pfVar2 = (float *)(*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
-                                (auStack_3,pSVar1,method->klass->rgctx_data[1].rgctxDataDummy);
-    fVar4 = pfVar2[1];
-    fVar5 = pfVar2[2];
-    fVar6 = pfVar2[3];
-    __return_storage_ptr__->x = *pfVar2;
-    __return_storage_ptr__->y = fVar4;
-    __return_storage_ptr__->z = fVar5;
-    __return_storage_ptr__->w = fVar6;
+  puStack_1 = &stack0xfffffffc;
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
+    fVar3 = (pSVar2->fields)._.value.y;
+    fVar4 = (pSVar2->fields)._.value.z;
+    fVar5 = (pSVar2->fields)._.value.w;
+    __return_storage_ptr__->x = (pSVar2->fields)._.value.x;
+    __return_storage_ptr__->y = fVar3;
+    __return_storage_ptr__->z = fVar4;
+    __return_storage_ptr__->w = fVar5;
     return __return_storage_ptr__;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pQVar8 = (Quaternion *)(*pcVar7)();
-  return pQVar8;
+  uVar6 = func_?(auStack_7);
+  func_?(uVar6);
+  pcVar8 = (code *)swi(3);
+  pQVar9 = (Quaternion *)(*pcVar8)();
+  return pQVar9;
 }
 
 
@@ -126,28 +120,24 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   pSVar1 = (this->fields).spawnRoleDataReceiver;
   if (pSVar1 != (SpawnRoleDataReceiver *)0x0) {
     if ((pSVar1->fields).isActive == 0) goto code_?;
-    pSVar2 = (this->fields).subscribableVariable;
-    if (pSVar2 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-                (pSVar2,value.x,value.y,value.z,value.w,method->klass->rgctx_data[3].rgctxDataDummy)
-      ;
+    this_00 = (this->fields).subscribableVariable;
+    if (this_00 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
+      SubscribableVariable`1[UnityEngine::Quaternion]::
+      SubscribableVariable_1_UnityEngine_Quaternion__set_ValueSet
+                (this_00,value,method->klass->rgctx_data[5].method);
       return;
     }
   }
   func_?();
 code_?:
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  this_00 = (Exception *)func_?(uVar3);
-  func_?(this_00);
+  uVar2 = func_?(&TypeInfo__System__Exception);
+  this_01 = (Exception *)func_?(uVar2);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_SpawnRole_receiver_not_active__P);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<UnityEngine::Quaternion>__set_Value_UnityEngine__Quaternion_
-                 );
-  func_?(this_00);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
+  func_?(this_01);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

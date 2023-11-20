@@ -318,7 +318,6 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
   }
   pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
   this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_02 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_02,(Object *)this,
@@ -327,29 +326,31 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
   pAVar1 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)pAVar1,(Delegate *)this_02,(MethodInfo *)0x0);
-  if (pAVar1 != (Action *)0x0) {
+  if (pAVar1 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+  }
+  else {
     pAVar2 = (Action *)0x0;
     if (pAVar1->klass == TypeInfo__System__Action) {
       pAVar2 = pAVar1;
     }
-    if (pAVar2 != (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar2;
-      pAVar2 = (Action *)0x0;
-      if (pAVar1->klass == TypeInfo__System__Action) {
-        pAVar2 = pAVar1;
-      }
-      if (pAVar2 != (Action *)0x0) goto code_?;
+    if (pAVar2 == (Action *)0x0) {
+code_?:
       func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    func_?();
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 == (Action *)0x0) {
+      func_?();
+      goto code_?;
+    }
   }
-  TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-code_?:
   func_?();
   if (TypeInfo__GamePassesHighlightArrowManager->static_fields->isHighlightingTierUnlocked == 0) {
     return;

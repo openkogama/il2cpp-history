@@ -26,82 +26,114 @@ void Assembly-CSharp.dll::GameRankRequirementSettings::GameRankRequirementSettin
     func_?(&StringLiteral_RequiredRank);
     cRam_? = '\x01';
   }
+  pGVar1 = this;
   this_00 = (this->fields).settingsBase;
   header = TM::TM__(StringLiteral_Game_Tier_Requirement,(MethodInfo *)0x0);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_Initialize_1(this_00,woID,root,header,(MethodInfo *)0x0);
-    if (woID == -1) {
-      this_04 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)func_?();
-      if (this_04 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-      goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_04,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      pOVar1 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_04,
-                 (Object *)StringLiteral_RequiredRank,pOVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-    }
-    else {
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (((this_03 == (MVWorldObjectClientManager *)0x0) ||
-          (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (this_03,woID,(MethodInfo *)0x0), pMVar2 == (MVWorldObject *)0x0)) ||
-         (this_04 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar2->fields).data,
-         this_04 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0))
-      goto code_?;
-    }
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_04,(Object *)StringLiteral_RequiredRank,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar3 == 0) {
-      pOVar1 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_04,
-                 (Object *)StringLiteral_RequiredRank,pOVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-    }
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)this_04,
-                        (Object *)StringLiteral_RequiredRank,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar4 = (int32_t *)func_?();
-        this_01 = (this->fields).slider;
-        if (this_01 != (SettingsSlider *)0x0) {
-          value = *piVar4;
-          SettingsSlider::SettingsSlider_Initialize_1
-                    (this_01,StringLiteral_RequiredRank,value,0,3,(MethodInfo *)0x0);
-          this_02 = (this->fields).gameTierRequirementInputField;
-          if (this_02 != (SettingsInputFieldSlider *)0x0) {
-            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                      (this_02,StringLiteral_RequiredRank,value,(MethodInfo *)0x0);
-            return;
-          }
+  iVar2 = woID;
+  if (this_00 == (SettingsBase *)0x0) goto code_?;
+  SettingsBase::SettingsBase_Initialize_1(this_00,woID,root,header,(MethodInfo *)0x0);
+  if (iVar2 == -1) {
+    woID = (int32_t)
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    this = (GameRankRequirementSettings *)&UNK_?;
+    this_04 = (MethodInfo *)func_?();
+    this = (GameRankRequirementSettings *)
+           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+    ;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)this_04,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    this = (GameRankRequirementSettings *)&this;
+    pOVar3 = (Object *)func_?();
+    if (this_04 == (MethodInfo *)0x0) goto code_?;
+    method = (MethodInfo *)StringLiteral_RequiredRank;
+    woID = (int32_t)&UNK_?;
+    root = (GameObject *)this_04;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_04,
+               (Object *)StringLiteral_RequiredRank,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+  }
+  else {
+    woID = 0;
+    this = (GameRankRequirementSettings *)&UNK_?;
+    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    root = (GameObject *)0x0;
+    this = (GameRankRequirementSettings *)this_03;
+    woID = iVar2;
+    pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_03,iVar2,(MethodInfo *)0x0);
+    if ((pMVar4 == (MVWorldObject *)0x0) ||
+       (this_04 = (MethodInfo *)(pMVar4->fields).data, this_04 == (MethodInfo *)0x0))
+    goto code_?;
+  }
+  root = (GameObject *)&UNK_?;
+  method = this_04;
+  bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                     (Object *)StringLiteral_RequiredRank,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                    );
+  if (bVar5 == 0) {
+    root = (GameObject *)0x0;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_04,
+               (Object *)StringLiteral_RequiredRank,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+  }
+  root = (GameObject *)
+         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+  ;
+  woID = (int32_t)StringLiteral_RequiredRank;
+  this = (GameRankRequirementSettings *)this_04;
+  TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                     (Object *)StringLiteral_RequiredRank,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    );
+  if (TVar6.m_Index != 0) {
+    if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar7 = (int32_t *)func_?();
+      this_01 = (pGVar1->fields).slider;
+      if (this_01 != (SettingsSlider *)0x0) {
+        iVar2 = *piVar7;
+        SettingsSlider::SettingsSlider_Initialize_1
+                  (this_01,StringLiteral_RequiredRank,iVar2,0,3,(MethodInfo *)0x0);
+        this_02 = (pGVar1->fields).gameTierRequirementInputField;
+        if (this_02 != (SettingsInputFieldSlider *)0x0) {
+          method = (MethodInfo *)StringLiteral_RequiredRank;
+          woID = (int32_t)&UNK_?;
+          root = (GameObject *)this_02;
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                    (this_02,StringLiteral_RequiredRank,iVar2,(MethodInfo *)0x0);
+          return;
         }
       }
-      else {
-        func_?();
-      }
+    }
+    else {
+      method = (MethodInfo *)&UNK_?;
+      func_?();
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -23,28 +23,26 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Enter
     cubeCorners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
                             ((MethodInfo *)0x0);
     this_01 = (ModelCursor3D *)func_?(TypeInfo__ModelCursor3D);
-    if (this_01 != (ModelCursor3D *)0x0) {
-      ModelCursor3D::ModelCursor3D__ctor(this_01,cubeCorners,(MethodInfo *)0x0);
-      (this->fields).modelCursor = this_01;
-      func_?(&(this->fields).modelCursor,this_01);
-      pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar1 != (GameEventManager *)0x0) &&
-          (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
-          pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (this_00 = (pGVar2->fields).LaserCommands,
-         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-                  (this_00,LaserPointerState__Enum_EditingCube,(MethodInfo *)0x0);
-        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl
-                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-        (this->fields)._.waitForMouseUp = bVar3;
-        (this->fields).currentInternalState = 2;
-        return;
+    ModelCursor3D::ModelCursor3D__ctor(this_01,cubeCorners,(MethodInfo *)0x0);
+    (this->fields).modelCursor = this_01;
+    func_?(&(this->fields).modelCursor,this_01);
+    pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if (((pGVar1 != (GameEventManager *)0x0) &&
+        (pGVar2 = (pGVar1->fields).AvatarCommandsBuildMode,
+        pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+       (this_00 = (pGVar2->fields).LaserCommands,
+       this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+      GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+      GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                (this_00,LaserPointerState__Enum_EditingCube,(MethodInfo *)0x0);
+      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+                        (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+      (this->fields)._.waitForMouseUp = bVar3;
+      (this->fields).currentInternalState = 2;
+      return;
     }
   }
   func_?();
@@ -61,14 +59,15 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Execute
                (EditCubes *this,CubeModelingStateMachine *e,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  uStack_2 = 0xffffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff00;
-  puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff00;
+  uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
+  puStack_3 = &stack0xfffffffc;
+  uStack_4 = 0xffffffff;
+  puStack_5 = &DAT_?;
+  uStack_6 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_6;
+  puStack_7 = &stack0xffffff00;
+  puVar8 = &stack0xfffffffc;
+  puVar9 = &stack0xffffff00;
   if (cRam_? == '\0') {
     func_?();
     func_?();
@@ -85,22 +84,9 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Execute
     func_?();
     func_?();
     func_?();
-    func_?(&StringLiteral_____EditCube_multi_change___poin);
-    func_?();
-    in_stack_8 = 0x10ef;
     func_?();
     func_?();
-    func_?();
-    func_?();
-    func_?();
-    in_stack_9 = 0xcc;
-    in_stack_10 = 0x81;
-    in_stack_11 = 0x10ee;
-    func_?();
-    in_stack_12 = 0x98;
-    func_?();
-    in_stack_13 = 0x80f0;
-    in_stack_14 = 0x10ee;
+    in_stack_10 = 0x119c;
     func_?();
     func_?();
     func_?();
@@ -108,459 +94,585 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Execute
     func_?();
     func_?();
     func_?();
-    func_?(&StringLiteral_____EditCube_WithinBounds___unlo);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
-    puVar6 = puStack_1;
-    puVar7 = puStack_5;
+    puVar8 = puStack_3;
+    puVar9 = puStack_7;
   }
-  puStack_5 = puVar7;
-  puStack_1 = puVar6;
-  bStack_15 = 0;
-  pMVar16 = (MVCubeModelBase *)0x0;
-  iVar17 = 0;
-  CStack_18 = CubeOutOfBoundState__Enum_WithinBounds;
-  puStack_19 = (undefined *)0x0;
+  puStack_7 = puVar9;
+  puStack_3 = puVar8;
+  MStack_11.methodPointer._0_1_ = 0;
+  pVVar12 = (Vector3__Array *)0x0;
+  iVar13 = 0;
+  CStack_14 = CubeOutOfBoundState__Enum_WithinBounds;
+  CStack_15 = CubeOutOfBoundState__Enum_WithinBounds;
+  puStack_16 = (undefined *)0x0;
   if (cRam_? == '\0') {
-    in_stack_8 = 0x103d;
+    in_stack_10 = 0x1044;
     func_?();
     cRam_? = '\x01';
   }
-  pCVar20 = TypeInfo__CubeModelTool->static_fields;
-  if ((pCVar20->cubeChange != 0) &&
-     (pCVar20->OnEditCubeChange != (Action_2_Int32_EditCubeChange_ *)0x0)) {
-    in_stack_8 = (undefined2)((uint)pCVar20->cubeChange >> 0x10);
-    (*(pCVar20->OnEditCubeChange->fields)._._.invoke_impl)();
+  pCVar17 = TypeInfo__CubeModelTool->static_fields;
+  if ((pCVar17->cubeChange != 0) &&
+     (pCVar17->OnEditCubeChange != (Action_2_Int32_EditCubeChange_ *)0x0)) {
+    in_stack_10 = (undefined2)((uint)pCVar17->cubeChange >> 0x10);
+    (*(pCVar17->OnEditCubeChange->fields)._._.invoke_impl)();
   }
   TypeInfo__CubeModelTool->static_fields->cubeChange = 0;
-  EVar21 = EditCubeChange__Enum_None;
+  EVar18 = EditCubeChange__Enum_None;
   if ((this->fields)._.waitForMouseUp != 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+    bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                        (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-    (this->fields)._.waitForMouseUp = bVar22;
+    (this->fields)._.waitForMouseUp = bVar19;
     goto code_?;
   }
-  pMVar23 = (this->fields).modelCursor;
-  pVVar24 = pVStack_25;
-  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-  pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-  if (pMVar23 != (ModelCursor3D *)0x0) {
-    if ((pMVar23->fields).indentArea == (IndentArea *)0x0 ||
-        (this->fields).movingEdgeCube != (CubePickingInfo *)0x0) {
+  pMVar20 = (this->fields).modelCursor;
+  pCVar21 = (Cube *)MStack_11._17_4_;
+  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+  pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+  fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+  if (pMVar20 != (ModelCursor3D *)0x0) {
+    if ((this->fields).movingEdgeCube == (CubePickingInfo *)0x0 &&
+        (pMVar20->fields).indentArea != (IndentArea *)0x0) {
+      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+      pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+      fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+      if (e != (CubeModelingStateMachine *)0x0) {
+        if ((e->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0)
+        goto code_?;
+        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+        pIVar26 = (((this->fields).modelCursor)->fields).indentArea;
+        IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+        pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+        fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+        if ((pMVar25 != (MVCubeModelBase *)0x0) &&
+           (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+           pVVar23 = (Vector3__Array *)
+                     CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+           fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+           pIVar26 != (IndentArea *)0x0)) {
+          pGVar27 = (pMVar25->fields)._.gameObject;
+          in_stack_10 = (undefined2)((uint)pGVar27 >> 0x10);
+          IndentArea::IndentArea_UpdateIndentArea
+                    (pIVar26,(e->fields)._SelectedCube_k__BackingField,pGVar27,(MethodInfo *)0x0);
+          pMVar20 = (this->fields).modelCursor;
+          pCVar21 = (Cube *)MStack_11._17_4_;
+          IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+          pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+          ;
+          fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+          if ((pMVar20 != (ModelCursor3D *)0x0) &&
+             (pIVar26 = (pMVar20->fields).indentArea,
+             IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+             pVVar23 = (Vector3__Array *)
+                       CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+             fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+             pIVar26 != (IndentArea *)0x0)) {
+            bVar19 = IndentArea::IndentArea_IsColliding(pIVar26,(MethodInfo *)0x0);
+            pCVar21 = (Cube *)MStack_11._17_4_;
+            if (bVar19 == 0) {
+              pMVar20 = (this->fields).modelCursor;
+              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+              pVVar23 = (Vector3__Array *)
+                        CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+              fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+              if (((pMVar20 != (ModelCursor3D *)0x0) &&
+                  (pIVar26 = (pMVar20->fields).indentArea,
+                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                  pVVar23 = (Vector3__Array *)
+                            CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                  fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                  pIVar26 != (IndentArea *)0x0)) &&
+                 (pGVar27 = (pIVar26->fields).gameObject,
+                 IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                 pVVar23 = (Vector3__Array *)
+                           CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                 fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                 pGVar27 != (GameObject *)0x0)) {
+                bVar19 = 0;
+code_?:
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar27,bVar19,(MethodInfo *)0x0);
+                goto code_?;
+              }
+            }
+            else {
+              pCVar28 = (e->fields)._SelectedCube_k__BackingField;
+              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+              pVVar23 = (Vector3__Array *)
+                        CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+              fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+              if (pCVar28 != (CubePickingInfo *)0x0) {
+                (pCVar28->fields).pickedEdge = 0;
+                pMVar20 = (this->fields).modelCursor;
+                IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                pVVar23 = (Vector3__Array *)
+                          CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                if (((pMVar20 != (ModelCursor3D *)0x0) &&
+                    (pIVar26 = (pMVar20->fields).indentArea,
+                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                    pVVar23 = (Vector3__Array *)
+                              CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                    fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                    pIVar26 != (IndentArea *)0x0)) &&
+                   (pGVar27 = (pIVar26->fields).gameObject,
+                   IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                   pVVar23 = (Vector3__Array *)
+                             CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                   fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                   pGVar27 != (GameObject *)0x0)) {
+                  bVar19 = 1;
+                  goto code_?;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
 code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        in_stack_8 = 0x103d;
+        in_stack_10 = 0x1044;
         func_?();
       }
-      bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+      bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-      if (bVar22 != 0) {
-        in_stack_8 = 0;
-        pVStack_31 = (Vector3__Array *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0);
-        (this->fields).prevMouseUpTime = (float)pVStack_31;
+      if (bVar19 != 0) {
+        in_stack_10 = 0;
+        MStack_11._37_4_ =
+             UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (this->fields).prevMouseUpTime = (float)MStack_11._37_4_;
       }
       if (cRam_? == '\0') {
-        in_stack_8 = 0x103d;
+        in_stack_10 = 0x1044;
         func_?();
         cRam_? = '\x01';
       }
-      pVVar24 = pVStack_25;
-      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-      pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
+      pCVar21 = (Cube *)MStack_11._17_4_;
+      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+      pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+      fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
       if (e != (CubeModelingStateMachine *)0x0) {
         if (((e->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0) ||
            ((this->fields).movingEdgeCube != (CubePickingInfo *)0x0)) goto code_?;
-        pMVar32 = (e->fields)._TargetCubeModel_k__BackingField;
-        uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-        pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-        if (pMVar32 != (MVCubeModelBase *)0x0) {
-          pVStack_25 = (Vector3__Array *)(pMVar32->fields)._.gameObject;
-          pCVar33 = (e->fields)._SelectedCube_k__BackingField;
-          pVStack_31 = *(Vector3__Array **)&(pCVar33->fields).iLocalPos;
-          uStack_34 = (Byte__Array *)CONCAT22((pCVar33->fields).iLocalPos.z,(undefined2)uStack_34);
+        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+        IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+        pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+        fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+        if (pMVar25 != (MVCubeModelBase *)0x0) {
+          MStack_11._33_4_ = (pMVar25->fields)._.gameObject;
+          pCVar28 = (e->fields)._SelectedCube_k__BackingField;
+          MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+          MStack_11._27_2_ = (pCVar28->fields).iLocalPos.z;
           if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          IVar35.z = uStack_34._2_2_;
-          IVar35._0_4_ = pVStack_31;
-          pVVar36 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
-                              ((Vector3 *)&stack0xffffff48,(GameObject *)pVStack_25,IVar35,
+          IVar29.z = MStack_11._27_2_;
+          IVar29._0_4_ = MStack_11._37_4_;
+          pVVar30 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
+                              ((Vector3 *)&stack0xffffff48,(GameObject *)MStack_11._33_4_,IVar29,
                                (MethodInfo *)0x0);
-          in_stack_13 = 0;
-          in_stack_14 = 0;
-          uVar37 = pVVar36->x;
-          uVar38 = pVVar36->y;
-          uStack_28._0_2_ = (short)uVar38;
-          uStack_28._2_2_ = (undefined2)((uint)uVar38 >> 0x10);
-          uStack_30._0_2_ = SUB42(pVVar36->z,0);
-          uStack_30._2_2_ = (undefined2)((uint)pVVar36->z >> 0x10);
-          fStack_39 = (float)uVar37;
+          uVar31 = pVVar30->x;
+          uVar32 = pVVar30->y;
+          MStack_11.virtualMethodPointer._1_2_ = (short)uVar32;
+          MStack_11._7_2_ = SUB42((uint)uVar32 >> 0x10,0);
+          MStack_11.invoker_method._1_2_ = SUB42(pVVar30->z,0);
+          MStack_11._11_2_ = SUB42((uint)pVVar30->z >> 0x10,0);
+          MStack_11._1_4_ = uVar31;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                               ((MethodInfo *)0x0);
-          pVVar24 = pVStack_25;
-          uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-          fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
+          pCVar21 = (Cube *)MStack_11._17_4_;
+          IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+          pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+          ;
+          fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
           if (this_02 != (MainCameraManager *)0x0) {
-            pTVar40 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                 ((Component *)this_02,(MethodInfo *)0x0);
-            pVVar24 = pVStack_25;
-            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-            fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-            if (pTVar40 != (Transform *)0x0) {
-              pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xffffff48,pTVar40,(MethodInfo *)0x0);
-              uVar41 = pVVar36->y;
-              uStack_26._0_2_ = (short)uVar41;
-              uStack_26._2_2_ = (short)((uint)uVar41 >> 0x10);
-              sStack_42 = SUB42(pVVar36->z,0);
-              uStack_43 = (undefined2)((uint)pVVar36->z >> 0x10);
-              fVar44 = (float10)func_?();
-              pMVar32 = (e->fields)._TargetCubeModel_k__BackingField;
-              pVStack_31 = (Vector3__Array *)(float)fVar44;
-              pVVar24 = pVStack_25;
-              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-              if (pMVar32 != (MVCubeModelBase *)0x0) {
-                in_stack_8 = (undefined2)((uint)pMVar32 >> 0x10);
-                puVar45 = (undefined8 *)(*(pMVar32->klass->vtable).get_Scale.methodPtr)();
-                fStack_46 = (float)((ulonglong)*puVar45 >> 0x20);
-                pMVar23 = (this->fields).modelCursor;
-                pVVar24 = pVStack_25;
-                if (fStack_46 * _UNK_? < (float)pVStack_31) {
+            pCVar21 = (Cube *)MStack_11._17_4_;
+            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+            pVVar23 = (Vector3__Array *)
+                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+            fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+            if (pTVar33 != (Transform *)0x0) {
+              pVVar30 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                  ((Vector3 *)&stack0xffffff48,pTVar33,(MethodInfo *)0x0);
+              uVar34 = pVVar30->y;
+              IStack_22.x = (int16_t)uVar34;
+              IStack_22.y = (int16_t)((uint)uVar34 >> 0x10);
+              IStack_22.z = SUB42(pVVar30->z,0);
+              uStack_35 = (undefined2)((uint)pVVar30->z >> 0x10);
+              fVar36 = (float10)func_?();
+              pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+              MStack_11._37_4_ = (BADTYPE)fVar36;
+              pCVar21 = (Cube *)MStack_11._17_4_;
+              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+              pVVar23 = (Vector3__Array *)
+                        CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+              fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+              if (pMVar25 != (MVCubeModelBase *)0x0) {
+                in_stack_10 = (undefined2)((uint)pMVar25 >> 0x10);
+                puVar37 = (undefined8 *)(*(code *)(pMVar25->klass->vtable).get_Scale.method)();
+                fStack_38 = (float)((ulonglong)*puVar37 >> 0x20);
+                pMVar20 = (this->fields).modelCursor;
+                pCVar21 = (Cube *)MStack_11._17_4_;
+                if (fStack_38 * _UNK_? < (float)MStack_11._37_4_) {
                   (this->fields).mouseSensitivity = 0.1325;
-                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                  pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                  if ((pMVar23 != (ModelCursor3D *)0x0) &&
-                     (pIVar47 = (pMVar23->fields).indentArea,
-                     uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                     pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                     pIVar47 != (IndentArea *)0x0)) {
-                    (pIVar47->fields).size = 1.0;
+                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                  pVVar23 = (Vector3__Array *)
+                            CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                  fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                  if ((pMVar20 != (ModelCursor3D *)0x0) &&
+                     (pIVar26 = (pMVar20->fields).indentArea,
+                     IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                     pVVar23 = (Vector3__Array *)
+                               CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                     fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                     pIVar26 != (IndentArea *)0x0)) {
+                    (pIVar26->fields).size = 1.0;
                     goto code_?;
                   }
                 }
                 else {
                   (this->fields).mouseSensitivity = 0.0225;
-                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                  pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                  if ((pMVar23 != (ModelCursor3D *)0x0) &&
-                     (pIVar47 = (pMVar23->fields).indentArea,
-                     uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                     pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                     pIVar47 != (IndentArea *)0x0)) {
-                    (pIVar47->fields).size = 0.5;
+                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                  pVVar23 = (Vector3__Array *)
+                            CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                  fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                  if ((pMVar20 != (ModelCursor3D *)0x0) &&
+                     (pIVar26 = (pMVar20->fields).indentArea,
+                     IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                     pVVar23 = (Vector3__Array *)
+                               CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_),
+                     fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                     pIVar26 != (IndentArea *)0x0)) {
+                    (pIVar26->fields).size = 0.5;
 code_?:
-                    cStack_48 = '\0';
-                    uStack_34 = (Byte__Array *)((uint)uStack_34 & 0xffffff);
-                    uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                    MStack_11.klass._0_1_ = '\0';
+                    MStack_11._25_4_ = MStack_11._25_4_ & 0xffffff;
+                    MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                     switch((this->fields).currentInternalState) {
                     case 0:
                       if ((this->fields).movingEdgeCube != (CubePickingInfo *)0x0) {
                         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                        bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                                            (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                        if (bVar22 == 0) {
+                        if (bVar19 == 0) {
                           if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                             func_?();
                           }
-                          pVStack_31 = (Vector3__Array *)
-                                       MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
-                                                 (StringLiteral_Mouse_X,(MethodInfo *)0x0);
-                          pVVar24 = (Vector3__Array *)
-                                    MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
-                                              (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-                          fVar49 = (float)pVStack_31 * _UNK_?;
-                          sStack_42 = 0;
-                          uStack_43 = 0;
-                          uStack_26 = (float)pVVar24 * _UNK_?;
-                          pMStack_50 = (e->fields)._TargetCubeModel_k__BackingField;
-                          pVStack_31 = (Vector3__Array *)(this->fields).mouseSensitivity;
-                          pMStack_51 = (MVCubeModelBase *)(this->fields).movingEdgeCube;
-                          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                          fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                          if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                            pMStack_52 = (MVCubeModelBase *)
-                                         CONCAT31(pMStack_52._1_3_,
-                                                  (pMStack_51->fields)._._.inputState);
-                            pVStack_25 = (Vector3__Array *)
-                                         CONCAT31((int3)((uint)pVVar24 >> 8),
-                                                  (((this->fields).movingEdgeCube)->fields).
-                                                  pickedEdgeIndex1);
-                            fVar29 = uStack_26;
+                          MStack_11._37_4_ =
+                               MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
+                                         (StringLiteral_Mouse_X,(MethodInfo *)0x0);
+                          MStack_11._33_4_ =
+                               MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
+                                         (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
+                          fVar39 = (float)MStack_11._37_4_ * _UNK_?;
+                          IStack_22.z = 0;
+                          uStack_35 = 0;
+                          IStack_22._0_4_ = (float)MStack_11._33_4_ * _UNK_?;
+                          MStack_11._29_4_ = (e->fields)._TargetCubeModel_k__BackingField;
+                          MStack_11._37_4_ = (this->fields).mouseSensitivity;
+                          MStack_11._21_4_ = (this->fields).movingEdgeCube;
+                          pCVar21 = (Cube *)MStack_11._17_4_;
+                          pVVar23 = (Vector3__Array *)
+                                    CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                          fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                          if ((Vector3__Array *)MStack_11._21_4_ != (Vector3__Array *)0x0) {
+                            bVar19 = *(bool *)&((Vector3__Array *)MStack_11._21_4_)->vector[0].y;
+                            MStack_11._34_3_ = SUB43((uint)MStack_11._33_4_ >> 8,0);
+                            MStack_11.field8_0x20._1_1_ =
+                                 (((this->fields).movingEdgeCube)->fields).pickedEdgeIndex1;
+                            fVar24 = (float)IStack_22._0_4_;
                             if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0)
                             {
-                              in_stack_9 = SUB41(TypeInfo__SharedCubeFunctions,0);
-                              in_stack_10 =
-                                   (undefined1)((uint)TypeInfo__SharedCubeFunctions >> 8);
-                              in_stack_11 =
-                                   (undefined2)((uint)TypeInfo__SharedCubeFunctions >> 0x10);
-                              in_stack_12 = 0x81;
                               func_?();
-                              fVar29 = uStack_26;
+                              fVar24 = (float)IStack_22._0_4_;
                             }
-                            uStack_26._2_2_ = (short)((uint)fVar29 >> 0x10);
-                            uStack_26._0_2_ = SUB42(fVar29,0);
-                            mousePositionDelta.y._0_2_ = (short)uStack_26;
-                            mousePositionDelta.x = fVar49;
-                            mousePositionDelta.y._2_2_ = uStack_26._2_2_;
-                            mousePositionDelta.z._2_2_ = uStack_43;
-                            mousePositionDelta.z._0_2_ = sStack_42;
-                            uStack_26 = fVar29;
-                            pVVar27 = (Vector3__Array *)
-                                      SharedCubeFunctions::SharedCubeFunctions_MoveEdge
-                                                (pMStack_50,(CubePickingInfo *)pMStack_51,
-                                                 mousePositionDelta,&(this->fields).delta,
-                                                 &(this->fields).deltaAccum,(float)pVStack_31,
-                                                 &bStack_15,(bool)pMStack_52,(bool)pVStack_25,
-                                                 (EditCubeChange__Enum *)&stack0xffffff6c,
-                                                 (MethodInfo *)0x0);
-                            uVar53 = (undefined2)((uint)pVStack_31 >> 0x10);
-                            pVStack_31 = pVVar27;
-                            if (pVVar27 == (Vector3__Array *)0x0) {
-                              pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                              pVVar24 = pVStack_25;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pMVar16 == (MVCubeModelBase *)0x0) goto code_?;
-                              iVar54 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
-                                                 (pMVar16,(MethodInfo *)0x0);
-                              in_stack_9 = (undefined1)EVar21;
-                              in_stack_10 = (undefined1)(EVar21 >> 8);
-                              in_stack_11 = (undefined2)(EVar21 >> 0x10);
-                              in_stack_12 = (bool)iVar54;
-                              in_stack_13 = 0xdbf5;
-                              in_stack_14 = 0x103d;
+                            IStack_22.y = (int16_t)((uint)fVar24 >> 0x10);
+                            IStack_22.x = SUB42(fVar24,0);
+                            pMVar40 = &MStack_11;
+                            showUnlockNotification = MStack_11.token._1_1_;
+                            uVar41 = MStack_11._39_2_;
+                            pGVar27 = (GameObject *)&(this->fields).deltaAccum;
+                            mousePositionDelta.z._2_2_ = uStack_35;
+                            mousePositionDelta.z._0_2_ = IStack_22.z;
+                            mousePositionDelta.y =
+                                 (float)(int)(CONCAT26(IStack_22.y,CONCAT24(IStack_22.x,fVar39)) >>
+                                             0x20);
+                            mousePositionDelta.x = fVar39;
+                            IStack_22._0_4_ = fVar24;
+                            MStack_11._37_4_ =
+                                 SharedCubeFunctions::SharedCubeFunctions_MoveEdge
+                                           ((MVCubeModelBase *)MStack_11._29_4_,
+                                            (CubePickingInfo *)MStack_11._21_4_,mousePositionDelta,
+                                            &(this->fields).delta,(float *)pGVar27,
+                                            (float)MStack_11._37_4_,(bool *)pMVar40,bVar19,
+                                            MStack_11.field8_0x20._1_1_,
+                                            (EditCubeChange__Enum *)&stack0xffffff6c,
+                                            (MethodInfo *)0x0);
+                            if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x0) {
+                              pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (pMVar25 == (MVCubeModelBase *)0x0) goto code_?;
+                              iVar42 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
+                                                 (pMVar25,(MethodInfo *)0x0);
                               CubeModelTool::CubeModelTool_SendCubeEvent
-                                        (iVar54,EVar21,(MethodInfo *)0x0);
+                                        (iVar42,EVar18,(MethodInfo *)0x0);
                             }
-                            if ((bStack_15 & (this->fields).edgeHasMoved == 0) != 0) {
+                            if (((byte)MStack_11.methodPointer & (this->fields).edgeHasMoved == 0)
+                                != 0) {
                               (this->fields).edgeHasMoved = 1;
                             }
-                            pVVar24 = pVStack_25;
-                            if (pVStack_31 == (Vector3__Array *)0x1) {
-                              pCVar33 = (this->fields).movingEdgeCube;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = uStack_30;
-                              if (pCVar33 != (CubePickingInfo *)0x0) {
-                                pVStack_31 = *(Vector3__Array **)&(pCVar33->fields).iLocalPos;
-                                uStack_34._2_2_ = (pCVar33->fields).iLocalPos.z;
-                                pVStack_25 = (Vector3__Array *)
-                                             (((this->fields).movingEdgeCube)->fields).pickedFace;
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x1) {
+                              pCVar28 = (this->fields).movingEdgeCube;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)MStack_11._9_4_;
+                              if (pCVar28 != (CubePickingInfo *)0x0) {
+                                MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                                MStack_11._27_2_ = (pCVar28->fields).iLocalPos.z;
+                                MStack_11._33_4_ =
+                                     (((this->fields).movingEdgeCube)->fields).pickedFace;
                                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                   func_?();
                                 }
-                                localPos_01.z = (int16_t)pVStack_31;
-                                localPos_01._0_4_ = &uStack_26;
-                                IVar35 = Cube::Cube_GetCubePosAboveFace
-                                                   (localPos_01,CONCAT22(uVar53,uStack_34._2_2_),
-                                                    (MethodInfo *)pVStack_25);
-                                pIVar55 = IVar35._0_4_;
-                                uStack_56 = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                              **)pIVar55;
-                                uStack_34 = (Byte__Array *)
-                                            CONCAT22(pIVar55->z,(undefined2)uStack_34);
-                                pMStack_52 = (MVCubeModelBase *)
-                                             CubeModelingStateMachine::
-                                             CubeModelingStateMachine_CanAddCubeAt
-                                                       (e,*pIVar55,(this->fields).movingEdgeCube,
-                                                        (MethodInfo *)0x0);
-                                if (pMStack_52 == (MVCubeModelBase *)0x0) {
-                                  pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                    pos_01.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                    pos_01._0_4_ = uStack_56;
-                                    pos_01.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                    pVStack_31 = (Vector3__Array *)
-                                                 MVCubeModelBase::MVCubeModelBase_GetCube
-                                                           (pMVar16,pos_01,(MethodInfo *)0x0);
+                                localPos.z = MStack_11.token._1_2_;
+                                localPos._0_4_ = &IStack_22;
+                                IVar29 = Cube::Cube_GetCubePosAboveFace
+                                                   (localPos,CONCAT22(uVar1,MStack_11._27_2_),
+                                                    (MethodInfo *)MStack_11._33_4_);
+                                pIVar43 = IVar29._0_4_;
+                                MStack_11._29_4_ = *(undefined4 *)pIVar43;
+                                MStack_11._27_2_ = pIVar43->z;
+                                MStack_11._33_4_ =
+                                     CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt
+                                               (e,*pIVar43,(this->fields).movingEdgeCube,
+                                                (MethodInfo *)0x0);
+                                if ((MVCubeModelBase *)MStack_11._33_4_ == (MVCubeModelBase *)0x0) {
+                                  pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                    pos.z = MStack_11._27_2_;
+                                    pos._0_4_ = MStack_11._29_4_;
+                                    MStack_11._37_4_ =
+                                         MVCubeModelBase::MVCubeModelBase_GetCube
+                                                   (pMVar25,pos,(MethodInfo *)0x0);
                                     if ((TypeInfo__MV__WorldObject__CubeBase->_1).
                                         cctor_finished_or_no_cctor == 0) {
-                                      func_?();
+                                      func_?(TypeInfo__MV__WorldObject__CubeBase);
                                     }
-                                    bVar22 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                    bVar19 = MVWorldObject.dll::MV::WorldObject::CubeBase::
                                              CubeBase_op_Equality
-                                                       ((CubeBase *)pVStack_31,(CubeBase *)0x0,
-                                                        (MethodInfo *)0x0);
-                                    if (bVar22 == 0) goto code_?;
-                                    pos_05.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                    pos_05._0_4_ = uStack_56;
-                                    pos_05.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
+                                                       ((CubeBase *)MStack_11._37_4_,(CubeBase *)0x0
+                                                        ,(MethodInfo *)0x0);
+                                    if (bVar19 == 0) goto code_?;
+                                    pos_00.z = MStack_11._27_2_;
+                                    pos_00._0_4_ = MStack_11._29_4_;
                                     CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                              (e,pos_05,AudioActions__Enum_FaceMoved,
+                                              (e,pos_00,AudioActions__Enum_FaceMoved,
                                                (MethodInfo *)0x0);
-                                    pMStack_52 = (e->fields)._TargetCubeModel_k__BackingField;
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pVStack_25 = (Vector3__Array *)(pCVar33->fields).cube;
-                                      pVStack_31 = (Vector3__Array *)
-                                                   (((this->fields).movingEdgeCube)->fields).
-                                                   pickedFace;
+                                    MStack_11._33_4_ = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if (pCVar28 != (CubePickingInfo *)0x0) {
+                                      MStack_11._37_4_ = (pCVar28->fields).cube;
+                                      FVar44 = (((this->fields).movingEdgeCube)->fields).pickedFace;
                                       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pVStack_31 = Cube::Cube_GetCorners
-                                                             ((Cube *)pVStack_25,
-                                                              (Face__Enum)pVStack_31,
-                                                              (MethodInfo *)0x0);
+                                      pVVar12 = Cube::Cube_GetCorners
+                                                          ((Cube *)MStack_11._37_4_,FVar44,
+                                                           (MethodInfo *)0x0);
                                       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pVStack_25 = (Vector3__Array *)
-                                                   MVWorldObject.dll::MV::WorldObject::
-                                                   CubeDataPacker::CubeDataPacker_CornersToByteArray
-                                                             (pVStack_31,(MethodInfo *)0x0);
-                                      uVar57 = CubeModelingStateMachine::
+                                      pBVar45 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                                                CubeDataPacker_CornersToByteArray
+                                                          (pVVar12,(MethodInfo *)0x0);
+                                      uVar46 = CubeModelingStateMachine::
                                                CubeModelingStateMachine_get_CurrentMaterialId
                                                          (e,(MethodInfo *)0x0);
-                                      pVStack_31 = (Vector3__Array *)
-                                                   CONCAT31(pVStack_31._1_3_,uVar57);
-                                      pVStack_31 = (Vector3__Array *)
-                                                   Cube::Cube_CreateMaterialArray
-                                                             (uVar57,(MethodInfo *)0x0);
-                                      pMStack_51 = (MVCubeModelBase *)func_?();
-                                      pVVar24 = pVStack_25;
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                      if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                                        Cube::Cube__ctor((Cube *)pMStack_51,
-                                                         (Byte__Array *)pVStack_25,
-                                                         (Byte__Array *)pVStack_31,(MethodInfo *)0x0
-                                                        );
-                                        pVVar24 = pVStack_25;
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30)
-                                        ;
-                                        if (pMStack_52 != (MVCubeModelBase *)0x0) {
-                                          pos_06.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                          pos_06._0_4_ = uStack_56;
-                                          pos_06.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                          MVCubeModelBase::MVCubeModelBase_AddCube
-                                                    (pMStack_52,pos_06,(CubeBase *)pMStack_51,
-                                                     (MethodInfo *)0x0);
-                                          pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                          pVVar24 = pVStack_25;
-                                          pVVar27 = (Vector3__Array *)
-                                                    CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                          fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                   (int16_t)uStack_30);
-                                          if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                            iVar54 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
-                                                               (pMVar16,(MethodInfo *)0x0);
-                                            CubeModelTool::CubeModelTool_SendCubeEvent
-                                                      (iVar54,EditCubeChange__Enum_CubeAdded,
+                                      MStack_11.token._1_1_ = uVar46;
+                                      pBVar47 = Cube::Cube_CreateMaterialArray
+                                                          (uVar46,(MethodInfo *)0x0);
+                                      MStack_11._37_4_ = func_?();
+                                      Cube::Cube__ctor((Cube *)MStack_11._37_4_,pBVar45,pBVar47,
                                                        (MethodInfo *)0x0);
-                                            pVStack_31 = (Vector3__Array *)
-                                                         (this->fields).movingEdgeCube;
-                                            pMStack_50 = (MVCubeModelBase *)func_?();
-                                            pVVar24 = pVStack_25;
-                                            pVVar27 = (Vector3__Array *)
-                                                      CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                            fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                     (int16_t)uStack_30);
-                                            if (pMStack_50 != (MVCubeModelBase *)0x0) {
-                                              CubePickingInfo::CubePickingInfo__ctor_1
-                                                        ((CubePickingInfo *)pMStack_50,
-                                                         (CubePickingInfo *)pVStack_31,
-                                                         (MethodInfo *)0x0);
-                                              pMVar16 = (e->fields)._TargetCubeModel_k__BackingField
-                                              ;
-                                              pVVar24 = pVStack_25;
-                                              pVVar27 = (Vector3__Array *)
-                                                        CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                              fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                       (int16_t)uStack_30);
-                                              if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                                pos_17.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                                pos_17._0_4_ = uStack_56;
-                                                pos_17.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                                pCVar58 = MVCubeModelBase::MVCubeModelBase_GetCube
-                                                                    (pMVar16,pos_17,
-                                                                     (MethodInfo *)0x0);
-                                                pCVar58 = Cube::Cube_Clone_1(pCVar58,(MethodInfo *)
-                                                                                     0x0);
-                                                (pMStack_50->fields)._._.id = (int32_t)pCVar58;
-                                                func_?();
-                                                (pMStack_50->fields)._._.position.y =
-                                                     (float)uStack_56;
-                                                *(int16_t *)&(pMStack_50->fields)._._.position.z =
-                                                     uStack_34._2_2_;
-                                                pCVar33 = (this->fields).movingEdgeCube;
-                                                pVVar24 = pVStack_25;
-                                                pVVar27 = (Vector3__Array *)
-                                                          CONCAT22(uStack_28._2_2_,(short)uStack_28)
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_);
+                                      if ((MVCubeModelBase *)MStack_11._33_4_ !=
+                                          (MVCubeModelBase *)0x0) {
+                                        pos_07.z = MStack_11._27_2_;
+                                        pos_07._0_4_ = MStack_11._29_4_;
+                                        MVCubeModelBase::MVCubeModelBase_AddCube
+                                                  ((MVCubeModelBase *)MStack_11._33_4_,pos_07,
+                                                   (CubeBase *)MStack_11._37_4_,(MethodInfo *)0x0);
+                                        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                        pCVar21 = (Cube *)MStack_11._17_4_;
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                 MStack_11.invoker_method._1_2_);
+                                        if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                          iVar42 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
+                                                             (pMVar25,(MethodInfo *)0x0);
+                                          CubeModelTool::CubeModelTool_SendCubeEvent
+                                                    (iVar42,EditCubeChange__Enum_CubeAdded,
+                                                     (MethodInfo *)0x0);
+                                          pCVar28 = (this->fields).movingEdgeCube;
+                                          MStack_11._21_4_ = func_?();
+                                          CubePickingInfo::CubePickingInfo__ctor_1
+                                                    ((CubePickingInfo *)MStack_11._21_4_,pCVar28,
+                                                     (MethodInfo *)0x0);
+                                          pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                          pCVar21 = (Cube *)MStack_11._17_4_;
+                                          pVVar23 = (Vector3__Array *)
+                                                    CONCAT22(MStack_11._7_2_,
+                                                             MStack_11.virtualMethodPointer._1_2_);
+                                          fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                   MStack_11.invoker_method._1_2_);
+                                          if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                            pos_08.z = MStack_11._27_2_;
+                                            pos_08._0_4_ = MStack_11._29_4_;
+                                            pCVar21 = MVCubeModelBase::MVCubeModelBase_GetCube
+                                                                (pMVar25,pos_08,(MethodInfo *)0x0);
+                                            pCVar48 = Cube::Cube_Clone_1(pCVar21,(MethodInfo *)0x0);
+                                            pCVar21 = (Cube *)MStack_11._17_4_;
+                                            pVVar23 = (Vector3__Array *)
+                                                      CONCAT22(MStack_11._7_2_,
+                                                               MStack_11.virtualMethodPointer._1_2_)
+                                            ;
+                                            fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                     MStack_11.invoker_method._1_2_)
+                                            ;
+                                            if ((Vector3__Array *)MStack_11._21_4_ !=
+                                                (Vector3__Array *)0x0) {
+                                              ((CubePickingInfo__Fields *)(MStack_11._21_4_ + 8))->
+                                              cube = pCVar48;
+                                              func_?();
+                                              ((Vector3 *)(MStack_11._21_4_ + 0x10))[2].z =
+                                                   (float)MStack_11._29_4_;
+                                              *(undefined2 *)
+                                               &((Vector3 *)(MStack_11._21_4_ + 0x10))[3].x =
+                                                   MStack_11._27_2_;
+                                              pCVar28 = (this->fields).movingEdgeCube;
+                                              pCVar21 = (Cube *)MStack_11._17_4_;
+                                              pVVar23 = (Vector3__Array *)
+                                                        CONCAT22(MStack_11._7_2_,
+                                                                 MStack_11.virtualMethodPointer.
+                                                                 _1_2_);
+                                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                       MStack_11.invoker_method.
+                                                                       _1_2_);
+                                              if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                                 (pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_),
+                                                 fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                          MStack_11.invoker_method.
+                                                                          _1_2_),
+                                                 (e->fields)._TargetCubeModel_k__BackingField !=
+                                                 (MVCubeModelBase *)0x0)) {
+                                                MVCubeModelBase::MVCubeModelBase_CornersChangedDone
+                                                          ((e->fields).
+                                                           _TargetCubeModel_k__BackingField,
+                                                           (pCVar28->fields).iLocalPos,
+                                                           (pCVar28->fields).cube,(MethodInfo *)0x0)
                                                 ;
-                                                fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                         (int16_t)uStack_30);
-                                                if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                                   (pVVar27 = (Vector3__Array *)
-                                                              CONCAT22(uStack_28._2_2_,
-                                                                       (short)uStack_28),
-                                                   fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                            (int16_t)uStack_30),
-                                                   (e->fields)._TargetCubeModel_k__BackingField !=
-                                                   (MVCubeModelBase *)0x0)) {
-                                                  iVector_05.z._1_1_ =
-                                                       (char)((ushort)(pCVar33->fields).iLocalPos.z
-                                                             >> 8);
-                                                  iVector_05._0_5_ =
-                                                       *(undefined5 *)&(pCVar33->fields).iLocalPos;
-                                                  MVCubeModelBase::
-                                                  MVCubeModelBase_CornersChangedDone
-                                                            ((e->fields).
-                                                             _TargetCubeModel_k__BackingField,
-                                                             iVector_05,(pCVar33->fields).cube,
-                                                             (MethodInfo *)0x0);
-                                                  (this->fields).movingEdgeCube =
-                                                       (CubePickingInfo *)pMStack_50;
-                                                  func_?();
-                                                  pVStack_31 = (Vector3__Array *)
-                                                               (this->fields).movingEdgeCube;
-                                                  pVVar24 = pVStack_25;
-                                                  pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                           (int16_t)uStack_30);
-                                                  if (pVStack_31 != (Vector3__Array *)0x0) {
-                                                    pVVar36 = Cube::Cube_GetFaceAxis
-                                                                        ((Vector3 *)&stack0xffffff48
-                                                                         ,pVStack_31->max_length,
-                                                                         (MethodInfo *)0x0);
-                                                    Cube::Cube_MoveFace((CubePickingInfo *)
-                                                                        pVStack_31,-0.75,*pVVar36,
-                                                                        &CStack_18,(MethodInfo *)0x0
-                                                                       );
-                                                    goto code_?;
+                                                (this->fields).movingEdgeCube =
+                                                     (CubePickingInfo *)MStack_11._21_4_;
+                                                func_?();
+                                                MStack_11._37_4_ = (this->fields).movingEdgeCube;
+                                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                                pVVar23 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_);
+                                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                         MStack_11.invoker_method.
+                                                                         _1_2_);
+                                                if ((Vector3__Array *)MStack_11._37_4_ !=
+                                                    (Vector3__Array *)0x0) {
+                                                  pVVar30 = Cube::Cube_GetFaceAxis
+                                                                      ((Vector3 *)&stack0xffffff48,
+                                                                       ((Vector3__Array *)
+                                                                       MStack_11._37_4_)->max_length
+                                                                       ,(MethodInfo *)0x0);
+                                                  Cube::Cube_MoveFace((CubePickingInfo *)
+                                                                      MStack_11._37_4_,-0.75,
+                                                                      *pVVar30,&CStack_14,
+                                                                      (MethodInfo *)0x0);
+code_?:
+                                                  pCVar28 = (this->fields).movingEdgeCube;
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                           MStack_11.invoker_method.
+                                                                           _1_2_);
+                                                  if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                                     (pVVar23 = (Vector3__Array *)
+                                                                CONCAT22(MStack_11._7_2_,
+                                                                         MStack_11.
+                                                                         virtualMethodPointer._1_2_)
+                                                     , fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                                MStack_11.
+                                                                                invoker_method._1_2_
+                                                                               ),
+                                                     (e->fields)._TargetCubeModel_k__BackingField !=
+                                                     (MVCubeModelBase *)0x0)) {
+                                                    MVCubeModelBase::MVCubeModelBase_CornersChanged
+                                                              ((e->fields).
+                                                               _TargetCubeModel_k__BackingField,
+                                                               (pCVar28->fields).iLocalPos,
+                                                               (pCVar28->fields).cube,
+                                                               (MethodInfo *)0x0);
+                                                    MStack_11._9_4_ =
+                                                         CONCAT22(MStack_11._11_2_,
+                                                                  MStack_11.invoker_method._1_2_);
+                                                    break;
                                                   }
                                                 }
                                               }
@@ -574,315 +686,584 @@ code_?:
                                 else {
 code_?:
                                   stack0xffffff5c = (MonitorData *)0xffffffff;
-                                  pCStack_59 = TypeInfo__CanPerformCubeActionResult;
-                                  pSVar60 = mscorlib.dll::System::Enum::Enum_ToString
-                                                      ((Enum *)&pCStack_59,(MethodInfo *)0x0);
-                                  uVar61 = SUB41(pSVar60,0);
-                                  uVar62 = (undefined1)((uint)pSVar60 >> 8);
-                                  uVar63 = (undefined2)((uint)pSVar60 >> 0x10);
-                                  uVar64 = SUB41(StringLiteral_____EditCube_OutOfBoundsAdd___er,0);
-                                  uVar65 = (undefined1)
-                                           ((uint)StringLiteral_____EditCube_OutOfBoundsAdd___er >>
-                                           8);
-                                  uVar53 = (undefined2)
+                                  pCStack_49 = TypeInfo__CanPerformCubeActionResult;
+                                  str1 = mscorlib.dll::System::Enum::Enum_ToString
+                                                   ((Enum *)&pCStack_49,(MethodInfo *)0x0);
+                                  uVar1 = SUB42(StringLiteral_____EditCube_OutOfBoundsAdd___er,0);
+                                  uVar41 = (undefined2)
                                            ((uint)StringLiteral_____EditCube_OutOfBoundsAdd___er >>
                                            0x10);
 code_?:
                                   mscorlib.dll::System::String::String_Concat_3
-                                            ((String *)CONCAT22(uVar53,CONCAT11(uVar65,uVar64)),
-                                             (String *)CONCAT22(uVar63,CONCAT11(uVar62,uVar61)),
+                                            ((String *)CONCAT22(uVar41,uVar1),str1,
                                              (MethodInfo *)0x0);
-                                  pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                  pMVar23 = (this->fields).modelCursor;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if ((pMVar16 != (MVCubeModelBase *)0x0) &&
-                                     (pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                     pMVar23 != (ModelCursor3D *)0x0)) {
-                                    iPos_00.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                    iPos_00._0_4_ = uStack_56;
-                                    iPos_00.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
+                                  pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                  pMVar20 = (this->fields).modelCursor;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if ((pMVar25 != (MVCubeModelBase *)0x0) &&
+                                     (pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
+                                     pMVar20 != (ModelCursor3D *)0x0)) {
+                                    iPos.z = MStack_11._27_2_;
+                                    iPos._0_4_ = MStack_11._29_4_;
                                     ModelCursor::ModelCursor_SetErrorCursor
-                                              ((ModelCursor *)pMVar23,iPos_00,
-                                               (pMVar16->fields)._.gameObject,
-                                               pMStack_52 == (MVCubeModelBase *)0x2,
-                                               (MethodInfo *)0x0);
-                                    fVar49 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    pVVar66 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-joined_?:
-                                      pVVar24 = pVStack_25;
-                                      pVVar27 = pVVar66;
-                                      fVar29 = fVar49;
-                                      if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                        pCVar58 = (pCVar33->fields).cube;
-                                        uVar64 = SUB41(pCVar58,0);
-                                        uVar65 = (undefined1)((uint)pCVar58 >> 8);
-                                        uVar53 = (undefined2)((uint)pCVar58 >> 0x10);
+                                              ((ModelCursor *)pMVar20,iPos,
+                                               (pMVar25->fields)._.gameObject,
+                                               (MVCubeModelBase *)MStack_11._33_4_ ==
+                                               (MVCubeModelBase *)0x2,(MethodInfo *)0x0);
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                       (pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_),
+                                       fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                MStack_11.invoker_method._1_2_),
+                                       pMVar25 != (MVCubeModelBase *)0x0)) {
+                                      pCVar21 = (pCVar28->fields).cube;
 code_?:
-                                        iVector_06.z._1_1_ =
-                                             (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                        iVector_06._0_5_ =
-                                             *(undefined5 *)&(pCVar33->fields).iLocalPos;
-                                        MVCubeModelBase::MVCubeModelBase_CornersChangedDone
-                                                  ((e->fields)._TargetCubeModel_k__BackingField,
-                                                   iVector_06,
-                                                   (Cube *)CONCAT22(uVar53,CONCAT11(uVar65,uVar64)),
-                                                   (MethodInfo *)0x0);
-                                        (this->fields).movingEdgeCube = (CubePickingInfo *)0x0;
-                                        func_?();
-                                        break;
-                                      }
+                                      MVCubeModelBase::MVCubeModelBase_CornersChangedDone
+                                                (pMVar25,(pCVar28->fields).iLocalPos,pCVar21,
+                                                 (MethodInfo *)0x0);
+                                      (this->fields).movingEdgeCube = (CubePickingInfo *)0x0;
+                                      func_?();
+                                      break;
                                     }
                                   }
                                 }
                               }
                             }
-                            else if (pVStack_31 == (Vector3__Array *)0x4) {
-                              pCVar33 = (this->fields).movingEdgeCube;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pCVar33 != (CubePickingInfo *)0x0) {
-                                pVStack_31 = *(Vector3__Array **)&(pCVar33->fields).iLocalPos;
-                                uStack_34._2_2_ = (pCVar33->fields).iLocalPos.z;
-                                pVStack_25 = (Vector3__Array *)
-                                             (((this->fields).movingEdgeCube)->fields).pickedFace;
+                            else if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x4) {
+                              pCVar28 = (this->fields).movingEdgeCube;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (pCVar28 != (CubePickingInfo *)0x0) {
+                                MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                                MStack_11._27_2_ = (pCVar28->fields).iLocalPos.z;
+                                MStack_11._33_4_ =
+                                     (((this->fields).movingEdgeCube)->fields).pickedFace;
                                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                   func_?();
                                 }
-                                localPos_00.z = (int16_t)pVStack_31;
-                                localPos_00._0_4_ = &uStack_26;
-                                IVar35 = Cube::Cube_GetCubePosAboveFace
-                                                   (localPos_00,CONCAT22(uVar53,uStack_34._2_2_),
-                                                    (MethodInfo *)pVStack_25);
-                                pIVar55 = IVar35._0_4_;
-                                uStack_56 = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                              **)pIVar55;
-                                uStack_34 = (Byte__Array *)
-                                            CONCAT22(pIVar55->z,(undefined2)uStack_34);
-                                pMStack_52 = (MVCubeModelBase *)
-                                             CubeModelingStateMachine::
-                                             CubeModelingStateMachine_CanAddCubeAt
-                                                       (e,*pIVar55,(this->fields).movingEdgeCube,
-                                                        (MethodInfo *)0x0);
-                                if (pMStack_52 != (MVCubeModelBase *)0x0) {
+                                localPos_02.z = MStack_11.token._1_2_;
+                                localPos_02._0_4_ = &IStack_22;
+                                IVar29 = Cube::Cube_GetCubePosAboveFace
+                                                   (localPos_02,CONCAT22(uVar41,MStack_11._27_2_),
+                                                    (MethodInfo *)MStack_11._33_4_);
+                                puVar50 = IVar29._0_4_;
+                                MStack_11._29_4_ = *(undefined4 *)puVar50;
+                                MStack_11._27_2_ = *(undefined2 *)((int)puVar50 + 4);
+                                requestedCubePos_00.z._1_1_ =
+                                     (char)((ushort)*(undefined2 *)((int)puVar50 + 4) >> 8);
+                                requestedCubePos_00._0_5_ = *puVar50;
+                                MStack_11._33_4_ =
+                                     CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt
+                                               (e,requestedCubePos_00,(this->fields).movingEdgeCube,
+                                                (MethodInfo *)0x0);
+                                if ((MVCubeModelBase *)MStack_11._33_4_ != (MVCubeModelBase *)0x0) {
 code_?:
                                   stack0xffffff5c = (MonitorData *)0xffffffff;
-                                  pCStack_59 = TypeInfo__CanPerformCubeActionResult;
-                                  pSVar60 = mscorlib.dll::System::Enum::Enum_ToString
-                                                      ((Enum *)&pCStack_59,(MethodInfo *)0x0);
-                                  uVar61 = SUB41(pSVar60,0);
-                                  uVar62 = (undefined1)((uint)pSVar60 >> 8);
-                                  uVar63 = (undefined2)((uint)pSVar60 >> 0x10);
-                                  uVar64 = SUB41(StringLiteral_____EditCube_OutOfBoundsAddEdge_,0);
-                                  uVar65 = (undefined1)
-                                           ((uint)StringLiteral_____EditCube_OutOfBoundsAddEdge_ >>
-                                           8);
-                                  uVar53 = (undefined2)
+                                  pCStack_49 = TypeInfo__CanPerformCubeActionResult;
+                                  str1 = mscorlib.dll::System::Enum::Enum_ToString
+                                                   ((Enum *)&pCStack_49,(MethodInfo *)0x0);
+                                  uVar1 = SUB42(StringLiteral_____EditCube_OutOfBoundsAddEdge_,0);
+                                  uVar41 = (undefined2)
                                            ((uint)StringLiteral_____EditCube_OutOfBoundsAddEdge_ >>
                                            0x10);
                                   goto code_?;
                                 }
-                                pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                pVVar24 = pVStack_25;
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                  pos_00.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                  pos_00._0_4_ = uStack_56;
-                                  pos_00.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                  pVStack_31 = (Vector3__Array *)
-                                               MVCubeModelBase::MVCubeModelBase_GetCube
-                                                         (pMVar16,pos_00,(MethodInfo *)0x0);
+                                pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                  pos_03.z._0_1_ = MStack_11.parameters._3_1_;
+                                  pos_03._0_4_ = MStack_11._29_4_;
+                                  pos_03.z._1_1_ = MStack_11.field7_0x1c._0_1_;
+                                  MStack_11._37_4_ =
+                                       MVCubeModelBase::MVCubeModelBase_GetCube
+                                                 (pMVar25,pos_03,(MethodInfo *)0x0);
                                   if ((TypeInfo__MV__WorldObject__CubeBase->_1).
                                       cctor_finished_or_no_cctor == 0) {
                                     func_?();
                                   }
-                                  bVar22 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                  bVar19 = MVWorldObject.dll::MV::WorldObject::CubeBase::
                                            CubeBase_op_Equality
-                                                     ((CubeBase *)pVStack_31,(CubeBase *)0x0,
+                                                     ((CubeBase *)MStack_11._37_4_,(CubeBase *)0x0,
                                                       (MethodInfo *)0x0);
-                                  if (bVar22 == 0) goto code_?;
-                                  pCVar33 = (this->fields).movingEdgeCube;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pCVar33 != (CubePickingInfo *)0x0) {
-                                    pos_04.z._1_1_ =
-                                         (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                    pos_04._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                  if (bVar19 == 0) goto code_?;
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
                                     CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                              (e,pos_04,AudioActions__Enum_CubeAdded,
-                                               (MethodInfo *)0x0);
-                                    pMStack_52 = (e->fields)._TargetCubeModel_k__BackingField;
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pVStack_25 = (Vector3__Array *)(pCVar33->fields).cube;
-                                      pVStack_31 = (Vector3__Array *)
-                                                   (((this->fields).movingEdgeCube)->fields).
-                                                   pickedFace;
+                                              (e,(pCVar28->fields).iLocalPos,
+                                               AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
+                                    MStack_11._33_4_ = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if (pCVar28 != (CubePickingInfo *)0x0) {
+                                      MStack_11._37_4_ = (pCVar28->fields).cube;
+                                      FVar44 = (((this->fields).movingEdgeCube)->fields).pickedFace;
                                       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pVStack_31 = Cube::Cube_GetCorners
-                                                             ((Cube *)pVStack_25,
-                                                              (Face__Enum)pVStack_31,
-                                                              (MethodInfo *)0x0);
+                                      pVVar12 = Cube::Cube_GetCorners
+                                                          ((Cube *)MStack_11._37_4_,FVar44,
+                                                           (MethodInfo *)0x0);
                                       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pVStack_25 = (Vector3__Array *)
-                                                   MVWorldObject.dll::MV::WorldObject::
-                                                   CubeDataPacker::CubeDataPacker_CornersToByteArray
-                                                             (pVStack_31,(MethodInfo *)0x0);
-                                      uVar57 = CubeModelingStateMachine::
+                                      pBVar45 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                                                CubeDataPacker_CornersToByteArray
+                                                          (pVVar12,(MethodInfo *)0x0);
+                                      uVar46 = CubeModelingStateMachine::
                                                CubeModelingStateMachine_get_CurrentMaterialId
                                                          (e,(MethodInfo *)0x0);
-                                      pVStack_31 = (Vector3__Array *)
-                                                   CONCAT31(pVStack_31._1_3_,uVar57);
-                                      pVStack_31 = (Vector3__Array *)
-                                                   Cube::Cube_CreateMaterialArray
-                                                             (uVar57,(MethodInfo *)0x0);
-                                      pMStack_51 = (MVCubeModelBase *)func_?();
-                                      pVVar24 = pVStack_25;
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                      if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                                        Cube::Cube__ctor((Cube *)pMStack_51,
-                                                         (Byte__Array *)pVStack_25,
-                                                         (Byte__Array *)pVStack_31,(MethodInfo *)0x0
-                                                        );
-                                        pVVar24 = pVStack_25;
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30)
-                                        ;
-                                        if (pMStack_52 != (MVCubeModelBase *)0x0) {
-                                          pos_12.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                          pos_12._0_4_ = uStack_56;
-                                          pos_12.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                          MVCubeModelBase::MVCubeModelBase_AddCube
-                                                    (pMStack_52,pos_12,(CubeBase *)pMStack_51,
-                                                     (MethodInfo *)0x0);
-                                          pVStack_31 = (Vector3__Array *)
-                                                       (this->fields).movingEdgeCube;
-                                          pMStack_50 = (MVCubeModelBase *)func_?();
-                                          pVVar24 = pVStack_25;
-                                          pVVar27 = (Vector3__Array *)
-                                                    CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                          fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                   (int16_t)uStack_30);
-                                          if (pMStack_50 != (MVCubeModelBase *)0x0) {
-                                            CubePickingInfo::CubePickingInfo__ctor_1
-                                                      ((CubePickingInfo *)pMStack_50,
-                                                       (CubePickingInfo *)pVStack_31,
+                                      MStack_11.token._1_1_ = uVar46;
+                                      pBVar47 = Cube::Cube_CreateMaterialArray
+                                                          (uVar46,(MethodInfo *)0x0);
+                                      MStack_11._37_4_ = func_?();
+                                      Cube::Cube__ctor((Cube *)MStack_11._37_4_,pBVar45,pBVar47,
                                                        (MethodInfo *)0x0);
-                                            pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                            pVVar24 = pVStack_25;
-                                            pVVar27 = (Vector3__Array *)
-                                                      CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                            fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                     (int16_t)uStack_30);
-                                            if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                              pos_16.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                              pos_16._0_4_ = uStack_56;
-                                              pos_16.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                              pCVar58 = MVCubeModelBase::MVCubeModelBase_GetCube
-                                                                  (pMVar16,pos_16,(MethodInfo *)0x0)
-                                              ;
-                                              pCVar58 = Cube::Cube_Clone_1(pCVar58,(MethodInfo *)0x0
-                                                                          );
-                                              (pMStack_50->fields)._._.id = (int32_t)pCVar58;
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_);
+                                      if ((MVCubeModelBase *)MStack_11._33_4_ !=
+                                          (MVCubeModelBase *)0x0) {
+                                        pos_12.z = MStack_11._27_2_;
+                                        pos_12._0_4_ = MStack_11._29_4_;
+                                        MVCubeModelBase::MVCubeModelBase_AddCube
+                                                  ((MVCubeModelBase *)MStack_11._33_4_,pos_12,
+                                                   (CubeBase *)MStack_11._37_4_,(MethodInfo *)0x0);
+                                        pCVar28 = (this->fields).movingEdgeCube;
+                                        MStack_11._21_4_ = func_?();
+                                        CubePickingInfo::CubePickingInfo__ctor_1
+                                                  ((CubePickingInfo *)MStack_11._21_4_,pCVar28,
+                                                   (MethodInfo *)0x0);
+                                        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                        pCVar21 = (Cube *)MStack_11._17_4_;
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                 MStack_11.invoker_method._1_2_);
+                                        if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                          pos_06.z = MStack_11._27_2_;
+                                          pos_06._0_4_ = MStack_11._29_4_;
+                                          pCVar21 = MVCubeModelBase::MVCubeModelBase_GetCube
+                                                              (pMVar25,pos_06,(MethodInfo *)0x0);
+                                          pCVar48 = Cube::Cube_Clone_1(pCVar21,(MethodInfo *)0x0);
+                                          pCVar21 = (Cube *)MStack_11._17_4_;
+                                          pVVar23 = (Vector3__Array *)
+                                                    CONCAT22(MStack_11._7_2_,
+                                                             MStack_11.virtualMethodPointer._1_2_);
+                                          fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                   MStack_11.invoker_method._1_2_);
+                                          if ((Vector3__Array *)MStack_11._21_4_ !=
+                                              (Vector3__Array *)0x0) {
+                                            ((CubePickingInfo__Fields *)(MStack_11._21_4_ + 8))->
+                                            cube = pCVar48;
+                                            func_?();
+                                            ((Vector3 *)(MStack_11._21_4_ + 0x10))[2].z =
+                                                 (float)MStack_11._29_4_;
+                                            *(undefined2 *)
+                                             &((Vector3 *)(MStack_11._21_4_ + 0x10))[3].x =
+                                                 MStack_11._27_2_;
+                                            pCVar28 = (this->fields).movingEdgeCube;
+                                            pCVar21 = (Cube *)MStack_11._17_4_;
+                                            pVVar23 = (Vector3__Array *)
+                                                      CONCAT22(MStack_11._7_2_,
+                                                               MStack_11.virtualMethodPointer._1_2_)
+                                            ;
+                                            fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                     MStack_11.invoker_method._1_2_)
+                                            ;
+                                            if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                               (pVVar23 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_),
+                                               fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                        MStack_11.invoker_method.
+                                                                        _1_2_),
+                                               (e->fields)._TargetCubeModel_k__BackingField !=
+                                               (MVCubeModelBase *)0x0)) {
+                                              MVCubeModelBase::MVCubeModelBase_CornersChangedDone
+                                                        ((e->fields).
+                                                         _TargetCubeModel_k__BackingField,
+                                                         (pCVar28->fields).iLocalPos,
+                                                         (pCVar28->fields).cube,(MethodInfo *)0x0);
+                                              (this->fields).movingEdgeCube =
+                                                   (CubePickingInfo *)MStack_11._21_4_;
                                               func_?();
-                                              (pMStack_50->fields)._._.position.y = (float)uStack_56
-                                              ;
-                                              *(int16_t *)&(pMStack_50->fields)._._.position.z =
-                                                   uStack_34._2_2_;
-                                              pCVar33 = (this->fields).movingEdgeCube;
-                                              pVVar24 = pVStack_25;
-                                              pVVar27 = (Vector3__Array *)
-                                                        CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                              fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                       (int16_t)uStack_30);
-                                              if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                                 (pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28),
-                                                 fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                          (int16_t)uStack_30),
-                                                 (e->fields)._TargetCubeModel_k__BackingField !=
-                                                 (MVCubeModelBase *)0x0)) {
-                                                iVector_04.z._1_1_ =
-                                                     (char)((ushort)(pCVar33->fields).iLocalPos.z >>
-                                                           8);
-                                                iVector_04._0_5_ =
-                                                     *(undefined5 *)&(pCVar33->fields).iLocalPos;
-                                                MVCubeModelBase::MVCubeModelBase_CornersChangedDone
-                                                          ((e->fields).
-                                                           _TargetCubeModel_k__BackingField,
-                                                           iVector_04,(pCVar33->fields).cube,
-                                                           (MethodInfo *)0x0);
-                                                (this->fields).movingEdgeCube =
-                                                     (CubePickingInfo *)pMStack_50;
-                                                func_?();
-                                                pVStack_31 = (Vector3__Array *)
-                                                             (this->fields).movingEdgeCube;
-                                                pVVar24 = pVStack_25;
-                                                pVVar27 = (Vector3__Array *)
-                                                          CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                                                ;
-                                                fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                         (int16_t)uStack_30);
-                                                if (pVStack_31 != (Vector3__Array *)0x0) {
-                                                  pVVar36 = Cube::Cube_GetFaceAxis
+                                              MStack_11._37_4_ = (this->fields).movingEdgeCube;
+                                              pCVar21 = (Cube *)MStack_11._17_4_;
+                                              pVVar23 = (Vector3__Array *)
+                                                        CONCAT22(MStack_11._7_2_,
+                                                                 MStack_11.virtualMethodPointer.
+                                                                 _1_2_);
+                                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                       MStack_11.invoker_method.
+                                                                       _1_2_);
+                                              if ((Vector3__Array *)MStack_11._37_4_ !=
+                                                  (Vector3__Array *)0x0) {
+                                                pVVar30 = Cube::Cube_GetFaceAxis
+                                                                    ((Vector3 *)&stack0xffffff48,
+                                                                     ((Vector3__Array *)
+                                                                     MStack_11._37_4_)->max_length,
+                                                                     (MethodInfo *)0x0);
+                                                axis_00.z._1_1_ = (char)((uint)pVVar30->z >> 8);
+                                                axis_00._0_9_ = *(unkbyte9 *)pVVar30;
+                                                axis_00.z._2_2_ = (short)((uint)pVVar30->z >> 0x10);
+                                                Cube::Cube_MoveFace((CubePickingInfo *)
+                                                                    MStack_11._37_4_,-1.0,axis_00,
+                                                                    &CStack_15,(MethodInfo *)0x0);
+                                                MStack_11._37_4_ = (this->fields).movingEdgeCube;
+                                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                                pVVar23 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_);
+                                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                         MStack_11.invoker_method.
+                                                                         _1_2_);
+                                                if ((Vector3__Array *)MStack_11._37_4_ !=
+                                                    (Vector3__Array *)0x0) {
+                                                  pVVar30 = Cube::Cube_GetFaceAxis
                                                                       ((Vector3 *)&stack0xffffff48,
-                                                                       pVStack_31->max_length,
-                                                                       (MethodInfo *)0x0);
-                                                  axis.z._2_2_ = (short)((uint)pVVar36->z >> 0x10);
-                                                  axis._0_10_ = *(unkbyte10 *)pVVar36;
-                                                  Cube::Cube_MoveFace((CubePickingInfo *)pVStack_31,
-                                                                      -1.0,axis,
-                                                                      (CubeOutOfBoundState__Enum *)
-                                                                      &puStack_19,(MethodInfo *)0x0)
+                                                                       ((Vector3__Array *)
+                                                                       MStack_11._37_4_)->max_length
+                                                                       ,(MethodInfo *)0x0);
+                                                  axis_02.z._2_2_ =
+                                                       (short)((uint)pVVar30->z >> 0x10);
+                                                  axis_02._0_10_ = *(unkbyte10 *)pVVar30;
+                                                  Cube::Cube_MoveEdge((CubePickingInfo *)
+                                                                      MStack_11._37_4_,-0.75,axis_02
+                                                                      ,&CStack_15,(MethodInfo *)0x0)
                                                   ;
-                                                  pVStack_31 = (Vector3__Array *)
-                                                               (this->fields).movingEdgeCube;
-                                                  pVVar24 = pVStack_25;
-                                                  pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                           (int16_t)uStack_30);
-                                                  if (pVStack_31 != (Vector3__Array *)0x0) {
-                                                    pVVar36 = Cube::Cube_GetFaceAxis
-                                                                        ((Vector3 *)&stack0xffffff48
-                                                                         ,pVStack_31->max_length,
-                                                                         (MethodInfo *)0x0);
-                                                    Cube::Cube_MoveEdge((CubePickingInfo *)
-                                                                        pVStack_31,-0.75,*pVVar36,
-                                                                        (CubeOutOfBoundState__Enum *
-                                                                        )&puStack_19,
-                                                                        (MethodInfo *)0x0);
+                                                  pCVar28 = (this->fields).movingEdgeCube;
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                           MStack_11.invoker_method.
+                                                                           _1_2_);
+                                                  if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                                     (pVVar23 = (Vector3__Array *)
+                                                                CONCAT22(MStack_11._7_2_,
+                                                                         MStack_11.
+                                                                         virtualMethodPointer._1_2_)
+                                                     , fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                                MStack_11.
+                                                                                invoker_method._1_2_
+                                                                               ),
+                                                     (e->fields)._TargetCubeModel_k__BackingField !=
+                                                     (MVCubeModelBase *)0x0)) {
+                                                    MVCubeModelBase::MVCubeModelBase_CornersChanged
+                                                              ((e->fields).
+                                                               _TargetCubeModel_k__BackingField,
+                                                               (pCVar28->fields).iLocalPos,
+                                                               (pCVar28->fields).cube,
+                                                               (MethodInfo *)0x0);
+                                                    MStack_11._9_4_ =
+                                                         CONCAT22(MStack_11._11_2_,
+                                                                  MStack_11.invoker_method._1_2_);
+                                                    break;
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            else if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x5) {
+                              pCVar28 = (this->fields).movingEdgeCube;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (pCVar28 != (CubePickingInfo *)0x0) {
+                                MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                                MStack_11._27_2_ = (pCVar28->fields).iLocalPos.z;
+                                MStack_11._33_4_ =
+                                     (((this->fields).movingEdgeCube)->fields).pickedFace;
+                                if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+                                  func_?();
+                                }
+                                localPos_01.z = MStack_11.token._1_2_;
+                                localPos_01._0_4_ = &IStack_22;
+                                IVar29 = Cube::Cube_GetCubePosAboveFace
+                                                   (localPos_01,CONCAT22(uVar41,MStack_11._27_2_),
+                                                    (MethodInfo *)MStack_11._33_4_);
+                                puVar50 = IVar29._0_4_;
+                                MStack_11._29_4_ = *(undefined4 *)puVar50;
+                                MStack_11._27_2_ = *(undefined2 *)((int)puVar50 + 4);
+                                requestedCubePos.z._1_1_ =
+                                     (char)((ushort)*(undefined2 *)((int)puVar50 + 4) >> 8);
+                                requestedCubePos._0_5_ = *puVar50;
+                                MStack_11._33_4_ =
+                                     CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt
+                                               (e,requestedCubePos,(this->fields).movingEdgeCube,
+                                                (MethodInfo *)0x0);
+                                if ((MVCubeModelBase *)MStack_11._33_4_ != (MVCubeModelBase *)0x0) {
+code_?:
+                                  stack0xffffff5c = (MonitorData *)0xffffffff;
+                                  pCStack_49 = TypeInfo__CanPerformCubeActionResult;
+                                  str1 = mscorlib.dll::System::Enum::Enum_ToString
+                                                   ((Enum *)&pCStack_49,(MethodInfo *)0x0);
+                                  uVar1 = SUB42(StringLiteral_____EditCube_OutOfBoundsAddVerte,0);
+                                  uVar41 = (undefined2)
+                                           ((uint)StringLiteral_____EditCube_OutOfBoundsAddVerte >>
+                                           0x10);
+                                  goto code_?;
+                                }
+                                pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                  pos_02.z._0_1_ = MStack_11.parameters._3_1_;
+                                  pos_02._0_4_ = MStack_11._29_4_;
+                                  pos_02.z._1_1_ = MStack_11.field7_0x1c._0_1_;
+                                  MStack_11._37_4_ =
+                                       MVCubeModelBase::MVCubeModelBase_GetCube
+                                                 (pMVar25,pos_02,(MethodInfo *)0x0);
+                                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).
+                                      cctor_finished_or_no_cctor == 0) {
+                                    func_?();
+                                  }
+                                  bVar19 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                           CubeBase_op_Equality
+                                                     ((CubeBase *)MStack_11._37_4_,(CubeBase *)0x0,
+                                                      (MethodInfo *)0x0);
+                                  if (bVar19 == 0) goto code_?;
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
+                                    CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
+                                              (e,(pCVar28->fields).iLocalPos,
+                                               AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
+                                    MStack_11._33_4_ = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if (pCVar28 != (CubePickingInfo *)0x0) {
+                                      MStack_11._37_4_ = (pCVar28->fields).cube;
+                                      FVar44 = (((this->fields).movingEdgeCube)->fields).pickedFace;
+                                      if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+                                        func_?();
+                                      }
+                                      pVVar12 = Cube::Cube_GetCorners
+                                                          ((Cube *)MStack_11._37_4_,FVar44,
+                                                           (MethodInfo *)0x0);
+                                      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
+                                          cctor_finished_or_no_cctor == 0) {
+                                        func_?();
+                                      }
+                                      pBVar45 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                                                CubeDataPacker_CornersToByteArray
+                                                          (pVVar12,(MethodInfo *)0x0);
+                                      uVar46 = CubeModelingStateMachine::
+                                               CubeModelingStateMachine_get_CurrentMaterialId
+                                                         (e,(MethodInfo *)0x0);
+                                      MStack_11.token._1_1_ = uVar46;
+                                      pBVar47 = Cube::Cube_CreateMaterialArray
+                                                          (uVar46,(MethodInfo *)0x0);
+                                      MStack_11._37_4_ = func_?();
+                                      Cube::Cube__ctor((Cube *)MStack_11._37_4_,pBVar45,pBVar47,
+                                                       (MethodInfo *)0x0);
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_);
+                                      if ((MVCubeModelBase *)MStack_11._33_4_ !=
+                                          (MVCubeModelBase *)0x0) {
+                                        pos_11.z = MStack_11._27_2_;
+                                        pos_11._0_4_ = MStack_11._29_4_;
+                                        MVCubeModelBase::MVCubeModelBase_AddCube
+                                                  ((MVCubeModelBase *)MStack_11._33_4_,pos_11,
+                                                   (CubeBase *)MStack_11._37_4_,(MethodInfo *)0x0);
+                                        pCVar28 = (this->fields).movingEdgeCube;
+                                        MStack_11._21_4_ = func_?();
+                                        CubePickingInfo::CubePickingInfo__ctor_1
+                                                  ((CubePickingInfo *)MStack_11._21_4_,pCVar28,
+                                                   (MethodInfo *)0x0);
+                                        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                        pCVar21 = (Cube *)MStack_11._17_4_;
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                 MStack_11.invoker_method._1_2_);
+                                        if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                          pos_05.z = MStack_11._27_2_;
+                                          pos_05._0_4_ = MStack_11._29_4_;
+                                          pCVar21 = MVCubeModelBase::MVCubeModelBase_GetCube
+                                                              (pMVar25,pos_05,(MethodInfo *)0x0);
+                                          pCVar48 = Cube::Cube_Clone_1(pCVar21,(MethodInfo *)0x0);
+                                          pCVar21 = (Cube *)MStack_11._17_4_;
+                                          pVVar23 = (Vector3__Array *)
+                                                    CONCAT22(MStack_11._7_2_,
+                                                             MStack_11.virtualMethodPointer._1_2_);
+                                          fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                   MStack_11.invoker_method._1_2_);
+                                          if ((Vector3__Array *)MStack_11._21_4_ !=
+                                              (Vector3__Array *)0x0) {
+                                            ((CubePickingInfo__Fields *)(MStack_11._21_4_ + 8))->
+                                            cube = pCVar48;
+                                            func_?();
+                                            ((Vector3 *)(MStack_11._21_4_ + 0x10))[2].z =
+                                                 (float)MStack_11._29_4_;
+                                            *(undefined2 *)
+                                             &((Vector3 *)(MStack_11._21_4_ + 0x10))[3].x =
+                                                 MStack_11._27_2_;
+                                            pCVar28 = (this->fields).movingEdgeCube;
+                                            pCVar21 = (Cube *)MStack_11._17_4_;
+                                            pVVar23 = (Vector3__Array *)
+                                                      CONCAT22(MStack_11._7_2_,
+                                                               MStack_11.virtualMethodPointer._1_2_)
+                                            ;
+                                            fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                     MStack_11.invoker_method._1_2_)
+                                            ;
+                                            if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                               (pVVar23 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_),
+                                               fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                        MStack_11.invoker_method.
+                                                                        _1_2_),
+                                               (e->fields)._TargetCubeModel_k__BackingField !=
+                                               (MVCubeModelBase *)0x0)) {
+                                              MVCubeModelBase::MVCubeModelBase_CornersChangedDone
+                                                        ((e->fields).
+                                                         _TargetCubeModel_k__BackingField,
+                                                         (pCVar28->fields).iLocalPos,
+                                                         (pCVar28->fields).cube,(MethodInfo *)0x0);
+                                              (this->fields).movingEdgeCube =
+                                                   (CubePickingInfo *)MStack_11._21_4_;
+                                              func_?();
+                                              MStack_11._37_4_ = (this->fields).movingEdgeCube;
+                                              pCVar21 = (Cube *)MStack_11._17_4_;
+                                              pVVar23 = (Vector3__Array *)
+                                                        CONCAT22(MStack_11._7_2_,
+                                                                 MStack_11.virtualMethodPointer.
+                                                                 _1_2_);
+                                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                       MStack_11.invoker_method.
+                                                                       _1_2_);
+                                              if ((Vector3__Array *)MStack_11._37_4_ !=
+                                                  (Vector3__Array *)0x0) {
+                                                pVVar30 = Cube::Cube_GetFaceAxis
+                                                                    ((Vector3 *)&stack0xffffff48,
+                                                                     ((Vector3__Array *)
+                                                                     MStack_11._37_4_)->max_length,
+                                                                     (MethodInfo *)0x0);
+                                                axis.z._1_1_ = (char)((uint)pVVar30->z >> 8);
+                                                axis._0_9_ = *(unkbyte9 *)pVVar30;
+                                                axis.z._2_2_ = (short)((uint)pVVar30->z >> 0x10);
+                                                Cube::Cube_MoveFace((CubePickingInfo *)
+                                                                    MStack_11._37_4_,-1.0,axis,
+                                                                    (CubeOutOfBoundState__Enum *)
+                                                                    &puStack_16,(MethodInfo *)0x0);
+                                                MStack_11._33_4_ = (this->fields).movingEdgeCube;
+                                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                                pVVar23 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_);
+                                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                         MStack_11.invoker_method.
+                                                                         _1_2_);
+                                                if ((MVCubeModelBase *)MStack_11._33_4_ !=
+                                                    (MVCubeModelBase *)0x0) {
+                                                  MStack_11._37_4_ =
+                                                       Cube::Cube_GetFaceAxis
+                                                                 ((Vector3 *)&stack0xffffff48,
+                                                                  (((MVCubeModelBase *)
+                                                                   MStack_11._33_4_)->fields)._._.
+                                                                  groupId,(MethodInfo *)0x0);
+                                                  pCVar28 = (this->fields).movingEdgeCube;
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                           MStack_11.invoker_method.
+                                                                           _1_2_);
+                                                  if (pCVar28 != (CubePickingInfo *)0x0) {
+                                                    pCVar21 = ((CubePickingInfo__Fields *)
+                                                              &((Vector3__Array *)MStack_11._37_4_)
+                                                               ->bounds)->cube;
+                                                    axis_01.z._1_1_ = (char)((uint)pCVar21 >> 8);
+                                                    axis_01._0_9_ = *(unkbyte9 *)MStack_11._37_4_;
+                                                    axis_01.z._2_2_ = (short)((uint)pCVar21 >> 0x10)
+                                                    ;
+                                                    Cube::Cube_MoveVertex
+                                                              ((CubePickingInfo *)MStack_11._33_4_,
+                                                               -0.75,axis_01,
+                                                               (pCVar28->fields).pickedEdgeIndex0,
+                                                               (pCVar28->fields).pickedEdgeIndex1,
+                                                               (CubeOutOfBoundState__Enum *)
+                                                               &puStack_16,(MethodInfo *)0x0);
                                                     goto code_?;
                                                   }
                                                 }
@@ -896,442 +1277,155 @@ code_?:
                                 }
                               }
                             }
-                            else if (pVStack_31 == (Vector3__Array *)0x5) {
-                              pCVar33 = (this->fields).movingEdgeCube;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pCVar33 != (CubePickingInfo *)0x0) {
-                                pVStack_31 = *(Vector3__Array **)&(pCVar33->fields).iLocalPos;
-                                uStack_34._2_2_ = (pCVar33->fields).iLocalPos.z;
-                                pVStack_25 = (Vector3__Array *)
-                                             (((this->fields).movingEdgeCube)->fields).pickedFace;
-                                if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                                  func_?();
-                                }
-                                localPos.z = (int16_t)pVStack_31;
-                                localPos._0_4_ = &uStack_26;
-                                IVar35 = Cube::Cube_GetCubePosAboveFace
-                                                   (localPos,CONCAT22(uVar53,uStack_34._2_2_),
-                                                    (MethodInfo *)pVStack_25);
-                                pIVar55 = IVar35._0_4_;
-                                uStack_56 = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                              **)pIVar55;
-                                uStack_34 = (Byte__Array *)
-                                            CONCAT22(pIVar55->z,(undefined2)uStack_34);
-                                pMStack_52 = (MVCubeModelBase *)
-                                             CubeModelingStateMachine::
-                                             CubeModelingStateMachine_CanAddCubeAt
-                                                       (e,*pIVar55,(this->fields).movingEdgeCube,
-                                                        (MethodInfo *)0x0);
-                                if (pMStack_52 == (MVCubeModelBase *)0x0) {
-                                  pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                    pos.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                    pos._0_4_ = uStack_56;
-                                    pos.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                    pVStack_31 = (Vector3__Array *)
-                                                 MVCubeModelBase::MVCubeModelBase_GetCube
-                                                           (pMVar16,pos,(MethodInfo *)0x0);
-                                    if ((TypeInfo__MV__WorldObject__CubeBase->_1).
-                                        cctor_finished_or_no_cctor == 0) {
-                                      func_?();
-                                    }
-                                    bVar22 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                                             CubeBase_op_Equality
-                                                       ((CubeBase *)pVStack_31,(CubeBase *)0x0,
-                                                        (MethodInfo *)0x0);
-                                    if (bVar22 == 0) goto code_?;
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pos_03.z._1_1_ =
-                                           (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                      pos_03._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
-                                      CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                                (e,pos_03,AudioActions__Enum_CubeAdded,
-                                                 (MethodInfo *)0x0);
-                                      pMStack_52 = (e->fields)._TargetCubeModel_k__BackingField;
-                                      pCVar33 = (this->fields).movingEdgeCube;
-                                      pVVar24 = pVStack_25;
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                      if (pCVar33 != (CubePickingInfo *)0x0) {
-                                        pVStack_25 = (Vector3__Array *)(pCVar33->fields).cube;
-                                        pVStack_31 = (Vector3__Array *)
-                                                     (((this->fields).movingEdgeCube)->fields).
-                                                     pickedFace;
-                                        if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                                          func_?();
-                                        }
-                                        pVStack_31 = Cube::Cube_GetCorners
-                                                               ((Cube *)pVStack_25,
-                                                                (Face__Enum)pVStack_31,
-                                                                (MethodInfo *)0x0);
-                                        if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
-                                            cctor_finished_or_no_cctor == 0) {
-                                          func_?();
-                                        }
-                                        pVStack_25 = (Vector3__Array *)
-                                                     MVWorldObject.dll::MV::WorldObject::
-                                                     CubeDataPacker::
-                                                     CubeDataPacker_CornersToByteArray
-                                                               (pVStack_31,(MethodInfo *)0x0);
-                                        uVar57 = CubeModelingStateMachine::
-                                                 CubeModelingStateMachine_get_CurrentMaterialId
-                                                           (e,(MethodInfo *)0x0);
-                                        pVStack_31 = (Vector3__Array *)
-                                                     CONCAT31(pVStack_31._1_3_,uVar57);
-                                        pVStack_31 = (Vector3__Array *)
-                                                     Cube::Cube_CreateMaterialArray
-                                                               (uVar57,(MethodInfo *)0x0);
-                                        pMStack_51 = (MVCubeModelBase *)func_?();
-                                        pVVar24 = pVStack_25;
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30)
-                                        ;
-                                        if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                                          Cube::Cube__ctor((Cube *)pMStack_51,
-                                                           (Byte__Array *)pVStack_25,
-                                                           (Byte__Array *)pVStack_31,
-                                                           (MethodInfo *)0x0);
-                                          pVVar24 = pVStack_25;
-                                          pVVar27 = (Vector3__Array *)
-                                                    CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                          fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                   (int16_t)uStack_30);
-                                          if (pMStack_52 != (MVCubeModelBase *)0x0) {
-                                            pos_11.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                            pos_11._0_4_ = uStack_56;
-                                            pos_11.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                            MVCubeModelBase::MVCubeModelBase_AddCube
-                                                      (pMStack_52,pos_11,(CubeBase *)pMStack_51,
-                                                       (MethodInfo *)0x0);
-                                            pVStack_31 = (Vector3__Array *)
-                                                         (this->fields).movingEdgeCube;
-                                            pMStack_50 = (MVCubeModelBase *)func_?();
-                                            pVVar24 = pVStack_25;
-                                            pVVar27 = (Vector3__Array *)
-                                                      CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                            fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                     (int16_t)uStack_30);
-                                            if (pMStack_50 != (MVCubeModelBase *)0x0) {
-                                              CubePickingInfo::CubePickingInfo__ctor_1
-                                                        ((CubePickingInfo *)pMStack_50,
-                                                         (CubePickingInfo *)pVStack_31,
-                                                         (MethodInfo *)0x0);
-                                              pMVar16 = (e->fields)._TargetCubeModel_k__BackingField
-                                              ;
-                                              pVVar24 = pVStack_25;
-                                              pVVar27 = (Vector3__Array *)
-                                                        CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                              fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                       (int16_t)uStack_30);
-                                              if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                                pos_15.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                                pos_15._0_4_ = uStack_56;
-                                                pos_15.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                                pCVar58 = MVCubeModelBase::MVCubeModelBase_GetCube
-                                                                    (pMVar16,pos_15,
-                                                                     (MethodInfo *)0x0);
-                                                pCVar58 = Cube::Cube_Clone_1(pCVar58,(MethodInfo *)
-                                                                                     0x0);
-                                                (pMStack_50->fields)._._.id = (int32_t)pCVar58;
-                                                func_?();
-                                                (pMStack_50->fields)._._.position.y =
-                                                     (float)uStack_56;
-                                                *(int16_t *)&(pMStack_50->fields)._._.position.z =
-                                                     uStack_34._2_2_;
-                                                pCVar33 = (this->fields).movingEdgeCube;
-                                                pVVar24 = pVStack_25;
-                                                pVVar27 = (Vector3__Array *)
-                                                          CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                                                ;
-                                                fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                         (int16_t)uStack_30);
-                                                if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                                   (pVVar27 = (Vector3__Array *)
-                                                              CONCAT22(uStack_28._2_2_,
-                                                                       (short)uStack_28),
-                                                   fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                            (int16_t)uStack_30),
-                                                   (e->fields)._TargetCubeModel_k__BackingField !=
-                                                   (MVCubeModelBase *)0x0)) {
-                                                  iVector_03.z._1_1_ =
-                                                       (char)((ushort)(pCVar33->fields).iLocalPos.z
-                                                             >> 8);
-                                                  iVector_03._0_5_ =
-                                                       *(undefined5 *)&(pCVar33->fields).iLocalPos;
-                                                  MVCubeModelBase::
-                                                  MVCubeModelBase_CornersChangedDone
-                                                            ((e->fields).
-                                                             _TargetCubeModel_k__BackingField,
-                                                             iVector_03,(pCVar33->fields).cube,
-                                                             (MethodInfo *)0x0);
-                                                  (this->fields).movingEdgeCube =
-                                                       (CubePickingInfo *)pMStack_50;
-                                                  func_?();
-                                                  pVStack_31 = (Vector3__Array *)
-                                                               (this->fields).movingEdgeCube;
-                                                  pVVar24 = pVStack_25;
-                                                  pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                           (int16_t)uStack_30);
-                                                  if (pVStack_31 != (Vector3__Array *)0x0) {
-                                                    pVVar36 = Cube::Cube_GetFaceAxis
-                                                                        ((Vector3 *)&stack0xffffff48
-                                                                         ,pVStack_31->max_length,
-                                                                         (MethodInfo *)0x0);
-                                                    Cube::Cube_MoveFace((CubePickingInfo *)
-                                                                        pVStack_31,-1.0,*pVVar36,
-                                                                        (CubeOutOfBoundState__Enum *
-                                                                        )&stack0xffffff34,
-                                                                        (MethodInfo *)0x0);
-                                                    pVStack_25 = (Vector3__Array *)
-                                                                 (this->fields).movingEdgeCube;
-                                                    pVVar24 = pVStack_25;
-                                                    pVVar27 = (Vector3__Array *)
-                                                              CONCAT22(uStack_28._2_2_,
-                                                                       (short)uStack_28);
-                                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                             (int16_t)uStack_30);
-                                                    if (pVStack_25 != (Vector3__Array *)0x0) {
-                                                      pVStack_31 = (Vector3__Array *)
-                                                                   Cube::Cube_GetFaceAxis
-                                                                             ((Vector3 *)
-                                                                              &stack0xffffff48,
-                                                                              pVStack_25->max_length
-                                                                              ,(MethodInfo *)0x0);
-                                                      pCVar33 = (this->fields).movingEdgeCube;
-                                                      pVVar24 = pVStack_25;
-                                                      pVVar27 = (Vector3__Array *)
-                                                                CONCAT22(uStack_28._2_2_,
-                                                                         (short)uStack_28);
-                                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,
-                                                                               (int16_t)uStack_30);
-                                                      if (pCVar33 != (CubePickingInfo *)0x0) {
-                                                        pCVar58 = ((CubePickingInfo__Fields *)
-                                                                  &pVStack_31->bounds)->cube;
-                                                        axis_00.z._1_1_ = (char)((uint)pCVar58 >> 8)
-                                                        ;
-                                                        axis_00._0_9_ = *(unkbyte9 *)pVStack_31;
-                                                        axis_00.z._2_2_ =
-                                                             (short)((uint)pCVar58 >> 0x10);
-                                                        Cube::Cube_MoveVertex
-                                                                  ((CubePickingInfo *)pVStack_25,
-                                                                   -0.75,axis_00,
-                                                                   (pCVar33->fields).
-                                                                   pickedEdgeIndex0,
-                                                                   (pCVar33->fields).
-                                                                   pickedEdgeIndex1,
-                                                                   (CubeOutOfBoundState__Enum *)
-                                                                   &stack0xffffff34,
-                                                                   (MethodInfo *)0x0);
-                                                        goto code_?;
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                                else {
-code_?:
-                                  stack0xffffff5c = (MonitorData *)0xffffffff;
-                                  pCStack_59 = TypeInfo__CanPerformCubeActionResult;
-                                  pSVar60 = mscorlib.dll::System::Enum::Enum_ToString
-                                                      ((Enum *)&pCStack_59,(MethodInfo *)0x0);
-                                  mscorlib.dll::System::String::String_Concat_3
-                                            (StringLiteral_____EditCube_OutOfBoundsAddVerte,pSVar60,
-                                             (MethodInfo *)0x0);
-                                  pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                  pMVar23 = (this->fields).modelCursor;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if ((pMVar16 != (MVCubeModelBase *)0x0) &&
-                                     (pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                     pMVar23 != (ModelCursor3D *)0x0)) {
-                                    iPos.z = uStack_34._2_2_;
-                                    iPos._0_4_ = uStack_56;
-                                    ModelCursor::ModelCursor_SetErrorCursor
-                                              ((ModelCursor *)pMVar23,iPos,
-                                               (pMVar16->fields)._.gameObject,
-                                               pMStack_52 == (MVCubeModelBase *)0x2,
-                                               (MethodInfo *)0x0);
-                                    fVar49 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    pVVar66 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                      goto joined_?;
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                            else if (pVStack_31 == (Vector3__Array *)0x2) {
-                              CVar67 = CubeModelingStateMachine::
+                            else if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x2) {
+                              CVar51 = CubeModelingStateMachine::
                                        CubeModelingStateMachine_CanRemoveCubeAt
                                                  (e,(this->fields).movingEdgeCube,(MethodInfo *)0x0)
                               ;
-                              pCVar33 = (this->fields).movingEdgeCube;
-                              pVVar24 = pVStack_25;
-                              if (CVar67 == CanPerformCubeActionResult__Enum_Yes) {
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                if (pCVar33 != (CubePickingInfo *)0x0) {
-                                  pVStack_31 = *(Vector3__Array **)&(pCVar33->fields).iLocalPos;
-                                  uStack_30._0_2_ = (pCVar33->fields).iLocalPos.z;
-                                  pCVar33 = (this->fields).movingEdgeCube;
-                                  pVVar27 = pVStack_31;
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pCVar33 != (CubePickingInfo *)0x0) {
-                                    pVStack_25 = (Vector3__Array *)(pCVar33->fields).pickedFace;
-                                    pVVar27 = pVStack_31;
+                              pCVar28 = (this->fields).movingEdgeCube;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              if (CVar51 == CanPerformCubeActionResult__Enum_Yes) {
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if (pCVar28 != (CubePickingInfo *)0x0) {
+                                  MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                                  MStack_11.invoker_method._1_2_ = (pCVar28->fields).iLocalPos.z;
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  pVVar23 = (Vector3__Array *)MStack_11._37_4_;
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
+                                    MStack_11._33_4_ = (pCVar28->fields).pickedFace;
+                                    MStack_11._5_4_ = MStack_11._37_4_;
                                     if (cRam_? == '\0') {
-                                      uStack_28 = pVStack_31;
+                                      func_?();
                                       func_?();
                                       cRam_? = '\x01';
-                                      pVVar27 = uStack_28;
                                     }
-                                    uStack_28._2_2_ = (undefined2)((uint)pVVar27 >> 0x10);
-                                    uStack_26._0_2_ = 0;
-                                    uStack_26._2_2_ = 0;
-                                    sStack_42 = 0;
-                                    iVar54 = CONCAT22((int16_t)uStack_30,uStack_28._2_2_);
-                                    uStack_28 = pVVar27;
+                                    IStack_22.x = 0;
+                                    IStack_22.y = 0;
+                                    IStack_22.z = 0;
+                                    pVVar12 = (Vector3__Array *)MStack_11._5_4_;
+                                    if ((TypeInfo__MV__WorldObject__IntVector->_1).
+                                        cctor_finished_or_no_cctor == 0) {
+                                      func_?();
+                                      pVVar12 = (Vector3__Array *)MStack_11._5_4_;
+                                    }
+                                    MStack_11._7_2_ = SUB42((uint)pVVar12 >> 0x10,0);
+                                    iVar42 = CONCAT22(MStack_11.invoker_method._1_2_,MStack_11._7_2_
+                                                     );
+                                    MStack_11._5_4_ = pVVar12;
                                     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                              ((IntVector *)&uStack_26,(int32_t)pVStack_31,iVar54,
-                                               CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                              (&IStack_22,MStack_11._37_4_,iVar42,
+                                               CONCAT22(MStack_11._11_2_,
+                                                        MStack_11.invoker_method._1_2_),
                                                (MethodInfo *)0x0);
                                     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                       func_?();
                                     }
-                                    pVVar36 = Cube::Cube_GetFaceAxis
+                                    pVVar30 = Cube::Cube_GetFaceAxis
                                                         ((Vector3 *)&stack0xffffff48,
-                                                         (Face__Enum)pVStack_25,(MethodInfo *)0x0);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    uVar68 = pVVar36->x;
-                                    uVar69 = pVVar36->y;
-                                    uStack_30 = pVVar36->z;
-                                    uStack_28._0_2_ = (short)uVar69;
-                                    uStack_28._2_2_ = (undefined2)((uint)uVar69 >> 0x10);
-                                    uStack_26._0_2_ = (short)uStack_26 - (short)(int)(float)uVar68;
-                                    uStack_26._2_2_ = uStack_26._2_2_ - (short)(int)(float)uVar69;
-                                    uStack_34 = (Byte__Array *)
-                                                CONCAT22(sStack_42 - (short)(int)uStack_30,
-                                                         (undefined2)uStack_34);
-                                    fStack_39 = (float)uVar68;
-                                    pVVar24 = pVStack_25;
-                                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                    pVVar27 = (Vector3__Array *)uVar69;
-                                    fVar29 = uStack_30;
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pos_02.z._1_1_ =
-                                           (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                      pos_02._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                                         MStack_11._33_4_,(MethodInfo *)0x0);
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    uVar52 = pVVar30->x;
+                                    uVar53 = pVVar30->y;
+                                    MStack_11._9_4_ = pVVar30->z;
+                                    MStack_11.virtualMethodPointer._1_2_ = (short)uVar53;
+                                    MStack_11._7_2_ = SUB42((uint)uVar53 >> 0x10,0);
+                                    IStack_22.x = IStack_22.x - (short)(int)(float)uVar52;
+                                    IStack_22.y = IStack_22.y - (short)(int)(float)uVar53;
+                                    MStack_11._27_2_ =
+                                         IStack_22.z - (short)(int)(float)MStack_11._9_4_;
+                                    MStack_11._1_4_ = uVar52;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                    pVVar23 = (Vector3__Array *)uVar53;
+                                    fVar24 = (float)MStack_11._9_4_;
+                                    if (pCVar28 != (CubePickingInfo *)0x0) {
+                                      pos_04.z._1_1_ =
+                                           (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                                      pos_04._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos;
                                       CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                                (e,pos_02,AudioActions__Enum_CubeRemoved,
+                                                (e,pos_04,AudioActions__Enum_CubeRemoved,
                                                  (MethodInfo *)0x0);
-                                      pCVar33 = (this->fields).movingEdgeCube;
-                                      pVVar24 = pVStack_25;
-                                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      fVar29 = uStack_30;
-                                      if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                         (uStack_26 = (float)CONCAT22(uStack_26._2_2_,
-                                                                      (short)uStack_26),
-                                         pVVar27 = (Vector3__Array *)
-                                                   CONCAT22(uStack_28._2_2_,(short)uStack_28),
+                                      pCVar28 = (this->fields).movingEdgeCube;
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      fVar24 = (float)MStack_11._9_4_;
+                                      if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                         (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                         pVVar23 = (Vector3__Array *)
+                                                   CONCAT22(MStack_11._7_2_,
+                                                            MStack_11.virtualMethodPointer._1_2_),
                                          (e->fields)._TargetCubeModel_k__BackingField !=
                                          (MVCubeModelBase *)0x0)) {
                                         MVCubeModelBase::MVCubeModelBase_RemoveCube
                                                   ((e->fields)._TargetCubeModel_k__BackingField,
-                                                   (pCVar33->fields).iLocalPos,(MethodInfo *)0x0);
-                                        pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                        pVVar24 = pVStack_25;
-                                        uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26
-                                                                   );
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                        fVar29 = uStack_30;
-                                        if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                          pos_14.y = uStack_26._2_2_;
-                                          pos_14.x = (short)uStack_26;
-                                          pos_14.z._0_1_ = (char)((uint)uStack_34 >> 0x10);
-                                          pos_14.z._1_1_ = (char)((uint)uStack_34 >> 0x18);
-                                          pMStack_52 = (MVCubeModelBase *)
-                                                       MVCubeModelBase::MVCubeModelBase_GetCube
-                                                                 (pMVar16,pos_14,(MethodInfo *)0x0);
+                                                   (pCVar28->fields).iLocalPos,(MethodInfo *)0x0);
+                                        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                        pCVar21 = (Cube *)MStack_11._17_4_;
+                                        IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        fVar24 = (float)MStack_11._9_4_;
+                                        if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                          pos_13.y = IStack_22.y;
+                                          pos_13.x = IStack_22.x;
+                                          pos_13.z._0_1_ = MStack_11.parameters._3_1_;
+                                          pos_13.z._1_1_ = MStack_11.field7_0x1c._0_1_;
+                                          pMVar25 = (MVCubeModelBase *)
+                                                    MVCubeModelBase::MVCubeModelBase_GetCube
+                                                              (pMVar25,pos_13,(MethodInfo *)0x0);
+                                          MStack_11._33_4_ = pMVar25;
                                           if ((TypeInfo__MV__WorldObject__CubeBase->_1).
                                               cctor_finished_or_no_cctor == 0) {
                                             func_?();
                                           }
-                                          bVar22 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                          bVar19 = MVWorldObject.dll::MV::WorldObject::CubeBase::
                                                    CubeBase_op_Inequality
-                                                             ((CubeBase *)pMStack_52,(CubeBase *)0x0
-                                                              ,(MethodInfo *)0x0);
-                                          if (bVar22 == 0) {
+                                                             ((CubeBase *)pMVar25,(CubeBase *)0x0,
+                                                              (MethodInfo *)0x0);
+                                          if (bVar19 == 0) {
                                             (this->fields).movingEdgeCube = (CubePickingInfo *)0x0;
                                             func_?();
                                           }
                                           else {
-                                            pVStack_31 = (Vector3__Array *)
-                                                         (this->fields).movingEdgeCube;
-                                            pMStack_51 = (MVCubeModelBase *)func_?();
-                                            pVVar24 = pVStack_25;
-                                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,
-                                                                        (short)uStack_26);
-                                            pVVar27 = (Vector3__Array *)
-                                                      CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                            fVar29 = uStack_30;
-                                            if (pMStack_51 == (MVCubeModelBase *)0x0)
-                                            goto code_?;
+                                            pCVar28 = (this->fields).movingEdgeCube;
+                                            pVVar12 = (Vector3__Array *)func_?();
+                                            MStack_11._37_4_ = pVVar12;
                                             CubePickingInfo::CubePickingInfo__ctor_1
-                                                      ((CubePickingInfo *)pMStack_51,
-                                                       (CubePickingInfo *)pVStack_31,
+                                                      ((CubePickingInfo *)pVVar12,pCVar28,
                                                        (MethodInfo *)0x0);
                                             if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0
                                                ) {
                                               func_?();
                                             }
-                                            pCVar58 = Cube::Cube_Clone_1((Cube *)pMStack_52,
+                                            pCVar48 = Cube::Cube_Clone_1((Cube *)MStack_11._33_4_,
                                                                          (MethodInfo *)0x0);
-                                            (pMStack_51->fields)._._.id = (int32_t)pCVar58;
+                                            pCVar21 = (Cube *)MStack_11._17_4_;
+                                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                            pVVar23 = (Vector3__Array *)
+                                                      CONCAT22(MStack_11._7_2_,
+                                                               MStack_11.virtualMethodPointer._1_2_)
+                                            ;
+                                            fVar24 = (float)MStack_11._9_4_;
+                                            if (pVVar12 == (Vector3__Array *)0x0)
+                                            goto code_?;
+                                            ((CubePickingInfo__Fields *)&pVVar12->bounds)->cube =
+                                                 pCVar48;
                                             func_?();
-                                            (pMStack_51->fields)._._.position.y =
-                                                 (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                            *(int16_t *)&(pMStack_51->fields)._._.position.z =
-                                                 uStack_34._2_2_;
+                                            pVVar12->vector[2].z =
+                                                 (float)CONCAT22(IStack_22.y,IStack_22.x);
+                                            *(undefined2 *)&pVVar12->vector[3].x = MStack_11._27_2_;
                                             (this->fields).movingEdgeCube =
-                                                 (CubePickingInfo *)pMStack_51;
+                                                 (CubePickingInfo *)pVVar12;
                                             func_?();
                                           }
                                           break;
@@ -1342,132 +1436,147 @@ code_?:
                                 }
                               }
                               else {
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                if (((pCVar33 != (CubePickingInfo *)0x0) &&
-                                    (pVVar27 = (Vector3__Array *)
-                                               CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if (((pCVar28 != (CubePickingInfo *)0x0) &&
+                                    (pVVar23 = (Vector3__Array *)
+                                               CONCAT22(MStack_11._7_2_,
+                                                        MStack_11.virtualMethodPointer._1_2_),
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_),
                                     (e->fields)._TargetCubeModel_k__BackingField !=
                                     (MVCubeModelBase *)0x0)) &&
-                                   (pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                   fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                   (pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_),
+                                   fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                            MStack_11.invoker_method._1_2_),
                                    (this->fields).modelCursor != (ModelCursor3D *)0x0)) {
 code_?:
                                   ModelCursor::ModelCursor_SetErrorCursor
                                             ((ModelCursor *)(this->fields).modelCursor,
-                                             (pCVar33->fields).iLocalPos,
-                                             (GameObject *)
-                                             CONCAT22(in_stack_14,in_stack_13),
-                                             in_stack_12,
-                                             (MethodInfo *)
-                                             CONCAT22(in_stack_11,
-                                                      CONCAT11(in_stack_10,in_stack_9))
-                                            );
-                                  pCVar33 = (this->fields).movingEdgeCube;
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                     (pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                     (e->fields)._TargetCubeModel_k__BackingField !=
-                                     (MVCubeModelBase *)0x0)) {
-                                    pCVar58 = (this->fields).prevCubeState;
-                                    uVar64 = SUB41(pCVar58,0);
-                                    uVar65 = (undefined1)((uint)pCVar58 >> 8);
-                                    uVar53 = (undefined2)((uint)pCVar58 >> 0x10);
+                                             (pCVar28->fields).iLocalPos,pGVar27,
+                                             showUnlockNotification,pMVar40);
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                     (pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
+                                     pMVar25 != (MVCubeModelBase *)0x0)) {
+                                    pCVar21 = (this->fields).prevCubeState;
                                     goto code_?;
                                   }
                                 }
                               }
                             }
                             else {
-                              if (pVStack_31 != (Vector3__Array *)0x0) break;
-                              pMStack_52 = (MVCubeModelBase *)
-                                           CubeModelingStateMachine::
-                                           CubeModelingStateMachine_CanRemoveCubeAt
-                                                     (e,(this->fields).movingEdgeCube,
-                                                      (MethodInfo *)0x0);
-                              pCVar33 = (this->fields).movingEdgeCube;
-                              pVVar24 = pVStack_25;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                 (pCVar58 = (pCVar33->fields).cube,
-                                 pVVar27 = (Vector3__Array *)
-                                           CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                 fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                 pCVar58 != (Cube *)0x0)) {
-                                pVStack_31 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                                             CubeBase_get_Corners
-                                                       ((CubeBase *)pCVar58,(MethodInfo *)0x0);
+                              if ((Vector3__Array *)MStack_11._37_4_ != (Vector3__Array *)0x0)
+                              break;
+                              MStack_11._33_4_ =
+                                   CubeModelingStateMachine::
+                                   CubeModelingStateMachine_CanRemoveCubeAt
+                                             (e,(this->fields).movingEdgeCube,(MethodInfo *)0x0);
+                              pCVar28 = (this->fields).movingEdgeCube;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                 (pCVar48 = (pCVar28->fields).cube,
+                                 pVVar23 = (Vector3__Array *)
+                                           CONCAT22(MStack_11._7_2_,
+                                                    MStack_11.virtualMethodPointer._1_2_),
+                                 fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                          MStack_11.invoker_method._1_2_),
+                                 pCVar48 != (Cube *)0x0)) {
+                                MStack_11._37_4_ =
+                                     MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                     CubeBase_get_Corners((CubeBase *)pCVar48,(MethodInfo *)0x0);
                                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                   func_?();
                                 }
-                                bVar22 = Cube::Cube_IsCollapsed(pVStack_31,(MethodInfo *)0x0);
-                                pVVar24 = pVStack_25;
-                                if ((bVar22 == 0) || (pMStack_52 != (MVCubeModelBase *)0x1)) {
-                                  pCVar33 = (this->fields).movingEdgeCube;
-                                  if (pMStack_52 == (MVCubeModelBase *)0x2) goto code_?;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pCVar33 != (CubePickingInfo *)0x0) {
+                                bVar19 = Cube::Cube_IsCollapsed
+                                                   ((Vector3__Array *)MStack_11._37_4_,
+                                                    (MethodInfo *)0x0);
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                if ((bVar19 == 0) ||
+                                   ((MVCubeModelBase *)MStack_11._33_4_ != (MVCubeModelBase *)0x1))
+                                {
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  if ((MVCubeModelBase *)MStack_11._33_4_ == (MVCubeModelBase *)0x2)
+                                  goto code_?;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
                                     CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                              (e,(pCVar33->fields).iLocalPos,
+                                              (e,(pCVar28->fields).iLocalPos,
                                                AudioActions__Enum_FaceMoved,(MethodInfo *)0x0);
-code_?:
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                       (pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                       fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                       (e->fields)._TargetCubeModel_k__BackingField !=
-                                       (MVCubeModelBase *)0x0)) {
-                                      iVector_02.z._1_1_ =
-                                           (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                      iVector_02._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos
-                                      ;
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                       (pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_),
+                                       fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                MStack_11.invoker_method._1_2_),
+                                       pMVar25 != (MVCubeModelBase *)0x0)) {
+                                      iVector.z._1_1_ =
+                                           (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                                      iVector._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos;
                                       MVCubeModelBase::MVCubeModelBase_CornersChanged
-                                                ((e->fields)._TargetCubeModel_k__BackingField,
-                                                 iVector_02,(pCVar33->fields).cube,(MethodInfo *)0x0
-                                                );
+                                                (pMVar25,iVector,(pCVar28->fields).cube,
+                                                 (MethodInfo *)0x0);
                                       goto code_?;
                                     }
                                   }
                                 }
                                 else {
-                                  pCVar33 = (this->fields).movingEdgeCube;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (((pCVar33 != (CubePickingInfo *)0x0) &&
-                                      (pMVar16 = (e->fields)._TargetCubeModel_k__BackingField,
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                      pMVar16 != (MVCubeModelBase *)0x0)) &&
-                                     (pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                  pCVar28 = (this->fields).movingEdgeCube;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (((pCVar28 != (CubePickingInfo *)0x0) &&
+                                      (pMVar25 = (e->fields)._TargetCubeModel_k__BackingField,
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_),
+                                      pMVar25 != (MVCubeModelBase *)0x0)) &&
+                                     (pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
                                      (this->fields).modelCursor != (ModelCursor3D *)0x0)) {
-                                    in_stack_9 = 0;
-                                    in_stack_10 = 0;
-                                    in_stack_11 = 0;
-                                    in_stack_12 = 0;
-                                    pGVar70 = (pMVar16->fields)._.gameObject;
-                                    in_stack_13 = SUB42(pGVar70,0);
-                                    in_stack_14 = (undefined2)((uint)pGVar70 >> 0x10);
+                                    pMVar40 = (MethodInfo *)0x0;
+                                    showUnlockNotification = 0;
+                                    pGVar27 = (pMVar25->fields)._.gameObject;
                                     goto code_?;
                                   }
                                 }
@@ -1476,90 +1585,96 @@ code_?:
                           }
                         }
                         else {
-                          uVar57 = (this->fields).prevMaterial;
-                          pVStack_31 = (Vector3__Array *)CONCAT31(pVStack_31._1_3_,uVar57);
+                          uVar46 = (this->fields).prevMaterial;
+                          MStack_11.token._1_1_ = uVar46;
                           (this->fields).currentInternalState = 2;
                           CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
-                                    (e,uVar57,(MethodInfo *)0x0);
-                          UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible
+                                    (e,uVar46,(MethodInfo *)0x0);
+                          UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible
                                     (1,(MethodInfo *)0x0);
-                          pCVar33 = (this->fields).movingEdgeCube;
+                          value = (WebHeaderCollection *)(this->fields).movingEdgeCube;
                           if ((this->fields).edgeHasMoved == 0) {
-                            uVar53 = 0x103d;
-                            Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing
-                            ::PostProcessLayer::PostProcessLayer_set_sortedBundles
-                                      ((PostProcessLayer *)e,
-                                       (Dictionary_2_UnityEngine_Rendering_PostProcessing_PostProcessEvent_List_1_UnityEngine_Rendering_PostProcessing_PostProcessLayer_SerializedBundleRef_
-                                        *)pCVar33,(MethodInfo *)0x0);
-                            pCVar33 = (e->fields)._SelectedCube_k__BackingField;
-                            pVVar24 = pVStack_25;
-                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                            if (pCVar33 != (CubePickingInfo *)0x0) {
-                              pos_10.z._1_1_ = (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                              pos_10._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                            uVar1 = 0x1044;
+                            System.dll::System::Net::WebResponseStream::
+                            WebResponseStream_set_Headers
+                                      ((WebResponseStream *)e,value,(MethodInfo *)0x0);
+                            pCVar28 = (e->fields)._SelectedCube_k__BackingField;
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_
+                                                    );
+                            if (pCVar28 != (CubePickingInfo *)0x0) {
+                              pos_10.z._1_1_ = (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                              pos_10._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos;
                               CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
                                         (e,pos_10,AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
-                              uStack_2 = 2;
-                              EVar21 = CubeModelingStateMachine::CubeModelingStateMachine_AddCube
+                              uStack_4 = 2;
+                              EVar18 = CubeModelingStateMachine::CubeModelingStateMachine_AddCube
                                                  (e,(MethodInfo *)0x0);
-                              pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                              pVVar24 = pVStack_25;
-                              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pMVar16 != (MVCubeModelBase *)0x0) {
-                                iVar54 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
-                                                   (pMVar16,(MethodInfo *)0x0);
+                              pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (pMVar25 != (MVCubeModelBase *)0x0) {
+                                iVar42 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
+                                                   (pMVar25,(MethodInfo *)0x0);
                                 CubeModelTool::CubeModelTool_SendCubeEvent
-                                          (iVar54,EVar21,(MethodInfo *)0x0);
-                                if (EVar21 != EditCubeChange__Enum_None) {
+                                          (iVar42,EVar18,(MethodInfo *)0x0);
+                                if (EVar18 != EditCubeChange__Enum_None) {
 code_?:
-                                  uStack_2 = 0xffffffff;
+                                  uStack_4 = 0xffffffff;
                                   goto code_?;
                                 }
-                                pCVar33 = (e->fields)._SelectedCube_k__BackingField;
-                                pVVar24 = pVStack_25;
-                                uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                if (pCVar33 != (CubePickingInfo *)0x0) {
-                                  pVStack_31._0_2_ = (pCVar33->fields).iLocalPos.x;
-                                  pVStack_31._2_2_ = (pCVar33->fields).iLocalPos.y;
-                                  uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                               *)CONCAT22((pCVar33->fields).iLocalPos.z,
-                                                          (undefined2)uStack_56);
-                                  pVStack_25 = (Vector3__Array *)
-                                               (((e->fields)._SelectedCube_k__BackingField)->fields)
-                                               .pickedFace;
+                                pCVar28 = (e->fields)._SelectedCube_k__BackingField;
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if (pCVar28 != (CubePickingInfo *)0x0) {
+                                  MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                                  MStack_11._31_2_ = (pCVar28->fields).iLocalPos.z;
+                                  MStack_11._33_4_ =
+                                       (((e->fields)._SelectedCube_k__BackingField)->fields).
+                                       pickedFace;
                                   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                     func_?();
                                   }
-                                  localPos_02.z = (int16_t)pVStack_31;
-                                  localPos_02._0_4_ = &uStack_26;
-                                  IVar35 = Cube::Cube_GetCubePosAboveFace
-                                                     (localPos_02,CONCAT22(uVar53,uStack_56._2_2_),
-                                                      (MethodInfo *)pVStack_25);
-                                  pVStack_31 = IVar35._0_4_;
-                                  pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                                  pMVar23 = (this->fields).modelCursor;
-                                  pVVar24 = pVStack_25;
-                                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if ((pMVar16 != (MVCubeModelBase *)0x0) &&
-                                     (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                     pVVar27 = (Vector3__Array *)
-                                               CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                     pMVar23 != (ModelCursor3D *)0x0)) {
+                                  localPos_03.z = MStack_11.token._1_2_;
+                                  localPos_03._0_4_ = &IStack_22;
+                                  IVar29 = Cube::Cube_GetCubePosAboveFace
+                                                     (localPos_03,CONCAT22(uVar1,MStack_11._31_2_),
+                                                      (MethodInfo *)MStack_11._33_4_);
+                                  MStack_11._37_4_ = IVar29._0_4_;
+                                  pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                  pMVar20 = (this->fields).modelCursor;
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if ((pMVar25 != (MVCubeModelBase *)0x0) &&
+                                     (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                     pVVar23 = (Vector3__Array *)
+                                               CONCAT22(MStack_11._7_2_,
+                                                        MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
+                                     pMVar20 != (ModelCursor3D *)0x0)) {
                                     ModelCursor::ModelCursor_SetErrorCursor
-                                              ((ModelCursor *)pMVar23,*(IntVector *)pVStack_31,
-                                               (pMVar16->fields)._.gameObject,0,(MethodInfo *)0x0);
+                                              ((ModelCursor *)pMVar20,*(IntVector *)MStack_11._37_4_
+                                               ,(pMVar25->fields)._.gameObject,0,(MethodInfo *)0x0);
                                     goto code_?;
                                   }
                                 }
@@ -1567,33 +1682,38 @@ code_?:
                             }
                           }
                           else {
-                            pVStack_25 = (Vector3__Array *)
-                                         CubeModelingStateMachine::
-                                         CubeModelingStateMachine_CanRemoveCubeAt
-                                                   (e,pCVar33,(MethodInfo *)0x0);
-                            pCVar33 = (this->fields).movingEdgeCube;
-                            pVVar24 = pVStack_25;
-                            if (pVStack_25 == (Vector3__Array *)0x2) {
-                              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (((pCVar33 != (CubePickingInfo *)0x0) &&
-                                  (pMVar16 = (e->fields)._TargetCubeModel_k__BackingField,
-                                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                  pMVar16 != (MVCubeModelBase *)0x0)) &&
-                                 (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                 pVVar27 = (Vector3__Array *)
-                                           CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                 fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                            MStack_11._33_4_ =
+                                 CubeModelingStateMachine::CubeModelingStateMachine_CanRemoveCubeAt
+                                           (e,(CubePickingInfo *)value,(MethodInfo *)0x0);
+                            pCVar28 = (this->fields).movingEdgeCube;
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            if ((MVCubeModelBase *)MStack_11._33_4_ == (MVCubeModelBase *)0x2) {
+                              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (((pCVar28 != (CubePickingInfo *)0x0) &&
+                                  (pMVar25 = (e->fields)._TargetCubeModel_k__BackingField,
+                                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_),
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_),
+                                  pMVar25 != (MVCubeModelBase *)0x0)) &&
+                                 (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                 pVVar23 = (Vector3__Array *)
+                                           CONCAT22(MStack_11._7_2_,
+                                                    MStack_11.virtualMethodPointer._1_2_),
+                                 fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                          MStack_11.invoker_method._1_2_),
                                  (this->fields).modelCursor != (ModelCursor3D *)0x0)) {
                                 ModelCursor::ModelCursor_SetErrorCursor
                                           ((ModelCursor *)(this->fields).modelCursor,
-                                           (pCVar33->fields).iLocalPos,
-                                           (pMVar16->fields)._.gameObject,1,(MethodInfo *)0x0);
+                                           (pCVar28->fields).iLocalPos,
+                                           (pMVar25->fields)._.gameObject,1,(MethodInfo *)0x0);
 code_?:
                                 (this->fields).movingEdgeCube = (CubePickingInfo *)0x0;
                                 func_?();
@@ -1602,168 +1722,183 @@ code_?:
                               }
                             }
                             else {
-                              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                 (pCVar58 = (pCVar33->fields).cube,
-                                 uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                 pVVar27 = (Vector3__Array *)
-                                           CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                 fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                 pCVar58 != (Cube *)0x0)) {
-                                uVar64 = 0;
-                                uVar65 = 0;
-                                uVar53 = 0;
-                                pVStack_31 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                                             CubeBase_get_Corners
-                                                       ((CubeBase *)pCVar58,(MethodInfo *)0x0);
+                              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                 (pCVar48 = (pCVar28->fields).cube,
+                                 IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                 pVVar23 = (Vector3__Array *)
+                                           CONCAT22(MStack_11._7_2_,
+                                                    MStack_11.virtualMethodPointer._1_2_),
+                                 fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                          MStack_11.invoker_method._1_2_),
+                                 pCVar48 != (Cube *)0x0)) {
+                                uVar1 = 0;
+                                uVar41 = 0;
+                                MStack_11._37_4_ =
+                                     MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                     CubeBase_get_Corners((CubeBase *)pCVar48,(MethodInfo *)0x0);
                                 if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                                  in_stack_8 = 0x103d;
+                                  in_stack_10 = 0x1044;
                                   func_?();
                                 }
-                                bVar22 = Cube::Cube_IsCollapsed(pVStack_31,(MethodInfo *)0x0);
-                                pCVar33 = (this->fields).movingEdgeCube;
-                                pVVar24 = pVStack_25;
-                                if (bVar22 == 0) {
-                                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pCVar33 != (CubePickingInfo *)0x0) {
-                                    pos_07.z._1_1_ =
-                                         (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                    pos_07._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                bVar19 = Cube::Cube_IsCollapsed
+                                                   ((Vector3__Array *)MStack_11._37_4_,
+                                                    (MethodInfo *)0x0);
+                                pCVar28 = (this->fields).movingEdgeCube;
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                if (bVar19 == 0) {
+                                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
                                     CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                              (e,pos_07,AudioActions__Enum_EdgeMoved,
-                                               (MethodInfo *)0x0);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                       (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26
-                                                                   ),
-                                       pVVar27 = (Vector3__Array *)
-                                                 CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                       fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                       (e->fields)._TargetCubeModel_k__BackingField !=
-                                       (MVCubeModelBase *)0x0)) {
-                                      pCVar58 = (pCVar33->fields).cube;
-                                      uVar61 = SUB41(pCVar58,0);
-                                      uVar62 = (undefined1)((uint)pCVar58 >> 8);
-                                      in_stack_8 = (undefined2)((uint)pCVar58 >> 0x10);
+                                              (e,(pCVar28->fields).iLocalPos,
+                                               AudioActions__Enum_EdgeMoved,(MethodInfo *)0x0);
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                       (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                       pVVar23 = (Vector3__Array *)
+                                                 CONCAT22(MStack_11._7_2_,
+                                                          MStack_11.virtualMethodPointer._1_2_),
+                                       fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                MStack_11.invoker_method._1_2_),
+                                       pMVar25 != (MVCubeModelBase *)0x0)) {
+                                      pCVar21 = (pCVar28->fields).cube;
+                                      uVar54 = SUB41(pCVar21,0);
+                                      uVar55 = (undefined1)((uint)pCVar21 >> 8);
+                                      in_stack_10 = (undefined2)((uint)pCVar21 >> 0x10);
 code_?:
-                                      iVector_01.z._1_1_ =
-                                           (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                      iVector_01._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos
+                                      iVector_02.z._1_1_ =
+                                           (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                                      iVector_02._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos
                                       ;
                                       MVCubeModelBase::MVCubeModelBase_CornersChangedDone
-                                                ((e->fields)._TargetCubeModel_k__BackingField,
-                                                 iVector_01,
-                                                 (Cube *)CONCAT22(uVar53,CONCAT11(uVar65,uVar64)),
+                                                (pMVar25,iVector_02,(Cube *)CONCAT22(uVar41,uVar1),
                                                  (MethodInfo *)
-                                                 CONCAT22(in_stack_8,CONCAT11(uVar62,uVar61))
+                                                 CONCAT22(in_stack_10,CONCAT11(uVar55,uVar54))
                                                 );
                                       goto code_?;
                                     }
                                   }
                                 }
-                                else if (pVStack_25 == (Vector3__Array *)0x0) {
-                                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (pCVar33 != (CubePickingInfo *)0x0) {
-                                    pos_08.z._1_1_ =
-                                         (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                    pos_08._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                else if ((MVCubeModelBase *)MStack_11._33_4_ ==
+                                         (MVCubeModelBase *)0x0) {
+                                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (pCVar28 != (CubePickingInfo *)0x0) {
                                     CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                              (e,pos_08,AudioActions__Enum_CubeRemoved,
-                                               (MethodInfo *)0x0);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                       (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26
-                                                                   ),
-                                       pVVar27 = (Vector3__Array *)
-                                                 CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                       fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                       (e->fields)._TargetCubeModel_k__BackingField !=
-                                       (MVCubeModelBase *)0x0)) {
-                                      pos_19.z._1_1_ =
-                                           (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                      pos_19._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                              (e,(pCVar28->fields).iLocalPos,
+                                               AudioActions__Enum_CubeRemoved,(MethodInfo *)0x0);
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                       (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                       pVVar23 = (Vector3__Array *)
+                                                 CONCAT22(MStack_11._7_2_,
+                                                          MStack_11.virtualMethodPointer._1_2_),
+                                       fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                MStack_11.invoker_method._1_2_),
+                                       pMVar25 != (MVCubeModelBase *)0x0)) {
+                                      pos_15.z._1_1_ =
+                                           (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                                      pos_15._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos;
                                       MVCubeModelBase::MVCubeModelBase_RemoveCube
-                                                ((e->fields)._TargetCubeModel_k__BackingField,pos_19
-                                                 ,(MethodInfo *)0x0);
+                                                (pMVar25,pos_15,(MethodInfo *)0x0);
                                       goto code_?;
                                     }
                                   }
                                 }
                                 else {
-                                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (((pCVar33 != (CubePickingInfo *)0x0) &&
-                                      (pMVar16 = (e->fields)._TargetCubeModel_k__BackingField,
-                                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                      pMVar16 != (MVCubeModelBase *)0x0)) &&
-                                     (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                     pVVar27 = (Vector3__Array *)
-                                               CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                  IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (((pCVar28 != (CubePickingInfo *)0x0) &&
+                                      (pMVar25 = (e->fields)._TargetCubeModel_k__BackingField,
+                                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_),
+                                      pMVar25 != (MVCubeModelBase *)0x0)) &&
+                                     (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                     pVVar23 = (Vector3__Array *)
+                                               CONCAT22(MStack_11._7_2_,
+                                                        MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
                                      (this->fields).modelCursor != (ModelCursor3D *)0x0)) {
                                     ModelCursor::ModelCursor_SetErrorCursor
                                               ((ModelCursor *)(this->fields).modelCursor,
-                                               (pCVar33->fields).iLocalPos,
-                                               (pMVar16->fields)._.gameObject,0,(MethodInfo *)0x0);
-                                    pCVar33 = (this->fields).movingEdgeCube;
-                                    pVVar24 = pVStack_25;
-                                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    if (pCVar33 != (CubePickingInfo *)0x0) {
-                                      pIVar55 = &(pCVar33->fields).iLocalPos;
-                                      uVar71 = pIVar55->x;
-                                      uVar53 = pIVar55->y;
-                                      uVar64 = (undefined1)uVar71;
-                                      uVar65 = (undefined1)((ushort)uVar71 >> 8);
-                                      iVar17 = (pCVar33->fields).iLocalPos.z;
-                                      uVar61 = (undefined1)iVar17;
-                                      uVar62 = (undefined1)((ushort)iVar17 >> 8);
-                                      pos_18.z._1_1_ = uVar62;
-                                      pos_18._0_5_ = *(undefined5 *)pIVar55;
+                                               (pCVar28->fields).iLocalPos,
+                                               (pMVar25->fields)._.gameObject,0,(MethodInfo *)0x0);
+                                    pCVar28 = (this->fields).movingEdgeCube;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                             MStack_11.invoker_method._1_2_);
+                                    if (pCVar28 != (CubePickingInfo *)0x0) {
+                                      pIVar43 = &(pCVar28->fields).iLocalPos;
+                                      uVar1 = pIVar43->x;
+                                      uVar41 = pIVar43->y;
+                                      iVar13 = (pCVar28->fields).iLocalPos.z;
+                                      uVar54 = (undefined1)iVar13;
+                                      uVar55 = (undefined1)((ushort)iVar13 >> 8);
+                                      pos_14.z._1_1_ = uVar55;
+                                      pos_14._0_5_ = *(undefined5 *)pIVar43;
                                       CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                                                (e,pos_18,AudioActions__Enum_FaceMoved,
+                                                (e,pos_14,AudioActions__Enum_FaceMoved,
                                                  (MethodInfo *)0x0);
-                                      pCVar33 = (this->fields).movingEdgeCube;
-                                      pVVar24 = pVStack_25;
-                                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                      if ((pCVar33 != (CubePickingInfo *)0x0) &&
-                                         (uStack_26 = (float)CONCAT22(uStack_26._2_2_,
-                                                                      (short)uStack_26),
-                                         pVVar27 = (Vector3__Array *)
-                                                   CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                         fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30
-                                                                 ),
-                                         (e->fields)._TargetCubeModel_k__BackingField !=
-                                         (MVCubeModelBase *)0x0)) goto code_?;
+                                      pCVar28 = (this->fields).movingEdgeCube;
+                                      pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_);
+                                      if ((pCVar28 != (CubePickingInfo *)0x0) &&
+                                         (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                         pVVar23 = (Vector3__Array *)
+                                                   CONCAT22(MStack_11._7_2_,
+                                                            MStack_11.virtualMethodPointer._1_2_),
+                                         fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                  MStack_11.invoker_method._1_2_),
+                                         pMVar25 != (MVCubeModelBase *)0x0)) goto code_?;
                                     }
                                   }
                                 }
@@ -1779,16 +1914,16 @@ code_?:
                       (this->fields).edgeHasMoved = 0;
                       break;
                     case 1:
-                      uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                      MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                       if ((this->fields).currentInternalState == 1) {
                         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                        bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                                            (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                        if (bVar22 != 0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible
+                        if (bVar19 != 0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible
                                     (1,(MethodInfo *)0x0);
                           (this->fields).currentInternalState = 2;
                         }
@@ -1799,14 +1934,15 @@ code_?:
                         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+                        bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                                            (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                        if (bVar22 != 0) {
-                          bVar22 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
-                          if (bVar22 != 0) {
+                        if (bVar19 != 0) {
+                          bVar19 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
+                          if (bVar19 != 0) {
                             (this->fields).currentInternalState = 3;
-                            uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                            MStack_11._9_4_ =
+                                 CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                             break;
                           }
                         }
@@ -1815,75 +1951,82 @@ code_?:
                         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                        bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                                            (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                        if (bVar22 != 0) {
-                          uStack_2 = 0;
-                          EVar21 = CubeModelingStateMachine::CubeModelingStateMachine_AddCube
+                        if (bVar19 != 0) {
+                          uStack_4 = 0;
+                          EVar18 = CubeModelingStateMachine::CubeModelingStateMachine_AddCube
                                              (e,(MethodInfo *)0x0);
-                          pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                          pVVar24 = pVStack_25;
-                          uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                          fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                          if (pMVar16 != (MVCubeModelBase *)0x0) {
-                            iVar54 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
-                                               (pMVar16,(MethodInfo *)0x0);
-                            uVar53 = 0;
+                          pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                          pCVar21 = (Cube *)MStack_11._17_4_;
+                          IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                          pVVar23 = (Vector3__Array *)
+                                    CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                          fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                          if (pMVar25 != (MVCubeModelBase *)0x0) {
+                            iVar42 = MVCubeModelBase::MVCubeModelBase_get_CubeCount
+                                               (pMVar25,(MethodInfo *)0x0);
                             CubeModelTool::CubeModelTool_SendCubeEvent
-                                      (iVar54,EVar21,(MethodInfo *)0x0);
-                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                            if (EVar21 != EditCubeChange__Enum_None) {
-                              cStack_48 = '\x01';
-                              uStack_2 = 0xffffffff;
-                              uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
+                                      (iVar42,EVar18,(MethodInfo *)0x0);
+                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                            if (EVar18 != EditCubeChange__Enum_None) {
+                              MStack_11.klass._0_1_ = '\x01';
+                              uStack_4 = 0xffffffff;
+                              MStack_11._9_4_ =
+                                   CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
                               break;
                             }
-                            pCVar33 = (e->fields)._SelectedCube_k__BackingField;
-                            pVVar24 = pVStack_25;
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                            if (pCVar33 != (CubePickingInfo *)0x0) {
-                              pVStack_31._0_2_ = (pCVar33->fields).iLocalPos.x;
-                              pVStack_31._2_2_ = (pCVar33->fields).iLocalPos.y;
-                              uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                           *)CONCAT22((pCVar33->fields).iLocalPos.z,
-                                                      (undefined2)uStack_56);
-                              pVStack_25 = (Vector3__Array *)
-                                           (((e->fields)._SelectedCube_k__BackingField)->fields).
-                                           pickedFace;
+                            pCVar28 = (e->fields)._SelectedCube_k__BackingField;
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_
+                                                    );
+                            if (pCVar28 != (CubePickingInfo *)0x0) {
+                              MStack_11._37_4_ = *(undefined4 *)&(pCVar28->fields).iLocalPos;
+                              MStack_11._31_2_ = (pCVar28->fields).iLocalPos.z;
+                              MStack_11._33_4_ =
+                                   (((e->fields)._SelectedCube_k__BackingField)->fields).pickedFace;
                               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                 func_?();
                               }
-                              localPos_03.z._0_1_ = (char)pVStack_31;
-                              localPos_03._0_4_ = &uStack_26;
-                              localPos_03.z._1_1_ = (char)((uint)pVStack_31 >> 8);
-                              IVar35 = Cube::Cube_GetCubePosAboveFace
-                                                 (localPos_03,CONCAT22(uVar53,uStack_56._2_2_),
-                                                  (MethodInfo *)pVStack_25);
-                              pVStack_31 = IVar35._0_4_;
-                              pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                              pMVar23 = (this->fields).modelCursor;
-                              pVVar24 = pVStack_25;
-                              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if ((pMVar16 != (MVCubeModelBase *)0x0) &&
-                                 (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                 pVVar27 = (Vector3__Array *)
-                                           CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                 fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                 pMVar23 != (ModelCursor3D *)0x0)) {
-                                iPos_02.z._1_1_ =
-                                     (char)((ushort)*(int16_t *)&pVStack_31->monitor >> 8);
-                                iPos_02._0_5_ = *(undefined5 *)pVStack_31;
+                              localPos_00.z = MStack_11.token._1_2_;
+                              localPos_00._0_4_ = &IStack_22;
+                              IVar29 = Cube::Cube_GetCubePosAboveFace
+                                                 (localPos_00,
+                                                  CONCAT22(in_stack_56,MStack_11._31_2_),
+                                                  (MethodInfo *)MStack_11._33_4_);
+                              MStack_11._37_4_ = IVar29._0_4_;
+                              pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                              pMVar20 = (this->fields).modelCursor;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if ((pMVar25 != (MVCubeModelBase *)0x0) &&
+                                 (IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                 pVVar23 = (Vector3__Array *)
+                                           CONCAT22(MStack_11._7_2_,
+                                                    MStack_11.virtualMethodPointer._1_2_),
+                                 fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                          MStack_11.invoker_method._1_2_),
+                                 pMVar20 != (ModelCursor3D *)0x0)) {
+                                iPos_00.z._1_1_ =
+                                     (char)((ushort)*(int16_t *)
+                                                     &((Vector3__Array *)MStack_11._37_4_)->monitor
+                                           >> 8);
+                                iPos_00._0_5_ = *(undefined5 *)MStack_11._37_4_;
                                 ModelCursor::ModelCursor_SetErrorCursor
-                                          ((ModelCursor *)pMVar23,iPos_02,
-                                           (pMVar16->fields)._.gameObject,0,(MethodInfo *)0x0);
-                                uStack_2 = 0xffffffff;
-                                uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                                          ((ModelCursor *)pMVar20,iPos_00,
+                                           (pMVar25->fields)._.gameObject,0,(MethodInfo *)0x0);
+                                uStack_4 = 0xffffffff;
+                                MStack_11._9_4_ =
+                                     CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                                IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                                 break;
                               }
                             }
@@ -1894,116 +2037,133 @@ code_?:
                       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+                      bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                      uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                      if (bVar22 != 0) {
-                        pVStack_31 = (Vector3__Array *)
-                                     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                               ((MethodInfo *)0x0);
-                        uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                        uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                        if (_UNK_? < (float)pVStack_31 - (this->fields).prevMouseUpTime) {
+                      MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                      if (bVar19 != 0) {
+                        MStack_11._37_4_ =
+                             UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                       ((MethodInfo *)0x0);
+                        MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                        IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                        if (_UNK_? < (float)MStack_11._37_4_ - (this->fields).prevMouseUpTime
+                           ) {
                           if (cRam_? == '\0') {
                             func_?();
                             func_?();
                             func_?();
                             cRam_? = '\x01';
                           }
-                          uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                          uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                          MStack_11._9_4_ =
+                               CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                          IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                           if ((this->fields).prevSelectedCube != (CubePickingInfo *)0x0) {
                             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                               func_?();
                             }
-                            pVStack_25 = (Vector3__Array *)
-                                         MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
-                                                   (StringLiteral_Mouse_X,(MethodInfo *)0x0);
-                            pVStack_31 = (Vector3__Array *)
-                                         MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
-                                                   (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                            if (((float)((uint)pVStack_25 & _UNK_?) != 0.0) ||
-                               (uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                               (float)((uint)pVStack_31 & _UNK_?) != 0.0)) {
-                              pCVar33 = (this->fields).prevSelectedCube;
-                              pVVar24 = pVStack_25;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pCVar33 != (CubePickingInfo *)0x0) {
-                                pVStack_25 = (Vector3__Array *)(pCVar33->fields).cube;
-                                pVStack_31 = (Vector3__Array *)
-                                             (((this->fields).prevSelectedCube)->fields).pickedFace;
+                            fVar24 = MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
+                                               (StringLiteral_Mouse_X,(MethodInfo *)0x0);
+                            MStack_11._37_4_ = (uint)fVar24 & _UNK_?;
+                            MStack_11._33_4_ =
+                                 MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
+                                           (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
+                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                            if (((float)MStack_11._37_4_ != 0.0) ||
+                               (MStack_11._9_4_ =
+                                     CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_),
+                               (float)(MStack_11._33_4_ & _UNK_?) != 0.0)) {
+                              pCVar28 = (this->fields).prevSelectedCube;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                       MStack_11.invoker_method._1_2_);
+                              if (pCVar28 != (CubePickingInfo *)0x0) {
+                                MStack_11._33_4_ = (pCVar28->fields).cube;
+                                MStack_11._37_4_ =
+                                     (((this->fields).prevSelectedCube)->fields).pickedFace;
                                 if ((TypeInfo__MV__WorldObject__CubeBase->_1).
                                     cctor_finished_or_no_cctor == 0) {
                                   func_?();
                                 }
-                                uVar57 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                uVar46 = MVWorldObject.dll::MV::WorldObject::CubeBase::
                                          CubeBase_GetMaterial
-                                                   ((CubeBase *)pVStack_25,(Face__Enum)pVStack_31,
+                                                   ((CubeBase *)MStack_11._33_4_,MStack_11._37_4_,
                                                     (MethodInfo *)0x0);
-                                pMStack_52 = (MVCubeModelBase *)CONCAT31(pMStack_52._1_3_,uVar57);
-                                pMVar72 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                MStack_11.field8_0x20._1_1_ = uVar46;
+                                pMVar57 = MVGameControllerBase::MVGameControllerBase_get_Game
                                                     ((MethodInfo *)0x0);
-                                pVVar24 = pVStack_25;
-                                uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                if ((pMVar72 != (MVNetworkGame *)0x0) &&
-                                   (this_00 = (pMVar72->fields)._MaterialRepository_k__BackingField,
-                                   uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                                   pVVar27 = (Vector3__Array *)
-                                             CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                   fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                         MStack_11.invoker_method._1_2_);
+                                if ((pMVar57 != (MVNetworkGame *)0x0) &&
+                                   (this_00 = (pMVar57->fields)._MaterialRepository_k__BackingField,
+                                   IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x),
+                                   pVVar23 = (Vector3__Array *)
+                                             CONCAT22(MStack_11._7_2_,
+                                                      MStack_11.virtualMethodPointer._1_2_),
+                                   fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                            MStack_11.invoker_method._1_2_),
                                    this_00 != (MVMaterialRepository *)0x0)) {
-                                  bVar22 = MVMaterialRepository::
+                                  bVar19 = MVMaterialRepository::
                                            MVMaterialRepository_IsMaterialUnlocked_1
-                                                     (this_00,(uint8_t)pMStack_52,(MethodInfo *)0x0)
-                                  ;
-                                  if (bVar22 != 0) {
-                                    uVar57 = CubeModelingStateMachine::
+                                                     (this_00,MStack_11.field8_0x20._1_1_,
+                                                      (MethodInfo *)0x0);
+                                  if (bVar19 != 0) {
+                                    uVar46 = CubeModelingStateMachine::
                                              CubeModelingStateMachine_get_CurrentMaterialId
                                                        (e,(MethodInfo *)0x0);
-                                    (this->fields).prevMaterial = uVar57;
+                                    (this->fields).prevMaterial = uVar46;
                                     CubeModelingStateMachine::
                                     CubeModelingStateMachine_set_CurrentMaterialId
-                                              (e,(uint8_t)pMStack_52,(MethodInfo *)0x0);
+                                              (e,MStack_11.field8_0x20._1_1_,(MethodInfo *)0x0);
                                     (this->fields).movingEdgeCube = (this->fields).prevSelectedCube;
                                     func_?();
                                     (this->fields).currentInternalState = 0;
                                     (this->fields).deltaAccum = 0.0;
                                     UnityEngine.CoreModule.dll::UnityEngine::Cursor::
-                                    Cursor_set_visible(0,(MethodInfo *)0x0);
-                                    uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
+                                    Cursor_1_set_visible(0,(MethodInfo *)0x0);
+                                    MStack_11._9_4_ =
+                                         CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                                    IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
                                     break;
                                   }
-                                  pCVar33 = (this->fields).prevSelectedCube;
+                                  pCVar28 = (this->fields).prevSelectedCube;
 code_?:
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                  if (((pCVar33 != (CubePickingInfo *)0x0) &&
-                                      (pMVar16 = (e->fields)._TargetCubeModel_k__BackingField,
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                      pMVar16 != (MVCubeModelBase *)0x0)) &&
-                                     (pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                           MStack_11.invoker_method._1_2_);
+                                  if (((pCVar28 != (CubePickingInfo *)0x0) &&
+                                      (pMVar25 = (e->fields)._TargetCubeModel_k__BackingField,
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                      fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                               MStack_11.invoker_method._1_2_),
+                                      pMVar25 != (MVCubeModelBase *)0x0)) &&
+                                     (pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                     fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                              MStack_11.invoker_method._1_2_),
                                      (this->fields).modelCursor != (ModelCursor3D *)0x0)) {
                                     iPos_01.z._1_1_ =
-                                         (char)((ushort)(pCVar33->fields).iLocalPos.z >> 8);
-                                    iPos_01._0_5_ = *(undefined5 *)&(pCVar33->fields).iLocalPos;
+                                         (char)((ushort)(pCVar28->fields).iLocalPos.z >> 8);
+                                    iPos_01._0_5_ = *(undefined5 *)&(pCVar28->fields).iLocalPos;
                                     ModelCursor::ModelCursor_SetErrorCursor
                                               ((ModelCursor *)(this->fields).modelCursor,iPos_01,
-                                               (pMVar16->fields)._.gameObject,1,(MethodInfo *)0x0);
-                                    uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
+                                               (pMVar25->fields)._.gameObject,1,(MethodInfo *)0x0);
+                                    MStack_11._9_4_ =
+                                         CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
                                     break;
                                   }
                                 }
@@ -2018,276 +2178,289 @@ code_?:
                       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                      bVar19 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-                      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                      if (bVar22 == 0) {
-                        pMVar32 = (e->fields)._TargetCubeModel_k__BackingField;
-                        pVVar24 = pVStack_25;
-                        pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                        if (pMVar32 == (MVCubeModelBase *)0x0) goto code_?;
-                        bVar22 = DrawPlane::DrawPlane_GetCubePosOnDrawplane
-                                           ((pMVar32->fields)._.gameObject,
-                                            (IntVector *)&stack0xffffff40,(MethodInfo *)0x0);
-                        uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                        uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                        if (bVar22 != 0) {
-                          requestedCubePos.z = iVar17;
-                          requestedCubePos._0_4_ = pMVar16;
-                          CVar67 = CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt_1
-                                             (e,requestedCubePos,(MethodInfo *)0x0);
-                          uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                          uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                          if (CVar67 == CanPerformCubeActionResult__Enum_Yes) {
-                            pos_09.z = iVar17;
-                            pos_09._0_4_ = pMVar16;
+                      IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                      if (bVar19 == 0) {
+                        pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                        pCVar21 = (Cube *)MStack_11._17_4_;
+                        pVVar23 = (Vector3__Array *)
+                                  CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                        fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                        if (pMVar25 == (MVCubeModelBase *)0x0) goto code_?;
+                        bVar19 = DrawPlane::DrawPlane_GetCubePosOnDrawplane
+                                           ((pMVar25->fields)._.gameObject,
+                                            (IntVector *)&stack0xffffff3c,(MethodInfo *)0x0);
+                        MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                        IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                        if (bVar19 != 0) {
+                          requestedCubePos_01.z = iVar13;
+                          requestedCubePos_01._0_4_ = pVVar12;
+                          CVar51 = CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt_1
+                                             (e,requestedCubePos_01,(MethodInfo *)0x0);
+                          MStack_11._9_4_ =
+                               CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
+                          IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                          if (CVar51 == CanPerformCubeActionResult__Enum_Yes) {
+                            pos_09.z = iVar13;
+                            pos_09._0_4_ = pVVar12;
                             CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
                                       (e,pos_09,AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
-                            pMStack_52 = (e->fields)._TargetCubeModel_k__BackingField;
-                            uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                         *)CONCAT22(iVar17,(undefined2)uStack_56);
-                            pMStack_50 = pMVar16;
+                            pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                            MStack_11._31_2_ = iVar13;
+                            MStack_11._21_4_ = pVVar12;
                             if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor
                                 == 0) {
                               func_?();
                             }
-                            pVStack_31 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                                         CubeBase_get_IdentityCorners((MethodInfo *)0x0);
+                            MStack_11._37_4_ =
+                                 MVWorldObject.dll::MV::WorldObject::CubeBase::
+                                 CubeBase_get_IdentityCorners((MethodInfo *)0x0);
                             if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).
                                 cctor_finished_or_no_cctor == 0) {
                               func_?();
                             }
-                            pVStack_25 = (Vector3__Array *)
-                                         MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
-                                         CubeDataPacker_CornersToByteArray
-                                                   (pVStack_31,(MethodInfo *)0x0);
-                            uVar57 = CubeModelingStateMachine::
+                            MStack_11._33_4_ =
+                                 MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                                 CubeDataPacker_CornersToByteArray
+                                           ((Vector3__Array *)MStack_11._37_4_,(MethodInfo *)0x0);
+                            uVar46 = CubeModelingStateMachine::
                                      CubeModelingStateMachine_get_CurrentMaterialId
                                                (e,(MethodInfo *)0x0);
-                            pVStack_31 = (Vector3__Array *)CONCAT31(pVStack_31._1_3_,uVar57);
+                            MStack_11.token._1_1_ = uVar46;
                             if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                               func_?();
                             }
-                            pVStack_31 = (Vector3__Array *)
-                                         Cube::Cube_CreateMaterialArray
-                                                   ((uint8_t)pVStack_31,(MethodInfo *)0x0);
-                            pMStack_51 = (MVCubeModelBase *)func_?();
-                            pVVar24 = pVStack_25;
-                            uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                            if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                              Cube::Cube__ctor((Cube *)pMStack_51,(Byte__Array *)pVStack_25,
-                                               (Byte__Array *)pVStack_31,(MethodInfo *)0x0);
-                              pVVar24 = pVStack_25;
-                              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                              if (pMStack_52 != (MVCubeModelBase *)0x0) {
-                                pos_13.z._0_1_ = (char)((uint)uStack_56 >> 0x10);
-                                pos_13._0_4_ = pMStack_50;
-                                pos_13.z._1_1_ = (char)((uint)uStack_56 >> 0x18);
-                                MVCubeModelBase::MVCubeModelBase_AddCube
-                                          (pMStack_52,pos_13,(CubeBase *)pMStack_51,
-                                           (MethodInfo *)0x0);
+                            pBVar45 = Cube::Cube_CreateMaterialArray
+                                                (MStack_11.token._1_1_,(MethodInfo *)0x0);
+                            MStack_11._37_4_ = func_?();
+                            Cube::Cube__ctor((Cube *)MStack_11._37_4_,
+                                             (Byte__Array *)MStack_11._33_4_,pBVar45,
+                                             (MethodInfo *)0x0);
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            IStack_22._0_4_ = CONCAT22(IStack_22.y,IStack_22.x);
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            fVar24 = (float)CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_
+                                                    );
+                            if (pMVar25 == (MVCubeModelBase *)0x0) goto code_?;
+                            pos_01.z._0_1_ = MStack_11.field7_0x1c._3_1_;
+                            pos_01._0_4_ = MStack_11._21_4_;
+                            pos_01.z._1_1_ = MStack_11.field8_0x20._0_1_;
+                            MVCubeModelBase::MVCubeModelBase_AddCube
+                                      (pMVar25,pos_01,(CubeBase *)MStack_11._37_4_,(MethodInfo *)0x0
+                                      );
 code_?:
-                                uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                                break;
-                              }
-                            }
-                            goto code_?;
+                            MStack_11._9_4_ =
+                                 CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
                           }
                         }
                       }
                       else {
                         (this->fields).currentInternalState = 2;
-                        uStack_30 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
+                        MStack_11._9_4_ = CONCAT22(MStack_11._11_2_,MStack_11.invoker_method._1_2_);
                       }
                     }
                     if ((this->fields).movingEdgeCube == (CubePickingInfo *)0x0) {
-                      pCVar58 = (Cube *)0x0;
+                      pCVar21 = (Cube *)0x0;
                     }
                     else {
-                      pCVar58 = (((this->fields).movingEdgeCube)->fields).cube;
-                      pVVar24 = pVStack_25;
-                      pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                      fVar29 = uStack_30;
-                      if (pCVar58 == (Cube *)0x0) goto code_?;
-                      pCVar58 = Cube::Cube_Clone(pCVar58,(MethodInfo *)0x0);
+                      pCVar48 = (((this->fields).movingEdgeCube)->fields).cube;
+                      pCVar21 = (Cube *)MStack_11._17_4_;
+                      pVVar23 = (Vector3__Array *)
+                                CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                      fVar24 = (float)MStack_11._9_4_;
+                      if (pCVar48 == (Cube *)0x0) goto code_?;
+                      pCVar21 = Cube::Cube_Clone(pCVar48,(MethodInfo *)0x0);
                     }
-                    (this->fields).prevCubeState = pCVar58;
+                    (this->fields).prevCubeState = pCVar21;
                     func_?();
                     (this->fields).prevSelectedCube = (e->fields)._SelectedCube_k__BackingField;
                     func_?();
                     if ((this->fields).modelCursor == (ModelCursor3D *)0x0) goto code_?;
-                    pVVar66 = (Vector3__Array *)(this->fields).movingEdgeCube;
-                    pMStack_52 = (MVCubeModelBase *)(this->fields).modelCursor;
-                    pVStack_31 = (Vector3__Array *)(e->fields)._SelectedCube_k__BackingField;
-                    pMVar16 = (e->fields)._TargetCubeModel_k__BackingField;
-                    pVVar24 = pVVar66;
-                    pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                    fVar29 = uStack_30;
-                    if (pMVar16 != (MVCubeModelBase *)0x0) {
-                      pMStack_50 = (MVCubeModelBase *)(pMVar16->fields)._.gameObject;
-                      iVar54 = (this->fields).currentInternalState;
-                      sStack_42 = (short)iVar54;
-                      uStack_43 = (undefined2)((uint)iVar54 >> 0x10);
-                      pVStack_25 = pVVar66;
-                      if (pVVar66 == (Vector3__Array *)0x0) {
-                        iVar73 = (pMStack_52->fields)._._.id;
-                        if (pVStack_31 == (Vector3__Array *)0x0) {
-                          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                          if ((iVar73 != 0) &&
-                             (pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                             , *(GameObject **)(iVar73 + 0x14) != (GameObject *)0x0)) {
-                            sStack_42 = -0x973;
-                            uStack_43 = 0x103d;
+                    pVVar12 = (Vector3__Array *)(this->fields).movingEdgeCube;
+                    pMVar20 = (this->fields).modelCursor;
+                    MStack_11._37_4_ = (e->fields)._SelectedCube_k__BackingField;
+                    pMVar25 = (e->fields)._TargetCubeModel_k__BackingField;
+                    pCVar21 = (Cube *)MStack_11._17_4_;
+                    MStack_11._21_4_ = pVVar12;
+                    pVVar23 = (Vector3__Array *)
+                              CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                    fVar24 = (float)MStack_11._9_4_;
+                    if (pMVar25 != (MVCubeModelBase *)0x0) {
+                      pMVar25 = (MVCubeModelBase *)(pMVar25->fields)._.gameObject;
+                      iVar42 = (this->fields).currentInternalState;
+                      IStack_22.z = (int16_t)iVar42;
+                      uStack_35 = (undefined2)((uint)iVar42 >> 0x10);
+                      MStack_11._33_4_ = pMVar25;
+                      if (pVVar12 == (Vector3__Array *)0x0) {
+                        pFVar58 = (pMVar20->fields)._.faceCursor;
+                        if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x0) {
+                          pVVar23 = (Vector3__Array *)
+                                    CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                          if ((pFVar58 != (FaceCursor *)0x0) &&
+                             (pGVar27 = (pFVar58->fields).gameObject,
+                             pVVar23 = (Vector3__Array *)
+                                       CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_
+                                               ), pGVar27 != (GameObject *)0x0)) {
+                            IStack_22.z = -0x3ad;
+                            uStack_35 = 0x1044;
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive
-                                      (*(GameObject **)(iVar73 + 0x14),0,(MethodInfo *)0x0);
-                            this = (EditCubes *)pMStack_52;
-                            pBVar74 = (Byte__Array *)(pMStack_52->fields)._._.itemId;
-                            pVVar24 = pVStack_25;
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            fVar29 = uStack_30;
-                            if ((pBVar74 != (Byte__Array *)0x0) &&
-                               (pGVar70 = *(GameObject **)(pBVar74->vector + 4),
-                               pVVar27 = (Vector3__Array *)
-                                         CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                               pGVar70 != (GameObject *)0x0)) {
+                            GameObject_SetActive(pGVar27,0,(MethodInfo *)0x0);
+                            pIVar26 = (pMVar20->fields).indentArea;
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            fVar24 = (float)MStack_11._9_4_;
+                            if ((pIVar26 != (IndentArea *)0x0) &&
+                               (pGVar27 = (pIVar26->fields).gameObject,
+                               pVVar23 = (Vector3__Array *)
+                                         CONCAT22(MStack_11._7_2_,
+                                                  MStack_11.virtualMethodPointer._1_2_),
+                               pGVar27 != (GameObject *)0x0)) {
                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_SetActive(pGVar70,0,(MethodInfo *)0x0);
+                              GameObject_SetActive(pGVar27,0,(MethodInfo *)0x0);
 code_?:
-                              pBVar74 = (Byte__Array *)
-                                        (((MVCubeModelBase *)this)->fields)._._.groupId;
-                              pVVar24 = pVStack_25;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = uStack_30;
-                              if (pBVar74 != (Byte__Array *)0x0) {
-                                CellCursor::CellCursor_UpdateCursor
-                                          ((CellCursor *)pBVar74,(MethodInfo *)0x0);
-                                pVVar75 = pVStack_31;
-                                if (CONCAT22(uStack_43,sStack_42) == 3) {
-                                  fVar76 = 0.0;
-                                  fVar49 = 0.0;
-                                  fVar77 = 0.0;
-                                  bVar22 = DrawPlane::DrawPlane_Pick
-                                                     ((Vector3 *)&stack0xffffff18,(MethodInfo *)0x0)
+                              this_01 = (pMVar20->fields)._.errorCursor;
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)MStack_11._9_4_;
+                              if (this_01 != (CellCursor *)0x0) {
+                                CellCursor::CellCursor_UpdateCursor(this_01,(MethodInfo *)0x0);
+                                uVar59 = MStack_11._37_4_;
+                                if (CONCAT22(uStack_35,IStack_22.z) == 3) {
+                                  fVar60 = 0.0;
+                                  fVar39 = 0.0;
+                                  fVar61 = 0.0;
+                                  bVar19 = DrawPlane::DrawPlane_Pick
+                                                     ((Vector3 *)&stack0xffffff14,(MethodInfo *)0x0)
                                   ;
-                                  if (bVar22 == 0) {
+                                  if (bVar19 == 0) {
 code_?:
-                                    *unaff_FS_OFFSET = uStack_4;
+                                    *unaff_FS_OFFSET = uStack_6;
                                     return;
                                   }
-                                  pGVar78 = MVGameControllerBase::
+                                  pGVar62 = MVGameControllerBase::
                                             MVGameControllerBase_get_GameEventManager
                                                       ((MethodInfo *)0x0);
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = uStack_30;
-                                  if (((pGVar78 != (GameEventManager *)0x0) &&
-                                      (pGVar79 = (pGVar78->fields).AvatarCommandsBuildMode,
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                      pGVar79 !=
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  fVar24 = (float)MStack_11._9_4_;
+                                  if (((pGVar62 != (GameEventManager *)0x0) &&
+                                      (pGVar63 = (pGVar62->fields).AvatarCommandsBuildMode,
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_),
+                                      pGVar63 !=
                                       (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                                     (pGVar80 = (pGVar79->fields).LaserCommands,
-                                     pVVar27 = (Vector3__Array *)
-                                               CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                     pGVar80 !=
+                                     (pGVar64 = (pGVar63->fields).LaserCommands,
+                                     pVVar23 = (Vector3__Array *)
+                                               CONCAT22(MStack_11._7_2_,
+                                                        MStack_11.virtualMethodPointer._1_2_),
+                                     pGVar64 !=
                                      (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
                                       *)0x0)) {
                                     GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager
                                     ::
                                     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-                                              (pGVar80,0.2,(MethodInfo *)0x0);
-                                    pGVar78 = MVGameControllerBase::
+                                              (pGVar64,0.2,(MethodInfo *)0x0);
+                                    pGVar62 = MVGameControllerBase::
                                               MVGameControllerBase_get_GameEventManager
                                                         ((MethodInfo *)0x0);
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = uStack_30;
-                                    if (((pGVar78 != (GameEventManager *)0x0) &&
-                                        (pGVar79 = (pGVar78->fields).AvatarCommandsBuildMode,
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                        pGVar79 !=
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)MStack_11._9_4_;
+                                    if (((pGVar62 != (GameEventManager *)0x0) &&
+                                        (pGVar63 = (pGVar62->fields).AvatarCommandsBuildMode,
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_),
+                                        pGVar63 !=
                                         (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                                       (pGVar80 = (pGVar79->fields).LaserCommands,
-                                       pVVar27 = (Vector3__Array *)
-                                                 CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                       pGVar80 !=
+                                       (pGVar64 = (pGVar63->fields).LaserCommands,
+                                       pVVar23 = (Vector3__Array *)
+                                                 CONCAT22(MStack_11._7_2_,
+                                                          MStack_11.virtualMethodPointer._1_2_),
+                                       pGVar64 !=
                                        (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
                                         *)0x0)) {
-                                      to_00.y = fVar77;
-                                      to_00.x = fVar49;
-                                      to_00.z = fVar76;
+                                      to_00.y = fVar61;
+                                      to_00.x = fVar39;
+                                      to_00.z = fVar60;
                                       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager
                                       ::
                                       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                                                (pGVar80,to_00,(MethodInfo *)0x0);
-                                      *unaff_FS_OFFSET = uStack_4;
+                                                (pGVar64,to_00,(MethodInfo *)0x0);
+                                      *unaff_FS_OFFSET = uStack_6;
                                       return;
                                     }
                                   }
                                 }
-                                else if (pVVar66 == (Vector3__Array *)0x0) {
-                                  if (cStack_48 == '\0') {
-                                    if (pVStack_31 == (Vector3__Array *)0x0) goto code_?;
-                                    pGVar78 = MVGameControllerBase::
+                                else if (pVVar12 == (Vector3__Array *)0x0) {
+                                  if ((char)MStack_11.klass == '\0') {
+                                    if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x0)
+                                    goto code_?;
+                                    pGVar62 = MVGameControllerBase::
                                               MVGameControllerBase_get_GameEventManager
                                                         ((MethodInfo *)0x0);
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = uStack_30;
-                                    if (((pGVar78 != (GameEventManager *)0x0) &&
-                                        (pGVar79 = (pGVar78->fields).AvatarCommandsBuildMode,
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                        pGVar79 !=
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    fVar24 = (float)MStack_11._9_4_;
+                                    if (((pGVar62 != (GameEventManager *)0x0) &&
+                                        (pGVar63 = (pGVar62->fields).AvatarCommandsBuildMode,
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_),
+                                        pGVar63 !=
                                         (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                                       (pGVar80 = (pGVar79->fields).LaserCommands,
-                                       pVVar27 = (Vector3__Array *)
-                                                 CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                                       pGVar80 !=
+                                       (pGVar64 = (pGVar63->fields).LaserCommands,
+                                       pVVar23 = (Vector3__Array *)
+                                                 CONCAT22(MStack_11._7_2_,
+                                                          MStack_11.virtualMethodPointer._1_2_),
+                                       pGVar64 !=
                                        (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
                                         *)0x0)) {
                                       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager
                                       ::
                                       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                                                (pGVar80,*(Vector3 *)&pVVar75->vector[1].z,
+                                                (pGVar64,*(Vector3 *)
+                                                          &((Vector3 *)(uVar59 + 0x10))[1].z,
                                                  (MethodInfo *)0x0);
-                                      *unaff_FS_OFFSET = uStack_4;
+                                      *unaff_FS_OFFSET = uStack_6;
                                       return;
                                     }
                                   }
                                   else {
-                                    pGVar78 = MVGameControllerBase::
+                                    pGVar62 = MVGameControllerBase::
                                               MVGameControllerBase_get_GameEventManager
                                                         ((MethodInfo *)0x0);
 code_?:
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = uStack_28;
-                                    fVar29 = uStack_30;
-                                    if (((pGVar78 != (GameEventManager *)0x0) &&
-                                        (pGVar79 = (pGVar78->fields).AvatarCommandsBuildMode,
-                                        pGVar79 !=
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = (Vector3__Array *)MStack_11._5_4_;
+                                    fVar24 = (float)MStack_11._9_4_;
+                                    if (((pGVar62 != (GameEventManager *)0x0) &&
+                                        (pGVar63 = (pGVar62->fields).AvatarCommandsBuildMode,
+                                        pGVar63 !=
                                         (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-                                       (pGVar80 = (pGVar79->fields).LaserCommands,
-                                       pGVar80 !=
+                                       (pGVar64 = (pGVar63->fields).LaserCommands,
+                                       pGVar64 !=
                                        (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
                                         *)0x0)) {
                                       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager
                                       ::
                                       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-                                                (pGVar80,0.2,(MethodInfo *)0x0);
-                                      *unaff_FS_OFFSET = uStack_4;
+                                                (pGVar64,0.2,(MethodInfo *)0x0);
+                                      *unaff_FS_OFFSET = uStack_6;
                                       return;
                                     }
                                   }
@@ -2298,87 +2471,89 @@ code_?:
                                     func_?();
                                     cRam_? = '\x01';
                                   }
-                                  pCVar58 = ((CubePickingInfo__Fields *)&pVVar66->bounds)->cube;
-                                  uStack_30._0_2_ = (int16_t)pVVar66->max_length;
-                                  uStack_30._2_2_ = (undefined2)(pVVar66->max_length >> 0x10);
-                                  fVar29 = pVVar66->vector[2].z;
-                                  sStack_42 = SUB42(fVar29,0);
-                                  uStack_43 = (undefined2)((uint)fVar29 >> 0x10);
-                                  uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                               *)CONCAT22(*(int16_t *)&pVVar66->vector[3].x,
-                                                          (undefined2)uStack_56);
+                                  pCVar21 = ((CubePickingInfo__Fields *)&pVVar12->bounds)->cube;
+                                  MStack_11.invoker_method._1_2_ = (int16_t)pVVar12->max_length;
+                                  MStack_11._11_2_ = SUB42(pVVar12->max_length >> 0x10,0);
+                                  fVar24 = pVVar12->vector[2].z;
+                                  IStack_22.z = SUB42(fVar24,0);
+                                  uStack_35 = (undefined2)((uint)fVar24 >> 0x10);
+                                  MStack_11._31_2_ = *(int16_t *)&pVVar12->vector[3].x;
                                   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                     func_?();
                                   }
-                                  this = (EditCubes *)pMStack_50;
-                                  iVector_00.y = uStack_43;
-                                  iVector_00.x = sStack_42;
-                                  iVector_00.z._0_1_ = (char)((uint)uStack_56 >> 0x10);
-                                  iVector_00.z._1_1_ = (char)((uint)uStack_56 >> 0x18);
-                                  pVVar81 = Cube::Cube_GetFaceVerticesWorld
-                                                      ((GameObject *)pMStack_50,pCVar58,
-                                                       CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                                                       iVector_00,(MethodInfo *)0x0);
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  pVVar24 = pVStack_25;
-                                  fVar29 = uStack_30;
-                                  if (pVVar81 != (Vector3__Array *)0x0) {
-                                    pVVar75 = pVVar27;
-                                    if ((pVVar81->max_length == 0) || (pVVar81->max_length < 2))
+                                  uVar59 = MStack_11._33_4_;
+                                  iVector_01.y = uStack_35;
+                                  iVector_01.x = IStack_22.z;
+                                  iVector_01.z = MStack_11._31_2_;
+                                  pVVar65 = Cube::Cube_GetFaceVerticesWorld
+                                                      ((GameObject *)MStack_11._33_4_,pCVar21,
+                                                       CONCAT22(MStack_11._11_2_,
+                                                                MStack_11.invoker_method._1_2_),
+                                                       iVector_01,(MethodInfo *)0x0);
+                                  pVVar23 = (Vector3__Array *)
+                                            CONCAT22(MStack_11._7_2_,
+                                                     MStack_11.virtualMethodPointer._1_2_);
+                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                  fVar24 = (float)MStack_11._9_4_;
+                                  if (pVVar65 != (Vector3__Array *)0x0) {
+                                    pVVar66 = pVVar23;
+                                    if ((pVVar65->max_length == 0) || (pVVar65->max_length < 2))
                                     goto code_?;
-                                    uVar82 = pVVar81->vector[1].x;
-                                    uVar83 = pVVar81->vector[1].y;
-                                    uVar84 = pVVar81->vector[0].x;
-                                    uVar85 = pVVar81->vector[0].y;
-                                    if (pVVar81->max_length < 3) goto code_?;
-                                    uVar86 = pVVar81->vector[2].x;
-                                    uVar87 = pVVar81->vector[2].y;
-                                    if (pVVar81->max_length < 4) goto code_?;
-                                    uVar88 = pVVar81->vector[3].x;
-                                    uVar89 = pVVar81->vector[3].y;
-                                    pVVar27 = (Vector3__Array *)
-                                              (((float)uVar88 +
-                                               (float)uVar86 + (float)uVar82 + (float)uVar84) *
+                                    uVar67 = pVVar65->vector[1].x;
+                                    uVar68 = pVVar65->vector[1].y;
+                                    uVar69 = pVVar65->vector[0].x;
+                                    uVar70 = pVVar65->vector[0].y;
+                                    if (pVVar65->max_length < 3) goto code_?;
+                                    uVar71 = pVVar65->vector[2].x;
+                                    uVar72 = pVVar65->vector[2].y;
+                                    if (pVVar65->max_length < 4) goto code_?;
+                                    uVar73 = pVVar65->vector[3].x;
+                                    uVar74 = pVVar65->vector[3].y;
+                                    pVVar23 = (Vector3__Array *)
+                                              (((float)uVar73 +
+                                               (float)uVar71 + (float)uVar67 + (float)uVar69) *
                                               _UNK_?);
-                                    pVVar24 = (Vector3__Array *)
-                                              (((float)uVar89 +
-                                               (float)uVar87 + (float)uVar83 + (float)uVar85) *
+                                    pMVar25 = (MVCubeModelBase *)
+                                              (((float)uVar74 +
+                                               (float)uVar72 + (float)uVar68 + (float)uVar70) *
                                               _UNK_?);
-                                    fVar49 = (pVVar81->vector[3].z +
-                                             pVVar81->vector[2].z +
-                                             pVVar81->vector[1].z + pVVar81->vector[0].z) *
+                                    fVar39 = (pVVar65->vector[3].z +
+                                             pVVar65->vector[2].z +
+                                             pVVar65->vector[1].z + pVVar65->vector[0].z) *
                                              _UNK_?;
-                                    pVStack_25 = pVVar24;
-                                    pVStack_31 = pVVar27;
-                                    if (pVVar66->vector[0].x == 0.0) {
-                                      uStack_26._0_2_ = 0;
-                                      uStack_26._2_2_ = 0;
-                                      sStack_42 = 0;
-                                      uStack_43 = 0;
-                                      pVVar66 = pVVar27;
-                                      pVVar75 = pVVar24;
+                                    MStack_11._33_4_ = pMVar25;
+                                    MStack_11._37_4_ = pVVar23;
+                                    if (pVVar12->vector[0].x == 0.0) {
+                                      IStack_22.x = 0;
+                                      IStack_22.y = 0;
+                                      IStack_22.z = 0;
+                                      uStack_35 = 0;
+                                      pVVar12 = pVVar23;
+                                      pMVar75 = pMVar25;
                                       if (cRam_? == '\0') {
                                         func_?();
                                         cRam_? = '\x01';
                                       }
-                                      pVVar90 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                      pCStack_59 = (CanPerformCubeActionResult__Enum__Class *)
-                                                   (pVVar90->upVector).x;
-                                      unique0x0000a404 = (MonitorData *)(pVVar90->upVector).y;
-                                      fVar29 = (pVVar90->upVector).z;
-                                      fVar77 = (float)pCStack_59 + (float)pVStack_31;
-                                      fVar76 = (float)unique0x0000a404 + (float)pVStack_25;
+                                      pVVar76 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                      pCStack_49 = (CanPerformCubeActionResult__Enum__Class *)
+                                                   (pVVar76->upVector).x;
+                                      unique0x0000a404 = (MonitorData *)(pVVar76->upVector).y;
+                                      fVar24 = (pVVar76->upVector).z;
+                                      fVar61 = (float)pCStack_49 + (float)MStack_11._37_4_;
+                                      fVar60 = (float)unique0x0000a404 + (float)MStack_11._33_4_;
                                       if ((TypeInfo__UnityEngine__Debug->_1).
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      start_00.y = (float)pVVar24;
-                                      start_00.x = (float)pVVar27;
-                                      start_00.z = fVar49;
-                                      end_00.y = fVar76;
-                                      end_00.x = fVar77;
-                                      end_00.z = fVar29 + fVar49;
+                                      start_00.y._0_1_ = (char)pMVar25;
+                                      start_00.x = (float)pVVar23;
+                                      start_00.y._1_1_ = (char)((uint)pMVar25 >> 8);
+                                      start_00.y._2_2_ = (short)((uint)pMVar25 >> 0x10);
+                                      start_00.z = fVar39;
+                                      end_00.y._0_2_ = SUB42(fVar60,0);
+                                      end_00.x = fVar61;
+                                      end_00.y._2_2_ = (short)((uint)fVar60 >> 0x10);
+                                      end_00.z = fVar24 + fVar39;
                                       color_00.g = (float)_UNK_?;
                                       color_00.r = (float)_UNK_?;
                                       color_00.b = (float)_UNK_?;
@@ -2386,155 +2561,157 @@ code_?:
                                       color_00.a._1_1_ = (char)((uint)_UNK_? >> 8);
                                       color_00.a._2_2_ = (short)((uint)_UNK_? >> 0x10);
                                       UnityEngine.CoreModule.dll::UnityEngine::Debug::
-                                      Debug_1_DrawLine_1(start_00,end_00,color_00,(MethodInfo *)0x0)
+                                      Debug_2_DrawLine_1(start_00,end_00,color_00,(MethodInfo *)0x0)
                                       ;
-                                      pVVar27 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
+                                      pVVar23 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
 code_?:
-                                      uStack_28 = pVVar27;
-                                      pGVar78 = MVGameControllerBase::
+                                      MStack_11._5_4_ = pVVar23;
+                                      pGVar62 = MVGameControllerBase::
                                                 MVGameControllerBase_get_GameEventManager
                                                           ((MethodInfo *)0x0);
-                                      pVVar24 = pVStack_25;
-                                      pVVar27 = uStack_28;
-                                      fVar29 = uStack_30;
-                                      if (((pGVar78 != (GameEventManager *)0x0) &&
-                                          (pGVar79 = (pGVar78->fields).AvatarCommandsBuildMode,
-                                          pGVar79 !=
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      pVVar23 = (Vector3__Array *)MStack_11._5_4_;
+                                      fVar24 = (float)MStack_11._9_4_;
+                                      if (((pGVar62 != (GameEventManager *)0x0) &&
+                                          (pGVar63 = (pGVar62->fields).AvatarCommandsBuildMode,
+                                          pGVar63 !=
                                           (GameEventManager_AvatarCommandsBuildModeManager *)0x0))
-                                         && (pGVar80 = (pGVar79->fields).LaserCommands,
-                                            pGVar80 !=
+                                         && (pGVar64 = (pGVar63->fields).LaserCommands,
+                                            pGVar64 !=
                                             (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager
                                              *)0x0)) {
-                                        to.y._0_1_ = (char)pVVar75;
-                                        to.x = (float)pVVar66;
-                                        to.y._1_1_ = (char)((uint)pVVar75 >> 8);
-                                        to.y._2_2_ = (short)((uint)pVVar75 >> 0x10);
-                                        to.z._0_1_ = SUB41(fVar49,0);
-                                        to.z._1_1_ = (char)((uint)fVar49 >> 8);
-                                        to.z._2_2_ = (short)((uint)fVar49 >> 0x10);
+                                        to.y._0_2_ = (short)pMVar75;
+                                        to.x = (float)pVVar12;
+                                        to.y._2_2_ = (short)((uint)pMVar75 >> 0x10);
+                                        to.z._0_1_ = SUB41(fVar39,0);
+                                        to.z._1_1_ = (char)((uint)fVar39 >> 8);
+                                        to.z._2_2_ = (short)((uint)fVar39 >> 0x10);
                                         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager
                                         ::
                                         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                                                  (pGVar80,to,(MethodInfo *)0x0);
-                                        pGVar78 = MVGameControllerBase::
+                                                  (pGVar64,to,(MethodInfo *)0x0);
+                                        pGVar62 = MVGameControllerBase::
                                                   MVGameControllerBase_get_GameEventManager
                                                             ((MethodInfo *)0x0);
                                         goto code_?;
                                       }
                                     }
                                     else {
-                                      pCVar58 = ((CubePickingInfo__Fields *)&pVVar66->bounds)->cube;
-                                      face = pVVar66->max_length;
-                                      fVar29 = pVVar66->vector[0].x;
-                                      uStack_30._0_2_ = SUB42(fVar29,0);
-                                      uStack_30._2_2_ = (undefined2)((uint)fVar29 >> 0x10);
-                                      fVar29 = pVVar66->vector[2].z;
-                                      sStack_42 = SUB42(fVar29,0);
-                                      uStack_43 = (undefined2)((uint)fVar29 >> 0x10);
-                                      uStack_56 = (
-                                                  List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                                  *)CONCAT22(*(int16_t *)&pVVar66->vector[3].x,
-                                                             (undefined2)uStack_56);
+                                      MStack_11._17_4_ =
+                                           ((CubePickingInfo__Fields *)&pVVar12->bounds)->cube;
+                                      FVar44 = pVVar12->max_length;
+                                      fVar24 = pVVar12->vector[0].x;
+                                      MStack_11.invoker_method._1_2_ = SUB42(fVar24,0);
+                                      MStack_11._11_2_ = SUB42((uint)fVar24 >> 0x10,0);
+                                      fVar24 = pVVar12->vector[2].z;
+                                      IStack_22.z = SUB42(fVar24,0);
+                                      uStack_35 = (undefined2)((uint)fVar24 >> 0x10);
+                                      MStack_11._31_2_ = *(int16_t *)&pVVar12->vector[3].x;
                                       if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      iVector.y = uStack_43;
-                                      iVector.x = sStack_42;
-                                      iVector.z = uStack_56._2_2_;
-                                      pVVar81 = Cube::Cube_GetEdgeVerticesWorld
-                                                          ((GameObject *)this,pCVar58,face,
-                                                           CONCAT22(uStack_30._2_2_,
-                                                                    (int16_t)uStack_30),iVector,
-                                                           (MethodInfo *)0x0);
-                                      pVVar75 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      pVVar24 = pVStack_25;
-                                      if (*(bool *)&pVVar66->vector[0].y == 0) {
-                                        pVVar27 = (Vector3__Array *)
-                                                  CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30)
-                                        ;
-                                        if (pVVar81 != (Vector3__Array *)0x0) {
-                                          if (*(bool *)((int)&pVVar66->vector[0].y + 1) == 0) {
-                                            if ((pVVar81->max_length == 0) ||
-                                               (pVVar81->max_length < 2)) goto code_?;
-                                            uVar91 = pVVar81->vector[1].x;
-                                            uVar92 = pVVar81->vector[1].y;
-                                            uVar93 = pVVar81->vector[0].x;
-                                            uVar94 = pVVar81->vector[0].y;
-                                            uStack_30 = (pVVar81->vector[1].z + pVVar81->vector[0].z
-                                                        ) * _UNK_?;
-                                            fStack_39 = ((float)uVar91 + (float)uVar93) *
-                                                        _UNK_?;
-                                            pVVar27 = (Vector3__Array *)
-                                                      (((float)uVar92 + (float)uVar94) *
+                                      iVector_00.y = uStack_35;
+                                      iVector_00.x = IStack_22.z;
+                                      iVector_00.z = MStack_11._31_2_;
+                                      pVVar65 = Cube::Cube_GetEdgeVerticesWorld
+                                                          ((GameObject *)uVar59,
+                                                           (Cube *)MStack_11._17_4_,FVar44,
+                                                           CONCAT22(MStack_11._11_2_,
+                                                                    MStack_11.invoker_method._1_2_),
+                                                           iVector_00,(MethodInfo *)0x0);
+                                      pVVar66 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      if (*(bool *)&pVVar12->vector[0].y == 0) {
+                                        pVVar23 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        fVar24 = (float)CONCAT22(MStack_11._11_2_,
+                                                                 MStack_11.invoker_method._1_2_);
+                                        if (pVVar65 != (Vector3__Array *)0x0) {
+                                          if (*(bool *)((int)&pVVar12->vector[0].y + 1) == 0) {
+                                            if ((pVVar65->max_length == 0) ||
+                                               (pVVar65->max_length < 2)) goto code_?;
+                                            uVar77 = pVVar65->vector[1].x;
+                                            uVar78 = pVVar65->vector[1].y;
+                                            uVar79 = pVVar65->vector[0].x;
+                                            uVar80 = pVVar65->vector[0].y;
+                                            MStack_11._9_4_ =
+                                                 (pVVar65->vector[1].z + pVVar65->vector[0].z) *
+                                                 _UNK_?;
+                                            MStack_11._1_4_ =
+                                                 ((float)uVar77 + (float)uVar79) * _UNK_?;
+                                            pVVar23 = (Vector3__Array *)
+                                                      (((float)uVar78 + (float)uVar80) *
                                                       _UNK_?);
                                           }
                                           else {
-                                            if (pVVar81->max_length < 2) goto code_?;
-                                            uVar95 = pVVar81->vector[1].x;
-                                            pVVar27 = (Vector3__Array *)pVVar81->vector[1].y;
-                                            uStack_30 = pVVar81->vector[1].z;
-                                            fStack_39 = (float)uVar95;
+                                            if (pVVar65->max_length < 2) goto code_?;
+                                            uVar81 = pVVar65->vector[1].x;
+                                            pVVar23 = (Vector3__Array *)pVVar65->vector[1].y;
+                                            MStack_11._9_4_ = pVVar65->vector[1].z;
+                                            MStack_11._1_4_ = uVar81;
                                           }
 code_?:
-                                          fVar49 = uStack_30 + (fVar49 - uStack_30) * _UNK_?;
-                                          pVVar66 = (Vector3__Array *)
-                                                    (fStack_39 +
-                                                    ((float)pVStack_31 - fStack_39) * _UNK_?)
+                                          fVar39 = (float)MStack_11._9_4_ +
+                                                   (fVar39 - (float)MStack_11._9_4_) * _UNK_?
                                           ;
-                                          pVVar75 = (Vector3__Array *)
-                                                    ((float)pVVar27 +
-                                                    ((float)pVStack_25 - (float)pVVar27) *
+                                          pVVar12 = (Vector3__Array *)
+                                                    ((float)MStack_11._1_4_ +
+                                                    ((float)MStack_11._37_4_ -
+                                                    (float)MStack_11._1_4_) * _UNK_?);
+                                          pMVar75 = (MVCubeModelBase *)
+                                                    ((float)pVVar23 +
+                                                    ((float)MStack_11._33_4_ - (float)pVVar23) *
                                                     _UNK_?);
                                           goto code_?;
                                         }
                                       }
                                       else {
-                                        pVVar27 = pVVar75;
-                                        fVar29 = uStack_30;
-                                        if (pVVar81 != (Vector3__Array *)0x0) {
-                                          if (pVVar81->max_length == 0) goto code_?;
-                                          uVar96 = pVVar81->vector[0].x;
-                                          uVar97 = pVVar81->vector[0].y;
-                                          fVar29 = pVVar81->vector[0].z;
-                                          uStack_28._0_2_ = (short)uVar97;
-                                          uStack_28._2_2_ = (undefined2)((uint)uVar97 >> 0x10);
-                                          uStack_26._0_2_ = (short)uVar96;
-                                          uStack_26._2_2_ = (short)((uint)uVar96 >> 0x10);
-                                          uVar98 = pVVar81->vector[0].x;
-                                          uVar99 = pVVar81->vector[0].y;
-                                          uStack_30._0_2_ = SUB42(fVar29,0);
-                                          uStack_30._2_2_ = (undefined2)((uint)fVar29 >> 0x10);
-                                          sStack_42 = (short)uStack_28;
-                                          uStack_43 = uStack_28._2_2_;
-                                          fStack_39 = (float)uVar96;
+                                        pVVar23 = pVVar66;
+                                        fVar24 = (float)MStack_11._9_4_;
+                                        if (pVVar65 != (Vector3__Array *)0x0) {
+                                          if (pVVar65->max_length == 0) goto code_?;
+                                          uVar82 = pVVar65->vector[0].x;
+                                          uVar83 = pVVar65->vector[0].y;
+                                          fVar60 = pVVar65->vector[0].z;
+                                          MStack_11.virtualMethodPointer._1_2_ = (short)uVar83;
+                                          MStack_11._7_2_ = SUB42((uint)uVar83 >> 0x10,0);
+                                          IStack_22.x = (int16_t)uVar82;
+                                          IStack_22.y = (int16_t)((uint)uVar82 >> 0x10);
+                                          fVar24 = pVVar65->vector[0].x;
+                                          fVar61 = pVVar65->vector[0].y;
+                                          MStack_11.invoker_method._1_2_ = SUB42(fVar60,0);
+                                          MStack_11._11_2_ = SUB42((uint)fVar60 >> 0x10,0);
+                                          IStack_22.z = MStack_11.virtualMethodPointer._1_2_;
+                                          uStack_35 = MStack_11._7_2_;
+                                          fVar84 = fVar60;
+                                          MStack_11._1_4_ = uVar82;
                                           if (cRam_? == '\0') {
                                             func_?();
                                             cRam_? = '\x01';
                                           }
-                                          pVVar90 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                          uVar100 = (pVVar90->upVector).x;
-                                          uVar101 = (pVVar90->upVector).y;
-                                          stack0xffffff5c =
-                                               (MonitorData *)((float)uVar99 + (float)uVar101);
-                                          pCStack_59 = (CanPerformCubeActionResult__Enum__Class *)
-                                                       ((float)uVar98 + (float)uVar100);
-                                          fVar77 = fVar29 + (pVVar90->upVector).z;
+                                          pVVar76 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                          uVar85 = (pVVar76->upVector).x;
+                                          uVar86 = (pVVar76->upVector).y;
+                                          stack0xffffff5c = (MonitorData *)((float)uVar86 + fVar61);
+                                          pCStack_49 = (CanPerformCubeActionResult__Enum__Class *)
+                                                       ((float)uVar85 + fVar24);
+                                          fVar84 = (pVVar76->upVector).z + fVar84;
                                           if ((TypeInfo__UnityEngine__Debug->_1).
                                               cctor_finished_or_no_cctor == 0) {
                                             func_?();
                                           }
-                                          start.y = (float)(int)(CONCAT26(uStack_43,
-                                                                          CONCAT24(sStack_42,
-                                                                                   CONCAT22(
-                                                  uStack_26._2_2_,(short)uStack_26))) >> 0x20);
-                                          start.x = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26
-                                                                   );
-                                          start.z = fVar29;
-                                          end.z = fVar77;
-                                          end.x = (float)pCStack_59;
+                                          start.x._2_2_ = IStack_22.y;
+                                          start.x._0_2_ = IStack_22.x;
+                                          start.y._0_2_ = IStack_22.z;
+                                          start.y._2_2_ = uStack_35;
+                                          start.z = fVar60;
+                                          end.z = fVar84;
+                                          end.x = (float)pCStack_49;
                                           end.y = (float)stack0xffffff5c;
                                           color.g = (float)_UNK_?;
                                           color.r = (float)_UNK_?;
@@ -2543,9 +2720,10 @@ code_?:
                                           color.a._1_1_ = (char)((uint)_UNK_? >> 8);
                                           color.a._2_2_ = (short)((uint)_UNK_? >> 0x10);
                                           UnityEngine.CoreModule.dll::UnityEngine::Debug::
-                                          Debug_1_DrawLine_1(start,end,color,(MethodInfo *)0x0);
-                                          pVVar27 = (Vector3__Array *)
-                                                    CONCAT22(uStack_28._2_2_,(short)uStack_28);
+                                          Debug_2_DrawLine_1(start,end,color,(MethodInfo *)0x0);
+                                          pVVar23 = (Vector3__Array *)
+                                                    CONCAT22(MStack_11._7_2_,
+                                                             MStack_11.virtualMethodPointer._1_2_);
                                           goto code_?;
                                         }
                                       }
@@ -2557,410 +2735,566 @@ code_?:
                           }
                         }
                         else {
-                          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                          if ((iVar73 != 0) &&
-                             (pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                             , *(GameObject **)(iVar73 + 0x14) != (GameObject *)0x0)) {
-                            sStack_42 = -0x92a;
-                            uStack_43 = 0x103d;
+                          pVVar23 = (Vector3__Array *)
+                                    CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                          if ((pFVar58 != (FaceCursor *)0x0) &&
+                             (pGVar27 = (pFVar58->fields).gameObject,
+                             pVVar23 = (Vector3__Array *)
+                                       CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_
+                                               ), pGVar27 != (GameObject *)0x0)) {
+                            IStack_22.z = -0x361;
+                            uStack_35 = 0x1044;
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive
-                                      (*(GameObject **)(iVar73 + 0x14),1,(MethodInfo *)0x0);
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            this_01 = (FaceCursor *)(pMStack_52->fields)._._.id;
-                            pVVar75 = pVStack_31;
-                            this = (EditCubes *)pMStack_52;
+                            GameObject_SetActive(pGVar27,1,(MethodInfo *)0x0);
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            pFVar58 = (pMVar20->fields)._.faceCursor;
+                            pVVar66 = (Vector3__Array *)MStack_11._37_4_;
 joined_?:
-                            pVVar24 = pVStack_25;
-                            fVar29 = uStack_30;
-                            if (this_01 != (FaceCursor *)0x0) {
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            fVar24 = (float)MStack_11._9_4_;
+                            if (pFVar58 != (FaceCursor *)0x0) {
                               FaceCursor::FaceCursor_UpdateCursor
-                                        (this_01,(CubePickingInfo *)pVVar75,(GameObject *)pMStack_50
-                                         ,(MethodInfo *)0x0);
+                                        (pFVar58,(CubePickingInfo *)pVVar66,
+                                         (GameObject *)MStack_11._33_4_,(MethodInfo *)0x0);
                               goto code_?;
                             }
                           }
                         }
                       }
                       else {
-                        uStack_34 = (Byte__Array *)(pMStack_52->fields)._._.itemId;
-                        pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                        if (uStack_34 != (Byte__Array *)0x0) {
+                        MStack_11._25_4_ = (pMVar20->fields).indentArea;
+                        pVVar23 = (Vector3__Array *)
+                                  CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                        if ((IndentArea *)MStack_11._25_4_ != (IndentArea *)0x0) {
                           if (cRam_? == '\0') {
                             func_?();
                             func_?();
-                            sStack_42 = -0x8d7;
-                            uStack_43 = 0x103d;
+                            IStack_22.z = -0x30b;
+                            uStack_35 = 0x1044;
                             func_?();
-                            sStack_42 = 0x5e28;
-                            uStack_43 = 0x10ee;
-                            uStack_26._0_2_ = -0x8cd;
-                            uStack_26._2_2_ = 0x103d;
+                            IStack_22.z = -0x1c8c;
+                            uStack_35 = 0x119b;
+                            IStack_22.x = -0x301;
+                            IStack_22.y = 0x1044;
                             func_?();
-                            uStack_26._0_2_ = 0x5bec;
-                            uStack_26._2_2_ = 0x10ee;
+                            IStack_22.x = -0x204c;
+                            IStack_22.y = 0x119b;
                             func_?();
                             func_?();
                             cRam_? = '\x01';
                           }
-                          pMStack_51 = (MVCubeModelBase *)pVVar66->max_length;
-                          pCVar58 = ((CubePickingInfo__Fields *)&pVVar66->bounds)->cube;
-                          pVStack_25 = (Vector3__Array *)pVVar66->vector[2].z;
-                          uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *
-                                      )CONCAT22(*(int16_t *)&pVVar66->vector[3].x,
-                                                (undefined2)uStack_56);
+                          MStack_11._17_4_ = ((CubePickingInfo__Fields *)&pVVar12->bounds)->cube;
+                          FVar44 = pVVar12->max_length;
+                          MStack_11._21_4_ = pVVar12->vector[2].z;
+                          iVar13 = *(int16_t *)&pVVar12->vector[3].x;
+                          MStack_11._31_2_ = iVar13;
                           if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                             func_?();
                           }
-                          iVector_07.z._0_1_ = (char)((uint)uStack_56 >> 0x10);
-                          iVector_07._0_4_ = pVStack_25;
-                          iVector_07.z._1_1_ = (char)((uint)uStack_56 >> 0x18);
-                          pVStack_25 = Cube::Cube_GetFaceVerticesWorld
-                                                 ((GameObject *)pMStack_50,pCVar58,
-                                                  (Face__Enum)pMStack_51,iVector_07,
-                                                  (MethodInfo *)0x0);
-                          this = (EditCubes *)func_?();
-                          pVVar24 = pVStack_25;
-                          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                          fVar29 = uStack_30;
-                          if ((MVCubeModelBase *)this != (MVCubeModelBase *)0x0) {
-                            mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::
-                            Object]::LowLevelList_1_System_Object___ctor
-                                      ((LowLevelList_1_System_Object_ *)this,
-                                       MethodInfo__System__Collections__Generic__List<int>__List__);
-                            pVVar24 = pVStack_25;
-                            pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                            fVar29 = uStack_30;
-                            if (*(GameObject **)(uStack_34->vector + 4) != (GameObject *)0x0) {
-                              this_03 = (MeshFilter *)
-                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_GetComponent_1
-                                                  (*(GameObject **)(uStack_34->vector + 4),
-                                                                                                      
-                                                  UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshFilter>__
-                                                  );
-                              pVVar24 = pVStack_25;
-                              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28)
-                              ;
-                              fVar29 = uStack_30;
-                              if (this_03 != (MeshFilter *)0x0) {
-                                pMStack_51 = (MVCubeModelBase *)
-                                             UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                                             MeshFilter_get_mesh(this_03,(MethodInfo *)0x0);
-                                pVVar24 = pVStack_25;
-                                pVVar27 = (Vector3__Array *)
-                                          CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                fVar29 = uStack_30;
-                                if (pMStack_51 != (MVCubeModelBase *)0x0) {
-                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_Clear
-                                            ((Mesh *)pMStack_51,(MethodInfo *)0x0);
-                                  func_?();
-                                  func_?();
-                                  func_?();
-                                  func_?();
-                                  func_?();
-                                  func_?();
-                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                                            ((Mesh *)pMStack_51,pVStack_25,(MethodInfo *)0x0);
-                                  if (cRam_? == '\0') {
-                                    func_?();
-                                    func_?();
-                                    func_?();
-                                    func_?();
-                                    cRam_? = '\x01';
-                                  }
-                                  uStack_56 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                               *)func_?();
-                                  pVVar24 = pVStack_25;
-                                  pVVar27 = (Vector3__Array *)
-                                            CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                  fVar29 = uStack_30;
-                                  if (uStack_56 !=
-                                      (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *
-                                      )0x0) {
-                                    mscorlib.dll::System::Collections::Generic::
-                                    LowLevelList`1[System::Object]::
-                                    LowLevelList_1_System_Object___ctor
-                                              ((LowLevelList_1_System_Object_ *)uStack_56,
-                                               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__
-                                              );
-                                    uStack_30._0_2_ = 0;
-                                    uStack_30._2_2_ = 0;
-                                    uStack_28._0_2_ = 0;
-                                    uStack_28._2_2_ = 0;
-                                    func_?();
-                                    uStack_30._0_2_ = 0;
-                                    uStack_30._2_2_ = 0;
-                                    uStack_28._0_2_ = 0;
-                                    uStack_28._2_2_ = 0x3f80;
-                                    func_?();
-                                    uStack_30._0_2_ = 0;
-                                    uStack_30._2_2_ = 0x3f80;
-                                    uStack_28._0_2_ = 0;
-                                    uStack_28._2_2_ = 0x3f80;
-                                    func_?();
-                                    uStack_30._0_2_ = 0;
-                                    uStack_30._2_2_ = 0x3f80;
-                                    uStack_28._0_2_ = 0;
-                                    uStack_28._2_2_ = 0;
-                                    func_?(uStack_56);
-                                    pUVar102 = mscorlib.dll::System::Collections::Generic::
-                                              List`1[UnityEngine::
-                                              UnitySynchronizationContext+WorkRequest]::
-                                              List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                                                        (uStack_56,
-                                                                                                                  
-                                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
-                                                  );
-                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
-                                              ((Mesh *)pMStack_51,(Vector2__Array *)pUVar102,
-                                               (MethodInfo *)0x0);
-                                    pUVar102 = mscorlib.dll::System::Collections::Generic::
-                                              List`1[UnityEngine::
-                                              UnitySynchronizationContext+WorkRequest]::
-                                              List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                                                        ((
-                                                  List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                                  *)this,
+                          iVector_03.z._0_1_ = MStack_11.field7_0x1c._3_1_;
+                          iVector_03._0_4_ = MStack_11._21_4_;
+                          iVector_03.z._1_1_ = MStack_11.field8_0x20._0_1_;
+                          MStack_11._29_4_ =
+                               Cube::Cube_GetFaceVerticesWorld
+                                         ((GameObject *)pMVar25,(Cube *)MStack_11._17_4_,FVar44,
+                                          iVector_03,(MethodInfo *)0x0);
+                          this_03 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                                     *)func_?();
+                          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::
+                          Metadata::__Il2CppFullySharedGenericType]::
+                          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                      *)this_03,
+                                     MethodInfo__System__Collections__Generic__List<int>__List__);
+                          pGVar27 = ((IndentArea__Fields *)(MStack_11._25_4_ + 8))->gameObject;
+                          pCVar21 = (Cube *)MStack_11._17_4_;
+                          pVVar23 = (Vector3__Array *)
+                                    CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
+                          fVar24 = (float)MStack_11._9_4_;
+                          if (pGVar27 != (GameObject *)0x0) {
+                            this_04 = (MeshFilter *)
+                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                      GameObject_GetComponent_1
+                                                (pGVar27,
+                                                 UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshFilter>__
+                                                );
+                            pCVar21 = (Cube *)MStack_11._17_4_;
+                            pVVar23 = (Vector3__Array *)
+                                      CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_)
+                            ;
+                            fVar24 = (float)MStack_11._9_4_;
+                            if (this_04 != (MeshFilter *)0x0) {
+                              MStack_11._21_4_ =
+                                   UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                                   MeshFilter_get_mesh(this_04,(MethodInfo *)0x0);
+                              pCVar21 = (Cube *)MStack_11._17_4_;
+                              pVVar23 = (Vector3__Array *)
+                                        CONCAT22(MStack_11._7_2_,
+                                                 MStack_11.virtualMethodPointer._1_2_);
+                              fVar24 = (float)MStack_11._9_4_;
+                              if ((Vector3__Array *)MStack_11._21_4_ != (Vector3__Array *)0x0) {
+                                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_Clear
+                                          ((Mesh *)MStack_11._21_4_,(MethodInfo *)0x0);
+                                pMVar40 = 
+                                MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                                pVVar66 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                pCVar21 = (Cube *)MStack_11._17_4_;
+                                pVVar23 = (Vector3__Array *)
+                                          CONCAT22(MStack_11._7_2_,
+                                                   MStack_11.virtualMethodPointer._1_2_);
+                                fVar24 = (float)MStack_11._9_4_;
+                                if (this_03 !=
+                                    (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                                     *)0x0) {
+                                  piVar87 = &(this_03->fields)._version;
+                                  *piVar87 = *piVar87 + 1;
+                                  pMVar88 = (this_03->fields)._items;
+                                  uVar89 = (this_03->fields)._size;
+                                  pVVar23 = pVVar66;
+                                  if (pMVar88 !=
+                                      (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
+                                      0x0) {
+                                    if (uVar89 < pMVar88->max_length) {
+                                      (this_03->fields)._size = uVar89 + 1;
+                                      if (pMVar88->max_length <= uVar89) goto code_?;
+                                      (&pMVar88->vector[0].index)[uVar89] = 0;
+                                    }
+                                    else {
+                                      mscorlib.dll::System::Collections::Generic::List`1[System::
+                                      Int32]::List_1_System_Int32__AddWithResize
+                                                ((List_1_System_Int32_ *)this_03,0,
+                                                 pMVar40->klass->rgctx_data[0xe].method);
+                                    }
+                                    pMVar40 = 
+                                    MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                                    pVVar66 = (Vector3__Array *)
+                                              CONCAT22(MStack_11._7_2_,
+                                                       MStack_11.virtualMethodPointer._1_2_);
+                                    piVar87 = &(this_03->fields)._version;
+                                    *piVar87 = *piVar87 + 1;
+                                    pMVar88 = (this_03->fields)._items;
+                                    uVar89 = (this_03->fields)._size;
+                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                    pVVar23 = pVVar66;
+                                    fVar24 = (float)MStack_11._9_4_;
+                                    if (pMVar88 !=
+                                        (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
+                                        0x0) {
+                                      if (uVar89 < pMVar88->max_length) {
+                                        (this_03->fields)._size = uVar89 + 1;
+                                        if (pMVar88->max_length <= uVar89) goto code_?;
+                                        (&pMVar88->vector[0].index)[uVar89] = 3;
+                                      }
+                                      else {
+                                        mscorlib.dll::System::Collections::Generic::List`1[System::
+                                        Int32]::List_1_System_Int32__AddWithResize
+                                                  ((List_1_System_Int32_ *)this_03,3,
+                                                   pMVar40->klass->rgctx_data[0xe].method);
+                                      }
+                                      pMVar40 = 
+                                      MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                                      pVVar66 = (Vector3__Array *)
+                                                CONCAT22(MStack_11._7_2_,
+                                                         MStack_11.virtualMethodPointer._1_2_);
+                                      piVar87 = &(this_03->fields)._version;
+                                      *piVar87 = *piVar87 + 1;
+                                      pMVar88 = (this_03->fields)._items;
+                                      uVar89 = (this_03->fields)._size;
+                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                      pVVar23 = pVVar66;
+                                      fVar24 = (float)MStack_11._9_4_;
+                                      if (pMVar88 !=
+                                          (MultiColumnCollectionHeader_ViewState_ColumnState__Array
+                                           *)0x0) {
+                                        if (uVar89 < pMVar88->max_length) {
+                                          (this_03->fields)._size = uVar89 + 1;
+                                          if (pMVar88->max_length <= uVar89) goto code_?;
+                                          (&pMVar88->vector[0].index)[uVar89] = 2;
+                                        }
+                                        else {
+                                          mscorlib.dll::System::Collections::Generic::List`1[System
+                                          ::Int32]::List_1_System_Int32__AddWithResize
+                                                    ((List_1_System_Int32_ *)this_03,2,
+                                                     pMVar40->klass->rgctx_data[0xe].method);
+                                        }
+                                        pMVar40 = 
+                                        MethodInfo__System__Collections__Generic__List<int>__Add_int_
+                                        ;
+                                        pVVar66 = (Vector3__Array *)
+                                                  CONCAT22(MStack_11._7_2_,
+                                                           MStack_11.virtualMethodPointer._1_2_);
+                                        piVar87 = &(this_03->fields)._version;
+                                        *piVar87 = *piVar87 + 1;
+                                        pMVar88 = (this_03->fields)._items;
+                                        uVar89 = (this_03->fields)._size;
+                                        pCVar21 = (Cube *)MStack_11._17_4_;
+                                        pVVar23 = pVVar66;
+                                        fVar24 = (float)MStack_11._9_4_;
+                                        if (pMVar88 !=
+                                            (MultiColumnCollectionHeader_ViewState_ColumnState__Array
+                                             *)0x0) {
+                                          if (uVar89 < pMVar88->max_length) {
+                                            (this_03->fields)._size = uVar89 + 1;
+                                            if (pMVar88->max_length <= uVar89)
+                                            goto code_?;
+                                            (&pMVar88->vector[0].index)[uVar89] = 2;
+                                          }
+                                          else {
+                                            mscorlib.dll::System::Collections::Generic::
+                                            List`1[System::Int32]::
+                                            List_1_System_Int32__AddWithResize
+                                                      ((List_1_System_Int32_ *)this_03,2,
+                                                       pMVar40->klass->rgctx_data[0xe].method);
+                                          }
+                                          pMVar40 = 
+                                          MethodInfo__System__Collections__Generic__List<int>__Add_int_
+                                          ;
+                                          pVVar66 = (Vector3__Array *)
+                                                    CONCAT22(MStack_11._7_2_,
+                                                             MStack_11.virtualMethodPointer._1_2_);
+                                          piVar87 = &(this_03->fields)._version;
+                                          *piVar87 = *piVar87 + 1;
+                                          pMVar88 = (this_03->fields)._items;
+                                          uVar89 = (this_03->fields)._size;
+                                          pCVar21 = (Cube *)MStack_11._17_4_;
+                                          pVVar23 = pVVar66;
+                                          fVar24 = (float)MStack_11._9_4_;
+                                          if (pMVar88 !=
+                                              (MultiColumnCollectionHeader_ViewState_ColumnState__Array
+                                               *)0x0) {
+                                            if (uVar89 < pMVar88->max_length) {
+                                              (this_03->fields)._size = uVar89 + 1;
+                                              if (pMVar88->max_length <= uVar89)
+                                              goto code_?;
+                                              (&pMVar88->vector[0].index)[uVar89] = 1;
+                                            }
+                                            else {
+                                              mscorlib.dll::System::Collections::Generic::
+                                              List`1[System::Int32]::
+                                              List_1_System_Int32__AddWithResize
+                                                        ((List_1_System_Int32_ *)this_03,1,
+                                                         pMVar40->klass->rgctx_data[0xe].method);
+                                            }
+                                            pMVar40 = 
+                                            MethodInfo__System__Collections__Generic__List<int>__Add_int_
+                                            ;
+                                            pVVar66 = (Vector3__Array *)
+                                                      CONCAT22(MStack_11._7_2_,
+                                                               MStack_11.virtualMethodPointer._1_2_)
+                                            ;
+                                            piVar87 = &(this_03->fields)._version;
+                                            *piVar87 = *piVar87 + 1;
+                                            pMVar88 = (this_03->fields)._items;
+                                            uVar89 = (this_03->fields)._size;
+                                            pCVar21 = (Cube *)MStack_11._17_4_;
+                                            pVVar23 = pVVar66;
+                                            fVar24 = (float)MStack_11._9_4_;
+                                            if (pMVar88 !=
+                                                (MultiColumnCollectionHeader_ViewState_ColumnState__Array
+                                                 *)0x0) {
+                                              if (uVar89 < pMVar88->max_length) {
+                                                (this_03->fields)._size = uVar89 + 1;
+                                                if (pMVar88->max_length <= uVar89)
+                                                goto code_?;
+                                                (&pMVar88->vector[0].index)[uVar89] = 0;
+                                              }
+                                              else {
+                                                mscorlib.dll::System::Collections::Generic::
+                                                List`1[System::Int32]::
+                                                List_1_System_Int32__AddWithResize
+                                                          ((List_1_System_Int32_ *)this_03,0,
+                                                           pMVar40->klass->rgctx_data[0xe].method);
+                                              }
+                                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                              Mesh_set_vertices((Mesh *)MStack_11._21_4_,
+                                                                (Vector3__Array *)MStack_11._29_4_,
+                                                                (MethodInfo *)0x0);
+                                              value_02 = IndentArea::IndentArea_SetUVs
+                                                                   ((IndentArea *)MStack_11._25_4_,
+                                                                    (MethodInfo *)0x0);
+                                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                              Mesh_set_uv((Mesh *)MStack_11._21_4_,value_02,
+                                                          (MethodInfo *)0x0);
+                                              pMVar88 = mscorlib.dll::System::Collections::Generic::
+                                                        List`1[UnityEngine::UIElements::Internal::
+                                                                                                                
+                                                  MultiColumnCollectionHeader+ViewState+ColumnState]
+                                                  ::
+                                                  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                                                            (this_03,
                                                   MethodInfo__System__Collections__Generic__List<int>__ToArray__
                                                   );
-                                    this = (EditCubes *)pMStack_51;
-                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::
-                                    Mesh_set_triangles((Mesh *)pMStack_51,(Int32__Array *)pUVar102,
-                                                       (MethodInfo *)0x0);
-                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::
-                                    Mesh_RecalculateNormals((Mesh *)this,(MethodInfo *)0x0);
-                                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::
-                                    Mesh_RecalculateBounds((Mesh *)this,(MethodInfo *)0x0);
-                                    pVVar24 = pVStack_25;
-                                    pVVar27 = (Vector3__Array *)
-                                              CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                    fVar29 = uStack_30;
-                                    if (pVStack_25 != (Vector3__Array *)0x0) {
-                                      pVVar75 = (Vector3__Array *)
-                                                CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                                      if (pVStack_25->max_length < 3) goto code_?;
-                                      uVar103 = pVStack_25->vector[0].x;
-                                      uVar104 = pVStack_25->vector[0].y;
-                                      uVar105 = pVStack_25->vector[2].x;
-                                      uVar106 = pVStack_25->vector[2].y;
-                                      uStack_30 = pVStack_25->vector[2].z;
-                                      uStack_28._0_2_ = (short)uVar106;
-                                      uStack_28._2_2_ = (undefined2)((uint)uVar106 >> 0x10);
-                                      fStack_39 = (float)uVar105;
-                                      pVVar75 = (Vector3__Array *)uVar106;
-                                      if (pVStack_25->max_length == 0) goto code_?;
-                                      uVar107 = pVStack_25->vector[0].x;
-                                      uVar108 = pVStack_25->vector[0].y;
-                                      pMStack_51 = (MVCubeModelBase *)
-                                                   ((float)uVar107 +
-                                                   ((float)uVar105 - (float)uVar103) * _UNK_?);
-                                      uStack_56 = (
-                                                  List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_
-                                                  *)((float)uVar108 +
-                                                    ((float)uVar106 - (float)uVar104) * _UNK_?)
-                                      ;
-                                      pVVar27 = (Vector3__Array *)uVar106;
-                                      fVar29 = uStack_30;
-                                      if (*(GameObject **)(uStack_34->vector + 4) !=
-                                          (GameObject *)0x0) {
-                                        pVStack_25 = (Vector3__Array *)
-                                                     UnityEngine.CoreModule.dll::UnityEngine::
-                                                     GameObject::GameObject_get_transform
-                                                               (*(GameObject **)
-                                                                 (uStack_34->vector + 4),
-                                                                (MethodInfo *)0x0);
-                                        if (cRam_? == '\0') {
-                                          func_?();
-                                          cRam_? = '\x01';
-                                        }
-                                        pVVar90 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                        uVar109 = (pVVar90->oneVector).x;
-                                        uVar110 = (pVVar90->oneVector).y;
-                                        fVar29 = *(float *)(uStack_34->vector + 8);
-                                        fStack_39 = (float)uVar109 * fVar29;
-                                        pVVar27 = (Vector3__Array *)((float)uVar110 * fVar29);
-                                        uStack_28._2_2_ = (undefined2)((uint)pVVar27 >> 0x10);
-                                        fVar29 = (pVVar90->oneVector).z * fVar29;
-                                        uStack_30._2_2_ = (undefined2)((uint)fVar29 >> 0x10);
-                                        pVVar24 = pVStack_25;
-                                        if (pVStack_25 != (Vector3__Array *)0x0) {
-                                          value.y._0_1_ = (char)pVVar27;
-                                          value.x = fStack_39;
-                                          value.y._1_1_ = (char)((uint)pVVar27 >> 8);
-                                          value.y._2_2_ = uStack_28._2_2_;
-                                          value.z._0_1_ = SUB41(fVar29,0);
-                                          value.z._1_1_ = (char)((uint)fVar29 >> 8);
-                                          value.z._2_2_ = uStack_30._2_2_;
-                                          uStack_28 = pVVar27;
-                                          uStack_30 = fVar29;
-                                          UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                          Transform_set_localScale
-                                                    ((Transform *)pVStack_25,value,(MethodInfo *)0x0
-                                                    );
-                                          pVVar24 = pVStack_25;
-                                          pVVar27 = uStack_28;
-                                          fVar29 = uStack_30;
-                                          if (*(GameObject **)(uStack_34->vector + 4) !=
-                                              (GameObject *)0x0) {
-                                            pVStack_25 = (Vector3__Array *)
-                                                         UnityEngine.CoreModule.dll::UnityEngine::
-                                                         GameObject::GameObject_get_transform
-                                                                   (*(GameObject **)
-                                                                     (uStack_34->vector + 4),
-                                                                    (MethodInfo *)0x0);
-                                            pVVar81 = UnityEngine.CoreModule.dll::UnityEngine::Mesh
-                                                      ::Mesh_get_vertices((Mesh *)this,
-                                                                          (MethodInfo *)0x0);
-                                            pVVar24 = pVStack_25;
-                                            pVVar27 = uStack_28;
-                                            fVar29 = uStack_30;
-                                            if (pVVar81 != (Vector3__Array *)0x0) {
-                                              pVVar75 = uStack_28;
-                                              if (pVVar81->max_length == 0) goto code_?;
-                                              if (pVStack_25 != (Vector3__Array *)0x0) {
-                                                pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                          Transform::Transform_TransformPoint
-                                                                    ((Vector3 *)&stack0xffffff48,
-                                                                     (Transform *)pVStack_25,
-                                                                     pVVar81->vector[0],
-                                                                     (MethodInfo *)0x0);
-                                                uVar111 = pVVar36->x;
-                                                uVar112 = pVVar36->y;
-                                                uStack_30 = pVVar36->z;
-                                                uStack_28._0_2_ = (short)uVar112;
-                                                uStack_28._2_2_ = (undefined2)((uint)uVar112 >> 0x10)
+                                              uVar59 = MStack_11._21_4_;
+                                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                              Mesh_set_triangles((Mesh *)MStack_11._21_4_,
+                                                                 (Int32__Array *)pMVar88,
+                                                                 (MethodInfo *)0x0);
+                                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                              Mesh_RecalculateNormals
+                                                        ((Mesh *)uVar59,(MethodInfo *)0x0);
+                                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                              Mesh_RecalculateBounds
+                                                        ((Mesh *)uVar59,(MethodInfo *)0x0);
+                                              pCVar21 = (Cube *)MStack_11._17_4_;
+                                              pVVar23 = (Vector3__Array *)
+                                                        CONCAT22(MStack_11._7_2_,
+                                                                 MStack_11.virtualMethodPointer.
+                                                                 _1_2_);
+                                              fVar24 = (float)MStack_11._9_4_;
+                                              if ((Vector3__Array *)MStack_11._29_4_ !=
+                                                  (Vector3__Array *)0x0) {
+                                                pVVar66 = (Vector3__Array *)
+                                                          CONCAT22(MStack_11._7_2_,
+                                                                   MStack_11.virtualMethodPointer.
+                                                                   _1_2_);
+                                                if (*(il2cpp_array_size_t *)(MStack_11._29_4_ + 0xc)
+                                                    < 3) goto code_?;
+                                                uVar90 = ((Vector3 *)(MStack_11._29_4_ + 0x10))->y;
+                                                uVar91 = ((Vector3 *)(MStack_11._29_4_ + 0x10))[2].x;
+                                                uVar92 = ((Vector3 *)(MStack_11._29_4_ + 0x10))[2].y
                                                 ;
-                                                fStack_39 = (float)uVar111;
-                                                pVVar24 = pVStack_25;
-                                                pVVar27 = (Vector3__Array *)uVar112;
-                                                fVar29 = uStack_30;
-                                                if (*(GameObject **)(uStack_34->vector + 4) !=
-                                                    (GameObject *)0x0) {
-                                                  pVStack_25 = (Vector3__Array *)
-                                                               UnityEngine.CoreModule.dll::
-                                                               UnityEngine::GameObject::
-                                                               GameObject_get_transform
-                                                                         (*(GameObject **)
-                                                                           (uStack_34->vector + 4),
-                                                                          (MethodInfo *)0x0);
-                                                  pVVar81 = UnityEngine.CoreModule.dll::UnityEngine
-                                                            ::Mesh::Mesh_get_vertices
-                                                                      ((Mesh *)this,
-                                                                       (MethodInfo *)0x0);
-                                                  pVVar75 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  pVVar24 = pVStack_25;
-                                                  pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  fVar29 = uStack_30;
-                                                  if (pVVar81 != (Vector3__Array *)0x0) {
-                                                    if (pVVar81->max_length < 3)
+                                                MStack_11._9_4_ =
+                                                     ((Vector3 *)(MStack_11._29_4_ + 0x10))[2].z;
+                                                MStack_11.virtualMethodPointer._1_2_ = (short)uVar92
+                                                ;
+                                                MStack_11._7_2_ = SUB42((uint)uVar92 >> 0x10,0);
+                                                MStack_11._1_4_ = uVar91;
+                                                pVVar66 = (Vector3__Array *)uVar92;
+                                                if (*(il2cpp_array_size_t *)(MStack_11._29_4_ + 0xc)
+                                                    == 0) goto code_?;
+                                                uVar93 = ((Vector3 *)(MStack_11._29_4_ + 0x10))->y;
+                                                MStack_11._21_4_ =
+                                                     (float)uVar93 +
+                                                     ((float)uVar92 - (float)uVar90) * _UNK_?
+                                                ;
+                                                pGVar27 = ((IndentArea__Fields *)
+                                                          (MStack_11._25_4_ + 8))->gameObject;
+                                                pVVar23 = (Vector3__Array *)uVar92;
+                                                fVar24 = (float)MStack_11._9_4_;
+                                                if (pGVar27 != (GameObject *)0x0) {
+                                                  MStack_11._17_4_ =
+                                                       UnityEngine.CoreModule.dll::UnityEngine::
+                                                       GameObject::GameObject_get_transform
+                                                                 (pGVar27,(MethodInfo *)0x0);
+                                                  if (cRam_? == '\0') {
+                                                    func_?();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  pVVar76 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar94 = (pVVar76->oneVector).x;
+                                                  uVar95 = (pVVar76->oneVector).y;
+                                                  fVar24 = ((IndentArea__Fields *)
+                                                           (MStack_11._25_4_ + 8))->size;
+                                                  MStack_11._1_4_ = (float)uVar94 * fVar24;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            ((float)uVar95 * fVar24);
+                                                  MStack_11.virtualMethodPointer._1_2_ =
+                                                       (short)pVVar23;
+                                                  MStack_11._7_2_ = SUB42((uint)pVVar23 >> 0x10,0);
+                                                  fVar24 = (pVVar76->oneVector).z * fVar24;
+                                                  MStack_11._11_2_ = SUB42((uint)fVar24 >> 0x10,0);
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  if ((Cube *)MStack_11._17_4_ != (Cube *)0x0) {
+                                                    value_00.y._0_2_ =
+                                                         MStack_11.virtualMethodPointer._1_2_;
+                                                    value_00.x = (float)MStack_11._1_4_;
+                                                    value_00.y._2_2_ = MStack_11._7_2_;
+                                                    value_00.z._0_1_ = SUB41(fVar24,0);
+                                                    value_00.z._1_1_ = (char)((uint)fVar24 >> 8);
+                                                    value_00.z._2_2_ = MStack_11._11_2_;
+                                                    MStack_11._5_4_ = pVVar23;
+                                                    MStack_11._9_4_ = fVar24;
+                                                    UnityEngine.CoreModule.dll::UnityEngine::
+                                                    Transform::Transform_set_localScale
+                                                              ((Transform *)MStack_11._17_4_,
+                                                               value_00,(MethodInfo *)0x0);
+                                                    pGVar27 = ((IndentArea__Fields *)
+                                                              (MStack_11._25_4_ + 8))->gameObject;
+                                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                                    pVVar23 = (Vector3__Array *)MStack_11._5_4_;
+                                                    fVar24 = (float)MStack_11._9_4_;
+                                                    if (pGVar27 != (GameObject *)0x0) {
+                                                      MStack_11._17_4_ =
+                                                           UnityEngine.CoreModule.dll::UnityEngine::
+                                                           GameObject::GameObject_get_transform
+                                                                     (pGVar27,(MethodInfo *)0x0);
+                                                      pVVar65 = UnityEngine.CoreModule.dll::
+                                                                UnityEngine::Mesh::Mesh_get_vertices
+                                                                          ((Mesh *)uVar59,
+                                                                           (MethodInfo *)0x0);
+                                                      pCVar21 = (Cube *)MStack_11._17_4_;
+                                                      pVVar23 = (Vector3__Array *)MStack_11._5_4_;
+                                                      fVar24 = (float)MStack_11._9_4_;
+                                                      if (pVVar65 != (Vector3__Array *)0x0) {
+                                                        pVVar66 = (Vector3__Array *)MStack_11._5_4_;
+                                                        if (pVVar65->max_length == 0)
+                                                        goto code_?;
+                                                        if ((Cube *)MStack_11._17_4_ != (Cube *)0x0)
+                                                        {
+                                                          pVVar30 = UnityEngine.CoreModule.dll::
+                                                                    UnityEngine::Transform::
+                                                                    Transform_TransformPoint
+                                                                              ((Vector3 *)
+                                                                               &stack0xffffff48,
+                                                                               (Transform *)
+                                                                               MStack_11._17_4_,
+                                                                               pVVar65->vector[0],
+                                                                               (MethodInfo *)0x0);
+                                                          uVar96 = pVVar30->x;
+                                                          uVar97 = pVVar30->y;
+                                                          MStack_11._9_4_ = pVVar30->z;
+                                                          MStack_11.virtualMethodPointer._1_2_ =
+                                                               (short)uVar97;
+                                                          MStack_11._7_2_ =
+                                                               SUB42((uint)uVar97 >> 0x10,0);
+                                                          pGVar27 = ((IndentArea__Fields *)
+                                                                    (MStack_11._25_4_ + 8))->
+                                                                    gameObject;
+                                                          MStack_11._1_4_ = uVar96;
+                                                          pCVar21 = (Cube *)MStack_11._17_4_;
+                                                          pVVar23 = (Vector3__Array *)uVar97;
+                                                          fVar24 = (float)MStack_11._9_4_;
+                                                          if (pGVar27 != (GameObject *)0x0) {
+                                                            MStack_11._17_4_ =
+                                                                 UnityEngine.CoreModule.dll::
+                                                                 UnityEngine::GameObject::
+                                                                 GameObject_get_transform
+                                                                           (pGVar27,(MethodInfo *)
+                                                                                    0x0);
+                                                            pVVar65 = UnityEngine.CoreModule.dll::
+                                                                      UnityEngine::Mesh::
+                                                                      Mesh_get_vertices((Mesh *)
+                                                  uVar59,(MethodInfo *)0x0);
+                                                  pVVar66 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  fVar24 = (float)MStack_11._9_4_;
+                                                  if (pVVar65 != (Vector3__Array *)0x0) {
+                                                    if (pVVar65->max_length < 3)
                                                     goto code_?;
-                                                    pVVar27 = pVVar75;
-                                                    if (pVStack_25 != (Vector3__Array *)0x0) {
-                                                      position.z._2_2_ =
-                                                           (short)((uint)pVVar81->vector[2].z >>
-                                                                  0x10);
-                                                      position._0_10_ =
-                                                           *(unkbyte10 *)(pVVar81->vector + 2);
-                                                      pVVar36 = UnityEngine.CoreModule.dll::
+                                                    pVVar23 = pVVar66;
+                                                    if ((Cube *)MStack_11._17_4_ != (Cube *)0x0) {
+                                                      pMVar20 = (ModelCursor3D *)
+                                                                pVVar65->vector[2].z;
+                                                      pVVar30 = (Vector3 *)&stack0xffffff48;
+                                                      pVVar98 = UnityEngine.CoreModule.dll::
                                                                 UnityEngine::Transform::
                                                                 Transform_TransformPoint
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffff48,
-                                                                           (Transform *)pVStack_25,
-                                                                           position,(MethodInfo *)
-                                                                                    0x0);
-                                                      pVVar27 = (Vector3__Array *)
-                                                                CONCAT22(uStack_28._2_2_,
-                                                                         (short)uStack_28);
-                                                      uVar113 = pVVar36->x;
-                                                      uVar114 = pVVar36->y;
-                                                      pVVar24 = (Vector3__Array *)
-                                                                (fStack_39 +
-                                                                ((float)uVar113 - fStack_39) *
-                                                                _UNK_?);
-                                                      fVar49 = (float)pVVar27 +
-                                                               ((float)uVar114 - (float)pVVar27) *
-                                                               _UNK_?;
-                                                      uStack_30 = uStack_30 +
-                                                                  (pVVar36->z - uStack_30) *
-                                                                  _UNK_?;
-                                                      pGVar70 = *(GameObject **)
-                                                                 (uStack_34->vector + 4);
-                                                      fVar29 = uStack_30;
-                                                      if (pGVar70 != (GameObject *)0x0) {
-                                                        stack0xffffff5c = (MonitorData *)pGVar70;
-                                                        pCStack_59 = (
+                                                                          (pVVar30,(Transform *)
+                                                                                   MStack_11._17_4_,
+                                                                           pVVar65->vector[2],
+                                                                           (MethodInfo *)0x0);
+                                                      pVVar23 = (Vector3__Array *)
+                                                                CONCAT22(MStack_11._7_2_,
+                                                                         MStack_11.
+                                                                         virtualMethodPointer._1_2_)
+                                                      ;
+                                                      uVar99 = pVVar98->x;
+                                                      uVar100 = pVVar98->y;
+                                                      pCVar21 = (Cube *)((float)MStack_11._1_4_ +
+                                                                        ((float)uVar99 -
+                                                                        (float)MStack_11._1_4_) *
+                                                                        _UNK_?);
+                                                      MStack_11._29_4_ =
+                                                           (float)pVVar23 +
+                                                           ((float)uVar100 - (float)pVVar23) *
+                                                           _UNK_?;
+                                                      MStack_11._9_4_ =
+                                                           (float)MStack_11._9_4_ +
+                                                           (pVVar98->z - (float)MStack_11._9_4_) *
+                                                           _UNK_?;
+                                                      pGVar27 = ((IndentArea__Fields *)
+                                                                (MStack_11._25_4_ + 8))->gameObject;
+                                                      fVar24 = (float)MStack_11._9_4_;
+                                                      if (pGVar27 != (GameObject *)0x0) {
+                                                        stack0xffffff5c = (MonitorData *)pGVar27;
+                                                        pCStack_49 = (
                                                   CanPerformCubeActionResult__Enum__Class *)
                                                   &UNK_?;
-                                                  pVVar75 = pVStack_25;
-                                                  pVStack_25 = pVVar24;
-                                                  pTVar40 = UnityEngine.CoreModule.dll::UnityEngine
+                                                  pCVar48 = (Cube *)MStack_11._17_4_;
+                                                  MStack_11._17_4_ = pCVar21;
+                                                  pTVar33 = UnityEngine.CoreModule.dll::UnityEngine
                                                             ::GameObject::GameObject_get_transform
-                                                                      (pGVar70,(MethodInfo *)0x0);
-                                                  this = (EditCubes *)0x0;
-                                                  pVVar24 = pVStack_25;
-                                                  pVVar27 = (Vector3__Array *)
-                                                            CONCAT22(uStack_28._2_2_,
-                                                                     (short)uStack_28);
-                                                  fVar29 = uStack_30;
-                                                  if (pTVar40 != (Transform *)0x0) {
+                                                                      (pGVar27,(MethodInfo *)0x0);
+                                                  pCVar21 = (Cube *)MStack_11._17_4_;
+                                                  pVVar23 = (Vector3__Array *)
+                                                            CONCAT22(MStack_11._7_2_,
+                                                                     MStack_11.virtualMethodPointer.
+                                                                     _1_2_);
+                                                  fVar24 = (float)MStack_11._9_4_;
+                                                  if (pTVar33 != (Transform *)0x0) {
                                                     stack0xffffff5c = (MonitorData *)&UNK_?;
-                                                    pVVar36 = UnityEngine.CoreModule.dll::
+                                                    pVVar98 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
                                                               Transform_get_position
                                                                         ((Vector3 *)&stack0xffffff48
-                                                                         ,pTVar40,(MethodInfo *)0x0)
+                                                                         ,pTVar33,(MethodInfo *)0x0)
                                                     ;
-                                                    uVar115 = pVVar36->x;
-                                                    uVar116 = pVVar36->y;
-                                                    uVar117 = pVVar66->vector[0].z;
-                                                    uVar118 = pVVar66->vector[1].x;
-                                                    value_00.y = (float)uVar116 +
-                                                                 (float)uVar118 * _UNK_? +
-                                                                 ((float)uStack_56 - fVar49);
-                                                    value_00.x = (float)uVar115 +
-                                                                 (float)uVar117 * _UNK_? +
-                                                                 ((float)pMStack_51 -
-                                                                 (float)pVStack_25);
-                                                    value_00.z = pVVar36->z +
-                                                                 pVVar66->vector[1].y *
+                                                    uVar101 = pVVar98->x;
+                                                    uVar102 = pVVar98->y;
+                                                    uVar103 = pVVar12->vector[0].z;
+                                                    uVar104 = pVVar12->vector[1].x;
+                                                    value_01.y = (float)uVar102 +
+                                                                 (float)uVar104 * _UNK_? +
+                                                                 ((float)MStack_11._21_4_ -
+                                                                 (float)MStack_11._29_4_);
+                                                    value_01.x = (float)uVar101 +
+                                                                 (float)uVar103 * _UNK_? +
+                                                                 ((float)pCVar48 -
+                                                                 (float)MStack_11._17_4_);
+                                                    value_01.z = pVVar98->z +
+                                                                 pVVar12->vector[1].y *
                                                                  _UNK_? +
-                                                                 ((float)pVVar75 - uStack_30);
+                                                                 ((float)pVVar30 -
+                                                                 (float)MStack_11._9_4_);
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     Transform::Transform_set_position
-                                                              (pTVar40,value_00,(MethodInfo *)0x0);
-                                                    this = (EditCubes *)pMStack_52;
-                                                    iVar73 = (pMStack_52->fields)._._.id;
-                                                    pVVar24 = pVStack_25;
-                                                    pVVar27 = (Vector3__Array *)
-                                                              CONCAT22(uStack_28._2_2_,
-                                                                       (short)uStack_28);
-                                                    fVar29 = uStack_30;
-                                                    if ((iVar73 != 0) &&
-                                                       (pGVar70 = *(GameObject **)(iVar73 + 0x14),
-                                                       pVVar27 = (Vector3__Array *)
-                                                                 CONCAT22(uStack_28._2_2_,
-                                                                          (short)uStack_28),
-                                                       pGVar70 != (GameObject *)0x0)) {
-                                                      sStack_42 = -0x2af;
-                                                      uStack_43 = 0x103d;
+                                                              (pTVar33,value_01,(MethodInfo *)0x0);
+                                                    pFVar58 = (pMVar20->fields)._.faceCursor;
+                                                    pCVar21 = (Cube *)MStack_11._17_4_;
+                                                    pVVar23 = (Vector3__Array *)
+                                                              CONCAT22(MStack_11._7_2_,
+                                                                       MStack_11.
+                                                                       virtualMethodPointer._1_2_);
+                                                    fVar24 = (float)MStack_11._9_4_;
+                                                    if ((pFVar58 != (FaceCursor *)0x0) &&
+                                                       (pGVar27 = (pFVar58->fields).gameObject,
+                                                       pVVar23 = (Vector3__Array *)
+                                                                 CONCAT22(MStack_11._7_2_,
+                                                                          MStack_11.
+                                                                          virtualMethodPointer._1_2_
+                                                                         ),
+                                                       pGVar27 != (GameObject *)0x0)) {
+                                                      IStack_22.z = 0x390;
+                                                      uStack_35 = 0x1045;
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_SetActive
-                                                                (pGVar70,1,(MethodInfo *)0x0);
-                                                      pVVar27 = (Vector3__Array *)
-                                                                CONCAT22(uStack_28._2_2_,
-                                                                         (short)uStack_28);
-                                                      this_01 = (FaceCursor *)
-                                                                (((MVCubeModelBase *)this)->fields).
-                                                                _._.id;
-                                                      pVVar75 = pVVar66;
+                                                                (pGVar27,1,(MethodInfo *)0x0);
+                                                      pVVar23 = (Vector3__Array *)
+                                                                CONCAT22(MStack_11._7_2_,
+                                                                         MStack_11.
+                                                                         virtualMethodPointer._1_2_)
+                                                      ;
+                                                      pFVar58 = (pMVar20->fields)._.faceCursor;
+                                                      pVVar66 = pVVar12;
                                                       goto joined_?;
                                                     }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
                                                   }
                                                   }
                                                   }
@@ -2988,111 +3322,23 @@ joined_?:
         }
       }
     }
-    else {
-      uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-      pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-      fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-      if (e != (CubeModelingStateMachine *)0x0) {
-        if ((e->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0)
-        goto code_?;
-        pMVar32 = (e->fields)._TargetCubeModel_k__BackingField;
-        pIVar47 = (((this->fields).modelCursor)->fields).indentArea;
-        uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-        pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-        fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-        if ((pMVar32 != (MVCubeModelBase *)0x0) &&
-           (uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-           pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-           fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-           pIVar47 != (IndentArea *)0x0)) {
-          pGVar70 = (pMVar32->fields)._.gameObject;
-          in_stack_8 = (undefined2)((uint)pGVar70 >> 0x10);
-          IndentArea::IndentArea_UpdateIndentArea
-                    (pIVar47,(e->fields)._SelectedCube_k__BackingField,pGVar70,(MethodInfo *)0x0);
-          pMVar23 = (this->fields).modelCursor;
-          pVVar24 = pVStack_25;
-          uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-          pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-          fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-          if ((pMVar23 != (ModelCursor3D *)0x0) &&
-             (pIVar47 = (pMVar23->fields).indentArea,
-             uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-             pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-             fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-             pIVar47 != (IndentArea *)0x0)) {
-            bVar22 = IndentArea::IndentArea_IsColliding(pIVar47,(MethodInfo *)0x0);
-            pVVar24 = pVStack_25;
-            if (bVar22 == 0) {
-              pMVar23 = (this->fields).modelCursor;
-              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-              if (((pMVar23 != (ModelCursor3D *)0x0) &&
-                  (pIVar47 = (pMVar23->fields).indentArea,
-                  uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                  pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                  fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                  pIVar47 != (IndentArea *)0x0)) &&
-                 (pGVar70 = (pIVar47->fields).gameObject,
-                 uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                 pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                 fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                 pGVar70 != (GameObject *)0x0)) {
-                bVar22 = 0;
-code_?:
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar70,bVar22,(MethodInfo *)0x0);
-                goto code_?;
-              }
-            }
-            else {
-              pCVar33 = (e->fields)._SelectedCube_k__BackingField;
-              uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-              pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-              fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-              if (pCVar33 != (CubePickingInfo *)0x0) {
-                (pCVar33->fields).pickedEdge = 0;
-                pMVar23 = (this->fields).modelCursor;
-                uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26);
-                pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28);
-                fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30);
-                if (((pMVar23 != (ModelCursor3D *)0x0) &&
-                    (pIVar47 = (pMVar23->fields).indentArea,
-                    uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                    pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                    fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                    pIVar47 != (IndentArea *)0x0)) &&
-                   (pGVar70 = (pIVar47->fields).gameObject,
-                   uStack_26 = (float)CONCAT22(uStack_26._2_2_,(short)uStack_26),
-                   pVVar27 = (Vector3__Array *)CONCAT22(uStack_28._2_2_,(short)uStack_28),
-                   fVar29 = (float)CONCAT22(uStack_30._2_2_,(int16_t)uStack_30),
-                   pGVar70 != (GameObject *)0x0)) {
-                  bVar22 = 1;
-                  goto code_?;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 code_?:
-  pVStack_25 = pVVar24;
-  uStack_28 = pVVar27;
-  uStack_30 = fVar29;
+  MStack_11._17_4_ = pCVar21;
+  MStack_11._5_4_ = pVVar23;
+  MStack_11._9_4_ = fVar24;
   func_?();
   func_?();
   func_?();
-  pVVar75 = uStack_28;
+  pVVar66 = (Vector3__Array *)MStack_11._5_4_;
 code_?:
-  uStack_28 = pVVar75;
-  pMVar119 = (MVCubeModelBase__Class *)func_?();
-  *(char *)&((MVCubeModelBase *)this)->monitor =
-       *(char *)&((MVCubeModelBase *)this)->monitor + (char)&stack0xfffffffc +
-       (pMVar119 < ((MVCubeModelBase *)this)->klass);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  MStack_11._5_4_ = pVVar66;
+  uVar89 = func_?();
+  pcVar105 = (char *)(uVar89 & 0xf5931044);
+  *pcVar105 = *pcVar105 + (char)((uint)pcVar105 >> 8) + !CARRY1(extraout_CH,(byte)&stack0xfffffffc);
+  pcVar106 = (code *)swi(3);
+  (*pcVar106)();
+  return;
 }
 
 
@@ -3142,8 +3388,8 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Exit
     func_?(unaff_EBP);
     (this->fields).edgeHasMoved = 0;
   }
-  (*(this->klass->vtable).HideCursor.methodPtr)(this,(this->klass->vtable).HideCursor.method);
-  UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(1,(MethodInfo *)0x0);
+  (*(code *)(this->klass->vtable).HideCursor.method)(this,this->klass[1]._0.image);
+  UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(1,(MethodInfo *)0x0);
   pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
   if (((pGVar2 != (GameEventManager *)0x0) &&
       (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
@@ -3173,10 +3419,14 @@ IntVector Assembly-CSharp.dll::EditCubes::EditCubes_GetCubePosNeighborOppositeFa
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
   *(undefined4 *)localPos._0_4_ = 0;
   *(undefined2 *)(localPos._0_4_ + 4) = 0;
+  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__WorldObject__IntVector);
+  }
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
             ((IntVector *)localPos._0_4_,CONCAT22(in_stack_1,localPos.z),
              CONCAT22((undefined2)face,in_stack_1),face,(MethodInfo *)0x0);
@@ -3231,11 +3481,11 @@ bool Assembly-CSharp.dll::EditCubes::EditCubes_GotoMultiChangeCubes
 void Assembly-CSharp.dll::EditCubes::EditCubes_HideCursor(EditCubes *this,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppImage *)&stack0xfffffffc;
   pMStack_2 = (this->fields).modelCursor;
   if (pMStack_2 != (ModelCursor3D *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).Remove.method;
-    (*(pMStack_2->klass->vtable).Remove.methodPtr)();
+    pIStack_1 = pMStack_2->klass[1]._0.image;
+    (*(code *)(pMStack_2->klass->vtable).Remove.method)();
     return;
   }
   uVar3 = func_?(&puStack_4);
@@ -3291,8 +3541,9 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_SetEditDetail
           pMVar1 = (e->fields)._TargetCubeModel_k__BackingField;
           if (pMVar1 != (MVCubeModelBase *)0x0) {
             puVar10 = (undefined8 *)
-                     (*(pMVar1->klass->vtable).get_Scale.methodPtr)
-                               (&puStack_8,(short)pMVar1,(pMVar1->klass->vtable).get_Scale.method);
+                     (*(code *)(pMVar1->klass->vtable).get_Scale.method)
+                               (&puStack_8,(short)pMVar1,
+                                (pMVar1->klass->vtable).set_Scale.methodPtr);
             pMVar11 = (this->fields).modelCursor;
             if ((float)((ulonglong)*puVar10 >> 0x20) * _UNK_? < (float)fVar9) {
               (this->fields).mouseSensitivity = 0.1325;
@@ -3337,11 +3588,11 @@ void Assembly-CSharp.dll::EditCubes::EditCubes__ctor(EditCubes *this,MethodInfo 
 bool Assembly-CSharp.dll::EditCubes::EditCubes_get_CursorVisible(EditCubes *this,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pMStack_2 = (this->fields).modelCursor;
   if (pMStack_2 != (ModelCursor3D *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).get_CursorVisible.method;
-    bVar3 = (*(pMStack_2->klass->vtable).get_CursorVisible.methodPtr)();
+    pIStack_1 = (pMStack_2->klass->vtable).set_CursorVisible.methodPtr;
+    bVar3 = (*(code *)(pMStack_2->klass->vtable).get_CursorVisible.method)();
     return bVar3;
   }
   uVar4 = func_?(&puStack_5);
@@ -3358,12 +3609,12 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_set_CursorVisible
                (EditCubes *this,bool value,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pMStack_2 = (this->fields).modelCursor;
   if (pMStack_2 != (ModelCursor3D *)0x0) {
-    pMStack_1 = (pMStack_2->klass->vtable).set_CursorVisible.method;
+    pIStack_1 = (pMStack_2->klass->vtable).Remove.methodPtr;
     uStack_3 = _value;
-    (*(pMStack_2->klass->vtable).set_CursorVisible.methodPtr)();
+    (*(code *)(pMStack_2->klass->vtable).set_CursorVisible.method)();
     return;
   }
   uVar4 = func_?(&pMStack_2);

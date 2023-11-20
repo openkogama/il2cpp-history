@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::Sentry::SdkVersion::SdkVersion__ctor(SdkVersion *this,
   (this->fields).version = StringLiteral__0_0_4;
   method_00 = (MethodInfo *)&(this->fields).version;
   func_?(method_00,StringLiteral__0_0_4);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

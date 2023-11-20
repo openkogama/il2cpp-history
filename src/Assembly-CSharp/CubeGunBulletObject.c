@@ -21,47 +21,149 @@ Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_Create
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (((pPVar1 != (PrefabPool *)0x0) &&
-      (this = (pPVar1->fields).enumPoolManager, this != (EnumPoolManager *)0x0)) &&
-     (this_00 = (Component *)
-                EnumPoolManager::EnumPoolManager_Instantiate
-                          (this,PoolEnums__Enum_CubeGunBullet,
-                           CubeGunBulletObject_MethodInfo__EnumPoolManager__Instantiate<CubeGunBulletObject>_PoolEnums_
-                          ), this_00 != (Component *)0x0)) {
-    *(uint8_t *)&this_00[2].klass = materialID;
-    if (this_00[1].klass != (Component__Class *)0x0) {
-      Bullet::Bullet_ResetBullet((Bullet *)this_00[1].klass,(MethodInfo *)0x0);
-      if (this_00[1].klass != (Component__Class *)0x0) {
-        ((this_00[1].klass)->_0).this_arg.data.__klassIndex = 1;
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           (this_00,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar2,origin,(MethodInfo *)0x0);
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             (this_00,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
+  if ((pPVar1 == (PrefabPool *)0x0) ||
+     (this = (pPVar1->fields).enumPoolManager, this == (EnumPoolManager *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
+    pCVar2 = (CubeGunBulletObject *)
+             EnumPoolManager::EnumPoolManager_Instantiate
+                       (this,PoolEnums__Enum_CubeGunBullet,
+                        CubeGunBulletObject_MethodInfo__EnumPoolManager__Instantiate<CubeGunBulletObject>_PoolEnums_
+                       );
+    if (pCVar2 == (CubeGunBulletObject *)0x0) goto code_?;
+    pBVar3 = (pCVar2->fields).bullet;
+    (pCVar2->fields).materialID = materialID;
+    if (pBVar3 == (Bullet *)0x0) goto code_?;
+    Bullet::Bullet_ResetBullet(pBVar3,(MethodInfo *)0x0);
+    pBVar3 = (pCVar2->fields).bullet;
+    if (pBVar3 == (Bullet *)0x0) goto code_?;
+    (pBVar3->fields).initiatedPoolType = 1;
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pCVar2,(MethodInfo *)0x0);
+    if (pTVar4 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+              (pTVar4,origin,(MethodInfo *)0x0);
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pCVar2,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (pTVar4 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+              (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+               (MethodInfo *)0x0);
+    this_00 = (pCVar2->fields).cubeBullet;
+    if (this_00 == (CubeBullet *)0x0) goto code_?;
+    CubeBullet::CubeBullet_SetCubeMaterial(this_00,materialID,(MethodInfo *)0x0);
+    if (owner == (MVPickupOwner *)0x0) goto code_?;
+    if ((owner->fields)._IsLocal_k__BackingField == 0) {
+code_?:
+      pBVar3 = (pCVar2->fields).bullet;
+      if (pBVar3 != (Bullet *)0x0) {
+        pBVar5 = (pBVar3->fields).onHit;
+        pDVar6 = (Delegate *)func_?(TypeInfo__Bullet__OnHitDelegate);
+        pMVar7 = MethodInfo__CubeGunBulletObject__HandleCubeHit_VoxelHit__UnityEngine__Ray_;
+        (pDVar6->fields).method_ptr =
+             MethodInfo__CubeGunBulletObject__HandleCubeHit_VoxelHit__UnityEngine__Ray_->
+             virtualMethodPointer;
+        (pDVar6->fields).method = pMVar7;
+        (pDVar6->fields).m_target = (Object *)pCVar2;
+        func_?(&(pDVar6->fields).m_target,pCVar2);
+        uVar8 = pMVar7->parameters_count;
+        (pDVar6->fields).method_code = pDVar6;
+        cVar9 = func_?(pMVar7);
+        if ((cVar9 == '\0') || (uVar8 != 2)) {
+          (pDVar6->fields).method_code = (pDVar6->fields).m_target;
+          puVar10 = (pDVar6->fields).method_ptr;
+        }
+        else {
+          puVar10 = &UNK_?;
+        }
+        (pDVar6->fields).invoke_impl = puVar10;
+        (pDVar6->fields).extra_arg = &UNK_?;
+        pBVar5 = (Bullet_OnHitDelegate *)
+                 mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pBVar5,pDVar6,(MethodInfo *)0x0);
+        if (pBVar5 == (Bullet_OnHitDelegate *)0x0) {
+          (pBVar3->fields).onHit = (Bullet_OnHitDelegate *)0x0;
+        }
+        else {
+          pBVar11 = (Bullet_OnHitDelegate *)0x0;
+          if (pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
+            pBVar11 = pBVar5;
           }
-          if (pTVar2 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                       (MethodInfo *)0x0);
-            if ((CubeBullet *)this_00[1].monitor != (CubeBullet *)0x0) {
-              CubeBullet::CubeBullet_SetCubeMaterial
-                        ((CubeBullet *)this_00[1].monitor,materialID,(MethodInfo *)0x0);
-            }
+          if (pBVar11 == (Bullet_OnHitDelegate *)0x0) goto code_?;
+          (pBVar3->fields).onHit = pBVar11;
+          pBVar11 = (Bullet_OnHitDelegate *)0x0;
+          if (pBVar5->klass == TypeInfo__Bullet__OnHitDelegate) {
+            pBVar11 = pBVar5;
           }
+          if (pBVar11 == (Bullet_OnHitDelegate *)0x0) goto code_?;
+        }
+        func_?();
+        pBVar3 = (pCVar2->fields).bullet;
+        if (pBVar3 != (Bullet *)0x0) {
+          (pBVar3->fields).pooledObjectReference = (MonoBehaviour *)pCVar2;
+          func_?(&(pBVar3->fields).pooledObjectReference,pCVar2);
+          return pCVar2;
         }
       }
+      goto code_?;
     }
+    pBVar3 = (pCVar2->fields).bullet;
+    if (pBVar3 == (Bullet *)0x0) goto code_?;
+    pBVar5 = (pBVar3->fields).onHitLocal;
+    pDVar6 = (Delegate *)func_?();
+    pMVar7 = MethodInfo__CubeGunBulletObject__HandleCubeHitLocal_VoxelHit__UnityEngine__Ray_;
+    (pDVar6->fields).method_ptr =
+         MethodInfo__CubeGunBulletObject__HandleCubeHitLocal_VoxelHit__UnityEngine__Ray_->
+         virtualMethodPointer;
+    (pDVar6->fields).method = pMVar7;
+    (pDVar6->fields).m_target = (Object *)pCVar2;
+    func_?(&(pDVar6->fields).m_target);
+    uVar8 = pMVar7->parameters_count;
+    (pDVar6->fields).method_code = pDVar6;
+    puVar10 = &UNK_?;
+    cVar9 = func_?();
+    if ((cVar9 == '\0') || (uVar8 != 2)) {
+      (pDVar6->fields).method_code = (pDVar6->fields).m_target;
+      puVar12 = (pDVar6->fields).method_ptr;
+    }
+    else {
+      puVar12 = &UNK_?;
+    }
+    (pDVar6->fields).invoke_impl = puVar12;
+    (pDVar6->fields).extra_arg = &UNK_?;
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pBVar5,pDVar6,(MethodInfo *)0x0);
+    if (pDVar6 == (Delegate *)0x0) {
+      *(undefined4 *)(puVar10 + 0x14) = 0;
+code_?:
+      func_?();
+      goto code_?;
+    }
+    pDVar13 = (Delegate *)0x0;
+    if ((Bullet_OnHitDelegate__Class *)pDVar6->klass == TypeInfo__Bullet__OnHitDelegate) {
+      pDVar13 = pDVar6;
+    }
+    if (pDVar13 == (Delegate *)0x0) goto code_?;
+    *(Delegate **)(puVar10 + 0x14) = pDVar13;
+    pDVar13 = (Delegate *)0x0;
+    if ((Bullet_OnHitDelegate__Class *)pDVar6->klass == TypeInfo__Bullet__OnHitDelegate) {
+      pDVar13 = pDVar6;
+    }
+    if (pDVar13 != (Delegate *)0x0) goto code_?;
   }
+code_?:
   func_?();
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  pCVar4 = (CubeGunBulletObject *)(*pcVar3)();
-  return pCVar4;
+  pcVar14 = (code *)swi(3);
+  pCVar2 = (CubeGunBulletObject *)(*pcVar14)();
+  return pCVar2;
 }
 
 
@@ -145,8 +247,8 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
     uVar5 = (this->fields).materialID;
     fStack_6 = (float)CONCAT31(fStack_6._1_3_,uVar5);
     voxelHit.normal.x = fStack_6;
-    voxelHit.point.y._0_2_ = -0x78e8;
-    voxelHit.point.y._2_2_ = 0x1052;
+    voxelHit.point.y._0_2_ = 0x2368;
+    voxelHit.point.y._2_2_ = 0x1054;
     voxelHit.point.z = (float)this_00;
     pMVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterial(this_00,uVar5,(MethodInfo *)0x0)
     ;
@@ -154,16 +256,16 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
       voxelHit.cubePos.z = 0;
       voxelHit._30_2_ = 0;
       if ((pMVar7->fields)._PhysicalProperties_k__BackingField.toughness == _UNK_?) {
-        voxelHit.cubePos.x = -0x783f;
-        voxelHit.cubePos.y = 0x1052;
+        voxelHit.cubePos.x = 0x2409;
+        voxelHit.cubePos.y = 0x1054;
         this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_03 != (MVWorldObjectClientManager *)0x0) {
           voxelHit.face =
                (int32_t)
                MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
           ;
-          voxelHit.cubePos.x = -0x7828;
-          voxelHit.cubePos.y = 0x1052;
+          voxelHit.cubePos.x = 0x2420;
+          voxelHit.cubePos.y = 0x1054;
           voxelHit._28_4_ = this_03;
           this_04 = (MVCubeModelBase *)
                     MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
@@ -203,38 +305,33 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
           voxelHit.collider = (Collider *)TypeInfo__Cube;
           voxelHit.distance = (float)&UNK_?;
           this_05 = (Cube *)func_?();
-          if (this_05 != (Cube *)0x0) {
-            voxelHit.normal.y = 0.0;
-            voxelHit.point.y._0_2_ = (int16_t)this_05;
-            voxelHit.point.y._2_2_ = (undefined2)((uint)this_05 >> 0x10);
-            voxelHit.point.x = (float)&UNK_?;
-            voxelHit.point.z = (float)byteCorners;
-            voxelHit.normal.x = (float)faceMaterials;
-            Cube::Cube__ctor(this_05,byteCorners,faceMaterials,(MethodInfo *)0x0);
-            if (this_04 != (MVCubeModelBase *)0x0) {
-              voxelHit.face = 0;
-              voxelHit.cubePos.x = voxelHit.interactionFlags._2_2_;
-              voxelHit.normal.x = (float)&UNK_?;
-              IVar2.z = voxelHit.interactionFlags._2_2_;
-              IVar2._0_4_ = fVar3;
-              voxelHit.normal.y = (float)this_04;
-              voxelHit.normal.z = fVar3;
-              voxelHit._28_4_ = this_05;
-              MVCubeModelBase::MVCubeModelBase_AddCube
-                        (this_04,IVar2,(CubeBase *)this_05,(MethodInfo *)0x0);
-              voxelHit.face = 0;
-              voxelHit.cubePos.x = -0x776f;
-              voxelHit.cubePos.y = 0x1052;
-              voxelHit._28_4_ = this_04;
-              MVCubeModelBase::MVCubeModelBase_HandleDelta(this_04,(MethodInfo *)0x0);
-              return;
-            }
+          voxelHit.point.y._0_2_ = 0;
+          voxelHit.point.y._2_2_ = 0;
+          voxelHit.point.x = (float)faceMaterials;
+          Cube::Cube__ctor(this_05,byteCorners,faceMaterials,(MethodInfo *)0x0);
+          if (this_04 != (MVCubeModelBase *)0x0) {
+            voxelHit.face = 0;
+            voxelHit.cubePos.x = voxelHit.interactionFlags._2_2_;
+            voxelHit.normal.x = (float)&UNK_?;
+            IVar2.z = voxelHit.interactionFlags._2_2_;
+            IVar2._0_4_ = fVar3;
+            voxelHit.normal.y = (float)this_04;
+            voxelHit.normal.z = fVar3;
+            voxelHit._28_4_ = this_05;
+            MVCubeModelBase::MVCubeModelBase_AddCube
+                      (this_04,IVar2,(CubeBase *)this_05,(MethodInfo *)0x0);
+            voxelHit.face = 0;
+            voxelHit.cubePos.x = 0x24d2;
+            voxelHit.cubePos.y = 0x1054;
+            voxelHit._28_4_ = this_04;
+            MVCubeModelBase::MVCubeModelBase_HandleDelta(this_04,(MethodInfo *)0x0);
+            return;
           }
         }
       }
       else {
-        voxelHit.cubePos.x = -0x78b6;
-        voxelHit.cubePos.y = 0x1052;
+        voxelHit.cubePos.x = 0x239a;
+        voxelHit.cubePos.y = 0x1054;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar4 != (MVNetworkGame *)0x0) &&
            (pWVar8 = (pMVar4->fields).worldNetwork, pWVar8 != (WorldNetwork *)0x0)) {
@@ -245,25 +342,23 @@ void Assembly-CSharp.dll::CubeGunBulletObject::CubeGunBulletObject_HandleCubeHit
           fStack_6 = (float)CONCAT31(fStack_6._1_3_,uVar5);
           voxelHit._28_4_ = &UNK_?;
           this_02 = (SingleCubeFineGrainedEvent *)func_?();
-          if (this_02 != (SingleCubeFineGrainedEvent *)0x0) {
-            voxelHit.normal.x = 0.0;
-            voxelHit.point.z = fStack_6;
-            voxelHit.point.y._0_2_ = voxelHit.interactionFlags._2_2_;
-            position.z = voxelHit.interactionFlags._2_2_;
-            position._0_4_ = fVar3;
-            voxelHit.point.x = fVar3;
-            MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
-            SingleCubeFineGrainedEvent__ctor(this_02,position,uVar5,(MethodInfo *)0x0);
-            if (this_01 != (RuntimeEventManager *)0x0) {
-              voxelHit.face = 0;
-              voxelHit.cubePos.x = (int16_t)this_01;
-              voxelHit.cubePos.y = (int16_t)((uint)this_01 >> 0x10);
-              voxelHit.normal.z = (float)&UNK_?;
-              voxelHit._28_4_ = this_02;
-              RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
-                        (this_01,this_02,(MethodInfo *)0x0);
-              return;
-            }
+          voxelHit.normal.x = 0.0;
+          voxelHit.point.z = fStack_6;
+          voxelHit.point.y._0_2_ = voxelHit.interactionFlags._2_2_;
+          position.z = voxelHit.interactionFlags._2_2_;
+          position._0_4_ = fVar3;
+          voxelHit.point.x = fVar3;
+          MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
+          SingleCubeFineGrainedEvent__ctor(this_02,position,uVar5,(MethodInfo *)0x0);
+          if (this_01 != (RuntimeEventManager *)0x0) {
+            voxelHit.face = 0;
+            voxelHit.cubePos.x = (int16_t)this_01;
+            voxelHit.cubePos.y = (int16_t)((uint)this_01 >> 0x10);
+            voxelHit.normal.z = (float)&UNK_?;
+            voxelHit._28_4_ = this_02;
+            RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
+                      (this_01,this_02,(MethodInfo *)0x0);
+            return;
           }
         }
       }

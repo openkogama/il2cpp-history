@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
                int32_t interstitialTimeoutAfterRewardedAd,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites = embeddedSiteConfigData.sites;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.siteEnum = embeddedSiteConfigData.siteEnum;

@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -50,7 +50,6 @@ namespace MV.WorldObject
 		public WorldObjectType WorldObjectType { get; set; }
 		public Dictionary<object, object> Data { get; set; }
 		public virtual Dictionary<object, object> RunTimeData { get; set; }
-		public int Timestamp { get; set; }
 		public List<Link> InputLinkRefs { get; }
 		public List<Link> OutputLinkRefs { get; }
 		public List<ObjectLink> ObjectLinkRefs { get; }
@@ -59,20 +58,14 @@ namespace MV.WorldObject
 		public virtual bool HasInputConnector { get; }
 		public virtual bool HasObjectConnector { get; }
 	
-		// Nested types
-		public delegate void CallBackDelegate(MVWorldObject wos);
-	
 		// Constructors
 		public MVWorldObject();
-		public MVWorldObject(MVWorldObject wo);
 	
 		// Methods
 		public virtual void OnInputStateChanged();
 		public virtual void Reset();
-		public virtual void OnObjectLinkChanged();
+		public virtual void OnObjectLinkChanged(ObjectLinkChangeType changeType, ObjectLink objectLink);
 		public virtual bool IsSingletonObject();
-		public virtual void TraverseRecursiveTail(CallBackDelegate callBack, Dictionary<int, MVWorldObject> wos);
-		protected void ResetRunTimeData();
 		public Dictionary<object, object> DeepCopyWorldObjectDataParameters();
 		protected void GetLinksForClone(List<int> links);
 		protected void GetObjectLinksForClone(List<int> objectLinks);

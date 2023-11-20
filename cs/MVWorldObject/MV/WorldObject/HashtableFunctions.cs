@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -18,10 +18,6 @@ namespace MV.WorldObject
 		// Methods
 		public static Dictionary<object, object> DeepCopyHashTable(Dictionary<object, object> from, Dictionary<object, object> to);
 		public static Dictionary<object, object> DeepCopyHashTable(Dictionary<object, object> from);
-		public static bool TryGetSubDictionary(out Dictionary<object, object> subDictionary, Dictionary<object, object> data, List<string> subDictionaryPath);
-		public static bool ContainsSubDictionary(Dictionary<object, object> data, List<string> subDictionaryPath);
-		public static Dictionary<object, object> CreateDictionaryUpdate(string key, object value, List<string> dictionaryBasePath);
-		public static Dictionary<object, object> GetSettingsSubDictionary(Dictionary<object, object> data, List<string> subDictionaryPath);
 		public static string PrettyString(Dictionary<object, object> dictionary);
 		private static string PrettyString(Dictionary<object, object> dictionary, int padLeft);
 	}

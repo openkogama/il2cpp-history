@@ -31,25 +31,31 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
   SettingsBase::SettingsBase_Initialize
             (this_00,woID,root,MVWorldObjectDocumentationType__Enum_WindTurbine,(MethodInfo *)0x0);
   if (iVar2 == -1) {
-    this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_02,
+    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_02,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
     this = (WindTurbineSettings *)0x0;
     pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+    if (this_02 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_02,(Object *)StringLiteral_windPitch,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)this_02,
+               (Object *)StringLiteral_windPitch,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     root = (GameObject *)0xa;
     pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&root);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_02,(Object *)StringLiteral_windSize,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_windSize
+               ,pOVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     pSVar4 = (pWVar1->fields).pitchSlider;
@@ -61,13 +67,18 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
     pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_01,iVar2,(MethodInfo *)0x0);
     if (pMVar5 == (MVWorldObject *)0x0) goto code_?;
-    this_02 = (pMVar5->fields).data;
+    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)(pMVar5->fields).data;
     pSVar4 = (pWVar1->fields).pitchSlider;
-    if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    if (this_02 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) goto code_?;
   }
-  woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__get_Item
-                            (this_02,(Object *)StringLiteral_windPitch,
+  woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02
+                             ,(Object *)StringLiteral_windPitch,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
   if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
@@ -78,32 +89,38 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
     SettingsSlider::SettingsSlider_Initialize_1
               (pSVar4,StringLiteral_windPitch,iVar2,0,0xb4,(MethodInfo *)0x0);
     pSVar6 = (pWVar1->fields).pitchInputField;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_02,(Object *)StringLiteral_windPitch,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
+                       (Object *)StringLiteral_windPitch,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(TVar7.m_Index,(MethodInfo *)0x0);
     if (pSVar6 != (SettingsInputFieldSlider *)0x0) {
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                 (pSVar6,StringLiteral_windPitch,iVar2,(MethodInfo *)0x0);
       pSVar4 = (pWVar1->fields).powerSlider;
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_02,(Object *)StringLiteral_windSize,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
+      TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
+                         (Object *)StringLiteral_windSize,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(TVar7.m_Index,(MethodInfo *)0x0);
       if (pSVar4 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize_1
                   (pSVar4,StringLiteral_windSize,iVar2,1,0x14,(MethodInfo *)0x0);
         pSVar6 = (pWVar1->fields).powerInputField;
-        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (this_02,(Object *)StringLiteral_windSize,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar3,(MethodInfo *)0x0);
+        TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
+                           (Object *)StringLiteral_windSize,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(TVar7.m_Index,(MethodInfo *)0x0);
         if (pSVar6 != (SettingsInputFieldSlider *)0x0) {
           SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                     (pSVar6,StringLiteral_windSize,iVar2,(MethodInfo *)0x0);
@@ -114,8 +131,8 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_Initialize
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -142,14 +159,13 @@ void Assembly-CSharp.dll::WindTurbineSettings::WindTurbineSettings_OnSettingChan
   }
   else {
     str3 = (String *)
-           (*(value->klass->vtable).ToString.methodPtr)
-                     (value,(value->klass->vtable).ToString.method);
+           (*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
   }
   pSVar1 = mscorlib.dll::System::String::String_Concat_5(pSVar1,key,str2,str3,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   this_00 = (this->fields).settingsBase;
   if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
     func_?();

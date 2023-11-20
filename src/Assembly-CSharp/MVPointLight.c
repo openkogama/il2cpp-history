@@ -22,81 +22,75 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_Initialize
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_hide,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_hide,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
 code_?:
-      pMVar2 = (this->fields).lightObject;
-      if (pMVar2 != (MVPointLightObject *)0x0) {
+      pMVar3 = (this->fields).lightObject;
+      if (pMVar3 != (MVPointLightObject *)0x0) {
         MVLogicObject::MVLogicObject_SetupCulling
-                  ((MVLogicObject *)this,(pMVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
+                  ((MVLogicObject *)this,(pMVar3->fields).visualObject,2.0,(MethodInfo *)0x0);
         MVPointLight_SetLightToData(this,(MethodInfo *)0x0);
         MVPointLight_UpdateTexture(this,(MethodInfo *)0x0);
         MVPointLight_UpdateVisible(this,(MethodInfo *)0x0);
         MVPointLight_UpdateColorForLightSphere(this,(MethodInfo *)0x0);
-        pLVar3 = (this->fields).lightComponent;
-        if (pLVar3 != (Light *)0x0) {
-          radius = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_range
-                             (pLVar3,(MethodInfo *)0x0);
+        this_00 = (this->fields).lightComponent;
+        if (this_00 != (Light *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_range(this_00,(MethodInfo *)0x0)
+          ;
           if (cRam_? == '\0') {
             func_?();
             func_?();
             cRam_? = '\x01';
           }
-          pCVar4 = (this->fields)._.cullingSubscriberBase;
-          if (pCVar4 != (CullingSubscriberBase *)0x0) {
-            CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar4,(MethodInfo *)0x0);
-            iVar5 = (*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
-            fVar6 = *(float *)(iVar5 + 8);
-            this_02 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-            if (this_02 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-              UnityAction_1_UnityEngine_Vector2___ctor
-                        (this_02,(Object *)this,(this->klass->vtable).OnStateChanged.method,
-                         (MethodInfo *)0x0);
-              uVar7 = CONCAT44(TypeInfo__CullingSubscriberBase,&UNK_?);
-              pCVar4 = (CullingSubscriberBase *)func_?();
-              if (pCVar4 != (CullingSubscriberBase *)0x0) {
-                position.z = fVar6;
-                position.x = (float)(int)uVar7;
-                position.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-                CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                          (pCVar4,radius,position,
-                           (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_02,(MethodInfo *)0x0
-                          );
-                (this->fields)._.cullingSubscriberBase = pCVar4;
-                func_?();
-                this_03 = (Action_2_Int32Enum_Object_ *)func_?();
-                if (this_03 != (Action_2_Int32Enum_Object_ *)0x0) {
-                  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                            (this_03,(Object *)this,
-                             MethodInfo__MVPointLight__OnInputStateUpdate_LogicInputState__LogicObjectManager_
-                             ,(MethodInfo *)0x0);
-                  pIVar8 = LogicClientsideFactory::
-                            LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                                      ((MVWorldObject *)this,1,
-                                       (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                                       (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
-                                       (MethodInfo *)0x0);
-                  (this->fields)._InputSignalReceiver_k__BackingField = pIVar8;
-                  func_?();
-                  pLVar3 = (this->fields).lightComponent;
-                  if ((this->fields)._InputSignalReceiver_k__BackingField !=
-                      (IInputSignalReceiver *)0x0) {
-                    bVar1 = func_?();
-                    if (pLVar3 != (Light *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                                ((Behaviour *)pLVar3,bVar1,(MethodInfo *)0x0);
-                      return;
-                    }
-                  }
-                }
+          this_01 = (this->fields)._.cullingSubscriberBase;
+          if (this_01 != (CullingSubscriberBase *)0x0) {
+            CullingSubscriberBase::CullingSubscriberBase_Destroy(this_01,(MethodInfo *)0x0);
+            puVar4 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
+            uVar5 = *puVar4;
+            worldObject = *(MVWorldObject **)(puVar4 + 1);
+            this_03 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+            UnityAction_1_UnityEngine_Vector2___ctor
+                      (this_03,(Object *)this,
+                       (this->klass->vtable).UpdateControllerUpdate_1.methodPtr,(MethodInfo *)0x0);
+            this_04 = (List_1_MV_WorldObject_Link_ *)func_?();
+            fVar6 = (float)uVar5;
+            this = (MVPointLight *)worldObject;
+            fVar7 = (float)(int)((ulonglong)uVar5 >> 0x20);
+            position = (Vector3)CONCAT84(uVar8,fVar6);
+            CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                      ((CullingSubscriberBase *)this_04,(float)&stack0xfffffffc,position,
+                       (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_03,(MethodInfo *)0x0);
+            worldObject[2].fields.outputLinkRefs = this_04;
+            func_?();
+            this_05 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
+            Int32]::UnityAction_2_System_Int32_System_Int32___ctor
+                      (this_05,(Object *)worldObject,
+                       MethodInfo__MVPointLight__OnInputStateUpdate_LogicInputState__LogicObjectManager_
+                       ,(MethodInfo *)0x0);
+            pIVar9 = LogicClientsideFactory::
+                     LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                               (worldObject,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                                (Action_2_LogicInputState_LogicObjectManager_ *)this_05,
+                                (MethodInfo *)0x0);
+            worldObject[2].fields.rotation.x = (float)pIVar9;
+            func_?();
+            this_02 = (Behaviour *)worldObject[2].fields.ownerActorNr;
+            if (worldObject[2].fields.rotation.x != 0.0) {
+              bVar2 = func_?();
+              if (this_02 != (Behaviour *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                          (this_02,bVar2,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -104,18 +98,20 @@ code_?:
       }
     }
     else {
-      this_01 = (this->fields)._._._.data;
-      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (this_01,(Object *)StringLiteral_hide,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if (pOVar9 != (Object *)0x0) {
-          if ((pOVar9->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-          goto code_?;
-          pcVar10 = (char *)func_?();
-          (this->fields).inputVisible = *pcVar10 == '\0';
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar1,(Object *)StringLiteral_hide,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if (TVar10.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+          pcVar11 = (char *)func_?();
+          (this->fields).inputVisible = *pcVar11 == '\0';
           goto code_?;
         }
       }
@@ -124,8 +120,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -147,42 +143,47 @@ bool Assembly-CSharp.dll::MVPointLight::MVPointLight_IsVisible
     func_?(&StringLiteral_hide);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_hide,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_hide,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if ((bVar1 == 0) || ((this->fields).inputVisible == 0)) {
+    if ((bVar2 == 0) || ((this->fields).inputVisible == 0)) {
       return 0;
     }
-    this_01 = (this->fields)._._._.data;
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_01,(Object *)StringLiteral_hide,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pOVar2 != (Object *)0x0) {
-        pBStack3 = TypeInfo__System__Boolean;
-        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-          pBStack3 = (Boolean__Class *)pOVar2;
-          pcVar4 = (char *)func_?();
-          return *pcVar4 == '\0';
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar1,(Object *)StringLiteral_hide,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar3.m_Index != 0) {
+        TStack4.m_Index = (int32_t)TypeInfo__System__Boolean;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+            (TypeInfo__System__Boolean->_0).element_class) {
+          TStack4 = TVar3;
+          pcVar5 = (char *)func_?();
+          return *pcVar5 == '\0';
         }
         goto code_?;
       }
     }
   }
+  TStack4.m_Index = (int32_t)&UNK_?;
   func_?();
-  pBStack3 = extraout_EDX;
+  TStack4.m_Index = (int32_t)extraout_EDX;
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar1 = (*pcVar5)();
-  return bVar1;
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
+  return bVar2;
 }
 
 
@@ -260,91 +261,97 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_SetLightToData
     func_?(&StringLiteral_color);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
 code_?:
     func_?();
   }
   else {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar1,(Object *)StringLiteral_color,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar2 == 0) {
 code_?:
-      pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-      if (pDVar1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (pDVar1,(Object *)StringLiteral_intensity,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
         if (bVar2 == 0) {
           return;
         }
-        pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data
-        ;
-        if (pDVar1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                 (this->fields)._._._.data;
+        if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                             (pDVar1,(Object *)StringLiteral_range,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           if (bVar2 == 0) {
             return;
           }
-          pDVar3 = (this->fields)._._._.data;
-          if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               (pDVar3,(Object *)StringLiteral_range,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            uVar5 = CONCAT44(TypeInfo__System__Single,pOVar4);
-            if (pOVar4 != (Object *)0x0) {
-              if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-              goto code_?;
-              pfVar6 = (float *)func_?();
-              value = *pfVar6;
-              pDVar3 = (this->fields)._._._.data;
-              if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                   (pDVar3,(Object *)StringLiteral_intensity,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
-                uVar5 = CONCAT44(TypeInfo__System__Single,pOVar4);
-                if (pOVar4 != (Object *)0x0) {
-                  if ((pOVar4->klass->_0).element_class !=
+          pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                   (this->fields)._._._.data;
+          if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (pDVar1,(Object *)StringLiteral_range,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+            uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
+            if (TVar3.m_Index != 0) {
+              if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                  (TypeInfo__System__Single->_0).element_class) goto code_?;
+              pfVar5 = (float *)func_?();
+              value = *pfVar5;
+              pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this->fields)._._._.data;
+              if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+                TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  (pDVar1,(Object *)StringLiteral_intensity,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+                uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
+                if (TVar3.m_Index != 0) {
+                  if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                       (TypeInfo__System__Single->_0).element_class) goto code_?;
-                  pfVar6 = (float *)func_?(pOVar4);
-                  pLVar7 = (this->fields).lightComponent;
-                  if (pLVar7 != (Light *)0x0) {
+                  pfVar5 = (float *)func_?(TVar3.m_Index);
+                  pLVar6 = (this->fields).lightComponent;
+                  if (pLVar6 != (Light *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_intensity
-                              (pLVar7,*pfVar6,(MethodInfo *)0x0);
-                    pLVar7 = (this->fields).lightComponent;
-                    if (pLVar7 != (Light *)0x0) {
+                              (pLVar6,*pfVar5,(MethodInfo *)0x0);
+                    pLVar6 = (this->fields).lightComponent;
+                    if (pLVar6 != (Light *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_range
-                                (pLVar7,value,(MethodInfo *)0x0);
-                      fVar8 = (this->fields).minumumScale;
-                      fVar9 = (value / (this->fields).rangeMaxValue) /
-                               (this->fields).scaleRestriction;
-                      if (fVar8 <= fVar9) {
-                        fVar8 = fVar9;
+                                (pLVar6,value,(MethodInfo *)0x0);
+                      fVar7 = (this->fields).minumumScale;
+                      fVar8 = (value / (this->fields).rangeMaxValue) /
+                              (this->fields).scaleRestriction;
+                      if (fVar7 <= fVar8) {
+                        fVar7 = fVar8;
                       }
-                      pMVar10 = (this->fields).lightObject;
-                      if ((pMVar10 != (MVPointLightObject *)0x0) &&
-                         (this_00 = (pMVar10->fields).pointLightPlaneTransform,
+                      pMVar9 = (this->fields).lightObject;
+                      if ((pMVar9 != (MVPointLightObject *)0x0) &&
+                         (this_00 = (pMVar9->fields).pointLightPlaneTransform,
                          this_00 != (Transform *)0x0)) {
-                        value_01.y = fVar8;
-                        value_01.x = fVar8;
-                        value_01.z = fVar8;
+                        value_01.y = fVar7;
+                        value_01.x = fVar7;
+                        value_01.z = fVar7;
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                                   (this_00,value_01,(MethodInfo *)0x0);
                         this_01 = (this->fields)._.cullingSubscriberBase;
@@ -364,26 +371,28 @@ code_?:
       }
       goto code_?;
     }
-    pDVar3 = (this->fields)._._._.data;
-    if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-       (unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                              (pDVar3,(Object *)StringLiteral_color,
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if ((pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (pDVar1,(Object *)StringLiteral_color,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              ), unaff_EBX = TypeInfo__System__Single, unaff_EDI == (Object *)0x0))
+                              ), unaff_EBX = TypeInfo__System__Single, unaff_EDI.m_Index == 0))
     goto code_?;
-    iVar11 = func_?(unaff_EDI,TypeInfo__System__Single);
-    if (iVar11 != 0) {
-      pLVar7 = (this->fields).lightComponent;
-      if (((*(int *)(iVar11 + 0xc) != 0) && (1 < *(uint *)(iVar11 + 0xc))) &&
-         (2 < *(uint *)(iVar11 + 0xc))) {
-        if (pLVar7 != (Light *)0x0) {
-          value_00.g = (float)*(undefined4 *)(iVar11 + 0x14);
-          value_00.r = (float)*(undefined4 *)(iVar11 + 0x10);
-          value_00.b = (float)*(undefined4 *)(iVar11 + 0x18);
+    iVar10 = func_?(unaff_EDI.m_Index,TypeInfo__System__Single);
+    if (iVar10 != 0) {
+      pLVar6 = (this->fields).lightComponent;
+      if (((*(int *)(iVar10 + 0xc) != 0) && (1 < *(uint *)(iVar10 + 0xc))) &&
+         (2 < *(uint *)(iVar10 + 0xc))) {
+        if (pLVar6 != (Light *)0x0) {
+          value_00.g = (float)*(undefined4 *)(iVar10 + 0x14);
+          value_00.r = (float)*(undefined4 *)(iVar10 + 0x10);
+          value_00.b = (float)*(undefined4 *)(iVar10 + 0x18);
           value_00.a = 1.0;
           UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
-                    (pLVar7,value_00,(MethodInfo *)0x0);
+                    (pLVar6,value_00,(MethodInfo *)0x0);
           goto code_?;
         }
         goto code_?;
@@ -391,11 +400,11 @@ code_?:
       goto code_?;
     }
   }
-  uVar5 = func_?(unaff_EDI,unaff_EBX);
+  uVar4 = func_?(unaff_EDI.m_Index,unaff_EBX);
 code_?:
-  func_?(uVar5);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(uVar4);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -407,31 +416,32 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_SetupLightCulling
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__CullingSubscriberBase);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields)._.cullingSubscriberBase;
   if (pCVar1 != (CullingSubscriberBase *)0x0) {
     CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar1,(MethodInfo *)0x0);
-    pVVar2 = (Vector3 *)(*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
+    pVVar2 = (Vector3 *)
+             (*(code *)(this->klass->vtable).get_WorldPosition_1.method)
+                       (&stack0xffffffe8,this,(this->klass->vtable).set_WorldPosition.methodPtr);
     position = *pVVar2;
-    this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-    if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-      UnityAction_1_UnityEngine_Vector2___ctor
-                (this_00,(Object *)this,(this->klass->vtable).OnStateChanged.method,
-                 (MethodInfo *)0x0);
-      pCVar1 = (CullingSubscriberBase *)func_?();
-      if (pCVar1 != (CullingSubscriberBase *)0x0) {
-        CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                  (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
-                   (MethodInfo *)0x0);
-        (this->fields)._.cullingSubscriberBase = pCVar1;
-        func_?();
-        return;
-      }
-    }
+    this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
+              func_?(
+                             TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                             );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+    UnityAction_1_UnityEngine_Vector2___ctor
+              (this_00,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
+               (MethodInfo *)0x0);
+    pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+    CullingSubscriberBase::CullingSubscriberBase__ctor_2
+              (pCVar1,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
+               (MethodInfo *)0x0);
+    (this->fields)._.cullingSubscriberBase = pCVar1;
+    func_?();
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -456,23 +466,25 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_UpdateColorForLightSphere
     func_?(&StringLiteral_color);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
   }
   else {
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
+    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (this_00,(Object *)StringLiteral_color,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     this = (MVPointLight *)TypeInfo__System__Single;
-    if (unaff_EBX == (Object *)0x0) {
+    if (unaff_EBX.m_Index == 0) {
       iVar2 = 0;
     }
     else {
-      iVar2 = func_?(unaff_EBX,TypeInfo__System__Single);
+      iVar2 = func_?(unaff_EBX.m_Index,TypeInfo__System__Single);
       if (iVar2 == 0) goto code_?;
     }
     pMVar3 = (pMVar1->fields).lightObject;
@@ -502,7 +514,7 @@ code_?:
 code_?:
   func_?();
 code_?:
-  func_?(unaff_EBX,this);
+  func_?(unaff_EBX.m_Index,this);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -527,49 +539,52 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_UpdateTexture
     func_?(&StringLiteral__unity3d);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_halo,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_halo,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       return;
     }
-    pMVar2 = (this->fields).lightObject;
-    if (((pMVar2 != (MVPointLightObject *)0x0) &&
-        (pSVar3 = (pMVar2->fields).streamedTexture, pSVar3 != (StreamedTextureToMeshRenderer *)0x0))
-       && (pSVar4 = (pSVar3->fields)._._.url, pSVar4 != (String *)0x0)) {
-      pSVar4 = mscorlib.dll::System::String::String_Remove_1
-                         (pSVar4,(pSVar4->fields)._stringLength + -9,(MethodInfo *)0x0);
-      this_01 = (this->fields)._._._.data;
-      if ((this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (this_01,(Object *)StringLiteral_halo,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar5 != (Object *)0x0)) {
-        if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
+    pMVar3 = (this->fields).lightObject;
+    if (((pMVar3 != (MVPointLightObject *)0x0) &&
+        (pSVar4 = (pMVar3->fields).streamedTexture, pSVar4 != (StreamedTextureToMeshRenderer *)0x0))
+       && (pSVar5 = (pSVar4->fields)._._.url, pSVar5 != (String *)0x0)) {
+      pSVar5 = mscorlib.dll::System::String::String_Remove_1
+                         (pSVar5,(pSVar5->fields)._stringLength + -9,(MethodInfo *)0x0);
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      if ((pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+         (TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)StringLiteral_halo,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), TVar6.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
         func_?();
         str1 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Concat_4
-                           (pSVar4,str1,StringLiteral__unity3d,(MethodInfo *)0x0);
-        pMVar2 = (this->fields).lightObject;
-        if ((pMVar2 != (MVPointLightObject *)0x0) &&
-           (pSVar3 = (pMVar2->fields).streamedTexture,
-           pSVar3 != (StreamedTextureToMeshRenderer *)0x0)) {
-          (pSVar3->fields)._._.url = pSVar4;
+        pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                           (pSVar5,str1,StringLiteral__unity3d,(MethodInfo *)0x0);
+        pMVar3 = (this->fields).lightObject;
+        if ((pMVar3 != (MVPointLightObject *)0x0) &&
+           (pSVar4 = (pMVar3->fields).streamedTexture,
+           pSVar4 != (StreamedTextureToMeshRenderer *)0x0)) {
+          (pSVar4->fields)._._.url = pSVar5;
           func_?();
-          pMVar2 = (this->fields).lightObject;
-          if ((pMVar2 != (MVPointLightObject *)0x0) &&
-             (pSVar3 = (pMVar2->fields).streamedTexture,
-             pSVar3 != (StreamedTextureToMeshRenderer *)0x0)) {
+          pMVar3 = (this->fields).lightObject;
+          if ((pMVar3 != (MVPointLightObject *)0x0) &&
+             (pSVar4 = (pMVar3->fields).streamedTexture,
+             pSVar4 != (StreamedTextureToMeshRenderer *)0x0)) {
             StreamedTextureToMeshRenderer::StreamedTextureToMeshRenderer_ReDownload
-                      (pSVar3,(MethodInfo *)0x0);
+                      (pSVar4,(MethodInfo *)0x0);
             return;
           }
         }
@@ -579,8 +594,8 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_UpdateTexture
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -605,15 +620,16 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight_UpdateVisible
       func_?(&StringLiteral_hide);
       cRam_? = '\x01';
     }
-    this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-    if (this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        (this_01,(Object *)StringLiteral_hide,
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        (pDVar2,(Object *)StringLiteral_hide,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if ((bVar2 == 0) || ((this->fields).inputVisible == 0)) {
+      if ((bVar3 == 0) || ((this->fields).inputVisible == 0)) {
         this._0_1_ = false;
 code_?:
         if (this_00 != (MeshRenderer *)0x0) {
@@ -623,30 +639,32 @@ code_?:
         }
       }
       else {
-        this_02 = (this->fields)._._._.data;
-        if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (this_02,(Object *)StringLiteral_hide,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          uVar4 = CONCAT44(TypeInfo__System__Boolean,pOVar3);
-          if (pOVar3 != (Object *)0x0) {
-            if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-            goto code_?;
-            pcVar5 = (char *)func_?();
-            this._0_1_ = *pcVar5 == '\0';
+        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                 (this->fields)._._._.data;
+        if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar2,(Object *)StringLiteral_hide,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+          uVar5 = CONCAT44(TypeInfo__System__Boolean,TVar4.m_Index);
+          if (TVar4.m_Index != 0) {
+            if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+                (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+            pcVar6 = (char *)func_?();
+            this._0_1_ = *pcVar6 == '\0';
             goto code_?;
           }
         }
       }
     }
   }
-  uVar4 = func_?();
+  uVar5 = func_?();
 code_?:
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -686,16 +704,16 @@ void Assembly-CSharp.dll::MVPointLight::MVPointLight__ctor
       (this->fields).lightObject = (MVPointLightObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVPointLightObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__MVPointLightObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
-          [(TypeInfo__MVPointLightObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVPointLightObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
       (this->fields).lightObject = pMVar3;
-      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVPointLightObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment <
+           (TypeInfo__MVPointLightObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy
-          [(TypeInfo__MVPointLightObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVPointLightObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVPointLightObject)) goto code_?;
     }
     func_?(&(this->fields).lightObject);
@@ -733,16 +751,5 @@ code_?:
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVPointLight::MVPointLight_get_DocumentationType
-          (MVPointLight *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_PointLight;
 }
 

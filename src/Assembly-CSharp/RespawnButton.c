@@ -13,8 +13,8 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
   if ((pGVar1 != (GameEventManager *)0x0) &&
      (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    GoogleMobileAds.dll::GoogleMobileAds::Api::BannerView::BannerView__ConfigureBannerEvents_m__7
-              ((BannerView *)this_00,(MethodInfo *)0x0);
+    GameEventManager+AvatarCommandsPlayModeManager::
+    GameEventManager_AvatarCommandsPlayModeManager_KillSelf(this_00,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';

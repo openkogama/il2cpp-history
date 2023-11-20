@@ -68,31 +68,6 @@ public class HackingToolDetector : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _Scan_Coroutine_d__28 : IEnumerator<object>
-	{
-		// Fields
-		private int __1__state;
-		private object __2__current;
-		public HackingToolDetector __4__this;
-		private float _waitDuration_5__2;
-
-		// Properties
-		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _Scan_Coroutine_d__28(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
 	private sealed class _HandleReports_d__30 : IEnumerator<object>
 	{
 		// Fields
@@ -108,6 +83,31 @@ public class HackingToolDetector : MonoBehaviour
 		// Constructors
 		[DebuggerHidden]
 		public _HandleReports_d__30(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
+
+	[CompilerGenerated]
+	private sealed class _Scan_Coroutine_d__28 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public HackingToolDetector __4__this;
+		private float _waitDuration_5__2;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _Scan_Coroutine_d__28(int __1__state);
 
 		// Methods
 		[DebuggerHidden]

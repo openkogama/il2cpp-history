@@ -107,7 +107,7 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarningFormat
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarningFormat
                 (StringLiteral__0__subscribers_are_never_unsubs,args,(MethodInfo *)0x0);
       pLVar2 = TypeInfo__BackButtonManager->static_fields->subscribers;
       if (pLVar2 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
@@ -175,24 +175,23 @@ void Assembly-CSharp.dll::BackButtonManager::BackButtonManager_Subscribe
         func_?(TypeInfo__BackButtonManager);
       }
       pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
-      value = (Object *)func_?(TypeInfo__BackButtonManager__BackButtonSubscriber);
-      if (value != (Object *)0x0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (value,ExceptionArgument__Enum_obj,unaff_EDI);
-        value[1].klass = (Object__Class *)handler;
-        func_?(value + 1,handler);
-        value[1].monitor = (MonitorData *)button;
-        value[2].klass = (Object__Class *)state;
-        value[2].monitor = (MonitorData *)callback;
-        func_?(&value[2].monitor,callback);
-        if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar1,value,
-                     MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__Add_BackButtonManager__BackButtonSubscriber_
-                    );
-          return;
-        }
+      method_00 = TypeInfo__BackButtonManager__BackButtonSubscriber;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)handler;
+      func_?(value + 1,handler);
+      value[1].monitor = (MonitorData *)button;
+      value[2].klass = (Object__Class *)state;
+      value[2].monitor = (MonitorData *)callback;
+      func_?(&value[2].monitor,callback);
+      if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)pLVar1,value,
+                   MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__Add_BackButtonManager__BackButtonSubscriber_
+                  );
+        return;
       }
       break;
     }
@@ -393,19 +392,14 @@ void Assembly-CSharp.dll::BackButtonManager::BackButtonManager__cctor(MethodInfo
          func_?(
                         TypeInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>
                         );
-  if (this != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__List__
-              );
-    TypeInfo__BackButtonManager->static_fields->subscribers = this;
-    func_?(TypeInfo__BackButtonManager->static_fields,this);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__List__
+            );
+  TypeInfo__BackButtonManager->static_fields->subscribers = this;
+  func_?(TypeInfo__BackButtonManager->static_fields,this);
   return;
 }
 

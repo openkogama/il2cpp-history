@@ -42,7 +42,7 @@ void Assembly-CSharp.dll::WaitForTicks::WaitForTicks__ctor
                (WaitForTicks *this,int32_t milliseconds,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   dVar1 = (double)milliseconds;
   if (_UNK_? < dVar1) {
@@ -50,7 +50,6 @@ void Assembly-CSharp.dll::WaitForTicks::WaitForTicks__ctor
     actualValue = (Object *)func_?(uVar2);
     uVar2 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
     this_01 = (ArgumentOutOfRangeException *)func_?(uVar2);
-    func_?(this_01);
     message = (String *)func_?(&StringLiteral_Cannot_wait_for_more_than_Int32_);
     paramName = (String *)func_?(&StringLiteral_milliseconds);
     mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_3

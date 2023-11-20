@@ -278,35 +278,29 @@ void Assembly-CSharp.dll::MeshDataPool::MeshDataPool_Create(MethodInfo *method)
     cRam_? = '\x01';
   }
   value = (MeshDataPool *)func_?(TypeInfo__MeshDataPool);
-  if (value != (MeshDataPool *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Color);
-      func_?(&TypeInfo__System__Int32);
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0xc0000);
-    (value->fields).vertices = pVVar1;
-    func_?(&(value->fields).vertices,pVVar1);
-    pVVar2 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
-    (value->fields).uvs = pVVar2;
-    func_?(&(value->fields).uvs,pVVar2);
-    pCVar3 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
-    (value->fields).colors = pCVar3;
-    func_?(&(value->fields).colors,pCVar3);
-    pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
-    (value->fields).indices = pIVar4;
-    func_?(&(value->fields).indices,pIVar4);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__MeshDataPool->static_fields->instance = value;
-    func_?(TypeInfo__MeshDataPool->static_fields,value);
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Color);
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__UnityEngine__Vector2);
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0xc0000);
+  (value->fields).vertices = pVVar1;
+  func_?(&(value->fields).vertices,pVVar1);
+  pVVar2 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
+  (value->fields).uvs = pVVar2;
+  func_?(&(value->fields).uvs,pVVar2);
+  pCVar3 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
+  (value->fields).colors = pCVar3;
+  func_?(&(value->fields).colors,pCVar3);
+  pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
+  (value->fields).indices = pIVar4;
+  func_?(&(value->fields).indices,pIVar4);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
+  TypeInfo__MeshDataPool->static_fields->instance = value;
+  func_?(TypeInfo__MeshDataPool->static_fields,value);
   return;
 }
 
@@ -574,7 +568,7 @@ void Assembly-CSharp.dll::MeshDataPool::MeshDataPool__ctor(MeshDataPool *this,Me
   pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
   (this->fields).indices = pIVar4;
   func_?(&(this->fields).indices,pIVar4);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
 }

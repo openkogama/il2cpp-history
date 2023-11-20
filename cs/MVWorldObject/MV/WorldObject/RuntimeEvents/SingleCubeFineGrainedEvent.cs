@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using MV.Common;
 using MV.WorldObject;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.RuntimeEvents
 {
@@ -26,7 +26,6 @@ namespace MV.WorldObject.RuntimeEvents
 		// Constructors
 		public SingleCubeFineGrainedEvent(IntVector position, byte material);
 		public SingleCubeFineGrainedEvent(IntVector position);
-		public SingleCubeFineGrainedEvent(RuntimeEventType runtimeEventType, byte[] data);
 		public SingleCubeFineGrainedEvent(RuntimeEventType runtimeEventType, BytePacker bp);
 	
 		// Methods

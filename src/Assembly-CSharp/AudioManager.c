@@ -22,99 +22,98 @@ void Assembly-CSharp.dll::AudioManager::AudioManager_Awake(AudioManager *this,Me
     cRam_? = '\x01';
   }
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
+  (this->fields).poolTransform = pGVar1;
+  func_?(&(this->fields).poolTransform,pGVar1);
+  pGVar1 = (this->fields).poolTransform;
   if (pGVar1 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
-              (pGVar1,(MethodInfo *)0x0);
-    (this->fields).poolTransform = pGVar1;
-    func_?(&(this->fields).poolTransform,pGVar1);
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
+              ((Object_1 *)pGVar1,StringLiteral_SoundPool,(MethodInfo *)0x0);
     pGVar1 = (this->fields).poolTransform;
     if (pGVar1 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                ((Object_1 *)pGVar1,StringLiteral_SoundPool,(MethodInfo *)0x0);
-      pGVar1 = (this->fields).poolTransform;
-      if (pGVar1 != (GameObject *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar1,(MethodInfo *)0x0);
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (pTVar2,pTVar3,(MethodInfo *)0x0);
-          pLVar4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                   (this->fields).activeSounds;
-          if (pLVar4 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-            UnitySynchronizationContext+WorkRequest]::
-            List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__set_Capacity
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                  (pTVar2,pTVar3,(MethodInfo *)0x0);
+        pLVar4 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                  *)(this->fields).activeSounds;
+        if (pLVar4 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                       *)0x0) {
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+          MultiColumnCollectionHeader+ViewState+ColumnState]::
+          List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__set_Capacity
+                    (pLVar4,0x80,
+                     MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__set_Capacity_int_
+                    );
+          pLVar4 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                    *)(this->fields).pooledSounds;
+          if (pLVar4 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+            MultiColumnCollectionHeader+ViewState+ColumnState]::
+            List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__set_Capacity
                       (pLVar4,0x80,
                        MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__set_Capacity_int_
                       );
-            pLVar4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                     (this->fields).pooledSounds;
-            if (pLVar4 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-              UnitySynchronizationContext+WorkRequest]::
-              List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__set_Capacity
+            pLVar4 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                      *)(this->fields).soundsToRemove;
+            if (pLVar4 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)0x0) {
+              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+              MultiColumnCollectionHeader+ViewState+ColumnState]::
+              List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__set_Capacity
                         (pLVar4,0x80,
-                         MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__set_Capacity_int_
-                        );
-              pLVar4 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                       (this->fields).soundsToRemove;
-              if (pLVar4 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                UnitySynchronizationContext+WorkRequest]::
-                List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__set_Capacity
-                          (pLVar4,0x80,
-                           MethodInfo__System__Collections__Generic__List<int>__set_Capacity_int_);
-                iStack_5 = 0;
-                while( true ) {
-                  value = (Object *)func_?(TypeInfo__AudioManager__Sound);
-                  if (value == (Object *)0x0) break;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                            (value,ExceptionArgument__Enum_obj,unaff_EDI);
-                  this_01 = (Object__Class *)func_?(TypeInfo__UnityEngine__GameObject);
-                  if (this_01 == (Object__Class *)0x0) break;
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
-                            ((GameObject *)this_01,(MethodInfo *)0x0);
-                  value[1].klass = this_01;
-                  func_?(value + 1,this_01);
-                  if (value[1].klass == (Object__Class *)0x0) break;
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                            ((Object_1 *)value[1].klass,StringLiteral_PooledSoundObject,
-                             (MethodInfo *)0x0);
-                  if (value[1].klass == (Object__Class *)0x0) break;
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            ((GameObject *)value[1].klass,0,(MethodInfo *)0x0);
-                  if (value[1].klass == (Object__Class *)0x0) break;
-                  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_get_transform((GameObject *)value[1].klass,(MethodInfo *)0x0);
-                  pGVar1 = (this->fields).poolTransform;
-                  if (pGVar1 == (GameObject *)0x0) break;
-                  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
-                  if (pTVar2 == (Transform *)0x0) break;
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                            (pTVar2,pTVar3,(MethodInfo *)0x0);
-                  if (value[1].klass == (Object__Class *)0x0) break;
-                  pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_AddComponent_1
-                                     ((GameObject *)value[1].klass,
-                                      UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__
-                                     );
-                  value[1].monitor = (MonitorData *)pOVar6;
-                  func_?(&value[1].monitor,pOVar6);
-                  this_00 = (this->fields).pooledSounds;
-                  if (this_00 == (List_1_AudioManager_Sound_ *)0x0) break;
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                  List_1_System_Object__Add
-                            ((List_1_System_Object_ *)this_00,value,
-                             MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__Add_AudioManager__Sound_
-                            );
-                  iStack_5 = iStack_5 + 1;
-                  if (0x7f < iStack_5) {
-                    return;
-                  }
+                         MethodInfo__System__Collections__Generic__List<int>__set_Capacity_int_);
+              while( true ) {
+                method_00 = TypeInfo__AudioManager__Sound;
+                value = (Object *)func_?();
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                          (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                pOVar5 = (Object__Class *)func_?();
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
+                          ((GameObject *)pOVar5,(MethodInfo *)0x0);
+                if (value == (Object *)0x0) break;
+                value[1].klass = pOVar5;
+                func_?();
+                if (value[1].klass == (Object__Class *)0x0) break;
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
+                          ((Object_1 *)value[1].klass,StringLiteral_PooledSoundObject,
+                           (MethodInfo *)0x0);
+                pOVar5 = value[1].klass;
+                if (pOVar5 == (Object__Class *)0x0) break;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          ((GameObject *)pOVar5,0,(MethodInfo *)0x0);
+                if (value[1].klass == (Object__Class *)0x0) break;
+                pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform((GameObject *)value[1].klass,(MethodInfo *)0x0);
+                pGVar1 = (this->fields).poolTransform;
+                if (pGVar1 == (GameObject *)0x0) break;
+                pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                if (pTVar2 == (Transform *)0x0) break;
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                          (pTVar2,pTVar3,(MethodInfo *)0x0);
+                if (value[1].klass == (Object__Class *)0x0) break;
+                pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_AddComponent_1
+                                   ((GameObject *)value[1].klass,
+                                    UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::AudioSource>__
+                                   );
+                value[1].monitor = (MonitorData *)pOVar6;
+                func_?();
+                this_00 = (this->fields).pooledSounds;
+                if (this_00 == (List_1_AudioManager_Sound_ *)0x0) break;
+                mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                List_1_System_Object__Add
+                          ((List_1_System_Object_ *)this_00,value,
+                           MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__Add_AudioManager__Sound_
+                          );
+                if (0x7f < (int)((int)&(pOVar5->_0).image + 1)) {
+                  return;
                 }
               }
             }
@@ -245,7 +244,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play
                             (*(AudioSource **)((int)item + 0xc),0x80,(MethodInfo *)0x0);
                   if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                              (*(AudioSource **)((int)item + 0xc),3.0288655e-29,(MethodInfo *)0x0);
+                              (*(AudioSource **)((int)item + 0xc),3.188063e-29,(MethodInfo *)0x0);
                     if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                       AudioSource_set_panStereo
@@ -741,40 +740,33 @@ void Assembly-CSharp.dll::AudioManager::AudioManager__ctor(AudioManager *this,Me
   }
   pLVar1 = (List_1_AudioManager_Sound_ *)
            func_?(TypeInfo__System__Collections__Generic__List<AudioManager::Sound>);
-  if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
-    (this->fields).activeSounds = pLVar1;
-    func_?(&(this->fields).activeSounds,pLVar1);
-    pLVar1 = (List_1_AudioManager_Sound_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<AudioManager::Sound>);
-    if (pLVar1 != (List_1_AudioManager_Sound_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)pLVar1,
-                 MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
-      (this->fields).pooledSounds = pLVar1;
-      func_?(&(this->fields).pooledSounds,pLVar1);
-      this_00 = (List_1_System_Int32_ *)
-                func_?(TypeInfo__System__Collections__Generic__List<int>);
-      if (this_00 != (List_1_System_Int32_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-        LowLevelList_1_System_Object___ctor
-                  ((LowLevelList_1_System_Object_ *)this_00,
-                   MethodInfo__System__Collections__Generic__List<int>__List__);
-        (this->fields).soundsToRemove = this_00;
-        func_?(&(this->fields).soundsToRemove,this_00);
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                  ((Transform *)this,(MethodInfo *)0x0);
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+             MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
+  (this->fields).activeSounds = pLVar1;
+  func_?(&(this->fields).activeSounds,pLVar1);
+  pLVar1 = (List_1_AudioManager_Sound_ *)
+           func_?(TypeInfo__System__Collections__Generic__List<AudioManager::Sound>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+             MethodInfo__System__Collections__Generic__List<AudioManager::Sound>__List__);
+  (this->fields).pooledSounds = pLVar1;
+  func_?(&(this->fields).pooledSounds,pLVar1);
+  this_00 = (List_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<int>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<int>__List__);
+  (this->fields).soundsToRemove = this_00;
+  func_?(&(this->fields).soundsToRemove,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

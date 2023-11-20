@@ -55,33 +55,37 @@ MeleeWeaponData_DefaultData(MethodInfo *method)
     func_?(&StringLiteral_itemType);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    value = MeleeWeaponData_DefaultItemData((MethodInfo *)0x0);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         func_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pDVar1 = MeleeWeaponData_DefaultItemData((MethodInfo *)0x0);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_itemData,(Object *)value,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemData,
+               (Object *)pDVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    value_00 = (Object *)func_?(TypeInfo__MV__Common__AvatarItemType);
+    value = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_itemType,value_00,
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemType,
+               value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    return pDVar1;
+    return (Dictionary_2_System_Object_System_Object_ *)this;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -111,27 +115,18 @@ MeleeWeaponData_DefaultItemData(MethodInfo *method)
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
   }
-  pDVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields
-           ->defaultItemValues;
-  this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
+  dictionary = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+               static_fields->defaultItemValues;
+  this = (Dictionary_2_System_Object_System_Object_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                         );
-  if (this != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
-              (this,(IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                     *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-              );
-    return (Dictionary_2_System_Object_System_Object_ *)this;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-  return pDVar1;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object___ctor_1
+            (this,(IDictionary_2_System_Object_System_Object_ *)dictionary,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+            );
+  return this;
 }
 
 
@@ -387,7 +382,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeW
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__String);
     func_?(&::_0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    func_?(&_6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field);
+    func_?(&::_6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field);
     func_?(&StringLiteral_none);
     func_?(&StringLiteral_Damage);
     func_?(&StringLiteral_slash);
@@ -416,360 +411,321 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeW
     func_?(&StringLiteral_explosion);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-code_?:
-    func_?();
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (pDVar1,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Name,(Object *)StringLiteral_Sword,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Name,
+               (Object *)StringLiteral_Sword,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff8);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff8);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Damage,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Damage,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_ImpulseStrength,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_ImpulseStrength,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack_4 = &stack0xfffffff0;
-    pSStack_5 = TypeInfo__System__Single;
-    pOVar3 = (Object *)func_?();
+    puStack_3 = &stack0xfffffff0;
+    pSStack_4 = TypeInfo__System__Single;
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_RecoilStrength,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_RecoilStrength,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?();
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackAnimationTime,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_AttackAnimationTime,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?();
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackCooldown,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_AttackCooldown,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?();
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Range,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Range,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar3 = (Object *)func_?();
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Radius,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Radius,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack_6 = (undefined *)0x1;
-    pOVar3 = (Object *)func_?();
+    puStack_5 = (undefined *)0x1;
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_FireSoundEffect,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_FireSoundEffect,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    uStack_7 = 1;
-    pOVar3 = (Object *)func_?();
+    uStack_6 = 1;
+    pOVar2 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_HitSoundEffect,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_HitSoundEffect,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pAVar8 = (Array *)func_?();
+    pAVar7 = (Array *)func_?();
     mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
     RuntimeHelpers_InitializeArray_1
-              (pAVar8,__6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field,
+              (pAVar7,__6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field,
                (MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_TrailColor,(Object *)pAVar8,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_TrailColor,(Object *)pAVar7,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pAVar8 = (Array *)func_?();
+    pAVar7 = (Array *)func_?();
     mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
     RuntimeHelpers_InitializeArray_1
-              (pAVar8,__0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field,
+              (pAVar7,__0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field,
                (MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_HitEffectColor,(Object *)pAVar8,
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)StringLiteral_HitEffectColor,(Object *)pAVar7,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
-    defaultItemValues = pDVar1;
+    defaultItemValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
     func_?();
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (pDVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    puStack_4 = (undefined1 *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&puStack_4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Damage,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pSStack_5 = (Single__Class *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&pSStack_5);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_ImpulseStrength,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffcc);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_RecoilStrength,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackAnimationTime,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackCooldown,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Range,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
-    minValues = pDVar1;
-    func_?();
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffbc);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Damage,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffb8);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_ImpulseStrength,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffb4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_RecoilStrength,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackAnimationTime,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_AttackCooldown,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar3 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_Range,pOVar3,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
-    maxValues = pDVar1;
-    func_?();
-    pSVar9 = (String__Array *)func_?();
-    if (pSVar9 == (String__Array *)0x0) goto code_?;
-    if ((StringLiteral_none != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_none,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_none;
-    if (pSVar9->max_length == 0) goto code_?;
-    pSVar9->vector[0] = StringLiteral_none;
-    func_?(pSVar9->vector,pSVar11);
-    if ((StringLiteral_sword_swing != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_sword_swing,(pSVar9->klass->_0).element_class),
-       iVar10 == 0)) goto code_?;
-    pSVar11 = StringLiteral_sword_swing;
-    if (pSVar9->max_length < 2) goto code_?;
-    pSVar9->vector[1] = StringLiteral_sword_swing;
-    func_?(pSVar9->vector + 1,pSVar11);
-    if ((StringLiteral_laser_swing != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_laser_swing,(pSVar9->klass->_0).element_class),
-       iVar10 == 0)) goto code_?;
-    pSVar11 = StringLiteral_laser_swing;
-    if (pSVar9->max_length < 3) goto code_?;
-    pSVar9->vector[2] = StringLiteral_laser_swing;
-    func_?(pSVar9->vector + 2,pSVar11);
-    if ((StringLiteral_woosh != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_woosh,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_woosh;
-    if (pSVar9->max_length < 4) goto code_?;
-    pSVar9->vector[3] = StringLiteral_woosh;
-    func_?(pSVar9->vector + 3,pSVar11);
-    if ((StringLiteral_shotgun != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_shotgun,(pSVar9->klass->_0).element_class), iVar10 == 0
-       )) goto code_?;
-    pSVar11 = StringLiteral_shotgun;
-    if (pSVar9->max_length < 5) goto code_?;
-    pSVar9->vector[4] = StringLiteral_shotgun;
-    func_?(pSVar9->vector + 4,pSVar11);
-    TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
-    fireSoundEffects = pSVar9;
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
-                     static_fields->fireSoundEffects,pSVar9);
-    pSVar9 = (String__Array *)func_?(TypeInfo__System__String,9);
-    if (pSVar9 == (String__Array *)0x0) goto code_?;
-    if ((StringLiteral_none != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_none,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_none;
-    if (pSVar9->max_length == 0) goto code_?;
-    pSVar9->vector[0] = StringLiteral_none;
-    func_?(pSVar9->vector,pSVar11);
-    if ((StringLiteral_slash != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_slash,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_slash;
-    if (pSVar9->max_length < 2) goto code_?;
-    pSVar9->vector[1] = StringLiteral_slash;
-    func_?(pSVar9->vector + 1,pSVar11);
-    if ((StringLiteral_metal_clash != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_metal_clash,(pSVar9->klass->_0).element_class),
-       iVar10 == 0)) goto code_?;
-    pSVar11 = StringLiteral_metal_clash;
-    if (pSVar9->max_length < 3) goto code_?;
-    pSVar9->vector[2] = StringLiteral_metal_clash;
-    func_?(pSVar9->vector + 2,pSVar11);
-    if ((StringLiteral_laser != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_laser,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_laser;
-    if (pSVar9->max_length < 4) goto code_?;
-    pSVar9->vector[3] = StringLiteral_laser;
-    func_?(pSVar9->vector + 3,pSVar11);
-    if ((StringLiteral_slap != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_slap,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_slap;
-    if (pSVar9->max_length < 5) goto code_?;
-    pSVar9->vector[4] = StringLiteral_slap;
-    func_?(pSVar9->vector + 4,pSVar11);
-    if ((StringLiteral_bonk != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_bonk,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_bonk;
-    if (pSVar9->max_length < 6) goto code_?;
-    pSVar9->vector[5] = StringLiteral_bonk;
-    func_?(pSVar9->vector + 5,pSVar11);
-    if ((StringLiteral_punch != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_punch,(pSVar9->klass->_0).element_class), iVar10 == 0))
-    goto code_?;
-    pSVar11 = StringLiteral_punch;
-    if (pSVar9->max_length < 7) goto code_?;
-    pSVar9->vector[6] = StringLiteral_punch;
-    func_?(pSVar9->vector + 6,pSVar11);
-    if ((StringLiteral_heavy_thud != (String *)0x0) &&
-       (iVar10 = func_?(StringLiteral_heavy_thud,(pSVar9->klass->_0).element_class),
-       iVar10 == 0)) goto code_?;
-    pSVar11 = StringLiteral_heavy_thud;
-    if (pSVar9->max_length < 8) goto code_?;
-    pSVar9->vector[7] = StringLiteral_heavy_thud;
-    func_?(pSVar9->vector + 7,pSVar11);
-    if ((StringLiteral_explosion == (String *)0x0) ||
-       (iVar10 = func_?(StringLiteral_explosion,(pSVar9->klass->_0).element_class),
-       iVar10 != 0)) {
-      pSVar11 = StringLiteral_explosion;
-      if (8 < pSVar9->max_length) {
-        pSVar9->vector[8] = StringLiteral_explosion;
-        func_?(pSVar9->vector + 8,pSVar11);
+    puStack_3 = (undefined1 *)0x0;
+    pOVar2 = (Object *)func_?();
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Damage,
+                 pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pSStack_4 = (Single__Class *)0x0;
+      pOVar2 = (Object *)func_?(TypeInfo__System__Single,&pSStack_4);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_ImpulseStrength,pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffcc);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_RecoilStrength,pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      puStack_3 = &stack0xffffffc8;
+      pSStack_4 = TypeInfo__System__Single;
+      pOVar2 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_AttackAnimationTime,pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pOVar2 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                 (Object *)StringLiteral_AttackCooldown,pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      pOVar2 = (Object *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Range,
+                 pOVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
+      minValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
+      func_?();
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (pDVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      pOVar2 = (Object *)func_?();
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_Damage,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffb8);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_ImpulseStrength,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffb4);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_RecoilStrength,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        puStack_3 = &stack0xffffffb0;
+        pSStack_4 = TypeInfo__System__Single;
+        pOVar2 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_AttackAnimationTime,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        pOVar2 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)StringLiteral_AttackCooldown,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
+        pOVar2 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__Add
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Range
+                   ,pOVar2,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  );
         TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
-        hitSoundEffects = pSVar9;
-        func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
-                         static_fields->hitSoundEffects,pSVar9);
-        return;
+        maxValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
+        func_?();
+        pSVar8 = (String__Array *)func_?();
+        pSVar9 = StringLiteral_none;
+        if (pSVar8 != (String__Array *)0x0) {
+          if (pSVar8->max_length == 0) goto code_?;
+          pSVar8->vector[0] = StringLiteral_none;
+          func_?(pSVar8->vector,pSVar9);
+          pSVar9 = StringLiteral_sword_swing;
+          if (pSVar8->max_length < 2) goto code_?;
+          pSVar8->vector[1] = StringLiteral_sword_swing;
+          func_?(pSVar8->vector + 1,pSVar9);
+          pSVar9 = StringLiteral_laser_swing;
+          if (pSVar8->max_length < 3) goto code_?;
+          pSVar8->vector[2] = StringLiteral_laser_swing;
+          func_?(pSVar8->vector + 2,pSVar9);
+          pSVar9 = StringLiteral_woosh;
+          if (pSVar8->max_length < 4) goto code_?;
+          pSVar8->vector[3] = StringLiteral_woosh;
+          func_?(pSVar8->vector + 3,pSVar9);
+          pSVar9 = StringLiteral_shotgun;
+          if (pSVar8->max_length < 5) goto code_?;
+          pSVar8->vector[4] = StringLiteral_shotgun;
+          func_?(pSVar8->vector + 4,pSVar9);
+          TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields->
+          fireSoundEffects = pSVar8;
+          func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
+                           ->static_fields->fireSoundEffects,pSVar8);
+          pSVar8 = (String__Array *)func_?(TypeInfo__System__String,9);
+          pSVar9 = StringLiteral_none;
+          if (pSVar8 != (String__Array *)0x0) {
+            if (pSVar8->max_length != 0) {
+              pSVar8->vector[0] = StringLiteral_none;
+              func_?(pSVar8->vector,pSVar9);
+              pSVar9 = StringLiteral_slash;
+              if (1 < pSVar8->max_length) {
+                pSVar8->vector[1] = StringLiteral_slash;
+                func_?(pSVar8->vector + 1,pSVar9);
+                pSVar9 = StringLiteral_metal_clash;
+                if (2 < pSVar8->max_length) {
+                  pSVar8->vector[2] = StringLiteral_metal_clash;
+                  func_?(pSVar8->vector + 2,pSVar9);
+                  pSVar9 = StringLiteral_laser;
+                  if (3 < pSVar8->max_length) {
+                    pSVar8->vector[3] = StringLiteral_laser;
+                    func_?(pSVar8->vector + 3,pSVar9);
+                    pSVar9 = StringLiteral_slap;
+                    if (4 < pSVar8->max_length) {
+                      pSVar8->vector[4] = StringLiteral_slap;
+                      func_?(pSVar8->vector + 4,pSVar9);
+                      pSVar9 = StringLiteral_bonk;
+                      if (5 < pSVar8->max_length) {
+                        pSVar8->vector[5] = StringLiteral_bonk;
+                        func_?(pSVar8->vector + 5,pSVar9);
+                        pSVar9 = StringLiteral_punch;
+                        if (6 < pSVar8->max_length) {
+                          pSVar8->vector[6] = StringLiteral_punch;
+                          func_?(pSVar8->vector + 6,pSVar9);
+                          pSVar9 = StringLiteral_heavy_thud;
+                          if (7 < pSVar8->max_length) {
+                            pSVar8->vector[7] = StringLiteral_heavy_thud;
+                            func_?(pSVar8->vector + 7,pSVar9);
+                            pSVar9 = StringLiteral_explosion;
+                            if (8 < pSVar8->max_length) {
+                              pSVar8->vector[8] = StringLiteral_explosion;
+                              func_?(pSVar8->vector + 8,pSVar9);
+                              TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
+                              ->static_fields->hitSoundEffects = pSVar8;
+                              func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
+                                               ->static_fields->hitSoundEffects,pSVar8);
+                              return;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            goto code_?;
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar2 = func_?(0);
-  func_?(uVar2);
+  func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

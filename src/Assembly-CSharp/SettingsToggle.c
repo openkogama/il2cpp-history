@@ -21,21 +21,19 @@ void Assembly-CSharp.dll::SettingsToggle::SettingsToggle_Initialize
     pTVar1 = (this->fields).toggle;
     if (pTVar1 != (Toggle *)0x0) {
       this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pTVar1->fields).onValueChanged;
-      this_01 = (UnityAction_1_System_ByteEnum_ *)
+      this_01 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
-      if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_01,(Object *)this,MethodInfo__SettingsToggle__ValueChanged_bool_,
-                   (MethodInfo *)0x0);
-        if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
-          UnityEvent_1_UnityEngine_Vector2__AddListener
-                    (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_01,
-                     MethodInfo__UnityEngine__Events__UnityEvent<bool>__AddListener_UnityEngine__Events__UnityAction<bool>_
-                    );
-          return;
-        }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_01,(Object *)this,MethodInfo__SettingsToggle__ValueChanged_bool_,
+                 (MethodInfo *)0x0);
+      if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
+        UnityEvent_1_UnityEngine_Vector2__AddListener
+                  (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_01,
+                   MethodInfo__UnityEngine__Events__UnityEvent<bool>__AddListener_UnityEngine__Events__UnityAction<bool>_
+                  );
+        return;
       }
     }
   }
@@ -85,10 +83,11 @@ void Assembly-CSharp.dll::SettingsToggle::SettingsToggle_ValueChanged
     func_?(&TypeInfo__SettingsToggle____c__DisplayClass3_0);
     cRam_? = '\x01';
   }
-  value_00 = (Object *)func_?(TypeInfo__SettingsToggle____c__DisplayClass3_0);
+  method_00 = TypeInfo__SettingsToggle____c__DisplayClass3_0;
+  value_00 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value_00 != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value_00,ExceptionArgument__Enum_obj,unaff_EDI);
     value_00[1].klass = (Object__Class *)this;
     func_?(value_00 + 1,this);
     *(bool *)&value_00[1].monitor = value;
@@ -99,22 +98,19 @@ void Assembly-CSharp.dll::SettingsToggle::SettingsToggle_ValueChanged
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
-                 MethodInfo__SettingsToggle____c__DisplayClass3_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
+               MethodInfo__SettingsToggle____c__DisplayClass3_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
+              );
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

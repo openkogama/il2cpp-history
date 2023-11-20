@@ -11,33 +11,36 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
     cRam_? = '\x01';
   }
   pMVar1 = MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__Add_MVTerrainLOD_;
-  pLVar2 = (this->fields).LODBookkeeping;
+  this_00 = (List_1_TranslateSoundData_ *)(this->fields).LODBookkeeping;
   if ((this->fields).prototypeCubeModel != (RuntimePrototypeCubeModel *)0x0) {
-    uVar3 = localPos._0_4_;
-    fVar4 = (float)(((this->fields).prototypeCubeModel)->fields).chunkSize * (this->fields).scale;
-    fVar5 = fVar4 * (float)(int)localPos.x;
-    uStack_6 = (uint)(ushort)localPos.z;
-    if (pLVar2 != (List_1_MVTerrainLOD_ *)0x0) {
-      piVar7 = &(pLVar2->fields)._version;
-      *piVar7 = *piVar7 + 1;
-      pMVar8 = (pLVar2->fields)._items;
-      if (pMVar8 != (MVTerrainLOD__Array *)0x0) {
-        uVar9 = (pLVar2->fields)._size;
-        if (pMVar8->max_length <= uVar9) {
-          (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                    (pLVar2,uVar3,uStack_6,fVar5,fVar4 * (float)(int)localPos.y,
-                     fVar4 * (float)(int)localPos.z,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+    fVar2 = (float)(((this->fields).prototypeCubeModel)->fields).chunkSize * (this->fields).scale;
+    fVar3 = fVar2 * (float)(int)localPos.x;
+    uStack_4 = (uint)(ushort)localPos.z;
+    if (this_00 != (List_1_TranslateSoundData_ *)0x0) {
+      piVar5 = &(this_00->fields)._version;
+      *piVar5 = *piVar5 + 1;
+      pTVar6 = (this_00->fields)._items;
+      if (pTVar6 != (TranslateSoundData__Array *)0x0) {
+        uVar7 = (this_00->fields)._size;
+        if (pTVar6->max_length <= uVar7) {
+          item._6_2_ = 0;
+          item._0_6_ = localPos;
+          item.worldPos.x = fVar3;
+          item.worldPos.y = fVar2 * (float)(int)localPos.y;
+          item.worldPos.z = fVar2 * (float)(int)localPos.z;
+          mscorlib.dll::System::Collections::Generic::List`1[TranslateSoundData]::
+          List_1_TranslateSoundData__AddWithResize
+                    (this_00,item,pMVar1->klass->rgctx_data[0xe].method);
           return;
         }
-        (pLVar2->fields)._size = uVar9 + 1;
-        if (uVar9 < pMVar8->max_length) {
-          pIVar10 = &pMVar8->vector[uVar9].localPos;
-          pIVar10->x = (short)uVar3;
-          pIVar10->y = (short)((uint)uVar3 >> 0x10);
-          *(uint *)&pIVar10->z = uStack_6;
-          ((Vector3 *)((int)(pIVar10 + 1) + 2))->x = fVar5;
-          *(float *)(pIVar10 + 2) = fVar4 * (float)(int)localPos.y;
-          pMVar8->vector[uVar9].worldPos.z = fVar4 * (float)(int)localPos.z;
+        (this_00->fields)._size = uVar7 + 1;
+        if (uVar7 < pTVar6->max_length) {
+          pTVar8 = pTVar6->vector + uVar7;
+          pTVar8->moveValue = localPos._0_4_;
+          *(uint *)&pTVar8->moveToGridPos = uStack_4;
+          (pTVar8->worldPos).x = fVar3;
+          (pTVar8->worldPos).y = fVar2 * (float)(int)localPos.y;
+          pTVar6->vector[uVar7].worldPos.z = fVar2 * (float)(int)localPos.z;
           return;
         }
         goto code_?;
@@ -47,8 +50,8 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -89,7 +92,7 @@ code_?:
       pRVar2 = (this->fields).prototypeCubeModel;
       if (pRVar2 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
       RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_AddRefenceToChunk
-                (pRVar2,(IntVector *)0x0,(MethodInfo *)0x0);
+                (pRVar2,chunkPosition,(MethodInfo *)0x0);
     }
   }
   return;
@@ -110,208 +113,217 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                    );
-    func_?(0xa478);
+    func_?(0x4630);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
-  CStack_1.gameObject = (GameObject *)0x0;
-  CStack_1.collider = (BoxCollider *)0x0;
-  CStack_1.renderer = (MeshRenderer *)0x0;
-  CStack_1.filter = (MeshFilter *)0x0;
+  pLVar1 = (this->fields).LODBookkeeping;
   fStack_2 = 0.0;
-  uStack_3._0_2_ = 0;
-  uStack_3._2_2_ = 0;
-  uStack_3._4_4_ = (undefined *)0x0;
-  pDStack_4 = (Debug_1__Class *)0x0;
-  uStack_5 = 0;
-  pLVar6 = (this->fields).LODBookkeeping;
-  SStack_7.m_value = 0.0;
-  IStack_8.m_value = 0;
-  if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-  if ((pLVar6->fields)._size == 0) {
+  SStack_3.m_value = 0.0;
+  IStack_4.m_value = 0;
+  uStack_5._0_2_ = 0;
+  uStack_5._2_2_ = 0;
+  uStack_5._4_4_ = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  if (pLVar1 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+  if ((pLVar1->fields)._size == 0) {
     return;
   }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if ((this_02 == (MainCameraManager *)0x0) ||
-     (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this_02,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
+  this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if ((this_03 == (MainCameraManager *)0x0) ||
+     (this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_03,(MethodInfo *)0x0), this_04 == (Transform *)0x0))
   goto code_?;
-  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                     ((Vector3 *)auStack_10,this_03,(MethodInfo *)0x0);
-  uStack_11._0_4_ = pVVar9->x;
-  uStack_11._4_4_ = pVVar9->y;
-  fStack_12 = pVVar9->z;
-  fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                     ((Vector3 *)auStack_9,this_04,(MethodInfo *)0x0);
+  uStack_10._0_4_ = pVVar8->x;
+  uStack_10._4_4_ = pVVar8->y;
+  fStack_11 = pVVar8->z;
+  fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  fVar13 = fVar13 * _UNK_?;
+  fVar12 = fVar12 * _UNK_?;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  if ((double)fVar13 < _UNK_?) {
-    fVar14 = (float10)func_?();
-    auStack_10._4_8_ = (undefined8)fVar14;
-    if ((double)auStack_10._4_8_ != _UNK_?) {
-      auStack_10._4_8_ = (double)fVar13 - _UNK_?;
-      fVar14 = (float10)func_?();
+  dVar13 = (double)fVar12;
+  if (dVar13 < _UNK_?) {
+    puVar14 = &UNK_?;
+    fVar15 = (float10)func_?();
+    auStack_9._4_8_ = (undefined8)fVar15;
+    if ((double)auStack_9._4_8_ != _UNK_?) {
+      auStack_9._4_8_ = (double)fVar12 - _UNK_?;
+      uVar16 = (undefined4)auStack_9._4_8_;
+      puStack_17 = (undefined *)((ulonglong)auStack_9._4_8_ >> 0x20);
+      puVar18 = &UNK_?;
+      fVar15 = (float10)func_?();
       goto code_?;
     }
-    uVar15 = func_?();
-    dVar16 = dStack_17;
-    if ((uVar15 & 1) != 0) {
-      dVar16 = dStack_17 - _UNK_?;
+    uVar19 = func_?();
+    dVar20 = dStack_21;
+    if ((uVar19 & 1) != 0) {
+      dVar20 = dStack_21 - _UNK_?;
     }
   }
   else {
-    fVar14 = (float10)func_?();
-    auStack_10._4_8_ = (undefined8)fVar14;
-    if ((double)auStack_10._4_8_ == _UNK_?) {
-      uVar15 = func_?();
-      dVar16 = dStack_17;
-      if ((uVar15 & 1) != 0) {
-        dVar16 = dStack_17 + _UNK_?;
+    puVar14 = &UNK_?;
+    fVar15 = (float10)func_?();
+    auStack_9._4_8_ = (undefined8)fVar15;
+    if ((double)auStack_9._4_8_ == _UNK_?) {
+      uVar19 = func_?();
+      dVar20 = dStack_21;
+      if ((uVar19 & 1) != 0) {
+        dVar20 = dStack_21 + _UNK_?;
       }
     }
     else {
-      auStack_10._4_8_ = (double)fVar13 + _UNK_?;
-      fVar14 = (float10)func_?();
+      auStack_9._4_8_ = (double)fVar12 + _UNK_?;
+      uVar16 = (undefined4)auStack_9._4_8_;
+      puStack_17 = (undefined *)((ulonglong)auStack_9._4_8_ >> 0x20);
+      puVar18 = &UNK_?;
+      fVar15 = (float10)func_?();
 code_?:
-      dStack_17 = (double)fVar14;
-      dVar16 = dStack_17;
+      dVar13 = (double)CONCAT44(uVar16,puVar18);
+      dStack_21 = (double)fVar15;
+      dVar20 = dStack_21;
     }
   }
-  iVar18 = (int)dVar16;
-  iVar19 = 0;
-  if (iVar18 < 1) {
-    iVar18 = 1;
+  iVar22 = (int)dVar20;
+  iVar23 = 0;
+  if (iVar22 < 1) {
+    iVar22 = 1;
   }
   do {
-    pLVar6 = (this->fields).LODBookkeeping;
-    if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-    if ((pLVar6->fields)._size == 0) {
+    pLVar1 = (this->fields).LODBookkeeping;
+    if (pLVar1 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+    if ((pLVar1->fields)._size == 0) {
       return;
     }
-    if ((pLVar6->fields)._size <= (this->fields).currentLODPosition) {
+    if ((pLVar1->fields)._size <= (this->fields).currentLODPosition) {
       (this->fields).currentLODPosition = 0;
     }
-    if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-    puVar20 = (undefined8 *)
-             func_?(&stack0xffffff94,pLVar6,(this->fields).currentLODPosition,
+    if (pLVar1 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+    puVar24 = (undefined8 *)
+             func_?(auStack_25,pLVar1,(this->fields).currentLODPosition,
                              MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
                             );
     this_00 = (this->fields).chunkInstances;
-    uStack_3._0_4_ = *(undefined4 *)puVar20;
-    uStack_3._4_4_ = *(undefined **)((int)puVar20 + 4);
-    pDStack_4 = *(Debug_1__Class **)(puVar20 + 1);
-    uStack_5 = *(undefined4 *)((int)puVar20 + 0xc);
-    fStack_2 = *(float *)(puVar20 + 2);
-    uStack_21 = *puVar20;
-    auStack_10._0_4_ = *(undefined4 *)(puVar20 + 1);
-    auStack_10._4_4_ = *(undefined4 *)((int)puVar20 + 0xc);
+    uStack_5._0_4_ = *(undefined4 *)puVar24;
+    uStack_5._4_4_ = *(undefined4 *)((int)puVar24 + 4);
+    uStack_6 = *(undefined4 *)(puVar24 + 1);
+    uStack_7 = *(undefined4 *)((int)puVar24 + 0xc);
+    fStack_2 = *(float *)(puVar24 + 2);
+    uStack_26 = *puVar24;
+    auStack_9._0_4_ = *(undefined4 *)(puVar24 + 1);
+    auStack_9._4_4_ = *(undefined4 *)((int)puVar24 + 0xc);
     if (this_00 == (ChunkInstances *)0x0) goto code_?;
-    bVar22 = ChunkInstances::ChunkInstances_TryGetValue
-                      (this_00,SUB86(uStack_21,0),&CStack_1,(MethodInfo *)0x0);
-    pLVar6 = (this->fields).LODBookkeeping;
-    if (bVar22 == 0) {
-      if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
-                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pLVar6,
-                 (this->fields).currentLODPosition,
+    bVar27 = ChunkInstances::ChunkInstances_TryGetValue
+                      (this_00,SUB86(uStack_26,0),
+                       (ChunkInstances_ChunkInstanceVariables *)&stack0xffffff80,(MethodInfo *)0x0);
+    this_01 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
+              (this->fields).LODBookkeeping;
+    if (bVar27 == 0) {
+      if (this_01 ==
+          (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+      Implementation::UIRStylePainter+RepeatRectUV]::
+      List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
+                (this_01,(this->fields).currentLODPosition,
                  MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__RemoveAt_int_);
     }
     else {
-      if (pLVar6 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
-      iVar23 = func_?(&stack0xffffff94,(short)pLVar6,(this->fields).currentLODPosition,
+      if (this_01 ==
+          (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)
+      goto code_?;
+      iVar28 = func_?(auStack_25,(short)this_01,(this->fields).currentLODPosition,
                                MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
                               );
-      fVar14 = (float10)func_?(*(undefined4 *)(iVar23 + 8),*(undefined4 *)(iVar23 + 0xc),
-                                        *(undefined4 *)(iVar23 + 0x10),(int)uStack_11,
-                                        (short)((ulonglong)uStack_11 >> 0x20),fStack_12,0);
-      pDVar24 = (this->fields).dynamicLodDistance;
-      if (pDVar24 == (DynamicLODDistance *)0x0) goto code_?;
-      chunk.collider = CStack_1.collider;
-      chunk.gameObject = CStack_1.gameObject;
-      chunk.renderer = CStack_1.renderer;
-      chunk.filter = CStack_1.filter;
+      fVar15 = (float10)func_?(*(undefined4 *)(iVar28 + 8),*(undefined4 *)(iVar28 + 0xc),
+                                        *(undefined4 *)(iVar28 + 0x10),(int)uStack_10,
+                                        (short)((ulonglong)uStack_10 >> 0x20),fStack_11,0);
+      pDVar29 = (this->fields).dynamicLodDistance;
+      if (pDVar29 == (DynamicLODDistance *)0x0) goto code_?;
       TerrainLODComponent_ChangeLODChunk
-                (this,chunk,(IntVector *)&uStack_3,(float)fVar14,(pDVar24->fields).currentRadius,
+                (this,(ChunkInstances_ChunkInstanceVariables)
+                      ZEXT1636(CONCAT412(puStack_17,
+                                         CONCAT48((int)((ulonglong)dVar13 >> 0x20),
+                                                  CONCAT44(SUB84(dVar13,0),puVar14)))),
+                 (IntVector *)&uStack_5,(float)fVar15,(pDVar29->fields).currentRadius,
                  (MethodInfo *)0x0);
-      pDVar24 = (this->fields).dynamicLodDistance;
-      if (pDVar24 == (DynamicLODDistance *)0x0) goto code_?;
-      pTVar25 = (this->fields).triangleCounter;
-      if ((float)fVar14 < (pDVar24->fields).maxRadius) {
-        if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
-        localPos_00.z = uStack_3._4_2_;
-        localPos_00.x = (int16_t)uStack_3;
-        localPos_00.y = uStack_3._2_2_;
+      pDVar29 = (this->fields).dynamicLodDistance;
+      if (pDVar29 == (DynamicLODDistance *)0x0) goto code_?;
+      pTVar30 = (this->fields).triangleCounter;
+      if ((float)fVar15 < (pDVar29->fields).maxRadius) {
+        if (pTVar30 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
+        localPos_00.z = uStack_5._4_2_;
+        localPos_00.x = (int16_t)uStack_5;
+        localPos_00.y = uStack_5._2_2_;
         TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Add
-                  (pTVar25,localPos_00,(MethodInfo *)0x0);
+                  (pTVar30,localPos_00,(MethodInfo *)0x0);
       }
       else {
-        if (pTVar25 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
-        localPos.z = uStack_3._4_2_;
-        localPos.x = (int16_t)uStack_3;
-        localPos.y = uStack_3._2_2_;
+        if (pTVar30 == (TerrainLODComponent_TriangleCounter *)0x0) goto code_?;
+        localPos.z = uStack_5._4_2_;
+        localPos.x = (int16_t)uStack_5;
+        localPos.y = uStack_5._2_2_;
         TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter_Remove
-                  (pTVar25,localPos,(MethodInfo *)0x0);
+                  (pTVar30,localPos,(MethodInfo *)0x0);
       }
-      this_01 = (List_1_TranslateSoundData_ *)(this->fields).LODBookkeeping;
-      if (this_01 == (List_1_TranslateSoundData_ *)0x0) goto code_?;
-      value._4_4_ = uStack_3._4_4_;
-      value.moveValue = (float)(undefined4)uStack_3;
-      value.worldPos.x = (float)pDStack_4;
-      value.worldPos.y = (float)uStack_5;
+      this_02 = (List_1_TranslateSoundData_ *)(this->fields).LODBookkeeping;
+      if (this_02 == (List_1_TranslateSoundData_ *)0x0) goto code_?;
+      value._4_4_ = uStack_5._4_4_;
+      value.moveValue = (float)(undefined4)uStack_5;
+      value.worldPos.x = (float)uStack_6;
+      value.worldPos.y = (float)uStack_7;
       value.worldPos.z = fStack_2;
       mscorlib.dll::System::Collections::Generic::List`1[TranslateSoundData]::
       List_1_TranslateSoundData__set_Item
-                (this_01,(this->fields).currentLODPosition,value,
+                (this_02,(this->fields).currentLODPosition,value,
                  MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                 );
     }
-    piVar26 = &(this->fields).currentLODPosition;
-    *piVar26 = *piVar26 + 1;
-    iVar19 = iVar19 + 1;
-  } while (iVar19 < iVar18);
-  pTVar25 = (this->fields).triangleCounter;
-  if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
+    piVar31 = &(this->fields).currentLODPosition;
+    *piVar31 = *piVar31 + 1;
+    iVar23 = iVar23 + 1;
+  } while (iVar23 < iVar22);
+  pTVar30 = (this->fields).triangleCounter;
+  if (pTVar30 != (TerrainLODComponent_TriangleCounter *)0x0) {
     numObjects = TerrainLODComponent+TriangleCounter::
                  TerrainLODComponent_TriangleCounter_GetEnabledTriangleCount
-                           (pTVar25,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
-    pDVar24 = (this->fields).dynamicLodDistance;
-    if (pDVar24 != (DynamicLODDistance *)0x0) {
-      DynamicLODDistance::DynamicLODDistance_Update(pDVar24,numObjects,(MethodInfo *)0x0);
+                           (pTVar30,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
+    pDVar29 = (this->fields).dynamicLodDistance;
+    if (pDVar29 != (DynamicLODDistance *)0x0) {
+      DynamicLODDistance::DynamicLODDistance_Update(pDVar29,numObjects,(MethodInfo *)0x0);
       if ((this->fields).debug == 0) {
         return;
       }
-      pDVar24 = (this->fields).dynamicLodDistance;
-      if (pDVar24 != (DynamicLODDistance *)0x0) {
-        SStack_7.m_value = (pDVar24->fields).currentRadius;
-        pSVar27 = mscorlib.dll::System::Single::Single_ToString(&SStack_7,(MethodInfo *)0x0);
-        pSVar27 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_dynamicLodDistance_CurrentRadius,pSVar27,
+      pDVar29 = (this->fields).dynamicLodDistance;
+      if (pDVar29 != (DynamicLODDistance *)0x0) {
+        SStack_3.m_value = (pDVar29->fields).currentRadius;
+        pSVar32 = mscorlib.dll::System::Single::Single_ToString(&SStack_3,(MethodInfo *)0x0);
+        pSVar32 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_dynamicLodDistance_CurrentRadius,pSVar32,
                              (MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          pDStack_4 = TypeInfo__UnityEngine__Debug;
-          uStack_3._4_4_ = &UNK_?;
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)pSVar27,(MethodInfo *)0x0);
-        pTVar25 = (this->fields).triangleCounter;
-        if (pTVar25 != (TerrainLODComponent_TriangleCounter *)0x0) {
-          IStack_8.m_value =
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)pSVar32,(MethodInfo *)0x0);
+        pTVar30 = (this->fields).triangleCounter;
+        if (pTVar30 != (TerrainLODComponent_TriangleCounter *)0x0) {
+          IStack_4.m_value =
                TerrainLODComponent+TriangleCounter::
                TerrainLODComponent_TriangleCounter_GetEnabledTriangleCount
-                         (pTVar25,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
-          pSVar27 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
-          pSVar27 = mscorlib.dll::System::String::String_Concat_3
-                              (StringLiteral_TriangleCount__,pSVar27,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                    ((Object *)pSVar27,(MethodInfo *)0x0);
+                         (pTVar30,(this->fields).prototypeCubeModel,(MethodInfo *)0x0);
+          pSVar32 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
+          pSVar32 = mscorlib.dll::System::String::String_Concat_3
+                              (StringLiteral_TriangleCount__,pSVar32,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar32,(MethodInfo *)0x0);
           return;
         }
       }
@@ -319,8 +331,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar28 = (code *)swi(3);
-  (*pcVar28)();
+  pcVar33 = (code *)swi(3);
+  (*pcVar33)();
   return;
 }
 
@@ -346,8 +358,10 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Key__
                    );
-    func_?(0xc618);
-    func_?(0x760c);
+    func_?(&
+                    TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
     func_?(&
                     MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
@@ -357,115 +371,96 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
   }
   this_00 = (List_1_MVTerrainLOD_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
-  if (this_00 != (List_1_MVTerrainLOD_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
-    (this->fields).LODBookkeeping = this_00;
-    func_?(&this->fields,this_00);
-    value = (TerrainLODComponent_TriangleCounter *)
-            func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
-    if (value != (TerrainLODComponent_TriangleCounter *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
-                       );
-        func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>
-                       );
-        cRam_? = '\x01';
-      }
-      this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>
-                               );
-      if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-        HashSet_1_UnityEngine_Vector3___ctor
-                  (this_01,
-                   MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
-                  );
-        pMVar4 = (MethodInfo *)&value->fields;
-        (value->fields).enabledChunks = (HashSet_1_MV_WorldObject_IntVector_ *)this_01;
-        func_?(pMVar4,this_01);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);
-        pMVar4 = (MethodInfo *)&(this->fields).triangleCounter;
-        (this->fields).triangleCounter = value;
-        func_?(pMVar4,value);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
-        (this->fields).prototypeCubeModel = prototypeCubeModel;
-        func_?((short)&(this->fields).prototypeCubeModel,prototypeCubeModel);
-        (this->fields).chunkInstances = chunkInstances;
-        func_?(&(this->fields).chunkInstances,(short)chunkInstances);
-        (this->fields).dynamicLodDistance = dynamicLodDistance;
-        func_?(&(this->fields).dynamicLodDistance,dynamicLodDistance);
-        (this->fields).scale = scale;
-        (this->fields).debug = debug;
-        if (chunkInstances != (ChunkInstances *)0x0) {
-          piVar5 = (int *)func_?(0,TypeInfo__System__Collections__IEnumerable,
-                                          chunkInstances);
-          uStack_1 = 1;
-          while (piVar5 != (int *)0x0) {
-            cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar5);
-            if (cVar6 == '\0') {
-              uStack_1 = 0xffffffff;
-              iVar7 = func_?(piVar5,TypeInfo__System__IDisposable);
-              if (iVar7 != 0) {
-                func_?(0,TypeInfo__System__IDisposable,iVar7);
-              }
-              uStack_1 = 0xffffffff;
-              this_02 = (UnityAction_2_System_Object_System_Object_ *)
-                        func_?(TypeInfo__System__EventHandler<ChunkInstancesChanged>);
-              if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (this_02,(Object *)this,
-                           MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
-                           ,(MethodInfo *)0x0);
-                ChunkInstances::ChunkInstances_add_Changed
-                          (chunkInstances,(EventHandler_1_ChunkInstancesChanged_ *)this_02,
-                           (MethodInfo *)0x0);
-                *unaff_FS_OFFSET = uStack_3;
-                return;
-              }
-              break;
-            }
-            if (piVar5 == (int *)0x0) break;
-            uVar8 = 0;
-            uVar9 = *(ushort *)(*piVar5 + 0xb2);
-            if (uVar9 != 0) {
-              do {
-                if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
-                    TypeInfo__System__Collections__IEnumerator) {
-                  puVar10 = (undefined4 *)
-                           (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xc4 +
-                           *piVar5);
-                  goto code_?;
-                }
-                uVar8 = uVar8 + 1;
-              } while (uVar8 < uVar9);
-            }
-            puVar10 = (undefined4 *)
-                     func_?(piVar5,TypeInfo__System__Collections__IEnumerator,1);
-code_?:
-            piVar11 = (int *)(*(code *)*puVar10)(piVar5,puVar10[1]);
-            if (piVar11 == (int *)0x0) break;
-            if (*(Il2CppClass **)(*piVar11 + 0x20) !=
-                (
-                TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                ->_0).element_class) {
-              func_?(piVar11,
-                              TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                             );
-              break;
-            }
-            pIVar12 = (IntVector *)func_?(piVar11);
-            TerrainLODComponent_AddToLOD(this,*pIVar12,(MethodInfo *)0x0);
-          }
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
+  (this->fields).LODBookkeeping = this_00;
+  func_?(&this->fields,this_00);
+  value = (TerrainLODComponent_TriangleCounter *)
+          func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  this_01 = (HashSet_1_MV_WorldObject_IntVector_ *)func_?();
+  System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
+  HashSet_1_MV_WorldObject_IntVector___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
+            );
+  pMVar4 = (MethodInfo *)&value->fields;
+  (value->fields).enabledChunks = this_01;
+  func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);
+  pMVar4 = (MethodInfo *)&(this->fields).triangleCounter;
+  (this->fields).triangleCounter = value;
+  func_?(pMVar4,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
+  (this->fields).prototypeCubeModel = prototypeCubeModel;
+  func_?(&(this->fields).prototypeCubeModel,prototypeCubeModel);
+  (this->fields).chunkInstances = chunkInstances;
+  func_?(&(this->fields).chunkInstances,chunkInstances);
+  (this->fields).dynamicLodDistance = dynamicLodDistance;
+  func_?(&(this->fields).dynamicLodDistance,dynamicLodDistance);
+  (this->fields).scale = scale;
+  (this->fields).debug = debug;
+  if (chunkInstances != (ChunkInstances *)0x0) {
+    piVar5 = (int *)func_?();
+    uStack_1 = 1;
+    while (piVar5 != (int *)0x0) {
+      cVar6 = func_?();
+      if (cVar6 == '\0') {
+        uStack_1 = 0xffffffff;
+        iVar7 = func_?();
+        if (iVar7 != 0) {
+          func_?();
         }
+        uStack_1 = 0xffffffff;
+        this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_02,(Object *)this,
+                   MethodInfo__TerrainLODComponent__chunkInstances_Changed_System__Object__ChunkInstancesChanged_
+                   ,(MethodInfo *)0x0);
+        ChunkInstances::ChunkInstances_add_Changed
+                  (chunkInstances,(EventHandler_1_ChunkInstancesChanged_ *)this_02,(MethodInfo *)0x0
+                  );
+        *unaff_FS_OFFSET = uStack_3;
+        return;
       }
+      if (piVar5 == (int *)0x0) break;
+      uVar8 = 0;
+      uVar9 = *(ushort *)(*piVar5 + 0xb6);
+      if (uVar9 != 0) {
+        do {
+          if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
+              TypeInfo__System__Collections__IEnumerator) {
+            puVar10 = (undefined4 *)
+                     (*piVar5 +
+                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x19) * 8);
+            goto code_?;
+          }
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
+      }
+      puVar10 = (undefined4 *)func_?();
+code_?:
+      piVar11 = (int *)(*(code *)*puVar10)();
+      if (piVar11 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar11 + 0x20) !=
+          (
+          TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+          ->_0).element_class) {
+        func_?();
+        break;
+      }
+      pIVar12 = (IntVector *)func_?();
+      TerrainLODComponent_AddToLOD(this,*pIVar12,(MethodInfo *)0x0);
     }
   }
   func_?();

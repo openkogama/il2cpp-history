@@ -49,228 +49,255 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh
       if ((pPVar2 != (PrefabPool *)0x0) && (this_01 != (Renderer *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                   (this_01,(pPVar2->fields).modelConstraintsMaterial,(MethodInfo *)0x0);
-        this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                  func_?(TypeInfo__System__Collections__Generic__List<int>);
-        if (this_02 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-          LowLevelList_1_System_Object___ctor
-                    ((LowLevelList_1_System_Object_ *)this_02,
-                     MethodInfo__System__Collections__Generic__List<int>__List__);
-          this_03 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                    func_?(
-                                   TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>
-                                   );
-          if (this_03 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-            LowLevelList_1_System_Object___ctor
-                      ((LowLevelList_1_System_Object_ *)this_03,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__)
-            ;
-            if (this_00 != (MeshFilter *)0x0) {
-              this_04 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
-                                  (this_00,(MethodInfo *)0x0);
-              if (this_04 != (Mesh *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                          (this_04,vertices,(MethodInfo *)0x0);
-                pSVar3 = (SendOrPostCallback *)0x2;
-                while( true ) {
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] = pSVar3;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,pSVar3,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] =
-                         (SendOrPostCallback *)((int)&pSVar3->klass + 1);
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,(undefined1 *)((int)&pSVar3->klass + 1),
-                               pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] =
-                         (SendOrPostCallback *)((int)&pSVar3[-1].fields._.delegates + 2);
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,(undefined1 *)((int)&pSVar3[-1].fields._.delegates + 2),
-                               pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] =
-                         (SendOrPostCallback *)((int)&pSVar3[-1].fields._.delegates + 2);
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,(undefined1 *)((int)&pSVar3[-1].fields._.delegates + 2),
-                               pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] =
-                         (SendOrPostCallback *)((int)&pSVar3[-1].fields._.delegates + 3);
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,(undefined1 *)((int)&pSVar3[-1].fields._.delegates + 3),
-                               pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-                  piVar5 = &(this_02->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_02->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_02->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_02->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7] = pSVar3;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_02,pSVar3,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = 
-                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                  ;
-                  piVar5 = &(this_03->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_03->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_03->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_03->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7 * 2] = (SendOrPostCallback *)0x0;
-                    (&pUVar6->vector[0].m_DelagateState)[uVar7 * 2] = (Object *)0x0;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_03,0,0,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = 
-                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                  ;
-                  piVar5 = &(this_03->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_03->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_03->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_03->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7 * 2] =
-                         (SendOrPostCallback *)0x3f800000;
-                    (&pUVar6->vector[0].m_DelagateState)[uVar7 * 2] = (Object *)0x0;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_03,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy,0);
-                  }
-                  pMVar4 = 
-                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                  ;
-                  piVar5 = &(this_03->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_03->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_03->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_03->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7 * 2] =
-                         (SendOrPostCallback *)0x3f800000;
-                    (&pUVar6->vector[0].m_DelagateState)[uVar7 * 2] = (Object *)0x3f800000;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_03,0x3f800000,0x3f800000,
-                               pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pMVar4 = 
-                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                  ;
-                  piVar5 = &(this_03->fields)._version;
-                  *piVar5 = *piVar5 + 1;
-                  pUVar6 = (this_03->fields)._items;
-                  if (pUVar6 == (UnitySynchronizationContext_WorkRequest__Array *)0x0) break;
-                  uVar7 = (this_03->fields)._size;
-                  if (uVar7 < pUVar6->max_length) {
-                    (this_03->fields)._size = uVar7 + 1;
-                    if (pUVar6->max_length <= uVar7) goto code_?;
-                    (&pUVar6->vector[0].m_DelagateCallback)[uVar7 * 2] = (SendOrPostCallback *)0x0;
-                    (&pUVar6->vector[0].m_DelagateState)[uVar7 * 2] = (Object *)0x3f800000;
-                  }
-                  else {
-                    (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this_03,0,0x3f800000,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
-                  }
-                  pSVar3 = (SendOrPostCallback *)&pSVar3->monitor;
-                  if (0x19 < (int)pSVar3) {
-                    pUVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                             UnitySynchronizationContext+WorkRequest]::
-                             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                                       (this_03,
-                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
-                                       );
-                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
-                              (this_04,(Vector2__Array *)pUVar6,(MethodInfo *)0x0);
-                    pUVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                             UnitySynchronizationContext+WorkRequest]::
-                             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                                       (this_02,
-                                        MethodInfo__System__Collections__Generic__List<int>__ToArray__
-                                       );
-                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
-                              (this_04,(Int32__Array *)pUVar6,(MethodInfo *)0x0);
-                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateNormals
-                              (this_04,(MethodInfo *)0x0);
-                    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateBounds
-                              (this_04,(MethodInfo *)0x0);
-                    return;
-                  }
+        this_02 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                   *)func_?(TypeInfo__System__Collections__Generic__List<int>);
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+                   MethodInfo__System__Collections__Generic__List<int>__List__);
+        this_03 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                   *)func_?(
+                                    TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>
+                                    );
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+        if (this_00 != (MeshFilter *)0x0) {
+          this_04 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
+                              (this_00,(MethodInfo *)0x0);
+          if (this_04 != (Mesh *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
+                      (this_04,vertices,(MethodInfo *)0x0);
+            item_00 = 2;
+            if (this_02 !=
+                (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)0x0) {
+              while( true ) {
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00 + 1;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00 + 1,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -2;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00 + -2,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -2;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00 + -2,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -1;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00 + -1,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                piVar4 = &(this_02->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_02->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_02->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_02->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6] = item_00;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                  List_1_System_Int32__AddWithResize
+                            ((List_1_System_Int32_ *)this_02,item_00,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = 
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                ;
+                if (this_03 ==
+                    (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                     *)0x0) break;
+                piVar4 = &(this_03->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_03->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_03->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_03->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6 * 2] = 0;
+                  (&pMVar5->vector[0].name)[uVar6 * 2] = (String *)0x0;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__AddWithResize
+                            ((List_1_UnityEngine_Vector2_ *)this_03,(Vector2)0x0,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = 
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                ;
+                piVar4 = &(this_03->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_03->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_03->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_03->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6 * 2] = 0x3f800000;
+                  (&pMVar5->vector[0].name)[uVar6 * 2] = (String *)0x0;
+                }
+                else {
+                  pMVar3 = pMVar3->klass->rgctx_data[0xe].method;
+                  item.y = 0.0;
+                  item.x = (float)pMVar3;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__AddWithResize
+                            ((List_1_UnityEngine_Vector2_ *)this_03,item,pMVar3);
+                }
+                pMVar3 = 
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                ;
+                piVar4 = &(this_03->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_03->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_03->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_03->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6 * 2] = 0x3f800000;
+                  (&pMVar5->vector[0].name)[uVar6 * 2] = (String *)0x3f800000;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__AddWithResize
+                            ((List_1_UnityEngine_Vector2_ *)this_03,(Vector2)0x3f8000003f800000,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                pMVar3 = 
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                ;
+                piVar4 = &(this_03->fields)._version;
+                *piVar4 = *piVar4 + 1;
+                pMVar5 = (this_03->fields)._items;
+                if (pMVar5 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+                break;
+                uVar6 = (this_03->fields)._size;
+                if (uVar6 < pMVar5->max_length) {
+                  (this_03->fields)._size = uVar6 + 1;
+                  if (pMVar5->max_length <= uVar6) goto code_?;
+                  (&pMVar5->vector[0].index)[uVar6 * 2] = 0;
+                  (&pMVar5->vector[0].name)[uVar6 * 2] = (String *)0x3f800000;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__AddWithResize
+                            ((List_1_UnityEngine_Vector2_ *)this_03,(Vector2)0x3f80000000000000,
+                             pMVar3->klass->rgctx_data[0xe].method);
+                }
+                item_00 = item_00 + 4;
+                if (0x19 < item_00) {
+                  pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                           UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]
+                           ::
+                           List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                                     (this_03,
+                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
+                                     );
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv
+                            (this_04,(Vector2__Array *)pMVar5,(MethodInfo *)0x0);
+                  pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                           UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]
+                           ::
+                           List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                                     (this_02,
+                                      MethodInfo__System__Collections__Generic__List<int>__ToArray__
+                                     );
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
+                            (this_04,(Int32__Array *)pMVar5,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateNormals
+                            (this_04,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateBounds
+                            (this_04,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -282,8 +309,8 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -302,11 +329,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Constraint_
   pIVar1 = (this->fields).constraint;
   if (pIVar1 != (IModelingConstraint *)0x0) {
     pIVar2 = pIVar1->klass;
-    if (((TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth <=
-         (pIVar2->_1).typeHierarchyDepth) &&
-       ((pIVar2->_1).typeHierarchy
-        [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] ==
-        (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
+    if (((TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment <=
+         (pIVar2->_1).naturalAligment) &&
+       ((pIVar2->_1).typeHierarchy[(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1]
+        == (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       if ((e == (ConstraintBoxChangedEventArgs *)0x0) || (this_00 == (Transform *)0x0)) {
@@ -340,10 +366,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_CreateInsid
   pVVar2 = (Vector3__Array *)0x0;
   if (pIVar1 != (IModelingConstraint *)0x0) {
     pIVar3 = pIVar1->klass;
-    if (((TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth <=
-         (pIVar3->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment <=
+         (pIVar3->_1).naturalAligment) &&
        ((pIVar3->_1).typeHierarchy
-        [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
       pIVar1 = (this->fields).constraint;
       if (pIVar1 == (IModelingConstraint *)0x0) {
@@ -351,10 +377,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_CreateInsid
                   ((Component *)this,(MethodInfo *)0x0);
       }
       else {
-        if (((pIVar1->klass->_1).typeHierarchyDepth <
-             (TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth) ||
+        if (((pIVar1->klass->_1).naturalAligment <
+             (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment) ||
            ((pIVar1->klass->_1).typeHierarchy
-            [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] !=
+            [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
           bVar4 = false;
         }
@@ -438,14 +464,13 @@ code_?:
       return;
     }
     pIVar3 = ((this->fields).constraint)->klass;
-    if (((TypeInfo__ModelingBoxConstraint->_1).typeHierarchyDepth <=
-         (pIVar3->_1).typeHierarchyDepth) &&
-       ((pIVar3->_1).typeHierarchy[(TypeInfo__ModelingBoxConstraint->_1).typeHierarchyDepth - 1] ==
+    if (((TypeInfo__ModelingBoxConstraint->_1).naturalAligment <= (pIVar3->_1).naturalAligment) &&
+       ((pIVar3->_1).typeHierarchy[(TypeInfo__ModelingBoxConstraint->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__ModelingBoxConstraint)) {
       pIVar1 = (this->fields).constraint;
       pIVar5 = (IModelingConstraint *)0x0;
       if ((pIVar1->klass->_1).typeHierarchy
-          [(TypeInfo__ModelingBoxConstraint->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__ModelingBoxConstraint->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__ModelingBoxConstraint) {
         pIVar5 = pIVar1;
       }
@@ -502,7 +527,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init
                IModelingConstraint *constraint,String *layer,MethodInfo *method)
 
 {
-  this_01 = this;
+  this_00 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
@@ -531,7 +556,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init
                   (pTVar2,*pQVar3,(MethodInfo *)0x0);
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        pVVar4 = (Vector3 *)(*(targetCubeModel->klass->vtable).get_Scale.methodPtr)();
+        pVVar4 = (Vector3 *)(*(code *)(targetCubeModel->klass->vtable).get_Scale.method)();
         if (pTVar2 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                     (pTVar2,*pVVar4,(MethodInfo *)0x0);
@@ -545,15 +570,15 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                         (pTVar2,value_00,(MethodInfo *)0x0);
               if (((constraint == (IModelingConstraint *)0x0) ||
-                  ((constraint->klass->_1).typeHierarchyDepth <
-                   (TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth)) ||
+                  ((constraint->klass->_1).naturalAligment <
+                   (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment)) ||
                  ((constraint->klass->_1).typeHierarchy
-                  [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] !=
+                  [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
                   (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
                 pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                    ((Component *)this,(MethodInfo *)0x0);
                 puVar5 = (undefined8 *)
-                         (*(targetCubeModel->klass->vtable).get_WorldPosition_1.methodPtr)();
+                         (*(code *)(targetCubeModel->klass->vtable).get_WorldPosition_1.method)();
                 if (pTVar2 != (Transform *)0x0) {
                   fVar6 = (float)*puVar5;
                   this = (ConstraintVisualizer *)*(undefined4 *)(puVar5 + 1);
@@ -561,15 +586,15 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init
                   VVar8 = (Vector3)CONCAT84(uVar9,fVar6);
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                             (pTVar2,VVar8,(MethodInfo *)0x0);
-                  ConstraintVisualizer_CreateInsideOutCube(this_01,(MethodInfo *)0x0);
+                  ConstraintVisualizer_CreateInsideOutCube(this_00,(MethodInfo *)0x0);
                   return;
                 }
               }
               else {
-                if (((constraint->klass->_1).typeHierarchyDepth <
-                     (TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth) ||
+                if (((constraint->klass->_1).naturalAligment <
+                     (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment) ||
                    ((constraint->klass->_1).typeHierarchy
-                    [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] !=
+                    [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
                     (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) goto code_?;
                 pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                    ((Component *)this,(MethodInfo *)0x0);
@@ -580,39 +605,32 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init
                   VVar8 = (Vector3)CONCAT84(uVar9,pIVar10);
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                             (pTVar2,VVar8,(MethodInfo *)0x0);
-                  this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-                  this_00 = 
-                  MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
-                  ;
-                  if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              (this_02,(Object *)this_01,
-                               MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
-                               ,(MethodInfo *)0x0);
-                    if (cRam_? == '\0') {
-                      func_?();
-                      cRam_? = '\x01';
-                    }
-                    pDVar11 = (Delegate *)constraint[0xb].monitor;
-                    do {
-                      constraint = (IModelingConstraint *)&UNK_?;
-                      pDVar12 = pDVar11;
-                      pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                         (pDVar11,(Delegate *)this_02,(MethodInfo *)0x0);
-                      if (pDVar11 != (Delegate *)0x0) {
-                        iVar13 = func_?();
-                        if (iVar13 == 0) goto code_?;
-                      }
-                      pDVar11 = (Delegate *)func_?();
-                      this_02 = (UnityAction_2_System_Object_System_Object_ *)constraint;
-                      if (pDVar11 == pDVar12) {
-                        ConstraintVisualizer_CreateInsideOutCube
-                                  ((ConstraintVisualizer *)this_00,(MethodInfo *)0x0);
-                        return;
-                      }
-                    } while( true );
+                  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                            (this_01,(Object *)this_00,
+                             MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
+                             ,(MethodInfo *)0x0);
+                  if (cRam_? == '\0') {
+                    func_?();
+                    cRam_? = '\x01';
                   }
+                  pDVar11 = (Delegate *)constraint[0xb].monitor;
+                  do {
+                    pDVar12 = pDVar11;
+                    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                       (pDVar11,(Delegate *)this_01,(MethodInfo *)0x0);
+                    if (pDVar11 != (Delegate *)0x0) {
+                      iVar13 = func_?();
+                      if (iVar13 == 0) goto code_?;
+                    }
+                    pDVar11 = (Delegate *)func_?();
+                    if (pDVar11 == pDVar12) {
+                      ConstraintVisualizer_CreateInsideOutCube
+                                ((ConstraintVisualizer *)0x0,(MethodInfo *)0x0);
+                      return;
+                    }
+                  } while( true );
                 }
               }
             }
@@ -646,23 +664,15 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_OnDestroy
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
     cRam_? = '\x01';
   }
-  pDVar1 = (Delegate *)(this->fields).constraint;
-  if (((pDVar1 != (Delegate *)0x0) &&
-      ((TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth <=
-       (pDVar1->klass->_1).typeHierarchyDepth)) &&
-     ((pDVar1->klass->_1).typeHierarchy
-      [(TypeInfo__ModelingDynamicBoxConstraint->_1).typeHierarchyDepth - 1] ==
+  pIVar1 = (this->fields).constraint;
+  if (((pIVar1 != (IModelingConstraint *)0x0) &&
+      ((TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment <=
+       (pIVar1->klass->_1).naturalAligment)) &&
+     ((pIVar1->klass->_1).typeHierarchy
+      [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] ==
       (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
     this_00 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-    if (this_00 == (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      func_?();
-code_?:
-      func_?(pDVar1);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (this_00,(Object *)this,
@@ -672,18 +682,21 @@ code_?:
       func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
       cRam_? = '\x01';
     }
-    source = pDVar1[1].fields.method_code;
-    ppvVar3 = &pDVar1[1].fields.method_code;
+    pDVar2 = (Delegate *)pIVar1[0xb].monitor;
     do {
-      pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         (source,(Delegate *)this_00,(MethodInfo *)0x0);
-      iVar4 = 0;
-      if ((pDVar1 != (Delegate *)0x0) && (iVar4 = func_?(pDVar1), iVar4 == 0))
-      goto code_?;
+      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         (pDVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+      iVar3 = 0;
+      if ((pDVar2 != (Delegate *)0x0) && (iVar3 = func_?(pDVar2), iVar3 == 0)) {
+        func_?(pDVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
       this_00 = (UnityAction_2_System_Object_System_Object_ *)&UNK_?;
-      pDVar1 = (Delegate *)ppvVar3;
-      source = (Delegate *)func_?(ppvVar3,iVar4);
-    } while (source != pDVar1);
+      pDVar5 = (Delegate *)&pIVar1[0xb].monitor;
+      pDVar2 = (Delegate *)func_?(&pIVar1[0xb].monitor,iVar3);
+    } while (pDVar2 != pDVar5);
   }
   return;
 }

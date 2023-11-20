@@ -35,57 +35,53 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
       func_?(TypeInfo__SharedCubeFunctions);
     }
     pNVar4 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
-                        (&NStack_5,pTVar3,(MethodInfo *)0x0);
+                        ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffd4,pTVar3,
+                         (MethodInfo *)0x0);
     if (pNVar4->hasValue == 0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+        func_?();
         cRam_? = '\x01';
       }
-      pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uStack_7._0_4_ = (pVVar6->zeroVector).x;
-      uStack_7._4_4_ = (pVVar6->zeroVector).y;
-      fVar8 = (pVVar6->zeroVector).z;
+      pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar6 = (pVVar5->zeroVector).x;
+      uVar7 = (pVVar5->zeroVector).y;
+      fVar8 = (pVVar5->zeroVector).z;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
+        func_?();
         cRam_? = '\x01';
       }
-      NStack_5.value.m_Extents.y = 0.0;
-      NStack_5.value.m_Extents.z = 0.0;
-      NStack_5.value.m_Center.x = 0.0;
-      NStack_5.value.m_Center.y = 0.0;
-      NStack_5.value.m_Center.z = 0.0;
-      NStack_5.value.m_Extents.x = 0.0;
-      center.z = fVar8;
-      center.x = (float)(undefined4)uStack_7;
-      center.y = (float)uStack_7._4_4_;
-      UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-                (&NStack_5.value,center,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
-                 (MethodInfo *)0x0);
+      pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar9 = (pVVar5->oneVector).x;
+      uVar10 = (pVVar5->oneVector).y;
+      fVar11 = (pVVar5->oneVector).z * _UNK_?;
+      fVar12 = (float)uVar9 * _UNK_?;
+      fVar13 = (float)uVar10 * _UNK_?;
       if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
-      (this_00->fields).targetBounds.m_Center.x = NStack_5.value.m_Center.x;
-      (this_00->fields).targetBounds.m_Center.y = NStack_5.value.m_Center.y;
-      (this_00->fields).targetBounds.m_Center.z = NStack_5.value.m_Center.z;
-      (this_00->fields).targetBounds.m_Extents.x = NStack_5.value.m_Extents.x;
-      (this_00->fields).targetBounds.m_Extents.y = NStack_5.value.m_Extents.y;
-      (this_00->fields).targetBounds.m_Extents.z = NStack_5.value.m_Extents.z;
+      (this_00->fields).targetBounds.m_Center.x = (float)uVar6;
+      (this_00->fields).targetBounds.m_Center.y = (float)uVar7;
+      (this_00->fields).targetBounds.m_Center.z = fVar8;
+      (this_00->fields).targetBounds.m_Extents.x = fVar12;
+      (this_00->fields).targetBounds.m_Extents.y = fVar13;
+      (this_00->fields).targetBounds.m_Extents.z = fVar11;
     }
     else {
-      pBVar9 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
+      pBVar14 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
                 Nullable_1_UnityEngine_Bounds__get_Value
-                          (&NStack_5.value,(Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffbc,
+                          ((Bounds *)&stack0xffffffd8,
+                           (Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffb8,
                            MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fVar10 = (pBVar9->m_Extents).y;
-      fVar11 = (pBVar9->m_Extents).z;
-      fVar8 = (pBVar9->m_Center).y;
-      fVar12 = (pBVar9->m_Center).z;
-      fVar13 = (pBVar9->m_Extents).x;
+      fVar12 = (pBVar14->m_Extents).y;
+      fVar15 = (pBVar14->m_Extents).z;
+      fVar8 = (pBVar14->m_Center).y;
+      fVar11 = (pBVar14->m_Center).z;
+      fVar13 = (pBVar14->m_Extents).x;
       if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
-      (this_00->fields).targetBounds.m_Center.x = (pBVar9->m_Center).x;
+      (this_00->fields).targetBounds.m_Center.x = (pBVar14->m_Center).x;
       (this_00->fields).targetBounds.m_Center.y = fVar8;
-      (this_00->fields).targetBounds.m_Center.z = fVar12;
+      (this_00->fields).targetBounds.m_Center.z = fVar11;
       (this_00->fields).targetBounds.m_Extents.x = fVar13;
-      (this_00->fields).targetBounds.m_Extents.y = fVar10;
-      (this_00->fields).targetBounds.m_Extents.z = fVar11;
+      (this_00->fields).targetBounds.m_Extents.y = fVar12;
+      (this_00->fields).targetBounds.m_Extents.z = fVar15;
     }
     ScreenShotGenerator::ScreenShotGenerator_InitCamera(this_00,0x200,0x200,(MethodInfo *)0x0);
     pGVar2 = (this_00->fields).targetObject;
@@ -96,28 +92,28 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
         func_?();
       }
       layersToChange.m_Mask =
-           (int32_t)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
+           (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility
+                    ::UnsafeUtility_AsRef_1
                               ((Void *)TypeInfo__ScreenShotGenerator->static_fields->renderLayers,
                                (MethodInfo *)0x0);
       layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                         (StringLiteral_Preview,(MethodInfo *)0x0);
       LayerUtil::LayerUtil_SetLayerRecursively_2(pTVar3,layersToChange,layer,(MethodInfo *)0x0);
-      this_01 = (TweenRunner_1_FloatTween_ *)func_?();
-      if (this_01 != (TweenRunner_1_FloatTween_ *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-        TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)this_01;
-        func_?(&(this->fields).__2__current,this_01);
-        (this->fields).__1__state = 1;
-        return 1;
-      }
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      (this->fields).__2__current = (Object *)this_01;
+      func_?();
+      (this->fields).__1__state = 1;
+      return 1;
     }
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 
@@ -130,7 +126,6 @@ void Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

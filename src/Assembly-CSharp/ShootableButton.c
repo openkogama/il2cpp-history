@@ -50,37 +50,49 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Destroy
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (pIVar1 != (IEditModeUI *)0x0) {
-      pDVar2 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar1);
-      this_00 = (UnityAction_1_System_ByteEnum_ *)
-                func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__ShootableButton__OnEditModeChange_EditModeChangeArgs_,
-                   (MethodInfo *)0x0);
-        pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           (pDVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-        this = (ShootableButton *)0x0;
-        if (pDVar2 != (Delegate *)0x0) {
-          this = (ShootableButton *)func_?();
-          if (this == (ShootableButton *)0x0) goto code_?;
-        }
-        func_?(3,TypeInfo__IEditModeUI);
-        goto code_?;
-      }
+    pSVar1 = (ShootableButton *)
+             TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+    if (pSVar1 == (ShootableButton *)0x0) {
+      func_?();
+code_?:
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    func_?();
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    pDVar3 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pSVar1);
+    this_00 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,
+               MethodInfo__ShootableButton__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar3 != (Delegate *)0x0) {
+      iVar4 = func_?();
+      if (iVar4 == 0) goto code_?;
+    }
+    unaff_EBP = 3;
+    func_?(3);
+    this = pSVar1;
   }
-code_?:
-  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UpdateController,unaff_EBP);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UpdateController);
+  }
+  UpdateController::UpdateController_RemoveUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
+    (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields)._.cullingSubscriberBase,0);
+  }
+  MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -157,22 +169,16 @@ Bounds * Assembly-CSharp.dll::ShootableButton::ShootableButton_GetLocalBounds
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
-  size.y = (float)
-           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::DotParamsList_1_T_::T>_>
-  ;
-  size.x = (float)
-           TypeRef__System__Collections__Generic__ICollection<System::Collections::Generic::KeyValuePair<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::DotParamsList_1_T_::T>_>
-  ;
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  size.z = 0.701;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-            (__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (__return_storage_ptr__->m_Center).x = (pVVar1->zeroVector).x;
+  uVar4 = _UNK_?;
+  (__return_storage_ptr__->m_Center).y = fVar2;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).z = 0.3505;
   return __return_storage_ptr__;
 }
 
@@ -219,12 +225,12 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
       pLVar2 = (this->fields).interactable;
       this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<TakeDamageEventArgs>);
-      if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__ShootableButton__Activate_System__Object__TakeDamageEventArgs_,
-                     (MethodInfo *)0x0), pLVar2 != (LogicInteractable *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__ShootableButton__Activate_System__Object__TakeDamageEventArgs_,
+                 (MethodInfo *)0x0);
+      if (pLVar2 != (LogicInteractable *)0x0) {
         LogicInteractable::LogicInteractable_add_OnDamageEvent
                   (pLVar2,(EventHandler_1_TakeDamageEventArgs_ *)this_01,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
@@ -240,19 +246,21 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
           pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
           if (pIVar3 == (IEditModeUI *)0x0) goto code_?;
           pDVar4 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar3);
-          this_02 = (UnityAction_1_System_ByteEnum_ *)
+          this_02 = (UnityAction_1_System_Int32Enum_ *)
                     func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-          if (this_02 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-          UnityAction_1_System_ByteEnum___ctor
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+          UnityAction_1_System_Int32Enum___ctor
                     (this_02,(Object *)this,
                      MethodInfo__ShootableButton__OnEditModeChange_EditModeChangeArgs_,
                      (MethodInfo *)0x0);
           pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                              (pDVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-          if ((pDVar4 != (Delegate *)0x0) && (iVar5 = func_?(), iVar5 == 0)) {
-            func_?();
-            goto code_?;
+          if (pDVar4 != (Delegate *)0x0) {
+            iVar5 = func_?();
+            if (iVar5 == 0) {
+              func_?();
+              goto code_?;
+            }
           }
           in_stack_6 = (GreyOutObjectScript *)0x3;
           func_?();
@@ -272,68 +280,61 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize
             if (pSVar7 != (ShootableButtonObject *)0x0) {
               MVLogicObject::MVLogicObject_SetupCulling
                         ((MVLogicObject *)this,(pSVar7->fields).visualRoot,2.0,(MethodInfo *)0x0);
-              this_03 = (Action_3_Boolean_Boolean_Object_ *)
+              this_03 = (Action_3_Int32_Int32_ByteEnum_ *)
                         func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-              if (this_03 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
-                mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::
-                Action_3_Boolean_Boolean_Object___ctor
-                          (this_03,(Object *)this,
-                           MethodInfo__ShootableButton__SignalCallback_bool__bool__LogicObjectManager_
-                           ,(MethodInfo *)0x0);
-                puVar9 = &UNK_?;
-                pIVar10 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
-                                   ((MVWorldObject *)this,0,
-                                    (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_03,
-                                    (MethodInfo *)0x0);
-                (this->fields)._InputSignalReceiver_k__BackingField = pIVar10;
-                func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar10);
-                iVar11 = (this->fields)._._._.id;
-                this_04 = (WorldObjectClientRef_1_System_Object_ *)
-                          func_?(TypeInfo__OutputSignalTransmitter);
-                if (this_04 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-                  WorldObjectClientRef`1[System::Object]::
-                  WorldObjectClientRef_1_System_Object___ctor(this_04,iVar11,(MethodInfo *)0x0);
-                  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_04;
-                  func_?(&(this->fields).outputSignalTransmitter,this_04);
-                  iVar11 = ShootableButton_get_CurrentTime(this,(MethodInfo *)0x0);
-                  if (iVar11 == -1) {
-                    return;
+              mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::
+              Action_3_Int32_Int32_ByteEnum___ctor
+                        (this_03,(Object *)this,
+                         MethodInfo__ShootableButton__SignalCallback_bool__bool__LogicObjectManager_
+                         ,(MethodInfo *)0x0);
+              pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
+                                 ((MVWorldObject *)this,0,
+                                  (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_03,
+                                  (MethodInfo *)0x0);
+              (this->fields)._InputSignalReceiver_k__BackingField = pIVar9;
+              func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar9);
+              iVar10 = (this->fields)._._._.id;
+              puVar11 = &UNK_?;
+              this_04 = (WorldObjectClientRef_1_System_Object_ *)
+                        func_?(TypeInfo__OutputSignalTransmitter);
+              WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+                        (this_04,iVar10,(MethodInfo *)0x0);
+              (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_04;
+              func_?();
+              iVar10 = ShootableButton_get_CurrentTime(this,(MethodInfo *)0x0);
+              if (iVar10 == -1) {
+                return;
+              }
+              pCVar8 = (this->fields).targetCollider;
+              if (pCVar8 != (Collider *)0x0) {
+                UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
+                          (pCVar8,0,(MethodInfo *)0x0);
+                pSVar7 = (this->fields).buttonObject;
+                if ((pSVar7 != (ShootableButtonObject *)0x0) &&
+                   ((pSVar7->fields).greyOutObject != (GreyOutObjectScript *)0x0)) {
+                  if (cRam_? == '\0') {
+                    func_?();
+                    func_?(&
+                                    MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
+                                   );
+                    cRam_? = '\x01';
                   }
-                  pCVar8 = (this->fields).targetCollider;
-                  if (pCVar8 != (Collider *)0x0) {
-                    UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                              (pCVar8,0,(MethodInfo *)0x0);
-                    pSVar7 = (this->fields).buttonObject;
-                    if ((pSVar7 != (ShootableButtonObject *)0x0) &&
-                       ((pSVar7->fields).greyOutObject != (GreyOutObjectScript *)0x0)) {
-                      if (cRam_? == '\0') {
-                        func_?();
-                        func_?(&
-                                        MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
-                                       );
-                        cRam_? = '\x01';
-                      }
-                      this_00 = (Action_1_Object_ *)
-                                func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                                                ,puVar9);
-                      if (this_00 == (Action_1_Object_ *)0x0) {
-                        func_?();
-                        pcVar12 = (code *)swi(3);
-                        (*pcVar12)();
-                        return;
-                      }
-                      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                                (this_00,(Object *)in_stack_6,
-                                 MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
-                                 ,(MethodInfo *)0x0);
-                      GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                                (in_stack_6,
-                                 (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,
-                                 (MethodInfo *)0x0);
-                      (in_stack_6->fields).isGreyedIn = 0;
-                      return;
-                    }
-                  }
+                  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                             *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                               ,puVar11);
+                  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP
+                  ::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+                  __Il2CppFullySharedGenericType]::
+                  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                            (this_00,(Object *)in_stack_6,
+                             MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
+                             ,(MethodInfo *)0x0);
+                  GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
+                            (in_stack_6,
+                             (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,
+                             (MethodInfo *)0x0);
+                  (in_stack_6->fields).isGreyedIn = 0;
+                  return;
                 }
               }
             }
@@ -470,31 +471,33 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Reset
        ((pSVar1->fields).greyOutObject != (GreyOutObjectScript *)0x0)) {
       if (cRam_? == '\0') {
         func_?();
+        ppMStack2 =
+             &
+             MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
+        ;
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (Action_1_Object_ *)func_?();
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)0x0,
-                   MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
-                   ,(MethodInfo *)0x0);
-        GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                  (in_stack_2,
-                   (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
-                   (MethodInfo *)0x0);
-        (in_stack_2->fields).isGreyedIn = 1;
-        return;
-      }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      ppMStack2 =
+           (MethodInfo **)TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)0x0,
+                 MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
+                 ,(MethodInfo *)0x0);
+      GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
+                (in_stack_3,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
+                 (MethodInfo *)0x0);
+      (in_stack_3->fields).isGreyedIn = 1;
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -517,25 +520,20 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToDownState
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (Action_1_Object_ *)
-                func_?(
-                               TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
-                               );
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)in_stack_2,
-                   MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
-                   ,(MethodInfo *)0x0);
-        GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                  (in_stack_2,
-                   (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
-                   (MethodInfo *)0x0);
-        (in_stack_2->fields).isGreyedIn = 0;
-        return;
-      }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(
+                                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>
+                                  );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)in_stack_2,
+                 MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
+                 ,(MethodInfo *)0x0);
+      GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
+                (in_stack_2,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
+                 (MethodInfo *)0x0);
+      (in_stack_2->fields).isGreyedIn = 0;
       return;
     }
   }
@@ -564,22 +562,18 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToUpState
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (Action_1_Object_ *)func_?();
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)0x0,
-                   MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
-                   ,(MethodInfo *)0x0);
-        GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
-                  (in_stack_2,
-                   (Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
-                   (MethodInfo *)0x0);
-        (in_stack_2->fields).isGreyedIn = 1;
-        return;
-      }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)0x0,
+                 MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
+                 ,(MethodInfo *)0x0);
+      GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials
+                (in_stack_2,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,
+                 (MethodInfo *)0x0);
+      (in_stack_2->fields).isGreyedIn = 1;
       return;
     }
   }
@@ -613,17 +607,19 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SignalCallback
       func_?(&StringLiteral_duration);
       cRam_? = '\x01';
     }
-    this_00 = (this->fields)._._._.data;
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_00,(Object *)StringLiteral_duration,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar4 = CONCAT44(TypeInfo__System__Single,pOVar3);
-      if (pOVar3 != (Object *)0x0) {
-        if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-        goto code_?;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              (this->fields)._._._.data;
+    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_00,(Object *)StringLiteral_duration,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar4 = CONCAT44(TypeInfo__System__Single,TVar3.m_Index);
+      if (TVar3.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
         pfVar5 = (float *)func_?();
         pOVar2 = (this->fields).outputSignalTransmitter;
         if ((int)(*pfVar5 * _UNK_?) < iVar1) {
@@ -690,16 +686,16 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton__ctor
       func_?();
       return;
     }
-    if (((TypeInfo__ShootableButtonObject->_1).typeHierarchyDepth <=
-         (((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__ShootableButtonObject->_1).naturalAligment <=
+         (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
        ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
-        [(TypeInfo__ShootableButtonObject->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__ShootableButtonObject->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__ShootableButtonObject)) {
       (this->fields).buttonObject = pSVar2;
-      if (((TypeInfo__ShootableButtonObject->_1).typeHierarchyDepth <=
-           (((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__ShootableButtonObject->_1).naturalAligment <=
+           (((ObjectPrefab__Class *)pSVar2->klass)->_1).naturalAligment) &&
          ((((ObjectPrefab__Class *)pSVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__ShootableButtonObject->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__ShootableButtonObject->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__ShootableButtonObject)) {
         func_?();
         return;
@@ -726,8 +722,8 @@ int32_t Assembly-CSharp.dll::ShootableButton::ShootableButton_get_CurrentTime
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -753,17 +749,6 @@ int32_t Assembly-CSharp.dll::ShootableButton::ShootableButton_get_CurrentTime
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::ShootableButton::ShootableButton_get_DocumentationType
-          (ShootableButton *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_ShootableButton;
-}
-
-
 /* Int32 get_Duration() */
 
 int32_t Assembly-CSharp.dll::ShootableButton::ShootableButton_get_Duration
@@ -776,15 +761,18 @@ int32_t Assembly-CSharp.dll::ShootableButton::ShootableButton_get_Duration
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_duration,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_duration,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
         pfVar2 = (float *)func_?();
         return (int)(*pfVar2 * _UNK_?);
       }
@@ -799,17 +787,6 @@ int32_t Assembly-CSharp.dll::ShootableButton::ShootableButton_get_Duration
   pcVar3 = (code *)swi(3);
   iVar4 = (*pcVar3)();
   return iVar4;
-}
-
-
-/* IInputSignalReceiver get_InputSignalReceiver() */
-
-IInputSignalReceiver *
-Assembly-CSharp.dll::ShootableButton::ShootableButton_get_InputSignalReceiver
-          (ShootableButton *this,MethodInfo *method)
-
-{
-  return (this->fields)._InputSignalReceiver_k__BackingField;
 }
 
 
@@ -853,8 +830,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_set_CurrentTime
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -874,22 +851,10 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_set_CurrentTime
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3
+  Extensions::Extensions_SetObscuredType_2
             (hashtable,StringLiteral_cT,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );
-  return;
-}
-
-
-/* Void set_InputSignalReceiver(IInputSignalReceiver) */
-
-void Assembly-CSharp.dll::ShootableButton::ShootableButton_set_InputSignalReceiver
-               (ShootableButton *this,IInputSignalReceiver *value,MethodInfo *method)
-
-{
-  (this->fields)._InputSignalReceiver_k__BackingField = value;
-  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,value);
   return;
 }
 
@@ -910,8 +875,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_set_IsActive
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -931,7 +896,7 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_set_IsActive
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3
+  Extensions::Extensions_SetObscuredType_2
             (hashtable,StringLiteral_cT,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );

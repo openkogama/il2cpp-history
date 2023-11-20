@@ -10,12 +10,13 @@ bool MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionBase::Subscri
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).benefits;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)subscriptionBenefit,
+  this_00 = (this->fields).benefits;
+  if (this_00 !=
+      (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
+       *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,subscriptionBenefit,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__ContainsKey_MV__WorldObject__Subscription__SubscriptionBenefit_
                       );
     return bVar1;
@@ -35,61 +36,64 @@ bool MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionBase::Subscri
                MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  pIVar1 = (Il2CppClass *)method;
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__TryGetValue_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule__
                    );
-    cRam_? = '\x01';
+    if ((((MethodInfo *)pIVar1)->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(pIVar1);
+    }
   }
-  pOStack_1 = (Object *)0x0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).benefits;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      (this_00,(Object *)subscriptionBenefit,&pOStack_1,
+  method = (MethodInfo *)0x0;
+  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).benefits;
+  if (this_00 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+    func_?();
+    rule = (Object **)unaff_EBX;
+  }
+  else {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__TryGetValue
+                      (this_00,subscriptionBenefit,(Object **)&method,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__TryGetValue_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule__
                       );
-    unaff_ESI = pOStack_1;
+    unaff_ESI = method;
     if (bVar2 == 0) {
       *rule = (Object *)0x0;
       return 0;
     }
-    unaff_EDI = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-    if (((uint)unaff_EDI[0x17].klass & 0x10000) == 0) {
-      pOStack_1 = unaff_EDI;
-      unaff_EDI = (Object *)func_?();
+    pIVar3 = (((MethodInfo *)pIVar1)->field7_0x1c).rgctx_data[1].klass;
+    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar3 = (Il2CppClass *)func_?(pIVar3);
     }
-    if (unaff_ESI == (Object *)0x0) {
-      pOVar3 = (Object *)0x0;
-    }
-    else {
-      pOStack_1 = unaff_EDI;
-      pOVar3 = (Object *)func_?(unaff_ESI);
-      if (pOVar3 == (Object *)0x0) goto code_?;
-    }
-    *rule = pOVar3;
-    unaff_EDI = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-    if (((uint)unaff_EDI[0x17].klass & 0x10000) == 0) {
-      pOStack_1 = unaff_EDI;
-      unaff_EDI = (Object *)func_?();
-    }
-    if (unaff_ESI == (Object *)0x0) {
-      pOStack_1 = (Object *)0x0;
+    if (unaff_ESI == (MethodInfo *)0x0) {
+      pOVar4 = (Object *)0x0;
     }
     else {
-      pOStack_1 = unaff_EDI;
-      pOStack_1 = (Object *)func_?(unaff_ESI);
-      if (pOStack_1 == (Object *)0x0) goto code_?;
+      pOVar4 = (Object *)func_?(unaff_ESI,pIVar3);
+      if (pOVar4 == (Object *)0x0) goto code_?;
     }
-    func_?(rule);
-    return 1;
+    *rule = pOVar4;
+    pIVar1 = (((MethodInfo *)pIVar1)->field7_0x1c).rgctx_data[1].klass;
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar1 = (Il2CppClass *)func_?(pIVar1);
+    }
+    if (unaff_ESI == (MethodInfo *)0x0) {
+      func_?(rule,0);
+      return 1;
+    }
+    iVar5 = func_?(unaff_ESI,pIVar1);
+    if (iVar5 != 0) {
+      func_?(rule,iVar5);
+      return 1;
+    }
   }
-  func_?();
+  func_?(unaff_ESI,pIVar1);
+  pIVar3 = (Il2CppClass *)rule;
 code_?:
-  pOStack_1 = unaff_EDI;
-  func_?(unaff_ESI);
-  pcVar4 = (code *)swi(3);
-  bVar2 = (*pcVar4)();
+  func_?(unaff_ESI,pIVar3);
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
   return bVar2;
 }
 
@@ -109,28 +113,23 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionBase::Subscri
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
-                              );
-  if (this_00 !=
-      (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
-       *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
-              );
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).benefits = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>
+                           );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
+            );
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).benefits =
+       (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
+        *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

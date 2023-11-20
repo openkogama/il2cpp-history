@@ -409,62 +409,52 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Awake
               ((pAVar3->fields)._._.method_code,TypeInfo__MainCameraManager->static_fields->mute,
                (pAVar3->fields)._._.method);
   }
-  dictionary = (SortedList_2_System_Single_System_Object_ *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-  this_00 = (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)
-            func_?(TypeInfo__ProtectedTransform);
-  if (this_00 != (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0) {
-    System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-    Single,System::Object]::SortedList_2_TKey_TValue_ValueList_System_Single_System_Object___ctor
-              (this_00,dictionary,(MethodInfo *)0x0);
-    (this->fields).protectedTransform = (ProtectedTransform *)this_00;
-    func_?(&(this->fields).protectedTransform,this_00);
-    pAVar3 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
-    this_01 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
-    if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-      UnityAction_1_System_ByteEnum___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__MainCameraManager__HandleCameraCubeAddedRemoved_bool_,(MethodInfo *)0x0
-                );
-      this = (MainCameraManager *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      pAVar4 = TypeInfo__System__Action<bool>;
-      if (this == (MainCameraManager *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved =
-             (Action_1_Boolean_ *)0x0;
-        pAStack5 = (Action_1_Boolean___Class *)0x0;
+  dictionary = (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+  this_00 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__ProtectedTransform);
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,dictionary,(MethodInfo *)0x0);
+  (this->fields).protectedTransform = (ProtectedTransform *)this_00;
+  func_?(&(this->fields).protectedTransform,this_00);
+  pAVar3 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
+  this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_01,(Object *)this,
+             MethodInfo__MainCameraManager__HandleCameraCubeAddedRemoved_bool_,(MethodInfo *)0x0);
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+  pAVar5 = TypeInfo__System__Action<bool>;
+  if (pDVar4 == (Delegate *)0x0) {
+    TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = (Action_1_Boolean_ *)0x0;
+    pAStack6 = (Action_1_Boolean___Class *)0x0;
 code_?:
-        pMStack6 =
-             (MainCameraManager *)
-             &TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
-        func_?();
-        return;
-      }
-      pAStack5 = TypeInfo__System__Action<bool>;
-      pMStack6 = this;
-      pAVar3 = (Action_1_Boolean_ *)func_?();
-      if (pAVar3 != (Action_1_Boolean_ *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = pAVar3;
-        pAVar4 = TypeInfo__System__Action<bool>;
-        pAStack5 = TypeInfo__System__Action<bool>;
-        pMStack6 = this;
-        pAStack5 = (Action_1_Boolean___Class *)func_?();
-        if (pAStack5 != (Action_1_Boolean___Class *)0x0) goto code_?;
-      }
-      goto code_?;
-    }
+    pDStack7 =
+         (Delegate *)&TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
+    func_?();
+    return;
   }
-  pAVar4 = (Action_1_Boolean___Class *)0x0;
+  pAStack6 = TypeInfo__System__Action<bool>;
+  pDStack7 = pDVar4;
+  pAVar3 = (Action_1_Boolean_ *)func_?();
+  if (pAVar3 != (Action_1_Boolean_ *)0x0) {
+    TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = pAVar3;
+    pAVar5 = TypeInfo__System__Action<bool>;
+    pAStack6 = TypeInfo__System__Action<bool>;
+    pDStack7 = pDVar4;
+    pAStack6 = (Action_1_Boolean___Class *)func_?();
+    if (pAStack6 != (Action_1_Boolean___Class *)0x0) goto code_?;
+  }
+  pDStack7 = pDVar4;
+  pAStack6 = pAVar5;
   func_?();
-code_?:
-  pMStack6 = this;
-  pAStack5 = pAVar4;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1251,13 +1241,11 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HasSetting
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-         TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this,(Object *)gameType,
+  this = TypeInfo__MainCameraManager->static_fields->cameraSettings;
+  if (this != (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_System_Single_ *)this,gameType,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__ContainsKey_MV__Common__MVGameType_
                       );
     return bVar1;
@@ -1282,13 +1270,8 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_IgnoreInputTypes
   }
   pEVar1 = (this->fields).onIgnoreInputTypes;
   if (pEVar1 != (EventHandler_1_OnIgnoreInputTypesArgs_ *)0x0) {
-    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__OnIgnoreInputTypesArgs);
-    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__OnIgnoreInputTypesArgs);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__EventArgs);
       cRam_? = '\x01';
@@ -1296,9 +1279,10 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_IgnoreInputTypes
     if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__EventArgs);
     }
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
-    (this_00->fields).m_CoroutineContainer = (MonoBehaviour *)inputTypes;
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)inputTypes;
     (*(pEVar1->fields)._._.invoke_impl)
               ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
   }
@@ -1394,16 +1378,6 @@ code_?:
 }
 
 
-/* Boolean IsCameraControllerSet() */
-
-bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_IsCameraControllerSet
-               (MainCameraManager *this,MethodInfo *method)
-
-{
-  return (this->fields).cameraController != (MVCameraController *)0x0;
-}
-
-
 /* Void OnDestroy() */
 
 void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_OnDestroy
@@ -1422,44 +1396,42 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_OnDestroy
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MainCameraManager);
   }
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-    Regex+CachedCodeEntryKey,System::Object]::
-    Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)TypeInfo__MainCameraManager->static_fields->cameraSettings;
+  if (this_00 ==
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    func_?();
+  }
+  else {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
+    StyleSheetCache+SheetHandleKey,System::Object]::
+    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Clear__
               );
     pAVar1 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
-    this_01 = (UnityAction_1_System_ByteEnum_ *)func_?(TypeInfo__System__Action<bool>);
-    if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-      UnityAction_1_System_ByteEnum___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__MainCameraManager__HandleCameraCubeAddedRemoved_bool_,(MethodInfo *)0x0
-                );
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar2 == (Delegate *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved =
-             (Action_1_Boolean_ *)0x0;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)this,
+               MethodInfo__MainCameraManager__HandleCameraCubeAddedRemoved_bool_,(MethodInfo *)0x0);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved =
+           (Action_1_Boolean_ *)0x0;
 code_?:
-        func_?();
-        return;
-      }
-      pAVar1 = (Action_1_Boolean_ *)func_?();
-      if (pAVar1 != (Action_1_Boolean_ *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = pAVar1;
-        iVar3 = func_?();
-        if (iVar3 != 0) goto code_?;
-      }
-      goto code_?;
+      func_?();
+      return;
+    }
+    pAVar1 = (Action_1_Boolean_ *)func_?();
+    if (pAVar1 != (Action_1_Boolean_ *)0x0) {
+      TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved = pAVar1;
+      iVar3 = func_?();
+      if (iVar3 != 0) goto code_?;
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -1507,12 +1479,12 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_RegisterCameraWit
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)
+  this = (Dictionary_2_System_Int32Enum_System_Object_ *)
          TypeInfo__MainCameraManager->static_fields->cameraSettings;
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)gameType,(Object *)camSettings,
+  if (this != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              (this,gameType,(Object *)camSettings,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Add_MV__Common__MVGameType__ICameraSettings_
               );
     pAVar1 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
@@ -1663,7 +1635,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                       Transform_set_localRotation
                                 (pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0x3a;
+                      (this_00->fields).superSoft = 0x2a;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }
@@ -1729,13 +1701,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UpdateCamera
       pMVar3 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
                          (this_00,(MethodInfo *)0x0);
       if (pMVar3 != (MVCameraBase *)0x0) {
-        (*(pMVar3->klass->vtable).UpdateCamera.methodPtr)
-                  (pMVar3,pMVar1,pPVar2,(pMVar3->klass->vtable).UpdateCamera.method);
+        (*(code *)(pMVar3->klass->vtable).UpdateCamera.method)
+                  (pMVar3,pMVar1,pPVar2,(pMVar3->klass->vtable).Enter.methodPtr);
         pTVar4 = (this->fields).transitionCamera;
         if (pTVar4 != (TransitionCamera *)0x0) {
-          (*(pTVar4->klass->vtable).UpdateCamera.methodPtr)
+          (*(code *)(pTVar4->klass->vtable).UpdateCamera.method)
                     (pTVar4,(this->fields).cameraController,(this->fields).protectedTransform,
-                     (pTVar4->klass->vtable).UpdateCamera.method);
+                     (pTVar4->klass->vtable).Enter.methodPtr);
           return;
         }
       }
@@ -1763,29 +1735,25 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__cctor(MethodInfo
     func_?(&TypeInfo__MainCameraManager);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)
+  this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>
                         );
-  if (this != (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Dictionary__
-              );
-    TypeInfo__MainCameraManager->static_fields->cameraSettings = this;
-    func_?(&TypeInfo__MainCameraManager->static_fields->cameraSettings,this);
-    TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = 5.0;
-    TypeInfo__MainCameraManager->static_fields->DefaultCameraType = 0;
-    TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = 0;
-    TypeInfo__MainCameraManager->static_fields->baseVolume = 0.0;
-    TypeInfo__MainCameraManager->static_fields->mute = 0;
-    TypeInfo__MainCameraManager->static_fields->gameHasCameraEffects = 0;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>__Dictionary__
+            );
+  TypeInfo__MainCameraManager->static_fields->cameraSettings =
+       (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)this;
+  func_?(&TypeInfo__MainCameraManager->static_fields->cameraSettings,this);
+  TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = 5.0;
+  TypeInfo__MainCameraManager->static_fields->DefaultCameraType = 0;
+  TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = 0;
+  TypeInfo__MainCameraManager->static_fields->baseVolume = 0.0;
+  TypeInfo__MainCameraManager->static_fields->mute = 0;
+  TypeInfo__MainCameraManager->static_fields->gameHasCameraEffects = 0;
   return;
 }
 

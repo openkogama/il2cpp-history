@@ -139,38 +139,35 @@ void Assembly-CSharp.dll::WorldObjectTypes::HoverCraft::Shared::HoverCraftThrust
   if (this_00 != (ParticleSystem *)0x0) {
     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision
               (this_00,(MethodInfo *)0x0);
-    this_01 = (AnimationCurve *)func_?(TypeInfo__UnityEngine__AnimationCurve);
-    if (this_01 != (AnimationCurve *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
-                (this_01,(MethodInfo *)0x0);
+    pAVar1 = (AnimationCurve *)func_?(TypeInfo__UnityEngine__AnimationCurve);
+    UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve__ctor_1
+              (pAVar1,(MethodInfo *)0x0);
+    if (pAVar1 != (AnimationCurve *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
-                (this_01,0.0,1.0,(MethodInfo *)0x0);
+                (pAVar1,0.0,1.0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_AddKey
-                (this_01,thrustersSize,0.0,(MethodInfo *)0x0);
-      uVar1 = 0;
-      uVar2 = 0;
-      uVar3 = 0;
+                (pAVar1,thrustersSize,0.0,(MethodInfo *)0x0);
+      this_01 = (ParticleSystem_MinMaxCurve *)&stack0xffffffe0;
+      fVar2 = 0.0;
       this = (HoverCraftThruster *)0x0;
-      uVar4 = 0xADDR;
+      pAVar1 = (AnimationCurve *)&UNK_?;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxCurve::
-      ParticleSystem_MinMaxCurve__ctor_1
-                ((ParticleSystem_MinMaxCurve *)0x0,1.0,this_01,(MethodInfo *)0x0);
-      fVar5 = (float)uVar2;
-      iVar6 = uVar1;
-      uVar7 = CONCAT44(fVar5,iVar6);
-      pAVar8 = (AnimationCurve *)uVar3;
-      thrustersSize = (float)(int)uVar4;
-      method = (MethodInfo *)(int)((ulonglong)uVar4 >> 0x20);
-      value = (ParticleSystem_MinMaxCurve)CONCAT168(auVar9,uVar7);
+      ParticleSystem_MinMaxCurve__ctor_1(this_01,0.0,(AnimationCurve *)0x0,(MethodInfo *)0x0);
+      fVar3 = fVar2;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+SizeOverLifetimeModule::
       ParticleSystem_SizeOverLifetimeModule_set_size
-                ((ParticleSystem_SizeOverLifetimeModule *)&stack0xfffffff8,value,(MethodInfo *)0x0);
+                ((ParticleSystem_SizeOverLifetimeModule *)&stack0xfffffff8,
+                 (ParticleSystem_MinMaxCurve)
+                 CONCAT816(CONCAT44(this,fVar3),
+                           CONCAT412((AnimationCurve *)this_01,
+                                     CONCAT48(pAVar1,CONCAT44((float)this,(int32_t)fVar2)))),
+                 (MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

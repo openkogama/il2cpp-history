@@ -12,7 +12,7 @@ Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights
   *unaff_FS_OFFSET = &uStack_3;
   puStack_4 = &stack0xffffff8c;
   puVar5 = &stack0xffffff8c;
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
                    );
@@ -30,94 +30,95 @@ Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__get_Value__
                    );
-    cRam_? = '\x01';
     puVar5 = puStack_4;
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+      puVar5 = puStack_4;
+    }
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
   DStack_6._current.value = (Object *)0x0;
   DStack_6._getEnumeratorRetType = 0;
-  pvVar7 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar7 + 0xba) & 1) == 0) {
-    pvVar7 = (void *)func_?(pvVar7);
+  pIVar7 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar7 = (Il2CppClass *)func_?(pIVar7);
   }
-  pLVar8 = (List_1_Highlight_1_System_Object_ *)func_?(pvVar7);
+  pLVar8 = (List_1_Highlight_1_System_Object_ *)func_?(pIVar7);
   pLStack_9 = pLVar8;
-  if (pLVar8 != (List_1_Highlight_1_System_Object_ *)0x0) {
-    (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-              (pLVar8,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
-    pLStack_10 = pLVar8;
-    if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__HighlightManager);
-    }
-    this = (Dictionary_2_System_Object_System_Object_ *)
-           TypeInfo__HighlightManager->static_fields->highlightDatas;
-    if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                         (&DStack_12,this,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
-                         );
-      uStack_13 = 0;
-      DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar11->_dictionary;
-      DStack_6._version = pDVar11->_version;
-      DStack_6._index = pDVar11->_index;
-      DStack_6._current.key = (int32_t)(pDVar11->_current).key;
-      DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
-      uStack_1 = 1;
-      pLVar8 = pLStack_9;
-      pDStack_14 = &DStack_6;
-      while( true ) {
-        do {
-          bVar15 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-                  Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                            (&DStack_6,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
-                            );
-          if (bVar15 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)&DStack_6,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dispose__
-                       ,unaff_EDI);
-            *unaff_FS_OFFSET = uStack_3;
-            return pLVar8;
-          }
-          pOVar16 = DStack_6._current.value;
-          if (DStack_6._current.value == (Object *)0x0) goto code_?;
-          pLVar8 = pLStack_9;
-        } while (*(undefined1 *)&DStack_6._current.value[2].klass != (undefined1)highlightType);
-        pMStack_17 = DStack_6._current.value[2].monitor;
-        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,
+             (method->field7_0x1c).rgctx_data[1].method);
+  pLStack_10 = pLVar8;
+  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  this = (Dictionary_2_System_UInt32_System_Object_ *)
+         TypeInfo__HighlightManager->static_fields->highlightDatas;
+  if (this != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffff98,this,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
+                       );
+    uStack_12 = 0;
+    DStack_6._dictionary = pDVar11->_dictionary;
+    DStack_6._version = pDVar11->_version;
+    DStack_6._index = pDVar11->_index;
+    DStack_6._current.key = (pDVar11->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
+    uStack_1 = 1;
+    pDStack_13 = &DStack_6;
+    while( true ) {
+      do {
+        bVar14 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          (&DStack_6,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
+                          );
+        if (bVar14 == 0) {
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)&DStack_6,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dispose__
+                     ,in_stack_15);
+          *unaff_FS_OFFSET = uStack_3;
+          return pLStack_9;
         }
-        pMStack_17 = (MonitorData *)
-                     (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
-                               (pMStack_17,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
-        if (pOVar16 == (Object *)0x0) break;
-        pOStack_18 = pOVar16[1].klass;
-        uVar19 = func_?((method->field7_0x1c).rgctx_data,3);
-        iStack_20 = func_?(uVar19);
-        if (iStack_20 == 0) break;
-        (*((method->field7_0x1c).rgctx_data[4].method)->virtualMethodPointer)
-                  (iStack_20,pOStack_18,pMStack_17,
-                   (method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
-        pLVar8 = pLStack_9;
-        (*((method->field7_0x1c).rgctx_data[5].method)->virtualMethodPointer)
-                  (pLStack_9,iStack_20,(method->field7_0x1c).rgctx_data[5].rgctxDataDummy);
+        pOVar16 = DStack_6._current.value;
+        if (DStack_6._current.value == (Object *)0x0) goto code_?;
+      } while (*(undefined1 *)&DStack_6._current.value[2].klass != (undefined1)highlightType);
+      pEStack_17 = (ExceptionDispatchInfo *)DStack_6._current.value[2].monitor;
+      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      pEStack_17 = (ExceptionDispatchInfo *)func_?();
+      if (pOVar16 == (Object *)0x0) break;
+      WStack_18.value__ = (int32_t)pOVar16[1].klass;
+      func_?();
+      pWStack_19 = (WebCompletionSource_1_T_Result_System_Object_ *)func_?();
+      System.dll::System::Net::WebCompletionSource`1[T]+Result[System::Object]::
+      WebCompletionSource_1_T_Result_System_Object___ctor_1
+                (pWStack_19,WStack_18,pEStack_17,(method->field7_0x1c).rgctx_data[5].method);
+      if (pLStack_9 == (List_1_Highlight_1_System_Object_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)pLStack_9,(Object *)pWStack_19,
+                 (method->field7_0x1c).rgctx_data[6].method);
     }
   }
 code_?:
-  uVar19 = func_?();
-  func_?(uVar19);
-  pcVar21 = (code *)swi(3);
-  pLVar8 = (List_1_Highlight_1_System_Object_ *)(*pcVar21)();
+  func_?();
+  func_?();
+  pcVar20 = (code *)swi(3);
+  pLVar8 = (List_1_Highlight_1_System_Object_ *)(*pcVar20)();
   return pLVar8;
 }
 
@@ -140,7 +141,7 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_Init
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
   pDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
-           Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+           Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                      (availableHighlightDatasString,
                       System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>_>_System__String_
                      );
@@ -168,27 +169,22 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager_Reset(MethodInfo *m
     func_?(&TypeInfo__HighlightManager);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
+  this = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
                         );
-  if (this != (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
-              0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
-              );
-    if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    TypeInfo__HighlightManager->static_fields->highlightDatas = this;
-    func_?(TypeInfo__HighlightManager->static_fields);
-    return;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+            );
+  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  TypeInfo__HighlightManager->static_fields->highlightDatas =
+       (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)this;
+  func_?(TypeInfo__HighlightManager->static_fields);
   return;
 }
 
@@ -253,24 +249,19 @@ void Assembly-CSharp.dll::HighlightManager::HighlightManager__cctor(MethodInfo *
     func_?(&TypeInfo__HighlightManager);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
+  this = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>
                         );
-  if (this != (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)
-              0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
-              );
-    TypeInfo__HighlightManager->static_fields->highlightDatas = this;
-    func_?(TypeInfo__HighlightManager->static_fields,this);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dictionary__
+            );
+  TypeInfo__HighlightManager->static_fields->highlightDatas =
+       (Dictionary_2_System_Int32_MV_WorldObject_HighlightSystem_AvailableHighlightData_ *)this;
+  func_?(TypeInfo__HighlightManager->static_fields,this);
   return;
 }
 

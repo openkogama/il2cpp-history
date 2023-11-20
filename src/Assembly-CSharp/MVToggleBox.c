@@ -15,32 +15,25 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_Initialize(MVToggleBox *this,
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
             ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-  this_00 = (Action_2_Int32Enum_Object_ *)
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-  if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MVToggleBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-               ,(MethodInfo *)0x0);
-    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                       ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                        (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-    func_?();
-    woId = (this->fields)._._._.id;
-    this_01 = (WorldObjectClientRef_1_System_Object_ *)
-              func_?(TypeInfo__OutputSignalTransmitter);
-    if (this_01 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-      WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                (this_01,woId,(MethodInfo *)0x0);
-      (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
-      func_?();
-      return;
-    }
-  }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__MVToggleBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,
+             (MethodInfo *)0x0);
+  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                     ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                      (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  woId = (this->fields)._._._.id;
+  pOStack2 = TypeInfo__OutputSignalTransmitter;
+  this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?();
+  WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+            (this_01,woId,(MethodInfo *)0x0);
+  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -75,17 +68,19 @@ code_?:
       func_?(&StringLiteral_once);
       cRam_? = '\x01';
     }
-    this_00 = (this->fields)._._._.data;
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_00,(Object *)StringLiteral_once,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar4 = CONCAT44(TypeInfo__System__Boolean,pOVar3);
-      if (pOVar3 != (Object *)0x0) {
-        if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-        goto code_?;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              (this->fields)._._._.data;
+    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_00,(Object *)StringLiteral_once,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar4 = CONCAT44(TypeInfo__System__Boolean,TVar3.m_Index);
+      if (TVar3.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+            (TypeInfo__System__Boolean->_0).element_class) goto code_?;
         pcVar5 = (char *)func_?();
         if (*pcVar5 == '\0') goto code_?;
         pOVar2 = (this->fields).outputSignalTransmitter;
@@ -147,17 +142,6 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox__ctor
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVToggleBox::MVToggleBox_get_DocumentationType
-          (MVToggleBox *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_ToggleBox;
-}
-
-
 /* Boolean get_Once() */
 
 bool Assembly-CSharp.dll::MVToggleBox::MVToggleBox_get_Once(MVToggleBox *this,MethodInfo *method)
@@ -169,15 +153,18 @@ bool Assembly-CSharp.dll::MVToggleBox::MVToggleBox_get_Once(MVToggleBox *this,Me
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_once,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_once,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
         pbVar2 = (bool *)func_?();
         return *pbVar2;
       }
@@ -207,8 +194,8 @@ bool Assembly-CSharp.dll::MVToggleBox::MVToggleBox_get_Toggled(MVToggleBox *this
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -283,8 +270,8 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_set_Toggled
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
@@ -295,7 +282,7 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_set_Toggled
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  Extensions::Extensions_SetObscuredType_1
+  Extensions::Extensions_SetObscuredType
             (hashtable,StringLiteral_toggled,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredBool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool_
             );

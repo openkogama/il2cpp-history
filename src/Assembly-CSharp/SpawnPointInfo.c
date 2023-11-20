@@ -34,8 +34,8 @@ code_?:
   if (pIVar4 != (Image *)0x0) {
     CStack_6.r = pCVar5->b;
     CStack_6.g = pCVar5->a;
-    CStack_6.b = (float)(pIVar4->klass->vtable).set_color.method;
-    (*(pIVar4->klass->vtable).set_color.methodPtr)(pIVar4,pCVar5->r,pCVar5->g);
+    CStack_6.b = (float)(pIVar4->klass->vtable).get_raycastTarget.methodPtr;
+    (*(code *)(pIVar4->klass->vtable).set_color.method)(pIVar4,pCVar5->r,pCVar5->g);
     return;
   }
 code_?:

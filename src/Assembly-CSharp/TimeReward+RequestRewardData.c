@@ -13,23 +13,19 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__TimeReward__RequestRewardData__OnRewardData_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__TimeReward__RequestRewardData__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -41,6 +37,7 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
                     TimeReward_RequestRewardData__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimeReward_RequestRewardData::RewardData>_System__String_
@@ -63,7 +60,7 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
       func_?();
     }
     stack0xfffffff4 = (UnityWebRequest *)pSVar1;
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
     stack0xfffffff4 = www;
     pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
              UnityWebRequest_get_error(www,(MethodInfo *)0x0);
@@ -75,21 +72,23 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar1,(MethodInfo *)0x0);
       return;
     }
-    this_00 = (DownloadHandler *)
-              mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
-              ValueListBuilder_1_System_Object__1_get_Length
-                        ((ValueListBuilder_1_System_Object__1 *)www,(MethodInfo *)0x0);
-    if (this_00 != (DownloadHandler *)0x0) {
+    this_00 = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+              __Il2CppFullySharedGenericType]::
+              WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                        ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                          *)www,(MethodInfo *)0x0);
+    if (this_00 !=
+        (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
-               DownloadHandler_get_text(this_00,(MethodInfo *)0x0);
+               DownloadHandler_get_text((DownloadHandler *)this_00,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pOVar3 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+      pOVar3 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                          (pSVar1,
                           TimeReward_RequestRewardData__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimeReward_RequestRewardData::RewardData>_System__String_
                          );
@@ -98,32 +97,31 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar1,(MethodInfo *)0x0);
       if (pOVar3 != (Object *)0x0) {
-        pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                           ((Boolean *)&stack0xfffffffb,(IFormatProvider *)0x0,in_stack_4);
-        pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral__rewardData_rewardEnabled__,pSVar1,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)pSVar1,(MethodInfo *)0x0);
-        if (*(char *)&pOVar3[1].klass == '\0') {
-          (this->fields).requestedRewardDataStatus = 2;
-          return;
-        }
-        pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&pOVar3[1].monitor,(MethodInfo *)0x0);
-        pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral__rewardData_timeInSeconds__,pSVar1,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString
+                           ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
+        pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral__rewardData_rewardEnabled__,pSVar1,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)pSVar1,(MethodInfo *)0x0);
-        pOVar5 = pOVar3[2].klass;
-        seconds = pOVar3[1].monitor;
-        value = (TimeReward_RewardCountdown *)func_?();
-        if (value != (TimeReward_RewardCountdown *)0x0) {
+        if (*(char *)&pOVar3[1].klass != '\0') {
+          pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                             ((Int32 *)&pOVar3[1].monitor,(MethodInfo *)0x0);
+          pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral__rewardData_timeInSeconds__,pSVar1,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar1,(MethodInfo *)0x0);
+          pOVar4 = pOVar3[2].klass;
+          seconds = pOVar3[1].monitor;
+          value = (TimeReward_RewardCountdown *)func_?();
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -131,48 +129,48 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
             func_?();
             cRam_? = '\x01';
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)value,ExceptionArgument__Enum_obj,in_stack_4);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)value,ExceptionArgument__Enum_obj,in_stack_5);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)StringLiteral_Time_is_started,(MethodInfo *)0x0);
           this_01 = (WaitForTicks *)func_?();
-          if (this_01 != (WaitForTicks *)0x0) {
-            WaitForTicks::WaitForTicks__ctor(this_01,(int)seconds * 1000,(MethodInfo *)0x0);
-            (value->fields).waitForTicks = this_01;
+          WaitForTicks::WaitForTicks__ctor(this_01,(int)seconds * 1000,(MethodInfo *)0x0);
+          (value->fields).waitForTicks = this_01;
+          func_?();
+          this_02 = (RewardStateDataEventArgs *)func_?();
+          if (cRam_? == '\0') {
             func_?();
-            this_02 = (RewardStateDataEventArgs *)func_?();
-            if (this_02 != (RewardStateDataEventArgs *)0x0) {
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-              TweenRunner_1_FloatTween___ctor
-                        ((TweenRunner_1_FloatTween_ *)this_02,(MethodInfo *)0x0);
-              _pMStack_10 = 0;
-              mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
-                        ((TimeSpan *)&pMStack_6,0,0,0,(int32_t)seconds,(MethodInfo *)0x0);
-              TVar7._ticks = _pMStack_10;
-              stack0xfffffff4 = (UnityWebRequest *)((ulonglong)_pMStack_10 >> 0x20);
-              *(MonoBehaviour **)&(this_02->fields).timeSpan._ticks = pMStack_6;
-              (this_02->fields).amountGold = (int32_t)pOVar5;
-              *(UnityWebRequest **)((int)&(this_02->fields).timeSpan._ticks + 4) = stack0xfffffff4;
-              (value->fields)._.rewardStateEventArgs = this_02;
-              _pMStack_10 = TVar7._ticks;
-              func_?();
-              (this->fields).rewardCountdown = value;
-              func_?();
-              (this->fields).requestedRewardDataStatus = 1;
-              return;
-            }
+            cRam_? = '\x01';
           }
+          if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+          UxmlObjectListAttributeDescription`1[System::Object]::
+          UxmlObjectListAttributeDescription_1_System_Object___ctor
+                    ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_02,
+                     (MethodInfo *)0x0);
+          _pLStack_10 = 0;
+          mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
+                    ((TimeSpan *)&pLStack_6,0,0,0,(int32_t)seconds,(MethodInfo *)0x0);
+          TVar7._ticks = _pLStack_10;
+          stack0xfffffff4 = (UnityWebRequest *)((ulonglong)_pLStack_10 >> 0x20);
+          *(List_1_System_Object_ **)&(this_02->fields).timeSpan._ticks = pLStack_6;
+          (this_02->fields).amountGold = (int32_t)pOVar4;
+          *(UnityWebRequest **)((int)&(this_02->fields).timeSpan._ticks + 4) = stack0xfffffff4;
+          (value->fields)._.rewardStateEventArgs = this_02;
+          _pLStack_10 = TVar7._ticks;
+          func_?();
+          (this->fields).rewardCountdown = value;
+          func_?();
+          (this->fields).requestedRewardDataStatus = 1;
+          return;
         }
+        (this->fields).requestedRewardDataStatus = 2;
+        return;
       }
     }
   }
@@ -210,49 +208,51 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::
     func_?(&StringLiteral_gold);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
-              );
-    bStack_1 = (this->fields).testRewardEnabled;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_1);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
+            );
+  pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffb);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)StringLiteral_rewardEnabled,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_rewardEnabled,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
               );
     if ((this->fields).testRewardEnabled != 0) {
-      uStack_3 = 0xb4;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&uStack_3);
+      pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)StringLiteral_timeInSeconds,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (Object *)StringLiteral_timeInSeconds,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
-      uStack_4 = 1;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&uStack_4);
+      pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)StringLiteral_gold,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_gold,
+                 pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
     }
     if (action != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_Object_ *)
                   0x0) {
-      (*(action->fields)._._.invoke_impl)
-                ((action->fields)._._.method_code,this_00,(action->fields)._._.method);
+      (*(action->fields)._._.invoke_impl)();
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -268,22 +268,16 @@ Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestRewardData_
     func_?(&TypeInfo__TimeReward__RewardDone);
     cRam_? = '\x01';
   }
-  if ((this->fields).requestedRewardDataStatus != 2) {
-    if ((this->fields).requestedRewardDataStatus == 1) {
-      this = (TimeReward_RequestRewardData *)(this->fields).rewardCountdown;
-    }
-    return (TimeReward_RewardStateBase *)this;
+  if ((this->fields).requestedRewardDataStatus == 2) {
+    method_00 = TypeInfo__TimeReward__RewardDone;
+    this = (TimeReward_RequestRewardData *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   }
-  pTVar1 = (TimeReward_RewardStateBase *)func_?(TypeInfo__TimeReward__RewardDone);
-  if (pTVar1 != (TimeReward_RewardStateBase *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pTVar1,ExceptionArgument__Enum_obj,unaff_ESI);
-    return pTVar1;
+  else if ((this->fields).requestedRewardDataStatus == 1) {
+    return (TimeReward_RewardStateBase *)(this->fields).rewardCountdown;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pTVar1 = (TimeReward_RewardStateBase *)(*pcVar2)();
-  return pTVar1;
+  return (TimeReward_RewardStateBase *)this;
 }
 
 
@@ -307,8 +301,8 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
     cRam_? = '\x01';
   }
   (this->fields).testRewardEnabled = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
@@ -316,8 +310,9 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
     arg0 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-    pSVar2 = mscorlib.dll::System::String::String_Format_2
+    puStack_2 = (undefined *)(pGVar1->fields).planetID;
+    arg1 = (Object *)func_?(TypeInfo__System__Int32,&puStack_2);
+    pSVar3 = mscorlib.dll::System::String::String_Format_2
                        (StringLiteral__profile_id__0__planet_id__1__to,arg0,arg1,
                         (Object *)(pGVar1->fields).token,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
@@ -327,46 +322,46 @@ void Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestReward
     pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
     if (pGVar1 != (GameSessionData *)0x0) {
       path = mscorlib.dll::System::String::String_Concat_3
-                       ((pGVar1->fields).gameRewardDataURL,pSVar2,(MethodInfo *)0x0);
-      this_00 = (Action_1_Object_ *)
-                func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__TimeReward__RequestRewardData__OnRewardData_UnityEngine__Networking__UnityWebRequest_
-                   ,(MethodInfo *)0x0);
-        this_01 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
-        if (this_01 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_01,path,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__AsyncWWWManager);
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__MVGameControllerBase);
-            cRam_? = '\x01';
-          }
-          pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-          if (pGVar1 != (GameSessionData *)0x0) {
-            pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                               (StringLiteral_MVGameControllerBase_GameSession,
-                                (pGVar1->fields).gameRewardDataURL,pSVar2,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                      ((Object *)pSVar2,(MethodInfo *)0x0);
-            return;
-          }
+                       ((pGVar1->fields).gameRewardDataURL,pSVar3,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(
+                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                  );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__TimeReward__RequestRewardData__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                 ,(MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,path,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__AsyncWWWManager);
+      }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 != (GameSessionData *)0x0) {
+        pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                           (StringLiteral_MVGameControllerBase_GameSession,
+                            (pGVar1->fields).gameRewardDataURL,pSVar3,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)pSVar3,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

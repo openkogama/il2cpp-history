@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_ChangeColor
 {
   pRVar1 = (this->fields).previewImage;
   if (pRVar1 != (RawImage *)0x0) {
-    (*(pRVar1->klass->vtable).set_color.methodPtr)
-              (pRVar1,c.r,c.g,c.b,c.a,(pRVar1->klass->vtable).set_color.method);
+    (*(code *)(pRVar1->klass->vtable).set_color.method)
+              (pRVar1,c.r,c.g,c.b,c.a,(pRVar1->klass->vtable).get_raycastTarget.methodPtr);
     pAVar2 = (this->fields).onChange;
     if (pAVar2 != (Action_1_UnityEngine_Color_ *)0x0) {
       (*(pAVar2->fields)._._.invoke_impl)
@@ -46,8 +46,9 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
   if (attrib != (ColorAttribute *)0x0) {
     pTVar1 = (this->fields).label;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,(attrib->fields)._.name,
+                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if ((TypeInfo__ThemeColorPickerRGB____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__ThemeColorPickerRGB____c);
       }
@@ -59,7 +60,6 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
         object = TypeInfo__ThemeColorPickerRGB____c->static_fields->__9;
         this_00 = (Action_1_UnityEngine_Color_ *)
                   func_?(TypeInfo__System__Action<UnityEngine::Color>);
-        if (this_00 == (Action_1_UnityEngine_Color_ *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
         UnityAction_1_UnityEngine_Color___ctor
                   ((UnityAction_1_UnityEngine_Color_ *)this_00,(Object *)object,
@@ -86,10 +86,10 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
                        (MethodInfo *)0x0);
             pRVar3 = (this->fields).previewImage;
             if (pRVar3 != (RawImage *)0x0) {
-              (*(pRVar3->klass->vtable).set_color.methodPtr)
+              (*(code *)(pRVar3->klass->vtable).set_color.method)
                         (pRVar3,(attrib->fields)._._.value.r,(attrib->fields)._._.value.g,
                          (attrib->fields)._._.value.b,(attrib->fields)._._.value.a,
-                         (pRVar3->klass->vtable).set_color.method);
+                         (pRVar3->klass->vtable).get_raycastTarget.methodPtr);
               (this->fields).onChange = onChange;
               func_?(&(this->fields).onChange,onChange);
               return;
@@ -99,7 +99,6 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
       }
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -125,8 +124,9 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_OnSettingChan
         pRVar5 = (this->fields).previewImage;
         if (pRVar5 != (RawImage *)0x0) {
           uVar6 = 0x3f800000;
-          (*(pRVar5->klass->vtable).set_color.methodPtr)
-                    (pRVar5,fVar2,fVar3,fVar4,0x3f800000,(pRVar5->klass->vtable).set_color.method);
+          (*(code *)(pRVar5->klass->vtable).set_color.method)
+                    (pRVar5,fVar2,fVar3,fVar4,0x3f800000,
+                     (pRVar5->klass->vtable).get_raycastTarget.methodPtr);
           pAVar7 = (this->fields).onChange;
           if (pAVar7 != (Action_1_UnityEngine_Color_ *)0x0) {
             (*(pAVar7->fields)._._.invoke_impl)
@@ -157,32 +157,32 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Reset
                    );
     cRam_? = '\x01';
   }
-  pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                     ((Component *)this,
                       SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
                      );
-  if (pIVar1 == (IEnumerable_1_System_Object_ *)0x0) {
+  if (pOVar1 == (Object__Array *)0x0) {
     func_?();
   }
-  else if (pIVar1[1].monitor != (MonitorData *)0x0) {
-    pIVar2 = pIVar1[2].klass;
-    (this->fields).sliderR = (SettingsSlider *)pIVar2;
-    func_?(&(this->fields).sliderR,pIVar2);
-    if ((MonitorData *)0x1 < pIVar1[1].monitor) {
-      pSVar3 = (SettingsSlider *)pIVar1[2].monitor;
-      (this->fields).sliderG = pSVar3;
-      func_?(&(this->fields).sliderG,pSVar3);
-      if ((MonitorData *)0x2 < pIVar1[1].monitor) {
-        pIVar2 = pIVar1[3].klass;
-        (this->fields).sliderB = (SettingsSlider *)pIVar2;
-        func_?(&(this->fields).sliderB,pIVar2);
+  else if (pOVar1->max_length != 0) {
+    pSVar2 = (SettingsSlider *)pOVar1->vector[0];
+    (this->fields).sliderR = pSVar2;
+    func_?(&(this->fields).sliderR,pSVar2);
+    if (1 < pOVar1->max_length) {
+      pSVar2 = (SettingsSlider *)pOVar1->vector[1];
+      (this->fields).sliderG = pSVar2;
+      func_?(&(this->fields).sliderG,pSVar2);
+      if (2 < pOVar1->max_length) {
+        pSVar2 = (SettingsSlider *)pOVar1->vector[2];
+        (this->fields).sliderB = pSVar2;
+        func_?(&(this->fields).sliderB,pSVar2);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

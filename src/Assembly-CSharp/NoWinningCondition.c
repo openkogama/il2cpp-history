@@ -87,19 +87,14 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_CreateRoundTime
           func_?(&(pRVar1->fields).roundCube,roundCube,puVar5,ppRVar4);
           this_00 = (List_1_System_Int32_ *)
                     func_?(TypeInfo__System__Collections__Generic__List<int>);
-          if (this_00 != (List_1_System_Int32_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-            LowLevelList_1_System_Object___ctor
-                      ((LowLevelList_1_System_Object_ *)this_00,
-                       MethodInfo__System__Collections__Generic__List<int>__List__);
-            (pRVar1->fields).timeNotifications = this_00;
-            func_?(&(pRVar1->fields).timeNotifications,this_00,puVar5,ppRVar4);
-            RoundTimer::RoundTimer_ResetTimeNotifications(pRVar1,(MethodInfo *)0x0);
-            return;
-          }
-          func_?();
-          pcVar6 = (code *)swi(3);
-          (*pcVar6)();
+          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+                     MethodInfo__System__Collections__Generic__List<int>__List__);
+          (pRVar1->fields).timeNotifications = this_00;
+          func_?(&(pRVar1->fields).timeNotifications,this_00);
+          RoundTimer::RoundTimer_ResetTimeNotifications(pRVar1,(MethodInfo *)0x0);
           return;
         }
       }
@@ -142,56 +137,42 @@ void Assembly-CSharp.dll::NoWinningCondition::NoWinningCondition_RoundEndReset
     func_?();
     cRam_? = '\x01';
   }
-  if (*(int *)(in_stack_3 + 0x18) == 0) {
+  if (*(int *)(in_stack_3 + 0x1c) == 0) {
     return;
   }
-  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-          RegexCharClass+SingleRange]::
-          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
-                    (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                      (in_stack_3 + 0x18),(RegexCharClass_SingleRange)0xa,
+  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+          List_1_System_Int32__Contains
+                    (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),10,
                      MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
   if (bVar1 == 0) {
-    if (*(int *)(in_stack_3 + 0x18) == 0) goto code_?;
+    if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
     func_?();
   }
-  if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-       (in_stack_3 + 0x18) !=
-      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
-                      (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                        (in_stack_3 + 0x18),(RegexCharClass_SingleRange)0x1e,
+  if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+            List_1_System_Int32__Contains
+                      (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),0x1e,
                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     if (bVar1 == 0) {
-      if (*(int *)(in_stack_3 + 0x18) == 0) goto code_?;
+      if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
       func_?();
     }
-    if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-         (in_stack_3 + 0x18) !=
-        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
-                        (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                          (in_stack_3 + 0x18),(RegexCharClass_SingleRange)0x3c,
+    if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+              List_1_System_Int32__Contains
+                        (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),0x3c,
                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
       if (bVar1 == 0) {
-        if (*(int *)(in_stack_3 + 0x18) == 0) goto code_?;
+        if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
         func_?();
       }
-      if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-           (in_stack_3 + 0x18) !=
-          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
-                          (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                            (in_stack_3 + 0x18),(RegexCharClass_SingleRange)0x12c,
+      if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                List_1_System_Int32__Contains
+                          (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),300,
                            MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
         if (bVar1 == 0) {
-          if (*(int *)(in_stack_3 + 0x18) == 0) goto code_?;
+          if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
           func_?();
         }
         return;

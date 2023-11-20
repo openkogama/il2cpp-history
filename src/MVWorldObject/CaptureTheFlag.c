@@ -10,17 +10,17 @@ void MVWorldObject.dll::CaptureTheFlag::CaptureTheFlag_GameCountersQuery_OnCount
     cRam_? = '\x01';
   }
   if (e == (OnCounterTypeChangedArgs *)0x0) {
-code_?:
     func_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
   if ((e->fields).count == (this->fields)._.limit) {
-    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__System__EventArgs);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     (this->fields)._.forfilled = 1;
     (this->fields)._.instigatorCounterTypeChangedEvent = e;
     func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);

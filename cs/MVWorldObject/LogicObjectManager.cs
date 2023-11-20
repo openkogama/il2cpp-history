@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class LogicObjectManager
 {
@@ -26,7 +26,6 @@ public class LogicObjectManager
 
 	// Properties
 	public int TimeStamp { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	public int FrameCount { get; }
 
 	// Nested types
 	public enum ValidateLinkStatus

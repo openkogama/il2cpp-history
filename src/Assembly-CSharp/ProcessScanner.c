@@ -188,69 +188,64 @@ void Assembly-CSharp.dll::ProcessScanner::ProcessScanner_StartScan
         pSVar14 = StringLiteral_NativeFunc_error_code__UNKNOWN;
       }
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar14,(MethodInfo *)0x0);
 code_?:
     *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  if (banList != (ApplicationDesc__Array *)0x0) {
-    if (uVar13 < banList->max_length) {
-      if (banList->vector[uVar13] != (ApplicationDesc *)0x0) {
-        if ((banList->vector[uVar13]->fields).strictComparison == 0) {
-          if (banList->max_length <= uVar13) goto code_?;
-          pAVar15 = banList->vector[uVar13];
-          if (pcRam_? == (code *)0x0) {
-            pcStack_16 = pcRam_?;
-            pcStack_17 = pcRam_?;
-            uStack_18 = 0;
-            uStack_19 = 0xb;
-            uStack_20 = 0x10;
-            uStack_21 = 1;
-            pcRam_? = (code *)func_?(&puStack_22);
-          }
-          uVar23 = (*pcRam_?)();
-          pSVar14 = (String *)func_?(uVar23);
-          func_?(uVar23);
-          report = (HackingToolDetector_HackingToolReport *)
-                   func_?(TypeInfo__HackingToolDetector__HackingToolReport);
-          if (report != (HackingToolDetector_HackingToolReport *)0x0) {
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
-            (report->fields).kind = 1;
-            (report->fields).app = pAVar15;
-            func_?();
-            (report->fields).exactFind = pSVar14;
-code_?:
-            func_?();
-            if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            HackingToolDetector::HackingToolDetector_Report(report,(MethodInfo *)0x0);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
+  if (banList == (ApplicationDesc__Array *)0x0) goto code_?;
+  if (uVar13 < banList->max_length) {
+    if (banList->vector[uVar13] == (ApplicationDesc *)0x0) goto code_?;
+    if ((banList->vector[uVar13]->fields).strictComparison == 0) {
+      if (uVar13 < banList->max_length) {
+        pAVar15 = banList->vector[uVar13];
+        if (pcRam_? == (code *)0x0) {
+          pcStack_16 = pcRam_?;
+          pcStack_17 = pcRam_?;
+          uStack_18 = 0;
+          uStack_19 = 0xb;
+          uStack_20 = 0x10;
+          uStack_21 = 1;
+          pcRam_? = (code *)func_?(&puStack_22);
         }
-        else {
-          if (banList->max_length <= uVar13) goto code_?;
-          pAVar15 = banList->vector[uVar13];
-          report = (HackingToolDetector_HackingToolReport *)
-                   func_?(TypeInfo__HackingToolDetector__HackingToolReport);
-          if (report != (HackingToolDetector_HackingToolReport *)0x0) {
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
-            (report->fields).kind = 0;
-            (report->fields).app = pAVar15;
-            goto code_?;
-          }
-        }
+        uVar23 = (*pcRam_?)();
+        pSVar14 = (String *)func_?(uVar23);
+        func_?(uVar23);
+        report = (HackingToolDetector_HackingToolReport *)
+                 func_?(TypeInfo__HackingToolDetector__HackingToolReport);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
+        (report->fields).kind = 1;
+        (report->fields).app = pAVar15;
+        func_?();
+        (report->fields).exactFind = pSVar14;
+        goto code_?;
       }
+      goto code_?;
     }
-    else {
-      func_?();
+    if (uVar13 < banList->max_length) {
+      pAVar15 = banList->vector[uVar13];
+      report = (HackingToolDetector_HackingToolReport *)
+               func_?(TypeInfo__HackingToolDetector__HackingToolReport);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)report,ExceptionArgument__Enum_obj,unaff_EDI);
+      (report->fields).kind = 0;
+      (report->fields).app = pAVar15;
 code_?:
       func_?();
+      if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      HackingToolDetector::HackingToolDetector_Report(report,(MethodInfo *)0x0);
+      *unaff_FS_OFFSET = uStack_3;
+      return;
     }
+  }
+  else {
+    func_?();
+code_?:
+    func_?();
   }
   func_?();
 code_?:

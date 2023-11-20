@@ -63,8 +63,6 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ILeaveEditPlayModeHandler>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_ILeaveEditPlayModeHandler_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -84,7 +82,6 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
               );
     return 0;
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   bVar5 = (*pcVar4)();
@@ -101,7 +98,6 @@ void Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

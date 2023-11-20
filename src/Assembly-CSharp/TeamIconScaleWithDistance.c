@@ -82,8 +82,8 @@ void Assembly-CSharp.dll::TeamIconScaleWithDistance::TeamIconScaleWithDistance__
   (this->fields).minDistance = 10.0;
   (this->fields).maxDistance = 50.0;
   (this->fields).scale.z = 1.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

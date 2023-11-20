@@ -26,8 +26,8 @@ void Assembly-CSharp.dll::ToolTipUI::ToolTipUI_Set
 {
   pTVar1 = (this->fields).toolTipText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,tooltip,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,tooltip,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).rectTransform;
     fStack_2 = 0.0;
     fStack_3 = 0.0;

@@ -23,14 +23,12 @@ void Assembly-CSharp.dll::AllWorldObjectTriggerBoxEvents::
                     (this_00,(MethodInfo *)0x0);
       pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
                          (t,(MethodInfo *)0x0);
-      if ((pMVar3 != (MVWorldObjectClient *)0x0) &&
-         ((this->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
+      if ((pMVar3 != (MVWorldObjectClient *)0x0) && (*(int *)(unaff_ESI + 0x10) != 0)) {
         woid = (pMVar3->fields)._.id;
-        pEVar4 = (this->fields).TriggerEnter;
+        iVar4 = *(int *)(unaff_ESI + 0x10);
         this_01 = (TriggerEventArgs *)func_?();
-        if (this_01 == (TriggerEventArgs *)0x0) goto code_?;
         TriggerEventArgs::TriggerEventArgs__ctor(this_01,woid,(MethodInfo *)0x0);
-        (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,this,this_01);
+        (**(code **)(iVar4 + 0xc))(*(undefined4 *)(iVar4 + 0x20),*(undefined4 *)(iVar4 + 0x14));
       }
     }
     return;
@@ -54,29 +52,29 @@ void Assembly-CSharp.dll::AllWorldObjectTriggerBoxEvents::
     func_?(&TypeInfo__TriggerEventArgs);
     cRam_? = '\x01';
   }
-  if ((other != (Collider *)0x0) &&
-     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)other,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)) {
-    t = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                  (this_00,(MethodInfo *)0x0);
-    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject(t,(MethodInfo *)0x0)
-    ;
-    if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
-       ((this->fields).TriggerExit != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
-      woid = (pMVar1->fields)._.id;
-      pEVar2 = (this->fields).TriggerExit;
-      this_01 = (TriggerEventArgs *)func_?();
-      if (this_01 == (TriggerEventArgs *)0x0) goto code_?;
-      TriggerEventArgs::TriggerEventArgs__ctor(this_01,woid,(MethodInfo *)0x0);
-      (*(pEVar2->fields)._._.invoke_impl)
-                ((pEVar2->fields)._._.method_code,this,this_01,(pEVar2->fields)._._.method);
+  if (other != (Collider *)0x0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)other,(MethodInfo *)0x0);
+    if (this_00 != (GameObject *)0x0) {
+      t = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                    (this_00,(MethodInfo *)0x0);
+      pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
+                         (t,(MethodInfo *)0x0);
+      pTVar2 = TypeInfo__TriggerEventArgs;
+      if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
+         ((this->fields).TriggerExit != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
+        woid = (pMVar1->fields)._.id;
+        pEVar3 = (this->fields).TriggerExit;
+        this_01 = (TriggerEventArgs *)func_?();
+        TriggerEventArgs::TriggerEventArgs__ctor(this_01,woid,(MethodInfo *)0x0);
+        (*(pEVar3->fields)._._.invoke_impl)((pEVar3->fields)._._.method_code,pTVar2,this_01);
+      }
+      return;
     }
-    return;
   }
-code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

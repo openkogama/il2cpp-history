@@ -27,28 +27,28 @@ void Assembly-CSharp.dll::RollingNumberCounterAndroid::RollingNumberCounterAndro
             if (pRVar1->max_length <= uVar4) goto code_?;
             iVar3 = *(int *)((int)pRVar1->vector + iStack_5 + -0x10);
             if (iVar3 == 0) break;
-            *(undefined4 *)(iVar3 + 0x2c) = 0;
-            *(float *)(iVar3 + 0x24) =
-                 (float)(*(int *)(iVar3 + 0x10) + 1) * *(float *)(iVar3 + 0x18) -
-                 (float)(*(uint *)(iVar3 + 0x14) & uVar6);
-            if (*(Transform **)(iVar3 + 0xc) == (Transform *)0x0) break;
+            *(undefined4 *)(iVar3 + 0x30) = 0;
+            *(float *)(iVar3 + 0x28) =
+                 (float)(*(int *)(iVar3 + 0x14) + 1) * *(float *)(iVar3 + 0x1c) -
+                 (float)(*(uint *)(iVar3 + 0x18) & uVar6);
+            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
             pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&stack0xffffffd4,*(Transform **)(iVar3 + 0xc),
+                               ((Vector3 *)&stack0xffffffd4,*(Transform **)(iVar3 + 0x10),
                                 (MethodInfo *)0x0);
             uVar8 = pVVar7->x;
-            if (*(Transform **)(iVar3 + 0xc) == (Transform *)0x0) break;
-            value_00.y = (float)*(undefined4 *)(iVar3 + 0x24);
+            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
+            value_00.y = (float)*(undefined4 *)(iVar3 + 0x28);
             value_00.x = (float)uVar8;
             value_00.z = pVVar7->z;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (*(Transform **)(iVar3 + 0xc),value_00,(MethodInfo *)0x0);
+                      (*(Transform **)(iVar3 + 0x10),value_00,(MethodInfo *)0x0);
             uVar6 = _UNK_?;
             uVar4 = uVar4 + 1;
-            fVar9 = *(float *)(iVar3 + 0x18) * _UNK_?;
+            fVar9 = *(float *)(iVar3 + 0x1c) * _UNK_?;
             iStack_5 = iStack_5 + 4;
-            fVar10 = (float)(*(uint *)(iVar3 + 0x14) & _UNK_?);
-            *(undefined4 *)(iVar3 + 0x10) = 9;
-            *(float *)(iVar3 + 0x20) = fVar9 - fVar10;
+            fVar10 = (float)(*(uint *)(iVar3 + 0x18) & _UNK_?);
+            *(undefined4 *)(iVar3 + 0x14) = 9;
+            *(float *)(iVar3 + 0x24) = fVar9 - fVar10;
             if ((int)iVar2 <= (int)uVar4) {
               return;
             }

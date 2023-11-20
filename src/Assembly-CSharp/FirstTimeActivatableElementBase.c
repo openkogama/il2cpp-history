@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
     func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
-  (*(this->klass->vtable).OnShow.methodPtr)(this,(this->klass->vtable).OnShow.method);
+  (*(code *)(this->klass->vtable).OnShow.method)(this,(this->klass->vtable).OnActivate.methodPtr);
   soundStyle = (this->fields).onShowSound;
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);
@@ -36,11 +36,9 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  if ((this_00 != (Action_2_Object_Int32Enum_ *)0x0) &&
-     (this != (FirstTimeActivatableElementBase *)0x0)) {
+  if (this != (FirstTimeActivatableElementBase *)0x0) {
     mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              (this_00,(Object *)this,(this->klass->vtable).OnFirstTimeState.method,
-               (MethodInfo *)0x0);
+              (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
               ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
                 *)this_00,(MethodInfo *)0x0);
@@ -102,8 +100,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -135,7 +131,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::
     }
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -151,7 +146,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
 {
   pFVar1 = this->klass;
   (this->fields)._IsShowing_k__BackingField = 1;
-  (*(pFVar1->vtable).OnActivate.methodPtr)(this,(pFVar1->vtable).OnActivate.method);
+  (*(code *)(pFVar1->vtable).OnActivate.method)(this,(pFVar1->vtable).OnEnable.methodPtr);
   if ((this->fields).delayBeforeShown <= _UNK_?) {
     FirstTimeActivatableElementBase_DoShow(this,(MethodInfo *)0x0);
     return;
@@ -174,19 +169,14 @@ Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableElemen
     func_?(&TypeInfo__FirstTimeActivatableElementBase___ShowDelay_d__26);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FirstTimeActivatableElementBase___ShowDelay_d__26);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__FirstTimeActivatableElementBase___ShowDelay_d__26;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -215,7 +205,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Trying_to_skip_unregistered_even,(MethodInfo *)0x0);
     return;
   }
@@ -226,24 +216,18 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__FirstTimeActivatableElementBase___SkipEvent_b__38_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
-              );
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__FirstTimeActivatableElementBase___SkipEvent_b__38_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
+            );
   return;
 }
 
@@ -277,18 +261,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  if (this_00 != (Action_2_Object_Int32Enum_ *)0x0) {
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              (this_00,(Object *)this,(this->klass->vtable).OnFirstTimeState.method,
-               (MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+            (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
+            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -325,13 +302,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -358,8 +328,6 @@ code_?:
       object = TypeInfo__FirstTimeActivatableElementBase____c->static_fields->__9;
       callbackFunction_00 =
            (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)func_?();
-      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IFirstTimeElementActivator_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,
@@ -367,8 +335,7 @@ code_?:
                  ,(MethodInfo *)0x0);
       TypeInfo__FirstTimeActivatableElementBase____c->static_fields->__9__37_1 = callbackFunction_00
       ;
-      func_?(&TypeInfo__FirstTimeActivatableElementBase____c->static_fields->__9__37_1,
-                      callbackFunction_00);
+      func_?();
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -494,25 +461,22 @@ bool Assembly-CSharp.dll::FirstTimeActivatableElementBase::
     func_?(&TypeInfo__FirstTimeActivatableElementBase____c__DisplayClass35_0);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__FirstTimeActivatableElementBase____c__DisplayClass35_0);
+  method_00 = TypeInfo__FirstTimeActivatableElementBase____c__DisplayClass35_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
-    if ((this->fields).checkForStackBlocking == 0) {
-      return 0;
-    }
-    *(undefined1 *)&value[1].klass = 0;
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    if ((this->fields).checkForStackBlocking != 0) {
+      *(undefined1 *)&value[1].klass = 0;
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
@@ -528,6 +492,7 @@ bool Assembly-CSharp.dll::FirstTimeActivatableElementBase::
                 );
       return *(bool *)&value[1].klass;
     }
+    return 0;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -549,17 +514,5 @@ bool Assembly-CSharp.dll::FirstTimeActivatableElementBase::
     return MVar1 == MVar2;
   }
   return 1;
-}
-
-
-/* Void set_IsShowing(Boolean) */
-
-void Assembly-CSharp.dll::FirstTimeActivatableElementBase::
-     FirstTimeActivatableElementBase_set_IsShowing
-               (FirstTimeActivatableElementBase *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._IsShowing_k__BackingField = value;
-  return;
 }
 

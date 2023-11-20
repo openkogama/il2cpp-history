@@ -38,19 +38,6 @@ public class InventoryItemPreviewSell : ManageItemPage
 	private bool addingToMarket;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass13_0
-	{
-		// Fields
-		public string txt;
-
-		// Constructors
-		public __c__DisplayClass13_0();
-
-		// Methods
-		internal void _AddToMarket_b__1(IModalPopupCreator x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -71,6 +58,19 @@ public class InventoryItemPreviewSell : ManageItemPage
 		internal void _OnRemoveFromMarketplace_b__15_0(IUIStack x, BaseEventData y);
 		internal void _OnAddToMarketplaceReturn_b__16_0(IUIStack x, BaseEventData y);
 		internal void _OnAddToMarketplaceReturn_b__16_2(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass13_0
+	{
+		// Fields
+		public string txt;
+
+		// Constructors
+		public __c__DisplayClass13_0();
+
+		// Methods
+		internal void _AddToMarket_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

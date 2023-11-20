@@ -13,8 +13,8 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_Awake
   }
   if ((this->fields)._colliders == (Collider__Array *)0x0) {
     pCVar1 = (Collider__Array *)
-             Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Collider>______
                        );
     (this->fields)._colliders = pCVar1;
@@ -39,8 +39,8 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_Awake
     }
     if ((this->fields)._renderers == (Renderer__Array *)0x0) {
       pRVar4 = (Renderer__Array *)
-               Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                         ((Component *)this,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
       (this->fields)._renderers = pRVar4;
@@ -87,56 +87,48 @@ Bounds * Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_GetLocalBounds
   (__return_storage_ptr__->m_Center).y = 0.0;
   (__return_storage_ptr__->m_Center).z = 0.0;
   (__return_storage_ptr__->m_Extents).x = 0.0;
+  pAVar1 = this->klass;
   (__return_storage_ptr__->m_Extents).y = 0.0;
   (__return_storage_ptr__->m_Extents).z = 0.0;
-  pfVar1 = (float *)(*(this->klass->vtable).GetWorldBounds.methodPtr)
-                               (&stack0xffffffcc,this,(this->klass->vtable).GetWorldBounds.method);
-  fVar2 = pfVar1[1];
-  fVar3 = pfVar1[2];
-  fVar4 = pfVar1[3];
-  fVar5 = pfVar1[4];
-  fVar6 = pfVar1[5];
-  (__return_storage_ptr__->m_Center).x = *pfVar1;
-  (__return_storage_ptr__->m_Center).y = fVar2;
-  (__return_storage_ptr__->m_Center).z = fVar3;
-  (__return_storage_ptr__->m_Extents).x = fVar4;
-  (__return_storage_ptr__->m_Extents).y = fVar5;
-  (__return_storage_ptr__->m_Extents).z = fVar6;
-  pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pfVar2 = (float *)(*(code *)(pAVar1->vtable).GetWorldBounds.method)
+                               (&stack0xffffffcc,this,(pAVar1->vtable).GetLocalBounds.methodPtr);
+  fVar3 = pfVar2[1];
+  fVar4 = pfVar2[2];
+  fVar5 = pfVar2[3];
+  (__return_storage_ptr__->m_Center).x = *pfVar2;
+  (__return_storage_ptr__->m_Center).y = fVar3;
+  (__return_storage_ptr__->m_Center).z = fVar4;
+  (__return_storage_ptr__->m_Extents).x = fVar5;
+  fVar3 = pfVar2[5];
+  (__return_storage_ptr__->m_Extents).y = pfVar2[4];
+  (__return_storage_ptr__->m_Extents).z = fVar3;
+  pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                     ((Object_1 *)pTVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
-    pRVar9 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                        ((Regex_CachedCodeEntryKey *)&stack0xffffffe4,
-                         (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                          *)__return_storage_ptr__,(MethodInfo *)0x0);
-    uVar10 = pRVar9->_options;
-    uVar11 = pRVar9->_cultureKey;
-    pSVar12 = pRVar9->_pattern;
-    pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                     ((Object_1 *)pTVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar7 != 0) {
+    uVar8 = (__return_storage_ptr__->m_Center).x;
+    uVar9 = (__return_storage_ptr__->m_Center).y;
+    fVar3 = (__return_storage_ptr__->m_Center).z;
+    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar7 == (Transform *)0x0) {
+    if (pTVar6 == (Transform *)0x0) {
       func_?();
-      pcVar13 = (code *)swi(3);
-      pBVar14 = (Bounds *)(*pcVar13)();
-      return pBVar14;
+      pcVar10 = (code *)swi(3);
+      pBVar11 = (Bounds *)(*pcVar10)();
+      return pBVar11;
     }
-    pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&puStack_16,pTVar7,(MethodInfo *)0x0);
-    uVar17 = pVVar15->x;
-    uVar18 = pVVar15->y;
-    value.y = (float)uVar11 - (float)uVar18;
-    value.x = (float)uVar10 - (float)uVar17;
-    value.z = (float)pSVar12 - pVVar15->z;
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
-    ParticleSystem_Particle_set_position
-              ((ParticleSystem_Particle *)__return_storage_ptr__,value,(MethodInfo *)0x0);
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
+    uVar13 = pVVar12->x;
+    uVar14 = pVVar12->y;
+    fVar4 = pVVar12->z;
+    (__return_storage_ptr__->m_Center).x = (float)uVar8 - (float)uVar13;
+    (__return_storage_ptr__->m_Center).y = (float)uVar9 - (float)uVar14;
+    (__return_storage_ptr__->m_Center).z = fVar3 - fVar4;
   }
   return __return_storage_ptr__;
 }
@@ -163,8 +155,8 @@ Bounds * Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_GetWorldBounds
   }
   if ((this->fields)._renderers == (Renderer__Array *)0x0) {
     pRVar2 = (Renderer__Array *)
-             Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
     (this->fields)._renderers = pRVar2;
@@ -244,8 +236,8 @@ Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_get_Colliders
   }
   if ((this->fields)._colliders == (Collider__Array *)0x0) {
     pCVar1 = (Collider__Array *)
-             Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Collider>______
                        );
     (this->fields)._colliders = pCVar1;
@@ -270,8 +262,8 @@ Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_get_Renderers
   }
   if ((this->fields)._renderers == (Renderer__Array *)0x0) {
     pRVar1 = (Renderer__Array *)
-             Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
     (this->fields)._renderers = pRVar1;
@@ -323,8 +315,8 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_set_Visible
     }
     if ((this->fields)._renderers == (Renderer__Array *)0x0) {
       pRVar1 = (Renderer__Array *)
-               Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                         ((Component *)this,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
       (this->fields)._renderers = pRVar1;

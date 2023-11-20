@@ -22,21 +22,23 @@ void Assembly-CSharp.dll::CloseApp+<>c__DisplayClass1_0::CloseApp_c_DisplayClass
     return;
   }
   uVar5 = 0;
-  uVar6 = (x->klass->_1).interface_offsets_count;
-  if (uVar6 != 0) {
+  pIVar6 = x->klass;
+  uVar7._0_1_ = (pIVar6->_1).rank;
+  uVar7._1_1_ = (pIVar6->_1).minimumAlignment;
+  if (uVar7 != 0) {
     do {
-      if (x->klass->interfaceOffsets[uVar5].interfaceType ==
+      if (pIVar6->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        pVVar7 = &(x->klass->vtable).Create_2 + x->klass->interfaceOffsets[uVar5].offset;
+        ppMVar8 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
         goto code_?;
       }
       uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
+    } while (uVar5 < uVar7);
   }
-  pVVar7 = (VirtualInvokeData *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,3);
+  ppMVar8 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,3);
 code_?:
-  (*pVVar7->methodPtr)(x,pSVar1,pUVar3,pSVar2,pVVar7->method);
+  (*(code *)*ppMVar8)(x,pSVar1,pUVar3,pSVar2,ppMVar8[1]);
   return;
 }
 

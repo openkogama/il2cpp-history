@@ -137,7 +137,7 @@ void Assembly-CSharp.dll::DoubleTapMovementChecker::DoubleTapMovementChecker__ct
   method_00 = (MethodInfo *)&this->fields;
   (this->fields).movementControls = array;
   func_?(method_00,array);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::InventoryItemData::InventoryItemData__ctor
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).slotIndex = slotIndex;
   (this->fields).categoryId = categoryId;

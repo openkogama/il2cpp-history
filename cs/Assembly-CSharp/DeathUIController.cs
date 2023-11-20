@@ -42,6 +42,28 @@ public class DeathUIController : MonoBehaviour
 	private bool isDeathBriefActive;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static UnityAction __9__20_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__31_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _ShowReviveMenu_b__20_2();
+		internal void _ReboostNotClicked_b__21_0(IUIStack x, BaseEventData y);
+		internal void _ReviveNotClicked_b__22_0(IUIStack x, BaseEventData y);
+		internal void _ShowDeadmodeUI_b__31_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass20_0
 	{
@@ -66,28 +88,6 @@ public class DeathUIController : MonoBehaviour
 
 		// Methods
 		internal void _ShowReviveMenu_b__1(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static UnityAction __9__20_2;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__31_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _ShowReviveMenu_b__20_2();
-		internal void _ReboostNotClicked_b__21_0(IUIStack x, BaseEventData y);
-		internal void _ReviveNotClicked_b__22_0(IUIStack x, BaseEventData y);
-		internal void _ShowDeadmodeUI_b__31_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

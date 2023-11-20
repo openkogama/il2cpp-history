@@ -42,7 +42,6 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
   else {
     uVar1 = func_?(&TypeInfo__System__Exception);
     pEVar2 = (Exception *)func_?(uVar1);
-    func_?(pEVar2);
     pMVar3 = (MethodInfo *)0x0;
     pSVar4 = (String *)func_?(&StringLiteral_prevXp___nextXp);
     mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
@@ -51,7 +50,6 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   pEVar2 = (Exception *)func_?(uVar1);
-  func_?(pEVar2);
   pMVar3 = (MethodInfo *)0x0;
   pSVar4 = (String *)func_?(&StringLiteral_currentXp__0);
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
@@ -60,7 +58,6 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
 code_?:
   uVar1 = func_?(&TypeInfo__System__Exception);
   pEVar2 = (Exception *)func_?(uVar1);
-  func_?(pEVar2);
   pMVar3 = (MethodInfo *)0x0;
   pSVar4 = (String *)func_?(&StringLiteral_currentXp___prevXp);
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);

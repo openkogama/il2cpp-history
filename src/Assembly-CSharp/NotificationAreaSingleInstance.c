@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstance::
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_Notification_is_null,(MethodInfo *)0x0);
         return;
       }
@@ -46,8 +46,8 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstance::
             cRam_? = '\x01';
           }
           if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-            (*(this_00->klass->vtable).Initialize.methodPtr)
-                      (this_00,data,(this_00->klass->vtable).Initialize.method);
+            (*(code *)(this_00->klass->vtable).Initialize.method)
+                      (this_00,data,(this_00->klass->vtable).Update.methodPtr);
             return;
           }
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform

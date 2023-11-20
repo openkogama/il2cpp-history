@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -21,12 +21,10 @@ namespace MV.WorldObject
 		private uint round;
 	
 		// Constructors
-		public RandomGenerator(uint seed);
 		public RandomGenerator(uint seed, uint step, uint round);
 		static RandomGenerator();
 	
 		// Methods
-		public int[] ToIntArray();
 		public int Range(int min, int max);
 		public int GetNewRandom();
 		private uint IncrementRandomIndex();

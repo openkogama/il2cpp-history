@@ -15,13 +15,13 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MVBuildModeAvatarRemote_Activate,(MethodInfo *)0x0);
-  (*(this->klass->vtable).set_Position.methodPtr)
-            (this,position._0_8_,position.z,(this->klass->vtable).set_Position.method);
-  (*(this->klass->vtable).set_Rotation.methodPtr)
+  (*(code *)(this->klass->vtable).set_Position.method)
+            (this,position._0_8_,position.z,(this->klass->vtable).get_Rotation.methodPtr);
+  (*(code *)(this->klass->vtable).set_Rotation.method)
             (this,rotation.x,rotation.y,rotation.z,rotation.w,
-             (this->klass->vtable).set_Rotation.method);
+             (this->klass->vtable).get_Scale.methodPtr);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar1->fields).transformNetworkManager, this_00 != (TransformNetworkManager *)0x0)
@@ -30,11 +30,10 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
               TransformNetworkManager::TransformNetworkManager_GetNetworkObject
                         (this_00,(this->fields)._._._._.id,(MethodInfo *)0x0);
     if (this_03 != (MVNetworkListener *)0x0) {
-      if (((this_03->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVNetworkListener->_1).typeHierarchyDepth) ||
-         ((this_03->klass->_1).typeHierarchy
-          [(TypeInfo__MVNetworkListener->_1).typeHierarchyDepth - 1] !=
-          (Il2CppClass *)TypeInfo__MVNetworkListener)) goto code_?;
+      if (((this_03->klass->_1).naturalAligment < (TypeInfo__MVNetworkListener->_1).naturalAligment)
+         || ((this_03->klass->_1).typeHierarchy
+             [(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] !=
+             (Il2CppClass *)TypeInfo__MVNetworkListener)) goto code_?;
       MVNetworkListener::MVNetworkListener_SetToCurrentPosition(this_03,(MethodInfo *)0x0);
     }
     this_01 = (this->fields)._._._.gameObject;
@@ -46,7 +45,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Activ
       if ((pAVar2 != (AvatarRemoteBuildMode *)0x0) &&
          (pAVar3 = (pAVar2->fields).avatarUIHandlerRemote, pAVar3 != (AvatarUIHandlerRemote *)0x0))
       {
-        (*(pAVar3->klass->vtable).Activate.methodPtr)();
+        (*(code *)(pAVar3->klass->vtable).Activate.method)();
         this_02 = (this->fields).cullingHandler;
         if (this_02 != (DynamicCullingHandler *)0x0) {
           DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
@@ -79,7 +78,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_DeAct
     pAVar1 = (this->fields).avatarRemoteBuildMode;
     if ((pAVar1 != (AvatarRemoteBuildMode *)0x0) &&
        (pAVar2 = (pAVar1->fields).avatarUIHandlerRemote, pAVar2 != (AvatarUIHandlerRemote *)0x0)) {
-      (*(pAVar2->klass->vtable).Deactivate.methodPtr)();
+      (*(code *)(pAVar2->klass->vtable).Deactivate.method)();
       this_01 = (this->fields).cullingHandler;
       if (this_01 != (DynamicCullingHandler *)0x0) {
         DynamicCullingHandler::DynamicCullingHandler_DeActivateCulling(this_01,(MethodInfo *)0x0);
@@ -200,82 +199,81 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
     }
     pAVar3 = (pAVar1->fields).avatarUIHandlerRemote;
     if (pAVar3 != (AvatarUIHandlerRemote *)0x0) {
-      (*(pAVar3->klass->vtable).Initialize.methodPtr)(pAVar3,0,this,iVar2);
+      object = (Object *)(pAVar3->klass->vtable).Activate.methodPtr;
+      (*(code *)(pAVar3->klass->vtable).Initialize.method)(pAVar3,0,this,iVar2);
+      pUVar4 = (this->fields)._._._.PositionChanged;
       this_02 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                                );
-      if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (this_02,(Object *)pAVar1,
-                   MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                   ,(MethodInfo *)0x0);
-        pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)0x0,(Delegate *)this_02,(MethodInfo *)0x0);
-        if (pDVar4 == (Delegate *)0x0) {
-          (this->fields)._._._.PositionChanged =
-               (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-        }
-        else {
-          pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-          if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-          goto code_?;
-          (this->fields)._._._.PositionChanged = pUVar5;
-          iVar6 = func_?();
-          if (iVar6 == 0) goto code_?;
-        }
-        func_?();
-        pAVar7 = (AvatarLimbManager *)func_?();
-        if (pAVar7 != (AvatarLimbManager *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-          TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)pAVar7,(MethodInfo *)0x0);
-          (this->fields)._.limbManager = pAVar7;
-          func_?();
-          pAVar1 = (this->fields).avatarRemoteBuildMode;
-          if ((pAVar1 != (AvatarRemoteBuildMode *)0x0) &&
-             (pAVar7 = (this->fields)._.limbManager, pAVar7 != (AvatarLimbManager *)0x0)) {
-            (*(pAVar7->klass->vtable).Initialize.methodPtr)
-                      (pAVar7,this,(this->fields)._.body,(pAVar1->fields).enabledChangeHandler);
-            newAnimation = StringLiteral_Idle;
-            pMVar8 = (this->fields)._.body;
-            if (pMVar8 != (MVBody *)0x0) {
-              pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar9 != (MVNetworkGame *)0x0) {
-                iVar2 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                                   (pMVar9,(MethodInfo *)0x0);
-                pMVar10 = (pMVar8->fields).bodyObject;
-                if ((pMVar10 != (MVBodyObject *)0x0) &&
-                   (this_00 = (pMVar10->fields).boneAnimation, this_00 != (BoneAnimation *)0x0)) {
-                  BoneAnimation::BoneAnimation_StartAnimation
-                            (this_00,newAnimation,iVar2,(MethodInfo *)0x0);
-                  pMVar8 = (this->fields)._.body;
-                  if ((pMVar8 != (MVBody *)0x0) &&
-                     (pGVar11 = (pMVar8->fields)._._._.gameObject, pGVar11 != (GameObject *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar11,1,(MethodInfo *)0x0);
-                    pGVar11 = (this->fields)._._._.gameObject;
-                    if (pGVar11 != (GameObject *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar11,0,(MethodInfo *)0x0);
-                      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                          ((MethodInfo *)0x0);
-                      if ((pMVar9 != (MVNetworkGame *)0x0) &&
-                         (this_01 = (pMVar9->fields).playerContainer,
-                         this_01 != (MVPlayerContainer *)0x0)) {
-                        this_03 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                                            (this_01,(this->fields)._._._._.ownerActorNr,
-                                             (MethodInfo *)0x0);
-                        if (this_03 != (MVPlayer *)0x0) {
-                          MVPlayer::MVPlayer_NotifyAvatarCreated
-                                    (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
-                          pLVar12 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
-                                              ((MVBuildModeAvatar *)this,0,(MethodInfo *)0x0);
-                          (this->fields).laserPointer = pLVar12;
-                          func_?();
-                          return;
-                        }
-                      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_02,object,
+                 MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                 ,(MethodInfo *)0x0);
+      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar4,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pDVar5 == (Delegate *)0x0) {
+        (this->fields)._._._.PositionChanged =
+             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      }
+      else {
+        pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+        if (pUVar4 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+        goto code_?;
+        (this->fields)._._._.PositionChanged = pUVar4;
+        iVar6 = func_?();
+        if (iVar6 == 0) goto code_?;
+      }
+      func_?();
+      pAVar7 = (AvatarLimbManager *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor
+                ((UxmlObjectListAttributeDescription_1_System_Object_ *)pAVar7,(MethodInfo *)0x0);
+      (this->fields)._.limbManager = pAVar7;
+      func_?();
+      pAVar1 = (this->fields).avatarRemoteBuildMode;
+      if ((pAVar1 != (AvatarRemoteBuildMode *)0x0) &&
+         (pAVar7 = (this->fields)._.limbManager, pAVar7 != (AvatarLimbManager *)0x0)) {
+        (*(code *)(pAVar7->klass->vtable).Initialize.method)
+                  (pAVar7,this,(this->fields)._.body,(pAVar1->fields).enabledChangeHandler);
+        newAnimation = StringLiteral_Idle;
+        pMVar8 = (this->fields)._.body;
+        if (pMVar8 != (MVBody *)0x0) {
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar9 != (MVNetworkGame *)0x0) {
+            iVar2 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                               (pMVar9,(MethodInfo *)0x0);
+            pMVar10 = (pMVar8->fields).bodyObject;
+            if ((pMVar10 != (MVBodyObject *)0x0) &&
+               (this_00 = (pMVar10->fields).boneAnimation, this_00 != (BoneAnimation *)0x0)) {
+              BoneAnimation::BoneAnimation_StartAnimation
+                        (this_00,newAnimation,iVar2,(MethodInfo *)0x0);
+              pMVar8 = (this->fields)._.body;
+              if ((pMVar8 != (MVBody *)0x0) &&
+                 (pGVar11 = (pMVar8->fields)._._._.gameObject, pGVar11 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar11,1,(MethodInfo *)0x0);
+                pGVar11 = (this->fields)._._._.gameObject;
+                if (pGVar11 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar11,0,(MethodInfo *)0x0);
+                  pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  if ((pMVar9 != (MVNetworkGame *)0x0) &&
+                     (this_01 = (pMVar9->fields).playerContainer,
+                     this_01 != (MVPlayerContainer *)0x0)) {
+                    this_03 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                                        (this_01,(this->fields)._._._._.ownerActorNr,
+                                         (MethodInfo *)0x0);
+                    if (this_03 != (MVPlayer *)0x0) {
+                      MVPlayer::MVPlayer_NotifyAvatarCreated
+                                (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
+                      pLVar12 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
+                                          ((MVBuildModeAvatar *)this,0,(MethodInfo *)0x0);
+                      (this->fields).laserPointer = pLVar12;
+                      func_?();
+                      return;
                     }
                   }
                 }
@@ -349,32 +347,30 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
     cRam_? = '\x01';
   }
   this_01 = (DynamicCullingHandler *)func_?(TypeInfo__DynamicCullingHandler);
-  if (this_01 != (DynamicCullingHandler *)0x0) {
-    DynamicCullingHandler::DynamicCullingHandler__ctor(this_01,3.5,(MethodInfo *)0x0);
-    (this->fields).cullingHandler = this_01;
-    func_?(&(this->fields).cullingHandler,this_01);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
-      cRam_? = '\x01';
-    }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar1 != (PrefabPool *)0x0) {
-      MVBuildModeAvatar::MVBuildModeAvatar__ctor
-                ((MVBuildModeAvatar *)this,data,(pPVar1->fields).mvRemoteAvatarBuildModePrefab,
-                 worldObjects,(MethodInfo *)0x0);
-      this_00 = (this->fields)._._._.gameObject;
-      if (this_00 != (GameObject *)0x0) {
-        pAVar2 = (AvatarRemoteBuildMode *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                           (this_00,
-                            AvatarRemoteBuildMode_MethodInfo__UnityEngine__GameObject__GetComponent<AvatarRemoteBuildMode>__
-                           );
-        (this->fields).avatarRemoteBuildMode = pAVar2;
-        func_?();
-        MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject
-                  ((MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
-        return;
-      }
+  DynamicCullingHandler::DynamicCullingHandler__ctor(this_01,3.5,(MethodInfo *)0x0);
+  (this->fields).cullingHandler = this_01;
+  func_?(&(this->fields).cullingHandler,this_01);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    MVBuildModeAvatar::MVBuildModeAvatar__ctor
+              ((MVBuildModeAvatar *)this,data,(pPVar1->fields).mvRemoteAvatarBuildModePrefab,
+               worldObjects,(MethodInfo *)0x0);
+    this_00 = (this->fields)._._._.gameObject;
+    if (this_00 != (GameObject *)0x0) {
+      pAVar2 = (AvatarRemoteBuildMode *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                         (this_00,
+                          AvatarRemoteBuildMode_MethodInfo__UnityEngine__GameObject__GetComponent<AvatarRemoteBuildMode>__
+                         );
+      (this->fields).avatarRemoteBuildMode = pAVar2;
+      func_?();
+      MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject
+                ((MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();

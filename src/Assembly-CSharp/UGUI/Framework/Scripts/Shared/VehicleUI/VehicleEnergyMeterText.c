@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
 {
   pTVar1 = (this->fields).energyText;
   if (pTVar1 != (Text *)0x0) {
-    pfVar2 = (float *)(*(pTVar1->klass->vtable).get_color.methodPtr)
-                                (auStack_3,pTVar1,(pTVar1->klass->vtable).get_color.method);
+    pfVar2 = (float *)(*(code *)(pTVar1->klass->vtable).get_color.method)
+                                (auStack_3,pTVar1,(pTVar1->klass->vtable).set_color.methodPtr);
     fVar4 = pfVar2[1];
     fVar5 = pfVar2[2];
     fVar6 = pfVar2[3];
@@ -47,9 +47,13 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
   (this->fields).vehicleEnergyContainer = (VehicleEnergyContainer *)0x0;
   func_?(&(this->fields).vehicleEnergyContainer,0);
   pTVar1 = (this->fields).energyText;
-  if ((pTVar1 != (Text *)0x0) &&
+  if ((pTVar1 == (Text *)0x0) ||
      (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+                         ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
     fVar4 = pVVar3->y;
@@ -66,10 +70,10 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
     if (bVar6 != 0) {
       if (rigidBody == (MVRigidBody *)0x0) goto code_?;
       pVVar7 = (VehicleEnergyContainer *)
-                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                          ((Component *)rigidBody,
-                           WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__Component__GetComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
-                          );
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)rigidBody,
+                          WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__Component__GetComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
+                         );
       (this->fields).vehicleEnergyContainer = pVVar7;
       func_?();
     }
@@ -114,7 +118,7 @@ code_?:
           mscorlib.dll::System::Int32::Int32_ToString
                     ((Int32 *)&(this->fields).currentEnergyStatus,(MethodInfo *)0x0);
           if (pTVar1 != (Text *)0x0) {
-            (*(pTVar1->klass->vtable).set_text.methodPtr)();
+            (*(code *)(pTVar1->klass->vtable).set_text.method)();
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
@@ -126,7 +130,7 @@ code_?:
                 func_?();
               }
               if (pTVar1 != (Text *)0x0) {
-                (*(pTVar1->klass->vtable).set_color.methodPtr)(pTVar1);
+                (*(code *)(pTVar1->klass->vtable).set_color.method)(pTVar1);
                 if (3 < (this->fields).lastBlink) {
                   (this->fields).lastBlink = -4;
                 }
@@ -163,7 +167,7 @@ code_?:
               }
             }
             else if (pTVar1 != (Text *)0x0) {
-              (*(pTVar1->klass->vtable).set_color.methodPtr)(pTVar1);
+              (*(code *)(pTVar1->klass->vtable).set_color.method)(pTVar1);
               pTVar1 = (this->fields).energyText;
               if ((pTVar1 != (Text *)0x0) &&
                  (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -177,53 +181,46 @@ code_?:
           }
         }
       }
+      goto code_?;
     }
-    else {
-      pVVar7 = (this->fields).vehicleEnergyContainer;
-      if (pVVar7 != (VehicleEnergyContainer *)0x0) {
-        pVVar11 = (this->fields).vehicleEnergyContainer;
-        (this->fields).updateEnergy = (pVVar7->fields)._UsingEnergy_k__BackingField;
-        if (pVVar11 != (VehicleEnergyContainer *)0x0) {
-          pAVar12 = (pVVar11->fields).OnRefill;
-          this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText__OnRefillCallback__
-                       ,(MethodInfo *)0x0);
-            pAVar12 = (Action *)
-                      mscorlib.dll::System::Delegate::Delegate_Combine
-                                ((Delegate *)pAVar12,(Delegate *)this_01,(MethodInfo *)0x0);
-            if (pAVar12 == (Action *)0x0) {
-              (pVVar11->fields).OnRefill = (Action *)0x0;
-            }
-            else {
-              pAVar13 = (Action *)0x0;
-              if (pAVar12->klass == TypeInfo__System__Action) {
-                pAVar13 = pAVar12;
-              }
-              if (pAVar13 == (Action *)0x0) goto code_?;
-              (pVVar11->fields).OnRefill = pAVar13;
-              pAVar13 = (Action *)0x0;
-              if (pAVar12->klass == TypeInfo__System__Action) {
-                pAVar13 = pAVar12;
-              }
-              if (pAVar13 == (Action *)0x0) goto code_?;
-            }
-            func_?();
-            goto code_?;
-          }
-        }
-      }
+    pVVar7 = (this->fields).vehicleEnergyContainer;
+    if (pVVar7 == (VehicleEnergyContainer *)0x0) goto code_?;
+    (this->fields).updateEnergy = (pVVar7->fields)._UsingEnergy_k__BackingField;
+    pVVar7 = (this->fields).vehicleEnergyContainer;
+    if (pVVar7 == (VehicleEnergyContainer *)0x0) goto code_?;
+    pAVar11 = (pVVar7->fields).OnRefill;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,
+               MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText__OnRefillCallback__
+               ,(MethodInfo *)0x0);
+    pAVar11 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar11,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar11 == (Action *)0x0) {
+      (pVVar7->fields).OnRefill = (Action *)0x0;
+code_?:
+      func_?();
+      goto code_?;
     }
+    pAVar12 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar12 = pAVar11;
+    }
+    if (pAVar12 == (Action *)0x0) goto code_?;
+    (pVVar7->fields).OnRefill = pAVar12;
+    pAVar12 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar12 = pAVar11;
+    }
+    if (pAVar12 != (Action *)0x0) goto code_?;
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -263,9 +260,9 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
       pSVar7 = pSVar6;
     }
     if (pTVar5 != (Text *)0x0) {
-      auStack_8._4_4_ = (pTVar5->klass->vtable).set_text.method;
+      auStack_8._4_4_ = (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
       auStack_8._0_4_ = pSVar7;
-      (*(pTVar5->klass->vtable).set_text.methodPtr)(pTVar5);
+      (*(code *)(pTVar5->klass->vtable).set_text.method)(pTVar5);
       if (cRam_? == '\0') {
         func_?(&
                         TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText
@@ -283,10 +280,10 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
         pVVar9 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText->
                  static_fields;
         if (pTVar5 != (Text *)0x0) {
-          (*(pTVar5->klass->vtable).set_color.methodPtr)
+          (*(code *)(pTVar5->klass->vtable).set_color.method)
                     (pTVar5,(pVVar9->WarningColor).r,(pVVar9->WarningColor).g,
                      (pVVar9->WarningColor).b,(pVVar9->WarningColor).a,
-                     (pTVar5->klass->vtable).set_color.method);
+                     (pTVar5->klass->vtable).get_raycastTarget.methodPtr);
           if (3 < (this->fields).lastBlink) {
             (this->fields).lastBlink = -4;
           }
@@ -327,10 +324,10 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
         }
       }
       else if (pTVar5 != (Text *)0x0) {
-        (*(pTVar5->klass->vtable).set_color.methodPtr)
+        (*(code *)(pTVar5->klass->vtable).set_color.method)
                   (pTVar5,(this->fields).originalColor.r,(this->fields).originalColor.g,
                    (this->fields).originalColor.b,(this->fields).originalColor.a,
-                   (pTVar5->klass->vtable).set_color.method);
+                   (pTVar5->klass->vtable).get_raycastTarget.methodPtr);
         pTVar5 = (this->fields).energyText;
         if (pTVar5 != (Text *)0x0) {
           pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -371,9 +368,9 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
     pVVar2 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText->
              static_fields;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_color.methodPtr)
+      (*(code *)(pTVar1->klass->vtable).set_color.method)
                 (pTVar1,(pVVar2->WarningColor).r,(pVVar2->WarningColor).g,(pVVar2->WarningColor).b,
-                 (pVVar2->WarningColor).a,(pTVar1->klass->vtable).set_color.method);
+                 (pVVar2->WarningColor).a,(pTVar1->klass->vtable).get_raycastTarget.methodPtr);
       if (3 < (this->fields).lastBlink) {
         (this->fields).lastBlink = -4;
       }
@@ -413,10 +410,10 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
     }
   }
   else if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_color.methodPtr)
+    (*(code *)(pTVar1->klass->vtable).set_color.method)
               (pTVar1,(this->fields).originalColor.r,(this->fields).originalColor.g,
                (this->fields).originalColor.b,(this->fields).originalColor.a,
-               (pTVar1->klass->vtable).set_color.method);
+               (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
     pTVar1 = (this->fields).energyText;
     if (pTVar1 != (Text *)0x0) {
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform

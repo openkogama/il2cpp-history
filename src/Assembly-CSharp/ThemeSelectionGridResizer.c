@@ -18,11 +18,8 @@ void Assembly-CSharp.dll::ThemeSelectionGridResizer::ThemeSelectionGridResizer_U
     }
     if (this_00 == (Transform *)0x0) goto code_?;
     pRVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffe8,(RectTransform *)this_00,(MethodInfo *)0x0);
-    fVar3 = SubscribableVariableBase`1[System::Single]::
-            SubscribableVariableBase_1_System_Single__get_Value
-                      ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffd8,
-                       (MethodInfo *)pRVar2->m_XMin);
+                       ((Rect *)&stack0xffffffe4,(RectTransform *)this_00,(MethodInfo *)0x0);
+    fVar3 = pRVar2->m_Width;
     if (fVar3 == (this->fields).prevSize) {
       return;
     }
@@ -40,10 +37,10 @@ void Assembly-CSharp.dll::ThemeSelectionGridResizer::ThemeSelectionGridResizer_U
           iVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_right
                             (pRVar6,method_00);
           pGVar4 = (this->fields).grid;
-          fVar3 = ((float)method_00 - (float)iVar7) * _UNK_?;
+          fVar5 = ((float)method_00 - (float)iVar7) * _UNK_?;
           if (pGVar4 != (GridLayoutGroup *)0x0) {
-            value.y = fVar3;
-            value.x = fVar3;
+            value.y = fVar5;
+            value.x = fVar5;
             UnityEngine.UI.dll::UnityEngine::UI::GridLayoutGroup::GridLayoutGroup_set_cellSize
                       (pGVar4,value,(MethodInfo *)0x0);
             (this->fields).prevSize = fVar3;

@@ -7,51 +7,42 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
 {
   pMVar1 = (this->fields)._.editableCubeModel;
   if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-     (this_00 = (String *)(pMVar1->fields)._._.transform, this_00 != (String *)0x0)) {
+     (this_00 = (pMVar1->fields)._._.transform, this_00 != (Transform *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-              ((Transform *)this_00,(this->fields)._.cubeModelBaseParent,(MethodInfo *)0x0);
+              (this_00,(this->fields)._.cubeModelBaseParent,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.editableCubeModel;
     if (pMVar1 != (MVCubeModelInstance *)0x0) {
       pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds
-                         ((Bounds *)&stack0xffffffcc,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
-      pRVar3 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-               RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                         ((Regex_CachedCodeEntryKey *)&puStack_4,
-                          (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                           *)&stack0xffffffb4,(MethodInfo *)(pBVar2->m_Center).x);
-      fVar5 = (float)pRVar3->_options;
-      fVar6 = (float)pRVar3->_cultureKey;
-      pSVar7 = pRVar3->_pattern;
+                         ((Bounds *)&stack0xffffffd8,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+      fVar3 = (pBVar2->m_Extents).y;
+      fVar4 = (pBVar2->m_Extents).z;
       pMVar1 = (this->fields)._.editableCubeModel;
       if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
          (this_01 = (pMVar1->fields)._._.transform, this_01 != (Transform *)0x0)) {
-        pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                           ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
-        puStack_4 = (undefined *)pVVar8->x;
-        unique0x0000a404 = (String *)pVVar8->y;
-        value.y = (float)((uint)((float)unique0x0000a404 * fVar6) ^
+        fVar5 = 0.0;
+        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                           ((Vector3 *)&stack0xffffffe4,this_01,(MethodInfo *)0x0);
+        uVar7 = pVVar6->x;
+        uVar8 = pVVar6->y;
+        value.y = (float)((uint)(fVar3 * (float)uVar8) ^
                          __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
                   _UNK_?;
-        value.x = (float)puStack_4 * fVar5 * _UNK_?;
-        value.z = pVVar8->z * (float)pSVar7 * _UNK_?;
+        value.x = fVar5 * (float)uVar7 * _UNK_?;
+        value.z = fVar4 * pVVar6->z * _UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  ((Transform *)this_00,value,(MethodInfo *)0x0);
+                  (this_00,value,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  ((Transform *)this_00,
-                   TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+                  (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                    (MethodInfo *)0x0);
         value_00.y = (float)_UNK_?;
         value_00.x = (float)_UNK_?;
-        stack0xfffffff4 = this_00;
         value_00.z = 0.3;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  ((Transform *)this_00,value_00,(MethodInfo *)0x0);
+                  (this_00,value_00,(MethodInfo *)0x0);
         return;
       }
     }

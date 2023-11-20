@@ -25,6 +25,22 @@ public class AccessoryMenuButton : MonoBehaviour
 	private bool playerReady;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IActivateUIElement> __9__12_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _CalculateShouldShowBundleAd_b__12_0(IActivateUIElement x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass10_0
 	{
@@ -50,22 +66,6 @@ public class AccessoryMenuButton : MonoBehaviour
 
 		// Methods
 		internal void _CalculateShouldShowAccessoryPopup_b__1(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IActivateUIElement> __9__12_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _CalculateShouldShowBundleAd_b__12_0(IActivateUIElement x, BaseEventData y);
 	}
 
 	// Constructors

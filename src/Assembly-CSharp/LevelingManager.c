@@ -13,28 +13,29 @@ Assembly-CSharp.dll::LevelingManager::LevelingManager_CreateInitialLevelData(Met
     func_?(&TypeInfo__LevelingManager);
     cRam_? = '\x01';
   }
-  pIVar1 = (InitialLevelData *)func_?(TypeInfo__InitialLevelData);
+  method_00 = TypeInfo__InitialLevelData;
+  pIVar1 = (InitialLevelData *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pIVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pLVar2 = LevelingManager_TestBadgeUrlData((MethodInfo *)0x0);
   if (pIVar1 != (InitialLevelData *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pIVar1,ExceptionArgument__Enum_obj,unaff_ESI);
-    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pLVar2 = LevelingManager_TestBadgeUrlData((MethodInfo *)0x0);
     (pIVar1->fields).BadgeUrlData = pLVar2;
-    func_?(&pIVar1->fields);
+    func_?();
     (pIVar1->fields).Level = 2;
     (pIVar1->fields).XP = 0x78;
     this = TypeInfo__LevelingManager->static_fields->TestLevelToLimits;
     if (this != (Dictionary_2_System_Int32_XPLevelLimits_ *)0x0) {
       pXVar3 = (XPLevelLimits *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+               Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                         ((Dictionary_2_System_Int32_System_Object_ *)this,2,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__get_Item_int_
                          );
       (pIVar1->fields).XPLevelLimits = pXVar3;
-      func_?(&(pIVar1->fields).XPLevelLimits,pXVar3);
+      func_?();
       return pIVar1;
     }
   }
@@ -54,8 +55,6 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Destroy(MethodInfo *m
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffcc;
-  puVar5 = &stack0xffffffcc;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__AsyncWWWManager);
@@ -64,32 +63,24 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Destroy(MethodInfo *m
                    );
     func_?(&TypeInfo__LevelingManager);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   uStack_1 = 2;
-  this = (Action_1_Object_ *)
-         func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this,(Object *)0x0,
-               MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,
-               (MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,(MethodInfo *)0x0);
-    uStack_1 = 0xffffffff;
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this,(Object *)0x0,
+             MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,
+             (MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    *unaff_FS_OFFSET = uStack_3;
-    return;
   }
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,(MethodInfo *)0x0);
+  uStack_1 = 0xffffffff;
   func_?();
-  uStack_6 = uRam_?;
-  func_?(&uStack_6,&UNK_?);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -116,32 +107,22 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Initialize
   pSVar1 = MVCommon.dll::MV::Common::Urls::Urls_get_InitialData((MethodInfo *)0x0);
   str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&profileID,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
-  this = (Action_1_Object_ *)
-         func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this != (Action_1_Object_ *)0x0) {
-    profileID = 0;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this,(Object *)0x0,
-               MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,
-               (MethodInfo *)0x0);
-    profileID = (int32_t)TypeInfo__GetRequest;
-    this_00 = (AssetBundleRequest *)func_?();
-    if (this_00 != (AssetBundleRequest *)0x0) {
-      profileID = 0;
-      AssetBundleRequest::AssetBundleRequest__ctor
-                (this_00,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
-                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
-      return;
-    }
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this,(Object *)0x0,
+             MethodInfo__LevelingManager__OnInitialData_UnityEngine__Networking__UnityWebRequest_,
+             (MethodInfo *)0x0);
+  this_00 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
+  AssetBundleRequest::AssetBundleRequest__ctor
+            (this_00,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
+             WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  profileID = (int32_t)&UNK_?;
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -167,7 +148,7 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_Notify
     if (this != (MVNetworkGame *)0x0) {
       pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this,(MethodInfo *)0x0);
       if (pMVar1 != (MVLocalPlayer *)0x0) {
-        (*(pMVar1->klass->vtable).InitializeLeveling.methodPtr)();
+        (*(code *)(pMVar1->klass->vtable).InitializeLeveling.method)();
         if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -216,17 +197,19 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_OnInitialData
     cRam_? = '\x01';
   }
   if (result != (UnityWebRequest *)0x0) {
-    this = (DownloadHandler *)
-           mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
-           ValueListBuilder_1_System_Object__1_get_Length
-                     ((ValueListBuilder_1_System_Object__1 *)result,(MethodInfo *)0x0);
-    if (this != (DownloadHandler *)0x0) {
+    this = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+           __Il2CppFullySharedGenericType]::
+           WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                     ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                      result,(MethodInfo *)0x0);
+    if (this != (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)0x0) {
       value = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
-              DownloadHandler_get_text(this,(MethodInfo *)0x0);
+              DownloadHandler_get_text((DownloadHandler *)this,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+      pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                          (value,
                           InitialLevelData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<InitialLevelData>_System__String_
                          );
@@ -249,8 +232,8 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager_OnInitialData
         if (this_00 != (MVNetworkGame *)0x0) {
           pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
           if (pMVar2 != (MVLocalPlayer *)0x0) {
-            (*(pMVar2->klass->vtable).InitializeLeveling.methodPtr)
-                      (pMVar2,pOVar1,(pMVar2->klass->vtable).InitializeLeveling.method);
+            (*(code *)(pMVar2->klass->vtable).InitializeLeveling.method)
+                      (pMVar2,pOVar1,(pMVar2->klass->vtable).Destroy.methodPtr);
             if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__LevelingManager);
             }
@@ -309,60 +292,48 @@ Assembly-CSharp.dll::LevelingManager::LevelingManager_TestBadgeUrlData(MethodInf
   }
   pLVar1 = (List_1_BadgeUrlData_ *)
            func_?(TypeInfo__System__Collections__Generic__List<BadgeUrlData>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+             MethodInfo__System__Collections__Generic__List<BadgeUrlData>__List__);
+  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__Common__Urls);
+  }
+  pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (pSVar2,StringLiteral_Promotion_Promotion_01_png,(MethodInfo *)0x0);
+  pBVar3 = (BadgeUrlData *)func_?(TypeInfo__BadgeUrlData);
+  BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,1,pSVar2,(MethodInfo *)0x0);
   if (pLVar1 != (List_1_BadgeUrlData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__List<BadgeUrlData>__List__);
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__Common__Urls);
-    }
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
+               MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
     pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
     pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                       (pSVar2,StringLiteral_Promotion_Promotion_01_png,(MethodInfo *)0x0);
-    pBVar3 = (BadgeUrlData *)func_?(TypeInfo__BadgeUrlData);
-    if (pBVar3 != (BadgeUrlData *)0x0) {
-      BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,1,pSVar2,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
-                 MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
-      pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar2,StringLiteral_Promotion_Promotion_02_png,(MethodInfo *)0x0);
-      pBVar3 = (BadgeUrlData *)func_?(TypeInfo__BadgeUrlData);
-      if (pBVar3 != (BadgeUrlData *)0x0) {
-        BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,2,pSVar2,(MethodInfo *)0x0);
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
-                   MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
-        pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-        pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                           (pSVar2,StringLiteral_Promotion_Promotion_03_png,(MethodInfo *)0x0);
-        pBVar3 = (BadgeUrlData *)func_?(TypeInfo__BadgeUrlData);
-        if (pBVar3 != (BadgeUrlData *)0x0) {
-          BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,3,pSVar2,(MethodInfo *)0x0);
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
-                     MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_
-                    );
-          pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-          pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                             (pSVar2,StringLiteral_Promotion_Promotion_04_png,(MethodInfo *)0x0);
-          pBVar3 = (BadgeUrlData *)func_?(TypeInfo__BadgeUrlData);
-          if (pBVar3 != (BadgeUrlData *)0x0) {
-            BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,4,pSVar2,(MethodInfo *)0x0);
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
-                       MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_
-                      );
-            return pLVar1;
-          }
-        }
-      }
-    }
+                       (pSVar2,StringLiteral_Promotion_Promotion_02_png,(MethodInfo *)0x0);
+    pBVar3 = (BadgeUrlData *)func_?();
+    BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,2,pSVar2,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
+               MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
+    pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (pSVar2,StringLiteral_Promotion_Promotion_03_png,(MethodInfo *)0x0);
+    pBVar3 = (BadgeUrlData *)func_?();
+    BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,3,pSVar2,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
+               MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
+    pSVar2 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (pSVar2,StringLiteral_Promotion_Promotion_04_png,(MethodInfo *)0x0);
+    pBVar3 = (BadgeUrlData *)func_?();
+    BadgeUrlData::BadgeUrlData__ctor_1(pBVar3,4,pSVar2,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)pLVar1,(Object *)pBVar3,
+               MethodInfo__System__Collections__Generic__List<BadgeUrlData>__Add_BadgeUrlData_);
+    return pLVar1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -388,101 +359,96 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager__cctor(MethodInfo *me
     func_?(&TypeInfo__XPLevelLimits);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)
+  this = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
          func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>);
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Dictionary__
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Dictionary__)
+  ;
+  pXVar1 = TypeInfo__XPLevelLimits;
+  pOVar2 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+  pOVar2[1].klass = (Object__Class *)0x0;
+  pOVar2[1].monitor = (MonitorData *)0x64;
+  pOVar2[2].klass = (Object__Class *)0x1;
+  if (this != (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+               *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,1,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-    if (pOVar1 != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-      pOVar1[1].klass = (Object__Class *)0x0;
-      pOVar1[1].monitor = (MonitorData *)0x64;
-      pOVar1[2].klass = (Object__Class *)0x1;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this,(Object *)0x1,pOVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                );
-      pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-      if (pOVar1 != (Object *)0x0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-        pOVar1[1].klass = (Object__Class *)0x65;
-        pOVar1[1].monitor = (MonitorData *)0xc8;
-        pOVar1[2].klass = (Object__Class *)0x2;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this,(Object *)0x2,pOVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                  );
-        pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-        if (pOVar1 != (Object *)0x0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-          pOVar1[1].klass = (Object__Class *)0xc9;
-          pOVar1[1].monitor = (MonitorData *)0x12c;
-          pOVar1[2].klass = (Object__Class *)0x3;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this,(Object *)0x3,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                    );
-          pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-          if (pOVar1 != (Object *)0x0) {
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-            pOVar1[1].klass = (Object__Class *)0x12d;
-            pOVar1[1].monitor = (MonitorData *)0x190;
-            pOVar1[2].klass = (Object__Class *)0x4;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (this,(Object *)0x4,pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                      );
-            pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-            if (pOVar1 != (Object *)0x0) {
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-              pOVar1[1].klass = (Object__Class *)0x191;
-              pOVar1[1].monitor = (MonitorData *)0x1f4;
-              pOVar1[2].klass = (Object__Class *)0x5;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        (this,(Object *)0x5,pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                        );
-              pOVar1 = (Object *)func_?(TypeInfo__XPLevelLimits);
-              if (pOVar1 != (Object *)0x0) {
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                          (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-                pOVar1[1].klass = (Object__Class *)0x1f5;
-                pOVar1[1].monitor = (MonitorData *)0x258;
-                pOVar1[2].klass = (Object__Class *)0x6;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (this,(Object *)0x6,pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
-                          );
-                TypeInfo__LevelingManager->static_fields->TestLevelToLimits =
-                     (Dictionary_2_System_Int32_XPLevelLimits_ *)this;
-                func_?(&TypeInfo__LevelingManager->static_fields->TestLevelToLimits,this);
-                return;
-              }
-            }
-          }
-        }
-      }
-    }
+    pXVar1 = TypeInfo__XPLevelLimits;
+    pOVar2 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    pOVar2[1].klass = (Object__Class *)0x65;
+    pOVar2[1].monitor = (MonitorData *)0xc8;
+    pOVar2[2].klass = (Object__Class *)0x2;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,2,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
+              );
+    pXVar1 = TypeInfo__XPLevelLimits;
+    pOVar2 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    pOVar2[1].klass = (Object__Class *)0xc9;
+    pOVar2[1].monitor = (MonitorData *)0x12c;
+    pOVar2[2].klass = (Object__Class *)0x3;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,3,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
+              );
+    pXVar1 = TypeInfo__XPLevelLimits;
+    pOVar2 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    pOVar2[1].klass = (Object__Class *)0x12d;
+    pOVar2[1].monitor = (MonitorData *)0x190;
+    pOVar2[2].klass = (Object__Class *)0x4;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,4,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
+              );
+    pXVar1 = TypeInfo__XPLevelLimits;
+    pOVar2 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    pOVar2[1].klass = (Object__Class *)0x191;
+    pOVar2[1].monitor = (MonitorData *)0x1f4;
+    pOVar2[2].klass = (Object__Class *)0x5;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,5,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
+              );
+    pXVar1 = TypeInfo__XPLevelLimits;
+    pOVar2 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
+    pOVar2[1].klass = (Object__Class *)0x1f5;
+    pOVar2[1].monitor = (MonitorData *)0x258;
+    pOVar2[2].klass = (Object__Class *)0x6;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              ((Dictionary_2_System_Int32_System_Object_ *)this,6,pOVar2,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
+              );
+    TypeInfo__LevelingManager->static_fields->TestLevelToLimits =
+         (Dictionary_2_System_Int32_XPLevelLimits_ *)this;
+    func_?();
+    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

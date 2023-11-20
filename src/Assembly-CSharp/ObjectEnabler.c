@@ -256,11 +256,11 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_UpdateControllerUpdate
           pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                               (this_01,*(int32_t *)((int)RVar11 + 0x10),(MethodInfo *)0x0);
           if (((pMVar12 != (MVWorldObject *)0x0) &&
-              ((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <=
-               (pMVar12->klass->_1).typeHierarchyDepth)) &&
+              ((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
+               (pMVar12->klass->_1).naturalAligment)) &&
              ((MVCubeModelInstance__Class *)
               (pMVar12->klass->_1).typeHierarchy
-              [(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] ==
+              [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
               TypeInfo__MVCubeModelInstance)) {
             iVar13 = func_?();
             if (iVar13 == 0) break;

@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class TeamCounter
 {
@@ -29,12 +29,10 @@ public class TeamCounter
 
 	// Methods
 	public int GetActorCount(int actorNumber);
-	public bool ContainsActor(int actorNumber);
 	public int Increment(int actorNumber, int value, bool includeTeamScore);
 	public int Update(int actorNumber, int value, bool includeTeamScore);
 	public int UpdateTeam(int value);
 	public void RemoveStatsFromActor(int actorNumber);
 	public override string ToString();
-	public byte[] ToByteArray();
 }
 

@@ -21,23 +21,26 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData);
     }
-    this_03 = Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorData_DefaultData
+    this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorData_DefaultData
                         (DoorType__Enum_Door,(MethodInfo *)0x0);
 code_?:
     if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (this_03 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_03,(Object *)
-                                TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys
-                                ->static_fields->DocType,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class !=
+    if (this_03 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_03,(Object *)
+                               TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
+                               static_fields->DocType,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
         (TypeInfo__MVWorldObjectDocumentationType->_0).element_class) goto code_?;
     pMVar2 = (MVWorldObjectDocumentationType__Enum *)func_?();
     this_00 = (this->fields).settingsBase;
@@ -46,61 +49,68 @@ code_?:
     this_01 = (this->fields).nameInputField;
     pSVar3 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
              Name;
-    pSVar4 = (String *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_03,(Object *)
-                                TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys
-                                ->static_fields->Name,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_03,(Object *)
+                               TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
+                               static_fields->Name,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     if (this_01 == (SettingsInputField *)0x0) goto code_?;
-    value = (String *)0x0;
-    if (pSVar4 != (String *)0x0) {
-      if (pSVar4->klass == TypeInfo__System__String) {
-        value = pSVar4;
+    value.m_Index = 0;
+    if (TVar1.m_Index != 0) {
+      if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
+        value = TVar1;
       }
-      if (value == (String *)0x0) goto code_?;
+      if ((String *)value.m_Index == (String *)0x0) goto code_?;
     }
-    SettingsInputField::SettingsInputField_Initialize(this_01,pSVar3,value,(MethodInfo *)0x0);
-    pSVar5 = (this->fields).toggleBeginOpen;
-    pSVar3 = (String *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_03,(Object *)
-                                TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys
-                                ->static_fields->BeginOpen,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if ((pSVar5 == (SettingsToggle *)0x0) || (pSVar3 == (String *)0x0)) goto code_?;
-    if ((pSVar3->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-      pbVar6 = (bool *)func_?();
-      SettingsToggle::SettingsToggle_Initialize(pSVar5,pSVar3,*pbVar6,(MethodInfo *)0x0);
-      pSVar5 = (this->fields).togglePlayersCanOpen;
-      pSVar3 = (String *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_03,(Object *)
-                                  TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys
-                                  ->static_fields->PlayersCanOpen,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if ((pSVar5 == (SettingsToggle *)0x0) || (pSVar3 == (String *)0x0)) goto code_?;
-      if ((pSVar3->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar6 = (bool *)func_?();
-        SettingsToggle::SettingsToggle_Initialize(pSVar5,pSVar3,*pbVar6,(MethodInfo *)0x0);
-        pSVar5 = (this->fields).toggleReverseOpenDirection;
+    SettingsInputField::SettingsInputField_Initialize
+              (this_01,pSVar3,(String *)value.m_Index,(MethodInfo *)0x0);
+    pSVar4 = (this->fields).toggleBeginOpen;
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_03,(Object *)
+                               TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
+                               static_fields->BeginOpen,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if ((pSVar4 == (SettingsToggle *)0x0) || (TVar1.m_Index == 0)) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+        (TypeInfo__System__Boolean->_0).element_class) {
+      pbVar5 = (bool *)func_?();
+      SettingsToggle::SettingsToggle_Initialize
+                (pSVar4,(String *)TVar1.m_Index,*pbVar5,(MethodInfo *)0x0);
+      pSVar4 = (this->fields).togglePlayersCanOpen;
+      TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_03,(Object *)
+                                 TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys
+                                 ->static_fields->PlayersCanOpen,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if ((pSVar4 == (SettingsToggle *)0x0) || (TVar1.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
+        pbVar5 = (bool *)func_?();
+        SettingsToggle::SettingsToggle_Initialize
+                  (pSVar4,(String *)TVar1.m_Index,*pbVar5,(MethodInfo *)0x0);
+        pSVar4 = (this->fields).toggleReverseOpenDirection;
         pSVar3 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
                  ->ReverseOpenDirection;
-        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (this_03,(Object *)pSVar3,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if ((pSVar5 == (SettingsToggle *)0x0) || (pOVar1 == (Object *)0x0)) goto code_?;
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-          pbVar6 = (bool *)func_?();
-          SettingsToggle::SettingsToggle_Initialize(pSVar5,pSVar3,*pbVar6,(MethodInfo *)0x0);
+        TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_03,(Object *)pSVar3,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if ((pSVar4 == (SettingsToggle *)0x0) || (TVar1.m_Index == 0)) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+            (TypeInfo__System__Boolean->_0).element_class) {
+          pbVar5 = (bool *)func_?();
+          SettingsToggle::SettingsToggle_Initialize(pSVar4,pSVar3,*pbVar5,(MethodInfo *)0x0);
           return;
         }
       }
@@ -109,10 +119,11 @@ code_?:
   else {
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_02 != (MVWorldObjectClientManager *)0x0) {
-      pMVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+      pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_02,woID,(MethodInfo *)0x0);
-      if (pMVar7 != (MVWorldObject *)0x0) {
-        this_03 = DoorSettings_ReadWorldObjectData(this,(pMVar7->fields).data,(MethodInfo *)0x0);
+      if (pMVar6 != (MVWorldObject *)0x0) {
+        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  DoorSettings_ReadWorldObjectData(this,(pMVar6->fields).data,(MethodInfo *)0x0);
         goto code_?;
       }
     }
@@ -123,8 +134,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -161,11 +172,11 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
        bVar2 != 0)) {
       return;
     }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClientManager *)0x0) {
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_02 != (MVWorldObjectClientManager *)0x0) {
       wo = (MVWorldObjectClient *)
            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                     (this_01,(pSVar1->fields).woID,(MethodInfo *)0x0);
+                     (this_02,(pSVar1->fields).woID,(MethodInfo *)0x0);
       if (wo == (MVWorldObjectClient *)0x0) {
         return;
       }
@@ -174,44 +185,49 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
         wo = (MVWorldObjectClient *)&UNK_?;
       }
       WorldObjectDataValidator::WorldObjectDataValidator_Validate(wo,key,value,(MethodInfo *)0x0);
-      this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pSVar1->fields).result;
-      if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                (pSVar1->fields).result;
+      if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (this_00,(Object *)key,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        pDVar3 = (pSVar1->fields).result;
+        this_01 = (pSVar1->fields).result;
         if (bVar2 == 0) {
-          if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+          if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar3,(Object *)key,value,
+                    (this_01,(Object *)key,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
         }
         else {
-          if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+          if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
-                    (pDVar3,(Object *)key,value,
+                    (this_01,(Object *)key,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );
         }
-        pDVar3 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)pDVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
+        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_03,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        if (this_03 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar3,(Object *)key,value,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)key,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          (**(code **)(iRam_? + 0x17c))();
+          (**(code **)(iRam_? + 0x178))();
           return;
         }
       }
@@ -220,8 +236,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors
 code_?:
   func_?();
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -271,7 +287,7 @@ DoorSettings_ReadWorldObjectData
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Door_has_no_set_type,(MethodInfo *)0x0);
       pOStack_1 = (Object *)func_?();
     }

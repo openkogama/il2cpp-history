@@ -7,11 +7,12 @@ float Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_DragCoefficientXZHul
 {
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&velocity,(MethodInfo *)0x0)
   ;
-  this_00 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                      ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-  if (this_00 != (MvCharacterController *)0x0) {
+  this_00 = (Component *)
+            System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                      ((DataTable *)this,(MethodInfo *)0x0);
+  if (this_00 != (Component *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this_00,(MethodInfo *)0x0);
+                        (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                          ((Quaternion *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
@@ -128,11 +129,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
   fStack_20 = velocity.x;
   fStack_4 = fVar1;
   if ((this->fields)._.HandleInput != 0) {
-    pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                        ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-    if (pMVar21 == (MvCharacterController *)0x0) goto code_?;
+    pCVar21 = (Component *)
+              System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                        ((DataTable *)this,(MethodInfo *)0x0);
+    if (pCVar21 == (Component *)0x0) goto code_?;
     pTStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pMVar21,(MethodInfo *)0x0);
+                           (pCVar21,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -175,11 +177,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
     VStack_32.y = pQVar30->y;
     VStack_32.z = pQVar30->z;
     fStack_33 = pQVar30->w;
-    pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                        ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-    if (pMVar21 == (MvCharacterController *)0x0) goto code_?;
+    pCVar21 = (Component *)
+              System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                        ((DataTable *)this,(MethodInfo *)0x0);
+    if (pCVar21 == (Component *)0x0) goto code_?;
     pTVar34 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pMVar21,(MethodInfo *)0x0);
+                        (pCVar21,(MethodInfo *)0x0);
     if (pTVar34 == (Transform *)0x0) goto code_?;
     pQVar30 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                         (&QStack_31,pTVar34,(MethodInfo *)0x0);
@@ -222,11 +225,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
     VStack_32.y = pQVar30->y;
     VStack_32.z = pQVar30->z;
     fStack_33 = pQVar30->w;
-    pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                        ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-    if (pMVar21 == (MvCharacterController *)0x0) goto code_?;
+    pCVar21 = (Component *)
+              System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                        ((DataTable *)this,(MethodInfo *)0x0);
+    if (pCVar21 == (Component *)0x0) goto code_?;
     pTVar34 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pMVar21,(MethodInfo *)0x0);
+                        (pCVar21,(MethodInfo *)0x0);
     if (pTVar34 == (Transform *)0x0) goto code_?;
     pQVar30 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                         (&QStack_31,pTVar34,(MethodInfo *)0x0);
@@ -244,11 +248,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
     else {
       pTStack_8 = (Transform *)0x0;
     }
-    pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                        ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-    if (pMVar21 == (MvCharacterController *)0x0) goto code_?;
+    pCVar21 = (Component *)
+              System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                        ((DataTable *)this,(MethodInfo *)0x0);
+    if (pCVar21 == (Component *)0x0) goto code_?;
     pTVar34 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pMVar21,(MethodInfo *)0x0);
+                        (pCVar21,(MethodInfo *)0x0);
     if (pTVar34 == (Transform *)0x0) goto code_?;
     value.y = VStack_11.y;
     value.x = VStack_11.x;
@@ -292,11 +297,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
     }
   }
   uStack_2 = uStack_2 & 0xffffffff00000000;
-  pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                      ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-  if (pMVar21 != (MvCharacterController *)0x0) {
+  pCVar21 = (Component *)
+            System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                      ((DataTable *)this,(MethodInfo *)0x0);
+  if (pCVar21 != (Component *)0x0) {
     pTVar34 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pMVar21,(MethodInfo *)0x0);
+                        (pCVar21,(MethodInfo *)0x0);
     if (pTVar34 != (Transform *)0x0) {
       pQVar30 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                           (&QStack_31,pTVar34,(MethodInfo *)0x0);
@@ -357,11 +363,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
         fStack_17 = VStack_43.z;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
                   (&VStack_43,(MethodInfo *)0x0);
-        pMVar21 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                            ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-        if (pMVar21 != (MvCharacterController *)0x0) {
+        pCVar21 = (Component *)
+                  System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                            ((DataTable *)this,(MethodInfo *)0x0);
+        if (pCVar21 != (Component *)0x0) {
           pTVar34 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pMVar21,(MethodInfo *)0x0);
+                              (pCVar21,(MethodInfo *)0x0);
           if (pTVar34 != (Transform *)0x0) {
             pQVar30 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                                 (&QStack_44,pTVar34,(MethodInfo *)0x0);
@@ -397,10 +404,10 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
                          fVar14 * fStack_13 * (float)pIStack_15);
             pMVar45 = (this->fields)._.interactableLocal;
             if (pMVar45 != (MVInteractableBase *)0x0) {
-              pIVar46 = (pMVar45->klass->vtable).__unknown_6.methodPtr;
-              uStack_23 = CONCAT44(pIVar46,(undefined4)uStack_23);
-              fVar6 = (float10)(*pIVar46)(pMVar45,3,(this->fields).thrustFactor,
-                                          (pMVar45->klass->vtable).__unknown_6.method);
+              pMVar46 = (pMVar45->klass->vtable).__unknown_6.method;
+              uStack_23 = CONCAT44(pMVar46,(undefined4)uStack_23);
+              fVar6 = (float10)(*(code *)pMVar46)(pMVar45,3,(this->fields).thrustFactor,
+                                                  (pMVar45->klass->vtable).__unknown_7.methodPtr);
               fVar16 = (float)fVar6;
               uStack_23 = CONCAT44(fVar16,(undefined4)uStack_23);
               fVar14 = (this->fields).mass;
@@ -675,11 +682,12 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_HullRotationDrag
 {
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
             ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  this_00 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                      ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-  if (this_00 != (MvCharacterController *)0x0) {
+  this_00 = (Component *)
+            System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                      ((DataTable *)this,(MethodInfo *)0x0);
+  if (this_00 != (Component *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this_00,(MethodInfo *)0x0);
+                        (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                          ((Quaternion *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
@@ -738,63 +746,59 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_Init
   SimpleVehicleMotorBase::SimpleVehicleMotorBase_Init
             ((SimpleVehicleMotorBase *)this,characterController,interactableLocalParam,
              vehicleEnergyContainerConfig,(MethodInfo *)0x0);
-  this_00 = (BounceState *)func_?(TypeInfo__BounceState);
-  if (this_00 != (BounceState *)0x0) {
-    BounceState::BounceState__ctor
-              (this_00,(MVInteractable *)interactableLocalParam,(MethodInfo *)0x0);
-    (this->fields).bounceState = this_00;
+  a = (Action_1_MVControllerColliderHit___Class *)func_?(TypeInfo__BounceState);
+  BounceState::BounceState__ctor
+            ((BounceState *)a,(MVInteractable *)interactableLocalParam,(MethodInfo *)0x0);
+  (this->fields).bounceState = (BounceState *)a;
+  func_?(&(this->fields).bounceState,a);
+  if (characterController == (SmoothCharacterController *)0x0) {
+code_?:
     func_?();
-    if ((characterController != (SmoothCharacterController *)0x0) &&
-       (pMVar1 = (characterController->fields).controller, pMVar1 != (MvCharacterController *)0x0))
-    {
-      interactableLocalParam = (VehicleInteractable *)(this->fields).bounceState;
-      pAVar2 = (Action_1_MVControllerColliderHit_ *)func_?();
-      characterController = (SmoothCharacterController *)0x0;
-      if (pAVar2 != (Action_1_MVControllerColliderHit_ *)0x0) {
-        mscorlib.dll::System::Action`1[MVControllerColliderHit]::
-        Action_1_MVControllerColliderHit___ctor
-                  (pAVar2,(Object *)interactableLocalParam,
-                   MethodInfo__BounceState__HandleMoveHit_MVControllerColliderHit_,(MethodInfo *)0x0
-                  );
-        characterController =
-             (SmoothCharacterController *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)0x0,(Delegate *)pAVar2,(MethodInfo *)0x0);
-        interactableLocalParam =
-             (VehicleInteractable *)TypeInfo__System__Action<MVControllerColliderHit>;
-        if ((Delegate *)characterController == (Delegate *)0x0) {
-          (pMVar1->fields).OnControllerColliderHit = (Action_1_MVControllerColliderHit_ *)0x0;
-          pAStack3 = (Action_1_MVControllerColliderHit___Class *)0x0;
-code_?:
-          pDStack4 = (Delegate *)&(pMVar1->fields).OnControllerColliderHit;
-          func_?();
-          (this->fields)._._.density = 1.3;
-          return;
-        }
-        pAStack3 = TypeInfo__System__Action<MVControllerColliderHit>;
-        pDStack4 = (Delegate *)characterController;
-        pAVar2 = (Action_1_MVControllerColliderHit_ *)func_?();
-        if (pAVar2 != (Action_1_MVControllerColliderHit_ *)0x0) {
-          (pMVar1->fields).OnControllerColliderHit = pAVar2;
-          pAStack3 = TypeInfo__System__Action<MVControllerColliderHit>;
-          interactableLocalParam =
-               (VehicleInteractable *)TypeInfo__System__Action<MVControllerColliderHit>;
-          pDStack4 = (Delegate *)characterController;
-          pAStack3 = (Action_1_MVControllerColliderHit___Class *)func_?();
-          if (pAStack3 != (Action_1_MVControllerColliderHit___Class *)0x0)
-          goto code_?;
-        }
-        goto code_?;
-      }
-    }
   }
-  func_?();
+  else {
+    pMVar1 = (characterController->fields).controller;
+    if (pMVar1 == (MvCharacterController *)0x0) goto code_?;
+    a = (Action_1_MVControllerColliderHit___Class *)(pMVar1->fields).OnControllerColliderHit;
+    object = (this->fields).bounceState;
+    this_00 = (Action_1_MVControllerColliderHit_ *)func_?();
+    mscorlib.dll::System::Action`1[MVControllerColliderHit]::Action_1_MVControllerColliderHit___ctor
+              (this_00,(Object *)object,
+               MethodInfo__BounceState__HandleMoveHit_MVControllerColliderHit_,(MethodInfo *)0x0);
+    interactableLocalParam =
+         (VehicleInteractable *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<MVControllerColliderHit>;
+    if ((Delegate *)interactableLocalParam == (Delegate *)0x0) {
+      (a->_1).typeHierarchy = (Il2CppClass **)0x0;
+      pAStack3 = (Action_1_MVControllerColliderHit___Class *)0x0;
 code_?:
-  pAStack3 = (Action_1_MVControllerColliderHit___Class *)interactableLocalParam;
-  pDStack4 = (Delegate *)characterController;
+      pDStack4 = (Delegate *)&a->_1;
+      func_?();
+      _UNK_? = 0x3fa66666;
+      return;
+    }
+    pAStack3 = TypeInfo__System__Action<MVControllerColliderHit>;
+    pDStack4 = (Delegate *)interactableLocalParam;
+    ppIVar5 = (Il2CppClass **)func_?();
+    pAStack3 = pAVar2;
+    if (ppIVar5 == (Il2CppClass **)0x0) goto code_?;
+    (a->_1).typeHierarchy = ppIVar5;
+    this = (HoverCraftMotor *)TypeInfo__System__Action<MVControllerColliderHit>;
+    pAStack3 = TypeInfo__System__Action<MVControllerColliderHit>;
+    pDStack4 = (Delegate *)interactableLocalParam;
+    pAStack3 = (Action_1_MVControllerColliderHit___Class *)func_?();
+    if (pAStack3 != (Action_1_MVControllerColliderHit___Class *)0x0) goto code_?;
+  }
+  pDStack4 = (Delegate *)interactableLocalParam;
+  pAStack3 = (Action_1_MVControllerColliderHit___Class *)this;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pAStack3 = a;
+code_?:
+  pDStack4 = (Delegate *)interactableLocalParam;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -805,7 +809,7 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_OnLocalVehicleEnter
                (HoverCraftMotor *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).dragCoefficientXZ = (this->fields).dragCoefficientXZFromInit;
   return;
@@ -922,19 +926,17 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_Reset
   (this->fields).velocityPrevFrame.x = (pVVar1->zeroVector).x;
   (this->fields).velocityPrevFrame.y = fVar2;
   (this->fields).velocityPrevFrame.z = fVar3;
-  pMVar4 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                     ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
+  iVar4 = System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                    ((DataTable *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  if (pMVar4 != (MvCharacterController *)0x0) {
-    (pMVar4->fields)._Velocity_k__BackingField.x = (pVVar1->zeroVector).x;
-    (pMVar4->fields)._Velocity_k__BackingField.y = fVar2;
-    (pMVar4->fields)._Velocity_k__BackingField.z = fVar3;
+  fVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+  if (iVar4 != 0) {
+    *(undefined8 *)(iVar4 + 0x54) =
+         *(undefined8 *)&TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
+    *(float *)(iVar4 + 0x5c) = fVar3;
     return;
   }
   func_?();
@@ -1086,151 +1088,155 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_VehicleUpdateFunction
   this_01 = (this->fields)._.movableMotorState;
   uVar6 = (this->fields).velocityPrevFrame.x;
   uVar7 = (this->fields).velocityPrevFrame.y;
-  pMVar8 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                      ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-  this_04 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                      ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
-  if (this_04 != (MvCharacterController *)0x0) {
-    fVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_distance
-                      ((RaycastHit *)this_04,(MethodInfo *)0x0);
+  controller = (MvCharacterController *)
+               System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                         ((DataTable *)this,(MethodInfo *)0x0);
+  this_04 = (TypedUxmlAttributeDescription_1_System_Single_ *)
+            System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                      ((DataTable *)this,(MethodInfo *)0x0);
+  if (this_04 != (TypedUxmlAttributeDescription_1_System_Single_ *)0x0) {
+    fVar8 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+             TypedUxmlAttributeDescription`1[System::Single]::
+             TypedUxmlAttributeDescription_1_System_Single__get_defaultValue
+                       (this_04,(MethodInfo *)0x0);
     if (this_01 != (MVMovableMotorState *)0x0) {
-      VVar10.y = (float)uVar7;
-      VVar10.x = (float)uVar6;
-      VVar10.z = fVar5;
+      VVar9.y = (float)uVar7;
+      VVar9.x = (float)uVar6;
+      VVar9.z = fVar5;
       MVMovableMotorState::MVMovableMotorState_Move
-                (this_01,VVar10,pMVar8,fVar9,(this->fields)._._.groundState,
+                (this_01,VVar9,controller,fVar8,(this->fields)._._.groundState,
                  (Vector3 *)&stack0xffffffc4,(MethodInfo *)0x0);
-      VStack_11.z = (float)&UNK_?;
+      VStack_10.z = (float)&UNK_?;
       velocity.y = fVar4;
       velocity.x = fVar3;
       velocity.z = fVar5;
-      pVVar12 = HoverCraftMotor_GetVehicleInputVelocityClassicCam
+      pVVar11 = HoverCraftMotor_GetVehicleInputVelocityClassicCam
                           ((Vector3 *)&stack0xffffffd8,this,velocity,(MethodInfo *)0x0);
-      puVar13 = (undefined *)pVVar12->x;
-      puVar14 = (undefined *)pVVar12->y;
-      puVar15 = (undefined *)pVVar12->z;
+      puVar12 = (undefined *)pVVar11->x;
+      puVar13 = (undefined *)pVVar11->y;
+      puVar14 = (undefined *)pVVar11->z;
       this_00 = (MVGroundState *)
                 SimpleVehicleMotorBase::SimpleVehicleMotorBase_WaterProximity
                           ((SimpleVehicleMotorBase *)this,(MethodInfo *)0x0);
       if (_UNK_? < (float)this_00) {
-        puVar1 = puVar13;
-        puVar2 = puVar14;
+        puVar1 = puVar12;
+        puVar2 = puVar13;
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                           ((MethodInfo *)0x0);
         velocity_02.y = (float)puVar2;
         velocity_02.x = (float)puVar1;
-        velocity_02.z = (float)puVar15;
-        puVar16 = puVar15;
-        pVVar12 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_ApplyWaterGravity
+        velocity_02.z = (float)puVar14;
+        puVar15 = puVar14;
+        pVVar11 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_ApplyWaterGravity
                             ((Vector3 *)&stack0xffffffac,velocity_02,(float)this_00,fVar3,
                              (MethodInfo *)0x0);
-        uVar17._0_4_ = pVVar12->x;
-        uVar17._4_4_ = pVVar12->y;
-        puVar15 = (undefined *)pVVar12->z;
+        uVar16._0_4_ = pVVar11->x;
+        uVar16._4_4_ = pVVar11->y;
+        puVar14 = (undefined *)pVVar11->z;
       }
       else {
         this_00 = (this->fields)._._.groundState;
         if (this_00 == (MVGroundState *)0x0) goto code_?;
         fVar3 = 0.0;
-        puVar16 = &UNK_?;
-        bVar18 = MVGroundState::MVGroundState_get_Grounded(this_00,(MethodInfo *)0x0);
-        if (bVar18 == 0) {
+        puVar15 = &UNK_?;
+        bVar17 = MVGroundState::MVGroundState_get_Grounded(this_00,(MethodInfo *)0x0);
+        if (bVar17 == 0) {
           if ((this->fields).isVerticalThrusting != 0) {
             (this->fields)._._.density = 0.2;
           }
-          pVVar12 = &(this->fields).velocityPrevFrame;
-          puVar16 = (undefined *)pVVar12->x;
-          this_00 = (MVGroundState *)pVVar12->y;
+          pVVar11 = &(this->fields).velocityPrevFrame;
+          puVar15 = (undefined *)pVVar11->x;
+          this_00 = (MVGroundState *)pVVar11->y;
           fVar3 = (this->fields).velocityPrevFrame.z;
-          velocity_01.y = (float)puVar14;
-          velocity_01.x = (float)puVar13;
-          velocity_01.z = (float)puVar15;
-          puVar2 = puVar15;
-          pVVar12 = MVRigidBody::MVRigidBody_ApplyGravity
-                              ((Vector3 *)&stack0xffffffb8,(MVRigidBody *)this,velocity_01,*pVVar12,
+          velocity_01.y = (float)puVar13;
+          velocity_01.x = (float)puVar12;
+          velocity_01.z = (float)puVar14;
+          puVar2 = puVar14;
+          pVVar11 = MVRigidBody::MVRigidBody_ApplyGravity
+                              ((Vector3 *)&stack0xffffffb8,(MVRigidBody *)this,velocity_01,*pVVar11,
                                (this->fields)._.interactableLocal,(MethodInfo *)0x0);
-          uVar17._0_4_ = pVVar12->x;
-          uVar17._4_4_ = pVVar12->y;
-          puVar15 = (undefined *)pVVar12->z;
+          uVar16._0_4_ = pVVar11->x;
+          uVar16._4_4_ = pVVar11->y;
+          puVar14 = (undefined *)pVVar11->z;
           (this->fields)._._.density = 1.3;
-          puVar1 = puVar14;
+          puVar1 = puVar13;
         }
         else {
-          uVar17 = CONCAT44(puVar14,puVar13);
+          uVar16 = CONCAT44(puVar13,puVar12);
         }
       }
       this_02 = (this->fields).bounceState;
       if (this_02 != (BounceState *)0x0) {
-        fVar5 = (float)((ulonglong)uVar17 >> 0x20);
-        velocity_03.z = (float)puVar15;
-        velocity_03.x = (float)(int)uVar17;
-        velocity_03.y = (float)(int)((ulonglong)uVar17 >> 0x20);
-        pVVar12 = BounceState::BounceState_ApplyBounceVelocity
+        fVar5 = (float)((ulonglong)uVar16 >> 0x20);
+        velocity_03.z = (float)puVar14;
+        velocity_03.x = (float)(int)uVar16;
+        velocity_03.y = (float)(int)((ulonglong)uVar16 >> 0x20);
+        pVVar11 = BounceState::BounceState_ApplyBounceVelocity
                             ((Vector3 *)&stack0xffffffa0,this_02,velocity_03,(MethodInfo *)0x0);
-        uVar19 = pVVar12->x;
-        uVar20 = pVVar12->y;
-        fVar4 = pVVar12->z;
-        pHVar21 = &this->fields;
+        uVar18 = pVVar11->x;
+        uVar19 = pVVar11->y;
+        fVar4 = pVVar11->z;
+        pHVar20 = &this->fields;
         this = (HoverCraftMotor *)fVar4;
-        fVar22 = (float)uVar20;
-        VVar10.x = (float)uVar19;
-        VVar10 = (Vector3)CONCAT84(uVar23,VVar10.x);
-        pVVar12 = MVRigidBody::MVRigidBody_GetImpulse
-                            (&VStack_11,(MVRigidBody *)this_03,VVar10,(pHVar21->_).interactableLocal
+        fVar21 = (float)uVar19;
+        VVar9.x = (float)uVar18;
+        VVar9 = (Vector3)CONCAT84(uVar22,VVar9.x);
+        pVVar11 = MVRigidBody::MVRigidBody_GetImpulse
+                            (&VStack_10,(MVRigidBody *)this_03,VVar9,(pHVar20->_).interactableLocal
                              ,(MethodInfo *)0x0);
-        pVVar12 = MVRigidBody::MVRigidBody_VelocityDamping
-                            ((Vector3 *)&stack0xffffff88,*pVVar12,1.0,
+        pVVar11 = MVRigidBody::MVRigidBody_VelocityDamping
+                            ((Vector3 *)&stack0xffffff88,*pVVar11,1.0,
                              (this_03->fields)._.interactableLocal,(MethodInfo *)0x0);
         this._3_1_ = (char)((uint)fVar4 >> 0x18);
-        fVar4 = pVVar12->z;
-        puVar13 = puVar16;
+        fVar4 = pVVar11->z;
+        puVar12 = puVar15;
         if (this._3_1_ == '\0') {
-          uVar24 = pVVar12->x;
-          uVar25 = pVVar12->y;
+          uVar23 = pVVar11->x;
+          uVar24 = pVVar11->y;
+          uVar25 = uVar23;
           uVar26 = uVar24;
-          uVar27 = uVar25;
         }
         else {
-          uVar26 = pVVar12->x;
-          uVar27 = pVVar12->y;
+          uVar25 = pVVar11->x;
+          uVar26 = pVVar11->y;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
-            puVar13 = puVar16;
+            puVar12 = puVar15;
           }
-          pVVar28 = TypeInfo__UnityEngine__Vector3->static_fields;
-          puVar1 = (undefined *)(pVVar28->zeroVector).x;
-          puVar2 = (undefined *)(pVVar28->zeroVector).y;
-          puVar16 = (undefined *)(pVVar28->zeroVector).z;
+          pVVar27 = TypeInfo__UnityEngine__Vector3->static_fields;
+          puVar1 = (undefined *)(pVVar27->zeroVector).x;
+          puVar2 = (undefined *)(pVVar27->zeroVector).y;
+          puVar15 = (undefined *)(pVVar27->zeroVector).z;
         }
-        fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                          ((MethodInfo *)0x0);
-        velocity_00.y = (float)uVar27;
-        velocity_00.x = (float)uVar26;
+        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                           ((MethodInfo *)0x0);
+        velocity_00.y = (float)uVar26;
+        velocity_00.x = (float)uVar25;
         velocity_00.z = fVar4;
         baseVelocity.y = (float)puVar2;
         baseVelocity.x = (float)puVar1;
-        baseVelocity.z = (float)puVar16;
+        baseVelocity.z = (float)puVar15;
         SimpleVehicleMotorBase::SimpleVehicleMotorBase_Move
-                  ((SimpleVehicleMotorBase *)this_03,velocity_00,baseVelocity,fVar9,
+                  ((SimpleVehicleMotorBase *)this_03,velocity_00,baseVelocity,fVar8,
                    (MethodInfo *)0x0);
         fVar4 = 0.0;
-        pHVar29 = this_03;
-        pMVar8 = SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-                            ((SimpleVehicleMotorBase *)this_03,(MethodInfo *)0x0);
-        if (pMVar8 != (MvCharacterController *)0x0) {
-          fVar9 = (pMVar8->fields)._Velocity_k__BackingField.x;
-          fVar30 = (pMVar8->fields)._Velocity_k__BackingField.y;
-          fVar31 = (pMVar8->fields)._Velocity_k__BackingField.z;
+        pHVar28 = this_03;
+        iVar29 = System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity
+                           ((DataTable *)this_03,(MethodInfo *)0x0);
+        if (iVar29 != 0) {
+          fVar8 = *(float *)(iVar29 + 0x5c);
+          fVar30 = (float)*(undefined8 *)(iVar29 + 0x54);
+          fVar31 = (float)((ulonglong)*(undefined8 *)(iVar29 + 0x54) >> 0x20);
           fVar32 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                              ((MethodInfo *)0x0);
-          (this_03->fields).velocityPrevFrame.x = fVar9 / fVar32;
-          (this_03->fields).velocityPrevFrame.y = fVar30 / fVar32;
-          (this_03->fields).velocityPrevFrame.z = fVar31 / fVar32;
+          (this_03->fields).velocityPrevFrame.x = fVar30 / fVar32;
+          (this_03->fields).velocityPrevFrame.y = fVar31 / fVar32;
+          (this_03->fields).velocityPrevFrame.z = fVar8 / fVar32;
           if (this._3_1_ == '\0') {
-            (this_03->fields).velocityPrevFrame.x = fVar9 / fVar32 - (float)pHVar29;
-            (this_03->fields).velocityPrevFrame.y = fVar30 / fVar32 - fVar4;
-            (this_03->fields).velocityPrevFrame.z = fVar31 / fVar32 - (float)puVar13;
+            (this_03->fields).velocityPrevFrame.x = fVar30 / fVar32 - (float)pHVar28;
+            (this_03->fields).velocityPrevFrame.y = fVar31 / fVar32 - fVar4;
+            (this_03->fields).velocityPrevFrame.z = fVar8 / fVar32 - (float)puVar12;
           }
           prevVelocity.y = fVar3;
           prevVelocity.x = (float)this_00;
@@ -1300,12 +1306,13 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
   }
   this = (List_1_System_Single_ *)
          func_?(TypeInfo__System__Collections__Generic__List<float>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             MethodInfo__System__Collections__Generic__List<float>__List__);
+  pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
   if (this != (List_1_System_Single_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__List<float>__List__);
-    pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
     piVar2 = &(this->fields)._version;
     *piVar2 = *piVar2 + 1;
     pSVar3 = (this->fields)._items;
@@ -1317,8 +1324,8 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
         pSVar3->vector[uVar4] = -1000.0;
       }
       else {
-        (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                  (this,0xc47a0000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+        mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+        List_1_System_Single__AddWithResize(this,-1000.0,pMVar1->klass->rgctx_data[0xe].method);
       }
       pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
       piVar2 = &(this->fields)._version;
@@ -1332,8 +1339,8 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
           pSVar3->vector[uVar4] = -500.0;
         }
         else {
-          (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                    (this,0xc3fa0000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+          mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+          List_1_System_Single__AddWithResize(this,-500.0,pMVar1->klass->rgctx_data[0xe].method);
         }
         pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
         piVar2 = &(this->fields)._version;
@@ -1347,8 +1354,8 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
             pSVar3->vector[uVar4] = -200.0;
           }
           else {
-            (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                      (this,0xc3480000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+            mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+            List_1_System_Single__AddWithResize(this,-200.0,pMVar1->klass->rgctx_data[0xe].method);
           }
           pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
           piVar2 = &(this->fields)._version;
@@ -1362,8 +1369,8 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
               pSVar3->vector[uVar4] = -65.0;
             }
             else {
-              (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                        (this,0xc2820000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+              mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+              List_1_System_Single__AddWithResize(this,-65.0,pMVar1->klass->rgctx_data[0xe].method);
             }
             pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
             piVar2 = &(this->fields)._version;
@@ -1377,8 +1384,9 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                 pSVar3->vector[uVar4] = -30.0;
               }
               else {
-                (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                          (this,0xc1f00000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                List_1_System_Single__AddWithResize
+                          (this,-30.0,pMVar1->klass->rgctx_data[0xe].method);
               }
               pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
               piVar2 = &(this->fields)._version;
@@ -1392,8 +1400,9 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                   pSVar3->vector[uVar4] = -15.0;
                 }
                 else {
-                  (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                            (this,0xc1700000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                  List_1_System_Single__AddWithResize
+                            (this,-15.0,pMVar1->klass->rgctx_data[0xe].method);
                 }
                 pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
                 piVar2 = &(this->fields)._version;
@@ -1407,8 +1416,9 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                     pSVar3->vector[uVar4] = -6.0;
                   }
                   else {
-                    (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                              (this,0xc0c00000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                    mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                    List_1_System_Single__AddWithResize
+                              (this,-6.0,pMVar1->klass->rgctx_data[0xe].method);
                   }
                   pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
                   piVar2 = &(this->fields)._version;
@@ -1422,8 +1432,9 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                       pSVar3->vector[uVar4] = -2.0;
                     }
                     else {
-                      (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                                (this,0xc0000000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                      mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                      List_1_System_Single__AddWithResize
+                                (this,-2.0,pMVar1->klass->rgctx_data[0xe].method);
                     }
                     pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
                     piVar2 = &(this->fields)._version;
@@ -1437,8 +1448,9 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                         pSVar3->vector[uVar4] = -1.4;
                       }
                       else {
-                        (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                                  (this,0xbfb33333,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                        mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                        List_1_System_Single__AddWithResize
+                                  (this,-1.4,pMVar1->klass->rgctx_data[0xe].method);
                       }
                       pMVar1 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
                       piVar2 = &(this->fields)._version;
@@ -1447,11 +1459,12 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__cctor(MethodInfo *me
                       if (pSVar3 != (Single__Array *)0x0) {
                         uVar4 = (this->fields)._size;
                         if (pSVar3->max_length <= uVar4) {
-                          (*(pMVar1->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                                    (this,0xbf800000,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy);
+                          mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                          List_1_System_Single__AddWithResize
+                                    (this,-1.0,pMVar1->klass->rgctx_data[0xe].method);
 code_?:
                           TypeInfo__HoverCraftMotor->static_fields->speedDragXZMap = this;
-                          func_?(TypeInfo__HoverCraftMotor->static_fields,this);
+                          func_?();
                           return;
                         }
                         (this->fields)._size = uVar4 + 1;
@@ -1508,16 +1521,10 @@ void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor__ctor
              __831D17CBF55E6A6EBB90B45C3EC4F41A557F6262DCEE4D6EA14D12FBD179E5BD_Field,
              (MethodInfo *)0x0);
   this_00 = (ImpactState *)func_?(TypeInfo__ImpactState);
-  if (this_00 != (ImpactState *)0x0) {
-    ImpactState::ImpactState__ctor(this_00,explosionEvents,(MethodInfo *)0x0);
-    (this->fields)._.impactState = this_00;
-    func_?(&(this->fields)._.impactState,this_00);
-    MVRigidBody::MVRigidBody__ctor((MVRigidBody *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ImpactState::ImpactState__ctor(this_00,explosionEvents,(MethodInfo *)0x0);
+  (this->fields)._.impactState = this_00;
+  func_?(&(this->fields)._.impactState,this_00);
+  MVRigidBody::MVRigidBody__ctor((MVRigidBody *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -1534,5 +1541,16 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_get_Velocity
   __return_storage_ptr__->y = fVar1;
   __return_storage_ptr__->z = fVar2;
   return __return_storage_ptr__;
+}
+
+
+/* Void set_IsMovementLocked(Boolean) */
+
+void Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_set_IsMovementLocked
+               (HoverCraftMotor *this,bool value,MethodInfo *method)
+
+{
+  (this->fields)._IsMovementLocked_k__BackingField = value;
+  return;
 }
 

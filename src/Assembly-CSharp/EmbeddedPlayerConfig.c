@@ -83,15 +83,17 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_ForceEmbedS
   }
   host = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
          UnityWebRequest_UnEscapeURL(url,(MethodInfo *)0x0);
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            (this->fields).kogamaDefaultData.sites;
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-             UnitySynchronizationContext+WorkRequest]::
-             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)(this->fields).kogamaDefaultData.sites;
+  if (this_00 !=
+      (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
+      0x0) {
+    pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pUVar5,(MethodInfo *)0x0);
+    bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       pLVar6 = (this->fields).kogamaDefaultData.sites;
       iVar7 = (this->fields).kogamaDefaultData.siteEnum;
@@ -130,23 +132,26 @@ code_?:
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
       if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
-      pSVar12 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&pGStack_13,
-                          (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)pLVar11,(int32_t)index,
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
-      if ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pSVar12->buttonSelected ==
-          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
-      pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-               UnitySynchronizationContext+WorkRequest]::
-               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                         ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                          pSVar12->buttonSelected,
+      if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+           *)pMVar12->index ==
+          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+           *)0x0) break;
+      pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                         ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pMVar12->index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
-      bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pUVar5,(MethodInfo *)0x0);
+      bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
       if (bVar4 != 0) {
         pLVar11 = (this->fields).siteData;
         if (pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
@@ -220,7 +225,7 @@ Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteDa
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)StringLiteral_Embedded_site_data_not_initializ,(MethodInfo *)0x0);
   iVar1 = (this->fields).kogamaDefaultData.siteEnum;
   bVar2 = (this->fields).kogamaDefaultData.showTouristPromotion;
@@ -326,15 +331,17 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_InitializeW
   }
   host = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
          UnityWebRequest_UnEscapeURL(url,(MethodInfo *)0x0);
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            (this->fields).kogamaDefaultData.sites;
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-             UnitySynchronizationContext+WorkRequest]::
-             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)(this->fields).kogamaDefaultData.sites;
+  if (this_00 !=
+      (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
+      0x0) {
+    pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pUVar5,(MethodInfo *)0x0);
+    bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       pLVar6 = (this->fields).kogamaDefaultData.sites;
       iVar7 = (this->fields).kogamaDefaultData.siteEnum;
@@ -373,23 +380,26 @@ code_?:
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
       if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
-      pSVar12 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&pGStack_13,
-                          (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)pLVar11,(int32_t)index,
+      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
-      if ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)pSVar12->buttonSelected ==
-          (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
-      pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-               UnitySynchronizationContext+WorkRequest]::
-               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                         ((List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                          pSVar12->buttonSelected,
+      if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+           *)pMVar12->index ==
+          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+           *)0x0) break;
+      pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                         ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pMVar12->index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
-      bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pUVar5,(MethodInfo *)0x0);
+      bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
       if (bVar4 != 0) {
         pLVar11 = (this->fields).siteData;
         if (pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
@@ -451,9 +461,9 @@ bool Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsValidHost
       host = mscorlib.dll::System::String::String_Substring(host,iVar1 + 3,(MethodInfo *)0x0);
     }
     this = (UriBuilder *)func_?(TypeInfo__System__UriBuilder);
+    System.dll::System::UriBuilder::UriBuilder__ctor_2
+              (this,StringLiteral_https,host,(MethodInfo *)0x0);
     if (this != (UriBuilder *)0x0) {
-      System.dll::System::UriBuilder::UriBuilder__ctor_1
-                (this,StringLiteral_https,host,(MethodInfo *)0x0);
       this_00 = System.dll::System::UriBuilder::UriBuilder_get_Uri(this,(MethodInfo *)0x0);
       uVar2 = 0;
       if (hosts != (String__Array *)0x0) {
@@ -476,7 +486,7 @@ bool Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsValidHost
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)pSVar4,(MethodInfo *)0x0);
             return 1;
           }
@@ -522,7 +532,7 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_OnURLSet
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   str1 = (Object__Class *)::StringLiteral__;
   if (ok == 0) {
     pSVar2 = StringLiteral_requestDomain_failed_;
@@ -535,7 +545,7 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_OnURLSet
     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar3 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+    pOVar3 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                        (json,
                         EmbeddedPlayerConfig__JSONDomainObject_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<EmbeddedPlayerConfig::JSONDomainObject>_System__String_
                        );
@@ -554,7 +564,7 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_OnURLSet
     }
     unaff_EBP = (MethodInfo *)0x0;
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,unaff_EBP);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,unaff_EBP);
   EmbeddedPlayerConfig_InitializeWithURL
             ((EmbeddedPlayerConfig *)0x0,(String *)str1,(MethodInfo *)0x0);
   *unaff_FS_OFFSET = uVar1;

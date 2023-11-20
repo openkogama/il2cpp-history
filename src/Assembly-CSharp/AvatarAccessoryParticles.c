@@ -6,8 +6,8 @@ Bounds * Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles
                    )
 
 {
-  pfVar1 = (float *)(*(this->klass->vtable).GetWorldBounds.methodPtr)
-                              (auStack_2,this,(this->klass->vtable).GetWorldBounds.method);
+  pfVar1 = (float *)(*(code *)(this->klass->vtable).GetWorldBounds.method)
+                              (auStack_2,this,(this->klass->vtable).GetLocalBounds.methodPtr);
   fVar3 = pfVar1[1];
   fVar4 = pfVar1[2];
   fVar5 = pfVar1[3];
@@ -33,18 +33,16 @@ Bounds * Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
-  size.y = (float)_UNK_?;
-  size.x = (float)_UNK_?;
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  size.z = 2.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-            (__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (__return_storage_ptr__->m_Center).x = (pVVar1->zeroVector).x;
+  uVar4 = _UNK_?;
+  (__return_storage_ptr__->m_Center).y = fVar2;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).z = 1.0;
   return __return_storage_ptr__;
 }
 

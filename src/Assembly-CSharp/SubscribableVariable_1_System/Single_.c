@@ -6,8 +6,9 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::Single]::
                (SubscribableVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)
-            (this,value,method->klass->rgctx_data[1].rgctxDataDummy);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._.value = value;
   return;
 }
 
@@ -19,10 +20,13 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::Single]::
                (SubscribableVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  pIVar1 = method->klass;
+  pAVar1 = (this->fields)._.OnChange;
   (this->fields)._.value = value;
-  (*pIVar1->rgctx_data->method->virtualMethodPointer)
-            (this,method->klass->rgctx_data->rgctxDataDummy);
+  if (pAVar1 != (Action_1_Single_ *)0x0) {
+    pAVar1 = (this->fields)._.OnChange;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,value,(pAVar1->fields)._._.method);
+  }
   return;
 }
 

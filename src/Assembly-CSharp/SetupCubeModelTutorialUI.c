@@ -28,10 +28,11 @@ void Assembly-CSharp.dll::SetupCubeModelTutorialUI::
     func_?(&TypeInfo__SetupCubeModelTutorialUI____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SetupCubeModelTutorialUI____c__DisplayClass4_0);
+  method_00 = TypeInfo__SetupCubeModelTutorialUI____c__DisplayClass4_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].monitor = (MonitorData *)closeAction;
     func_?(&value[1].monitor,closeAction);
     original = (this->fields).desktopCubeModelTutorialControllerPrefab;
@@ -66,20 +67,18 @@ void Assembly-CSharp.dll::SetupCubeModelTutorialUI::
             DesktopCubeModelingControllerCubeTutorial::
             DesktopCubeModelingControllerCubeTutorial_SetMaterial
                       ((DesktopCubeModelingControllerCubeTutorial *)pOVar1,uVar3,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)this,(MethodInfo *)0x0);
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__SetupCubeModelTutorialUI____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__SetupCubeModelTutorialUI____c);
+              func_?();
             }
             callbackFunction = TypeInfo__SetupCubeModelTutorialUI____c->static_fields->__9__4_0;
             if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
               if ((TypeInfo__SetupCubeModelTutorialUI____c->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__SetupCubeModelTutorialUI____c);
+                func_?();
               }
               object = TypeInfo__SetupCubeModelTutorialUI____c->static_fields->__9;
               callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-              if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-              goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
               Object]::UnityAction_2_System_Object_System_Object___ctor
                         ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
@@ -87,48 +86,41 @@ void Assembly-CSharp.dll::SetupCubeModelTutorialUI::
                          MethodInfo__SetupCubeModelTutorialUI____c___PushCubeEditCubeTutorialTools_b__4_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                          ,(MethodInfo *)0x0);
               TypeInfo__SetupCubeModelTutorialUI____c->static_fields->__9__4_0 = callbackFunction;
-              func_?(&TypeInfo__SetupCubeModelTutorialUI____c->static_fields->__9__4_0,
-                              callbackFunction);
+              pGVar4 = (GameObject *)&UNK_?;
+              func_?(&TypeInfo__SetupCubeModelTutorialUI____c->static_fields->__9__4_0);
             }
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
                 == 0) {
-              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+              func_?();
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      ((GameObject *)callbackFunction,(BaseEventData *)0x0,
+                      (pGVar4,(BaseEventData *)0x0,
                        (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
-            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-            callbackFunction_00 =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                         MethodInfo__SetupCubeModelTutorialUI____c__DisplayClass4_0___PushCubeEditCubeTutorialTools_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        (root,(BaseEventData *)0x0,callbackFunction_00,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                        );
-              return;
-            }
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                       MethodInfo__SetupCubeModelTutorialUI____c__DisplayClass4_0___PushCubeEditCubeTutorialTools_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                      );
+            return;
           }
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

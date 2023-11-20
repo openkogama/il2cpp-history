@@ -12,8 +12,8 @@ String * Assembly-CSharp.dll::LSEnumGenerator::LSEnumGenerator_Generate
   pSVar1 = LSEnumGenerator_GenerateEnumCode(type,customStringCallback,(MethodInfo *)0x0);
   if (type != (Type *)0x0) {
     arg0 = (Object *)
-           (*(type->klass->vtable).__unknown.methodPtr)(type,(type->klass->vtable).__unknown.method)
-    ;
+           (*(code *)(type->klass->vtable).__unknown.method)
+                     (type,(type->klass->vtable).get_DeclaringType.methodPtr);
     pSVar1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral_u000Du000A____public_static_string____0_,arg0,(Object *)pSVar1
                         ,(MethodInfo *)0x0);
@@ -47,8 +47,8 @@ String * Assembly-CSharp.dll::LSEnumGenerator::LSEnumGenerator_GenerateEnumCode
   pSVar4 = ::StringLiteral__;
   if (type != (Type *)0x0) {
     arg0 = (Object *)
-           (*(type->klass->vtable).__unknown.methodPtr)(type,(type->klass->vtable).__unknown.method)
-    ;
+           (*(code *)(type->klass->vtable).__unknown.method)
+                     (type,(type->klass->vtable).get_DeclaringType.methodPtr);
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }

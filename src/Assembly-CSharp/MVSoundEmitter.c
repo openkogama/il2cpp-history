@@ -6,18 +6,27 @@ bool Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Delete
                String **errorText,MethodInfo *method)
 
 {
-  this_00 = (this->fields).soundLoader;
-  if (this_00 != (SoundLoader *)0x0) {
-    SoundLoader::SoundLoader_StopAndDestroySound(this_00,(MethodInfo *)0x0);
-    bVar1 = MVWorldObjectClient::MVWorldObjectClient_Delete
+  pSVar1 = (this->fields).soundLoader;
+  if ((pSVar1 != (SoundLoader *)0x0) &&
+     (pAVar2 = (pSVar1->fields).audioSource, pAVar2 != (AudioSource *)0x0)) {
+    bVar3 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                      (pAVar2,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      pAVar2 = (pSVar1->fields).audioSource;
+      if (pAVar2 == (AudioSource *)0x0) goto code_?;
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
+                (pAVar2,(MethodInfo *)0x0);
+    }
+    bVar3 = MVWorldObjectClient::MVWorldObjectClient_Delete
                       ((MVWorldObjectClient *)this,worldObjectClientManager,errorText,
                        (MethodInfo *)0x0);
-    return bVar1;
+    return bVar3;
   }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
 }
 
 
@@ -28,25 +37,23 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Destroy
 
 {
   MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-  if ((this->fields).soundLoader == (SoundLoader *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&
-                    MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                   );
-    cRam_? = '\x01';
-  }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,in_stack_2,
+  object = (this->fields).soundLoader;
+  if (object != (SoundLoader *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+      func_?(&TypeInfo__AsyncWWWManager);
+      func_?(&
+                      MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
+                     );
+      cRam_? = '\x01';
+    }
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
+    ;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)object,
                MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -125,295 +132,129 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Initialize
     func_?(&StringLiteral_AmbientAudio_Nature_kgm_amb_fore);
     cRam_? = '\x01';
   }
-  this_02 = (Action_2_Int32Enum_Object_ *)
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-  if (this_02 == (Action_2_Int32Enum_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-            (this_02,(Object *)this,
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
              MethodInfo__MVSoundEmitter__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
              ,(MethodInfo *)0x0);
   pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                      ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                      (Action_2_LogicInputState_LogicObjectManager_ *)this_02,(MethodInfo *)0x0);
+                      (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
   (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
   func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
   pSVar2 = (this->fields).soundEmitterObject;
   if ((pSVar2 == (SoundEmitterObject *)0x0) ||
-     (this_00 = (pSVar2->fields).soundCheck, this_00 == (SoundEmitterActiveCheck *)0x0))
-  goto code_?;
-  SoundEmitterActiveCheck::SoundEmitterActiveCheck_Initialize(this_00,this,(MethodInfo *)0x0);
-  MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  pSVar2 = (this->fields).soundEmitterObject;
-  if ((pSVar2 == (SoundEmitterObject *)0x0) ||
-     (pSVar3 = (this->fields).soundLoader, pSVar3 == (SoundLoader *)0x0)) goto code_?;
-  pAVar4 = (pSVar2->fields).audioSource;
-  (pSVar3->fields).audioSource = pAVar4;
-  func_?(&(pSVar3->fields).audioSource,pAVar4);
-  pSVar3 = (this->fields).soundLoader;
-  pSVar5 = (SoundLoader_UpdateSoundCallback *)
-           func_?(TypeInfo__SoundLoader__UpdateSoundCallback);
-  if ((pSVar5 == (SoundLoader_UpdateSoundCallback *)0x0) ||
-     (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                ((NavMesh_OnNavMeshPreUpdate *)pSVar5,(Object *)this,
-                 MethodInfo__MVSoundEmitter__UpdateSound__,(MethodInfo *)0x0),
-     pSVar3 == (SoundLoader *)0x0)) goto code_?;
-  (pSVar3->fields).callback = pSVar5;
-  func_?(&(pSVar3->fields).callback,pSVar5);
-  pSVar2 = (this->fields).soundEmitterObject;
-  if (pSVar2 == (SoundEmitterObject *)0x0) goto code_?;
-  MVLogicObject::MVLogicObject_SetupCulling
-            ((MVLogicObject *)this,(pSVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
-  this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_01 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-  goto code_?;
-  bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    (this_01,(Object *)StringLiteral_url,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                    );
-  if (bVar6 == 0) {
-    pSVar7 = (String__Class *)(this->fields).soundLoader;
-    if (pSVar7 == (String__Class *)0x0) goto code_?;
-    (pSVar7->_0).namespaze = (char *)StringLiteral_AmbientAudio_Nature_kgm_amb_fore;
-  }
-  else {
-    pDVar8 = (this->fields)._._._.data;
-    if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-       (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (pDVar8,(Object *)StringLiteral_url,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), pOVar9 == (Object *)0x0)) goto code_?;
-    pOVar10 = (Object *)0x0;
-    if ((String__Class *)pOVar9->klass == TypeInfo__System__String) {
-      pOVar10 = pOVar9;
-    }
-    pSVar7 = TypeInfo__System__String;
-    if (pOVar10 == (Object *)0x0) {
-code_?:
-      func_?(pOVar9,pSVar7);
-      goto code_?;
-    }
-    pOVar10 = (Object *)0x0;
-    if ((String__Class *)pOVar9->klass == TypeInfo__System__String) {
-      pOVar10 = pOVar9;
-    }
-    if ((int)pOVar10[1].klass < 1) {
-      return;
-    }
-    pDVar8 = (this->fields)._._._.data;
-    pSVar7 = (String__Class *)(this->fields).soundLoader;
-    if ((pDVar8 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-       (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (pDVar8,(Object *)StringLiteral_url,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), pSVar7 == (String__Class *)0x0)) goto code_?;
-    pOVar10 = (Object *)0x0;
-    if (pOVar9 != (Object *)0x0) {
-      if ((String__Class *)pOVar9->klass == TypeInfo__System__String) {
-        pOVar10 = pOVar9;
-      }
-      if (pOVar10 == (Object *)0x0) {
-        func_?(pOVar9,TypeInfo__System__String);
-        pOVar9 = extraout_EDX;
-        goto code_?;
-      }
-    }
-    (pSVar7->_0).namespaze = (char *)pOVar10;
-  }
-  func_?(&(pSVar7->_0).namespaze);
-  pSVar3 = (this->fields).soundLoader;
-  if (pSVar3 == (SoundLoader *)0x0) {
-code_?:
-    func_?();
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
-    func_?(&TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    func_?(&MethodInfo__SoundLoader__LoadSound__);
-    func_?(&TypeInfo__MV__Common__Urls);
-    cRam_? = '\x01';
-  }
-  bVar6 = mscorlib.dll::System::String::String_op_Inequality
-                    ((pSVar3->fields).url,(pSVar3->fields).currentUrl,(MethodInfo *)0x0);
-  if (bVar6 == 0) {
-    pAVar4 = (pSVar3->fields).audioSource;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pAVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar6 == 0) {
-      return;
-    }
-    pSVar5 = (pSVar3->fields).callback;
-    if (pSVar5 != (SoundLoader_UpdateSoundCallback *)0x0) {
-      (*(pSVar5->fields)._._.invoke_impl)();
-      return;
-    }
+     (pSVar3 = (pSVar2->fields).soundCheck, pSVar3 == (SoundEmitterActiveCheck *)0x0)) {
 code_?:
     func_?();
   }
   else {
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__Common__Urls);
+    (pSVar3->fields).soundEmitter = this;
+    func_?();
+    (pSVar3->fields).initialized = 1;
+    MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
+    pSVar2 = (this->fields).soundEmitterObject;
+    if ((pSVar2 == (SoundEmitterObject *)0x0) ||
+       (pSVar4 = (this->fields).soundLoader, pSVar4 == (SoundLoader *)0x0)) goto code_?;
+    (pSVar4->fields).audioSource = (pSVar2->fields).audioSource;
+    func_?();
+    pIVar5 = (Il2CppType *)func_?();
+    pMVar6 = MethodInfo__MVSoundEmitter__UpdateSound__;
+    pIVar5[1].data = (_union_86)MethodInfo__MVSoundEmitter__UpdateSound__->virtualMethodPointer;
+    *(MethodInfo **)&pIVar5[2].attrs = pMVar6;
+    pIVar5[2].data.typeHandle = (Il2CppMetadataTypeHandle)this;
+    func_?(pIVar5 + 2);
+    uVar7 = pMVar6->parameters_count;
+    pIVar5[4].data.type = pIVar5;
+    cVar8 = func_?();
+    if ((cVar8 == '\0') || (uVar7 != 0)) {
+      pIVar5[4].data = pIVar5[2].data;
+      _Var11 = pIVar5[1].data;
     }
-    bVar6 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MV__Common__Urls);
-      }
-      pUVar12 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-      pNVar13 = (NavMesh_OnNavMeshPreUpdate *)
-                func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-      if (pNVar13 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar13,(Object *)pSVar3,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
-        pUVar12 = (Urls_OnStreamingAssetsUrlAvailable *)
-                  mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)pUVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
-        if (pUVar12 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-          TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-               (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        }
-        else {
-          pUVar14 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-          if (pUVar12->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-            pUVar14 = pUVar12;
-          }
-          if (pUVar14 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-          TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar14;
-          pUVar14 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-          if (pUVar12->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-            pUVar14 = pUVar12;
-          }
-          if (pUVar14 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-        }
-        func_?();
-        pAVar4 = (pSVar3->fields).audioSource;
-        if (pAVar4 != (AudioSource *)0x0) {
-          bVar6 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
-                            (pAVar4,(MethodInfo *)0x0);
-          if (bVar6 != 0) {
-            pAVar4 = (pSVar3->fields).audioSource;
-            if (pAVar4 == (AudioSource *)0x0) goto code_?;
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                      (pAVar4,(MethodInfo *)0x0);
-          }
-          (pSVar3->fields).currentUrl = (pSVar3->fields).url;
-          func_?();
-          pSVar15 = (pSVar3->fields).currentUrl;
-          if (cRam_? == '\0') {
-            func_?();
-            func_?();
-            func_?();
-            func_?(&TypeInfo__UnityEngine__Debug);
-            func_?(&
-                            MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                           );
-            func_?(&TypeInfo__StreamingAsset);
-            func_?(&StringLiteral_Could_not_find_asset_info_for_au);
-            cRam_? = '\x01';
-          }
-          if (pSVar15 != (String *)0x0) {
-            if ((pSVar15->fields)._stringLength == 0) {
-              pSVar15 = mscorlib.dll::System::String::String_Concat_3
-                                  (StringLiteral_Could_not_find_asset_info_for_au,
-                                   (pSVar3->fields).currentUrl,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                        ((Object *)pSVar15,(MethodInfo *)0x0);
-              return;
-            }
-            if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            str0 = StreamingAsset::StreamingAsset_get_AssetBundleUrl((MethodInfo *)0x0);
-            pSVar15 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar15,(MethodInfo *)0x0);
-            pSVar15 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar15,(MethodInfo *)0x0);
-            pAVar16 = (Action_1_Object_ *)func_?();
-            if (pAVar16 != (Action_1_Object_ *)0x0) {
-              mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                        (pAVar16,(Object *)pSVar3,
-                         MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                        ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar16,
-                         (MethodInfo *)0x0);
-              pAVar16 = (Action_1_Object_ *)func_?();
-              if (pAVar16 != (Action_1_Object_ *)0x0) {
-                mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                          (pAVar16,(Object *)pSVar3,
-                           MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                           ,(MethodInfo *)0x0);
-                this_03 = (AssetBundleRequest *)func_?();
-                if (this_03 != (AssetBundleRequest *)0x0) {
-                  AssetBundleRequest::AssetBundleRequest__ctor
-                            (this_03,pSVar15,
-                             (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar16,
-                             WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0)
-                  ;
-                  AsyncWWWManager::AsyncWWWManager_WWWRequest
-                            ((AsyncWebRequest *)this_03,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
-          }
-        }
+    else {
+      _Var11.dummy = &UNK_?;
+    }
+    *(_union_86 *)&pIVar5[1].attrs = _Var11;
+    *(undefined **)&pIVar5[3].attrs = &UNK_?;
+    if (pMVar6 == (MethodInfo *)0x0) goto code_?;
+    pMVar6->return_type = pIVar5;
+    func_?();
+    pSVar2 = (this->fields).soundEmitterObject;
+    if (pSVar2 == (SoundEmitterObject *)0x0) goto code_?;
+    MVLogicObject::MVLogicObject_SetupCulling
+              ((MVLogicObject *)this,(pSVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
+    pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar9 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar9,(Object *)StringLiteral_url,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar10 == 0) {
+      pSVar4 = (this->fields).soundLoader;
+      if (pSVar4 == (SoundLoader *)0x0) goto code_?;
+      (pSVar4->fields).url = StringLiteral_AmbientAudio_Nature_kgm_amb_fore;
+code_?:
+      func_?(&(pSVar4->fields).url);
+      pSVar4 = (this->fields).soundLoader;
+      if (pSVar4 != (SoundLoader *)0x0) {
+        SoundLoader::SoundLoader_LoadSound(pSVar4,(MethodInfo *)0x0);
+        return;
       }
       goto code_?;
     }
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__Common__Urls);
+    pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if ((pDVar9 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (TVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           (pDVar9,(Object *)StringLiteral_url,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           ), TVar11.m_Index == 0)) goto code_?;
+    TVar12.m_Index = 0;
+    if (*(String__Class **)TVar11.m_Index == TypeInfo__System__String) {
+      TVar12 = TVar11;
     }
-    pUVar12 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-    pNVar13 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar13 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar13,(Object *)pSVar3,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
-    pUVar12 = (Urls_OnStreamingAssetsUrlAvailable *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pUVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
-    if (pUVar12 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-code_?:
-      func_?();
+    if (TVar12.m_Index == 0) goto code_?;
+    TVar12.m_Index = 0;
+    if (*(String__Class **)TVar11.m_Index == TypeInfo__System__String) {
+      TVar12 = TVar11;
+    }
+    if (*(int *)(TVar12.m_Index + 8) < 1) {
       return;
     }
-    pUVar14 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar12->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar14 = pUVar12;
+    pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    pSVar4 = (this->fields).soundLoader;
+    if ((pDVar9 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (TVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           (pDVar9,(Object *)StringLiteral_url,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           ), pSVar4 == (SoundLoader *)0x0)) goto code_?;
+    TVar12.m_Index = 0;
+    if (TVar11.m_Index == 0) {
+code_?:
+      (pSVar4->fields).url = (String *)TVar12.m_Index;
+      goto code_?;
     }
-    if (pUVar14 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar14;
-    pUVar14 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar12->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar14 = pUVar12;
+    if (*(String__Class **)TVar11.m_Index == TypeInfo__System__String) {
+      TVar12 = TVar11;
     }
-    if (pUVar14 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    if ((String *)TVar12.m_Index != (String *)0x0) goto code_?;
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -501,115 +342,121 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_OnDataUpdate
   worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
             (woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
   goto code_?;
-  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    (this_00,(Object *)StringLiteral_url,
+  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    (pDVar1,(Object *)StringLiteral_url,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
-  if (bVar1 == 0) {
-    pSVar2 = (this->fields).soundLoader;
-    if (pSVar2 == (SoundLoader *)0x0) goto code_?;
-    (pSVar2->fields).url = StringLiteral_AmbientAudio_Nature_kgm_amb_fore;
+  if (bVar2 == 0) {
+    pSVar3 = (this->fields).soundLoader;
+    if (pSVar3 == (SoundLoader *)0x0) goto code_?;
+    (pSVar3->fields).url = StringLiteral_AmbientAudio_Nature_kgm_amb_fore;
   }
   else {
-    pDVar3 = (this->fields)._._._.data;
-    if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-       (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (pDVar3,(Object *)StringLiteral_url,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), pOVar4 == (Object *)0x0)) goto code_?;
-    pOVar5 = (Object *)0x0;
-    if ((String__Class *)pOVar4->klass == TypeInfo__System__String) {
-      pOVar5 = pOVar4;
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if ((pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar1,(Object *)StringLiteral_url,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          ), TVar4.m_Index == 0)) goto code_?;
+    TVar5.m_Index = 0;
+    if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+      TVar5 = TVar4;
     }
-    if (pOVar5 == (Object *)0x0) {
+    if (TVar5.m_Index == 0) {
 code_?:
       func_?();
       goto code_?;
     }
-    pOVar5 = (Object *)0x0;
-    if ((String__Class *)pOVar4->klass == TypeInfo__System__String) {
-      pOVar5 = pOVar4;
+    TVar5.m_Index = 0;
+    if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+      TVar5 = TVar4;
     }
-    pDVar3 = (this->fields)._._._.data;
-    if ((int)pOVar5[1].klass < 1) {
-      if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-         (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar3,(Object *)StringLiteral_url,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar4 == (Object *)0x0)) goto code_?;
-      pOVar5 = (Object *)0x0;
-      if ((String__Class *)pOVar4->klass == TypeInfo__System__String) {
-        pOVar5 = pOVar4;
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (*(int *)(TVar5.m_Index + 8) < 1) {
+      if ((pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)StringLiteral_url,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), TVar4.m_Index == 0)) goto code_?;
+      TVar5.m_Index = 0;
+      if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+        TVar5 = TVar4;
       }
-      if (pOVar5 == (Object *)0x0) goto code_?;
-      pOVar5 = (Object *)0x0;
-      if ((String__Class *)pOVar4->klass == TypeInfo__System__String) {
-        pOVar5 = pOVar4;
+      if (TVar5.m_Index == 0) goto code_?;
+      TVar5.m_Index = 0;
+      if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+        TVar5 = TVar4;
       }
-      if (0 < (int)pOVar5[1].klass) {
+      if (0 < *(int *)(TVar5.m_Index + 8)) {
         return;
       }
-      pDVar3 = (this->fields)._._._.data;
-      if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      this_00 = (this->fields)._._._.data;
+      if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__set_Item
-                (pDVar3,(Object *)StringLiteral_url,
+                (this_00,(Object *)StringLiteral_url,
                  (Object *)StringLiteral_AmbientAudio_Nature_kgm_amb_fore,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                 );
-      pDVar3 = (this->fields)._._._.data;
-      pSVar2 = (this->fields).soundLoader;
-      if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-         (pSVar6 = (String *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar3,(Object *)StringLiteral_url,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pSVar2 == (SoundLoader *)0x0)) goto code_?;
-      pSVar7 = (String *)0x0;
-      if (pSVar6 != (String *)0x0) {
-        if (pSVar6->klass == TypeInfo__System__String) {
-          pSVar7 = pSVar6;
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      pSVar3 = (this->fields).soundLoader;
+      if ((pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)StringLiteral_url,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), pSVar3 == (SoundLoader *)0x0)) goto code_?;
+      TVar5.m_Index = 0;
+      if (TVar4.m_Index != 0) {
+        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+          TVar5 = TVar4;
         }
         goto joined_?;
       }
     }
     else {
-      pSVar2 = (this->fields).soundLoader;
-      if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-         (pSVar6 = (String *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar3,(Object *)StringLiteral_url,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pSVar2 == (SoundLoader *)0x0)) goto code_?;
-      pSVar7 = (String *)0x0;
-      if (pSVar6 != (String *)0x0) {
-        if (pSVar6->klass == TypeInfo__System__String) {
-          pSVar7 = pSVar6;
+      pSVar3 = (this->fields).soundLoader;
+      if ((pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)StringLiteral_url,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), pSVar3 == (SoundLoader *)0x0)) goto code_?;
+      TVar5.m_Index = 0;
+      if (TVar4.m_Index != 0) {
+        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+          TVar5 = TVar4;
         }
 joined_?:
-        if (pSVar7 == (String *)0x0) {
+        if ((String *)TVar5.m_Index == (String *)0x0) {
           func_?();
           goto code_?;
         }
       }
     }
-    (pSVar2->fields).url = pSVar7;
+    (pSVar3->fields).url = (String *)TVar5.m_Index;
   }
   func_?();
   if ((this->fields).soundLoader == (SoundLoader *)0x0) {
 code_?:
     func_?();
-    pcVar8 = (code *)swi(3);
-    (*pcVar8)();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
   if (cRam_? == '\0') {
@@ -619,21 +466,21 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  bVar1 = mscorlib.dll::System::String::String_op_Inequality
-                    ((String *)in_stack_9[1].monitor,(String *)in_stack_9[1].klass,
+  bVar2 = mscorlib.dll::System::String::String_op_Inequality
+                    ((String *)in_stack_7[1].monitor,(String *)in_stack_7[1].klass,
                      (MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pOVar10 = in_stack_9[2].klass;
+  if (bVar2 == 0) {
+    pOVar8 = in_stack_7[2].klass;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pOVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pOVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return;
     }
-    if (in_stack_9[2].monitor != (MonitorData *)0x0) {
-      (**(code **)(in_stack_9[2].monitor + 0xc))();
+    if (in_stack_7[2].monitor != (MonitorData *)0x0) {
+      (**(code **)(in_stack_7[2].monitor + 0xc))();
       return;
     }
 code_?:
@@ -643,110 +490,107 @@ code_?:
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar1 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
-    if (bVar1 != 0) {
+    bVar2 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
+    if (bVar2 != 0) {
       if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pUVar11 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-      pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (pNVar12 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar12,in_stack_9,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
-        pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)
-                  mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)pUVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
-        if (pUVar11 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-          TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-               (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUVar9 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar10,in_stack_7,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
+      pUVar9 = (Urls_OnStreamingAssetsUrlAvailable *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pUVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+      if (pUVar9 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+             (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      }
+      else {
+        pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+        if (pUVar9->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+          pUVar11 = pUVar9;
         }
-        else {
-          pUVar13 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-          if (pUVar11->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-            pUVar13 = pUVar11;
-          }
-          if (pUVar13 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-          TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar13;
-          pUVar13 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-          if (pUVar11->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-            pUVar13 = pUVar11;
-          }
-          if (pUVar13 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+        if (pUVar11 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar11;
+        pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+        if (pUVar9->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+          pUVar11 = pUVar9;
         }
+        if (pUVar11 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+      }
+      func_?();
+      if (in_stack_7[2].klass != (Object__Class *)0x0) {
+        bVar2 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                          ((AudioSource *)in_stack_7[2].klass,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          if (in_stack_7[2].klass == (Object__Class *)0x0) goto code_?;
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
+                    ((AudioSource *)in_stack_7[2].klass,(MethodInfo *)0x0);
+        }
+        in_stack_7[1].klass = (Object__Class *)in_stack_7[1].monitor;
         func_?();
-        if (in_stack_9[2].klass != (Object__Class *)0x0) {
-          bVar1 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
-                            ((AudioSource *)in_stack_9[2].klass,(MethodInfo *)0x0);
-          if (bVar1 != 0) {
-            if (in_stack_9[2].klass == (Object__Class *)0x0) goto code_?;
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                      ((AudioSource *)in_stack_9[2].klass,(MethodInfo *)0x0);
-          }
-          in_stack_9[1].klass = (Object__Class *)in_stack_9[1].monitor;
+        pOVar8 = in_stack_7[1].klass;
+        if (cRam_? == '\0') {
           func_?();
-          pOVar10 = in_stack_9[1].klass;
-          if (cRam_? == '\0') {
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            cRam_? = '\x01';
-          }
-          if (pOVar10 != (Object__Class *)0x0) {
-            if (((String__Fields *)&(pOVar10->_0).name)->_stringLength == 0) {
-              pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                                 (StringLiteral_Could_not_find_asset_info_for_au,
-                                  (String *)in_stack_9[1].klass,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                        ((Object *)pSVar6,(MethodInfo *)0x0);
-              return;
-            }
-            if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          cRam_? = '\x01';
+        }
+        if (pOVar8 != (Object__Class *)0x0) {
+          if (((String__Fields *)&(pOVar8->_0).name)->_stringLength == 0) {
+            pSVar12 = mscorlib.dll::System::String::String_Concat_3
+                                (StringLiteral_Could_not_find_asset_info_for_au,
+                                 (String *)in_stack_7[1].klass,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pSVar6 = StreamingAsset::StreamingAsset_get_AssetBundleUrl((MethodInfo *)0x0);
-            pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                               (pSVar6,(String *)pOVar10,(MethodInfo *)0x0);
-            pSVar6 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar6,(MethodInfo *)0x0);
-            pAVar14 = (Action_1_Object_ *)func_?();
-            if (pAVar14 != (Action_1_Object_ *)0x0) {
-              mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                        (pAVar14,in_stack_9,
-                         MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                        ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar14,
-                         (MethodInfo *)0x0);
-              pAVar14 = (Action_1_Object_ *)func_?();
-              if (pAVar14 != (Action_1_Object_ *)0x0) {
-                mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                          (pAVar14,in_stack_9,
-                           MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
-                           ,(MethodInfo *)0x0);
-                this_01 = (AssetBundleRequest *)func_?();
-                if (this_01 != (AssetBundleRequest *)0x0) {
-                  AssetBundleRequest::AssetBundleRequest__ctor
-                            (this_01,pSVar6,
-                             (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar14,
-                             WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0)
-                  ;
-                  AsyncWWWManager::AsyncWWWManager_WWWRequest
-                            ((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                      ((Object *)pSVar12,(MethodInfo *)0x0);
+            return;
           }
+          if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pSVar12 = StreamingAsset::StreamingAsset_get_AssetBundleUrl((MethodInfo *)0x0);
+          pSVar12 = mscorlib.dll::System::String::String_Concat_3
+                              (pSVar12,(String *)pOVar8,(MethodInfo *)0x0);
+          StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar12,(MethodInfo *)0x0);
+          pDVar13 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar13,in_stack_7,
+                     MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+                    ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar13,(MethodInfo *)0x0);
+          pDVar13 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar13,in_stack_7,
+                     MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
+                     ,(MethodInfo *)0x0);
+          this_01 = (AssetBundleRequest *)func_?();
+          AssetBundleRequest::AssetBundleRequest__ctor
+                    (this_01,(String *)0x0,
+                     (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar13,
+                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+          return;
         }
       }
       goto code_?;
@@ -754,40 +598,39 @@ code_?:
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pUVar11 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
-    pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (pNVar12 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    pUVar9 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+    pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar12,in_stack_9,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
-    pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pUVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
-    if (pUVar11 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+              (pNVar10,in_stack_7,MethodInfo__SoundLoader__LoadSound__,(MethodInfo *)0x0);
+    pUVar9 = (Urls_OnStreamingAssetsUrlAvailable *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+    if (pUVar9 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
       TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
            (Urls_OnStreamingAssetsUrlAvailable *)0x0;
 code_?:
       func_?();
       return;
     }
-    pUVar13 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar11->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar13 = pUVar11;
+    pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar9->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar11 = pUVar9;
     }
-    if (pUVar13 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar13;
-    pUVar13 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar11->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar13 = pUVar11;
+    if (pUVar11 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar11;
+    pUVar11 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar9->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar11 = pUVar9;
     }
-    if (pUVar13 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    if (pUVar11 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -807,16 +650,18 @@ bool Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_ShouldPlay
     func_?(&StringLiteral_mute);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_mute,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_mute,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
+          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
       pcVar2 = (char *)func_?();
       if (*pcVar2 != '\0') {
         return 0;
@@ -827,9 +672,9 @@ bool Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_ShouldPlay
       }
     }
   }
-  pOVar1 = (Object *)func_?();
+  TVar1.m_Index = func_?();
 code_?:
-  func_?(pOVar1);
+  func_?(TVar1.m_Index);
   pcVar4 = (code *)swi(3);
   bVar5 = (*pcVar4)();
   return bVar5;
@@ -869,7 +714,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_soundEmitterObject_is_null,(MethodInfo *)0x0);
     return;
   }
@@ -885,58 +730,70 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_audioSource_for_soundEmitterObje,(MethodInfo *)0x0);
       return;
     }
-    pDVar3 = (this->fields)._._._.data;
-    if (((pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-        (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__get_Item
-                            (pDVar3,(Object *)StringLiteral_volume,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), this_00 != (AudioSource *)0x0)) && (pOVar4 != (Object *)0x0)) {
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (((pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+        (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                 ::UIElements::TextureId]::
+                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                           (pDVar3,(Object *)StringLiteral_volume,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           ), this_00 != (AudioSource *)0x0)) && (TVar4.m_Index != 0)) {
       pIVar5 = (Int32__Class *)TypeInfo__System__Single;
-      if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
         pfVar6 = (float *)func_?();
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
                   (this_00,*pfVar6,(MethodInfo *)0x0);
-        pDVar3 = (this->fields)._._._.data;
-        if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-           (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               (pDVar3,(Object *)StringLiteral_pitch,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               ), pOVar4 == (Object *)0x0)) goto code_?;
+        pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                 (this->fields)._._._.data;
+        if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+           (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (pDVar3,(Object *)StringLiteral_pitch,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              ), TVar4.m_Index == 0)) goto code_?;
         pIVar5 = (Int32__Class *)TypeInfo__System__Single;
-        if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-          pfVar6 = (float *)func_?(pOVar4);
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+            (TypeInfo__System__Single->_0).element_class) {
+          pfVar6 = (float *)func_?(TVar4.m_Index);
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
                     (this_00,*pfVar6,(MethodInfo *)0x0);
-          pDVar3 = (this->fields)._._._.data;
-          if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-             (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                 (pDVar3,(Object *)StringLiteral_loop,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 ), pOVar4 == (Object *)0x0)) goto code_?;
+          pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                   (this->fields)._._._.data;
+          if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+             (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                (pDVar3,(Object *)StringLiteral_loop,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                ), TVar4.m_Index == 0)) goto code_?;
           pIVar5 = (Int32__Class *)TypeInfo__System__Boolean;
-          if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-            pbVar7 = (bool *)func_?(pOVar4);
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+              (TypeInfo__System__Boolean->_0).element_class) {
+            pbVar7 = (bool *)func_?(TVar4.m_Index);
             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
                       (this_00,*pbVar7,(MethodInfo *)0x0);
             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_rolloffMode
                       (this_00,AudioRolloffMode__Enum_Custom,(MethodInfo *)0x0);
-            pDVar3 = (this->fields)._._._.data;
-            if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-               (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                   (pDVar3,(Object *)StringLiteral_range,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   ), pOVar4 == (Object *)0x0)) goto code_?;
+            pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                     (this->fields)._._._.data;
+            if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+               (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  (pDVar3,(Object *)StringLiteral_range,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  ), TVar4.m_Index == 0)) goto code_?;
             pIVar5 = TypeInfo__System__Int32;
-            if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-              piVar8 = (int *)func_?(pOVar4);
+            if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              piVar8 = (int *)func_?(TVar4.m_Index);
               iVar9 = *piVar8;
               fVar10 = _UNK_?;
               if (((iVar9 != 0) && (fVar10 = _UNK_?, iVar9 != 1)) &&
@@ -945,18 +802,19 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
               }
               UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_minDistance
                         (this_00,fVar10,(MethodInfo *)0x0);
-              pDVar3 = (this->fields)._._._.data;
-              if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-                 (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                           Object,System::Object]::
-                           Dictionary_2_System_Object_System_Object__get_Item
-                                     (pDVar3,(Object *)StringLiteral_range,
-                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                     ), pOVar4 == (Object *)0x0)) goto code_?;
+              pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this->fields)._._._.data;
+              if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+                 (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                    (pDVar3,(Object *)StringLiteral_range,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    ), TVar4.m_Index == 0)) goto code_?;
               pIVar5 = TypeInfo__System__Int32;
-              if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
-              {
-                piVar8 = (int *)func_?(pOVar4);
+              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+                  (TypeInfo__System__Int32->_0).element_class) {
+                piVar8 = (int *)func_?(TVar4.m_Index);
                 iVar9 = *piVar8;
                 fVar10 = _UNK_?;
                 if (((iVar9 != 0) && (fVar10 = _UNK_?, iVar9 != 1)) &&
@@ -985,7 +843,7 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
           }
         }
       }
-      func_?(pOVar4,pIVar5);
+      func_?(TVar4.m_Index,pIVar5);
     }
   }
 code_?:
@@ -1009,65 +867,61 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter__ctor
     func_?(&TypeInfo__SoundLoader);
     cRam_? = '\x01';
   }
-  this_00 = (SoundLoader *)func_?(TypeInfo__SoundLoader);
-  if (this_00 != (SoundLoader *)0x0) {
-    SoundLoader::SoundLoader__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields).soundLoader = this_00;
-    func_?(&(this->fields).soundLoader,this_00);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
-      cRam_? = '\x01';
+  value = (SoundLoader *)func_?(TypeInfo__SoundLoader);
+  if (cRam_? == '\0') {
+    func_?(&::StringLiteral__);
+    cRam_? = '\x01';
+  }
+  (value->fields).currentUrl = ::StringLiteral__;
+  func_?(&value->fields,::StringLiteral__);
+  (value->fields).url = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(value->fields).url;
+  func_?(method_00,::StringLiteral__);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).soundLoader = value;
+  func_?(&(this->fields).soundLoader,value);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 == (PrefabPool *)0x0) {
+    func_?();
+  }
+  else {
+    MVLogicObject::MVLogicObject__ctor
+              ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvSoundEmitterPrefab,
+               worldObjects,(MethodInfo *)0x0);
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x1008000;
+    pSVar3 = (SoundEmitterObject *)(this->fields)._._.component;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    if (pSVar3 == (SoundEmitterObject *)0x0) {
+      (this->fields).soundEmitterObject = (SoundEmitterObject *)0x0;
+      func_?();
+      return;
     }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar1 != (PrefabPool *)0x0) {
-      MVLogicObject::MVLogicObject__ctor
-                ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvSoundEmitterPrefab,
-                 worldObjects,(MethodInfo *)0x0);
-      piVar2 = &(this->fields)._._.interactionFlags;
-      *(uint *)piVar2 = (uint)*piVar2 | 0x1008000;
-      pSVar3 = (SoundEmitterObject *)(this->fields)._._.component;
-      *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-           *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-      if (pSVar3 == (SoundEmitterObject *)0x0) {
-        (this->fields).soundEmitterObject = (SoundEmitterObject *)0x0;
+    if (((TypeInfo__SoundEmitterObject->_1).naturalAligment <=
+         (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy
+        [(TypeInfo__SoundEmitterObject->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__SoundEmitterObject)) {
+      (this->fields).soundEmitterObject = pSVar3;
+      if (((TypeInfo__SoundEmitterObject->_1).naturalAligment <=
+           (((ObjectPrefab__Class *)pSVar3->klass)->_1).naturalAligment) &&
+         ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__SoundEmitterObject->_1).naturalAligment - 1] ==
+          (Il2CppClass *)TypeInfo__SoundEmitterObject)) {
         func_?();
         return;
       }
-      if (((TypeInfo__SoundEmitterObject->_1).typeHierarchyDepth <=
-           (((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchyDepth) &&
-         ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy
-          [(TypeInfo__SoundEmitterObject->_1).typeHierarchyDepth - 1] ==
-          (Il2CppClass *)TypeInfo__SoundEmitterObject)) {
-        (this->fields).soundEmitterObject = pSVar3;
-        if (((TypeInfo__SoundEmitterObject->_1).typeHierarchyDepth <=
-             (((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchyDepth) &&
-           ((((ObjectPrefab__Class *)pSVar3->klass)->_1).typeHierarchy
-            [(TypeInfo__SoundEmitterObject->_1).typeHierarchyDepth - 1] ==
-            (Il2CppClass *)TypeInfo__SoundEmitterObject)) {
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
   func_?();
-  pSVar3 = extraout_EDX;
-code_?:
-  func_?(pSVar3);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_get_DocumentationType
-          (MVSoundEmitter *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_SoundEmitter;
 }
 

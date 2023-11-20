@@ -14,10 +14,7 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (pMVar5 != (MVLocalPlayer *)0x0) {
       if ((iVar3 != 2) && ((pMVar5->fields).respawnTime <= fVar4)) {
-        if ((this->fields)._.OnPlayButtonPressed != (Action *)0x0) {
-          pAVar6 = (this->fields)._.OnPlayButtonPressed;
-          (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
-        }
+        PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this,(MethodInfo *)0x0);
         return;
       }
       this_00 = (this->fields)._.button;
@@ -29,8 +26,20 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
+/* Void OnCountdownEnd() */
+
+void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCountdownEnd
+               (BriefingPlayButtonTouch *this,MethodInfo *method)
+
+{
+  (*(code *)(this->klass->vtable).StartPlaying.method)
+            (this,(this->klass->vtable).OnCountdownEnd.methodPtr);
   return;
 }
 
@@ -82,69 +91,69 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_Start
         if (bVar5 == 0) {
           pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                              ((MethodInfo *)0x0);
-          if ((pSVar3 == (SpawnRoleDataMediator *)0x0) ||
+          if ((pSVar3 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (pSVar3->fields).SpawnRoleModeTypeWrapper,
-             this_00 == (SpawnRoleModeTypeWrapper *)0x0)) goto code_?;
-          bVar5 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
-                            (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                               ((MethodInfo *)0x0);
-            if ((pGVar6 == (GameEventManager *)0x0) ||
-               (this_01 = (pGVar6->fields).AvatarCommandsPlayMode,
-               this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
-            goto code_?;
-            GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-            RewardedInterstitialAd__RegisterAdEvents_m__2
-                      ((RewardedInterstitialAd *)this_01,(Object *)0x0,unaff_retaddr,
-                       (MethodInfo *)this);
+             this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
+            bVar5 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
+                              (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
+            if (bVar5 != 0) {
+              pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                                 ((MethodInfo *)0x0);
+              if ((pGVar6 == (GameEventManager *)0x0) ||
+                 (this_01 = (pGVar6->fields).AvatarCommandsPlayMode,
+                 this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
+              goto code_?;
+              GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
+              RewardedAd__RegisterAdEvents_m__9((RewardedAd *)this_01,(MethodInfo *)0x0);
+            }
+code_?:
+            if ((this->fields)._.shouldPop != 0) {
+              root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+              if ((TypeInfo__BriefingPlayButtonTouch____c->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              callbackFunction = TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0;
+              if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+                if ((TypeInfo__BriefingPlayButtonTouch____c->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                object = TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9;
+                callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                           (Object *)object,
+                           MethodInfo__BriefingPlayButtonTouch____c___StartPlaying_b__2_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                           ,(MethodInfo *)0x0);
+                TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0 = callbackFunction;
+                func_?(&TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0);
+              }
+              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                  cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+              ExecuteEvents_ExecuteHierarchy
+                        (root,(BaseEventData *)0x0,
+                         (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                        );
+            }
+            return;
           }
         }
         else {
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
           this_02 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-          if (this_02 == (MVLocalPlayer *)0x0) goto code_?;
-          iVar4 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(this_02,(MethodInfo *)0x0);
-          if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-          MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(pMVar2,iVar4,(MethodInfo *)0x0);
-        }
-        if ((this->fields)._.shouldPop != 0) {
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          if ((TypeInfo__BriefingPlayButtonTouch____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          callbackFunction = TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0;
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-            if ((TypeInfo__BriefingPlayButtonTouch____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          if (this_02 != (MVLocalPlayer *)0x0) {
+            iVar4 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(this_02,(MethodInfo *)0x0);
+            if (pMVar2 != (MVLocalPlayer *)0x0) {
+              MVLocalPlayer::MVLocalPlayer_SetActiveSpawnRole(pMVar2,iVar4,(MethodInfo *)0x0);
+              goto code_?;
             }
-            object = TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9;
-            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-            goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)object,
-                       MethodInfo__BriefingPlayButtonTouch____c___StartPlaying_b__2_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0 = callbackFunction;
-            func_?(&TypeInfo__BriefingPlayButtonTouch____c->static_fields->__9__2_0,
-                            callbackFunction);
           }
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
         }
-        return;
       }
     }
   }

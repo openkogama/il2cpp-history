@@ -12,8 +12,8 @@ void MVWorldObject.dll::AllCollectiblesCollected::
     func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  cVar2 = (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)
-                    (this,(this->klass->vtable).get_IsTeamMode_1.method);
+  cVar2 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
+                    (this,(this->klass->vtable).get_HighScores.methodPtr);
   if (e != (OnCounterTypeChangedArgs *)0x0) {
     if (cVar2 == '\0') {
       iVar3 = (e->fields).count;
@@ -27,17 +27,17 @@ void MVWorldObject.dll::AllCollectiblesCollected::
       ;
     }
     if ((pAVar1->fields)._.limit <= iVar3) {
-      this_01 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-      if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
-      UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-      TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__System__EventArgs);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
       (pAVar1->fields)._.forfilled = 1;
       (pAVar1->fields)._.instigatorCounterTypeChangedEvent = e;
       func_?(&(pAVar1->fields)._.instigatorCounterTypeChangedEvent,e);
       if ((pAVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
         pEVar4 = (pAVar1->fields)._.OnWinningConditionChanged;
-        (*(pEVar4->fields)._._.invoke_impl)
-                  ((pEVar4->fields)._._.method_code,pAVar1,this_01,(pEVar4->fields)._._.method);
+        (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,pAVar1);
       }
     }
     return;

@@ -18,25 +18,25 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
       func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)
+    this_00 = (Dictionary_2_System_Byte_System_Object_ *)
               func_?(
                              TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                              );
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                );
-      value = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x16,value,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object___ctor
+              (this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+              );
+    value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffffc);
+    if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+      Dictionary_2_System_Byte_System_Object__Add
+                (this_00,0x16,value,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x12,(Object *)0x0,
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+      Dictionary_2_System_Byte_System_Object__Add
+                (this_00,0x12,(Object *)0x0,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 );
       piVar2 = *(int **)(arg1 + 0x10);
@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
         func_?();
       }
       if (piVar2 != (int *)0x0) {
-        (**(code **)(*piVar2 + 0x134))(piVar2,4);
+        (**(code **)(*piVar2 + 0x110))(piVar2,4);
         return;
       }
     }
@@ -78,23 +78,23 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   pSVar2 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString
                      ((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,
                       (MethodInfo *)0x0);
   pSVar2 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_data_beforeu000A,pSVar2,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable_1
             ((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,
              (Dictionary_2_System_Object_System_Object_ *)0x0,1,(MethodInfo *)0x0);
-  (*(code *)pSVar1->klass[1].vtable.System_Collections_IEnumerable_GetEnumerator.method)();
+  (*pSVar1->klass[1].vtable.System_Collections_IEnumerable_GetEnumerator.methodPtr)();
   pSVar1 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString
                      ((Dictionary_2_System_Object_System_Object_ *)pSVar1[5].fields._stringLength,
                       (MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_data_afteru000A,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   return;
 }
 
@@ -121,19 +121,19 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_Partial
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)this_00,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)this_00,(MethodInfo *)0x0);
   pSVar1 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString
                      ((this_00->fields)._.data,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_data_beforeu000A,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   MVWorldObjectClient::MVWorldObjectClient_PartialUpdateWOData
             (this_00,(Dictionary_2_System_Object_System_Object_ *)0x0,(MethodInfo *)0x0);
   pSVar1 = MVWorldObject.dll::MV::WorldObject::HashtableFunctions::HashtableFunctions_PrettyString
                      ((this_00->fields)._.data,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_data_afteru000A,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   return;
 }
 
@@ -156,14 +156,15 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_RemoveS
         cRam_? = '\x01';
       }
       if ((pSVar2->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this_00,
+        this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        (pSVar2->fields).DeltaRemovalData = this_00;
+        (pSVar2->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)this_00;
         func_?();
       }
       MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
@@ -180,7 +181,6 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_RemoveS
       }
     }
   }
-code_?:
   uVar4 = func_?(&stack0xffffffec);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -228,14 +228,15 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_UpdateS
         cRam_? = '\x01';
       }
       if ((pSVar2->fields).DeltaData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this_00,
+        this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_00,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        (pSVar2->fields).DeltaData = this_00;
+        (pSVar2->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)this_00;
         func_?();
       }
       MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
@@ -252,7 +253,6 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_UpdateS
       }
     }
   }
-code_?:
   uVar4 = func_?(&stack0xffffffec);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -299,48 +299,49 @@ void Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject__ctor
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
-  this_00 = (Action_2_Int32Enum_Object_ *)func_?();
-  if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MVGameOptionDataObject__PartialDataUpdate_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-               ,(MethodInfo *)0x0);
-    this_01 = (Action_2_Int32Enum_Object_ *)func_?();
-    if (this_01 != (Action_2_Int32Enum_Object_ *)0x0) {
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__MVGameOptionDataObject__PartialDataRemove_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                 ,(MethodInfo *)0x0);
-      this_02 = (SettingsReporter *)func_?();
-      if (this_02 != (SettingsReporter *)0x0) {
-        MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-        SettingsReporter::SettingsReporter__ctor
-                  (this_02,(MVWorldObject *)this,
-                   (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                    *)this_00,
-                   (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                    *)this_01,(MethodInfo *)0x0);
-        (this->fields).setttingsReporter = (SettingsReporter *)0x0;
-        func_?();
-        dictionary = (SortedList_2_System_Single_System_Object_ *)(this->fields).setttingsReporter;
-        this_03 = (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)
-                  func_?();
-        if (this_03 != (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0) {
-          System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-          Single,System::Object]::
-          SortedList_2_TKey_TValue_ValueList_System_Single_System_Object___ctor
-                    (this_03,dictionary,(MethodInfo *)0x0);
-          (this->fields).settingsManager = (SettingsManager *)this_03;
-          func_?();
-          return;
-        }
-      }
-    }
-  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
+  worldObject = 
+  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+  ;
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__MVGameOptionDataObject__PartialDataUpdate_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+             ,(MethodInfo *)0x0);
+  this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_01,(Object *)this,
+             MethodInfo__MVGameOptionDataObject__PartialDataRemove_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+             ,(MethodInfo *)0x0);
+  pMVar1 = (MethodInfo *)
+           func_?(
+                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__Client__SettingsReporter
+                          );
+  MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::SettingsReporter::
+  SettingsReporter__ctor
+            ((SettingsReporter *)pMVar1,(MVWorldObject *)worldObject,
+             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             this_00,(Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                      *)this_01,(MethodInfo *)0x0);
+  (worldObject->vtable).ToString.method = pMVar1;
+  ppMStack2 = &(worldObject->vtable).ToString.method;
+  pMStack3 = pMVar1;
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pSStack4 =
+       TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__Client__SettingsManager;
+  pMVar1 = (worldObject->vtable).ToString.method;
+  this_02 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?();
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_02,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)pMVar1,(MethodInfo *)0x0);
+  (worldObject->vtable).Clone.methodPtr = (Il2CppMethodPointer)this_02;
+  func_?();
   return;
 }
 
@@ -359,20 +360,17 @@ Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoos
     cRam_? = '\x01';
   }
   dictionary = (this->fields)._._.data;
-  this_00 = (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)
-            func_?(
-                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingsManager
-                           );
-  if (this_00 != (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0) {
-    System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-    Single,System::Object]::SortedList_2_TKey_TValue_ValueList_System_Single_System_Object___ctor
-              (this_00,(SortedList_2_System_Single_System_Object_ *)dictionary,(MethodInfo *)0x0);
-    return (GameBoosterSettingsManager *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pGVar2 = (GameBoosterSettingsManager *)(*pcVar1)();
-  return pGVar2;
+  this_00 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(
+                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingsManager
+                              );
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)dictionary,(MethodInfo *)0x0);
+  return (GameBoosterSettingsManager *)this_00;
 }
 
 
@@ -390,19 +388,16 @@ Assembly-CSharp.dll::MVGameOptionDataObject::MVGameOptionDataObject_get_GameOpti
     cRam_? = '\x01';
   }
   dictionary = (this->fields)._._.data;
-  this_00 = (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)
-            func_?(
-                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameOptions__GameOptionSettingsManager
-                           );
-  if (this_00 != (SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0) {
-    System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-    Single,System::Object]::SortedList_2_TKey_TValue_ValueList_System_Single_System_Object___ctor
-              (this_00,(SortedList_2_System_Single_System_Object_ *)dictionary,(MethodInfo *)0x0);
-    return (GameOptionSettingsManager *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pGVar2 = (GameOptionSettingsManager *)(*pcVar1)();
-  return pGVar2;
+  this_00 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(
+                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameOptions__GameOptionSettingsManager
+                              );
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)dictionary,(MethodInfo *)0x0);
+  return (GameOptionSettingsManager *)this_00;
 }
 

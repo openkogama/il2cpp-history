@@ -51,8 +51,8 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_Update
   (this->fields).timer = fVar2 + fVar1;
   if (pIVar3 != (Image *)0x0) {
     puVar4 = (undefined4 *)
-             (*(pIVar3->klass->vtable).get_color.methodPtr)
-                       (&uStack_5,pIVar3,(pIVar3->klass->vtable).get_color.method);
+             (*(code *)(pIVar3->klass->vtable).get_color.method)
+                       (&uStack_5,pIVar3,(pIVar3->klass->vtable).set_color.methodPtr);
     uStack_5 = *puVar4;
     uStack_6 = puVar4[1];
     uStack_7 = puVar4[2];
@@ -63,9 +63,9 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_Update
                            (pAVar9,(this->fields).timer,(MethodInfo *)0x0);
       pIVar3 = (this->fields).crossHairHitEnemyIndicator;
       if (pIVar3 != (Image *)0x0) {
-        (*(pIVar3->klass->vtable).set_color.methodPtr)
+        (*(code *)(pIVar3->klass->vtable).set_color.method)
                   (pIVar3,uStack_5,uStack_6,uStack_7,fStack_8,
-                   (pIVar3->klass->vtable).set_color.method);
+                   (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
         fVar1 = (this->fields).timer;
         pAVar9 = (this->fields).fadeCurve;
         if (pAVar9 != (AnimationCurve *)0x0) {
@@ -114,16 +114,17 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_UpdateCrossHair
   }
   if (pickupItem != (PickupItem *)0x0) {
     IStack_1.m_value =
-         (*(pickupItem->klass->vtable).get_Quantity.methodPtr)
-                   (pickupItem,(pickupItem->klass->vtable).get_Quantity.method);
-    pfVar2 = (float *)(*(pickupItem->klass->vtable).get_CrossHairColor.methodPtr)
+         (*(code *)(pickupItem->klass->vtable).get_Quantity.method)
+                   (pickupItem,(pickupItem->klass->vtable).get_CrossHairColor.methodPtr);
+    pfVar2 = (float *)(*(code *)(pickupItem->klass->vtable).get_CrossHairColor.method)
                                 (&stack0xffffffe8,pickupItem,
-                                 (pickupItem->klass->vtable).get_CrossHairColor.method);
+                                 (pickupItem->klass->vtable).get_ChargeState.methodPtr);
     fVar3 = *pfVar2;
     fVar4 = pfVar2[1];
     fVar5 = pfVar2[2];
-    fVar6 = (float10)(*(pickupItem->klass->vtable).get_ChargeState.methodPtr)
-                                (pickupItem,(pickupItem->klass->vtable).get_ChargeState.method);
+    fVar6 = (float10)(*(code *)(pickupItem->klass->vtable).get_ChargeState.method)
+                                (pickupItem,
+                                 (pickupItem->klass->vtable).get_ActivateGunModeOnEquip.methodPtr);
     fVar7 = (float)fVar6;
     bVar8 = false;
     if (IStack_1.m_value == 0) {
@@ -197,8 +198,8 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_UpdateCrossHair
     pTVar9 = (this->fields).ammoCount;
     pSVar13 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
     if (pTVar9 != (Text *)0x0) {
-      (*(pTVar9->klass->vtable).set_text.methodPtr)
-                (pTVar9,pSVar13,(pTVar9->klass->vtable).set_text.method);
+      (*(code *)(pTVar9->klass->vtable).set_text.method)
+                (pTVar9,pSVar13,(pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pIVar12 = (this->fields).crossHair;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -211,10 +212,10 @@ void Assembly-CSharp.dll::CrossHairAndroid::CrossHairAndroid_UpdateCrossHair
         (this->fields).alphaBase.g = fVar4;
         pIVar12 = (this->fields).crossHair;
         if (pIVar12 == (Image *)0x0) goto code_?;
-        (*(pIVar12->klass->vtable).set_color.methodPtr)
+        (*(code *)(pIVar12->klass->vtable).set_color.method)
                   (pIVar12,(this->fields).alphaBase.r,(this->fields).alphaBase.g,
                    (this->fields).alphaBase.b,(this->fields).alphaBase.a,
-                   (pIVar12->klass->vtable).set_color.method);
+                   (pIVar12->klass->vtable).get_raycastTarget.methodPtr);
       }
       if (fVar7 <= _UNK_?) {
         return;

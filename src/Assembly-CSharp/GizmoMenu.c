@@ -37,18 +37,18 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanClone(GizmoMenu *this,MethodIn
     method_00 = (MethodInfo *)
                 EditorStateMachine::EditorStateMachine_get_SelectedWOs(this_00,(MethodInfo *)0x0);
     if (method_00 != (MethodInfo *)0x0) {
-      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-               HashSet_1_System_Object__GetEnumerator
-                         (&HStack_8,(HashSet_1_System_Object_ *)method_00,
+      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+               HashSet_1_System_UInt32__GetEnumerator
+                         (&HStack_8,(HashSet_1_System_UInt32_ *)method_00,
                           MethodInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>__GetEnumerator__
                          );
-      HStack_6._set = pHVar7->_set;
+      HStack_6._set = (HashSet_1_System_Object_ *)pHVar7->_set;
       HStack_6._index = pHVar7->_index;
       HStack_6._version = pHVar7->_version;
-      HStack_6._current = pHVar7->_current;
+      HStack_6._current = (Object *)pHVar7->_current;
       HStack_8._version = 0;
       uStack_1 = 1;
-      HStack_8._current = (Object *)&HStack_6;
+      HStack_8._current = (uint32_t)&HStack_6;
       do {
         bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
                 Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
@@ -58,7 +58,7 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanClone(GizmoMenu *this,MethodIn
         this_01 = HStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&HStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -79,7 +79,7 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanClone(GizmoMenu *this,MethodIn
                            (MethodInfo *)0x0);
       } while (bVar9 == 0);
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&HStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -134,18 +134,18 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanCloneRoot(GizmoMenu *this,Meth
     method_00 = (MethodInfo *)
                 EditorStateMachine::EditorStateMachine_get_SelectedWOs(this_00,(MethodInfo *)0x0);
     if (method_00 != (MethodInfo *)0x0) {
-      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-               HashSet_1_System_Object__GetEnumerator
-                         (&HStack_8,(HashSet_1_System_Object_ *)method_00,
+      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+               HashSet_1_System_UInt32__GetEnumerator
+                         (&HStack_8,(HashSet_1_System_UInt32_ *)method_00,
                           MethodInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>__GetEnumerator__
                          );
-      HStack_6._set = pHVar7->_set;
+      HStack_6._set = (HashSet_1_System_Object_ *)pHVar7->_set;
       HStack_6._index = pHVar7->_index;
       HStack_6._version = pHVar7->_version;
-      HStack_6._current = pHVar7->_current;
+      HStack_6._current = (Object *)pHVar7->_current;
       HStack_8._version = 0;
       uStack_1 = 1;
-      HStack_8._current = (Object *)&HStack_6;
+      HStack_8._current = (uint32_t)&HStack_6;
       do {
         bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
                 Object]::HashSet_1_T_Enumerator_System_Object__MoveNext
@@ -155,7 +155,7 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanCloneRoot(GizmoMenu *this,Meth
         this_01 = HStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&HStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -176,7 +176,7 @@ bool Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CanCloneRoot(GizmoMenu *this,Meth
                            (MethodInfo *)0x0);
       } while (bVar9 == 0);
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&HStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -217,7 +217,6 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_ChangeRotationMode
   }
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                    ((Component *)this,(MethodInfo *)0x0);
-  NStack_1.value = (uint32_t)root;
   if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__GizmoMenu____c);
   }
@@ -232,16 +231,13 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_ChangeRotationMode
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IGizmoHandler_ *)0x0)
-    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__GizmoMenu____c___ChangeRotationMode_b__28_0_IGizmoHandler__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__GizmoMenu____c->static_fields->__9__28_0 = callbackFunction;
-    func_?();
-    root = (GameObject *)NStack_1.value;
+    func_?(&TypeInfo__GizmoMenu____c->static_fields->__9__28_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -281,7 +277,6 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_ChangeRotationMode
       }
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -369,7 +364,6 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_Clone(GizmoMenu *this,MethodInfo 
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -393,22 +387,15 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_Clone(GizmoMenu *this,MethodInfo 
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>
                       );
-  if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
-               MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,callbackFunction_00,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
-              );
-    return;
-  }
-code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+             MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,callbackFunction_00,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
+            );
   return;
 }
 
@@ -442,73 +429,71 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_CloneRoot(GizmoMenu *this,MethodI
     func_?(&TypeInfo__GizmoMenu____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GizmoMenu____c__DisplayClass22_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-              ((Component *)this,(MethodInfo *)0x0);
+  method_00 = TypeInfo__GizmoMenu____c__DisplayClass22_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__GizmoMenu____c);
+  }
+  callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__22_0;
+  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GizmoMenu____c);
     }
-    callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__22_0;
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__GizmoMenu____c);
-      }
-      object = TypeInfo__GizmoMenu____c->static_fields->__9;
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IUIStack_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__GizmoMenu____c___CloneRoot_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__GizmoMenu____c->static_fields->__9__22_0 = callbackFunction;
-      func_?();
-    }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              ((GameObject *)
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-               ,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_00 != (MVWorldObjectClientManager *)0x0) {
-      pOVar1 = (Object__Class *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
-                         (this_00,(this->fields).woID,(MethodInfo *)0x0);
-      value[1].klass = pOVar1;
+    object = TypeInfo__GizmoMenu____c->static_fields->__9;
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_IUIStack_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__GizmoMenu____c___CloneRoot_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__GizmoMenu____c->static_fields->__9__22_0 = callbackFunction;
+    func_?(&TypeInfo__GizmoMenu____c->static_fields->__9__22_0,callbackFunction);
+  }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            ((GameObject *)
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+             ,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_00 != (MVWorldObjectClientManager *)0x0) {
+    pOStack1 =
+         (Object__Class *)
+         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
+                   (this_00,(this->fields).woID,(MethodInfo *)0x0);
+    if (value != (Object *)0x0) {
+      value[1].klass = pOStack1;
+      pOStack2 = value + 1;
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                   MethodInfo__GizmoMenu____c__DisplayClass22_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
-                  );
-        return;
-      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                 MethodInfo__GizmoMenu____c__DisplayClass22_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
+                );
+      return;
     }
   }
-code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -521,88 +506,81 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_HandleCloningHotkey
 {
   bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
                     (KeyCode__Enum_Q,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  bVar1 = GizmoMenu_CanClone(this,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    bVar1 = GizmoMenu_CanCloneRoot(this,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    bVar1 = GizmoMenu_CanClone(this,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      return;
+      bVar1 = GizmoMenu_CanCloneRoot(this,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        GizmoMenu_CloneRoot(this,(MethodInfo *)0x0);
+        return;
+      }
     }
-    GizmoMenu_CloneRoot(this,(MethodInfo *)0x0);
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__GizmoMenu____c);
-    cRam_? = '\x01';
-  }
-  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    else {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?(&
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>
+                       );
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
+                       );
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                       );
+        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?(&
+                        MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&
+                        MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&TypeInfo__GizmoMenu____c);
+        cRam_? = '\x01';
+      }
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        object = TypeInfo__GizmoMenu____c->static_fields->__9;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__GizmoMenu____c->static_fields->__9__21_0 = callbackFunction;
+        pGVar2 = (GameObject *)&TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
+        func_?(pGVar2,callbackFunction);
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+                 MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
+                );
     }
-    object = TypeInfo__GizmoMenu____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__GizmoMenu____c->static_fields->__9__21_0 = callbackFunction;
-    pGVar2 = (GameObject *)&UNK_?;
-    func_?(&TypeInfo__GizmoMenu____c->static_fields->__9__21_0);
   }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar2,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-            );
-  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-  if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
-               MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar2,(BaseEventData *)0x0,callbackFunction_00,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
-              );
-    return;
-  }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -642,18 +620,16 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_OnDestroy(GizmoMenu *this,MethodI
   this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
   ;
-  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__GizmoMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_,
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__GizmoMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_,
+             (MethodInfo *)0x0);
+  if (this_00 != (MVWorldObjectClientManager *)0x0) {
+    MVWorldObjectClientManager::MVWorldObjectClientManager_UnsubscribeWODestroyedEvent
+              (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
                (MethodInfo *)0x0);
-    if (this_00 != (MVWorldObjectClientManager *)0x0) {
-      MVWorldObjectClientManager::MVWorldObjectClientManager_UnsubscribeWODestroyedEvent
-                (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
-                 (MethodInfo *)0x0);
-      return;
-    }
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -698,12 +674,6 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_PopWoDestroyed
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -778,14 +748,13 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_Setup(GizmoMenu *this,MethodInfo 
             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                       (pMVar1,(this->fields).woID,(MethodInfo *)0x0);
   if (this_00 == (MVWorldObjectClient *)0x0) goto code_?;
-  (*(this_00->klass->vtable).DrawTransformGizmo.methodPtr)
-            (this_00,(this_00->klass->vtable).DrawTransformGizmo.method);
+  (*(code *)(this_00->klass->vtable).DrawTransformGizmo.method)
+            (this_00,(this_00->klass->vtable).OnContextMenu.methodPtr);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   woID = (this->fields).woID;
   this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
   ;
-  if (this_01 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             (this_01,(Object *)this,
@@ -887,85 +856,78 @@ void Assembly-CSharp.dll::GizmoMenu::GizmoMenu_Update(GizmoMenu *this,MethodInfo
   GizmoMenu_SetToScreenPoint(this,(MethodInfo *)0x0);
   bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
                     (KeyCode__Enum_Q,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  bVar1 = GizmoMenu_CanClone(in_stack_2,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    bVar1 = GizmoMenu_CanCloneRoot(in_stack_2,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    bVar1 = GizmoMenu_CanClone(in_stack_2,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      return;
+      bVar1 = GizmoMenu_CanCloneRoot(in_stack_2,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        GizmoMenu_CloneRoot(in_stack_2,(MethodInfo *)0x0);
+        return;
+      }
     }
-    GizmoMenu_CloneRoot(in_stack_2,(MethodInfo *)0x0);
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__GizmoMenu____c);
-    cRam_? = '\x01';
-  }
-  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)in_stack_2,(MethodInfo *)0x0);
-  if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    else {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                       );
+        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?(&
+                        MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&
+                        MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       );
+        func_?(&TypeInfo__GizmoMenu____c);
+        cRam_? = '\x01';
+      }
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)in_stack_2,(MethodInfo *)0x0);
+      if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      callbackFunction = TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__GizmoMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        object = TypeInfo__GizmoMenu____c->static_fields->__9;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__GizmoMenu____c->static_fields->__9__21_0 = callbackFunction;
+        pGVar3 = (GameObject *)&TypeInfo__GizmoMenu____c->static_fields->__9__21_0;
+        func_?();
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar3,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)in_stack_2,(MethodInfo *)0x0);
+      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                 (Object *)in_stack_2,
+                 MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
+                );
     }
-    object = TypeInfo__GizmoMenu____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__GizmoMenu____c___Clone_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__GizmoMenu____c->static_fields->__9__21_0 = callbackFunction;
-    pGVar3 = (GameObject *)&UNK_?;
-    func_?();
   }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar3,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-            );
-  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)in_stack_2,(MethodInfo *)0x0);
-  callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-  if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-               (Object *)in_stack_2,
-               MethodInfo__GizmoMenu___Clone_b__21_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_
-              );
-    return;
-  }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 

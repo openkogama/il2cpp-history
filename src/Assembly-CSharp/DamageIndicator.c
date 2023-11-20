@@ -17,59 +17,59 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_Awake
   if (this_00 != (Transform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
               (this_00,(Transform *)0x0,0,(MethodInfo *)0x0);
-    fStack_1 = (this->fields).indicationRadius;
+    fVar1 = (this->fields).indicationRadius;
     pDVar2 = (this->fields).directionArrowBase;
     numberOfArrows = (this->fields).maxNumberOfArrows;
     pDVar3 = (DamageIndicator_IndicatorArrow *)
              func_?(TypeInfo__DamageIndicator__IndicatorArrow);
-    if (pDVar3 != (DamageIndicator_IndicatorArrow *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__DamageIndicator__IndicatorArrow);
-        cRam_? = '\x01';
-      }
-      DamageIndicator+IndicatorArrow::DamageIndicator_IndicatorArrow__ctor_1
-                (pDVar3,numberOfArrows,pDVar2,(DamageIndicator_IndicatorArrow *)0x0,
-                 (MethodInfo *)0x0);
-      TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius = fStack_1;
-      TypeInfo__DamageIndicator__IndicatorArrow->static_fields->_nextArrow = pDVar3;
-      func_?(TypeInfo__DamageIndicator__IndicatorArrow->static_fields,pDVar3);
-      (this->fields).directionArrow = pDVar3;
-      func_?(&(this->fields).directionArrow,pDVar3);
-      pSVar4 = (this->fields).arrowSpriteStream;
-      this_01 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Sprite>);
-      if ((this_01 != (Action_1_Object_ *)0x0) &&
-         (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__DamageIndicator__SetArrowSprites_UnityEngine__Sprite_,
-                     (MethodInfo *)0x0), pSVar4 != (StreamedSpriteToCallback *)0x0)) {
-        (pSVar4->fields)._.onAssetSet = (Action_1_UnityEngine_Sprite_ *)this_01;
-        func_?(&(pSVar4->fields)._.onAssetSet,this_01);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    DamageIndicator+IndicatorArrow::DamageIndicator_IndicatorArrow__ctor_1
+              (pDVar3,numberOfArrows,pDVar2,(DamageIndicator_IndicatorArrow *)0x0,(MethodInfo *)0x0)
+    ;
+    TypeInfo__DamageIndicator__IndicatorArrow->static_fields->indicationRadius = fVar1;
+    TypeInfo__DamageIndicator__IndicatorArrow->static_fields->_nextArrow = pDVar3;
+    func_?();
+    (this->fields).directionArrow = pDVar3;
+    func_?(&(this->fields).directionArrow);
+    pSVar4 = (this->fields).arrowSpriteStream;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::Sprite>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__DamageIndicator__SetArrowSprites_UnityEngine__Sprite_,(MethodInfo *)0x0);
+    if (pSVar4 != (StreamedSpriteToCallback *)0x0) {
+      (pSVar4->fields)._.onAssetSet = (Action_1_UnityEngine_Sprite_ *)this_01;
+      func_?(&(pSVar4->fields)._.onAssetSet,this_01);
+      pIVar5 = (this->fields).damageOverlay;
+      if (pIVar5 != (Image *)0x0) {
+        iVar6 = (*(code *)(pIVar5->klass->vtable).get_color.method)
+                          (&stack0xffffffe8,pIVar5,(pIVar5->klass->vtable).set_color.methodPtr);
         pIVar5 = (this->fields).damageOverlay;
+        (this->fields).initialAlpha = *(float *)(iVar6 + 0xc);
         if (pIVar5 != (Image *)0x0) {
-          iVar6 = (*(pIVar5->klass->vtable).get_color.methodPtr)
-                            (auStack_7,pIVar5,(pIVar5->klass->vtable).get_color.method);
-          pIVar5 = (this->fields).damageOverlay;
-          (this->fields).initialAlpha = *(float *)(iVar6 + 0xc);
-          if (pIVar5 != (Image *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                      ((Behaviour *)pIVar5,0,(MethodInfo *)0x0);
-            pDVar3 = (this->fields).directionArrow;
-            if (pDVar3 != (DamageIndicator_IndicatorArrow *)0x0) {
-              for (pDVar8 = (pDVar3->fields).nextArrow; pDVar8 != pDVar3;
-                  pDVar8 = (pDVar8->fields).nextArrow) {
-                if ((pDVar8 == (DamageIndicator_IndicatorArrow *)0x0) ||
-                   (pDVar2 = (pDVar8->fields).arrow, pDVar2 == (DamageArrow *)0x0))
-                goto code_?;
-                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)pDVar2,0,(MethodInfo *)0x0);
-                (pDVar8->fields).idle = 1;
-              }
-              pDVar2 = (pDVar3->fields).arrow;
-              if (pDVar2 != (DamageArrow *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)pDVar2,0,(MethodInfo *)0x0);
-                return;
-              }
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    ((Behaviour *)pIVar5,0,(MethodInfo *)0x0);
+          pDVar3 = (this->fields).directionArrow;
+          if (pDVar3 != (DamageIndicator_IndicatorArrow *)0x0) {
+            for (pDVar7 = (pDVar3->fields).nextArrow; pDVar7 != pDVar3;
+                pDVar7 = (pDVar7->fields).nextArrow) {
+              if ((pDVar7 == (DamageIndicator_IndicatorArrow *)0x0) ||
+                 (pDVar2 = (pDVar7->fields).arrow, pDVar2 == (DamageArrow *)0x0))
+              goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                        ((Behaviour *)pDVar2,0,(MethodInfo *)0x0);
+              (pDVar7->fields).idle = 1;
+            }
+            pDVar2 = (pDVar3->fields).arrow;
+            if (pDVar2 != (DamageArrow *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                        ((Behaviour *)pDVar2,0,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -78,8 +78,8 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_Awake
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -284,15 +284,15 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_Update
         fStack_6 = (this->fields).initialAlpha;
         if (pIVar4 != (Image *)0x0) {
           puVar7 = (undefined4 *)
-                   (*(pIVar4->klass->vtable).get_color.methodPtr)
-                             (&uStack_8,pIVar4,(pIVar4->klass->vtable).get_color.method);
+                   (*(code *)(pIVar4->klass->vtable).get_color.method)
+                             (&uStack_8,pIVar4,(pIVar4->klass->vtable).set_color.methodPtr);
           uStack_8 = *puVar7;
           uStack_9 = puVar7[1];
           uStack_10 = puVar7[2];
           fStack_6 = fStack_6 * fStack_5;
-          (*(pIVar4->klass->vtable).set_color.methodPtr)
+          (*(code *)(pIVar4->klass->vtable).set_color.method)
                     (pIVar4,uStack_8,uStack_9,uStack_10,fStack_6,
-                     (pIVar4->klass->vtable).set_color.method);
+                     (pIVar4->klass->vtable).get_raycastTarget.methodPtr);
           fVar1 = (this->fields).damageOverlayTimer;
           fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                             ((MethodInfo *)0x0);

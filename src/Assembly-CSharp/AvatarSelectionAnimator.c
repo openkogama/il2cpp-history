@@ -61,8 +61,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
        RVar2 != (RegexCharClass_SingleRange)0x0)) {
       uVar3._0_4_ = (this->fields).displayPos.x;
       uVar3._4_4_ = (this->fields).displayPos.y;
-      (**(code **)(*(int *)RVar2 + 0x194))
-                (RVar2,uVar3,(this->fields).displayPos.z,*(undefined4 *)(*(int *)RVar2 + 0x198));
+      (**(code **)(*(int *)RVar2 + 400))
+                (RVar2,uVar3,(this->fields).displayPos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
       pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).Bodies;
       if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -79,8 +79,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
         if (RVar2 != (RegexCharClass_SingleRange)0x0) {
           uVar5._0_4_ = (pVVar4->oneVector).x;
           uVar5._4_4_ = (pVVar4->oneVector).y;
-          (**(code **)(*(int *)RVar2 + 0x104))
-                    (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x108));
+          (**(code **)(*(int *)RVar2 + 0x108))
+                    (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
           return;
         }
       }
@@ -150,8 +150,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
     uVar3._0_4_ = (this->fields).hidePos.x;
     uVar3._4_4_ = (this->fields).hidePos.y;
-    (**(code **)(*(int *)RVar2 + 0x194))
-              (RVar2,uVar3,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x198));
+    (**(code **)(*(int *)RVar2 + 400))
+              (RVar2,uVar3,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
     pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).Bodies;
     if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -169,8 +169,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
     uVar5._0_4_ = (pVVar4->oneVector).x;
     uVar5._4_4_ = (pVVar4->oneVector).y;
-    (**(code **)(*(int *)RVar2 + 0x104))
-              (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x108));
+    (**(code **)(*(int *)RVar2 + 0x108))
+              (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
   }
   pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).Bodies;
@@ -183,8 +183,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     if (RVar2 != (RegexCharClass_SingleRange)0x0) {
       uVar6._0_4_ = (this->fields).hidePos.x;
       uVar6._4_4_ = (this->fields).hidePos.y;
-      (**(code **)(*(int *)RVar2 + 0x194))
-                (RVar2,uVar6,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x198));
+      (**(code **)(*(int *)RVar2 + 400))
+                (RVar2,uVar6,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
       pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).Bodies;
       if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -201,8 +201,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
         if (RVar2 != (RegexCharClass_SingleRange)0x0) {
           uVar7._0_4_ = (pVVar4->oneVector).x;
           uVar7._4_4_ = (pVVar4->oneVector).y;
-          (**(code **)(*(int *)RVar2 + 0x104))
-                    (RVar2,uVar7,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x108));
+          (**(code **)(*(int *)RVar2 + 0x108))
+                    (RVar2,uVar7,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
           pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (this->fields).Bodies;
           if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -215,9 +215,9 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
             if (RVar2 != (RegexCharClass_SingleRange)0x0) {
               uVar8._0_4_ = (this->fields).displayPos.x;
               uVar8._4_4_ = (this->fields).displayPos.y;
-              (**(code **)(*(int *)RVar2 + 0x194))
+              (**(code **)(*(int *)RVar2 + 400))
                         (RVar2,uVar8,(this->fields).displayPos.z,
-                         *(undefined4 *)(*(int *)RVar2 + 0x198));
+                         *(undefined4 *)(*(int *)RVar2 + 0x194));
               pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).Bodies;
               if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
@@ -236,9 +236,9 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
                 if (RVar2 != (RegexCharClass_SingleRange)0x0) {
                   uVar9._0_4_ = (pVVar4->oneVector).x;
                   uVar9._4_4_ = (pVVar4->oneVector).y;
-                  (**(code **)(*(int *)RVar2 + 0x104))
+                  (**(code **)(*(int *)RVar2 + 0x108))
                             (RVar2,uVar9,(pVVar4->oneVector).z,
-                             *(undefined4 *)(*(int *)RVar2 + 0x108));
+                             *(undefined4 *)(*(int *)RVar2 + 0x10c));
                   (this->fields).currentIndex = -1;
                   (this->fields).targetIndex = -1;
                   (this->fields).time = 0.0;
@@ -324,7 +324,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
       uVar11 = (this_00->fields).displayPos.x;
       uVar12 = (this_00->fields).distance.x;
       if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-        (**(code **)(*(int *)RVar10 + 0x194))
+        (**(code **)(*(int *)RVar10 + 400))
                   (RVar10,(float)uVar11 + (float)uVar12 * (float)this * (this_00->fields).time);
         pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   (this_00->fields).Bodies;
@@ -341,7 +341,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
           }
           uVar13 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).x;
           if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-            (**(code **)(*(int *)RVar10 + 0x104))
+            (**(code **)(*(int *)RVar10 + 0x108))
                       (RVar10,(float)uVar13 * ((float)_UNK_? - (this_00->fields).time));
             pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                       (this_00->fields).Bodies;
@@ -357,7 +357,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
               uVar15 = (this_00->fields).distance.x;
               uVar16 = (this_00->fields).distance.x;
               if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                (**(code **)(*(int *)RVar10 + 0x194))
+                (**(code **)(*(int *)RVar10 + 400))
                           (RVar10,((float)uVar14 +
                                   (float)uVar15 * (float)this * (this_00->fields).time) -
                                   (float)uVar16 * (float)this);
@@ -377,7 +377,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
                   }
                   uVar17 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).x;
                   if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                    (**(code **)(*(int *)RVar10 + 0x104))
+                    (**(code **)(*(int *)RVar10 + 0x108))
                               (RVar10,(float)uVar17 * (this_00->fields).time);
                     if ((this_00->fields).time <= (float)_UNK_?) {
                       return;
@@ -393,7 +393,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
                                                MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
                                               ), RVar10 != (RegexCharClass_SingleRange)0x0)) {
                       uVar18 = (this_00->fields).hidePos.x;
-                      (**(code **)(*(int *)RVar10 + 0x194))(RVar10,uVar18);
+                      (**(code **)(*(int *)RVar10 + 400))(RVar10,uVar18);
                       pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
                                 )(this_00->fields).Bodies;
                       if (pLVar9 !=
@@ -407,7 +407,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
                                            );
                         puVar19 = (undefined8 *)func_?();
                         if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                          (**(code **)(*(int *)RVar10 + 0x104))(RVar10,(int)*puVar19);
+                          (**(code **)(*(int *)RVar10 + 0x108))(RVar10,(int)*puVar19);
                           (this_00->fields).time = 0.0;
                           if (index != (this_00->fields).targetIndex) {
                             (this_00->fields).currentIndex = index;
@@ -425,7 +425,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
                                                                                                                         
                                                   MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
                                                   ), RVar10 != (RegexCharClass_SingleRange)0x0)) {
-                            func_?(0x1b,RVar10);
+                            func_?(0x1a,RVar10);
                             pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                        *)(this_00->fields).Bodies;
                             if (pLVar9 !=
@@ -479,39 +479,34 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator__ctor
     cRam_? = '\x01';
   }
   this_00 = (List_1_MVBody_ *)func_?(TypeInfo__System__Collections__Generic__List<MVBody>);
-  if (this_00 != (List_1_MVBody_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVBody>__List__);
-    (this->fields).Bodies = this_00;
-    func_?(&(this->fields).Bodies,this_00);
-    (this->fields).currentIndex = -1;
-    (this->fields).targetIndex = -1;
-    (this->fields).baseTimeMultiplier = 2.0;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar2 = (pVVar1->rightVector).x;
-    uVar3 = (pVVar1->rightVector).y;
-    fVar4 = (pVVar1->rightVector).z * _UNK_?;
-    fVar5 = (float)uVar3 * _UNK_?;
-    (this->fields).distance.x = (float)uVar2 * _UNK_?;
-    (this->fields).distance.y = fVar5;
-    (this->fields).distance.z = fVar4;
-    (this->fields).forward = 1;
-    (this->fields).timeSlowThreshold = 0.8;
-    (this->fields).endmultiplier = 0.01;
-    (this->fields).SuperspeedFactor = 1.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVBody>__List__);
+  (this->fields).Bodies = this_00;
+  func_?(&(this->fields).Bodies,this_00);
+  (this->fields).currentIndex = -1;
+  (this->fields).targetIndex = -1;
+  (this->fields).baseTimeMultiplier = 2.0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->rightVector).x;
+  uVar3 = (pVVar1->rightVector).y;
+  fVar4 = (pVVar1->rightVector).z * _UNK_?;
+  fVar5 = (float)uVar3 * _UNK_?;
+  (this->fields).distance.x = (float)uVar2 * _UNK_?;
+  (this->fields).distance.y = fVar5;
+  (this->fields).distance.z = fVar4;
+  (this->fields).forward = 1;
+  (this->fields).timeSlowThreshold = 0.8;
+  (this->fields).endmultiplier = 0.01;
+  (this->fields).SuperspeedFactor = 1.0;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

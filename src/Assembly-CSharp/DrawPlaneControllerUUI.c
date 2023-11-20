@@ -291,106 +291,62 @@ bool Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_Pick
                (DrawPlaneControllerUUI *this,Vector3 *hit,MethodInfo *method)
 
 {
-  pWVar1 = (this->fields).worldEditorDrawPlane;
-  if (pWVar1 != (WorldEditorDrawPlane *)0x0) {
-    method = (MethodInfo *)0x0;
-    this = (DrawPlaneControllerUUI *)pWVar1;
+  this_00 = (this->fields).worldEditorDrawPlane;
+  if (this_00 != (WorldEditorDrawPlane *)0x0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVInputWrapper);
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
-    pDVar2 = this;
-    x = *(Object_1 **)&(this->fields).inputEnabled;
+    pCVar1 = (this_00->fields).mainCamera;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      *(Camera **)&(pDVar2->fields).inputEnabled = pCVar4;
-      func_?(&(pDVar2->fields).inputEnabled);
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      (this_00->fields).mainCamera = pCVar1;
+      func_?(&(this_00->fields).mainCamera);
     }
-    pCVar4 = *(Camera **)&(pDVar2->fields).inputEnabled;
+    pCVar1 = (this_00->fields).mainCamera;
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pVVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+    pVVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                        ((Vector3 *)&stack0xffffffe4,(MethodInfo *)0x0);
+    uVar4 = pVVar3->x;
+    pVVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
                         ((Vector3 *)&stack0xffffffd8,(MethodInfo *)0x0);
-    uVar6 = pVVar5->x;
-    pVVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                        ((Vector3 *)&fStack_7,(MethodInfo *)0x0);
-    uVar8 = pVVar5->y;
-    pSStack_9 = (String *)uVar8;
-    fStack_7 = (float)uVar6;
-    if (pCVar4 != (Camera *)0x0) {
-      pos.y = (float)uVar8;
-      pos.x = (float)uVar6;
+    uVar5 = pVVar3->y;
+    if (pCVar1 != (Camera *)0x0) {
+      pos.y = (float)uVar5;
+      pos.x = (float)uVar4;
       pos.z = 0.0;
-      pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                          ((Ray *)&stack0xffffffc0,pCVar4,pos,(MethodInfo *)0x0);
-      pDVar11 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                 *)(pRVar10->m_Origin).x;
-      pSVar12 = (String *)(pRVar10->m_Origin).y;
-      pSVar13 = (String *)(pRVar10->m_Origin).z;
-      pOVar14 = (Object *)(pRVar10->m_Direction).x;
-      uVar15._0_4_ = (String *)(pRVar10->m_Direction).y;
-      uVar15._4_4_ = (String *)(pRVar10->m_Direction).z;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      this = (DrawPlaneControllerUUI *)0x0;
-      if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      this_00 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
-                          ((MethodInfo *)0x0);
-      if (this_00 != (EventSystem *)0x0) {
-        bVar3 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-                EventSystem_IsPointerOverGameObject(this_00,(MethodInfo *)0x0);
-        if (((bVar3 == 0) && (*(char *)&pDVar2[1].fields.worldEditorDrawPlane != '\0')) &&
-           (ray.m_Origin.y = (float)pSVar12, ray.m_Origin.x = (float)pDVar11,
-           ray.m_Origin.z = (float)pSVar13, ray.m_Direction.x = (float)pOVar14,
-           ray.m_Direction.y = (float)(String *)uVar15, ray.m_Direction.z = (float)SUB84(uVar15,4),
-           bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                             ((Plane *)&pDVar2[2].fields.inputEnabled,ray,(float *)&this,
-                              (MethodInfo *)0x0), bVar3 != 0)) {
-          pRVar16 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                              ((Regex_CachedCodeEntryKey *)&stack0xffffffd8,
-                               (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)&stack0xffffffa8,(MethodInfo *)0x0);
-          uVar17 = pRVar16->_options;
-          uVar18 = pRVar16->_cultureKey;
-          pSVar12 = pRVar16->_pattern;
-          mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-          RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-          Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                    ((Regex_CachedCodeEntryKey *)&fStack_7,
-                     (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)&stack0xffffffa8,(MethodInfo *)0x0);
-          puVar19 = (undefined8 *)func_?();
-          fVar20 = *(float *)(puVar19 + 1);
-          fStack_7 = (float)*puVar19;
-          pSStack_9 = (String *)((ulonglong)*puVar19 >> 0x20);
-          hit->x = (float)uVar17 + fStack_7 * (float)this;
-          hit->y = (float)uVar18 + (float)pSStack_9 * (float)this;
-          hit->z = (float)pSVar12 + fVar20 * (float)this;
-          return 1;
-        }
-        return 0;
-      }
+      pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+                          ((Ray *)&stack0xffffffcc,pCVar1,pos,(MethodInfo *)0x0);
+      uVar7 = (pRVar6->m_Direction).z;
+      uVar8 = (pRVar6->m_Origin).x;
+      uVar9 = (pRVar6->m_Origin).y;
+      uVar10 = (pRVar6->m_Origin).z;
+      ray.m_Origin.z = (float)uVar10;
+      ray.m_Origin.y = (float)uVar9;
+      ray.m_Origin.x = (float)uVar8;
+      uVar11 = (pRVar6->m_Direction).x;
+      uVar12 = (pRVar6->m_Direction).y;
+      ray.m_Direction.y = (float)uVar12;
+      ray.m_Direction.x = (float)uVar11;
+      ray.m_Direction.z = (float)uVar7;
+      bVar2 = WorldEditorDrawPlane::WorldEditorDrawPlane_RayCast
+                         (this_00,ray,hit,0,(MethodInfo *)0x0);
+      return bVar2;
     }
   }
   func_?();
   func_?();
-  pcVar21 = (code *)swi(3);
-  bVar3 = (*pcVar21)();
-  return bVar3;
+  pcVar13 = (code *)swi(3);
+  bVar2 = (*pcVar13)();
+  return bVar2;
 }
 
 

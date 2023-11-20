@@ -10,7 +10,6 @@ MVLocalObjectController_AvatarLocalObjectPlaceHolder_FixedUpdate
 {
   uVar1 = func_?(&TypeInfo__System__NotImplementedException);
   this_00 = (NotImplementedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
@@ -34,7 +33,6 @@ MVLocalObjectController_AvatarLocalObjectPlaceHolder_Update
 {
   uVar1 = func_?(&TypeInfo__System__NotImplementedException);
   this_00 = (NotImplementedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

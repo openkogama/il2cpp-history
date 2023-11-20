@@ -31,7 +31,7 @@ int32_t Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Day_Night_cycle_color_preset_ind,(MethodInfo *)0x0);
     }
     return iVar6;
@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
       (pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                           (pDVar2,i,(MethodInfo *)0x0),
       pDVar5 != (DayNightCycleColorPresets_Preset *)0x0)) && (pTVar4 != (Text *)0x0)) {
-    (*(pTVar4->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar4->klass->vtable).set_text.method)();
     pAVar6 = (this->fields).onChange;
     if (pAVar6 != (Action_1_Int32_ *)0x0) {
       (*(pAVar6->fields)._._.invoke_impl)();
@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
         (pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                             (pDVar1,i,(MethodInfo *)0x0),
         pDVar5 != (DayNightCycleColorPresets_Preset *)0x0)) && (pTVar4 != (Text *)0x0)) {
-      (*(pTVar4->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar4->klass->vtable).set_text.method)();
       pAVar6 = (this->fields).onChange;
       if (pAVar6 != (Action_1_Int32_ *)0x0) {
         (*(pAVar6->fields)._._.invoke_impl)();
@@ -147,16 +147,18 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
     pTVar2 = (this->fields).settingNameLabel;
     (this->fields).colorPresetIndex = iVar1;
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,(attrib->fields)._.name,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,(attrib->fields)._.name,
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       this_00 = (this->fields).colorPresets;
       pTVar2 = (this->fields).presetNameLabel;
       if (this_00 != (DayNightCycleColorPresets *)0x0) {
         pDVar3 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                            (this_00,(this->fields).colorPresetIndex,(MethodInfo *)0x0);
         if ((pDVar3 != (DayNightCycleColorPresets_Preset *)0x0) && (pTVar2 != (Text *)0x0)) {
-          (*(pTVar2->klass->vtable).set_text.methodPtr)
-                    (pTVar2,(pDVar3->fields).name,(pTVar2->klass->vtable).set_text.method);
+          (*(code *)(pTVar2->klass->vtable).set_text.method)
+                    (pTVar2,(pDVar3->fields).name,
+                     (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }
@@ -185,7 +187,7 @@ void Assembly-CSharp.dll::ThemeDayNightCycleColorPresetSetter::
     pDVar2 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                        (this_00,i,(MethodInfo *)0x0);
     if ((pDVar2 != (DayNightCycleColorPresets_Preset *)0x0) && (pTVar1 != (Text *)0x0)) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar1->klass->vtable).set_text.method)();
       pAVar3 = (this->fields).onChange;
       if (pAVar3 != (Action_1_Int32_ *)0x0) {
         (*(pAVar3->fields)._._.invoke_impl)

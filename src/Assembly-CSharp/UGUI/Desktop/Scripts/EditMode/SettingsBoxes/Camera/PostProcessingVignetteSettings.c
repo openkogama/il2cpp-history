@@ -53,21 +53,21 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
-    iVar8 = Extensions::Extensions_GetValueOrDefault_1
+    IVar8 = Extensions::Extensions_GetValueOrDefault_2
                       (data,StringLiteral_ppVignInty,0,
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
-    this->intensity = iVar8;
-    iVar8 = Extensions::Extensions_GetValueOrDefault_1
+    this->intensity = IVar8;
+    IVar8 = Extensions::Extensions_GetValueOrDefault_2
                       (data,StringLiteral_ppVignSmooth,2,
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
-    this->smoothness = iVar8;
-    iVar8 = Extensions::Extensions_GetValueOrDefault_1
+    this->smoothness = IVar8;
+    IVar8 = Extensions::Extensions_GetValueOrDefault_2
                       (data,StringLiteral_ppVignRness,100,
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
-    this->roundness = iVar8;
+    this->roundness = IVar8;
     fVar9 = Extensions::Extensions_GetValueOrDefault_4
                       (data,StringLiteral_ppVignColR,0.0,
                        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_

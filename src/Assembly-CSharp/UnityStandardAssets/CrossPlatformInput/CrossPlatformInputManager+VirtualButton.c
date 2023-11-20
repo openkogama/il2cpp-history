@@ -65,12 +65,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                      );
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
               (pVVar1->fields).m_VirtualButtons;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (this_00,(Object *)key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
                         );
@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
@@ -124,7 +124,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);

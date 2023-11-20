@@ -33,19 +33,6 @@ internal class ESSelection : ESStateBase
 		public PickResult(Vector3 mousePosition, VoxelHit hit, T data);
 	}
 
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
-	{
-		// Fields
-		public string errorText;
-
-		// Constructors
-		public __c__DisplayClass14_0();
-
-		// Methods
-		internal void _Execute_b__0(IModalPopupCreator handler, BaseEventData data);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -60,6 +47,19 @@ internal class ESSelection : ESStateBase
 
 		// Methods
 		internal void _Execute_b__14_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass14_0
+	{
+		// Fields
+		public string errorText;
+
+		// Constructors
+		public __c__DisplayClass14_0();
+
+		// Methods
+		internal void _Execute_b__0(IModalPopupCreator handler, BaseEventData data);
 	}
 
 	// Constructors

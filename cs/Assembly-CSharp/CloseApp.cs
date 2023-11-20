@@ -18,19 +18,6 @@ public class CloseApp : MonoBehaviour
 	private ConfirmationPopup closeAppPopupPrefab;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass1_0
-	{
-		// Fields
-		public UnityAction<bool, ConfirmationPopup> quit;
-
-		// Constructors
-		public __c__DisplayClass1_0();
-
-		// Methods
-		internal void _Close_b__1(IModalPopupCreator x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -45,6 +32,19 @@ public class CloseApp : MonoBehaviour
 
 		// Methods
 		internal void _Close_b__1_0(bool confirmation, ConfirmationPopup popup);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass1_0
+	{
+		// Fields
+		public UnityAction<bool, ConfirmationPopup> quit;
+
+		// Constructors
+		public __c__DisplayClass1_0();
+
+		// Methods
+		internal void _Close_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

@@ -11,10 +11,10 @@ bool Assembly-CSharp.dll::JetPackCamera+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVSpawnPointBlue->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth)
-       && ((MVSpawnPointBlue__Class *)
-           (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointBlue->_1).typeHierarchyDepth - 1] ==
-           TypeInfo__MVSpawnPointBlue)) {
+    if (((TypeInfo__MVSpawnPointBlue->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+       ((MVSpawnPointBlue__Class *)
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] ==
+        TypeInfo__MVSpawnPointBlue)) {
       return wo != (MVWorldObjectClient *)0x0;
     }
     return 0;
@@ -32,17 +32,12 @@ void Assembly-CSharp.dll::JetPackCamera+<>c::JetPackCamera_c__cctor(MethodInfo *
     func_?(&TypeInfo__JetPackCamera____c);
     cRam_? = '\x01';
   }
-  value = (JetPackCamera_c *)func_?(TypeInfo__JetPackCamera____c);
-  if (value != (JetPackCamera_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__JetPackCamera____c->static_fields->__9 = value;
-    func_?(TypeInfo__JetPackCamera____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__JetPackCamera____c;
+  value = (JetPackCamera_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__JetPackCamera____c->static_fields->__9 = value;
+  func_?(TypeInfo__JetPackCamera____c->static_fields,value);
   return;
 }
 

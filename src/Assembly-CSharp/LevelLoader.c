@@ -178,109 +178,81 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader__cctor(MethodInfo *method)
     func_?(&StringLiteral_DesktopEditModeGUI);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)
+  this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>
                         );
-  if (this == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-code_?:
-    func_?();
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-  }
-  else {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Dictionary__
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if ((StringLiteral_DesktopPlayModeGUI != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral_DesktopPlayModeGUI,(pOVar2->klass->_0).element_class),
-       iVar3 == 0)) goto code_?;
-    pSVar4 = StringLiteral_DesktopPlayModeGUI;
-    if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
-    pOVar2[2].klass = (Object__Class *)StringLiteral_DesktopPlayModeGUI;
-    func_?(pOVar2 + 2,pSVar4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)0x0,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if ((StringLiteral_DesktopPlayModeGUI != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral_DesktopPlayModeGUI,(pOVar2->klass->_0).element_class),
-       iVar3 == 0)) goto code_?;
-    pSVar4 = StringLiteral_DesktopPlayModeGUI;
-    if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
-    pOVar2[2].klass = (Object__Class *)StringLiteral_DesktopPlayModeGUI;
-    func_?(pOVar2 + 2,pSVar4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)0x2,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__String,2);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if ((StringLiteral_DesktopEditModeGUI != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral_DesktopEditModeGUI,(pOVar2->klass->_0).element_class),
-       iVar3 == 0)) goto code_?;
-    pSVar4 = StringLiteral_DesktopEditModeGUI;
-    if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
-    pOVar2[2].klass = (Object__Class *)StringLiteral_DesktopEditModeGUI;
-    func_?(pOVar2 + 2,pSVar4);
-    if ((StringLiteral_DesktopPlayModeGUI != (String *)0x0) &&
-       (iVar3 = func_?(StringLiteral_DesktopPlayModeGUI,(pOVar2->klass->_0).element_class),
-       iVar3 == 0)) goto code_?;
-    pSVar4 = StringLiteral_DesktopPlayModeGUI;
-    if (pOVar2[1].monitor < (MonitorData *)0x2) goto code_?;
-    pOVar2[2].monitor = (MonitorData *)StringLiteral_DesktopPlayModeGUI;
-    func_?(&pOVar2[2].monitor,pSVar4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this,(Object *)0x3,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__String,1);
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    if ((StringLiteral_DesktopAvatarEditModeGUI == (String *)0x0) ||
-       (iVar3 = func_?(StringLiteral_DesktopAvatarEditModeGUI,
-                                (pOVar2->klass->_0).element_class), iVar3 != 0)) {
-      pSVar4 = StringLiteral_DesktopAvatarEditModeGUI;
-      if (pOVar2[1].monitor != (MonitorData *)0x0) {
-        pOVar2[2].klass = (Object__Class *)StringLiteral_DesktopAvatarEditModeGUI;
-        func_?(pOVar2 + 2,pSVar4);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this,(Object *)0x4,pOVar2,
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Dictionary__
+            );
+  pOVar1 = (Object *)func_?(TypeInfo__System__String,1);
+  pSVar2 = StringLiteral_DesktopPlayModeGUI;
+  if (pOVar1 != (Object *)0x0) {
+    if (pOVar1[1].monitor == (MonitorData *)0x0) goto code_?;
+    pOVar1[2].klass = (Object__Class *)StringLiteral_DesktopPlayModeGUI;
+    func_?(pOVar1 + 2,pSVar2);
+    if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__Add
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0,pOVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
+                );
+      pOVar1 = (Object *)func_?(TypeInfo__System__String,1);
+      pSVar2 = StringLiteral_DesktopPlayModeGUI;
+      if (pOVar1 != (Object *)0x0) {
+        if (pOVar1[1].monitor == (MonitorData *)0x0) goto code_?;
+        pOVar1[2].klass = (Object__Class *)StringLiteral_DesktopPlayModeGUI;
+        func_?(pOVar1 + 2,pSVar2);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__Add
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,pOVar1,
                    MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
                   );
-        TypeInfo__LevelLoader->static_fields->scenesForModeMap =
-             (Dictionary_2_ScenesForMode_System_String_ *)this;
-        func_?(TypeInfo__LevelLoader->static_fields,this);
-        return;
+        pOVar1 = (Object *)func_?(TypeInfo__System__String,2);
+        pSVar2 = StringLiteral_DesktopEditModeGUI;
+        if (pOVar1 != (Object *)0x0) {
+          if (pOVar1[1].monitor == (MonitorData *)0x0) goto code_?;
+          pOVar1[2].klass = (Object__Class *)StringLiteral_DesktopEditModeGUI;
+          func_?(pOVar1 + 2,pSVar2);
+          pSVar2 = StringLiteral_DesktopPlayModeGUI;
+          if (pOVar1[1].monitor < (MonitorData *)0x2) goto code_?;
+          pOVar1[2].monitor = (MonitorData *)StringLiteral_DesktopPlayModeGUI;
+          func_?(&pOVar1[2].monitor,pSVar2);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__Add
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this,3,pOVar1,
+                     MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
+                    );
+          pOVar1 = (Object *)func_?(TypeInfo__System__String,1);
+          pSVar2 = StringLiteral_DesktopAvatarEditModeGUI;
+          if (pOVar1 != (Object *)0x0) {
+            if (pOVar1[1].monitor != (MonitorData *)0x0) {
+              pOVar1[2].klass = (Object__Class *)StringLiteral_DesktopAvatarEditModeGUI;
+              func_?(pOVar1 + 2,pSVar2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+              Object]::Dictionary_2_System_Int32Enum_System_Object__Add
+                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this,4,pOVar1,
+                         MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__Add_ScenesForMode__System__String____
+                        );
+              TypeInfo__LevelLoader->static_fields->scenesForModeMap =
+                   (Dictionary_2_ScenesForMode_System_String_ *)this;
+              func_?(TypeInfo__LevelLoader->static_fields,this);
+              return;
+            }
+            goto code_?;
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
+  func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -301,20 +273,15 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader__ctor(LevelLoader *this,Metho
             func_?(
                            TypeInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>
                            );
-  if (this_00 != (List_1_UnityEngine_AsyncOperation_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__List__);
-    (this->fields).pendingScenes = this_00;
-    func_?(&(this->fields).pendingScenes,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__List__);
+  (this->fields).pendingScenes = this_00;
+  func_?(&(this->fields).pendingScenes,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

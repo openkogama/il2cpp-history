@@ -14,202 +14,143 @@ void Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perlin
   }
   pIVar1 = (Int32__Array__Array *)func_?(TypeInfo__System__Int32,0xc);
   pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-  if (pIVar2 == (Int32__Array *)0x0) {
-code_?:
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-  }
-  else {
+  if (pIVar2 != (Int32__Array *)0x0) {
     if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 2))
     goto code_?;
     pIVar2->vector[1] = 1;
-    if (pIVar1 == (Int32__Array__Array *)0x0) goto code_?;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length == 0) goto code_?;
-    pIVar1->vector[0] = pIVar2;
-    func_?(pIVar1->vector,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 2))
-    goto code_?;
-    pIVar2->vector[1] = 1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 2) goto code_?;
-    pIVar1->vector[1] = pIVar2;
-    func_?(pIVar1->vector + 1,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 2))
-    goto code_?;
-    pIVar2->vector[1] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 3) goto code_?;
-    pIVar1->vector[2] = pIVar2;
-    func_?(pIVar1->vector + 2,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 2))
-    goto code_?;
-    pIVar2->vector[1] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 4) goto code_?;
-    pIVar1->vector[3] = pIVar2;
-    func_?(pIVar1->vector + 3,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = 1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 5) goto code_?;
-    pIVar1->vector[4] = pIVar2;
-    func_?(pIVar1->vector + 4,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = 1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 6) goto code_?;
-    pIVar1->vector[5] = pIVar2;
-    func_?(pIVar1->vector + 5,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 7) goto code_?;
-    pIVar1->vector[6] = pIVar2;
-    func_?(pIVar1->vector + 6,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 8) goto code_?;
-    pIVar1->vector[7] = pIVar2;
-    func_?(pIVar1->vector + 7,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length < 2) || (pIVar2->vector[1] = 1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = 1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 9) goto code_?;
-    pIVar1->vector[8] = pIVar2;
-    func_?(pIVar1->vector + 8,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length < 2) || (pIVar2->vector[1] = -1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = 1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 10) goto code_?;
-    pIVar1->vector[9] = pIVar2;
-    func_?(pIVar1->vector + 9,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length < 2) || (pIVar2->vector[1] = 1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
-    if (pIVar1->max_length < 0xb) goto code_?;
-    pIVar1->vector[10] = pIVar2;
-    func_?(pIVar1->vector + 10,pIVar2);
-    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    if (pIVar2 == (Int32__Array *)0x0) goto code_?;
-    if ((pIVar2->max_length < 2) || (pIVar2->vector[1] = -1, pIVar2->max_length < 3))
-    goto code_?;
-    pIVar2->vector[2] = -1;
-    iVar4 = func_?(pIVar2,(pIVar1->klass->_0).element_class);
-    if (iVar4 != 0) {
-      if (pIVar1->max_length < 0xc) goto code_?;
-      pIVar1->vector[0xb] = pIVar2;
-      func_?(pIVar1->vector + 0xb,pIVar2);
-      TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3 = pIVar1;
-      func_?(TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields,pIVar1);
-      pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x100);
-      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-      RuntimeHelpers_InitializeArray_1
-                ((Array *)pIVar2,
-                 _EA3CF748EF2EED46C8D386654894EFB4A0ACA29E79789C2D3A4A27B57352CECD_Field,
-                 (MethodInfo *)0x0);
-      TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->p = pIVar2;
-      func_?(&TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->p,pIVar2);
-      pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x200);
-      TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm = pIVar2;
-      func_?(&TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm,pIVar2);
-      uVar5 = 0;
-      iVar4 = 0x10;
-      while( true ) {
-        pIVar2 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-        pIVar6 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->p;
-        if (pIVar6 == (Int32__Array *)0x0) break;
-        uVar7 = uVar5 & 0xff;
-        if (pIVar6->max_length <= uVar7) goto code_?;
-        if (pIVar2 == (Int32__Array *)0x0) break;
-        if (pIVar2->max_length <= uVar5) goto code_?;
-        uVar5 = uVar5 + 1;
-        *(int32_t *)((int)pIVar2->vector + iVar4 + -0x10) = pIVar6->vector[uVar7];
-        iVar4 = iVar4 + 4;
-        if (0x80f < iVar4) {
-          return;
+    if (pIVar1 != (Int32__Array__Array *)0x0) {
+      if (pIVar1->max_length == 0) goto code_?;
+      pIVar1->vector[0] = pIVar2;
+      func_?(pIVar1->vector,pIVar2);
+      pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+      if (pIVar2 != (Int32__Array *)0x0) {
+        if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 2)) ||
+           (pIVar2->vector[1] = 1, pIVar1->max_length < 2)) goto code_?;
+        pIVar1->vector[1] = pIVar2;
+        func_?(pIVar1->vector + 1,pIVar2);
+        pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+        if (pIVar2 != (Int32__Array *)0x0) {
+          if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 2)) ||
+             (pIVar2->vector[1] = -1, pIVar1->max_length < 3)) goto code_?;
+          pIVar1->vector[2] = pIVar2;
+          func_?(pIVar1->vector + 2,pIVar2);
+          pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+          if (pIVar2 != (Int32__Array *)0x0) {
+            if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 2)) ||
+               (pIVar2->vector[1] = -1, pIVar1->max_length < 4)) goto code_?;
+            pIVar1->vector[3] = pIVar2;
+            func_?(pIVar1->vector + 3,pIVar2);
+            pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+            if (pIVar2 != (Int32__Array *)0x0) {
+              if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 3)) ||
+                 (pIVar2->vector[2] = 1, pIVar1->max_length < 5)) goto code_?;
+              pIVar1->vector[4] = pIVar2;
+              func_?(pIVar1->vector + 4,pIVar2);
+              pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+              if (pIVar2 != (Int32__Array *)0x0) {
+                if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = -1, pIVar2->max_length < 3))
+                   || (pIVar2->vector[2] = 1, pIVar1->max_length < 6)) goto code_?;
+                pIVar1->vector[5] = pIVar2;
+                func_?(pIVar1->vector + 5,pIVar2);
+                pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                if (pIVar2 != (Int32__Array *)0x0) {
+                  if (((pIVar2->max_length == 0) || (pIVar2->vector[0] = 1, pIVar2->max_length < 3))
+                     || (pIVar2->vector[2] = -1, pIVar1->max_length < 7)) goto code_?;
+                  pIVar1->vector[6] = pIVar2;
+                  func_?(pIVar1->vector + 6,pIVar2);
+                  pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                  if (pIVar2 != (Int32__Array *)0x0) {
+                    if (((pIVar2->max_length == 0) ||
+                        (pIVar2->vector[0] = -1, pIVar2->max_length < 3)) ||
+                       (pIVar2->vector[2] = -1, pIVar1->max_length < 8)) goto code_?;
+                    pIVar1->vector[7] = pIVar2;
+                    func_?(pIVar1->vector + 7,pIVar2);
+                    pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                    if (pIVar2 != (Int32__Array *)0x0) {
+                      if (((pIVar2->max_length < 2) ||
+                          (pIVar2->vector[1] = 1, pIVar2->max_length < 3)) ||
+                         (pIVar2->vector[2] = 1, pIVar1->max_length < 9)) goto code_?;
+                      pIVar1->vector[8] = pIVar2;
+                      func_?(pIVar1->vector + 8,pIVar2);
+                      pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                      if (pIVar2 != (Int32__Array *)0x0) {
+                        if (((pIVar2->max_length < 2) ||
+                            (pIVar2->vector[1] = -1, pIVar2->max_length < 3)) ||
+                           (pIVar2->vector[2] = 1, pIVar1->max_length < 10)) goto code_?;
+                        pIVar1->vector[9] = pIVar2;
+                        func_?(pIVar1->vector + 9,pIVar2);
+                        pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                        if (pIVar2 != (Int32__Array *)0x0) {
+                          if (((pIVar2->max_length < 2) ||
+                              (pIVar2->vector[1] = 1, pIVar2->max_length < 3)) ||
+                             (pIVar2->vector[2] = -1, pIVar1->max_length < 0xb))
+                          goto code_?;
+                          pIVar1->vector[10] = pIVar2;
+                          func_?(pIVar1->vector + 10,pIVar2);
+                          pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+                          if (pIVar2 != (Int32__Array *)0x0) {
+                            if (((pIVar2->max_length < 2) ||
+                                (pIVar2->vector[1] = -1, pIVar2->max_length < 3)) ||
+                               (pIVar2->vector[2] = -1, pIVar1->max_length < 0xc))
+                            goto code_?;
+                            pIVar1->vector[0xb] = pIVar2;
+                            func_?(pIVar1->vector + 0xb,pIVar2);
+                            TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3 =
+                                 pIVar1;
+                            func_?(TypeInfo__MathFunctions__PerlinSimplexNoise->
+                                            static_fields,pIVar1);
+                            pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x100);
+                            mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+                            RuntimeHelpers_InitializeArray_1
+                                      ((Array *)pIVar2,
+                                       _EA3CF748EF2EED46C8D386654894EFB4A0ACA29E79789C2D3A4A27B57352CECD_Field
+                                       ,(MethodInfo *)0x0);
+                            TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->p = pIVar2;
+                            func_?(&TypeInfo__MathFunctions__PerlinSimplexNoise->
+                                             static_fields->p,pIVar2);
+                            pIVar2 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x200);
+                            TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm =
+                                 pIVar2;
+                            func_?(&TypeInfo__MathFunctions__PerlinSimplexNoise->
+                                             static_fields->perm,pIVar2);
+                            uVar3 = 0;
+                            iVar4 = 0x10;
+                            while( true ) {
+                              pIVar2 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->
+                                       perm;
+                              pIVar5 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->p
+                              ;
+                              if (pIVar5 == (Int32__Array *)0x0) break;
+                              uVar6 = uVar3 & 0xff;
+                              if (pIVar5->max_length <= uVar6) goto code_?;
+                              if (pIVar2 == (Int32__Array *)0x0) break;
+                              if (pIVar2->max_length <= uVar3) goto code_?;
+                              uVar3 = uVar3 + 1;
+                              *(int32_t *)((int)pIVar2->vector + iVar4 + -0x10) =
+                                   pIVar5->vector[uVar6];
+                              iVar4 = iVar4 + 4;
+                              if (0x80f < iVar4) {
+                                return;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
-      goto code_?;
     }
   }
-  uVar3 = func_?(0);
-  func_?(uVar3);
+  func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

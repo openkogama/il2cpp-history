@@ -98,48 +98,47 @@ void Assembly-CSharp.dll::PlayerList::PlayerList_Initialize
               func_?(
                              TypeInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>
                              );
-    if (this_02 != (List_1_PlayerList_PlayerElementData_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)this_02,
-                 MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__List__
-                );
-      (this->fields).playerElementList = this_02;
-      func_?(&(this->fields).playerElementList,this_02);
-      pLVar1 = (this->fields).winningConditionIcons;
-      index = 0;
-      if (pLVar1 != (List_1_PlayerList_ScoreIconDef_ *)0x0) {
-        while( true ) {
-          if ((pLVar1->fields)._size <= index) {
-            return;
-          }
-          pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).winningConditionIcons;
-          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-             || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (pLVar2,index,
-                                    MethodInfo__System__Collections__Generic__List<PlayerList::ScoreIconDef>__get_Item_int_
-                                   ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-          this_01 = *(GameObject **)((int)RVar3 + 0xc);
-          pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).winningConditionIcons;
-          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-             || ((RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (pLVar2,index,
-                                     MethodInfo__System__Collections__Generic__List<PlayerList::ScoreIconDef>__get_Item_int_
-                                    ), RVar3 == (RegexCharClass_SingleRange)0x0 ||
-                 (this_01 == (GameObject *)0x0)))) break;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,*(uint8_t *)((int)RVar3 + 8) == (uint8_t)typeToDisplay,
-                     (MethodInfo *)0x0);
-          pLVar1 = (this->fields).winningConditionIcons;
-          index = index + 1;
-          if (pLVar1 == (List_1_PlayerList_ScoreIconDef_ *)0x0) break;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+               MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__List__
+              );
+    (this->fields).playerElementList = this_02;
+    func_?(&(this->fields).playerElementList,this_02);
+    pLVar1 = (this->fields).winningConditionIcons;
+    index = 0;
+    if (pLVar1 != (List_1_PlayerList_ScoreIconDef_ *)0x0) {
+      while( true ) {
+        if ((pLVar1->fields)._size <= index) {
+          return;
         }
+        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).winningConditionIcons;
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (pLVar2,index,
+                               MethodInfo__System__Collections__Generic__List<PlayerList::ScoreIconDef>__get_Item_int_
+                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+        this_01 = *(GameObject **)((int)RVar3 + 0xc);
+        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).winningConditionIcons;
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           ((RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     RegularExpressions::RegexCharClass+SingleRange]::
+                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                               (pLVar2,index,
+                                MethodInfo__System__Collections__Generic__List<PlayerList::ScoreIconDef>__get_Item_int_
+                               ), RVar3 == (RegexCharClass_SingleRange)0x0 ||
+            (this_01 == (GameObject *)0x0)))) break;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_01,*(uint8_t *)((int)RVar3 + 8) == (uint8_t)typeToDisplay,(MethodInfo *)0x0)
+        ;
+        pLVar1 = (this->fields).winningConditionIcons;
+        index = index + 1;
+        if (pLVar1 == (List_1_PlayerList_ScoreIconDef_ *)0x0) break;
       }
     }
   }
@@ -182,27 +181,33 @@ void Assembly-CSharp.dll::PlayerList::PlayerList_SortAfterScore
               = pMVar5, pLVar4 != (List_1_PlayerList_PlayerElementData_ *)0x0) {
     if ((pLVar4->fields)._size <= iVar3) {
       if (!bVar2) {
-        pLVar4 = (pPVar1->fields).playerElementList;
-        if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
-        piVar6 = &(pLVar4->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pPVar7 = (pLVar4->fields)._items;
-        if (pPVar7 == (PlayerList_PlayerElementData__Array *)0x0) break;
-        uVar8 = (pLVar4->fields)._size;
-        if (uVar8 < pPVar7->max_length) {
-          (pLVar4->fields)._size = uVar8 + 1;
-          if (pPVar7->max_length <= uVar8) {
+        pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)
+                 (pPVar1->fields).playerElementList;
+        if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)0x0) break;
+        piVar7 = &(pLVar6->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pVVar8 = (pLVar6->fields)._items;
+        if (pVVar8 == (VisualTreeAsset_UxmlObjectEntry__Array *)0x0) break;
+        uVar9 = (pLVar6->fields)._size;
+        if (uVar9 < pVVar8->max_length) {
+          (pLVar6->fields)._size = uVar9 + 1;
+          if (pVVar8->max_length <= uVar9) {
             func_?();
             break;
           }
-          pPVar7->vector[uVar8].score = playerElementData.score;
-          pPVar7->vector[uVar8].playerElement = playerElementData.playerElement;
-          func_?(&pPVar7->vector[uVar8].playerElement,0);
+          pVVar8->vector[uVar9].parentId = playerElementData.score;
+          pVVar8->vector[uVar9].uxmlObjectAssets =
+               (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)playerElementData.playerElement;
+          func_?(&pVVar8->vector[uVar9].uxmlObjectAssets,0);
         }
         else {
-          (*(pMVar5->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                    (pLVar4,playerElementData.score,playerElementData.playerElement,
-                     pMVar5->klass->rgctx_data[0xb].rgctxDataDummy);
+          item.uxmlObjectAssets =
+               (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)playerElementData.playerElement;
+          item.parentId = playerElementData.score;
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+          VisualTreeAsset+UxmlObjectEntry]::
+          List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__AddWithResize
+                    (pLVar6,item,pMVar5->klass->rgctx_data[0xe].method);
         }
       }
       pLVar4 = (pPVar1->fields).playerElementList;
@@ -210,42 +215,48 @@ void Assembly-CSharp.dll::PlayerList::PlayerList_SortAfterScore
       if (pLVar4 != (List_1_PlayerList_PlayerElementData_ *)0x0) goto code_?;
       break;
     }
-    pLVar4 = (pPVar1->fields).playerElementList;
+    pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (pPVar1->fields).playerElementList;
     if (bVar2) {
-      if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
-      TVar9 = mscorlib.dll::System::Collections::Generic::
-               List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-               List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
-                         ((List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)pLVar4,iVar3,
+      if (pLVar10 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      break;
+      XVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+               XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+               List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                         (pLVar10,iVar3,
                           MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__get_Item_int_
                          );
-      if ((TVar9.streamedImagePrefab == (Graphic *)0x0) ||
-         (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)TVar9.streamedImagePrefab,(MethodInfo *)0x0),
-         pTVar10 == (Transform *)0x0)) break;
+      if ((XVar11.xso == (XmlSchemaObject *)0x0) ||
+         (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)XVar11.xso,(MethodInfo *)0x0),
+         pTVar12 == (Transform *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                (pTVar10,(MethodInfo *)0x0);
+                (pTVar12,(MethodInfo *)0x0);
     }
     else {
-      if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
-      TVar9 = mscorlib.dll::System::Collections::Generic::
-               List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-               List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
-                         ((List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)pLVar4,iVar3,
+      if (pLVar10 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      break;
+      XVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+               XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+               List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                         (pLVar10,iVar3,
                           MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__get_Item_int_
                          );
       this = (PlayerList *)CONCAT31(this._1_3_,(pPVar1->fields).typeToDisplay);
-      bVar11 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
-                        (playerElementData.score,TVar9.tabID,(GameStatCounterType__Enum)this,
-                         (MethodInfo *)0x0);
-      if (bVar11 != 0) {
-        pLVar4 = (pPVar1->fields).playerElementList;
-        if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
-        TVar9.streamedImagePrefab = (Graphic *)playerElementData.playerElement;
-        TVar9.tabID = playerElementData.score;
-        mscorlib.dll::System::Collections::Generic::List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-        List_1_TabMenuButtonAccessory_AccessoryTabDef__Insert
-                  ((List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)pLVar4,iVar3,TVar9,
+      bVar13 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
+                         (playerElementData.score,(int32_t)XVar11.qname,
+                          (GameStatCounterType__Enum)this,(MethodInfo *)0x0);
+      if (bVar13 != 0) {
+        pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)
+                 (pPVar1->fields).playerElementList;
+        if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)0x0) break;
+        item_00.uxmlObjectAssets =
+             (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)playerElementData.playerElement;
+        item_00.parentId = playerElementData.score;
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+        VisualTreeAsset+UxmlObjectEntry]::
+        List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__Insert
+                  (pLVar6,iVar3,item_00,
                    MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__Insert_int__PlayerList__PlayerElementData_
                   );
         bVar2 = true;
@@ -259,40 +270,40 @@ void Assembly-CSharp.dll::PlayerList::PlayerList_SortAfterScore
   }
   goto code_?;
   while( true ) {
-    TVar9 = mscorlib.dll::System::Collections::Generic::
-             List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-             List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
-                       ((List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)pLVar4,iVar3,
+    XVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                       (pLVar10,iVar3,
                         MethodInfo__System__Collections__Generic__List<PlayerList::PlayerElementData>__get_Item_int_
                        );
-    this_01 = TVar9.streamedImagePrefab;
-    if (this_01 == (Graphic *)0x0) break;
+    this_01 = XVar11.xso;
+    if (this_01 == (XmlSchemaObject *)0x0) break;
     this = (PlayerList *)0x0;
-    pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this_01,(MethodInfo *)0x0);
-    if (pTVar10 == (Transform *)0x0) break;
-    iVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
-                       (pTVar10,(MethodInfo *)0x0);
-    this = (PlayerList *)(iVar12 + 1);
-    pPVar13 = (PlayerElement *)
+    if (pTVar12 == (Transform *)0x0) break;
+    iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
+                       (pTVar12,(MethodInfo *)0x0);
+    this = (PlayerList *)(iVar14 + 1);
+    pPVar15 = (PlayerElement *)
               mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-    this_00 = (PlayerList *)(this_01->fields).m_Color.b;
+    this_00 = *(PlayerList **)&(this_01->fields).isProcessing;
     if (this_00 == (PlayerList *)0x0) break;
     playerElementData.score = 0;
     this = this_00;
-    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      ((GameObject *)this_00,(MethodInfo *)0x0);
-    if (bVar11 == 0) {
-      piVar14 = (int *)(this_01->fields).m_Color.r;
-      if (piVar14 == (int *)0x0) break;
+    bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                       ((GameObject *)this_00,(MethodInfo *)0x0);
+    if (bVar13 == 0) {
+      pXVar16 = (this_01->fields).namespaces;
+      if (pXVar16 == (XmlSerializerNamespaces *)0x0) break;
       this = (PlayerList *)&UNK_?;
-      playerElementData.score = (int32_t)piVar14;
-      playerElementData.playerElement = pPVar13;
-      (**(code **)(*piVar14 + 0x314))();
+      playerElementData.score = (int32_t)pXVar16;
+      playerElementData.playerElement = pPVar15;
+      (*(code *)pXVar16->klass[3]._1.actualSize)();
     }
-    piVar14 = (int *)(this_01->fields).m_Color.a;
-    if (piVar14 == (int *)0x0) break;
-    (**(code **)(*piVar14 + 0x314))(piVar14,pPVar13,*(undefined4 *)(*piVar14 + 0x318));
+    piVar17 = ((Object_1__Fields *)&this_01[1].klass)->m_CachedPtr;
+    if (piVar17 == (int *)0x0) break;
+    (**(code **)(*piVar17 + 0x318))(piVar17,pPVar15,*(undefined4 *)(*piVar17 + 0x31c));
     pLVar4 = (pPVar1->fields).playerElementList;
     iVar3 = iVar3 + 1;
     if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
@@ -300,13 +311,14 @@ code_?:
     if ((pLVar4->fields)._size <= iVar3) {
       return;
     }
-    pLVar4 = (pPVar1->fields).playerElementList;
-    if (pLVar4 == (List_1_PlayerList_PlayerElementData_ *)0x0) break;
+    pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (pPVar1->fields).playerElementList;
+    if (pLVar10 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) break;
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

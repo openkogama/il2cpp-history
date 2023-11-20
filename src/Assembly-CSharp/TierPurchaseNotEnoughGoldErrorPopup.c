@@ -33,19 +33,14 @@ void Assembly-CSharp.dll::TierPurchaseNotEnoughGoldErrorPopup::
     }
     object = TypeInfo__TierPurchaseNotEnoughGoldErrorPopup____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__TierPurchaseNotEnoughGoldErrorPopup____c___GetGold_b__2_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__TierPurchaseNotEnoughGoldErrorPopup____c->static_fields->__9__2_0 = callbackFunction;
-    func_?(&TypeInfo__TierPurchaseNotEnoughGoldErrorPopup____c->static_fields->__9__2_0);
+    func_?(&TypeInfo__TierPurchaseNotEnoughGoldErrorPopup____c->static_fields->__9__2_0,
+                    callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -71,8 +66,8 @@ void Assembly-CSharp.dll::TierPurchaseNotEnoughGoldErrorPopup::
   tierToPurchase = tierToPurchase & 0xff;
   pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&tierToPurchase,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();

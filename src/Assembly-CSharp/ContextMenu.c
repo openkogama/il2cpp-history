@@ -22,13 +22,11 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_AddButton
                       ((Object *)original,
                        ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
                       );
-  if ((this_01 != (Component *)0x0) && (pMVar1 = this_01[1].monitor, pMVar1 != (MonitorData *)0x0))
-  {
-    (**(code **)(*(int *)pMVar1 + 0x314))(pMVar1,buttonText,*(undefined4 *)(*(int *)pMVar1 + 0x318))
-    ;
-    if ((this_01[1].klass != (Component__Class *)0x0) &&
-       (this_00 = *(UnityEvent **)&((this_01[1].klass)->_1).interfaces_count,
-       this_00 != (UnityEvent *)0x0)) {
+  if ((this_01 != (Component *)0x0) &&
+     (piVar1 = this_01[1].fields._.m_CachedPtr, piVar1 != (int *)0x0)) {
+    (**(code **)(*piVar1 + 0x318))(piVar1,buttonText,*(undefined4 *)(*piVar1 + 0x31c));
+    if ((this_01[1].monitor != (MonitorData *)0x0) &&
+       (this_00 = *(UnityEvent **)(this_01[1].monitor + 0xb4), this_00 != (UnityEvent *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                 (this_00,onClickCallback,(MethodInfo *)0x0);
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -71,10 +69,9 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_AddLockedButton
                       ((Object *)original,
                        ContextMenuButton_MethodInfo__UnityEngine__Object__Instantiate<ContextMenuButton>_ContextMenuButton_
                       );
-  if ((this_00 != (Component *)0x0) && (pMVar1 = this_00[1].monitor, pMVar1 != (MonitorData *)0x0))
-  {
-    (**(code **)(*(int *)pMVar1 + 0x314))(pMVar1,buttonText,*(undefined4 *)(*(int *)pMVar1 + 0x318))
-    ;
+  if ((this_00 != (Component *)0x0) &&
+     (piVar1 = this_00[1].fields._.m_CachedPtr, piVar1 != (int *)0x0)) {
+    (**(code **)(*piVar1 + 0x318))(piVar1,buttonText,*(undefined4 *)(*piVar1 + 0x31c));
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         (this_00,(MethodInfo *)0x0);
     parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -110,22 +107,20 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Initialize
   this_01 = (UnityAction_2_System_Object_System_Object_ *)
             func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
   ;
-  if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
-               ,(MethodInfo *)0x0);
-    if (this_00 != (MVWorldObjectClientManager *)0x0) {
-      MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
-                (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
-                 (MethodInfo *)0x0);
-      (this->fields).worldPosition.x = worldPosition.x;
-      (this->fields).worldPosition.y = worldPosition.y;
-      (this->fields).worldPosition.z = worldPosition.z;
-      ContextMenu_SetToScreenPoint(this,(MethodInfo *)0x0);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_,
+             (MethodInfo *)0x0);
+  if (this_00 != (MVWorldObjectClientManager *)0x0) {
+    MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
+              (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
+               (MethodInfo *)0x0);
+    (this->fields).worldPosition.x = worldPosition.x;
+    (this->fields).worldPosition.y = worldPosition.y;
+    (this->fields).worldPosition.z = worldPosition.z;
+    ContextMenu_SetToScreenPoint(this,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -171,7 +166,6 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_LateUpdate(ContextMenu *this,
     this_00 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
                         ((MethodInfo *)0x0);
     if (this_00 == (EventSystem *)0x0) {
-code_?:
       uVar2 = func_?(&stack0xfffffffc);
       func_?(uVar2);
       pcVar3 = (code *)swi(3);
@@ -201,8 +195,6 @@ code_?:
         }
         object = TypeInfo__ContextMenu____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -239,28 +231,28 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_OnDestroy(ContextMenu *this,M
                    );
     cRam_? = '\x01';
   }
-  if ((this->fields).linkMenu != 0) {
-    return;
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  woID = (this->fields).woID;
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
-            func_?(TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>)
-  ;
-  if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-     (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
-                 ,(MethodInfo *)0x0), this_00 != (MVWorldObjectClientManager *)0x0)) {
+  if ((this->fields).linkMenu == 0) {
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    woID = (this->fields).woID;
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+              func_?(
+                             TypeInfo__System__Action<System::Object,_WorldObjectDestroyedEventArgs>
+                             );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__ContextMenu__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+               ,(MethodInfo *)0x0);
+    if (this_00 == (MVWorldObjectClientManager *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
     MVWorldObjectClientManager::MVWorldObjectClientManager_UnsubscribeWODestroyedEvent
               (this_00,woID,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)this_01,
                (MethodInfo *)0x0);
-    return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -300,12 +292,6 @@ void Assembly-CSharp.dll::ContextMenu::ContextMenu_Pop(ContextMenu *this,MethodI
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,

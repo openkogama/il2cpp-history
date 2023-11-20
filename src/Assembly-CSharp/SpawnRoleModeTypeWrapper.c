@@ -9,14 +9,14 @@ bool Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsI
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (SpawnRoleVariable_1_System_Object_ *)(this->fields).spawnRoleType;
-  if (this_00 != (SpawnRoleVariable_1_System_Object_ *)0x0) {
-    pOVar1 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-             SpawnRoleVariable`1[System::Object]::SpawnRoleVariable_1_System_Object__get_Value
+  this_00 = (WebCompletionSource_1_System_Object_ *)(this->fields).spawnRoleType;
+  if (this_00 != (WebCompletionSource_1_System_Object_ *)0x0) {
+    pTVar1 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+             WebCompletionSource_1_System_Object__get_Task
                        (this_00,
                         MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                        );
-    return 0 < (int)(t & (uint)pOVar1);
+    return 0 < (int)(t & (uint)pTVar1);
   }
   uVar2 = func_?(&puStack_3);
   func_?(uVar2);
@@ -45,29 +45,28 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper__ct
                    );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).spawnRoleType = spawnRoleType;
   func_?(&this->fields,spawnRoleType);
-  value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
+  value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
           func_?(
                          TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
                          );
-  if (value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-               MethodInfo__SpawnRoleModeTypeWrapper__OnChangeInternal_MV__Common__SpawnRoleModeType_
-               ,(MethodInfo *)0x0);
-    if (spawnRoleType != (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) {
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[UnityEngine::Vector3]::
-      SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                ((SpawnRoleVariable_1_UnityEngine_Vector3_ *)spawnRoleType,value,
-                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                );
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+             MethodInfo__SpawnRoleModeTypeWrapper__OnChangeInternal_MV__Common__SpawnRoleModeType_,
+             (MethodInfo *)0x0);
+  if (spawnRoleType != (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) {
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
+              ((SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+               spawnRoleType,value,
+               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+              );
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

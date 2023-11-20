@@ -31,47 +31,54 @@ bool Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Equip
     }
     pMVar1 = (this->fields).interactableLocal;
     if (pMVar1 != (MVInteractableBase *)0x0) {
-      (*(pMVar1->klass->vtable).__unknown.methodPtr)
-                (pMVar1,0xff800000,0,0,(pMVar1->klass->vtable).__unknown.method);
+      (*(code *)(pMVar1->klass->vtable).__unknown.method)
+                (pMVar1,0xff800000,0,0,(pMVar1->klass->vtable).__unknown_1.methodPtr);
       return 1;
     }
   }
   else {
-    this_01 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      equipType = type;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&equipType);
+    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_01,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    equipType = type;
+    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&equipType);
+    if (this_01 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)StringLiteral_type,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)StringLiteral_type,
+                 pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       iStack_3 = variantID;
       pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)StringLiteral_variantId,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                 (Object *)StringLiteral_variantId,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       uStack_4 = 4;
       pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&uStack_4);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_01,(Object *)StringLiteral_updateItemState,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                 (Object *)StringLiteral_updateItemState,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       if (itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (this_01,(Object *)StringLiteral_itemData,(Object *)itemData,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                   (Object *)StringLiteral_itemData,(Object *)itemData,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
       }
@@ -114,11 +121,11 @@ void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Holster
               MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
     if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth) &&
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
          ((Dictionary_2_System_Object_System_Object___Class *)
           (this_00->klass->_1).typeHierarchy
           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] ==
+           naturalAligment - 1] ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
         this = (VehicleEquipable *)0x1;
         value = (Object *)func_?(TypeInfo__System__Int32,&this);
@@ -143,21 +150,6 @@ code_?:
 }
 
 
-/* Void Init(MVInteractableBase, MVRuntimeDataVariable) */
-
-void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Init
-               (VehicleEquipable *this,MVInteractableBase *interactableLocal,
-               MVRuntimeDataVariable *currentItem,MethodInfo *method)
-
-{
-  (this->fields).interactableLocal = interactableLocal;
-  func_?(&(this->fields).interactableLocal,interactableLocal);
-  (this->fields).currentItem = currentItem;
-  func_?(&(this->fields).currentItem,currentItem);
-  return;
-}
-
-
 /* Void Unequip() */
 
 void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Unequip
@@ -174,21 +166,20 @@ void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Unequip
     cRam_? = '\x01';
   }
   this_00 = (this->fields).currentItem;
-  this_01 = (ParameterOverride_1_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              (this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    if (this_00 != (MVRuntimeDataVariable *)0x0) {
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (this_00,(Object *)this_01,(MethodInfo *)0x0);
-      return;
-    }
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if (this_00 != (MVRuntimeDataVariable *)0x0) {
+    MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+              (this_00,(Object *)this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -221,11 +212,11 @@ void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Unholster
               MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
     if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth) &&
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
          ((Dictionary_2_System_Object_System_Object___Class *)
           (this_00->klass->_1).typeHierarchy
           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] ==
+           naturalAligment - 1] ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
         this = (VehicleEquipable *)0x2;
         value = (Object *)func_?(TypeInfo__System__Int32,&this);

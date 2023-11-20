@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::Boost::Boost__ctor
                String *title,bool allowedForGame,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Type_k__BackingField = type;
   (this->fields)._BoostKey_k__BackingField = boostKey;
@@ -67,7 +67,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
       pGVar1 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
                          (this_01,(MethodInfo *)0x0);
       if (pGVar1 != (GameBoosterSettingsManager *)0x0) {
-        this_02 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+        this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
                   GameBoosterSettings::GameBoosterSettingsManager::
                   GameBoosterSettingsManager_get_ActiveSettingsList(pGVar1,(MethodInfo *)0x0);
@@ -78,12 +78,10 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
                        ::GameBoosterSettings::GameBoosterSettingsManager::
                        GameBoosterSettingsManager_get_InactiveGameBoosterSettingsList
                                  (pGVar1,(MethodInfo *)0x0);
-          if (this_02 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-            UnitySynchronizationContext+WorkRequest]::
-            List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__AddRange
-                      (this_02,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *
-                               )collection,
+          if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__AddRange
+                      ((List_1_System_Object_ *)this_02,(IEnumerable_1_System_Object_ *)collection,
                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
                       );
             iVar2 = 0;
@@ -96,8 +94,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
               RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                       RegularExpressions::RegexCharClass+SingleRange]::
                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                  *)this_02,iVar2,
+                                (this_02,iVar2,
                                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                 );
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
@@ -109,8 +106,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
             RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this_02,iVar2,
+                              (this_02,iVar2,
                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                               );
             if (RVar4 != (RegexCharClass_SingleRange)0x0) {

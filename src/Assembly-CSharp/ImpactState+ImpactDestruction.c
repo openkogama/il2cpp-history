@@ -102,7 +102,7 @@ void Assembly-CSharp.dll::ImpactState+ImpactDestruction::
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&LStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__Dispose__
@@ -186,22 +186,19 @@ void Assembly-CSharp.dll::ImpactState+ImpactDestruction::
               (this_01,(MVControllerColliderHit *)&stack0xffffff6c,moveHits,(MethodInfo *)0x0);
     this_02 = (ExplosionEvent *)
               func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-    if (this_02 != (ExplosionEvent *)0x0) {
-      worldPosition.z = VStack_7.z;
-      worldPosition._0_8_ = VStack_7._0_8_;
-      normal.z = aVStack_8[0].z;
-      normal._0_8_ = aVStack_8[0]._0_8_;
-      MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2
-                (this_02,(RuntimeEventType__Enum)this,worldPosition,normal,(MethodInfo *)0x0);
-      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar9 != (MVNetworkGame *)0x0) &&
-          (pWVar10 = (pMVar9->fields).worldNetwork, pWVar10 != (WorldNetwork *)0x0)) &&
-         (this_00 = (RuntimeEventManager *)(pWVar10->fields)._.runtimeEventManagerNetwork,
-         this_00 != (RuntimeEventManager *)0x0)) {
-        RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent(this_00,this_02,(MethodInfo *)0x0)
-        ;
-        return;
-      }
+    worldPosition.z = VStack_7.z;
+    worldPosition._0_8_ = VStack_7._0_8_;
+    normal.z = aVStack_8[0].z;
+    normal._0_8_ = aVStack_8[0]._0_8_;
+    MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_1
+              (this_02,(RuntimeEventType__Enum)this,worldPosition,normal,(MethodInfo *)0x0);
+    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar9 != (MVNetworkGame *)0x0) &&
+        (pWVar10 = (pMVar9->fields).worldNetwork, pWVar10 != (WorldNetwork *)0x0)) &&
+       (this_00 = (RuntimeEventManager *)(pWVar10->fields)._.runtimeEventManagerNetwork,
+       this_00 != (RuntimeEventManager *)0x0)) {
+      RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent(this_00,this_02,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:
@@ -283,6 +280,7 @@ void Assembly-CSharp.dll::ImpactState+ImpactDestruction::ImpactState_ImpactDestr
                MethodInfo *method)
 
 {
+  pRVar1 = explosionEvents;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
     func_?(&TypeInfo__ImpactState__ImpactDamageRuntimeEventType);
@@ -300,72 +298,65 @@ void Assembly-CSharp.dll::ImpactState+ImpactDestruction::ImpactState_ImpactDestr
                    );
     cRam_? = '\x01';
   }
-  this_01 = (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>
-                           );
-  if (this_01 != (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_01,
-               MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__List__
-              );
-    (this->fields).impactDamageRuntimeEventTypes = this_01;
-    func_?(&this->fields,this_01);
-    (this->fields).velChangeToDamageConstant = 1.5;
-    value = (MethodInfo *)this;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_1);
-    uVar2 = 0;
-    if (explosionEvents != (RuntimeEventType__Enum__Array *)0x0) {
-      for (; (int)uVar2 < (int)explosionEvents->max_length; uVar2 = uVar2 + 1) {
-        if (explosionEvents->max_length <= uVar2) goto code_?;
-        RStack_3 = CONCAT31(RStack_3._1_3_,*(undefined1 *)((int)explosionEvents->vector + uVar2));
-        method_00 = value;
-        if ((TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-          method_00 = value;
-        }
-        pEVar4 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
-                 ExplosionEvent_GetExplosionValuesStruct(&EStack_5,RStack_3,(MethodInfo *)0x0);
-        uStack_6._0_4_ = pEVar4->radius;
-        uStack_6._4_4_ = (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)pEVar4->centerDamage;
-        pLStack_7 = (this->fields).impactDamageRuntimeEventTypes;
-        value = (MethodInfo *)func_?(TypeInfo__ImpactState__ImpactDamageRuntimeEventType);
-        if (value == (MethodInfo *)0x0) goto code_?;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-        *(undefined1 *)&value->name = (undefined1)RStack_3;
-        ((ImpactState_ImpactDestruction__Fields *)&value->invoker_method)->
-        impactDamageRuntimeEventTypes = uStack_6._4_4_;
-        if (pLStack_7 == (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)0x0)
-        goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLStack_7,(Object *)value,
-                   MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__Add_ImpactState__ImpactDamageRuntimeEventType_
-                  );
+  method_00 = (MethodInfo *)
+              func_?(
+                             TypeInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>
+                             );
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method_00,
+             MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__List__
+            );
+  method_01 = (MethodInfo *)&this->fields;
+  (this->fields).impactDamageRuntimeEventTypes =
+       (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)method_00;
+  func_?();
+  (this->fields).velChangeToDamageConstant = 1.5;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_01);
+  uVar2 = 0;
+  if (explosionEvents != (RuntimeEventType__Enum__Array *)0x0) {
+    for (; (int)uVar2 < (int)pRVar1->max_length; uVar2 = uVar2 + 1) {
+      if (pRVar1->max_length <= uVar2) goto code_?;
+      uVar3 = *(undefined1 *)((int)pRVar1->vector + uVar2);
+      explosionEvents = (RuntimeEventType__Enum__Array *)CONCAT31(explosionEvents._1_3_,uVar3);
+      if ((TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).cctor_finished_or_no_cctor
+          == 0) {
+        func_?();
       }
-      this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                (this->fields).impactDamageRuntimeEventTypes;
-      if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-        UnitySynchronizationContext+WorkRequest]::
-        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Sort
-                  (this_00,
-                   MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__Sort__
-                  );
-        return;
-      }
+      pEVar4 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
+               ExplosionEvent_GetExplosionValuesStruct
+                         ((ExplosionEvent_ExplosionValues *)&stack0xffffffdc,
+                          (RuntimeEventType__Enum)explosionEvents,(MethodInfo *)0x0);
+      uVar5 = pEVar4->centerDamage;
+      pLVar6 = (this->fields).impactDamageRuntimeEventTypes;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,method_00);
+      value[1].klass = (Object__Class *)uVar5;
+      *(undefined1 *)&value[1].monitor = uVar3;
+      if (pLVar6 == (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)pLVar6,value,
+                 MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__Add_ImpactState__ImpactDamageRuntimeEventType_
+                );
+    }
+    pLVar6 = (this->fields).impactDamageRuntimeEventTypes;
+    if (pLVar6 != (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Sort
+                ((List_1_System_Object_ *)pLVar6,
+                 MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__Sort__
+                );
+      return;
     }
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

@@ -39,27 +39,24 @@ Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_GetSettingsUIOb
                        ThemeAttributes__IntAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::IntAttribute::Setter>_ThemeAttributes__IntAttribute__Setter_
                       );
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
-  if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_01,(Object *)this,(this->klass->vtable).OnSettingsChanged.method,
-               (MethodInfo *)0x0);
-    if (this_00 != (Component *)0x0) {
-      (*(code *)this_00->klass[1]._0.image)(this_00,this);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         (this_00,(MethodInfo *)0x0);
-      pTVar2 = (Transform *)0x0;
-      if (pTVar1 != (Transform *)0x0) {
-        if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-          pTVar2 = pTVar1;
-        }
-        if (pTVar2 == (Transform *)0x0) {
-          func_?();
-          goto code_?;
-        }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+  if (this_00 != (Component *)0x0) {
+    (*this_00->klass[1]._0.gc_desc)(this_00,this);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       (this_00,(MethodInfo *)0x0);
+    pTVar2 = (Transform *)0x0;
+    if (pTVar1 != (Transform *)0x0) {
+      if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+        pTVar2 = pTVar1;
       }
-      return (RectTransform *)pTVar2;
+      if (pTVar2 == (Transform *)0x0) {
+        func_?();
+        goto code_?;
+      }
     }
+    return (RectTransform *)pTVar2;
   }
 code_?:
   func_?();
@@ -121,8 +118,8 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute_OnSettings
   key = (this->fields)._._._._Key_k__BackingField;
   (this->fields)._._.value = value;
   value_00 = (Object *)
-             (*(this->klass->vtable).get_Data.methodPtr)(this,(this->klass->vtable).get_Data.method)
-  ;
+             (*(code *)(this->klass->vtable).get_Data.method)
+                       (this,(this->klass->vtable).GetSettingsUIObject.methodPtr);
   pSVar2 = (this->fields)._._._.themeSettings;
   if (pSVar2 != (SettingsWrapper *)0x0) {
     if (cRam_? == '\0') {
@@ -164,9 +161,8 @@ void Assembly-CSharp.dll::ThemeAttributes::IntAttribute::IntAttribute__ctor
   }
   (this->fields).min = -0x80000000;
   (this->fields).max = 0x7fffffff;
-  StreamedAssetToCallback`2[System::Object,System::Object]::
-  StreamedAssetToCallback_2_System_Object_System_Object___ctor
-            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+  NamedThemeAttribute`1[System::Single]::NamedThemeAttribute_1_System_Single___ctor
+            ((NamedThemeAttribute_1_System_Single_ *)this,
              MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__NamedThemeAttribute__);
   return;
 }

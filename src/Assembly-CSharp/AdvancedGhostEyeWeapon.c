@@ -28,24 +28,24 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  HStack_6._set = (HashSet_1_System_Int32_ *)0x0;
+  HStack_6._set = (HashSet_1_System_UInt32_ *)0x0;
   HStack_6._index = 0;
   HStack_6._version = 0;
   HStack_6._current = 0;
   pTVar7 = (this->fields).timeoutMap;
   if (pTVar7 != (TimeoutMap *)0x0) {
     TimeoutMap::TimeoutMap_Update(pTVar7,(MethodInfo *)0x0);
-    this_00 = (HashSet_1_System_Object_ *)(this->fields)._.attackTargets;
-    if (this_00 != (HashSet_1_System_Object_ *)0x0) {
-      pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-               HashSet_1_System_Object__GetEnumerator
-                         ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffff68,this_00,
+    this_00 = (HashSet_1_System_UInt32_ *)(this->fields)._.attackTargets;
+    if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
+      pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+               HashSet_1_System_UInt32__GetEnumerator
+                         ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffff68,this_00,
                           MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
       uStack_9 = 0;
-      HStack_6._set = (HashSet_1_System_Int32_ *)pHVar8->_set;
+      HStack_6._set = pHVar8->_set;
       HStack_6._index = pHVar8->_index;
       HStack_6._version = pHVar8->_version;
-      HStack_6._current = (int32_t)pHVar8->_current;
+      HStack_6._current = pHVar8->_current;
       uStack_1 = 1;
       pHStack_10 = &HStack_6;
       while( true ) {
@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
           do {
             do {
               bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System
-                      ::Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                      ::UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
                                 (&HStack_6,
                                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                                 );
@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
               if (bVar11 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           ((Object *)&HStack_6,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
@@ -156,31 +156,23 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon__ctor
   }
   (this->fields).impulseStrength = 2000.0;
   this_00 = (TimeoutMap *)func_?(TypeInfo__TimeoutMap);
-  if (this_00 != (TimeoutMap *)0x0) {
-    TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
-    (this->fields).timeoutMap = this_00;
-    func_?(&(this->fields).timeoutMap,this_00);
-    if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-      cRam_? = '\x01';
-    }
-    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-              func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      (this->fields)._.attackTargets = (HashSet_1_System_Int32_ *)this_01;
-      func_?(&(this->fields)._.attackTargets,this_01);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
+  TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
+  (this->fields).timeoutMap = this_00;
+  func_?(&(this->fields).timeoutMap,this_00);
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_01 = (HashSet_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  (this->fields)._.attackTargets = this_01;
+  func_?(&(this->fields)._.attackTargets,this_01);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

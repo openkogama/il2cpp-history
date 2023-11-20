@@ -17,8 +17,7 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_Delete
   if (pMVar3 == (MVWorldObject *)0x0) {
     return 0;
   }
-  bVar2 = (**(code **)&pMVar3->klass[2]._0.byval_arg.attrs)
-                    (pMVar3,worldObjectClientManager,errorText);
+  bVar2 = (*(code *)pMVar3->klass[2]._0.element_class)(pMVar3,worldObjectClientManager,errorText);
   return bVar2;
 }
 
@@ -52,7 +51,6 @@ code_?:
       pUVar4 = (this->fields).useInteractor;
       pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (pUVar5 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 (pUVar5,(Object *)pUVar4,
@@ -67,7 +65,6 @@ code_?:
       pUVar4 = (this->fields).useInteractor;
       pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (pUVar5 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 (pUVar5,(Object *)pUVar4,
@@ -96,7 +93,6 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     func_?(&TypeInfo__MVAvatarLocal);
@@ -104,124 +100,124 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
                     TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_actor_ignore_list_should_use_ids);
-    func_?(&StringLiteral_DoTeleport2);
-    func_?(&StringLiteral_DoTeleport);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if ((this->fields).target == (MVTeleporter *)0x0) {
+    return 0;
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-            ((Object *)StringLiteral_DoTeleport,(MethodInfo *)0x0);
-  if ((this->fields).target != (MVTeleporter *)0x0) {
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) {
-code_?:
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
+  this_02 = (MVAvatarLocal *)
+            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                      (this_01,instigatorWOID,(MethodInfo *)0x0);
+  if (this_02 == (MVAvatarLocal *)0x0) {
+    return 0;
+  }
+  if ((this_02->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
+    return 0;
+  }
+  if ((MVAvatarLocal__Class *)
+      (this_02->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+      TypeInfo__MVAvatarLocal) {
+    return 0;
+  }
+  pMVar1 = TypeInfo__MVAvatarLocal;
+  if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this_02->klass->_1).naturalAligment) &&
+     ((MVAvatarLocal__Class *)
+      (this_02->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+      TypeInfo__MVAvatarLocal)) {
+    bVar2 = MVAvatarLocal::MVAvatarLocal_get_IsEnteringVehicle(this_02,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      return 0;
+    }
+    bVar2 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this_02,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_02,0,(MethodInfo *)0x0);
+    }
+    bVar2 = MVAvatarLocal::MVAvatarLocal_IsSpawnRoleActive(this_02,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      return 0;
+    }
+    pLVar3 = (this->fields).avatarIgnoreList;
+    if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
+    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+             List_1_System_Int32__Contains
+                       (pLVar3,(this_02->fields)._._._._.id,
+                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    if (bVar2 != 0) {
+      return 1;
+    }
+    this_00 = (this->fields)._._.transform;
+    if (this_00 == (Transform *)0x0) goto code_?;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
+    original = (this->fields).teleportAvatarPrefab;
+    OVar5.klass = (Object__Class *)pVVar4->x;
+    OVar5.monitor = (MonitorData *)pVVar4->y;
+    fVar6 = pVVar4->z;
+    OVar7 = OVar5;
+    if (cRam_? == '\0') {
       func_?();
-      pcVar1 = (code *)swi(3);
-      bVar2 = (*pcVar1)();
-      return bVar2;
+      cRam_? = '\x01';
     }
-    this_03 = (MVAvatarLocal *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_02,instigatorWOID,(MethodInfo *)0x0);
-    if (((this_03 != (MVAvatarLocal *)0x0) &&
-        ((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= (this_03->klass->_1).typeHierarchyDepth
-        )) && ((MVAvatarLocal__Class *)
-               (this_03->klass->_1).typeHierarchy
-               [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] == TypeInfo__MVAvatarLocal)) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)StringLiteral_DoTeleport2,(MethodInfo *)0x0);
-      if (((this_03->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) ||
-         ((MVAvatarLocal__Class *)
-          (this_03->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1]
-          != TypeInfo__MVAvatarLocal)) {
-        func_?();
-        goto code_?;
-      }
-      bVar2 = MVAvatarLocal::MVAvatarLocal_get_IsEnteringVehicle(this_03,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        bVar2 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)this_03,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_03,0,(MethodInfo *)0x0);
-        }
-        bVar2 = MVAvatarLocal::MVAvatarLocal_IsSpawnRoleActive(this_03,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).avatarIgnoreList;
-          if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains
-                              (this_00,(RegexCharClass_SingleRange)(this_03->fields)._._._._.id,
-                               MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-            if (bVar2 != 0) {
-              return 1;
-            }
-            this_01 = (this->fields)._._.transform;
-            if (this_01 != (Transform *)0x0) {
-              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 ((Vector3 *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
-              original = (this->fields).teleportAvatarPrefab;
-              uVar4._0_4_ = pVVar3->x;
-              uVar4._4_4_ = pVVar3->y;
-              pMVar5 = (MonitorData *)pVVar3->z;
-              uVar6 = uVar4;
-              pMVar7 = pMVar5;
-              pQVar8 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
-                       MVWorldObject_get_WorldRotation
-                                 ((Quaternion *)&puStack_9,(MVWorldObject *)0x0,in_stack_10);
-              puStack_9 = (undefined *)pQVar8->x;
-              fVar11 = pQVar8->y;
-              fVar12 = pQVar8->z;
-              fVar13 = pQVar8->w;
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              position.z = (float)pMVar5;
-              position.x = (float)(int)uVar6;
-              position.y = (float)(int)((ulonglong)uVar6 >> 0x20);
-              rotation.y = fVar11;
-              rotation.x = (float)puStack_9;
-              rotation.z = fVar12;
-              rotation.w = fVar13;
-              pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                                 ((Object *)original,position,rotation,
-                                  TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
-                                 );
-              if (pOVar14 != (Object *)0x0) {
-                pOVar14[5].klass = (Object__Class *)this_03;
-                func_?();
-                pOVar15 = (Object *)func_?();
-                pOVar16 = pOVar15[1].klass;
-                pOVar14[2] = *pOVar15;
-                pOVar14[3].klass = pOVar16;
-                *(undefined8 *)&pOVar14[3].monitor = uVar4;
-                pOVar14[4].monitor = pMVar7;
-                if (this_00[10].fields._items != (RegexCharClass_SingleRange__Array *)0x0) {
-                  func_?();
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
-                            ((Object *)StringLiteral_actor_ignore_list_should_use_ids,
-                             (MethodInfo *)0x0);
-                  return 1;
-                }
-              }
-            }
-          }
-          goto code_?;
-        }
-      }
+    pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    fVar9 = (pQVar8->identityQuaternion).x;
+    fVar10 = (pQVar8->identityQuaternion).y;
+    fVar11 = (pQVar8->identityQuaternion).z;
+    fVar12 = (pQVar8->identityQuaternion).w;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    position.z = fVar6;
+    position.x = (float)OVar7.klass;
+    position.y = (float)OVar7.monitor;
+    rotation.y = fVar10;
+    rotation.x = fVar9;
+    rotation.z = fVar11;
+    rotation.w = fVar12;
+    pOVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
+                        ((Object *)original,position,rotation,
+                         TeleportAvatar_MethodInfo__UnityEngine__Object__Instantiate<TeleportAvatar>_TeleportAvatar__UnityEngine__Vector3__UnityEngine__Quaternion_
+                        );
+    pOVar14 = OVar7.klass;
+    if (pOVar13 == (Object *)0x0) goto code_?;
+    pOVar13[5].monitor = (MonitorData *)this_02;
+    func_?();
+    puVar15 = (undefined8 *)func_?();
+    pMVar16 = *(MonitorData **)(puVar15 + 1);
+    *(undefined8 *)&pOVar13[2].monitor = *puVar15;
+    pOVar13[3].monitor = pMVar16;
+    pOVar13[4] = OVar5;
+    pOVar13[5].klass = pOVar14;
+    pMVar17 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar3 = *(List_1_System_Int32_ **)((int)fVar9 + 0xf8);
+    this_02 = (MVAvatarLocal *)(this_02->fields)._._._._.id;
+    if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar18 = &(pLVar3->fields)._version;
+    *piVar18 = *piVar18 + 1;
+    pIVar19 = (pLVar3->fields)._items;
+    if (pIVar19 == (Int32__Array *)0x0) goto code_?;
+    uVar20 = (pLVar3->fields)._size;
+    if (pIVar19->max_length <= uVar20) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      List_1_System_Int32__AddWithResize
+                (pLVar3,(int32_t)this_02,pMVar17->klass->rgctx_data[0xe].method);
+      return 1;
+    }
+    (pLVar3->fields)._size = uVar20 + 1;
+    if (uVar20 < pIVar19->max_length) {
+      pIVar19->vector[uVar20] = (int32_t)this_02;
+      return 1;
+    }
+    func_?();
+    pMVar1 = extraout_EDX;
   }
-  return 0;
+  func_?(this_02,pMVar1);
+code_?:
+  func_?();
+  pcVar21 = (code *)swi(3);
+  bVar2 = (*pcVar21)();
+  return bVar2;
 }
 
 
@@ -308,7 +304,7 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_OnDataUpdate
                (MVTeleporter *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   this_00 = (this->fields).useInteractor;
   if (this_00 != (UseInteractor *)0x0) {
@@ -353,153 +349,118 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
     pTVar3 = (((this->fields).teleportObject)->fields).triggerBoxEvents;
     if (pTVar3 != (TriggerBoxEvents *)0x0) {
       triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar3,(MethodInfo *)0x0);
-      this_00 = (Predicate_1_Int32Enum_ *)func_?(TypeInfo__System__Func<int,_bool>);
-      if (this_00 != (Predicate_1_Int32Enum_ *)0x0) {
-        mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
-                  (this_00,(Object *)this,MethodInfo__MVTeleporter__DoTeleport_int_,
-                   (MethodInfo *)0x0);
-        pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-        if (pUVar4 != (UseInteractor *)0x0) {
-          UseInteractor::UseInteractor__ctor
-                    (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
-                     (Func_2_Int32_Boolean_ *)this_00,
-                     (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-          (this->fields).useInteractor = pUVar4;
-          func_?(&(this->fields).useInteractor,pUVar4);
-          pMVar1 = (this->fields).teleportObject;
-          if (pMVar1 != (MVTeleporterObject *)0x0) {
-            pGVar2 = (pMVar1->fields).useInteractionRotator;
-            this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-            if (this_01 != (GameCoinLogic *)0x0) {
-              GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar2,0,(MethodInfo *)0x0);
+      this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                (this_00,(Object *)this,MethodInfo__MVTeleporter__DoTeleport_int_,(MethodInfo *)0x0)
+      ;
+      pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      UseInteractor::UseInteractor__ctor
+                (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
+                 (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
+                 2.5,0,(MethodInfo *)0x0);
+      (this->fields).useInteractor = pUVar4;
+      func_?(&(this->fields).useInteractor,pUVar4);
+      pMVar1 = (this->fields).teleportObject;
+      if (pMVar1 != (MVTeleporterObject *)0x0) {
+        pGVar2 = (pMVar1->fields).useInteractionRotator;
+        this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
+        GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar2,0,(MethodInfo *)0x0);
+        pMVar1 = (this->fields).teleportObject;
+        if (pMVar1 != (MVTeleporterObject *)0x0) {
+          pGVar2 = (pMVar1->fields).useInteractionRotator;
+          this_02 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
+          GameRankRequirement::GameRankRequirement__ctor
+                    (this_02,pGVar2,(MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
+          if (this_02 != (GameRankRequirement *)0x0) {
+            (*(code *)(this_02->klass->vtable).OnDataUpdate.method)
+                      (this_02,(this->fields)._._._.data,(this->fields)._._._.id,
+                       (this_02->klass->vtable).GetShowOption.methodPtr);
+            pMVar1 = (this->fields).teleportObject;
+            if (pMVar1 != (MVTeleporterObject *)0x0) {
+              pGVar2 = (pMVar1->fields).useInteractionRotator;
+              this_03 = (LevelBasedUseRequirement *)
+                        func_?(TypeInfo__LevelBasedUseRequirement);
+              LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
+                        (this_03,pGVar2,0,(MethodInfo *)0x0);
               pMVar1 = (this->fields).teleportObject;
               if (pMVar1 != (MVTeleporterObject *)0x0) {
                 pGVar2 = (pMVar1->fields).useInteractionRotator;
-                this_02 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
-                if (this_02 != (GameRankRequirement *)0x0) {
-                  GameRankRequirement::GameRankRequirement__ctor
-                            (this_02,pGVar2,(MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
-                  (*(this_02->klass->vtable).OnDataUpdate.methodPtr)
-                            (this_02,(this->fields)._._._.data,(this->fields)._._._.id,
-                             (this_02->klass->vtable).OnDataUpdate.method);
+                this_04 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
+                StarRequirement::StarRequirement__ctor(this_04,pGVar2,0,(MethodInfo *)0x0);
+                pMVar1 = (this->fields).teleportObject;
+                if (pMVar1 != (MVTeleporterObject *)0x0) {
+                  tintObject = (pMVar1->fields).tintObject;
+                  this_05 = (TeamRequirement *)func_?(TypeInfo__TeamRequirement);
+                  TeamRequirement::TeamRequirement__ctor
+                            (this_05,(TintObject *)tintObject,0,(MethodInfo *)0x0);
                   pMVar1 = (this->fields).teleportObject;
                   if (pMVar1 != (MVTeleporterObject *)0x0) {
                     pGVar2 = (pMVar1->fields).useInteractionRotator;
-                    this_03 = (LevelBasedUseRequirement *)
-                              func_?(TypeInfo__LevelBasedUseRequirement);
-                    if (this_03 != (LevelBasedUseRequirement *)0x0) {
-                      LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                                (this_03,pGVar2,0,(MethodInfo *)0x0);
-                      pMVar1 = (this->fields).teleportObject;
-                      if (pMVar1 != (MVTeleporterObject *)0x0) {
-                        pGVar2 = (pMVar1->fields).useInteractionRotator;
-                        this_04 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
-                        if (this_04 != (StarRequirement *)0x0) {
-                          StarRequirement::StarRequirement__ctor(this_04,pGVar2,0,(MethodInfo *)0x0)
-                          ;
-                          pMVar1 = (this->fields).teleportObject;
-                          if (pMVar1 != (MVTeleporterObject *)0x0) {
-                            tintObject = (pMVar1->fields).tintObject;
-                            this_05 = (TeamRequirement *)func_?(TypeInfo__TeamRequirement);
-                            if (this_05 != (TeamRequirement *)0x0) {
-                              TeamRequirement::TeamRequirement__ctor
-                                        (this_05,(TintObject *)tintObject,0,(MethodInfo *)0x0);
-                              pMVar1 = (this->fields).teleportObject;
-                              if (pMVar1 != (MVTeleporterObject *)0x0) {
-                                pGVar2 = (pMVar1->fields).useInteractionRotator;
-                                this_06 = (RewardedAdRequirement *)
-                                          func_?(
-                                                  TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
-                                                  );
-                                if (this_06 != (RewardedAdRequirement *)0x0) {
-                                  WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                                  RewardedAdRequirement__ctor(this_06,pGVar2,(MethodInfo *)0x0);
+                    this_06 = (RewardedAdRequirement *)
+                              func_?(
+                                             TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
+                                             );
+                    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
+                    RewardedAdRequirement__ctor(this_06,pGVar2,(MethodInfo *)0x0);
+                    pUVar4 = (this->fields).useInteractor;
+                    if (pUVar4 != (UseInteractor *)0x0) {
+                      UseInteractor::UseInteractor_AddRequirement
+                                (pUVar4,(UseRequirement *)this_03,(MethodInfo *)0x0);
+                      pUVar4 = (this->fields).useInteractor;
+                      if (pUVar4 != (UseInteractor *)0x0) {
+                        UseInteractor::UseInteractor_AddRequirement
+                                  (pUVar4,(UseRequirement *)this_01,(MethodInfo *)0x0);
+                        pUVar4 = (this->fields).useInteractor;
+                        if (pUVar4 != (UseInteractor *)0x0) {
+                          UseInteractor::UseInteractor_AddRequirement
+                                    (pUVar4,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                          pUVar4 = (this->fields).useInteractor;
+                          if (pUVar4 != (UseInteractor *)0x0) {
+                            UseInteractor::UseInteractor_AddRequirement
+                                      (pUVar4,(UseRequirement *)this_05,(MethodInfo *)0x0);
+                            pUVar4 = (this->fields).useInteractor;
+                            if (pUVar4 != (UseInteractor *)0x0) {
+                              UseInteractor::UseInteractor_AddRequirement
+                                        (pUVar4,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                              pUVar4 = (this->fields).useInteractor;
+                              if (pUVar4 != (UseInteractor *)0x0) {
+                                UseInteractor::UseInteractor_AddRequirement
+                                          (pUVar4,(UseRequirement *)this_06,(MethodInfo *)0x0);
+                                pMVar1 = (this->fields).teleportObject;
+                                if (pMVar1 != (MVTeleporterObject *)0x0) {
+                                  pTVar3 = (pMVar1->fields).triggerBoxEvents;
                                   pUVar4 = (this->fields).useInteractor;
-                                  if (pUVar4 != (UseInteractor *)0x0) {
-                                    UseInteractor::UseInteractor_AddRequirement
-                                              (pUVar4,(UseRequirement *)this_03,(MethodInfo *)0x0);
-                                    pUVar4 = (this->fields).useInteractor;
-                                    if (pUVar4 != (UseInteractor *)0x0) {
-                                      UseInteractor::UseInteractor_AddRequirement
-                                                (pUVar4,(UseRequirement *)this_01,(MethodInfo *)0x0)
-                                      ;
+                                  pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                           func_?(
+                                                  TypeInfo__System__EventHandler<TriggerEventArgs>);
+                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                  UnityAction`2[System::Object,System::Object]::
+                                  UnityAction_2_System_Object_System_Object___ctor
+                                            (pUVar5,(Object *)pUVar4,
+                                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                                             ,(MethodInfo *)0x0);
+                                  if (pTVar3 != (TriggerBoxEvents *)0x0) {
+                                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                                              (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                                               (MethodInfo *)0x0);
+                                    pMVar1 = (this->fields).teleportObject;
+                                    if (pMVar1 != (MVTeleporterObject *)0x0) {
+                                      pTVar3 = (pMVar1->fields).triggerBoxEvents;
                                       pUVar4 = (this->fields).useInteractor;
-                                      if (pUVar4 != (UseInteractor *)0x0) {
-                                        UseInteractor::UseInteractor_AddRequirement
-                                                  (pUVar4,(UseRequirement *)this_04,
-                                                   (MethodInfo *)0x0);
-                                        pUVar4 = (this->fields).useInteractor;
-                                        if (pUVar4 != (UseInteractor *)0x0) {
-                                          UseInteractor::UseInteractor_AddRequirement
-                                                    (pUVar4,(UseRequirement *)this_05,
-                                                     (MethodInfo *)0x0);
-                                          pUVar4 = (this->fields).useInteractor;
-                                          if (pUVar4 != (UseInteractor *)0x0) {
-                                            UseInteractor::UseInteractor_AddRequirement
-                                                      (pUVar4,(UseRequirement *)this_02,
-                                                       (MethodInfo *)0x0);
-                                            pUVar4 = (this->fields).useInteractor;
-                                            if (pUVar4 != (UseInteractor *)0x0) {
-                                              UseInteractor::UseInteractor_AddRequirement
-                                                        (pUVar4,(UseRequirement *)this_06,
-                                                         (MethodInfo *)0x0);
-                                              pMVar1 = (this->fields).teleportObject;
-                                              if (pMVar1 != (MVTeleporterObject *)0x0) {
-                                                pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                                                pUVar4 = (this->fields).useInteractor;
-                                                pUVar5 = (UnityAction_2_System_Object_System_Object_
-                                                          *)func_?(
+                                      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                               func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
-                                                if (pUVar5 != (
-                                                  UnityAction_2_System_Object_System_Object_ *)0x0)
-                                                {
-                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                                  UnityAction`2[System::Object,System::Object]::
-                                                  UnityAction_2_System_Object_System_Object___ctor
-                                                            (pUVar5,(Object *)pUVar4,
-                                                                                                                          
-                                                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                                                    TriggerBoxEvents::
-                                                    TriggerBoxEvents_add_TriggerEnter
-                                                              (pTVar3,(
-                                                  EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                                  (MethodInfo *)0x0);
-                                                  pMVar1 = (this->fields).teleportObject;
-                                                  if (pMVar1 != (MVTeleporterObject *)0x0) {
-                                                    pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                                                    pUVar4 = (this->fields).useInteractor;
-                                                    pUVar5 = (
-                                                  UnityAction_2_System_Object_System_Object_ *)
-                                                  func_?(
-                                                  TypeInfo__System__EventHandler<TriggerEventArgs>);
-                                                  if (pUVar5 != (
-                                                  UnityAction_2_System_Object_System_Object_ *)0x0)
-                                                  {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::Events
-                                                    ::UnityAction`2[System::Object,System::Object]::
-                                                    UnityAction_2_System_Object_System_Object___ctor
-                                                              (pUVar5,(Object *)pUVar4,
-                                                                                                                              
-                                                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                                                  ,(MethodInfo *)0x0);
-                                                  if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                                                    TriggerBoxEvents::
-                                                    TriggerBoxEvents_add_TriggerExit
-                                                              (pTVar3,(
-                                                  EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                                  (MethodInfo *)0x0);
-                                                  return;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
+                                      UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                      UnityAction`2[System::Object,System::Object]::
+                                      UnityAction_2_System_Object_System_Object___ctor
+                                                (pUVar5,(Object *)pUVar4,
+                                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                                 ,(MethodInfo *)0x0);
+                                      if (pTVar3 != (TriggerBoxEvents *)0x0) {
+                                        TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                                                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5
+                                                   ,(MethodInfo *)0x0);
+                                        return;
                                       }
                                     }
                                   }
@@ -537,9 +498,9 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_ValidateObjectLinkTarget
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVTeleporter->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__MVTeleporter->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
        ((MVTeleporter__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1] ==
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).naturalAligment - 1] ==
         TypeInfo__MVTeleporter)) {
       return wo != (MVWorldObjectClient *)0x0;
     }
@@ -572,88 +533,82 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter__ctor
   }
   this_00 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
-  if (this_00 != (List_1_System_Int32_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<int>__List__);
-    (this->fields).avatarIgnoreList = this_00;
-    func_?(&(this->fields).avatarIgnoreList,this_00);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<int>__List__);
+  (this->fields).avatarIgnoreList = this_00;
+  func_?(&(this->fields).avatarIgnoreList,this_00);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 != (PrefabPool *)0x0) {
+    MVLogicObject::MVLogicObject__ctor
+              ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvTeleporterPrefab,
+               worldObjects,(MethodInfo *)0x0);
+    pMVar2 = (MVTeleporterObject *)(this->fields)._._.component;
+    if (pMVar2 == (MVTeleporterObject *)0x0) {
+      (this->fields).teleportObject = (MVTeleporterObject *)0x0;
+    }
+    else {
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVTeleporterObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVTeleporterObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVTeleporterObject)) goto code_?;
+      (this->fields).teleportObject = pMVar2;
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVTeleporterObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
+          [(TypeInfo__MVTeleporterObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__MVTeleporterObject)) goto code_?;
+    }
+    func_?();
     if (cRam_? == '\0') {
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
     pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
     if (pPVar1 != (PrefabPool *)0x0) {
-      MVLogicObject::MVLogicObject__ctor
-                ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).mvTeleporterPrefab,
-                 worldObjects,(MethodInfo *)0x0);
-      pMVar2 = (MVTeleporterObject *)(this->fields)._._.component;
-      if (pMVar2 == (MVTeleporterObject *)0x0) {
-        (this->fields).teleportObject = (MVTeleporterObject *)0x0;
-      }
-      else {
-        if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-             (TypeInfo__MVTeleporterObject->_1).typeHierarchyDepth) ||
-           ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-            [(TypeInfo__MVTeleporterObject->_1).typeHierarchyDepth - 1] !=
-            (Il2CppClass *)TypeInfo__MVTeleporterObject)) goto code_?;
-        (this->fields).teleportObject = pMVar2;
-        if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-             (TypeInfo__MVTeleporterObject->_1).typeHierarchyDepth) ||
-           ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-            [(TypeInfo__MVTeleporterObject->_1).typeHierarchyDepth - 1] !=
-            (Il2CppClass *)TypeInfo__MVTeleporterObject)) goto code_?;
-      }
-      func_?(&(this->fields).teleportObject);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar1 != (PrefabPool *)0x0) {
-        pTVar3 = (pPVar1->fields).teleportAvatarPrefab;
-        (this->fields).teleportAvatarPrefab = pTVar3;
-        func_?(&(this->fields).teleportAvatarPrefab,pTVar3);
-        pMVar2 = (this->fields).teleportObject;
-        if (pMVar2 != (MVTeleporterObject *)0x0) {
-          pTVar4 = (pMVar2->fields).triggerBoxEvents;
-          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      pTVar3 = (pPVar1->fields).teleportAvatarPrefab;
+      (this->fields).teleportAvatarPrefab = pTVar3;
+      func_?(&(this->fields).teleportAvatarPrefab,pTVar3);
+      pMVar2 = (this->fields).teleportObject;
+      if (pMVar2 != (MVTeleporterObject *)0x0) {
+        pTVar4 = (pMVar2->fields).triggerBoxEvents;
+        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar5,(Object *)this,
+                   MethodInfo__MVTeleporter__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pTVar4 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                    (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+          pMVar2 = (this->fields).teleportObject;
+          if (pMVar2 != (MVTeleporterObject *)0x0) {
+            pTVar4 = (pMVar2->fields).triggerBoxEvents;
+            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       (pUVar5,(Object *)this,
-                       MethodInfo__MVTeleporter__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       MethodInfo__MVTeleporter__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar4 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
                         (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-              pMVar2 = (this->fields).teleportObject;
-              if (pMVar2 != (MVTeleporterObject *)0x0) {
-                pTVar4 = (pMVar2->fields).triggerBoxEvents;
-                pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                            (pUVar5,(Object *)this,
-                             MethodInfo__MVTeleporter__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                             ,(MethodInfo *)0x0);
-                  if (pTVar4 != (TriggerBoxEvents *)0x0) {
-                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
-                    iVar6 = (this->fields)._._.interactionFlags;
-                    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-                         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-                    puVar7 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-                    *puVar7 = *puVar7 | 2;
-                    *(uint *)&(this->fields)._._.interactionFlags =
-                         (uint)iVar6 & 0xffffdfff | 0x12700000;
-                    return;
-                  }
-                }
-              }
+              iVar6 = (this->fields)._._.interactionFlags;
+              *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+                   *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+              puVar7 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
+              *puVar7 = *puVar7 | 2;
+              *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar6 & 0xffffdfff | 0x12700000;
+              return;
             }
           }
         }
@@ -661,9 +616,8 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter__ctor
     }
   }
   func_?();
-  pMVar2 = extraout_EDX;
 code_?:
-  func_?(pMVar2);
+  func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -721,18 +675,6 @@ Assembly-CSharp.dll::MVTeleporter::MVTeleporter_get_ObjectConnectorRotation
 }
 
 
-/* Void set_Target(MVTeleporter) */
-
-void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_set_Target
-               (MVTeleporter *this,MVTeleporter *value,MethodInfo *method)
-
-{
-  (this->fields).target = value;
-  func_?(&(this->fields).target,value);
-  return;
-}
-
-
 /* Void triggerBoxEvents_TriggerEnter(Object, TriggerEventArgs) */
 
 void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_triggerBoxEvents_TriggerEnter
@@ -763,19 +705,15 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_triggerBoxEvents_TriggerEnt
         pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0);
         if ((pMVar5 != (MVWorldObject *)0x0) &&
-           (((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <=
-             (pMVar5->klass->_1).typeHierarchyDepth &&
+           (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar5->klass->_1).naturalAligment &&
             ((MVAvatarLocal__Class *)
-             (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1]
-             == TypeInfo__MVAvatarLocal)))) {
-          this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).avatarIgnoreList;
-          if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-          RegexCharClass+SingleRange]::
-          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove
-                    (this_00,(RegexCharClass_SingleRange)(pMVar5->fields).id,
+             (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+             TypeInfo__MVAvatarLocal)))) {
+          this_00 = (this->fields).avatarIgnoreList;
+          if (this_00 == (List_1_System_Int32_ *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+          List_1_System_Int32__Remove
+                    (this_00,(pMVar5->fields).id,
                      MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
         }
       }
@@ -816,19 +754,15 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_triggerBoxEvents_TriggerExi
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      if (((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <=
-           (pMVar1->klass->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
          ((MVAvatarLocal__Class *)
-          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] ==
+          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
           TypeInfo__MVAvatarLocal)) {
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields).avatarIgnoreList;
-        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-        goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-        RegexCharClass+SingleRange]::
-        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove
-                  (this_00,(RegexCharClass_SingleRange)(pMVar1->fields).id,
+        this_00 = (this->fields).avatarIgnoreList;
+        if (this_00 == (List_1_System_Int32_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+        List_1_System_Int32__Remove
+                  (this_00,(pMVar1->fields).id,
                    MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
       }
     }

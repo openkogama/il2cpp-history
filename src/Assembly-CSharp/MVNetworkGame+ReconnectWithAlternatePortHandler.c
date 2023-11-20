@@ -62,7 +62,7 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)pSVar2,(MethodInfo *)0x0);
       return 1;
     }
@@ -88,7 +88,7 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar2,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);

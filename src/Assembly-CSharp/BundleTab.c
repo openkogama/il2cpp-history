@@ -22,6 +22,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_Initialize
     func_?(&
                     MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
                    );
+    func_?(&TypeInfo__System__TimeSpan);
     func_?(&MethodInfo__BundleTab____c__DisplayClass13_0___Initialize_b__0__);
     func_?(&TypeInfo__BundleTab____c__DisplayClass13_0);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
@@ -29,28 +30,27 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_Initialize
     cRam_? = '\x01';
   }
   IStack_1.m_value = 0;
-  _puStack_20 = 0;
-  pOVar2 = (Object *)func_?(TypeInfo__BundleTab____c__DisplayClass13_0);
+  method_00 = TypeInfo__BundleTab____c__DisplayClass13_0;
+  pOVar2 = (Object *)func_?();
+  pOVar3 = pOVar2;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pOVar2 == (Object *)0x0) {
 code_?:
     func_?();
+    pUVar4 = extraout_EDX;
   }
   else {
-    pOVar3 = pOVar2;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (pOVar2,ExceptionArgument__Enum_obj,unaff_EDI);
     pOVar2[1].klass = (Object__Class *)this;
     func_?(pOVar2 + 1,this);
     pOVar2[1].monitor = (MonitorData *)tabId;
     this_00 = (this->fields).rectTransform;
     if (this_00 == (RectTransform *)0x0) goto code_?;
-    VStack_4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
-    fVar5 = VStack_4.x;
-    (this->fields).startPos = fVar5;
+    VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+             RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
+    (this->fields).startPos = VVar5.x;
     if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__HighlightManager);
-      VStack_4.x = fVar5;
     }
     this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               HighlightManager::HighlightManager_GetHighLights
@@ -60,58 +60,50 @@ code_?:
     pAStack_6 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
                           ((MethodInfo *)0x0);
     index = 0;
-    VVar7 = VStack_4;
     if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
-    for (; VStack_4.y = VVar7.y, index < (this_03->fields)._size; index = index + 1) {
-      RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    for (; index < (this_03->fields)._size; index = index + 1) {
+      RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         (this_03,index,
                          MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
                         );
-      VVar7 = (Vector2)((ulonglong)(uint)VStack_4.y << 0x20);
-      if (((RVar8 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar8 + 0xc) == 0)) ||
+      if (((RVar7 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar7 + 0xc) == 0)) ||
          (pAStack_6 == (AccessoryBundleClient *)0x0)) goto code_?;
-      if (*(int *)(*(int *)((int)RVar8 + 0xc) + 8) == (pAStack_6->fields)._.accessoryBundleID) {
+      if (*(int *)(*(int *)((int)RVar7 + 0xc) + 8) == (pAStack_6->fields)._.accessoryBundleID) {
         this_01 = (this->fields).redDot;
         if (this_01 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_01,1,(MethodInfo *)0x0);
-        VStack_4.y = (float)(this->fields).redDotCount;
-        pLVar9 = (pAStack_6->fields)._.accessoryBundleItems;
-        if (pLVar9 == (List_1_MV_WorldObject_Accessories_AccessoryBundleItem_ *)0x0)
+        pLVar8 = (pAStack_6->fields)._.accessoryBundleItems;
+        if (pLVar8 == (List_1_MV_WorldObject_Accessories_AccessoryBundleItem_ *)0x0)
         goto code_?;
-        IStack_1.m_value = (pLVar9->fields)._size;
-        stack0xffffffe4 = &IStack_1;
-        pTVar10 = (Text *)mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-        fVar5 = VStack_4.y;
-        if ((Text *)VStack_4.y == (Text *)0x0) goto code_?;
-        pOVar3 = (Object *)0x4b;
-        stack0xffffffe4 = (Int32 *)&UNK_?;
-        VStack_4.y = (float)pTVar10;
+        IStack_1.m_value = (pLVar8->fields)._size;
+        pUVar9 = (UnityAction *)0x0;
+        pOVar3 = (Object *)&UNK_?;
+        pAVar10 = (AccessoryBundleClient *)
+                 mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+        if (pUVar9 == (UnityAction *)0x0) goto code_?;
+        IStack_1.m_value = (int32_t)pUVar9;
+        pAStack_6 = pAVar10;
         func_?();
-        RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_03,index,
                            MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
                           );
-        VVar7.y = VStack_4.y;
-        VVar7.x = fVar5;
-        if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        (this->fields).highlightId = *(int32_t *)((int)RVar8 + 8);
+        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        (this->fields).highlightId = *(int32_t *)((int)RVar7 + 8);
         break;
       }
     }
-    VStack_4.y = VVar7.y;
     pBVar11 = (this->fields).button;
     if (pBVar11 == (Button *)0x0) goto code_?;
     this_02 = (UnityEvent *)(pBVar11->fields).m_OnClick;
-    VStack_4 = VVar7;
     pNVar12 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar12 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar12,pOVar3,MethodInfo__BundleTab____c__DisplayClass13_0___Initialize_b__0__,
@@ -119,104 +111,166 @@ code_?:
     if (this_02 == (UnityEvent *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
               (this_02,(UnityAction *)pNVar12,(MethodInfo *)0x0);
-    pAVar13 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
-                        ((MethodInfo *)0x0);
-    if ((pAVar13 == (AccessoryBundleClient *)0x0) ||
-       (pAVar14 = (pAVar13->fields)._.timelimit, pAVar14 == (AccessoryTimelimit *)0x0))
+    pAVar10 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0)
+    ;
+    if ((pAVar10 == (AccessoryBundleClient *)0x0) ||
+       (pAVar13 = (pAVar10->fields)._.timelimit, pAVar13 == (AccessoryTimelimit *)0x0))
     goto code_?;
-    bVar15 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
-            AccessoryTimelimit_get_IsTimeLimited(pAVar14,(MethodInfo *)0x0);
-    if (bVar15 != 0) {
-      pAVar13 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
-                          ((MethodInfo *)0x0);
-      if ((pAVar13 != (AccessoryBundleClient *)0x0) &&
-         (pAVar14 = (pAVar13->fields)._.timelimit, pAVar14 != (AccessoryTimelimit *)0x0)) {
-        _puStack_20 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
-                      AccessoryTimelimit_GetTimeLeft(pAVar14,(MethodInfo *)0x0);
-        pTVar10 = (this->fields).timeLimitText;
-        mscorlib.dll::System::TimeSpan::TimeSpan_get_Days((TimeSpan *)&puStack_16,(MethodInfo *)0x0)
-        ;
-        pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe8);
-        VStack_4.y = (float)mscorlib.dll::System::TimeSpan::TimeSpan_get_Hours
-                                       ((TimeSpan *)&puStack_16,(MethodInfo *)0x0);
-        pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&VStack_4.y);
-        pSVar17 = mscorlib.dll::System::String::String_Format_1
-                            (StringLiteral__0_d__1_h,pOVar2,pOVar3,(MethodInfo *)0x0);
-        if (pTVar10 != (Text *)0x0) {
-          (*(pTVar10->klass->vtable).set_text.methodPtr)
-                    (pTVar10,pSVar17,(pTVar10->klass->vtable).set_text.method);
-          VStack_4 = (Vector2)((ulonglong)(uint)VStack_4.y << 0x20);
+    bVar14 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
+            AccessoryTimelimit_get_IsTimeLimited(pAVar13,(MethodInfo *)0x0);
+    if (bVar14 != 0) {
+      pAVar10 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
+                         ((MethodInfo *)0x0);
+      if ((pAVar10 != (AccessoryBundleClient *)0x0) &&
+         (pAVar13 = (pAVar10->fields)._.timelimit, pAVar13 != (AccessoryTimelimit *)0x0)) {
+        MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
+        AccessoryTimelimit_GetTimeLeft(pAVar13,(MethodInfo *)0x0);
+        pTVar15 = (this->fields).timeLimitText;
+        if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::TimeSpan::TimeSpan_get_Days
+                  ((TimeSpan *)&stack0xffffffe0,(MethodInfo *)0x0);
+        pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+        mscorlib.dll::System::TimeSpan::TimeSpan_get_Hours
+                  ((TimeSpan *)&stack0xffffffe0,(MethodInfo *)0x0);
+        pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
+        pSVar16 = mscorlib.dll::System::String::String_Format_1
+                            (StringLiteral__0_d__1_h,pOVar3,pOVar2,(MethodInfo *)0x0);
+        if (pTVar15 != (Text *)0x0) {
+          (*(code *)(pTVar15->klass->vtable).set_text.method)
+                    (pTVar15,pSVar16,
+                     (pTVar15->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           goto code_?;
         }
       }
       goto code_?;
     }
 code_?:
-    pAVar13 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
-                        ((MethodInfo *)0x0);
-    if (pAVar13 == (AccessoryBundleClient *)0x0) goto code_?;
-    if ((pAVar13->fields)._.level < 1) {
+    pAVar10 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0)
+    ;
+    if (pAVar10 == (AccessoryBundleClient *)0x0) goto code_?;
+    if ((pAVar10->fields)._.level < 1) {
       return;
     }
     if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LevelingManager);
-      VStack_4 = (Vector2)((ulonglong)(uint)VStack_4.y << 0x20);
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__LevelingManager);
-      VStack_4 = (Vector2)((ulonglong)(uint)VStack_4.y << 0x20);
       cRam_? = '\x01';
     }
     if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LevelingManager);
-      VStack_4 = (Vector2)((ulonglong)(uint)VStack_4.y << 0x20);
     }
     if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
-      BundleTab_SetLevelBadge(this,(MethodInfo *)0x0);
-      return;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        func_?(&TypeInfo__BadgeManager);
+        func_?(&
+                        MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_
+                       );
+        func_?(&MethodInfo__BundleTab__SetLevelBadge__);
+        func_?(&TypeInfo__LevelingManager);
+        func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__LevelingManager);
+      }
+      pUVar9 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+      pNVar12 = (NavMesh_OnNavMeshPreUpdate *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar12,(Object *)this,MethodInfo__BundleTab__SetLevelBadge__,(MethodInfo *)0x0);
+      pUVar9 = (UnityAction *)
+                mscorlib.dll::System::Delegate::Delegate_Remove
+                          ((Delegate *)pUVar9,(Delegate *)pNVar12,(MethodInfo *)0x0);
+      if (pUVar9 == (UnityAction *)0x0) {
+        TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+        IStack_1.m_value = 0;
+      }
+      else {
+        pUVar17 = (UnityAction *)0x0;
+        if (pUVar9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar17 = pUVar9;
+        }
+        IStack_1.m_value = (int32_t)TypeInfo__UnityEngine__Events__UnityAction;
+        if (pUVar17 == (UnityAction *)0x0) goto code_?;
+        TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar17;
+        IStack_1.m_value = (int32_t)(UnityAction *)0x0;
+        if (pUVar9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          IStack_1.m_value = (int32_t)pUVar9;
+        }
+        pUVar4 = TypeInfo__UnityEngine__Events__UnityAction;
+        if ((UnityAction *)IStack_1.m_value == (UnityAction *)0x0) goto code_?;
+      }
+      func_?();
+      pAVar10 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
+                         ((MethodInfo *)0x0);
+      if (pAVar10 != (AccessoryBundleClient *)0x0) {
+        level = (pAVar10->fields)._.level;
+        this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)func_?(
+                                    TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                    );
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  (this_04,(Object *)this,
+                   MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,
+                   (MethodInfo *)0x0);
+        if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        BadgeManager::BadgeManager_GetBadgeTexture
+                  (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_04,
+                   (MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
     if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LevelingManager);
     }
-    pUVar18 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+    pUVar9 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
     pNVar12 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar12 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar12,(Object *)this,MethodInfo__BundleTab__SetLevelBadge__,(MethodInfo *)0x0);
-    pUVar18 = (UnityAction *)
+    pUVar9 = (UnityAction *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pUVar18,(Delegate *)pNVar12,(MethodInfo *)0x0);
-    if (pUVar18 == (UnityAction *)0x0) {
+                        ((Delegate *)pUVar9,(Delegate *)pNVar12,(MethodInfo *)0x0);
+    if (pUVar9 == (UnityAction *)0x0) {
       TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-      stack0xffffffe4 = (Int32 *)&UNK_?;
-      func_?();
-      return;
-    }
-    pUVar19 = (UnityAction *)0x0;
-    if (pUVar18->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar19 = pUVar18;
-    }
-    if (pUVar19 == (UnityAction *)0x0) goto code_?;
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar19;
-    pUVar19 = (UnityAction *)0x0;
-    if (pUVar18->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar19 = pUVar18;
-    }
-    if (pUVar19 != (UnityAction *)0x0) {
-      stack0xffffffe4 = (Int32 *)&UNK_?;
-      func_?();
-      return;
-    }
-  }
-  stack0xffffffe4 = (Int32 *)&UNK_?;
-  func_?();
+      IStack_1.m_value = 0;
 code_?:
-  stack0xffffffe4 = (Int32 *)&UNK_?;
+      func_?();
+      return;
+    }
+    pUVar17 = (UnityAction *)0x0;
+    if (pUVar9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar17 = pUVar9;
+    }
+    IStack_1.m_value = (int32_t)TypeInfo__UnityEngine__Events__UnityAction;
+    if (pUVar17 == (UnityAction *)0x0) goto code_?;
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar17;
+    IStack_1.m_value = (int32_t)(UnityAction *)0x0;
+    if (pUVar9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      IStack_1.m_value = (int32_t)pUVar9;
+    }
+    pUVar4 = TypeInfo__UnityEngine__Events__UnityAction;
+    if ((UnityAction *)IStack_1.m_value != (UnityAction *)0x0) goto code_?;
+  }
+code_?:
+  IStack_1.m_value = (int32_t)pUVar4;
+  IStack_1.m_value = func_?();
+code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -231,20 +285,15 @@ Assembly-CSharp.dll::BundleTab::BundleTab_LerpToSize(BundleTab *this,float size,
     func_?(&TypeInfo__BundleTab___LerpToSize_d__20);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__BundleTab___LerpToSize_d__20);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    value[2].monitor = (MonitorData *)size;
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)size;
+  return (IEnumerator *)value;
 }
 
 
@@ -315,25 +364,21 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_OnDestroy(BundleTab *this,MethodI
     ;
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,
-               (MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).badgeTextureAsset = (Texture2D *)0x0;
-    func_?(&(this->fields).badgeTextureAsset);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,
+             (MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+  (this->fields).badgeTextureAsset = (Texture2D *)0x0;
+  func_?(&(this->fields).badgeTextureAsset);
   return;
 }
 
@@ -379,7 +424,8 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsDeselected(BundleTab *this,M
   pCVar2 = Styles::Styles_GetColor
                      ((Color *)&stack0xffffffec,ColorStyle__Enum_OffWhite,(MethodInfo *)0x0);
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a);
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
+              (pIVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a);
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 != (GameObject *)0x0) {
@@ -387,15 +433,27 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsDeselected(BundleTab *this,M
                 (this_00,1,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
                 ((MonoBehaviour *)this,(MethodInfo *)0x0);
-      routine = BundleTab_LerpToSize(this,(this->fields).startPos,(MethodInfo *)0x0);
+      pMVar3 = (MonitorData *)(this->fields).startPos;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)this;
+      func_?();
+      value[2].monitor = pMVar3;
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -438,11 +496,11 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
     func_?(TypeInfo__Styles);
   }
   pCVar2 = Styles::Styles_GetColor
-                     ((Color *)&stack0xffffffdc,ColorStyle__Enum_SelectedTab,(MethodInfo *)0x0);
+                     ((Color *)&stack0xffffffec,ColorStyle__Enum_SelectedTab,(MethodInfo *)0x0);
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
               (pIVar1,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a,
-               (pIVar1->klass->vtable).set_color.method);
+               (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
     pGVar3 = (this->fields).redDot;
     if (pGVar3 != (GameObject *)0x0) {
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
@@ -473,8 +531,6 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
                  func_?(
                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>
                                 );
-        if (pEVar5 == (ExecuteEvents_EventFunction_1_IAccessoryClicked_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)pEVar5,(Object *)pBVar6,
@@ -506,8 +562,6 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
                  func_?(
                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAccessoryClicked>
                                 );
-        if (pEVar5 == (ExecuteEvents_EventFunction_1_IAccessoryClicked_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)pEVar5,(Object *)pBVar6,
@@ -534,14 +588,22 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
         this_00 = (this->fields).rectTransform;
         if (this_00 != (RectTransform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                    ((Rect *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
-          fVar7 = SubscribableVariableBase`1[System::Single]::
-                  SubscribableVariableBase_1_System_Single__get_Value
-                            ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffec,
-                             (MethodInfo *)0x0);
-          routine = BundleTab_LerpToSize(this,(this->fields).offsetX + fVar7,(MethodInfo *)0x0);
+                    ((Rect *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
+          fVar7 = (this->fields).offsetX;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
+          value = (Object *)func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          value[1].klass = (Object__Class *)0x0;
+          value[2].klass = (Object__Class *)this;
+          func_?();
+          value[2].monitor = (MonitorData *)((float)method_00 + fVar7);
           UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+                    ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
           pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__BundleTab____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -555,8 +617,6 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
             pBVar6 = TypeInfo__BundleTab____c->static_fields->__9;
             callbackFunction = (ExecuteEvents_EventFunction_1_IBundleController_ *)func_?()
             ;
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IBundleController_ *)0x0)
-            goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
@@ -564,7 +624,7 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
                        MethodInfo__BundleTab____c___SetAsSelected_b__17_2_UnityEngine__EventSystems__IBundleController__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             TypeInfo__BundleTab____c->static_fields->__9__17_2 = callbackFunction;
-            func_?(&TypeInfo__BundleTab____c->static_fields->__9__17_2,callbackFunction);
+            func_?();
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
@@ -610,55 +670,52 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetLevelBadge(BundleTab *this,Met
   pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__BundleTab__SetLevelBadge__,(MethodInfo *)0x0);
+  pUVar1 = (UnityAction *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar1 == (UnityAction *)0x0) {
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
 code_?:
     func_?();
+    pAVar2 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0)
+    ;
+    if (pAVar2 != (AccessoryBundleClient *)0x0) {
+      level = (pAVar2->fields)._.level;
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)0x0,
+                 MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,
+                 (MethodInfo *)0x0);
+      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      BadgeManager::BadgeManager_GetBadgeTexture
+                (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0
+                );
+      return;
+    }
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__BundleTab__SetLevelBadge__,(MethodInfo *)0x0);
-    pUVar1 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pUVar1 == (UnityAction *)0x0) {
-      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-code_?:
-      func_?();
-      pAVar2 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
-                         ((MethodInfo *)0x0);
-      if (pAVar2 != (AccessoryBundleClient *)0x0) {
-        level = (pAVar2->fields)._.level;
-        this_01 = (Action_1_Object_ *)
-                  func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                 );
-        if (this_01 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                    (this_01,(Object *)&UNK_?,
-                     MethodInfo__BundleTab__OnBadgeLoaded_UnityEngine__Networking__UnityWebRequest_,
-                     (MethodInfo *)0x0);
-          if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          BadgeManager::BadgeManager_GetBadgeTexture
-                    (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
-                     (MethodInfo *)0x0);
-          return;
-        }
+    pUVar3 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar3 = pUVar1;
+    }
+    if (pUVar3 != (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
+      pUVar3 = (UnityAction *)0x0;
+      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar3 = pUVar1;
       }
+      if (pUVar3 == (UnityAction *)0x0) goto code_?;
       goto code_?;
     }
-    pUVar3 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUVar1;
-    }
-    if (pUVar3 == (UnityAction *)0x0) goto code_?;
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
-    pUVar3 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUVar1;
-    }
-    if (pUVar3 != (UnityAction *)0x0) goto code_?;
+    func_?();
   }
   func_?();
 code_?:

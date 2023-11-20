@@ -20,7 +20,9 @@ public class ChunkInstancesChanged : EventArgs
 	{
 		Added = 0,
 		Removed = 1,
-		Clear = 2
+		Clear = 2,
+		Transparent = 3,
+		NotTransparent = 4
 	}
 
 	// Constructors

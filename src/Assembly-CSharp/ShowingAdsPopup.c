@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnDestroy
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Resuming_audio,(MethodInfo *)0x0);
   value = (this->fields).previousMuteState;
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnEnable
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Muting_audio,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
@@ -96,6 +96,21 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnEnable
       func_?();
     }
     (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
+  }
+  return;
+}
+
+
+/* Void OnSkip() */
+
+void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnSkip
+               (ShowingAdsPopup *this,MethodInfo *method)
+
+{
+  if ((this->fields).skipAction != (Action *)0x0) {
+    pAVar1 = (this->fields).skipAction;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
 }

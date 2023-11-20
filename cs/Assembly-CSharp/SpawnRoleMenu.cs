@@ -60,6 +60,22 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 	protected override LobbyFlowMenuType MenuType { get; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__62_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Close_b__62_0(IUIStack handler, BaseEventData data);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass56_0
 	{
@@ -97,22 +113,6 @@ public class SpawnRoleMenu : LobbyFlowMenu, IDragInputReciever
 
 		// Methods
 		internal void _ShowTestTier_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__62_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _Close_b__62_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors

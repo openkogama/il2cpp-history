@@ -52,52 +52,42 @@ void Assembly-CSharp.dll::PlayerStatusPopup::PlayerStatusPopup_Initialize
   if (this_01 != (MVNetworkGame *)0x0) {
     this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
     if (this_02 != (MVLocalPlayer *)0x0) {
-      this_03 = MVLocalPlayer::MVLocalPlayer_get_XPProgressData(this_02,(MethodInfo *)0x0);
-      if (this_03 != (XPProgressData *)0x0) {
-        iVar1 = (this_03->fields).playerCurrentXP;
-        iVar2 = mscorlib.dll::System::Text::EncoderReplacementFallback::
-                EncoderReplacementFallback_get_MaxCharCount
-                          ((EncoderReplacementFallback *)this_03,(MethodInfo *)0x0);
-        iVar1 = iVar1 - iVar2;
-        iVar2 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]::
+      this_03 = (SparselyPopulatedArrayFragment_1_System_Object_ *)
+                DayNightCycle::DayNightCycle_get__skyParamsList
+                          ((DayNightCycle *)this_02,(MethodInfo *)0x0);
+      if (this_03 != (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0) {
+        iVar1 = (this_03->fields)._freeCount;
+        pTVar2 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+                 WebCompletionSource_1_System_Object__get_Task
+                           ((WebCompletionSource_1_System_Object_ *)this_03,(MethodInfo *)0x0);
+        iVar1 = iVar1 - (int)pTVar2;
+        iVar3 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]::
                 SparselyPopulatedArrayFragment_1_System_Object__get_Length
-                          ((SparselyPopulatedArrayFragment_1_System_Object_ *)this_03,
-                           (MethodInfo *)0x0);
-        iVar3 = mscorlib.dll::System::Text::EncoderReplacementFallback::
-                EncoderReplacementFallback_get_MaxCharCount
-                          ((EncoderReplacementFallback *)this_03,(MethodInfo *)0x0);
-        fVar4 = (float)(iVar2 - iVar3);
+                          (this_03,(MethodInfo *)0x0);
+        pTVar2 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+                 WebCompletionSource_1_System_Object__get_Task
+                           ((WebCompletionSource_1_System_Object_ *)this_03,(MethodInfo *)0x0);
+        amount = (float)(iVar3 - (int)pTVar2);
         arg0 = PlayerStatusPopup_FormatXP(this,(float)iVar1,(MethodInfo *)0x0);
-        arg1 = PlayerStatusPopup_FormatXP(this,fVar4,(MethodInfo *)0x0);
-        pTVar5 = (this->fields).xpProgress;
+        arg1 = PlayerStatusPopup_FormatXP(this,amount,(MethodInfo *)0x0);
+        pTVar4 = (this->fields).xpProgress;
         mscorlib.dll::System::String::String_Format_1
                   (StringLiteral_XP___0_____1_,(Object *)arg0,(Object *)arg1,(MethodInfo *)0x0);
-        if (pTVar5 != (Text *)0x0) {
-          (*(pTVar5->klass->vtable).set_text.methodPtr)();
-          pPVar6 = (this->fields).progressBar;
-          if (pPVar6 != (ProgressBarAndroid *)0x0) {
-            fVar4 = (float)iVar1 / fVar4;
-            if (fVar4 < 0.0) {
-              fVar4 = 0.0;
-            }
-            else if (_UNK_? < fVar4) {
-              fVar4 = _UNK_?;
-            }
-            (pPVar6->fields).progress = fVar4;
-            this_00 = (pPVar6->fields).ProgressBar;
-            if (this_00 != (Scrollbar *)0x0) {
-              UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-                        (this_00,fVar4,(MethodInfo *)0x0);
-              return;
-            }
+        if (pTVar4 != (Text *)0x0) {
+          (*(code *)(pTVar4->klass->vtable).set_text.method)();
+          this_00 = (this->fields).progressBar;
+          if (this_00 != (ProgressBarAndroid *)0x0) {
+            ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                      (this_00,(float)iVar1 / amount,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -143,12 +133,6 @@ void Assembly-CSharp.dll::PlayerStatusPopup::PlayerStatusPopup_Update
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
-      }
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,

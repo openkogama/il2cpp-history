@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Added_water_plane_to_manager_twi,(MethodInfo *)0x0);
   }
   (this->fields).waterPlaneLogicCube = logicCube;
@@ -250,14 +250,14 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_OnDestroy
     if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )TypeInfo__SplashController->static_fields->objectIDToData;
+    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+               *)TypeInfo__SplashController->static_fields->objectIDToData;
     if (this_00 !=
-        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-    {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-      Regex+CachedCodeEntryKey,System::Object]::
-      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets
+      ::StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
                 (this_00,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Clear__
                 );
@@ -291,33 +291,32 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_OnDisable
   pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
   this_00 = (UnityAction_1_System_Int32Enum_ *)
             func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
+             (MethodInfo *)0x0);
+  pMStack2 =
+       (MVQualitySettings_OnQualityLevedChanged *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
+         (MVQualitySettings_OnQualityLevedChanged *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
+  if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
+    pMVar1 = pMStack2;
+  }
+  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     func_?();
     pMStack2 = extraout_ECX;
     pMStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
-               (MethodInfo *)0x0);
-    pMStack2 =
-         (MVQualitySettings_OnQualityLevedChanged *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-      TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-           (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
     TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar1;
     pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
     if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
@@ -326,9 +325,6 @@ code_?:
     pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     if (pMVar1 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
   }
-  pMStack3 = (MVQualitySettings_OnQualityLevedChanged__Class *)func_?();
-  pMStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -354,33 +350,32 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_OnEnable
   pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
   this_00 = (UnityAction_1_System_Int32Enum_ *)
             func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
+             (MethodInfo *)0x0);
+  pMStack2 =
+       (MVQualitySettings_OnQualityLevedChanged *)
+       mscorlib.dll::System::Delegate::Delegate_Combine
+                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
+         (MVQualitySettings_OnQualityLevedChanged *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
+  if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
+    pMVar1 = pMStack2;
+  }
+  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     func_?();
     pMStack2 = extraout_ECX;
     pMStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,MethodInfo__WaterPlaneManager__HandleQualityChanged_int_,
-               (MethodInfo *)0x0);
-    pMStack2 =
-         (MVQualitySettings_OnQualityLevedChanged *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-      TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-           (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
     TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar1;
     pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
     if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
@@ -389,9 +384,6 @@ code_?:
     pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     if (pMVar1 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
   }
-  pMStack3 = (MVQualitySettings_OnQualityLevedChanged__Class *)func_?();
-  pMStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -484,83 +476,73 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_Start
   (this->fields).skyboxManager = pSVar1;
   func_?(&(this->fields).skyboxManager,pSVar1);
   pSVar1 = (this->fields).skyboxManager;
-  if (pSVar1 != (SkyboxManager *)0x0) {
+  if (pSVar1 == (SkyboxManager *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     pSVar2 = (pSVar1->fields).OnSkyboxColorChanged;
     this_01 = (UnityAction_1_UnityEngine_Color_ *)
               func_?(TypeInfo__SkyboxManager__SkyboxColorChangedDelegate);
-    if (this_01 != (UnityAction_1_UnityEngine_Color_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-      UnityAction_1_UnityEngine_Color___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__WaterPlaneManager__HandleSkyboxColorChanged_UnityEngine__Color_,
-                 (MethodInfo *)0x0);
-      pSVar2 = (SkyboxManager_SkyboxColorChangedDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pSVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pSVar2 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) {
-        (pSVar1->fields).OnSkyboxColorChanged = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-      }
-      else {
-        pSVar3 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-        if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
-          pSVar3 = pSVar2;
-        }
-        if (pSVar3 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
-        (pSVar1->fields).OnSkyboxColorChanged = pSVar3;
-        pSVar3 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-        if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
-          pSVar3 = pSVar2;
-        }
-        if (pSVar3 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+    UnityAction_1_UnityEngine_Color___ctor
+              (this_01,(Object *)this,
+               MethodInfo__WaterPlaneManager__HandleSkyboxColorChanged_UnityEngine__Color_,
+               (MethodInfo *)0x0);
+    pSVar2 = (SkyboxManager_SkyboxColorChangedDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pSVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pSVar2 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) {
+      (pSVar1->fields).OnSkyboxColorChanged = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
+code_?:
       func_?();
-      pTVar4 = (this->fields).underwaterCameraPlane;
-      if (pTVar4 != (Transform *)0x0) {
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pTVar4,(MethodInfo *)0x0);
-        if (pGVar5 != (GameObject *)0x0) {
+      pTVar3 = (this->fields).underwaterCameraPlane;
+      if (pTVar3 != (Transform *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar3,(MethodInfo *)0x0);
+        if (pGVar4 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar5,0,(MethodInfo *)0x0);
-          pTVar4 = (this->fields).underwaterCameraPlane;
-          if (pTVar4 != (Transform *)0x0) {
-            pRVar6 = (Renderer *)
+                    (pGVar4,0,(MethodInfo *)0x0);
+          pTVar3 = (this->fields).underwaterCameraPlane;
+          if (pTVar3 != (Transform *)0x0) {
+            pRVar5 = (Renderer *)
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                               ((Component *)pTVar4,
+                               ((Component *)pTVar3,
                                 UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__
                                );
-            (this->fields).underwaterCameraPlaneRenderer = pRVar6;
-            func_?(&(this->fields).underwaterCameraPlaneRenderer,pRVar6);
+            (this->fields).underwaterCameraPlaneRenderer = pRVar5;
+            func_?(&(this->fields).underwaterCameraPlaneRenderer,pRVar5);
             this_00 = (this->fields).water;
             if (this_00 != (Water *)0x0) {
-              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_00,(MethodInfo *)0x0);
-              if (pGVar5 != (GameObject *)0x0) {
+              if (pGVar4 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar5,0,(MethodInfo *)0x0);
-                pCVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+                          (pGVar4,0,(MethodInfo *)0x0);
+                pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                                    ((MethodInfo *)0x0);
-                (this->fields).mainCamera = pCVar7;
-                func_?(&(this->fields).mainCamera,pCVar7);
-                pCVar7 = (this->fields).mainCamera;
-                if (pCVar7 != (Camera *)0x0) {
-                  pAVar8 = (AudioLowPassFilter *)
+                (this->fields).mainCamera = pCVar6;
+                func_?(&(this->fields).mainCamera,pCVar6);
+                pCVar6 = (this->fields).mainCamera;
+                if (pCVar6 != (Camera *)0x0) {
+                  pAVar7 = (AudioLowPassFilter *)
                            UnityEngine.CoreModule.dll::UnityEngine::Component::
                            Component_GetComponent_1
-                                     ((Component *)pCVar7,
+                                     ((Component *)pCVar6,
                                       UnityEngine__AudioLowPassFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioLowPassFilter>__
                                      );
-                  (this->fields).lowPassFilter = pAVar8;
-                  func_?(&(this->fields).lowPassFilter,pAVar8);
-                  pCVar7 = (this->fields).mainCamera;
-                  if (pCVar7 != (Camera *)0x0) {
-                    pAVar9 = (AudioReverbFilter *)
+                  (this->fields).lowPassFilter = pAVar7;
+                  func_?(&(this->fields).lowPassFilter,pAVar7);
+                  pCVar6 = (this->fields).mainCamera;
+                  if (pCVar6 != (Camera *)0x0) {
+                    pAVar8 = (AudioReverbFilter *)
                              UnityEngine.CoreModule.dll::UnityEngine::Component::
                              Component_GetComponent_1
-                                       ((Component *)pCVar7,
+                                       ((Component *)pCVar6,
                                         UnityEngine__AudioReverbFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioReverbFilter>__
                                        );
-                    (this->fields).reverbFilter = pAVar9;
-                    func_?(&(this->fields).reverbFilter,pAVar9);
+                    (this->fields).reverbFilter = pAVar8;
+                    func_?(&(this->fields).reverbFilter,pAVar8);
                     return;
                   }
                 }
@@ -569,7 +551,19 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_Start
           }
         }
       }
+      goto code_?;
     }
+    pSVar9 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
+    if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
+      pSVar9 = pSVar2;
+    }
+    if (pSVar9 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
+    (pSVar1->fields).OnSkyboxColorChanged = pSVar9;
+    pSVar9 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
+    if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
+      pSVar9 = pSVar2;
+    }
+    if (pSVar9 != (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:

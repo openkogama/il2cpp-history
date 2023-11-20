@@ -27,12 +27,13 @@ void Assembly-CSharp.dll::EnterPlaySessionRoundCountDown::EnterPlaySessionRoundC
   if ((pMVar2 != (MVNetworkGame *)0x0) &&
      (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
      pMVar3 != (MVNetworkGameStateListener *)0x0)) {
-    args.m_value = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInSeconds
-                             (pMVar3,(MethodInfo *)0x0);
-    str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+    IStack_4.m_value =
+         MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInSeconds
+                   (pMVar3,(MethodInfo *)0x0);
+    str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
     mscorlib.dll::System::String::String_Concat_3(str0,str1,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar1->klass->vtable).set_text.method)();
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar2 != (MVNetworkGame *)0x0) &&
          (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
@@ -56,8 +57,6 @@ void Assembly-CSharp.dll::EnterPlaySessionRoundCountDown::EnterPlaySessionRoundC
                func_?(
                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                               );
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-          goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
@@ -81,27 +80,25 @@ void Assembly-CSharp.dll::EnterPlaySessionRoundCountDown::EnterPlaySessionRoundC
           func_?(&TypeInfo__MVGameControllerBase);
           cRam_? = '\x01';
         }
-        pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-        if (pIVar4 != (IPlayModeUI *)0x0) {
-          func_?(4,TypeInfo__IPlayModeUI,pIVar4,0);
-          pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+        pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+        if (pIVar5 != (IPlayModeUI *)0x0) {
+          func_?(4,TypeInfo__IPlayModeUI,pIVar5,0);
+          pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                              ((MethodInfo *)0x0);
-          if ((pSVar5 != (SpawnRoleDataMediator *)0x0) &&
-             (this_00 = (pSVar5->fields).SpawnRoleModeTypeWrapper,
+          if ((pSVar6 != (SpawnRoleDataMediator *)0x0) &&
+             (this_00 = (pSVar6->fields).SpawnRoleModeTypeWrapper,
              this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
-            bVar6 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
+            bVar7 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
                               (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
-            if (bVar6 != 0) {
-              pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+            if (bVar7 != 0) {
+              pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                  ((MethodInfo *)0x0);
-              if ((pGVar7 == (GameEventManager *)0x0) ||
-                 (this_01 = (pGVar7->fields).AvatarCommandsPlayMode,
+              if ((pGVar8 == (GameEventManager *)0x0) ||
+                 (this_01 = (pGVar8->fields).AvatarCommandsPlayMode,
                  this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
               goto code_?;
-              GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-              RewardedInterstitialAd__RegisterAdEvents_m__2
-                        ((RewardedInterstitialAd *)this_01,(Object *)0x0,(EventArgs *)args.m_value,
-                         unaff_EBP);
+              GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
+              RewardedAd__RegisterAdEvents_m__9((RewardedAd *)this_01,(MethodInfo *)0x0);
             }
             return;
           }
@@ -111,8 +108,8 @@ void Assembly-CSharp.dll::EnterPlaySessionRoundCountDown::EnterPlaySessionRoundC
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

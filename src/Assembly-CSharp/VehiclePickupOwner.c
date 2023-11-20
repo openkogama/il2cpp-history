@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner_Equip
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_AvatarItem_is_null__This_is_thou,(MethodInfo *)0x0);
     avatarItem = MVPickupOwner::MVPickupOwner_CreateAvatarItem
                            ((MVPickupOwner *)this,AvatarItemType__Enum_Hand,variantId,
@@ -66,11 +66,11 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner_Equip
                     ((MVPickupOwner *)this_00,avatarItem,(MethodInfo *)0x0);
           pPStack8 = (this_00->fields)._.currentItem;
           if (pPStack8 != (PickupItem *)0x0) {
-            pMStack9 = (pPStack8->klass->vtable).OnEquip.method;
-            (*(pPStack8->klass->vtable).OnEquip.methodPtr)();
+            pIStack9 = (pPStack8->klass->vtable).OnUnequip.methodPtr;
+            (*(code *)(pPStack8->klass->vtable).OnEquip.method)();
             if ((this_00->fields)._.onEquipItem != (MVPickupOwner_OnEquipItemDelegate *)0x0) {
               pMVar10 = (this_00->fields)._.onEquipItem;
-              pMStack9 = (pMVar10->fields)._._.method;
+              pIStack9 = (pMVar10->fields)._._.method;
               pPStack8 = (this_00->fields)._.currentItem;
               (*(pMVar10->fields)._._.invoke_impl)();
             }
@@ -118,7 +118,7 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner_OnLocalObjectsD
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_OnLocalObjectsDestroyed,(MethodInfo *)0x0);
   (this->fields)._._IsLocal_k__BackingField = 0;
   return;
@@ -151,8 +151,8 @@ code_?:
       return;
     }
     if ((pPVar1->fields)._IsHolstered_k__BackingField == 0) {
-      (*(pPVar1->klass->vtable).OnUnequip.methodPtr)
-                (pPVar1,(pPVar1->klass->vtable).OnUnequip.method);
+      (*(code *)(pPVar1->klass->vtable).OnUnequip.method)
+                (pPVar1,(pPVar1->klass->vtable).ResetAmmo.methodPtr);
       pPVar1 = (this->fields)._.currentItem;
       if (pPVar1 == (PickupItem *)0x0) goto code_?;
       obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -202,8 +202,8 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner__ctor
   (this->fields)._.lookDirection.y = fVar2;
   (this->fields)._.lookDirection.z = fVar3;
   (this->fields)._._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

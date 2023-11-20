@@ -19,53 +19,51 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_A
   if ((TypeInfo__ClientSideNPCInteractable->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-            TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)type,
+  pDVar1 = TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary;
+  if (pDVar1 != (Dictionary_2_AvatarModifierPackageType_System_Single_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,type,
                        MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>__ContainsKey_AvatarModifierPackageType_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
 code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_Ignore_add_modifier,(MethodInfo *)0x0);
       return;
     }
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar2 != (MVNetworkGame *)0x0) &&
-       (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
-      pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar3,id,(MethodInfo *)0x0);
-      if (pMVar4 == (MVPlayer *)0x0) goto code_?;
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar3 != (MVNetworkGame *)0x0) &&
+       (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) {
+      pMVar5 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar4,id,(MethodInfo *)0x0);
+      if (pMVar5 == (MVPlayer *)0x0) goto code_?;
       if ((TypeInfo__ClientSideNPCInteractable->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      this_01 = TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary;
-      if (this_01 != (Dictionary_2_AvatarModifierPackageType_System_Single_ *)0x0) {
+      pDVar1 = TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary;
+      if (pDVar1 != (Dictionary_2_AvatarModifierPackageType_System_Single_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
         Dictionary_2_System_Int32Enum_System_Single__get_Item
-                  ((Dictionary_2_System_Int32Enum_System_Single_ *)this_01,0,
+                  ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,0,
                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>__get_Item_AvatarModifierPackageType_
                   );
-        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar2 != (MVNetworkGame *)0x0) &&
-           (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
-          MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar3,id,(MethodInfo *)0x0);
-          (**(code **)(*(int *)id + 0xe4))();
+        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar3 != (MVNetworkGame *)0x0) &&
+           (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) {
+          MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(pMVar4,id,(MethodInfo *)0x0);
+          (**(code **)(*(int *)id + 0xe8))();
           return;
         }
       }
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar6 = func_?(&stack0xfffffff0);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -84,7 +82,7 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_C
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral__ignore_ClearModifiers,(MethodInfo *)0x0);
   return;
 }
@@ -124,31 +122,34 @@ code_?:
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__SharedWorldObjectValuesRepository);
     }
-    pDVar3 = MVWorldObject.dll::MV::WorldObject::SharedWorldObjectValuesRepository::
-             SharedWorldObjectValuesRepository_GetValues
-                       ((WorldObjectType__Enum)unaff_EDI,(MethodInfo *)0x0);
-    if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar3,(Object *)StringLiteral_RespawnInterval,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar5 = CONCAT44(TypeInfo__System__Int32,pOVar4);
-    if (pOVar4 == (Object *)0x0) goto code_?;
-    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              MVWorldObject.dll::MV::WorldObject::SharedWorldObjectValuesRepository::
+              SharedWorldObjectValuesRepository_GetValues
+                        ((WorldObjectType__Enum)unaff_EDI,(MethodInfo *)0x0);
+    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    piVar6 = (int32_t *)func_?();
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_RespawnInterval,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar5 = (int32_t *)func_?();
     pMVar1 = (this->fields)._._.worldObjectParent;
-    (this->fields).respawnInterval = *piVar6;
+    (this->fields).respawnInterval = *piVar5;
     if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
-    pDVar3 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                       (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+    hashtable = (Dictionary_2_System_Object_System_Object_ *)
+                (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                          (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
     unaff_EDI = Extensions::Extensions_GetObscuredType
-                          (pDVar3,StringLiteral_health,(MethodInfo *)0x0);
+                          (hashtable,StringLiteral_health,(MethodInfo *)0x0);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
@@ -157,18 +158,18 @@ code_?:
     pOVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat;
     if ((unaff_EDI->klass->_0).element_class ==
         (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_0).element_class) {
-      pOVar7 = (ObscuredFloat *)func_?(unaff_EDI);
-      fVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit_1(*pOVar7,(MethodInfo *)0x0);
-      (this->fields).maxHealth = fVar8;
+      pOVar6 = (ObscuredFloat *)func_?(unaff_EDI);
+      fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+              ObscuredFloat_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
+      (this->fields).maxHealth = fVar7;
       return;
     }
   }
-  uVar5 = func_?(unaff_EDI,pOVar2);
+  uVar4 = func_?(unaff_EDI,pOVar2);
 code_?:
-  func_?(uVar5);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(uVar4);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -189,8 +190,8 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_I
   iVar2 = (this->fields).respawnInterval;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                          (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+                (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                          (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
@@ -242,7 +243,7 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Ignore_remove_modifier,(MethodInfo *)0x0);
   return;
 }
@@ -271,8 +272,8 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     obscuredValue =
          (Object *)
-         (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                   (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+         (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                   (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
     unaff_EBX = (Dictionary_2_System_Object_System_Object_ *)
                 ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
                           (obscuredValue,(MethodInfo *)0x0);
@@ -281,14 +282,14 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
     }
     else {
       pDVar2 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if (((unaff_EBX->klass->_1).typeHierarchyDepth <
+      if (((unaff_EBX->klass->_1).naturalAligment <
            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth) ||
+           naturalAligment) ||
          (targetRuntimeVariables = unaff_EBX,
          (Dictionary_2_System_Object_System_Object___Class *)
          (unaff_EBX->klass->_1).typeHierarchy
          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          typeHierarchyDepth - 1] !=
+          naturalAligment - 1] !=
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
     }
@@ -304,13 +305,14 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
                 ((WorldObjectType__Enum)unaff_EBX,targetRuntimeVariables,(MethodInfo *)0x0);
       pMVar1 = (this->fields)._._.worldObjectParent;
       if (pMVar1 != (MVWorldObjectClient *)0x0) {
-        (*(pMVar1->klass->vtable).set_RunTimeData.methodPtr)
-                  (pMVar1,targetRuntimeVariables,(pMVar1->klass->vtable).set_RunTimeData.method);
+        (*(code *)(pMVar1->klass->vtable).set_RunTimeData.method)
+                  (pMVar1,targetRuntimeVariables,
+                   (pMVar1->klass->vtable).get_HasOutputConnector.methodPtr);
         pMVar1 = (this->fields)._._.worldObjectParent;
         if (pMVar1 != (MVWorldObjectClient *)0x0) {
           unaff_EBX = (Dictionary_2_System_Object_System_Object_ *)
-                      (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                                (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+                      (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                                (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
           iVar3 = (this->fields).respawnInterval;
           this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (this_00 != (MVNetworkGame *)0x0) {
@@ -336,7 +338,7 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
             value.fakeValue = iVar4;
             value.inited = pOVar5->inited;
             value._13_3_ = *(undefined3 *)&pOVar5->field_0xd;
-            Extensions::Extensions_SetObscuredType_3
+            Extensions::Extensions_SetObscuredType_2
                       (unaff_EBX,StringLiteral_deathTime,value,
                        void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
                       );
@@ -397,8 +399,8 @@ code_?:
   }
   else {
     pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(pMVar2->klass->vtable).get_RunTimeData.methodPtr)
-                       (pMVar2,(pMVar2->klass->vtable).get_RunTimeData.method);
+             (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
+                       (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
@@ -427,8 +429,8 @@ code_?:
     pMVar2 = (this->fields)._._.worldObjectParent;
     if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
     pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(pMVar2->klass->vtable).get_RunTimeData.methodPtr)
-                       (pMVar2,(pMVar2->klass->vtable).get_RunTimeData.method);
+             (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
+                       (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
@@ -454,8 +456,8 @@ code_?:
     pMVar2 = (this->fields)._._.worldObjectParent;
     if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
     unaff_EDI = (Dictionary_2_System_Object_System_Object_ *)
-                (*(pMVar2->klass->vtable).get_RunTimeData.methodPtr)
-                          (pMVar2,(pMVar2->klass->vtable).get_RunTimeData.method);
+                (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
+                          (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
@@ -478,7 +480,7 @@ code_?:
     value.fakeValue = (float)auStack_13._12_4_;
     value.inited = pOVar10->inited;
     value._17_3_ = *(undefined3 *)&pOVar10->field_0x11;
-    Extensions::Extensions_SetObscuredType_2
+    Extensions::Extensions_SetObscuredType_1
               (unaff_EDI,StringLiteral_health,value,
                void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat_
               );
@@ -493,8 +495,8 @@ code_?:
         pMVar2 = (pCVar1->fields)._._.worldObjectParent;
         if (pMVar2 != (MVWorldObjectClient *)0x0) {
           pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
-                   (*(pMVar2->klass->vtable).get_RunTimeData.methodPtr)
-                             (pMVar2,(pMVar2->klass->vtable).get_RunTimeData.method);
+                   (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
+                             (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
           if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
@@ -518,7 +520,7 @@ code_?:
           value_01.fakeValue = (float)auStack_13._12_4_;
           value_01.inited = pOVar10->inited;
           value_01._17_3_ = *(undefined3 *)&pOVar10->field_0x11;
-          Extensions::Extensions_SetObscuredType_2
+          Extensions::Extensions_SetObscuredType_1
                     (pDVar5,StringLiteral_health,value_01,
                      void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat_
                     );
@@ -534,25 +536,29 @@ code_?:
     {
       func_?(TypeInfo__MV__WorldObject__RuntimeVariablesRepository);
     }
-    pDVar5 = MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
-             RuntimeVariablesRepository_GetRuntimeVariables
-                       ((WorldObjectType__Enum)unaff_EDI,(MethodInfo *)0x0);
-    if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pOVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__get_Item
-                        (pDVar5,(Object *)StringLiteral_health,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-    uVar4 = CONCAT44(TypeInfo__System__Single,pOVar15);
-    if (pOVar15 == (Object *)0x0) goto code_?;
-    if ((pOVar15->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      puVar16 = (undefined4 *)func_?(pOVar15);
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
+              RuntimeVariablesRepository_GetRuntimeVariables
+                        ((WorldObjectType__Enum)unaff_EDI,(MethodInfo *)0x0);
+    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (this_00,(Object *)StringLiteral_health,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    uVar4 = CONCAT44(TypeInfo__System__Single,TVar15.m_Index);
+    if (TVar15.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar15.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      puVar16 = (undefined4 *)func_?(TVar15.m_Index);
       pMVar2 = (this->fields)._._.worldObjectParent;
       value_02 = (ClientSideNPCInteractable *)*puVar16;
       if (pMVar2 != (MVWorldObjectClient *)0x0) {
         pDVar5 = (Dictionary_2_System_Object_System_Object_ *)
-                 (*(pMVar2->klass->vtable).get_RunTimeData.methodPtr)
-                           (pMVar2,(pMVar2->klass->vtable).get_RunTimeData.method);
+                 (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
+                           (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
         pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar8 != (MVNetworkGame *)0x0) {
           unaff_EDI = (Dictionary_2_System_Object_System_Object_ *)
@@ -576,7 +582,7 @@ code_?:
           value_00.currentCryptoKey = auStack_13._0_4_;
           value_00.fakeValue = auStack_13._8_4_;
           value_00._12_4_ = auStack_13._12_4_;
-          Extensions::Extensions_SetObscuredType_3
+          Extensions::Extensions_SetObscuredType_2
                     (pDVar5,StringLiteral_deathTime,value_00,
                      void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
                     );
@@ -615,16 +621,17 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable__
                    );
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_AvatarModifierPackageType_System_Single_ *)
+  this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>
                         );
-  if (this != (Dictionary_2_AvatarModifierPackageType_System_Single_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>__Dictionary__
-              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>__Dictionary__
+            );
+  if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
     Dictionary_2_System_Int32Enum_System_Single__Add
               ((Dictionary_2_System_Int32Enum_System_Single_ *)this,0x12,-1.0,
@@ -635,7 +642,8 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable__
               ((Dictionary_2_System_Int32Enum_System_Single_ *)this,8,1.8,
                MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_float>__Add_AvatarModifierPackageType__float_
               );
-    TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary = this;
+    TypeInfo__ClientSideNPCInteractable->static_fields->allowedModifiersDictionary =
+         (Dictionary_2_AvatarModifierPackageType_System_Single_ *)this;
     func_?();
     return;
   }

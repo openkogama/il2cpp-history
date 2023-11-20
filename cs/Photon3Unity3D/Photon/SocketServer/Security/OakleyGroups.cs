@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 [assembly: AssemblyCompany("Exit Games GmbH")]
 [assembly: AssemblyConfiguration(".NET Framework 3.5")]
 [assembly: AssemblyCopyright("(c) Exit Games GmbH, http://www.exitgames.com")]

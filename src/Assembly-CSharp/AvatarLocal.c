@@ -129,47 +129,40 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_Initialize
                        );
   }
   (this->fields).avatarCameraController = pIVar1;
-  pMVar2 = (MVAvatar *)&UNK_?;
   func_?(&(this->fields).avatarCameraController);
   pIVar1 = (this->fields).avatarCameraController;
   if (pIVar1 == (IAvatarCameraController *)0x0) {
     func_?();
   }
-  else {
-    pMVar3 = mvAvatar;
-    if ((mvAvatar == (MVAvatar *)0x0) ||
-       (((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <=
-         (mvAvatar->klass->_1).typeHierarchyDepth &&
-        (pMVar3 = pMVar2,
-        (MVAvatarLocal__Class *)
-        (mvAvatar->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] ==
-        TypeInfo__MVAvatarLocal)))) {
-      uVar4 = 0;
-      uVar5 = (pIVar1->klass->_1).interface_offsets_count;
-      if (uVar5 != 0) {
-        do {
-          if (pIVar1->klass->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__IAvatarCameraController) {
-            pVVar6 = &(pIVar1->klass->vtable).Initialize +
-                     pIVar1->klass->interfaceOffsets[uVar4].offset;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-          mvAvatar = pMVar3;
-        } while (uVar4 < uVar5);
-      }
-      pMVar3 = mvAvatar;
-      pVVar6 = (VirtualInvokeData *)func_?(pIVar1,TypeInfo__IAvatarCameraController);
-code_?:
-      (*pVVar6->methodPtr)(pIVar1,pMVar3);
-      layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
-      AvatarLocal_CreateXPParticlesWithLayer(this,0,layer,(MethodInfo *)0x0);
-      return;
+  else if ((mvAvatar == (MVAvatar *)0x0) ||
+          (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (mvAvatar->klass->_1).naturalAligment
+           && ((MVAvatarLocal__Class *)
+               (mvAvatar->klass->_1).typeHierarchy
+               [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)))) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+            (Il2CppClass *)TypeInfo__IAvatarCameraController) {
+          ppMVar5 = &(&(pIVar2->vtable).Initialize)[pIVar2->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IAvatarCameraController);
+code_?:
+    (*(code *)*ppMVar5)(pIVar1,mvAvatar);
+    layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
+    AvatarLocal_CreateXPParticlesWithLayer(this,0,layer,(MethodInfo *)0x0);
+    return;
   }
   func_?(mvAvatar);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -189,10 +182,10 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_OnDestroy(AvatarLocal *this,M
     this_00 = (Component *)0x0;
   }
   else {
-    if (((pCVar1->klass->_1).typeHierarchyDepth <
-         (TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth) ||
+    if (((pCVar1->klass->_1).naturalAligment <
+         (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
        ((pCVar1->klass->_1).typeHierarchy
-        [(TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth - 1] !=
+        [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) {
       bVar2 = false;
     }
@@ -244,7 +237,7 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_OnXpProgressing
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_OnXpProgressing,(MethodInfo *)0x0);
   pMVar1 = (this->fields)._.mvAvatar;
   if (((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
@@ -294,41 +287,36 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal__ctor(AvatarLocal *this,Metho
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>
-                           );
-  if (this_00 != (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Dictionary__
-              );
-    (this->fields)._.modifiers = this_00;
-    func_?(&(this->fields)._.modifiers,this_00);
-    this_01 = (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>
-                             );
-    if (this_01 != (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Dictionary__
-                );
-      (this->fields)._.currentModifierByteState = this_01;
-      func_?(&(this->fields)._.currentModifierByteState,this_01);
-      pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
-      (this->fields)._.modifierEffectCount = pBVar1;
-      func_?(&(this->fields)._.modifierEffectCount,pBVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+           func_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>
+                          );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (pDVar1,
+             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Dictionary__
+            );
+  (this->fields)._.modifiers = (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)pDVar1;
+  func_?(&(this->fields)._.modifiers,pDVar1);
+  pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+           func_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>
+                          );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (pDVar1,
+             MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Dictionary__
+            );
+  (this->fields)._.currentModifierByteState =
+       (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)pDVar1;
+  func_?(&(this->fields)._.currentModifierByteState,pDVar1);
+  pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x1b);
+  (this->fields)._.modifierEffectCount = pBVar2;
+  func_?(&(this->fields)._.modifierEffectCount,pBVar2);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

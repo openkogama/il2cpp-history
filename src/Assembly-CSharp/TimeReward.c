@@ -1,10 +1,32 @@
 
+/* Void DestroyRewardRequest() */
+
+void Assembly-CSharp.dll::TimeReward::TimeReward_DestroyRewardRequest
+               (TimeReward *this,MethodInfo *method)
+
+{
+  pIStack_1 = (Il2CppImage *)&stack0xfffffffc;
+  pTStack_2 = (this->fields).rewardStateBase;
+  if (pTStack_2 != (TimeReward_RewardStateBase *)0x0) {
+    pIStack_1 = pTStack_2->klass[1]._0.image;
+    (*(code *)(pTStack_2->klass->vtable).__unknown_1.method)();
+    return;
+  }
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
 /* Void Init() */
 
 void Assembly-CSharp.dll::TimeReward::TimeReward_Init(TimeReward *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__TimeReward__RequestRewardData);
     func_?(&TypeInfo__UpdateController);
@@ -17,54 +39,26 @@ void Assembly-CSharp.dll::TimeReward::TimeReward_Init(TimeReward *this,MethodInf
   UpdateController::UpdateController_AddUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
              (MethodInfo *)0x0);
-  if (cRam_? == '\0') {
+  MVGameControllerBase::MVGameControllerBase_get_UsingDevSessionData((MethodInfo *)0x0);
+  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    cRam_? = '\x01';
   }
-  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-     (pKVar2 = (pMVar1->fields).koGaMaSettings, pKVar2 != (KoGaMaSettingsContainer *)0x0)) {
-    if ((pKVar2->fields).showDebugLogin == 0) {
-      System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-      Single,System::Object]::
-      SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__System_Collections_ICollection_get_IsSynchronized
-                ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                 unaff_retaddr);
-    }
-    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                       ((Boolean *)&stack0xfffffffb,(IFormatProvider *)0x0,unaff_retaddr);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral__MVGameControllerBase_UsingDevSe,pSVar3,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-       (pKVar2 = (pMVar1->fields).koGaMaSettings, pKVar2 != (KoGaMaSettingsContainer *)0x0)) {
-      if (((pKVar2->fields).showDebugLogin == 0) &&
-         (bVar4 = System.dll::System::Collections::Generic::
-                  SortedList`2[TKey,TValue]+ValueList[System::Single,System::Object]::
-                  SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__System_Collections_ICollection_get_IsSynchronized
-                            ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                             unaff_retaddr), bVar4 == 0)) {
-        this_00 = (TimeReward_RequestRewardData *)func_?();
-        if (this_00 == (TimeReward_RequestRewardData *)0x0) goto code_?;
-        TimeReward+RequestRewardData::TimeReward_RequestRewardData__ctor(this_00,(MethodInfo *)0x0);
-        (this->fields).rewardStateBase = (TimeReward_RewardStateBase *)this_00;
-        func_?(&this->fields);
-      }
-      return;
-    }
+  pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString
+                     ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral__MVGameControllerBase_UsingDevSe,pSVar1,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  bVar2 = MVGameControllerBase::MVGameControllerBase_get_UsingDevSessionData((MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pTStack3 = TypeInfo__TimeReward__RequestRewardData;
+    this_00 = (TimeReward_RequestRewardData *)func_?();
+    TimeReward+RequestRewardData::TimeReward_RequestRewardData__ctor(this_00,(MethodInfo *)0x0);
+    (this->fields).rewardStateBase = (TimeReward_RewardStateBase *)this_00;
+    func_?();
+  }
   return;
 }
 
@@ -78,8 +72,8 @@ void Assembly-CSharp.dll::TimeReward::TimeReward_UpdateControllerUpdate
   pTVar1 = (this->fields).rewardStateBase;
   if (pTVar1 != (TimeReward_RewardStateBase *)0x0) {
     pTVar1 = (TimeReward_RewardStateBase *)
-             (*(pTVar1->klass->vtable).__unknown.methodPtr)
-                       (pTVar1,(pTVar1->klass->vtable).__unknown.method);
+             (*(code *)(pTVar1->klass->vtable).__unknown.method)
+                       (pTVar1,(pTVar1->klass->vtable).__unknown_1.methodPtr);
     (this->fields).rewardStateBase = pTVar1;
     func_?(&this->fields,pTVar1);
     pTVar1 = (this->fields).rewardStateBase;
@@ -112,20 +106,15 @@ void Assembly-CSharp.dll::TimeReward::TimeReward__ctor(TimeReward *this,MethodIn
     func_?(&TypeInfo__TimeReward__RewardDone);
     cRam_? = '\x01';
   }
-  value = (TimeReward_RewardStateBase *)func_?(TypeInfo__TimeReward__RewardDone);
-  if (value != (TimeReward_RewardStateBase *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).rewardStateBase = value;
-    func_?(method_00,value);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_01 = TypeInfo__TimeReward__RewardDone;
+  value = (TimeReward_RewardStateBase *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).rewardStateBase = value;
+  func_?(method_00,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

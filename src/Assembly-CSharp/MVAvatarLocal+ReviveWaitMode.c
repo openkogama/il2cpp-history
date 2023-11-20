@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveWaitMode::MVAvatarLocal_ReviveWait
                (MVAvatarLocal_ReviveWaitMode *this,MVAvatarLocal *mvAvatar,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.mvAvatar = mvAvatar;
   func_?(&this->fields,mvAvatar);

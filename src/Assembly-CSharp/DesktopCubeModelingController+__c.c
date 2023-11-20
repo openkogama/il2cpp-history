@@ -109,22 +109,24 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::
     return;
   }
   uVar4 = 0;
-  uVar5 = (x->klass->_1).interface_offsets_count;
-  if (uVar5 != 0) {
+  pIVar5 = x->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
     do {
-      if (x->klass->interfaceOffsets[uVar4].interfaceType ==
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        pVVar6 = &(x->klass->vtable).CreateErrorNotificationPopup +
-                 x->klass->interfaceOffsets[uVar4].offset;
+        ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)
+                   [x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
+    } while (uVar4 < uVar6);
   }
-  pVVar6 = (VirtualInvokeData *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
 code_?:
-  (*pVVar6->methodPtr)(x,pSVar1,pSVar2,pVVar6->method);
+  (*(code *)*ppMVar7)(x,pSVar1,pSVar2,ppMVar7[1]);
   return;
 }
 
@@ -139,18 +141,12 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModeling
     func_?(&TypeInfo__DesktopCubeModelingController____c);
     cRam_? = '\x01';
   }
-  value = (DesktopCubeModelingController_c *)
-          func_?(TypeInfo__DesktopCubeModelingController____c);
-  if (value != (DesktopCubeModelingController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__DesktopCubeModelingController____c->static_fields->__9 = value;
-    func_?(TypeInfo__DesktopCubeModelingController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__DesktopCubeModelingController____c;
+  value = (DesktopCubeModelingController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__DesktopCubeModelingController____c->static_fields->__9 = value;
+  func_?(TypeInfo__DesktopCubeModelingController____c->static_fields,value);
   return;
 }
 

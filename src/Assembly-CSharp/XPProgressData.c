@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::XPProgressData::XPProgressData__ctor
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).playerCurrentXP = playerCurrentXP;
   (this->fields).xpLevelLimits = xpLevelLimits;
@@ -28,7 +28,6 @@ bool Assembly-CSharp.dll::XPProgressData::XPProgressData_get_XPLimitExceeded
 code_?:
     uVar3 = func_?(&TypeInfo__System__Exception);
     pEVar4 = (Exception *)func_?(uVar3);
-    func_?(pEVar4);
     pMVar5 = (MethodInfo *)0x0;
     pSVar6 = (String *)func_?(&StringLiteral_currentXp__0);
     mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
@@ -50,7 +49,6 @@ code_?:
   }
   uVar3 = func_?(&TypeInfo__System__Exception);
   pEVar4 = (Exception *)func_?(uVar3);
-  func_?(pEVar4);
   pMVar5 = (MethodInfo *)0x0;
   pSVar6 = (String *)func_?(&StringLiteral_currentXp___prevXp);
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
@@ -59,7 +57,6 @@ code_?:
 code_?:
   uVar3 = func_?(&TypeInfo__System__Exception);
   pEVar4 = (Exception *)func_?(uVar3);
-  func_?(pEVar4);
   pMVar5 = (MethodInfo *)0x0;
   pSVar6 = (String *)func_?(&StringLiteral_prevXp___nextXp);
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);

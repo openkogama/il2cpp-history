@@ -26,6 +26,22 @@ public class AdUIWithTimeout : MonoBehaviour, IAdUIManager
 	private Action<RewardedAdResult> rewardedCallback;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _TryPopOverlay_b__16_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass11_0
 	{
@@ -66,22 +82,6 @@ public class AdUIWithTimeout : MonoBehaviour, IAdUIManager
 
 		// Methods
 		internal void _PopRewardedVideo_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__16_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _TryPopOverlay_b__16_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

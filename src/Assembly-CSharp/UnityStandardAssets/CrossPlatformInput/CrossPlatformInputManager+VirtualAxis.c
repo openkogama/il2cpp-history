@@ -22,7 +22,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
   if (pSVar1 == (String *)0x0) {
     uVar2 = func_?(&TypeInfo__System__ArgumentNullException);
     this_02 = (ArgumentNullException *)func_?(uVar2);
-    func_?(this_02);
     method_00 = (MethodInfo *)0x0;
     pSVar1 = (String *)func_?(&StringLiteral_name);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
@@ -49,12 +48,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                        );
         cRam_? = '\x01';
       }
-      this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                 (pVVar3->fields).m_VirtualAxes;
-      if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+      if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (this_00,(Object *)pSVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_
                           );
@@ -88,7 +87,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                (CrossPlatformInputManager_VirtualAxis *this,String *name,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
@@ -105,7 +104,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);

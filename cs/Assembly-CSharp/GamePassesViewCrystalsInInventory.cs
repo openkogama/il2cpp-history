@@ -40,20 +40,6 @@ public class GamePassesViewCrystalsInInventory : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public int categoryId;
-		public int itemSlot;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal void _OpenInventoryAtPosition_b__0(IPlayerInventory x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
 	private sealed class __c__DisplayClass10_0
 	{
 		// Fields
@@ -75,6 +61,20 @@ public class GamePassesViewCrystalsInInventory : MonoBehaviour
 
 		// Methods
 		internal void _ProductPurchaseResponseHandler_b__1(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public int categoryId;
+		public int itemSlot;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _OpenInventoryAtPosition_b__0(IPlayerInventory x, BaseEventData y);
 	}
 
 	// Constructors

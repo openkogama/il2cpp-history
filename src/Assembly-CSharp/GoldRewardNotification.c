@@ -17,15 +17,17 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
   pGVar1 = this;
   this = (GoldRewardNotification *)CONCAT13(2,this._0_3_);
   (pGVar1->fields)._.timeSinceStart = 0.0;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,pOVar2,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 != (Object *)0x0) {
-      if ((pOVar2->klass->_0).element_class == (TypeInfo__NotificationLifetime->_0).element_class) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__NotificationLifetime->_0).element_class) {
         piVar3 = (int32_t *)func_?();
         (pGVar1->fields).lifeTime = *piVar3;
         return;
@@ -33,9 +35,9 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
       goto code_?;
     }
   }
-  pOVar2 = (Object *)func_?();
+  TVar2.m_Index = func_?();
 code_?:
-  func_?(pOVar2);
+  func_?(TVar2.m_Index);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -59,8 +61,8 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
       (*(pAVar2->fields)._._.invoke_impl)
                 ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
     }
-    iVar3 = (*(this->klass->vtable).get_Lifetime.methodPtr)
-                      (this,(this->klass->vtable).get_Lifetime.method);
+    iVar3 = (*(code *)(this->klass->vtable).get_Lifetime.method)
+                      (this,(this->klass->vtable).Initialize.methodPtr);
     (this->fields)._.timeSinceStart = (float)(iVar3 + 1);
   }
   return;

@@ -39,7 +39,6 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_Destroy
 code_?:
   func_?();
   this_00 = (Exception *)func_?();
-  func_?();
   message = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
   uStack4 = func_?();
@@ -142,7 +141,6 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_OnDataUpdate
   }
   func_?();
   this_02 = (Exception *)func_?();
-  func_?(this_02);
   message = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,(MethodInfo *)0x0);
   uStack2 = func_?();
@@ -188,17 +186,6 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit__ctor
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_get_DocumentationType
-          (MVOculusKillLimit *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_OculusKillWinCondition;
-}
-
-
 /* Int32 get_GamePointRewardAmount() */
 
 int32_t Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_get_GamePointRewardAmount
@@ -225,15 +212,18 @@ int32_t Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_get_KillLimit
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_killLimit,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_killLimit,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
         return *piVar2;
       }

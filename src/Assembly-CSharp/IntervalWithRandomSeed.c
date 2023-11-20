@@ -48,7 +48,7 @@ void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed__ctor
                (IntervalWithRandomSeed *this,float interval,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).range = interval;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range

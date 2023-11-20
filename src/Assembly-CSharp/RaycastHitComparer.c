@@ -11,9 +11,10 @@ void Assembly-CSharp.dll::RaycastHitComparer::RaycastHitComparer__ctor
                    );
     cRam_? = '\x01';
   }
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor
-            ((TweenRunner_1_FloatTween_ *)this,
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,
              MethodInfo__System__Collections__Generic__Comparer<UnityEngine::RaycastHit>__Comparer__
             );
   return;

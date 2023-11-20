@@ -35,15 +35,17 @@ Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetTargets
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  HStack_7._set = (HashSet_1_System_Int32_ *)0x0;
+  HStack_7._set = (HashSet_1_System_UInt32_ *)0x0;
   HStack_7._index = 0;
   HStack_7._version = 0;
   HStack_7._current = 0;
   pWStack_8 = (WorldObjectClientRef *)0x0;
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).removeSet;
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3__Clear
+  this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            (this->fields).removeSet;
+  if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     pLVar9 = (this->fields).targets;
     if (pLVar9 != (List_1_WorldObjectClientRef_ *)0x0) {
@@ -56,36 +58,36 @@ Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetTargets
                   ((Array *)(pLVar9->fields)._items,0,(int32_t)length,(MethodInfo *)0x0);
         unaff_EDI = length;
       }
-      pHVar11 = (HashSet_1_System_Object_ *)(this->fields).potentialTargets;
-      if (pHVar11 != (HashSet_1_System_Object_ *)0x0) {
-        pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-                 HashSet_1_System_Object__GetEnumerator
+      pHVar11 = (HashSet_1_System_UInt32_ *)(this->fields).potentialTargets;
+      if (pHVar11 != (HashSet_1_System_UInt32_ *)0x0) {
+        pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                 HashSet_1_System_UInt32__GetEnumerator
                            (&HStack_13,pHVar11,
                             MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__)
         ;
-        HStack_7._set = (HashSet_1_System_Int32_ *)pHVar12->_set;
+        HStack_7._set = pHVar12->_set;
         HStack_7._index = pHVar12->_index;
         HStack_7._version = pHVar12->_version;
-        HStack_7._current = (int32_t)pHVar12->_current;
+        HStack_7._current = pHVar12->_current;
         HStack_13._version = 0;
         uStack_1 = 1;
-        HStack_13._current = (Object *)&HStack_7;
+        HStack_13._current = (uint32_t)&HStack_7;
         while( true ) {
           bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
-                  Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                  UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
                             (&HStack_7,
                              MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                             );
           if (bVar14 == 0) break;
-          pOStack_15 = (Object *)HStack_7._current;
+          IStack_15 = HStack_7._current;
           bVar14 = OptimizedPerception_GetValidTarget
                             (this,HStack_7._current,alliedTeam,&pWStack_8,(MethodInfo *)0x0);
           if (bVar14 == 0) {
-            pHVar11 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
-            if (pHVar11 == (HashSet_1_System_Object_ *)0x0) goto code_?;
-            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-            HashSet_1_System_Object__Add
-                      (pHVar11,pOStack_15,
+            this_01 = (this->fields).removeSet;
+            if (this_01 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+            HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                      (this_01,IStack_15,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
           }
           else {
@@ -99,35 +101,35 @@ Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetTargets
           }
         }
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&HStack_7,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                    ,(MethodInfo *)in_stack_6);
         uStack_1 = 0xffffffff;
-        pHVar11 = (HashSet_1_System_Object_ *)(this->fields).removeSet;
-        if (pHVar11 != (HashSet_1_System_Object_ *)0x0) {
-          pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-                   HashSet_1_System_Object__GetEnumerator
+        pHVar11 = (HashSet_1_System_UInt32_ *)(this->fields).removeSet;
+        if (pHVar11 != (HashSet_1_System_UInt32_ *)0x0) {
+          pHVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                   HashSet_1_System_UInt32__GetEnumerator
                              (&HStack_13,pHVar11,
                               MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
                              );
-          HStack_7._set = (HashSet_1_System_Int32_ *)pHVar12->_set;
+          HStack_7._set = pHVar12->_set;
           HStack_7._index = pHVar12->_index;
           HStack_7._version = pHVar12->_version;
-          HStack_7._current = (int32_t)pHVar12->_current;
+          HStack_7._current = pHVar12->_current;
           HStack_13._version = 0;
           uStack_1 = 4;
-          HStack_13._current = (Object *)&HStack_7;
+          HStack_13._current = (uint32_t)&HStack_7;
           while( true ) {
             bVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
-                    Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
+                    UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
                               (&HStack_7,
                                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                               );
             if (bVar14 == 0) {
               uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                         ((Object *)&HStack_7,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
@@ -136,11 +138,11 @@ Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetTargets
               *unaff_FS_OFFSET = uStack_3;
               return pLVar9;
             }
-            this_01 = (this->fields).potentialTargets;
-            if (this_01 == (HashSet_1_System_Int32_ *)0x0) break;
-            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-            HashSet_1_System_Int32__Remove
-                      (this_01,HStack_7._current,
+            this_02 = (HashSet_1_System_Int32Enum_ *)(this->fields).potentialTargets;
+            if (this_02 == (HashSet_1_System_Int32Enum_ *)0x0) break;
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Remove
+                      (this_02,HStack_7._current,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Remove_int_);
           }
         }
@@ -187,7 +189,7 @@ bool Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetValidTarge
       }
       wo = (WorldObjectClientRef **)&UNK_?;
       method = message;
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)message,(MethodInfo *)0x0);
       method = (MethodInfo *)wo;
       *wo = (WorldObjectClientRef *)0x0;
@@ -311,13 +313,16 @@ void Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_UpdatePotenti
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__Physics);
     func_?(&StringLiteral_Player);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).potentialTargets;
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3__Clear
+  this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            (this->fields).potentialTargets;
+  if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     position = (this->fields).position;
     radius = (this->fields).radius;
@@ -327,53 +332,54 @@ void Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_UpdatePotenti
     pCVar1 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
     iVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                       (StringLiteral_Player,(MethodInfo *)0x0);
-    puVar3 = (undefined *)
-             UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                       (position,radius,pCVar1,1 << ((byte)iVar2 & 0x1f),(MethodInfo *)0x0);
-    uVar4 = 0;
-    if (0 < (int)puVar3) {
-      iVar5 = 0x10;
+    if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Physics);
+    }
+    iVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
+                      (position,radius,pCVar1,1 << ((byte)iVar2 & 0x1f),(MethodInfo *)0x0);
+    uVar3 = 0;
+    if (0 < iVar2) {
+      iVar4 = 0x10;
       do {
         if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CollisionDetectionGlobalBuffers);
         }
         pCVar1 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
         if (pCVar1 == (Collider__Array *)0x0) goto code_?;
-        if (pCVar1->max_length <= uVar4) goto code_?;
-        this_01 = *(Component **)((int)pCVar1->vector + iVar5 + -0x10);
+        if (pCVar1->max_length <= uVar3) goto code_?;
+        this_01 = *(Component **)((int)pCVar1->vector + iVar4 + -0x10);
         if (this_01 == (Component *)0x0) goto code_?;
         t = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       (this_01,(MethodInfo *)0x0);
         this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
                             (t,(MethodInfo *)0x0);
         if (this_03 != (MVWorldObjectClient *)0x0) {
-          pOStack_6 = (Object_1__Class *)(this_03->fields)._.id;
+          pOStack_5 = (Object_1__Class *)(this_03->fields)._.id;
           this_04 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
                               (this_03,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            pOStack_6 = TypeInfo__UnityEngine__Object;
-            puVar3 = &UNK_?;
+            pOStack_5 = TypeInfo__UnityEngine__Object;
             func_?();
           }
-          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)this_04,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
+          if (bVar6 != 0) {
             if (this_04 == (InteractionDataHandlerBase *)0x0) goto code_?;
-            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+            bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
                               ((Behaviour *)this_04,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
-              this_02 = (HashSet_1_System_Object_ *)(this->fields).potentialTargets;
-              if (this_02 == (HashSet_1_System_Object_ *)0x0) goto code_?;
-              System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-              HashSet_1_System_Object__Add
-                        (this_02,(Object *)pOStack_6,
+            if (bVar6 != 0) {
+              this_02 = (this->fields).potentialTargets;
+              if (this_02 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+              HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                        (this_02,(int32_t)pOStack_5,
                          MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
             }
           }
         }
-        uVar4 = uVar4 + 1;
-        iVar5 = iVar5 + 4;
-      } while ((int)uVar4 < (int)puVar3);
+        uVar3 = uVar3 + 1;
+        iVar4 = iVar4 + 4;
+      } while ((int)uVar3 < iVar2);
     }
     return;
   }
@@ -381,8 +387,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -401,42 +407,31 @@ void Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception__ctor
     func_?(&TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
     cRam_? = '\x01';
   }
-  pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
+  pHVar1 = (HashSet_1_System_Int32_ *)
            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    (this->fields).potentialTargets = (HashSet_1_System_Int32_ *)pHVar1;
-    func_?(&(this->fields).potentialTargets,pHVar1);
-    pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
-             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      (this->fields).removeSet = (HashSet_1_System_Int32_ *)pHVar1;
-      func_?(&(this->fields).removeSet,pHVar1);
-      this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
-      if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-        UnitySynchronizationContext+WorkRequest]::
-        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-                  (this_00,0x10,
-                   MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
-        method_00 = (MethodInfo *)&(this->fields).targets;
-        (this->fields).targets = (List_1_WorldObjectClientRef_ *)this_00;
-        func_?(method_00,this_00);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  (this->fields).potentialTargets = pHVar1;
+  func_?(&(this->fields).potentialTargets,pHVar1);
+  pHVar1 = (HashSet_1_System_Int32_ *)
+           func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  (this->fields).removeSet = pHVar1;
+  func_?(&(this->fields).removeSet,pHVar1);
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_00,0x10,
+             MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
+  (this->fields).targets = (List_1_WorldObjectClientRef_ *)this_00;
+  func_?(&(this->fields).targets,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_2);
   return;
 }
 

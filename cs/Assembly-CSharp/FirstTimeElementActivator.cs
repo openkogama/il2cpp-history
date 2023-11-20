@@ -25,19 +25,6 @@ public class FirstTimeElementActivator : MonoBehaviour, IFirstTimeElementActivat
 	private List<FirstTimeEvent> elementsToRemove;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass15_0
-	{
-		// Fields
-		public FirstTimeEventSkipPopup popup;
-
-		// Constructors
-		public __c__DisplayClass15_0();
-
-		// Methods
-		internal void _SkipFirstTimeEvent_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -52,6 +39,19 @@ public class FirstTimeElementActivator : MonoBehaviour, IFirstTimeElementActivat
 
 		// Methods
 		internal void _SkipFirstTimeEvent_b__15_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass15_0
+	{
+		// Fields
+		public FirstTimeEventSkipPopup popup;
+
+		// Constructors
+		public __c__DisplayClass15_0();
+
+		// Methods
+		internal void _SkipFirstTimeEvent_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

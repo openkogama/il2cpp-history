@@ -7,7 +7,7 @@ void MVWorldObject.dll::MV::WorldObject::AntiCheat::ApplicationDesc::Application
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).programName = displayName;
   func_?(&this->fields,displayName);

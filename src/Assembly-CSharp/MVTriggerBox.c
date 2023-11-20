@@ -17,31 +17,27 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Destroy(MVTriggerBox *this,
   pTVar1 = (this->fields).triggerBoxEvents;
   pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (pUVar2,(Object *)this,
+             MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+             ,(MethodInfo *)0x0);
+  if (pTVar1 != (TriggerBoxEvents *)0x0) {
+    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+    pTVar1 = (this->fields).triggerBoxEvents;
+    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (pUVar2,(Object *)this,
-               MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+               MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+      TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
                 (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-      pTVar1 = (this->fields).triggerBoxEvents;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar2,(Object *)this,
-                   MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pTVar1 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-          MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-          return;
-        }
-      }
+      MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -108,7 +104,7 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Enter
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -183,7 +179,7 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Exit(MVTriggerBox *this,Met
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -310,44 +306,42 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox__ctor
                worldObjects,(MethodInfo *)0x0);
     piVar2 = &(this->fields)._._.interactionFlags;
     *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)(this->fields)._._.component;
+    unaff_EDI = (this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    if (unaff_EDI != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      if (((unaff_EDI->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVTriggerBoxObject->_1).typeHierarchyDepth) ||
+    if (unaff_EDI != (ObjectPrefab *)0x0) {
+      if (((unaff_EDI->klass->_1).naturalAligment <
+           (TypeInfo__MVTriggerBoxObject->_1).naturalAligment) ||
          ((unaff_EDI->klass->_1).typeHierarchy
-          [(TypeInfo__MVTriggerBoxObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVTriggerBoxObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVTriggerBoxObject)) goto code_?;
-      (this->fields).triggerBoxEvents = (unaff_EDI->fields)._._.delegate_trampoline;
+      (this->fields).triggerBoxEvents = (TriggerBoxEvents *)unaff_EDI[1].monitor;
       func_?(&(this->fields).triggerBoxEvents);
       pTVar3 = (this->fields).triggerBoxEvents;
-      unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (unaff_EDI != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+               func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar4,(Object *)this,
+                 MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 ,(MethodInfo *)0x0);
+      unaff_EDI = (ObjectPrefab *)0x0;
+      if (pTVar3 != (TriggerBoxEvents *)0x0) {
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+        pTVar3 = (this->fields).triggerBoxEvents;
+        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (unaff_EDI,(Object *)this,
-                   MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                  (pUVar4,(Object *)this,
+                   MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
+        unaff_EDI = (ObjectPrefab *)0x0;
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)unaff_EDI,(MethodInfo *)0x0);
-          pTVar3 = (this->fields).triggerBoxEvents;
-          unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)
-                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          if (unaff_EDI != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (unaff_EDI,(Object *)this,
-                       MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                       ,(MethodInfo *)0x0);
-            if (pTVar3 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)unaff_EDI,(MethodInfo *)0x0);
-              return;
-            }
-          }
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+          return;
         }
       }
     }
@@ -355,8 +349,8 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox__ctor
   func_?();
 code_?:
   func_?(unaff_EDI);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

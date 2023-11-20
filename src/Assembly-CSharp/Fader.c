@@ -42,21 +42,25 @@ void Assembly-CSharp.dll::Fader::Fader_Fade(Fader *this,float fadeFactor,MethodI
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&StringLiteral_Faded_);
     func_?(&StringLiteral__factor_);
     cRam_? = '\x01';
   }
   if ((bool)(this->fields).faded != fadeFactor < _UNK_?) {
-    pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                       ((Boolean *)&(this->fields).faded,(IFormatProvider *)0x0,unaff_EDI);
+    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Boolean);
+    }
+    pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString
+                       ((Boolean *)&(this->fields).faded,(MethodInfo *)0x0);
     str3 = mscorlib.dll::System::Single::Single_ToString((Single *)&fadeFactor,(MethodInfo *)0x0);
     pSVar1 = mscorlib.dll::System::String::String_Concat_5
                        (StringLiteral_Faded_,pSVar1,StringLiteral__factor_,str3,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   }
   pRVar2 = (this->fields)._renderer;
   if (fadeFactor < _UNK_?) {

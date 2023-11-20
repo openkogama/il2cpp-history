@@ -13,8 +13,10 @@ void Assembly-CSharp.dll::ProxyLogHandler+LogFormatData::ProxyLogHandler_LogForm
   if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).LogType = logType;
   (this->fields).context = context;
   func_?(&(this->fields).context,context);

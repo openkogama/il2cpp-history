@@ -83,26 +83,24 @@ void Assembly-CSharp.dll::PressurePlateTintObject::PressurePlateTintObject_TeamT
 {
   switch(team) {
   case MVTeam__Enum_Blue:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3c23d70a,0x3f0a3d71,0x3f800000,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)
+              (this,0x3c23d70a,0x3f0a3d71,0x3f800000,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Red:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3f5ae148,0,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)(this,0x3f5ae148,0,0,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Green:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0,0x3f27ae14,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)(this,0,0x3f27ae14,0,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Yellow:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3f800000,0x3f800000,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)
+              (this,0x3f800000,0x3f800000,0,0,this->klass[1]._0.image);
     return;
   default:
-    (*(this->klass->vtable).Tint.methodPtr)
+    (*(code *)(this->klass->vtable).Tint.method)
               (this,(this->fields).OriginalColor.r,(this->fields).OriginalColor.g,
                (this->fields).OriginalColor.b,(this->fields).OriginalColor.a,
-               (this->klass->vtable).Tint.method);
+               (this->klass->vtable).TeamTint.methodPtr);
     return;
   case MVTeam__Enum_None:
     func_?(4,this,(this->fields).OriginalColor.r,(this->fields).OriginalColor.g,

@@ -11,9 +11,9 @@ void Assembly-CSharp.dll::StreamedSpriteToCallback::StreamedSpriteToCallback__ct
                    );
     cRam_? = '\x01';
   }
-  StreamedAssetToCallback`2[System::Object,System::Object]::
-  StreamedAssetToCallback_2_System_Object_System_Object___ctor
-            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+  StreamingAsset`2[System::Object,System::Object]::
+  StreamingAsset_2_System_Object_System_Object___ctor
+            ((StreamingAsset_2_System_Object_System_Object_ *)this,
              MethodInfo__StreamedAssetToCallback<UnityEngine::Sprite,_UnityEngine::Texture2D>__StreamedAssetToCallback__
             );
   return;

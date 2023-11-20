@@ -34,7 +34,7 @@ Vector3 * Assembly-CSharp.dll::SizeState::SizeState_FindValidMoveLocation
   auStack_6._0_4_ = (Object__Class *)0x0;
   auStack_6._4_4_ = (MonitorData *)0x0;
   auStack_6._8_4_ = 0;
-  auStack_6._12_4_ = (SendOrPostCallback *)0x0;
+  auStack_6._12_4_ = (String *)0x0;
   __return_storage_ptr__->x = 0.0;
   __return_storage_ptr__->y = 0.0;
   pMVar7 = (this->fields).controllerLocal;
@@ -68,13 +68,13 @@ code_?:
           in_stack_17 = (MethodInfo *)&UNK_?;
           func_?();
         }
-        this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+        this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                   TypeInfo__SizeState->static_fields->relativePositions;
-        if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
-        pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                 UnitySynchronizationContext+WorkRequest]::
-                 List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_UnitySynchronizationContext_WorkRequest_
+        if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
+        pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                 VisualTreeAsset+UsingEntry]::
+                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
+                           ((List_1_T_Enumerator_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
                              *)&stack0xffffff54,this_00,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                            );
@@ -82,8 +82,8 @@ code_?:
         auStack_6._0_4_ = pLVar18->_list;
         auStack_6._4_4_ = pLVar18->_index;
         auStack_6._8_4_ = pLVar18->_version;
-        auStack_6._12_4_ = (pLVar18->_current).m_DelagateCallback;
-        auStack_6._16_8_ = *(undefined8 *)&(pLVar18->_current).m_DelagateState;
+        auStack_6._12_4_ = (pLVar18->_current).alias;
+        auStack_6._16_8_ = *(undefined8 *)&(pLVar18->_current).path;
         uStack_1 = 1;
         pOStack_20 = (Object *)auStack_6;
         do {
@@ -96,7 +96,7 @@ code_?:
                             );
           if (bVar21 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)auStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
@@ -105,7 +105,7 @@ code_?:
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)StringLiteral_no_position_found_,(MethodInfo *)0x0);
             goto code_?;
           }
@@ -149,7 +149,7 @@ code_?:
         __return_storage_ptr__->x = pVVar11->x;
         __return_storage_ptr__->y = fVar13;
         __return_storage_ptr__->z = fVar14;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)auStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
@@ -324,61 +324,87 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)pMVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                ((Vector3 *)&stack0xffffffd0,pTVar2,(MethodInfo *)0x0);
-      if ((this->fields).controllerLocal != (MvCharacterController *)0x0) {
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+      puStack_4 = (undefined *)pVVar3->x;
+      unique0x0000a404 = pVVar3->y;
+      pMVar1 = (this->fields).controllerLocal;
+      if (pMVar1 != (MvCharacterController *)0x0) {
+        uVar5 = (pMVar1->fields).center.x;
+        uVar6 = (pMVar1->fields).center.y;
+        fVar7 = (float)uVar5 + (float)puStack_4;
+        fVar8 = (float)uVar6 + unique0x0000a404;
         pMVar1 = (this->fields).controllerLocal;
         if (pMVar1 != (MvCharacterController *)0x0) {
+          stack0xffffffd4 = (float)pMVar1;
+          fVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                   TypedUxmlAttributeDescription`1[System::Single]::
+                   TypedUxmlAttributeDescription_1_System_Single__get_defaultValue
+                             ((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar1,
+                              (MethodInfo *)0x0);
+          pMVar1 = (this->fields).controllerLocal;
           if (pMVar1 != (MvCharacterController *)0x0) {
+            puStack_4 = (undefined *)(pMVar1->fields).centerBase.x;
+            unique0x0000a404 = (pMVar1->fields).centerBase.y;
             if (pMVar1 != (MvCharacterController *)0x0) {
-              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pMVar1,(MethodInfo *)0x0);
-              if (pTVar2 != (Transform *)0x0) {
-                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
-                uVar4 = pVVar3->x;
-                uVar5 = pVVar3->y;
-                pMVar1 = (this->fields).controllerLocal;
-                if (pMVar1 != (MvCharacterController *)0x0) {
-                  uVar6 = (pMVar1->fields).center.x;
-                  uVar7 = (pMVar1->fields).center.y;
-                  fVar8 = ((pMVar1->fields).center.z + pVVar3->z) - hitData.positionTouchingHit.y;
-                  fVar9 = ((float)uVar6 + (float)uVar4) - (float)in_stack_10;
-                  fVar11 = ((float)uVar7 + (float)uVar5) - hitData.positionTouchingHit.x;
-                  inPoint.y = fVar11;
-                  inPoint.x = fVar9;
-                  inPoint.z = fVar8;
-                  UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor
-                            ((Plane *)&stack0xffffffc0,hitData._32_12_,inPoint,(MethodInfo *)0x0);
-                  point.y = fVar11;
-                  point.x = fVar9;
-                  point.z = fVar8;
-                  fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_GetDistanceToPoint
-                                     ((Plane *)&stack0xffffffc0,point,(MethodInfo *)0x0);
-                  fVar8 = hitData.slopeNormal.x * fVar9;
-                  fVar11 = hitData.slopeNormal.y * fVar9;
+              uVar10 = (pMVar1->fields).center.x;
+              uVar11 = (pMVar1->fields).center.y;
+              fVar12 = (float)puStack_4 - (float)uVar10;
+              fVar13 = unique0x0000a404 - (float)uVar11;
+              fVar9 = fVar9 / (pMVar1->fields).radiusBase.x;
+              if (pMVar1 != (MvCharacterController *)0x0) {
+                pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)pMVar1,(MethodInfo *)0x0);
+                if (pTVar2 != (Transform *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
                   pMVar1 = (this->fields).controllerLocal;
                   if (pMVar1 != (MvCharacterController *)0x0) {
-                    in_stack_10 = &UNK_?;
-                    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
+                    puStack_4 = (undefined *)(pMVar1->fields).center.x;
+                    unique0x0000a404 = (pMVar1->fields).center.y;
+                    fVar14 = 0.0;
+                    fVar15 = hitData.slopeNormal.x;
+                    fVar16 = hitData.slopeNormal.y;
+                    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                        ((Vector3 *)&stack0xffffffdc,hitData._32_12_,
+                                         (MethodInfo *)0x0);
+                    uVar17 = pVVar3->x;
+                    uVar18 = pVVar3->y;
+                    puStack_4 = (undefined *)pVVar3->x;
+                    unique0x0000a404 = pVVar3->y;
+                    fVar8 = unique0x0000a404 *
+                             ((fVar8 - hitData.positionTouchingHit.x) * fVar9 + fVar13) +
+                             (float)puStack_4 * ((fVar7 - in_stack_19) * fVar9 + fVar12) +
+                             pVVar3->z * fVar14 +
+                             (float)((uint)((float)uVar18 * fVar16 + (float)uVar17 * fVar15 +
+                                           pVVar3->z * hitData.elipsoidNormal.z) ^
+                                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
+                                    );
+                    fVar7 = hitData.slopeNormal.x * fVar8;
+                    fVar8 = hitData.slopeNormal.y * fVar8;
                     pMVar1 = (this->fields).controllerLocal;
                     if (pMVar1 != (MvCharacterController *)0x0) {
-                      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
-                      if (this_00 != (Transform *)0x0) {
-                        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_position
-                                            ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
-                        uVar12 = pVVar3->x;
-                        uVar13 = pVVar3->y;
-                        if (pTVar2 != (Transform *)0x0) {
-                          value.y = (float)uVar13 + fVar8;
-                          value.x = (float)uVar12 + hitData.elipsoidNormal.z * fVar9;
-                          value.z = pVVar3->z + fVar11;
-                          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                                    (pTVar2,value,(MethodInfo *)0x0);
-                          return;
+                      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
+                      this_00 = (this->fields).controllerLocal;
+                      if (this_00 != (MvCharacterController *)0x0) {
+                        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+                        if (this_01 != (Transform *)0x0) {
+                          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                    Transform_get_position
+                                              ((Vector3 *)&stack0xffffffdc,this_01,(MethodInfo *)0x0
+                                              );
+                          puStack_4 = (undefined *)pVVar3->x;
+                          unique0x0000a404 = pVVar3->y;
+                          if (pTVar2 != (Transform *)0x0) {
+                            value.y = unique0x0000a404 + fVar7;
+                            value.x = (float)puStack_4 + (float)pMVar1;
+                            value.z = pVVar3->z + fVar8;
+                            UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_set_position(pTVar2,value,(MethodInfo *)0x0);
+                            return;
+                          }
                         }
                       }
                     }
@@ -392,8 +418,8 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -490,82 +516,66 @@ void Assembly-CSharp.dll::SizeState::SizeState_OnScalingWhileColliding
 void Assembly-CSharp.dll::SizeState::SizeState_ScaleChanged(SizeState *this,MethodInfo *method)
 
 {
-  pSVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__EventArgs);
     func_?(&TypeInfo__ScaleArgs);
     cRam_? = '\x01';
   }
-  this_01 = (SizeState *)SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
-  pfVar2 = &(this->fields).currentSize;
-  if (*pfVar2 <= (float)this_01 && (float)this_01 != *pfVar2) {
-    pVVar3 = SizeState_FindValidMoveLocation
-                        ((Vector3 *)&stack0xffffffe4,this,(float)this_01,(MethodInfo *)0x0);
-    uVar4 = pVVar3->x;
-    uVar5 = pVVar3->y;
-    fVar6 = pVVar3->z;
-    pMVar7 = (this->fields).controllerLocal;
-    if ((pMVar7 == (MvCharacterController *)0x0) ||
+  scale = (MVInteractable *)SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
+  pfVar1 = &(this->fields).currentSize;
+  if (*pfVar1 <= (float)scale && (float)scale != *pfVar1) {
+    pVVar2 = SizeState_FindValidMoveLocation
+                       ((Vector3 *)&stack0xffffffe8,this,(float)scale,(MethodInfo *)0x0);
+    uVar3 = pVVar2->x;
+    uVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
+    pMVar6 = (this->fields).controllerLocal;
+    if ((pMVar6 == (MvCharacterController *)0x0) ||
        (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pMVar7,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
+                            ((Component *)pMVar6,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
     goto code_?;
-    value.y = (float)uVar5;
-    value.x = (float)uVar4;
-    value.z = fVar6;
+    value.y = (float)uVar4;
+    value.x = (float)uVar3;
+    value.z = fVar5;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (this_00,value,(MethodInfo *)0x0);
-    pMVar8 = (this->fields).interactableLocal;
-    if (pMVar8 == (MVInteractable *)0x0) goto code_?;
-    this = (SizeState *)0x5;
-    cVar9 = (*(pMVar8->klass->vtable).HasModifierEffect.methodPtr)();
-    this_01 = this;
-    if (cVar9 != '\0') {
-      pEVar10 = (EventHandler_1_EventArgs_ *)(pSVar1->fields).EquipSlapGunEvent;
+    scale = (this->fields).interactableLocal;
+    if (scale == (MVInteractable *)0x0) goto code_?;
+    cVar7 = (*(code *)(scale->klass->vtable).HasModifierEffect.method)();
+    if (cVar7 != '\0') {
+      pEVar8 = (EventHandler_1_EventArgs_ *)(this->fields).EquipSlapGunEvent;
       if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      if (pEVar10 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
+      if (pEVar8 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
       goto code_?;
     }
   }
   else if ((this->fields).UnEquipSlapGunEvent != (EventHandler_1_EventArgs_ *)0x0) {
-    pEVar10 = (this->fields).UnEquipSlapGunEvent;
+    pEVar8 = (this->fields).UnEquipSlapGunEvent;
     if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__EventArgs);
     }
 code_?:
-    this_01 = (SizeState *)TypeInfo__System__EventArgs->static_fields->Empty;
-    (*(pEVar10->fields)._._.invoke_impl)();
+    (*(pEVar8->fields)._._.invoke_impl)();
+    scale = (MVInteractable *)this;
   }
-  pMVar7 = (pSVar1->fields).controllerLocal;
-  if (pMVar7 == (MvCharacterController *)0x0) {
-code_?:
-    func_?();
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
+  pMVar6 = (this->fields).controllerLocal;
+  if (pMVar6 != (MvCharacterController *)0x0) {
+    MvCharacterController::MvCharacterController_SetScale(pMVar6,(float)scale,(MethodInfo *)0x0);
+    if ((this->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
+      pEVar9 = (this->fields).CameraScaleEvent;
+      this_01 = (ScaleArgs *)func_?();
+      ScaleArgs::ScaleArgs__ctor(this_01,(float)pMVar6,(MethodInfo *)0x0);
+      (*(pEVar9->fields)._._.invoke_impl)();
+    }
+    (this->fields).currentSize = (float)pMVar6;
     return;
   }
-  uVar12 = (pMVar7->fields).centerBase.x;
-  uVar13 = (pMVar7->fields).centerBase.y;
-  fVar6 = (pMVar7->fields).centerBase.z;
-  (pMVar7->fields).center.x = (float)uVar12 * (float)this_01;
-  (pMVar7->fields).center.y = (float)uVar13 * (float)this_01;
-  (pMVar7->fields).center.z = fVar6 * (float)this_01;
-  fVar6 = (pMVar7->fields).radiusBase.z;
-  fVar14 = (pMVar7->fields).radiusBase.y;
-  fVar15 = (pMVar7->fields).offsetBase;
-  (pMVar7->fields).elipsoidRadius.x = (float)this_01 * (pMVar7->fields).radiusBase.x;
-  (pMVar7->fields).elipsoidRadius.y = (float)this_01 * fVar14;
-  (pMVar7->fields).elipsoidRadius.z = (float)this_01 * fVar6;
-  (pMVar7->fields).offsetFactor = (float)this_01 * fVar15;
-  if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
-    pEVar16 = (pSVar1->fields).CameraScaleEvent;
-    this_01 = (SizeState *)func_?();
-    if (this_01 == (SizeState *)0x0) goto code_?;
-    ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.13991e-29,(MethodInfo *)0x0);
-    (*(pEVar16->fields)._._.invoke_impl)();
-  }
-  (pSVar1->fields).currentSize = (float)this_01;
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -575,10 +585,72 @@ code_?:
 void Assembly-CSharp.dll::SizeState::SizeState_UpdateScale(SizeState *this,MethodInfo *method)
 
 {
-  fVar1 = SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
-  if ((this->fields).currentSize != fVar1) {
-    SizeState_ScaleChanged(this,(MethodInfo *)0x0);
+  pSVar1 = this;
+  fVar2 = SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
+  if ((this->fields).currentSize == fVar2) {
+    return;
   }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__EventArgs);
+    func_?(&TypeInfo__ScaleArgs);
+    cRam_? = '\x01';
+  }
+  scale = (SizeState *)SizeState_get_AvatarScale(this,(MethodInfo *)0x0);
+  pfVar3 = &(this->fields).currentSize;
+  if (*pfVar3 <= (float)scale && (float)scale != *pfVar3) {
+    pVVar4 = SizeState_FindValidMoveLocation
+                       ((Vector3 *)&stack0xffffffe8,this,(float)scale,(MethodInfo *)0x0);
+    fVar2 = pVVar4->z;
+    pMVar5 = (this->fields).controllerLocal;
+    if (pMVar5 == (MvCharacterController *)0x0) goto code_?;
+    uVar6 = 0;
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pMVar5,(MethodInfo *)0x0);
+    if (this_00 == (Transform *)0x0) goto code_?;
+    value.y = (float)uVar6;
+    value.x = (float)pMVar5;
+    value.z = fVar2;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+              (this_00,value,(MethodInfo *)0x0);
+    pMVar7 = (this->fields).interactableLocal;
+    if (pMVar7 == (MVInteractable *)0x0) goto code_?;
+    cVar8 = (*(code *)(pMVar7->klass->vtable).HasModifierEffect.method)();
+    if (cVar8 != '\0') {
+      pEVar9 = (EventHandler_1_EventArgs_ *)(this->fields).EquipSlapGunEvent;
+      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      if (pEVar9 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
+      goto code_?;
+    }
+  }
+  else if ((this->fields).UnEquipSlapGunEvent != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar9 = (this->fields).UnEquipSlapGunEvent;
+    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+code_?:
+    this = (SizeState *)&UNK_?;
+    (*(pEVar9->fields)._._.invoke_impl)();
+    scale = this;
+  }
+  this = scale;
+  pMVar5 = (pSVar1->fields).controllerLocal;
+  if (pMVar5 != (MvCharacterController *)0x0) {
+    MvCharacterController::MvCharacterController_SetScale(pMVar5,(float)this,(MethodInfo *)0x0);
+    if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
+      pEVar10 = (pSVar1->fields).CameraScaleEvent;
+      this_01 = (ScaleArgs *)func_?();
+      ScaleArgs::ScaleArgs__ctor(this_01,(float)this,(MethodInfo *)0x0);
+      (*(pEVar10->fields)._._.invoke_impl)();
+    }
+    (pSVar1->fields).currentSize = (float)this;
+    return;
+  }
+code_?:
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -607,15 +679,16 @@ void Assembly-CSharp.dll::SizeState::SizeState__cctor(MethodInfo *method)
        ~(1 << (uVar1 & 0x1f)) & 0xfffffffbU & ~(1 << (uVar2 & 0x1f));
   this = (List_1_UnityEngine_Vector3_ *)
          func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+  uVar3 = 0;
+  uVar4 = 0;
+  uVar5 = 0;
+  uVar6 = 0;
   if (this != (List_1_UnityEngine_Vector3_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-    uVar3 = 0;
-    uVar4 = 0;
-    uVar5 = 0;
-    uVar6 = 0;
     func_?(this,0,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
                    );
@@ -698,15 +771,15 @@ void Assembly-CSharp.dll::SizeState::SizeState__cctor(MethodInfo *method)
     func_?(this,CONCAT44(_UNK_?,_UNK_?),0xbf800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
                    );
-    uVar4 = 0x3f800000;
+    uVar3 = 0x3f800000;
     func_?(this,CONCAT44(_UNK_?,_UNK_?),0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
                    );
-    uVar5 = 0xbf800000;
-    func_?(this,CONCAT44(_UNK_?,uVar4),0xbf800000,
+    uVar4 = 0xbf800000;
+    func_?(this,CONCAT44(_UNK_?,uVar3),0xbf800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
                    );
-    func_?(this,CONCAT44(uVar5,uVar5),0x3f800000,
+    func_?(this,CONCAT44(uVar4,uVar4),0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
                    );
     TypeInfo__SizeState->static_fields->relativePositions = this;
@@ -728,7 +801,7 @@ void Assembly-CSharp.dll::SizeState::SizeState__ctor
 
 {
   (this->fields).currentSize = 1.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactableLocal = interactable;
   func_?(&this->fields,interactable);
@@ -854,8 +927,8 @@ float Assembly-CSharp.dll::SizeState::SizeState_get_AvatarScale(SizeState *this,
   }
   pMVar1 = (this->fields).interactableLocal;
   if (pMVar1 != (MVInteractable *)0x0) {
-    cVar2 = (*(pMVar1->klass->vtable).HasModifierEffect.methodPtr)
-                      (pMVar1,5,(pMVar1->klass->vtable).HasModifierEffect.method);
+    cVar2 = (*(code *)(pMVar1->klass->vtable).HasModifierEffect.method)
+                      (pMVar1,5,(pMVar1->klass->vtable).HandleModifierEffect.methodPtr);
     if (cVar2 == '\0') {
       pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
@@ -873,9 +946,9 @@ float Assembly-CSharp.dll::SizeState::SizeState_get_AvatarScale(SizeState *this,
     else {
       pMVar1 = (this->fields).interactableLocal;
       if (pMVar1 != (MVInteractable *)0x0) {
-        fVar5 = (float10)(*(pMVar1->klass->vtable).HandleModifierEffect.methodPtr)
+        fVar5 = (float10)(*(code *)(pMVar1->klass->vtable).HandleModifierEffect.method)
                                    (pMVar1,5,0x3f800000,
-                                    (pMVar1->klass->vtable).HandleModifierEffect.method);
+                                    (pMVar1->klass->vtable).ClearModifiers.methodPtr);
         return (float)fVar5;
       }
     }

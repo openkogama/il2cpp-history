@@ -170,12 +170,12 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh_Update
           uVar7 = pCVar6->r;
           uVar8 = pCVar6->g;
           uVar9 = pCVar6->b;
-          value.b = (float)uVar9;
-          value.g = (float)uVar8;
-          value.r = (float)uVar7;
+          value.z = (float)uVar9;
+          value.y = (float)uVar8;
+          value.x = (float)uVar7;
           iVar10 = 0;
-          value.a = (fVar1 / (this->fields).fadeOutTime) * (this->fields).baseAlpha;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor_1
+          value.w = (fVar1 / (this->fields).fadeOutTime) * (this->fields).baseAlpha;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1
                     (this_01,TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,value,
                      (MethodInfo *)0x0);
           uVar4 = uVar4 + 1;
@@ -239,19 +239,19 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
     cRam_? = '\x01';
   }
   (this->fields).fadeOutTime = 0.5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).fadeOutTime = fadeOutTime;
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+            (pGVar1,StringLiteral_CellCursorCubeLineMesh,(MethodInfo *)0x0);
+  value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                    (StringLiteral_UIItems,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-              (pGVar1,StringLiteral_CellCursorCubeLineMesh,(MethodInfo *)0x0);
-    value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (StringLiteral_UIItems,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
               (pGVar1,value,(MethodInfo *)0x0);
     (this->fields).gameObject = pGVar1;
-    func_?(&(this->fields).gameObject,pGVar1);
+    func_?();
     pGVar1 = (this->fields).gameObject;
     if (pGVar1 != (GameObject *)0x0) {
       pMVar2 = (MeshRenderer *)
@@ -260,7 +260,7 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
                           UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
                          );
       (this->fields).meshRenderer = pMVar2;
-      func_?(&(this->fields).meshRenderer,pMVar2);
+      func_?();
       pMVar2 = (this->fields).meshRenderer;
       if (pMVar2 != (MeshRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_shadowCastingMode
@@ -285,7 +285,7 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
                 this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                                     ((Renderer *)pMVar2,(MethodInfo *)0x0);
                 if ((TypeInfo__CellCursorCubeLineMesh->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__CellCursorCubeLineMesh);
+                  func_?();
                 }
                 if (this_01 != (Material *)0x0) {
                   pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor_1
@@ -300,7 +300,8 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor
                       func_?();
                     }
                     SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
-                              (mesh,cubeCorners,diagonalWidth,(MethodInfo *)0x0);
+                              (mesh,(Vector3__Array *)&UNK_?,3.8643068e-29,(MethodInfo *)0x0)
+                    ;
                     return;
                   }
                 }

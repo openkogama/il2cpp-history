@@ -25,7 +25,6 @@ code_?:
     pEVar2 = (pMVar1->fields).OnResetWorldDone;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    if (this_00 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (this_00,(Object *)this,
@@ -67,7 +66,6 @@ code_?:
   }
   uVar8 = func_?(&TypeInfo__System__Exception);
   this_01 = (Exception *)func_?(uVar8);
-  func_?(this_01);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Couldn_t_find_TimeLimit_winning_);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
@@ -95,17 +93,19 @@ int32_t Assembly-CSharp.dll::MVRoundCube::MVRoundCube_GetTimeLeft
     func_?(&StringLiteral_interval);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_interval,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-      goto code_?;
-      piVar2 = (int *)func_?(pOVar1);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_interval,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar2 = (int *)func_?(TVar1.m_Index);
       iVar3 = *piVar2;
       pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar4 != (MVNetworkGame *)0x0) {
@@ -153,59 +153,61 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Initialize(MVRoundCube *this,
     pEVar2 = (pMVar1->fields).OnResetWorldDone;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
-                 (MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pEVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (pMVar1->fields).OnResetWorldDone = (EventHandler_1_EventArgs_ *)0x0;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
+               (MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pEVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).OnResetWorldDone = (EventHandler_1_EventArgs_ *)0x0;
+    }
+    else {
+      pEVar2 = (EventHandler_1_EventArgs_ *)func_?();
+      if (pEVar2 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
+      (pMVar1->fields).OnResetWorldDone = pEVar2;
+      iVar4 = func_?();
+      if (iVar4 == 0) goto code_?;
+    }
+    func_?();
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    pMVar6 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
+    if (pMVar5 != (MVNetworkGame *)0x0) {
+      this_00 = (pMVar5->fields)._WinningConditionManager_k__BackingField;
+      if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+          rgctx_data == (Il2CppRGCTXData *)0x0) {
+        func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
       }
-      else {
-        pEVar2 = (EventHandler_1_EventArgs_ *)func_?();
-        if (pEVar2 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
-        (pMVar1->fields).OnResetWorldDone = pEVar2;
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
+      pIVar7 = (pMVar6->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar7 = (Il2CppClass *)func_?(pIVar7);
       }
-      func_?();
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      pMVar6 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
-      if (pMVar5 != (MVNetworkGame *)0x0) {
-        this_00 = (pMVar5->fields)._WinningConditionManager_k__BackingField;
-        iVar4 = *(int *)(System__Object__MethodInfo__System__Array__Empty<System::Object>______->
-                        field7_0x1c).methodMetadataHandle;
-        if ((*(byte *)(iVar4 + 0xba) & 1) == 0) {
-          iVar4 = func_?(iVar4);
-        }
-        if (*(int *)(iVar4 + 0x74) == 0) {
-          func_?(iVar4);
-        }
-        iVar4 = *(int *)(pMVar6->field7_0x1c).methodMetadataHandle;
-        if ((*(byte *)(iVar4 + 0xba) & 1) == 0) {
-          iVar4 = func_?(iVar4);
-        }
-        if (this_00 != (WinningConditionManager *)0x0) {
-          MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
-                    (this_00,(Object__Array *)**(undefined4 **)(iVar4 + 0x5c),
-                     TimeLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<TimeLimitClient>_System__Object____
-                    );
-          (this->fields).initializedInWorld = 1;
-          MVLogicObject::MVLogicObject_SetupCulling
-                    ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-          return;
-        }
+      if (pIVar7->cctor_finished_or_no_cctor == 0) {
+        func_?(pIVar7);
+      }
+      pIVar7 = (pMVar6->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar7 = (Il2CppClass *)func_?(pIVar7);
+      }
+      if (this_00 != (WinningConditionManager *)0x0) {
+        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
+                  (this_00,*(Object__Array **)pIVar7->static_fields,
+                   TimeLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<TimeLimitClient>_System__Object____
+                  );
+        lodGameObject = (this->fields)._._.gameObject;
+        (this->fields).initializedInWorld = 1;
+        MVLogicObject::MVLogicObject_SetupCulling
+                  ((MVLogicObject *)this,lodGameObject,2.0,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -301,7 +303,6 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_OnResetWorldDone
     }
     func_?();
     this_01 = (Exception *)func_?();
-    func_?(this_01);
     message = (String *)func_?();
     mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,(MethodInfo *)0x0);
     func_?();
@@ -346,17 +347,6 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube__ctor
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVRoundCube::MVRoundCube_get_DocumentationType
-          (MVRoundCube *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_RoundCube;
-}
-
-
 /* Int32 get_DurationInMilliseconds() */
 
 int32_t Assembly-CSharp.dll::MVRoundCube::MVRoundCube_get_DurationInMilliseconds
@@ -369,15 +359,18 @@ int32_t Assembly-CSharp.dll::MVRoundCube::MVRoundCube_get_DurationInMilliseconds
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_interval,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_interval,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int *)func_?();
         return *piVar2 * 1000;
       }

@@ -86,8 +86,8 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_SendToolTip
     if ((pTVar2 != (ToolTipUI *)0x0) &&
        (pTVar4 = (pTVar2->fields).toolTipText, pTVar4 != (Text *)0x0)) {
       pTVar5 = pTVar4->klass;
-      pMVar6 = (pTVar5->vtable).set_text.method;
-      (*(pTVar5->vtable).set_text.methodPtr)();
+      pIVar6 = (pTVar5->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+      (*(code *)(pTVar5->vtable).set_text.method)();
       this_00 = (pTVar2->fields).rectTransform;
       fVar7 = 0.0;
       fVar8 = 0.0;
@@ -96,7 +96,7 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_SendToolTip
         fVar7 = 1.0;
       }
       iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-      if ((float)iVar9 * _UNK_? < (float)pMVar6) {
+      if ((float)iVar9 * _UNK_? < (float)pIVar6) {
         fVar8 = 1.0;
       }
       if (this_00 != (RectTransform *)0x0) {
@@ -106,7 +106,7 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_SendToolTip
                   (this_00,value,(MethodInfo *)0x0);
         pTVar10 = (Transform *)(pTVar2->fields).rectTransform;
         if (pTVar10 != (Transform *)0x0) {
-          value_00.y = (float)pMVar6;
+          value_00.y = (float)pIVar6;
           value_00.x = (float)toolTip;
           value_00.z = 0.0;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position

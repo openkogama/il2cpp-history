@@ -65,31 +65,26 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Dead::AdvancedGhostBehaviour_
     cRam_? = '\x01';
   }
   if (ghostBehaviour != (AdvancedGhostBehaviour *)0x0) {
-    if ((ghostBehaviour->fields).lives != 0) {
-      pFVar1 = (ghostBehaviour->fields).deathCheckFunc;
-      if (pFVar1 == (Func_1_Boolean_ *)0x0) goto code_?;
-      cVar2 = (*(pFVar1->fields)._._.invoke_impl)
-                        ((pFVar1->fields)._._.method_code,(pFVar1->fields)._._.method);
-      handle = TypeRef__AdvancedGhostBehaviour__Idle;
-      if (cVar2 == '\0') {
-        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__Type);
-        }
-        pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-        return pTVar3;
+    bVar1 = AdvancedGhostBehaviour::AdvancedGhostBehaviour_get_IsDead
+                      (ghostBehaviour,(MethodInfo *)0x0);
+    handle = TypeRef__AdvancedGhostBehaviour__Idle;
+    if (bVar1 == 0) {
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
       }
+      pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                         ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+      return pTVar2;
     }
     this_00 = (Object *)(ghostBehaviour->fields).currentState;
     if (this_00 != (Object *)0x0) {
-      pTVar3 = mscorlib.dll::System::Object::Object_GetType(this_00,(MethodInfo *)0x0);
-      return pTVar3;
+      pTVar2 = mscorlib.dll::System::Object::Object_GetType(this_00,(MethodInfo *)0x0);
+      return pTVar2;
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar3 = (Type *)(*pcVar4)();
-  return pTVar3;
+  pcVar3 = (code *)swi(3);
+  pTVar2 = (Type *)(*pcVar3)();
+  return pTVar2;
 }
 

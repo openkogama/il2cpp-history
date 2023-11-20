@@ -18,19 +18,6 @@ public class DeleteWoidController : MonoBehaviour
 	private int woid;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass2_0
-	{
-		// Fields
-		public PickHelper pickHelper;
-
-		// Constructors
-		public __c__DisplayClass2_0();
-
-		// Methods
-		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -49,6 +36,19 @@ public class DeleteWoidController : MonoBehaviour
 		internal void _DeleteWorldObject_b__4_0(IUIStack x, BaseEventData y);
 		internal void _DeleteWorldObject_b__4_2(IModalPopupCreator x, BaseEventData y);
 		internal void _DeleteWorldObject_b__4_3(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass2_0
+	{
+		// Fields
+		public PickHelper pickHelper;
+
+		// Constructors
+		public __c__DisplayClass2_0();
+
+		// Methods
+		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -158,8 +158,11 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar12 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX + unaff_BL) +
+                   -0x33efbe0d);
+  *pcVar12 = *pcVar12 + (char)((uint)(extraout_ECX + 2) >> 8) + CARRY1((byte)extraout_EDX,unaff_BL);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -224,7 +227,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
   mscorlib.dll::System::Int32::Int32_ToString
             ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
   if (pTVar7 != (Text *)0x0) {
-    (*(pTVar7->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar7->klass->vtable).set_text.method)();
     return;
   }
   func_?();
@@ -291,8 +294,8 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
     if (pTVar2 == (Text *)0x0) goto code_?;
-    (*(pTVar2->klass->vtable).set_text.methodPtr)
-              (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
   }
   pTVar4 = (this->fields).transformToSlide;
   if (pTVar4 != (Transform *)0x0) {
@@ -422,8 +425,8 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
   pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();

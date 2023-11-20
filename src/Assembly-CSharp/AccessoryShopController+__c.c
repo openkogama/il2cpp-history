@@ -84,25 +84,6 @@ void Assembly-CSharp.dll::AccessoryShopController+<>c::
 }
 
 
-/* Int32 <GetAccessoryDataFromCategoryType>b__40_2(AccessoryDataClient) */
-
-int32_t Assembly-CSharp.dll::AccessoryShopController+<>c::
-        AccessoryShopController_c__GetAccessoryDataFromCategoryType_b__40_2
-                  (AccessoryShopController_c *this,AccessoryDataClient *o,MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  if (o != (AccessoryDataClient *)0x0) {
-    return (o->fields)._.lvl;
-  }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
-}
-
-
 /* Int32 <GetAccessoryDataFromCategoryType>b__40_3(AccessoryDataClient) */
 
 int32_t Assembly-CSharp.dll::AccessoryShopController+<>c::
@@ -247,17 +228,12 @@ void Assembly-CSharp.dll::AccessoryShopController+<>c::AccessoryShopController_c
     func_?(&TypeInfo__AccessoryShopController____c);
     cRam_? = '\x01';
   }
-  value = (AccessoryShopController_c *)func_?(TypeInfo__AccessoryShopController____c);
-  if (value != (AccessoryShopController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__AccessoryShopController____c->static_fields->__9 = value;
-    func_?(TypeInfo__AccessoryShopController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__AccessoryShopController____c;
+  value = (AccessoryShopController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__AccessoryShopController____c->static_fields->__9 = value;
+  func_?(TypeInfo__AccessoryShopController____c->static_fields,value);
   return;
 }
 

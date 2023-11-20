@@ -18,73 +18,80 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Awake
   pIVar3 = (this->fields).poisonOverlay.animator;
   pSVar4 = (this->fields).poisonOverlay.streamComponent;
   pCVar5 = (this->fields).poisonOverlay.alphaHandler;
-  pAVar6 = (this->fields).fadeOutCurve;
   pMVar1 = (this->fields).modifierIndicators;
+  pAVar6 = (this->fields).fadeOutCurve;
   pMVar7 = (ModifierIndicator_OverlayWrapper *)
            func_?(TypeInfo__ModifierIndicator__OverlayWrapper);
-  if (pMVar7 == (ModifierIndicator_OverlayWrapper *)0x0) {
+  overlayImage.animator = pIVar3;
+  overlayImage.image = pIVar2;
+  overlayImage.streamComponent = pSVar4;
+  overlayImage.alphaHandler = pCVar5;
+  pMVar8 = pMVar7;
+  ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
+            (pMVar7,overlayImage,pAVar6,(MethodInfo *)0x0);
+  if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) {
 code_?:
     func_?();
 code_?:
-    uVar8 = func_?(0);
-    func_?(uVar8);
+    uVar9 = func_?(0);
+    func_?(uVar9);
 code_?:
-    uVar8 = func_?(0);
-    func_?(uVar8);
+    uVar9 = func_?(0);
+    func_?(uVar9);
   }
   else {
-    overlayImage.animator = pIVar3;
-    overlayImage.image = pIVar2;
-    overlayImage.streamComponent = pSVar4;
-    overlayImage.alphaHandler = pCVar5;
-    ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
-              (pMVar7,overlayImage,pAVar6,(MethodInfo *)0x0);
-    if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) goto code_?;
-    iVar9 = func_?(pMVar7,(pMVar1->klass->_0).element_class);
-    if (iVar9 == 0) goto code_?;
+    if (pMVar7 != (ModifierIndicator_OverlayWrapper *)0x0) {
+      iVar10 = func_?(pMVar7,(pMVar1->klass->_0).element_class,pMVar8);
+      if (iVar10 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pMVar1->max_length == 0) goto code_?;
     pMVar1->vector[0] = pMVar7;
     func_?(pMVar1->vector,pMVar7);
     pIVar3 = (this->fields).fireOverlay.animator;
     pSVar4 = (this->fields).fireOverlay.streamComponent;
     pCVar5 = (this->fields).fireOverlay.alphaHandler;
-    pAVar6 = (this->fields).fadeOutCurve;
     pMVar1 = (this->fields).modifierIndicators;
-    puVar10 = &UNK_?;
+    pAVar6 = (this->fields).fadeOutCurve;
+    puVar11 = &UNK_?;
     pMVar7 = (ModifierIndicator_OverlayWrapper *)func_?();
-    if (pMVar7 == (ModifierIndicator_OverlayWrapper *)0x0) goto code_?;
     overlayImage_00.animator = pIVar3;
-    overlayImage_00.image = (Image *)puVar10;
+    overlayImage_00.image = (Image *)puVar11;
     overlayImage_00.streamComponent = pSVar4;
     overlayImage_00.alphaHandler = pCVar5;
+    pMVar8 = pMVar7;
     ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
               (pMVar7,overlayImage_00,pAVar6,(MethodInfo *)0x0);
     if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) goto code_?;
-    iVar9 = func_?(pMVar7,(pMVar1->klass->_0).element_class);
-    if (iVar9 == 0) goto code_?;
+    if (pMVar7 != (ModifierIndicator_OverlayWrapper *)0x0) {
+      iVar10 = func_?(pMVar7,(pMVar1->klass->_0).element_class,pMVar8);
+      if (iVar10 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pMVar1->max_length < 2) goto code_?;
     pMVar1->vector[1] = pMVar7;
     func_?(pMVar1->vector + 1,pMVar7);
     pIVar3 = (this->fields).iceOverlay.animator;
     pSVar4 = (this->fields).iceOverlay.streamComponent;
     pCVar5 = (this->fields).iceOverlay.alphaHandler;
-    pAVar6 = (this->fields).fadeOutCurve;
     pMVar1 = (this->fields).modifierIndicators;
-    puVar10 = &UNK_?;
-    pMVar7 = (ModifierIndicator_OverlayWrapper *)func_?();
-    if (pMVar7 == (ModifierIndicator_OverlayWrapper *)0x0) goto code_?;
+    pAVar6 = (this->fields).fadeOutCurve;
+    puVar11 = &UNK_?;
+    pMVar8 = (ModifierIndicator_OverlayWrapper *)func_?();
     overlayImage_01.animator = pIVar3;
-    overlayImage_01.image = (Image *)puVar10;
+    overlayImage_01.image = (Image *)puVar11;
     overlayImage_01.streamComponent = pSVar4;
     overlayImage_01.alphaHandler = pCVar5;
     ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
-              (pMVar7,overlayImage_01,pAVar6,(MethodInfo *)0x0);
+              (pMVar8,overlayImage_01,pAVar6,(MethodInfo *)0x0);
     if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) goto code_?;
-    iVar9 = func_?(pMVar7,(pMVar1->klass->_0).element_class);
-    if (iVar9 != 0) {
+    if (pMVar8 == (ModifierIndicator_OverlayWrapper *)0x0) {
+code_?:
       if (pMVar1->max_length < 3) goto code_?;
-      pMVar1->vector[2] = pMVar7;
-      func_?(pMVar1->vector + 2,pMVar7);
+      pMVar1->vector[2] = pMVar8;
+      func_?(pMVar1->vector + 2,pMVar8);
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
@@ -94,13 +101,15 @@ code_?:
       }
       goto code_?;
     }
+    iVar10 = func_?(pMVar8,(pMVar1->klass->_0).element_class);
+    if (iVar10 != 0) goto code_?;
   }
-  uVar8 = func_?(0);
-  func_?(uVar8);
+  uVar9 = func_?(0);
+  func_?(uVar9);
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -162,12 +171,13 @@ code_?:
          (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
                             (pAVar2,(MethodInfo *)0x0), pKVar1 != (Keyframe__Array *)0x0)) {
         if (pKVar1->max_length <= iVar3 - 1U) goto code_?;
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::FloatTween::FloatTween_set_startValue
-                  ((FloatTween *)(pKVar1->vector + iVar3 + -1),0.0,(MethodInfo *)0x0);
+        UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::LowLevel::GlyphValueRecord
+        ::GlyphValueRecord_set_yPlacement
+                  ((GlyphValueRecord *)(pKVar1->vector + iVar3 + -1),0.0,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_fadeOutCurve_has_been_auto_corre,(MethodInfo *)0x0);
         goto code_?;
       }
@@ -219,8 +229,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
 {
   pMVar1 = (this->fields).localInteractable;
   if (pMVar1 != (MVInteractableBase *)0x0) {
-    bVar2 = (*(pMVar1->klass->vtable).__unknown_3.methodPtr)
-                      (pMVar1,4,(pMVar1->klass->vtable).__unknown_3.method);
+    bVar2 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
+                      (pMVar1,4,(pMVar1->klass->vtable).__unknown_4.methodPtr);
     pMVar3 = (this->fields).modifierIndicators;
     if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
       if (pMVar3->max_length == 0) goto code_?;
@@ -229,8 +239,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
                   (pMVar3->vector[0],bVar2 & 1,(MethodInfo *)0x0);
         pMVar1 = (this->fields).localInteractable;
         if (pMVar1 != (MVInteractableBase *)0x0) {
-          bVar4 = (*(pMVar1->klass->vtable).__unknown_3.methodPtr)
-                            (pMVar1,1,(pMVar1->klass->vtable).__unknown_3.method);
+          bVar4 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
+                            (pMVar1,1,(pMVar1->klass->vtable).__unknown_4.methodPtr);
           pMVar3 = (this->fields).modifierIndicators;
           if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
             if (pMVar3->max_length < 2) goto code_?;
@@ -239,8 +249,8 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Update
                         (pMVar3->vector[1],bVar2 == 0 & bVar4,(MethodInfo *)0x0);
               pMVar1 = (this->fields).localInteractable;
               if (pMVar1 != (MVInteractableBase *)0x0) {
-                bVar5 = (*(pMVar1->klass->vtable).__unknown_3.methodPtr)
-                                  (pMVar1,10,(pMVar1->klass->vtable).__unknown_3.method);
+                bVar5 = (*(code *)(pMVar1->klass->vtable).__unknown_3.method)
+                                  (pMVar1,10,(pMVar1->klass->vtable).__unknown_4.methodPtr);
                 pMVar3 = (this->fields).modifierIndicators;
                 if (pMVar3 != (ModifierIndicator_OverlayWrapper__Array *)0x0) {
                   if (pMVar3->max_length < 3) goto code_?;

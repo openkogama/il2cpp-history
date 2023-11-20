@@ -14,81 +14,82 @@ void Assembly-CSharp.dll::DesktopPlayMode::DesktopPlayMode__ctor
   }
   DesktopDefaultKeyboardMapping::DesktopDefaultKeyboardMapping__ctor
             ((DesktopDefaultKeyboardMapping *)this,(MethodInfo *)0x0);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.keyMapping;
+  pDVar1 = (this->fields)._.keyMapping;
   pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,2);
   if (pOVar2 != (Object *)0x0) {
     if ((pOVar2[1].monitor == (MonitorData *)0x0) ||
        (pOVar2[2].klass = (Object__Class *)0x77, pOVar2[1].monitor < (MonitorData *)0x2))
     goto code_?;
     pOVar2[2].monitor = (MonitorData *)0x111;
-    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)0x0,pOVar2,
+    if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__Add
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0,pOVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                 );
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.keyMapping;
+      pDVar1 = (this->fields)._.keyMapping;
       pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,2);
       if (pOVar2 != (Object *)0x0) {
         if ((pOVar2[1].monitor == (MonitorData *)0x0) ||
            (pOVar2[2].klass = (Object__Class *)0x73, pOVar2[1].monitor < (MonitorData *)0x2))
         goto code_?;
         pOVar2[2].monitor = (MonitorData *)0x112;
-        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)0x3,pOVar2,
+        if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__Add
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,3,pOVar2,
                      MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                     );
-          pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.keyMapping;
+          pDVar1 = (this->fields)._.keyMapping;
           pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,2);
           if (pOVar2 != (Object *)0x0) {
             if ((pOVar2[1].monitor == (MonitorData *)0x0) ||
                (pOVar2[2].klass = (Object__Class *)0x61, pOVar2[1].monitor < (MonitorData *)0x2))
             goto code_?;
             pOVar2[2].monitor = (MonitorData *)0x114;
-            if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        (pDVar1,(Object *)0x1,pOVar2,
+            if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+              Object]::Dictionary_2_System_Int32Enum_System_Object__Add
+                        ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,1,pOVar2,
                          MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                         );
-              pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.keyMapping;
+              pDVar1 = (this->fields)._.keyMapping;
               pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,2);
               if (pOVar2 != (Object *)0x0) {
                 if ((pOVar2[1].monitor == (MonitorData *)0x0) ||
                    (pOVar2[2].klass = (Object__Class *)0x64, pOVar2[1].monitor < (MonitorData *)0x2)
                    ) goto code_?;
                 pOVar2[2].monitor = (MonitorData *)0x113;
-                if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            (pDVar1,(Object *)0x2,pOVar2,
+                if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,2,pOVar2,
                              MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                             );
-                  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.keyMapping;
+                  pDVar1 = (this->fields)._.keyMapping;
                   pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,2);
                   if (pOVar2 != (Object *)0x0) {
                     if ((pOVar2[1].monitor == (MonitorData *)0x0) ||
                        (pOVar2[2].klass = (Object__Class *)0x20,
                        pOVar2[1].monitor < (MonitorData *)0x2)) goto code_?;
                     pOVar2[2].monitor = (MonitorData *)0x100;
-                    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__Add
-                                (pDVar1,(Object *)0x21,pOVar2,
+                    if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x21,pOVar2,
                                  MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                 );
-                      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-                               (this->fields)._.keyMapping;
+                      pDVar1 = (this->fields)._.keyMapping;
                       pOVar2 = (Object *)func_?(TypeInfo__UnityEngine__KeyCode,1);
                       if (pOVar2 != (Object *)0x0) {
                         if (pOVar2[1].monitor == (MonitorData *)0x0) goto code_?;
                         pOVar2[2].klass = (Object__Class *)0x143;
-                        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                        if (pDVar1 != (Dictionary_2_KogamaControls_UnityEngine_KeyCode__1 *)0x0) {
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,System::Object]::Dictionary_2_System_Object_System_Object__Add
-                                    (pDVar1,(Object *)0x20,pOVar2,
+                          Int32Enum,System::Object]::
+                          Dictionary_2_System_Int32Enum_System_Object__Add
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x20,
+                                     pOVar2,
                                      MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_UnityEngine::KeyCode_[]>__Add_KogamaControls__UnityEngine__KeyCode____
                                     );
                           return;

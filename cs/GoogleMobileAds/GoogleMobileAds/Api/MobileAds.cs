@@ -10,7 +10,7 @@ using System.Threading;
 using GoogleMobileAds;
 using GoogleMobileAds.Common;
 
-// Image 15: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 38: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -28,16 +28,9 @@ namespace GoogleMobileAds.Api
 	
 		// Properties
 		public static MobileAds Instance { get; }
-		public static bool RaiseAdEventsOnUnityMainThread { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public static bool RaiseAdEventsOnUnityMainThread { [CompilerGenerated] get; }
 	
 		// Nested types
-		public static class Utils
-		{
-			// Methods
-			public static float GetDeviceScale();
-			public static int GetDeviceSafeWidth();
-		}
-	
 		[CompilerGenerated]
 		private sealed class _Initialize_c__AnonStorey0
 		{
@@ -66,33 +59,6 @@ namespace GoogleMobileAds.Api
 		}
 	
 		[CompilerGenerated]
-		private sealed class _OpenAdInspector_c__AnonStorey2
-		{
-			// Fields
-			internal Action<AdInspectorError> adInspectorClosedAction;
-	
-			// Nested types
-			private sealed class _OpenAdInspector_c__AnonStorey3
-			{
-				// Fields
-				internal AdInspectorErrorClientEventArgs args;
-				internal _OpenAdInspector_c__AnonStorey2 __f__ref_2;
-	
-				// Constructors
-				public _OpenAdInspector_c__AnonStorey3();
-	
-				// Methods
-				internal void __m__0();
-			}
-	
-			// Constructors
-			public _OpenAdInspector_c__AnonStorey2();
-	
-			// Methods
-			internal void __m__0(AdInspectorErrorClientEventArgs args);
-		}
-	
-		[CompilerGenerated]
 		private sealed class _RaiseAction_c__AnonStorey4
 		{
 			// Fields
@@ -110,15 +76,9 @@ namespace GoogleMobileAds.Api
 	
 		// Methods
 		public static void Initialize(Action<InitializationStatus> initCompleteAction);
-		public static void DisableMediationInitialization();
-		public static void SetApplicationMuted(bool muted);
 		public static void SetRequestConfiguration(RequestConfiguration requestConfiguration);
-		public static RequestConfiguration GetRequestConfiguration();
-		public static void SetApplicationVolume(float volume);
 		public static void SetiOSAppPauseOnBackground(bool pause);
-		public static void OpenAdInspector(Action<AdInspectorError> adInspectorClosedAction);
 		internal static IClientFactory GetClientFactory();
-		internal static void SetClientFactory(IClientFactory clientFactory);
 		internal static void RaiseAction(Action action);
 		private static IMobileAdsClient GetMobileAdsClient();
 	}

@@ -55,19 +55,12 @@ void Assembly-CSharp.dll::JoinUIUpdater::JoinUIUpdater__cctor(MethodInfo *method
   }
   this = (Queue_1_MV_Common_MVEventCodes_ *)
          func_?(TypeInfo__System__Collections__Generic__Queue<MV::Common::MVEventCodes>);
-  if (this != (Queue_1_MV_Common_MVEventCodes_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-    Stack_1_System_Object___ctor
-              ((Stack_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Queue<MV::Common::MVEventCodes>__Queue__);
-    TypeInfo__JoinUIUpdater->static_fields->JoinEventCodes = this;
-    func_?(TypeInfo__JoinUIUpdater->static_fields,this);
-    TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent = 0x3a;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)this,
+             MethodInfo__System__Collections__Generic__Queue<MV::Common::MVEventCodes>__Queue__);
+  TypeInfo__JoinUIUpdater->static_fields->JoinEventCodes = this;
+  func_?(TypeInfo__JoinUIUpdater->static_fields,this);
+  TypeInfo__JoinUIUpdater->static_fields->latestJoinEvent = 0x3a;
   return;
 }
 

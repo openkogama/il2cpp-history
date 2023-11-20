@@ -26,14 +26,3 @@ void Assembly-CSharp.dll::MVSpawnPointBlue::MVSpawnPointBlue__ctor
   return;
 }
 
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVSpawnPointBlue::MVSpawnPointBlue_get_DocumentationType
-          (MVSpawnPointBlue *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_SpawnPointBlue;
-}
-

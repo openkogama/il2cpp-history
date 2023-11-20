@@ -212,184 +212,122 @@ void Assembly-CSharp.dll::HamsterWheelVisualization::HamsterWheelVisualization_I
   (this->fields)._.isInSpawner = isInSpawner;
   (this->fields).vehicleSeatManager = vehicleSeatManager;
   func_?(&(this->fields).vehicleSeatManager,vehicleSeatManager);
-  if (vehicleSeatManager != (VehicleSeatManager *)0x0) {
-    pVVar1 = (vehicleSeatManager->fields).OnSeatOccupiedChange;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,
-                 MethodInfo__HamsterWheelVisualization__OnSeatOccupiedChange__,(MethodInfo *)0x0);
-      VStack_2.z = (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                                     ((Delegate *)pVVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-      if ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z ==
-          (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) {
-        (vehicleSeatManager->fields).OnSeatOccupiedChange =
-             (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-      }
-      else {
-        pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-        if (((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-            TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate) {
-          pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-        }
-        if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-        goto code_?;
-        (vehicleSeatManager->fields).OnSeatOccupiedChange = pVVar1;
-        pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-        if (((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-            TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate) {
-          pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-        }
-        if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-        goto code_?;
-      }
-      VStack_2.z = (float)&(vehicleSeatManager->fields).OnSeatOccupiedChange;
-      VStack_2.y = (float)&UNK_?;
+  if (vehicleSeatManager == (VehicleSeatManager *)0x0) goto code_?;
+  pVVar1 = (vehicleSeatManager->fields).OnSeatOccupiedChange;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
+            func_?(TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__HamsterWheelVisualization__OnSeatOccupiedChange__,
+             (MethodInfo *)0x0);
+  VStack_2.z = (float)mscorlib.dll::System::Delegate::Delegate_Combine
+                                 ((Delegate *)pVVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z ==
+      (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) {
+    (vehicleSeatManager->fields).OnSeatOccupiedChange =
+         (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
+code_?:
+    VStack_2.z = (float)&(vehicleSeatManager->fields).OnSeatOccupiedChange;
+    VStack_2.y = (float)&UNK_?;
+    func_?();
+    if (health == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    fVar3 = (float10)(*(code *)(health->klass->vtable).get_Value.method)
+                                (health,(health->klass->vtable).set_Value.methodPtr);
+    (this->fields).curHealth = (float)fVar3;
+    pMVar4 = (health->fields)._._.OnChange;
+    pVVar5 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (pVVar5,(Object *)this,
+               MethodInfo__HamsterWheelVisualization___Init_b__16_0_System__Object_,
+               (MethodInfo *)0x0);
+    pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pMVar4,(Delegate *)pVVar5,(MethodInfo *)0x0);
+    if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+      (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+code_?:
+      VStack_2.z = (float)&UNK_?;
       func_?();
-      if (health != (MVRuntimeDataVariableClampedFloat *)0x0) {
-        fVar3 = (float10)(*(health->klass->vtable).get_Value.methodPtr)
-                                    (health,(health->klass->vtable).get_Value.method);
-        (this->fields).curHealth = (float)fVar3;
-        pMVar4 = (health->fields)._._.OnChange;
-        pUVar5 = (UnityAction_1_System_Object_ *)
-                 func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-        if (pUVar5 != (UnityAction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-          UnityAction_1_System_Object___ctor
-                    (pUVar5,(Object *)this,
-                     MethodInfo__HamsterWheelVisualization___Init_b__16_0_System__Object_,
-                     (MethodInfo *)0x0);
-          VStack_2.z = (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                                         ((Delegate *)pMVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-          if ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z ==
-              (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) {
-            (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          }
-          else {
-            pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-            if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)
-                ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-                TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-              pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-            }
-            if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-            goto code_?;
-            (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)pVVar1;
-            pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-            if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)
-                ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-                TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-              pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-            }
-            if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-            goto code_?;
-          }
-          VStack_2.z = (float)&(health->fields)._._.OnChange;
-          VStack_2.y = (float)&UNK_?;
-          func_?();
-          if (isGrounded != (MVRuntimeDataVariable *)0x0) {
-            pMVar4 = (isGrounded->fields).OnChange;
-            pUVar5 = (UnityAction_1_System_Object_ *)
-                     func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-            if (pUVar5 != (UnityAction_1_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-              UnityAction_1_System_Object___ctor
-                        (pUVar5,(Object *)this,
-                         MethodInfo__HamsterWheelVisualization___Init_b__16_1_System__Object_,
-                         (MethodInfo *)0x0);
-              VStack_2.z = (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                                             ((Delegate *)pMVar4,(Delegate *)pUVar5,
-                                              (MethodInfo *)0x0);
-              if ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z ==
-                  (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) {
-                (isGrounded->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-              }
-              else {
-                pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-                if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)
-                    ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-                    TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                  pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-                }
-                if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-                goto code_?;
-                (isGrounded->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)pVVar1;
-                pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
-                if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)
-                    ((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
-                    TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                  pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
-                }
-                if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0)
-                goto code_?;
-              }
-              VStack_2.z = (float)&(isGrounded->fields).OnChange;
-              VStack_2.y = (float)&UNK_?;
-              func_?();
-              pTVar6 = (this->fields).hamsterWheelVisualizationRoot;
+      if (isGrounded == (MVRuntimeDataVariable *)0x0) goto code_?;
+      pMVar4 = (isGrounded->fields).OnChange;
+      pVVar5 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+               func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                (pVVar5,(Object *)this,
+                 MethodInfo__HamsterWheelVisualization___Init_b__16_1_System__Object_,
+                 (MethodInfo *)0x0);
+      pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar4,(Delegate *)pVVar5,(MethodInfo *)0x0);
+      if (pMVar4 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (isGrounded->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+code_?:
+        VStack_2.z = (float)&UNK_?;
+        func_?();
+        pTVar6 = (this->fields).hamsterWheelVisualizationRoot;
+        pVVar7 = (this->fields).vehicleBlinker;
+        if (pTVar6 != (Transform *)0x0) {
+          pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar6,(MethodInfo *)0x0);
+          if (pGVar8 != (GameObject *)0x0) {
+            pMVar9 = (MeshFilter__Array *)
+                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                     GameObject_GetComponentsInChildren
+                               (pGVar8,
+                                UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
+                               );
+            if (pVVar7 != (VehicleBlinker *)0x0) {
+              (pVVar7->fields)._.meshFilters = pMVar9;
+              func_?(&(pVVar7->fields)._.meshFilters,pMVar9);
               pVVar7 = (this->fields).vehicleBlinker;
-              if (pTVar6 != (Transform *)0x0) {
-                pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pTVar6,(MethodInfo *)0x0);
-                if (pGVar8 != (GameObject *)0x0) {
-                  pMVar9 = (MeshFilter__Array *)
-                           Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar8,
-                                      UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
-                                     );
-                  if (pVVar7 != (VehicleBlinker *)0x0) {
-                    (pVVar7->fields)._.meshFilters = pMVar9;
-                    func_?(&(pVVar7->fields)._.meshFilters,pMVar9);
-                    pVVar7 = (this->fields).vehicleBlinker;
-                    if (pVVar7 != (VehicleBlinker *)0x0) {
-                      (pVVar7->fields)._.visible = 1;
-                      if (isInSpawner != 0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                                  ((Behaviour *)this,0,(MethodInfo *)0x0);
-                      }
-                      pTVar6 = (this->fields).hamsterWheelVisualizationRoot;
-                      if (pTVar6 != (Transform *)0x0) {
-                        pAVar10 = (AvatarBlobShadowController *)
-                                  UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_GetComponentInChildren_1
-                                            ((Component *)pTVar6,
-                                             AvatarBlobShadowController_MethodInfo__UnityEngine__Component__GetComponentInChildren<AvatarBlobShadowController>__
-                                            );
-                        (this->fields).blobShadow = pAVar10;
-                        func_?(&(this->fields).blobShadow,pAVar10);
-                        pAVar10 = (this->fields).blobShadow;
-                        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__UnityEngine__Object);
-                        }
-                        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                Object_1_op_Inequality
-                                          ((Object_1 *)pAVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
-                        if (bVar11 != 0) {
-                          pAVar10 = (this->fields).blobShadow;
-                          if (pAVar10 == (AvatarBlobShadowController *)0x0) goto code_?;
-                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                                    ((Behaviour *)pAVar10,0,(MethodInfo *)0x0);
-                        }
-                        pGVar8 = (this->fields).wheel;
-                        if (pGVar8 != (GameObject *)0x0) {
-                          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                    GameObject_get_transform(pGVar8,(MethodInfo *)0x0);
-                          if (pTVar6 != (Transform *)0x0) {
-                            pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                      Transform_get_position(&VStack_2,pTVar6,(MethodInfo *)0x0);
-                            fVar13 = pVVar12->y;
-                            fVar14 = pVVar12->z;
-                            (this->fields).prevPosition.x = pVVar12->x;
-                            (this->fields).prevPosition.y = fVar13;
-                            (this->fields).prevPosition.z = fVar14;
-                            (this->fields)._.cullDistance = 100.0;
-                            (this->fields)._.disableVisualizationDistance = 100.0;
-                            return;
-                          }
-                        }
-                      }
+              if (pVVar7 != (VehicleBlinker *)0x0) {
+                (pVVar7->fields)._.visible = 1;
+                if (isInSpawner != 0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                            ((Behaviour *)this,0,(MethodInfo *)0x0);
+                }
+                pTVar6 = (this->fields).hamsterWheelVisualizationRoot;
+                if (pTVar6 != (Transform *)0x0) {
+                  pAVar10 = (AvatarBlobShadowController *)
+                            UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_GetComponentInChildren_1
+                                      ((Component *)pTVar6,
+                                       AvatarBlobShadowController_MethodInfo__UnityEngine__Component__GetComponentInChildren<AvatarBlobShadowController>__
+                                      );
+                  (this->fields).blobShadow = pAVar10;
+                  func_?(&(this->fields).blobShadow,pAVar10);
+                  pAVar10 = (this->fields).blobShadow;
+                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__UnityEngine__Object);
+                  }
+                  bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                                    ((Object_1 *)pAVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
+                  if (bVar11 != 0) {
+                    pAVar10 = (this->fields).blobShadow;
+                    if (pAVar10 == (AvatarBlobShadowController *)0x0) goto code_?;
+                    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                              ((Behaviour *)pAVar10,0,(MethodInfo *)0x0);
+                  }
+                  pGVar8 = (this->fields).wheel;
+                  if (pGVar8 != (GameObject *)0x0) {
+                    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_get_transform(pGVar8,(MethodInfo *)0x0);
+                    if (pTVar6 != (Transform *)0x0) {
+                      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_position(&VStack_2,pTVar6,(MethodInfo *)0x0);
+                      fVar13 = pVVar12->y;
+                      fVar14 = pVVar12->z;
+                      (this->fields).prevPosition.x = pVVar12->x;
+                      (this->fields).prevPosition.y = fVar13;
+                      (this->fields).prevPosition.z = fVar14;
+                      (this->fields)._.cullDistance = 100.0;
+                      (this->fields)._.disableVisualizationDistance = 100.0;
+                      return;
                     }
                   }
                 }
@@ -397,16 +335,72 @@ void Assembly-CSharp.dll::HamsterWheelVisualization::HamsterWheelVisualization_I
             }
           }
         }
+code_?:
+        func_?();
+        goto code_?;
+      }
+      pMVar15 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+      if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pMVar15 = pMVar4;
+      }
+      if (pMVar15 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (isGrounded->fields).OnChange = pMVar15;
+        pMVar15 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar15 = pMVar4;
+        }
+        if (pMVar15 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+        goto code_?;
+      }
+code_?:
+      VStack_2.z = (float)&UNK_?;
+      func_?();
+    }
+    else {
+      pMVar15 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+      if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pMVar15 = pMVar4;
+      }
+      if (pMVar15 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (health->fields)._._.OnChange = pMVar15;
+        pMVar15 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar4->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar15 = pMVar4;
+        }
+        if (pMVar15 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+code_?:
+        VStack_2.z = (float)&UNK_?;
+        func_?();
+        goto code_?;
       }
     }
+    VStack_2.z = (float)&UNK_?;
+    func_?();
+    VStack_2.z = (float)extraout_ECX;
   }
-code_?:
-  VStack_2.z = (float)func_?();
+  else {
+    pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
+    if (((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
+        TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate) {
+      pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
+    }
+    if (pVVar1 == (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) goto code_?;
+    (vehicleSeatManager->fields).OnSeatOccupiedChange = pVVar1;
+    pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0;
+    if (((VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z)->klass ==
+        TypeInfo__VehicleSeatManager__OnSeatOccupiedChangeDelegate) {
+      pVVar1 = (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)VStack_2.z;
+    }
+    if (pVVar1 != (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) goto code_?;
+  }
+  VStack_2.y = (float)&UNK_?;
+  func_?();
+  VStack_2.z = (float)extraout_ECX_00;
 code_?:
   VStack_2.y = (float)&UNK_?;
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -597,162 +591,178 @@ void Assembly-CSharp.dll::HamsterWheelVisualization::HamsterWheelVisualization_U
     func_?(&StringLiteral_Idle);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
+  pHVar1 = this;
+  uStack_2 = 0;
+  fStack_3 = 0.0;
   if ((this->fields)._.isInSpawner == 0) {
     if ((this->fields).vehicleIsUnoccupied == 0) {
-      pVVar3 = (this->fields).vehicleSeatManager;
-      if (pVVar3 == (VehicleSeatManager *)0x0) goto code_?;
-      if ((pVVar3->fields).occupiedSeatCount == 0) {
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).unoccupiedTime = fVar4;
-        (this->fields).vehicleIsUnoccupied = 1;
+      pVVar4 = (this->fields).vehicleSeatManager;
+      if (pVVar4 == (VehicleSeatManager *)0x0) goto code_?;
+      if ((pVVar4->fields).occupiedSeatCount == 0) {
+        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (pHVar1->fields).unoccupiedTime = fVar5;
+        (pHVar1->fields).vehicleIsUnoccupied = 1;
       }
-      if ((this->fields).vehicleIsUnoccupied == 0) goto code_?;
+      if ((pHVar1->fields).vehicleIsUnoccupied == 0) goto code_?;
     }
-    pVVar3 = (this->fields).vehicleSeatManager;
-    if (pVVar3 == (VehicleSeatManager *)0x0) goto code_?;
-    if (0 < (pVVar3->fields).occupiedSeatCount) {
-      (this->fields).vehicleIsUnoccupied = 0;
+    pVVar4 = (pHVar1->fields).vehicleSeatManager;
+    if (pVVar4 == (VehicleSeatManager *)0x0) goto code_?;
+    if (0 < (pVVar4->fields).occupiedSeatCount) {
+      (pHVar1->fields).vehicleIsUnoccupied = 0;
     }
-    if (((this->fields).vehicleIsUnoccupied != 0) &&
-       (fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
-       _UNK_? - (fVar4 - (this->fields).unoccupiedTime) <
-       (this->fields).vehicleAboutToBeRemovedTime)) {
-      this_00 = (this->fields).vehicleBlinker;
+    if (((pHVar1->fields).vehicleIsUnoccupied != 0) &&
+       (this = (HamsterWheelVisualization *)
+               UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
+       _UNK_? - ((float)this - (pHVar1->fields).unoccupiedTime) <
+       (pHVar1->fields).vehicleAboutToBeRemovedTime)) {
+      this_00 = (pHVar1->fields).vehicleBlinker;
       if (this_00 == (VehicleBlinker *)0x0) goto code_?;
       BlinkerBase::BlinkerBase_StartBlinking
                 ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,0.3,(MethodInfo *)0x0);
     }
   }
 code_?:
-  puVar5 = (undefined8 *)func_?(&stack0xffffffc0,&(this->fields).velocity,0);
-  uStack_6 = *puVar5;
-  fStack_7 = *(float *)(puVar5 + 1);
+  puVar6 = (undefined8 *)func_?(&stack0xffffffbc,&(pHVar1->fields).velocity,0);
+  uStack_7 = *puVar6;
+  fStack_8 = *(float *)(puVar6 + 1);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_9._0_4_ = (pVVar8->upVector).x;
-  uStack_9._4_4_ = (pVVar8->upVector).y;
-  fStack_10 = (pVVar8->upVector).z;
-  puStack_11 = (undefined *)
-               ((float)(undefined4)uStack_9 * fStack_7 - (float)uStack_6 * fStack_10);
-  pDStack_12 = (Dictionary_2_System_Object_System_Object___Class *)
-               ((float)uStack_6 * (float)uStack_9._4_4_ -
-               (float)(undefined4)uStack_9 * uStack_6._4_4_);
-  fVar13 = (float10)func_?(&(this->fields).velocity,0);
-  fStack_14 = (float)fVar13;
-  if ((this->fields).vehicleIsUnoccupied == 0) {
-    fVar4 = (this->fields).velocity.x;
-    pVVar3 = (this->fields).vehicleSeatManager;
-    fStack_2 = (this->fields).velocity.z;
-    uStack_1 = (ulonglong)(uint)fVar4;
-    fStack_15 = fStack_2;
-    if (((pVVar3 == (VehicleSeatManager *)0x0) ||
+  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_10._0_4_ = (pVVar9->upVector).x;
+  uStack_10._4_4_ = (pVVar9->upVector).y;
+  fStack_11 = (pVVar9->upVector).z;
+  puStack_12 = (undefined *)
+               ((float)(undefined4)uStack_10 * fStack_8 - (float)uStack_7 * fStack_11);
+  pDStack_13 = (Dictionary_2_System_Object_System_Object___Class *)
+               ((float)uStack_7 * (float)uStack_10._4_4_ -
+               (float)(undefined4)uStack_10 * uStack_7._4_4_);
+  fVar14 = (float10)func_?(&(pHVar1->fields).velocity,0);
+  fStack_15 = (float)fVar14;
+  if ((pHVar1->fields).vehicleIsUnoccupied == 0) {
+    this = (HamsterWheelVisualization *)(pHVar1->fields).velocity.x;
+    pVVar4 = (pHVar1->fields).vehicleSeatManager;
+    fStack_3 = (pHVar1->fields).velocity.z;
+    uStack_2 = ZEXT48(this);
+    fStack_16 = fStack_3;
+    if (((pVVar4 == (VehicleSeatManager *)0x0) ||
         (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (pVVar3->fields).seats,
+                   (pVVar4->fields).seats,
         this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) ||
-       (RVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+       (RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_01,0,
                            MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
-                          ), RVar16 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    iVar17 = *(int *)((int)RVar16 + 0x10);
+                          ), RVar17 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+    pHVar18 = *(HamsterWheelVisualization **)((int)RVar17 + 0x14);
+    pHStack_19 = pHVar18;
     this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_03 == (MVNetworkGame *)0x0) goto code_?;
-    fStack_18 = (float)MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                                (this_03,(MethodInfo *)0x0);
-    if (_UNK_? < fVar4 * fVar4 + 0.0 + fStack_15 * fStack_15) {
-      if ((iVar17 == 0) || (*(int *)(iVar17 + 0x144) == 0)) goto code_?;
-      pTVar19 = *(Transform **)(*(int *)(iVar17 + 0x144) + 0x90);
-      pVVar20 = (Vector3 *)func_?(&uStack_6,&uStack_1,0);
-      if (pTVar19 == (Transform *)0x0) goto code_?;
+    pHStack_20 = (HamsterWheelVisualization *)
+                MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_03,(MethodInfo *)0x0)
+    ;
+    if (_UNK_? < (float)this * (float)this + 0.0 + fStack_16 * fStack_16) {
+      if ((pHVar18 == (HamsterWheelVisualization *)0x0) ||
+         (pCVar21 = pHVar18[3].fields._._.m_CancellationTokenSource,
+         pCVar21 == (CancellationTokenSource *)0x0)) goto code_?;
+      this = (HamsterWheelVisualization *)pCVar21[4].klass;
+      pVVar22 = (Vector3 *)func_?(&uStack_7,&uStack_2,0);
+      if (this == (HamsterWheelVisualization *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_forward
-                (pTVar19,*pVVar20,(MethodInfo *)0x0);
-      if ((this->fields).speedState == 0) {
-        pDStack_12 = 
+                ((Transform *)this,*pVVar22,(MethodInfo *)0x0);
+      if ((pHVar1->fields).speedState == 0) {
+        pDStack_13 = 
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-        pDVar21 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (pDVar21 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)pDVar21,
+        this = (HamsterWheelVisualization *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                    *)this,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
+        if (this == (HamsterWheelVisualization *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar21,(Object *)StringLiteral_state,(Object *)StringLiteral_Walk,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_state,
+                   (Object *)StringLiteral_Walk,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        fStack_15 = fStack_18;
-        pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&fStack_15);
+        pHStack_19 = pHStack_20;
+        pOVar23 = (Object *)func_?(TypeInfo__System__Int32,&pHStack_19);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar21,(Object *)StringLiteral_timeStamp,pOVar22,
+                  ((Dictionary_2_System_Object_System_Object_ *)this,
+                   (Object *)StringLiteral_timeStamp,pOVar23,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        if (*(MVRuntimeDataVariable **)(iVar17 + 0xfc) == (MVRuntimeDataVariable *)0x0)
-        goto code_?;
+        pVVar4 = pHVar18[2].fields.vehicleSeatManager;
+        if (pVVar4 == (VehicleSeatManager *)0x0) goto code_?;
         MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                  (*(MVRuntimeDataVariable **)(iVar17 + 0xfc),(Object *)pDVar21,(MethodInfo *)0x0);
-        (this->fields).speedState = 1;
+                  ((MVRuntimeDataVariable *)pVVar4,(Object *)this,(MethodInfo *)0x0);
+        (pHVar1->fields).speedState = 1;
       }
     }
-    else if ((this->fields).speedState != 0) {
-      pDVar21 = (Dictionary_2_System_Object_System_Object_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
-      if (pDVar21 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)pDVar21,
+    else if ((pHVar1->fields).speedState != 0) {
+      this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_04,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
+      if (this_04 ==
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar21,(Object *)StringLiteral_state,(Object *)StringLiteral_Idle,
+                ((Dictionary_2_System_Object_System_Object_ *)this_04,(Object *)StringLiteral_state,
+                 (Object *)StringLiteral_Idle,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      fStack_15 = fStack_18;
-      pOVar22 = (Object *)func_?(TypeInfo__System__Int32,&fStack_15);
+      this = pHStack_20;
+      pOVar23 = (Object *)func_?(TypeInfo__System__Int32,&this);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (pDVar21,(Object *)StringLiteral_timeStamp,pOVar22,
+                ((Dictionary_2_System_Object_System_Object_ *)this_04,
+                 (Object *)StringLiteral_timeStamp,pOVar23,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      if ((iVar17 == 0) ||
-         (*(MVRuntimeDataVariable **)(iVar17 + 0xfc) == (MVRuntimeDataVariable *)0x0))
+      if ((pHStack_19 == (HamsterWheelVisualization *)0x0) ||
+         (pVVar4 = pHStack_19[2].fields.vehicleSeatManager, pVVar4 == (VehicleSeatManager *)0x0))
       goto code_?;
       MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (*(MVRuntimeDataVariable **)(iVar17 + 0xfc),(Object *)pDVar21,(MethodInfo *)0x0);
-      (this->fields).speedState = 0;
+                ((MVRuntimeDataVariable *)pVVar4,(Object *)this_04,(MethodInfo *)0x0);
+      (pHVar1->fields).speedState = 0;
     }
   }
-  this_02 = (this->fields).wheel;
+  this_02 = (pHVar1->fields).wheel;
   if (this_02 != (GameObject *)0x0) {
-    pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    this_05 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_02,(MethodInfo *)0x0);
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    if (pTVar19 != (Transform *)0x0) {
-      auVar23._4_4_ = pDStack_12;
-      auVar23._0_4_ = puStack_11;
-      auVar23._8_4_ = 0;
+    this = (HamsterWheelVisualization *)
+           UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    if (this_05 != (Transform *)0x0) {
+      auVar24._4_4_ = pDStack_13;
+      auVar24._0_4_ = puStack_12;
+      auVar24._8_4_ = 0;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4
-                (pTVar19,(Vector3)(auVar23 << 0x20),
-                 (float)((uint)fStack_14 ^
+                (this_05,(Vector3)(auVar24 << 0x20),
+                 (float)((uint)fStack_15 ^
                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
-                 fVar4 * _UNK_?,Space__Enum_World,(MethodInfo *)0x0);
+                 (float)this * _UNK_?,Space__Enum_World,(MethodInfo *)0x0);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -857,22 +867,17 @@ void Assembly-CSharp.dll::HamsterWheelVisualization::HamsterWheelVisualization__
   }
   this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-    (this->fields)._.lodGameObjects = this_00;
-    func_?(&(this->fields)._.lodGameObjects,this_00);
-    (this->fields)._.disableVisualizationDistance = 40.0;
-    (this->fields)._.cullDistance = 145.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  (this->fields)._.lodGameObjects = this_00;
+  func_?(&(this->fields)._.lodGameObjects,this_00);
+  (this->fields)._.disableVisualizationDistance = 40.0;
+  (this->fields)._.cullDistance = 145.0;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

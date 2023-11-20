@@ -45,22 +45,6 @@ public abstract class ReviveUIHandlerBase : MonoBehaviour
 	protected abstract AdContext AdContext { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_0
-	{
-		// Fields
-		public ContinueButtonLockCursor popup;
-		public ReviveUIHandlerBase __4__this;
-		public UnityAction __9__1;
-
-		// Constructors
-		public __c__DisplayClass23_0();
-
-		// Methods
-		internal void _OnWatchAdClicked_b__0(IUIStack x, BaseEventData y);
-		internal void _OnWatchAdClicked_b__1();
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -77,6 +61,22 @@ public abstract class ReviveUIHandlerBase : MonoBehaviour
 		// Methods
 		internal void _OnWatchAdClicked_b__23_2(IUIStack z, BaseEventData c);
 		internal void _OnSubscriberClicked_b__24_2(IUIStack z, BaseEventData c);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass23_0
+	{
+		// Fields
+		public ContinueButtonLockCursor popup;
+		public ReviveUIHandlerBase __4__this;
+		public UnityAction __9__1;
+
+		// Constructors
+		public __c__DisplayClass23_0();
+
+		// Methods
+		internal void _OnWatchAdClicked_b__0(IUIStack x, BaseEventData y);
+		internal void _OnWatchAdClicked_b__1();
 	}
 
 	[CompilerGenerated]

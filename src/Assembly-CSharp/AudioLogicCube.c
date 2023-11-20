@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::AudioLogicCube::AudioLogicCube_Play
       if (pAVar1->max_length <= uVar2) break;
       pAVar4 = *ppAVar3;
       if (pAVar4 == (AudioOnOffComponent *)0x0) goto code_?;
-      (*(pAVar4->klass->vtable).TurnOff.methodPtr)(pAVar4,(pAVar4->klass->vtable).TurnOff.method);
+      (*(code *)(pAVar4->klass->vtable).TurnOff.method)(pAVar4,pAVar4->klass[1]._0.image);
       uVar2 = uVar2 + 1;
       ppAVar3 = ppAVar3 + 1;
     }
@@ -55,7 +55,8 @@ void Assembly-CSharp.dll::AudioLogicCube::AudioLogicCube_Play
       if (pAVar1->max_length <= uVar2) break;
       pAVar4 = *ppAVar3;
       if (pAVar4 == (AudioOnOffComponent *)0x0) goto code_?;
-      (*(pAVar4->klass->vtable).TurnOn.methodPtr)(pAVar4,(pAVar4->klass->vtable).TurnOn.method);
+      (*(code *)(pAVar4->klass->vtable).TurnOn.method)
+                (pAVar4,(pAVar4->klass->vtable).TurnOff.methodPtr);
       uVar2 = uVar2 + 1;
       ppAVar3 = ppAVar3 + 1;
     }

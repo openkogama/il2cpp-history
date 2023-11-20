@@ -93,8 +93,9 @@ void Assembly-CSharp.dll::SpawnRoleSelectionButtonController::
                                (StringLiteral_Tier_,pSVar6,StringLiteral__Locked,(MethodInfo *)0x0);
           }
           if (pTVar5 != (Text *)0x0) {
-            (*(pTVar5->klass->vtable).set_text.methodPtr)
-                      (pTVar5,pSVar6,(pTVar5->klass->vtable).set_text.method);
+            (*(code *)(pTVar5->klass->vtable).set_text.method)
+                      (pTVar5,pSVar6,
+                       (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             return;
           }
         }

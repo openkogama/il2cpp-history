@@ -11,7 +11,6 @@ void MVWorldObject.dll::TargetAssasinated::TargetAssasinated_GameCountersQuery_O
     cRam_? = '\x01';
   }
   if (e == (OnCounterTypeChangedArgs *)0x0) {
-code_?:
     func_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
@@ -19,10 +18,11 @@ code_?:
   }
   if (((e->fields).actorNumber == (this->fields).assassinatorActorNumber) &&
      ((e->fields).otherID == (this->fields).assassineeActorNumber)) {
-    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__System__EventArgs);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     (this->fields)._.forfilled = 1;
     (this->fields)._.instigatorCounterTypeChangedEvent = e;
     func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);

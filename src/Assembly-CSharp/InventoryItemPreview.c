@@ -10,18 +10,20 @@ void Assembly-CSharp.dll::InventoryItemPreview::InventoryItemPreview_Initialize
   func_?(&(this->fields).item,inventoryItem);
   pIVar1 = (this->fields).item;
   if ((pIVar1 != (InventoryItem *)0x0) && (pTVar2 = (this->fields).title, pTVar2 != (Text *)0x0)) {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)
-              (pTVar2,(pIVar1->fields).name,(pTVar2->klass->vtable).set_text.method);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,(pIVar1->fields).name,
+               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pIVar1 = (this->fields).item;
     if ((pIVar1 != (InventoryItem *)0x0) &&
        (pTVar2 = (this->fields).description, pTVar2 != (Text *)0x0)) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,(pIVar1->fields).description,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,(pIVar1->fields).description,
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       this_00 = (this->fields).previewImage;
       if (preview != (RawImage *)0x0) {
         value = (Texture *)
-                (*(preview->klass->vtable).get_mainTexture.methodPtr)
-                          (preview,(preview->klass->vtable).get_mainTexture.method);
+                (*(code *)(preview->klass->vtable).get_mainTexture.method)
+                          (preview,(preview->klass->vtable).OnCullingChanged.methodPtr);
         if (this_00 != (RawImage *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                     (this_00,value,(MethodInfo *)0x0);

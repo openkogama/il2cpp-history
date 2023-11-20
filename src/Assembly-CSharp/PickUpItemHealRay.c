@@ -5,7 +5,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_Awake
                (PickUpItemHealRay *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).ResetAmmo.methodPtr)(this,(this->klass->vtable).ResetAmmo.method);
+  (*(code *)(this->klass->vtable).ResetAmmo.method)
+            (this,(this->klass->vtable).OnLeaveVehicleWithWeapon.methodPtr);
   this_00 = (this->fields).rayParticles;
   if (this_00 != (ParticleSystem *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -321,9 +322,9 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ChangeUsedParticl
   pMVar1 = (this->fields)._.owner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = pMVar1->klass;
-    if (((TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth <= (pMVar2->_1).typeHierarchyDepth)
-       && ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth - 1] ==
-           (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
+    if (((TypeInfo__VehiclePickupOwner->_1).naturalAligment <= (pMVar2->_1).naturalAligment) &&
+       ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
       pPVar3 = (this->fields).particleRenderer;
       if (pPVar3 != (ParticleSystemRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
@@ -382,10 +383,10 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ChangeValueInStat
   key_00 = key;
   this_00 = newState;
   if (newState != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                        (Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -437,10 +438,10 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ChangeValueInStat
   key_00 = key;
   this_00 = newState;
   if (newState != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                        (Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -547,14 +548,14 @@ code_?:
                          MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
                         );
     if (this_00 == (MVRigidBody *)0x0) goto code_?;
-    pMStack_18 = (this_00->klass->vtable).__unknown.method;
-    cVar19 = (*(this_00->klass->vtable).__unknown.methodPtr)(this_00);
-    if (cVar19 == '\0') {
-      puVar20 = (undefined8 *)
-                (*(this_00->klass->vtable).__unknown_1.methodPtr)
-                          (&VStack_3,this_00,(this_00->klass->vtable).__unknown_1.method);
-      VStack_15._0_8_ = *puVar20;
-      VStack_15.z = *(float *)(puVar20 + 1);
+    pppppuStack_78 = (undefined4 *****)(this_00->klass->vtable).__unknown_1.methodPtr;
+    cVar18 = (*(code *)(this_00->klass->vtable).__unknown.method)(this_00);
+    if (cVar18 == '\0') {
+      puVar19 = (undefined8 *)
+                (*(code *)(this_00->klass->vtable).__unknown_1.method)
+                          (&VStack_3,this_00,(this_00->klass->vtable).__unknown_2.methodPtr);
+      VStack_15._0_8_ = *puVar19;
+      VStack_15.z = *(float *)(puVar19 + 1);
       aOStack_6[0].currentCryptoKey = 0;
       aOStack_6[0].hiddenValue.b1 = 0;
       aOStack_6[0].hiddenValue.b2 = 0;
@@ -569,17 +570,18 @@ code_?:
                             (&VStack_3,pMVar13,(MethodInfo *)0x0);
         fStack_1 = pVVar14->y;
         if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
-          pMStack_21 = TypeInfo__MVPhysics;
+          pMStack_20 = TypeInfo__MVPhysics;
+          pppppuStack_78 = (undefined4 *****)&UNK_?;
           func_?();
         }
-        pMStack_18 = (MethodInfo *)&pMStack_18;
-        pMStack_21 = (MVPhysics__Class *)0x0;
-        pfVar22 = (float *)func_?();
-        VStack_3.x = *pfVar22;
-        VStack_3.y = *(float *)(pfVar22 + 1);
-        VStack_3.z = pfVar22[2];
-        fStack_4 = pfVar22[3];
-        fStack_2 = pfVar22[4];
+        pppppuStack_78 = &pppppuStack_78;
+        pMStack_20 = (MVPhysics__Class *)0x0;
+        pfVar21 = (float *)func_?();
+        VStack_3.x = *pfVar21;
+        VStack_3.y = *(float *)(pfVar21 + 1);
+        VStack_3.z = pfVar21[2];
+        fStack_4 = pfVar21[3];
+        fStack_2 = pfVar21[4];
         if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
             cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
@@ -608,17 +610,17 @@ code_?:
       }
     }
   }
-  cVar19 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
-                     (this,(this->klass->vtable).get_IsAmmoDepleted.method);
-  if (cVar19 != '\0') {
+  cVar18 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
+  if (cVar18 != '\0') {
     pMVar13 = (this->fields)._.owner;
     if (((pMVar13 == (MVPickupOwner *)0x0) ||
         (pMVar16 = (pMVar13->fields)._.worldObjectParent, pMVar16 == (MVWorldObjectClient *)0x0)) ||
        (pGVar17 = (pMVar16->fields).gameObject, pGVar17 == (GameObject *)0x0)) {
 code_?:
       func_?();
-      pcVar23 = (code *)swi(3);
-      (*pcVar23)();
+      pcVar22 = (code *)swi(3);
+      (*pcVar22)();
       return;
     }
     x = (Object_1 *)
@@ -629,14 +631,10 @@ code_?:
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar10 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      pOVar24 = x->klass;
-      uVar25._0_2_ = pOVar24[1]._0.byval_arg.attrs;
-      uVar25._2_1_ = pOVar24[1]._0.byval_arg.type;
-      uVar25._3_1_ = pOVar24[1]._0.byval_arg.field_0x7;
-      (*(code *)pOVar24[1]._0.byval_arg.data)(x,uVar25);
+      (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
     }
   }
   return;
@@ -665,12 +663,12 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoFloating
                          MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
                         );
     if (this_01 != (MVRigidBody *)0x0) {
-      cVar3 = (*(this_01->klass->vtable).__unknown.methodPtr)
-                        (this_01,(this_01->klass->vtable).__unknown.method);
+      cVar3 = (*(code *)(this_01->klass->vtable).__unknown.method)
+                        (this_01,(this_01->klass->vtable).__unknown_1.methodPtr);
       if (cVar3 == '\0') {
         puVar4 = (undefined8 *)
-                 (*(this_01->klass->vtable).__unknown_1.methodPtr)
-                           (&VStack_5,this_01,(this_01->klass->vtable).__unknown_1.method);
+                 (*(code *)(this_01->klass->vtable).__unknown_1.method)
+                           (&VStack_5,this_01,(this_01->klass->vtable).__unknown_2.methodPtr);
         uVar6 = *puVar4;
         uStack_7 = *(undefined4 *)(puVar4 + 1);
         uStack_8._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
@@ -797,7 +795,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoHealing
   auVar15._0_24_ = auVar14._0_24_;
   auVar15._24_4_ = fVar10;
   if ((fVar10 <= _UNK_?) &&
-     (cVar16 = (*(this_00->klass->vtable).get_HasUnlimitedAmmo.methodPtr)(), cVar16 == '\0')) {
+     (cVar16 = (*(code *)(this_00->klass->vtable).get_HasUnlimitedAmmo.method)(), cVar16 == '\0')) {
     return;
   }
   x = (this_00->fields).stuckObject;
@@ -924,7 +922,7 @@ code_?:
         if ((this_00->fields).isLockedOn == 0) {
           return;
         }
-        (*(this_00->klass->vtable).TriggerEnd.methodPtr)();
+        (*(code *)(this_00->klass->vtable).TriggerEnd.method)();
         return;
       }
     }
@@ -1084,41 +1082,41 @@ Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoRaycast
           (PickUpItemHealRay *this,Vector3 direction,MethodInfo *method)
 
 {
-  pMVar1 = (this->fields)._.owner;
-  if (pMVar1 != (MVPickupOwner *)0x0) {
-    fVar2 = 0.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
-              ((Ray *)&stack0xffffffe4,(pMVar1->fields).lookOrigin,direction,(MethodInfo *)0x0);
+  if ((this->fields)._.owner != (MVPickupOwner *)0x0) {
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       (&VStack_2,direction,(MethodInfo *)0x0);
+    uVar3 = pVVar1->x;
+    uVar4 = pVVar1->y;
+    fVar5 = pVVar1->z;
     if ((this->fields).isLockedOn == 0) {
       distance = (this->fields).maxRayRange;
     }
     else {
       distance = (this->fields).maxLockOnRange;
     }
-    pMVar1 = (this->fields)._.owner;
-    if (pMVar1 != (MVPickupOwner *)0x0) {
+    pMVar6 = (this->fields)._.owner;
+    if (pMVar6 != (MVPickupOwner *)0x0) {
       ignoreWoIds = (HashSet_1_System_Int32_ *)
-                    (*(pMVar1->klass->vtable).get_IgnoreWOIDs.methodPtr)();
-      fVar3 = 0.0;
-      source = (Void *)(this->fields).layers.m_Mask;
-      puVar4 = &UNK_?;
-      layerMask = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                            (source,(MethodInfo *)0x0);
-      ray.m_Origin.y = (float)puVar4;
-      ray.m_Origin.x = fVar2;
-      ray.m_Origin.z = (float)source;
-      ray.m_Direction.x = fVar3;
-      ray.m_Direction.y = distance;
-      ray.m_Direction.z = (float)ignoreWoIds;
-      pLVar5 = CollisionDetection::CollisionDetection_MVHitAll
+                    (*(code *)(pMVar6->klass->vtable).get_IgnoreWOIDs.method)
+                              (pMVar6,pMVar6->klass[1]._0.image,uVar3,uVar4);
+      uVar7 = 0;
+      layerMask = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                  UnsafeUtility_AsRef_1((Void *)(this->fields).layers.m_Mask,(MethodInfo *)0x0);
+      ray.m_Origin.y = distance;
+      ray.m_Origin.x = (float)uVar7;
+      ray.m_Origin.z = (float)ignoreWoIds;
+      ray.m_Direction.x = (float)layerMask;
+      ray.m_Direction.y = 0.0;
+      ray.m_Direction.z = fVar5;
+      pLVar8 = CollisionDetection::CollisionDetection_MVHitAll
                          (ray,distance,ignoreWoIds,(int32_t)layerMask,(MethodInfo *)0x0);
-      return pLVar5;
+      return pLVar8;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  pLVar5 = (List_1_VoxelHit_ *)(*pcVar6)();
-  return pLVar5;
+  pcVar9 = (code *)swi(3);
+  pLVar8 = (List_1_VoxelHit_ *)(*pcVar9)();
+  return pLVar8;
 }
 
 
@@ -1208,7 +1206,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_HandleNoHit
 
 {
   if ((this->fields).isLockedOn != 0) {
-    (*(this->klass->vtable).TriggerEnd.methodPtr)(this,(this->klass->vtable).TriggerEnd.method);
+    (*(code *)(this->klass->vtable).TriggerEnd.method)
+              (this,(this->klass->vtable).OnStateChanged.methodPtr);
   }
   return;
 }
@@ -1228,7 +1227,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_HandleOnStuck
   if (hitObject == (MVWorldObjectClient *)0x0) {
 code_?:
     if ((this->fields).isLockedOn != 0) {
-      (*(this->klass->vtable).TriggerEnd.methodPtr)(this,(this->klass->vtable).TriggerEnd.method);
+      (*(code *)(this->klass->vtable).TriggerEnd.method)
+                (this,(this->klass->vtable).OnStateChanged.methodPtr);
     }
     return;
   }
@@ -1376,7 +1376,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_HandleRaycastResu
         if ((this->fields).isLockedOn == 0) {
           return;
         }
-        (*(this->klass->vtable).TriggerEnd.methodPtr)();
+        (*(code *)(this->klass->vtable).TriggerEnd.method)();
         return;
       }
     }
@@ -1527,9 +1527,9 @@ Vector3 * Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_HandleVehicl
   if (((this->fields).isLockedOn == 0) &&
      (pMVar1 = (this->fields)._.owner, pMVar1 != (MVPickupOwner *)0x0)) {
     pMVar2 = pMVar1->klass;
-    if (((TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth <= (pMVar2->_1).typeHierarchyDepth)
-       && ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth - 1] ==
-           (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
+    if (((TypeInfo__VehiclePickupOwner->_1).naturalAligment <= (pMVar2->_1).naturalAligment) &&
+       ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
       pMVar1 = (this->fields)._.owner;
       uVar3 = (pMVar1->fields).lookOrigin.x;
       uVar4 = (pMVar1->fields).lookOrigin.y;
@@ -1677,8 +1677,8 @@ bool Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_IsDirectionValid
           if (pMVar3 == (MVPickupOwner *)0x0) goto code_?;
           MVPickupOwner::MVPickupOwner_get_LookDirection(&direction,pMVar3,(MethodInfo *)0x0);
           if ((this->fields).isLockedOn != 0) {
-            (*(this->klass->vtable).TriggerEnd.methodPtr)
-                      (this,(this->klass->vtable).TriggerEnd.method);
+            (*(code *)(this->klass->vtable).TriggerEnd.method)
+                      (this,(this->klass->vtable).OnStateChanged.methodPtr);
             return 0;
           }
         }
@@ -2028,57 +2028,58 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnStateChanged
     func_?(&StringLiteral_S);
     cRam_? = '\x01';
   }
-  pDVar2 = newState;
-  pMVar3 = (pPVar1->fields)._.owner;
+  this_00 = newState;
+  pMVar2 = (pPVar1->fields)._.owner;
   this = (PickUpItemHealRay *)0x0;
-  if (pMVar3 == (MVPickupOwner *)0x0) {
+  if (pMVar2 == (MVPickupOwner *)0x0) {
 code_?:
     func_?();
 code_?:
     func_?();
-    pPVar4 = this;
+    pPVar3 = this;
   }
   else {
-    if ((pMVar3->fields)._IsLocal_k__BackingField != 0) {
+    if ((pMVar2->fields)._IsLocal_k__BackingField != 0) {
       return;
     }
-    unaff_EDI = (PickUpItemHealRay *)pDVar2;
+    unaff_EDI = (PickUpItemHealRay *)this_00;
     if (newState == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                        (Object *)StringLiteral_S,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar5 == 0) {
+    if (bVar4 == 0) {
       return;
     }
-    pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar2,(Object *)StringLiteral_S,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar6 = CONCAT44(TypeInfo__System__Int32,pDVar2);
-    if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    if ((pDVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                       (Object *)StringLiteral_S,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
+    if (TVar5.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
     this = (PickUpItemHealRay *)&UNK_?;
-    newState = pDVar2;
+    newState = (Dictionary_2_System_Object_System_Object_ *)TVar5;
     piVar7 = (int *)func_?();
     unaff_EDI = (PickUpItemHealRay *)*piVar7;
     if (unaff_EDI == (PickUpItemHealRay *)0xffffffff) {
-      (*(pPVar1->klass->vtable).TriggerEnd.methodPtr)
-                (pPVar1,(pPVar1->klass->vtable).TriggerEnd.method);
+      (*(code *)(pPVar1->klass->vtable).TriggerEnd.method)
+                (pPVar1,(pPVar1->klass->vtable).OnStateChanged.methodPtr);
       return;
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_00 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    bVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_TryGetWorldObject
-                      (this_00,(int32_t)unaff_EDI,(MVWorldObject **)&this,(MethodInfo *)0x0);
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
+    bVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_TryGetWorldObject
+                      (this_01,(int32_t)unaff_EDI,(MVWorldObject **)&this,(MethodInfo *)0x0);
     unaff_EDI = this;
-    if (bVar5 == 0) {
+    if (bVar4 == 0) {
       return;
     }
     if (this == (PickUpItemHealRay *)0x0) {
@@ -2087,14 +2088,13 @@ code_?:
       (pPVar1->fields).damageRay = 0;
       return;
     }
-    pPVar4 = unaff_EBX;
-    if ((((TypeInfo__MVWorldObjectClient->_1).typeHierarchyDepth <=
-          (this->klass->_1).typeHierarchyDepth) &&
-        (pPVar4 = unaff_EBX,
-        (MVWorldObjectClient__Class *)
-        (this->klass->_1).typeHierarchy[(TypeInfo__MVWorldObjectClient->_1).typeHierarchyDepth - 1]
-        == TypeInfo__MVWorldObjectClient)) && (pPVar4 = unaff_EBX, this != (PickUpItemHealRay *)0x0)
-       ) {
+    pPVar3 = unaff_EBX;
+    if ((((TypeInfo__MVWorldObjectClient->_1).naturalAligment <= (this->klass->_1).naturalAligment)
+        && (pPVar3 = unaff_EBX,
+           (MVWorldObjectClient__Class *)
+           (this->klass->_1).typeHierarchy[(TypeInfo__MVWorldObjectClient->_1).naturalAligment - 1]
+           == TypeInfo__MVWorldObjectClient)) &&
+       (pPVar3 = unaff_EBX, this != (PickUpItemHealRay *)0x0)) {
       (pPVar1->fields).stuckObject = (GameObject *)0x0;
       func_?(&(pPVar1->fields).stuckObject);
       (pPVar1->fields).damageRay = 0;
@@ -2107,23 +2107,23 @@ code_?:
       }
       newState = (Dictionary_2_System_Object_System_Object_ *)0x0;
       this = (PickUpItemHealRay *)0x0;
-      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
+      if (bVar4 == 0) {
         return;
       }
-      (pPVar1->fields).stuckObject = (GameObject *)(unaff_EDI->fields).rayStartTime;
+      (pPVar1->fields).stuckObject = (GameObject *)(unaff_EDI->fields).audioSource;
       method = (MethodInfo *)&UNK_?;
       func_?();
-      pMVar3 = (pPVar1->fields)._.owner;
+      pMVar2 = (pPVar1->fields)._.owner;
       if ((TypeInfo__PickUpItemHealRay->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       newState = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-      method = (MethodInfo *)pMVar3;
-      bVar5 = PickUpItemHealRay_IsDamageRay
-                        (pMVar3,(MVWorldObjectClient *)unaff_EDI,(MethodInfo *)0x0);
-      (pPVar1->fields).damageRay = bVar5;
+      method = (MethodInfo *)pMVar2;
+      bVar4 = PickUpItemHealRay_IsDamageRay
+                        (pMVar2,(MVWorldObjectClient *)unaff_EDI,(MethodInfo *)0x0);
+      (pPVar1->fields).damageRay = bVar4;
       (pPVar1->fields).isLockedOn = 1;
       method = (MethodInfo *)&UNK_?;
       iVar8 = func_?();
@@ -2141,7 +2141,7 @@ code_?:
       goto code_?;
     }
   }
-  this = pPVar4;
+  this = pPVar3;
   uVar6 = func_?(unaff_EDI);
 code_?:
   newState = (Dictionary_2_System_Object_System_Object_ *)((ulonglong)uVar6 >> 0x20);
@@ -2159,7 +2159,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnUnequip
                (PickUpItemHealRay *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((this->fields).hitParticles != (ParticleSystem *)0x0) {
     if (pcRam_? == (code *)0x0) {
@@ -2185,7 +2185,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ResetAmmo
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   AStack_1 = (ACTkByte4)(this->fields).maxAmmoTime.currentCryptoKey;
   AStack_2 = (this->fields).maxAmmoTime.hiddenValue;
@@ -2206,8 +2206,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ResetAmmo
   value._17_3_ = *(undefined3 *)&(this->fields).maxAmmoTime.field_0x11;
   fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
           ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar5 = (*(this->klass->vtable).GetAmmoMultiplier.methodPtr)
-                    (this,(int)fVar4,(this->klass->vtable).GetAmmoMultiplier.method);
+  iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
+                    (this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
   pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
            ObscuredFloat_op_Implicit
                      ((ObscuredFloat *)&stack0xffffffe8,(float)iVar5,(MethodInfo *)0x0);
@@ -2382,14 +2382,15 @@ code_?:
     if (piVar14 != (int *)0x0) {
       pIStack_13 = (ICurrentItemOwner__Class *)*piVar14;
       uVar16 = 0;
-      uVar17 = (pIStack_13->_1).interface_offsets_count;
+      uVar17._0_1_ = (pIStack_13->_1).rank;
+      uVar17._1_1_ = (pIStack_13->_1).minimumAlignment;
       if (uVar17 != 0) {
         do {
           if (pIStack_13->interfaceOffsets[uVar16].interfaceType ==
               (Il2CppClass *)TypeInfo__ICurrentItemOwner) {
             puVar18 = (undefined4 *)
-                      (*(int *)(*(int *)(*piVar14 + 0x58) + 4 + (uint)uVar16 * 8) * 8 + 0xc4 +
-                      *piVar14);
+                      (*piVar14 +
+                      (*(int *)(*(int *)(*piVar14 + 0x58) + 4 + (uint)uVar16 * 8) + 0x19) * 8);
             goto code_?;
           }
           uVar16 = uVar16 + 1;
@@ -2426,8 +2427,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_TriggerBegin
     pMVar1 = (this->fields)._.owner;
     if (((pMVar1 == (MVPickupOwner *)0x0) ||
         (pMVar2 = pMVar1->klass,
-        (pMVar2->_1).typeHierarchyDepth < (TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth)) ||
-       ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth - 1] !=
+        (pMVar2->_1).naturalAligment < (TypeInfo__VehiclePickupOwner->_1).naturalAligment)) ||
+       ((pMVar2->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
       pTVar3 = (this->fields).localMuzzePoint;
       (this->fields)._.muzzlePoint = pTVar3;
@@ -2589,7 +2590,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_TryHealTarget
                     ((Object_1 *)interactionHandler,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     if ((this->fields).isLockedOn != 0) {
-      (*(this->klass->vtable).TriggerEnd.methodPtr)(this,(this->klass->vtable).TriggerEnd.method);
+      (*(code *)(this->klass->vtable).TriggerEnd.method)
+                (this,(this->klass->vtable).OnStateChanged.methodPtr);
       return;
     }
     return;
@@ -2612,17 +2614,16 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_TryHealTarget
         if (pMVar6 == (MVWorldObjectClient *)0x0) {
           return;
         }
-        if ((pMVar6->klass->_1).typeHierarchyDepth <
-            (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth) {
+        if ((pMVar6->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
           return;
         }
         if ((MVAvatarLocal__Class *)
-            (pMVar6->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1]
-            != TypeInfo__MVAvatarLocal) {
+            (pMVar6->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+            TypeInfo__MVAvatarLocal) {
           return;
         }
         this_02 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-        otherTeam = (*(interactionHandler->klass->vtable).__unknown.methodPtr)();
+        otherTeam = (*(code *)(interactionHandler->klass->vtable).__unknown.method)();
         if (this_02 != (MVLocalPlayer *)0x0) {
           bVar1 = MVPlayer::MVPlayer_IsOnTeam((MVPlayer *)this_02,otherTeam,(MethodInfo *)0x0);
           if (bVar1 != 0) {
@@ -2635,7 +2636,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_TryHealTarget
                                  (this_01,
                                   MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
                                  ), pOVar7 != (Object *)0x0)) {
-            (*(code *)pOVar7->klass[1]._0.this_arg.data)();
+            (**(code **)&pOVar7->klass[1]._0.this_arg.attrs)();
             return;
           }
         }
@@ -2833,7 +2834,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateItemState
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)pSVar5,(MethodInfo *)0x0);
         return;
       }
@@ -2849,14 +2850,14 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateItemState
         pIVar3 = pIVar6;
         if (piVar7 == (int *)0x0) goto code_?;
         uVar8 = 0;
-        uVar9 = *(ushort *)(*piVar7 + 0xb2);
+        uVar9 = *(ushort *)(*piVar7 + 0xb6);
         if (uVar9 != 0) {
           do {
             if (*(ICurrentItemOwner__Class **)(*(int *)(*piVar7 + 0x58) + (uint)uVar8 * 8) ==
                 TypeInfo__ICurrentItemOwner) {
               puVar10 = (undefined4 *)
-                        (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xbc +
-                        *piVar7);
+                        (*piVar7 +
+                        (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar8 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar8 = uVar8 + 1;
@@ -2882,10 +2883,10 @@ code_?:
         unaff_ESI = (MVWorldObjectClient *)0x0;
         if (this_01 != (PickUpItemHealRay *)0x0) {
           bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                            ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_01,
-                             (Object *)unaff_EDI,
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01
+                             ,(Object *)unaff_EDI,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           ppppuStack_8 = &ppppuStack_8;
@@ -3037,9 +3038,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateRayParticle
       if (((this->fields).isLockedOn == 0) &&
          (pMVar1 = (this->fields)._.owner, pMVar1 != (MVPickupOwner *)0x0)) {
         pMVar16 = pMVar1->klass;
-        if (((TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth <=
-             (pMVar16->_1).typeHierarchyDepth) &&
-           ((pMVar16->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).typeHierarchyDepth - 1] ==
+        if (((TypeInfo__VehiclePickupOwner->_1).naturalAligment <= (pMVar16->_1).naturalAligment) &&
+           ((pMVar16->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] ==
             (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
           pMVar1 = (this->fields)._.owner;
           uStack_6._0_4_ = (pMVar1->fields).lookOrigin.x;
@@ -3565,9 +3565,9 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay__ctor
   *(undefined3 *)&(this->fields).maxAmmoTime.field_0x11 = uVar6;
   func_?();
   uVar7 = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Logic,(MethodInfo *)0x0);
-  ppOVar8 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                      ((Void *)(~(1 << (uVar7 & 0x1f)) & 0xfffffffb),(MethodInfo *)0x0);
-  (this->fields).layers.m_Mask = (int32_t)ppOVar8;
+  p_Var8 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+           UnsafeUtility_AsRef_1((Void *)(~(1 << (uVar7 & 0x1f)) & 0xfffffffb),(MethodInfo *)0x0);
+  (this->fields).layers.m_Mask = (int32_t)p_Var8;
   PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
   return;
 }

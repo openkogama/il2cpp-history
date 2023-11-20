@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::PlayerListSelector+<>c__DisplayClass2_0::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Set_active,(MethodInfo *)0x0);
   this_00 = (this->fields).__4__this;
   if (this_00 != (PlayerListSelector *)0x0) {

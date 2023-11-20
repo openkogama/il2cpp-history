@@ -12,10 +12,10 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::ColliderCo
                    );
     cRam_? = '\x01';
   }
-  pCVar1 = TypeInfo__UnityEngine__Collider;
   method_00 = 
   MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__CopyTo_UnityEngine__Collider_____int_
   ;
+  pCVar1 = TypeInfo__UnityEngine__Collider;
   this_00 = (this->fields).colliders;
   if (this_00 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
     if (array == (Array *)0x0) {
@@ -108,30 +108,33 @@ bool Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)collider,(Object_1 *)y,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    pLVar2 = (this->fields).colliders;
-    if (pLVar2 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
+    this_00 = (this->fields).colliders;
+    if (this_00 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
       bVar1 = System.dll::System::Collections::Generic::LinkedList`1[System::Object]::
               LinkedList_1_System_Object__Remove
-                        ((LinkedList_1_System_Object_ *)pLVar2,(Object *)collider,
+                        ((LinkedList_1_System_Object_ *)this_00,(Object *)collider,
                          MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__Remove_UnityEngine__Collider_
                         );
-      pLVar2 = (this->fields).colliders;
-      if (pLVar2 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
-        pLVar3 = System.dll::System::Collections::Generic::LinkedList`1[System::Object]::
-                 LinkedList_1_System_Object__get_Last
-                           ((LinkedList_1_System_Object_ *)pLVar2,
+      this_01 = (LinkedList_1_UnityEngine_UIElements_UIR_UIRenderDevice_DeviceToFree_ *)
+                (this->fields).colliders;
+      if (this_01 != (LinkedList_1_UnityEngine_UIElements_UIR_UIRenderDevice_DeviceToFree_ *)0x0) {
+        pLVar2 = System.dll::System::Collections::Generic::LinkedList`1[UnityEngine::UIElements::UIR
+                 ::UIRenderDevice+DeviceToFree]::
+                 LinkedList_1_UnityEngine_UIElements_UIR_UIRenderDevice_DeviceToFree__get_Last
+                           (this_01,
                             MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__get_Last__
                            );
-        if (pLVar3 != (LinkedListNode_1_System_Object_ *)0x0) {
-          (this->fields).activeCollider = (Collider *)(pLVar3->fields).item;
+        if (pLVar2 != (LinkedListNode_1_UnityEngine_UIElements_UIR_UIRenderDevice_DeviceToFree_ *)
+                      0x0) {
+          (this->fields).activeCollider = (Collider *)(pLVar2->fields).item.handle;
           func_?();
           return bVar1;
         }
       }
     }
     func_?();
-    pcVar4 = (code *)swi(3);
-    bVar1 = (*pcVar4)();
+    pcVar3 = (code *)swi(3);
+    bVar1 = (*pcVar3)();
     return bVar1;
   }
   return 0;
@@ -238,32 +241,31 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::ColliderCo
     func_?(&TypeInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pLVar1 = (LinkedList_1_UnityEngine_Collider_ *)
            func_?(TypeInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>
                           );
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pLVar1,
+             MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__LinkedList__
+            );
+  (this->fields).colliders = pLVar1;
+  func_?(&this->fields,pLVar1);
+  pLVar1 = (this->fields).colliders;
   if (pLVar1 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor
-              ((TweenRunner_1_FloatTween_ *)pLVar1,
-               MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__LinkedList__
+    System.dll::System::Collections::Generic::LinkedList`1[System::Object]::
+    LinkedList_1_System_Object__AddLast
+              ((LinkedList_1_System_Object_ *)pLVar1,(Object *)baseCollider,
+               MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__AddLast_UnityEngine__Collider_
               );
-    (this->fields).colliders = pLVar1;
-    func_?(&this->fields,pLVar1);
-    pLVar1 = (this->fields).colliders;
-    if (pLVar1 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
-      System.dll::System::Collections::Generic::LinkedList`1[System::Object]::
-      LinkedList_1_System_Object__AddLast
-                ((LinkedList_1_System_Object_ *)pLVar1,(Object *)baseCollider,
-                 MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__AddLast_UnityEngine__Collider_
-                );
-      (this->fields).baseCollider = baseCollider;
-      func_?(&(this->fields).baseCollider,baseCollider);
-      (this->fields).activeCollider = baseCollider;
-      func_?(&(this->fields).activeCollider,baseCollider);
-      return;
-    }
+    (this->fields).baseCollider = baseCollider;
+    func_?(&(this->fields).baseCollider);
+    (this->fields).activeCollider = baseCollider;
+    func_?(&(this->fields).activeCollider,baseCollider);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

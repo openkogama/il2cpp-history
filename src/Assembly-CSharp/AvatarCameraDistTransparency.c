@@ -114,7 +114,7 @@ void Assembly-CSharp.dll::AvatarCameraDistTransparency::AvatarCameraDistTranspar
   (this->fields).fadeStartBase = 4.0;
   (this->fields).fadeEndBase = 2.0;
   (this->fields).prevDist = -1.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).camMoveTowardsOffset.x = camMoveTowardsOffset.x;
   (this->fields).camMoveTowardsOffset.y = camMoveTowardsOffset.y;

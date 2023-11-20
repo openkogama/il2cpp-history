@@ -28,19 +28,6 @@ public class UploadAvatarScreenshotHandler : MonoBehaviour
 	private MVBody avatarBody;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass9_0
-	{
-		// Fields
-		public GameObject popup;
-
-		// Constructors
-		public __c__DisplayClass9_0();
-
-		// Methods
-		internal void _PrepareScreenshot_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -70,6 +57,19 @@ public class UploadAvatarScreenshotHandler : MonoBehaviour
 
 		// Methods
 		internal void _OnUpdatePressed_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass9_0
+	{
+		// Fields
+		public GameObject popup;
+
+		// Constructors
+		public __c__DisplayClass9_0();
+
+		// Methods
+		internal void _PrepareScreenshot_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

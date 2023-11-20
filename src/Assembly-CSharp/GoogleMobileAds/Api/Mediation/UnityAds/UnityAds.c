@@ -29,25 +29,27 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
     (*pcVar2)();
     return;
   }
-  uVar3 = 0;
-  uVar4 = (pIVar1->klass->_1).interface_offsets_count;
-  if (uVar4 != 0) {
+  pIVar3 = pIVar1->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
     do {
-      if (pIVar1->klass->interfaceOffsets[uVar3].interfaceType ==
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient) {
-        pIVar5 = &pIVar1->klass->vtable + pIVar1->klass->interfaceOffsets[uVar3].offset;
+        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].
+                   SetConsentMetaData.method;
         goto code_?;
       }
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar4);
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
   }
-  pIVar5 = (IUnityAdsClient__VTable *)
-           func_?(pIVar1,
-                           TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,0
-                          );
+  ppMVar6 = (MethodInfo **)
+            func_?(pIVar1,
+                            TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
+                            0);
 code_?:
-  (*(pIVar5->SetConsentMetaData).methodPtr)
-            (pIVar1,key,_metaDataValue,(pIVar5->SetConsentMetaData).method);
+  (*(code *)*ppMVar6)(pIVar1,key,_metaDataValue,ppMVar6[1]);
   return;
 }
 

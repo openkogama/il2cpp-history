@@ -15,78 +15,83 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::SpawnRoleLooksEditorMenu_Ini
   (this->fields).spawnRoleId = spawnRoleId;
   (this->fields).spawnRole = spawnRole;
   func_?(&(this->fields).spawnRole,spawnRole);
-  if (spawnRole != (MVAvatarSpawnRoleCreator *)0x0) {
-    spawnRolePreviewObject =
-         MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_GetSpawnRolePreviewObject
-                   (spawnRole,(MethodInfo *)0x0);
-    SpawnRoleLooksEditorMenu_SetupPreviewImage(this,spawnRolePreviewObject,(MethodInfo *)0x0);
-    pAVar1 = (spawnRole->fields).OnBodyUpdate;
-    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar2,(Object *)this,MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleBodyUpdate__
-                 ,(MethodInfo *)0x0);
-      pAVar1 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
-      if (pAVar1 == (Action *)0x0) {
-        (spawnRole->fields).OnBodyUpdate = (Action *)0x0;
-      }
-      else {
-        pAVar3 = (Action *)0x0;
-        if (pAVar1->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar1;
-        }
-        if (pAVar3 == (Action *)0x0) goto code_?;
-        (spawnRole->fields).OnBodyUpdate = pAVar3;
-        pAVar3 = (Action *)0x0;
-        if (pAVar1->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar1;
-        }
-        if (pAVar3 == (Action *)0x0) goto code_?;
-      }
+  if (spawnRole == (MVAvatarSpawnRoleCreator *)0x0) {
+    uVar1 = func_?();
+    goto code_?;
+  }
+  spawnRolePreviewObject =
+       MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_GetSpawnRolePreviewObject
+                 (spawnRole,(MethodInfo *)0x0);
+  SpawnRoleLooksEditorMenu_SetupPreviewImage(this,spawnRolePreviewObject,(MethodInfo *)0x0);
+  pAVar2 = (spawnRole->fields).OnBodyUpdate;
+  pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar3,(Object *)this,MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleBodyUpdate__,
+             (MethodInfo *)0x0);
+  pAVar2 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+  uVar1 = CONCAT44(TypeInfo__System__Action,pAVar2);
+  pAStack4 = (Action *)0x0;
+  if (pAVar2 == (Action *)0x0) {
+    (spawnRole->fields).OnBodyUpdate = (Action *)0x0;
+  }
+  else {
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAStack4 = pAVar2;
+    }
+    if (pAStack4 == (Action *)0x0) goto code_?;
+    (spawnRole->fields).OnBodyUpdate = pAStack4;
+    uVar1 = CONCAT44(TypeInfo__System__Action,pAVar2);
+    pAStack4 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAStack4 = pAVar2;
+    }
+    if (pAStack4 == (Action *)0x0) goto code_?;
+  }
+  ppAStack5 = &(spawnRole->fields).OnBodyUpdate;
+  func_?();
+  pAStack6 = TypeInfo__System__Action;
+  pAVar2 = (spawnRole->fields).OnRedoObjectLinks;
+  pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar3,(Object *)this,
+             MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleRedoObjectLinks__,(MethodInfo *)0x0);
+  pAVar2 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+  uVar1 = CONCAT44(TypeInfo__System__Action,pAVar2);
+  if (pAVar2 == (Action *)0x0) {
+    (spawnRole->fields).OnRedoObjectLinks = (Action *)0x0;
+    ppAStack5 = &(spawnRole->fields).OnRedoObjectLinks;
+    pAStack4 = (Action *)0x0;
+    func_?();
+    return;
+  }
+  pAVar7 = (Action *)0x0;
+  if (pAVar2->klass == TypeInfo__System__Action) {
+    pAVar7 = pAVar2;
+  }
+  if (pAVar7 != (Action *)0x0) {
+    (spawnRole->fields).OnRedoObjectLinks = pAVar7;
+    uVar1 = CONCAT44(TypeInfo__System__Action,pAVar2);
+    pAStack4 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAStack4 = pAVar2;
+    }
+    if (pAStack4 != (Action *)0x0) {
+      ppAStack5 = &(spawnRole->fields).OnRedoObjectLinks;
       func_?();
-      pAVar1 = (spawnRole->fields).OnRedoObjectLinks;
-      pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar2,(Object *)this,
-                   MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleRedoObjectLinks__,
-                   (MethodInfo *)0x0);
-        pAVar1 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
-        if (pAVar1 == (Action *)0x0) {
-          (spawnRole->fields).OnRedoObjectLinks = (Action *)0x0;
-          func_?();
-          return;
-        }
-        pAVar3 = (Action *)0x0;
-        if (pAVar1->klass == TypeInfo__System__Action) {
-          pAVar3 = pAVar1;
-        }
-        if (pAVar3 != (Action *)0x0) {
-          (spawnRole->fields).OnRedoObjectLinks = pAVar3;
-          pAVar3 = (Action *)0x0;
-          if (pAVar1->klass == TypeInfo__System__Action) {
-            pAVar3 = pAVar1;
-          }
-          if (pAVar3 != (Action *)0x0) {
-            func_?();
-            return;
-          }
-        }
-        goto code_?;
-      }
+      return;
     }
   }
-  func_?();
 code_?:
+  _ppAStack00000018 = uVar1;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -116,19 +121,20 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::
     func_?(&TypeInfo__SpawnRoleLooksEditorMenu____c__DisplayClass11_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SpawnRoleLooksEditorMenu____c__DisplayClass11_0);
+  method_00 = TypeInfo__SpawnRoleLooksEditorMenu____c__DisplayClass11_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).avatarSelectionMenuPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      SpawnRoleAvatarSelectionMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleAvatarSelectionMenu>_SpawnRoleAvatarSelectionMenu_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).avatarSelectionMenuPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        SpawnRoleAvatarSelectionMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleAvatarSelectionMenu>_SpawnRoleAvatarSelectionMenu_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -137,61 +143,55 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                             );
-    if (pEVar3 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)pEVar3,value,
+               MethodInfo__SpawnRoleLooksEditorMenu____c__DisplayClass11_0___OnAvatarChangeButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar2,(BaseEventData *)0x0,pEVar3,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    pOVar1 = value[1].klass;
+    pIVar4 = (Il2CppClass *)(this->fields).spawnRoleId;
+    if (pOVar1 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>
+                       );
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_
+                       );
+        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?(&
+                        MethodInfo__SpawnRoleAvatarSelectionMenu___Initialize_b__9_0_UnityEngine__EventSystems__IHandleSpawnRoleAvatarSelectionData__UnityEngine__EventSystems__BaseEventData_
+                       );
+        cRam_? = '\x01';
+      }
+      (pOVar1->_0).castClass = pIVar4;
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pOVar1,(MethodInfo *)0x0);
+      pEVar3 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>
+                              );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar3,value,
-                 MethodInfo__SpawnRoleLooksEditorMenu____c__DisplayClass11_0___OnAvatarChangeButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pOVar1,
+                 MethodInfo__SpawnRoleAvatarSelectionMenu___Initialize_b__9_0_UnityEngine__EventSystems__IHandleSpawnRoleAvatarSelectionData__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                 (pGVar2,(BaseEventData *)0x0,pEVar3,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_
                 );
-      pOVar1 = value[1].klass;
-      pIVar4 = (Il2CppClass *)(this->fields).spawnRoleId;
-      if (pOVar1 != (Object__Class *)0x0) {
-        if (cRam_? == '\0') {
-          func_?(&
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>
-                         );
-          func_?(&
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_
-                         );
-          func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          func_?(&
-                          MethodInfo__SpawnRoleAvatarSelectionMenu___Initialize_b__9_0_UnityEngine__EventSystems__IHandleSpawnRoleAvatarSelectionData__UnityEngine__EventSystems__BaseEventData_
-                         );
-          cRam_? = '\x01';
-        }
-        (pOVar1->_0).element_class = pIVar4;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pOVar1,(MethodInfo *)0x0);
-        pEVar3 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>
-                                );
-        if (pEVar3 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pOVar1,
-                     MethodInfo__SpawnRoleAvatarSelectionMenu___Initialize_b__9_0_UnityEngine__EventSystems__IHandleSpawnRoleAvatarSelectionData__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar2,(BaseEventData *)0x0,pEVar3,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSpawnRoleAvatarSelectionData>_
-                    );
-          return;
-        }
-      }
+      return;
     }
   }
   func_?();
@@ -224,67 +224,63 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::SpawnRoleLooksEditorMenu_OnD
   if (pMVar1 != (MVAvatarSpawnRoleCreator *)0x0) {
     pAVar2 = (pMVar1->fields).OnBodyUpdate;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleBodyUpdate__,
+               (MethodInfo *)0x0);
+    pAVar2 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pAVar2 == (Action *)0x0) {
+      (pMVar1->fields).OnBodyUpdate = (Action *)0x0;
+    }
+    else {
+      pAVar4 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar4 = pAVar2;
+      }
+      if (pAVar4 == (Action *)0x0) goto code_?;
+      (pMVar1->fields).OnBodyUpdate = pAVar4;
+      pAVar4 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar4 = pAVar2;
+      }
+      if (pAVar4 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    pMVar1 = (this->fields).spawnRole;
+    if (pMVar1 != (MVAvatarSpawnRoleCreator *)0x0) {
+      pAVar2 = (pMVar1->fields).OnRedoObjectLinks;
+      pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleBodyUpdate__
-                 ,(MethodInfo *)0x0);
+                (pNVar3,(Object *)this,
+                 MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleRedoObjectLinks__,
+                 (MethodInfo *)0x0);
       pAVar2 = (Action *)
                mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
       if (pAVar2 == (Action *)0x0) {
-        (pMVar1->fields).OnBodyUpdate = (Action *)0x0;
+        (pMVar1->fields).OnRedoObjectLinks = (Action *)0x0;
+        func_?();
+        return;
       }
-      else {
+      pAVar4 = (Action *)0x0;
+      if (pAVar2->klass == TypeInfo__System__Action) {
+        pAVar4 = pAVar2;
+      }
+      if (pAVar4 != (Action *)0x0) {
+        (pMVar1->fields).OnRedoObjectLinks = pAVar4;
         pAVar4 = (Action *)0x0;
         if (pAVar2->klass == TypeInfo__System__Action) {
           pAVar4 = pAVar2;
         }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-        (pMVar1->fields).OnBodyUpdate = pAVar4;
-        pAVar4 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar2;
-        }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-      }
-      func_?();
-      pMVar1 = (this->fields).spawnRole;
-      if (pMVar1 != (MVAvatarSpawnRoleCreator *)0x0) {
-        pAVar2 = (pMVar1->fields).OnRedoObjectLinks;
-        pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-        if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar3,(Object *)this,
-                     MethodInfo__SpawnRoleLooksEditorMenu__OnSpawnRoleRedoObjectLinks__,
-                     (MethodInfo *)0x0);
-          pAVar2 = (Action *)
-                   mscorlib.dll::System::Delegate::Delegate_Remove
-                             ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-          if (pAVar2 == (Action *)0x0) {
-            (pMVar1->fields).OnRedoObjectLinks = (Action *)0x0;
-            func_?();
-            return;
-          }
-          pAVar4 = (Action *)0x0;
-          if (pAVar2->klass == TypeInfo__System__Action) {
-            pAVar4 = pAVar2;
-          }
-          if (pAVar4 != (Action *)0x0) {
-            (pMVar1->fields).OnRedoObjectLinks = pAVar4;
-            pAVar4 = (Action *)0x0;
-            if (pAVar2->klass == TypeInfo__System__Action) {
-              pAVar4 = pAVar2;
-            }
-            if (pAVar4 != (Action *)0x0) {
-              func_?();
-              return;
-            }
-          }
-          goto code_?;
+        if (pAVar4 != (Action *)0x0) {
+          func_?();
+          return;
         }
       }
+      goto code_?;
     }
   }
   func_?();
@@ -344,12 +340,6 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -441,9 +431,9 @@ void Assembly-CSharp.dll::SpawnRoleLooksEditorMenu::SpawnRoleLooksEditorMenu_Set
                   (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                    (MethodInfo *)0x0);
         this_02 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                  (this_02,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
         if (this_02 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                    (this_02,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                              (this_02,(MethodInfo *)0x0);
           pSVar1 = (this->fields).spawnRolePreviewer;

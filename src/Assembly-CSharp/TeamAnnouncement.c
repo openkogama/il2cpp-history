@@ -16,8 +16,7 @@ void Assembly-CSharp.dll::TeamAnnouncement::TeamAnnouncement_Initialize
   this_00 = (this->fields).fader;
   if (this_00 != (NotificationFade *)0x0) {
     NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-    MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Reset
-              ((LogicObjectManager *)this,(MethodInfo *)data);
+    Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
       pMVar2 = (pMVar1->fields).teamManager;
@@ -33,9 +32,9 @@ void Assembly-CSharp.dll::TeamAnnouncement::TeamAnnouncement_Initialize
           pCVar4 = Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,key,0,(MethodInfo *)0x0);
           pTVar5 = (this->fields).teamColorText;
           if (pTVar5 != (Text *)0x0) {
-            (*(pTVar5->klass->vtable).set_color.methodPtr)
+            (*(code *)(pTVar5->klass->vtable).set_color.method)
                       (pTVar5,pCVar4->r,pCVar4->g,pCVar4->b,pCVar4->a,
-                       (pTVar5->klass->vtable).set_color.method);
+                       (pTVar5->klass->vtable).get_raycastTarget.methodPtr);
             pTVar5 = (this->fields).teamColorText;
             pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if (((pMVar1 != (MVNetworkGame *)0x0) &&
@@ -49,8 +48,9 @@ void Assembly-CSharp.dll::TeamAnnouncement::TeamAnnouncement_Initialize
                                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
                                  );
               if (pTVar5 != (Text *)0x0) {
-                (*(pTVar5->klass->vtable).set_text.methodPtr)
-                          (pTVar5,pOVar6,(pTVar5->klass->vtable).set_text.method);
+                (*(code *)(pTVar5->klass->vtable).set_text.method)
+                          (pTVar5,pOVar6,
+                           (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
                 return;
               }
             }

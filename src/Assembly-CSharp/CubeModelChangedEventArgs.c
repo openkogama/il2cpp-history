@@ -38,8 +38,10 @@ void Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventArgs__
   if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__EventArgs);
   }
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
   (this->fields).Action = (undefined1)action;
   (this->fields).Pos.x = pos.x;
   (this->fields).Pos.y = pos.y;

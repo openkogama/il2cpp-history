@@ -115,25 +115,29 @@ code_?:
       }
       goto code_?;
     }
-    pLVar4 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterIcons;
-    if (pLVar4 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::
-            List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-            List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterIcons;
+    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    goto code_?;
+    XVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                       (pLVar4,index,
                        MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                       );
-    pLVar4 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterIcons;
-    if (pLVar4 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) goto code_?;
-    TVar6 = mscorlib.dll::System::Collections::Generic::
-            List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-            List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterIcons;
+    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    goto code_?;
+    XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                       (pLVar4,index,
                        MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                       );
-    if (TVar6.streamedImagePrefab == (Graphic *)0x0) goto code_?;
+    if (XVar6.xso == (XmlSchemaObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              ((GameObject *)TVar6.streamedImagePrefab,TVar5.tabID == type,(MethodInfo *)0x0);
+              ((GameObject *)XVar6.xso,XVar5.qname == (XmlQualifiedName *)type,(MethodInfo *)0x0);
     pLVar1 = (this->fields).boosterIcons;
     index = index + 1;
   } while( true );

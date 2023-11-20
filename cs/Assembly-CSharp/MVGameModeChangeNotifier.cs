@@ -16,19 +16,6 @@ public class MVGameModeChangeNotifier : IUpdatecontrollerSubscriberUpdate
 	private List<IGameStateControllerSubscriber> UpdateList;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass4_0
-	{
-		// Fields
-		public IGameStateControllerSubscriber obj;
-
-		// Constructors
-		public __c__DisplayClass4_0();
-
-		// Methods
-		internal bool _RemoveObject_b__0(IGameStateControllerSubscriber x);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -43,6 +30,19 @@ public class MVGameModeChangeNotifier : IUpdatecontrollerSubscriberUpdate
 
 		// Methods
 		internal bool _UpdateControllerUpdate_b__6_0(IGameStateControllerSubscriber pd);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass4_0
+	{
+		// Fields
+		public IGameStateControllerSubscriber obj;
+
+		// Constructors
+		public __c__DisplayClass4_0();
+
+		// Methods
+		internal bool _RemoveObject_b__0(IGameStateControllerSubscriber x);
 	}
 
 	// Constructors

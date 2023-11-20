@@ -10,17 +10,39 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 {
   KogamaSettingValueWrapperBase::KogamaSettingValueWrapperBase__ctor
             ((KogamaSettingValueWrapperBase *)this,key,parent,(MethodInfo *)0x0);
-  pvVar1 = method->klass->rgctx_data->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-    pvVar1 = (void *)func_?(pvVar1);
+  pIVar1 = method->klass->rgctx_data[1].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pKVar2 = (KogamaSettingNumeric_1_System_Single_ *)func_?(pvVar1);
-  if (pKVar2 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
-    (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-              (pKVar2,value,min,max,method->klass->rgctx_data[3].rgctxDataDummy);
-    (this->fields).KogamaSettingNumeric = pKVar2;
-    func_?(&(this->fields).KogamaSettingNumeric,pKVar2);
-    return;
+  this_00 = (KogamaSettingBase *)func_?(pIVar1);
+  pMVar2 = method->klass->rgctx_data[5].method;
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
+  if (((uint)(pMVar2->klass->rgctx_data[3].klass)->vtable[0].methodPtr & 0x100) == 0) {
+    func_?();
+  }
+  this_01 = (KogamaSettingBase__Class *)func_?();
+  AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single___ctor_1
+            ((RangeValidator_1_System_Single_ *)this_01,min,max,pMVar2->klass->rgctx_data[5].method)
+  ;
+  this_00[1].klass = this_01;
+  func_?();
+  if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
+    AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+              ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,0,
+               pMVar2->klass->rgctx_data[4].method);
+    if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
+      AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+                ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,1,
+                 (pMVar2->klass->rgctx_data[6].method)->klass->rgctx_data[4].method);
+      value_00 = (Object *)func_?();
+      KogamaSettingBase::KogamaSettingBase_set_Value(this_00,value_00,(MethodInfo *)0x0);
+      _UNK_? = this_00;
+      func_?();
+      return;
+    }
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -37,18 +59,28 @@ float MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Ko
                 (KogamaSettingNumericBase_1_System_Single_ *this,MethodInfo *method)
 
 {
-  IStack_1.rgctxDataDummy = &stack0xfffffffc;
-  pKStack_2 = (this->fields).KogamaSettingNumeric;
-  if (pKStack_2 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
-    IStack_1 = method->klass->rgctx_data[1];
-    fVar3 = (float10)(*(method->klass->rgctx_data[1].method)->virtualMethodPointer)();
-    return (float)fVar3;
+  pKVar1 = (this->fields).KogamaSettingNumeric;
+  pOVar2 = (Object *)0x0;
+  if (pKVar1 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
+    pOVar2 = (pKVar1->fields)._.value;
+    pIVar3 = (method->klass->rgctx_data[2].method)->klass->rgctx_data[1].klass;
+    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar3 = (Il2CppClass *)func_?(pIVar3);
+    }
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class == pIVar3->element_class) {
+        pfVar4 = (float *)func_?(pOVar2);
+        return *pfVar4;
+      }
+      goto code_?;
+    }
   }
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar6)();
-  return (float)fVar3;
+  pIVar3 = (Il2CppClass *)func_?();
+code_?:
+  func_?(pOVar2,pIVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -60,10 +92,17 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                (KogamaSettingNumericBase_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  pKVar1 = (this->fields).KogamaSettingNumeric;
-  if (pKVar1 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
-    (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)
-              (pKVar1,value,method->klass->rgctx_data[2].rgctxDataDummy);
+  this_00 = (this->fields).KogamaSettingNumeric;
+  if ((this_00 != (KogamaSettingNumeric_1_System_Single_ *)0x0) &&
+     (this_01 = (this_00->fields).RangeValidator, this_01 != (RangeValidator_1_System_Single_ *)0x0)
+     ) {
+    pMVar1 = method->klass->rgctx_data[4].method;
+    this = (KogamaSettingNumericBase_1_System_Single_ *)
+           AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+                     (this_01,value,1,pMVar1->klass->rgctx_data[4].method);
+    value_00 = (Object *)func_?(pMVar1->klass->rgctx_data[1].rgctxDataDummy,&this);
+    KogamaSettingBase::KogamaSettingBase_set_Value
+              ((KogamaSettingBase *)this_00,value_00,(MethodInfo *)0x0);
     return;
   }
   func_?();

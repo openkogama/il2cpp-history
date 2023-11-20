@@ -47,8 +47,12 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
   (this->fields)._moonAttitudeVector.z = 0.0;
   if (pDVar5 == (DayNightCycleColorPresets_Preset *)0x0) {
     this_00 = (this->fields).colorPresets;
-    if (this_00 == (DayNightCycleColorPresets *)0x0) goto code_?;
-    in_stack_6 = &UNK_?;
+    if (this_00 == (DayNightCycleColorPresets *)0x0) {
+      func_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
     pDVar5 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                        (this_00,0,(MethodInfo *)0x0);
     (this->fields).activeColorPreset = pDVar5;
@@ -57,22 +61,16 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Initialize
   if ((this->fields).useServerTime == 0) {
     fVar1 = (this->fields).cycleLength;
     this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_01 == (Timer_1 *)0x0) {
-code_?:
-      func_?();
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
-      return;
-    }
-    method_00 = (MethodInfo *)&UNK_?;
-    fVar8 = (float10)func_?(fVar1,0);
-    ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar8,(float)in_stack_6,method_00);
+    method_00 = (MethodInfo *)0x0;
+    fVar7 = (float10)func_?();
+    ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar7,fVar1,method_00);
   }
   else {
     this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
-    if (this_01 == (Timer_1 *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_01,(MethodInfo *)0x0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,(MethodInfo *)0x0);
   }
   (this->fields).timer = (ITimer *)this_01;
   func_?(&(this->fields).timer,this_01);
@@ -209,12 +207,6 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Reset(DayNightCycle *this
     initialTime = (this->fields).cycleStartTime;
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_00 == (Timer_1 *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     ThemeTimers::Timer::Timer_1__ctor(this_00,initialTime,cycleLength,(MethodInfo *)0x0);
     (this->fields).timer = (ITimer *)this_00;
     func_?(&(this->fields).timer,this_00);
@@ -1018,16 +1010,14 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_CycleLength
     fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_00 != (Timer_1 *)0x0) {
-      ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar2,cycleLength,(MethodInfo *)0x0);
-      (this->fields).timer = (ITimer *)this_00;
-      func_?(&(this->fields).timer,this_00);
-      pIVar1 = (this->fields).timer;
-      if (pIVar1 != (ITimer *)0x0) {
-        fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
-        DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
-        return;
-      }
+    ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar2,cycleLength,(MethodInfo *)0x0);
+    (this->fields).timer = (ITimer *)this_00;
+    func_?(&(this->fields).timer,this_00);
+    pIVar1 = (this->fields).timer;
+    if (pIVar1 != (ITimer *)0x0) {
+      fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
+      DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -1050,25 +1040,22 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_InitialTimeOfDay
   }
   fVar1 = (float10)func_?();
   (this->fields).cycleStartTime = (float)fVar1;
-  if ((this->fields).initialized == 0) {
-    return;
-  }
-  cycleLength = (this->fields).cycleLength;
-  this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-  if (this_00 != (Timer_1 *)0x0) {
+  if ((this->fields).initialized != 0) {
+    cycleLength = (this->fields).cycleLength;
+    this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
     ThemeTimers::Timer::Timer_1__ctor(this_00,(float)fVar1,cycleLength,(MethodInfo *)0x0);
     (this->fields).timer = (ITimer *)this_00;
     func_?(&(this->fields).timer,this_00);
     pIVar2 = (this->fields).timer;
-    if (pIVar2 != (ITimer *)0x0) {
-      fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
-      DayNightCycle_Update_1(this,(float)fVar1,(MethodInfo *)0x0);
+    if (pIVar2 == (ITimer *)0x0) {
+      func_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
+    fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+    DayNightCycle_Update_1(this,(float)fVar1,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -1356,22 +1343,19 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_TimeOfDay
   }
   cycleLength = (this->fields).cycleLength;
   this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-  if (this_00 != (Timer_1 *)0x0) {
-    ThemeTimers::Timer::Timer_1__ctor(this_00,value,cycleLength,(MethodInfo *)0x0);
-    (this->fields).timer = (ITimer *)this_00;
-    func_?(&(this->fields).timer,this_00);
-    if ((this->fields).initialized != 0) {
-      pIVar1 = (this->fields).timer;
-      if (pIVar1 == (ITimer *)0x0) goto code_?;
-      fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
-      DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
+  ThemeTimers::Timer::Timer_1__ctor(this_00,value,cycleLength,(MethodInfo *)0x0);
+  (this->fields).timer = (ITimer *)this_00;
+  func_?(&(this->fields).timer,this_00);
+  if ((this->fields).initialized != 0) {
+    if ((this->fields).timer == (ITimer *)0x0) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
-    return;
+    fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer);
+    DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
   }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -1393,28 +1377,26 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_set_UseServerTime
     initialTime = (this->fields).cycleStartTime;
     cycleLength = (this->fields).cycleLength;
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-    if (this_00 == (Timer_1 *)0x0) goto code_?;
     ThemeTimers::Timer::Timer_1__ctor(this_00,initialTime,cycleLength,(MethodInfo *)0x0);
   }
   else {
     this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
-    if (this_00 == (Timer_1 *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_00,(MethodInfo *)0x0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
   }
   (this->fields).timer = (ITimer *)this_00;
   func_?(&(this->fields).timer);
   if ((this->fields).initialized != 0) {
-    pIVar1 = (this->fields).timer;
-    if (pIVar1 == (ITimer *)0x0) {
-code_?:
+    if ((this->fields).timer == (ITimer *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
-    DayNightCycle_Update_1(this,(float)fVar3,(MethodInfo *)0x0);
+    fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer);
+    DayNightCycle_Update_1(this,(float)fVar2,(MethodInfo *)0x0);
   }
   return;
 }

@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                   (pGVar2,value_00,(MethodInfo *)0x0);
         pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
-                 RenderTexture_GetTemporary_1
+                 RenderTexture_GetTemporary_4
                            (0,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,
                             RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
         (this->fields).previewTexture = pRVar4;
@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
     layersToChange.m_Mask =
-         (int32_t)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                            ((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
+         (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                  UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                       (StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);

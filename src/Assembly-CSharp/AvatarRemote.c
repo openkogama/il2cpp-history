@@ -25,8 +25,12 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote_Initialize
   }
   (this->fields)._.mvAvatar = mvAvatar;
   func_?(&(this->fields)._.mvAvatar,mvAvatar);
-  if (((mvAvatar != (MVAvatar *)0x0) && (pMVar1 = (mvAvatar->fields).body, pMVar1 != (MVBody *)0x0))
-     && (pAVar2 = (this->fields)._.avatarFader, pAVar2 != (AvatarFader *)0x0)) {
+  if (((mvAvatar == (MVAvatar *)0x0) || (pMVar1 = (mvAvatar->fields).body, pMVar1 == (MVBody *)0x0))
+     || (pAVar2 = (this->fields)._.avatarFader, pAVar2 == (AvatarFader *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
     pTVar3 = (pMVar1->fields)._._._.transform;
     (pAVar2->fields).bodyTransform = pTVar3;
     func_?(&(pAVar2->fields).bodyTransform,pTVar3);
@@ -46,64 +50,70 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote_Initialize
     (this->fields)._.avatarCollider = pCVar5;
     func_?(&(this->fields)._.avatarCollider,pCVar5);
     this_00 = (this->fields)._.avatarLevelUp;
-    if (this_00 != (AvatarLevelUp *)0x0) {
-      AvatarLevelUp::AvatarLevelUp_Init
-                (this_00,(mvAvatar->fields)._._._.ownerActorNr,(MethodInfo *)0x0);
-      pWVar6 = (this->fields)._.waterSplashComponent;
-      if (pWVar6 != (WaterSplashComponent *)0x0) {
-        (*(pWVar6->klass->vtable).Initialize.methodPtr)
-                  (pWVar6,this,(pWVar6->klass->vtable).Initialize.method);
-        pAVar7 = (this->fields)._.avatarUIHandler;
-        if (pAVar7 != (AvatarUIHandler *)0x0) {
-          (*(pAVar7->klass->vtable).Initialize.methodPtr)
-                    (pAVar7,(uint)(this->fields)._.isLocal,mvAvatar,
-                     (mvAvatar->fields)._._._.ownerActorNr,(this->fields)._.chatBubbleAnchor,
-                     (pAVar7->klass->vtable).Initialize.method);
-          this_01 = (this->fields)._.chatBubbleAnchor;
-          if (this_01 != (ChatAnchor *)0x0) {
-            ChatAnchor::ChatAnchor_Initialize(this_01,isLocal,(Avatar *)this,(MethodInfo *)0x0);
-            this_02 = (this->fields)._.avatarPaused;
-            if (this_02 != (AvatarPaused *)0x0) {
-              WorldObjectTypes::Avatar::Shared::AvatarPaused::AvatarPaused_Init
-                        (this_02,(mvAvatar->fields)._._._.ownerActorNr,(MethodInfo *)0x0);
-              pUVar8 = (mvAvatar->fields)._._.PositionChanged;
-              this_03 = (UnityAction_2_System_Object_System_Object_ *)
-                        func_?(
-                                       TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                                       );
-              if (this_03 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (this_03,(Object *)this,
-                           MethodInfo__AvatarRemote__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                           ,(MethodInfo *)0x0);
-                pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                   ((Delegate *)pUVar8,(Delegate *)this_03,(MethodInfo *)0x0);
-                if (pDVar9 == (Delegate *)0x0) {
-                  (mvAvatar->fields)._._.PositionChanged =
-                       (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-                  func_?();
-                  return;
-                }
-                pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
-                          func_?();
-                if (pUVar8 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-                  (mvAvatar->fields)._._.PositionChanged = pUVar8;
-                  iVar10 = func_?();
-                  if (iVar10 != 0) {
-                    func_?();
-                    return;
-                  }
-                }
-                goto code_?;
-              }
-            }
-          }
-        }
-      }
+    if (this_00 == (AvatarLevelUp *)0x0) goto code_?;
+    AvatarLevelUp::AvatarLevelUp_Init
+              (this_00,(mvAvatar->fields)._._._.ownerActorNr,(MethodInfo *)0x0);
+    pWVar6 = (this->fields)._.waterSplashComponent;
+    if (pWVar6 == (WaterSplashComponent *)0x0) goto code_?;
+    (*(code *)(pWVar6->klass->vtable).Initialize.method)
+              (pWVar6,this,(pWVar6->klass->vtable).Start.methodPtr);
+    pAVar7 = (this->fields)._.avatarUIHandler;
+    if (pAVar7 == (AvatarUIHandler *)0x0) goto code_?;
+    (*(code *)(pAVar7->klass->vtable).Initialize.method)
+              (pAVar7,(this->fields)._.isLocal,mvAvatar,(mvAvatar->fields)._._._.ownerActorNr,
+               (this->fields)._.chatBubbleAnchor,(pAVar7->klass->vtable).Activate.methodPtr);
+    this_01 = (this->fields)._.chatBubbleAnchor;
+    if (this_01 == (ChatAnchor *)0x0) goto code_?;
+    ChatAnchor::ChatAnchor_Initialize(this_01,isLocal,(Avatar *)this,(MethodInfo *)0x0);
+    this_02 = (this->fields)._.avatarPaused;
+    if (this_02 == (AvatarPaused *)0x0) goto code_?;
+    WorldObjectTypes::Avatar::Shared::AvatarPaused::AvatarPaused_Init
+              (this_02,(mvAvatar->fields)._._._.ownerActorNr,(MethodInfo *)0x0);
+    pUVar8 = (mvAvatar->fields)._._.PositionChanged;
+    this_03 = (UnityAction_2_System_Object_System_Object_ *)
+              func_?(
+                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                             );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_03,(Object *)this,
+               MethodInfo__AvatarRemote__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+               ,(MethodInfo *)0x0);
+    pMStack9 =
+         (MVAvatar *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)pUVar8,(Delegate *)this_03,(MethodInfo *)0x0);
+    pUVar10 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    if (pMStack9 == (MVAvatar *)0x0) {
+      (mvAvatar->fields)._._.PositionChanged =
+           (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      func_?();
+      return;
+    }
+    pMStack9 =
+         (MVAvatar *)
+         TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    pMStack9 = (MVAvatar *)pUVar10;
+    if (pUVar8 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+    goto code_?;
+    (mvAvatar->fields)._._.PositionChanged = pUVar8;
+    this = (AvatarRemote *)
+           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+    ;
+    pMStack9 =
+         (MVAvatar *)
+         TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pMStack9 = (MVAvatar *)func_?();
+    if (pMStack9 != (MVAvatar *)0x0) {
+      func_?();
+      return;
     }
   }
+  pMStack9 = (MVAvatar *)this;
   func_?();
+  pMStack9 = mvAvatar;
 code_?:
   func_?();
   pcVar11 = (code *)swi(3);
@@ -119,13 +129,13 @@ void Assembly-CSharp.dll::AvatarRemote::AvatarRemote_OnPositionChanged
                PositionChangedEventArgs *positionChangedEventArgs,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pAVar2 = (this->fields)._.avatarUIHandler;
   if (pAVar2 != (AvatarUIHandler *)0x0) {
-    pMStack_1 = (pAVar2->klass->vtable).OnPositionChanged.method;
+    pIStack_1 = (pAVar2->klass->vtable).HandleTeamChange.methodPtr;
     pPStack_3 = positionChangedEventArgs;
     pMStack_4 = arg0;
-    (*(pAVar2->klass->vtable).OnPositionChanged.methodPtr)(pAVar2);
+    (*(code *)(pAVar2->klass->vtable).OnPositionChanged.method)(pAVar2);
     return;
   }
   uVar5 = func_?(&pMStack_4);

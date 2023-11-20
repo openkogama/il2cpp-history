@@ -40,8 +40,9 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize
                         MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
                        );
     if ((pOVar2 != (Object *)0x0) && (pTVar1 != (Text *)0x0)) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,pOVar2[1].klass,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pOVar2[1].klass,
+                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       (this->fields).woID = woID;
       if ((TypeInfo__SettingsBase____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SettingsBase____c);
@@ -57,8 +58,6 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                             );
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -81,21 +80,18 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
-                   MethodInfo__SettingsBase___Initialize_b__4_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
-      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+                 MethodInfo__SettingsBase___Initialize_b__4_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -128,8 +124,8 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize_1
   }
   pTVar1 = (this->fields).headerText;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,header,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     (this->fields).woID = woID;
     if ((TypeInfo__SettingsBase____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SettingsBase____c);
@@ -145,7 +141,6 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize_1
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -167,20 +162,17 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Initialize_1
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
-                 MethodInfo__SettingsBase___Initialize_b__5_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction_00,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+               MethodInfo__SettingsBase___Initialize_b__5_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction_00,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -211,14 +203,14 @@ code_?:
     pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_01,(this->fields).woID,(MethodInfo *)0x0);
     if (pMVar2 != (MVWorldObject *)0x0) {
-      this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+      this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  *)(this->fields).result;
       if (this_00 ==
-          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
-         ) goto code_?;
-      iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+          (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+           *)0x0) goto code_?;
+      iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Count__
                         );
@@ -266,11 +258,11 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_OnSettingChanged
      ) {
     return;
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_01 != (MVWorldObjectClientManager *)0x0) {
+  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_02 != (MVWorldObjectClientManager *)0x0) {
     wo = (MVWorldObjectClient *)
          MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (this_01,(this->fields).woID,(MethodInfo *)0x0);
+                   (this_02,(this->fields).woID,(MethodInfo *)0x0);
     if (wo == (MVWorldObjectClient *)0x0) {
       return;
     }
@@ -279,52 +271,56 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_OnSettingChanged
       wo = (MVWorldObjectClient *)&UNK_?;
     }
     WorldObjectDataValidator::WorldObjectDataValidator_Validate(wo,key,value,(MethodInfo *)0x0);
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).result;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).result;
+    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (this_00,(Object *)key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      pDVar2 = (this->fields).result;
+      this_01 = (this->fields).result;
       if (bVar1 == 0) {
-        if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar2,(Object *)key,value,
+                  (this_01,(Object *)key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
       }
       else {
-        if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__set_Item
-                  (pDVar2,(Object *)key,value,
+                  (this_01,(Object *)key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                   );
       }
-      pDVar2 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)pDVar2,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
+      this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_03,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      if (this_03 !=
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar2,(Object *)key,value,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        (**(code **)(iRam_? + 0x17c))();
+        (**(code **)(iRam_? + 0x178))();
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -378,7 +374,6 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase_Update(SettingsBase *this,M
   if ((this->fields).woID != -1) {
     this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_00 == (MVWorldObjectClientManager *)0x0) {
-code_?:
       func_?();
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -399,15 +394,13 @@ code_?:
         }
         object = TypeInfo__SettingsBase____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__SettingsBase____c___Update_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__SettingsBase____c->static_fields->__9__9_0 = callbackFunction;
-        func_?(&TypeInfo__SettingsBase____c->static_fields->__9__9_0,callbackFunction);
+        func_?(&TypeInfo__SettingsBase____c->static_fields->__9__9_0);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -440,14 +433,12 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase__Initialize_b__4_1
                      ((Component *)this,(MethodInfo *)0x0);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__SettingsBase__OnPop__,(MethodInfo *)0x0);
-    if (handler != (IUIStack *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,pGVar1);
-      return;
-    }
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__SettingsBase__OnPop__,(MethodInfo *)0x0);
+  if (handler != (IUIStack *)0x0) {
+    func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,pGVar1);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -472,14 +463,12 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase__Initialize_b__5_1
                      ((Component *)this,(MethodInfo *)0x0);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__SettingsBase__OnPop__,(MethodInfo *)0x0);
-    if (handler != (IUIStack *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,pGVar1);
-      return;
-    }
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__SettingsBase__OnPop__,(MethodInfo *)0x0);
+  if (handler != (IUIStack *)0x0) {
+    func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,pGVar1);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -502,25 +491,20 @@ void Assembly-CSharp.dll::SettingsBase::SettingsBase__ctor(SettingsBase *this,Me
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    (this->fields).result = this_00;
-    func_?(&(this->fields).result,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  (this->fields).result = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields).result,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

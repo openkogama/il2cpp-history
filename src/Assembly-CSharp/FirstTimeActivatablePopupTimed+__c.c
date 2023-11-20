@@ -38,18 +38,12 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed+<>c::
     func_?(&TypeInfo__FirstTimeActivatablePopupTimed____c);
     cRam_? = '\x01';
   }
-  value = (FirstTimeActivatablePopupTimed_c *)
-          func_?(TypeInfo__FirstTimeActivatablePopupTimed____c);
-  if (value != (FirstTimeActivatablePopupTimed_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9 = value;
-    func_?(TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__FirstTimeActivatablePopupTimed____c;
+  value = (FirstTimeActivatablePopupTimed_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields->__9 = value;
+  func_?(TypeInfo__FirstTimeActivatablePopupTimed____c->static_fields,value);
   return;
 }
 

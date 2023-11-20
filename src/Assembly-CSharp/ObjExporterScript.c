@@ -46,14 +46,14 @@ void Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_CubeModelToFile
       }
       if (piVar5 == (int *)0x0) break;
       uVar8 = 0;
-      uVar9 = *(ushort *)(*piVar5 + 0xb2);
+      uVar9 = *(ushort *)(*piVar5 + 0xb6);
       if (uVar9 != 0) {
         do {
           if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
             puVar10 = (undefined4 *)
-                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xc4 + *piVar5
-                     );
+                     (*piVar5 +
+                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x19) * 8);
             goto code_?;
           }
           uVar8 = uVar8 + 1;
@@ -98,7 +98,7 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar14,(MethodInfo *)0x0);
     }
   }
@@ -126,23 +126,20 @@ void Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToFile
     func_?(&TypeInfo__System__IO__StreamWriter);
     cRam_? = '\x01';
   }
-  iStack_1._0_1_ = 0;
-  iStack_1._1_3_ = 0;
+  iStack_1 = 0;
   this = (StreamWriter *)func_?(TypeInfo__System__IO__StreamWriter);
+  mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_5
+            (this,filename,append,(MethodInfo *)0x0);
+  iStack_1._0_1_ = 2;
+  ObjExporterScript_MeshToString(mf,(MethodInfo *)0x0);
   if (this != (StreamWriter *)0x0) {
-    mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_5
-              (this,filename,append,(MethodInfo *)0x0);
-    iStack_1._0_1_ = 2;
-    ObjExporterScript_MeshToString(mf,(MethodInfo *)0x0);
+    (*(code *)(this->klass->vtable).WriteLine_1.method)();
+    iStack_1 = (uint)iStack_1._1_3_ << 8;
     if (this != (StreamWriter *)0x0) {
-      (*(this->klass->vtable).WriteLine_2.methodPtr)();
-      iStack_1 = (uint)iStack_1._1_3_ << 8;
-      if (this != (StreamWriter *)0x0) {
-        func_?();
-      }
-      *unaff_FS_OFFSET = uStack_3;
-      return;
+      func_?();
     }
+    *unaff_FS_OFFSET = uStack_3;
+    return;
   }
   func_?();
   func_?();
@@ -192,8 +189,8 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                             (this_00,(MethodInfo *)0x0);
       pSVar2 = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
       pSStack_3 = pSVar2;
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(pSVar2,(MethodInfo *)0x0);
       if (pSVar2 != (StringBuilder *)0x0) {
-        mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(pSVar2,(MethodInfo *)0x0);
         pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                            (pSVar2,StringLiteral_g_,(MethodInfo *)0x0);
         pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
@@ -389,8 +386,11 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                                  Mesh_get_subMeshCount(this,(MethodInfo *)0x0);
                         if (iVar27 <= (int)submesh) {
                           pSVar5 = (String *)
-                                   (*(pSVar2->klass->vtable).ToString.methodPtr)
-                                             (pSVar2,(pSVar2->klass->vtable).ToString.method);
+                                   (*(code *)(pSVar2->klass->vtable).ToString.method)
+                                             (pSVar2,(pSVar2->klass->vtable).
+                                                                                                          
+                                                  System_Runtime_Serialization_ISerializable_GetObjectData
+                                                  .methodPtr);
                           return pSVar5;
                         }
                         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2

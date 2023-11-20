@@ -36,32 +36,30 @@ code_?:
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
         this_00 = (UnityAction_2_System_Object_System_Object_ *)
                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__MVGamePoint__Enter_System__Object__TriggerEventArgs_,
-                     (MethodInfo *)0x0);
-          if (pTVar2 != (TriggerBoxEvents *)0x0) {
-            TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                      (pTVar2,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
-            goto code_?;
-          }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__MVGamePoint__Enter_System__Object__TriggerEventArgs_,
+                   (MethodInfo *)0x0);
+        if (pTVar2 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
+          goto code_?;
         }
       }
     }
   }
   else {
-    if (((TypeInfo__MVGamePointObject->_1).typeHierarchyDepth <=
-         (((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__MVGamePointObject->_1).naturalAligment <=
+         (((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment) &&
        ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy
-        [(TypeInfo__MVGamePointObject->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__MVGamePointObject->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__MVGamePointObject)) {
       (this->fields).gamePointObject = pMVar1;
-      if (((TypeInfo__MVGamePointObject->_1).typeHierarchyDepth <=
-           (((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__MVGamePointObject->_1).naturalAligment <=
+           (((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment) &&
          ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGamePointObject->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__MVGamePointObject->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__MVGamePointObject)) goto code_?;
     }
     func_?(pMVar1,TypeInfo__MVGamePointObject);
@@ -86,38 +84,39 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Destroy(MVGamePoint *this,Met
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-      this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,
-                   (MethodInfo *)0x0);
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pDVar3 == (Delegate *)0x0) {
-          (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        }
-        else {
-          pAVar2 = (Action_1_IWinningCondition_ *)func_?();
-          if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-          (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
+    if (pMVar1 == (MVNetworkGame *)0x0) {
+      func_?();
+      goto code_?;
+    }
+    pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,
+               (MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+    }
+    else {
+      pAVar2 = (Action_1_IWinningCondition_ *)func_?();
+      if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) {
+code_?:
         func_?();
-        goto code_?;
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
     }
     func_?();
-code_?:
-    func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
   }
-code_?:
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GamePointAmountManager);
     cRam_? = '\x01';
@@ -239,49 +238,53 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Initialize(MVGamePoint *this,
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).gamePointObject;
-  if (pMVar1 != (MVGamePointObject *)0x0) {
+  if (pMVar1 == (MVGamePointObject *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     MVLogicObject::MVLogicObject_SetupCulling
               ((MVLogicObject *)this,(pMVar1->fields).visualObject,2.0,(MethodInfo *)0x0);
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 != (MVNetworkGame *)0x0) {
-      this_00 = (Action_1_Object_ *)func_?();
-      unaff_EBX = (Action_1_IWinningCondition___Class *)0x0;
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,
-                   (MethodInfo *)0x0);
-        this = (MVGamePoint *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)this_00,(Delegate *)this_00,(MethodInfo *)0x0);
-        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-        if (this == (MVGamePoint *)0x0) {
-          (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-          pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
+    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+    a = (pMVar2->fields).OnWinningConditionFulfilled;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,
+               (MethodInfo *)0x0);
+    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+    if (unaff_ESI == (Delegate *)0x0) {
+      iRam_? = 0;
+      pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-          pMStack4 = (MVGamePoint *)&(pMVar2->fields).OnWinningConditionFulfilled;
-          func_?();
-          return;
-        }
-        pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-        pMStack4 = this;
-        pAVar5 = (Action_1_IWinningCondition_ *)func_?();
-        if (pAVar5 != (Action_1_IWinningCondition_ *)0x0) {
-          (pMVar2->fields).OnWinningConditionFulfilled = pAVar5;
-          unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-          pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-          pMStack4 = this;
-          pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-          if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
-        }
-        goto code_?;
-      }
+      pDStack4 = (Delegate *)0xb8;
+      func_?();
+      return;
     }
+    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack4 = unaff_ESI;
+    iVar5 = func_?();
+    this = (MVGamePoint *)TypeInfo__System__Action<IWinningCondition>;
+    if (iVar5 == 0) goto code_?;
+    unaff_EDI = (Action_1_IWinningCondition___Class *)0x0;
+    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack4 = unaff_ESI;
+    iRam_? = iVar5;
+    pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
+    if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
   }
+  pDStack4 = unaff_ESI;
+  pAStack3 = (Action_1_IWinningCondition___Class *)this;
   func_?();
 code_?:
-  pMStack4 = this;
-  pAStack3 = unaff_EBX;
+  pDStack4 = unaff_ESI;
+  pAStack3 = unaff_EDI;
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
@@ -307,10 +310,12 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_OnDataUpdate
 void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_OnUpdate(MVGamePoint *this,MethodInfo *method)
 
 {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (((this->fields).canRespawn != 0) && ((this->fields).state == 1)) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     if ((float)(this->fields).respawnTime + (this->fields).pickUpTime < fVar1) {
-      (*(this->klass->vtable).Reset.methodPtr)(this,(this->klass->vtable).Reset.method);
+      (*(code *)(this->klass->vtable).Reset.method)(this);
     }
   }
   return;
@@ -333,10 +338,10 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_PartialUpdateWOData
     func_?(&StringLiteral_respawnTime);
     cRam_? = '\x01';
   }
-  if (in_stack_1 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+  if (in_stack_1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (in_stack_1,(Object *)StringLiteral_respawnTime,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -344,14 +349,15 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_PartialUpdateWOData
     if (bVar2 == 0) {
       return;
     }
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)in_stack_1,
-                        (Object *)StringLiteral_respawnTime,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar4 != (Object *)0x0) {
-      if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (in_stack_1,(Object *)StringLiteral_respawnTime,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar4.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
         puVar5 = (undefined4 *)func_?();
         *(undefined4 *)(in_stack_3 + 0x100) = *puVar5;
         return;
@@ -384,7 +390,7 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Reset(MVGamePoint *this,Metho
       *(undefined4 *)(in_stack_2 + 0xf8) = 1;
       *(undefined1 *)(in_stack_2 + 0xfc) = 0;
       if ((*(int *)(in_stack_2 + 0x108) == 0) ||
-         (this_00 = *(GreyOutObjectScript **)(*(int *)(in_stack_2 + 0x108) + 0x1c),
+         (this_00 = *(GreyOutObjectScript **)(*(int *)(in_stack_2 + 0x108) + 0x20),
          this_00 == (GreyOutObjectScript *)0x0)) goto code_?;
       GreyOutObjectScript::GreyOutObjectScript_GreyOut(this_00,(MethodInfo *)0x0);
       *(undefined1 *)(in_stack_2 + 0xfd) = 0;
@@ -452,10 +458,10 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_UpdateCanRespawn
     cRam_? = '\x01';
   }
   if (newData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newData,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newData,
                        (Object *)StringLiteral_respawnTime,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -463,13 +469,16 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_UpdateCanRespawn
     if (bVar1 == 0) {
       return;
     }
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (newData,(Object *)StringLiteral_respawnTime,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 != (Object *)0x0) {
-      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newData,
+                       (Object *)StringLiteral_respawnTime,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
         piVar3 = (int32_t *)func_?();
         (this->fields).respawnTime = *piVar3;
         return;

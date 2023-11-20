@@ -12,23 +12,19 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_Destroy(XPProgress *this,Method
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__XPProgress__XPLimitsCallback_UnityEngine__Networking__UnityWebRequest_,
-               (MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__XPProgress__XPLimitsCallback_UnityEngine__Networking__UnityWebRequest_,
+             (MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -46,7 +42,7 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_OnXPLevelLimitsUpdated
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)xpLevelLimits,(MethodInfo *)0x0);
   pXVar1 = (this->fields).xpProgressData;
   if (pXVar1 != (XPProgressData *)0x0) {
@@ -126,36 +122,33 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_UpdateLevel
   pXVar1 = (this->fields).xpProgressData;
   if ((pXVar1 != (XPProgressData *)0x0) &&
      (pXVar2 = (pXVar1->fields).xpLevelLimits, pXVar2 != (XPLevelLimits *)0x0)) {
-    if ((pXVar2->fields)._Level_k__BackingField == level) {
-      return;
-    }
-    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__Common__Urls);
-    }
-    pSVar3 = MVCommon.dll::MV::Common::Urls::Urls_get_XPLimit((MethodInfo *)0x0);
-    str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&level,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
-    this_00 = (Action_1_Object_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+    if ((pXVar2->fields)._Level_k__BackingField != level) {
+      if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__Common__Urls);
+      }
+      pSVar3 = MVCommon.dll::MV::Common::Urls::Urls_get_XPLimit((MethodInfo *)0x0);
+      str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&level,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(
+                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                  );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_00,(Object *)this,
                  MethodInfo__XPProgress__XPLimitsCallback_UnityEngine__Networking__UnityWebRequest_,
                  (MethodInfo *)0x0);
       this_01 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
-      if (this_01 != (AssetBundleRequest *)0x0) {
-        AssetBundleRequest::AssetBundleRequest__ctor
-                  (this_01,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                   WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-          level = (int32_t)TypeInfo__AsyncWWWManager;
-          func_?();
-        }
-        level = 0;
-        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-        return;
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
     }
+    return;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -184,18 +177,21 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_XPLimitsCallback
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
-    this_00 = (DownloadHandler *)
-              mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
-              ValueListBuilder_1_System_Object__1_get_Length
-                        ((ValueListBuilder_1_System_Object__1 *)result,(MethodInfo *)0x0);
-    if (this_00 != (DownloadHandler *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    this_00 = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+              __Il2CppFullySharedGenericType]::
+              WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                        ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                          *)result,(MethodInfo *)0x0);
+    if (this_00 !=
+        (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
-               DownloadHandler_get_text(this_00,(MethodInfo *)0x0);
+               DownloadHandler_get_text((DownloadHandler *)this_00,(MethodInfo *)0x0);
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      message = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+      message = (Exception *)
+                Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                           (pSVar1,
                            XPLevelLimits_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<XPLevelLimits>_System__String_
                           );
@@ -206,19 +202,20 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_XPLimitsCallback
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
-      pDVar2 = this_00[1].klass;
-      if (pDVar2 != (DownloadHandler__Class *)0x0) {
-        (pDVar2->_0).name = (char *)message;
-        ppcStack3 = &(pDVar2->_0).name;
-        pDStack4 = (DownloadHandler__Class *)message;
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)message,(MethodInfo *)0x0);
+      pEVar2 = (this_00->fields)._Error_k__BackingField;
+      if (pEVar2 != (ExceptionDispatchInfo *)0x0) {
+        (pEVar2->fields).m_Exception = message;
+        pEStack3 = &pEVar2->fields;
+        pEStack4 = message;
         func_?();
-        if ((this_00->fields).m_Ptr != (void *)0x0) {
-          pvVar5 = (this_00->fields).m_Ptr;
-          uStack6 = *(undefined4 *)((int)pvVar5 + 0x14);
-          pDStack4 = this_00[1].klass;
-          ppcStack3 = *(char ***)((int)pvVar5 + 0x20);
-          (**(code **)((int)pvVar5 + 0xc))();
+        if ((this_00->fields)._Status_k__BackingField.value__ != 0) {
+          iVar5 = (this_00->fields)._Status_k__BackingField.value__;
+          uStack6 = *(undefined4 *)(iVar5 + 0x14);
+          pEStack4 = (Exception *)(this_00->fields)._Error_k__BackingField;
+          pEStack3 = *(ExceptionDispatchInfo__Fields **)(iVar5 + 0x20);
+          (**(code **)(iVar5 + 0xc))();
         }
         return;
       }
@@ -244,48 +241,44 @@ void Assembly-CSharp.dll::XPProgress::XPProgress__ctor
     func_?(&MethodInfo__XPProgress__UpdateLevel_int_);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (initialLevelData != (InitialLevelData *)0x0) {
     iVar1 = (initialLevelData->fields).XP;
     pXVar2 = (initialLevelData->fields).XPLevelLimits;
-    value = (XPProgressData *)func_?(TypeInfo__XPProgressData);
-    if (value != (XPProgressData *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,unaff_EBX);
-      (value->fields).playerCurrentXP = iVar1;
-      (value->fields).xpLevelLimits = pXVar2;
-      func_?(&value->fields,pXVar2);
-      (this->fields).xpProgressData = value;
-      func_?(&(this->fields).xpProgressData,value);
-      if (player != (MVLocalPlayer *)0x0) {
-        pUVar3 = (player->fields)._.OnLevelChanged;
-        this_00 = (UnityAction_1_System_Int32Enum_ *)
-                  func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-        if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_00,(Object *)this,MethodInfo__XPProgress__UpdateLevel_int_,
-                     (MethodInfo *)0x0);
-          pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-          if (pDVar4 == (Delegate *)0x0) {
-            (player->fields)._.OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
-            func_?();
-            return;
-          }
-          pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
-          if (pUVar3 != (UnityAction_1_System_Int32_ *)0x0) {
-            (player->fields)._.OnLevelChanged = pUVar3;
-            iVar5 = func_?();
-            if (iVar5 != 0) {
-              func_?();
-              return;
-            }
-          }
-          goto code_?;
+    method_00 = TypeInfo__XPProgressData;
+    value = (XPProgressData *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (value->fields).playerCurrentXP = iVar1;
+    (value->fields).xpLevelLimits = pXVar2;
+    func_?(&value->fields,pXVar2);
+    (this->fields).xpProgressData = value;
+    func_?(&(this->fields).xpProgressData,value);
+    if (player != (MVLocalPlayer *)0x0) {
+      pUVar3 = (player->fields)._.OnLevelChanged;
+      this_00 = (UnityAction_1_System_Int32Enum_ *)
+                func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_00,(Object *)this,MethodInfo__XPProgress__UpdateLevel_int_,(MethodInfo *)0x0);
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (player->fields)._.OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
+        func_?();
+        return;
+      }
+      pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
+      if (pUVar3 != (UnityAction_1_System_Int32_ *)0x0) {
+        (player->fields)._.OnLevelChanged = pUVar3;
+        iVar5 = func_?();
+        if (iVar5 != 0) {
+          func_?();
+          return;
         }
       }
+      goto code_?;
     }
   }
   func_?();

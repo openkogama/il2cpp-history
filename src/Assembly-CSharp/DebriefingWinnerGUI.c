@@ -22,21 +22,24 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
     }
     pLVar1 = (this->fields).winConImages;
     if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
-    pSVar2 = mscorlib.dll::System::Collections::Generic::
-             List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-             List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                       (&SStack_3,(List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)pLVar1,index,
+    pMVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       (&MStack_3,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar1,index,
                         MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                        );
     pLVar1 = (this->fields).winConImages;
-    SStack_3.team = pSVar2->team;
-    if ((GameObject *)statType == pSVar2->buttonSelected) {
+    MStack_3.visible = pMVar2->visible;
+    MStack_3._17_3_ = *(undefined3 *)&pMVar2->field_0x11;
+    if (statType == pMVar2->index) {
       if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
       apMStack_4[0] =
            MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
       ;
       iVar5 = func_?(apMStack_4,pLVar1,index);
-      SStack_3.team = *(int32_t *)(iVar5 + 0x10);
+      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
       if ((*(Component **)(iVar5 + 4) == (Component *)0x0) ||
          (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              (*(Component **)(iVar5 + 4),(MethodInfo *)0x0),
@@ -49,7 +52,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
       pGVar6 = *(GameObject **)(iVar5 + 8);
-      SStack_3.team = *(int32_t *)(iVar5 + 0x10);
+      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
       if (pGVar6 == (GameObject *)0x0) break;
       value = 1;
     }
@@ -58,7 +61,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
       apMStack_4[0] =
            MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
       ;
-      iVar5 = func_?(&SStack_3,pLVar1,index);
+      iVar5 = func_?(&MStack_3,pLVar1,index);
       uStack_7 = *(undefined4 *)(iVar5 + 0x10);
       if ((*(Component **)(iVar5 + 4) == (Component *)0x0) ||
          (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -72,7 +75,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
       pGVar6 = *(GameObject **)(iVar5 + 8);
-      SStack_3.team = *(int32_t *)(iVar5 + 0x10);
+      MStack_3._16_4_ = *(undefined4 *)(iVar5 + 0x10);
       if (pGVar6 == (GameObject *)0x0) break;
       value = 0;
     }
@@ -118,14 +121,17 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
     }
     pLVar2 = (this->fields).winConImages;
     if (pLVar2 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
-    pSVar3 = mscorlib.dll::System::Collections::Generic::
-             List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-             List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                       (&SStack_4,(List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)pLVar2,index,
+    pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       (&MStack_4,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar2,index,
                         MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                        );
-    SStack_4.team = pSVar3->team;
-    if (pSVar3->buttonSelected == (GameObject *)winConType) {
+    MStack_4.visible = pMVar3->visible;
+    MStack_4._17_3_ = *(undefined3 *)&pMVar3->field_0x11;
+    if (pMVar3->index == winConType) {
       if ((this->fields).winConImages == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0)
       break;
       iVar5 = func_?();
@@ -137,7 +143,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
       iVar5 = func_?(&stack0xffffffd4,pLVar2,index,
                               MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_
                              );
-      SStack_4.team = *(int32_t *)(iVar5 + 0x10);
+      MStack_4._16_4_ = *(undefined4 *)(iVar5 + 0x10);
       if (*(int *)(iVar5 + 0xc) == 0) break;
       func_?(0x4b,*(int *)(iVar5 + 0xc),text);
     }
@@ -157,12 +163,12 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetTimerText
                (DebriefingWinnerGUI *this,String *time,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pTStack_2 = (this->fields).timer;
   if (pTStack_2 != (Text *)0x0) {
-    pMStack_1 = (pTStack_2->klass->vtable).set_text.method;
+    pIStack_1 = (pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     pSStack_3 = time;
-    (*(pTStack_2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
     return;
   }
   uVar4 = func_?(&pTStack_2);
@@ -179,12 +185,12 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetWinValue
                (DebriefingWinnerGUI *this,String *winVal,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pTStack_2 = (this->fields).winValue;
   if (pTStack_2 != (Text *)0x0) {
-    pMStack_1 = (pTStack_2->klass->vtable).set_text.method;
+    pIStack_1 = (pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     pSStack_3 = winVal;
-    (*(pTStack_2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
     return;
   }
   uVar4 = func_?(&pTStack_2);
@@ -228,12 +234,12 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetWinnerText
                (DebriefingWinnerGUI *this,String *winner,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pTStack_2 = (this->fields).winnerName;
   if (pTStack_2 != (Text *)0x0) {
-    pMStack_1 = (pTStack_2->klass->vtable).set_text.method;
+    pIStack_1 = (pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     pSStack_3 = winner;
-    (*(pTStack_2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
     return;
   }
   uVar4 = func_?(&pTStack_2);

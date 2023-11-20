@@ -11,32 +11,26 @@ void Assembly-CSharp.dll::MVBattery::MVBattery_Initialize(MVBattery *this,Method
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (Action_3_Boolean_Boolean_Object_ *)
+  this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
             func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-  if (this_00 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
-    mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::Action_3_Boolean_Boolean_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MVBattery__SignalCallback_bool__bool__LogicObjectManager_,
-               (MethodInfo *)0x0);
-    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
-                       ((MVWorldObject *)this,1,
-                        (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-    func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
-    woId = (this->fields)._._._.id;
-    this_01 = (WorldObjectClientRef_1_System_Object_ *)
-              func_?(TypeInfo__OutputSignalTransmitter);
-    if (this_01 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-      WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                (this_01,woId,(MethodInfo *)0x0);
-      (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
-      func_?(&(this->fields).outputSignalTransmitter,this_01);
-      return;
-    }
-  }
+  mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+            (this_00,(Object *)this,
+             MethodInfo__MVBattery__SignalCallback_bool__bool__LogicObjectManager_,(MethodInfo *)0x0
+            );
+  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
+                     ((MVWorldObject *)this,1,
+                      (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  woId = (this->fields)._._._.id;
+  this_01 = (WorldObjectClientRef_1_System_Object_ *)
+            func_?(TypeInfo__OutputSignalTransmitter);
+  WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+            (this_01,woId,(MethodInfo *)0x0);
+  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
+  ppOStack2 = &(this->fields).outputSignalTransmitter;
+  pWStack3 = this_01;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 

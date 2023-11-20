@@ -101,7 +101,7 @@ void Assembly-CSharp.dll::Sentry::StackTraceSpec::StackTraceSpec__ctor
   (this->fields).module = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).module;
   func_?(method_00,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).filename = filename;
   func_?(&this->fields,filename);

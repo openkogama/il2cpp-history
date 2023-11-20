@@ -128,7 +128,6 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Ran
   }
   uVar3 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar3);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_max_must_be_greater_than_min);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -137,48 +136,6 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Ran
   pcVar4 = (code *)swi(3);
   iVar1 = (*pcVar4)();
   return iVar1;
-}
-
-
-/* Int32[] ToIntArray() */
-
-Int32__Array *
-MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_ToIntArray
-          (RandomGenerator *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__System__Int32;
-    func_?();
-    cRam_? = '\x01';
-  }
-  ppIStack_1 = (Int32__Array__Class **)0x3;
-  pIStack_2 = TypeInfo__System__Int32;
-  pIVar3 = (Int32__Array *)func_?();
-  if (pIVar3 != (Int32__Array *)0x0) {
-    if (pIVar3->max_length != 0) {
-      pIVar3->vector[0] = (this->fields).seed;
-      if (1 < pIVar3->max_length) {
-        pIVar3->vector[1] = (this->fields).step;
-        if (2 < pIVar3->max_length) {
-          pIVar3->vector[2] = (this->fields).round;
-          return pIVar3;
-        }
-      }
-    }
-    ppIStack_1 = (Int32__Array__Class **)0x0;
-    pIStack_2 = (Int32__Array__Class *)func_?();
-    func_?();
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (Int32__Array *)(*pcVar4)();
-    return pIVar3;
-  }
-  ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  pIVar3 = (Int32__Array *)(*pcVar4)();
-  return pIVar3;
 }
 
 
@@ -227,30 +184,15 @@ void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__cctor
 }
 
 
-/* RandomGenerator(UInt32) */
-
-void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor
-               (RandomGenerator *this,uint32_t seed,MethodInfo *method)
-
-{
-  (this->fields).step = 1;
-  (this->fields).round = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).seed = seed;
-  return;
-}
-
-
 /* RandomGenerator(UInt32, UInt32, UInt32) */
 
-void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor_1
+void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor
                (RandomGenerator *this,uint32_t seed,uint32_t step,uint32_t round,MethodInfo *method)
 
 {
   (this->fields).step = 1;
   (this->fields).round = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).seed = seed;
   (this->fields).step = step;

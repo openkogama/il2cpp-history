@@ -38,8 +38,10 @@ public class ScaleAnimationBase : MonoBehaviour
 
 	// Methods
 	public void ResetScaleAnimation();
+	public virtual void Stop();
 	protected void Test();
 	public virtual void Play(float offsetTime = 0f);
 	public void SetTarget(Transform target);
+	public bool IsPlaying();
 }
 

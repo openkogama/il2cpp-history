@@ -5,10 +5,62 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_Awake(MVPickupOwner *this
 
 {
   if ((this->fields)._.findWorldObjectParent != 0) {
-    MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)this,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&StringLiteral_worldObjectParent_already_set_);
+      func_?(&StringLiteral___worldobjectParent_not_found_on);
+      cRam_? = '\x01';
+    }
+    pMVar1 = (this->fields)._.worldObjectParent;
+    (this->fields)._.findWorldObjectParent = 1;
+    pSVar2 = StringLiteral_worldObjectParent_already_set_;
+    if (pMVar1 != (MVWorldObjectClient *)0x0) {
+      pMVar1 = (this->fields)._.worldObjectParent;
+      pMVar3 = pMVar1->klass;
+      str1 = (String *)
+             (*(code *)(pMVar3->vtable).ToString.method)
+                       (pMVar1,(pMVar3->vtable).get_Position.methodPtr);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar2,(MethodInfo *)0x0);
+    }
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if ((pGVar4 == (GameObject *)0x0) ||
+       (goId = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                         ((Object_1 *)pGVar4,(MethodInfo *)0x0),
+       this_00 == (MVWorldObjectClientManager *)0x0)) {
+code_?:
+      func_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectByGoId
+                       (this_00,goId,(MethodInfo *)0x0);
+    (this->fields)._.worldObjectParent = pMVar1;
+    func_?(&(this->fields)._.worldObjectParent,pMVar1);
+    if ((this->fields)._.worldObjectParent == (MVWorldObjectClient *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (pGVar4 == (GameObject *)0x0) goto code_?;
+      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                         ((Object_1 *)pGVar4,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar2,StringLiteral___worldobjectParent_not_found_on,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar2,(MethodInfo *)0x0);
+    }
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).prevUpdateLineOfFireTime = fVar1;
+  fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  (this->fields).prevUpdateLineOfFireTime = fVar6;
   return;
 }
 
@@ -52,7 +104,7 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_CreateAvatarItem
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_Item_to_equip_is_missing_the_Ava,(MethodInfo *)0x0);
         return pPVar2;
       }
@@ -73,7 +125,7 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_CreateAvatarItem
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)pSVar4,(MethodInfo *)0x0);
   return (PickupItem *)0x0;
 }
@@ -85,17 +137,19 @@ float Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpee
                 (MVPickupOwner *this,float projectileSpeed,MethodInfo *method)
 
 {
-  fStack_1 = (this->fields).lookDirection.z;
-  uStack_2._0_4_ = (this->fields).lookDirection.x;
-  uStack_2._4_4_ = (this->fields).lookDirection.y;
-  puVar3 = (undefined8 *)func_?(auStack_4,&(this->fields).lookDirection,0);
-  uStack_5._0_4_ = (float)*puVar3;
-  uStack_5._4_4_ = (float)((ulonglong)*puVar3 >> 0x20);
-  fStack_6 = fStack_1 - *(float *)(puVar3 + 1);
-  uStack_5 = CONCAT44(uStack_2._4_4_ - uStack_5._4_4_,(float)uStack_2 - (float)uStack_5);
-  fStack_1 = fStack_6;
-  fVar7 = (float10)func_?(&uStack_5,0);
-  return (float)(fVar7 + (float10)projectileSpeed);
+  pVVar1 = &(this->fields).lookDirection;
+  uStack_2._0_4_ = pVVar1->x;
+  uStack_2._4_4_ = pVVar1->y;
+  fStack_3 = (this->fields).lookDirection.z;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_4,*pVVar1,(MethodInfo *)0x0);
+  uVar5 = pVVar1->x;
+  uVar6 = pVVar1->y;
+  fStack_7 = fStack_3 - pVVar1->z;
+  uStack_8 = CONCAT44(uStack_2._4_4_ - (float)uVar6,(float)uStack_2 - (float)uVar5);
+  fStack_3 = fStack_7;
+  fVar9 = (float10)func_?(&uStack_8,0);
+  return (float)(fVar9 + (float10)projectileSpeed);
 }
 
 
@@ -134,38 +188,37 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       pVVar3 = (Vector3 *)(*pcVar2)();
       return pVVar3;
     }
-    puVar4 = (undefined8 *)(*(code *)x->klass[1]._0.byval_arg.data)();
-    uStack_5 = *puVar4;
-    uStack_6 = *(undefined4 *)(puVar4 + 1);
-    puVar4 = (undefined8 *)func_?(&uStack_7);
-    uVar8 = *puVar4;
-    fVar9 = *(float *)(puVar4 + 1);
-    puVar4 = (undefined8 *)func_?(&uStack_7,&(this->fields).lookDirection,0);
-    uStack_5 = *puVar4;
-    uStack_6 = *(undefined4 *)(puVar4 + 1);
-    puVar4 = (undefined8 *)func_?(&stack0xffffffc8,&uStack_5,0);
-    uVar10 = *puVar4;
-    fStack_11 = *(float *)(puVar4 + 1);
-    uStack_7._0_4_ = (float)uVar10;
-    fStack_12 = (float)uVar8;
-    uStack_7._4_4_ = (float)((ulonglong)uVar10 >> 0x20);
-    fStack_13 = (float)((ulonglong)uVar8 >> 0x20);
-    fStack_14 = uStack_7._4_4_ * fStack_13 + (float)uStack_7 * fStack_12 + fStack_11 * fVar9;
-    if (0.0 < fStack_14) {
-      uStack_7 = uVar10;
-      puVar4 = (undefined8 *)(*(code *)x->klass[1]._0.byval_arg.data)();
-      uStack_5 = *puVar4;
-      uStack_6 = *(undefined4 *)(puVar4 + 1);
-      fVar15 = (float10)func_?();
-      fVar9 = (float)(fVar15 * (float10)fStack_14);
-      __return_storage_ptr__->x = lookDirection.x + lookDirection.x * fVar9;
-      __return_storage_ptr__->y = lookDirection.y + lookDirection.y * fVar9;
-      __return_storage_ptr__->z = lookDirection.z + lookDirection.z * fVar9;
-      return __return_storage_ptr__;
+    pVVar3 = (Vector3 *)(**(code **)&x->klass[1]._0.byval_arg.attrs)();
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       ((Vector3 *)&stack0xffffffec,*pVVar3,(MethodInfo *)0x0);
+    fVar4 = pVVar3->x;
+    pVVar3 = (Vector3 *)&stack0xffffffec;
+    puVar5 = &UNK_?;
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       (pVVar3,(this->fields).lookDirection,(MethodInfo *)0x0);
+    uVar7 = pVVar6->y;
+    lookDirection.x = 0.0;
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       ((Vector3 *)&stack0xffffffd4,*pVVar6,(MethodInfo *)0x0);
+    uVar8 = pVVar6->x;
+    uVar9 = pVVar6->y;
+    fVar4 = (float)uVar9 * (float)puVar5 + (float)uVar8 * fVar4 + pVVar6->z * (float)pVVar3;
+    __return_storage_ptr__ = (Vector3 *)uVar7;
+    if (0.0 < fVar4) {
+      _Stack00000020 = x->klass[1]._0.this_arg.data;
+      pOStack10 = x;
+      (**(code **)&x->klass[1]._0.byval_arg.attrs)();
+      fVar11 = (float10)func_?();
+      fVar4 = (float)(fVar11 * (float10)fVar4);
+      *(ulonglong *)uVar7 =
+           CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
+                    fVar4 * 3.3109372e-29 + 3.3109372e-29);
+      *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
+      return (Vector3 *)uVar7;
     }
   }
-  __return_storage_ptr__->x = (float)(int)lookDirection._0_8_;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)lookDirection._0_8_ >> 0x20);
+  __return_storage_ptr__->x = lookDirection.x;
+  __return_storage_ptr__->y = lookDirection.y;
   __return_storage_ptr__->z = lookDirection.z;
   return __return_storage_ptr__;
 }
@@ -185,21 +238,22 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_GetTargetHolsterTransform
   pTVar1 = (Transform *)0x0;
   pMVar2 = (this->fields)._.worldObjectParent;
   if (((pMVar2 != (MVWorldObjectClient *)0x0) &&
-      ((TypeInfo__MVAvatar->_1).typeHierarchyDepth <= (pMVar2->klass->_1).typeHierarchyDepth)) &&
+      ((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)) &&
      ((MVAvatar__Class *)
-      (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).typeHierarchyDepth - 1] ==
+      (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
       TypeInfo__MVAvatar)) {
     this_00 = (MVBody *)pMVar2[1].fields.PositionChanged;
     if ((this_00 == (MVBody *)0x0) ||
-       (this_01 = MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0), this_01 == (BodyData *)0x0
-       )) {
+       (this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
+       this_01 == (MethodCall *)0x0)) {
       func_?();
       pcVar3 = (code *)swi(3);
       pTVar1 = (Transform *)(*pcVar3)();
       return pTVar1;
     }
-    pTVar1 = BodyData::BodyData_GetPartBone
-                       (this_01,BodyData_PartIndex__Enum_Holster,(MethodInfo *)0x0);
+    pTVar1 = (Transform *)
+             mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
+                       (this_01,8,(MethodInfo *)0x0);
   }
   return pTVar1;
 }
@@ -219,74 +273,79 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_HandleFire
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_get_FireDirection(&VStack_2,pMVar1,(MethodInfo *)0x0);
+    pVVar2 = MainCameraManager::MainCameraManager_get_FireDirection
+                        ((Vector3 *)&stack0xffffffe4,pMVar1,(MethodInfo *)0x0);
+    uVar3 = pVVar2->x;
+    uVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar1 != (MainCameraManager *)0x0) {
-      pVVar3 = MainCameraManager::MainCameraManager_get_FireOrigin
-                          ((Vector3 *)&stack0xffffffd4,pMVar1,(MethodInfo *)0x0);
-      VStack_2.y = pVVar3->x;
-      VStack_2.z = pVVar3->y;
-      fVar4 = pVVar3->z;
-      pVVar3 = (Vector3 *)func_?(&stack0xffffffd4);
-      pVVar3 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
-                          ((Vector3 *)&stack0xffffffd4,this,*pVVar3,(MethodInfo *)0x0);
-      fVar5 = pVVar3->x;
-      fVar6 = pVVar3->y;
-      fVar7 = pVVar3->z;
-      (this->fields).lookOrigin.x = VStack_2.y;
-      (this->fields).lookOrigin.y = VStack_2.z;
-      (this->fields).lookDirection.x = fVar5;
-      (this->fields).lookDirection.y = fVar6;
-      (this->fields).lookOrigin.z = fVar4;
-      pPVar8 = (this->fields).currentItem;
-      (this->fields).lookDirection.z = fVar7;
+      pVVar2 = MainCameraManager::MainCameraManager_get_FireOrigin
+                          ((Vector3 *)&stack0xffffffd8,pMVar1,(MethodInfo *)0x0);
+      method_00 = pVVar2->x;
+      fVar6 = pVVar2->z;
+      value.y = (float)uVar4;
+      value.x = (float)uVar3;
+      value.z = fVar5;
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                          ((Vector3 *)&stack0xffffffd8,value,(MethodInfo *)method_00);
+      uVar7._4_4_ = (float)this;
+      uVar7._0_4_ = (float)&stack0xffffffd8;
+      pVVar2 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
+                          ((Vector3 *)&stack0xffffffd8,this,*pVVar2,(MethodInfo *)0x0);
+      fVar8 = pVVar2->x;
+      fVar9 = pVVar2->y;
+      fVar5 = pVVar2->z;
+      (this->fields).lookOrigin.x = (float)uVar7;
+      (this->fields).lookOrigin.y = SUB84(uVar7,4);
+      (this->fields).lookDirection.x = fVar8;
+      (this->fields).lookDirection.y = fVar9;
+      (this->fields).lookOrigin.z = fVar6;
+      pPVar10 = (this->fields).currentItem;
+      (this->fields).lookDirection.z = fVar5;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+        func_?();
       }
-      bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                        ((Object_1 *)pPVar8,(MethodInfo *)0x0);
-      if (bVar9 == 0) {
+      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                        ((Object_1 *)pPVar10,(MethodInfo *)0x0);
+      if (bVar11 == 0) {
 code_?:
         inputFire = 0;
       }
       else {
-        pPVar8 = (this->fields).currentItem;
-        if (pPVar8 == (PickupItem *)0x0) goto code_?;
-        cVar10 = (*(pPVar8->klass->vtable).CanFire.methodPtr)();
-        if (cVar10 == '\0') goto code_?;
+        pPVar10 = (this->fields).currentItem;
+        if (pPVar10 == (PickupItem *)0x0) goto code_?;
+        cVar12 = (*(code *)(pPVar10->klass->vtable).CanFire.method)();
+        if (cVar12 == '\0') goto code_?;
       }
-      if ((isFiringRuntimeVariable != (MVRuntimeDataVariable *)0x0) &&
-         (pOVar11 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                              (isFiringRuntimeVariable,(MethodInfo *)0x0), pOVar11 != (Object *)0x0)
-         ) {
-        if ((pOVar11->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+      pOVar13 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                          ((MVRuntimeDataVariable *)&UNK_?,(MethodInfo *)0x0);
+      if (pOVar13 != (Object *)0x0) {
+        if ((pOVar13->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
         goto code_?;
-        pbVar12 = (bool *)func_?();
-        if (*pbVar12 != inputFire) {
-          bStack_13 = inputFire;
-          pOVar11 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_13);
+        pbVar14 = (bool *)func_?();
+        if (*pbVar14 != inputFire) {
+          pOVar13 = (Object *)func_?();
           MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                    (isFiringRuntimeVariable,pOVar11,(MethodInfo *)0x0);
+                    ((MVRuntimeDataVariable *)&UNK_?,pOVar13,(MethodInfo *)0x0);
         }
-        if (inputFire == 0) {
-          return;
-        }
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        VStack_2.z = fVar4;
-        if (fVar4 - (this->fields).prevUpdateLineOfFireTime <= _UNK_?) {
+        if ((inputFire == 0) ||
+           (fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0),
+           fVar5 - (this->fields).prevUpdateLineOfFireTime <= _UNK_?)) {
           return;
         }
         this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                             ((MethodInfo *)0x0);
-        pMVar14 = (this->fields)._.worldObjectParent;
-        if ((pMVar14 != (MVWorldObjectClient *)0x0) &&
+        pMVar15 = (this->fields)._.worldObjectParent;
+        if ((pMVar15 != (MVWorldObjectClient *)0x0) &&
            (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateLineOfFire
-                    (this_00,(pMVar14->fields)._.id,(this->fields).lookDirection,
+                    (this_00,(pMVar15->fields)._.id,(this->fields).lookDirection,
                      (this->fields).lookOrigin,(MethodInfo *)0x0);
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
+          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
           ;
-          (this->fields).prevUpdateLineOfFireTime = fVar4;
+          (this->fields).prevUpdateLineOfFireTime = fVar5;
           return;
         }
       }
@@ -296,8 +355,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -329,7 +388,7 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_HandleFiring
   if (isFiring == 0) {
     pPVar2 = (this->fields).currentItem;
     if (pPVar2 != (PickupItem *)0x0) {
-      (*(pPVar2->klass->vtable).TriggerEnd.methodPtr)(pPVar2);
+      (*(code *)(pPVar2->klass->vtable).TriggerEnd.method)(pPVar2);
       return;
     }
   }
@@ -337,7 +396,7 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_HandleFiring
     pMVar4 = (this->fields)._.worldObjectParent;
     if ((pMVar4 != (MVWorldObjectClient *)0x0) &&
        (pPVar2 = (this->fields).currentItem, pPVar2 != (PickupItem *)0x0)) {
-      (*(pPVar2->klass->vtable).TriggerBegin.methodPtr)(pPVar2,(pMVar4->fields)._.id);
+      (*(code *)(pPVar2->klass->vtable).TriggerBegin.method)(pPVar2,(pMVar4->fields)._.id);
       return;
     }
   }
@@ -370,106 +429,94 @@ code_?:
   }
   else {
     pMVar1 = (currentItemRuntimeVariable->fields).OnChange;
-    this_01 = (UnityAction_1_System_Object_ *)
-              func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-    if (this_01 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (this_01,(Object *)this,MethodInfo__MVPickupOwner___Init_b__39_0_System__Object_,
-               (MethodInfo *)0x0);
-    pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)
+    unaff_ESI = (MVRuntimeDataVariable_OnChangeDelegate *)
+                func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)unaff_ESI,(Object *)this,
+               MethodInfo__MVPickupOwner___Init_b__39_0_System__Object_,(MethodInfo *)0x0);
+    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pMVar1 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                       ((Delegate *)pMVar1,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+    pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
       (currentItemRuntimeVariable->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       this_00 = &(currentItemRuntimeVariable->fields).OnChange;
       func_?();
-      currentItemRuntimeVariable =
-           (MVRuntimeDataVariable *)
-           MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                     (currentItemRuntimeVariable,(MethodInfo *)0x0);
-      if (((UnityAction_1_System_Object_ *)currentItemRuntimeVariable !=
-           (UnityAction_1_System_Object_ *)0x0) &&
-         ((pDVar2 = 
+      unaff_ESI = (MVRuntimeDataVariable_OnChangeDelegate *)
+                  MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                            (currentItemRuntimeVariable,(MethodInfo *)0x0);
+      if ((unaff_ESI != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) &&
+         ((pDVar3 = 
            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-          (((Dictionary_2_System_Object_System_Object___Class *)
-           ((UnityAction_1_System_Object_ *)currentItemRuntimeVariable)->klass)->_1).
-          typeHierarchyDepth <
+          (unaff_ESI->klass->_1).naturalAligment <
           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          typeHierarchyDepth ||
+          naturalAligment ||
           ((Dictionary_2_System_Object_System_Object___Class *)
-           (((Dictionary_2_System_Object_System_Object___Class *)
-            ((UnityAction_1_System_Object_ *)currentItemRuntimeVariable)->klass)->_1).typeHierarchy
+           (unaff_ESI->klass->_1).typeHierarchy
            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .typeHierarchyDepth - 1] !=
+            .naturalAligment - 1] !=
            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
       goto code_?;
       MVPickupOwner_UpdateCurrentItem
-                ((MVPickupOwner *)this_00,
-                 (Dictionary_2_System_Object_System_Object_ *)currentItemRuntimeVariable,
+                ((MVPickupOwner *)this_00,(Dictionary_2_System_Object_System_Object_ *)unaff_ESI,
                  (MethodInfo *)0x0);
-      if (isFiringRuntimeVariable != (MVRuntimeDataVariable *)0x0) {
-        pMVar1 = (isFiringRuntimeVariable->fields).OnChange;
-        currentItemRuntimeVariable =
-             (MVRuntimeDataVariable *)
-             func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-        if ((UnityAction_1_System_Object_ *)currentItemRuntimeVariable !=
-            (UnityAction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-          UnityAction_1_System_Object___ctor
-                    ((UnityAction_1_System_Object_ *)currentItemRuntimeVariable,(Object *)this_00,
-                     MethodInfo__MVPickupOwner___Init_b__39_1_System__Object_,(MethodInfo *)0x0);
-          pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                   mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pMVar1,(Delegate *)currentItemRuntimeVariable,
-                              (MethodInfo *)0x0);
-          if (pMVar1 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-            (isFiringRuntimeVariable->fields).OnChange =
-                 (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-            func_?();
-            return;
-          }
-          pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar3 = pMVar1;
-          }
-          if (pMVar3 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-            (isFiringRuntimeVariable->fields).OnChange = pMVar3;
-            pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-            if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-              pMVar3 = pMVar1;
-            }
-            if (pMVar3 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-              func_?();
-              return;
-            }
-          }
-          goto code_?;
+      if (isFiringRuntimeVariable == (MVRuntimeDataVariable *)0x0) goto code_?;
+      pMVar2 = (isFiringRuntimeVariable->fields).OnChange;
+      this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+                func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                (this_01,(Object *)this_00,MethodInfo__MVPickupOwner___Init_b__39_1_System__Object_,
+                 (MethodInfo *)0x0);
+      pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+      if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (isFiringRuntimeVariable->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        func_?();
+        return;
+      }
+      pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pMVar4 = pMVar2;
+      }
+      unaff_ESI = pMVar1;
+      if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (isFiringRuntimeVariable->fields).OnChange = pMVar4;
+        pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar1 = pMVar2;
+        }
+        if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+          func_?();
+          return;
         }
       }
-      goto code_?;
     }
-    pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar3 = pMVar1;
-    }
-    if (pMVar3 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-      (currentItemRuntimeVariable->fields).OnChange = pMVar3;
-      pMVar3 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        pMVar3 = pMVar1;
+    else {
+      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pMVar1 = pMVar2;
       }
-      if (pMVar3 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+      if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        (currentItemRuntimeVariable->fields).OnChange = pMVar1;
+        pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar1 = pMVar2;
+        }
+        if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+      }
     }
   }
-code_?:
   func_?();
-  pDVar2 = extraout_EDX;
+  pDVar3 = extraout_EDX;
 code_?:
-  func_?(currentItemRuntimeVariable,pDVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(unaff_ESI,pDVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -519,7 +566,7 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_SetAvatarItemAsCurrent
           bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)x,(Object_1 *)avatarItem,(MethodInfo *)0x0);
           if (bVar2 != 0) {
-            (*(this->klass->vtable).__unknown_1.methodPtr)();
+            (*(code *)(this->klass->vtable).__unknown_1.method)();
           }
           (this->fields).currentItem = avatarItem;
           func_?();
@@ -559,32 +606,41 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_SetLineOfFireLocal
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_get_FireDirection(&VStack_2,pMVar1,(MethodInfo *)0x0);
+    pVVar2 = MainCameraManager::MainCameraManager_get_FireDirection
+                       ((Vector3 *)&stack0xffffffe8,pMVar1,(MethodInfo *)0x0);
+    uVar3 = pVVar2->x;
+    uVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (pMVar1 != (MainCameraManager *)0x0) {
-      pVVar3 = MainCameraManager::MainCameraManager_get_FireOrigin
-                         ((Vector3 *)&stack0xffffffd8,pMVar1,(MethodInfo *)0x0);
-      VStack_2.y = pVVar3->x;
-      VStack_2.z = pVVar3->y;
-      fVar4 = pVVar3->z;
-      pVVar3 = (Vector3 *)func_?();
-      pVVar3 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
-                         ((Vector3 *)&stack0xffffffd8,this,*pVVar3,(MethodInfo *)0x0);
-      fVar5 = pVVar3->x;
-      fVar6 = pVVar3->y;
-      fVar7 = pVVar3->z;
-      (this->fields).lookOrigin.x = VStack_2.y;
-      (this->fields).lookOrigin.y = VStack_2.z;
-      (this->fields).lookOrigin.z = fVar4;
-      (this->fields).lookDirection.x = fVar5;
-      (this->fields).lookDirection.y = fVar6;
-      (this->fields).lookDirection.z = fVar7;
+      pVVar2 = MainCameraManager::MainCameraManager_get_FireOrigin
+                         ((Vector3 *)&stack0xffffffdc,pMVar1,(MethodInfo *)0x0);
+      method_00 = pVVar2->y;
+      fVar6 = pVVar2->z;
+      value.y = (float)uVar4;
+      value.x = (float)uVar3;
+      value.z = fVar5;
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                          ((Vector3 *)&stack0xffffffdc,value,(MethodInfo *)method_00);
+      pVVar2 = (Vector3 *)&stack0xffffffdc;
+      puVar8 = &UNK_?;
+      pVVar7 = MVPickupOwner_GetLookDirectionWithAddedVelocityMagnitude
+                          (pVVar2,this,*pVVar7,(MethodInfo *)0x0);
+      fVar9 = pVVar7->x;
+      fVar10 = pVVar7->y;
+      fVar5 = pVVar7->z;
+      (this->fields).lookOrigin.x = (float)puVar8;
+      (this->fields).lookOrigin.y = (float)pVVar2;
+      (this->fields).lookOrigin.z = fVar6;
+      (this->fields).lookDirection.x = fVar9;
+      (this->fields).lookDirection.y = fVar10;
+      (this->fields).lookDirection.z = fVar5;
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -612,55 +668,60 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
     cRam_? = '\x01';
   }
   if (newState != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                        (Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
-      (*(this->klass->vtable).__unknown_1.methodPtr)(this,(this->klass->vtable).__unknown_1.method);
+      (*(code *)(this->klass->vtable).__unknown_1.method)
+                (this,(this->klass->vtable).get_IgnoreWOIDs.methodPtr);
       return;
     }
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (newState,(Object *)StringLiteral_type,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar3 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,pOVar2);
-    if (pOVar2 != (Object *)0x0) {
-      if ((pOVar2->klass->_0).element_class !=
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
+                       (Object *)StringLiteral_type,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar3 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,TVar2.m_Index);
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
           (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
-      puVar4 = (undefined4 *)func_?(pOVar2);
+      puVar4 = (undefined4 *)func_?(TVar2.m_Index);
       pPVar5 = (PickupItem *)*puVar4;
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                          (Object *)StringLiteral_variantId,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
       if (bVar1 == 0) {
-        pMVar6 = (MethodInfo *)0x0;
+        pIVar6 = (Il2CppMethodPointer)0x0;
       }
       else {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (newState,(Object *)StringLiteral_variantId,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        uVar3 = CONCAT44(TypeInfo__System__Int32,pOVar2);
-        if (pOVar2 == (Object *)0x0) goto code_?;
-        if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
-        puVar4 = (undefined4 *)func_?(pOVar2);
-        pMVar6 = (MethodInfo *)*puVar4;
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
+                           (Object *)StringLiteral_variantId,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        puVar4 = (undefined4 *)func_?(TVar2.m_Index);
+        pIVar6 = (Il2CppMethodPointer)*puVar4;
       }
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)newState,
+      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
                          (Object *)StringLiteral_updateItemState,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -668,17 +729,19 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
         uVar7 = 0;
       }
       else {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (newState,(Object *)StringLiteral_updateItemState,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        uVar3 = CONCAT44(TypeInfo__System__Int32,pOVar2);
-        if (pOVar2 == (Object *)0x0) goto code_?;
-        if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
-        pMVar6 = (MethodInfo *)&UNK_?;
-        puVar8 = (uint *)func_?(pOVar2);
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
+                           (Object *)StringLiteral_updateItemState,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        pIVar6 = (Il2CppMethodPointer)&UNK_?;
+        puVar8 = (uint *)func_?(TVar2.m_Index);
         uVar7 = *puVar8;
       }
       pPVar9 = (this->fields).currentItem;
@@ -690,12 +753,12 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
       if (bVar1 == 0) {
         pPVar5 = (this->fields).currentItem;
         if (pPVar5 == (PickupItem *)0x0) goto code_?;
-        pMVar6 = (pPVar5->klass->vtable).__unknown.method;
-        pPVar9 = (PickupItem *)(*(pPVar5->klass->vtable).__unknown.methodPtr)();
+        pIVar6 = (pPVar5->klass->vtable).CanFire.methodPtr;
+        pPVar9 = (PickupItem *)(*(code *)(pPVar5->klass->vtable).__unknown.method)();
         if (pPVar5 != pPVar9) goto code_?;
         pPVar9 = (this->fields).currentItem;
         if (pPVar9 == (PickupItem *)0x0) goto code_?;
-        if (pMVar6 != (MethodInfo *)(pPVar9->fields)._VariantID_k__BackingField)
+        if (pIVar6 != (Il2CppMethodPointer)(pPVar9->fields)._VariantID_k__BackingField)
         goto code_?;
         if ((uVar7 & 4) != 0) {
           func_?(0x13,pPVar9);
@@ -703,13 +766,13 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_UpdateCurrentItem
       }
       else {
 code_?:
-        (*(this->klass->vtable).__unknown.methodPtr)
-                  (this,pPVar5,pMVar6,(this->klass->vtable).__unknown.method);
+        (*(code *)(this->klass->vtable).__unknown.method)
+                  (this,pPVar5,pIVar6,(this->klass->vtable).__unknown_1.methodPtr);
       }
       pPVar5 = (this->fields).currentItem;
       if (pPVar5 != (PickupItem *)0x0) {
-        cVar10 = (*(pPVar5->klass->vtable).get_CanHolster.methodPtr)
-                          (pPVar5,(pPVar5->klass->vtable).get_CanHolster.method);
+        cVar10 = (*(code *)(pPVar5->klass->vtable).get_CanHolster.method)
+                          (pPVar5,(pPVar5->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
         if (cVar10 != '\0') {
           if ((uVar7 & 1) != 0) {
             pPVar5 = (this->fields).currentItem;
@@ -722,18 +785,18 @@ code_?:
               pMVar11 = (this->fields)._.worldObjectParent;
               targetHolsterTransform = (Transform *)0x0;
               if (((pMVar11 != (MVWorldObjectClient *)0x0) &&
-                  ((TypeInfo__MVAvatar->_1).typeHierarchyDepth <=
-                   (pMVar11->klass->_1).typeHierarchyDepth)) &&
-                 ((MVAvatar__Class *)
-                  (pMVar11->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).typeHierarchyDepth - 1]
-                  == TypeInfo__MVAvatar)) {
+                  ((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar11->klass->_1).naturalAligment))
+                 && ((MVAvatar__Class *)
+                     (pMVar11->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
+                     == TypeInfo__MVAvatar)) {
                 this_00 = (MVBody *)pMVar11[1].fields.PositionChanged;
                 if ((this_00 == (MVBody *)0x0) ||
-                   (this_01 = MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
-                   this_01 == (BodyData *)0x0)) goto code_?;
+                   (this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
+                   this_01 == (MethodCall *)0x0)) goto code_?;
                 targetHolsterTransform =
-                     BodyData::BodyData_GetPartBone
-                               (this_01,BodyData_PartIndex__Enum_Holster,(MethodInfo *)0x0);
+                     (Transform *)
+                     mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::
+                     MethodCall_GetArg(this_01,8,(MethodInfo *)0x0);
               }
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
@@ -767,8 +830,8 @@ code_?:
         }
         pPVar5 = (this->fields).currentItem;
         if (pPVar5 != (PickupItem *)0x0) {
-          (*(pPVar5->klass->vtable).OnStateChanged.methodPtr)
-                    (pPVar5,newState,(pPVar5->klass->vtable).OnStateChanged.method);
+          (*(code *)(pPVar5->klass->vtable).OnStateChanged.method)
+                    (pPVar5,newState,(pPVar5->klass->vtable).OnEquip.methodPtr);
           return;
         }
       }
@@ -802,11 +865,11 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__Init_b__39_0
     return;
   }
   if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       typeHierarchyDepth <= (item->klass->_1).typeHierarchyDepth) &&
+       naturalAligment <= (item->klass->_1).naturalAligment) &&
      ((Dictionary_2_System_Object_System_Object___Class *)
       (item->klass->_1).typeHierarchy
       [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       typeHierarchyDepth - 1] ==
+       naturalAligment - 1] ==
       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
     MVPickupOwner_UpdateCurrentItem
               (this,(Dictionary_2_System_Object_System_Object_ *)item,(MethodInfo *)0x0);
@@ -859,8 +922,8 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__Init_b__39_1
     if (bVar3 == 0) {
       pPVar5 = (this->fields).currentItem;
       if (pPVar5 != (PickupItem *)0x0) {
-        (*(pPVar5->klass->vtable).TriggerEnd.methodPtr)
-                  (pPVar5,(pPVar5->klass->vtable).TriggerEnd.method);
+        (*(code *)(pPVar5->klass->vtable).TriggerEnd.method)
+                  (pPVar5,(pPVar5->klass->vtable).OnStateChanged.methodPtr);
         return;
       }
     }
@@ -868,8 +931,8 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__Init_b__39_1
       pMVar7 = (this->fields)._.worldObjectParent;
       if ((pMVar7 != (MVWorldObjectClient *)0x0) &&
          (pPVar5 = (this->fields).currentItem, pPVar5 != (PickupItem *)0x0)) {
-        (*(pPVar5->klass->vtable).TriggerBegin.methodPtr)
-                  (pPVar5,(pMVar7->fields)._.id,(pPVar5->klass->vtable).TriggerBegin.method);
+        (*(code *)(pPVar5->klass->vtable).TriggerBegin.method)
+                  (pPVar5,(pMVar7->fields)._.id,(pPVar5->klass->vtable).TriggerEnd.methodPtr);
         return;
       }
     }
@@ -911,8 +974,8 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__ctor(MVPickupOwner *this
   (this->fields).lookDirection.y = fVar2;
   (this->fields).lookDirection.z = fVar3;
   (this->fields)._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -925,96 +988,91 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs
 
 {
   pMVar1 = (this->fields)._.worldObjectParent;
-  if (pMVar1 == (MVWorldObjectClient *)0x0) {
-code_?:
-    uVar2 = func_?(&stack0xfffffff0);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    pHVar4 = (HashSet_1_System_Int32_ *)(*pcVar3)();
-    return pHVar4;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&
-                    MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-                   );
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
-    cRam_? = '\x01';
-  }
-  value = (Object *)func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
-  if (value == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (value,ExceptionArgument__Enum_obj,unaff_retaddr);
-  this_00 = (Object__Class *)func_?();
-  if (this_00 == (Object__Class *)0x0) goto code_?;
-  System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-  HashSet_1_UnityEngine_Vector3___ctor
-            ((HashSet_1_UnityEngine_Vector3_ *)this_00,
-             MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  value[1].klass = this_00;
-  func_?();
-  iVar5 = func_?();
-  pMVar6 = 
-  MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-  ;
-  if (iVar5 == 0) goto code_?;
-  uVar2 = func_?();
-  *(undefined4 *)(iVar5 + 8) = uVar2;
-  *(MethodInfo **)(iVar5 + 0x14) = pMVar6;
-  *(Object **)(iVar5 + 0x10) = value;
-  func_?();
-  uVar7 = pMVar6->parameters_count;
-  *(int *)(iVar5 + 0x20) = iVar5;
-  cVar8 = func_?();
-  if (cVar8 == '\0') {
-    if (uVar7 == 0) {
-      if (*(char *)(iVar5 + 0x38) == '\0') {
-        puVar9 = &UNK_?;
-      }
-      else {
-        cVar8 = func_?();
-        if (cVar8 == '\0') {
-          cVar8 = func_?();
-          if (cVar8 == '\0') {
-            puVar9 = &UNK_?;
+  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+      func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+      func_?(&
+                      MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                     );
+      func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass51_0);
+      cRam_? = '\x01';
+    }
+    method_00 = TypeInfo__MVWorldObjectClient____c__DisplayClass51_0;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    this_00 = (Object__Class *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>)
+    ;
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32___ctor
+              ((HashSet_1_System_Int32_ *)this_00,
+               MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    if (value != (Object *)0x0) {
+      value[1].klass = this_00;
+      func_?();
+      iVar2 = func_?();
+      pMVar3 = 
+      MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+      ;
+      *(Il2CppMethodPointer *)(iVar2 + 8) =
+           MethodInfo__MVWorldObjectClient____c__DisplayClass51_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+           ->virtualMethodPointer;
+      *(MethodInfo **)(iVar2 + 0x14) = pMVar3;
+      *(Object **)(iVar2 + 0x10) = value;
+      func_?(iVar2 + 0x10);
+      uVar4 = pMVar3->parameters_count;
+      *(int *)(iVar2 + 0x20) = iVar2;
+      cVar5 = func_?(pMVar3);
+      if (cVar5 == '\0') {
+        if (uVar4 == 0) {
+          if (*(char *)(iVar2 + 0x38) == '\0') {
+            puVar6 = &UNK_?;
           }
           else {
-            puVar9 = &UNK_?;
+            cVar5 = func_?();
+            if (cVar5 == '\0') {
+              cVar5 = func_?();
+              if (cVar5 == '\0') {
+                puVar6 = &UNK_?;
+              }
+              else {
+                puVar6 = &UNK_?;
+              }
+            }
+            else {
+              cVar5 = func_?();
+              puVar6 = &UNK_?;
+              if (cVar5 != '\0') {
+                puVar6 = &UNK_?;
+              }
+            }
           }
         }
         else {
-          cVar8 = func_?();
-          puVar9 = &UNK_?;
-          if (cVar8 != '\0') {
-            puVar9 = &UNK_?;
-          }
+          puVar6 = *(undefined **)(iVar2 + 8);
+          *(undefined4 *)(iVar2 + 0x20) = *(undefined4 *)(iVar2 + 0x10);
         }
       }
-      goto code_?;
-    }
-  }
-  else {
-    if (pMVar6->indirect_call_via_invokers != 0) {
-      puVar9 = &UNK_?;
-      if (uVar7 != 1) {
-        puVar9 = &UNK_?;
+      else if (uVar4 == 1) {
+        puVar6 = &UNK_?;
       }
-      goto code_?;
-    }
-    if (uVar7 == 1) {
-      puVar9 = &UNK_?;
-      goto code_?;
+      else {
+        puVar6 = *(undefined **)(iVar2 + 8);
+        *(undefined4 *)(iVar2 + 0x20) = *(undefined4 *)(iVar2 + 0x10);
+      }
+      *(undefined **)(iVar2 + 0xc) = puVar6;
+      *(undefined **)(iVar2 + 0x1c) = &UNK_?;
+      (*(code *)(pMVar1->klass->vtable).TraverseRecursiveTail.method)();
+      return (HashSet_1_System_Int32_ *)(pMVar1->fields)._.id;
     }
   }
-  puVar9 = *(undefined **)(iVar5 + 8);
-  *(undefined4 *)(iVar5 + 0x20) = *(undefined4 *)(iVar5 + 0x10);
-code_?:
-  *(undefined **)(iVar5 + 0xc) = puVar9;
-  *(undefined **)(iVar5 + 0x1c) = &UNK_?;
-  (*(pMVar1->klass->vtable).TraverseRecursiveTail_1.methodPtr)();
-  return (HashSet_1_System_Int32_ *)value[1].klass;
+  uVar7 = func_?(&stack0xfffffff0);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  pHVar9 = (HashSet_1_System_Int32_ *)(*pcVar8)();
+  return pHVar9;
 }
 
 
@@ -1043,8 +1101,8 @@ bool Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_InGunMode
       return bVar2;
     }
     if ((pPVar1->fields)._IsHolstered_k__BackingField == 0) {
-      bVar2 = (*(pPVar1->klass->vtable).get_ActivateGunModeOnEquip.methodPtr)
-                        (pPVar1,(pPVar1->klass->vtable).get_ActivateGunModeOnEquip.method);
+      bVar2 = (*(code *)(pPVar1->klass->vtable).get_ActivateGunModeOnEquip.method)
+                        (pPVar1,(pPVar1->klass->vtable).get_CanHolster.methodPtr);
       return bVar2;
     }
   }
@@ -1058,11 +1116,12 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_LookDirection
                     (Vector3 *__return_storage_ptr__,MVPickupOwner *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)func_?(auStack_2,&(this->fields).lookDirection,0);
-  uVar3 = *puVar1;
-  fVar4 = *(float *)(puVar1 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar3;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar3 >> 0x20);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_2,(this->fields).lookDirection,(MethodInfo *)0x0);
+  fVar3 = pVVar1->y;
+  fVar4 = pVVar1->z;
+  __return_storage_ptr__->x = pVVar1->x;
+  __return_storage_ptr__->y = fVar3;
   __return_storage_ptr__->z = fVar4;
   return __return_storage_ptr__;
 }
@@ -1074,7 +1133,7 @@ bool Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_PickupItemIsInHand
                (MVPickupOwner *this,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pPStack_2 = (this->fields).currentItem;
   if (pPStack_2 == (PickupItem *)0x0) {
     uVar3 = func_?(&puStack_4);
@@ -1086,8 +1145,8 @@ bool Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_PickupItemIsInHand
   if ((pPStack_2->fields)._IsHolstered_k__BackingField != 0) {
     return 0;
   }
-  pMStack_1 = (pPStack_2->klass->vtable).__unknown.method;
-  iVar7 = (*(pPStack_2->klass->vtable).__unknown.methodPtr)();
+  pIStack_1 = (pPStack_2->klass->vtable).CanFire.methodPtr;
+  iVar7 = (*(code *)(pPStack_2->klass->vtable).__unknown.method)();
   return iVar7 != 5;
 }
 

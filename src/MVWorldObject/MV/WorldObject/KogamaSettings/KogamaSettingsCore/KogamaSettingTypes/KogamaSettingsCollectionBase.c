@@ -48,18 +48,12 @@ KogamaSettingsCollectionBase::KogamaSettingsCollectionBase_CopyWithOutChildren
     cRam_? = '\x01';
   }
   key = (this->fields)._.key;
-  pKVar1 = (KogamaSettingsCollectionBase *)
-           func_?(
-                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                          );
-  if (pKVar1 != (KogamaSettingsCollectionBase *)0x0) {
-    KogamaSettingsCollectionBase__ctor(pKVar1,key,parent,(MethodInfo *)0x0);
-    return pKVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pKVar1 = (KogamaSettingsCollectionBase *)(*pcVar2)();
-  return pKVar1;
+  this_00 = (KogamaSettingsCollectionBase *)
+            func_?(
+                           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+                           );
+  KogamaSettingsCollectionBase__ctor(this_00,key,parent,(MethodInfo *)0x0);
+  return this_00;
 }
 
 
@@ -98,32 +92,27 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
                               );
-  if (this_00 !=
-      (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-       *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dictionary__
-              );
-    method_00 = (MethodInfo *)&(this->fields).children;
-    (this->fields).children = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields)._._Parent_k__BackingField = kogamaSettingsCollection;
-    func_?(&(this->fields)._._Parent_k__BackingField,kogamaSettingsCollection);
-    (this->fields)._.key = key;
-    func_?(&this->fields,key);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dictionary__
+            );
+  method_00 = (MethodInfo *)&(this->fields).children;
+  (this->fields).children =
+       (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+        *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields)._._Parent_k__BackingField = kogamaSettingsCollection;
+  func_?(&(this->fields)._._Parent_k__BackingField,kogamaSettingsCollection);
+  (this->fields)._.key = key;
+  func_?(&this->fields,key);
   return;
 }
 

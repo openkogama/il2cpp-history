@@ -16,8 +16,8 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c__DisplayClass13_0::
   if ((pMVar2 != (MaterialPurchasePopup *)0x0) &&
      (pTVar3 = (pMVar2->fields).price, pTVar3 != (Text *)0x0)) {
     s = (String *)
-        (*(pTVar3->klass->vtable).get_text.methodPtr)
-                  (pTVar3,(pTVar3->klass->vtable).get_text.method);
+        (*(code *)(pTVar3->klass->vtable).get_text.method)
+                  (pTVar3,(pTVar3->klass->vtable).set_text.methodPtr);
     iVar4 = mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
     if (x != (IModalPopupCreator *)0x0) {
       func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,iVar1,iVar4);

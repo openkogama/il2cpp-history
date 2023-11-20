@@ -31,18 +31,12 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping+ControlBitArray::
     cRam_? = '\x01';
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  if (this_00 != (BitArray *)0x0) {
-    mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x35,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).controlDown = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x35,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).controlDown = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -66,7 +60,6 @@ bool Assembly-CSharp.dll::DesktopDefaultKeyboardMapping+ControlBitArray::
     ppAStack_4 = &TypeInfo__System__ArgumentOutOfRangeException;
     puStack_5 = (undefined *)func_?();
     this_00 = (ArgumentOutOfRangeException *)func_?();
-    func_?(this_00);
     message = (String *)func_?(&StringLiteral_Index_was_out_of_range__Must_be_);
     paramName = (String *)func_?(&StringLiteral_index);
     mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_3
@@ -115,7 +108,6 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping+ControlBitArray::
     ppAStack_4 = &TypeInfo__System__ArgumentOutOfRangeException;
     puStack_5 = (undefined *)func_?();
     this_00 = (ArgumentOutOfRangeException *)func_?();
-    func_?(this_00);
     message = (String *)func_?(&StringLiteral_Index_was_out_of_range__Must_be_);
     paramName = (String *)func_?(&StringLiteral_index);
     mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_3

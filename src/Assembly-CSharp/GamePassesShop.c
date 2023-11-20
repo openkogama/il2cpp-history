@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ActivateBar
         }
         pTVar4 = (this->fields).progressHeader;
         if (pTVar4 != (Text *)0x0) {
-          (*(pTVar4->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar4->klass->vtable).set_text.method)();
           pPVar5 = (ProgressBarAndroid *)(this->fields).progressBar;
           if (pPVar5 != (ProgressBarAndroid *)0x0) {
             ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar5,1.0,(MethodInfo *)0x0);
@@ -272,14 +272,14 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
       return 0;
     }
     unaff_EDI = pKVar7->klass;
-    if (((unaff_EDI->_1).typeHierarchyDepth <
+    if (((unaff_EDI->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-         ->_1).typeHierarchyDepth) ||
+         ->_1).naturalAligment) ||
        ((unaff_EDI->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-         ->_1).typeHierarchyDepth - 1] !=
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
@@ -290,19 +290,19 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
       spawnRoleCreator = (MVAvatarSpawnRoleCreator *)0x0;
       if (pKVar7[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
         method_00 = (MethodInfo *)&UNK_?;
-        pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                           ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+        pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                             &stack0xffffffa0,
-                            (Dictionary_2_System_Object_System_Object_ *)pKVar7[1].klass,
+                            (Dictionary_2_System_UInt32_System_Object_ *)pKVar7[1].klass,
                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                            );
         pDStack_9 = &DStack_6;
         uStack_10 = 0;
-        DStack_6._dictionary = pDVar8->_dictionary;
+        DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
         DStack_6._version = pDVar8->_version;
         DStack_6._index = pDVar8->_index;
-        DStack_6._current.key = (pDVar8->_current).key;
+        DStack_6._current.key = (Object *)(pDVar8->_current).key;
         DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
         uStack_1 = 1;
         while( true ) {
@@ -314,7 +314,7 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
                             );
           if (bVar11 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&DStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
@@ -342,7 +342,7 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
           iStack_15 = *piStack_14;
           uVar16 = 0;
           uStack_17 = 0;
-          uVar18 = *(ushort *)(iStack_15 + 0xb2);
+          uVar18 = *(ushort *)(iStack_15 + 0xb6);
           pIStack_12 = (IAttributeSetting__Class *)(uint)uVar18;
           if (uVar18 != 0) {
             do {
@@ -350,8 +350,8 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                  ) {
                 puVar19 = (undefined4 *)
-                         (*(int *)(*(int *)(iStack_15 + 0x58) + 4 + (uint)uVar16 * 8) * 8 + 0xbc +
-                         iStack_15);
+                         (iStack_15 +
+                         (*(int *)(*(int *)(iStack_15 + 0x58) + 4 + (uint)uVar16 * 8) + 0x18) * 8);
                 goto code_?;
               }
               uVar16 = uVar16 + 1;
@@ -598,13 +598,14 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CreateUnlockedAccessIte
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_02 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            GamePassesShop_SortOutNonAccessItemsInShopData(this,tierShopData,(MethodInfo *)0x0);
+  this_02 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)GamePassesShop_SortOutNonAccessItemsInShopData(this,tierShopData,(MethodInfo *)0x0);
   if (this_02 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+            StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+            Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                       (this_02,
                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Count__
                       );
@@ -677,13 +678,14 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CreateUnlockedItemsInfo
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_02 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            GamePassesShop_SortOutNonLootItemsInShopData(this,tierShopData,(MethodInfo *)0x0);
+  this_02 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)GamePassesShop_SortOutNonLootItemsInShopData(this,tierShopData,(MethodInfo *)0x0);
   if (this_02 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+            StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+            Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                       (this_02,
                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Count__
                       );
@@ -811,8 +813,9 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_DeactivateBar
       gamePassRewardsActivated == 0)) {
     pTVar1 = (this->fields).progressHeader;
     if (pTVar1 == (Text *)0x0) goto code_?;
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,StringLiteral_Progress_Locked,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,StringLiteral_Progress_Locked,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pPVar2 = (this->fields).progressBar;
     if (pPVar2 == (ProgressBar *)0x0) goto code_?;
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -900,8 +903,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_DelayedInitialize
        GamePointAmountManager::GamePointAmountManager_GetTotalGamePointAmount((MethodInfo *)0x0);
   pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar3,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     GamePassesShop_UpdateProgressBar
               (this,(uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
     GamePassesShop_AddTierContent(this,(uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0)
@@ -935,16 +938,16 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_DelayedInitialize
               pGVar7 = (this->fields).purchaseButtonObject;
               if (pGVar7 == (GameObject *)0x0) goto code_?;
               pGVar7 = (GameObject *)
-                        mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                  ((Void *)pGVar7,(MethodInfo *)0x0);
+                        UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                        UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar7,(MethodInfo *)0x0);
               if (pGVar7 == (GameObject *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar7,0,(MethodInfo *)0x0);
               pGVar7 = (this->fields).freeTryUI;
               if (pGVar7 == (GameObject *)0x0) goto code_?;
               pGVar7 = (GameObject *)
-                        mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                                  ((Void *)pGVar7,(MethodInfo *)0x0);
+                        UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                        UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar7,(MethodInfo *)0x0);
               if (pGVar7 == (GameObject *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar7,0,(MethodInfo *)0x0);
@@ -1113,12 +1116,6 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_Exit
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -1176,222 +1173,237 @@ Assembly-CSharp.dll::GamePassesShop::GamePassesShop_GetSortedSpawnRoles
   if ((this_00 != (MVNetworkGame *)0x0) &&
      (this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(this_00,(MethodInfo *)0x0)
      , this_01 != (MVWorldObjectClientManager *)0x0)) {
-    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-              (this_01,WorldObjectType__Enum_AvatarSpawnRoleCreator,(MethodInfo *)0x0);
     RVar1 = (RegexCharClass_SingleRange)
-            func_?(TypeInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>);
-    in_stack_2 = unaff_ESI;
+            MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                      (this_01,WorldObjectType__Enum_AvatarSpawnRoleCreator,(MethodInfo *)0x0);
+    this_02 = (RegexCharClass_SingleRange)
+              func_?(TypeInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>
+                             );
+    RVar2 = this_02;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__List__);
+    this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>
+                             );
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
+               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__List__);
+    index.First = 0;
+    index.Last = 0;
+    in_stack_3 = unaff_ESI;
     if (RVar1 != (RegexCharClass_SingleRange)0x0) {
-      spawnRoleCreator = RVar1;
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)RVar1,
-                 MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__List__);
-      this_06 = (RegexCharClass_SingleRange)&UNK_?;
-      this_07 = TypeInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>;
-      this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                func_?();
-      in_stack_2 = this_06;
-      if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-        LowLevelList_1_System_Object___ctor
-                  ((LowLevelList_1_System_Object_ *)this_02,
-                   MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__List__)
+      for (; (int)index < (int)*(char **)((int)RVar1 + 0xc);
+          index = (RegexCharClass_SingleRange)((int)index + 1)) {
+        in_stack_3 = index;
+        this_07 = (RegexCharClass_SingleRange)
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
         ;
-        iVar3 = 0;
-        in_stack_2 = this_06;
-        if (this_07 != (List_1_MVAvatarSpawnRoleCreator___Class *)0x0) {
-          do {
-            if ((int)(this_07->_0).namespaze <= iVar3) {
-              this_04 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           RVar1,(int32_t)index,
+                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                          );
+        RVar1 = this_07;
+        if (((RVar4 != (RegexCharClass_SingleRange)0x0) &&
+            (in_stack_3 = *(RegexCharClass_SingleRange *)RVar4,
+            (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
+            *(byte *)((int)in_stack_3 + 0xb8))) &&
+           (*(MVAvatarSpawnRoleCreator__Class **)
+             (*(int *)((int)in_stack_3 + 100) + -4 +
+             (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment * 4) ==
+            TypeInfo__MVAvatarSpawnRoleCreator)) {
+          RVar1 = (RegexCharClass_SingleRange)&UNK_?;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             this_07,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                            );
+          in_stack_3 = RVar2;
+          if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          this = (GamePassesShop *)&UNK_?;
+          iVar5 = func_?();
+          if ((iVar5 == 0) ||
+             (this_04 = (MVAvatarSpawnRoleCreator *)
+                        func_?(in_stack_3,TypeInfo__MVAvatarSpawnRoleCreator),
+             this_04 == (MVAvatarSpawnRoleCreator *)0x0)) goto code_?;
+          GVar6 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
+                            (this_04,(MethodInfo *)0x0);
+          gamePassTierToDisplay._0_1_ = (undefined1)RVar2.First;
+          RVar2 = this_07;
+          if ((char)GVar6 == (undefined1)gamePassTierToDisplay) {
+            in_stack_3 =
+                 mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            RVar1,(int32_t)index,
+                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                           );
+            if (this_02 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            item = (Object *)0x0;
+            RVar2 = this_07;
+            if (in_stack_3 != (RegexCharClass_SingleRange)0x0) {
+              RVar1 = (RegexCharClass_SingleRange)&UNK_?;
+              RVar2 = in_stack_3;
+              item = (Object *)func_?(in_stack_3,TypeInfo__MVAvatarSpawnRoleCreator)
+              ;
+              if (item == (Object *)0x0) goto code_?;
+            }
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)this_02,item,
+                       MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Add_MVAvatarSpawnRoleCreator_
+                      );
+          }
+        }
+        unaff_ESI = in_stack_3;
+      }
+      this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+      in_stack_3 = unaff_ESI;
+      if (RVar2 != (RegexCharClass_SingleRange)0x0) {
 code_?:
-              do {
-                if (*(int32_t *)((int)spawnRoleCreator + 0xc) <= (int)this_04) {
-                  return (List_1_MVAvatarSpawnRoleCreator_ *)this_02;
-                }
-                for (iVar3 = 0; iVar3 < (this_02->fields)._size; iVar3 = iVar3 + 1) {
-                  RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)spawnRoleCreator,(int32_t)this_04,
-                                     MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                    );
-                  in_stack_2 = this_06;
-                  if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  this_06 = (RegexCharClass_SingleRange)
-                            MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
-                                      ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
-                  RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (this_02,iVar3,
-                                     MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                    );
-                  in_stack_2 = this_06;
-                  if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  MVar4 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
-                                    ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
-                  if ((int)this_06 < (int)MVar4) {
-                    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                        *)spawnRoleCreator,(int32_t)this_04,
-                                       MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                      );
-                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                    List_1_System_Object__Insert
-                              ((List_1_System_Object_ *)this_02,iVar3,(Object *)RVar1,
-                               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Insert_int__MVAvatarSpawnRoleCreator_
+        do {
+          if ((int)*(char **)((int)RVar2 + 0xc) <= (int)this_05) {
+            return (List_1_MVAvatarSpawnRoleCreator_ *)this_03;
+          }
+          iVar5 = 0;
+          in_stack_3 = unaff_ESI;
+          if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          break;
+          for (; iVar5 < (this_03->fields)._size; iVar5 = iVar5 + 1) {
+            RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               RVar2,(int32_t)this_05,
+                               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
                               );
-                    this_04 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              ((int)&this_04->klass + 1);
-                    goto code_?;
-                  }
-                  RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)spawnRoleCreator,(int32_t)this_04,
-                                     MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                    );
-                  in_stack_2 = this_06;
-                  if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  in_stack_2 =
-                       (RegexCharClass_SingleRange)
-                       MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
-                                 ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
-                  this_06 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (this_02,iVar3,
-                                       MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                      );
-                  if (this_06 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            &UNK_?;
-                  RVar1 = (RegexCharClass_SingleRange)
-                          MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
-                                    ((MVAvatarSpawnRoleCreator *)this_06,(MethodInfo *)0x0);
-                  if (this_06 == RVar1) {
-                    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (this_04,(int32_t)this_04,
-                                       MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                      );
-                    iVar5 = GamePassesShop_CalculateTotalSpawnRoleCost
-                                      (this,(MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
-                    spawnRoleCreator =
-                         mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (this_05,iVar3,
-                                    MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                   );
-                    this_06 = (RegexCharClass_SingleRange)&UNK_?;
-                    this_02 = this_05;
-                    iVar6 = GamePassesShop_CalculateTotalSpawnRoleCost
-                                      (this,(MVAvatarSpawnRoleCreator *)spawnRoleCreator,
-                                       (MethodInfo *)0x0);
-                    if (iVar6 < iVar5) {
-                      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                              RegularExpressions::RegexCharClass+SingleRange]::
-                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                          *)spawnRoleCreator,(int32_t)this_04,
-                                         MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
-                                        );
-                      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                      List_1_System_Object__Insert
-                                ((List_1_System_Object_ *)this_02,iVar3,(Object *)RVar1,
-                                 MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Insert_int__MVAvatarSpawnRoleCreator_
+            in_stack_3 = unaff_ESI;
+            if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            unaff_ESI = (RegexCharClass_SingleRange)
+                        MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+                                  ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
+            RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (this_03,iVar5,
+                               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                              );
+            in_stack_3 = unaff_ESI;
+            if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            MVar7 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+                              ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
+            if ((int)unaff_ESI < (int)MVar7) {
+              RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)RVar2,(int32_t)this_05,
+                                 MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
                                 );
-                      this_04 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )((int)&this_04->klass + 1);
-                      goto code_?;
-                    }
-                  }
-                }
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Insert
+                        ((List_1_System_Object_ *)this_03,iVar5,(Object *)RVar1,
+                         MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Insert_int__MVAvatarSpawnRoleCreator_
+                        );
+              this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        ((int)&this_05->klass + 1);
+              goto code_?;
+            }
+            RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               RVar2,(int32_t)this_05,
+                               MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                              );
+            in_stack_3 = unaff_ESI;
+            if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            in_stack_3 =
+                 (RegexCharClass_SingleRange)
+                 MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+                           ((MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
+            unaff_ESI = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        RegularExpressions::RegexCharClass+SingleRange]::
+                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                  (this_03,iVar5,
+                                   MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                                  );
+            if (unaff_ESI == (RegexCharClass_SingleRange)0x0) goto code_?;
+            this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      &UNK_?;
+            RVar1 = (RegexCharClass_SingleRange)
+                    MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+                              ((MVAvatarSpawnRoleCreator *)unaff_ESI,(MethodInfo *)0x0);
+            if (unaff_ESI == RVar1) {
+              RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                (this_05,(int32_t)this_05,
+                                 MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                                );
+              iVar8 = GamePassesShop_CalculateTotalSpawnRoleCost
+                                (this,(MVAvatarSpawnRoleCreator *)RVar1,(MethodInfo *)0x0);
+              RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                (this_06,iVar5,
+                                 MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                                );
+              unaff_ESI = (RegexCharClass_SingleRange)&UNK_?;
+              this_03 = this_06;
+              iVar9 = GamePassesShop_CalculateTotalSpawnRoleCost
+                                (this,(MVAvatarSpawnRoleCreator *)RVar2,(MethodInfo *)0x0);
+              if (iVar9 < iVar8) {
                 RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                   ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                    *)spawnRoleCreator,(int32_t)this_04,
+                                    *)RVar2,(int32_t)this_05,
                                    MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
                                   );
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                List_1_System_Object__Add
-                          ((List_1_System_Object_ *)this_02,(Object *)RVar1,
-                           MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Add_MVAvatarSpawnRoleCreator_
+                List_1_System_Object__Insert
+                          ((List_1_System_Object_ *)this_03,iVar5,(Object *)RVar1,
+                           MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Insert_int__MVAvatarSpawnRoleCreator_
                           );
-                this_04 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          ((int)&this_04->klass + 1);
-              } while( true );
-            }
-            RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this_07,iVar3,
-                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                              );
-            if (((RVar7 != (RegexCharClass_SingleRange)0x0) &&
-                (this_06 = *(RegexCharClass_SingleRange *)RVar7,
-                (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth <=
-                *(byte *)((int)this_06 + 0xb4))) &&
-               (*(MVAvatarSpawnRoleCreator__Class **)
-                 (*(int *)((int)this_06 + 100) + -4 +
-                 (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth * 4) ==
-                TypeInfo__MVAvatarSpawnRoleCreator)) {
-              this_06 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                    *)this_07,iVar3,
-                                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                                  );
-              in_stack_2 = this_06;
-              if (this_06 == (RegexCharClass_SingleRange)0x0) break;
-              iVar8 = func_?(this_06,TypeInfo__MVAvatarSpawnRoleCreator);
-              in_stack_2 = this_06;
-              if ((iVar8 == 0) ||
-                 (this_03 = (MVAvatarSpawnRoleCreator *)
-                            func_?(this_06,TypeInfo__MVAvatarSpawnRoleCreator),
-                 in_stack_2 = this_06, this_03 == (MVAvatarSpawnRoleCreator *)0x0))
-              goto code_?;
-              GVar9 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
-                                (this_03,(MethodInfo *)0x0);
-              if ((char)GVar9 == (undefined1)gamePassTierToDisplay) {
-                this_06 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)this_07,iVar3,
-                                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                                    );
-                item = (Object *)0x0;
-                if ((this_06 != (RegexCharClass_SingleRange)0x0) &&
-                   (item = (Object *)func_?(this_06,TypeInfo__MVAvatarSpawnRoleCreator),
-                   in_stack_2 = this_06, item == (Object *)0x0)) goto code_?;
-                mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                List_1_System_Object__Add
-                          ((List_1_System_Object_ *)RVar1,item,
-                           MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Add_MVAvatarSpawnRoleCreator_
-                          );
+                this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          ((int)&this_05->klass + 1);
+                goto code_?;
               }
             }
-            iVar3 = iVar3 + 1;
-          } while( true );
-        }
+          }
+          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             RVar2,(int32_t)this_05,
+                             MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
+                            );
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)this_03,(Object *)RVar1,
+                     MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__Add_MVAvatarSpawnRoleCreator_
+                    );
+          this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    ((int)&this_05->klass + 1);
+        } while( true );
       }
     }
   }
 code_?:
   func_?();
 code_?:
-  func_?(in_stack_2,TypeInfo__MVAvatarSpawnRoleCreator);
+  func_?(in_stack_3,TypeInfo__MVAvatarSpawnRoleCreator);
   pcVar10 = (code *)swi(3);
   pLVar11 = (List_1_MVAvatarSpawnRoleCreator_ *)(*pcVar10)();
   return pLVar11;
@@ -1572,32 +1584,34 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_HandlePurchase
     if ((pPVar1 != (PlayerPlanetData *)0x0) &&
        (this_00 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
        this_00 != (PlayerTierStateCalculator *)0x0)) {
-      GVar2 = CONCAT31((int3)((uint)in_stack_3 >> 8),(pPVar1->fields).gamePassTier);
+      playerGamePassTier =
+           CONCAT31((int3)((uint)in_stack_2 >> 8),(pPVar1->fields).gamePassTier);
+      method_00 = (MethodInfo *)&UNK_?;
       this_01 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator::
                 PlayerTierStateCalculator_GetTierPricingState
-                          (this_00,playerGamePoints,GVar2,(MethodInfo *)0x0);
+                          (this_00,playerGamePoints,playerGamePassTier,(MethodInfo *)0x0);
       if (this_01 !=
           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
       {
-        method_00 = (MethodInfo *)&UNK_?;
-        pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                            ((Dictionary_2_System_ByteEnum_System_Object_ *)this_01,
-                            CONCAT31((int3)(GVar2 >> 8),(this->fields).gamePassTierDisplayed),
+                            CONCAT31((int3)(playerGamePassTier >> 8),
+                                     (this->fields).gamePassTierDisplayed),
                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                            );
-        if (pOVar4 != (Object *)0x0) {
-          pOVar5 = pOVar4[2].klass;
+        if (pOVar3 != (Object *)0x0) {
+          pOVar4 = pOVar3[2].klass;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (this_02 != (MVNetworkGame *)0x0) {
-            pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
-            if ((pMVar6 != (MVLocalPlayer *)0x0) &&
-               (pUVar7 = (pMVar6->fields)._._UserProfileData_k__BackingField,
-               pUVar7 != (UserProfileData *)0x0)) {
-              if ((pUVar7->fields).Gold < (int)pOVar5) {
-                bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession
+            pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
+            if ((pMVar5 != (MVLocalPlayer *)0x0) &&
+               (pUVar6 = (pMVar5->fields)._._UserProfileData_k__BackingField,
+               pUVar6 != (UserProfileData *)0x0)) {
+              if ((pUVar6->fields).Gold < (int)pOVar4) {
+                bVar7 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession
                                   ((MethodInfo *)0x0);
-                if (bVar8 != 0) {
+                if (bVar7 != 0) {
                   GamePassesShop_ShowTouristInformationPopup(this,(MethodInfo *)0x0);
                   return;
                 }
@@ -1613,50 +1627,48 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_HandlePurchase
                   func_?(&TypeInfo__GamePassesShop____c__DisplayClass76_0);
                   cRam_? = '\x01';
                 }
-                pOVar4 = (Object *)func_?();
-                if (pOVar4 != (Object *)0x0) {
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                            (pOVar4,ExceptionArgument__Enum_obj,method_00);
-                  original = (this->fields).tierPurchaseGoldErrorPopupPrefab;
-                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__UnityEngine__Object);
-                  }
-                  pOVar5 = (Object__Class *)
-                           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                     ((Object *)original,
-                                      TierPurchaseNotEnoughGoldErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchaseNotEnoughGoldErrorPopup>_TierPurchaseNotEnoughGoldErrorPopup_
-                                     );
-                  pOVar4[1].klass = pOVar5;
-                  func_?(pOVar4 + 1,pOVar5);
-                  pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                  pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                pOVar3 = (Object *)func_?();
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                          (pOVar3,ExceptionArgument__Enum_obj,method_00);
+                original = (this->fields).tierPurchaseGoldErrorPopupPrefab;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__UnityEngine__Object);
+                }
+                pOVar4 = (Object__Class *)
+                         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                   ((Object *)original,
+                                    TierPurchaseNotEnoughGoldErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchaseNotEnoughGoldErrorPopup>_TierPurchaseNotEnoughGoldErrorPopup_
+                                   );
+                if (pOVar3 != (Object *)0x0) {
+                  pOVar3[1].klass = pOVar4;
+                  func_?(pOVar3 + 1,pOVar4);
+                  root = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+                  pEVar8 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                            func_?(
                                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                           );
-                  if (pEVar10 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              ((UnityAction_2_System_Object_System_Object_ *)pEVar10,pOVar4,
-                               MethodInfo__GamePassesShop____c__DisplayClass76_0___ShowPurchaseGoldErrorPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                               ,(MethodInfo *)0x0);
-                    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                        cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-                    }
-                    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                    ExecuteEvents_ExecuteHierarchy
-                              (pGVar9,(BaseEventData *)0x0,pEVar10,
-                               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                              );
-                    if (pOVar4[1].klass != (Object__Class *)0x0) {
-                      TierPurchaseNotEnoughGoldErrorPopup::
-                      TierPurchaseNotEnoughGoldErrorPopup_Initialize
-                                ((TierPurchaseNotEnoughGoldErrorPopup *)pOVar4[1].klass,
-                                 (uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
-                      return;
-                    }
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                            ((UnityAction_2_System_Object_System_Object_ *)pEVar8,pOVar3,
+                             MethodInfo__GamePassesShop____c__DisplayClass76_0___ShowPurchaseGoldErrorPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                             ,(MethodInfo *)0x0);
+                  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+                  }
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                  ExecuteEvents_ExecuteHierarchy
+                            (root,(BaseEventData *)0x0,pEVar8,
+                             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                            );
+                  if (pOVar3[1].klass != (Object__Class *)0x0) {
+                    TierPurchaseNotEnoughGoldErrorPopup::
+                    TierPurchaseNotEnoughGoldErrorPopup_Initialize
+                              ((TierPurchaseNotEnoughGoldErrorPopup *)pOVar3[1].klass,
+                               (uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -1674,65 +1686,59 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_HandlePurchase
                                   MethodInfo__GamePassesShop____c__DisplayClass75_0___ShowPurchaseConfirmPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                  );
                   func_?(&TypeInfo__GamePassesShop____c__DisplayClass75_0);
-                  method_00 = (MethodInfo *)&UNK_?;
                   func_?(&TypeInfo__UnityEngine__Events__UnityAction);
                   cRam_? = '\x01';
                 }
-                pOVar4 = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass75_0);
-                if (pOVar4 != (Object *)0x0) {
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                            (pOVar4,ExceptionArgument__Enum_obj,method_00);
-                  original_00 = (this->fields).tierPurchasePopupPrefab;
-                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__UnityEngine__Object);
-                  }
-                  pOVar5 = (Object__Class *)
-                           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                     ((Object *)original_00,
-                                      TierPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchasePopup>_TierPurchasePopup_
-                                     );
-                  pOVar4[1].klass = pOVar5;
-                  func_?(pOVar4 + 1,pOVar5);
-                  pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                  pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                pOVar3 = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass75_0);
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                          (pOVar3,ExceptionArgument__Enum_obj,method_00);
+                original_00 = (this->fields).tierPurchasePopupPrefab;
+                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?(TypeInfo__UnityEngine__Object);
+                }
+                pOVar9 = (Object__Class *)
+                         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                   ((Object *)original_00,
+                                    TierPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchasePopup>_TierPurchasePopup_
+                                   );
+                if (pOVar3 != (Object *)0x0) {
+                  pOVar3[1].klass = pOVar9;
+                  func_?(pOVar3 + 1,pOVar9);
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+                  pEVar8 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                            func_?(
                                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                           );
-                  if (pEVar10 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              ((UnityAction_2_System_Object_System_Object_ *)pEVar10,pOVar4,
-                               MethodInfo__GamePassesShop____c__DisplayClass75_0___ShowPurchaseConfirmPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                               ,(MethodInfo *)0x0);
-                    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                        cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-                    }
-                    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                    ExecuteEvents_ExecuteHierarchy
-                              (pGVar9,(BaseEventData *)0x0,pEVar10,
-                               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                              );
-                    pOVar5 = pOVar4[1].klass;
-                    GVar2 = CONCAT31((int3)((uint)pGVar9 >> 8),(this->fields).gamePassTierDisplayed
-                                     );
-                    price = TypeInfo__UnityEngine__Events__UnityAction;
-                    this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                    if (this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                      NavMesh_OnNavMeshPreUpdate__ctor
-                                (this_03,(Object *)this,
-                                 MethodInfo__GamePassesShop__OnSuccessfulPurchase__,
-                                 (MethodInfo *)0x0);
-                      if (pOVar5 != (Object__Class *)0x0) {
-                        TierPurchasePopup::TierPurchasePopup_Initialize
-                                  ((TierPurchasePopup *)pOVar5,GVar2,(int32_t)price,
-                                   (UnityAction *)this_03,(MethodInfo *)0x0);
-                        return;
-                      }
-                    }
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                            ((UnityAction_2_System_Object_System_Object_ *)pEVar8,pOVar3,
+                             MethodInfo__GamePassesShop____c__DisplayClass75_0___ShowPurchaseConfirmPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                             ,(MethodInfo *)0x0);
+                  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
+                      cctor_finished_or_no_cctor == 0) {
+                    pEVar8 = (ExecuteEvents_EventFunction_1_System_Object_ *)&UNK_?;
+                    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+                  }
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                  ExecuteEvents_ExecuteHierarchy
+                            ((GameObject *)0x0,(BaseEventData *)0x0,pEVar8,
+                             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                            );
+                  pOVar9 = pOVar3[1].klass;
+                  tierToPurchase = &UNK_?;
+                  this_03 = (NavMesh_OnNavMeshPreUpdate *)
+                            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                  NavMesh_OnNavMeshPreUpdate__ctor
+                            (this_03,(Object *)this,
+                             MethodInfo__GamePassesShop__OnSuccessfulPurchase__,(MethodInfo *)0x0);
+                  if (pOVar9 != (Object__Class *)0x0) {
+                    TierPurchasePopup::TierPurchasePopup_Initialize
+                              ((TierPurchasePopup *)pOVar9,(GamePassTier__Enum)tierToPurchase,
+                               (int32_t)pOVar4,(UnityAction *)this_03,(MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -1743,8 +1749,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_HandlePurchase
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1767,15 +1773,17 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_HandlePurchaseButtonVis
     pGVar2 = (this->fields).purchaseButtonObject;
     if ((pGVar2 != (GameObject *)0x0) &&
        (pGVar2 = (GameObject *)
-                 mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                           ((Void *)pGVar2,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
+                 UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                 UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+       pGVar2 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,0,(MethodInfo *)0x0);
       pGVar2 = (this->fields).freeTryUI;
       if ((pGVar2 != (GameObject *)0x0) &&
          (pGVar2 = (GameObject *)
-                   mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                             ((Void *)pGVar2,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
+                   UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                   UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+         pGVar2 != (GameObject *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,0,(MethodInfo *)0x0);
         GamePassesShop_UpdateTierCostTets(this,(MethodInfo *)0x0);
@@ -1808,7 +1816,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_Initialize
                      (StringLiteral_Game_Tier_,pSVar3,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
     IStack_1.m_value = (int32_t)pSVar3;
-    (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
     (this->fields).gamePassTierDisplayed = (undefined1)gamePassTierToDisplay;
     return;
   }
@@ -1853,17 +1861,16 @@ bool Assembly-CSharp.dll::GamePassesShop::GamePassesShop_IsTierItemALootItem
     return 0;
   }
   pMVar1 = item->klass;
-  if (((TypeInfo__MVPickupItemBase->_1).typeHierarchyDepth <= (pMVar1->_1).typeHierarchyDepth) &&
+  if (((TypeInfo__MVPickupItemBase->_1).naturalAligment <= (pMVar1->_1).naturalAligment) &&
      ((MVPickupItemBase__Class *)
-      (pMVar1->_1).typeHierarchy[(TypeInfo__MVPickupItemBase->_1).typeHierarchyDepth - 1] ==
+      (pMVar1->_1).typeHierarchy[(TypeInfo__MVPickupItemBase->_1).naturalAligment - 1] ==
       TypeInfo__MVPickupItemBase)) {
     return 1;
   }
-  if (((TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth <=
-       (pMVar1->_1).typeHierarchyDepth) &&
-     ((MVWorldObjectSpawnerVehicle__Class *)
-      (pMVar1->_1).typeHierarchy[(TypeInfo__MVWorldObjectSpawnerVehicle->_1).typeHierarchyDepth - 1]
-      == TypeInfo__MVWorldObjectSpawnerVehicle)) {
+  if (((TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment <= (pMVar1->_1).naturalAligment)
+     && ((MVWorldObjectSpawnerVehicle__Class *)
+         (pMVar1->_1).typeHierarchy[(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1]
+         == TypeInfo__MVWorldObjectSpawnerVehicle)) {
     return item != (MVWorldObjectClient *)0x0;
   }
   return 0;
@@ -1888,9 +1895,9 @@ bool Assembly-CSharp.dll::GamePassesShop::GamePassesShop_IsTierItemAnAccessItem
   if (item == (MVWorldObjectClient *)0x0) {
     return 0;
   }
-  if (((TypeInfo__MVTeleporter->_1).typeHierarchyDepth <= (item->klass->_1).typeHierarchyDepth) &&
+  if (((TypeInfo__MVTeleporter->_1).naturalAligment <= (item->klass->_1).naturalAligment) &&
      ((MVTeleporter__Class *)
-      (item->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).typeHierarchyDepth - 1] ==
+      (item->klass->_1).typeHierarchy[(TypeInfo__MVTeleporter->_1).naturalAligment - 1] ==
       TypeInfo__MVTeleporter)) {
     return item != (MVWorldObjectClient *)0x0;
   }
@@ -2020,15 +2027,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnClickFreeTryAd
         }
         object = TypeInfo__GamePassesShop____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__GamePassesShop____c___ShowAd_b__83_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__83_0 = callbackFunction;
-        func_?();
+        func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__83_0,callbackFunction);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -2046,16 +2051,15 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnClickFreeTryAd
       if ((pTVar1->fields).freeTry == 0) {
         pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
         this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__GamePassesShop__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                     ,(MethodInfo *)0x0);
-          if (pIVar3 != (IAdManager *)0x0) {
-            func_?(6);
-            return;
-          }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__GamePassesShop__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                   ,(MethodInfo *)0x0);
+        if (pIVar3 != (IAdManager *)0x0) {
+          puStack4 = (undefined *)0x6;
+          func_?(6);
+          return;
         }
       }
       else {
@@ -2068,10 +2072,9 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnClickFreeTryAd
       }
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2117,110 +2120,101 @@ code_?:
         func_?(TypeInfo__GamePassesShop____c);
       }
       pEVar3 = TypeInfo__GamePassesShop____c->static_fields->__9__85_1;
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-code_?:
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__GamePassesShop____c);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar2,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                  );
-        return;
-      }
-      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__GamePassesShop____c);
-      }
-      object = TypeInfo__GamePassesShop____c->static_fields->__9;
-      pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                              );
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar4 = TypeInfo__GamePassesShop____c->static_fields->__9;
+        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)object,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
                    MethodInfo__GamePassesShop____c___PreviewTier_b__85_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__85_1 = pEVar3;
         func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__85_1,pEVar3);
-        goto code_?;
       }
-      goto code_?;
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                );
+      return;
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TogglePreviewTier
               (this_01,(MethodInfo *)0x0);
-    pAVar4 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    pAVar5 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_02 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_02,(Object *)this,MethodInfo__GamePassesShop__OnPlayerPlanetDataUpdated__,
                (MethodInfo *)0x0);
-    pAVar4 = (Action *)
+    pAVar5 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pAVar4 == (Action *)0x0) {
+                       ((Delegate *)pAVar5,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pAVar5 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
       func_?();
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
+      pGVar6 = pGVar2;
       if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       pEVar3 = TypeInfo__GamePassesShop____c->static_fields->__9__85_0;
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-code_?:
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
+      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar2 = pGVar6;
+        if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
+          pGVar2 = pGVar6;
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar2,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                  );
-        (this->fields).isWaitingForFreeTryTier = 1;
-        return;
-      }
-      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar4 = TypeInfo__GamePassesShop____c->static_fields->__9;
+        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)0x0,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
                    MethodInfo__GamePassesShop____c___PreviewTier_b__85_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__85_0 = pEVar3;
-        func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__85_0,pEVar3);
-        goto code_?;
+        func_?();
       }
-      goto code_?;
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                );
+      (this->fields).isWaitingForFreeTryTier = 1;
+      return;
     }
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
+    pAVar7 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar7 = pAVar5;
     }
-    if (pAVar5 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar5;
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
+    if (pAVar7 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar7;
+    pAVar7 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar7 = pAVar5;
     }
-    if (pAVar5 != (Action *)0x0) goto code_?;
+    if (pAVar7 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -2241,41 +2235,38 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnDestroy
   }
   pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__GamePassesShop__UpdateUI__,(MethodInfo *)0x0);
+  pAVar1 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+    pAVar2 = (Action *)0x0;
+code_?:
+    pAStack3 = (Action__Class *)pAVar2;
     func_?();
-    pAStack2 = extraout_EDX;
+    return;
+  }
+  pAVar2 = (Action *)0x0;
+  if (pAVar1->klass == TypeInfo__System__Action) {
+    pAVar2 = pAVar1;
+  }
+  if (pAVar2 == (Action *)0x0) {
+    pAStack3 = TypeInfo__System__Action;
+    func_?();
+    pAStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__GamePassesShop__UpdateUI__,(MethodInfo *)0x0);
-    pAVar1 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar1 == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-      pAVar3 = (Action *)0x0;
-code_?:
-      pAStack2 = (Action__Class *)pAVar3;
-      func_?();
-      return;
-    }
-    pAVar3 = (Action *)0x0;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar2;
+    pAVar2 = (Action *)0x0;
     if (pAVar1->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar1;
+      pAVar2 = pAVar1;
     }
-    pAStack2 = TypeInfo__System__Action;
-    if (pAVar3 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar3;
-    pAVar3 = (Action *)0x0;
-    if (pAVar1->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar1;
-    }
-    pAStack2 = TypeInfo__System__Action;
-    if (pAVar3 != (Action *)0x0) goto code_?;
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar2 != (Action *)0x0) goto code_?;
   }
-  pAStack2 = (Action__Class *)func_?();
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -2306,103 +2297,96 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnPlayerPlanetDataUpdat
     func_?(&TypeInfo__GamePassesShop____c);
     cRam_? = '\x01';
   }
-  if ((this->fields).isWaitingForFreeTryTier == 0) {
-code_?:
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
-    if ((pPVar1->fields).previewGamePassTier < (this->fields).gamePassTierDisplayed) {
-      return;
-    }
-    if ((this->fields).haveShownFreeTryUnlock != 0) {
-      return;
-    }
-    pAVar2 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__GamePassesShop__OnPlayerPlanetDataUpdated__,
-               (MethodInfo *)0x0);
-    pAStack3 =
-         (Action *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAStack3 == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-      pAVar2 = (Action *)0x0;
-code_?:
-      pAStack3 =
-           (Action *)&TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-      pAStack4 = (Action__Class *)pAVar2;
-      func_?();
-      GamePassesShop_ShowTierUnlockedPopup(this,0,1,(MethodInfo *)0x0);
-      (this->fields).haveShownFreeTryUnlock = 1;
-      return;
-    }
-    pAVar2 = (Action *)0x0;
-    if (pAStack3->klass == TypeInfo__System__Action) {
-      pAVar2 = pAStack3;
-    }
-    pAStack4 = TypeInfo__System__Action;
-    if (pAVar2 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar2;
-    pAVar2 = (Action *)0x0;
-    if (pAStack3->klass == TypeInfo__System__Action) {
-      pAVar2 = pAStack3;
-    }
-    pAStack4 = TypeInfo__System__Action;
-    if (pAVar2 != (Action *)0x0) goto code_?;
-  }
-  else {
+  if ((this->fields).isWaitingForFreeTryTier != 0) {
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__GamePassesShop____c);
     }
     callbackFunction = TypeInfo__GamePassesShop____c->static_fields->__9__86_0;
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-code_?:
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__GamePassesShop____c);
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      (this->fields).isWaitingForFreeTryTier = 0;
-      goto code_?;
-    }
-    if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__GamePassesShop____c);
-    }
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      object = TypeInfo__GamePassesShop____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)0x0,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                  MethodInfo__GamePassesShop____c___OnPlayerPlanetDataUpdated_b__86_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__GamePassesShop____c->static_fields->__9__86_0 = callbackFunction;
-      func_?();
-      goto code_?;
+      func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__86_0,callbackFunction);
     }
-code_?:
-    func_?();
-    pAStack3 = extraout_ECX;
-    pAStack4 = extraout_EDX;
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    (this->fields).isWaitingForFreeTryTier = 0;
   }
-  pAStack4 = (Action__Class *)func_?();
-  pAStack3 = extraout_ECX_00;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+  if (pPVar1 == (PlayerPlanetData *)0x0) {
+    func_?();
+    pAStack2 = extraout_ECX;
+    pAStack3 = extraout_EDX;
+  }
+  else {
+    if ((pPVar1->fields).previewGamePassTier < (this->fields).gamePassTierDisplayed) {
+      return;
+    }
+    if ((this->fields).haveShownFreeTryUnlock != 0) {
+      return;
+    }
+    pAVar4 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__GamePassesShop__OnPlayerPlanetDataUpdated__,
+               (MethodInfo *)0x0);
+    pAStack2 =
+         (Action *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAStack2 == (Action *)0x0) {
+      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+      pAVar4 = (Action *)0x0;
+code_?:
+      pAStack2 =
+           (Action *)&TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+      pAStack3 = (Action__Class *)pAVar4;
+      func_?();
+      GamePassesShop_ShowTierUnlockedPopup(this,0,1,(MethodInfo *)0x0);
+      (this->fields).haveShownFreeTryUnlock = 1;
+      return;
+    }
+    pAVar4 = (Action *)0x0;
+    if (pAStack2->klass == TypeInfo__System__Action) {
+      pAVar4 = pAStack2;
+    }
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar4 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar4;
+    pAVar4 = (Action *)0x0;
+    if (pAStack2->klass == TypeInfo__System__Action) {
+      pAVar4 = pAStack2;
+    }
+    pAStack3 = TypeInfo__System__Action;
+    if (pAVar4 != (Action *)0x0) goto code_?;
+  }
+  pAStack3 = (Action__Class *)func_?();
+  pAStack2 = extraout_ECX_00;
 code_?:
   func_?();
   pcVar5 = (code *)swi(3);
@@ -2430,15 +2414,15 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
   pGVar2 = (this->fields).purchaseButtonObject;
   if (pGVar2 != (GameObject *)0x0) {
     pGVar2 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar2,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,0,(MethodInfo *)0x0);
-      this_00 = (this->fields).freeTryUI;
-      if (this_00 != (GameObject *)0x0) {
+      pGVar2 = (this->fields).freeTryUI;
+      if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,0,(MethodInfo *)0x0);
+                  (pGVar2,0,(MethodInfo *)0x0);
         pPVar3 = (ProgressBarAndroid *)(this->fields).progressBar;
         if (pPVar3 != (ProgressBarAndroid *)0x0) {
           ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar3,1.0,(MethodInfo *)0x0);
@@ -2454,13 +2438,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
             if ((pPVar4 != (PlayerPlanetData *)0x0) &&
                (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
                pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)(uint)(pPVar4->fields).gamePassTier;
+              this = (GamePassesShop *)CONCAT31(0x104157,(pPVar4->fields).gamePassTier);
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator
                        ::PlayerTierStateCalculator_GetTierPricingState
                                  (pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
                              *)0x0) {
-                this = (GamePassesShop *)(uint)(pGVar1->fields).gamePassTierDisplayed;
+                this = (GamePassesShop *)CONCAT31(0x104157,(pGVar1->fields).gamePassTierDisplayed);
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           ByteEnum,System::Object]::
                           Dictionary_2_System_ByteEnum_System_Object__get_Item
@@ -2477,7 +2461,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                             (str0,::StringLiteral____,str2,(MethodInfo *)0x0);
                   pTVar8 = (pGVar1->fields).progressText;
                   if (pTVar8 != (Text *)0x0) {
-                    (*(pTVar8->klass->vtable).set_text.methodPtr)();
+                    (*(code *)(pTVar8->klass->vtable).set_text.method)();
                     bVar9 = (pGVar1->fields).gamePassTierDisplayed;
                     if (cRam_? == '\0') {
                       func_?();
@@ -2500,14 +2484,12 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                          (pPVar5 = TypeInfo__GamePassesManager->static_fields->
                                    playerTierStateCalculator,
                          pPVar5 != (PlayerTierStateCalculator *)0x0)) {
+                        GStack_10 = CONCAT31(0x104156,(pPVar4->fields).gamePassTier);
                         pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::
                                  PlayerTierStateCalculator::
                                  PlayerTierStateCalculator_GetTierPricingState
-                                           (pPVar5,playerGamePoints,
-                                            CONCAT31((int3)((uint)pGVar2 >> 8),
-                                                     (pPVar4->fields).gamePassTier),
-                                            (MethodInfo *)0x0);
-                        gamePointAmountShown = 0;
+                                           (pPVar5,playerGamePoints,GStack_10,(MethodInfo *)0x0);
+                        iVar11 = 0;
                         key = (ByteEnum__Enum)bVar9;
                         if (bVar9 != 0) {
                           if (pDVar6 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
@@ -2521,14 +2503,21 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                                                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                                                 );
                             if (pOVar7 == (Object *)0x0) goto code_?;
-                            gamePointAmountShown =
-                                 (int)&((pOVar7[3].klass)->_0).image + gamePointAmountShown;
+                            iVar11 = (int)&((pOVar7[3].klass)->_0).image + iVar11;
                             key = key - 1;
                           } while (0 < (int)key);
                         }
-                        GamePointGainEffectManager::
-                        GamePointGainEffectManager_HaveShownGamePointGainEffect
-                                  (gamePointAmountShown,(MethodInfo *)0x0);
+                        if (cRam_? == '\0') {
+                          func_?();
+                          cRam_? = '\x01';
+                        }
+                        TypeInfo__GamePointGainEffectManager->static_fields->
+                        progressBarGamePointAmountShown = iVar11;
+                        if (TypeInfo__GamePointGainEffectManager->static_fields->
+                            OnGamePointGainEffectShown != (Action_1_Int32_ *)0x0) {
+                          (*(TypeInfo__GamePointGainEffectManager->static_fields->
+                             OnGamePointGainEffectShown->fields)._._.invoke_impl)();
+                        }
                         return;
                       }
                     }
@@ -2543,8 +2532,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -2697,110 +2686,101 @@ code_?:
         func_?(TypeInfo__GamePassesShop____c);
       }
       pEVar3 = TypeInfo__GamePassesShop____c->static_fields->__9__85_1;
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-code_?:
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__GamePassesShop____c);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar2,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                  );
-        return;
-      }
-      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__GamePassesShop____c);
-      }
-      object = TypeInfo__GamePassesShop____c->static_fields->__9;
-      pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                              );
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar4 = TypeInfo__GamePassesShop____c->static_fields->__9;
+        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)object,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
                    MethodInfo__GamePassesShop____c___PreviewTier_b__85_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__85_1 = pEVar3;
         func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__85_1,pEVar3);
-        goto code_?;
       }
-      goto code_?;
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                );
+      return;
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TogglePreviewTier
               (this_01,(MethodInfo *)0x0);
-    pAVar4 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    pAVar5 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_02 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_02,(Object *)this,MethodInfo__GamePassesShop__OnPlayerPlanetDataUpdated__,
                (MethodInfo *)0x0);
-    pAVar4 = (Action *)
+    pAVar5 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pAVar4 == (Action *)0x0) {
+                       ((Delegate *)pAVar5,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pAVar5 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
       func_?();
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
+      pGVar6 = pGVar2;
       if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       pEVar3 = TypeInfo__GamePassesShop____c->static_fields->__9__85_0;
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-code_?:
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
+      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar2 = pGVar6;
+        if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
+          pGVar2 = pGVar6;
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar2,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                  );
-        (this->fields).isWaitingForFreeTryTier = 1;
-        return;
-      }
-      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-      if (pEVar3 != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+        pGVar4 = TypeInfo__GamePassesShop____c->static_fields->__9;
+        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)0x0,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
                    MethodInfo__GamePassesShop____c___PreviewTier_b__85_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__85_0 = pEVar3;
-        func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__85_0,pEVar3);
-        goto code_?;
+        func_?();
       }
-      goto code_?;
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                );
+      (this->fields).isWaitingForFreeTryTier = 1;
+      return;
     }
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
+    pAVar7 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar7 = pAVar5;
     }
-    if (pAVar5 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar5;
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
+    if (pAVar7 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar7;
+    pAVar7 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar7 = pAVar5;
     }
-    if (pAVar5 != (Action *)0x0) goto code_?;
+    if (pAVar7 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -2846,8 +2826,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void RewardedAdCallback(RewardedAdResult) */
 
 void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_RewardedAdCallback
@@ -2889,44 +2867,31 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_RewardedAdCallback
       func_?(TypeInfo__GamePassesShop____c);
     }
     callbackFunction = TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-    goto code_?;
-    if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__GamePassesShop____c);
-    }
-    object = TypeInfo__GamePassesShop____c->static_fields->__9;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__GamePassesShop____c);
+      }
+      pGVar2 = TypeInfo__GamePassesShop____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pGVar2,
                  MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__GamePassesShop____c->static_fields->__9__84_1 = callbackFunction;
-      ppEVar2 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
+      ppEVar3 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_1;
 code_?:
-      func_?(ppEVar2,callbackFunction);
-code_?:
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
-      return;
+      func_?(ppEVar3,callbackFunction);
     }
     break;
+  case RewardedAdResult__Enum_ErrorTimeout:
+    goto code_?;
   case RewardedAdResult__Enum_RewardUnlocked:
     GamePassesShop_PreviewTier(this,(MethodInfo *)0x0);
-  case RewardedAdResult__Enum_ErrorTimeout:
-code_?:
     return;
   case RewardedAdResult__Enum_RewardNotUnlocked:
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -2935,132 +2900,39 @@ code_?:
       func_?(TypeInfo__GamePassesShop____c);
     }
     callbackFunction = TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-    goto code_?;
-    if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__GamePassesShop____c);
-    }
-    object = TypeInfo__GamePassesShop____c->static_fields->__9;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      if ((TypeInfo__GamePassesShop____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__GamePassesShop____c);
+      }
+      pGVar2 = TypeInfo__GamePassesShop____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pGVar2,
                  MethodInfo__GamePassesShop____c___RewardedAdCallback_b__84_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__GamePassesShop____c->static_fields->__9__84_0 = callbackFunction;
-      ppEVar2 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
+      ppEVar3 = &TypeInfo__GamePassesShop____c->static_fields->__9__84_0;
       goto code_?;
     }
     break;
   default:
     goto code_?;
   }
-  pGVar3 = (GamePassesManager__Class *)0x0;
-  cVar4 = '\0';
-  bVar5 = 0;
-  uVar6 = func_?();
-  bVar7 = (byte)uVar6;
-  bVar5 = 0x99 < bVar7 | bVar5;
-  bVar7 = bVar7 + (9 < (bVar7 & 0xf) | in_AF) * '\x06' + bVar5 * '`';
-  if ((bool)cVar4 == (char)bVar7 < '\0') {
-    bVar7 = bVar7 + bVar5 + 0x69;
-    bVar8 = false;
-code_?:
-    bVar9 = (byte)((uint)extraout_ECX >> 8);
-    bVar5 = bVar7 + bVar9;
-    bVar10 = CARRY1(bVar7,bVar9) || CARRY1(bVar5,bVar8);
-    bVar7 = bVar5 + bVar8;
-code_?:
-    piVar11 = (int *)(CONCAT31((int3)((uint)object >> 8),0xd1) + 0x5c604c4);
-    *piVar11 = *piVar11 + 1;
-    bVar8 = *piVar11 < 0;
-code_?:
-    pcVar12 = extraout_ECX;
-    pTVar13 = extraout_EDX;
-    if (bVar8) {
-      *extraout_ECX = *extraout_ECX + bVar7 + bVar10;
-      goto code_?;
-    }
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
-  else {
-    bVar14 = (byte)((ushort)uVar6 >> 8);
-    cVar4 = *(char *)&root->klass;
-    bVar9 = *(char *)&root->klass + bVar14;
-    bVar8 = CARRY1(*(byte *)&root->klass,bVar14) || CARRY1(bVar9,bVar5);
-    *(byte *)&root->klass = bVar9 + bVar5;
-    if ((SCARRY1(cVar4,bVar14) != SCARRY1(bVar9,bVar5)) == *(char *)&root->klass < '\0') {
-      out((short)extraout_EDX,bVar7);
-      goto code_?;
-    }
-    bVar14 = (byte)((uint)object >> 8);
-    bVar5 = bVar14 + bVar7;
-    bVar15 = CARRY1(bVar14,bVar7) || CARRY1(bVar5,bVar8);
-    bVar9 = bVar5 + bVar8;
-    object = (GamePassesShop_c *)((uint)CONCAT21((short)((uint)object >> 0x10),bVar9) << 8);
-    unaff_EBX = &stack0xfffffffc;
-    bVar10 = bVar15;
-    if ((SCARRY1(bVar14,bVar7) != SCARRY1(bVar5,bVar8)) == (char)bVar9 < '\0')
-    goto code_?;
-    pbVar16 = (byte *)((int)&extraout_EDX[-0x3c6f73]._0.nestedTypes + 1);
-    bVar5 = *pbVar16;
-    bVar14 = *pbVar16 + bVar9;
-    bVar10 = CARRY1(*pbVar16,bVar9) || CARRY1(bVar14,bVar15);
-    *pbVar16 = bVar14 + bVar15;
-    bVar8 = (char)*pbVar16 < '\0';
-    unaff_EBX = &stack0xfffffffc;
-    if ((SCARRY1(bVar5,bVar9) != SCARRY1(bVar14,bVar15)) == bVar8) goto code_?;
-    in((short)extraout_EDX);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__TierUnlockedPopupController);
-      cRam_? = '\x01';
-    }
-    unaff_EBX = &stack0xfffffffc;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
-      cRam_? = '\x01';
-      unaff_EBX = &stack0xfffffffc;
-    }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+            );
 code_?:
-    pGVar17 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar17 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar17->fields).gameMode == 0) {
-      return;
-    }
-    pcVar12 = (char *)(uint)bRam_?;
-    bVar5 = TypeInfo__TierUnlockedPopupController->static_fields->HighestTierRewardShown;
-    if (bRam_? == 0) {
-      func_?(&TypeInfo__GamePassesManager);
-      pcVar12 = (char *)0x1;
-      bRam_? = 1;
-    }
-    pPVar18 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar18 == (PlayerPlanetData *)0x0) goto code_?;
-    pTVar13 = TypeInfo__TierUnlockedPopupController;
-    pGVar3 = TypeInfo__GamePassesManager;
-    if ((pPVar18->fields).gamePassTier <= bVar5) {
-      return;
-    }
-  }
-  if ((byte)unaff_EBX[0xc] <= pTVar13->static_fields->HighestTierRewardShown) {
-    return;
-  }
-  if ((char)pcVar12 == '\0') {
-    func_?(&TypeInfo__GamePassesManager);
-    bRam_? = 1;
-    pGVar3 = TypeInfo__GamePassesManager;
-  }
-  if (pGVar3->static_fields->playerPlanetData != (PlayerPlanetData *)0x0) {
-    return;
-  }
 code_?:
-  func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
   return;
 }
 
@@ -3155,15 +3027,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowAd
         }
         object = TypeInfo__GamePassesShop____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-        goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__GamePassesShop____c___ShowAd_b__83_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__GamePassesShop____c->static_fields->__9__83_0 = callbackFunction;
-        func_?();
+        func_?(&TypeInfo__GamePassesShop____c->static_fields->__9__83_0,callbackFunction);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -3181,16 +3051,15 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowAd
       if ((pTVar1->fields).freeTry == 0) {
         pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
         this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__GamePassesShop__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                     ,(MethodInfo *)0x0);
-          if (pIVar3 != (IAdManager *)0x0) {
-            func_?(6);
-            return;
-          }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__GamePassesShop__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                   ,(MethodInfo *)0x0);
+        if (pIVar3 != (IAdManager *)0x0) {
+          puStack4 = (undefined *)0x6;
+          func_?(6);
+          return;
         }
       }
       else {
@@ -3203,10 +3072,9 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowAd
       }
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -3235,19 +3103,20 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowGamePassShopInforma
     func_?(&TypeInfo__GamePassesShop____c__DisplayClass92_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass92_0);
+  method_00 = TypeInfo__GamePassesShop____c__DisplayClass92_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pGVar1 = (this->fields).gamePassesShopInformationPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar2 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)pGVar1,
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pGVar1 = (this->fields).gamePassesShopInformationPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pGVar1,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                       );
     value[1].klass = pOVar2;
     func_?(value + 1,pOVar2);
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -3257,22 +3126,19 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowGamePassShopInforma
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesShop____c__DisplayClass92_0___ShowGamePassShopInformationPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__GamePassesShop____c__DisplayClass92_0___ShowGamePassShopInformationPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -3287,6 +3153,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
                (GamePassesShop *this,int32_t price,MethodInfo *method)
 
 {
+  object = this;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
@@ -3307,61 +3174,53 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass75_0);
+  method_00 = TypeInfo__GamePassesShop____c__DisplayClass75_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).tierPurchasePopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      TierPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchasePopup>_TierPurchasePopup_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).tierPurchasePopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        TierPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchasePopup>_TierPurchasePopup_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
-    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-              ((Component *)this,(MethodInfo *)0x0);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesShop____c__DisplayClass75_0___ShowPurchaseConfirmPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                 ,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      pOVar1 = value[1].klass;
-      tierToPurchase =
-           CONCAT31((int3)((uint)TypeInfo__UnityEngine__Events__UnityAction >> 8),
-                    (this->fields).gamePassTierDisplayed);
-      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_00,(Object *)this,MethodInfo__GamePassesShop__OnSuccessfulPurchase__,
-                   (MethodInfo *)0x0);
-        if (pOVar1 != (Object__Class *)0x0) {
-          TierPurchasePopup::TierPurchasePopup_Initialize
-                    ((TierPurchasePopup *)pOVar1,tierToPurchase,price,(UnityAction *)this_00,
-                     (MethodInfo *)0x0);
-          return;
-        }
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__GamePassesShop____c__DisplayClass75_0___ShowPurchaseConfirmPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    pOVar1 = value[1].klass;
+    this = (GamePassesShop *)CONCAT31(0x104163,(this->fields).gamePassTierDisplayed);
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)object,MethodInfo__GamePassesShop__OnSuccessfulPurchase__,
+               (MethodInfo *)0x0);
+    if (pOVar1 != (Object__Class *)0x0) {
+      TierPurchasePopup::TierPurchasePopup_Initialize
+                ((TierPurchasePopup *)pOVar1,(GamePassTier__Enum)this,(int32_t)root,
+                 (UnityAction *)this_00,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -3395,19 +3254,20 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseGoldErrorPo
     func_?(&TypeInfo__GamePassesShop____c__DisplayClass76_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass76_0);
+  method_00 = TypeInfo__GamePassesShop____c__DisplayClass76_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).tierPurchaseGoldErrorPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      TierPurchaseNotEnoughGoldErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchaseNotEnoughGoldErrorPopup>_TierPurchaseNotEnoughGoldErrorPopup_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).tierPurchaseGoldErrorPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        TierPurchaseNotEnoughGoldErrorPopup_MethodInfo__UnityEngine__Object__Instantiate<TierPurchaseNotEnoughGoldErrorPopup>_TierPurchaseNotEnoughGoldErrorPopup_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -3417,26 +3277,23 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseGoldErrorPo
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesShop____c__DisplayClass76_0___ShowPurchaseGoldErrorPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if (value[1].klass != (Object__Class *)0x0) {
-        TierPurchaseNotEnoughGoldErrorPopup::TierPurchaseNotEnoughGoldErrorPopup_Initialize
-                  ((TierPurchaseNotEnoughGoldErrorPopup *)value[1].klass,
-                   (uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__GamePassesShop____c__DisplayClass76_0___ShowPurchaseGoldErrorPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (value[1].klass != (Object__Class *)0x0) {
+      TierPurchaseNotEnoughGoldErrorPopup::TierPurchaseNotEnoughGoldErrorPopup_Initialize
+                ((TierPurchaseNotEnoughGoldErrorPopup *)value[1].klass,
+                 (uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -3470,19 +3327,20 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowTierUnlockedPopup
     func_?(&TypeInfo__GamePassesShop____c__DisplayClass73_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass73_0);
+  method_00 = TypeInfo__GamePassesShop____c__DisplayClass73_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).TierUnlockedPopupControllerPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      TierUnlockedPopupController_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupController>_TierUnlockedPopupController_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).TierUnlockedPopupControllerPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        TierUnlockedPopupController_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedPopupController>_TierUnlockedPopupController_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -3492,27 +3350,24 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowTierUnlockedPopup
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesShop____c__DisplayClass73_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if (value[1].klass != (Object__Class *)0x0) {
-        TierUnlockedPopupController::TierUnlockedPopupController_Initialize
-                  ((TierUnlockedPopupController *)value[1].klass,
-                   (uint)(this->fields).gamePassTierDisplayed,wasPurchased,wasTempUnlocked,
-                   (MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__GamePassesShop____c__DisplayClass73_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (value[1].klass != (Object__Class *)0x0) {
+      TierUnlockedPopupController::TierUnlockedPopupController_Initialize
+                ((TierUnlockedPopupController *)value[1].klass,
+                 (uint)(this->fields).gamePassTierDisplayed,wasPurchased,wasTempUnlocked,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -3546,19 +3401,20 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowTouristInformationP
     func_?(&TypeInfo__GamePassesShop____c__DisplayClass74_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__GamePassesShop____c__DisplayClass74_0);
+  method_00 = TypeInfo__GamePassesShop____c__DisplayClass74_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).touristInformationPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).touristInformationPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -3568,22 +3424,19 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowTouristInformationP
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesShop____c__DisplayClass74_0___ShowTouristInformationPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__GamePassesShop____c__DisplayClass74_0___ShowTouristInformationPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -3607,8 +3460,8 @@ Assembly-CSharp.dll::GamePassesShop::GamePassesShop_SortOutNonAccessItemsInShopD
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
+  puStack_4 = &stack0xffffff90;
+  puVar5 = &stack0xffffff90;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
@@ -3644,24 +3497,25 @@ Assembly-CSharp.dll::GamePassesShop::GamePassesShop_SortOutNonAccessItemsInShopD
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
   DStack_6._current.value = (Object *)0x0;
   DStack_6._getEnumeratorRetType = 0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
                            );
   pDStack_7 = this_00;
-  if ((this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-     (Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
-                ), pDStack_8 = this_00,
-     tierShopData == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0)
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
+            );
+  pDStack_8 = this_00;
+  if (tierShopData == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0
      ) {
 code_?:
     func_?();
@@ -3670,31 +3524,31 @@ code_?:
     pDVar10 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)(*pcVar9)();
     return pDVar10;
   }
-  pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-           Dictionary_2_System_Object_System_Object__GetEnumerator
-                     ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                      &stack0xffffff98,(Dictionary_2_System_Object_System_Object_ *)tierShopData,
+  pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::
+           Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                      &stack0xffffff9c,(Dictionary_2_System_UInt32_System_Object_ *)tierShopData,
                       MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
                      );
   uStack_12 = 0;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar11->_dictionary;
+  DStack_6._dictionary = pDVar11->_dictionary;
   DStack_6._version = pDVar11->_version;
   DStack_6._index = pDVar11->_index;
-  DStack_6._current.key = (int32_t)(pDVar11->_current).key;
+  DStack_6._current.key = (pDVar11->_current).key;
   DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
   uStack_1 = 1;
   pDStack_13 = &DStack_6;
 code_?:
   bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
-          Int32Enum,System::Object]::
-          Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+          UInt32,System::Object]::
+          Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                     (&DStack_6,
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
                     );
   key = DStack_6._current.key;
   if (bVar14 == 0) {
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
@@ -3708,31 +3562,29 @@ code_?:
                DStack_6._current.value;
   if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)DStack_6._current.value
       != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RStack_18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           DStack_6._current.value,0,
-                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                          );
+    RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       DStack_6._current.value,0,
+                       MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                      );
     if (cRam_? == '\0') {
-      DStack_6._dictionary =
-           (Dictionary_2_System_Int32Enum_System_Object_ *)&TypeInfo__MVTeleporter;
+      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)&TypeInfo__MVTeleporter;
       func_?();
       cRam_? = '\x01';
     }
     this_00 = pDStack_7;
-    if (((Object *)key != (Object *)0x41) && ((Object *)key != (Object *)0x3b))
-    goto code_?;
+    if ((key != 0x41) && (key != 0x3b)) goto code_?;
     goto code_?;
   }
   goto code_?;
 code_?:
-  if (RStack_18 != (RegexCharClass_SingleRange)0x0) {
-    pLStack_17 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)RStack_18;
-    if (((byte)pLStack_17[7].fields._size < (TypeInfo__MVTeleporter->_1).typeHierarchyDepth) ||
+  if (RVar18 != (RegexCharClass_SingleRange)0x0) {
+    pLStack_17 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)RVar18;
+    if (((byte)pLStack_17[7].fields._version < (TypeInfo__MVTeleporter->_1).naturalAligment) ||
        (*(MVTeleporter__Class **)
-         (pLStack_17[4].monitor + (uint)(TypeInfo__MVTeleporter->_1).typeHierarchyDepth * 4 + -4) !=
+         (pLStack_17[4].monitor + (uint)(TypeInfo__MVTeleporter->_1).naturalAligment * 4 + -4) !=
         TypeInfo__MVTeleporter)) {
       bVar19 = false;
     }
@@ -3742,13 +3594,17 @@ code_?:
     RVar20.First = 0;
     RVar20.Last = 0;
     if (bVar19) {
-      RVar20 = RStack_18;
+      RVar20 = RVar18;
     }
     if (RVar20 != (RegexCharClass_SingleRange)0x0) {
 code_?:
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDStack_7,(Object *)key,(Object *)pLStack_16,
+      if (pDStack_7 ==
+          (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0)
+      goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__Add
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDStack_7,key,(Object *)pLStack_16
+                 ,
                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
                 );
     }
@@ -3808,51 +3664,54 @@ Assembly-CSharp.dll::GamePassesShop::GamePassesShop_SortOutNonLootItemsInShopDat
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
                            );
-  if ((this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-     (Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
-                ),
-     tierShopData != (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0)
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
+            );
+  if (tierShopData != (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0
      ) {
-    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                        &stack0xffffffa4,(Dictionary_2_System_Object_System_Object_ *)tierShopData,
+    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffffa8,(Dictionary_2_System_UInt32_System_Object_ *)tierShopData,
                         MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
                        );
     uVar5 = *(undefined8 *)&(pDVar4->_current).value;
     uStack_1 = 1;
     pMVar6 = (MethodInfo *)(pDVar4->_current).key;
     while( true ) {
-      key = pMVar6;
-      bVar7 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
-                         &stack0xffffffbc,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
-                        );
-      if (bVar7 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)&stack0xffffffbc,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
-                   ,(MethodInfo *)in_stack_8);
-        *unaff_FS_OFFSET = uStack_3;
-        return (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)this_00;
-      }
-      pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)uVar5;
-      if (pLStack_9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      break;
-      pMVar6 = key;
-      if (0 < (pLStack_9->fields)._size) {
+      do {
+        do {
+          key = pMVar6;
+          bVar7 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                             &stack0xffffffc0,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
+                            );
+          if (bVar7 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)&stack0xffffffc0,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
+                       ,(MethodInfo *)in_stack_8);
+            *unaff_FS_OFFSET = uStack_3;
+            return (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+                   this_00;
+          }
+          pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)uVar5;
+          if (pLStack_9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+             ) goto code_?;
+          pMVar6 = key;
+        } while ((pLStack_9->fields)._size < 1);
         item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -3862,19 +3721,21 @@ Assembly-CSharp.dll::GamePassesShop::GamePassesShop_SortOutNonLootItemsInShopDat
         in_stack_8 = this;
         bVar7 = GamePassesShop_IsTierItemALootItem
                           (this,(MVWorldObjectClient *)item,(MethodInfo *)0x0);
-        if (bVar7 != 0) {
-          pMVar6 = 
-          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
-          ;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this_00,(Object *)key,(Object *)pLStack_9,
-                     MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
-                    );
-        }
-      }
+      } while (bVar7 == 0);
+      if (this_00 == (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0
+         ) break;
+      pMVar6 = 
+      MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
+      ;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__Add
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,
+                 (Object *)pLStack_9,
+                 MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
+                );
     }
   }
+code_?:
   func_?();
   func_?();
   pcVar10 = (code *)swi(3);
@@ -3899,158 +3760,110 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_Start
     func_?(&TypeInfo__UnityEngine__RectTransform);
     cRam_? = '\x01';
   }
-  SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)0x0;
-  SStack_1.monitor = (MonitorData *)0x0;
-  SStack_1.fields.value = 0.0;
-  SStack_1.fields.OnChange = (Action_1_Single_ *)0x0;
-  pAVar2 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-  pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  pTVar4 = (Transform *)0x0;
-  if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)this,MethodInfo__GamePassesShop__UpdateUI__,(MethodInfo *)0x0);
+  pAVar1 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
     func_?();
-    pRVar5 = extraout_ECX;
-code_?:
-    func_?(pTVar4,pRVar5);
-    SStack_1.fields.value = (float)extraout_ECX_00;
-    pAVar6 = extraout_EDX;
-  }
-  else {
+    pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
+    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,MethodInfo__GamePassesShop__UpdateUI__,(MethodInfo *)0x0);
-    SStack_1.fields.value =
-         (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-    if ((Action *)SStack_1.fields.value == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-      SStack_1.fields.OnChange = (Action_1_Single_ *)0x0;
-code_?:
-      SStack_1.fields.value =
-           (float)&TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-      SStack_1.monitor = (MonitorData *)&UNK_?;
-      func_?();
-      SStack_1.monitor = (MonitorData *)TypeInfo__System__Action;
-      pAVar2 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate
+              (pNVar2,(Object *)this,MethodInfo__GamePassesShop__UpdateTierCostTets__,
+               (MethodInfo *)0x0);
+    pAVar1 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
+    if (pAVar1 == (Action *)0x0) {
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+           (Action *)0x0;
+    }
+    else {
+      pAVar3 = (Action *)0x0;
+      if (pAVar1->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar1;
+      }
+      if (pAVar3 == (Action *)0x0) goto code_?;
+      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar3
       ;
-      SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)&UNK_?;
-      pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      pTVar4 = (Transform *)0x0;
-      if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__GamePassesShop__UpdateTierCostTets__,
-                 (MethodInfo *)0x0);
-      SStack_1.fields.value =
-           (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-      if ((Action *)SStack_1.fields.value == (Action *)0x0) {
-        TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
-             (Action *)0x0;
-        SStack_1.fields.OnChange = (Action_1_Single_ *)0x0;
+      pAVar3 = (Action *)0x0;
+      if (pAVar1->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar1;
       }
-      else {
-        pAVar2 = (Action *)0x0;
-        if (((Action *)SStack_1.fields.value)->klass == TypeInfo__System__Action) {
-          pAVar2 = (Action *)SStack_1.fields.value;
-        }
-        SStack_1.fields.OnChange = (Action_1_Single_ *)TypeInfo__System__Action;
-        if (pAVar2 == (Action *)0x0) goto code_?;
-        TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
-             pAVar2;
-        SStack_1.fields.OnChange = (Action_1_Single_ *)(Action *)0x0;
-        if (((Action *)SStack_1.fields.value)->klass == TypeInfo__System__Action) {
-          SStack_1.fields.OnChange = (Action_1_Single_ *)SStack_1.fields.value;
-        }
-        pAVar6 = TypeInfo__System__Action;
-        if (SStack_1.fields.OnChange == (Action_1_Single_ *)0x0) goto code_?;
-      }
-      SStack_1.fields.value =
-           (float)&TypeInfo__GamePassProgressionController->static_fields->
-                   OnGamePassesProgressionUpdate;
-      SStack_1.monitor = (MonitorData *)&UNK_?;
+      if (pAVar3 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__UI__LayoutRebuilder);
-      }
-      layoutRoot = (Transform *)0x0;
-      if (pTVar4 == (Transform *)0x0) {
+    }
+    layoutRoot = (Transform *)0x0;
+    if (pTVar4 == (Transform *)0x0) {
 code_?:
-        UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-        LayoutRebuilder_ForceRebuildLayoutImmediate((RectTransform *)layoutRoot,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-        LayoutRebuilder_ForceRebuildLayoutImmediate
-                  ((this->fields).tierListContainer,(MethodInfo *)0x0);
-        pRVar7 = (this->fields).tierList;
-        if (pRVar7 != (RectTransform *)0x0) {
-          pRVar8 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                             (&RStack_9,pRVar7,(MethodInfo *)0x0);
-          SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar8->m_XMin;
-          SStack_1.monitor = (MonitorData *)pRVar8->m_YMin;
-          SStack_1.fields.value = pRVar8->m_Width;
-          SStack_1.fields.OnChange = (Action_1_Single_ *)pRVar8->m_Height;
-          fStack_10 = SubscribableVariableBase`1[System::Single]::
-                     SubscribableVariableBase_1_System_Single__get_Value
-                               (&SStack_1,(MethodInfo *)0x0);
-          pRVar7 = (this->fields).tierListContainer;
-          if (pRVar7 != (RectTransform *)0x0) {
-            pRVar8 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                               (&RStack_9,pRVar7,(MethodInfo *)0x0);
-            SStack_1.klass = (SubscribableVariableBase_1_System_Single___Class *)pRVar8->m_XMin;
-            SStack_1.monitor = (MonitorData *)pRVar8->m_YMin;
-            SStack_1.fields.value = pRVar8->m_Width;
-            SStack_1.fields.OnChange = (Action_1_Single_ *)pRVar8->m_Height;
-            fVar11 = SubscribableVariableBase`1[System::Single]::
-                    SubscribableVariableBase_1_System_Single__get_Value
-                              (&SStack_1,(MethodInfo *)0x0);
-            if (fStack_10 <= fVar11) {
-              return;
-            }
-            pRVar7 = (this->fields).tierListContainer;
-            RStack_9.m_Width = 0.5;
-            RStack_9.m_Height = 0.5;
-            if (pRVar7 != (RectTransform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
-                        (pRVar7,(Vector2)0x3f0000003f000000,(MethodInfo *)0x0);
-              return;
-            }
+      UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
+      LayoutRebuilder_ForceRebuildLayoutImmediate((RectTransform *)layoutRoot,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
+      LayoutRebuilder_ForceRebuildLayoutImmediate
+                ((this->fields).tierListContainer,(MethodInfo *)0x0);
+      pRVar5 = (this->fields).tierList;
+      if (pRVar5 != (RectTransform *)0x0) {
+        pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                           ((Rect *)&stack0xffffffec,pRVar5,(MethodInfo *)0x0);
+        fVar7 = pRVar6->m_Width;
+        pRVar5 = (this->fields).tierListContainer;
+        if (pRVar5 != (RectTransform *)0x0) {
+          pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                             ((Rect *)&stack0xffffffdc,pRVar5,(MethodInfo *)0x0);
+          if (fVar7 < pRVar6->m_Width || fVar7 == pRVar6->m_Width) {
+            return;
+          }
+          pRVar5 = (this->fields).tierListContainer;
+          if (pRVar5 != (RectTransform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
+                      (pRVar5,(Vector2)0x3f0000003f000000,(MethodInfo *)0x0);
+            return;
           }
         }
-        goto code_?;
       }
-      if (pTVar4->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-        layoutRoot = pTVar4;
-      }
-      pRVar5 = TypeInfo__UnityEngine__RectTransform;
-      if (layoutRoot != (Transform *)0x0) goto code_?;
       goto code_?;
     }
-    pAVar2 = (Action *)0x0;
-    if (((Action *)SStack_1.fields.value)->klass == TypeInfo__System__Action) {
-      pAVar2 = (Action *)SStack_1.fields.value;
+    if (pTVar4->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+      layoutRoot = pTVar4;
     }
-    SStack_1.fields.OnChange = (Action_1_Single_ *)TypeInfo__System__Action;
-    if (pAVar2 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar2;
-    SStack_1.fields.OnChange = (Action_1_Single_ *)(Action *)0x0;
-    if (((Action *)SStack_1.fields.value)->klass == TypeInfo__System__Action) {
-      SStack_1.fields.OnChange = (Action_1_Single_ *)SStack_1.fields.value;
-    }
-    pAVar6 = TypeInfo__System__Action;
-    if (SStack_1.fields.OnChange != (Action_1_Single_ *)0x0) goto code_?;
+    if (layoutRoot != (Transform *)0x0) goto code_?;
   }
+  else {
+    pAVar3 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar1;
+    }
+    if (pAVar3 != (Action *)0x0) {
+      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar3;
+      pAVar3 = (Action *)0x0;
+      if (pAVar1->klass == TypeInfo__System__Action) {
+        pAVar3 = pAVar1;
+      }
+      if (pAVar3 == (Action *)0x0) goto code_?;
+      goto code_?;
+    }
 code_?:
-  SStack_1.monitor = (MonitorData *)&UNK_?;
-  SStack_1.fields.OnChange = (Action_1_Single_ *)pAVar6;
-  SStack_1.fields.OnChange = (Action_1_Single_ *)func_?();
-  SStack_1.fields.value = (float)extraout_ECX_01;
+    func_?();
 code_?:
-  SStack_1.monitor = (MonitorData *)&UNK_?;
+    func_?();
+  }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -4289,8 +4102,9 @@ code_?:
                                     (pSVar12,::StringLiteral____,str2,(MethodInfo *)0x0);
                 pTVar13 = (this_01->fields).progressText;
                 if (pTVar13 != (Text *)0x0) {
-                  (*(pTVar13->klass->vtable).set_text.methodPtr)
-                            (pTVar13,pSVar12,(pTVar13->klass->vtable).set_text.method);
+                  (*(code *)(pTVar13->klass->vtable).set_text.method)
+                            (pTVar13,pSVar12,
+                             (pTVar13->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
                   pPVar10 = (ProgressBarAndroid *)(this_01->fields).disabledProgressBar;
                   pGVar14 = (GamePassesShop *)0x0;
                   if ((0.0 <= (float)pGVar11) &&
@@ -4476,8 +4290,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateProgressBar
     pTVar3 = (this->fields).gameTierIconText;
     pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
     if (pTVar3 != (Text *)0x0) {
-      (*(pTVar3->klass->vtable).set_text.methodPtr)
-                (pTVar3,pSVar4,(pTVar3->klass->vtable).set_text.method);
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
+                (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__GamePassesManager);
         cRam_? = '\x01';
@@ -4491,8 +4305,9 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateProgressBar
          bVar5 == 0)) {
         pTVar3 = (this->fields).progressHeader;
         if (pTVar3 == (Text *)0x0) goto code_?;
-        (*(pTVar3->klass->vtable).set_text.methodPtr)
-                  (pTVar3,StringLiteral_Progress_Locked,(pTVar3->klass->vtable).set_text.method);
+        (*(code *)(pTVar3->klass->vtable).set_text.method)
+                  (pTVar3,StringLiteral_Progress_Locked,
+                   (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
         pPVar6 = (this->fields).progressBar;
         if ((pPVar6 == (ProgressBar *)0x0) ||
            (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -4518,8 +4333,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateProgressBar
       else {
         pTVar3 = (this->fields).progressHeader;
         if (pTVar3 == (Text *)0x0) goto code_?;
-        in_stack_8 = (pTVar3->klass->vtable).set_text.method;
-        (*(pTVar3->klass->vtable).set_text.methodPtr)
+        in_stack_8 = (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar3->klass->vtable).set_text.method)
                   (pTVar3,StringLiteral_Unlock_Progress,in_stack_8);
       }
       if (cRam_? == '\0') {
@@ -4591,7 +4406,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateProgressBar
             ;
             pTVar3 = (this->fields).progressText;
             if (pTVar3 == (Text *)0x0) goto code_?;
-            (*(pTVar3->klass->vtable).set_text.methodPtr)();
+            (*(code *)(pTVar3->klass->vtable).set_text.method)();
             pGVar7 = (this->fields).progressBarDivider;
             if (pGVar7 == (GameObject *)0x0) goto code_?;
             bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
@@ -4644,6 +4459,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateTierCostTets
                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                    );
     func_?(&TypeInfo__GamePassesManager);
+    func_?(&TypeInfo__System__TimeSpan);
     func_?(&StringLiteral__min_);
     cRam_? = '\x01';
   }
@@ -4662,7 +4478,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateTierCostTets
     if (pOVar4 != (Object *)0x0) {
       mscorlib.dll::System::Int32::Int32_ToString((Int32 *)(pOVar4 + 1),(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
         pPVar2 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator;
         if ((pPVar2 != (PlayerTierStateCalculator *)0x0) &&
            (pDVar3 = (pPVar2->fields).progressionThresholds,
@@ -4675,6 +4491,9 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateTierCostTets
                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                              );
           if (pOVar4 != (Object *)0x0) {
+            if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
             mscorlib.dll::System::TimeSpan::TimeSpan_get_Minutes
                       ((TimeSpan *)(pOVar4 + 2),(MethodInfo *)0x0);
             pPVar2 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator;
@@ -4706,7 +4525,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateTierCostTets
                 mscorlib.dll::System::String::String_Concat_3
                           (str0,StringLiteral__min_,(MethodInfo *)0x0);
                 if (pTVar1 != (Text *)0x0) {
-                  (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1);
+                  (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
                   return;
                 }
               }

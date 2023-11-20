@@ -21,19 +21,6 @@ public class ItemInventoryDeleteTab : ManageItemPage
 	private InventoryItem previewedItem;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass5_0
-	{
-		// Fields
-		public string text;
-
-		// Constructors
-		public __c__DisplayClass5_0();
-
-		// Methods
-		internal void _OnConfirmation_b__1(IModalPopupCreator x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -48,6 +35,19 @@ public class ItemInventoryDeleteTab : ManageItemPage
 
 		// Methods
 		internal void _OnConfirmation_b__5_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass5_0
+	{
+		// Fields
+		public string text;
+
+		// Constructors
+		public __c__DisplayClass5_0();
+
+		// Methods
+		internal void _OnConfirmation_b__1(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

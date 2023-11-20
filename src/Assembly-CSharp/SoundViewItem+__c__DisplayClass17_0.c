@@ -21,21 +21,24 @@ void Assembly-CSharp.dll::SoundViewItem+<>c__DisplayClass17_0::
     return;
   }
   uVar4 = 0;
-  uVar5 = (handler->klass->_1).interface_offsets_count;
-  if (uVar5 != 0) {
+  pIVar5 = handler->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
     do {
-      if (handler->klass->interfaceOffsets[uVar4].interfaceType ==
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged) {
-        pIVar6 = &handler->klass->vtable + handler->klass->interfaceOffsets[uVar4].offset;
+        ppMVar7 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar4].offset].
+                   OnSettingChanged.method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
+    } while (uVar4 < uVar6);
   }
-  pIVar6 = (IHandleSettingChanged__VTable *)
-           func_?(handler,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,0);
+  ppMVar7 = (MethodInfo **)
+            func_?(handler,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,0);
 code_?:
-  (*(pIVar6->OnSettingChanged).methodPtr)(handler,pSVar1,pSVar2,(pIVar6->OnSettingChanged).method);
+  (*(code *)*ppMVar7)(handler,pSVar1,pSVar2,ppMVar7[1]);
   return;
 }
 

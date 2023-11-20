@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).idleKickTimeMinutes = kickAfterMinutes;
   (this->fields).warningTimeMinutes = warnAfterMinutes;

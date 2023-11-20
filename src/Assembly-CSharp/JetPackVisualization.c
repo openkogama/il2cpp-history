@@ -90,7 +90,7 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_EnableThrus
                 ((ParticleSystem_EmissionModule *)&this,(bool)_enable,(MethodInfo *)0x0);
     }
     uStack_2 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&LStack_8,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__Dispose__
@@ -171,181 +171,178 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_Init
   }
   pIStack_4 = pIVar5;
   pMStack_6 = (MVRuntimeDataVariable_OnChangeDelegate__Class *)0x0;
-  PStack_7.m_ParticleSystem = (ParticleSystem *)0x0;
-  if (jetPackCubeModel != (Transform *)0x0) {
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+  if (jetPackCubeModel == (Transform *)0x0) {
+code_?:
+    uVar7 = func_?();
+    uVar8 = func_?(uVar7);
+  }
+  else {
+    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)&stack0xffffffc8,jetPackCubeModel,(MethodInfo *)0x0);
-    value_00 = *pVVar8;
-    pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+    value_00 = *pVVar9;
+    pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                        ((Quaternion *)&stack0xffffffc4,jetPackCubeModel,(MethodInfo *)0x0);
-    pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pQVar9->x;
-    fVar11 = pQVar9->y;
-    fVar12 = pQVar9->z;
-    RVar13 = (RegexCharClass_SingleRange)pQVar9->w;
+    pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pQVar10->x;
+    fVar12 = pQVar10->y;
+    fVar13 = pQVar10->z;
+    RVar14 = (RegexCharClass_SingleRange)pQVar10->w;
     method_00 = (MethodInfo *)&UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
               (jetPackCubeModel,(this->fields).JetPackRoot,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (jetPackCubeModel,value_00,(MethodInfo *)0x0);
-    value.y = fVar11;
-    value.x = (float)pLVar10;
-    value.z = fVar12;
-    value.w = (float)RVar13;
+    value.y = fVar12;
+    value.x = (float)pLVar11;
+    value.z = fVar13;
+    value.w = (float)RVar14;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
               (jetPackCubeModel,value,(MethodInfo *)0x0);
-    if (jetMode != (MVRuntimeDataVariable *)0x0) {
-      pMVar14 = (jetMode->fields).OnChange;
-      pMStack_6 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
-      PStack_7.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-      this_01 = (UnityAction_1_System_Object_ *)func_?();
-      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__JetPackVisualization___Init_b__16_0_System__Object_,(MethodInfo *)0x0
-                  );
-        pMVar15 = (MVRuntimeDataVariable_OnChangeDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar14,(Delegate *)this_01,(MethodInfo *)0x0);
-        uVar16 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar15);
-        pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar15 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-          (jetMode->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        }
-        else {
-          if (pMVar15->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar14 = pMVar15;
-          }
-          if (pMVar14 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-          (jetMode->fields).OnChange = pMVar14;
-          uVar16 = CONCAT44(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate,pMVar15);
-          pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-          if (pMVar15->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-            pMVar14 = pMVar15;
-          }
-          if (pMVar14 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-        }
-        func_?(&(jetMode->fields).OnChange,pMVar14);
-        (this->fields)._.isInSpawner = isInSpawner;
-        if (isInSpawner == 0) {
-          pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).thrusters;
-          if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                               ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                 *)&stack0xffffffc4,pLVar10,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::ParticleSystem>__GetEnumerator__
-                               );
-            pIStack_1 = (Il2CppClass *)0x1;
-            RVar13 = pLVar17->_current;
-            while( true ) {
-              bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                      Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffa8,
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__MoveNext__
-                                );
-              if (bVar18 == 0) break;
-              if (RVar13 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              RVar19 = RVar13;
-              pMStack_6 = (MVRuntimeDataVariable_OnChangeDelegate__Class *)
-                           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                           ParticleSystem_get_collision((ParticleSystem *)RVar13,(MethodInfo *)0x0);
-              method_00 = (MethodInfo *)&pMStack_6;
-              fVar11 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule
-                       ::ParticleSystem_MainModule_get_startSizeMultiplier_Injected
-                                 ((ParticleSystem_MainModule *)method_00,(MethodInfo *)0x0);
-              (this->fields).originalMaxSize = fVar11;
-              if (RVar13 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              PStack_7.m_ParticleSystem =
-                   (ParticleSystem *)
+    if (jetMode == (MVRuntimeDataVariable *)0x0) goto code_?;
+    pMStack_6 = TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    a = (jetMode->fields).OnChange;
+    this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_01,(Object *)this,
+               MethodInfo__JetPackVisualization___Init_b__16_0_System__Object_,(MethodInfo *)0x0);
+    pJVar15 = (JetPackVisualization *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    this_03 = (JetPackVisualization *)0x0;
+    if (pJVar15 == (JetPackVisualization *)0x0) {
+      (jetMode->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    }
+    else {
+      if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)pJVar15->klass ==
+          TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        this_03 = pJVar15;
+      }
+      if (this_03 == (JetPackVisualization *)0x0) {
+        func_?();
+        goto code_?;
+      }
+      (jetMode->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)this_03;
+      this_03 = (JetPackVisualization *)0x0;
+      if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)pJVar15->klass ==
+          TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        this_03 = pJVar15;
+      }
+      if (this_03 == (JetPackVisualization *)0x0) goto code_?;
+    }
+    func_?();
+    (this_03->fields)._.isInSpawner = isInSpawner;
+    if (isInSpawner != 0) {
+      jetPackCubeModel._0_1_ = 0;
+code_?:
+      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                ((Behaviour *)this_03,(bool)jetPackCubeModel,(MethodInfo *)0x0);
+      pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_03,(MethodInfo *)0x0);
+      if (pTVar16 != (Transform *)0x0) {
+        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0xffffffb8,pTVar16,(MethodInfo *)0x0);
+        fVar13 = pVVar9->y;
+        fVar12 = pVVar9->z;
+        (this_03->fields).prevWorldPosition.x = pVVar9->x;
+        (this_03->fields).prevWorldPosition.y = fVar13;
+        (this_03->fields).prevWorldPosition.z = fVar12;
+        *unaff_FS_OFFSET = pIStack_3;
+        return;
+      }
+      goto code_?;
+    }
+    pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this_03->fields).thrusters;
+    if (pLVar11 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                         *)&stack0xffffffc4,pLVar11,
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::ParticleSystem>__GetEnumerator__
+                       );
+    pIStack_1 = (Il2CppClass *)0x1;
+    RVar14 = pLVar17->_current;
+    while( true ) {
+      bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffa8,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__MoveNext__
+                        );
+      if (bVar18 == 0) break;
+      if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      RVar19 = RVar14;
+      pMStack_6 = (MVRuntimeDataVariable_OnChangeDelegate__Class *)
                    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                   ParticleSystem_get_collision((ParticleSystem *)RVar13,(MethodInfo *)0x0);
-              fVar11 = UnityEngine.ParticleSystemModule.dll::UnityEngine::
-                       ParticleSystem+EmissionModule::
-                       ParticleSystem_EmissionModule_get_rateOverTimeMultiplier_Injected
-                                 (&PStack_7,(MethodInfo *)0x0);
-              (this->fields).originalMaxEmission = fVar11;
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_Play_1((ParticleSystem *)RVar13,(MethodInfo *)0x0);
-              RVar13 = RVar19;
-            }
-            pIStack_1 = (Il2CppClass *)0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)&stack0xffffffa8,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__Dispose__
-                       ,method_00);
-            pIStack_1 = (Il2CppClass *)0xffffffff;
-            pOVar20 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                               (jetMode,(MethodInfo *)0x0);
-            uVar16 = CONCAT44(TypeInfo__MVJetPack__JetModeType,pOVar20);
-            if (pOVar20 != (Object *)0x0) {
-              if ((pOVar20->klass->_0).element_class !=
-                  (TypeInfo__MVJetPack__JetModeType->_0).element_class) goto code_?;
-              pbVar21 = (byte *)func_?(pOVar20);
-              JetPackVisualization_OnJetModeChange(this,(uint)*pbVar21,(MethodInfo *)0x0);
-              this_00 = (this->fields).moving;
-              if (this_00 != (AudioSource *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)this_00,1,(MethodInfo *)0x0);
-                pTVar22 = (this->fields).JetPackRoot;
-                pVVar23 = (this->fields).vehicleBlinker;
-                if (pTVar22 != (Transform *)0x0) {
-                  source = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pTVar22,(MethodInfo *)0x0);
-                  if (source != (GameObject *)0x0) {
-                    pMVar24 = (MeshFilter__Array *)
-                              Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                                        ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
-                                         UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
-                                        );
-                    if (pVVar23 != (VehicleBlinker *)0x0) {
-                      (pVVar23->fields)._.meshFilters = pMVar24;
-                      func_?(&(pVVar23->fields)._.meshFilters,pMVar24);
-                      pVVar23 = (this->fields).vehicleBlinker;
-                      if (pVVar23 != (VehicleBlinker *)0x0) {
-                        (pVVar23->fields)._.visible = 1;
-                        jetPackCubeModel._0_1_ = 1;
-                        goto code_?;
-                      }
-                    }
-                  }
-                }
+                   ParticleSystem_get_collision((ParticleSystem *)RVar14,(MethodInfo *)0x0);
+      method_00 = (MethodInfo *)&pMStack_6;
+      fVar12 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+               ParticleSystem_MainModule_get_startSizeMultiplier_Injected
+                         ((ParticleSystem_MainModule *)method_00,(MethodInfo *)0x0);
+      (this_03->fields).originalMaxSize = fVar12;
+      if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+      ParticleSystem_get_collision((ParticleSystem *)RVar14,(MethodInfo *)0x0);
+      fVar12 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+               ParticleSystem_EmissionModule_get_rateOverTimeMultiplier_Injected
+                         ((ParticleSystem_EmissionModule *)&stack0xffffffe4,(MethodInfo *)0x0);
+      (this_03->fields).originalMaxEmission = fVar12;
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
+                ((ParticleSystem *)RVar14,(MethodInfo *)0x0);
+      RVar14 = RVar19;
+    }
+    pIStack_1 = (Il2CppClass *)0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&stack0xffffffa8,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__Dispose__
+               ,method_00);
+    pIStack_1 = (Il2CppClass *)0xffffffff;
+    pOVar20 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(jetMode,(MethodInfo *)0x0);
+    uVar8 = CONCAT44(TypeInfo__MVJetPack__JetModeType,pOVar20);
+    if (pOVar20 == (Object *)0x0) goto code_?;
+    if ((pOVar20->klass->_0).element_class == (TypeInfo__MVJetPack__JetModeType->_0).element_class) {
+      pbVar21 = (byte *)func_?(pOVar20);
+      JetPackVisualization_OnJetModeChange(this_03,(uint)*pbVar21,(MethodInfo *)0x0);
+      this_00 = (this_03->fields).moving;
+      if (this_00 != (AudioSource *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)this_00,1,(MethodInfo *)0x0);
+        pTVar16 = (this_03->fields).JetPackRoot;
+        pVVar22 = (this_03->fields).vehicleBlinker;
+        if (pTVar16 != (Transform *)0x0) {
+          this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar16,(MethodInfo *)0x0);
+          if (this_02 != (GameObject *)0x0) {
+            pMVar23 = (MeshFilter__Array *)
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                      GameObject_GetComponentsInChildren
+                                (this_02,
+                                 UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
+                                );
+            if (pVVar22 != (VehicleBlinker *)0x0) {
+              (pVVar22->fields)._.meshFilters = pMVar23;
+              func_?(&(pVVar22->fields)._.meshFilters,pMVar23);
+              pVVar22 = (this_03->fields).vehicleBlinker;
+              if (pVVar22 != (VehicleBlinker *)0x0) {
+                (pVVar22->fields)._.visible = 1;
+                jetPackCubeModel._0_1_ = 1;
+                goto code_?;
               }
             }
           }
         }
-        else {
-          jetPackCubeModel._0_1_ = 0;
-code_?:
-          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)this,(bool)jetPackCubeModel,(MethodInfo *)0x0);
-          pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)this,(MethodInfo *)0x0);
-          if (pTVar22 != (Transform *)0x0) {
-            pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               ((Vector3 *)&stack0xffffffb8,pTVar22,(MethodInfo *)0x0);
-            fVar12 = pVVar8->y;
-            fVar11 = pVVar8->z;
-            (this->fields).prevWorldPosition.x = pVVar8->x;
-            (this->fields).prevWorldPosition.y = fVar12;
-            (this->fields).prevWorldPosition.z = fVar11;
-            *unaff_FS_OFFSET = pIStack_3;
-            return;
-          }
-        }
       }
+      goto code_?;
     }
   }
+  func_?(uVar8);
 code_?:
-  uVar25 = func_?();
-  uVar16 = func_?(uVar25);
-code_?:
-  func_?(uVar16);
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  func_?();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -612,7 +609,7 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_SetMaxSizeF
                         );
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc0,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::ParticleSystem>__Dispose__
@@ -853,21 +850,16 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization__ctor
             func_?(
                            TypeInfo__System__Collections__Generic__List<UnityEngine::ParticleSystem>
                            );
-  if (this_00 != (List_1_UnityEngine_ParticleSystem_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::ParticleSystem>__List__);
-    (this->fields).thrusters = this_00;
-    func_?(&(this->fields).thrusters,this_00);
-    (this->fields).mode = 3;
-    VehicleVisualizationBase::VehicleVisualizationBase__ctor
-              ((VehicleVisualizationBase *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::ParticleSystem>__List__);
+  (this->fields).thrusters = this_00;
+  func_?(&(this->fields).thrusters,this_00);
+  (this->fields).mode = 3;
+  VehicleVisualizationBase::VehicleVisualizationBase__ctor
+            ((VehicleVisualizationBase *)this,(MethodInfo *)0x0);
   return;
 }
 

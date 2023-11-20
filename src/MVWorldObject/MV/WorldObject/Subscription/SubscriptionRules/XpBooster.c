@@ -1,14 +1,4 @@
 
-/* Int32 GetBaseBoostedXP(Int32) */
-
-int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
-        XpBooster_GetBaseBoostedXP(XpBooster *this,int32_t xp,MethodInfo *method)
-
-{
-  return (int)(((float)(this->fields).baseBoost / _UNK_?) * (float)xp + (float)xp);
-}
-
-
 /* Int32 GetBoostedXp(Int32, Int32) */
 
 int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
@@ -66,7 +56,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBoos
                int32_t otherMembersBoost,int32_t maxMemberBoost,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).baseBoost = baseBoost;
   (this->fields).firstOtherMemberBoost = firstOtherMemberBoost;

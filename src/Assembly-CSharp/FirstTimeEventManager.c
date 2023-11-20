@@ -84,38 +84,41 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_Initializ
   }
   pUVar2 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
   this = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this,(Object *)0x0,MethodInfo__FirstTimeEventManager__OnLevelingInitialized__,
-               (MethodInfo *)0x0);
-    pUVar2 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar2,(Delegate *)this,(MethodInfo *)0x0);
-    if (pUVar2 == (UnityAction *)0x0) {
-      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this,(Object *)0x0,MethodInfo__FirstTimeEventManager__OnLevelingInitialized__,
+             (MethodInfo *)0x0);
+  pUStack3 =
+       (UnityAction *)
+       mscorlib.dll::System::Delegate::Delegate_Combine
+                 ((Delegate *)pUVar2,(Delegate *)this,(MethodInfo *)0x0);
+  if (pUStack3 == (UnityAction *)0x0) {
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+    pUStack4 = (UnityAction__Class *)0x0;
 code_?:
-      func_?();
-      return;
-    }
-    pUVar3 = (UnityAction *)0x0;
-    if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUVar2;
-    }
-    if (pUVar3 != (UnityAction *)0x0) {
-      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
-      pUVar3 = (UnityAction *)0x0;
-      if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar3 = pUVar2;
-      }
-      if (pUVar3 != (UnityAction *)0x0) goto code_?;
-      func_?();
-    }
+    pUStack3 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
     func_?();
+    return;
+  }
+  pUVar2 = (UnityAction *)0x0;
+  if (pUStack3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar2 = pUStack3;
+  }
+  pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
+  if (pUVar2 != (UnityAction *)0x0) {
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar2;
+    pUStack4 = (UnityAction__Class *)(UnityAction *)0x0;
+    if (pUStack3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUStack4 = (UnityAction__Class *)pUStack3;
+    }
+    if (pUStack4 != (UnityAction__Class *)0x0) goto code_?;
+    pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
+    pUStack4 = (UnityAction__Class *)func_?();
+    pUStack3 = extraout_ECX;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -193,33 +196,32 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_OnLevelin
   }
   pUVar3 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
   this = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this,(Object *)0x0,MethodInfo__FirstTimeEventManager__OnLevelingInitialized__,
+             (MethodInfo *)0x0);
+  pUStack4 =
+       (UnityAction *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pUVar3,(Delegate *)this,(MethodInfo *)0x0);
+  if (pUStack4 == (UnityAction *)0x0) {
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+    pUStack5 = (UnityAction__Class *)0x0;
+    pUStack4 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
+    func_?();
+    return;
+  }
+  pUVar3 = (UnityAction *)0x0;
+  if (pUStack4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar3 = pUStack4;
+  }
+  if (pUVar3 == (UnityAction *)0x0) {
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
     func_?();
     pUStack4 = extraout_ECX;
     pUStack5 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this,(Object *)0x0,MethodInfo__FirstTimeEventManager__OnLevelingInitialized__,
-               (MethodInfo *)0x0);
-    pUStack4 =
-         (UnityAction *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pUVar3,(Delegate *)this,(MethodInfo *)0x0);
-    if (pUStack4 == (UnityAction *)0x0) {
-      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-      pUStack5 = (UnityAction__Class *)0x0;
-      pUStack4 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
-      func_?();
-      return;
-    }
-    pUVar3 = (UnityAction *)0x0;
-    if (pUStack4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUStack4;
-    }
-    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar3 == (UnityAction *)0x0) goto code_?;
     TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
     pUVar3 = (UnityAction *)0x0;
     if (pUStack4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
@@ -233,9 +235,6 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_OnLevelin
       return;
     }
   }
-  pUStack5 = (UnityAction__Class *)func_?();
-  pUStack4 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
@@ -345,40 +344,42 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_ResetFirs
         break;
       }
       if (pIVar4 == (IEnumerator *)0x0) break;
-      uVar8 = 0;
-      uVar9 = (pIVar4->klass->_1).interface_offsets_count;
-      if (uVar9 != 0) {
+      pIVar8 = pIVar4->klass;
+      uVar9 = 0;
+      uVar10._0_1_ = (pIVar8->_1).rank;
+      uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+      if (uVar10 != 0) {
         do {
-          if (pIVar4->klass->interfaceOffsets[uVar8].interfaceType ==
+          if (pIVar8->interfaceOffsets[uVar9].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            pVVar10 = &(pIVar4->klass->vtable).get_Current +
-                     pIVar4->klass->interfaceOffsets[uVar8].offset;
+            ppMVar11 = &(&(pIVar4->klass->vtable).get_Current)
+                       [pIVar4->klass->interfaceOffsets[uVar9].offset].method;
             goto code_?;
           }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < uVar9);
+          uVar9 = uVar9 + 1;
+        } while (uVar9 < uVar10);
       }
-      pVVar10 = (VirtualInvokeData *)func_?();
+      ppMVar11 = (MethodInfo **)func_?();
 code_?:
-      piVar11 = (int *)(*pVVar10->methodPtr)();
-      if (piVar11 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar11 + 0x20) !=
+      piVar12 = (int *)(*(code *)*ppMVar11)();
+      if (piVar12 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar12 + 0x20) !=
           (TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent->_0).element_class)
       goto code_?;
-      pFVar12 = (FirstTimeEvent__Enum *)func_?();
-      if (*pFVar12 != FirstTimeEvent__Enum_NoEvent) {
+      pFVar13 = (FirstTimeEvent__Enum *)func_?();
+      if (*pFVar13 != FirstTimeEvent__Enum_NoEvent) {
         this = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
         if (this == (FirstTimeState *)0x0) break;
         MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
-        FirstTimeState_OverrideFirstTimeEvent(this,*pFVar12,overrideValue,(MethodInfo *)0x0);
+        FirstTimeState_OverrideFirstTimeEvent(this,*pFVar13,overrideValue,(MethodInfo *)0x0);
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

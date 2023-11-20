@@ -21,34 +21,35 @@ code_?:
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
   if (pIVar1 != (IEditModeUI *)0x0) {
-    uVar2 = 0;
-    uVar3 = (pIVar1->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (pIVar1->klass->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__IEditModeUI) {
-          pVVar4 = &(pIVar1->klass->vtable).get_PlayerShopInventoryRepository +
-                   pIVar1->klass->interfaceOffsets[uVar2].offset;
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_PlayerShopInventoryRepository)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    pVVar4 = (VirtualInvokeData *)func_?(pIVar1,TypeInfo__IEditModeUI,4);
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IEditModeUI,4);
 code_?:
-    this_00 = (PlayerShopInventoryRepository *)(*pVVar4->methodPtr)(pIVar1,pVVar4->method);
+    this_00 = (PlayerShopInventoryRepository *)(*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
     if (this_00 != (PlayerShopInventoryRepository *)0x0) {
-      bVar5 = Inventories::PlayerShopInventoryRepository::
+      bVar6 = Inventories::PlayerShopInventoryRepository::
               PlayerShopInventoryRepository_HasShopWorldObjectType
                         (this_00,worldObjectType,(MethodInfo *)0x0);
-      (this->fields).itemAvailable = bVar5;
+      (this->fields).itemAvailable = bVar6;
       (this->fields).haveCheckedItemAvailability = 1;
       goto code_?;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  pcVar7 = (code *)swi(3);
+  bVar6 = (*pcVar7)();
+  return bVar6;
 }
 

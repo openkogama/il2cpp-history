@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                           );
         if (bVar15 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
@@ -90,9 +90,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                            );
         if (pOVar16 != (Object *)0x0) {
           func_?();
-          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x41,pOVar16,uStack_10);
+          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x40,pOVar16,uStack_10);
           uVar8 = *puVar17;
-          func_?(0x1e,pOVar16);
+          func_?(0x1d,pOVar16);
         }
       }
     }
@@ -155,7 +155,7 @@ Vector3 * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::Rotation
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                          );
       if (pOVar4 != (Object *)0x0) {
-        puVar5 = (undefined8 *)(**(code **)&pOVar4->klass[2]._0.byval_arg.attrs)();
+        puVar5 = (undefined8 *)(*(code *)pOVar4->klass[2]._0.byval_arg.data)();
         uVar6 = *puVar5;
         fVar3 = *(float *)(puVar5 + 1);
         __return_storage_ptr__->x = (float)(int)uVar6;
@@ -245,7 +245,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  HStack_7._set = (HashSet_1_System_Int32_ *)0x0;
+  HStack_7._set = (HashSet_1_System_UInt32_ *)0x0;
   HStack_7._index = 0;
   HStack_7._version = 0;
   HStack_7._current = 0;
@@ -263,69 +263,72 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     if (pMVar10 != (MVNetworkSelector *)0x0) {
       bVar12 = MVNetworkSelector::MVNetworkSelector_RequestOwnership(pMVar10,pHVar11,(MethodInfo *)0x0)
       ;
-      if (bVar12 == 0) goto code_?;
+      if (bVar12 == 0) {
+code_?:
+        *unaff_FS_OFFSET = uStack_3;
+        return;
+      }
       QStack_13.y = (float)TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>;
       QStack_13.x = (float)&UNK_?;
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 func_?();
       pLStack_14 = this_00;
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-        LowLevelList_1_System_Object___ctor
-                  ((LowLevelList_1_System_Object_ *)this_00,
-                   MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
-        pMVar15 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
-        pLStack_16 = this_00;
-        if (pMVar15 != (MVJetPack_LocalObjectsJetPack *)0x0) {
-          this_01 = (HashSet_1_System_Object_ *)
-                    MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
-                              (pMVar15,(MethodInfo *)0x0);
-          if (this_01 != (HashSet_1_System_Object_ *)0x0) {
-            pHVar17 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-                     HashSet_1_System_Object__GetEnumerator
-                               ((HashSet_1_T_Enumerator_System_Object_ *)&LStack_18,this_01,
-                                MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
-                               );
-            HStack_7._set = (HashSet_1_System_Int32_ *)pHVar17->_set;
-            HStack_7._index = pHVar17->_index;
-            HStack_7._version = pHVar17->_version;
-            HStack_7._current = (int32_t)pHVar17->_current;
-            LStack_18._version = 0;
-            uStack_1 = 1;
-            LStack_18._current = (RegexCharClass_SingleRange)&HStack_7;
-            while( true ) {
-              bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System
-                      ::Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
-                                (&HStack_7,
-                                 MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                                );
-              if (bVar12 == 0) break;
-              pQStack_19 = (Quaternion *)HStack_7._current;
-              this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-              item = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                               (this_02,(int32_t)pQStack_19,(MethodInfo *)0x0);
-              in_stack_20 = (MethodInfo *)&UNK_?;
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)this_00,(Object *)item,
-                         MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
-                        );
-            }
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)&HStack_7,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
-                       ,in_stack_20);
-            uStack_1 = 0xffffffff;
-            bVar12 = RotationHelper_ValidateTargets
-                              ((List_1_WorldObjectClientRef_ *)this_00,(MethodInfo *)0x0);
-            if (bVar12 == 0) {
-code_?:
-              *unaff_FS_OFFSET = uStack_3;
-              return;
-            }
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+                 MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
+      pMVar15 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
+      pLStack_16 = this_00;
+      if (pMVar15 != (MVJetPack_LocalObjectsJetPack *)0x0) {
+        this_01 = (HashSet_1_System_UInt32_ *)
+                  MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
+                            (pMVar15,(MethodInfo *)0x0);
+        if (this_01 != (HashSet_1_System_UInt32_ *)0x0) {
+          pHVar17 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                   HashSet_1_System_UInt32__GetEnumerator
+                             ((HashSet_1_T_Enumerator_System_UInt32_ *)&LStack_18,this_01,
+                              MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
+                             );
+          HStack_7._set = pHVar17->_set;
+          HStack_7._index = pHVar17->_index;
+          HStack_7._version = pHVar17->_version;
+          HStack_7._current = pHVar17->_current;
+          LStack_18._version = 0;
+          uStack_1 = 1;
+          LStack_18._current = (RegexCharClass_SingleRange)&HStack_7;
+          while( true ) {
+            bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                    UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
+                              (&HStack_7,
+                               MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                              );
+            if (bVar12 == 0) break;
+            pQStack_19 = (Quaternion *)HStack_7._current;
+            this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
+            item = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                             (this_02,(int32_t)pQStack_19,(MethodInfo *)0x0);
+            if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            goto code_?;
+            in_stack_20 = (MethodInfo *)&UNK_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)this_00,(Object *)item,
+                       MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
+                      );
+          }
+          uStack_1 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)&HStack_7,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                     ,in_stack_20);
+          uStack_1 = 0xffffffff;
+          bVar12 = RotationHelper_ValidateTargets
+                            ((List_1_WorldObjectClientRef_ *)this_00,(MethodInfo *)0x0);
+          if (bVar12 == 0) goto code_?;
+          if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
             pLVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
@@ -359,11 +362,11 @@ code_?:
               pQStack_19 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
                                      (&QStack_13,this_03,(MethodInfo *)0x0);
               in_stack_6 = (MethodInfo **)&UNK_?;
-              (*(this_03->klass->vtable).set_SyncRot.methodPtr)
+              (*(code *)(this_03->klass->vtable).set_SyncRot.method)
                         (this_03,pQStack_19->x,pQStack_19->y,pQStack_19->z,pQStack_19->w);
             }
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&LStack_8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
@@ -406,10 +409,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                MethodInfo *method)
 
 {
-  pMVar1 = (MethodInfo *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
-  pMVar2 = (MethodInfo *)&stack0xffffff84;
-  method_00 = (MethodInfo *)&stack0xffffff84;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
@@ -429,8 +432,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__get_Current__
                    );
-    in_stack_3 = &MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__;
-    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__Add_UnityEngine__Transform_
                    );
@@ -454,76 +456,85 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
     ;
     cRam_? = '\x01';
-    method_00 = pMVar2;
   }
-  pEVar4 = (this->fields).editorStateMachine;
-  if (pEVar4 == (EditorStateMachine *)0x0) goto code_?;
-  pMVar5 = (pEVar4->fields).networkSelector;
-  pHVar6 = (HashSet_1_System_Int32_ *)
+  pMVar4 = (MethodInfo *)0x0;
+  pEVar5 = (this->fields).editorStateMachine;
+  if (pEVar5 == (EditorStateMachine *)0x0) goto code_?;
+  pMVar6 = (pEVar5->fields).networkSelector;
+  pHVar7 = (HashSet_1_System_Int32_ *)
            MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
                      ((MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine,
                       (MethodInfo *)0x0);
-  if (pMVar5 == (MVNetworkSelector *)0x0) goto code_?;
-  bVar7 = MVNetworkSelector::MVNetworkSelector_RequestOwnership(pMVar5,pHVar6,(MethodInfo *)0x0);
-  if (bVar7 == 0) goto code_?;
+  if (pMVar6 == (MVNetworkSelector *)0x0) goto code_?;
+  method_00 = (MethodInfo *)&UNK_?;
+  bVar8 = MVNetworkSelector::MVNetworkSelector_RequestOwnership(pMVar6,pHVar7,(MethodInfo *)0x0);
+  if (bVar8 == 0) goto code_?;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)func_?();
-  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-  goto code_?;
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-  LowLevelList_1_System_Object___ctor
-            ((LowLevelList_1_System_Object_ *)this_00,
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List__);
-  transforms = (List_1_UnityEngine_Transform_ *)
-               func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Transform>)
-  ;
-  if (transforms == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-  LowLevelList_1_System_Object___ctor
-            ((LowLevelList_1_System_Object_ *)transforms,
+  transforms = (List_1_UnityEngine_Transform_ *)func_?();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)transforms,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__List__);
-  pMVar8 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
-  if ((pMVar8 == (MVJetPack_LocalObjectsJetPack *)0x0) ||
-     (this_01 = (HashSet_1_System_Object_ *)
+  pMVar9 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
+  if ((pMVar9 == (MVJetPack_LocalObjectsJetPack *)0x0) ||
+     (this_01 = (HashSet_1_System_UInt32_ *)
                 MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
-                          (pMVar8,(MethodInfo *)0x0), this_01 == (HashSet_1_System_Object_ *)0x0))
+                          (pMVar9,(MethodInfo *)0x0), this_01 == (HashSet_1_System_UInt32_ *)0x0))
   goto code_?;
-  pHVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-           HashSet_1_System_Object__GetEnumerator
-                     ((HashSet_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,this_01,
+  pHVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+           HashSet_1_System_UInt32__GetEnumerator
+                     ((HashSet_1_T_Enumerator_System_UInt32_ *)&pHStack_11,this_01,
                       MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-  pOVar10 = pHVar9->_current;
-  while (bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
-                 Int32]::HashSet_1_T_Enumerator_System_Int32__MoveNext
-                           ((HashSet_1_T_Enumerator_System_Int32_ *)&stack0xffffffa0,
+  angle = (Object__Class *)pHVar10->_set;
+  method_01 = (MethodInfo *)pHVar10->_index;
+  uStack_1 = 1;
+  id = pHVar10->_current;
+  while (bVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                 UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
+                           ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffa0,
                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                           ), bVar7 != 0) {
-    pOVar11 = pOVar10;
+                           ), bVar8 != 0) {
+    uVar12 = id;
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                        (this_02,(int32_t)pOVar10,(MethodInfo *)0x0);
-    in_stack_3 = (MethodInfo **)&UNK_?;
+    if ((this_02 == (MVWorldObjectClientManager *)0x0) ||
+       (this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                            (this_02,id,(MethodInfo *)0x0),
+       this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
+    goto code_?;
+    method_00 = (MethodInfo *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
               ((List_1_System_Object_ *)this_00,(Object *)this_03,
                MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__Add_WorldObjectClientRef_
               );
     if ((this_03 == (WorldObjectClientRef *)0x0) ||
-       (pOVar10 = WorldObjectClientRef`1[System::Object]::
-                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)this_03,
-                            MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                           ), pOVar10 == (Object *)0x0)) goto code_?;
+       ((pOVar13 = WorldObjectClientRef`1[System::Object]::
+                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                            ((WorldObjectClientRef_1_System_Object_ *)this_03,
+                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                            ), pOVar13 == (Object *)0x0 ||
+        (transforms == (List_1_UnityEngine_Transform_ *)0x0)))) goto code_?;
+    pMVar4 = 
+    MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__Add_UnityEngine__Transform_
+    ;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)transforms,(Object *)pOVar10[0x12].klass,
+              ((List_1_System_Object_ *)transforms,(Object *)pOVar13[0x12].klass,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__Add_UnityEngine__Transform_
               );
-    pOVar10 = pOVar11;
+    id = uVar12;
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  uStack_1 = 0xffffffff;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)&stack0xffffffa0,
              (ExceptionArgument__Enum)
              MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
-             (MethodInfo *)in_stack_3);
+             method_00);
+  uStack_1 = 0xffffffff;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Count__
@@ -536,158 +547,155 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     ;
     cRam_? = '\x01';
   }
+  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+  goto code_?;
   if ((this_00->fields)._size == 1) {
-    RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                        (this_00,0,
                         MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_
                        );
-    if ((RVar12 == (RegexCharClass_SingleRange)0x0) ||
-       (pOVar10 = WorldObjectClientRef`1[System::Object]::
+    if ((RVar14 == (RegexCharClass_SingleRange)0x0) ||
+       (pOVar13 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)RVar12,
+                           ((WorldObjectClientRef_1_System_Object_ *)RVar14,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                           ), pOVar10 == (Object *)0x0)) goto code_?;
-    iVar13 = (**(code **)&pOVar10->klass[2]._0.byval_arg.attrs)
-                       (&stack0xffffffb4,pOVar10,pOVar10->klass[2]._0.this_arg.data.dummy);
-    rotationMode_00 = *(float *)(iVar13 + 8);
+                           ), pOVar13 == (Object *)0x0)) goto code_?;
+    puVar15 = (undefined8 *)(*(code *)pOVar13->klass[2]._0.byval_arg.data)();
+    uVar16 = *puVar15;
+    fStack_17 = *(float *)(puVar15 + 1);
   }
   else {
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SharedCubeFunctions);
     }
-    pVVar14 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter
-                       ((Vector3 *)&stack0xffffffc0,transforms,(MethodInfo *)0x0);
-    rotationMode_00 = pVVar14->z;
+    pVVar18 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter
+                        ((Vector3 *)&stack0xffffffc0,transforms,(MethodInfo *)0x0);
+    fStack_17 = pVVar18->z;
+    uVar16._0_4_ = pVVar18->x;
+    uVar16._4_4_ = pVVar18->y;
   }
-  bVar7 = RotationHelper_ValidateTargets((List_1_WorldObjectClientRef_ *)this_00,(MethodInfo *)0x0);
-  if (bVar7 == 0) goto code_?;
-  RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  bVar8 = RotationHelper_ValidateTargets((List_1_WorldObjectClientRef_ *)this_00,(MethodInfo *)0x0);
+  if (bVar8 == 0) goto code_?;
+  RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                      (this_00,0,
                       MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__get_Item_int_
                      );
-  if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
+  if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
   this_04 = (MVWorldObjectClient *)
             WorldObjectClientRef`1[System::Object]::
             WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                      ((WorldObjectClientRef_1_System_Object_ *)RVar12,
+                      ((WorldObjectClientRef_1_System_Object_ *)RVar14,
                        MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                       );
   if ((this_00->fields)._size == 1) {
     if (this_04 == (MVWorldObjectClient *)0x0) goto code_?;
-    pVVar14 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles
-                       ((Vector3 *)&stack0xffffffb4,this_04,(MethodInfo *)0x0);
-    pVVar14 = MathFunctions::MathFunctions_RoundVector
-                       ((Vector3 *)&stack0xffffffb4,*pVVar14,0,(MethodInfo *)0x0);
-    MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles(this_04,*pVVar14,(MethodInfo *)0x0)
-    ;
+    pVVar18 = MVWorldObjectClient::MVWorldObjectClient_get_WorldEulerAngles
+                        ((Vector3 *)&puStack_19,this_04,(MethodInfo *)0x0);
+    pVVar18 = MathFunctions::MathFunctions_RoundVector
+                        ((Vector3 *)&puStack_19,*pVVar18,0,(MethodInfo *)0x0);
+    MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles
+              (this_04,*pVVar18,(MethodInfo *)0x0);
     if ((this_00->fields)._size != 1) goto code_?;
     if (this_04 == (MVWorldObjectClient *)0x0) goto code_?;
-    uVar15 = 0;
-    bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+    bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
                       (this_04,InteractionFlags__Enum_CanRotateX,(MethodInfo *)0x0);
-    if ((bVar7 == 0) || (rotationMode != RotationMode__Enum_X)) {
-      uVar15 = CONCAT44(0x100,this_04);
-      bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                        (this_04,InteractionFlags__Enum_CanRotateY,(MethodInfo *)0x0);
-      if ((bVar7 == 0) || (rotationMode != RotationMode__Enum_Y)) {
-        bVar7 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                          (this_04,InteractionFlags__Enum_CanRotateZ,(MethodInfo *)0x0);
-        if ((bVar7 == 0) || (rotationMode != RotationMode__Enum_Z)) goto code_?;
-        pMVar1 = (MethodInfo *)0x0;
-        method_00 = (MethodInfo *)(rotationSpeed * _UNK_? - _UNK_?);
-        rotationMode_00 = 2.8026e-45;
-      }
+    if (((bVar8 == 0) || (rotationMode != RotationMode__Enum_X)) &&
+       ((bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                           (this_04,InteractionFlags__Enum_CanRotateY,(MethodInfo *)0x0), bVar8 == 0
+        || (rotationMode != RotationMode__Enum_Y)))) {
+      bVar8 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                        (this_04,InteractionFlags__Enum_CanRotateZ,(MethodInfo *)0x0);
+      if ((bVar8 == 0) || (rotationMode != RotationMode__Enum_Z)) goto code_?;
+      method_01 = (MethodInfo *)0x0;
+      angle = (Object__Class *)(rotationSpeed * _UNK_? - _UNK_?);
+      pMVar4 = (MethodInfo *)0x2;
     }
-    else {
-      uVar15 = uVar15 & 0xffffffff;
-    }
-    pivot_00.z = rotationMode_00;
-    pivot_00.x = (float)(int)uVar15;
-    pivot_00.y = (float)(int)(uVar15 >> 0x20);
+    pivot_00.z = fStack_17;
+    pivot_00.x = (float)(int)uVar16;
+    pivot_00.y = (float)(int)((ulonglong)uVar16 >> 0x20);
     MVWorldObjectClient::MVWorldObjectClient_RotateAroundLocal
-              (this_04,pivot_00,(RotationMode__Enum)rotationMode_00,(float)method_00,pMVar1);
+              (this_04,pivot_00,(RotationMode__Enum)pMVar4,(float)angle,method_01);
     MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
-              ((Quaternion *)&stack0xffffffb0,this_04,(MethodInfo *)0x0);
-    (*(this_04->klass->vtable).set_SyncRot.methodPtr)();
-    this = (RotationHelper *)this_04;
+              ((Quaternion *)&pHStack_11,this_04,(MethodInfo *)0x0);
+    (*(code *)(this_04->klass->vtable).set_SyncRot.method)();
   }
   else {
 code_?:
-    uVar16 = CONCAT44(this_00,(List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffb0);
-    pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)&stack0xffffffb0,this_00,
+                          *)&pHStack_11,this_00,
                          MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__
                         );
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffff90;
-    RVar12 = pLVar17->_current;
-    while (bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+    pMVar4 = (MethodInfo *)pLVar20->_version;
+    RVar14 = pLVar20->_current;
+    uStack_1 = 4;
+    while (bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                    ::List_1_T_Enumerator_System_Object__MoveNext
                              ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff90,
                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__
-                             ), bVar7 != 0) {
-      if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pMVar1 = MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
-      RVar12 = (RegexCharClass_SingleRange)
+                             ), bVar8 != 0) {
+      if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      RVar14 = (RegexCharClass_SingleRange)
                WorldObjectClientRef`1[System::Object]::
                WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                         ((WorldObjectClientRef_1_System_Object_ *)RVar12,
+                         ((WorldObjectClientRef_1_System_Object_ *)RVar14,
                           MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                          );
       if (cRam_? == '\0') {
-        method_00 = (MethodInfo *)&UNK_?;
         func_?();
         cRam_? = '\x01';
       }
-      if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pivot.z = (float)pMVar1;
+      if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      pivot.z = fStack_17;
       pivot.x = (float)(int)uVar16;
       pivot.y = (float)(int)((ulonglong)uVar16 >> 0x20);
       MVWorldObjectClient::MVWorldObjectClient_RotateAround
-                ((MVWorldObjectClient *)RVar12,pivot,
+                ((MVWorldObjectClient *)RVar14,pivot,
                  TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                  (float)(_UNK_? ^
                         __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field) *
                  rotationSpeed - _UNK_?,(MethodInfo *)0x0);
       MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
-                ((Quaternion *)&stack0xffffffb0,(MVWorldObjectClient *)RVar12,(MethodInfo *)0x0);
-      (**(code **)(*(int *)RVar12 + 0x1bc))();
+                ((Quaternion *)&pHStack_11,(MVWorldObjectClient *)RVar14,(MethodInfo *)0x0);
+      pHStack_11 = *(HashSet_1_System_UInt32_ **)(*(int *)RVar14 + 0x1bc);
+      pMVar4 = (MethodInfo *)&UNK_?;
+      (**(code **)(*(int *)RVar14 + 0x1b8))();
     }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this_00,
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&stack0xffffff90,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
-               ,method_00);
+               ,pMVar4);
+    uStack_1 = 0xffffffff;
   }
 code_?:
   RotationHelper_DoGridSnapping((List_1_WorldObjectClientRef_ *)this_00,(MethodInfo *)0x0);
-  pMVar8 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
-  if (pMVar8 != (MVJetPack_LocalObjectsJetPack *)0x0) {
-    pMVar5 = *(MVNetworkSelector **)&(pMVar8->fields).walkMode;
-    pMVar1 = (MethodInfo *)&UNK_?;
-    pHVar6 = (HashSet_1_System_Int32_ *)
+  pMVar9 = (MVJetPack_LocalObjectsJetPack *)(this->fields).editorStateMachine;
+  if (pMVar9 != (MVJetPack_LocalObjectsJetPack *)0x0) {
+    pMVar6 = *(MVNetworkSelector **)&(pMVar9->fields).walkMode;
+    pHVar7 = (HashSet_1_System_Int32_ *)
              MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
-                       (pMVar8,(MethodInfo *)0x0);
-    if (pMVar5 != (MVNetworkSelector *)0x0) {
-      MVNetworkSelector::MVNetworkSelector_RequestReleaseOwnership(pMVar5,pHVar6,(MethodInfo *)0x0);
+                       (pMVar9,(MethodInfo *)0x0);
+    if (pMVar6 != (MVNetworkSelector *)0x0) {
+      MVNetworkSelector::MVNetworkSelector_RequestReleaseOwnership(pMVar6,pHVar7,(MethodInfo *)0x0);
 code_?:
-      *unaff_FS_OFFSET = pMVar1;
+      *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
-  uVar18 = func_?();
-  uVar18 = func_?(uVar18);
-  func_?(uVar18);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  uVar21 = func_?();
+  uVar21 = func_?(uVar21);
+  func_?(uVar21);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -751,7 +759,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
@@ -767,7 +775,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                          );
       if (pOVar10 == (Object *)0x0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__

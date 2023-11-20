@@ -21,15 +21,11 @@ void Assembly-CSharp.dll::TM::TM_Destroy(MethodInfo *method)
     TypeInfo__TM->static_fields->instance = (TM *)0x0;
     func_?(TypeInfo__TM->static_fields,0);
     uStack_1 = 0;
-    this = (Action_1_Object_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    if (this == (Action_1_Object_ *)0x0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
-    }
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+    this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this,(Object *)0x0,
                MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,
                (MethodInfo *)0x0);
@@ -125,26 +121,25 @@ String * Assembly-CSharp.dll::TM::TM_GetTextWithValues
   if (pTVar2 != (TM *)0x0) {
     name = (pTVar2->fields).cultureName;
     this_00 = (CultureInfo *)func_?(TypeInfo__System__Globalization__CultureInfo);
-    if (this_00 != (CultureInfo *)0x0) {
-      mscorlib.dll::System::Globalization::CultureInfo::CultureInfo__ctor_3
-                (this_00,name,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
-        cRam_? = '\x01';
-      }
-      this = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(values->fields).values;
-      if (this != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        args = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-               UnitySynchronizationContext+WorkRequest]::
-               List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
-                         (this,
-                          MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__)
-        ;
-        pSVar1 = mscorlib.dll::System::String::String_Format_7
-                           ((IFormatProvider *)this_00,pSVar1,(Object__Array *)args,
-                            (MethodInfo *)0x0);
-        return pSVar1;
-      }
+    mscorlib.dll::System::Globalization::CultureInfo::CultureInfo__ctor_3
+              (this_00,name,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
+      cRam_? = '\x01';
+    }
+    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+            *)(values->fields).values;
+    if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)0x0) {
+      args = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                       (this,
+                        MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
+      pSVar1 = mscorlib.dll::System::String::String_Format_7
+                         ((IFormatProvider *)this_00,pSVar1,(Object__Array *)args,(MethodInfo *)0x0)
+      ;
+      return pSVar1;
     }
   }
   func_?();
@@ -237,25 +232,24 @@ void Assembly-CSharp.dll::TM::TM_LoadLanguage(String *languageName,MethodInfo *m
           }
           str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
           pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,(MethodInfo *)0x0);
-          this = (Action_1_Object_ *)func_?();
-          if (this != (Action_1_Object_ *)0x0) {
-            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                      (this,(Object *)0x0,
-                       MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-                       ,(MethodInfo *)0x0);
-            this_00 = (AssetBundleRequest *)func_?();
-            if (this_00 != (AssetBundleRequest *)0x0) {
-              AssetBundleRequest::AssetBundleRequest__ctor
-                        (this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
-                         WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-              if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              AsyncWWWManager::AsyncWWWManager_WWWRequest
-                        ((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
-              return;
-            }
+          this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                  *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (this,(Object *)0x0,
+                     MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+                     ,(MethodInfo *)0x0);
+          this_00 = (AssetBundleRequest *)func_?();
+          AssetBundleRequest::AssetBundleRequest__ctor
+                    (this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
+                     WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
+          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
           }
+          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
+          return;
         }
       }
       goto code_?;
@@ -330,7 +324,7 @@ void Assembly-CSharp.dll::TM::TM_SetLanguageLoadingDone(MethodInfo *method)
         RVar6 = RVar8;
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&stack0xffffffc8,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::Action>__Dispose__
@@ -393,45 +387,45 @@ void Assembly-CSharp.dll::TM::TM_StreamingAssetCallback(UnityWebRequest *www,Met
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)pSVar5,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_2;
       return;
     }
     pTVar6 = TM_get_Instance((MethodInfo *)0x0);
     pCVar7 = (Catalog *)func_?();
-    if (pCVar7 != (Catalog *)0x0) {
-      GNU::Gettext::Catalog::Catalog__ctor(pCVar7,(MethodInfo *)0x0);
+    GNU::Gettext::Catalog::Catalog__ctor(pCVar7,(MethodInfo *)0x0);
+    if (pTVar6 != (TM *)0x0) {
+      (pTVar6->fields).catalog = pCVar7;
+      func_?(&pTVar6->fields,pCVar7);
+      pTVar6 = TM_get_Instance((MethodInfo *)0x0);
       if (pTVar6 != (TM *)0x0) {
-        (pTVar6->fields).catalog = pCVar7;
-        func_?(&pTVar6->fields,pCVar7);
-        pTVar6 = TM_get_Instance((MethodInfo *)0x0);
-        if (pTVar6 != (TM *)0x0) {
-          pCVar7 = (pTVar6->fields).catalog;
-          this = (DownloadHandler *)
-                 mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::Object]::
-                 ValueListBuilder_1_System_Object__1_get_Length
-                           ((ValueListBuilder_1_System_Object__1 *)www,(MethodInfo *)0x0);
-          if (this != (DownloadHandler *)0x0) {
-            pSVar5 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler
-                     ::DownloadHandler_get_text(this,(MethodInfo *)0x0);
+        pCVar7 = (pTVar6->fields).catalog;
+        this = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+               __Il2CppFullySharedGenericType]::
+               WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                         ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                           *)www,(MethodInfo *)0x0);
+        if (this != (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)0x0) {
+          pSVar5 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
+                   DownloadHandler_get_text((DownloadHandler *)this,(MethodInfo *)0x0);
+          pTVar6 = TM_get_Instance((MethodInfo *)0x0);
+          if ((pTVar6 != (TM *)0x0) && (pCVar7 != (Catalog *)0x0)) {
+            GNU::Gettext::Catalog::Catalog_Load
+                      (pCVar7,pSVar5,(pTVar6->fields).fileName,(MethodInfo *)0x0);
             pTVar6 = TM_get_Instance((MethodInfo *)0x0);
-            if ((pTVar6 != (TM *)0x0) && (pCVar7 != (Catalog *)0x0)) {
-              GNU::Gettext::Catalog::Catalog_Load
-                        (pCVar7,pSVar5,(pTVar6->fields).fileName,(MethodInfo *)0x0);
-              pTVar6 = TM_get_Instance((MethodInfo *)0x0);
-              pTVar8 = TM_get_Instance((MethodInfo *)0x0);
-              if ((pTVar8 != (TM *)0x0) &&
-                 (pSVar5 = (pTVar8->fields).fileName, pSVar5 != (String *)0x0)) {
-                pSVar5 = mscorlib.dll::System::String::String_Replace
-                                   (pSVar5,0x5f,0x2d,(MethodInfo *)0x0);
-                if (pTVar6 != (TM *)0x0) {
-                  (pTVar6->fields).cultureName = pSVar5;
-                  func_?(&(pTVar6->fields).cultureName,pSVar5);
-                  TM_SetLanguageLoadingDone((MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = uStack_2;
-                  return;
-                }
+            pTVar8 = TM_get_Instance((MethodInfo *)0x0);
+            if ((pTVar8 != (TM *)0x0) &&
+               (pSVar5 = (pTVar8->fields).fileName, pSVar5 != (String *)0x0)) {
+              pSVar5 = mscorlib.dll::System::String::String_Replace
+                                 (pSVar5,0x5f,0x2d,(MethodInfo *)0x0);
+              if (pTVar6 != (TM *)0x0) {
+                (pTVar6->fields).cultureName = pSVar5;
+                func_?(&(pTVar6->fields).cultureName,pSVar5);
+                TM_SetLanguageLoadingDone((MethodInfo *)0x0);
+                *unaff_FS_OFFSET = uStack_2;
+                return;
               }
             }
           }
@@ -462,30 +456,28 @@ String * Assembly-CSharp.dll::TM::TM_StripAssetStringFromFuncIdentifier
     return (String *)0x0;
   }
   this = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
-  if (this != (Regex *)0x0) {
-    System.dll::System::Text::RegularExpressions::Regex::Regex__ctor
-              (this,StringLiteral___sPtr___sPtr_____________Ptr_________,(MethodInfo *)0x0);
-    this_00 = System.dll::System::Text::RegularExpressions::Regex::Regex_Match
-                        (this,key,(MethodInfo *)0x0);
-    if (this_00 != (Match *)0x0) {
-      bVar1 = System.dll::System::Text::RegularExpressions::Group::Group_get_Success
-                        ((Group *)this_00,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        return key;
-      }
-      this_01 = (GroupCollection *)(*(this_00->klass->vtable).get_Groups.methodPtr)();
-      if (((this_01 != (GroupCollection *)0x0) &&
-          (pOVar2 = System.dll::System::Text::RegularExpressions::GroupCollection::
-                    GroupCollection_System_Collections_IList_get_Item(this_01,1,(MethodInfo *)0x0),
-          pOVar2 != (Object *)0x0)) &&
-         (pSVar3 = (String *)(*(pOVar2->klass->vtable).ToString.methodPtr)(),
-         pSVar3 != (String *)0x0)) {
-        pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                           (pSVar3,1,(pSVar3->fields)._stringLength + -2,(MethodInfo *)0x0);
-        pSVar3 = GNU::Gettext::StringEscaping::StringEscaping_FromGettextFormat
-                           (pSVar3,(MethodInfo *)0x0);
-        return pSVar3;
-      }
+  System.dll::System::Text::RegularExpressions::Regex::Regex__ctor
+            (this,StringLiteral___sPtr___sPtr_____________Ptr_________,(MethodInfo *)0x0);
+  if ((this != (Regex *)0x0) &&
+     (this_00 = System.dll::System::Text::RegularExpressions::Regex::Regex_Match
+                          (this,key,(MethodInfo *)0x0), this_00 != (Match *)0x0)) {
+    bVar1 = System.dll::System::Text::RegularExpressions::Group::Group_get_Success
+                      ((Group *)this_00,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return key;
+    }
+    this_01 = (GroupCollection *)(*(code *)(this_00->klass->vtable).get_Groups.method)();
+    if (((this_01 != (GroupCollection *)0x0) &&
+        (pOVar2 = System.dll::System::Text::RegularExpressions::GroupCollection::
+                  GroupCollection_System_Collections_IList_get_Item(this_01,1,(MethodInfo *)0x0),
+        pOVar2 != (Object *)0x0)) &&
+       (pSVar3 = (String *)(*(code *)(pOVar2->klass->vtable).ToString.method)(),
+       pSVar3 != (String *)0x0)) {
+      pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                         (pSVar3,1,(pSVar3->fields)._stringLength + -2,(MethodInfo *)0x0);
+      pSVar3 = GNU::Gettext::StringEscaping::StringEscaping_FromGettextFormat
+                         (pSVar3,(MethodInfo *)0x0);
+      return pSVar3;
     }
   }
   func_?();
@@ -526,24 +518,23 @@ void Assembly-CSharp.dll::TM::TM_TryGetTextAsset(String *fileName,MethodInfo *me
       }
       str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
       pSVar3 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar3,(MethodInfo *)0x0);
-      this = (Action_1_Object_ *)func_?();
-      if (this != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this,(Object *)0x0,
-                   MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,
-                   (MethodInfo *)0x0);
-        this_00 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
-        if (this_00 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_00,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
-                     WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
-          return;
-        }
+      this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this,(Object *)0x0,
+                 MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,
+                 (MethodInfo *)0x0);
+      this_00 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_00,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
+                 WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_00,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -572,21 +563,21 @@ String * Assembly-CSharp.dll::TM::TM__(String *key,MethodInfo *method)
   }
   else {
     this_00 = (Regex *)func_?(TypeInfo__System__Text__RegularExpressions__Regex);
-    if (this_00 == (Regex *)0x0) goto code_?;
     System.dll::System::Text::RegularExpressions::Regex::Regex__ctor
               (this_00,StringLiteral___sPtr___sPtr_____________Ptr_________,(MethodInfo *)0x0);
+    if (this_00 == (Regex *)0x0) goto code_?;
     this_01 = System.dll::System::Text::RegularExpressions::Regex::Regex_Match
                         (this_00,key,(MethodInfo *)0x0);
     if (this_01 == (Match *)0x0) goto code_?;
     bVar1 = System.dll::System::Text::RegularExpressions::Group::Group_get_Success
                       ((Group *)this_01,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      this_02 = (GroupCollection *)(*(this_01->klass->vtable).get_Groups.methodPtr)();
+      this_02 = (GroupCollection *)(*(code *)(this_01->klass->vtable).get_Groups.method)();
       if (this_02 == (GroupCollection *)0x0) goto code_?;
       pOVar2 = System.dll::System::Text::RegularExpressions::GroupCollection::
                GroupCollection_System_Collections_IList_get_Item(this_02,1,(MethodInfo *)0x0);
       if (pOVar2 == (Object *)0x0) goto code_?;
-      pSVar3 = (String *)(*(pOVar2->klass->vtable).ToString.methodPtr)(pOVar2);
+      pSVar3 = (String *)(*(code *)(pOVar2->klass->vtable).ToString.method)(pOVar2);
       if (pSVar3 == (String *)0x0) goto code_?;
       pSVar3 = mscorlib.dll::System::String::String_Substring_1
                          (pSVar3,1,(pSVar3->fields)._stringLength + -2,(MethodInfo *)0x0);
@@ -639,32 +630,25 @@ void Assembly-CSharp.dll::TM::TM__ctor(TM *this,MethodInfo *method)
     cRam_? = '\x01';
   }
   this_00 = (Catalog *)func_?(TypeInfo__GNU__Gettext__Catalog);
-  if (this_00 != (Catalog *)0x0) {
-    GNU::Gettext::Catalog::Catalog__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields).catalog = this_00;
-    func_?(&this->fields,this_00);
-    (this->fields).fileName = ::StringLiteral__;
-    func_?(&(this->fields).fileName,::StringLiteral__);
-    this_01 = (List_1_System_Action_ *)
-              func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
-    if (this_01 != (List_1_System_Action_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__List<System::Action>__List__);
-      (this->fields).languageChangedCallback = this_01;
-      func_?(&(this->fields).languageChangedCallback,this_01);
-      (this->fields).cultureName = StringLiteral_en_US;
-      method_00 = (MethodInfo *)&(this->fields).cultureName;
-      func_?(method_00,StringLiteral_en_US);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  GNU::Gettext::Catalog::Catalog__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).catalog = this_00;
+  func_?(&this->fields,this_00);
+  (this->fields).fileName = ::StringLiteral__;
+  func_?(&(this->fields).fileName,::StringLiteral__);
+  this_01 = (List_1_System_Action_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             MethodInfo__System__Collections__Generic__List<System::Action>__List__);
+  (this->fields).languageChangedCallback = this_01;
+  func_?(&(this->fields).languageChangedCallback,this_01);
+  (this->fields).cultureName = StringLiteral_en_US;
+  method_00 = (MethodInfo *)&(this->fields).cultureName;
+  func_?(method_00,StringLiteral_en_US);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -678,50 +662,43 @@ TM * Assembly-CSharp.dll::TM::TM_get_Instance(MethodInfo *method)
     func_?(&TypeInfo__TM);
     cRam_? = '\x01';
   }
-  if (TypeInfo__TM->static_fields->instance == (TM *)0x0) {
-    pTVar1 = (TM *)func_?(TypeInfo__TM);
-    if (pTVar1 != (TM *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__GNU__Gettext__Catalog);
-        func_?(&MethodInfo__System__Collections__Generic__List<System::Action>__List__);
-        func_?(&TypeInfo__System__Collections__Generic__List<System::Action>);
-        func_?(&StringLiteral_en_US);
-        func_?(&::StringLiteral__);
-        cRam_? = '\x01';
-      }
-      this = (Catalog *)func_?(TypeInfo__GNU__Gettext__Catalog);
-      if (this != (Catalog *)0x0) {
-        GNU::Gettext::Catalog::Catalog__ctor(this,(MethodInfo *)0x0);
-        (pTVar1->fields).catalog = this;
-        func_?(&pTVar1->fields,this);
-        (pTVar1->fields).fileName = ::StringLiteral__;
-        func_?(&(pTVar1->fields).fileName,::StringLiteral__);
-        this_00 = (List_1_System_Action_ *)
-                  func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
-        if (this_00 != (List_1_System_Action_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-          LowLevelList_1_System_Object___ctor
-                    ((LowLevelList_1_System_Object_ *)this_00,
-                     MethodInfo__System__Collections__Generic__List<System::Action>__List__);
-          (pTVar1->fields).languageChangedCallback = this_00;
-          func_?(&(pTVar1->fields).languageChangedCallback,this_00);
-          (pTVar1->fields).cultureName = StringLiteral_en_US;
-          method_00 = (MethodInfo *)&(pTVar1->fields).cultureName;
-          func_?(method_00,StringLiteral_en_US);
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)pTVar1,ExceptionArgument__Enum_obj,method_00);
-          TypeInfo__TM->static_fields->instance = pTVar1;
-          func_?(TypeInfo__TM->static_fields,pTVar1);
-          goto code_?;
-        }
-      }
+  pTVar1 = TypeInfo__TM->static_fields;
+  if (pTVar1->instance == (TM *)0x0) {
+    value = (TM *)func_?(TypeInfo__TM);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__GNU__Gettext__Catalog);
+      func_?(&MethodInfo__System__Collections__Generic__List<System::Action>__List__);
+      func_?(&TypeInfo__System__Collections__Generic__List<System::Action>);
+      func_?(&StringLiteral_en_US);
+      func_?(&::StringLiteral__);
+      cRam_? = '\x01';
     }
+    this = (Catalog *)func_?(TypeInfo__GNU__Gettext__Catalog);
+    GNU::Gettext::Catalog::Catalog__ctor(this,(MethodInfo *)0x0);
+    (value->fields).catalog = this;
+    func_?(&value->fields,this);
+    (value->fields).fileName = ::StringLiteral__;
+    func_?(&(value->fields).fileName,::StringLiteral__);
+    this_00 = (List_1_System_Action_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<System::Action>__List__);
+    (value->fields).languageChangedCallback = this_00;
+    func_?(&(value->fields).languageChangedCallback,this_00);
+    (value->fields).cultureName = StringLiteral_en_US;
+    method_00 = (MethodInfo *)&(value->fields).cultureName;
+    func_?(method_00,StringLiteral_en_US);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+    TypeInfo__TM->static_fields->instance = value;
+    pTStack2 = TypeInfo__TM->static_fields;
+    pTStack3 = value;
     func_?();
-    pcVar2 = (code *)swi(3);
-    pTVar1 = (TM *)(*pcVar2)();
-    return pTVar1;
+    pTVar1 = TypeInfo__TM->static_fields;
   }
-code_?:
-  return TypeInfo__TM->static_fields->instance;
+  return pTVar1->instance;
 }
 

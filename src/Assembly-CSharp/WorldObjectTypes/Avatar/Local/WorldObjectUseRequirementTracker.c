@@ -13,10 +13,9 @@ bool Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
     cRam_? = '\x01';
   }
   fStack_1 = 0.0;
-  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32Enum]
-          ::Dictionary_2_System_Object_System_Int32Enum__TryGetValue
-                    ((Dictionary_2_System_Object_System_Int32Enum_ *)this,(Object *)worldObjectID,
-                     (Int32Enum__Enum *)&fStack_1,
+  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+          Dictionary_2_System_Int32_System_Single__TryGetValue
+                    ((Dictionary_2_System_Int32_System_Single_ *)this,worldObjectID,&fStack_1,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_float>__TryGetValue_int__System__Single__
                     );
   if (bVar2 == 0) {
@@ -53,8 +52,26 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
       (IEditModeUI *)0x0) {
     pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
     if (pIVar1 != (IAdManager *)0x0) {
-      cVar2 = func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-      if (cVar2 == '\0') {
+      pIVar2 = pIVar1->klass;
+      uVar3 = 0;
+      uVar4._0_1_ = (pIVar2->_1).rank;
+      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+      if (uVar4 != 0) {
+        do {
+          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+              (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+            ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)
+                       [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+            goto code_?;
+          }
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
+      }
+      ppMVar5 = (MethodInfo **)
+                func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,4);
+code_?:
+      cVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+      if (cVar6 == '\0') {
         if (onAdFinished != (UnityAction_1_System_Boolean_ *)0x0) {
           (*(onAdFinished->fields)._._.invoke_impl)
                     ((onAdFinished->fields)._._.method_code,0,(onAdFinished->fields)._._.method);
@@ -66,7 +83,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)StringLiteral_An_ad_is_already_on_going,(MethodInfo *)0x0);
           return;
         }
@@ -77,32 +94,32 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
                   func_?(
                                  TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>
                                  );
-        if (this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
-                     ,(MethodInfo *)0x0);
-          if (pIVar1 != (IAdManager *)0x0) {
-            uVar3 = 0;
-            uVar4 = (pIVar1->klass->_1).interface_offsets_count;
-            if (uVar4 != 0) {
-              do {
-                if (pIVar1->klass->interfaceOffsets[uVar3].interfaceType ==
-                    (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                  pVVar5 = &(pIVar1->klass->vtable).RequestRewardedAd +
-                           pIVar1->klass->interfaceOffsets[uVar3].offset;
-                  goto code_?;
-                }
-                uVar3 = uVar3 + 1;
-              } while (uVar3 < uVar4);
-            }
-            pVVar5 = (VirtualInvokeData *)
-                     func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
-code_?:
-            (*pVVar5->methodPtr)(pIVar1,this_00,0xe,pVVar5->method);
-            return;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_
+                   ,(MethodInfo *)0x0);
+        if (pIVar1 != (IAdManager *)0x0) {
+          pIVar2 = pIVar1->klass;
+          uVar4 = 0;
+          uVar3._0_1_ = (pIVar2->_1).rank;
+          uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+          if (uVar3 != 0) {
+            do {
+              if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
+                  (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+                ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)
+                           [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
+                goto code_?;
+              }
+              uVar4 = uVar4 + 1;
+            } while (uVar4 < uVar3);
           }
+          ppMVar5 = (MethodInfo **)
+                    func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,6);
+code_?:
+          (*(code *)*ppMVar5)(pIVar1,this_00,0xe,ppMVar5[1]);
+          return;
         }
       }
     }
@@ -113,8 +130,8 @@ code_?:
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -164,9 +181,9 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
                       ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,requirementType,
                        MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__get_Item_UseRequirementType_
                       );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
-    Dictionary_2_System_Int32Enum_System_Single__set_Item
-              ((Dictionary_2_System_Int32Enum_System_Single_ *)this,worldObjectID,fVar2 + fVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+    Dictionary_2_System_Int32_System_Single__set_Item
+              ((Dictionary_2_System_Int32_System_Single_ *)this,worldObjectID,fVar2 + fVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
               );
     return;
@@ -197,26 +214,29 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UseRequirementType_System_Single_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>
                            );
-  if (this_00 != (Dictionary_2_UseRequirementType_System_Single_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Dictionary__
-              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Dictionary__
+            );
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::
     Dictionary_2_System_Int32Enum_System_Single__Add
               ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,5,15.0,
                MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Add_UseRequirementType__float_
               );
-    (this->fields).timeouts = this_00;
+    (this->fields).timeouts = (Dictionary_2_UseRequirementType_System_Single_ *)this_00;
     func_?(&(this->fields).timeouts,this_00);
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              ((Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                *)this,
                MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
     return;
   }

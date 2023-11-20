@@ -31,25 +31,31 @@ void Assembly-CSharp.dll::CountingCubeSettings::CountingCubeSettings_Initialize
   SettingsBase::SettingsBase_Initialize
             (this_00,woID,root,MVWorldObjectDocumentationType__Enum_CountingCube,(MethodInfo *)0x0);
   if (id == -1) {
-    this_04 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (this_04 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_04,
+    this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_04,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
     root = (GameObject *)0x5;
     pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&root);
+    if (this_04 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_04,(Object *)StringLiteral_startingValue,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_04,
+               (Object *)StringLiteral_startingValue,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     this = (CountingCubeSettings *)CONCAT13(1,this._0_3_);
     pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_04,(Object *)StringLiteral_reset,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_04,(Object *)StringLiteral_reset,
+               pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     this_05 = (pCVar1->fields).slider;
@@ -61,56 +67,68 @@ void Assembly-CSharp.dll::CountingCubeSettings::CountingCubeSettings_Initialize
     pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_03,id,(MethodInfo *)0x0);
     if (pMVar3 == (MVWorldObject *)0x0) goto code_?;
-    this_04 = (pMVar3->fields).data;
+    this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)(pMVar3->fields).data;
     this_05 = (pCVar1->fields).slider;
-    if (this_04 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    if (this_04 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) goto code_?;
   }
-  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-           Dictionary_2_System_Object_System_Object__get_Item
-                     (this_04,(Object *)StringLiteral_startingValue,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-  if ((this_05 != (SettingsSlider *)0x0) && (pOVar2 != (Object *)0x0)) {
-    pIVar4 = TypeInfo__System__Int32;
-    if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      piVar5 = (int32_t *)func_?(pOVar2);
+  TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                     (Object *)StringLiteral_startingValue,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    );
+  if ((this_05 != (SettingsSlider *)0x0) && (TVar4.m_Index != 0)) {
+    pIVar5 = TypeInfo__System__Int32;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar6 = (int32_t *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize_1
-                (this_05,StringLiteral_startingValue,*piVar5,1,99,(MethodInfo *)0x0);
+                (this_05,StringLiteral_startingValue,*piVar6,1,99,(MethodInfo *)0x0);
       this_01 = (pCVar1->fields).inputField;
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_04,(Object *)StringLiteral_startingValue,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if ((this_01 == (SettingsInputFieldSlider *)0x0) || (pOVar2 == (Object *)0x0))
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                         (Object *)StringLiteral_startingValue,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if ((this_01 == (SettingsInputFieldSlider *)0x0) || (TVar4.m_Index == 0))
       goto code_?;
-      pIVar4 = TypeInfo__System__Int32;
-      if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar5 = (int32_t *)func_?(pOVar2);
+      pIVar5 = TypeInfo__System__Int32;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar6 = (int32_t *)func_?(TVar4.m_Index);
         SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                  (this_01,StringLiteral_startingValue,*piVar5,(MethodInfo *)0x0);
+                  (this_01,StringLiteral_startingValue,*piVar6,(MethodInfo *)0x0);
         this_02 = (pCVar1->fields).toggle;
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (this_04,(Object *)StringLiteral_reset,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if ((this_02 == (SettingsToggle *)0x0) || (pOVar2 == (Object *)0x0)) goto code_?;
-        pIVar4 = (Int32__Class *)TypeInfo__System__Boolean;
-        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-          pbVar6 = (bool *)func_?(pOVar2);
+        TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_04,
+                           (Object *)StringLiteral_reset,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if ((this_02 == (SettingsToggle *)0x0) || (TVar4.m_Index == 0)) goto code_?;
+        pIVar5 = (Int32__Class *)TypeInfo__System__Boolean;
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+            (TypeInfo__System__Boolean->_0).element_class) {
+          pbVar7 = (bool *)func_?(TVar4.m_Index);
           SettingsToggle::SettingsToggle_Initialize
-                    (this_02,StringLiteral_reset,*pbVar6,(MethodInfo *)0x0);
+                    (this_02,StringLiteral_reset,*pbVar7,(MethodInfo *)0x0);
           return;
         }
       }
     }
-    func_?(pOVar2,pIVar4);
+    func_?(TVar4.m_Index,pIVar5);
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

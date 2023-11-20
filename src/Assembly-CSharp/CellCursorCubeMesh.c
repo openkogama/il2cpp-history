@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube
             uVar7 = pVVar4->x;
             uVar8 = pVVar4->y;
             if (pTVar3 != (Transform *)0x0) {
-              in_stack_5 = 0x103c;
+              in_stack_5 = 0x1043;
               value.y = (float)uVar8 * _UNK_?;
               value.x = (float)uVar7 * _UNK_?;
               value.z = pVVar4->z * _UNK_?;
@@ -198,57 +198,54 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh__ctor
     cRam_? = '\x01';
   }
   (this->fields).fadeOutTime = 0.5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+            (pGVar1,StringLiteral_CellCursor,(MethodInfo *)0x0);
+  (this->fields).gameObject = pGVar1;
+  func_?(&(this->fields).gameObject,pGVar1);
+  pGVar1 = (this->fields).gameObject;
+  value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                    (StringLiteral_UIItems,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-              (pGVar1,StringLiteral_CellCursor,(MethodInfo *)0x0);
-    (this->fields).gameObject = pGVar1;
-    func_?(&(this->fields).gameObject,pGVar1);
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+              (pGVar1,value,(MethodInfo *)0x0);
     pGVar1 = (this->fields).gameObject;
-    value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (StringLiteral_UIItems,(MethodInfo *)0x0);
     if (pGVar1 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                (pGVar1,value,(MethodInfo *)0x0);
+      this_00 = (Renderer *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                          (pGVar1,
+                           UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                          );
       pGVar1 = (this->fields).gameObject;
       if (pGVar1 != (GameObject *)0x0) {
-        this_00 = (Renderer *)
+        this_01 = (MeshFilter *)
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                             (pGVar1,
-                             UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                             UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
                             );
-        pGVar1 = (this->fields).gameObject;
-        if (pGVar1 != (GameObject *)0x0) {
-          this_01 = (MeshFilter *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                              (pGVar1,
-                               UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
-                              );
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__PrefabPool);
-            cRam_? = '\x01';
-          }
-          pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-          if ((pPVar2 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                      (this_00,(pPVar2->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
-            if (this_01 != (MeshFilter *)0x0) {
-              mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
-                               (this_01,(MethodInfo *)0x0);
-              if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              corners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
-                                  ((MethodInfo *)0x0);
-              if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh(mesh,corners,1,(MethodInfo *)0x0)
-              ;
-              return;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+        if ((pPVar2 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                    (this_00,(pPVar2->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
+          if (this_01 != (MeshFilter *)0x0) {
+            mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
+                             (this_01,(MethodInfo *)0x0);
+            if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
+            corners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                                ((MethodInfo *)0x0);
+            if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh(mesh,corners,1,(MethodInfo *)0x0);
+            return;
           }
         }
       }

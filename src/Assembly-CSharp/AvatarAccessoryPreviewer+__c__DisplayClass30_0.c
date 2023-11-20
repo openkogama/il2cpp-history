@@ -13,28 +13,31 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer+<>c__DisplayClass30_0::
   }
   pAVar1 = (this->fields).accessoryData;
   if (x != (IAccessoryClicked *)0x0) {
-    uVar2 = 0;
-    uVar3 = (x->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = x->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryClicked) {
-          pVVar4 = &(x->klass->vtable).OpenAccessoryManagementScreen +
-                   x->klass->interfaceOffsets[uVar2].offset;
-          (*pVVar4->methodPtr)(x,pAVar1,pVVar4->method);
+          pIVar2 = x->klass;
+          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
+          (*(code *)(&(pIVar2->vtable).OpenAccessoryManagementScreen)[iVar5].method)
+                    (x,pAVar1,(&(pIVar2->vtable).OpenCategoryScreen)[iVar5].methodPtr);
           return;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar5 = (undefined4 *)
+    puVar6 = (undefined4 *)
              func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryClicked,0);
-    (*(code *)*puVar5)(x,pAVar1,puVar5[1]);
+    (*(code *)*puVar6)(x,pAVar1,puVar6[1]);
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

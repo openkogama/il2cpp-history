@@ -41,16 +41,16 @@ code_?:
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Extensions);
       }
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppAOInty,0,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->intensity = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->intensity = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppAOThick,1,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->thickness = iVar4;
+      this->thickness = IVar4;
       Extensions::Extensions_GetValueOrDefault_4
                 (data,StringLiteral_ppAOColR,0.0,
                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_

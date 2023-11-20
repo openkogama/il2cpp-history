@@ -29,19 +29,20 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_Initialize
       }
       pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
       if (pTVar2 != (Text *)0x0) {
-        pMVar4 = (pTVar2->klass->vtable).set_text.method;
-        (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar3);
+        pMVar4 = (MvAvatarMetaData *)
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar3);
         this_01 = (this->fields).removeButton;
         if ((((this_01 != (Button *)0x0) &&
              (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                   ((Component *)this_01,(MethodInfo *)0x0),
-             pMVar4 != (MethodInfo *)0x0)) && (this_03 != (GameObject *)0x0)) &&
+             pMVar4 != (MvAvatarMetaData *)0x0)) && (this_03 != (GameObject *)0x0)) &&
            ((UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                       (this_03,*(bool *)&pMVar4->return_type,(MethodInfo *)0x0),
-            pMVar4 != (MethodInfo *)0x0 &&
+                       (this_03,(pMVar4->fields).isOnMarketPlace,(MethodInfo *)0x0),
+            pMVar4 != (MvAvatarMetaData *)0x0 &&
             (this_02 = (this->fields).nameField, this_02 != (InputField *)0x0)))) {
           UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                    (this_02,(String *)pMVar4->name,(MethodInfo *)0x0);
+                    (this_02,(pMVar4->fields).name,(MethodInfo *)0x0);
           return;
         }
       }
@@ -109,109 +110,77 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnAddToMark
     func_?(&StringLiteral_Avatar_updated_in_your_shop_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SellAvatarController____c__DisplayClass11_0);
-  if (value == (Object *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            (value,ExceptionArgument__Enum_obj,unaff_EDI);
+  method_00 = TypeInfo__SellAvatarController____c__DisplayClass11_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
-  this_01 = (UnityAction_1_System_ByteEnum_ *)
-            func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
-  if (this_01 == (UnityAction_1_System_ByteEnum_ *)0x0) goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-  UnityAction_1_System_ByteEnum___ctor
-            (this_01,(Object *)this,MethodInfo__SellAvatarController__OnAddToMarketplace_bool_,
-             (MethodInfo *)0x0);
-  pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-           mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-    pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-    if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-      pMVar3 = pMVar2;
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)this,MethodInfo__SellAvatarController__OnAddToMarketplace_bool_,
+               (MethodInfo *)0x0);
+    pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+      (pMVar1->fields).OnMarketPlaceActionComplete =
+           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
     }
-    if (pMVar3 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+    else {
+      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+        pMVar3 = pMVar2;
+      }
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+        func_?();
+        goto code_?;
+      }
       (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
       pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
       if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
         pMVar3 = pMVar2;
       }
-      if (pMVar3 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
       goto code_?;
     }
     func_?();
-    goto code_?;
-  }
-  (pMVar1->fields).OnMarketPlaceActionComplete =
-       (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-code_?:
-  func_?();
-  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SellAvatarController____c);
-  }
-  callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__11_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SellAvatarController____c);
     }
-    pSVar5 = TypeInfo__SellAvatarController____c->static_fields->__9;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pSVar5,
-               MethodInfo__SellAvatarController____c___OnAddToMarketplace_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__SellAvatarController____c->static_fields->__9__11_0 = callbackFunction;
-    func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__11_0,callbackFunction)
-    ;
-  }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-  }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar4,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-            );
-  if ((char)pMVar1 == ',') {
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 == (MVNetworkGame *)0x0) ||
-       (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-       pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
-    iVar7 = (pMVar6->fields)._.level;
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    if (iVar7 < (pMVar1->fields)._MarketPlaceLevel_k__BackingField) {
-      pSVar8 = TM::TM__(StringLiteral_You_need_to_be_level__0__to_plac,(MethodInfo *)0x0);
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-      arg0 = (Object *)func_?(TypeInfo__System__Int32);
-      pOVar9 = (Object__Class *)
-                mscorlib.dll::System::String::String_Format(pSVar8,arg0,(MethodInfo *)0x0);
-      value[1].klass = pOVar9;
-      func_?(value + 1,pOVar9);
-    }
-    else {
-      pMVar10 = (this->fields).metaData;
-      if (pMVar10 == (MvAvatarMetaData *)0x0) goto code_?;
-      pSVar8 = StringLiteral_Failed_to_put_Avatar_in_your_sho;
-      if ((pMVar10->fields).isOnMarketPlace != 0) {
-        pSVar8 = StringLiteral_Failed_to_update_Avatar_;
+    callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__11_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__SellAvatarController____c);
       }
-      pOVar9 = (Object__Class *)TM::TM__(pSVar8,(MethodInfo *)0x0);
-      value[1].klass = pOVar9;
-      func_?(value + 1,pOVar9);
+      pSVar5 = TypeInfo__SellAvatarController____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IUIStack_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pSVar5,
+                 MethodInfo__SellAvatarController____c___OnAddToMarketplace_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__SellAvatarController____c->static_fields->__9__11_0 = callbackFunction;
+      func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__11_0,
+                      callbackFunction);
     }
-  }
-  else {
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar4,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -228,12 +197,9 @@ code_?:
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                           );
-      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pSVar5
-                 ,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pSVar5,
                  MethodInfo__SellAvatarController____c___OnAddToMarketplace_b__11_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__SellAvatarController____c->static_fields->__9__11_1 = callbackFunction_00;
@@ -248,50 +214,62 @@ code_?:
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
               );
-    pMVar10 = (this->fields).metaData;
-    if (pMVar10 == (MvAvatarMetaData *)0x0) goto code_?;
-    pSVar8 = StringLiteral_Avatar_is_now_available_in_your_;
-    if ((pMVar10->fields).isOnMarketPlace != 0) {
-      pSVar8 = StringLiteral_Avatar_updated_in_your_shop_;
+    pMVar6 = (this->fields).metaData;
+    if (pMVar6 != (MvAvatarMetaData *)0x0) {
+      pSVar7 = StringLiteral_Avatar_is_now_available_in_your_;
+      if ((pMVar6->fields).isOnMarketPlace != 0) {
+        pSVar7 = StringLiteral_Avatar_updated_in_your_shop_;
+      }
+      pOVar8 = (Object__Class *)TM::TM__(pSVar7,(MethodInfo *)0x0);
+      if (value != (Object *)0x0) {
+        value[1].klass = pOVar8;
+        func_?(value + 1,pOVar8);
+        this_00 = (this->fields).removeButton;
+        if ((this_00 != (Button *)0x0) &&
+           (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_00,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0
+           )) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar4,1,(MethodInfo *)0x0);
+          pTVar9 = (this->fields).sellButtonText;
+          pSVar7 = TM::TM__(StringLiteral_Update,(MethodInfo *)0x0);
+          if (pTVar9 != (Text *)0x0) {
+            (*(code *)(pTVar9->klass->vtable).set_text.method)
+                      (pTVar9,pSVar7,
+                       (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            callbackFunction_01 =
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                );
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,value,
+                       MethodInfo__SellAvatarController____c__DisplayClass11_0___OnAddToMarketplace_b__2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction_01,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                      );
+            return;
+          }
+        }
+      }
     }
-    pOVar9 = (Object__Class *)TM::TM__(pSVar8,(MethodInfo *)0x0);
-    value[1].klass = pOVar9;
-    func_?();
-    this_00 = (this->fields).removeButton;
-    if ((this_00 == (Button *)0x0) ||
-       (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_00,(MethodInfo *)0x0), pGVar4 == (GameObject *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar4,1,(MethodInfo *)0x0);
-    pTVar11 = (this->fields).sellButtonText;
-    pSVar8 = TM::TM__(StringLiteral_Update,(MethodInfo *)0x0);
-    if (pTVar11 == (Text *)0x0) goto code_?;
-    (*(pTVar11->klass->vtable).set_text.methodPtr)
-              (pTVar11,pSVar8,(pTVar11->klass->vtable).set_text.method);
-  }
-  pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  callbackFunction_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-  if (callbackFunction_01 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,value,
-               MethodInfo__SellAvatarController____c__DisplayClass11_0___OnAddToMarketplace_b__2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar4,(BaseEventData *)0x0,callbackFunction_01,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-              );
-    return;
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+code_?:
+  func_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -353,12 +331,6 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnPop
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -415,88 +387,94 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnRemoveFro
     func_?(&StringLiteral_Failed_to_remove_Avatar_from_you);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SellAvatarController____c__DisplayClass15_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
-      this_01 = (UnityAction_1_System_ByteEnum_ *)
-                func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
-      if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__SellAvatarController__OnRemoveFromMarketplace_bool_,(MethodInfo *)0x0
-                  );
-        pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Remove
-                           ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-          (pMVar1->fields).OnMarketPlaceActionComplete =
-               (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-        }
-        else {
-          pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-          if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-            pMVar3 = pMVar2;
-          }
-          if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-          goto code_?;
-          (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
-          pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-          if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-            pMVar3 = pMVar2;
-          }
-          if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-          goto code_?;
-        }
-        func_?();
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-        if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__15_0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          object = TypeInfo__SellAvatarController____c->static_fields->__9;
-          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-          goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
-                     MethodInfo__SellAvatarController____c___OnRemoveFromMarketplace_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__SellAvatarController____c->static_fields->__9__15_0 = callbackFunction;
-          func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__15_0,
-                          callbackFunction);
-        }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar4,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        pOVar5 = (Object__Class *)
-                 TM::TM__(StringLiteral_Failed_to_remove_Avatar_from_you,(MethodInfo *)0x0);
-        value[1].klass = pOVar5;
-        func_?();
-        added = (bool)pGVar4;
-        if (added == 0) {
+  method_00 = TypeInfo__SellAvatarController____c__DisplayClass15_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 == (MVNetworkGame *)0x0) {
 code_?:
-          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
+    func_?();
+  }
+  else {
+    pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)this,
+               MethodInfo__SellAvatarController__OnRemoveFromMarketplace_bool_,(MethodInfo *)0x0);
+    pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+      (pMVar1->fields).OnMarketPlaceActionComplete =
+           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+code_?:
+      func_?();
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__SellAvatarController____c);
+      }
+      callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__15_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__SellAvatarController____c);
+        }
+        object = TypeInfo__SellAvatarController____c->static_fields->__9;
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__SellAvatarController____c___OnRemoveFromMarketplace_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__SellAvatarController____c->static_fields->__9__15_0 = callbackFunction;
+        func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__15_0,
+                        callbackFunction);
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar3,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pOVar4 = (Object__Class *)
+               TM::TM__(StringLiteral_Failed_to_remove_Avatar_from_you,(MethodInfo *)0x0);
+      if (value != (Object *)0x0) {
+        value[1].klass = pOVar4;
+        func_?(value + 1,pOVar4);
+        pOVar4 = (Object__Class *)
+                 TM::TM__(StringLiteral_Avatar_removed_from_your_shop_,(MethodInfo *)0x0);
+        value[1].klass = pOVar4;
+        func_?(value + 1,pOVar4);
+        this_00 = (this->fields).removeButton;
+        if ((this_00 != (Button *)0x0) &&
+           (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_00,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0
+           )) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar3,0,(MethodInfo *)0x0);
+          pTVar5 = (this->fields).sellButtonText;
+          pSVar6 = TM::TM__(StringLiteral_Sell,(MethodInfo *)0x0);
+          if (pTVar5 != (Text *)0x0) {
+            (*(code *)(pTVar5->klass->vtable).set_text.method)
+                      (pTVar5,pSVar6,
+                       (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            callbackFunction_00 =
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                );
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
                       ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
@@ -508,38 +486,27 @@ code_?:
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
+                      (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                       );
             return;
           }
         }
-        else {
-          pOVar5 = (Object__Class *)
-                   TM::TM__(StringLiteral_Avatar_removed_from_your_shop_,(MethodInfo *)0x0);
-          value[1].klass = pOVar5;
-          func_?();
-          this_00 = (this->fields).removeButton;
-          if (this_00 != (Button *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this_00,(MethodInfo *)0x0);
-            if (pGVar4 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar4,0,(MethodInfo *)0x0);
-              pTVar6 = (this->fields).sellButtonText;
-              pSVar7 = TM::TM__(StringLiteral_Sell,(MethodInfo *)0x0);
-              if (pTVar6 != (Text *)0x0) {
-                (*(pTVar6->klass->vtable).set_text.methodPtr)
-                          (pTVar6,pSVar7,(pTVar6->klass->vtable).set_text.method);
-                goto code_?;
-              }
-            }
-          }
-        }
       }
+      goto code_?;
     }
+    pMVar7 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+      pMVar7 = pMVar2;
+    }
+    if (pMVar7 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    (pMVar1->fields).OnMarketPlaceActionComplete = pMVar7;
+    pMVar7 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+      pMVar7 = pMVar2;
+    }
+    if (pMVar7 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
   }
-code_?:
   func_?();
 code_?:
   func_?();
@@ -587,69 +554,57 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnRemovePre
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__SellAvatarController____c___OnRemovePressed_b__14_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__SellAvatarController____c->static_fields->__9__14_0 = callbackFunction;
-      func_?();
-      goto code_?;
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+               MethodInfo__SellAvatarController____c___OnRemovePressed_b__14_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__SellAvatarController____c->static_fields->__9__14_0 = callbackFunction;
+    func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__14_0,callbackFunction)
+    ;
   }
-  else {
-code_?:
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+            );
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)0x0,MethodInfo__SellAvatarController__OnRemoveFromMarketplace_bool_
+               ,(MethodInfo *)0x0);
+    pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pMVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+      (pMVar1->fields).OnMarketPlaceActionComplete =
+           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
     }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-              );
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      this_00 = (UnityAction_1_System_ByteEnum_ *)func_?();
-      if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        a = this_00;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__SellAvatarController__OnRemoveFromMarketplace_bool_,(MethodInfo *)0x0
-                  );
-        pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-          (pMVar1->fields).OnMarketPlaceActionComplete =
-               (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-        }
-        else {
-          pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-          if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-            pMVar3 = pMVar2;
-          }
-          if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-          goto code_?;
-          (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
-          pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-          if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-            pMVar3 = pMVar2;
-          }
-          if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-          goto code_?;
-        }
-        func_?();
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                            ((MethodInfo *)0x0);
-        if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::
-          MVNetworkGame_OperationRequests_DeleteAvatarFromShopInventory
-                    (this_01,(this->fields).woID,(MethodInfo *)0x0);
-          return;
-        }
+    else {
+      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+        pMVar3 = pMVar2;
       }
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+      (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
+      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+        pMVar3 = pMVar2;
+      }
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    }
+    func_?();
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_DeleteAvatarFromShopInventory
+                (this_01,iRam_?,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -675,35 +630,33 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_OnSellPress
     func_?(&StringLiteral_Screenshot_taken_successfully_);
     cRam_? = '\x01';
   }
-  if (((this->fields).metaData == (MvAvatarMetaData *)0x0) ||
-     ((((this->fields).metaData)->fields).canBeSoldOnMarketPlace == 0)) {
-    return;
-  }
-  pIVar1 = (this->fields).nameField;
-  if (pIVar1 != (InputField *)0x0) {
-    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                      ((pIVar1->fields).m_Text,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+  if (((this->fields).metaData != (MvAvatarMetaData *)0x0) &&
+     ((((this->fields).metaData)->fields).canBeSoldOnMarketPlace != 0)) {
+    pIVar1 = (this->fields).nameField;
+    if (pIVar1 == (InputField *)0x0) {
+code_?:
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    this_00 = (this->fields).screenShooter;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
-    if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__SellAvatarController__ScreenShotCallback_UnityEngine__Texture2D__System__String_
-                   ,(MethodInfo *)0x0), this_00 != (AvatarScreenShooter *)0x0)) {
+    bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                      ((pIVar1->fields).m_Text,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
+      this_00 = (this->fields).screenShooter;
+      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(TypeInfo__System__Action<UnityEngine::Texture2D,_System::String>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__SellAvatarController__ScreenShotCallback_UnityEngine__Texture2D__System__String_
+                 ,(MethodInfo *)0x0);
+      if (this_00 == (AvatarScreenShooter *)0x0) goto code_?;
       AvatarScreenShooter::AvatarScreenShooter_TakeScreenShot
                 (this_00,(Action_2_UnityEngine_Texture2D_String_ *)this_01,(this->fields).body,1,
                  StringLiteral_Screenshot_taken_successfully_,(MethodInfo *)0x0);
-      return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -734,83 +687,81 @@ void Assembly-CSharp.dll::SellAvatarController::SellAvatarController_ScreenShotC
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
-    this_00 = (UnityAction_1_System_ByteEnum_ *)
+    this_00 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
-    if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-      UnityAction_1_System_ByteEnum___ctor
-                (this_00,(Object *)this,MethodInfo__SellAvatarController__OnAddToMarketplace_bool_,
-                 (MethodInfo *)0x0);
-      pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pMVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-        (pMVar1->fields).OnMarketPlaceActionComplete =
-             (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,MethodInfo__SellAvatarController__OnAddToMarketplace_bool_,
+               (MethodInfo *)0x0);
+    pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pMVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
+      (pMVar1->fields).OnMarketPlaceActionComplete =
+           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    }
+    else {
+      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+        pMVar3 = pMVar2;
       }
-      else {
-        pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-        if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-          pMVar3 = pMVar2;
-        }
-        if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-        goto code_?;
-        (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
-        pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-        if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-          pMVar3 = pMVar2;
-        }
-        if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0)
-        goto code_?;
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+      (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
+      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+        pMVar3 = pMVar2;
       }
-      func_?();
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    }
+    func_?();
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)&(pMVar1->fields).OnMarketPlaceActionComplete,(MethodInfo *)0x0);
+    if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__SellAvatarController____c);
+    }
+    callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__9_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
       if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SellAvatarController____c);
       }
-      callbackFunction = TypeInfo__SellAvatarController____c->static_fields->__9__9_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-        if ((TypeInfo__SellAvatarController____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__SellAvatarController____c);
-        }
-        object = TypeInfo__SellAvatarController____c->static_fields->__9;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                            );
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__SellAvatarController____c___ScreenShotCallback_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__SellAvatarController____c->static_fields->__9__9_0 = callbackFunction;
-        func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__9_0,
-                        callbackFunction);
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      pIVar4 = (this->fields).nameField;
-      if ((pIVar4 != (InputField *)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
-        MVNetworkGame+OperationRequests::
-        MVNetworkGame_OperationRequests_AddAvatarToAvatarShopInventory
-                  (this_01,(this->fields).woID,(pIVar4->fields).m_Text,(MethodInfo *)0x0);
-        return;
-      }
+      object = TypeInfo__SellAvatarController____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__SellAvatarController____c___ScreenShotCallback_b__9_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__SellAvatarController____c->static_fields->__9__9_0 = callbackFunction;
+      func_?(&TypeInfo__SellAvatarController____c->static_fields->__9__9_0,callbackFunction
+                     );
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+              );
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    pMVar4 = (pMVar1->fields).playerContainer;
+    if ((pMVar4 != (MVPlayerContainer *)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0))
+    {
+      worldObjectId._0_1_ = (pMVar1->fields).embeddedSiteConfigData.showTouristPromotion;
+      worldObjectId._1_1_ = (pMVar1->fields).embeddedSiteConfigData.allowsOpenInNewTab;
+      worldObjectId._2_1_ = (pMVar1->fields).embeddedSiteConfigData.allowsRedirectToWebpage;
+      worldObjectId._3_1_ = (pMVar1->fields).embeddedSiteConfigData.allowsModals;
+      MVNetworkGame+OperationRequests::
+      MVNetworkGame_OperationRequests_AddAvatarToAvatarShopInventory
+                (this_01,worldObjectId,(String *)pMVar4[7].fields.OnPlayerListLoaded,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();

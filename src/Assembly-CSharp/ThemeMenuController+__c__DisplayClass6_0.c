@@ -23,7 +23,6 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass6_0::
     if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
       this_01 = (NavMesh_OnNavMeshPreUpdate *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_01,(Object *)this,
@@ -37,7 +36,6 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass6_0::
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -66,7 +64,7 @@ code_?:
     return;
   }
   if (cRam_? == '\0') {
-    pDStack_3 = (Debug_1__Class *)&TypeInfo__UnityEngine__Debug;
+    pDStack_3 = (Debug_2__Class *)&TypeInfo__UnityEngine__Debug;
     func_?();
     func_?();
     func_?();
@@ -76,7 +74,7 @@ code_?:
     pDStack_3 = TypeInfo__UnityEngine__Debug;
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Preview_theme_destroyed,(MethodInfo *)0x0);
   if (pTVar1 == (Theme *)0x0) goto code_?;
   Theme::Theme_Deactivate(pTVar1,(MethodInfo *)0x0);
@@ -103,7 +101,7 @@ code_?:
   if ((pTVar4 == (ThemeWorldObject *)0x0) ||
      (pTVar1 = (pTVar4->fields)._Visualization_k__BackingField, pTVar1 == (Theme *)0x0))
   goto code_?;
-  pDStack_3 = (Debug_1__Class *)*unaff_FS_OFFSET;
+  pDStack_3 = (Debug_2__Class *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &pDStack_3;
   if (cRam_? == '\0') {
     func_?(&
@@ -143,7 +141,7 @@ code_?:
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__MoveNext__
                         );
       if (bVar5 == 0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__
@@ -152,7 +150,7 @@ code_?:
         return;
       }
       if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)RVar7 + 0xdc))(RVar7,*(undefined4 *)(*(int *)RVar7 + 0xe0));
+      (**(code **)(*(int *)RVar7 + 0xe0))(RVar7,*(undefined4 *)(*(int *)RVar7 + 0xe4));
     }
   }
 code_?:

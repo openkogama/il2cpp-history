@@ -8,111 +8,154 @@ void Assembly-CSharp.dll::AvatarBlinker::AvatarBlinker_Awake(AvatarBlinker *this
     func_?();
     func_?();
     func_?();
-    func_?();
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+            func_?();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__)
+  ;
+  uVar1 = (this->fields).blinkDamageColor.r;
+  uVar2 = (this->fields).blinkDamageColor.g;
+  uVar3 = (this->fields).blinkDamageColor.b;
+  color_06.b = (float)uVar3;
+  color_06.g = (float)uVar2;
+  color_06.r = (float)uVar1;
+  fVar4 = (this->fields).blinkDamageColor.a;
+  pMVar5 = (this->fields)._.blinkMaterial;
+  pBVar6 = (Blinker *)func_?();
+  color_06.a = fVar4;
+  Blinker::Blinker__ctor(pBVar6,4.0,pMVar5,color_06,(MethodInfo *)0x0);
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
               );
-    CVar1 = (this->fields).blinkDamageColor;
-    pMVar2 = (this->fields)._.blinkMaterial;
-    pBVar3 = (Blinker *)func_?();
-    if (pBVar3 != (Blinker *)0x0) {
-      Blinker::Blinker__ctor(pBVar3,4.0,pMVar2,CVar1,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x0,(Object *)pBVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                );
-      CVar1 = (this->fields).blinkHealthBoostColor;
-      pMVar2 = (this->fields)._.blinkMaterial;
-      pBVar3 = (Blinker *)func_?();
-      if (pBVar3 != (Blinker *)0x0) {
-        Blinker::Blinker__ctor(pBVar3,5.0,pMVar2,CVar1,(MethodInfo *)0x0);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)0x1,(Object *)pBVar3,
-                   MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                  );
-        CVar1 = (this->fields).blinkPoisonColor;
-        pMVar2 = (this->fields)._.blinkMaterial;
-        pBVar3 = (Blinker *)func_?();
-        if (pBVar3 != (Blinker *)0x0) {
-          Blinker::Blinker__ctor(pBVar3,2.0,pMVar2,CVar1,(MethodInfo *)0x0);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this_00,(Object *)0x3,(Object *)pBVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                    );
-          CVar1 = (this->fields).blinkFrozenColor;
-          pMVar2 = (this->fields)._.blinkMaterial;
-          pBVar3 = (Blinker *)func_?();
-          if (pBVar3 != (Blinker *)0x0) {
-            Blinker::Blinker__ctor(pBVar3,3.0,pMVar2,CVar1,(MethodInfo *)0x0);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (this_00,(Object *)0x4,(Object *)pBVar3,
-                       MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                      );
-            CVar1 = (this->fields).blinkHealingColor;
-            pMVar2 = (this->fields)._.blinkMaterial;
-            pBVar3 = (Blinker *)func_?();
-            if (pBVar3 != (Blinker *)0x0) {
-              Blinker::Blinker__ctor(pBVar3,2.0,pMVar2,CVar1,(MethodInfo *)0x0);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        (this_00,(Object *)0x8,(Object *)pBVar3,
-                         MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                        );
-              CVar1 = (this->fields).blinkShieldColor;
-              pMVar2 = (this->fields)._.blinkMaterial;
-              pBVar3 = (Blinker *)func_?();
-              if (pBVar3 != (Blinker *)0x0) {
-                Blinker::Blinker__ctor(pBVar3,2.0,pMVar2,CVar1,(MethodInfo *)0x0);
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (this_00,(Object *)0x9,(Object *)pBVar3,
-                           MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                          );
-                CVar1 = (this->fields).blinkLethalColor;
-                pMVar2 = (this->fields)._.blinkMaterial;
-                pBVar3 = (Blinker *)func_?();
-                if (pBVar3 != (Blinker *)0x0) {
-                  Blinker::Blinker__ctor(pBVar3,2.0,pMVar2,CVar1,(MethodInfo *)0x0);
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            (this_00,(Object *)0xa,(Object *)pBVar3,
-                             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                            );
-                  CVar1 = (this->fields).blinkHealingColor;
-                  pMVar2 = (this->fields)._.blinkMaterial;
-                  pBVar3 = (Blinker *)func_?();
-                  if (pBVar3 != (Blinker *)0x0) {
-                    Blinker::Blinker__ctor(pBVar3,2.0,pMVar2,CVar1,(MethodInfo *)0x0);
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__Add
-                              (this_00,(Object *)0xb,(Object *)pBVar3,
-                               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-                              );
-                    (this->fields)._.blinkers = (Dictionary_2_BlinkType_Blinker_ *)this_00;
-                    func_?();
-                    return;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    uVar7 = (this->fields).blinkHealthBoostColor.r;
+    uVar8 = (this->fields).blinkHealthBoostColor.g;
+    uVar9 = (this->fields).blinkHealthBoostColor.b;
+    color.b = (float)uVar9;
+    color.g = (float)uVar8;
+    color.r = (float)uVar7;
+    fVar4 = (this->fields).blinkHealthBoostColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    this_01 = (Dictionary_2_BlinkType_Blinker_ *)0x40a00000;
+    color.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,5.0,pMVar5,color,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,1,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar10 = (this->fields).blinkPoisonColor.r;
+    uVar11 = (this->fields).blinkPoisonColor.g;
+    uVar12 = (this->fields).blinkPoisonColor.b;
+    color_00.b = (float)uVar12;
+    color_00.g = (float)uVar11;
+    color_00.r = (float)uVar10;
+    fVar4 = (this->fields).blinkPoisonColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_00.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_00,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,3,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar13 = (this->fields).blinkFrozenColor.r;
+    uVar14 = (this->fields).blinkFrozenColor.g;
+    uVar15 = (this->fields).blinkFrozenColor.b;
+    color_01.b = (float)uVar15;
+    color_01.g = (float)uVar14;
+    color_01.r = (float)uVar13;
+    fVar4 = (this->fields).blinkFrozenColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_01.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,3.0,pMVar5,color_01,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,4,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar16 = (this->fields).blinkHealingColor.r;
+    uVar17 = (this->fields).blinkHealingColor.g;
+    uVar18 = (this->fields).blinkHealingColor.b;
+    color_02.b = (float)uVar18;
+    color_02.g = (float)uVar17;
+    color_02.r = (float)uVar16;
+    fVar4 = (this->fields).blinkHealingColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_02.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_02,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,8,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar19 = (this->fields).blinkShieldColor.r;
+    uVar20 = (this->fields).blinkShieldColor.g;
+    uVar21 = (this->fields).blinkShieldColor.b;
+    color_03.b = (float)uVar21;
+    color_03.g = (float)uVar20;
+    color_03.r = (float)uVar19;
+    fVar4 = (this->fields).blinkShieldColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_03.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_03,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,9,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar22 = (this->fields).blinkLethalColor.r;
+    uVar23 = (this->fields).blinkLethalColor.g;
+    uVar24 = (this->fields).blinkLethalColor.b;
+    color_04.b = (float)uVar24;
+    color_04.g = (float)uVar23;
+    color_04.r = (float)uVar22;
+    fVar4 = (this->fields).blinkLethalColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_04.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_04,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,10,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    uVar25 = (this->fields).blinkHealingColor.r;
+    uVar26 = (this->fields).blinkHealingColor.g;
+    uVar27 = (this->fields).blinkHealingColor.b;
+    color_05.b = (float)uVar27;
+    color_05.g = (float)uVar26;
+    color_05.r = (float)uVar25;
+    fVar4 = (this->fields).blinkHealingColor.a;
+    pMVar5 = (this->fields)._.blinkMaterial;
+    pBVar6 = (Blinker *)func_?();
+    color_05.a = fVar4;
+    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_05,(MethodInfo *)0x0);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0xb,(Object *)pBVar6,
+               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+              );
+    (this->fields)._.blinkers = this_01;
+    func_?();
+    return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -254,33 +297,33 @@ void Assembly-CSharp.dll::AvatarBlinker::AvatarBlinker_UpdateBlinking
   }
   if (((this->fields)._.visible != 0) &&
      ((this->fields)._.blinkers != (Dictionary_2_BlinkType_Blinker_ *)0x0)) {
-    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-             RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-             Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                       ((Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                       ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                          *)(this->fields)._.blinkers,
                         MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Values__
                        );
-    if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)0x0) {
-      this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+      this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  *)(this->fields)._.blinkers;
       if (this_00 !=
-          (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0
-         ) {
-        pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                 RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                 Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+          (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+           *)0x0) {
+        pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                            (this_00,
                             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Values__
                            );
-        if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                        *)0x0) {
           mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-          Regex+CachedCodeEntryKey,System::Object]::
-          Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+          Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+          StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                       *)&stack0xffffffc8,pDVar4,
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BlinkType,_Blinker>__GetEnumerator__
                     );
@@ -292,9 +335,9 @@ code_?:
           ;
           bVar5 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                               *)&stack0xffffffb8,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
                             );
@@ -351,7 +394,7 @@ code_?:
             goto code_?;
           }
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__

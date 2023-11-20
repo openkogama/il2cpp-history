@@ -14,8 +14,9 @@ void Assembly-CSharp.dll::ThemeFloatSlider::ThemeFloatSlider_Initialize
   (this->fields).onChange = onChange;
   func_?(&(this->fields).onChange,onChange);
   if ((attrib != (FloatAttribute *)0x0) && (pTVar1 = (this->fields).label, pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,(attrib->fields)._.name,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).slider;
     if (this_00 != (SettingsSlider *)0x0) {
       SettingsSlider::SettingsSlider_Initialize

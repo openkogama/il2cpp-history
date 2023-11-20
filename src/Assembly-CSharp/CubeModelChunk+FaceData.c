@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::CubeModelChunk+FaceData::CubeModelChunk_FaceData__ctor
   (this->fields).colors = pCVar2;
   method_00 = (MethodInfo *)&(this->fields).colors;
   func_?(method_00,pCVar2);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

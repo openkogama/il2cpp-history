@@ -9,8 +9,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+EditAvatarModeBase::
   pMVar1 = (this->fields)._.mvAvatar;
   if ((pMVar1 != (MVAvatarLocal *)0x0) &&
      (pAVar2 = (pMVar1->fields).avatarEquipable, pAVar2 != (AvatarEquipable *)0x0)) {
-    (*(pAVar2->klass->vtable).Equip.methodPtr)
-              (pAVar2,0,0,0,0,1,(pAVar2->klass->vtable).Equip.method);
+    (*(code *)(pAVar2->klass->vtable).Equip.method)
+              (pAVar2,0,0,0,0,1,(pAVar2->klass->vtable).Unequip.methodPtr);
     pMVar1 = (this->fields)._.mvAvatar;
     if ((pMVar1 != (MVAvatarLocal *)0x0) &&
        (this_00 = (pMVar1->fields).triggerHandler, this_00 != (MVTriggerHandler *)0x0)) {

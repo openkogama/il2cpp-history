@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 29: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -20,16 +20,9 @@ namespace GoogleMobileAds.Api
 		[CompilerGenerated]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		private string _Description_k__BackingField;
-		[CompilerGenerated]
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private int _Latency_k__BackingField;
 	
 		// Properties
-		public AdapterState InitializationState { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public string Description { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public int Latency { [CompilerGenerated] get; [CompilerGenerated] private set; }
-	
-		// Constructors
-		internal AdapterStatus(AdapterState state, string description, int latency);
+		public AdapterState InitializationState { [CompilerGenerated] get; }
+		public string Description { [CompilerGenerated] get; }
 	}
 }

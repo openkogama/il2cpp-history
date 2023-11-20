@@ -14,13 +14,13 @@ using UnityEngine;
 public class AdvancedGhostBodyRotateWeapon : MonoBehaviour
 {
 	// Fields
-	private float damage;
-	private float impulseStrength;
+	private const float Damage = 55f;
+	private const float ImpulseStrength = 2500f;
 	private float factor;
-	private TimeoutMap timeoutMap;
+	private readonly TimeoutMap timeoutMap;
 	private AudioSource weaponHitSound;
 	public MVTeam alliedTeam;
-	private List<AdvancedGhostTriggerBase> ghostTriggers;
+	private readonly List<AdvancedGhostTriggerBase> ghostTriggers;
 
 	// Properties
 	public MVTeam AlliedTeam { get; set; }
@@ -29,8 +29,8 @@ public class AdvancedGhostBodyRotateWeapon : MonoBehaviour
 	public AdvancedGhostBodyRotateWeapon();
 
 	// Methods
-	public void SetAttackValueFactor(float factor);
-	public void Init(AudioSource weaponHitSound, MVCubeModelBase body);
+	public void SetAttackValueFactor(float attackFactor);
+	public void Init(AudioSource hitSound, MVCubeModelBase body);
 	private void body_Changed(CubeModelChangedEventArgs e);
 	private void SetupWeaponCollision();
 	private void Update();

@@ -13,32 +13,31 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_OnDestroy
   }
   pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__GamePassesUIEnabler__OnGamePassProgression__,
+             (MethodInfo *)0x0);
+  pAStack2 =
+       (Action *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAStack2 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pAVar1 = (Action *)0x0;
+  if (pAStack2->klass == TypeInfo__System__Action) {
+    pAVar1 = pAStack2;
+  }
+  if (pAVar1 == (Action *)0x0) {
+    pAStack3 = TypeInfo__System__Action;
     func_?();
     pAStack2 = extraout_ECX;
     pAStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__GamePassesUIEnabler__OnGamePassProgression__,
-               (MethodInfo *)0x0);
-    pAStack2 =
-         (Action *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAStack2 == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pAVar1 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAStack2;
-    }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar1 == (Action *)0x0) goto code_?;
     TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar1;
     pAVar1 = (Action *)0x0;
     if (pAStack2->klass == TypeInfo__System__Action) {
@@ -47,9 +46,6 @@ code_?:
     pAStack3 = TypeInfo__System__Action;
     if (pAVar1 != (Action *)0x0) goto code_?;
   }
-  pAStack3 = (Action__Class *)func_?();
-  pAStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -121,7 +117,6 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_Start
                        ,(MethodInfo *)0x0);
   }
   if (this_00 == (GameObject *)0x0) {
-code_?:
     func_?();
     pAStack1 = extraout_ECX;
     pAStack2 = extraout_EDX;
@@ -131,7 +126,6 @@ code_?:
               (this_00,value,(MethodInfo *)0x0);
     pAVar3 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)this,MethodInfo__GamePassesUIEnabler__OnGamePassProgression__,

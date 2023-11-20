@@ -44,18 +44,18 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
   DStack_6._current.key = (Object *)0x0;
   DStack_6._current.value = (Object *)0x0;
   DStack_6._getEnumeratorRetType = 0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.table;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       (&DStack_8,this_00,
+  this_00 = (this->fields)._.table;
+  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
                        );
     uStack_9 = 0;
-    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;
     DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._current.key = (Object *)(pDVar7->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
     pDStack_10 = &DStack_6;
@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__Dispose__
@@ -79,11 +79,11 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
       unaff_EDI = (MethodInfo *)DStack_6._current.value;
       if ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0) break;
       pEVar12 = TypeInfo__ESStateBase;
-      if ((((byte)*(code *)((int)(DStack_6._current.value)->klass + 0xb4) <
-            (TypeInfo__ESStateBase->_1).typeHierarchyDepth) ||
+      if ((((byte)*(code *)((int)(DStack_6._current.value)->klass + 0xb8) <
+            (TypeInfo__ESStateBase->_1).naturalAligment) ||
           (*(ESStateBase__Class **)
             (*(int *)((int)(DStack_6._current.value)->klass + 100) + -4 +
-            (uint)(TypeInfo__ESStateBase->_1).typeHierarchyDepth * 4) != TypeInfo__ESStateBase)) ||
+            (uint)(TypeInfo__ESStateBase->_1).naturalAligment * 4) != TypeInfo__ESStateBase)) ||
          ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0)) goto code_?;
       if (DStack_6._current.key == (Object *)0x0) break;
       pOVar13 = DStack_6._current.key;
@@ -92,11 +92,11 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
           (TypeInfo__EditorEvent->_0).element_class) goto code_?;
       puVar15 = (undefined4 *)func_?(DStack_6._current.key);
       pEVar12 = TypeInfo__ESStateBase;
-      if (((byte)*(code *)((int)((Object *)unaff_EDI)->klass + 0xb4) <
-           (TypeInfo__ESStateBase->_1).typeHierarchyDepth) ||
+      if (((byte)*(code *)((int)((Object *)unaff_EDI)->klass + 0xb8) <
+           (TypeInfo__ESStateBase->_1).naturalAligment) ||
          (*(ESStateBase__Class **)
            (*(int *)((int)((Object *)unaff_EDI)->klass + 100) + -4 +
-           (uint)(TypeInfo__ESStateBase->_1).typeHierarchyDepth * 4) != TypeInfo__ESStateBase))
+           (uint)(TypeInfo__ESStateBase->_1).naturalAligment * 4) != TypeInfo__ESStateBase))
       goto code_?;
       *(InvokerMethod *)((int)unaff_EDI + 8) = (InvokerMethod)*puVar15;
     }
@@ -128,26 +128,21 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::EditorStateTransitionT
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_IState_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
-              );
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields)._.table = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
+            );
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields)._.table = (Dictionary_2_System_Object_IState_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

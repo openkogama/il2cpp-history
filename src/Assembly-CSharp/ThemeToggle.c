@@ -14,8 +14,9 @@ void Assembly-CSharp.dll::ThemeToggle::ThemeToggle_Initialize
   (this->fields).onChange = onChange;
   func_?(&(this->fields).onChange,onChange);
   if ((attrib != (BoolAttribute *)0x0) && (pTVar1 = (this->fields).label, pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,(attrib->fields)._.name,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).toggle;
     if (this_00 != (SettingsToggle *)0x0) {
       SettingsToggle::SettingsToggle_Initialize

@@ -11,9 +11,11 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)(this->fields).gameStateType;
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum__set_ValueSet
+  this_00 = (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)
+            (this->fields).gameStateType;
+  if (this_00 != (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    GameEventManager+GameEventSubscribableVariable`1[System::Int32Enum]::
+    GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum__set_ValueSet
               (this_00,gameState,
                MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__set_ValueSet_MV__Common__MVGameStateType_
               );
@@ -42,26 +44,21 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::GameEventManager_Ga
                    );
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Object_ *)
+  this_00 = (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)
             func_?(
                            TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
                            );
-  if (this_00 != (SubscribableVariable_1_System_Object_ *)0x0) {
-    SubscribableVariable`1[System::Object]::SubscribableVariable_1_System_Object___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-              );
-    method_00 = (MethodInfo *)&(this->fields).gameStateType;
-    (this->fields).gameStateType =
-         (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  GameEventManager+GameEventSubscribableVariable`1[System::Int32Enum]::
+  GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,
+             MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+            );
+  method_00 = (MethodInfo *)&(this->fields).gameStateType;
+  (this->fields).gameStateType =
+       (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

@@ -33,94 +33,108 @@ void Assembly-CSharp.dll::SpawnRoleTeamEditor::SpawnRoleTeamEditor_Initialize
       this_00 = (pMVar3->fields).teamNames;
       pLVar1 = (this->fields).teamButtons;
       if ((pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) ||
-         (pSVar4 = mscorlib.dll::System::Collections::Generic::
-                   List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-                   List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                             (&SStack_5,pLVar1,index,
+         (pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                   Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::
+                   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                             (&MStack_5,
+                              (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                               *)pLVar1,index,
                               MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                              ), this_00 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
          ) break;
-      pTVar6 = (Text *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Int32Enum,System::Object]::
-                       Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-                                  pSVar4->team,
-                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                 );
+      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                          *(Int32Enum__Enum *)&pMVar4->visible,
+                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                         );
       pLVar1 = (this->fields).teamButtons;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar4 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+      pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar1,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      pTVar7 = pSVar4->buttonSelectedText;
-      SStack_5.team = pSVar4->team;
-      if (pTVar7 == (Text *)0x0) break;
-      SStack_5.buttonNotSelectedText = (Text *)(pTVar7->klass->vtable).set_text.method;
-      SStack_5.buttonSelected = (GameObject *)&UNK_?;
-      SStack_5.buttonNotSelected = (GameObject *)pTVar7;
-      SStack_5.buttonSelectedText = pTVar6;
-      (*(pTVar7->klass->vtable).set_text.methodPtr)();
+      pSVar7 = (String *)pMVar4->actualWidth;
+      MStack_5.visible = pMVar4->visible;
+      MStack_5._17_3_ = *(undefined3 *)&pMVar4->field_0x11;
+      if (pSVar7 == (String *)0x0) break;
+      MStack_5.width = (float)pSVar7->klass[1].vtable.System_IConvertible_ToType.method;
+      MStack_5.index = (int32_t)&UNK_?;
+      MStack_5.name = pSVar7;
+      MStack_5.actualWidth = (float)pOVar6;
+      (*pSVar7->klass[1].vtable.System_IConvertible_ToType.methodPtr)();
       pLVar1 = (this->fields).teamButtons;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar4 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+      pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar1,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      pTVar7 = pSVar4->buttonNotSelectedText;
-      SStack_5.team = pSVar4->team;
-      if (pTVar7 == (Text *)0x0) break;
-      (*(pTVar7->klass->vtable).set_text.methodPtr)
-                (pTVar7,pTVar6,(pTVar7->klass->vtable).set_text.method);
+      piVar8 = (int *)pMVar4->width;
+      MStack_5.visible = pMVar4->visible;
+      MStack_5._17_3_ = *(undefined3 *)&pMVar4->field_0x11;
+      if (piVar8 == (int *)0x0) break;
+      (**(code **)(*piVar8 + 0x318))(piVar8,pOVar6,*(undefined4 *)(*piVar8 + 0x31c));
       pLVar1 = (this->fields).teamButtons;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar4 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+      pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar1,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      value = spawnRolesTeam == pSVar4->team;
-      SStack_5.buttonSelected = pSVar4->buttonSelected;
-      SStack_5.buttonNotSelected = pSVar4->buttonNotSelected;
-      SStack_5.buttonSelectedText = pSVar4->buttonSelectedText;
-      SStack_5.buttonNotSelectedText = pSVar4->buttonNotSelectedText;
+      value = spawnRolesTeam == *(MVTeam__Enum *)&pMVar4->visible;
+      MStack_5.index = pMVar4->index;
+      MStack_5.name = pMVar4->name;
+      MStack_5.actualWidth = pMVar4->actualWidth;
+      MStack_5.width = pMVar4->width;
       pLVar1 = (this->fields).teamButtons;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar4 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+      pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar1,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      SStack_5.team = pSVar4->team;
-      if (pSVar4->buttonSelected == (GameObject *)0x0) break;
+      MStack_5.visible = pMVar4->visible;
+      MStack_5._17_3_ = *(undefined3 *)&pMVar4->field_0x11;
+      if ((GameObject *)pMVar4->index == (GameObject *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pSVar4->buttonSelected,value,(MethodInfo *)0x0);
+                ((GameObject *)pMVar4->index,value,(MethodInfo *)0x0);
       pLVar1 = (this->fields).teamButtons;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar4 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar1,index,
+      pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar1,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      SStack_5.team = pSVar4->team;
-      if (pSVar4->buttonNotSelected == (GameObject *)0x0) break;
+      MStack_5.visible = pMVar4->visible;
+      MStack_5._17_3_ = *(undefined3 *)&pMVar4->field_0x11;
+      if (pMVar4->name == (String *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pSVar4->buttonNotSelected,!value,(MethodInfo *)0x0);
+                ((GameObject *)pMVar4->name,!value,(MethodInfo *)0x0);
       pLVar1 = (this->fields).teamButtons;
       index = index + 1;
       if (pLVar1 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -185,35 +199,41 @@ void Assembly-CSharp.dll::SpawnRoleTeamEditor::SpawnRoleTeamEditor_SelectTeam
       }
       pLVar2 = (this->fields).teamButtons;
       if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar3 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffe8,pLVar2,index,
+      pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffe8,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      value = teamSelected == pSVar3->team;
+      value = teamSelected == *(MVTeam__Enum *)&pMVar3->visible;
       pLVar2 = (this->fields).teamButtons;
       if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar3 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar2,index,
+      pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      if (pSVar3->buttonSelected == (GameObject *)0x0) break;
+      if ((GameObject *)pMVar3->index == (GameObject *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pSVar3->buttonSelected,value,(MethodInfo *)0x0);
+                ((GameObject *)pMVar3->index,value,(MethodInfo *)0x0);
       pLVar2 = (this->fields).teamButtons;
       if (pLVar2 == (List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton_ *)0x0) break;
-      pSVar3 = mscorlib.dll::System::Collections::Generic::
-               List`1[SpawnRoleTeamEditor+SpawnRoleTeamButton]::
-               List_1_SpawnRoleTeamEditor_SpawnRoleTeamButton__get_Item
-                         ((SpawnRoleTeamEditor_SpawnRoleTeamButton *)&stack0xffffffd4,pLVar2,index,
+      pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffd4,
+                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)pLVar2,index,
                           MethodInfo__System__Collections__Generic__List<SpawnRoleTeamEditor::SpawnRoleTeamButton>__get_Item_int_
                          );
-      if (pSVar3->buttonNotSelected == (GameObject *)0x0) break;
+      if (pMVar3->name == (String *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pSVar3->buttonNotSelected,!value,(MethodInfo *)0x0);
+                ((GameObject *)pMVar3->name,!value,(MethodInfo *)0x0);
       index = index + 1;
       pLVar2 = (this->fields).teamButtons;
     }

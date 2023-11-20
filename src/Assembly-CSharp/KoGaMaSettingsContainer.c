@@ -105,120 +105,117 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_g
 
 {
   pTVar1 = (this->fields).additionalMetaData;
-  puVar2 = &stack0xfffffffc;
   if (pTVar1 != (TextAsset *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    pTStack_3 = pTVar1;
-    (*pcRam_?)();
-    in_stack_4 = 0xffffffff;
-    in_stack_5 = &DAT_?;
-    in_stack_6 = *unaff_FS_OFFSET;
-    *unaff_FS_OFFSET = &stack0x00000028;
     if (cRam_? == '\0') {
-      func_?();
-      pTStack_3 = (TextAsset *)
-                  &
-                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Key__
-      ;
-      func_?();
-      ppMStack_7 = &
-                   MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Value__
-      ;
+      pTStack_2 = (TextAsset *)&TypeInfo__System__String;
       func_?();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
     }
-    pKVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup;
-    puVar2 = &stack0x00000034;
-    if (pKVar8 != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
-      iVar9 = pKVar8->max_length;
-      pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-      for (uVar11 = 0; (int)uVar11 < (int)iVar9; uVar11 = uVar11 + 1) {
-        if ((pTVar10->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-          pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-        }
-        pKVar8 = pTVar10->static_fields->encodingLookup;
-        puVar2 = &stack0x00000034;
-        if (pKVar8 == (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0)
-        goto code_?;
-        if (pKVar8->max_length <= uVar11) {
+    pTStack_2 = pTVar1;
+    iVar3 = (*pcRam_?)();
+    if (iVar3 != 0) {
+      if (*(int *)(iVar3 + 0xc) == 0) {
+        return TypeInfo__System__String->static_fields->Empty;
+      }
+      pTStack_2 = (TextAsset *)0xffffffff;
+      puStack_4 = &DAT_?;
+      uStack_5 = *unaff_FS_OFFSET;
+      *unaff_FS_OFFSET = &uStack_5;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__TextAsset__EncodingUtility);
+        func_?(&
+                        MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Key__
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Value__
+                       );
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__TextAsset__EncodingUtility);
+      }
+      pKVar6 = TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup;
+      if (pKVar6 != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
+        iVar7 = pKVar6->max_length;
+        pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+        for (uVar9 = 0; (int)uVar9 < (int)iVar7; uVar9 = uVar9 + 1) {
+          if ((pTVar8->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(pTVar8);
+            pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+          }
+          pKVar6 = pTVar8->static_fields->encodingLookup;
+          if (pKVar6 == (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0)
+          goto code_?;
+          if (pKVar6->max_length <= uVar9) {
 code_?:
-          func_?();
-          pcVar12 = (code *)swi(3);
-          pSVar13 = (String *)(*pcVar12)();
-          return pSVar13;
-        }
-        pBVar14 = pKVar8->vector[uVar11].key;
-        puVar2 = &stack0x00000034;
-        if ((pBVar14 == (Byte__Array *)0x0) ||
-           (iVar15 = pBVar14->max_length, puVar2 = &stack0x00000034,
-           in_stack_16 == (undefined *)0x0)) goto code_?;
-        if ((int)iVar15 <= *(int *)(in_stack_16 + 0xc)) {
-          uVar17 = 0;
-          if (0 < (int)iVar15) {
-            do {
-              if ((pBVar14->max_length <= uVar17) || (*(uint *)(in_stack_16 + 0xc) <= uVar17))
+            func_?();
+            pcVar10 = (code *)swi(3);
+            pSVar11 = (String *)(*pcVar10)();
+            return pSVar11;
+          }
+          pBVar12 = pKVar6->vector[uVar9].key;
+          if ((pBVar12 == (Byte__Array *)0x0) || (iVar13 = pBVar12->max_length, iVar3 == 0))
+          goto code_?;
+          if ((int)iVar13 <= *(int *)(iVar3 + 0xc)) {
+            uVar14 = 0;
+            if (0 < (int)iVar13) {
+              do {
+                if ((pBVar12->max_length <= uVar14) || (*(uint *)(iVar3 + 0xc) <= uVar14))
+                goto code_?;
+                if (pBVar12->vector[uVar14] != *(uint8_t *)(uVar14 + 0x10 + iVar3)) {
+                  iVar13 = 0xffffffff;
+                }
+                uVar14 = uVar14 + 1;
+                pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+              } while ((int)uVar14 < (int)iVar13);
+            }
+            if (-1 < (int)iVar13) {
+              pTStack_2 = (TextAsset *)0x0;
+              if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor
+                  == 0) {
+                func_?(TypeInfo__UnityEngine__TextAsset__EncodingUtility);
+              }
+              if (TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup
+                  != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
+                iVar15 = func_?(uVar9);
+                if (*(int *)(iVar15 + 4) != 0) {
+                  pSVar11 = (String *)
+                           func_?(0x23,*(int *)(iVar15 + 4),iVar3,iVar13,
+                                           *(int *)(iVar3 + 0xc) - iVar13);
+                  *unaff_FS_OFFSET = uStack_5;
+                  return pSVar11;
+                }
+              }
               goto code_?;
-              if (pBVar14->vector[uVar17] != in_stack_16[uVar17 + 0x10]) {
-                iVar15 = 0xffffffff;
-              }
-              uVar17 = uVar17 + 1;
-              pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-            } while ((int)uVar17 < (int)iVar15);
-          }
-          if (-1 < (int)iVar15) {
-            in_stack_4 = 0;
-            if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
             }
-            puVar2 = &stack0x00000034;
-            if (TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup !=
-                (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
-              iVar18 = func_?();
-              puVar2 = &stack0x00000034;
-              if (*(undefined **)(iVar18 + 4) != (undefined *)0x0) {
-                ppMStack_7 = (MethodInfo **)in_stack_16;
-                puStack_19 = *(undefined **)(iVar18 + 4);
-                pTStack_3 = (TextAsset *)iVar15;
-                pSVar13 = (String *)func_?(0x23);
-                *unaff_FS_OFFSET = in_stack_6;
-                return pSVar13;
-              }
-            }
-            goto code_?;
           }
         }
-      }
-      if ((pTVar10->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pTVar10 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-      }
-      pEVar20 = pTVar10->static_fields->targetEncoding;
-      puVar2 = &stack0x00000034;
-      if ((in_stack_16 != (undefined *)0x0) &&
-         (puVar2 = &stack0x00000034, pEVar20 != (Encoding *)0x0)) {
-        pTStack_3 = *(TextAsset **)(in_stack_16 + 0xc);
-        ppMStack_7 = (MethodInfo **)0x0;
-        puStack_19 = in_stack_16;
-        pSVar13 = (String *)(*(pEVar20->klass->vtable).GetString_1.methodPtr)(pEVar20);
-        *unaff_FS_OFFSET = in_stack_6;
-        return pSVar13;
+        if ((pTVar8->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(pTVar8);
+          pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
+        }
+        pEVar16 = pTVar8->static_fields->targetEncoding;
+        if ((iVar3 != 0) && (pEVar16 != (Encoding *)0x0)) {
+          pSVar11 = (String *)
+                   (*(code *)(pEVar16->klass->vtable).GetString_1.method)
+                             (pEVar16,iVar3,0,*(undefined4 *)(iVar3 + 0xc),
+                              (pEVar16->klass->vtable).GetBestFitUnicodeToBytesData.methodPtr);
+          *unaff_FS_OFFSET = uStack_5;
+          return pSVar11;
+        }
       }
     }
   }
 code_?:
-  pTStack_3 = (TextAsset *)puVar2;
-  uVar21 = func_?(&puStack_19);
-  func_?(uVar21);
-  pcVar12 = (code *)swi(3);
-  pSVar13 = (String *)(*pcVar12)();
-  return pSVar13;
+  pTStack_2 = (TextAsset *)&stack0xfffffffc;
+  func_?();
+  func_?();
+  pcVar10 = (code *)swi(3);
+  pSVar11 = (String *)(*pcVar10)();
+  return pSVar11;
 }
 
 
@@ -466,91 +463,75 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::KoGaMaSettingsContainer_g
   }
   values = (String__Array *)func_?(TypeInfo__System__String,7);
   pTVar1 = (this->fields).versionText;
-  if ((pTVar1 == (TextAsset *)0x0) ||
-     (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                         (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0)) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-  }
-  else {
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if (values == (String__Array *)0x0) goto code_?;
-    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    if (values->max_length == 0) goto code_?;
-    values->vector[0] = pSVar2;
-    func_?();
-    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
-    goto code_?;
-    if (values->max_length < 2) goto code_?;
-    values->vector[1] = ::StringLiteral__;
-    func_?();
-    pTVar1 = (this->fields).versionText;
-    if ((pTVar1 == (TextAsset *)0x0) ||
-       (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                           (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
-    goto code_?;
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    if (values->max_length < 3) goto code_?;
-    values->vector[2] = pSVar2;
-    func_?();
-    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
-    goto code_?;
-    if (values->max_length < 4) goto code_?;
-    values->vector[3] = ::StringLiteral__;
-    func_?();
-    pTVar1 = (this->fields).versionText;
-    if ((pTVar1 == (TextAsset *)0x0) ||
-       (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                           (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
-    goto code_?;
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,3,3,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    if (values->max_length < 5) goto code_?;
-    values->vector[4] = pSVar2;
-    func_?();
-    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
-    goto code_?;
-    if (values->max_length < 6) goto code_?;
-    values->vector[5] = ::StringLiteral__;
-    func_?();
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(this->fields).versionBuild,(MethodInfo *)0x0);
-    if ((pSVar2 == (String *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
-      if (6 < values->max_length) {
-        values->vector[6] = pSVar2;
+  if (pTVar1 != (TextAsset *)0x0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                       (pTVar1,(MethodInfo *)0x0);
+    if (pSVar2 != (String *)0x0) {
+      pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
+      IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+      pSStack4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+      if (values != (String__Array *)0x0) {
+        if (values->max_length == 0) goto code_?;
+        values->vector[0] = pSStack4;
         func_?();
-        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-        return pSVar2;
+        if (values->max_length < 2) goto code_?;
+        pSStack4 = ::StringLiteral__;
+        values->vector[1] = ::StringLiteral__;
+        func_?();
+        pTVar1 = (this->fields).versionText;
+        if (pTVar1 != (TextAsset *)0x0) {
+          pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                             (pTVar1,(MethodInfo *)0x0);
+          if (pSVar2 != (String *)0x0) {
+            pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
+            IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+            pSStack4 =
+                 mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+            if (values->max_length < 3) goto code_?;
+            values->vector[2] = pSStack4;
+            func_?();
+            if (values->max_length < 4) goto code_?;
+            pSStack4 = ::StringLiteral__;
+            values->vector[3] = ::StringLiteral__;
+            func_?();
+            pTVar1 = (this->fields).versionText;
+            if (pTVar1 != (TextAsset *)0x0) {
+              pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                                 (pTVar1,(MethodInfo *)0x0);
+              if (pSVar2 != (String *)0x0) {
+                pSVar2 = mscorlib.dll::System::String::String_Substring_1
+                                   (pSVar2,3,3,(MethodInfo *)0x0);
+                IStack_3.m_value =
+                     mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+                pSStack4 =
+                     mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+                if (4 < values->max_length) {
+                  values->vector[4] = pSStack4;
+                  func_?();
+                  if (5 < values->max_length) {
+                    pSStack4 = ::StringLiteral__;
+                    values->vector[5] = ::StringLiteral__;
+                    func_?();
+                    pSStack4 =
+                         mscorlib.dll::System::Int32::Int32_ToString
+                                   ((Int32 *)&(this->fields).versionBuild,(MethodInfo *)0x0);
+                    if (6 < values->max_length) {
+                      values->vector[6] = pSStack4;
+                      func_?();
+                      pSVar2 = mscorlib.dll::System::String::String_Concat_6
+                                         (values,(MethodInfo *)0x0);
+                      return pSVar2;
+                    }
+                  }
+                }
+                goto code_?;
+              }
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  func_?();
   func_?();
 code_?:
   func_?();
@@ -574,74 +555,62 @@ String * Assembly-CSharp.dll::KoGaMaSettingsContainer::
   }
   values = (String__Array *)func_?(TypeInfo__System__String,5);
   pTVar1 = (this->fields).versionText;
-  if ((pTVar1 == (TextAsset *)0x0) ||
-     (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                         (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0)) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-  }
-  else {
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if (values == (String__Array *)0x0) goto code_?;
-    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    if (values->max_length == 0) goto code_?;
-    values->vector[0] = pSVar2;
-    func_?();
-    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
-    goto code_?;
-    if (values->max_length < 2) goto code_?;
-    values->vector[1] = ::StringLiteral__;
-    func_?();
-    pTVar1 = (this->fields).versionText;
-    if ((pTVar1 == (TextAsset *)0x0) ||
-       (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                           (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
-    goto code_?;
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if ((pSVar2 != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0)) goto code_?;
-    if (values->max_length < 3) goto code_?;
-    values->vector[2] = pSVar2;
-    func_?();
-    if ((::StringLiteral__ != (String *)0x0) && (iVar4 = func_?(), iVar4 == 0))
-    goto code_?;
-    if (values->max_length < 4) goto code_?;
-    values->vector[3] = ::StringLiteral__;
-    func_?();
-    pTVar1 = (this->fields).versionText;
-    if ((pTVar1 == (TextAsset *)0x0) ||
-       (pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                           (pTVar1,(MethodInfo *)0x0), pSVar2 == (String *)0x0))
-    goto code_?;
-    pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,3,3,(MethodInfo *)0x0);
-    IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
-    if ((pSVar2 == (String *)0x0) || (iVar4 = func_?(), iVar4 != 0)) {
-      if (4 < values->max_length) {
-        values->vector[4] = pSVar2;
+  if (pTVar1 != (TextAsset *)0x0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                       (pTVar1,(MethodInfo *)0x0);
+    if (pSVar2 != (String *)0x0) {
+      pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,0,1,(MethodInfo *)0x0);
+      IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+      pSStack4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+      if (values != (String__Array *)0x0) {
+        if (values->max_length == 0) goto code_?;
+        values->vector[0] = pSStack4;
         func_?();
-        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-        return pSVar2;
+        if (values->max_length < 2) goto code_?;
+        pSStack4 = ::StringLiteral__;
+        values->vector[1] = ::StringLiteral__;
+        func_?();
+        pTVar1 = (this->fields).versionText;
+        if (pTVar1 != (TextAsset *)0x0) {
+          pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                             (pTVar1,(MethodInfo *)0x0);
+          if (pSVar2 != (String *)0x0) {
+            pSVar2 = mscorlib.dll::System::String::String_Substring_1(pSVar2,1,2,(MethodInfo *)0x0);
+            IStack_3.m_value = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+            pSStack4 =
+                 mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+            if (values->max_length < 3) goto code_?;
+            values->vector[2] = pSStack4;
+            func_?();
+            if (values->max_length < 4) goto code_?;
+            pSStack4 = ::StringLiteral__;
+            values->vector[3] = ::StringLiteral__;
+            func_?();
+            pTVar1 = (this->fields).versionText;
+            if (pTVar1 != (TextAsset *)0x0) {
+              pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
+                                 (pTVar1,(MethodInfo *)0x0);
+              if (pSVar2 != (String *)0x0) {
+                pSVar2 = mscorlib.dll::System::String::String_Substring_1
+                                   (pSVar2,3,3,(MethodInfo *)0x0);
+                IStack_3.m_value =
+                     mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+                pSStack4 =
+                     mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
+                if (4 < values->max_length) {
+                  values->vector[4] = pSStack4;
+                  func_?();
+                  pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+                  return pSVar2;
+                }
+                goto code_?;
+              }
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  func_?();
   func_?();
 code_?:
   func_?();

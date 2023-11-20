@@ -26,78 +26,55 @@ void Assembly-CSharp.dll::GameEventManager::GameEventManager__ctor
     func_?(&TypeInfo__GameEventManager__GameStateManager);
     cRam_? = '\x01';
   }
-  value = (GameEventManager_AvatarCommandsPlayModeManager *)
-          func_?(TypeInfo__GameEventManager__AvatarCommandsPlayModeManager);
-  if (value != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).AvatarCommandsPlayMode = value;
-    func_?(&(this->fields).AvatarCommandsPlayMode,value);
-    value_00 = (GameEventManager_AvatarCommandsBuildModeManager *)
-               func_?(TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
-    if (value_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&
-                        TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
-                       );
-        cRam_? = '\x01';
-      }
-      value_01 = (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
-                 func_?(
-                                TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
-                                );
-      if (value_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value_01,ExceptionArgument__Enum_obj,unaff_EDI);
-        pMVar1 = (MethodInfo *)&(value_00->fields).LaserCommands;
-        (value_00->fields).LaserCommands = value_01;
-        func_?(pMVar1,value_01);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar1);
-        (this->fields).AvatarCommandsBuildMode = value_00;
-        func_?(&(this->fields).AvatarCommandsBuildMode,value_00);
-        value_02 = (GameEventManager_GameStateManager *)
-                   func_?(TypeInfo__GameEventManager__GameStateManager);
-        if (value_02 != (GameEventManager_GameStateManager *)0x0) {
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-                           );
-            func_?(&
-                            TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
-                           );
-            cRam_? = '\x01';
-          }
-          this_00 = (SubscribableVariable_1_System_Object_ *)
-                    func_?(
-                                   TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
-                                   );
-          if (this_00 != (SubscribableVariable_1_System_Object_ *)0x0) {
-            SubscribableVariable`1[System::Object]::SubscribableVariable_1_System_Object___ctor
-                      (this_00,(Object *)0x0,
-                       MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-                      );
-            pMVar1 = (MethodInfo *)&(value_02->fields).gameStateType;
-            (value_02->fields).gameStateType =
-                 (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
-                 this_00;
-            func_?(pMVar1,this_00);
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)value_02,ExceptionArgument__Enum_obj,pMVar1);
-            pMVar1 = (MethodInfo *)&(this->fields).GameState;
-            (this->fields).GameState = value_02;
-            func_?(pMVar1,value_02);
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
-            return;
-          }
-        }
-      }
-    }
+  method_00 = TypeInfo__GameEventManager__AvatarCommandsPlayModeManager;
+  value = (GameEventManager_AvatarCommandsPlayModeManager *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).AvatarCommandsPlayMode = value;
+  func_?(&(this->fields).AvatarCommandsPlayMode,value);
+  value_00 = (GameEventManager_AvatarCommandsBuildModeManager *)
+             func_?(TypeInfo__GameEventManager__AvatarCommandsBuildModeManager);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager
+                   );
+    cRam_? = '\x01';
   }
+  method_01 = TypeInfo__GameEventManager_AvatarCommandsBuildModeManager__LaserCommandsManager;
+  value_01 = (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)
+             func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value_01,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pMVar1 = (MethodInfo *)&(value_00->fields).LaserCommands;
+  (value_00->fields).LaserCommands = value_01;
+  func_?(pMVar1,value_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar1);
+  (this->fields).AvatarCommandsBuildMode = value_00;
+  func_?(&(this->fields).AvatarCommandsBuildMode,value_00);
+  value_02 = (GameEventManager_GameStateManager *)
+             func_?(TypeInfo__GameEventManager__GameStateManager);
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  this_00 = (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)func_?();
+  GameEventManager+GameEventSubscribableVariable`1[System::Int32Enum]::
+  GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,
+             MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+            );
+  pMVar1 = (MethodInfo *)&(value_02->fields).gameStateType;
+  (value_02->fields).gameStateType =
+       (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value_02,ExceptionArgument__Enum_obj,pMVar1);
+  pMVar1 = (MethodInfo *)&(this->fields).GameState;
+  (this->fields).GameState = value_02;
+  func_?(pMVar1,value_02);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
   return;
 }
 

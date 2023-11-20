@@ -12,9 +12,9 @@ void Assembly-CSharp.dll::NotificationRequirementPanel::NotificationRequirementP
               (this_00,checkmarkSprite,(MethodInfo *)0x0);
     pTVar1 = (this->fields).textField;
     if (text != (Object *)0x0) {
-      uVar2 = (*(text->klass->vtable).ToString.methodPtr)(text);
+      uVar2 = (*(code *)(text->klass->vtable).ToString.method)(text);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,uVar2);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,uVar2);
         return;
       }
     }

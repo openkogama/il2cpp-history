@@ -16,15 +16,16 @@ IState * Assembly-CSharp.dll::StateTransitionTable::StateTransitionTable_GetStat
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).table;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,evt,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__get_Item_System__Object_
-                       );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).table;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,evt,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__get_Item_System__Object_
+                      );
     *unaff_FS_OFFSET = uStack_3;
-    return (IState *)pOVar4;
+    return (IState *)TVar4.m_Index;
   }
   func_?();
   pcVar5 = (code *)swi(3);
@@ -73,26 +74,21 @@ void Assembly-CSharp.dll::StateTransitionTable::StateTransitionTable__ctor
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_IState_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
-              );
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).table = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_IState>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Dictionary__
+            );
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).table = (Dictionary_2_System_Object_IState_ *)this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

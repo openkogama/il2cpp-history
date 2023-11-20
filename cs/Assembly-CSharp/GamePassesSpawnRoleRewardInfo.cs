@@ -68,32 +68,6 @@ public class GamePassesSpawnRoleRewardInfo : MonoBehaviour, IGamePassShopContent
 	private bool haveShownFreeTryUnlock;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass32_0
-	{
-		// Fields
-		public SpawnRoleSelectionSkillMenu skillMenu;
-
-		// Constructors
-		public __c__DisplayClass32_0();
-
-		// Methods
-		internal void _OnPressed_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass33_0
-	{
-		// Fields
-		public SpawnRoleEditorMenu spawnRoleMenu;
-
-		// Constructors
-		public __c__DisplayClass33_0();
-
-		// Methods
-		internal void _OnEditPressed_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -126,6 +100,32 @@ public class GamePassesSpawnRoleRewardInfo : MonoBehaviour, IGamePassShopContent
 		internal void _PreviewTier_b__52_1(IModalPopupCreator x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__53_0(IUIStack x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__53_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass32_0
+	{
+		// Fields
+		public SpawnRoleSelectionSkillMenu skillMenu;
+
+		// Constructors
+		public __c__DisplayClass32_0();
+
+		// Methods
+		internal void _OnPressed_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass33_0
+	{
+		// Fields
+		public SpawnRoleEditorMenu spawnRoleMenu;
+
+		// Constructors
+		public __c__DisplayClass33_0();
+
+		// Methods
+		internal void _OnEditPressed_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

@@ -13,30 +13,34 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
   }
   pCVar1 = (this->fields).__4__this;
   if (pCVar1 != (CubeModelPopup *)0x0) {
-    this = (CubeModelPopup_c_DisplayClass7_0 *)CONCAT31(this._1_3_,(pCVar1->fields).materialID);
+    this = (CubeModelPopup_c_DisplayClass7_0 *)(uint)(pCVar1->fields).materialID;
     if (x != (IMaterialClicked *)0x0) {
-      uVar2 = 0;
-      uVar3 = (x->klass->_1).interface_offsets_count;
-      if (uVar3 != 0) {
+      pIVar2 = x->klass;
+      uVar3 = 0;
+      uVar4._0_1_ = (pIVar2->_1).rank;
+      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+      if (uVar4 != 0) {
         do {
-          if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IMaterialClicked) {
-            pIVar4 = &x->klass->vtable + x->klass->interfaceOffsets[uVar2].offset;
-            (*(pIVar4->OnMaterialClicked).methodPtr)(x,this,(pIVar4->OnMaterialClicked).method);
+            pIVar2 = x->klass;
+            iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
+            (*(code *)(&pIVar2->vtable)[iVar5].OnMaterialClicked.method)
+                      (x,this,(&pIVar2[1]._0.image)[iVar5 * 2]);
             return;
           }
-          uVar2 = uVar2 + 1;
-        } while (uVar2 < uVar3);
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
       }
-      puVar5 = (undefined4 *)
+      puVar6 = (undefined4 *)
                func_?(x,TypeInfo__UnityEngine__EventSystems__IMaterialClicked,0);
-      (*(code *)*puVar5)(x,this,puVar5[1]);
+      (*(code *)*puVar6)(x,this,puVar6[1]);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -63,21 +67,24 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
     return;
   }
   uVar4 = 0;
-  uVar5 = (x->klass->_1).interface_offsets_count;
-  if (uVar5 != 0) {
+  pIVar5 = x->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
     do {
-      if (x->klass->interfaceOffsets[uVar4].interfaceType ==
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype) {
-        pIVar6 = &x->klass->vtable + x->klass->interfaceOffsets[uVar4].offset;
+        ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OnAddNewPrototype.
+                   method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
+    } while (uVar4 < uVar6);
   }
-  pIVar6 = (ICreateNewPrototype__VTable *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype,0);
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype,0);
 code_?:
-  (*(pIVar6->OnAddNewPrototype).methodPtr)(x,pSVar1,fVar2,(pIVar6->OnAddNewPrototype).method);
+  (*(code *)*ppMVar7)(x,pSVar1,fVar2,ppMVar7[1]);
   return;
 }
 
@@ -99,29 +106,31 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
     fVar2 = (this->fields).scale;
     iVar3 = (pCVar1->fields).woID;
     if (x != (IChangePrototypeScale *)0x0) {
-      uVar4 = 0;
-      uVar5 = (x->klass->_1).interface_offsets_count;
-      if (uVar5 != 0) {
+      pIVar4 = x->klass;
+      uVar5 = 0;
+      uVar6._0_1_ = (pIVar4->_1).rank;
+      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+      if (uVar6 != 0) {
         do {
-          if (x->klass->interfaceOffsets[uVar4].interfaceType ==
+          if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale) {
-            pIVar6 = &x->klass->vtable + x->klass->interfaceOffsets[uVar4].offset;
+            ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar5].offset].
+                       OnChangePrototypeScale.method;
             goto code_?;
           }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
       }
-      pIVar6 = (IChangePrototypeScale__VTable *)
-               func_?(x,TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale,0);
+      ppMVar7 = (MethodInfo **)
+                func_?(x,TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale,0);
 code_?:
-      (*(pIVar6->OnChangePrototypeScale).methodPtr)
-                (x,iVar3,fVar2,(pIVar6->OnChangePrototypeScale).method);
+      (*(code *)*ppMVar7)(x,iVar3,fVar2,ppMVar7[1]);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

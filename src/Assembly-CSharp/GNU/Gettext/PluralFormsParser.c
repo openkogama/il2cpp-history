@@ -23,14 +23,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Equality
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -42,8 +41,9 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Equality
   if (pPVar5 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
-  pPVar6 = (this_00->fields).nodes;
-  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  if ((this_00 == (PluralFormsNode *)0x0) ||
+     (pPVar6 = (this_00->fields).nodes, pPVar6 == (PluralFormsNode__Array *)0x0))
+  goto code_?;
   iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
   if (iVar7 == 0) {
     uVar8 = func_?(0);
@@ -97,14 +97,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Expressi
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -116,8 +115,9 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Expressi
   if (pPVar5 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
-  pPVar6 = (this_00->fields).nodes;
-  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  if ((this_00 == (PluralFormsNode *)0x0) ||
+     (pPVar6 = (this_00->fields).nodes, pPVar6 == (PluralFormsNode__Array *)0x0))
+  goto code_?;
   iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
   if (iVar7 == 0) {
     uVar8 = func_?(0);
@@ -196,14 +196,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalA
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -216,7 +215,8 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalA
     return (PluralFormsNode *)0x0;
   }
   pPVar3 = (this_01->fields).token;
-  if (pPVar3 == (PluralFormsToken *)0x0) goto code_?;
+  if ((pPVar3 == (PluralFormsToken *)0x0) || (this_00 == (PluralFormsNode *)0x0))
+  goto code_?;
   pPVar5 = (this_00->fields).nodes;
   if ((pPVar3->fields).type == 0xe) {
     if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
@@ -315,14 +315,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalO
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -335,7 +334,8 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_LogicalO
     return (PluralFormsNode *)0x0;
   }
   pPVar3 = (this_01->fields).token;
-  if (pPVar3 == (PluralFormsToken *)0x0) goto code_?;
+  if ((pPVar3 == (PluralFormsToken *)0x0) || (this_00 == (PluralFormsNode *)0x0))
+  goto code_?;
   pPVar5 = (this_00->fields).nodes;
   if ((pPVar3->fields).type == 0xf) {
     if (pPVar5 == (PluralFormsNode__Array *)0x0) goto code_?;
@@ -434,14 +434,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Multipli
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -453,8 +452,9 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Multipli
   if (pPVar5 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
-  pPVar6 = (this_00->fields).nodes;
-  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  if ((this_00 == (PluralFormsNode *)0x0) ||
+     (pPVar6 = (this_00->fields).nodes, pPVar6 == (PluralFormsNode__Array *)0x0))
+  goto code_?;
   iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
   if (iVar7 == 0) {
     uVar8 = func_?(0);
@@ -663,20 +663,17 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_PmExpres
       if (pPVar1 != (PluralFormsScanner *)0x0) {
         pPVar2 = (pPVar1->fields).token;
         token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-        if ((token != (PluralFormsToken *)0x0) &&
-           (mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBP),
-           pPVar2 != (PluralFormsToken *)0x0)) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)token,ExceptionArgument__Enum_obj,unaff_ESI);
+        if (pPVar2 != (PluralFormsToken *)0x0) {
           (token->fields).type = (pPVar2->fields).type;
           (token->fields).number = (pPVar2->fields).number;
           pPVar3 = (PluralFormsNode *)func_?();
-          if (pPVar3 != (PluralFormsNode *)0x0) {
-            PluralFormsNode::PluralFormsNode__ctor(pPVar3,token,(MethodInfo *)0x0);
-            pPVar1 = (this->fields).scanner;
-            if (pPVar1 != (PluralFormsScanner *)0x0) {
-              bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
-              goto code_?;
-            }
+          PluralFormsNode::PluralFormsNode__ctor(pPVar3,token,(MethodInfo *)0x0);
+          pPVar1 = (this->fields).scanner;
+          if (pPVar1 != (PluralFormsScanner *)0x0) {
+            bVar4 = PluralFormsScanner::PluralFormsScanner_NextToken(pPVar1,(MethodInfo *)0x0);
+            goto code_?;
           }
         }
       }
@@ -742,14 +739,13 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Relation
     return pPVar1;
   }
   pPVar3 = (((this->fields).scanner)->fields).token;
-  token = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (token == (PluralFormsToken *)0x0) goto code_?;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)token,ExceptionArgument__Enum_obj,unaff_EBX);
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  token = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)token,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (token->fields).type = (pPVar3->fields).type;
   (token->fields).number = (pPVar3->fields).number;
   this_00 = (PluralFormsNode *)func_?(TypeInfo__GNU__Gettext__PluralFormsNode);
-  if (this_00 == (PluralFormsNode *)0x0) goto code_?;
   PluralFormsNode::PluralFormsNode__ctor(this_00,token,(MethodInfo *)0x0);
   pPVar2 = (this->fields).scanner;
   if (pPVar2 == (PluralFormsScanner *)0x0) goto code_?;
@@ -761,8 +757,9 @@ Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Relation
   if (pPVar5 == (PluralFormsNode *)0x0) {
     return (PluralFormsNode *)0x0;
   }
-  pPVar6 = (this_00->fields).nodes;
-  if (pPVar6 == (PluralFormsNode__Array *)0x0) goto code_?;
+  if ((this_00 == (PluralFormsNode *)0x0) ||
+     (pPVar6 = (this_00->fields).nodes, pPVar6 == (PluralFormsNode__Array *)0x0))
+  goto code_?;
   iVar7 = func_?(pPVar5,(pPVar6->klass->_0).element_class);
   if (iVar7 == 0) {
     uVar8 = func_?(0);

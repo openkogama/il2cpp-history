@@ -22,8 +22,8 @@ void Assembly-CSharp.dll::MVAvatarRemote+<>c__DisplayClass18_0::
     if ((pMVar4 != (MVAvatarRemote *)0x0) &&
        (pMVar7 = (pMVar4->fields)._.Health, pMVar7 != (MVRuntimeDataVariable_1_System_Single_ *)0x0)
        ) {
-      fVar8 = (float10)(*(pMVar7->klass->vtable).get_Value.methodPtr)
-                                 (pMVar7,(pMVar7->klass->vtable).get_Value.method);
+      fVar8 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
+                                 (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
       if (this_00 != (MVAvatarRemote *)0x0) {
         MVAvatar::MVAvatar_TrySpawningHealParticles
                   ((MVAvatar *)this_00,fStack_6 * fStack_5,(float)fVar8,(MethodInfo *)0x0);

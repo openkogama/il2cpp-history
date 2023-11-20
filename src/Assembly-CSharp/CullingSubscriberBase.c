@@ -120,7 +120,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor
     func_?();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -155,8 +155,9 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor
       }
       pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
       if (pBVar1 != (BoundingSphere__Array *)0x0) {
-        mscorlib.dll::System::Array::Array_Resize
-                  (&TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,
+        mscorlib.dll::System::Array::Array_Resize_86
+                  ((BindingRestrictions_TestBuilder_AndNode__Array **)
+                   &TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,
                    void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
                   );
         pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
@@ -172,7 +173,7 @@ code_?:
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)
+      this_00 = (Dictionary_2_System_Int32_System_Object_ *)
                 TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__CullingApiWrapper);
@@ -181,11 +182,10 @@ code_?:
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)
-                           TypeInfo__CullingApiWrapper->static_fields->
+      if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Add
+                  (this_00,TypeInfo__CullingApiWrapper->static_fields->
                            _NumBoundSpheres_k__BackingField,in_stack_3,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__Add_int__ICullingSubscriber_
                   );
@@ -289,7 +289,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor_1
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CullingApiWrapper);
@@ -312,7 +312,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor_2
     func_?(&TypeInfo__CullingApiWrapper);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();

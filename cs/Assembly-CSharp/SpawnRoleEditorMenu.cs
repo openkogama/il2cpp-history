@@ -36,6 +36,24 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 	private float timeUntilEnterPlayMode;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__16_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__16_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _Update_b__16_0(IEditModeController x, BaseEventData y);
+		internal void _Update_b__16_1(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass11_0
 	{
@@ -60,24 +78,6 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 
 		// Methods
 		internal void _OnLooksEditPressed_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IEditModeController> __9__16_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__16_1;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _Update_b__16_0(IEditModeController x, BaseEventData y);
-		internal void _Update_b__16_1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

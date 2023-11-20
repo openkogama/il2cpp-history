@@ -83,23 +83,24 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop_C
                          );
           cRam_? = '\x01';
         }
-        this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)(pBVar11->fields).activeBoosts;
         if ((this_01 !=
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             0x0) && (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                                          (this_01,
-                                           MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
-                                          ),
-                     this_04 !=
-                     (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)0x0)) {
+             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)0x0) &&
+           (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                                (this_01,
+                                 MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                                ),
+           this_04 !=
+           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+            *)0x0)) {
           pDVar12 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                   Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                   Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+                   StyleSheetCache+SheetHandleKey,System::Object]::
+                   Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                              (&DStack_13,this_04,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
                              );
@@ -110,15 +111,15 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop_C
           while( true ) {
             bVar14 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                    Object,System::Object]::
-                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                    UInt32,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                                 *)&stack0xffffffc4,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
                               );
             if (bVar14 == 0) {
               uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                         ((Object *)&stack0xffffffc4,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
@@ -134,7 +135,7 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop_C
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               DStack_13._index = (int32_t)TypeInfo__UnityEngine__Object;
               DStack_13._dictionary =
-                   (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                   (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                     *)&UNK_?;
               func_?();
             }
@@ -192,49 +193,47 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop_O
     return;
   }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((pMVar2 != (MVLocalPlayer *)0x0) &&
-     (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
-    pAVar4 = (pBVar3->fields).BoostCountChanged;
+  if ((pMVar2 == (MVLocalPlayer *)0x0) ||
+     (pBVar3 = (pMVar2->fields).boostController, pBVar3 == (BoostController *)0x0)) {
+    uVar4 = func_?();
+  }
+  else {
+    pAVar5 = (pBVar3->fields).BoostCountChanged;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,MethodInfo__BoostHUDControllerDesktop__CreateActiveBoosts__,
-                 (MethodInfo *)0x0);
-      pAVar4 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
-      if (pAVar4 == (Action *)0x0) {
-        (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__BoostHUDControllerDesktop__CreateActiveBoosts__,
+               (MethodInfo *)0x0);
+    pAVar5 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+    if (pAVar5 == (Action *)0x0) {
+      (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+      pBStack6 = &pBVar3->fields;
+      pAStack7 = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar8 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar5;
+    }
+    if (pAVar8 != (Action *)0x0) {
+      (pBVar3->fields).BoostCountChanged = pAVar8;
+      uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+      pAStack7 = (Action *)0x0;
+      if (pAVar5->klass == TypeInfo__System__Action) {
+        pAStack7 = pAVar5;
+      }
+      if (pAStack7 != (Action *)0x0) {
         pBStack6 = &pBVar3->fields;
-        pAStack7 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar8 = (Action *)0x0;
-      if (pAVar4->klass == TypeInfo__System__Action) {
-        pAVar8 = pAVar4;
-      }
-      if (pAVar8 != (Action *)0x0) {
-        (pBVar3->fields).BoostCountChanged = pAVar8;
-        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
-        pAStack7 = (Action *)0x0;
-        if (pAVar4->klass == TypeInfo__System__Action) {
-          pAStack7 = pAVar4;
-        }
-        if (pAStack7 != (Action *)0x0) {
-          pBStack6 = &pBVar3->fields;
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  uVar5 = func_?();
-code_?:
-  _pBStack0000001c = uVar5;
+  _pBStack00000014 = uVar4;
   func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
@@ -259,46 +258,44 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop_S
     if (pBVar2 != (BoostController *)0x0) {
       pAVar3 = (pBVar2->fields).BoostCountChanged;
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__BoostHUDControllerDesktop__CreateActiveBoosts__,(MethodInfo *)0x0);
-        pAVar3 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,MethodInfo__BoostHUDControllerDesktop__CreateActiveBoosts__,
+                 (MethodInfo *)0x0);
+      pAVar3 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      if (pAVar3 == (Action *)0x0) {
+        (pBVar2->fields).BoostCountChanged = (Action *)0x0;
+        pBStack5 = &pBVar2->fields;
+        pAStack6 = (Action *)0x0;
+        func_?();
+        return;
+      }
+      pAVar7 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar7 = pAVar3;
+      }
+      if (pAVar7 != (Action *)0x0) {
+        (pBVar2->fields).BoostCountChanged = pAVar7;
         uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-        if (pAVar3 == (Action *)0x0) {
-          (pBVar2->fields).BoostCountChanged = (Action *)0x0;
+        pAStack6 = (Action *)0x0;
+        if (pAVar3->klass == TypeInfo__System__Action) {
+          pAStack6 = pAVar3;
+        }
+        if (pAStack6 != (Action *)0x0) {
           pBStack5 = &pBVar2->fields;
-          pAStack6 = (Action *)0x0;
           func_?();
           return;
         }
-        pAVar7 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAVar7 = pAVar3;
-        }
-        if (pAVar7 != (Action *)0x0) {
-          (pBVar2->fields).BoostCountChanged = pAVar7;
-          uVar4 = CONCAT44(TypeInfo__System__Action,pAVar3);
-          pAStack6 = (Action *)0x0;
-          if (pAVar3->klass == TypeInfo__System__Action) {
-            pAStack6 = pAVar3;
-          }
-          if (pAStack6 != (Action *)0x0) {
-            pBStack5 = &pBVar2->fields;
-            func_?();
-            return;
-          }
-        }
-        goto code_?;
       }
+      goto code_?;
     }
   }
   uVar4 = func_?();
 code_?:
-  _pBStack00000018 = uVar4;
+  _pBStack00000010 = uVar4;
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
@@ -320,20 +317,15 @@ void Assembly-CSharp.dll::BoostHUDControllerDesktop::BoostHUDControllerDesktop__
   }
   this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-    (this->fields).currentBoosts = this_00;
-    func_?(&(this->fields).currentBoosts,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  (this->fields).currentBoosts = this_00;
+  func_?(&(this->fields).currentBoosts,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

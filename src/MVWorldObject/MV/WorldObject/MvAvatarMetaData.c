@@ -1,33 +1,4 @@
 
-/* Byte[] ToByteArray() */
-
-Byte__Array *
-MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData_ToByteArray
-          (MvAvatarMetaData *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    cRam_? = '\x01';
-  }
-  this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-  if (this_00 != (BytePacker *)0x0) {
-    BytePacker::BytePacker__ctor(this_00,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_7(this_00,(this->fields).avatarID,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_11(this_00,(this->fields).name,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_7(this_00,(this->fields).priceGold,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_3(this_00,(this->fields).isOnMarketPlace,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_3(this_00,(this->fields).canBeSoldOnMarketPlace,(MethodInfo *)0x0);
-    pBVar1 = BytePacker::BytePacker_ToArray(this_00,(MethodInfo *)0x0);
-    return pBVar1;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar2)();
-  return pBVar1;
-}
-
-
 /* String ToString() */
 
 String * MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData_ToString
@@ -118,37 +89,9 @@ code_?:
 }
 
 
-/* MvAvatarMetaData(Int32, String, Int32, Boolean, Boolean) */
-
-void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__ctor
-               (MvAvatarMetaData *this,int32_t avatarID,String *name,int32_t priceGold,
-               bool isOnMarketPlace,bool canBeSoldOnMarketPlace,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
-    cRam_? = '\x01';
-  }
-  (this->fields).avatarID = -1;
-  (this->fields).name = ::StringLiteral__;
-  method_00 = (MethodInfo *)&(this->fields).name;
-  func_?(method_00,::StringLiteral__);
-  (this->fields).priceGold = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).avatarID = avatarID;
-  (this->fields).name = name;
-  func_?(&(this->fields).name,name);
-  (this->fields).priceGold = priceGold;
-  (this->fields).isOnMarketPlace = isOnMarketPlace;
-  (this->fields).canBeSoldOnMarketPlace = canBeSoldOnMarketPlace;
-  return;
-}
-
-
 /* MvAvatarMetaData(BytePacker) */
 
-void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__ctor_1
+void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__ctor
                (MvAvatarMetaData *this,BytePacker *bp,MethodInfo *method)
 
 {
@@ -161,7 +104,7 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__cto
   method_00 = (MethodInfo *)&(this->fields).name;
   func_?(method_00,::StringLiteral__);
   (this->fields).priceGold = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if (bp != (BytePacker *)0x0) {
     iVar1 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);

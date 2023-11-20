@@ -48,60 +48,56 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Initialize
   func_?(&(this->fields).chatAnchor,chatAnchor);
   pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  this_00 = (Action_2_Int32_Boolean_ *)func_?(TypeInfo__System__Action<int,_bool>);
-  if (this_00 != (Action_2_Int32_Boolean_ *)0x0) {
-    mscorlib.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean___ctor
-              (this_00,(Object *)this,
-               MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
-               (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-           (Action_2_Int32_Boolean_ *)0x0;
-    }
-    else {
-      pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
-      if (pAVar1 == (Action_2_Int32_Boolean_ *)0x0) goto code_?;
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-           pAVar1;
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
-    func_?();
-    pAVar4 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
-    this_01 = (Action_2_Int32Enum_Object_ *)func_?();
-    if (this_01 != (Action_2_Int32Enum_Object_ *)0x0) {
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                 ,(MethodInfo *)0x0);
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar2 == (Delegate *)0x0) {
-        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
-             (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             0x0;
-code_?:
-        func_?();
-        return;
-      }
-      pAVar4 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                *)func_?();
-      if (pAVar4 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                     *)0x0) {
-        TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar4;
-        iVar3 = func_?();
-        if (iVar3 != 0) goto code_?;
-      }
-      goto code_?;
-    }
+  pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+           func_?(TypeInfo__System__Action<int,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (pUVar2,(Object *)this,
+             MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
+             (MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
+  if (pDVar3 == (Delegate *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
+         (Action_2_Int32_Boolean_ *)0x0;
+  }
+  else {
+    pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
+    if (pAVar1 == (Action_2_Int32_Boolean_ *)0x0) goto code_?;
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
+         pAVar1;
+    iVar4 = func_?();
+    if (iVar4 == 0) goto code_?;
   }
   func_?();
+  pAVar5 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+  pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (pUVar2,(Object *)this,
+             MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+             ,(MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar5,(Delegate *)pUVar2,(MethodInfo *)0x0);
+  if (pDVar3 == (Delegate *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
+         (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+           func_?();
+  if (pAVar5 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                 *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar5;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
+  }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -172,44 +168,40 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnDestroy
     func_?(&TypeInfo__SayChatBubbleVisibilityManager);
     cRam_? = '\x01';
   }
-  source = (Action_2_Int32_Boolean___Class *)
-           TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+  pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  pAVar1 = (Action_2_Int32_Boolean_ *)func_?(TypeInfo__System__Action<int,_bool>);
-  if (pAVar1 == (Action_2_Int32_Boolean_ *)0x0) {
-    func_?();
-  }
-  else {
-    mscorlib.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean___ctor
-              (pAVar1,(Object *)this,
-               MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
-               (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)pAVar1,(MethodInfo *)0x0);
-    source = TypeInfo__System__Action<int,_bool>;
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-           (Action_2_Int32_Boolean_ *)0x0;
-      pAStack3 = (Action_2_Int32_Boolean___Class *)0x0;
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+            func_?(TypeInfo__System__Action<int,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
+             (MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar3 = TypeInfo__System__Action<int,_bool>;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
+         (Action_2_Int32_Boolean_ *)0x0;
+    pAStack4 = (Action_2_Int32_Boolean___Class *)0x0;
 code_?:
-      func_?();
-      return;
-    }
-    pAStack3 = TypeInfo__System__Action<int,_bool>;
-    pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
-    if (pAVar1 != (Action_2_Int32_Boolean_ *)0x0) {
-      TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-           pAVar1;
-      source = TypeInfo__System__Action<int,_bool>;
-      pAStack3 = TypeInfo__System__Action<int,_bool>;
-      pAStack3 = (Action_2_Int32_Boolean___Class *)func_?();
-      if (pAStack3 != (Action_2_Int32_Boolean___Class *)0x0) goto code_?;
-    }
+    func_?();
+    return;
   }
-  pAStack3 = source;
+  pAStack4 = TypeInfo__System__Action<int,_bool>;
+  pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
+  if (pAVar1 != (Action_2_Int32_Boolean_ *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
+         pAVar1;
+    pAVar3 = TypeInfo__System__Action<int,_bool>;
+    pAStack4 = TypeInfo__System__Action<int,_bool>;
+    pAStack4 = (Action_2_Int32_Boolean___Class *)func_?();
+    if (pAStack4 != (Action_2_Int32_Boolean___Class *)0x0) goto code_?;
+  }
+  pAStack4 = pAVar3;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -244,18 +236,19 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
     pDVar3 = data;
     if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       this = (SayChatBubbleHandler *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,key,
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-      text = (SayChatBubbleHandler *)0x0;
+      text.m_Index = 0;
       if (this == (SayChatBubbleHandler *)0x0) {
 code_?:
         actorNr = 0;
         this = (SayChatBubbleHandler *)(pSVar1->fields).chatAnchor;
         ChatBubbleManager::ChatBubbleManager_ShowChatBubble
-                  ((String *)text,anchorId,(ChatAnchor *)this,(MethodInfo *)0x0);
+                  ((String *)text.m_Index,anchorId,(ChatAnchor *)this,(MethodInfo *)0x0);
         if (TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard ==
             (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
           return;
@@ -268,11 +261,11 @@ code_?:
         (*(pAVar4->fields)._._.invoke_impl)();
         return;
       }
-      if ((String__Class *)this->klass == TypeInfo__System__String) {
-        text = this;
+      if (*(String__Class **)this == TypeInfo__System__String) {
+        text = (TextureId)this;
       }
       actorNr = (int32_t)TypeInfo__System__String;
-      if (text != (SayChatBubbleHandler *)0x0) goto code_?;
+      if ((String *)text.m_Index != (String *)0x0) goto code_?;
       goto code_?;
     }
   }

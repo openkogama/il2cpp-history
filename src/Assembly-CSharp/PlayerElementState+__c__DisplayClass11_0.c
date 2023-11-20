@@ -6,10 +6,8 @@ void Assembly-CSharp.dll::PlayerElementState+<>c__DisplayClass11_0::
                (PlayerElementState_c_DisplayClass11_0 *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  uVar1 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
@@ -25,57 +23,53 @@ void Assembly-CSharp.dll::PlayerElementState+<>c__DisplayClass11_0::
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
   value = (Object *)func_?(TypeInfo__PlayerElementState____c__DisplayClass11_1);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pPVar4 = (this->fields).__4__this;
-    if (pPVar4 != (PlayerElementState *)0x0) {
-      PlayerElementState::PlayerElementState_ValidateFriendRequest(pPVar4,(MethodInfo *)0x0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,unaff_EDI);
+  pPVar2 = (this->fields).__4__this;
+  if (pPVar2 != (PlayerElementState *)0x0) {
+    PlayerElementState::PlayerElementState_ValidateFriendRequest(pPVar2,(MethodInfo *)0x0);
+    if (value != (Object *)0x0) {
       value[1].klass = (Object__Class *)::StringLiteral__;
       func_?();
       this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      pMVar5 = (this->fields).player;
-      if ((pMVar5 != (MVPlayer *)0x0) && (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
-        bVar6 = MVNetworkGame+OperationRequests::
+      pMVar3 = (this->fields).player;
+      if ((pMVar3 != (MVPlayer *)0x0) && (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
+        bVar4 = MVNetworkGame+OperationRequests::
                 MVNetworkGame_OperationRequests_RequestFriendShipByID
-                          (this_00,(pMVar5->fields)._ProfileID_k__BackingField,
+                          (this_00,(pMVar3->fields)._ProfileID_k__BackingField,
                            (String **)(value + 1),(MethodInfo *)0x0);
-        if (bVar6 != 0) {
-code_?:
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        pPVar4 = (this->fields).__4__this;
-        if (pPVar4 != (PlayerElementState *)0x0) {
+        if (bVar4 == 0) {
+          pPVar2 = (this->fields).__4__this;
+          if (pPVar2 == (PlayerElementState *)0x0) goto code_?;
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pPVar4,(MethodInfo *)0x0);
+                           ((Component *)pPVar2,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                       MethodInfo__PlayerElementState____c__DisplayClass11_1___SetupButtons_b__4_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                      );
-            goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__PlayerElementState____c__DisplayClass11_1___SetupButtons_b__4_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          uVar1 = 0;
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                    );
         }
+        *unaff_FS_OFFSET = uVar1;
+        return;
       }
     }
   }
+code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

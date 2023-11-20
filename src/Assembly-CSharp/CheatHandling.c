@@ -54,27 +54,18 @@ void Assembly-CSharp.dll::CheatHandling::CheatHandling_Init(MethodInfo *method)
   }
   pNVar1 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction)
   ;
-  if (pNVar1 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__SpeedHackDetected__,(MethodInfo *)0x0
-              );
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDetector::
-    SpeedHackDetector_StartDetection_3((UnityAction *)pNVar1,1.0,3,(MethodInfo *)0x0);
-    pNVar1 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (pNVar1 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__ObscuredCheatingDetected__,
-                 (MethodInfo *)0x0);
-      Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
-      ObscuredCheatingDetector_StartDetection_1((UnityAction *)pNVar1,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__SpeedHackDetected__,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDetector::
+  SpeedHackDetector_StartDetection_3((UnityAction *)pNVar1,1.0,3,(MethodInfo *)0x0);
+  pNVar1 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar1,(Object *)0x0,MethodInfo__CheatHandling__ObscuredCheatingDetected__,
+             (MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+  ObscuredCheatingDetector_StartDetection_1((UnityAction *)pNVar1,(MethodInfo *)0x0);
   return;
 }
 

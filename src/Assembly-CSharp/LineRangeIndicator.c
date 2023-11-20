@@ -11,21 +11,19 @@ void Assembly-CSharp.dll::LineRangeIndicator::LineRangeIndicator_CopyMaterial
   }
   source = (this->fields).lineDotMaterial;
   this_00 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-  if (this_00 != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-              (this_00,source,(MethodInfo *)0x0);
-    (this->fields).materialCopy = this_00;
-    func_?(&(this->fields).materialCopy,this_00);
-    pMVar1 = (this->fields).rangeIndicator;
+  UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+            (this_00,source,(MethodInfo *)0x0);
+  (this->fields).materialCopy = this_00;
+  func_?(&(this->fields).materialCopy,this_00);
+  pMVar1 = (this->fields).rangeIndicator;
+  if (pMVar1 != (MeshRenderer *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+              ((Renderer *)pMVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
+    pMVar1 = (this->fields).rangeIndicator_backside;
     if (pMVar1 != (MeshRenderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                 ((Renderer *)pMVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).rangeIndicator_backside;
-      if (pMVar1 != (MeshRenderer *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                  ((Renderer *)pMVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-        return;
-      }
+      return;
     }
   }
   func_?();

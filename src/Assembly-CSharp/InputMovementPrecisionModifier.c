@@ -61,43 +61,35 @@ void Assembly-CSharp.dll::InputMovementPrecisionModifier::
   pUVar2 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
   this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
-  if (this_00 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-    func_?();
-  }
-  else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-    UnityAction_1_UnityEngine_Vector2___ctor
-              (this_00,(Object *)this,
-               MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_
-               ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    this = (InputMovementPrecisionModifier *)
-           TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
-    if (pDVar3 == (Delegate *)0x0) {
-      TypeInfo__ResolutionManager->static_fields->OnReferenceResolution =
-           (UnityAction_1_UnityEngine_Vector2_ *)0x0;
-      referenceResolution.x = 0.0;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+  UnityAction_1_UnityEngine_Vector2___ctor
+            (this_00,(Object *)this,
+             MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_
+             ,(MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
+  if (pDVar3 == (Delegate *)0x0) {
+    TypeInfo__ResolutionManager->static_fields->OnReferenceResolution =
+         (UnityAction_1_UnityEngine_Vector2_ *)0x0;
+    referenceResolution.x = 0.0;
 code_?:
-      func_?();
-      return;
-    }
-    referenceResolution.x = (float)TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
-    pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-    if (pUVar2 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-      TypeInfo__ResolutionManager->static_fields->OnReferenceResolution = pUVar2;
-      this = (InputMovementPrecisionModifier *)
-             TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
-      referenceResolution.x =
-           (float)TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
-      referenceResolution.x = (float)func_?();
-      if (referenceResolution.x != 0.0) goto code_?;
-    }
+    func_?();
+    return;
   }
-  referenceResolution.x = (float)this;
+  referenceResolution.x = (float)TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
+  pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
+  if (pUVar2 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+    TypeInfo__ResolutionManager->static_fields->OnReferenceResolution = pUVar2;
+    pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
+    referenceResolution.x = (float)TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>;
+    referenceResolution.x = (float)func_?();
+    if (referenceResolution.x != 0.0) goto code_?;
+  }
+  referenceResolution.x = (float)pUVar4;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -124,25 +116,22 @@ void Assembly-CSharp.dll::InputMovementPrecisionModifier::InputMovementPrecision
     pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
     pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
-    if (pUVar2 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-code_?:
-      func_?();
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
     UnityAction_1_UnityEngine_Vector2___ctor
               (pUVar2,(Object *)this,
                MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_
                ,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pUVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
-    if (pDVar4 != (Delegate *)0x0) {
+    if (pDVar3 != (Delegate *)0x0) {
       pUVar1 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
-      if (pUVar1 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) goto code_?;
+      if (pUVar1 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+        func_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
       TypeInfo__ResolutionManager->static_fields->OnReferenceResolution = pUVar1;
       iVar5 = func_?();
       if (iVar5 == 0) goto code_?;
@@ -164,15 +153,14 @@ code_?:
     pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
     pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
-    if (pUVar2 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
     UnityAction_1_UnityEngine_Vector2___ctor
               (pUVar2,(Object *)this,
                MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_
                ,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pUVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
-    if (pDVar4 != (Delegate *)0x0) {
+    if (pDVar3 != (Delegate *)0x0) {
       pUVar1 = (UnityAction_1_UnityEngine_Vector2_ *)func_?();
       if (pUVar1 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
         TypeInfo__ResolutionManager->static_fields->OnReferenceResolution = pUVar1;

@@ -15,88 +15,88 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     cRam_? = '\x01';
   }
   pSVar1 = StringLiteral_InternalStateInterstitial_ADLoad;
-  if ((error == (LoadAdError *)0x0) && (ad != (InterstitialAd *)0x0)) {
-    pRVar2 = GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-             InterstitialAd_GetResponseInfo(ad,(MethodInfo *)0x0);
-    pSVar1 = StringLiteral_InternalStateInterstitial_ADLoad;
-    if (pRVar2 == (ResponseInfo *)0x0) {
-      pSVar3 = (String *)0x0;
-    }
-    else {
-      pSVar3 = (String *)
-               (*(pRVar2->klass->vtable).ToString.methodPtr)
-                         (pRVar2,(pRVar2->klass->vtable).ToString.method);
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+  if (error == (LoadAdError *)0x0) {
+    if (ad != (InterstitialAd *)0x0) {
+      pRVar2 = GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
+               InterstitialAd_GetResponseInfo(ad,(MethodInfo *)0x0);
+      pSVar1 = StringLiteral_InternalStateInterstitial_ADLoad;
+      if (pRVar2 == (ResponseInfo *)0x0) {
+        pSVar3 = (String *)0x0;
+      }
+      else {
+        pSVar3 = (String *)
+                 (*(code *)(pRVar2->klass->vtable).ToString.method)
+                           (pRVar2,pRVar2->klass[1]._0.image);
+      }
+      pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar1,(MethodInfo *)0x0);
+      pIRam00000018 = ad;
       func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
-    pIRam00000018 = ad;
-    func_?();
-    MobileAdManager_InternalStateInterstitial_SetupCallbacks
-              ((MobileAdManager_InternalStateInterstitial *)0x0,(MethodInfo *)0x0);
-    if (iRam_? != 0) {
-      *(undefined1 *)(iRam_? + 8) = 0;
-      if (cRam_? == '\0') {
-        return;
-      }
-      if (pIRam00000018 != (InterstitialAd *)0x0) {
-        GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Show
-                  (pIRam00000018,(MethodInfo *)0x0);
-        return;
-      }
-    }
-  }
-  else {
-    if (error == (LoadAdError *)0x0) {
-      pSVar3 = (String *)0x0;
-    }
-    else {
-      pSVar3 = (String *)
-               (*(error->klass->vtable).ToString.methodPtr)
-                         (error,(error->klass->vtable).ToString.method);
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-              ((Object *)pSVar1,(MethodInfo *)0x0);
-    pMVar4 = (this->fields).adLoadState;
-    if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
-      bVar5 = cRam_? == '\0';
-      (pMVar4->fields).loadingAd = 0;
-      if (bVar5) {
-        func_?();
-        func_?();
-        func_?(&StringLiteral_InternalStateInterstitial_Handle);
-        cRam_? = '\x01';
-      }
-      pMVar4 = (this->fields).adLoadState;
-      if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
-        bVar6 = MobileAdManager+AdLoadState::MobileAdManager_AdLoadState_Reload
-                          (pMVar4,(MethodInfo *)0x0);
-        if (bVar6 == 0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                    ((Object *)StringLiteral_InternalStateInterstitial_Handle,(MethodInfo *)0x0);
-          (this->fields).interstitialAdResult = 1;
-          MobileAdManager_InternalStateInterstitial_FinishRequest(this,(MethodInfo *)0x0);
+      MobileAdManager_InternalStateInterstitial_SetupCallbacks
+                ((MobileAdManager_InternalStateInterstitial *)0x0,(MethodInfo *)0x0);
+      if (iRam_? != 0) {
+        *(undefined1 *)(iRam_? + 8) = 0;
+        if (cRam_? == '\0') {
           return;
         }
+        if (pIRam00000018 != (InterstitialAd *)0x0) {
+          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Show
+                    (pIRam00000018,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      goto code_?;
+    }
+    pSVar3 = (String *)0x0;
+  }
+  else {
+    pSVar3 = (String *)
+             (*(code *)(error->klass->vtable).ToString.method)(error,error->klass[1]._0.image);
+  }
+  pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Debug);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+            ((Object *)pSVar1,(MethodInfo *)0x0);
+  pMVar4 = (this->fields).adLoadState;
+  if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
+    bVar5 = cRam_? == '\0';
+    (pMVar4->fields).loadingAd = 0;
+    if (bVar5) {
+      func_?();
+      func_?();
+      func_?(&StringLiteral_InternalStateInterstitial_Handle);
+      cRam_? = '\x01';
+    }
+    pMVar4 = (this->fields).adLoadState;
+    if (pMVar4 != (MobileAdManager_AdLoadState *)0x0) {
+      bVar6 = MobileAdManager+AdLoadState::MobileAdManager_AdLoadState_Reload
+                        (pMVar4,(MethodInfo *)0x0);
+      if (bVar6 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_InternalStateInterstitial_Handle,(MethodInfo *)0x0);
-        MobileAdManager_InternalStateInterstitial_LoadInterstitialAd(this,(MethodInfo *)0x0);
+        (this->fields).interstitialAdResult = 1;
+        MobileAdManager_InternalStateInterstitial_FinishRequest(this,(MethodInfo *)0x0);
         return;
       }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)StringLiteral_InternalStateInterstitial_Handle,(MethodInfo *)0x0);
+      MobileAdManager_InternalStateInterstitial_LoadInterstitialAd(this,(MethodInfo *)0x0);
+      return;
     }
   }
+code_?:
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Create,(MethodInfo *)0x0);
   MobileAdManager::MobileAdManager_SendStat(StringLiteral_Ad_InterstitialLoad,(MethodInfo *)0x0);
   MobileAdManager_InternalStateInterstitial_DestroyInterstitial(this,(MethodInfo *)0x0);
@@ -138,35 +138,33 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_InternalStateInterstitial_LoadIn,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_InternalStateInterstitial_LoadIn,(MethodInfo *)0x0);
     if (in_stack_1[2].klass != (Object__Class *)0x0) {
       *(undefined1 *)&((in_stack_1[2].klass)->_0).name = 1;
-      request = MobileAdManager::MobileAdManager_CreateAdRequest((MethodInfo *)0x0);
+      MobileAdManager::MobileAdManager_CreateAdRequest((MethodInfo *)0x0);
       pAVar2 = MobileAdManagerCredentials::MobileAdManagerCredentials_GetAdMobCredentials
                          ((MethodInfo *)0x0);
       if (pAVar2 != (AdMobCredentials *)0x0) {
         adUnitId = (pAVar2->fields).InterstitialAdUnitId;
         this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_00,in_stack_1,
-                     MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__ADLoadCallback_GoogleMobileAds__Api__InterstitialAd__GoogleMobileAds__Api__LoadAdError_
-                     ,(MethodInfo *)0x0);
-          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Load
-                    (adUnitId,request,
-                     (Action_2_GoogleMobileAds_Api_InterstitialAd_GoogleMobileAds_Api_LoadAdError_ *
-                     )this_00,(MethodInfo *)0x0);
-          return;
-        }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_00,in_stack_1,
+                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__ADLoadCallback_GoogleMobileAds__Api__InterstitialAd__GoogleMobileAds__Api__LoadAdError_
+                   ,(MethodInfo *)0x0);
+        GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Load
+                  (adUnitId,unaff_ESI,
+                   (Action_2_GoogleMobileAds_Api_InterstitialAd_GoogleMobileAds_Api_LoadAdError_ *)
+                   this_00,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -192,7 +190,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Destro,(MethodInfo *)0x0);
   MobileAdManager_InternalStateInterstitial_DestroyInterstitial(this,(MethodInfo *)0x0);
   (this->fields).interstitialAdCallback =
@@ -218,7 +216,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Destro,(MethodInfo *)0x0);
   if ((this->fields).interstitial != (InterstitialAd *)0x0) {
     MobileAdManager_InternalStateInterstitial_RemoveCallbacks(this,(MethodInfo *)0x0);
@@ -263,7 +261,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_InternalStateInterstitial_Finish,(MethodInfo *)0x0);
     *unaff_FS_OFFSET = uStack_3;
     return;
@@ -271,7 +269,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Finish,(MethodInfo *)0x0);
   uStack_1 = 2;
   pAVar4 = (this->fields).interstitialAdCallback;
@@ -313,7 +311,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_InternalStateInterstitial_Handle,(MethodInfo *)0x0);
       (this->fields).interstitialAdResult = 1;
       MobileAdManager_InternalStateInterstitial_FinishRequest(this,(MethodInfo *)0x0);
@@ -322,7 +320,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_InternalStateInterstitial_Handle,(MethodInfo *)0x0);
     MobileAdManager_InternalStateInterstitial_LoadInterstitialAd(this,(MethodInfo *)0x0);
     return;
@@ -350,7 +348,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Inters,(MethodInfo *)0x0);
   return;
 }
@@ -372,7 +370,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Inters,(MethodInfo *)0x0);
   (this->fields).interstitialAdResult = 3;
   MobileAdManager_InternalStateInterstitial_FinishRequest(this,(MethodInfo *)0x0);
@@ -400,14 +398,13 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   }
   else {
     str1 = (String *)
-           (*(error->klass->vtable).ToString.methodPtr)
-                     (error,(error->klass->vtable).ToString.method);
+           (*(code *)(error->klass->vtable).ToString.method)(error,error->klass[1]._0.image);
   }
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)pSVar1,(MethodInfo *)0x0);
   return;
 }
@@ -429,7 +426,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Inters,(MethodInfo *)0x0);
   pMVar1 = (this->fields).adLoadState;
   if (pMVar1 != (MobileAdManager_AdLoadState *)0x0) {
@@ -460,7 +457,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Inters,(MethodInfo *)0x0);
   return;
 }
@@ -490,7 +487,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0)
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
     ;
     return;
   }
@@ -527,19 +524,19 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_InternalStateInterstitial_LoadIn,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_InternalStateInterstitial_LoadIn,(MethodInfo *)0x0);
     pMVar1 = (this->fields).adLoadState;
     if (pMVar1 != (MobileAdManager_AdLoadState *)0x0) {
       (pMVar1->fields).loadingAd = 1;
-      request = MobileAdManager::MobileAdManager_CreateAdRequest((MethodInfo *)0x0);
+      MobileAdManager::MobileAdManager_CreateAdRequest((MethodInfo *)0x0);
       pAVar2 = MobileAdManagerCredentials::MobileAdManagerCredentials_GetAdMobCredentials
                          ((MethodInfo *)0x0);
       if (pAVar2 != (AdMobCredentials *)0x0) {
@@ -548,18 +545,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                   func_?(
                                  TypeInfo__System__Action<GoogleMobileAds::Api::InterstitialAd,_GoogleMobileAds::Api::LoadAdError>
                                  );
-        if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__ADLoadCallback_GoogleMobileAds__Api__InterstitialAd__GoogleMobileAds__Api__LoadAdError_
-                     ,(MethodInfo *)0x0);
-          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Load
-                    (adUnitId,request,
-                     (Action_2_GoogleMobileAds_Api_InterstitialAd_GoogleMobileAds_Api_LoadAdError_ *
-                     )this_00,(MethodInfo *)0x0);
-          return;
-        }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__ADLoadCallback_GoogleMobileAds__Api__InterstitialAd__GoogleMobileAds__Api__LoadAdError_
+                   ,(MethodInfo *)0x0);
+        GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_Load
+                  (adUnitId,unaff_ESI,
+                   (Action_2_GoogleMobileAds_Api_InterstitialAd_GoogleMobileAds_Api_LoadAdError_ *)
+                   this_00,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -607,85 +602,75 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Remove,(MethodInfo *)0x0);
   pIVar1 = (this->fields).interstitial;
   pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)this,
+             MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentOpened__
+             ,(MethodInfo *)0x0);
+  if (pIVar1 != (InterstitialAd *)0x0) {
+    GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
+    InterstitialAd_remove_OnAdFullScreenContentOpened(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+    pIVar1 = (this->fields).interstitial;
+    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar2,(Object *)this,
-               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentOpened__
+               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentClosed__
                ,(MethodInfo *)0x0);
     if (pIVar1 != (InterstitialAd *)0x0) {
       GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-      InterstitialAd_remove_OnAdFullScreenContentOpened(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+      InterstitialAd_remove_OnAdFullScreenContentClosed(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
       pIVar1 = (this->fields).interstitial;
       pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar2,(Object *)this,
-                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentClosed__
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar2,(Object *)this,
+                 MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdClicked__
+                 ,(MethodInfo *)0x0);
+      if (pIVar1 != (InterstitialAd *)0x0) {
+        GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_remove_OnAdClicked
+                  (pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+        pIVar1 = (this->fields).interstitial;
+        pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                  *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  (pDVar3,(Object *)this,
+                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdPaid_GoogleMobileAds__Api__AdValue_
                    ,(MethodInfo *)0x0);
         if (pIVar1 != (InterstitialAd *)0x0) {
-          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-          InterstitialAd_remove_OnAdFullScreenContentClosed
-                    (pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_remove_OnAdPaid
+                    (pIVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pDVar3,(MethodInfo *)0x0);
           pIVar1 = (this->fields).interstitial;
           pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar2,(Object *)this,
-                       MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdClicked__
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (pNVar2,(Object *)this,
+                     MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdImpressionRecorded__
+                     ,(MethodInfo *)0x0);
+          if (pIVar1 != (InterstitialAd *)0x0) {
+            GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
+            InterstitialAd_remove_OnAdImpressionRecorded(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+            pIVar1 = (this->fields).interstitial;
+            pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                      (pDVar3,(Object *)this,
+                       MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
                        ,(MethodInfo *)0x0);
             if (pIVar1 != (InterstitialAd *)0x0) {
               GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-              InterstitialAd_remove_OnAdClicked(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
-              pIVar1 = (this->fields).interstitial;
-              pAVar3 = (Action_1_Object_ *)func_?();
-              if (pAVar3 != (Action_1_Object_ *)0x0) {
-                mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                          (pAVar3,(Object *)this,
-                           MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdPaid_GoogleMobileAds__Api__AdValue_
-                           ,(MethodInfo *)0x0);
-                if (pIVar1 != (InterstitialAd *)0x0) {
-                  GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                  InterstitialAd_remove_OnAdPaid
-                            (pIVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pAVar3,
-                             (MethodInfo *)0x0);
-                  pIVar1 = (this->fields).interstitial;
-                  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                  if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                    NavMesh_OnNavMeshPreUpdate__ctor
-                              (pNVar2,(Object *)this,
-                               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdImpressionRecorded__
-                               ,(MethodInfo *)0x0);
-                    if (pIVar1 != (InterstitialAd *)0x0) {
-                      GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                      InterstitialAd_remove_OnAdImpressionRecorded
-                                (pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
-                      pIVar1 = (this->fields).interstitial;
-                      pAVar3 = (Action_1_Object_ *)func_?();
-                      if (pAVar3 != (Action_1_Object_ *)0x0) {
-                        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                                  (pAVar3,(Object *)this,
-                                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
-                                   ,(MethodInfo *)0x0);
-                        if (pIVar1 != (InterstitialAd *)0x0) {
-                          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                          InterstitialAd_remove_OnAdFullScreenContentFailed
-                                    (pIVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pAVar3,
-                                     (MethodInfo *)0x0);
-                          return;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+              InterstitialAd_remove_OnAdFullScreenContentFailed
+                        (pIVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pDVar3,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -718,16 +703,15 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_Reques,(MethodInfo *)0x0);
   (this->fields).interstitialAdCallback = interstitialAdCallback;
   func_?(&(this->fields).interstitialAdCallback,interstitialAdCallback);
   (this->fields).isHandlingRequest = 1;
   if (((this->fields).interstitial == (InterstitialAd *)0x0) ||
-     (bVar1 = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-              RewardedInterstitialAd_CanShowAd
-                        ((RewardedInterstitialAd *)(this->fields).interstitial,(MethodInfo *)0x0),
-     bVar1 == 0)) {
+     (bVar1 = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_CanShowAd
+                        ((RewardedAd *)(this->fields).interstitial,(MethodInfo *)0x0), bVar1 == 0))
+  {
     pMVar2 = (this->fields).adLoadState;
     if (pMVar2 != (MobileAdManager_AdLoadState *)0x0) {
       if ((pMVar2->fields).loadingAd != 0) {
@@ -741,7 +725,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
               ((Object *)StringLiteral_InternalStateInterstitial_Reques,(MethodInfo *)0x0);
     this_00 = (this->fields).interstitial;
     if (this_00 != (InterstitialAd *)0x0) {
@@ -794,84 +778,75 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_InternalStateInterstitial_SetupC,(MethodInfo *)0x0);
   pIVar1 = (this->fields).interstitial;
   pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)this,
+             MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentOpened__
+             ,(MethodInfo *)0x0);
+  if (pIVar1 != (InterstitialAd *)0x0) {
+    GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
+    InterstitialAd_add_OnAdFullScreenContentOpened(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+    pIVar1 = (this->fields).interstitial;
+    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar2,(Object *)this,
-               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentOpened__
+               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentClosed__
                ,(MethodInfo *)0x0);
     if (pIVar1 != (InterstitialAd *)0x0) {
       GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-      InterstitialAd_add_OnAdFullScreenContentOpened(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+      InterstitialAd_add_OnAdFullScreenContentClosed(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
       pIVar1 = (this->fields).interstitial;
       pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar2,(Object *)this,
-                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentClosed__
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar2,(Object *)this,
+                 MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdClicked__
+                 ,(MethodInfo *)0x0);
+      if (pIVar1 != (InterstitialAd *)0x0) {
+        GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_add_OnAdClicked
+                  (pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+        pIVar1 = (this->fields).interstitial;
+        pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                  *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  (pDVar3,(Object *)this,
+                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdPaid_GoogleMobileAds__Api__AdValue_
                    ,(MethodInfo *)0x0);
         if (pIVar1 != (InterstitialAd *)0x0) {
-          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-          InterstitialAd_add_OnAdFullScreenContentClosed(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::InterstitialAd_add_OnAdPaid
+                    (pIVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pDVar3,(MethodInfo *)0x0);
           pIVar1 = (this->fields).interstitial;
           pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar2,(Object *)this,
-                       MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdClicked__
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (pNVar2,(Object *)this,
+                     MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdImpressionRecorded__
+                     ,(MethodInfo *)0x0);
+          if (pIVar1 != (InterstitialAd *)0x0) {
+            GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
+            InterstitialAd_add_OnAdImpressionRecorded(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
+            pIVar1 = (this->fields).interstitial;
+            pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                      (pDVar3,(Object *)this,
+                       MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
                        ,(MethodInfo *)0x0);
             if (pIVar1 != (InterstitialAd *)0x0) {
               GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-              InterstitialAd_add_OnAdClicked(pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
-              pIVar1 = (this->fields).interstitial;
-              pAVar3 = (Action_1_Object_ *)func_?();
-              if (pAVar3 != (Action_1_Object_ *)0x0) {
-                mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                          (pAVar3,(Object *)this,
-                           MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdPaid_GoogleMobileAds__Api__AdValue_
-                           ,(MethodInfo *)0x0);
-                if (pIVar1 != (InterstitialAd *)0x0) {
-                  GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                  InterstitialAd_add_OnAdPaid
-                            (pIVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pAVar3,
-                             (MethodInfo *)0x0);
-                  pIVar1 = (this->fields).interstitial;
-                  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                  if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                    NavMesh_OnNavMeshPreUpdate__ctor
-                              (pNVar2,(Object *)this,
-                               MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdImpressionRecorded__
-                               ,(MethodInfo *)0x0);
-                    if (pIVar1 != (InterstitialAd *)0x0) {
-                      GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                      InterstitialAd_add_OnAdImpressionRecorded
-                                (pIVar1,(Action *)pNVar2,(MethodInfo *)0x0);
-                      pIVar1 = (this->fields).interstitial;
-                      pAVar3 = (Action_1_Object_ *)func_?();
-                      if (pAVar3 != (Action_1_Object_ *)0x0) {
-                        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                                  (pAVar3,(Object *)this,
-                                   MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateInterstitial__InterstitialOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
-                                   ,(MethodInfo *)0x0);
-                        if (pIVar1 != (InterstitialAd *)0x0) {
-                          GoogleMobileAds.dll::GoogleMobileAds::Api::InterstitialAd::
-                          InterstitialAd_add_OnAdFullScreenContentFailed
-                                    (pIVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pAVar3,
-                                     (MethodInfo *)0x0);
-                          return;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+              InterstitialAd_add_OnAdFullScreenContentFailed
+                        (pIVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pDVar3,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -901,13 +876,13 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     cRam_? = '\x01';
   }
   this._3_1_ = 0;
-  this_00 = (RewardedInterstitialAd *)(pMVar1->fields).interstitial;
-  if (this_00 != (RewardedInterstitialAd *)0x0) {
-    this._3_1_ = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedInterstitialAd::
-                 RewardedInterstitialAd_CanShowAd(this_00,(MethodInfo *)0x0);
+  this_00 = (RewardedAd *)(pMVar1->fields).interstitial;
+  if (this_00 != (RewardedAd *)0x0) {
+    this._3_1_ = GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_CanShowAd
+                           (this_00,(MethodInfo *)0x0);
   }
   args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  uStack_2 = CONCAT13(this_00 != (RewardedInterstitialAd *)0x0,(undefined3)uStack_2);
+  uStack_2 = CONCAT13(this_00 != (RewardedAd *)0x0,(undefined3)uStack_2);
   pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,(int)&uStack_2 + 3);
   if (args == (Object__Array *)0x0) {
     func_?();
@@ -993,24 +968,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   *(int *)&(this->fields).prevInterstitialTime._dateData =
        (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
   *(undefined4 *)((int)&(this->fields).prevInterstitialTime._dateData + 4) = uVar1;
-  value = (MobileAdManager_AdLoadState *)
-          func_?(
-                         TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState
-                         );
-  if (value != (MobileAdManager_AdLoadState *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    method_00 = (MethodInfo *)&(this->fields).adLoadState;
-    (this->fields).adLoadState = value;
-    func_?(method_00,value);
-    (this->fields).interstitialAdResult = 3;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  method_01 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__AdLoadState;
+  value = (MobileAdManager_AdLoadState *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  method_00 = (MethodInfo *)&(this->fields).adLoadState;
+  (this->fields).adLoadState = value;
+  func_?(method_00,value);
+  (this->fields).interstitialAdResult = 3;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

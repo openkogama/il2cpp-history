@@ -68,52 +68,54 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     func_?(&::StringLiteral___);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass14_0);
+  method_00 = TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass14_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)popupGameObject;
     func_?(value + 1,popupGameObject);
-    pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffe8,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-    str3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_5
-                       (StringLiteral_OnShown_,pSVar1,::StringLiteral___,str3,(MethodInfo *)0x0);
+    EStack_1.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent;
+    iStack_2 = (this->fields)._._.firstTimeEvent;
+    EStack_1.monitor = (MonitorData *)0xffffffff;
+    pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+    IStack_4.m_value =
+         UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
+    str3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_5
+                       (StringLiteral_OnShown_,pSVar3,::StringLiteral___,str3,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this,(MethodInfo *)0x0);
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass14_0___OnPopupRemoved_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)this,(MethodInfo *)0x0);
-      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
-      return;
+    IStack_4.m_value = (int32_t)&UNK_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass14_0___OnPopupRemoved_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              ((GameObject *)0x0,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+              ((Object_1 *)this,(MethodInfo *)0x0);
+    FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+              ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -139,50 +141,45 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     func_?(&TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass9_0);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass9_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    value[1].monitor = (MonitorData *)this;
-    func_?(&value[1].monitor,this);
-    if ((this->fields).showing == 0) {
-      *(undefined1 *)&value[1].klass = 0;
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction =
-           (UnityAction_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      if (callbackFunction == (UnityAction_2_System_Object_System_Object_ *)0x0)
-      goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (callbackFunction,value,
-                 MethodInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass9_0___OnShow_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)callbackFunction,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if (*(char *)&value[1].klass != '\0') {
-        (this->fields).wantsToShow = 1;
-        return;
-      }
-      FirstTimeActivatableEditToolPopup_ShowPopup(this,(MethodInfo *)0x0);
-    }
+  method_00 = TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass9_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value == (Object *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-code_?:
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  value[1].monitor = (MonitorData *)this;
+  func_?(&value[1].monitor,this);
+  if ((this->fields).showing == 0) {
+    *(undefined1 *)&value[1].klass = 0;
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass9_0___OnShow_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (*(char *)&value[1].klass != '\0') {
+      (this->fields).wantsToShow = 1;
+      return;
+    }
+    FirstTimeActivatableEditToolPopup_ShowPopup(this,(MethodInfo *)0x0);
+  }
   return;
 }
 
@@ -210,46 +207,45 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
   pAVar1 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-  if (this_00 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatableEditToolPopup__OnCubeChanged_int__EditCubeChange_,
-               (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
-    }
-    else {
-      pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
-      if (pAVar1 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeActivatableEditToolPopup__OnCubeChanged_int__EditCubeChange_,
+             (MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
+code_?:
     func_?();
-    pFVar4 = (this->fields).popup;
+    pFVar3 = (this->fields).popup;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pFVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar5 == 0) {
-      return;
-    }
-    pFVar4 = (this->fields).popup;
-    this_01 = (Action_1_Object_ *)func_?();
-    if ((this_01 != (Action_1_Object_ *)0x0) &&
-       (mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__FirstTimeActivatableEditToolPopup__OnPopupRemoved_UnityEngine__GameObject_
-                   ,(MethodInfo *)0x0), pFVar4 != (FirstTimeEventPopup *)0x0)) {
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pFVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      pFVar3 = (this->fields).popup;
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__FirstTimeActivatableEditToolPopup__OnPopupRemoved_UnityEngine__GameObject_
+                 ,(MethodInfo *)0x0);
+      if (pFVar3 == (FirstTimeEventPopup *)0x0) goto code_?;
       FirstTimeEventPopup::FirstTimeEventPopup_StartFade
-                (pFVar4,(Action_1_UnityEngine_GameObject_ *)this_01,(MethodInfo *)0x0);
-      return;
+                (pFVar3,(Action_1_UnityEngine_GameObject_ *)this_01,(MethodInfo *)0x0);
     }
+    return;
+  }
+  pAVar1 = (Action_2_Int32_EditCubeChange_ *)func_?();
+  if (pAVar1 != (Action_2_Int32_EditCubeChange_ *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar1;
+    iVar5 = func_?();
+    if (iVar5 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -301,74 +297,68 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
     pAVar3 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-    if (this_00 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-      UnityAction_2_System_Int32_System_Int32___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__FirstTimeActivatableEditToolPopup__OnCubeChanged_int__EditCubeChange_,
-                 (MethodInfo *)0x0);
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar4 == (Delegate *)0x0) {
-        TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-             (Action_2_Int32_EditCubeChange_ *)0x0;
-      }
-      else {
-        pAVar3 = (Action_2_Int32_EditCubeChange_ *)func_?();
-        if (pAVar3 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
-        TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar3;
-        iVar5 = func_?();
-        if (iVar5 == 0) goto code_?;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+    UnityAction_2_System_Int32_System_Int32___ctor
+              (this_00,(Object *)this,
+               MethodInfo__FirstTimeActivatableEditToolPopup__OnCubeChanged_int__EditCubeChange_,
+               (MethodInfo *)0x0);
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
+           (Action_2_Int32_EditCubeChange_ *)0x0;
+    }
+    else {
+      pAVar3 = (Action_2_Int32_EditCubeChange_ *)func_?();
+      if (pAVar3 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
+      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar3;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
+    }
+    func_?();
+    pFVar6 = (this->fields).popupPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      pFVar6 = (this->fields).popupPrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pFVar6 = (FirstTimeEventPopup *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pFVar6,
-                          FirstTimeEventPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopup>_FirstTimeEventPopup_
-                         );
-      (this->fields).popup = pFVar6;
-      func_?();
+    }
+    pFVar6 = (FirstTimeEventPopup *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)pFVar6,
+                        FirstTimeEventPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopup>_FirstTimeEventPopup_
+                       );
+    (this->fields).popup = pFVar6;
+    func_?();
+    pFVar6 = (this->fields).popup;
+    if (pFVar6 != (FirstTimeEventPopup *)0x0) {
+      FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable
+                (pFVar6,(this->fields).skipAllowed,(MethodInfo *)0x0);
       pFVar6 = (this->fields).popup;
       if (pFVar6 != (FirstTimeEventPopup *)0x0) {
-        FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable
-                  (pFVar6,(this->fields).skipAllowed,(MethodInfo *)0x0);
-        pFVar6 = (this->fields).popup;
-        if (pFVar6 != (FirstTimeEventPopup *)0x0) {
-          FirstTimeEventPopup::FirstTimeEventPopup_FadeIn(pFVar6,(MethodInfo *)0x0);
-          (this->fields).showing = 1;
-          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                              );
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this
-                       ,
-                       MethodInfo__FirstTimeActivatableEditToolPopup___ShowPopup_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (pGVar1,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
-          }
+        FirstTimeEventPopup::FirstTimeEventPopup_FadeIn(pFVar6,(MethodInfo *)0x0);
+        (this->fields).showing = 1;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction =
+             (ExecuteEvents_EventFunction_1_System_Object_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__FirstTimeActivatableEditToolPopup___ShowPopup_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
         }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar1,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        return;
       }
     }
   }
@@ -402,36 +392,33 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     func_?(&TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass11_0);
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass11_0);
+  method_00 = TypeInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass11_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
     if ((this->fields).wantsToShow != 0) {
       *(undefined1 *)&value[1].monitor = 0;
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                ((Component *)this,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
-           (UnityAction_2_System_Object_System_Object_ *)
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (UnityAction_2_System_Object_System_Object_ *)0x0)
-      goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (callbackFunction,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                  MethodInfo__FirstTimeActivatableEditToolPopup____c__DisplayClass11_0___Update_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)callbackFunction,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       if (*(char *)&value[1].monitor == '\0') {
@@ -440,7 +427,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     }
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -507,6 +493,7 @@ bool Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&StringLiteral_canshow_);
     cRam_? = '\x01';
@@ -518,21 +505,19 @@ bool Assembly-CSharp.dll::FirstTimeActivatableEditToolPopup::
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar3 == (GameObject *)0x0) goto code_?;
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                      (pGVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+              (pGVar3,(MethodInfo *)0x0);
   }
-  else {
-    bVar1 = 0;
-    pGVar3 = extraout_var;
+  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Boolean);
   }
-  str1 = mscorlib.dll::System::Boolean::Boolean_ToString_1
-                   ((Boolean *)&stack0xfffffffb,(IFormatProvider *)0x0,
-                    (MethodInfo *)CONCAT13(bVar1,(int3)pGVar3));
+  str1 = mscorlib.dll::System::Boolean::Boolean_ToString
+                   ((Boolean *)&stack0xfffffffb,(MethodInfo *)0x0);
   pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
                     ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   if (bVar1 != 0) {

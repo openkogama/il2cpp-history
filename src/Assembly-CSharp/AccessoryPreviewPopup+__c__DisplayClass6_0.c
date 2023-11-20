@@ -18,22 +18,25 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup+<>c__DisplayClass6_0::
     (*pcVar2)();
     return;
   }
-  uVar3 = 0;
-  uVar4 = (x->klass->_1).interface_offsets_count;
-  if (uVar4 != 0) {
+  pIVar3 = x->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
     do {
-      if (x->klass->interfaceOffsets[uVar3].interfaceType ==
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler) {
-        pIVar5 = &x->klass->vtable + x->klass->interfaceOffsets[uVar3].offset;
+        ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OpenInventoryAtItem
+                   .method;
         goto code_?;
       }
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar4);
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
   }
-  pIVar5 = (IAccessoryPopupHandler__VTable *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler,0);
+  ppMVar6 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler,0);
 code_?:
-  (*(pIVar5->OpenInventoryAtItem).methodPtr)(x,1,pAVar1,(pIVar5->OpenInventoryAtItem).method);
+  (*(code *)*ppMVar6)(x,1,pAVar1,ppMVar6[1]);
   return;
 }
 

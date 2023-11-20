@@ -22,36 +22,30 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,method->klass->rgctx_data[2].rgctxDataDummy,(MethodInfo *)0x0);
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
 code_?:
       func_?();
+      return;
     }
-    else {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,method->klass->rgctx_data->rgctxDataDummy,(MethodInfo *)0x0);
-      pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-      if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-             (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-code_?:
-        func_?();
-        return;
-      }
-      pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-        pUVar4 = pUVar2;
-      }
-      if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-      pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-        pUVar4 = pUVar2;
-      }
-      if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar4 = pUVar2;
     }
+    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
+    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar4 = pUVar2;
+    }
+    if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
   }
   else {
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
@@ -60,10 +54,9 @@ code_?:
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,method->klass->rgctx_data->rgctxDataDummy,(MethodInfo *)0x0);
+              (pNVar3,(Object *)this,method->klass->rgctx_data[2].rgctxDataDummy,(MethodInfo *)0x0);
     pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
@@ -111,64 +104,62 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
                (StreamingAsset_2_System_Object_System_Object_ *this,MethodInfo *method)
 
 {
-  if (this != (StreamingAsset_2_System_Object_System_Object_ *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      func_?(&TypeInfo__AsyncWWWManager);
-      func_?(&TypeInfo__UnityEngine__Events__UnityAction);
-      cRam_? = '\x01';
-    }
-    pUVar1 = (this->fields)._.onAssetSetAction;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
-      pUVar1 = (UnityAction *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pUVar1 == (UnityAction *)0x0) {
-        (this->fields)._.onAssetSetAction = (UnityAction *)0x0;
-      }
-      else {
-        pUVar2 = (UnityAction *)0x0;
-        if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUVar2 = pUVar1;
-        }
-        if (pUVar2 == (UnityAction *)0x0) {
-code_?:
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
-        (this->fields)._.onAssetSetAction = pUVar2;
-        pUVar2 = (UnityAction *)0x0;
-        if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUVar2 = pUVar1;
-        }
-        if (pUVar2 == (UnityAction *)0x0) goto code_?;
-      }
-      func_?();
-      this_01 = (Action_1_Object_ *)func_?();
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_01,(Object *)this,(this->klass->vtable).OnDownloadFinished.method,
-                   (MethodInfo *)0x0);
-        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                  ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
-    }
+  if (this == (StreamingAsset_2_System_Object_System_Object_ *)0x0) {
+    uVar1 = func_?(&stack0xfffffff0);
+    func_?(uVar1);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (cRam_? == '\0') {
+    func_?();
+    func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    cRam_? = '\x01';
+  }
+  pUVar3 = (this->fields)._.onAssetSetAction;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)
+            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,(this->klass->vtable).OnDownloadFinished.methodPtr,
+             (MethodInfo *)0x0);
+  pUVar3 = (UnityAction *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUStack4 = (UnityAction__Class *)0x0;
+  if (pUVar3 == (UnityAction *)0x0) {
+    (this->fields)._.onAssetSetAction = (UnityAction *)0x0;
+code_?:
+    func_?();
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0);
+    return;
+  }
+  if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUStack4 = (UnityAction__Class *)pUVar3;
+  }
+  if (pUStack4 != (UnityAction__Class *)0x0) {
+    (this->fields)._.onAssetSetAction = (UnityAction *)pUStack4;
+    pUStack4 = (UnityAction__Class *)(UnityAction *)0x0;
+    if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUStack4 = (UnityAction__Class *)pUVar3;
+    }
+    if (pUStack4 != (UnityAction__Class *)0x0) goto code_?;
+  }
+  pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -190,20 +181,27 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      if (*(char *)(unaff_EBX + 0x14) != '\0') {
+      if ((this->fields).useCache == 0) {
         if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__StreamingAsset);
+          func_?();
         }
-        (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-                  (www,method->klass->rgctx_data[3].rgctxDataDummy);
-        (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)();
-        return;
+        pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_NonCached
+                           (www,(MonoBehaviour *)this,method->klass->rgctx_data[3].method);
+        (this->fields).asset = pOVar2;
+        func_?(&(this->fields).asset);
       }
-      if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__StreamingAsset);
+      else {
+        if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_Cached
+                           (www,method->klass->rgctx_data[5].method);
+        (this->fields).asset = pOVar2;
+        func_?(&(this->fields).asset);
       }
-      (*(method->klass->rgctx_data[1].method)->virtualMethodPointer)(www);
-      (*(method->klass->rgctx_data[2].method)->virtualMethodPointer)();
+      if ((this->fields)._.onAssetSetAction != (UnityAction *)0x0) {
+        (*(((this->fields)._.onAssetSetAction)->fields)._._.invoke_impl)();
+      }
     }
   }
   return;
@@ -225,14 +223,14 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields)._.url,(MethodInfo *)0x0)
   ;
   if (bVar1 == 0) {
-    (*method->klass->rgctx_data->method->virtualMethodPointer)
-              (this,method->klass->rgctx_data->rgctxDataDummy);
+    StreamingAsset_2_System_Object_System_Object__DownloadWhenPossible
+              (this,method->klass->rgctx_data[2].method);
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)StringLiteral_StreamedAsset_is_missing_a_refer,(MethodInfo *)0x0);
   return;
 }
@@ -255,17 +253,6 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
   }
   StreamingAsset::StreamingAsset__ctor((StreamingAsset *)this,(MethodInfo *)0x0);
   return;
-}
-
-
-/* Object get_Asset() */
-
-Object * Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
-         StreamingAsset_2_System_Object_System_Object__get_Asset
-                   (StreamingAsset_2_System_Object_System_Object_ *this,MethodInfo *method)
-
-{
-  return (this->fields).asset;
 }
 
 

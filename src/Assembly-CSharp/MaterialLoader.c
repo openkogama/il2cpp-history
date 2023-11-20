@@ -25,6 +25,13 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Awake
   func_?(&(this->fields).cubeModelMaterialHigh,pMVar1);
   pMVar1 = (Material *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)(this->fields).cubeModelMaterialHighTransp,
+                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                     );
+  (this->fields).cubeModelMaterialHighTransp = pMVar1;
+  func_?(&(this->fields).cubeModelMaterialHighTransp,pMVar1);
+  pMVar1 = (Material *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)(this->fields).cubeModelMaterialLow,
                       UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
                      );
@@ -32,11 +39,25 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Awake
   func_?(&(this->fields).cubeModelMaterialLow,pMVar1);
   pMVar1 = (Material *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)(this->fields).cubeModelMaterialLowTransp,
+                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                     );
+  (this->fields).cubeModelMaterialLowTransp = pMVar1;
+  func_?(&(this->fields).cubeModelMaterialLowTransp,pMVar1);
+  pMVar1 = (Material *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)(this->fields).cubeModelMaterialMobile,
                       UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
                      );
   (this->fields).cubeModelMaterialMobile = pMVar1;
-  func_?(&(this->fields).cubeModelMaterialMobile,pMVar1);
+  func_?();
+  pMVar1 = (Material *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)(this->fields).cubeModelMaterialMobileTransp,
+                      UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
+                     );
+  (this->fields).cubeModelMaterialMobileTransp = pMVar1;
+  func_?();
   MaterialLoader_SetMainTexture(this,(this->fields).lowResMaterials,(MethodInfo *)0x0);
   return;
 }
@@ -74,7 +95,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Callback
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Failed_to_load_highres_texture_f,(MethodInfo *)0x0);
         return;
       }
@@ -190,32 +211,37 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_DownloadWhenPossible
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
                (MethodInfo *)0x0);
-    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
       TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
            (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
 code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
       func_?();
       return;
     }
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUVar2;
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
     }
-    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUVar2;
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
     }
-    if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
   }
   else {
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
@@ -224,64 +250,64 @@ code_?:
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
-                 (MethodInfo *)0x0);
-      pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-      if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-             (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      }
-      else {
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
+               (MethodInfo *)0x0);
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
+code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
       func_?();
-      pSVar5 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-      pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar5,StringLiteral_AssetBundles_Atlas_atlas_unity3d,(MethodInfo *)0x0);
-      object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-      this_00 = (Action_1_Object_ *)func_?();
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)object,
-                   MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
-                   (MethodInfo *)0x0);
-        this_01 = (AssetBundleRequest *)func_?(TypeInfo__CachedAssetBundleRequest);
-        if (this_01 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_01,pSVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-          return;
-        }
+      pSVar6 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+      pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar6,StringLiteral_AssetBundles_Atlas_atlas_unity3d,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
+                 (MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+      return;
     }
-code_?:
-    func_?();
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
+    }
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
+    }
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
   }
+  pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+  pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)func_?();
+  pUStack4 = extraout_ECX;
 code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -324,10 +350,10 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_InitAllMaterials
                (MaterialLoader *this,bool useSM3,MethodInfo *method)
 
 {
+  pMVar1 = this;
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__MaterialLoader);
     func_?(&TypeInfo__System__Math);
-    func_?(&StringLiteral__MaterialSize);
-    func_?(&StringLiteral__MaxMipLevel);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
@@ -337,10 +363,10 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_InitAllMaterials
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  dVar1 = mscorlib.dll::System::Math::Math_Log
+  dVar2 = mscorlib.dll::System::Math::Math_Log
                     ((double)CONCAT44(_UNK_?,_UNK_?),
                      (double)CONCAT44(_UNK_?,_UNK_?),(MethodInfo *)0x0);
-  fVar2 = (float)dVar1;
+  fVar3 = (float)dVar2;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -348,90 +374,171 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_InitAllMaterials
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  pMVar3 = TypeInfo__System__Math;
-  fVar4 = (float10)func_?((double)fVar2);
-  iVar5 = (int)fVar4;
-  if ((pMVar3->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(pMVar3);
+  pMVar4 = TypeInfo__System__Math;
+  fVar5 = (float10)func_?((double)fVar3);
+  iVar6 = (int)fVar5;
+  if ((pMVar4->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(pMVar4);
   }
   if (cRam_? == '\0') {
     func_?(&void_MethodInfo__System__Math__ThrowMinMaxException<int>_int__int_);
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  if (iVar5 < 0) {
-    value_01 = 0;
+  if (iVar6 < 0) {
+    value_00 = 0;
   }
   else {
-    value_01 = 5;
-    if (iVar5 < 6) {
-      value_01 = iVar5;
+    value_00 = 5;
+    if (iVar6 < 6) {
+      value_00 = iVar6;
     }
   }
-  pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-  if (pMVar6 != (Material *)0x0) {
-    value_00.z = 64.0;
-    value_00.x = 0.0625;
-    value_00.y = 0.0625;
-    value_00.w = (float)iVar5;
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-              (pMVar6,StringLiteral__MaterialSize,value_00,(MethodInfo *)0x0);
-    pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-    if (pMVar6 != (Material *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInteger
-                (pMVar6,StringLiteral__MaxMipLevel,value_01,(MethodInfo *)0x0);
-      pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-      if ((pMVar6 != (Material *)0x0) &&
-         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                             (pMVar6,(MethodInfo *)0x0), pTVar7 != (Texture *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                  (pTVar7,FilterMode__Enum_Point,(MethodInfo *)0x0);
-        pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-        if ((pMVar6 != (Material *)0x0) &&
-           (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                               (pMVar6,(MethodInfo *)0x0), pTVar7 != (Texture *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                    (pTVar7,1,(MethodInfo *)0x0);
-          pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-          if ((pMVar6 != (Material *)0x0) &&
-             (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                 (pMVar6,(MethodInfo *)0x0), pTVar7 != (Texture *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
-                      (pTVar7,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
-            useSM3 = (bool)value_01;
-            if (useSM3 == 0) {
-              return;
-            }
-            pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-            if (pMVar6 != (Material *)0x0) {
-              value.z = 64.0;
-              value.x = 0.0625;
-              value.y = 0.0625;
-              value.w = (float)iVar5;
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                        (pMVar6,StringLiteral__MaterialSize,value,(MethodInfo *)0x0);
-              pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-              if ((pMVar6 != (Material *)0x0) &&
-                 (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::
-                           Material_get_mainTexture(pMVar6,(MethodInfo *)0x0),
-                 pTVar7 != (Texture *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                          (pTVar7,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField
-                    == 0) {
-                  pMVar6 = (this->fields)._CubeModelMaterial_k__BackingField;
-                  if ((pMVar6 == (Material *)0x0) ||
-                     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::
-                               Material_get_mainTexture(pMVar6,(MethodInfo *)0x0),
-                     pTVar7 == (Texture *)0x0)) goto code_?;
+  pMVar7 = (this->fields)._CubeModelMaterial_k__BackingField;
+  if ((TypeInfo__MaterialLoader->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MaterialLoader);
+  }
+  if (pMVar7 != (Material *)0x0) {
+    VVar8.z = 64.0;
+    VVar8.x = 0.0625;
+    VVar8.y = 0.0625;
+    VVar8.w = (float)iVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1
+              (pMVar7,TypeInfo__MaterialLoader->static_fields->MaterialSizeShaderProperty,VVar8,
+               (MethodInfo *)0x0);
+    pMVar7 = (this->fields)._CubeModelMaterialTransp_k__BackingField;
+    if (pMVar7 != (Material *)0x0) {
+      _useSM3 = (float)iVar6;
+      fVar9 = 0.0625;
+      this = (MaterialLoader *)0x42800000;
+      fVar10 = 0.0625;
+      VVar8 = (Vector4)CONCAT124(auVar11,fVar10);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1
+                (pMVar7,TypeInfo__MaterialLoader->static_fields->MaterialSizeShaderProperty,VVar8,
+                 (MethodInfo *)0x0);
+      pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+      if (pMVar7 != (Material *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInteger
+                  (pMVar7,TypeInfo__MaterialLoader->static_fields->MaxMipLevelShaderProperty,
+                   value_00,(MethodInfo *)0x0);
+        pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+        if (pMVar7 != (Material *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInteger
+                    (pMVar7,TypeInfo__MaterialLoader->static_fields->MaxMipLevelShaderProperty,
+                     value_00,(MethodInfo *)0x0);
+          pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+          if ((pMVar7 != (Material *)0x0) &&
+             (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                                 (pMVar7,(MethodInfo *)0x0), pTVar12 != (Texture *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                      (pTVar12,FilterMode__Enum_Point,(MethodInfo *)0x0);
+            pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+            if ((pMVar7 != (Material *)0x0) &&
+               (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                                   (pMVar7,(MethodInfo *)0x0), pTVar12 != (Texture *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                        (pTVar12,FilterMode__Enum_Point,(MethodInfo *)0x0);
+              pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+              if ((pMVar7 != (Material *)0x0) &&
+                 (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                           Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                 pTVar12 != (Texture *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
+                          (pTVar12,1,(MethodInfo *)0x0);
+                pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+                if ((pMVar7 != (Material *)0x0) &&
+                   (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                             Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                   pTVar12 != (Texture *)0x0)) {
                   UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                            (pTVar7,2,(MethodInfo *)0x0);
+                            (pTVar12,1,(MethodInfo *)0x0);
+                  pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+                  if ((pMVar7 != (Material *)0x0) &&
+                     (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                               Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                     pTVar12 != (Texture *)0x0)) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
+                              (pTVar12,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
+                    pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+                    if ((pMVar7 != (Material *)0x0) &&
+                       (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                 Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                       pTVar12 != (Texture *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
+                                (pTVar12,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
+                      useSM3 = SUB41((float)iVar6,0);
+                      if (useSM3 == 0) {
+                        return;
+                      }
+                      pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+                      if ((TypeInfo__MaterialLoader->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?();
+                      }
+                      if (pMVar7 != (Material *)0x0) {
+                        value.z = 64.0;
+                        value.x = 0.0625;
+                        value.y = 0.0625;
+                        value.w = (float)iVar6;
+                        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1
+                                  (pMVar7,TypeInfo__MaterialLoader->static_fields->
+                                          MaterialSizeShaderProperty,value,(MethodInfo *)0x0);
+                        pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+                        if (pMVar7 != (Material *)0x0) {
+                          _useSM3 = (float)iVar6;
+                          fVar9 = 0.0625;
+                          this = (MaterialLoader *)0x42800000;
+                          fVar13 = 0.0625;
+                          VVar8 = (Vector4)CONCAT124(auVar11,fVar13);
+                          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector_1
+                                    (pMVar7,TypeInfo__MaterialLoader->static_fields->
+                                            MaterialSizeShaderProperty,VVar8,(MethodInfo *)0x0);
+                          pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+                          if ((pMVar7 != (Material *)0x0) &&
+                             (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                       Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                             pTVar12 != (Texture *)0x0)) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                                      (pTVar12,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
+                            pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+                            if ((pMVar7 != (Material *)0x0) &&
+                               (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                         Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                               pTVar12 != (Texture *)0x0)) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Texture::
+                              Texture_set_filterMode
+                                        (pTVar12,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
+                              if (cRam_? == '\0') {
+                                func_?();
+                                cRam_? = '\x01';
+                              }
+                              if (TypeInfo__MVGameControllerBase->static_fields->
+                                  _WebPlayAsTouch_k__BackingField != 0) {
+                                return;
+                              }
+                              pMVar7 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+                              if ((pMVar7 != (Material *)0x0) &&
+                                 (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                           Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                                 pTVar12 != (Texture *)0x0)) {
+                                UnityEngine.CoreModule.dll::UnityEngine::Texture::
+                                Texture_set_anisoLevel(pTVar12,2,(MethodInfo *)0x0);
+                                pMVar7 = (pMVar1->fields)._CubeModelMaterialTransp_k__BackingField;
+                                if ((pMVar7 != (Material *)0x0) &&
+                                   (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                             Material_get_mainTexture(pMVar7,(MethodInfo *)0x0),
+                                   pTVar12 != (Texture *)0x0)) {
+                                  UnityEngine.CoreModule.dll::UnityEngine::Texture::
+                                  Texture_set_anisoLevel(pTVar12,2,(MethodInfo *)0x0);
+                                  return;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
-                return;
               }
             }
           }
@@ -439,10 +546,9 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_InitAllMaterials
       }
     }
   }
-code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -476,32 +582,37 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Initialize
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
                (MethodInfo *)0x0);
-    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
       TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
            (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
 code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
       func_?();
       return;
     }
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUVar2;
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
     }
-    if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-    pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-    if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-      pUVar4 = pUVar2;
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
     }
-    if (pUVar4 != (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
   }
   else {
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
@@ -510,64 +621,64 @@ code_?:
     pUVar2 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
-                 (MethodInfo *)0x0);
-      pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-      if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
-             (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-      }
-      else {
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-        TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar4;
-        pUVar4 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
-        if (pUVar2->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
-          pUVar4 = pUVar2;
-        }
-        if (pUVar4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__MaterialLoader__DownloadWhenPossible__,
+               (MethodInfo *)0x0);
+    pUStack4 =
+         (Urls_OnStreamingAssetsUrlAvailable *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pUVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pUStack4 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+      TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+           (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0;
+code_?:
+      pUStack4 =
+           (Urls_OnStreamingAssetsUrlAvailable *)TypeInfo__MV__Common__Urls->static_fields;
       func_?();
-      pSVar5 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-      pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar5,StringLiteral_AssetBundles_Atlas_atlas_unity3d,(MethodInfo *)0x0);
-      object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-      this_00 = (Action_1_Object_ *)func_?();
-      if (this_00 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                  (this_00,(Object *)object,
-                   MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
-                   (MethodInfo *)0x0);
-        this_01 = (AssetBundleRequest *)func_?(TypeInfo__CachedAssetBundleRequest);
-        if (this_01 != (AssetBundleRequest *)0x0) {
-          AssetBundleRequest::AssetBundleRequest__ctor
-                    (this_01,pSVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                     WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-          if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-          return;
-        }
+      pSVar6 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+      pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar6,StringLiteral_AssetBundles_Atlas_atlas_unity3d,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
+                 (MethodInfo *)0x0);
+      this_01 = (AssetBundleRequest *)func_?();
+      AssetBundleRequest::AssetBundleRequest__ctor
+                (this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+      return;
     }
-code_?:
-    func_?();
+    pUVar2 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUVar2 = pUStack4;
+    }
+    pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+    if (pUVar2 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) goto code_?;
+    TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar2;
+    pUStack5 =
+         (Urls_OnStreamingAssetsUrlAvailable__Class *)(Urls_OnStreamingAssetsUrlAvailable *)0x0;
+    if (pUStack4->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+      pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)pUStack4;
+    }
+    if (pUStack5 != (Urls_OnStreamingAssetsUrlAvailable__Class *)0x0) goto code_?;
   }
+  pUStack5 = TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable;
+  pUStack5 = (Urls_OnStreamingAssetsUrlAvailable__Class *)func_?();
+  pUStack4 = extraout_ECX;
 code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -593,24 +704,28 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_OnDestroy
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)obj,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+            ((Object_1 *)(this->fields).cubeModelMaterialLowTransp,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)(this->fields).cubeModelMaterialHigh,(MethodInfo *)0x0);
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
-               (MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+            ((Object_1 *)(this->fields).cubeModelMaterialHighTransp,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+            ((Object_1 *)(this->fields).cubeModelMaterialMobile,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+            ((Object_1 *)(this->fields).cubeModelMaterialMobileTransp,(MethodInfo *)0x0);
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__MaterialLoader__Callback_UnityEngine__Networking__UnityWebRequest_,
+             (MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -636,15 +751,30 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_SetMainTexture
       if (pMVar4 != (Material *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
                   (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
-        pMVar4 = (this->fields).cubeModelMaterialLow;
+        pMVar4 = (this->fields).cubeModelMaterialHighTransp;
         if (pMVar4 != (Material *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
                     (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
-          pMVar4 = (this->fields).cubeModelMaterialMobile;
+          pMVar4 = (this->fields).cubeModelMaterialLow;
           if (pMVar4 != (Material *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
                       (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
-            return;
+            pMVar4 = (this->fields).cubeModelMaterialLowTransp;
+            if (pMVar4 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
+                        (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
+              pMVar4 = (this->fields).cubeModelMaterialMobile;
+              if (pMVar4 != (Material *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
+                          (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
+                pMVar4 = (this->fields).cubeModelMaterialMobileTransp;
+                if (pMVar4 != (Material *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
+                            (pMVar4,(Texture *)texture,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+            }
           }
         }
       }
@@ -710,10 +840,9 @@ code_?:
 code_?:
     func_?();
     this_00 = (NullReferenceException *)func_?();
-    func_?();
     mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor
               (this_00,(MethodInfo *)0x0);
-    uStack6 = func_?(&MethodInfo__MaterialLoader__SetupMaterials__);
+    uStack6 = func_?();
     pNStack7 = this_00;
     func_?();
     pcVar8 = (code *)swi(3);
@@ -733,13 +862,20 @@ code_?:
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-      pMVar4 = (this->fields).cubeModelMaterialHigh;
+      (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialHigh;
+      func_?();
+      pMVar4 = (this->fields).cubeModelMaterialHighTransp;
       goto code_?;
     }
+    (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialLow;
   }
-  pMVar4 = (this->fields).cubeModelMaterialLow;
+  else {
+    (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialLow;
+  }
+  func_?();
+  pMVar4 = (this->fields).cubeModelMaterialLowTransp;
 code_?:
-  (this->fields)._CubeModelMaterial_k__BackingField = pMVar4;
+  (this->fields)._CubeModelMaterialTransp_k__BackingField = pMVar4;
   func_?();
   MaterialLoader_InitAllMaterials(this,useSM3,(MethodInfo *)0x0);
   return;
@@ -797,10 +933,9 @@ code_?:
 code_?:
     func_?();
     this_00 = (NullReferenceException *)func_?();
-    func_?();
     mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor
               (this_00,(MethodInfo *)0x0);
-    uStack6 = func_?(&MethodInfo__MaterialLoader__SetupMaterials__);
+    uStack6 = func_?();
     pNStack7 = this_00;
     func_?();
     pcVar8 = (code *)swi(3);
@@ -820,15 +955,43 @@ code_?:
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-      pMVar4 = (this->fields).cubeModelMaterialHigh;
+      (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialHigh;
+      func_?();
+      pMVar4 = (this->fields).cubeModelMaterialHighTransp;
       goto code_?;
     }
+    (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialLow;
   }
-  pMVar4 = (this->fields).cubeModelMaterialLow;
+  else {
+    (this->fields)._CubeModelMaterial_k__BackingField = (this->fields).cubeModelMaterialLow;
+  }
+  func_?();
+  pMVar4 = (this->fields).cubeModelMaterialLowTransp;
 code_?:
-  (this->fields)._CubeModelMaterial_k__BackingField = pMVar4;
+  (this->fields)._CubeModelMaterialTransp_k__BackingField = pMVar4;
   func_?();
   MaterialLoader_InitAllMaterials(this,useSM3,(MethodInfo *)0x0);
+  return;
+}
+
+
+/* MaterialLoader() */
+
+void Assembly-CSharp.dll::MaterialLoader::MaterialLoader__cctor(MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MaterialLoader);
+    func_?(&StringLiteral__MaterialSize);
+    func_?(&StringLiteral__MaxMipLevel);
+    cRam_? = '\x01';
+  }
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                    (StringLiteral__MaterialSize,(MethodInfo *)0x0);
+  TypeInfo__MaterialLoader->static_fields->MaterialSizeShaderProperty = iVar1;
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                    (StringLiteral__MaxMipLevel,(MethodInfo *)0x0);
+  TypeInfo__MaterialLoader->static_fields->MaxMipLevelShaderProperty = iVar1;
   return;
 }
 

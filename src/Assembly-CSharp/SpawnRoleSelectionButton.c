@@ -23,14 +23,3 @@ code_?:
   return;
 }
 
-
-/* Void OnPointerEnter(PointerEventData) */
-
-void Assembly-CSharp.dll::SpawnRoleSelectionButton::SpawnRoleSelectionButton_OnPointerEnter
-               (SpawnRoleSelectionButton *this,PointerEventData *eventData,MethodInfo *method)
-
-{
-  (this->fields).isMouseOver = 1;
-  return;
-}
-

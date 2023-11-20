@@ -84,24 +84,23 @@ code_?:
     if ((pMVar3->fields).currentGameState == 1) {
       (this->fields).isInTrigger = 1;
       if ((this->fields).TriggerEnterOverride != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-        iVar5 = (pMVar1->fields)._.id;
-        pEVar6 = (this->fields).TriggerEnterOverride;
+        pEVar5 = (this->fields).TriggerEnterOverride;
+        iVar6 = (pMVar1->fields)._.id;
         pTVar7 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
-        if ((pTVar7 != (TriggerEventArgs *)0x0) &&
-           (TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar5,(MethodInfo *)0x0),
-           pEVar6 != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
-          (*(pEVar6->fields)._._.invoke_impl)((pEVar6->fields)._._.method_code,this,pTVar7);
+        TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar6,(MethodInfo *)0x0);
+        if (pEVar5 != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+          (*(pEVar5->fields)._._.invoke_impl)((pEVar5->fields)._._.method_code,this,pTVar7);
           return;
         }
         goto code_?;
       }
       if ((this->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-        iVar5 = (pMVar1->fields)._.id;
-        pEVar6 = (this->fields).TriggerEnter;
+        pEVar5 = (this->fields).TriggerEnter;
+        iVar6 = (pMVar1->fields)._.id;
         pTVar7 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
-        if (pTVar7 == (TriggerEventArgs *)0x0) goto code_?;
-        TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar5,(MethodInfo *)0x0);
-        (*(pEVar6->fields)._._.invoke_impl)((pEVar6->fields)._._.method_code,this,pTVar7);
+        TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar6,(MethodInfo *)0x0);
+        (*(pEVar5->fields)._._.invoke_impl)
+                  ((pEVar5->fields)._._.method_code,this,pTVar7,(pEVar5->fields)._._.method);
       }
     }
   }
@@ -123,30 +122,26 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     (this->fields).isInTrigger = 0;
     if ((this->fields).TriggerExitOverride != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-      iVar2 = (pMVar1->fields)._.id;
-      pEVar3 = (this->fields).TriggerExitOverride;
+      pEVar2 = (this->fields).TriggerExitOverride;
+      iVar3 = (pMVar1->fields)._.id;
       pTVar4 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
-      if ((pTVar4 != (TriggerEventArgs *)0x0) &&
-         (TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar2,(MethodInfo *)0x0),
-         pEVar3 != (EventHandler_1_TriggerEventArgs_ *)0x0)) {
-        (*(pEVar3->fields)._._.invoke_impl)
-                  ((pEVar3->fields)._._.method_code,this,pTVar4,(pEVar3->fields)._._.method);
+      TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar3,(MethodInfo *)0x0);
+      if (pEVar2 == (EventHandler_1_TriggerEventArgs_ *)0x0) {
+        func_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      (*(pEVar2->fields)._._.invoke_impl)((pEVar2->fields)._._.method_code,this);
       return;
     }
     if ((this->fields).TriggerExit != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-      iVar2 = (pMVar1->fields)._.id;
-      pEVar3 = (this->fields).TriggerExit;
+      pEVar2 = (this->fields).TriggerExit;
+      iVar3 = (pMVar1->fields)._.id;
       pTVar4 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
-      if (pTVar4 == (TriggerEventArgs *)0x0) goto code_?;
-      TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar2,(MethodInfo *)0x0);
-      (*(pEVar3->fields)._._.invoke_impl)
-                ((pEVar3->fields)._._.method_code,this,pTVar4,(pEVar3->fields)._._.method);
+      TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar3,(MethodInfo *)0x0);
+      (*(pEVar2->fields)._._.invoke_impl)
+                ((pEVar2->fields)._._.method_code,this,pTVar4,(pEVar2->fields)._._.method);
     }
   }
   return;
@@ -203,7 +198,7 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnValidate
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_TriggerBoxEvents__triggerCollide,(MethodInfo *)0x0);
     }
   }
@@ -215,7 +210,7 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnValidate
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_TriggerBoxEvents__triggerCollide,(MethodInfo *)0x0);
     }
     return;

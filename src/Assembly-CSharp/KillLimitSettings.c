@@ -32,23 +32,27 @@ void Assembly-CSharp.dll::KillLimitSettings::KillLimitSettings_Initialize
                (MethodInfo *)0x0);
     pTVar2 = (pKVar1->fields).killLimitHeader;
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,header);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,header);
       if (id == -1) {
-        this_03 = (Dictionary_2_System_Object_System_Object_ *)
-                  func_?(
-                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                 );
-        if (this_03 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this_03,
+        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?(
+                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                    );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_03,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
         this = (KillLimitSettings *)0x5;
-        pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+        value = (Object *)func_?(TypeInfo__System__Int32,&this);
+        if (this_03 ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (this_03,(Object *)StringLiteral_killLimit,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_03,
+                   (Object *)StringLiteral_killLimit,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         this_04 = (pKVar1->fields).killLimitSlider;
@@ -56,39 +60,53 @@ void Assembly-CSharp.dll::KillLimitSettings::KillLimitSettings_Initialize
       else {
         this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((this_02 == (MVWorldObjectClientManager *)0x0) ||
-           (pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                               (this_02,id,(MethodInfo *)0x0), pMVar4 == (MVWorldObject *)0x0))
+           (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                               (this_02,id,(MethodInfo *)0x0), pMVar3 == (MVWorldObject *)0x0))
         goto code_?;
-        this_03 = (pMVar4->fields).data;
+        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)(pMVar3->fields).data;
         this_04 = (pKVar1->fields).killLimitSlider;
-        if (this_03 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        if (this_03 ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) goto code_?;
       }
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_03,(Object *)StringLiteral_killLimit,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if ((this_04 != (SettingsSlider *)0x0) && (pOVar3 != (Object *)0x0)) {
-        if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-          piVar5 = (int32_t *)func_?(pOVar3);
+      this = (KillLimitSettings *)
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+      ;
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
+                         (Object *)StringLiteral_killLimit,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if ((this_04 != (SettingsSlider *)0x0) && (TVar4.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+            (TypeInfo__System__Int32->_0).element_class) {
+          root = (GameObject *)&UNK_?;
+          header = (String *)TVar4;
+          piVar5 = (int32_t *)func_?();
           SettingsSlider::SettingsSlider_Initialize_1
                     (this_04,StringLiteral_killLimit,*piVar5,1,200,(MethodInfo *)0x0);
           this_01 = (pKVar1->fields).killLimitInputField;
-          pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (this_03,(Object *)StringLiteral_killLimit,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          if ((this_01 == (SettingsInputFieldSlider *)0x0) || (pOVar3 == (Object *)0x0))
+          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03
+                             ,(Object *)StringLiteral_killLimit,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+          if ((this_01 == (SettingsInputFieldSlider *)0x0) || (TVar4.m_Index == 0))
           goto code_?;
-          if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-            piVar5 = (int32_t *)func_?(pOVar3);
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+              (TypeInfo__System__Int32->_0).element_class) {
+            piVar5 = (int32_t *)func_?(TVar4.m_Index);
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
                       (this_01,StringLiteral_killLimit,*piVar5,(MethodInfo *)0x0);
             return;
           }
         }
-        func_?(pOVar3,TypeInfo__System__Int32);
+        func_?(TVar4.m_Index,TypeInfo__System__Int32);
       }
     }
   }

@@ -29,6 +29,7 @@ public class MVCubeModelInstance : MVCubeModelBase
 
 	// Methods
 	public override void Initialize();
+	private static void MVCubeModelBase_BeingEditedChanged(object sender, EditStateEventArgs e);
 	public void SetCullDistanceBand(int distanceBandIndex);
 	public void EnableCulling();
 	public void SetupCulling(UnityAction<CullingGroupEvent> onStateChanged);
@@ -52,5 +53,6 @@ public class MVCubeModelInstance : MVCubeModelBase
 	public ChunkInstances.ChunkInstanceVariables GetChunkInstance(IntVector chunkPos);
 	public override bool OnEnterObject(EditorStateMachine e);
 	public override void DrawTransformGizmo();
+	public void Rebuild();
 }
 

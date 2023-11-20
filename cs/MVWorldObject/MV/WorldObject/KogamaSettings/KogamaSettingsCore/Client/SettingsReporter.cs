@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.KogamaSettings.KogamaSettingsCore.Client
 {
@@ -26,14 +26,6 @@ namespace MV.WorldObject.KogamaSettings.KogamaSettingsCore.Client
 		private Action<Dictionary<object, object>> OnValueChangedLocal;
 	
 		// Events
-		private event Action<int, Dictionary<object, object>> partialDataUpdate {
-			add;
-			remove;
-		}
-		private event Action<int, Dictionary<object, object>> partialDataRemove {
-			add;
-			remove;
-		}
 		public event Action<Dictionary<object, object>> OnValueRemovedLocal {
 			add;
 			remove;

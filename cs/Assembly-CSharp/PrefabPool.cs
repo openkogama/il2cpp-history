@@ -10,6 +10,7 @@ using IngameController.MVEditor;
 using MV.Common;
 using UnityEngine;
 using WorldObjectInteractionSystem.UseSystem;
+using WorldObjectTypes.MVObjectTransparency;
 using WorldObjectTypes.VehiclesBase.Shared;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -163,6 +164,8 @@ public class PrefabPool : MonoBehaviour
 	private ObjectPrefab vehicleEnergyPrefab;
 	[SerializeField]
 	private ObjectPrefab doorPrefab;
+	[SerializeField]
+	private MVObjectTransparencyObject mvObjectTransparencyPrefab;
 	[Header("Game")]
 	[SerializeField]
 	[Space(20f)]
@@ -341,6 +344,8 @@ public class PrefabPool : MonoBehaviour
 	private InsertCursor insertCursor;
 	[SerializeField]
 	private ChatBubble chatBubble;
+	[SerializeField]
+	private Material roundedRectangleMaterial;
 	[Header("TextBubbleContent")]
 	[SerializeField]
 	private RectTransform editCornerHelpText;
@@ -348,8 +353,8 @@ public class PrefabPool : MonoBehaviour
 	private RectTransform editEdgeHelpText;
 	[SerializeField]
 	private RectTransform editFaceHelpText;
-	[Header("Editor")]
 	[Header("Cameras")]
+	[Header("Editor")]
 	[SerializeField]
 	[Space(20f)]
 	[Space(20f)]
@@ -466,6 +471,7 @@ public class PrefabPool : MonoBehaviour
 	public ObjectPrefab VehicleEnergyPrefab { get; }
 	public ObjectPrefab DoorPrefab { get; }
 	public TriggerCubePrefab TriggerCubePrefab { get; }
+	public MVObjectTransparencyObject MVObjectTransparencyPrefab { get; }
 	public Material GhostMarkerMaterial { get; }
 	public Material ObjectHiddenMaterial { get; }
 	public SentryGunBeam IceBeamObject { get; }
@@ -547,6 +553,7 @@ public class PrefabPool : MonoBehaviour
 	public MaterialButtonTextureGenerator MaterialButtonTextureGenerator { get; }
 	public InsertCursor InsertCursor { get; }
 	public ChatBubble ChatBubble { get; }
+	public Material RoundedRectangleMaterial { get; }
 	public Material CellCursorErrorMaterial { get; }
 	public Material CellCursorMaterial { get; }
 	public Material ModelCubeSpaceMaterial { get; }

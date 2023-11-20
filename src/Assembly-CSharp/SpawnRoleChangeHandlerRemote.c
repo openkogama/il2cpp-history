@@ -35,16 +35,17 @@ code_?:
     pIVar2 = TypeInfo__ISpawnRoleRemote;
     if (piVar3 == (int *)0x0) goto code_?;
     uVar4 = 0;
-    if (*(ushort *)(*piVar3 + 0xb2) != 0) {
+    if (*(ushort *)(*piVar3 + 0xb6) != 0) {
       do {
         if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar3 + 0x58) + (uint)uVar4 * 8) ==
             TypeInfo__ISpawnRoleRemote) {
           puVar5 = (undefined4 *)
-                   (*(int *)(*(int *)(*piVar3 + 0x58) + 4 + (uint)uVar4 * 8) * 8 + 0xc4 + *piVar3);
+                   (*piVar3 + (*(int *)(*(int *)(*piVar3 + 0x58) + 4 + (uint)uVar4 * 8) + 0x19) * 8)
+          ;
           goto code_?;
         }
         uVar4 = uVar4 + 1;
-      } while (uVar4 < *(ushort *)(*piVar3 + 0xb2));
+      } while (uVar4 < *(ushort *)(*piVar3 + 0xb6));
     }
     puVar5 = (undefined4 *)func_?(piVar3,TypeInfo__ISpawnRoleRemote);
 code_?:
@@ -57,14 +58,14 @@ code_?:
       pIVar2 = (ISpawnRoleRemote__Class *)0x0;
       if (piVar3 != (int *)0x0) {
         uVar7 = 0;
-        uVar4 = *(ushort *)(*piVar3 + 0xb2);
+        uVar4 = *(ushort *)(*piVar3 + 0xb6);
         if (uVar4 != 0) {
           do {
             if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar3 + 0x58) + (uint)uVar7 * 8) ==
                 TypeInfo__ISpawnRoleRemote) {
               puVar5 = (undefined4 *)
                        (*piVar3 + *(int *)(*(int *)(*piVar3 + 0x58) + 4 + (uint)uVar7 * 8) * 8 +
-                       0xbc);
+                       0xc0);
               goto code_?;
             }
             uVar7 = uVar7 + 1;

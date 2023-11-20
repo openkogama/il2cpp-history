@@ -20,11 +20,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     cRam_? = '\x01';
   }
   pJVar1 = this;
-  pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.bluePrintData;
-  if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (this->fields)._.bluePrintData;
+  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar2,(Object *)StringLiteral_vehicleEnergyUse,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -39,12 +40,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
     }
-    pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (pJVar1->fields)._.bluePrintData;
-    if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (pDVar2,(Object *)StringLiteral_vehicleEnergyStorage,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -60,12 +61,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
       }
-      pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (pJVar1->fields)._.bluePrintData;
-      if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (pDVar2,(Object *)StringLiteral_vehicleEnergyConsumption,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
@@ -117,43 +118,47 @@ JetpackSettings_FillDefaultBlueprintData(JetpackSettings *this,MethodInfo *metho
     func_?(&StringLiteral_vehicleEnergyStorage);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    uStack_2 = 0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_2);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  uStack_1 = 0;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_1);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyUse,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyUse,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    uStack_4 = 0x14;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&uStack_4);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Int32);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyStorage,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyStorage,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    uStack_5 = 3;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&uStack_5);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyConsumption,pOVar3,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyConsumption,pOVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    return pDVar1;
+    return (Dictionary_2_System_Object_System_Object_ *)this_00;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar6)();
-  return pDVar1;
+  pcVar3 = (code *)swi(3);
+  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar3)();
+  return pDVar4;
 }
 
 
@@ -199,6 +204,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                (JetpackSettings *this,String *key,Object *value,MethodInfo *method)
 
 {
+  a = key;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
@@ -206,38 +212,119 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     cRam_? = '\x01';
   }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(key,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((
-        TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-        ->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(
-                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-                     );
-    }
-    bVar1 = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_IsKey
-                      (key,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      this_00 = (this->fields)._.settingsBase;
-      if (this_00 == (SettingsBase *)0x0) goto code_?;
-      SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value,(MethodInfo *)0x0);
-    }
-    else {
-      this_01 = (this->fields)._.vehicleEnergyForVehicleSettings;
-      if (this_01 == (VehicleEnergyForVehicleSettings *)0x0) goto code_?;
-      value = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_ValueToSend
-                        (this_01,key,value,(MethodInfo *)0x0);
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    if (this_02 == (MVNetworkGame_OperationRequests *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-              (this_02,(this->fields)._.vehicleWoID,key,value,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    return;
   }
+  if ((
+      TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+      ->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(
+                   TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+                   );
+  }
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_vehicleEnergyConsumption);
+    func_?(&StringLiteral_vehicleEnergyUse);
+    func_?(&StringLiteral_vehicleEnergyStorage);
+    cRam_? = '\x01';
+  }
+  pSVar2 = StringLiteral_vehicleEnergyUse;
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_BlueprintData_);
+    cRam_? = '\x01';
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
+  pSVar2 = StringLiteral_vehicleEnergyStorage;
+  if (bVar1 == 0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this = (JetpackSettings *)
+           mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,(String *)this,(MethodInfo *)0x0);
+    pSVar2 = StringLiteral_vehicleEnergyConsumption;
+    if (bVar1 != 0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
+    if (bVar1 != 0) goto code_?;
+    this_00 = (this->fields)._.settingsBase;
+    if (this_00 == (SettingsBase *)0x0) goto code_?;
+    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value,(MethodInfo *)0x0);
+  }
+  else {
+code_?:
+    if ((this->fields)._.vehicleEnergyForVehicleSettings == (VehicleEnergyForVehicleSettings *)0x0)
+    goto code_?;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    key = StringLiteral_vehicleEnergyUse;
+    if (cRam_? == '\0') {
+      key = (String *)&StringLiteral_BlueprintData_;
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_BlueprintData_,key,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+    pSVar2 = StringLiteral_vehicleEnergyStorage;
+    if (bVar1 == 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+      bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+      pSVar2 = StringLiteral_vehicleEnergyConsumption;
+      if (bVar1 == 0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+        bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+        if (bVar1 == 0) goto code_?;
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+      }
+      else {
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+      }
+      value = (Object *)func_?();
+    }
+  }
+code_?:
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
+              (this_01,(this->fields)._.vehicleWoID,a,value,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

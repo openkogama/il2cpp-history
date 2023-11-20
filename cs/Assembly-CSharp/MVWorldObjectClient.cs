@@ -92,19 +92,6 @@ public class MVWorldObjectClient : MVWorldObject
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass51_0
-	{
-		// Fields
-		public HashSet<int> childIDs;
-
-		// Constructors
-		public __c__DisplayClass51_0();
-
-		// Methods
-		internal void _get_WorldIDsRecursive_b__0(MVWorldObjectClient wo);
-	}
-
-	[CompilerGenerated]
 	private sealed class __c__DisplayClass164_0
 	{
 		// Fields
@@ -115,6 +102,19 @@ public class MVWorldObjectClient : MVWorldObject
 
 		// Methods
 		internal Vector3 _GetBoundsCornersWorld_b__0(Vector3 localCorner);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass51_0
+	{
+		// Fields
+		public HashSet<int> childIDs;
+
+		// Constructors
+		public __c__DisplayClass51_0();
+
+		// Methods
+		internal void _get_WorldIDsRecursive_b__0(MVWorldObjectClient wo);
 	}
 
 	// Constructors

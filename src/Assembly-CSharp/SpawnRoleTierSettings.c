@@ -133,7 +133,6 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_SelectTie
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -153,7 +152,6 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_SelectTie
               );
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

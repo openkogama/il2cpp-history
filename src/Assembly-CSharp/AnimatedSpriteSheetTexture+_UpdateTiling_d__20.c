@@ -59,17 +59,14 @@ code_?:
                           (this_01,StringLiteral__MainTex,(this->fields)._offset_5__3,
                            (MethodInfo *)0x0);
                 fVar3 = (pAVar2->fields).FramesPerSecond;
-                this_02 = (SubscribableVariableBase_1_System_Single_ *)
+                this_02 = (SubscribableVariable_1_System_Single_ *)
                           func_?(TypeInfo__UnityEngine__WaitForSeconds);
-                if (this_02 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-                  SubscribableVariableBase`1[System::Single]::
-                  SubscribableVariableBase_1_System_Single___ctor
-                            (this_02,_UNK_? / fVar3,(MethodInfo *)0x0);
-                  (this->fields).__2__current = (Object *)this_02;
-                  func_?(&(this->fields).__2__current,this_02);
-                  (this->fields).__1__state = 1;
-                  return 1;
-                }
+                SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
+                          (this_02,_UNK_? / fVar3,(MethodInfo *)0x0);
+                (this->fields).__2__current = (Object *)this_02;
+                func_?();
+                (this->fields).__1__state = 1;
+                return 1;
               }
             }
             goto code_?;
@@ -104,7 +101,6 @@ void Assembly-CSharp.dll::AnimatedSpriteSheetTexture+<UpdateTiling>d__20::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

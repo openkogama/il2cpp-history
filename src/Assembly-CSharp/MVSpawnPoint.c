@@ -21,34 +21,33 @@ bool Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Delete
     }
     if ((pGRam00000088 != (GameObject *)0x0) &&
        (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGRam00000088,0,(MethodInfo *)0x0), pOVar3 = pORam00000008,
-       in_stack_4 != 0)) {
+                  (pGRam00000088,0,(MethodInfo *)0x0), iVar2 = iRam_?, in_stack_3 != 0)
+       ) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
         func_?();
         cRam_? = '\x01';
       }
-      if (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)(in_stack_4 + 8) !=
-          (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)
-                            (in_stack_4 + 8),pOVar3,
+      if (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_3 + 8) !=
+          (Dictionary_2_System_Int32_System_Single_ *)0x0) {
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
+                          (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_3 + 8),
+                           iVar2,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
                           );
-        if (bVar5 == 0) {
+        if (bVar4 == 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_trying_to_unregister_none_existi,(MethodInfo *)0x0);
           return 1;
         }
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
         ;
-        if (pMVar6 != (MVNetworkGame_OperationRequests *)0x0) {
+        if (pMVar5 != (MVNetworkGame_OperationRequests *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -57,26 +56,26 @@ bool Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Delete
             func_?();
             cRam_? = '\x01';
           }
-          this_01 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-            ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                      ((ParameterOverride_1_System_Object_ *)this_01,
-                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                      );
-            pOVar3 = (Object *)func_?();
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (this_01,(Object *)0x16,pOVar3,
+          this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+          Dictionary_2_System_Byte_System_Object___ctor
+                    (this_01,
+                     MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                    );
+          value = (Object *)func_?();
+          if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+            Dictionary_2_System_Byte_System_Object__Add
+                      (this_01,0x16,value,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       );
-            pPVar7 = (pMVar6->fields).peer;
+            pPVar6 = (pMVar5->fields).peer;
             if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor ==
                 0) {
               func_?();
             }
-            if (pPVar7 != (PhotonPeer *)0x0) {
-              (*(pPVar7->klass->vtable).SendOperation.methodPtr)(pPVar7,1);
+            if (pPVar6 != (PhotonPeer *)0x0) {
+              (*(code *)(pPVar6->klass->vtable).SendOperation.method)(pPVar6,1);
               return 1;
             }
           }
@@ -84,11 +83,11 @@ bool Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Delete
       }
     }
   }
-  uVar8 = func_?(&stack0xfffffffc);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  bVar5 = (*pcVar9)();
-  return bVar5;
+  uVar7 = func_?(&stack0xfffffffc);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  bVar4 = (*pcVar8)();
+  return bVar4;
 }
 
 
@@ -196,48 +195,52 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
   }
   pMVar1 = this;
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields)._._._.data;
+  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (pMVar1->fields)._._._.data;
   (pMVar1->fields).isInWorld = 1;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_onlyFirstSpawn,
+  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar2 != 0) {
-      this_01 = (pMVar1->fields)._._._.data;
-      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    if (bVar3 != 0) {
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (pMVar1->fields)._._._.data;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+      goto code_?;
       this = (MVSpawnPoint *)
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
       ;
-      pMVar3 = (MethodInfo *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_01,(Object *)StringLiteral_onlyFirstSpawn,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pMVar3 != (MethodInfo *)0x0) {
-        pMVar4 = (MethodInfo *)0x0;
-        if ((Boolean__Class *)pMVar3->methodPointer == TypeInfo__System__Boolean) {
-          pMVar4 = pMVar3;
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar4.m_Index != 0) {
+        TVar5.m_Index = 0;
+        if (*(Boolean__Class **)TVar4.m_Index == TypeInfo__System__Boolean) {
+          TVar5 = TVar4;
         }
-        if (pMVar4 != (MethodInfo *)0x0) {
-          if ((((Object__Class *)pMVar3->methodPointer)->_0).element_class !=
-              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+        if (TVar5.m_Index != 0) {
+          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
+          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar5 = (int8_t *)func_?();
+          piVar8 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar5,
+                    ((Nullable_1_SByte_ *)&this,*piVar8,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar6 != (MVNetworkGame *)0x0) {
-      pMVar3 = (MethodInfo *)(pMVar6->fields).teamManager;
+    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar9 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -254,30 +257,43 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
       default:
         team = MVTeam__Enum_None;
       }
-      if (pMVar3 != (MethodInfo *)0x0) {
+      if (this_00 != (MethodInfo *)0x0) {
         this = (MVSpawnPoint *)&UNK_?;
-        method = pMVar3;
+        method = this_00;
         MVTeamManager::MVTeamManager_OnAddSpawnPoint
-                  ((MVTeamManager *)pMVar3,(pMVar1->fields)._._._.id,team,(MethodInfo *)0x0);
+                  ((MVTeamManager *)this_00,(pMVar1->fields)._._._.id,team,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
+  bVar7 = 0;
   func_?();
-  pMVar3 = extraout_EDX;
+  TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
-  method = pMVar3;
-  func_?();
-  switch(method) {
-  case (MethodInfo *)0x27:
+  method = (MethodInfo *)TVar4.m_Index;
+  Var12 = func_?();
+  this = (MVSpawnPoint *)CONCAT22(this._2_2_,in_CS);
+  Var12 = to_bcd(Var12);
+  *extraout_EDX_00 = Var12;
+  bVar10 = CARRY1(bRam_?,(byte)extraout_EDX_00);
+  bVar11 = bRam_? + (byte)extraout_EDX_00;
+  bRam_? = bVar11 + bVar7;
+  Var12 = to_bcd(extraout_ST1);
+  *extraout_EDX_00 = Var12;
+  *unaff_EBX = *unaff_EBX + extraout_AH + (bVar10 || CARRY1(bVar11,bVar7));
+  Var12 = to_bcd(in_ST2);
+  *extraout_EDX_00 = Var12;
+  in((short)extraout_EDX_00);
+  switch(this) {
+  case (MVSpawnPoint *)0x27:
     return;
-  case (MethodInfo *)0x28:
+  case (MVSpawnPoint *)0x28:
     return;
-  case (MethodInfo *)0x29:
+  case (MVSpawnPoint *)0x29:
     return;
-  case (MethodInfo *)0x2a:
+  case (MVSpawnPoint *)0x2a:
     return;
   default:
     return;
@@ -351,50 +367,55 @@ bool Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_get_SpawnPointOnlyFirstDeat
                        MethodInfo__System__Nullable<bool>__get_Value__);
     return bVar2;
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  pSVar3 = (String *)0x0;
-  if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+  pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  pSVar4 = (String *)0x0;
+  if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
-    pcVar4 = (code *)swi(3);
-    bVar2 = (*pcVar4)();
+    pcVar5 = (code *)swi(3);
+    bVar2 = (*pcVar5)();
     return bVar2;
   }
-  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    (this_00,(Object *)StringLiteral_onlyFirstSpawn,
+  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
   if (bVar2 != 0) {
-    this_01 = (pMVar1->fields)._._._.data;
-    if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pSVar3 = StringLiteral_onlyFirstSpawn;
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (pMVar1->fields)._._._.data;
+    if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    pSVar4 = StringLiteral_onlyFirstSpawn;
     this = (MVSpawnPoint *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-           Dictionary_2_System_Object_System_Object__get_Item
-                     (this_01,(Object *)StringLiteral_onlyFirstSpawn,
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     (pDVar3,(Object *)StringLiteral_onlyFirstSpawn,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                      );
     if (this != (MVSpawnPoint *)0x0) {
-      pMVar5 = (MVSpawnPoint *)0x0;
-      if (this->klass == (MVSpawnPoint__Class *)TypeInfo__System__Boolean) {
-        pMVar5 = this;
+      TVar6.m_Index = 0;
+      if (*(Boolean__Class **)this == TypeInfo__System__Boolean) {
+        TVar6 = (TextureId)this;
       }
-      if (pMVar5 != (MVSpawnPoint *)0x0) {
-        if ((this->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class) {
+      if (TVar6.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)this + 0x20) != (TypeInfo__System__Boolean->_0).element_class)
+        {
           this = (MVSpawnPoint *)TypeInfo__System__Boolean;
           method = unaff_EDI;
           func_?();
           goto code_?;
         }
         func_?();
-        pSVar3 = (String *)((uint)pSVar3 & 0xffffff00);
+        pSVar4 = (String *)((uint)pSVar4 & 0xffffff00);
       }
     }
   }
   method = MethodInfo__System__Nullable<bool>__Nullable_bool_;
-  this = (MVSpawnPoint *)((uint)pSVar3 & 0xffff0000);
+  this = (MVSpawnPoint *)((uint)pSVar4 & 0xffff0000);
   mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
             ((Nullable_1_SByte_ *)&this,0,MethodInfo__System__Nullable<bool>__Nullable_bool_);
   (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;

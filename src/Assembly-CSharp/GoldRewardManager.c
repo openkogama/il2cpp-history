@@ -73,21 +73,21 @@ void Assembly-CSharp.dll::GoldRewardManager::GoldRewardManager_OnAvatarChangeSta
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
-    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar1->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                           );
-    if ((value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) &&
-       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-        UnityAction_1_System_Int32Enum___ctor
-                  ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                   MethodInfo__GoldRewardManager__OnAvatarChangeState_MV__Common__SpawnRoleModeType_
-                   ,(MethodInfo *)0x0), this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0))
-    {
+    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (pSVar1->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__GoldRewardManager__OnAvatarChangeState_MV__Common__SpawnRoleModeType_,
+               (MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[UnityEngine::Vector3]::
-      SpawnRoleVariable_1_UnityEngine_Vector3__remove_OnChange
+      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__remove_OnChange
                 (this_00,value,
                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                 );
@@ -150,26 +150,25 @@ void Assembly-CSharp.dll::GoldRewardManager::GoldRewardManager_StartGoldRewardCo
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
-    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar1->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                           );
-    if (value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                 MethodInfo__GoldRewardManager__OnAvatarChangeState_MV__Common__SpawnRoleModeType_,
-                 (MethodInfo *)0x0);
-      if (this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[UnityEngine::Vector3]::
-        SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                  (this_00,value,
-                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                  );
-        return;
-      }
+    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (pSVar1->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__GoldRewardManager__OnAvatarChangeState_MV__Common__SpawnRoleModeType_,
+               (MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
+                (this_00,value,
+                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                );
+      return;
     }
   }
   func_?();

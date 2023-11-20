@@ -24,27 +24,13 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator+<>c__DisplayClass9
                 (pSVar3,StringLiteral__0___,arg0,(MethodInfo *)0x0);
       pRVar2 = (pPVar1->fields).tracer;
       if (pRVar2 != (RecursiveTracer *)0x0) {
-        if (cRam_? == '\0') {
-          func_?(&StringLiteral_u0009);
-          cRam_? = '\x01';
-        }
-        iVar4 = 0;
-        if (0 < (pRVar2->fields)._Level_k__BackingField) {
-          do {
-            pSVar3 = (pRVar2->fields)._Text_k__BackingField;
-            if (pSVar3 == (StringBuilder *)0x0) goto code_?;
-            mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                      (pSVar3,StringLiteral_u0009,(MethodInfo *)0x0);
-            iVar4 = iVar4 + 1;
-          } while (iVar4 < (pRVar2->fields)._Level_k__BackingField);
-        }
+        RecursiveTracer::RecursiveTracer_Indent(pRVar2,(MethodInfo *)0x0);
         pRVar2 = (pPVar1->fields).tracer;
         if (pRVar2 != (RecursiveTracer *)0x0) {
           pSVar3 = (pRVar2->fields)._Text_k__BackingField;
           if (node != (PluralFormsNode *)0x0) {
             value = (String *)
-                    (*(node->klass->vtable).ToString.methodPtr)
-                              (node,(node->klass->vtable).ToString.method);
+                    (*(code *)(node->klass->vtable).ToString.method)(node,node->klass[1]._0.image);
             if (pSVar3 != (StringBuilder *)0x0) {
               mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendLine_1
                         (pSVar3,value,(MethodInfo *)0x0);
@@ -55,10 +41,9 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator+<>c__DisplayClass9
       }
     }
   }
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

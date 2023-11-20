@@ -18,150 +18,172 @@ void Assembly-CSharp.dll::HurryUpNotification::HurryUpNotification_Initialize
     func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  object = (Delegate *)this;
+  pAVar1 = (Action_1_IWinningCondition___Class *)this;
+  (this->fields)._.timeSinceStart = 0.0;
   this = (HurryUpNotification *)CONCAT13(0x11,this._0_3_);
-  (((HurryUpNotification *)object)->fields)._.timeSinceStart = 0.0;
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  this_00 = data;
-  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  pAVar3 = (Action__Class *)data;
+  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    );
+  if (TVar4.m_Index == 0) goto code_?;
+  if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) == (TypeInfo__System__Int32->_0).element_class
+     ) {
+    piVar5 = (int32_t *)func_?(TVar4.m_Index);
+    (((HurryUpNotification *)pAVar1)->fields).timeStamp = *piVar5;
+    uStack_6 = CONCAT13(4,(undefined3)uStack_6);
+    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_6 + 3);
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pAVar3,pOVar2
+                       ,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar5 = (int32_t *)func_?(TVar4.m_Index);
+    (((HurryUpNotification *)pAVar1)->fields).timeLeftFromTimeStamp = *piVar5;
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_00 == (MVNetworkGame *)0x0) goto code_?;
+    iVar7 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
+    iVar8 = (int)((float)(((((HurryUpNotification *)pAVar1)->fields).timeLeftFromTimeStamp +
+                           (((HurryUpNotification *)pAVar1)->fields).timeStamp) - iVar7) /
+                  _UNK_?);
+    if (iVar8 < 0xb) {
+      pNVar9 = (((HurryUpNotification *)pAVar1)->fields).countdownFader;
+      if (pNVar9 == (NotificationFade *)0x0) goto code_?;
+      (pNVar9->fields).pauseAt = (pNVar9->fields).duration;
+      pCVar10 = (pNVar9->fields).group;
+      (pNVar9->fields).playing = 1;
+      if (pCVar10 == (CanvasGroup *)0x0) goto code_?;
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (pCVar10,0.0,(MethodInfo *)0x0);
+      (pNVar9->fields).currentTime = 0.0;
+      iVar11 = (*(code *)(((HurryUpNotification *)pAVar1)->klass->vtable).get_Lifetime.method)
+                        (pAVar1,(((HurryUpNotification *)pAVar1)->klass->vtable).Initialize.
+                                 methodPtr);
+      (((HurryUpNotification *)pAVar1)->fields)._.timeSinceStart =
+           (float)(iVar11 - iVar8) - _UNK_?;
+    }
+    else {
+      pNVar9 = (((HurryUpNotification *)pAVar1)->fields).fader;
+      if (pNVar9 == (NotificationFade *)0x0) goto code_?;
+      (pNVar9->fields).pauseAt = (pNVar9->fields).duration;
+      pCVar10 = (pNVar9->fields).group;
+      (pNVar9->fields).playing = 1;
+      if (pCVar10 == (CanvasGroup *)0x0) goto code_?;
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (pCVar10,0.0,(MethodInfo *)0x0);
+      (pNVar9->fields).currentTime = 0.0;
+    }
+    this = (HurryUpNotification *)(((HurryUpNotification *)pAVar1)->fields).fader;
+    if (this == (HurryUpNotification *)0x0) goto code_?;
+    a = (Action *)(this->fields).timeStamp;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)pAVar1,MethodInfo__HurryUpNotification__DestroyNotification__,
+               (MethodInfo *)0x0);
+    method = (MethodInfo *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    in_stack_12 = (Action__Class *)0x0;
+    if ((Action__Class *)method == (Action__Class *)0x0) {
+      (this->fields).timeStamp = 0;
 code_?:
-    func_?();
-  }
-  else {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar3 = (int32_t *)func_?(pOVar1);
-    (((HurryUpNotification *)object)->fields).timeStamp = *piVar3;
-    uStack_4 = CONCAT13(4,(undefined3)uStack_4);
-    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_4 + 3);
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar3 = (int32_t *)func_?(pOVar1);
-    (((HurryUpNotification *)object)->fields).timeLeftFromTimeStamp = *piVar3;
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
-    iVar6 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar5,(MethodInfo *)0x0);
-    unaff_EBX = (Action_1_IWinningCondition___Class *)
-                (int)((float)(((((HurryUpNotification *)object)->fields).timeLeftFromTimeStamp +
-                              (((HurryUpNotification *)object)->fields).timeStamp) - iVar6) /
-                     _UNK_?);
-    if (10 < (int)unaff_EBX) {
-      pNVar7 = (((HurryUpNotification *)object)->fields).fader;
-      if (pNVar7 != (NotificationFade *)0x0) {
-        (pNVar7->fields).pauseAt = (pNVar7->fields).duration;
-        pCVar8 = (pNVar7->fields).group;
-        (pNVar7->fields).playing = 1;
-        if (pCVar8 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (pCVar8,0.0,(MethodInfo *)0x0);
-          (pNVar7->fields).currentTime = 0.0;
-          goto code_?;
-        }
+      method = (MethodInfo *)&(this->fields).timeStamp;
+      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+      func_?();
+      this = (HurryUpNotification *)
+             MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((MVNetworkGame *)this == (MVNetworkGame *)0x0) goto code_?;
+      a_00 = (((MVNetworkGame *)this)->fields).OnWinningConditionFulfilled;
+      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(TypeInfo__System__Action<IWinningCondition>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_02,(Object *)pAVar1,
+                 MethodInfo__HurryUpNotification__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+      pAVar3 = (Action__Class *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)a_00,(Delegate *)this_02,(MethodInfo *)0x0);
+      pAVar1 = TypeInfo__System__Action<IWinningCondition>;
+      if (pAVar3 == (Action__Class *)0x0) {
+        this[3].fields._.Type = 0;
+        in_stack_12 = (Action__Class *)0x0;
+        unaff_EDI = (Action_1_IWinningCondition___Class *)this;
+code_?:
+        method = (MethodInfo *)&(((HurryUpNotification *)((int)unaff_EDI + 0xa8))->fields)._.Type;
+        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+        func_?();
+        return;
+      }
+      in_stack_12 = (Action__Class *)TypeInfo__System__Action<IWinningCondition>;
+      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+      method = (MethodInfo *)pAVar3;
+      iVar8 = func_?();
+      unaff_EDI = (Action_1_IWinningCondition___Class *)this;
+      in_stack_12 = (Action__Class *)pAVar1;
+      if (iVar8 != 0) {
+        this[3].fields._.Type = iVar8;
+        pAVar1 = TypeInfo__System__Action<IWinningCondition>;
+        in_stack_12 = (Action__Class *)TypeInfo__System__Action<IWinningCondition>;
+        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+        method = (MethodInfo *)pAVar3;
+        in_stack_12 = (Action__Class *)func_?();
+        if (in_stack_12 != (Action__Class *)0x0) goto code_?;
+        goto code_?;
       }
       goto code_?;
     }
-    pNVar7 = (((HurryUpNotification *)object)->fields).countdownFader;
-    if (pNVar7 == (NotificationFade *)0x0) goto code_?;
-    (pNVar7->fields).pauseAt = (pNVar7->fields).duration;
-    pCVar8 = (pNVar7->fields).group;
-    (pNVar7->fields).playing = 1;
-    if (pCVar8 == (CanvasGroup *)0x0) goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar8,0.0,(MethodInfo *)0x0);
-    (pNVar7->fields).currentTime = 0.0;
-    iVar9 = (*(((HurryUpNotification *)object)->klass->vtable).get_Lifetime.methodPtr)
-                      (object,(((HurryUpNotification *)object)->klass->vtable).get_Lifetime.method);
-    (((HurryUpNotification *)object)->fields)._.timeSinceStart =
-         (float)(iVar9 - (int)unaff_EBX) - _UNK_?;
-code_?:
-    pNVar7 = (((HurryUpNotification *)object)->fields).fader;
-    if (pNVar7 == (NotificationFade *)0x0) goto code_?;
-    this = (HurryUpNotification *)(pNVar7->fields).OnFinished;
-    unaff_EBX = (Action_1_IWinningCondition___Class *)func_?(TypeInfo__System__Action);
-    if (unaff_EBX == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              ((NavMesh_OnNavMeshPreUpdate *)unaff_EBX,(Object *)object,
-               MethodInfo__HurryUpNotification__DestroyNotification__,(MethodInfo *)0x0);
-    pAVar10 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)this,(Delegate *)unaff_EBX,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar10);
-    pAVar11 = (Action *)0x0;
-    if (pAVar10 == (Action *)0x0) {
-      (pNVar7->fields).OnFinished = (Action *)0x0;
+    pAVar3 = in_stack_12;
+    if ((Action__Class *)(((Action__Class *)method)->_0).image == TypeInfo__System__Action) {
+      pAVar3 = (Action__Class *)method;
     }
-    else {
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar11 = pAVar10;
+    in_stack_12 = TypeInfo__System__Action;
+    if (pAVar3 != (Action__Class *)0x0) {
+      (this->fields).timeStamp = (int32_t)pAVar3;
+      in_stack_12 = (Action__Class *)0x0;
+      if ((Action__Class *)(((Action__Class *)method)->_0).image == TypeInfo__System__Action) {
+        in_stack_12 = (Action__Class *)method;
       }
-      if (pAVar11 == (Action *)0x0) goto code_?;
-      (pNVar7->fields).OnFinished = pAVar11;
-      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar10);
-      pAVar11 = (Action *)0x0;
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar11 = pAVar10;
-      }
-      if (pAVar11 == (Action *)0x0) goto code_?;
-    }
-    func_?(&(pNVar7->fields).OnFinished,pAVar11);
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
-    this = (HurryUpNotification *)(pMVar5->fields).OnWinningConditionFulfilled;
-    this_01 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    unaff_EBX = (Action_1_IWinningCondition___Class *)0x0;
-    if (this_01 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_01,(Object *)object,
-               MethodInfo__HurryUpNotification__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
-    object = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)this,(Delegate *)this_01,(MethodInfo *)0x0);
-    unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-    if (object == (Delegate *)0x0) {
-      (pMVar5->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      in_stack_12 = (Action_1_IWinningCondition___Class *)0x0;
-code_?:
-      method = (MethodInfo *)&(pMVar5->fields).OnWinningConditionFulfilled;
-      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-      func_?();
-      return;
-    }
-    in_stack_12 = TypeInfo__System__Action<IWinningCondition>;
-    data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-    method = (MethodInfo *)object;
-    pAVar13 = (Action_1_IWinningCondition_ *)func_?();
-    if (pAVar13 != (Action_1_IWinningCondition_ *)0x0) {
-      (pMVar5->fields).OnWinningConditionFulfilled = pAVar13;
-      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-      in_stack_12 = TypeInfo__System__Action<IWinningCondition>;
-      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-      method = (MethodInfo *)object;
-      in_stack_12 = (Action_1_IWinningCondition___Class *)func_?();
-      if (in_stack_12 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+      pAVar3 = TypeInfo__System__Action;
+      if (in_stack_12 != (Action__Class *)0x0) goto code_?;
+      goto code_?;
     }
   }
-  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-  method = (MethodInfo *)object;
-  in_stack_12 = unaff_EBX;
-  uVar2 = func_?();
+  else {
 code_?:
-  func_?(uVar2);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+    func_?(TVar4.m_Index,TypeInfo__System__Int32);
+code_?:
+    data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+    method = (MethodInfo *)pAVar3;
+    in_stack_12 = (Action__Class *)pAVar1;
+    func_?();
+    in_stack_12 = (Action__Class *)unaff_EDI;
+code_?:
+    data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+    method = (MethodInfo *)pAVar3;
+    method = (MethodInfo *)func_?();
+code_?:
+    data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+    in_stack_12 = pAVar3;
+    method = (MethodInfo *)func_?();
+    in_stack_12 = extraout_ECX;
+  }
+  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+  func_?();
+code_?:
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -178,54 +200,53 @@ void Assembly-CSharp.dll::HurryUpNotification::HurryUpNotification_OnDestroy
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 == (MVNetworkGame *)0x0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    unaff_EBX = (Action_1_IWinningCondition___Class *)(pMVar2->fields).OnWinningConditionFulfilled;
-    this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    unaff_EDI = (Delegate *)0x0;
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
+  if (bVar1 != 0) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 == (MVNetworkGame *)0x0) {
+        func_?();
+        goto code_?;
+      }
+      pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(TypeInfo__System__Action<IWinningCondition>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_00,(Object *)this,
                  MethodInfo__HurryUpNotification__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
-      unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Remove
-                            ((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-      if (unaff_EDI == (Delegate *)0x0) {
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove
+                            ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      if (unaff_ESI == (Delegate *)0x0) {
         (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
+        pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+      }
+      else {
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+        if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
 code_?:
-        pDStack4 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
-        func_?();
-        return;
+          pDStack5 = unaff_ESI;
+          pAStack4 = unaff_EDI;
+          func_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
+        unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+        if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
       }
-      pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack4 = unaff_EDI;
-      pAVar5 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar5 != (Action_1_IWinningCondition_ *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = pAVar5;
-        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-        pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-        pDStack4 = unaff_EDI;
-        pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-        if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
-      }
-      goto code_?;
+      pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+      func_?();
     }
   }
-  func_?();
-code_?:
-  pDStack4 = unaff_EDI;
-  pAStack3 = unaff_EBX;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 
@@ -261,8 +282,9 @@ void Assembly-CSharp.dll::HurryUpNotification::HurryUpNotification_Update
     pTVar5 = (this->fields).timeText;
     iVar6 = (int)fVar4;
     if (pTVar5 != (Text *)0x0) {
-      (*(pTVar5->klass->vtable).set_text.methodPtr)
-                (pTVar5,uStack_3,(pTVar5->klass->vtable).set_text.method);
+      (*(code *)(pTVar5->klass->vtable).set_text.method)
+                (pTVar5,uStack_3,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
+                );
       if ((((float)score <= _UNK_?) && (iVar6 != (this->fields).previousSecondCount)) &&
          (900 < score + iVar6 * -1000)) {
         this_01 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);

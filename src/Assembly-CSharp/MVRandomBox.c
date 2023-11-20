@@ -33,51 +33,47 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_Initialize(MVRandomBox *this,
     value.currentCryptoKey = iVar2;
     value.fakeValue = iVar4;
     value._12_4_ = puVar5;
-    seed = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-    pOVar1 = MVRandomBox_get_CurrentRandomValues(this,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)
+                Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+    pOVar1 = MVRandomBox_get_CurrentRandomValues(this,method_00);
     if (pOVar1 != (ObscuredInt__Array *)0x0) {
       if (pOVar1->max_length < 2) goto code_?;
-      Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-      ObscuredInt_op_Implicit_1(pOVar1->vector[1],(MethodInfo *)0x0);
+      step = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+             ObscuredInt_op_Implicit_1(pOVar1->vector[1],(MethodInfo *)0x0);
       pOVar1 = MVRandomBox_get_CurrentRandomValues(this,(MethodInfo *)0x0);
       if (pOVar1 != (ObscuredInt__Array *)0x0) {
-        if (pOVar1->max_length < 3) goto code_?;
-        round = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                ObscuredInt_op_Implicit_1(pOVar1->vector[2],(MethodInfo *)0x0);
-        this_00 = (RandomGenerator *)func_?();
-        if (this_00 != (RandomGenerator *)0x0) {
-          MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor_1
-                    (this_00,seed,0,round,(MethodInfo *)0x0);
+        if (2 < pOVar1->max_length) {
+          round = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                  ObscuredInt_op_Implicit_1(pOVar1->vector[2],(MethodInfo *)0x0);
+          this_00 = (RandomGenerator *)func_?();
+          MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor
+                    (this_00,(uint32_t)method_00,step,round,(MethodInfo *)0x0);
           (this->fields).randomGenerator = this_00;
-          func_?(&(this->fields).randomGenerator,this_00);
-          this_01 = (Action_2_Int32Enum_Object_ *)
-                    func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-          if (this_01 != (Action_2_Int32Enum_Object_ *)0x0) {
-            mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                       ,(MethodInfo *)0x0);
-            pIVar6 = LogicClientsideFactory::
-                     LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                               ((MVWorldObject *)this,0,
-                                (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                                (Action_2_LogicInputState_LogicObjectManager_ *)this_01,
-                                (MethodInfo *)0x0);
-            (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
-            func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar6);
-            iVar2 = (this->fields)._._._.id;
-            this_02 = (WorldObjectClientRef_1_System_Object_ *)
-                      func_?(TypeInfo__OutputSignalTransmitterSpecific);
-            if (this_02 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-              WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                        (this_02,iVar2,(MethodInfo *)0x0);
-              (this->fields)._outputSignalTransmitter = (OutputSignalTransmitterSpecific *)this_02;
-              func_?(&(this->fields)._outputSignalTransmitter,this_02);
-              return;
-            }
-          }
+          func_?();
+          this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
+          Int32]::UnityAction_2_System_Int32_System_Int32___ctor
+                    (this_01,(Object *)this,
+                     MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+                     ,(MethodInfo *)0x0);
+          pIVar6 = LogicClientsideFactory::
+                   LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                             ((MVWorldObject *)this,0,
+                              (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                              (Action_2_LogicInputState_LogicObjectManager_ *)this_01,
+                              (MethodInfo *)0x0);
+          (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
+          func_?();
+          iVar2 = (this->fields)._._._.id;
+          this_02 = (WorldObjectClientRef_1_System_Object_ *)func_?();
+          WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+                    (this_02,iVar2,(MethodInfo *)0x0);
+          (this->fields)._outputSignalTransmitter = (OutputSignalTransmitterSpecific *)this_02;
+          func_?();
+          return;
         }
+        goto code_?;
       }
     }
   }
@@ -125,8 +121,8 @@ code_?:
         cRam_? = '\x01';
       }
       hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                  (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                            (this,(this->klass->vtable).get_RunTimeData.method);
+                  (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                            (this,(this->klass->vtable).set_RunTimeData.methodPtr);
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Extensions);
       }
@@ -199,8 +195,8 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_SetRandomIndex
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -220,7 +216,7 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_SetRandomIndex
   value.fakeValue = iVar4;
   value.inited = pOVar1->inited;
   value._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3
+  Extensions::Extensions_SetObscuredType_2
             (hashtable,StringLiteral_currentValue,value,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );
@@ -272,8 +268,8 @@ Assembly-CSharp.dll::MVRandomBox::MVRandomBox_get_CurrentRandomValues
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -308,8 +304,8 @@ int32_t Assembly-CSharp.dll::MVRandomBox::MVRandomBox_get_CurrentValue
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -363,8 +359,8 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_set_CurrentValue
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -384,7 +380,7 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_set_CurrentValue
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3
+  Extensions::Extensions_SetObscuredType_2
             (hashtable,StringLiteral_currentValue,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );

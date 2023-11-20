@@ -40,76 +40,59 @@ code_?:
       if (pMVar1 != (MVNetworkGame *)0x0) {
         MVar2 = (pMVar1->fields)._GameType_k__BackingField;
         if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MainCameraManager);
+          func_?();
         }
         pIVar5 = MainCameraManager::MainCameraManager_GetSettings(MVar2,(MethodInfo *)0x0);
         if (pIVar5 != (ICameraSettings *)0x0) {
-          uVar6 = 0;
-          uVar7 = (pIVar5->klass->_1).interface_offsets_count;
-          if (uVar7 != 0) {
-            do {
-              if (pIVar5->klass->interfaceOffsets[uVar6].interfaceType ==
-                  (Il2CppClass *)TypeInfo__ICameraSettings) {
-                pVVar8 = &(pIVar5->klass->vtable).SetDefaultSettings +
-                         pIVar5->klass->interfaceOffsets[uVar6].offset;
-                goto code_?;
-              }
-              uVar6 = uVar6 + 1;
-            } while (uVar6 < uVar7);
-          }
-          pVVar8 = (VirtualInvokeData *)func_?(pIVar5,TypeInfo__ICameraSettings,1);
-code_?:
-          (*pVVar8->methodPtr)(pIVar5,pVVar8->method);
+          func_?(1,TypeInfo__ICameraSettings,pIVar5);
           goto code_?;
         }
       }
     }
 code_?:
     func_?();
-    pAVar9 = extraout_ECX;
+code_?:
+    func_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+code_?:
+  if ((this->fields).needToUnsubscribeToSettingsCallback == 0) goto code_?;
+  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pAVar7 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
+             (MethodInfo *)0x0);
+  pAVar7 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar7,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar7 == (Action *)0x0) {
+    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
   }
   else {
-code_?:
-    if ((this->fields).needToUnsubscribeToSettingsCallback == 0) goto code_?;
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MainCameraManager);
+    pAVar8 = (Action *)0x0;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar7;
     }
-    pAVar9 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
-               (MethodInfo *)0x0);
-    pAVar9 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar9,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar9 == (Action *)0x0) {
-      TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
-code_?:
-      func_?(&TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded);
-code_?:
-      MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-      return;
+    if (pAVar8 == (Action *)0x0) {
+      func_?();
+      goto code_?;
     }
-    pAVar10 = (Action *)0x0;
-    if (pAVar9->klass == TypeInfo__System__Action) {
-      pAVar10 = pAVar9;
+    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar8;
+    pAVar8 = (Action *)0x0;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar7;
     }
-    if (pAVar10 == (Action *)0x0) goto code_?;
-    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar10;
-    pAVar10 = (Action *)0x0;
-    if (pAVar9->klass == TypeInfo__System__Action) {
-      pAVar10 = pAVar9;
-    }
-    if (pAVar10 != (Action *)0x0) goto code_?;
+    if (pAVar8 == (Action *)0x0) goto code_?;
   }
-  func_?(pAVar9);
-  pAVar9 = extraout_ECX_00;
+  func_?();
 code_?:
-  func_?(pAVar9);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -125,7 +108,8 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_Initialize
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
+  (*(code *)(this->klass->vtable).OnDataUpdate.method)
+            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
   if ((this->fields).isPreview == 0) {
     if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -229,7 +213,6 @@ code_?:
     }
     pAVar7 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
@@ -301,38 +284,42 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_UpdateStaticValues
                     );
   if (bVar5 == 0) {
 code_?:
-    pDVar3 = (this->fields)._._._.data;
-    if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              (this->fields)._._._.data;
+    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
     puVar6 = &UNK_?;
-    pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar3,(Object *)StringLiteral_distanceToAvatar,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_distanceToAvatar,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (pOVar7 == (Object *)0x0) goto code_?;
-    if ((pOVar7->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+    if (TVar7.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
       pfVar8 = (float *)func_?();
       TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = *pfVar8;
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       puVar9 = &UNK_?;
-      pMVar10 = this_00;
+      pMVar10 = this_01;
       bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)this_01,(Object_1 *)0x0,(MethodInfo *)0x0);
       if ((bVar5 != 0) && ((this->fields).isPreview == 0)) {
         func_?();
         uVar11 = 0;
         pDVar3 = (this->fields)._._._.data;
-        this_01 = (PostProcessingSettings *)&stack0xffffff50;
+        this_02 = (PostProcessingSettings *)&stack0xffffff50;
         puVar12 = &UNK_?;
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::PostProcessingSettings::
-        PostProcessingSettings__ctor(this_01,pDVar3,(MethodInfo *)0x0);
-        if (this_00 == (MainCameraManager *)0x0) goto code_?;
+        PostProcessingSettings__ctor(this_02,pDVar3,(MethodInfo *)0x0);
+        if (this_01 == (MainCameraManager *)0x0) goto code_?;
         method_00 = (MethodInfo *)0x0;
         puVar13 = (undefined4 *)&stack0xffffff50;
         puVar14 = (undefined4 *)&stack0xfffffe98;
@@ -387,7 +374,7 @@ code_?:
         data.vignetteSettings.color.g = (float)auVar21._4_4_;
         data.vignetteSettings.color.b = (float)auVar21._8_4_;
         data.vignetteSettings.color.a = (float)auVar21._12_4_;
-        data.grainSettings._0_4_ = this_01;
+        data.grainSettings._0_4_ = this_02;
         data.grainSettings.intensity = (int32_t)pDVar3;
         data.grainSettings.size = uVar11;
         data.grainSettings.luminanceContribution = (int32_t)in_stack_1;
@@ -395,7 +382,7 @@ code_?:
         data.lensDistortionSettings.intensity = (int32_t)puVar6;
         data.lensDistortionSettings.xMultiplier = (int32_t)puVar9;
         data.lensDistortionSettings.yMultiplier = (int32_t)pMVar10;
-        bVar5 = MainCameraManager::MainCameraManager_ApplyPostProcessingThis(this_00,data,method_00)
+        bVar5 = MainCameraManager::MainCameraManager_ApplyPostProcessingThis(this_01,data,method_00)
         ;
         if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -467,16 +454,5 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings__ctor
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_get_DocumentationType
-          (MVCameraSettings *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_CameraSettings;
 }
 

@@ -23,7 +23,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::
     if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
       this_01 = (NavMesh_OnNavMeshPreUpdate *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_01,(Object *)this,
@@ -37,7 +36,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -84,7 +82,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -104,7 +101,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::
               );
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();

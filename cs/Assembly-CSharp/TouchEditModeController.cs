@@ -77,6 +77,35 @@ public class TouchEditModeController : ModeControllerBase, IEditStateCommands, I
 	public Action<EditModeChangeArgs> EditModeChange { get; set; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__64_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _DeleteWoid_b__64_1(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass64_0
+	{
+		// Fields
+		public string errorText;
+
+		// Constructors
+		public __c__DisplayClass64_0();
+
+		// Methods
+		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class _HandleCursorVisible_d__55 : IEnumerator<object>
 	{
@@ -98,35 +127,6 @@ public class TouchEditModeController : ModeControllerBase, IEditStateCommands, I
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass64_0
-	{
-		// Fields
-		public string errorText;
-
-		// Constructors
-		public __c__DisplayClass64_0();
-
-		// Methods
-		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__64_1;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _DeleteWoid_b__64_1(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors

@@ -7,7 +7,7 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c::
 
 {
   if (requirement != (UseRequirement *)0x0) {
-    this_00 = (GameObject *)(*(requirement->klass->vtable).__unknown_10.methodPtr)();
+    this_00 = (GameObject *)(*(code *)(requirement->klass->vtable).__unknown_10.method)();
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_00,0,(MethodInfo *)0x0);
@@ -29,11 +29,11 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c::
                (UseInteractorVisualization_c *this,UseRequirement *requirement,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (requirement != (UseRequirement *)0x0) {
-    pMStack_1 = (requirement->klass->vtable).__unknown_1.method;
+    pIStack_1 = (requirement->klass->vtable).__unknown_2.methodPtr;
     pUStack_2 = requirement;
-    (*(requirement->klass->vtable).__unknown_1.methodPtr)();
+    (*(code *)(requirement->klass->vtable).__unknown_1.method)();
     return 1;
   }
   uVar3 = func_?(&puStack_4);
@@ -54,18 +54,12 @@ void Assembly-CSharp.dll::UseInteractorVisualization+<>c::UseInteractorVisualiza
     func_?(&TypeInfo__UseInteractorVisualization____c);
     cRam_? = '\x01';
   }
-  value = (UseInteractorVisualization_c *)func_?(TypeInfo__UseInteractorVisualization____c)
-  ;
-  if (value != (UseInteractorVisualization_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__UseInteractorVisualization____c->static_fields->__9 = value;
-    func_?(TypeInfo__UseInteractorVisualization____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__UseInteractorVisualization____c;
+  value = (UseInteractorVisualization_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__UseInteractorVisualization____c->static_fields->__9 = value;
+  func_?(TypeInfo__UseInteractorVisualization____c->static_fields,value);
   return;
 }
 

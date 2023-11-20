@@ -9,7 +9,7 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c__DisplayClass21_0::
 {
   bVar1 = (this->fields).isVisible;
   if (requirement != (UseRequirement *)0x0) {
-    this_00 = (GameObject *)(*(requirement->klass->vtable).__unknown_10.methodPtr)();
+    this_00 = (GameObject *)(*(code *)(requirement->klass->vtable).__unknown_10.method)();
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_00,bVar1,(MethodInfo *)0x0);

@@ -27,63 +27,53 @@ bool Assembly-CSharp.dll::PurchasedAccessoryPreviewer+<DisplayAndFadeImages>d__1
   switch((this->fields).__1__state) {
   case 0:
     (this->fields).__1__state = -1;
-    bVar2 = 0;
-    if (this_00 != (PurchasedAccessoryPreviewer *)0x0) {
-      this_01 = (this_00->fields).image;
-      bVar2 = 0;
-      if (this_01 != (Image *)0x0) {
-        this_02 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                            ((Graphic *)this_01,(MethodInfo *)0x0);
-        bVar2 = 0;
-        if (this_02 != (RectTransform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-                    (this_02,(Vector2)0x0,(MethodInfo *)0x0);
-          (this_00->fields).currentTime = 0.0;
-          goto code_?;
-        }
-      }
-    }
-    break;
-  case 1:
-    (this->fields).__1__state = -1;
-    bVar2 = 0;
-    if (this_00 != (PurchasedAccessoryPreviewer *)0x0) {
+    if (((this_00 != (PurchasedAccessoryPreviewer *)0x0) &&
+        (this_01 = (this_00->fields).image, this_01 != (Image *)0x0)) &&
+       (this_02 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                            ((Graphic *)this_01,(MethodInfo *)0x0), this_02 != (RectTransform *)0x0)
+       ) {
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
+                (this_02,(Vector2)0x0,(MethodInfo *)0x0);
+      (this_00->fields).currentTime = 0.0;
 code_?:
       if (_UNK_? <= (this_00->fields).currentTime / (this_00->fields).imageDisplayTime) {
         PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_EvaluateImageAtTime
                   (this_00,1.0,1.0,(MethodInfo *)0x0);
         this = (PurchasedAccessoryPreviewer_DisplayAndFadeImages_d_17 *)0x0;
-        pOVar3 = (Object *)func_?();
-        (pPVar1->fields).__2__current = pOVar3;
-        func_?(&(pPVar1->fields).__2__current,pOVar3);
+        pOVar2 = (Object *)func_?();
+        (pPVar1->fields).__2__current = pOVar2;
+        func_?(&(pPVar1->fields).__2__current,pOVar2);
         (pPVar1->fields).__1__state = 2;
         return 1;
       }
       method_00 = (MethodInfo *)(this_00->fields).currentTime;
       this = (PurchasedAccessoryPreviewer_DisplayAndFadeImages_d_17 *)
              UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime(method_00);
-      fVar4 = (float)this + (float)method_00;
-      (this_00->fields).currentTime = fVar4;
+      fVar3 = (float)this + (float)method_00;
+      (this_00->fields).currentTime = fVar3;
       PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_EvaluateImageAtTime
-                (this_00,fVar4 / (this_00->fields).imageBounceEffectTime,
-                 fVar4 / (this_00->fields).imageDisplayTime,(MethodInfo *)0x0);
-      pOVar3 = (Object *)func_?();
-      (pPVar1->fields).__2__current = pOVar3;
+                (this_00,fVar3 / (this_00->fields).imageBounceEffectTime,
+                 fVar3 / (this_00->fields).imageDisplayTime,(MethodInfo *)0x0);
+      pOVar2 = (Object *)func_?();
+      (pPVar1->fields).__2__current = pOVar2;
       func_?(&(pPVar1->fields).__2__current);
       (pPVar1->fields).__1__state = 1;
       return 1;
     }
     break;
+  case 1:
+    (this->fields).__1__state = -1;
+    if (this_00 != (PurchasedAccessoryPreviewer *)0x0) goto code_?;
+    break;
   case 2:
     (this->fields).__1__state = -1;
-    bVar2 = 0;
-    if (this_00 == (PurchasedAccessoryPreviewer *)0x0) break;
-    pAVar5 = (this_00->fields).previewData;
-    bVar2 = 0;
-    if (pAVar5 == (AccessoryDataClient__Array *)0x0) break;
-    if ((int)(pAVar5->max_length - 1) <= (this_00->fields).currentStreamingAssetIndex) {
-      unaff_EBX = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0);
+    if ((this_00 == (PurchasedAccessoryPreviewer *)0x0) ||
+       (pAVar4 = (this_00->fields).previewData, pAVar4 == (AccessoryDataClient__Array *)0x0)) break;
+    if ((int)(pAVar4->max_length - 1) <= (this_00->fields).currentStreamingAssetIndex) {
+      root = (PurchasedAccessoryPreviewer_DisplayAndFadeImages_d_17 *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+      this = root;
       if ((TypeInfo__PurchasedAccessoryPreviewer____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__PurchasedAccessoryPreviewer____c);
       }
@@ -92,26 +82,24 @@ code_?:
         if ((TypeInfo__PurchasedAccessoryPreviewer____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        this = (PurchasedAccessoryPreviewer_DisplayAndFadeImages_d_17 *)
-               TypeInfo__PurchasedAccessoryPreviewer____c->static_fields->__9;
+        object = TypeInfo__PurchasedAccessoryPreviewer____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        bVar2 = 0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                    MethodInfo__PurchasedAccessoryPreviewer____c___DisplayAndFadeImages_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         TypeInfo__PurchasedAccessoryPreviewer____c->static_fields->__9__17_0 = callbackFunction;
         func_?(&TypeInfo__PurchasedAccessoryPreviewer____c->static_fields->__9__17_0,
                         callbackFunction);
+        root = this;
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (unaff_EBX,(BaseEventData *)0x0,
+                ((GameObject *)root,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
@@ -119,57 +107,48 @@ code_?:
     }
     PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_EvaluateImageAtTime
               (this_00,0.0,0.0,(MethodInfo *)0x0);
-    iVar6 = (this_00->fields).currentStreamingAssetIndex;
-    pAVar5 = (this_00->fields).previewData;
-    uVar7 = iVar6 + 1;
-    (this_00->fields).currentStreamingAssetIndex = uVar7;
-    bVar2 = 0;
-    if (pAVar5 == (AccessoryDataClient__Array *)0x0) break;
-    bVar2 = uVar7 < pAVar5->max_length;
-    if ((bool)bVar2) {
-      bVar2 = 0;
-      if (pAVar5->vector[iVar6 + 1] == (AccessoryDataClient *)0x0) break;
-      if (((pAVar5->vector[iVar6 + 1]->fields)._.lvl == 0) ||
-         ((((this_00->fields).previewData)->vector[iVar6 + 1]->fields)._.cost != 0)) {
-        pAVar5 = (this_00->fields).previewData;
-        bVar2 = 0;
-        if (pAVar5 == (AccessoryDataClient__Array *)0x0) break;
-        bVar2 = uVar7 < pAVar5->max_length;
-        if (!(bool)bVar2) goto code_?;
-        unaff_EBX = (GameObject *)(pAVar5->vector[iVar6 + 1]->fields)._.cost;
+    iVar5 = (this_00->fields).currentStreamingAssetIndex;
+    pAVar4 = (this_00->fields).previewData;
+    uVar6 = iVar5 + 1;
+    (this_00->fields).currentStreamingAssetIndex = uVar6;
+    if (pAVar4 == (AccessoryDataClient__Array *)0x0) break;
+    if (uVar6 < pAVar4->max_length) {
+      if (pAVar4->vector[iVar5 + 1] == (AccessoryDataClient *)0x0) break;
+      if (((pAVar4->vector[iVar5 + 1]->fields)._.lvl == 0) ||
+         ((((this_00->fields).previewData)->vector[iVar5 + 1]->fields)._.cost != 0)) {
+        pAVar4 = (this_00->fields).previewData;
+        if (pAVar4 == (AccessoryDataClient__Array *)0x0) break;
+        if (pAVar4->max_length <= uVar6) goto code_?;
+        iVar7 = (pAVar4->vector[iVar5 + 1]->fields)._.cost;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pRVar8 = Styles::Styles_GetAccessoryColorsFromPrice((int32_t)unaff_EBX,(MethodInfo *)0x0);
+        pRVar8 = Styles::Styles_GetAccessoryColorsFromPrice(iVar7,(MethodInfo *)0x0);
       }
       else {
-        pAVar5 = (this_00->fields).previewData;
-        bVar2 = 0;
-        if (pAVar5 == (AccessoryDataClient__Array *)0x0) break;
-        bVar2 = uVar7 < pAVar5->max_length;
-        if (!(bool)bVar2) goto code_?;
-        bVar2 = 0;
-        if (pAVar5->vector[iVar6 + 1] == (AccessoryDataClient *)0x0) break;
-        unaff_EBX = (GameObject *)(pAVar5->vector[iVar6 + 1]->fields)._.lvl;
+        pAVar4 = (this_00->fields).previewData;
+        if (pAVar4 == (AccessoryDataClient__Array *)0x0) break;
+        if (pAVar4->max_length <= uVar6) goto code_?;
+        if (pAVar4->vector[iVar5 + 1] == (AccessoryDataClient *)0x0) break;
+        iVar7 = (pAVar4->vector[iVar5 + 1]->fields)._.lvl;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pRVar8 = Styles::Styles_GetAccessoryColorsFromLevel((int32_t)unaff_EBX,(MethodInfo *)0x0);
+        pRVar8 = Styles::Styles_GetAccessoryColorsFromLevel(iVar7,(MethodInfo *)0x0);
       }
-      bVar2 = 0;
       if (pRVar8 != (RarityStylesDef *)0x0) {
-        fVar4 = (pRVar8->fields).backgroundColor.g;
+        fVar3 = (pRVar8->fields).backgroundColor.g;
         fVar9 = (pRVar8->fields).backgroundColor.b;
         fVar10 = (pRVar8->fields).backgroundColor.a;
         (this_00->fields).targetColorBackground.r = (pRVar8->fields).backgroundColor.r;
-        (this_00->fields).targetColorBackground.g = fVar4;
+        (this_00->fields).targetColorBackground.g = fVar3;
         (this_00->fields).targetColorBackground.b = fVar9;
         (this_00->fields).targetColorBackground.a = fVar10;
-        fVar4 = (pRVar8->fields).glowColor.g;
+        fVar3 = (pRVar8->fields).glowColor.g;
         fVar9 = (pRVar8->fields).glowColor.b;
         fVar10 = (pRVar8->fields).glowColor.a;
         (this_00->fields).targetColorGlow.r = (pRVar8->fields).glowColor.r;
-        (this_00->fields).targetColorGlow.g = fVar4;
+        (this_00->fields).targetColorGlow.g = fVar3;
         (this_00->fields).targetColorGlow.b = fVar9;
         (this_00->fields).targetColorGlow.a = fVar10;
         routine = PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_DisplayAndFadeImages
@@ -178,8 +157,8 @@ code_?:
                   ((MonoBehaviour *)this_00,routine,(MethodInfo *)0x0);
 code_?:
         this = (PurchasedAccessoryPreviewer_DisplayAndFadeImages_d_17 *)&this;
-        pOVar3 = (Object *)func_?();
-        (pPVar1->fields).__2__current = pOVar3;
+        pOVar2 = (Object *)func_?();
+        (pPVar1->fields).__2__current = pOVar2;
         func_?();
         (pPVar1->fields).__1__state = 3;
         return 1;
@@ -196,13 +175,9 @@ code_?:
     return 0;
   }
   func_?();
-  puVar11 = (ushort *)((int)&unaff_EBX[-0x58b2951].monitor + 1);
-  sVar12 = (((short)pPVar1 - (short)*(undefined4 *)(extraout_EDX + -0x458fefc7)) - (ushort)bVar2 & 3
-          ) - (*puVar11 & 3);
-  *puVar11 = *puVar11 + (ushort)(0 < sVar12) * sVar12;
-  pcVar13 = (code *)swi(3);
-  bVar14 = (*pcVar13)();
-  return bVar14;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 
@@ -215,7 +190,6 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer+<DisplayAndFadeImages>d__1
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

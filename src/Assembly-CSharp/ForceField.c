@@ -73,7 +73,8 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyForceTo
                       uVar11 = pVVar3->x;
                       uVar12 = pVVar3->y;
                       fVar9 = pVVar3->z;
-                      puVar13 = (undefined8 *)(*(this_00->klass->vtable).__unknown_1.methodPtr)();
+                      puVar13 = (undefined8 *)
+                                (*(code *)(this_00->klass->vtable).__unknown_1.method)();
                       if ((float)*puVar13 * ((float)uVar11 - fVar5) +
                           (float)((ulonglong)*puVar13 >> 0x20) * ((float)uVar12 - fStack_10) +
                           *(float *)(puVar13 + 1) * (fVar9 - fVar6) <= 0.0) {
@@ -83,7 +84,7 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyForceTo
                         fVar6 = *(float *)(puVar13 + 1);
                         fVar14 = (float)*puVar13;
                         fVar15 = (float)((ulonglong)*puVar13 >> 0x20);
-                        (*(this_00->klass->vtable).__unknown_1.methodPtr)();
+                        (*(code *)(this_00->klass->vtable).__unknown_1.method)();
                         puStack16 = (undefined *)0x0;
                         puStack17 = &stack0xffffffd0;
                         fVar18 = (float10)func_?();
@@ -121,12 +122,12 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyNoFriction
                (ForceField *this,MVInteractableBase *interactable,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (interactable != (MVInteractableBase *)0x0) {
-    pMStack_1 = (interactable->klass->vtable).__unknown_2.method;
+    pIStack_1 = (interactable->klass->vtable).__unknown_3.methodPtr;
     uStack_2 = 0;
     uStack_3 = 0xffffffff;
-    (*(interactable->klass->vtable).__unknown_2.methodPtr)(interactable,7);
+    (*(code *)(interactable->klass->vtable).__unknown_2.method)(interactable,7);
     return;
   }
   uVar4 = func_?(&uStack_3);
@@ -151,29 +152,24 @@ void Assembly-CSharp.dll::ForceField::ForceField_Awake(ForceField *this,MethodIn
   pTVar1 = (this->fields).triggerBoxEvents;
   pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (pUVar2,(Object *)this,MethodInfo__ForceField__OnEnter_System__Object__TriggerEventArgs_
+             ,(MethodInfo *)0x0);
+  if (pTVar1 != (TriggerBoxEvents *)0x0) {
+    TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+    pTVar1 = (this->fields).triggerBoxEvents;
+    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (pUVar2,(Object *)this,
-               MethodInfo__ForceField__OnEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+               MethodInfo__ForceField__OnExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+      TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
                 (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-      pTVar1 = (this->fields).triggerBoxEvents;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar2,(Object *)this,
-                   MethodInfo__ForceField__OnExit_System__Object__TriggerEventArgs_,
-                   (MethodInfo *)0x0);
-        if (pTVar1 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
-          return;
-        }
-      }
+      return;
     }
   }
   func_?();
@@ -232,18 +228,18 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
   HStack_6._current = (Object *)0x0;
   pMVar7 = (MethodInfo *)(this->fields).interactablesInField;
   if (pMVar7 != (MethodInfo *)0x0) {
-    pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-             HashSet_1_System_Object__GetEnumerator
-                       (&HStack_9,(HashSet_1_System_Object_ *)pMVar7,
+    pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+             HashSet_1_System_UInt32__GetEnumerator
+                       (&HStack_9,(HashSet_1_System_UInt32_ *)pMVar7,
                         MethodInfo__System__Collections__Generic__HashSet<MVInteractableBase>__GetEnumerator__
                        );
-    HStack_6._set = pHVar8->_set;
+    HStack_6._set = (HashSet_1_System_Object_ *)pHVar8->_set;
     HStack_6._index = pHVar8->_index;
     HStack_6._version = pHVar8->_version;
-    HStack_6._current = pHVar8->_current;
+    HStack_6._current = (Object *)pHVar8->_current;
     HStack_9._version = 0;
     uStack_1 = 1;
-    HStack_9._current = (Object *)&HStack_6;
+    HStack_9._current = (uint32_t)&HStack_6;
     while( true ) {
       bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::Object]
               ::HashSet_1_T_Enumerator_System_Object__MoveNext
@@ -252,31 +248,28 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
                         );
       if (bVar10 == 0) break;
       if (HStack_6._current == (Object *)0x0) goto code_?;
-      pOVar11 = (HStack_6._current)->klass;
-      uVar12._0_2_ = pOVar11[1]._0.this_arg.attrs;
-      uVar12._2_1_ = pOVar11[1]._0.this_arg.type;
-      uVar12._3_1_ = pOVar11[1]._0.this_arg.field_0x7;
-      (*(code *)pOVar11[1]._0.this_arg.data)(HStack_6._current,7,0xffffffff,0,uVar12);
+      (**(code **)&(HStack_6._current)->klass[1]._0.this_arg.attrs)
+                (HStack_6._current,7,0xffffffff,0,(HStack_6._current)->klass[1]._0.element_class);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&HStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVInteractableBase>__Dispose__
                ,pMVar7);
     uStack_1 = 0xffffffff;
-    pHVar13 = (this->fields).bodiesInField;
-    if (pHVar13 != (HashSet_1_MVRigidBody_ *)0x0) {
-      pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-               HashSet_1_System_Object__GetEnumerator
-                         (&HStack_9,(HashSet_1_System_Object_ *)pHVar13,
+    pHVar11 = (this->fields).bodiesInField;
+    if (pHVar11 != (HashSet_1_MVRigidBody_ *)0x0) {
+      pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+               HashSet_1_System_UInt32__GetEnumerator
+                         (&HStack_9,(HashSet_1_System_UInt32_ *)pHVar11,
                           MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__GetEnumerator__
                          );
       pMVar7 = (MethodInfo *)pHVar8->_version;
       body = (MVRigidBody *)pHVar8->_current;
       HStack_9._version = 0;
       uStack_1 = 4;
-      HStack_9._current = (Object *)&stack0xffffffb4;
+      HStack_9._current = (uint32_t)&stack0xffffffb4;
       while( true ) {
         while( true ) {
           bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
@@ -286,7 +279,7 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
                             );
           if (bVar10 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&stack0xffffffb4,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MVRigidBody>__Dispose__
@@ -302,11 +295,11 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
           if (bVar10 != 0) break;
           ForceField_ApplyForceTo(this,body,(MethodInfo *)0x0);
         }
-        pHVar13 = (this->fields).bodiesInField;
-        if (pHVar13 == (HashSet_1_MVRigidBody_ *)0x0) break;
+        pHVar11 = (this->fields).bodiesInField;
+        if (pHVar11 == (HashSet_1_MVRigidBody_ *)0x0) break;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
         HashSet_1_System_Object__Remove
-                  ((HashSet_1_System_Object_ *)pHVar13,(Object *)body,
+                  ((HashSet_1_System_Object_ *)pHVar11,(Object *)body,
                    MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__Remove_MVRigidBody_
                   );
       }
@@ -315,8 +308,8 @@ void Assembly-CSharp.dll::ForceField::ForceField_FixedUpdate(ForceField *this,Me
 code_?:
   uVar12 = func_?();
   func_?(uVar12);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -361,10 +354,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_OnEnter
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         (pOVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar4 != 0) {
-        if (pHRam0000001c == (HashSet_1_System_Object_ *)0x0) goto code_?;
+        if (pHRam00000020 == (HashSet_1_System_Object_ *)0x0) goto code_?;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-        HashSet_1_System_Object__Add
-                  (pHRam0000001c,(Object *)pOVar3,
+        HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
+                  (pHRam00000020,(Object *)pOVar3,
                    MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__Add_MVRigidBody_)
         ;
       }
@@ -381,10 +374,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_OnEnter
         bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (pOVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar4 != 0) {
-          if (pHRam00000018 == (HashSet_1_System_Object_ *)0x0) goto code_?;
+          if (pHRam0000001c == (HashSet_1_System_Object_ *)0x0) goto code_?;
           System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-          HashSet_1_System_Object__Add
-                    (pHRam00000018,(Object *)pOVar3,
+          HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
+                    (pHRam0000001c,(Object *)pOVar3,
                      MethodInfo__System__Collections__Generic__HashSet<MVInteractableBase>__Add_MVInteractableBase_
                     );
         }
@@ -440,10 +433,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_OnExit
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         (pOVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar4 != 0) {
-        if (pHRam0000001c == (HashSet_1_System_Object_ *)0x0) goto code_?;
+        if (pHRam00000020 == (HashSet_1_System_Object_ *)0x0) goto code_?;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
         HashSet_1_System_Object__Remove
-                  (pHRam0000001c,(Object *)pOVar3,
+                  (pHRam00000020,(Object *)pOVar3,
                    MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__Remove_MVRigidBody_
                   );
       }
@@ -460,10 +453,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_OnExit
         bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (pOVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar4 != 0) {
-          if (pHRam00000018 == (HashSet_1_System_Object_ *)0x0) goto code_?;
+          if (pHRam0000001c == (HashSet_1_System_Object_ *)0x0) goto code_?;
           System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
           HashSet_1_System_Object__Remove
-                    (pHRam00000018,(Object *)pOVar3,
+                    (pHRam0000001c,(Object *)pOVar3,
                      MethodInfo__System__Collections__Generic__HashSet<MVInteractableBase>__Remove_MVInteractableBase_
                     );
         }
@@ -493,31 +486,24 @@ void Assembly-CSharp.dll::ForceField::ForceField__ctor(ForceField *this,MethodIn
     func_?(&TypeInfo__System__Collections__Generic__HashSet<MVRigidBody>);
     cRam_? = '\x01';
   }
-  pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<MVInteractableBase>);
-  if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (pHVar1,
-               MethodInfo__System__Collections__Generic__HashSet<MVInteractableBase>__HashSet__);
-    (this->fields).interactablesInField = (HashSet_1_MVInteractableBase_ *)pHVar1;
-    func_?(&(this->fields).interactablesInField,pHVar1);
-    pHVar1 = (HashSet_1_UnityEngine_Vector3_ *)
-             func_?(TypeInfo__System__Collections__Generic__HashSet<MVRigidBody>);
-    if (pHVar1 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (pHVar1,MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__HashSet__);
-      (this->fields).bodiesInField = (HashSet_1_MVRigidBody_ *)pHVar1;
-      func_?(&(this->fields).bodiesInField,pHVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  this_00 = (HashSet_1_MVInteractableBase_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<MVInteractableBase>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+  HashSet_1_System_Object___ctor
+            ((HashSet_1_System_Object_ *)this_00,
+             MethodInfo__System__Collections__Generic__HashSet<MVInteractableBase>__HashSet__);
+  (this->fields).interactablesInField = this_00;
+  func_?(&(this->fields).interactablesInField,this_00);
+  this_01 = (HashSet_1_MVRigidBody_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<MVRigidBody>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+  HashSet_1_System_Object___ctor
+            ((HashSet_1_System_Object_ *)this_01,
+             MethodInfo__System__Collections__Generic__HashSet<MVRigidBody>__HashSet__);
+  (this->fields).bodiesInField = this_01;
+  func_?(&(this->fields).bodiesInField,this_01);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -18,40 +18,34 @@ void Assembly-CSharp.dll::ShopItem::ShopItem_ApplyLocalDescriptionOverride
   if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__InventoryItem);
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-            TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)t,
+  pDVar1 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+  if (pDVar1 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,t,
                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       return;
     }
     if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this_01 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-    if ((this_01 !=
-         (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0) &&
-       (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,t,
-                            MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
-                           ), pOVar2 != (Object *)0x0)) {
-      (this->fields).name = (String *)pOVar2[1].klass;
+    pDVar1 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+    if ((pDVar1 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0
+        ) && (this_00 = (InventoryItem_ItemDescription *)
+                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32Enum,System::Object]::
+                        Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,t,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                                  ), this_00 != (InventoryItem_ItemDescription *)0x0)) {
+      (this->fields).name = (this_00->fields).name;
       func_?(&(this->fields).name);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                         ((String *)pOVar2[1].monitor,StringLiteral_u000Au000A,
-                          (String *)pOVar2[2].klass,(MethodInfo *)0x0);
+      pSVar3 = InventoryItem+ItemDescription::InventoryItem_ItemDescription_get_Description
+                         (this_00,(MethodInfo *)0x0);
       (this->fields).description = pSVar3;
-      func_?(&(this->fields).description);
+      func_?(&(this->fields).description,pSVar3);
       return;
     }
   }
@@ -84,8 +78,8 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor
     func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)unaff_EDI.m_Index);
   key_00 = (Byte__Array__Class *)key;
   (value->fields).itemID = key;
   _Stack_10 = (_union_155)key;
@@ -98,218 +92,209 @@ code_?:
     pDVar3 = extraout_EDX;
   }
   else {
-    unaff_EDI = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (outData,pOVar1,
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData,
+                           pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     this = (ShopItem *)CONCAT13(0x70,this._0_3_);
     _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,(int)&this + 3)
     ;
-    if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+    if (unaff_EDI.m_Index == 0) goto code_?;
     pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-         typeHierarchyDepth <
+    if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-        typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] !=
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                        (Object *)_Stack_14.methodMetadataHandle,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar4 = (int32_t *)func_?(pOVar1);
-    (value->fields).itemCategoryID = *piVar4;
-    ppIStack_5 = (Il2CppType **)key_00;
-    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&ppIStack_5);
-    unaff_EDI = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (outData,pOVar1,
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (unaff_EDI.m_Index,(Object *)_Stack_14.methodMetadataHandle,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar5 = (int32_t *)func_?(TVar4.m_Index);
+    (value->fields).itemCategoryID = *piVar5;
+    ppIStack_6 = (Il2CppType **)key_00;
+    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&ppIStack_6);
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData,
+                           pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-    uStack_6 = 0xf;
-    _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,&uStack_6);
-    if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+    uStack_7 = 0xf;
+    _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,&uStack_7);
+    if (unaff_EDI.m_Index == 0) goto code_?;
     pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-         typeHierarchyDepth <
+    if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-        typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] !=
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                        (Object *)_Stack_14.methodMetadataHandle,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar4 = (int32_t *)func_?(pOVar1);
-    (value->fields).itemTypeID = *piVar4;
-    pIStack_7 = (Il2CppType *)key_00;
-    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_7);
-    unaff_EDI = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (outData,pOVar1,
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (unaff_EDI.m_Index,(Object *)_Stack_14.methodMetadataHandle,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar5 = (int32_t *)func_?(TVar4.m_Index);
+    (value->fields).itemTypeID = *piVar5;
+    pIStack_8 = (Il2CppType *)key_00;
+    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_8);
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData,
+                           pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-    uStack_8 = 10;
-    _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,&uStack_8);
-    if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+    uStack_9 = 10;
+    _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,&uStack_9);
+    if (unaff_EDI.m_Index == 0) goto code_?;
     pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-         typeHierarchyDepth <
+    if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-        typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] !=
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    pSVar9 = (String *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                        (Object *)_Stack_14.methodMetadataHandle,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__String,pSVar9);
-    pSVar10 = (String *)0x0;
-    if (pSVar9 != (String *)0x0) {
-      if (pSVar9->klass == TypeInfo__System__String) {
-        pSVar10 = pSVar9;
+    TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (unaff_EDI.m_Index,(Object *)_Stack_14.methodMetadataHandle,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__String,TVar10.m_Index);
+    TVar4.m_Index = 0;
+    if (TVar10.m_Index != 0) {
+      if (*(String__Class **)TVar10.m_Index == TypeInfo__System__String) {
+        TVar4 = TVar10;
       }
-      if (pSVar10 != (String *)0x0) {
-        (value->fields).name = pSVar10;
-        uVar2 = CONCAT44(TypeInfo__System__String,pSVar9);
-        pSVar10 = (String *)0x0;
-        if (pSVar9->klass == TypeInfo__System__String) {
-          pSVar10 = pSVar9;
+      if ((String *)TVar4.m_Index != (String *)0x0) {
+        (value->fields).name = (String *)TVar4.m_Index;
+        uVar2 = CONCAT44(TypeInfo__System__String,TVar10.m_Index);
+        TVar4.m_Index = (int32_t)(String *)0x0;
+        if (*(String__Class **)TVar10.m_Index == TypeInfo__System__String) {
+          TVar4 = TVar10;
         }
-        if (pSVar10 != (String *)0x0) goto code_?;
+        if ((String *)TVar4.m_Index != (String *)0x0) goto code_?;
       }
       goto code_?;
     }
     (value->fields).name = (String *)0x0;
 code_?:
-    func_?(&(value->fields).name,pSVar10);
+    func_?(&(value->fields).name,TVar4.m_Index);
     pIStack_11 = (Il2CppClass *)key_00;
     pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_11);
-    unaff_EDI = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (outData,pOVar1,
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData,
+                           pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     uStack_12 = 0x67;
     _Stack_14.rgctx_data = (Il2CppRGCTXData *)func_?(TypeInfo__System__Byte,&uStack_12);
-    if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+    if (unaff_EDI.m_Index == 0) goto code_?;
     pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-         typeHierarchyDepth <
+    if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth) ||
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-        typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] !=
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    pSVar9 = (String *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                        (Object *)_Stack_14.methodMetadataHandle,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar2 = CONCAT44(TypeInfo__System__String,pSVar9);
-    pSVar10 = (String *)0x0;
-    if (pSVar9 != (String *)0x0) {
-      if (pSVar9->klass == TypeInfo__System__String) {
-        pSVar10 = pSVar9;
+    TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (unaff_EDI.m_Index,(Object *)_Stack_14.methodMetadataHandle,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__String,TVar10.m_Index);
+    TVar4.m_Index = 0;
+    if (TVar10.m_Index != 0) {
+      if (*(String__Class **)TVar10.m_Index == TypeInfo__System__String) {
+        TVar4 = TVar10;
       }
-      if (pSVar10 != (String *)0x0) {
-        (value->fields).description = pSVar10;
-        uVar2 = CONCAT44(TypeInfo__System__String,pSVar9);
-        pSVar10 = (String *)0x0;
-        if (pSVar9->klass == TypeInfo__System__String) {
-          pSVar10 = pSVar9;
+      if ((String *)TVar4.m_Index != (String *)0x0) {
+        (value->fields).description = (String *)TVar4.m_Index;
+        uVar2 = CONCAT44(TypeInfo__System__String,TVar10.m_Index);
+        TVar4.m_Index = (int32_t)(String *)0x0;
+        if (*(String__Class **)TVar10.m_Index == TypeInfo__System__String) {
+          TVar4 = TVar10;
         }
-        if (pSVar10 != (String *)0x0) goto code_?;
+        if ((String *)TVar4.m_Index != (String *)0x0) goto code_?;
       }
       goto code_?;
     }
     (value->fields).description = (String *)0x0;
 code_?:
-    func_?(&(value->fields).description,pSVar10);
+    func_?(&(value->fields).description,TVar4.m_Index);
     pcStack_13 = (char *)key_00;
     pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pcStack_13);
-    unaff_EDI = (MethodInfo *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
-                          (outData,pOVar1,
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData,
+                           pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     uStack_14 = 0xb;
     key_00 = (Byte__Array__Class *)func_?(TypeInfo__System__Byte,&uStack_14);
-    if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+    if (unaff_EDI.m_Index == 0) goto code_?;
     pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
     if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth <=
-         (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-         typeHierarchyDepth) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-        typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] ==
+         naturalAligment <= *(byte *)(*(int *)unaff_EDI.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      unaff_EDI = (MethodInfo *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__get_Item
-                            ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)key_00
-                             ,
+      unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (unaff_EDI.m_Index,(Object *)key_00,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
       key_00 = TypeInfo__System__Byte;
-      if (unaff_EDI == (MethodInfo *)0x0) {
+      if (unaff_EDI.m_Index == 0) {
         (value->fields).data = (Byte__Array *)0x0;
         pBStack_15 = (Byte__Array__Class *)0x0;
       }
       else {
         pBStack_15 = TypeInfo__System__Byte;
-        pMStack_16 = unaff_EDI;
+        pMStack_16 = (MethodInfo *)unaff_EDI;
         pBVar17 = (Byte__Array *)func_?();
         if (pBVar17 == (Byte__Array *)0x0) goto code_?;
         (value->fields).data = pBVar17;
         key_00 = TypeInfo__System__Byte;
         pBStack_15 = TypeInfo__System__Byte;
-        pMStack_16 = unaff_EDI;
+        pMStack_16 = (MethodInfo *)unaff_EDI;
         pBStack_15 = (Byte__Array__Class *)func_?();
         if (pBStack_15 == (Byte__Array__Class *)0x0) goto code_?;
       }
@@ -318,111 +303,111 @@ code_?:
       key_00 = (Byte__Array__Class *)key;
       pIStack_18 = (InvokerMethod)key;
       pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pIStack_18);
-      unaff_EDI = (MethodInfo *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__get_Item
-                            (outData,pOVar1,
+      unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData
+                             ,pOVar1,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
       uStack_19 = 100;
       key = func_?(TypeInfo__System__Byte,&uStack_19);
-      if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+      if (unaff_EDI.m_Index == 0) goto code_?;
       pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-           typeHierarchyDepth <
+      if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth) ||
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-          typeHierarchy
-          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] !=
+           naturalAligment) ||
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) !=
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
-      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)key,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar2 = CONCAT44(TypeInfo__System__Boolean,pOVar1);
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
-      pbVar20 = (bool *)func_?(pOVar1);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (unaff_EDI.m_Index,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar2 = CONCAT44(TypeInfo__System__Boolean,TVar4.m_Index);
+      if (TVar4.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+      pbVar20 = (bool *)func_?(TVar4.m_Index);
       (value->fields).resellable = *pbVar20;
       pBStack_15 = key_00;
       pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&pBStack_15);
-      unaff_EDI = (MethodInfo *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__get_Item
-                            (outData,pOVar1,
+      unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)outData
+                             ,pOVar1,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
       uStack_21 = 0x4b;
       key = func_?(TypeInfo__System__Byte,&uStack_21);
-      if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
+      if (unaff_EDI.m_Index == 0) goto code_?;
       pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-           typeHierarchyDepth <
+      if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth) ||
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-          typeHierarchy
-          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] !=
+           naturalAligment) ||
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) !=
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
-      pBVar22 = (Byte__Array__Class *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,(Object *)key,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar2 = CONCAT44(TypeInfo__System__Int32,pBVar22);
-      if (pBVar22 == (Byte__Array__Class *)0x0) goto code_?;
-      if ((Il2CppClass *)((pBVar22->_0).image)->codeGenModule ==
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (unaff_EDI.m_Index,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar2 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+      if (TVar4.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
           (TypeInfo__System__Int32->_0).element_class) {
-        piVar4 = (int32_t *)func_?(pBVar22);
-        (value->fields).priceGold = *piVar4;
-        pMVar23 = (MethodInfo *)&pMStack_16;
+        piVar5 = (int32_t *)func_?(TVar4.m_Index);
+        (value->fields).priceGold = *piVar5;
+        pMVar22 = (MethodInfo *)&pMStack_16;
         pMStack_16 = (MethodInfo *)key_00;
-        pOVar1 = (Object *)func_?(TypeInfo__System__Int32,pMVar23);
-        unaff_EDI = (MethodInfo *)
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                              (outData,pOVar1,
+        pOVar1 = (Object *)func_?(TypeInfo__System__Int32,pMVar22);
+        unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               outData,pOVar1,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               );
-        uStack_24 = 0x62;
-        key_00 = (Byte__Array__Class *)func_?(TypeInfo__System__Byte,&uStack_24);
-        if (unaff_EDI != (MethodInfo *)0x0) {
+        uStack_23 = 0x62;
+        key_00 = (Byte__Array__Class *)func_?(TypeInfo__System__Byte,&uStack_23);
+        if (unaff_EDI.m_Index != 0) {
           pDVar3 = 
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-          if (((((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-               typeHierarchyDepth <
+          if ((*(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) <
                (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).typeHierarchyDepth) ||
-             ((Dictionary_2_System_Object_System_Object___Class *)
-              (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI->methodPointer)->_1).
-              typeHierarchy
-              [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).typeHierarchyDepth - 1] !=
+               _1).naturalAligment) ||
+             (*(Dictionary_2_System_Object_System_Object___Class **)
+               (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
+               (uint)(
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).naturalAligment * 4) !=
               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
           goto code_?;
-          pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             ((Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
-                              (Object *)key_00,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          key_00 = pBVar22;
-          unaff_EDI = pMVar23;
-          uVar2 = CONCAT44(TypeInfo__System__Int32,pOVar1);
-          if (pOVar1 != (Object *)0x0) {
-            if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-              piVar4 = (int32_t *)func_?(pOVar1);
-              (value->fields).slotPosition = *piVar4;
+          TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (unaff_EDI.m_Index,(Object *)key_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+          key_00 = (Byte__Array__Class *)TVar4.m_Index;
+          unaff_EDI.m_Index = (int32_t)pMVar22;
+          uVar2 = CONCAT44(TypeInfo__System__Int32,TVar10.m_Index);
+          if (TVar10.m_Index != 0) {
+            if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              piVar5 = (int32_t *)func_?(TVar10.m_Index);
+              (value->fields).slotPosition = *piVar5;
               return;
             }
             goto code_?;
@@ -434,13 +419,13 @@ code_?:
     }
   }
 code_?:
-  func_?(unaff_EDI,pDVar3);
+  func_?(unaff_EDI.m_Index,pDVar3);
 code_?:
-  pMStack_16 = unaff_EDI;
+  pMStack_16 = (MethodInfo *)unaff_EDI.m_Index;
   pBStack_15 = key_00;
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -451,7 +436,7 @@ void Assembly-CSharp.dll::ShopItem::ShopItem__ctor_1
                (ShopItem *this,InventoryItem *inventoryItem,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (inventoryItem != (InventoryItem *)0x0) {
     (this->fields).itemID = (inventoryItem->fields).itemID;

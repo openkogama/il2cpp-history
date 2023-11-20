@@ -57,10 +57,10 @@ code_?:
                 TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
       unaff_ESI = TypeInfo__UnityEngine__MonoBehaviour;
       if (this_02 != (Component *)0x0) {
-        if (((this_02->klass->_1).typeHierarchyDepth <
-             (TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth) ||
+        if (((this_02->klass->_1).naturalAligment <
+             (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
            ((this_02->klass->_1).typeHierarchy
-            [(TypeInfo__UnityEngine__MonoBehaviour->_1).typeHierarchyDepth - 1] !=
+            [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
         pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (this_02,(MethodInfo *)0x0);
@@ -130,11 +130,15 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Handl
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&TypeInfo__QuitBaseCallback);
     cRam_? = '\x01';
   }
   if (quitBaseCallback != (QuitBaseCallback *)0x0) {
     func_?(0,TypeInfo__QuitBaseCallback,quitBaseCallback);
+  }
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Application);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Application::Application_Quit_1((MethodInfo *)0x0);
   return;
@@ -314,10 +318,10 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
           this = (DesktopEditModeController *)(pMVar1->fields)._.modeController;
           unaff_EDI = TypeInfo__DesktopEditModeController;
           if (this != (DesktopEditModeController *)0x0) {
-            if (((TypeInfo__DesktopEditModeController->_1).typeHierarchyDepth <=
-                 (this->klass->_1).typeHierarchyDepth) &&
+            if (((TypeInfo__DesktopEditModeController->_1).naturalAligment <=
+                 (this->klass->_1).naturalAligment) &&
                ((this->klass->_1).typeHierarchy
-                [(TypeInfo__DesktopEditModeController->_1).typeHierarchyDepth - 1] ==
+                [(TypeInfo__DesktopEditModeController->_1).naturalAligment - 1] ==
                 (Il2CppClass *)TypeInfo__DesktopEditModeController)) {
               DesktopEditModeController::DesktopEditModeController_RegisterPlayModeController
                         (this,playModeController,(MethodInfo *)0x0);
@@ -346,6 +350,7 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&TypeInfo__FullScreenController);
     cRam_? = '\x01';
   }
@@ -353,13 +358,17 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
   if (this_00 != (TextureIntegrityChecker *)0x0) {
     AntiHack::TextureIntegrityChecker::TextureIntegrityChecker_Initialize(this_00,(MethodInfo *)0x0)
     ;
-    bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-            Single,System::Object]::
-            SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__System_Collections_ICollection_get_IsSynchronized
-                      ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                       unaff_ESI);
+    if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Application);
+    }
+    bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
+            IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Collections_ICollection_get_IsSynchronized
+                      ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                        *)0x0,unaff_retaddr);
     if ((bVar1 != 0) || ((this->fields)._.koGaMaSettings != (KoGaMaSettingsContainer *)0x0)) {
-      (*(this->klass->vtable).InitStandAlone.methodPtr)(this);
+      (*(code *)(this->klass->vtable).InitStandAlone.method)(this);
       if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -373,6 +382,22 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Start
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
+  return;
+}
+
+
+/* Void UnregisterDesktopPlayModeController() */
+
+void Assembly-CSharp.dll::MVGameControllerDesktop::
+     MVGameControllerDesktop_UnregisterDesktopPlayModeController(MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField = (IPlayModeUI *)0x0;
+  func_?(&TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField,0);
   return;
 }
 
@@ -418,22 +443,6 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
 }
 
 
-/* Void UnregisterPlayModeController() */
-
-void Assembly-CSharp.dll::MVGameControllerDesktop::
-     MVGameControllerDesktop_UnregisterPlayModeController(MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    cRam_? = '\x01';
-  }
-  TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField = (IPlayModeUI *)0x0;
-  func_?(&TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField,0);
-  return;
-}
-
-
 /* Void UpdateInternal() */
 
 void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_UpdateInternal
@@ -460,8 +469,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Updat
       MaterialLoader::MaterialLoader_Initialize(this_00,(MethodInfo *)0x0);
       pMVar1 = (this->fields)._.modeController;
       if (pMVar1 != (ModeControllerBase *)0x0) {
-        (*(pMVar1->klass->vtable).Initialize.methodPtr)
-                  (pMVar1,(pMVar1->klass->vtable).Initialize.method);
+        (*(code *)(pMVar1->klass->vtable).Initialize.method)
+                  (pMVar1,(pMVar1->klass->vtable).ShowEUseIcon_1.methodPtr);
         if (cRam_? == '\0') {
           func_?(&TypeInfo__MVGameControllerBase);
           cRam_? = '\x01';
@@ -507,44 +516,36 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop__ctor
   }
   (this->fields).applicationHasFocus = 1;
   this_00 = (InHouseAdManager *)func_?(TypeInfo__AdIntegration__InHouse__InHouseAdManager);
-  if (this_00 != (InHouseAdManager *)0x0) {
-    AdIntegration::InHouse::InHouseAdManager::InHouseAdManager__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields).adManager = (IAdManager *)this_00;
-    func_?(&(this->fields).adManager,this_00);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__FlagDebriefingControl);
-      func_?(&TypeInfo__GoldRewardManager);
-      func_?(&TypeInfo__SkinnedMeshOptimizeManager);
-      cRam_? = '\x01';
-    }
-    this_01 = (SkinnedMeshOptimizeManager *)func_?(TypeInfo__SkinnedMeshOptimizeManager);
-    if (this_01 != (SkinnedMeshOptimizeManager *)0x0) {
-      SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager__ctor(this_01,(MethodInfo *)0x0);
-      (this->fields)._.skinnedMeshOptimizeManager = this_01;
-      func_?(&(this->fields)._.skinnedMeshOptimizeManager,this_01);
-      this_02 = (FlagDebriefingControl *)func_?(TypeInfo__FlagDebriefingControl);
-      if (this_02 != (FlagDebriefingControl *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-        TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_02,(MethodInfo *)0x0);
-        (this->fields)._.flagDebriefingControl = this_02;
-        func_?(&(this->fields)._.flagDebriefingControl,this_02);
-        this_03 = (GoldRewardManager *)func_?(TypeInfo__GoldRewardManager);
-        if (this_03 != (GoldRewardManager *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-          TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this_03,(MethodInfo *)0x0);
-          (this->fields)._.goldRewardManager = this_03;
-          func_?(&(this->fields)._.goldRewardManager,this_03);
-          (this->fields)._.reAuthTestTries = 3;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                    ((Transform *)this,(MethodInfo *)0x0);
-          return;
-        }
-      }
-    }
+  AdIntegration::InHouse::InHouseAdManager::InHouseAdManager__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).adManager = (IAdManager *)this_00;
+  func_?(&(this->fields).adManager,this_00);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__FlagDebriefingControl);
+    func_?(&TypeInfo__GoldRewardManager);
+    func_?(&TypeInfo__SkinnedMeshOptimizeManager);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_01 = (SkinnedMeshOptimizeManager *)func_?(TypeInfo__SkinnedMeshOptimizeManager);
+  SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager__ctor(this_01,(MethodInfo *)0x0);
+  (this->fields)._.skinnedMeshOptimizeManager = this_01;
+  func_?(&(this->fields)._.skinnedMeshOptimizeManager,this_01);
+  this_02 = (FlagDebriefingControl *)func_?(TypeInfo__FlagDebriefingControl);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_02,(MethodInfo *)0x0);
+  (this->fields)._.flagDebriefingControl = this_02;
+  func_?(&(this->fields)._.flagDebriefingControl,this_02);
+  this_03 = (GoldRewardManager *)func_?(TypeInfo__GoldRewardManager);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_03,(MethodInfo *)0x0);
+  (this->fields)._.goldRewardManager = this_03;
+  func_?(&(this->fields)._.goldRewardManager,this_03);
+  (this->fields)._.reAuthTestTries = 3;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -565,10 +566,10 @@ Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_get_Instan
   if (pMVar1 == (MVGameControllerDesktop *)0x0) {
     return (MVGameControllerDesktop *)0x0;
   }
-  if (((TypeInfo__MVGameControllerDesktop->_1).typeHierarchyDepth <=
-       (((MVGameControllerBase__Class *)pMVar1->klass)->_1).typeHierarchyDepth) &&
+  if (((TypeInfo__MVGameControllerDesktop->_1).naturalAligment <=
+       (((MVGameControllerBase__Class *)pMVar1->klass)->_1).naturalAligment) &&
      ((((MVGameControllerBase__Class *)pMVar1->klass)->_1).typeHierarchy
-      [(TypeInfo__MVGameControllerDesktop->_1).typeHierarchyDepth - 1] ==
+      [(TypeInfo__MVGameControllerDesktop->_1).naturalAligment - 1] ==
       (Il2CppClass *)TypeInfo__MVGameControllerDesktop)) {
     return pMVar1;
   }

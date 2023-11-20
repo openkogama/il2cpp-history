@@ -170,18 +170,12 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
   *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = uVar1;
   this_00 = (PlayerPlanetMetaDataClient *)
             func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-  if (this_00 != (PlayerPlanetMetaDataClient *)0x0) {
-    PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(this_00,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
-    (this->fields).playerPlanetMetaData = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(this_00,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
+  (this->fields).playerPlanetMetaData = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -210,40 +204,37 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
   *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = uVar1;
   pPVar2 = (PlayerPlanetMetaDataClient *)
            func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-  if (pPVar2 != (PlayerPlanetMetaDataClient *)0x0) {
-    PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(pPVar2,(MethodInfo *)0x0);
+  PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(pPVar2,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
+  (this->fields).playerPlanetMetaData = pPVar2;
+  func_?(method_00,pPVar2);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).highScoreGamePoints = highScoreGamePoints;
+  (this->fields).rank = previewGamePassTier;
+  (this->fields).progressionGamePoints = progressionGamePoints;
+  (this->fields).gamePassTier = playtime._ticks._4_1_;
+  (this->fields).previewGamePassTier = (undefined1)gamePassTier;
+  *(undefined4 *)&(this->fields).playtime._ticks = in_stack_3;
+  *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = (undefined4)playtime._ticks;
+  if (rank != 0) {
+    gamePassTier = CONCAT31(gamePassTier._1_3_,*(undefined1 *)(rank + 8));
+    welcomeRewardClaimed = *(bool *)(rank + 9);
+    uVar4 = *(uint *)(rank + 0x14);
+    method_01 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient;
+    pPVar2 = (PlayerPlanetMetaDataClient *)func_?();
+    lastDailyWelcomeRewardClaim._dateData._4_4_ = 0;
+    lastDailyWelcomeRewardClaim._dateData._0_4_ = uVar4;
+    PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor_1
+              (pPVar2,gamePassTier,welcomeRewardClaimed,lastDailyWelcomeRewardClaim,
+               (MethodInfo *)method_01);
     (this->fields).playerPlanetMetaData = pPVar2;
     func_?(&(this->fields).playerPlanetMetaData,pPVar2);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_3);
-    (this->fields).highScoreGamePoints = highScoreGamePoints;
-    (this->fields).rank = previewGamePassTier;
-    (this->fields).progressionGamePoints = progressionGamePoints;
-    (this->fields).gamePassTier = playtime._ticks._4_1_;
-    *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = (undefined4)playtime._ticks;
-    (this->fields).previewGamePassTier = (undefined1)gamePassTier;
-    *(undefined4 *)&(this->fields).playtime._ticks = in_stack_4;
-    if (rank != 0) {
-      GStack_5 = CONCAT31(GStack_5._1_3_,*(undefined1 *)(rank + 8));
-      welcomeRewardClaimed = *(bool *)(rank + 9);
-      uVar6 = *(uint *)(rank + 0x14);
-      pPVar2 = (PlayerPlanetMetaDataClient *)
-               func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient
-                              );
-      if (pPVar2 != (PlayerPlanetMetaDataClient *)0x0) {
-        lastDailyWelcomeRewardClaim._dateData._4_4_ = 0;
-        lastDailyWelcomeRewardClaim._dateData._0_4_ = uVar6;
-        PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor_1
-                  (pPVar2,GStack_5,welcomeRewardClaimed,lastDailyWelcomeRewardClaim,unaff_EDI);
-        (this->fields).playerPlanetMetaData = pPVar2;
-        func_?(&(this->fields).playerPlanetMetaData,pPVar2);
-        return;
-      }
-    }
+    return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

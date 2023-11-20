@@ -330,24 +330,26 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_OnD
     cRam_? = '\x01';
   }
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                        (Object *)StringLiteral_levelAmount,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) {
       return;
     }
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)StringLiteral_levelAmount,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar2 != (Object *)0x0) {
-      if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-      goto code_?;
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
+                       (Object *)StringLiteral_levelAmount,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
       piVar3 = (int *)func_?();
       x = _UNK_?;
       _UNK_? = *piVar3;
@@ -367,16 +369,21 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_OnD
       if (_UNK_? != 0) {
         return;
       }
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this_00,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_00,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      if (this_00 !=
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)StringLiteral_levelAmount,(Object *)0x0,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_levelAmount,(Object *)0x0,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -384,8 +391,8 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_OnD
         if ((this_01 != (MVNetworkGame_OperationRequests *)0x0) &&
            (MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                      (this_01,ownerID,this_00,(MethodInfo *)0x0),
-           _UNK_? != (LevelDisplayCube *)0x0)) {
+                      (this_01,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_00,
+                       (MethodInfo *)0x0), _UNK_? != (LevelDisplayCube *)0x0)) {
           obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)_UNK_?,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -448,7 +455,7 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement__ct
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).hasUseWhenFree = 1;
   (this->fields).displayObjectOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   (this->fields).displayObjectRoot = root;
@@ -468,7 +475,7 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement__ct
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).hasUseWhenFree = 1;
   (this->fields).displayObjectOffset.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   uVar1 = (this->fields).displayObjectOffset.x;
   uVar2 = (this->fields).displayObjectOffset.y;
@@ -480,5 +487,30 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement__ct
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   return;
+}
+
+
+/* GameObject get_GameObject() */
+
+GameObject *
+Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_get_GameObject
+          (LevelBasedUseRequirement *this,MethodInfo *method)
+
+{
+  pLStack_1 = (LevelDisplayCube *)&stack0xfffffffc;
+  pLVar2 = (this->fields).displayObject;
+  if (pLVar2 != (LevelDisplayCube *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    pLStack_1 = pLVar2;
+    pGVar3 = (GameObject *)(*pcRam_?)();
+    return pGVar3;
+  }
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  pGVar3 = (GameObject *)(*pcVar6)();
+  return pGVar3;
 }
 

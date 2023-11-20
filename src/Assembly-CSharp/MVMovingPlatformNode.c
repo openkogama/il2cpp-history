@@ -15,19 +15,19 @@ bool Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_Delete
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Delete,(MethodInfo *)0x0);
   if (WOCM != (MVWorldObjectClientManager *)0x0) {
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (WOCM,(this->fields)._._.groupId,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObject *)0x0) {
-      if (((TypeInfo__MVMovingPlatformGroup->_1).typeHierarchyDepth <=
-           (pMVar1->klass->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__MVMovingPlatformGroup->_1).naturalAligment <=
+           (pMVar1->klass->_1).naturalAligment) &&
          ((MVMovingPlatformGroup__Class *)
           (pMVar1->klass->_1).typeHierarchy
-          [(TypeInfo__MVMovingPlatformGroup->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] ==
           TypeInfo__MVMovingPlatformGroup)) {
-        bVar2 = (**(code **)&pMVar1->klass[2]._0.byval_arg.attrs)(pMVar1,WOCM);
+        bVar2 = (*(code *)pMVar1->klass[2]._0.element_class)(pMVar1,WOCM);
         return bVar2;
       }
     }
@@ -47,40 +47,44 @@ Bounds * Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_GetLoca
                    BoundsContext__Enum boundsContext,MethodInfo *method)
 
 {
+  this_00 = (this->fields)._.collider;
   (__return_storage_ptr__->m_Center).x = 0.0;
   (__return_storage_ptr__->m_Center).y = 0.0;
   (__return_storage_ptr__->m_Center).z = 0.0;
   (__return_storage_ptr__->m_Extents).x = 0.0;
   (__return_storage_ptr__->m_Extents).y = 0.0;
   (__return_storage_ptr__->m_Extents).z = 0.0;
-  this_00 = (this->fields)._.collider;
   if (this_00 != (Collider *)0x0) {
     pBVar1 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                       ((Bounds *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
-    fVar2 = (pBVar1->m_Center).y;
-    fVar3 = (pBVar1->m_Center).z;
-    fVar4 = (pBVar1->m_Extents).x;
-    fVar5 = (pBVar1->m_Extents).y;
-    fVar6 = (pBVar1->m_Extents).z;
+                       (&BStack_2,this_00,(MethodInfo *)0x0);
+    bVar3 = cRam_? == '\0';
+    fVar4 = (pBVar1->m_Center).y;
+    fVar5 = (pBVar1->m_Center).z;
+    fVar6 = (pBVar1->m_Extents).x;
     (__return_storage_ptr__->m_Center).x = (pBVar1->m_Center).x;
-    (__return_storage_ptr__->m_Center).y = fVar2;
-    (__return_storage_ptr__->m_Center).z = fVar3;
-    (__return_storage_ptr__->m_Extents).x = fVar4;
-    (__return_storage_ptr__->m_Extents).y = fVar5;
-    (__return_storage_ptr__->m_Extents).z = fVar6;
-    if (cRam_? == '\0') {
+    (__return_storage_ptr__->m_Center).y = fVar4;
+    (__return_storage_ptr__->m_Center).z = fVar5;
+    (__return_storage_ptr__->m_Extents).x = fVar6;
+    fVar4 = (pBVar1->m_Extents).z;
+    (__return_storage_ptr__->m_Extents).y = (pBVar1->m_Extents).y;
+    (__return_storage_ptr__->m_Extents).z = fVar4;
+    if (bVar3) {
+      BStack_2.m_Center.y = (float)&TypeInfo__UnityEngine__Vector3;
+      BStack_2.m_Center.x = (float)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
-    ParticleSystem_Particle_set_position
-              ((ParticleSystem_Particle *)__return_storage_ptr__,
-               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
+    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar5 = (pVVar7->zeroVector).y;
+    fVar4 = (pVVar7->zeroVector).z;
+    (__return_storage_ptr__->m_Center).x = (pVVar7->zeroVector).x;
+    (__return_storage_ptr__->m_Center).y = fVar5;
+    (__return_storage_ptr__->m_Center).z = fVar4;
     return __return_storage_ptr__;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pBVar1 = (Bounds *)(*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  pBVar1 = (Bounds *)(*pcVar8)();
   return pBVar1;
 }
 
@@ -120,18 +124,6 @@ void Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode__ctor
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
-  return;
-}
-
-
-/* Void set_Next(MVMovingPlatformNode) */
-
-void Assembly-CSharp.dll::MVMovingPlatformNode::MVMovingPlatformNode_set_Next
-               (MVMovingPlatformNode *this,MVMovingPlatformNode *value,MethodInfo *method)
-
-{
-  (this->fields)._Next_k__BackingField = value;
-  func_?(&(this->fields)._Next_k__BackingField,value);
   return;
 }
 

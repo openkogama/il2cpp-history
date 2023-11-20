@@ -109,7 +109,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
     }
     else {
       if (cRam_? == '\0') {
-        uStack_3 = 0x10eec9c4104099ba;
+        uStack_3 = 0x119b0dd810477d3a;
         func_?();
         cRam_? = '\x01';
       }
@@ -117,7 +117,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
       position.z = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     }
     if (cRam_? == '\0') {
-      uStack_3 = 0x10eec9c410409a0d;
+      uStack_3 = 0x119b0dd810477d8d;
       func_?();
       cRam_? = '\x01';
     }
@@ -129,7 +129,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
                           (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y) &
                    _UNK_?));
     if (cRam_? == '\0') {
-      uStack_3 = 0x10eec9c410409a60;
+      uStack_3 = 0x119b0dd810477de0;
       func_?();
       cRam_? = '\x01';
     }
@@ -156,18 +156,12 @@ void Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis__ctor
     cRam_? = '\x01';
   }
   this_00 = (SmoothTouchAxis *)func_?(TypeInfo__SmoothTouchAxis);
-  if (this_00 != (SmoothTouchAxis *)0x0) {
-    SmoothTouchAxis::SmoothTouchAxis__ctor(this_00,3,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&(this->fields).smoothTouchAxis;
-    (this->fields).smoothTouchAxis = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  SmoothTouchAxis::SmoothTouchAxis__ctor(this_00,3,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).smoothTouchAxis;
+  (this->fields).smoothTouchAxis = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

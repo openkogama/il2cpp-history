@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::CameraImpact::CameraImpact__ctor
                float forceMultiplier,Space__Enum impactSpace,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).impactDirection.x = impactDirection.x;
   (this->fields).impactDirection.y = impactDirection.y;

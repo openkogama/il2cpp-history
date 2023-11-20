@@ -38,21 +38,18 @@ void Assembly-CSharp.dll::PhysicsCollisionData::PhysicsCollisionData_Set
     (this->fields).transform = pTVar5;
     func_?();
     (this->fields).isInsideCollider = 0;
-    fVar6 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_distance
-                      (&hit,(MethodInfo *)0x0);
+    fVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaTime
+                      ((Touch *)&hit,(MethodInfo *)0x0);
     (this->fields).distance = fVar6;
-    pRVar1 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-             RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-             Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                       ((Regex_CachedCodeEntryKey *)&stack0xfffffff0,
-                        (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                         *)&hit,(MethodInfo *)0x0);
-    pSVar2 = pRVar1->_cultureKey;
-    pSVar3 = pRVar1->_pattern;
-    (this->fields).normal.x = (float)pRVar1->_options;
-    (this->fields).normal.y = (float)pSVar2;
-    (this->fields).normal.z = (float)pSVar3;
+    pMVar7 = mscorlib.dll::System::Tuple`3[Object,Memory`1[Byte],Object]::
+             Tuple_3_Object_Memory_1_Byte_Object__get_Item2
+                       ((Memory_1_Byte_ *)&stack0xfffffff0,
+                        (Tuple_3_Object_Memory_1_Byte_Object_ *)&hit,(MethodInfo *)0x0);
+    iVar8 = pMVar7->_index;
+    fVar6 = (float)pMVar7->_length;
+    (this->fields).normal.x = (float)pMVar7->_object;
+    (this->fields).normal.y = (float)iVar8;
+    (this->fields).normal.z = fVar6;
     pCVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
                        (&hit,(MethodInfo *)0x0);
     (this->fields).collider = pCVar4;
@@ -60,8 +57,8 @@ void Assembly-CSharp.dll::PhysicsCollisionData::PhysicsCollisionData_Set
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

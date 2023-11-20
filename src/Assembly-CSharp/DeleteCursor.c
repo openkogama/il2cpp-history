@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor_UpdateCursor
                                 (pCVar4,(selectedCube->fields).iLocalPos,(MethodInfo *)0x0),
            this_00 != (CellCursorCubeLineMesh *)0x0)) {
           iStack6 = (int16_t)((uint)pCVar4 >> 0x10);
-          uStack7 = 0x103d;
+          uStack7 = 0x1044;
           position.z = iStack6;
           position.x = (short)uVar5;
           position.y = (short)((uint)uVar5 >> 0x10);
@@ -76,7 +76,7 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor__ctor
     func_?(&TypeInfo__CellCursor);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);
@@ -86,12 +86,10 @@ void Assembly-CSharp.dll::DeleteCursor::DeleteCursor__ctor
   if (pPVar1 != (PrefabPool *)0x0) {
     material = (pPVar1->fields).cellCursorErrorMaterial;
     this_00 = (CellCursor *)func_?(TypeInfo__CellCursor);
-    if (this_00 != (CellCursor *)0x0) {
-      CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-      (this->fields).deleteCursor = this_00;
-      func_?(&this->fields,this_00);
-      return;
-    }
+    CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+    (this->fields).deleteCursor = this_00;
+    func_?(&this->fields,this_00);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

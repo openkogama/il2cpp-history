@@ -62,17 +62,12 @@ void Assembly-CSharp.dll::PlayerLists+<>c::PlayerLists_c__cctor(MethodInfo *meth
     func_?(&TypeInfo__PlayerLists____c);
     cRam_? = '\x01';
   }
-  value = (PlayerLists_c *)func_?(TypeInfo__PlayerLists____c);
-  if (value != (PlayerLists_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__PlayerLists____c->static_fields->__9 = value;
-    func_?(TypeInfo__PlayerLists____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__PlayerLists____c;
+  value = (PlayerLists_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__PlayerLists____c->static_fields->__9 = value;
+  func_?(TypeInfo__PlayerLists____c->static_fields,value);
   return;
 }
 

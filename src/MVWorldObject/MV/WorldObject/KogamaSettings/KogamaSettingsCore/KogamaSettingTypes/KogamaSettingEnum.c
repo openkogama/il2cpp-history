@@ -33,29 +33,49 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
     func_?(&TypeInfo__MV__WorldObject__AntiCheat__RangeValidator<int>);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_01 = (Tuple_2_Int32_Int32_ *)
+  this_00 = (Tuple_2_Int32_Int32_ *)
             func_?(TypeInfo__MV__WorldObject__AntiCheat__RangeValidator<int>);
-  if (this_01 != (Tuple_2_Int32_Int32_ *)0x0) {
-    mscorlib.dll::System::Tuple`2[Int32,Int32]::Tuple_2_Int32_Int32___ctor
-              (this_01,min,max,
-               MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__RangeValidator_int__int_
-              );
-    (this->fields).RangeValidator = (RangeValidator_1_System_Int32_ *)this_01;
-    func_?(&(this->fields).RangeValidator,this_01);
-    this_00 = (this->fields).RangeValidator;
-    if (this_00 != (RangeValidator_1_System_Int32_ *)0x0) {
+  mscorlib.dll::System::Tuple`2[Int32,Int32]::Tuple_2_Int32_Int32___ctor
+            (this_00,min,max,
+             MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__RangeValidator_int__int_);
+  (this->fields).RangeValidator = (RangeValidator_1_System_Int32_ *)this_00;
+  func_?(&(this->fields).RangeValidator,this_00);
+  value_00 = MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_;
+  pRVar1 = (this->fields).RangeValidator;
+  if (pRVar1 != (RangeValidator_1_System_Int32_ *)0x0) {
+    AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
+              (pRVar1,(int32_t)
+                      MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_
+               ,0,MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_);
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    pRVar1 = (this->fields).RangeValidator;
+    if (pRVar1 != (RangeValidator_1_System_Int32_ *)0x0) {
       AntiCheat::RangeValidator`1[System::Int32]::RangeValidator_1_System_Int32__Validate
-                (this_00,value,0,
+                (pRVar1,(int32_t)value_00,1,
                  MethodInfo__MV__WorldObject__AntiCheat__RangeValidator<int>__Validate_int__bool_);
-      KogamaSettingEnum_set_EnumValue(this,value,(MethodInfo *)0x0);
+      pOVar2 = (Object *)func_?();
+      (this->fields)._.value = pOVar2;
+      func_?();
+      if ((this->fields)._.OnValueChange !=
+          (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+        pAVar3 = (this->fields)._.OnValueChange;
+        pvStack4 = (pAVar3->fields)._._.method;
+        pKStack5 = this;
+        pvStack6 = (pAVar3->fields)._._.method_code;
+        (*(pAVar3->fields)._._.invoke_impl)();
+      }
       return;
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

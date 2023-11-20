@@ -15,8 +15,9 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
   func_?(&(this->fields)._.onChange,onChange);
   if ((attrib != (BoolAttribute *)0x0) && (pTVar1 = (this->fields)._.label, pTVar1 != (Text *)0x0))
   {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,(attrib->fields)._.name,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields)._.toggle;
     if (this_00 != (SettingsToggle *)0x0) {
       SettingsToggle::SettingsToggle_Initialize
@@ -25,8 +26,8 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
       pTVar1 = (this->fields)._.label;
       if (pTVar1 != (Text *)0x0) {
         pSVar2 = (String *)
-                 (*(pTVar1->klass->vtable).get_text.methodPtr)
-                           (pTVar1,(pTVar1->klass->vtable).get_text.method);
+                 (*(code *)(pTVar1->klass->vtable).get_text.method)
+                           (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
         (this->fields).labelText = pSVar2;
         func_?(&(this->fields).labelText,pSVar2);
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
@@ -73,9 +74,9 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Update
          mscorlib.dll::System::String::String_Format_1
                    (StringLiteral__0___1_,(Object *)arg0,(Object *)arg1,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      pMStack4 = (pTVar2->klass->vtable).set_text.method;
+      pIStack4 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
       pTStack5 = pTVar2;
-      (*(pTVar2->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar2->klass->vtable).set_text.method)();
       return;
     }
   }

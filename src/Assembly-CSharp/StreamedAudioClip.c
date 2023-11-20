@@ -15,26 +15,30 @@ void Assembly-CSharp.dll::StreamedAudioClip::StreamedAudioClip_OnAssetSet
   pSVar1 = (this->fields).receiver;
   pAVar2 = (this->fields)._.asset;
   if (pSVar1 != (StreamedAudioClip_IReceiver *)0x0) {
-    uVar3 = 0;
-    uVar4 = (pSVar1->klass->_1).interface_offsets_count;
-    if (uVar4 != 0) {
+    pSVar3 = pSVar1->klass;
+    uVar4 = 0;
+    uVar5._0_1_ = (pSVar3->_1).rank;
+    uVar5._1_1_ = (pSVar3->_1).minimumAlignment;
+    if (uVar5 != 0) {
       do {
-        if (pSVar1->klass->interfaceOffsets[uVar3].interfaceType ==
+        if (pSVar3->interfaceOffsets[uVar4].interfaceType ==
             (Il2CppClass *)TypeInfo__StreamedAudioClip__IReceiver) {
-          pSVar5 = &pSVar1->klass->vtable + pSVar1->klass->interfaceOffsets[uVar3].offset;
-          (*(pSVar5->OnAudioReceived).methodPtr)(pSVar1,pAVar2,(pSVar5->OnAudioReceived).method);
+          pSVar3 = pSVar1->klass;
+          iVar6 = pSVar3->interfaceOffsets[uVar4].offset;
+          (*(code *)(&pSVar3->vtable)[iVar6].OnAudioReceived.method)
+                    (pSVar1,pAVar2,(&pSVar3[1]._0.image)[iVar6 * 2]);
           return;
         }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < uVar5);
     }
-    puVar6 = (undefined4 *)func_?(pSVar1,TypeInfo__StreamedAudioClip__IReceiver,0);
-    (*(code *)*puVar6)(pSVar1,pAVar2,puVar6[1]);
+    puVar7 = (undefined4 *)func_?(pSVar1,TypeInfo__StreamedAudioClip__IReceiver,0);
+    (*(code *)*puVar7)(pSVar1,pAVar2,puVar7[1]);
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -76,25 +76,10 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 }
 
 
-/* APFloatCalcZeroValueLinear(Single, Single) */
-
-void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::AttributeSettings
-     ::AttributePointCalculators::APFloatCalcZeroValueLinear::APFloatCalcZeroValueLinear__ctor
-               (APFloatCalcZeroValueLinear *this,float zeroValue,float exchangeRate,
-               MethodInfo *method)
-
-{
-  this->exchangeRatePositive = exchangeRate;
-  this->exchangeRateNegative = exchangeRate;
-  this->zeroValue = zeroValue;
-  return;
-}
-
-
 /* APFloatCalcZeroValueLinear(Single, Single, Single) */
 
 void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::AttributeSettings
-     ::AttributePointCalculators::APFloatCalcZeroValueLinear::APFloatCalcZeroValueLinear__ctor_1
+     ::AttributePointCalculators::APFloatCalcZeroValueLinear::APFloatCalcZeroValueLinear__ctor
                (APFloatCalcZeroValueLinear *this,float zeroValue,float exchangeRatePositive,
                float exchangeRateNegative,MethodInfo *method)
 

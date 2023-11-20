@@ -58,26 +58,26 @@ code_?:
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppDofPFDist,10,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->focusDistance = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->focusDistance = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppDofApert,0x38,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->aperture = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->aperture = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppDofFLen,0x32,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->focalLength = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1
+      this->focalLength = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2
                         (data,StringLiteral_ppDofMBlur,2,
                          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                         );
-      this->maxBlurSize = iVar4;
+      this->maxBlurSize = IVar4;
       return;
     }
     if (pOVar1 != (Object *)0x0) {

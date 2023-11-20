@@ -41,13 +41,15 @@ Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::PromotionLooksD
   }
   this_00 = (this->fields).promotionData;
   if (this_00 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-             PromotionLooksData+LooksData]::
-             List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                       (&PStack_2,this_00,(this->fields).promotionIndex,
+    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+             VisualTreeAsset+AssetEntry]::
+             List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                       (&VStack_2,
+                        (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)this_00,
+                        (this->fields).promotionIndex,
                         MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                        );
-    return pPVar1->promotionActionType;
+    return (PromotionActionType__Enum)pVVar1->m_CachedType;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -74,19 +76,20 @@ Image * Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::
   }
   this_00 = (this->fields).promotionData;
   if (this_00 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-             PromotionLooksData+LooksData]::
-             List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                       ((PromotionLooksData_LooksData *)&stack0xffffffdc,this_00,
+    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+             VisualTreeAsset+AssetEntry]::
+             List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                       ((VisualTreeAsset_AssetEntry *)&stack0xffffffdc,
+                        (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)this_00,
                         (this->fields).promotionIndex,
                         MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                        );
-    pIVar2 = pPVar1->promotionImage;
+    original = pVVar1->path;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     pIVar2 = (Image *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                ((Object *)pIVar2,
+                                ((Object *)original,
                                  UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
                                 );
     return pIVar2;
@@ -112,13 +115,15 @@ String * Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::
   }
   this_00 = (this->fields).promotionData;
   if (this_00 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-    pPVar1 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-             PromotionLooksData+LooksData]::
-             List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                       (&PStack_2,this_00,(this->fields).promotionIndex,
+    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+             VisualTreeAsset+AssetEntry]::
+             List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                       (&VStack_2,
+                        (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)this_00,
+                        (this->fields).promotionIndex,
                         MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                        );
-    pSVar3 = TM::TM__(pPVar1->promotionText,(MethodInfo *)0x0);
+    pSVar3 = TM::TM__(pVVar1->typeFullName,(MethodInfo *)0x0);
     return pSVar3;
   }
   func_?();
@@ -152,59 +157,59 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::
   if ((this->fields).initialized == 0) {
     pLVar1 = (List_1_System_Int32_ *)
              func_?(TypeInfo__System__Collections__Generic__List<int>);
-    if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)pLVar1,
-                 MethodInfo__System__Collections__Generic__List<int>__List__);
-      (this->fields).portalsIndices = pLVar1;
-      func_?(&(this->fields).portalsIndices,pLVar1);
-      pLVar1 = (List_1_System_Int32_ *)
-               func_?(TypeInfo__System__Collections__Generic__List<int>);
-      if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-        LowLevelList_1_System_Object___ctor
-                  ((LowLevelList_1_System_Object_ *)pLVar1,
-                   MethodInfo__System__Collections__Generic__List<int>__List__);
-        (this->fields).embeddedIndices = pLVar1;
-        func_?(&(this->fields).embeddedIndices,pLVar1);
-        index_00 = 0;
-        pLVar2 = (this->fields).promotionData;
-        while (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-          if ((pLVar2->fields)._size <= index_00) {
-            (this->fields).initialized = 1;
-            goto code_?;
-          }
-          pLVar2 = (this->fields).promotionData;
-          if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
-          pPVar3 = mscorlib.dll::System::Collections::Generic::List`1[AdIntegration::InHouse::
-                   PromotionLooksData+LooksData]::
-                   List_1_AdIntegration_InHouse_PromotionLooksData_LooksData__get_Item
-                             (&PStack_4,pLVar2,index_00,
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+               MethodInfo__System__Collections__Generic__List<int>__List__);
+    (this->fields).portalsIndices = pLVar1;
+    func_?(&(this->fields).portalsIndices,pLVar1);
+    pLVar1 = (List_1_System_Int32_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<int>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+               MethodInfo__System__Collections__Generic__List<int>__List__);
+    (this->fields).embeddedIndices = pLVar1;
+    func_?(&(this->fields).embeddedIndices,pLVar1);
+    index_00 = 0;
+    pLVar2 = (this->fields).promotionData;
+    while (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
+      if ((pLVar2->fields)._size <= index_00) {
+        (this->fields).initialized = 1;
+        goto code_?;
+      }
+      pLVar2 = (this->fields).promotionData;
+      if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
+      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+AssetEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
+                         (&VStack_4,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)pLVar2,
+                          index_00,
+                          MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
+                         );
+      if (*(char *)&pVVar3->asset != '\0') {
+        pLVar1 = (this->fields).portalsIndices;
+        if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
+        pMStack_5 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+        iStack_6 = index_00;
+        func_?(pLVar1);
+      }
+      pLVar2 = (this->fields).promotionData;
+      if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
+      iVar7 = func_?(&iStack_6,pLVar2,index_00,
                               MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                              );
-          if (pPVar3->validOnKogamaPortal != 0) {
-            pLVar1 = (this->fields).portalsIndices;
-            if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
-            pMStack_5 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-            iStack_6 = index_00;
-            func_?(pLVar1);
-          }
-          pLVar2 = (this->fields).promotionData;
-          if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
-          iVar7 = func_?(&iStack_6,pLVar2,index_00,
-                                  MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
-                                 );
-          if (*(char *)(iVar7 + 9) != '\0') {
-            pLVar1 = (this->fields).embeddedIndices;
-            if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
-            func_?(pLVar1,index_00,
-                            MethodInfo__System__Collections__Generic__List<int>__Add_int_);
-          }
-          index_00 = index_00 + 1;
-          pLVar2 = (this->fields).promotionData;
-        }
+      if (*(char *)(iVar7 + 9) != '\0') {
+        pLVar1 = (this->fields).embeddedIndices;
+        if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
+        func_?(pLVar1,index_00,
+                        MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
+      index_00 = index_00 + 1;
+      pLVar2 = (this->fields).promotionData;
     }
   }
   else {

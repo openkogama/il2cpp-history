@@ -35,14 +35,14 @@ void Assembly-CSharp.dll::TintObject::TintObject_TeamTint
     colorStyle = ColorStyle__Enum_TeamYellow;
     break;
   default:
-    (*(this->klass->vtable).Tint.methodPtr)
-              (this,0x3f800000,0x3f800000,0x3f800000,0x3f800000,(this->klass->vtable).Tint.method);
+    (*(code *)(this->klass->vtable).Tint.method)
+              (this,0x3f800000,0x3f800000,0x3f800000,0x3f800000,this->klass[1]._0.image);
     return;
   }
   pCVar1 = Styles::Styles_GetColor(&CStack_2,colorStyle,(MethodInfo *)0x0);
   CStack_2.r = pCVar1->a;
-  CStack_2.g = (float)(this->klass->vtable).__unknown.method;
-  (*(this->klass->vtable).__unknown.methodPtr)(this,pCVar1->r,pCVar1->g,pCVar1->b);
+  CStack_2.g = (float)(this->klass->vtable).TeamTint.methodPtr;
+  (*(code *)(this->klass->vtable).__unknown.method)(this,pCVar1->r,pCVar1->g,pCVar1->b);
   return;
 }
 
@@ -53,7 +53,8 @@ void Assembly-CSharp.dll::TintObject::TintObject_Tint
                (TintObject *this,float r,float g,float b,float a,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).__unknown.methodPtr)(this,r,g,b,a,(this->klass->vtable).__unknown.method);
+  (*(code *)(this->klass->vtable).__unknown.method)
+            (this,r,g,b,a,(this->klass->vtable).TeamTint.methodPtr);
   return;
 }
 

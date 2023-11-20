@@ -20,15 +20,13 @@ void Assembly-CSharp.dll::DeathUIController+<>c__DisplayClass28_0::
     object = (this->fields).__4__this;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)object,MethodInfo__DeathUIController__OnTierUnlockedPop__,
-                 (MethodInfo *)0x0);
-      if (x != (IUIStack *)0x0) {
-        func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,4,this_01,4);
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)object,MethodInfo__DeathUIController__OnTierUnlockedPop__,
+               (MethodInfo *)0x0);
+    if (x != (IUIStack *)0x0) {
+      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,4,this_01,4);
+      return;
     }
   }
   func_?();

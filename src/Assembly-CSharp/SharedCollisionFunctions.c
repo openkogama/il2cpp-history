@@ -36,14 +36,12 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
       object = TypeInfo__SharedCollisionFunctions____c->static_fields->__9;
       this = (Comparison_1_UnityEngine_RaycastHit_ *)
              func_?(TypeInfo__System__Comparison<UnityEngine::RaycastHit>);
-      if (this == (Comparison_1_UnityEngine_RaycastHit_ *)0x0) goto code_?;
       mscorlib.dll::System::Comparison`1[UnityEngine::RaycastHit]::
       Comparison_1_UnityEngine_RaycastHit___ctor
                 (this,(Object *)object,
                  MethodInfo__SharedCollisionFunctions____c___GetPhysicsCollisionData_b__2_0_UnityEngine__RaycastHit__UnityEngine__RaycastHit_
                  ,(MethodInfo *)0x0);
       TypeInfo__SharedCollisionFunctions____c->static_fields->__9__2_0 = this;
-      method_00 = (MethodInfo *)&UNK_?;
       func_?(&TypeInfo__SharedCollisionFunctions____c->static_fields->__9__2_0,this);
     }
     mscorlib.dll::System::Array::Array_Sort_13
@@ -69,7 +67,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
       }
       uVar2 = 0;
       if (hits != (RaycastHit__Array *)0x0) {
-        this_00 = hits->vector;
+        this_01 = (Touch *)hits->vector;
         while( true ) {
           if ((int)hits->max_length <= (int)uVar2) {
             if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -78,23 +76,23 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
             return TypeInfo__SharedCollisionFunctions->static_fields->physicsCollisionWrapper;
           }
           if (hits->max_length <= uVar2) break;
-          pRVar6 = this_00;
-          fVar7 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_distance
-                            (this_00,(MethodInfo *)0x0);
+          pTVar6 = this_01;
+          fVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaTime
+                            (this_01,(MethodInfo *)0x0);
           if (fVar7 == 0.0) {
             if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             pPVar1 = TypeInfo__SharedCollisionFunctions->static_fields->physicsCollisionWrapper;
-            pRVar6 = (RaycastHit *)func_?();
+            this_00 = (RaycastHit *)func_?();
             pCVar5 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
-                               (pRVar6,method_00);
+                               (this_00,method_00);
             if (pPVar1 == (PhysicsCollisionDatasWrapper *)0x0) goto code_?;
             method_00 = pMVar4;
             PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_Add_1
                       (pPVar1,pCVar5,origin,(MethodInfo *)0x0);
             uVar2 = uVar2 + 1;
-            this_00 = this_00 + 1;
+            this_01 = (Touch *)&this_01->m_Pressure;
           }
           else {
             if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -105,7 +103,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
             func_?();
             if (pPVar1 == (PhysicsCollisionDatasWrapper *)0x0) goto code_?;
             method_00 = (MethodInfo *)((ulonglong)uStack_9 >> 0x20);
-            hit.m_Point.y = (float)pRVar6;
+            hit.m_Point.y = (float)pTVar6;
             hit.m_Point.x = (float)puStack_10;
             hit.m_Point.z = (float)puVar8;
             hit.m_Normal.x = (float)&puStack_10;
@@ -119,7 +117,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
             PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_Add
                       (pPVar1,hit,(MethodInfo *)0x0);
             uVar2 = uVar2 + 1;
-            this_00 = this_00 + 1;
+            this_01 = (Touch *)&this_01->m_Pressure;
           }
         }
         goto code_?;
@@ -159,7 +157,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
   if (pPVar1 != (PhysicsCollisionDatasWrapper *)0x0) {
     PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_Clear(pPVar1,(MethodInfo *)0x0);
     method_00 = (MethodInfo *)hitAmount;
-    mscorlib.dll::System::Array::Array_Sort_43
+    mscorlib.dll::System::Array::Array_Sort_77
               (hits,0,hitAmount,
                (IComparer_1_UnityEngine_RaycastHit_ *)
                TypeInfo__SharedCollisionFunctions->static_fields->rayHitComparer,
@@ -185,22 +183,22 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
       } while ((int)uVar3 < overlapAmount);
     }
     if (0 < hitAmount) {
-      this = hits->vector;
+      this_00 = (Touch *)hits->vector;
       uVar3 = 0;
       if (hits == (RaycastHit__Array *)0x0) goto code_?;
       do {
         if (hits->max_length <= uVar3) goto code_?;
-        pRVar5 = this;
-        fVar6 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_distance
-                          (this,(MethodInfo *)0x0);
+        pTVar5 = this_00;
+        fVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaTime
+                          (this_00,(MethodInfo *)0x0);
         if (fVar6 == 0.0) {
           if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           pPVar1 = TypeInfo__SharedCollisionFunctions->static_fields->physicsCollisionWrapper;
-          pRVar5 = (RaycastHit *)func_?();
+          this = (RaycastHit *)func_?();
           pCVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
-                             (pRVar5,method_00);
+                             (this,method_00);
           if (pPVar1 == (PhysicsCollisionDatasWrapper *)0x0) goto code_?;
           method_00 = (MethodInfo *)origin.y;
           PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_Add_1
@@ -215,7 +213,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
           func_?();
           if (pPVar1 == (PhysicsCollisionDatasWrapper *)0x0) goto code_?;
           method_00 = (MethodInfo *)((ulonglong)uStack_8 >> 0x20);
-          hit.m_Point.y = (float)pRVar5;
+          hit.m_Point.y = (float)pTVar5;
           hit.m_Point.x = (float)puStack_9;
           hit.m_Point.z = (float)puVar7;
           hit.m_Normal.x = (float)&puStack_9;
@@ -230,7 +228,7 @@ Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_GetPhysi
                     (pPVar1,hit,(MethodInfo *)0x0);
         }
         uVar3 = uVar3 + 1;
-        this = this + 1;
+        this_00 = (Touch *)&this_00->m_Pressure;
       } while ((int)uVar3 < hitAmount);
     }
     if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -254,86 +252,91 @@ void Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_Get
                (IntVector *min,IntVector *max,Bounds localSpaceBounds,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_min
-                     ((Vector3 *)&stack0xffffffb8,&localSpaceBounds,(MethodInfo *)0x0);
-  uVar2._0_4_ = pVVar1->x;
-  uVar2._4_4_ = pVVar1->y;
-  fVar3 = pVVar1->z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    cRam_? = '\x01';
+  }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_5.x = (pVVar4->oneVector).x;
-  VStack_5.y = (pVVar4->oneVector).y;
-  VStack_5.z = (pVVar4->oneVector).z;
-  fVar6 = VStack_5.x * _UNK_?;
-  fVar7 = VStack_5.y * _UNK_?;
-  fVar3 = fVar3 + VStack_5.z * _UNK_?;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max
-                     ((Vector3 *)&stack0xffffffc8,&localSpaceBounds,(MethodInfo *)0x0);
-  VStack_5.x = pVVar1->x;
-  VStack_5.y = pVVar1->y;
-  VStack_5.z = pVVar1->z;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->oneVector).x;
+  uVar3 = (pVVar1->oneVector).y;
+  fVar4 = (float)uVar2 * _UNK_?;
+  fVar5 = (float)uVar3 * _UNK_?;
+  fVar6 = (pVVar1->oneVector).z * _UNK_?;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  uVar8 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).y;
-  fStack_9 = VStack_5.y + (float)uVar8 * _UNK_?;
-  fVar10 = VStack_5.z + (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).z * _UNK_?
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar7 = (pVVar1->oneVector).x;
+  uVar8 = (pVVar1->oneVector).y;
+  fVar9 = (float)uVar8 * _UNK_?;
+  fVar10 = (pVVar1->oneVector).z * _UNK_?;
+  fVar11 = (float)uVar7 * _UNK_? + localSpaceBounds.m_Extents.x + localSpaceBounds.m_Center.x
   ;
-  vector.y = SUB84(uVar2,4) + fVar7;
-  vector.x = (float)uVar2 + fVar6;
-  vector.z = fVar3;
-  pVVar1 = MathFunctions::MathFunctions_FloorVector(&VStack_5,vector,(MethodInfo *)0x0);
-  uStack_11._0_4_ = pVVar1->x;
-  puStack_12 = (undefined *)pVVar1->y;
-  pIVar13 = (IntVector *)pVVar1->z;
-  vector_00.y = fStack_9;
-  vector_00.x = fVar3;
-  vector_00.z = fVar10;
-  pVVar1 = MathFunctions::MathFunctions_FloorVector
-                     (&VStack_5,vector_00,(MethodInfo *)(float)uStack_11);
+  vector.z = (localSpaceBounds.m_Center.z - localSpaceBounds.m_Extents.z) + fVar6;
+  vector.x = fVar4 + (localSpaceBounds.m_Center.x - localSpaceBounds.m_Extents.x);
+  vector.y = fVar5 + (localSpaceBounds.m_Center.y - localSpaceBounds.m_Extents.y);
+  pVVar12 = MathFunctions::MathFunctions_FloorVector
+                      ((Vector3 *)&stack0xffffffb8,vector,(MethodInfo *)0x0);
+  uVar13 = pVVar12->x;
+  uVar14 = pVVar12->y;
+  fVar6 = pVVar12->z;
+  vector_00.y = fVar9 + localSpaceBounds.m_Extents.y + localSpaceBounds.m_Center.y;
+  vector_00.x = fVar11;
+  vector_00.z = fVar10 + localSpaceBounds.m_Extents.z + localSpaceBounds.m_Center.z;
+  pVVar12 = MathFunctions::MathFunctions_FloorVector
+                      ((Vector3 *)&stack0xffffffb8,vector_00,(MethodInfo *)0x0);
   key = 0;
-  fVar3 = pVVar1->z;
+  uVar15 = pVVar12->x;
+  uVar16 = pVVar12->y;
+  fVar5 = pVVar12->z;
   do {
     if (key == 0) {
-      fVar7 = (float)((int)(float)uStack_11 & 0xffff);
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                (min,0,(int16_t)(int)(float)uStack_11,(MethodInfo *)0x0);
+      fVar4 = (float)uVar13;
+    }
+    else if (key == 1) {
+      fVar4 = (float)uVar14;
+    }
+    else {
+      fVar4 = fVar6;
+      if (key != 2) goto code_?;
+    }
+    if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__IntVector);
+    }
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
+              (min,key,(int16_t)(int)fVar4,(MethodInfo *)0x0);
+    if (key == 0) {
+      fVar4 = (float)uVar15;
     }
     else {
       if (key != 1) {
         if (key == 2) {
           MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                    (min,2,(int16_t)(int)(float)pIVar13,(MethodInfo *)0x0);
-          MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                    (max,2,(int16_t)(int)fVar3,(MethodInfo *)0x0);
+                    (max,2,(int16_t)(int)fVar5,(MethodInfo *)0x0);
           return;
         }
-        func_?();
-        this = (IndexOutOfRangeException *)func_?();
-        func_?();
+code_?:
+        uVar17 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+        this = (IndexOutOfRangeException *)func_?(uVar17);
         method_00 = (MethodInfo *)0x0;
-        message = (String *)func_?();
+        message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
         mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
                   (this,message,method_00);
-        fVar3 = (float)func_?();
-        VStack_5.x = fVar3;
+        func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
         func_?();
-        pcVar14 = (code *)swi(3);
-        (*pcVar14)();
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
       }
-      uVar15 = (ulonglong)(uint)(int)(float)puStack_12 & 0xffffffff0000ffff;
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                (min,1,(int16_t)uVar15,(MethodInfo *)0x0);
-      fVar7 = (float)(uVar15 >> 0x20);
+      fVar4 = (float)uVar16;
     }
-    pIVar13 = max;
     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-              (max,key,(int16_t)(int)fVar7,(MethodInfo *)0x0);
+              (max,key,(int16_t)(int)fVar4,(MethodInfo *)0x0);
     key = key + 1;
   } while( true );
 }
@@ -353,9 +356,9 @@ bool Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_Ign
     return 1;
   }
   if ((ignoreWoIds != (HashSet_1_System_Int32_ *)0x0) &&
-     (bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-              HashSet_1_System_Int32__Contains
-                        (ignoreWoIds,(wo->fields)._.id,
+     (bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+              HashSet_1_System_Int32Enum__Contains
+                        ((HashSet_1_System_Int32Enum_ *)ignoreWoIds,(wo->fields)._.id,
                          MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_),
      bVar1 != 0)) {
     return 1;
@@ -462,86 +465,80 @@ void Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions__cc
     func_?(&TypeInfo__SharedCollisionFunctions);
     cRam_? = '\x01';
   }
-  this = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__RaycastHitComparer);
-  if (this != (TweenRunner_1_FloatTween_ *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Comparer<UnityEngine::RaycastHit>__Comparer__
-                     );
-      cRam_? = '\x01';
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__RaycastHitComparer);
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Comparer<UnityEngine::RaycastHit>__Comparer__
+                   );
+    cRam_? = '\x01';
+  }
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Comparer<UnityEngine::RaycastHit>__Comparer__
+            );
+  TypeInfo__SharedCollisionFunctions->static_fields->rayHitComparer = (RaycastHitComparer *)this_00;
+  func_?(TypeInfo__SharedCollisionFunctions->static_fields,this_00);
+  value = (PhysicsCollisionDatasWrapper *)func_?(TypeInfo__PhysicsCollisionDatasWrapper);
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__Add_PhysicsCollisionData_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__List_int_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Capacity__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<PhysicsCollisionData>);
+    func_?(&TypeInfo__PhysicsCollisionData);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__System__Collections__Generic__List<PhysicsCollisionData>;
+  this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?();
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_01,100,
+             MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__List_int_);
+  pMVar1 = (MethodInfo *)&(value->fields).physicsCollisionDatas;
+  (value->fields).physicsCollisionDatas = (List_1_PhysicsCollisionData_ *)this_01;
+  func_?(pMVar1,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
+  puVar2 = (undefined1 *)0x0;
+  this = (value->fields).physicsCollisionDatas;
+  while (this != (List_1_PhysicsCollisionData_ *)0x0) {
+    iVar3 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]::
+            SparselyPopulatedArrayFragment_1_System_Object__get_Length
+                      ((SparselyPopulatedArrayFragment_1_System_Object_ *)this,
+                       MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Capacity__
+                      );
+    if (iVar3 <= (int)puVar2) {
+      TypeInfo__SharedCollisionFunctions->static_fields->physicsCollisionWrapper = value;
+      func_?();
+      return;
     }
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor
-              (this,
-               MethodInfo__System__Collections__Generic__Comparer<UnityEngine::RaycastHit>__Comparer__
+    this_02 = (List_1_PhysicsCollisionData___Class *)(value->fields).physicsCollisionDatas;
+    value_00 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    if (this_02 == (List_1_PhysicsCollisionData___Class *)0x0) break;
+    pMVar1 = 
+    MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__Add_PhysicsCollisionData_;
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_02,value_00,
+               MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__Add_PhysicsCollisionData_
               );
-    TypeInfo__SharedCollisionFunctions->static_fields->rayHitComparer = (RaycastHitComparer *)this;
-    func_?(TypeInfo__SharedCollisionFunctions->static_fields,this);
-    value = (PhysicsCollisionDatasWrapper *)func_?(TypeInfo__PhysicsCollisionDatasWrapper);
-    if (value != (PhysicsCollisionDatasWrapper *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__Add_PhysicsCollisionData_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__List_int_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Capacity__
-                       );
-        func_?(&TypeInfo__System__Collections__Generic__List<PhysicsCollisionData>);
-        in_stack_1 = &TypeInfo__PhysicsCollisionData;
-        func_?();
-        cRam_? = '\x01';
-      }
-      this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                func_?(TypeInfo__System__Collections__Generic__List<PhysicsCollisionData>);
-      if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-        UnitySynchronizationContext+WorkRequest]::
-        List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-                  (this_00,100,
-                   MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__List_int_);
-        (value->fields).physicsCollisionDatas = (List_1_PhysicsCollisionData_ *)this_00;
-        func_?(&(value->fields).physicsCollisionDatas,this_00);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value,ExceptionArgument__Enum_obj,in_stack_2);
-        pLVar3 = (value->fields).physicsCollisionDatas;
-        iStack_4 = 0;
-        while (pLVar3 != (List_1_PhysicsCollisionData_ *)0x0) {
-          iVar5 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]
-                  ::SparselyPopulatedArrayFragment_1_System_Object__get_Length
-                            ((SparselyPopulatedArrayFragment_1_System_Object_ *)pLVar3,
-                             MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Capacity__
-                            );
-          if (iVar5 <= iStack_4) {
-            TypeInfo__SharedCollisionFunctions->static_fields->physicsCollisionWrapper = value;
-            func_?(&TypeInfo__SharedCollisionFunctions->static_fields->
-                             physicsCollisionWrapper,value);
-            return;
-          }
-          pLVar3 = (value->fields).physicsCollisionDatas;
-          value_00 = (MethodInfo *)func_?(TypeInfo__PhysicsCollisionData);
-          if ((value_00 == (MethodInfo *)0x0) ||
-             (mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        ((Object *)value_00,ExceptionArgument__Enum_obj,
-                         (MethodInfo *)in_stack_1),
-             pLVar3 == (List_1_PhysicsCollisionData_ *)0x0)) break;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar3,(Object *)value_00,
-                     MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__Add_PhysicsCollisionData_
-                    );
-          iStack_4 = iStack_4 + 1;
-          in_stack_1 = (PhysicsCollisionData__Class **)value_00;
-          pLVar3 = (value->fields).physicsCollisionDatas;
-        }
-      }
-    }
+    puVar2 = (undefined1 *)((int)&pMVar1->methodPointer + 1);
+    method_00 = this_02;
+    this = (value->fields).physicsCollisionDatas;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

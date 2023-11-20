@@ -32,6 +32,28 @@ public class ThemePreviewSettingsMenu : ThemeSettingsMenuBase
 	private ThemeData ThemeData { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_1;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_3;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_4;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPurchaseResponse_b__20_0(IUIStack x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_1(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_3(IModalPopupCreator x, BaseEventData y);
+		internal void _OnPurchaseResponse_b__20_4(IModalPopupCreator x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass12_0
 	{
@@ -98,28 +120,6 @@ public class ThemePreviewSettingsMenu : ThemeSettingsMenuBase
 
 		// Methods
 		internal void _DisplayThemeSwitchWarning_b__0(IModalPopupCreator x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_1;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_3;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__20_4;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _OnPurchaseResponse_b__20_0(IUIStack x, BaseEventData y);
-		internal void _OnPurchaseResponse_b__20_1(IModalPopupCreator x, BaseEventData y);
-		internal void _OnPurchaseResponse_b__20_3(IModalPopupCreator x, BaseEventData y);
-		internal void _OnPurchaseResponse_b__20_4(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

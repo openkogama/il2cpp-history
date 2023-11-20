@@ -7,7 +7,8 @@ void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Activate
 {
   pAVar1 = this->klass;
   (this->fields).isActivated = 1;
-  (*(pAVar1->vtable).OnActivated.methodPtr)(this,target,(pAVar1->vtable).OnActivated.method);
+  (*(code *)(pAVar1->vtable).OnActivated.method)
+            (this,target,(pAVar1->vtable).OnDeactivated.methodPtr);
   return;
 }
 
@@ -63,8 +64,8 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   case AvatarModifierPackageType__Enum_Fire:
   case AvatarModifierPackageType__Enum_FlamerBurn:
     iVar1 = func_?(0);
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_BurningModifier;
     method_00 = BurningModifier_MethodInfo__EnumPoolManager__Instantiate<BurningModifier>_PoolEnums_
     ;
@@ -72,8 +73,8 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   case AvatarModifierPackageType__Enum_Mutant:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_MutantModifier;
     break;
   default:
@@ -81,42 +82,42 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   case AvatarModifierPackageType__Enum_Poison:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_PoisonModifier;
     break;
   case AvatarModifierPackageType__Enum_Frozen:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_FrozenModifier;
     break;
   case AvatarModifierPackageType__Enum_NinjaRun:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_NinjaRunModifier;
     break;
   case AvatarModifierPackageType__Enum_Shrunken:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_MouseModifier;
     break;
   case AvatarModifierPackageType__Enum_Enlarged:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_GrowthModifier;
     break;
   case AvatarModifierPackageType__Enum_Shielded:
     iVar1 = func_?(0);
     if (iVar1 == 0) goto code_?;
-    original = *(Object **)(iVar1 + 0x204);
+    original = *(Object **)(iVar1 + 0x20c);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -128,52 +129,62 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
     goto code_?;
   case AvatarModifierPackageType__Enum_SpawnProtection:
     iVar1 = func_?(0);
-    if (((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0xc) == (EnumPoolManager *)0x0)) ||
-       (pAVar2 = (AvatarModifier *)
-                 EnumPoolManager::EnumPoolManager_Instantiate
-                           (*(EnumPoolManager **)(iVar1 + 0xc),
-                            PoolEnums__Enum_InvulnerabilityModifier,
-                            InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
-                           ), pAVar2 == (AvatarModifier *)0x0)) goto code_?;
+    if ((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0x10) == (EnumPoolManager *)0x0))
+    goto code_?;
+    pAVar2 = (AvatarModifier *)
+             EnumPoolManager::EnumPoolManager_Instantiate
+                       (*(EnumPoolManager **)(iVar1 + 0x10),PoolEnums__Enum_InvulnerabilityModifier,
+                        InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
+                       );
+    unaff_ESI = (char *)0x0;
+    if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
     pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
     goto code_?;
   case AvatarModifierPackageType__Enum_Lethal:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_Lethal;
     break;
   case AvatarModifierPackageType__Enum_HealingMat:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_HealingMat;
     break;
   case AvatarModifierPackageType__Enum_CrumbleMat:
     method_00 = (MethodInfo *)0x0;
     iVar1 = func_?();
-    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0xc), this == (EnumPoolManager *)0x0))
-    goto code_?;
+    if ((iVar1 == 0) || (this = *(EnumPoolManager **)(iVar1 + 0x10), this == (EnumPoolManager *)0x0)
+       ) goto code_?;
     pEnum = PoolEnums__Enum_CrumbleMat;
   }
   pAVar2 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
+  unaff_ESI = (char *)0x0;
   if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
-    func_?();
-    bVar3 = (byte)((ushort)extraout_DX >> 8);
-    *(byte *)(unaff_EDI + 0xb7321024) = *(byte *)(unaff_EDI + 0xb7321024) | bVar3;
-    *(uint *)(extraout_ECX + -0x48a3efdc) = *(uint *)(extraout_ECX + -0x48a3efdc) ^ unaff_EDI;
-    LOCK();
-    bVar4 = *(byte *)(unaff_EDI + 0xb7b01024);
-    *(byte *)(unaff_EDI + 0xb7b01024) = bVar3;
-    UNLOCK();
-    in(CONCAT11(bVar4,(char)extraout_DX));
+    uVar3 = func_?();
+    pcVar4 = (char *)((ulonglong)uVar3 >> 0x20);
+    uVar5 = (uint)uVar3;
+    bVar6 = (byte)((uint)extraout_ECX >> 8);
+    *(byte *)(uVar5 + 0x2d) = *(byte *)(uVar5 + 0x2d) | bVar6;
+    cVar7 = (char)((ulonglong)uVar3 >> 0x28);
+    *pcVar4 = *pcVar4 + cVar7;
+    cVar8 = (char)(uVar5 + 0xd297a3f0);
+    unaff_ESI[-0x4fefd298] = unaff_ESI[-0x4fefd298] + cVar8 + (uVar5 < 0x2d685c10);
+    *unaff_ESI = *unaff_ESI + bVar6 + (uVar5 + 0xd297a3f0 < 0x2d690410);
+    pcVar4 = (char *)CONCAT22((short)((ulonglong)uVar3 >> 0x30),
+                              CONCAT11(cVar7 + (byte)extraout_ECX +
+                                       ((longlong)(int)((longlong)iRam_? * 0x2d69af10) !=
+                                       (longlong)iRam_? * 0x2d69af10),
+                                       (char)((ulonglong)uVar3 >> 0x20)));
+    *pcVar4 = *pcVar4 + cVar8 + -0x10 + (char)*(undefined4 *)pcVar4 + *pcVar4;
     *extraout_ECX = *extraout_ECX | (byte)extraout_ECX;
-    pcVar5 = (code *)swi(3);
-    pAVar2 = (AvatarModifier *)(*pcVar5)();
+    pcVar9 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar9)();
     return pAVar2;
   }
 code_?:
@@ -191,7 +202,7 @@ void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Deactivate
 {
   pAVar1 = this->klass;
   (this->fields).isActivated = 0;
-  (*(pAVar1->vtable).OnDeactivated.methodPtr)(this,target,(pAVar1->vtable).OnDeactivated.method);
+  (*(code *)(pAVar1->vtable).OnDeactivated.method)(this,target,pAVar1[1]._0.image);
   return;
 }
 

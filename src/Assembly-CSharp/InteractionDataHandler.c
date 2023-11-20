@@ -17,6 +17,7 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
     func_?(&
                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                    );
+    func_?(&TypeInfo__MV__WorldObject__InteractionData);
     cRam_? = '\x01';
   }
   if (interactionIsLocal == 0) {
@@ -26,38 +27,43 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
       return 1;
     }
     pMVar2 = (this->fields)._._.worldObjectParent;
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      in_stack_3 = 0;
-      key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000023);
-      value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
-                        (&interaction,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,key,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      if (pMVar2 != (MVWorldObjectClient *)0x0) {
-        MVWorldObjectClient::MVWorldObjectClient_SendPackage(pMVar2,this_00,(MethodInfo *)0x0);
-        return 1;
-      }
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    in_stack_3 = 0;
+    key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000023);
+    if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__InteractionData);
+    }
+    value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
+                      (&interaction,(MethodInfo *)0x0);
+    if ((this_00 !=
+         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         0x0) && (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__Add
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,key,
+                             (Object *)value,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                            ), pMVar2 != (MVWorldObjectClient *)0x0)) {
+      MVWorldObjectClient::MVWorldObjectClient_SendPackage
+                (pMVar2,(Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
+      return 1;
     }
   }
   else {
     pMVar2 = (this->fields)._._.worldObjectParent;
     if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      (*(pMVar2->klass->vtable).ReceiveInteractionPackage.methodPtr)
+      (*(code *)(pMVar2->klass->vtable).ReceiveInteractionPackage.method)
                 (pMVar2,interaction.damage,interaction.impulse.x,interaction.impulse.y,
                  interaction.impulse.z,interaction._16_4_,0,
-                 (pMVar2->klass->vtable).ReceiveInteractionPackage.method);
+                 (pMVar2->klass->vtable).HandleInput.methodPtr);
       return 1;
     }
   }

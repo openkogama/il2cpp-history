@@ -20,19 +20,6 @@ public class SpawnRoleMenuButton : MonoBehaviour
 	private GameObject buttonObject;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass6_0
-	{
-		// Fields
-		public SpawnRoleMenu newSpawnRoleMenu;
-
-		// Constructors
-		public __c__DisplayClass6_0();
-
-		// Methods
-		internal void _ShowSpawnRoleMenu_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -47,6 +34,19 @@ public class SpawnRoleMenuButton : MonoBehaviour
 
 		// Methods
 		internal void _ShowSpawnRoleMenu_b__6_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass6_0
+	{
+		// Fields
+		public SpawnRoleMenu newSpawnRoleMenu;
+
+		// Constructors
+		public __c__DisplayClass6_0();
+
+		// Methods
+		internal void _ShowSpawnRoleMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

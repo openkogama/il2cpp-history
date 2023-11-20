@@ -38,27 +38,31 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__On
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    uVar1 = 0;
-    uVar2 = (x->klass->_1).interface_offsets_count;
-    if (uVar2 != 0) {
+    pIVar1 = x->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
       do {
-        if (x->klass->interfaceOffsets[uVar1].interfaceType ==
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-          pVVar3 = &(x->klass->vtable).Create_1 + x->klass->interfaceOffsets[uVar1].offset;
-          (*pVVar3->methodPtr)(x,pVVar3->method);
+          pIVar1 = x->klass;
+          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
+          (*(code *)(&(pIVar1->vtable).Create_1)[iVar4].method)
+                    (x,(&(pIVar1->vtable).Create_2)[iVar4].methodPtr);
           return;
         }
-        uVar1 = uVar1 + 1;
-      } while (uVar1 < uVar2);
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
     }
-    puVar4 = (undefined4 *)
+    puVar5 = (undefined4 *)
              func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2);
-    (*(code *)*puVar4)(x,puVar4[1]);
+    (*(code *)*puVar5)(x,puVar5[1]);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -129,17 +133,12 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__cc
     func_?(&TypeInfo__MaterialPurchasePopup____c);
     cRam_? = '\x01';
   }
-  value = (MaterialPurchasePopup_c *)func_?(TypeInfo__MaterialPurchasePopup____c);
-  if (value != (MaterialPurchasePopup_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__MaterialPurchasePopup____c->static_fields->__9 = value;
-    func_?(TypeInfo__MaterialPurchasePopup____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__MaterialPurchasePopup____c;
+  value = (MaterialPurchasePopup_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__MaterialPurchasePopup____c->static_fields->__9 = value;
+  func_?(TypeInfo__MaterialPurchasePopup____c->static_fields,value);
   return;
 }
 

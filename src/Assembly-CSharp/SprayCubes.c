@@ -21,49 +21,42 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Enter
     cubeCorners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
                             ((MethodInfo *)0x0);
     value = (SprayCursor *)func_?(TypeInfo__SprayCursor);
-    if (value != (SprayCursor *)0x0) {
-      if (cRam_? == '\0') {
-        unaff_ESI = (MethodInfo *)&UNK_?;
-        func_?(&TypeInfo__CellCursor);
-        cRam_? = '\x01';
-      }
-      (value->fields).addCubeLaserOnTime = 0.2;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar1 != (PrefabPool *)0x0) {
-        material = (pPVar1->fields).cellCursorMaterial;
-        this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
-        if (this_01 != (CellCursor *)0x0) {
-          CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-          (value->fields).sprayCursor = this_01;
-          func_?(&value->fields,this_01);
-          (this->fields).sprayCursor = value;
-          func_?(&(this->fields).sprayCursor,value);
-          pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if (((pGVar2 != (GameEventManager *)0x0) &&
-              (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
-              pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-             (this_00 = (pGVar3->fields).LaserCommands,
-             this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
-             ) {
-            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-            GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-                      (this_00,LaserPointerState__Enum_SprayCubes,(MethodInfo *)0x0);
-            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
-                              (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-            (this->fields)._.waitForMouseUp = bVar4;
-            return;
-          }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__CellCursor);
+      cRam_? = '\x01';
+    }
+    (value->fields).addCubeLaserOnTime = 0.2;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar1 != (PrefabPool *)0x0) {
+      material = (pPVar1->fields).cellCursorMaterial;
+      this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
+      CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+      (value->fields).sprayCursor = this_01;
+      func_?(&value->fields,this_01);
+      (this->fields).sprayCursor = value;
+      func_?(&(this->fields).sprayCursor,value);
+      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar2 != (GameEventManager *)0x0) &&
+          (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
+          pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (this_00 = (pGVar3->fields).LaserCommands,
+         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_00,LaserPointerState__Enum_SprayCubes,(MethodInfo *)0x0);
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
+        bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+        (this->fields)._.waitForMouseUp = bVar4;
+        return;
       }
     }
   }
@@ -84,7 +77,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Execute
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0x60dc);
+    func_?(0xe9b4);
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__MVInputWrapper);
@@ -142,23 +135,23 @@ code_?:
                           ((pMVar8->fields)._.gameObject,(IntVector *)&stack0xffffffc4,
                            (MethodInfo *)0x0);
         if (bVar7 != 0) {
-          requestedCubePos.y = iVar3;
-          requestedCubePos.x = iVar2;
+          IVar9.y = iVar3;
+          IVar9.x = iVar2;
           iVar2 = 0;
-          requestedCubePos.z = 0;
-          CVar9 = CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt_1
-                            (e,requestedCubePos,(MethodInfo *)0x0);
-          if (CVar9 == CanPerformCubeActionResult__Enum_Yes) {
+          IVar9.z = 0;
+          CVar10 = CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt_1
+                            (e,IVar9,(MethodInfo *)0x0);
+          if (CVar10 == CanPerformCubeActionResult__Enum_Yes) {
             pos.y = iVar3;
             pos.x = iVar2;
-            iVar2 = 0x750b;
-            iVar3 = 0x103e;
+            iVar2 = 0x7a59;
+            iVar3 = 0x1045;
             pos.z = (int16_t)e;
-            pCVar10 = e;
+            pCVar11 = e;
             CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
                       (e,pos,AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
             pMVar8 = (e->fields)._TargetCubeModel_k__BackingField;
-            uVar11 = CONCAT22(iVar3,iVar2);
+            uVar12 = CONCAT22(iVar3,iVar2);
             if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -177,13 +170,11 @@ code_?:
             }
             faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
             this_00 = (Cube *)func_?();
-            if ((this_00 == (Cube *)0x0) ||
-               (Cube::Cube__ctor(this_00,(Byte__Array *)&UNK_?,faceMaterials,
-                                 (MethodInfo *)0x0), pMVar8 == (MVCubeModelBase *)0x0))
-            goto code_?;
-            pos_00.z = (int16_t)pCVar10;
-            pos_00.x = (short)uVar11;
-            pos_00.y = (short)((uint)uVar11 >> 0x10);
+            Cube::Cube__ctor(this_00,(Byte__Array *)&UNK_?,faceMaterials,(MethodInfo *)0x0);
+            if (pMVar8 == (MVCubeModelBase *)0x0) goto code_?;
+            pos_00.z = (int16_t)pCVar11;
+            pos_00.x = (short)uVar12;
+            pos_00.y = (short)((uint)uVar12 >> 0x10);
             MVCubeModelBase::MVCubeModelBase_AddCube
                       (pMVar8,pos_00,(CubeBase *)this_00,(MethodInfo *)0x0);
             bVar6 = 1;
@@ -195,37 +186,32 @@ code_?:
     }
     else {
       if ((this->fields).cubeNotToBeSprayed != (CubePickingInfo *)0x0) {
-        pCVar12 = (e->fields)._SelectedCube_k__BackingField;
-        if (pCVar12 == (CubePickingInfo *)0x0) goto code_?;
-        uVar11._0_2_ = (pCVar12->fields).iLocalPos.x;
-        uVar11._2_2_ = (pCVar12->fields).iLocalPos.y;
-        iVar2 = (pCVar12->fields).iLocalPos.z;
-        pCVar12 = (this->fields).cubeNotToBeSprayed;
-        uVar13._0_2_ = (pCVar12->fields).iLocalPos.x;
-        uVar13._2_2_ = (pCVar12->fields).iLocalPos.y;
-        iVar3 = (pCVar12->fields).iLocalPos.z;
+        pCVar13 = (e->fields)._SelectedCube_k__BackingField;
+        if (pCVar13 == (CubePickingInfo *)0x0) goto code_?;
+        IVar9 = (pCVar13->fields).iLocalPos;
+        pCVar13 = (this->fields).cubeNotToBeSprayed;
+        uVar12._0_2_ = (pCVar13->fields).iLocalPos.x;
+        uVar12._2_2_ = (pCVar13->fields).iLocalPos.y;
+        iVar2 = (pCVar13->fields).iLocalPos.z;
         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        a.z = iVar2;
-        a.x = (short)uVar11;
-        a.y = (short)((uint)uVar11 >> 0x10);
-        b.z = iVar3;
-        b.x = (short)uVar13;
-        b.y = (short)((uint)uVar13 >> 0x10);
+        b.z = iVar2;
+        b.x = (short)uVar12;
+        b.y = (short)((uint)uVar12 >> 0x10);
         bVar7 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
-                          (a,b,(MethodInfo *)0x0);
+                          (IVar9,b,(MethodInfo *)0x0);
         if (bVar7 == 0) goto code_?;
       }
-      pCVar12 = (e->fields)._SelectedCube_k__BackingField;
-      if (pCVar12 == (CubePickingInfo *)0x0) goto code_?;
+      pCVar13 = (e->fields)._SelectedCube_k__BackingField;
+      if (pCVar13 == (CubePickingInfo *)0x0) goto code_?;
       CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                (e,(pCVar12->fields).iLocalPos,AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
+                (e,(pCVar13->fields).iLocalPos,AudioActions__Enum_CubeAdded,(MethodInfo *)0x0);
       CubeModelingStateMachine::CubeModelingStateMachine_AddCube(e,(MethodInfo *)0x0);
-      pCVar12 = CubeModelingStateMachine::CubeModelingStateMachine_DoPicking(e,(MethodInfo *)0x0);
-      (this->fields).cubeNotToBeSprayed = pCVar12;
+      pCVar13 = CubeModelingStateMachine::CubeModelingStateMachine_DoPicking(e,(MethodInfo *)0x0);
+      (this->fields).cubeNotToBeSprayed = pCVar13;
       func_?();
-      bVar6 = (bool)pCVar12;
+      bVar6 = (bool)pCVar13;
     }
     this_01 = (this->fields).sprayCursor;
   }
@@ -251,9 +237,9 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Exit
                (SprayCubes *this,CubeModelingStateMachine *e,MethodInfo *method)
 
 {
-  pMStack_1 = (this->klass->vtable).HideCursor.method;
+  pIStack_1 = this->klass[1]._0.image;
   pSStack_2 = this;
-  (*(this->klass->vtable).HideCursor.methodPtr)();
+  (*(code *)(this->klass->vtable).HideCursor.method)();
   pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
   if (((pGVar3 != (GameEventManager *)0x0) &&
       (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode,
@@ -261,7 +247,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Exit
      ((pGVar4->fields).LaserCommands !=
       (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
     if (iRam_? != 0) {
-      pMStack_1 = (MethodInfo *)0x0;
+      pIStack_1 = (Il2CppImage *)0x0;
       pSStack_2 = *(SprayCubes **)(iRam_? + 0x20);
       (**(code **)(iRam_? + 0xc))();
     }
@@ -338,7 +324,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_HideCursor(SprayCubes *this,Met
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
       }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)array,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__

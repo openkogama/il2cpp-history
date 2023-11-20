@@ -13,15 +13,15 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Enter
     cRam_? = '\x01';
   }
   if ((e != (EditorStateMachine *)0x0) &&
-     (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(e->fields)._.data,
-     this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+     (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(e->fields)._.data,
+     this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (this_00,(Object *)StringLiteral_goToInsert,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    (this->fields).goToInsert = bVar1 != 0;
+    (this->fields).goToInsert = bVar1;
     pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if ((pMVar2 == (MVWorldObjectClient *)0x0) || ((this->fields).goToInsert != 0)) {
 code_?:
@@ -30,7 +30,7 @@ code_?:
     }
     pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      puVar3 = (undefined8 *)(*(pMVar2->klass->vtable).get_WorldPosition_1.methodPtr)();
+      puVar3 = (undefined8 *)(*(code *)(pMVar2->klass->vtable).get_WorldPosition_1.method)();
       uVar4 = *puVar3;
       fVar5 = *(float *)(puVar3 + 1);
       (this->fields).pos.x = (float)(int)uVar4;
@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
     func_?(&StringLiteral_translateMode);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,(ExceptionArgument__Enum)e,(MethodInfo *)0x0);
   if (e != (EditorStateMachine *)0x0) {
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::ESWaitForClone::ESWaitForClone_Execute
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClient *)0x0) {
       uVar2 = (this->fields).pos.x;
-      (*(pMVar1->klass->vtable).set_WorldPosition.methodPtr)(pMVar1,uVar2);
+      (*(code *)(pMVar1->klass->vtable).set_WorldPosition.method)(pMVar1,uVar2);
       pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClient *)0x0) {
         MVWorldObjectClient::MVWorldObjectClient_set_SyncRot

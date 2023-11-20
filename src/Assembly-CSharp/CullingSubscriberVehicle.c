@@ -51,10 +51,10 @@ void Assembly-CSharp.dll::CullingSubscriberVehicle::CullingSubscriberVehicle_Pos
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_positionChanged,(MethodInfo *)0x0);
   if (arg0 != (MVWorldObjectClient *)0x0) {
-    pVVar1 = (Vector3 *)(*(arg0->klass->vtable).get_Position.methodPtr)(&stack0xfffffff0);
+    pVVar1 = (Vector3 *)(*(code *)(arg0->klass->vtable).get_Position.method)(&stack0xfffffff0);
     CullingSubscriberBase::CullingSubscriberBase_set_Position
               ((CullingSubscriberBase *)this,*pVVar1,(MethodInfo *)0x0);
     return;

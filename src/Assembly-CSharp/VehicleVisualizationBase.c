@@ -67,18 +67,18 @@ code_?:
       if (bVar13 == 0) break;
       if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
       RVar11 = RVar12;
-      pIStack_14 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)RVar12,
+      pOStack_14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                   GameObject_GetComponentsInChildren
+                             ((GameObject *)RVar12,
                               UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                              );
-      pMVar15 = (MonitorData *)0x0;
-      if (pIStack_14 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
-      for (; unaff_EDI = RVar12, (int)pMVar15 < (int)pIStack_14[1].monitor; pMVar15 = pMVar15 + 1) {
-        if (pIStack_14[1].monitor <= pMVar15) goto code_?;
-        if ((&pIStack_14[2].klass)[(int)pMVar15] == (IEnumerable_1_System_Object___Class *)0x0)
-        goto code_?;
+      uVar15 = 0;
+      if (pOStack_14 == (Object__Array *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)uVar15 < (int)pOStack_14->max_length; uVar15 = uVar15 + 1) {
+        if (pOStack_14->max_length <= uVar15) goto code_?;
+        if ((Renderer *)pOStack_14->vector[uVar15] == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)(&pIStack_14[2].klass)[(int)pMVar15],0,(MethodInfo *)0x0);
+                  ((Renderer *)pOStack_14->vector[uVar15],0,(MethodInfo *)0x0);
       }
     }
   }
@@ -112,26 +112,26 @@ code_?:
       if (bVar13 == 0) break;
       if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
       RVar11 = RVar12;
-      pIStack_14 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)RVar12,
+      pOStack_14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                   GameObject_GetComponentsInChildren
+                             ((GameObject *)RVar12,
                               UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                              );
-      pMVar15 = (MonitorData *)0x0;
-      if (pIStack_14 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
-      for (; unaff_EDI = RVar12, (int)pMVar15 < (int)pIStack_14[1].monitor; pMVar15 = pMVar15 + 1) {
-        if (pIStack_14[1].monitor <= pMVar15) {
+      uVar15 = 0;
+      if (pOStack_14 == (Object__Array *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)uVar15 < (int)pOStack_14->max_length; uVar15 = uVar15 + 1) {
+        if (pOStack_14->max_length <= uVar15) {
           func_?();
           goto code_?;
         }
-        if ((&pIStack_14[2].klass)[(int)pMVar15] == (IEnumerable_1_System_Object___Class *)0x0)
-        goto code_?;
+        if ((Renderer *)pOStack_14->vector[uVar15] == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)(&pIStack_14[2].klass)[(int)pMVar15],1,(MethodInfo *)0x0);
+                  ((Renderer *)pOStack_14->vector[uVar15],1,(MethodInfo *)0x0);
       }
     }
   }
   uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)&stack0xffffffc0,
              (ExceptionArgument__Enum)
              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -213,22 +213,17 @@ void Assembly-CSharp.dll::VehicleVisualizationBase::VehicleVisualizationBase__ct
   }
   this_00 = (List_1_UnityEngine_GameObject_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  if (this_00 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-    (this->fields).lodGameObjects = this_00;
-    func_?(&(this->fields).lodGameObjects,this_00);
-    (this->fields).disableVisualizationDistance = 40.0;
-    (this->fields).cullDistance = 145.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  (this->fields).lodGameObjects = this_00;
+  func_?(&(this->fields).lodGameObjects,this_00);
+  (this->fields).disableVisualizationDistance = 40.0;
+  (this->fields).cullDistance = 145.0;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

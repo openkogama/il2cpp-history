@@ -68,52 +68,60 @@ void Assembly-CSharp.dll::ActivateOnAnimationBase::ActivateOnAnimationBase_OnDes
      pBVar1 == (BoneAnimation *)0x0)) {
 code_?:
     func_?();
+code_?:
+    func_?();
   }
   else {
     pAVar2 = (pBVar1->fields).OnAnimationChange;
-    pAVar3 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<System::String>);
-    if (pAVar3 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar3,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
+    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?(TypeInfo__System__Action<System::String>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)pAVar3,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pBVar1->fields).OnAnimationChange = (Action_1_String_ *)0x0;
-    }
-    else {
-      pAVar2 = (Action_1_String_ *)func_?();
-      if (pAVar2 == (Action_1_String_ *)0x0) goto code_?;
-      (pBVar1->fields).OnAnimationChange = pAVar2;
-      iVar5 = func_?();
-      if (iVar5 == 0) goto code_?;
-    }
-    func_?();
-    pMVar6 = (this->fields).mvAvatar;
-    if ((pMVar6 == (MVAvatar *)0x0) ||
-       (pAVar7 = (pMVar6->fields).limbManager, pAVar7 == (AvatarLimbManager *)0x0))
-    goto code_?;
-    pAVar2 = (pAVar7->fields).OnEmoteStart;
-    pAVar3 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<System::String>);
-    if (pAVar3 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar3,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)pAVar3,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
-      (pAVar7->fields).OnEmoteStart = (Action_1_String_ *)0x0;
+code_?:
       func_?();
-      return;
-    }
-    pAVar2 = (Action_1_String_ *)func_?();
-    if (pAVar2 != (Action_1_String_ *)0x0) {
-      (pAVar7->fields).OnEmoteStart = pAVar2;
-      iVar5 = func_?();
-      if (iVar5 != 0) {
+      pMVar5 = (this->fields).mvAvatar;
+      if ((pMVar5 == (MVAvatar *)0x0) ||
+         (pAVar6 = (pMVar5->fields).limbManager, pAVar6 == (AvatarLimbManager *)0x0))
+      goto code_?;
+      pAVar2 = (pAVar6->fields).OnEmoteStart;
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?(TypeInfo__System__Action<System::String>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (pAVar6->fields).OnEmoteStart = (Action_1_String_ *)0x0;
         func_?();
         return;
       }
+      pAVar2 = (Action_1_String_ *)func_?();
+      if (pAVar2 == (Action_1_String_ *)0x0) goto code_?;
+      (pAVar6->fields).OnEmoteStart = pAVar2;
+      iVar7 = func_?();
+      if (iVar7 != 0) {
+        func_?();
+        return;
+      }
+      goto code_?;
+    }
+    pAVar2 = (Action_1_String_ *)func_?();
+    if (pAVar2 != (Action_1_String_ *)0x0) {
+      (pBVar1->fields).OnAnimationChange = pAVar2;
+      iVar7 = func_?();
+      if (iVar7 == 0) goto code_?;
+      goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -143,6 +151,8 @@ void Assembly-CSharp.dll::ActivateOnAnimationBase::ActivateOnAnimationBase_Start
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 == (Transform *)0x0) {
+code_?:
+    func_?();
 code_?:
     func_?();
   }
@@ -178,60 +188,67 @@ code_?:
       return;
     }
     if (x == (Object_1 *)0x0) goto code_?;
-    (this->fields).mvAvatar = (MVAvatar *)x[1].klass;
+    (this->fields).mvAvatar = (MVAvatar *)x[1].monitor;
     func_?();
     pMVar3 = (this->fields).mvAvatar;
-    if ((((pMVar3 == (MVAvatar *)0x0) || (this_00 = (pMVar3->fields).body, this_00 == (MVBody *)0x0)
-         ) || (pBVar4 = MVBody::MVBody_get_Animation(this_00,(MethodInfo *)0x0),
-              pBVar4 == (BoneAnimation *)0x0)) ||
-       (pAVar5 = (Action_1_Object_ *)func_?(), pAVar5 == (Action_1_Object_ *)0x0))
-    goto code_?;
-    pAVar6 = pAVar5;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar5,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
+    if (((pMVar3 == (MVAvatar *)0x0) || (this_00 = (pMVar3->fields).body, this_00 == (MVBody *)0x0))
+       || (pBVar4 = MVBody::MVBody_get_Animation(this_00,(MethodInfo *)0x0),
+          pBVar4 == (BoneAnimation *)0x0)) goto code_?;
+    pAVar5 = (pBVar4->fields).OnAnimationChange;
+    pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar6,(Delegate *)pAVar5,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
     if (pDVar7 == (Delegate *)0x0) {
-      (pBVar4->fields).OnAnimationChange = (Action_1_String_ *)0x0;
-    }
-    else {
-      pAVar8 = (Action_1_String_ *)func_?();
-      if (pAVar8 == (Action_1_String_ *)0x0) goto code_?;
-      (pBVar4->fields).OnAnimationChange = pAVar8;
-      iVar9 = func_?();
-      if (iVar9 == 0) goto code_?;
-    }
-    func_?();
-    pMVar3 = (this->fields).mvAvatar;
-    if (((pMVar3 == (MVAvatar *)0x0) ||
-        (pAVar10 = (pMVar3->fields).limbManager, pAVar10 == (AvatarLimbManager *)0x0)) ||
-       (pAVar5 = (Action_1_Object_ *)func_?(), pAVar5 == (Action_1_Object_ *)0x0))
-    goto code_?;
-    pAVar6 = pAVar5;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar5,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar6,(Delegate *)pAVar5,(MethodInfo *)0x0);
-    if (pDVar7 == (Delegate *)0x0) {
-      (pAVar10->fields).OnEmoteStart = (Action_1_String_ *)0x0;
+      (pAVar5->fields)._._.m_target = (Object *)0x0;
+code_?:
       func_?();
-      return;
-    }
-    pAVar8 = (Action_1_String_ *)func_?();
-    if (pAVar8 != (Action_1_String_ *)0x0) {
-      (pAVar10->fields).OnEmoteStart = pAVar8;
-      iVar9 = func_?();
-      if (iVar9 != 0) {
+      pMVar3 = (this->fields).mvAvatar;
+      if ((pMVar3 == (MVAvatar *)0x0) ||
+         (pAVar8 = (pMVar3->fields).limbManager, pAVar8 == (AvatarLimbManager *)0x0))
+      goto code_?;
+      pAVar5 = (pAVar8->fields).OnEmoteStart;
+      pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
+        (pAVar5->fields)._._.invoke_impl = (void *)0x0;
         func_?();
         return;
       }
+      pvVar9 = (void *)func_?();
+      if (pvVar9 == (void *)0x0) goto code_?;
+      (pAVar5->fields)._._.invoke_impl = pvVar9;
+      iVar10 = func_?();
+      if (iVar10 != 0) {
+        func_?();
+        return;
+      }
+      goto code_?;
+    }
+    pOVar11 = (Object *)func_?();
+    if (pOVar11 != (Object *)0x0) {
+      (pAVar5->fields)._._.m_target = pOVar11;
+      iVar10 = func_?();
+      if (iVar10 == 0) goto code_?;
+      goto code_?;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

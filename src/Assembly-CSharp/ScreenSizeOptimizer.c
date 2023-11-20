@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_Awake
         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
                   ((this->fields).renderTarget,(MethodInfo *)0x0);
       }
-      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1
+      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4
                          ((int32_t)width,(int32_t)height,0x18,RenderTextureFormat__Enum_ARGB32,
                           RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
       (this->fields).renderTarget = pRVar5;
@@ -98,7 +98,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_HalfResolutio
         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
                   ((this->fields).renderTarget,(MethodInfo *)0x0);
       }
-      pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1
+      pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4
                          (width,height,0x18,RenderTextureFormat__Enum_ARGB32,
                           RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
       (this->fields).renderTarget = pRVar4;
@@ -213,7 +213,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_SetResolution
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
               ((this->fields).renderTarget,(MethodInfo *)0x0);
   }
-  pRVar1 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1
+  pRVar1 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4
                      (newWidth,newHeight,0x18,RenderTextureFormat__Enum_ARGB32,
                       RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
   (this->fields).renderTarget = pRVar1;

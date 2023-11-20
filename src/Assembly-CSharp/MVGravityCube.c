@@ -39,7 +39,8 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_Initialize
 
 {
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
+  (*(code *)(this->klass->vtable).OnDataUpdate.method)
+            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
   return;
 }
 
@@ -60,10 +61,12 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_OnDataUpdate
     func_?(&StringLiteral_gravity);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (this_00,(Object *)StringLiteral_gravity,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
@@ -74,10 +77,11 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_OnDataUpdate
       OStack_1.currentCryptoKey = (int32_t)&UNK_?;
       func_?();
     }
-    if (unaff_ESI != (Object *)0x0) {
+    if (unaff_ESI.m_Index != 0) {
       pSVar2 = TypeInfo__System__Single;
-      if ((unaff_ESI->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar3 = (float *)func_?(unaff_ESI);
+      if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
+        pfVar3 = (float *)func_?(unaff_ESI.m_Index);
         pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
                  ObscuredFloat_op_Implicit(&OStack_1,*pfVar3,(MethodInfo *)0x0);
         iStack_5 = pOVar4->currentCryptoKey;
@@ -122,7 +126,7 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_OnDataUpdate
   func_?();
   pSVar2 = extraout_ECX;
 code_?:
-  func_?(unaff_ESI,pSVar2);
+  func_?(unaff_ESI.m_Index,pSVar2);
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;

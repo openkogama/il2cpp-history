@@ -9,18 +9,16 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 
 {
   pSVar1 = (this->fields).subscribableVariable;
-  if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-    piVar2 = (int *)(*(method->klass->rgctx_data[6].method)->virtualMethodPointer)
-                              (pSVar1,method->klass->rgctx_data[6].rgctxDataDummy);
-    if ((other != (SpawnRoleVariable_1_System_Object_ *)0x0) &&
-       (pSVar1 = (other->fields).subscribableVariable,
-       pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0)) {
-      uVar3 = (*(method->klass->rgctx_data[6].method)->virtualMethodPointer)
-                        (pSVar1,method->klass->rgctx_data[6].rgctxDataDummy);
-      if (piVar2 != (int *)0x0) {
-        bVar4 = (**(code **)(*piVar2 + 0xbc))(piVar2,uVar3,*(undefined4 *)(*piVar2 + 0xc0));
-        return bVar4;
-      }
+  if (((pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) &&
+      (other != (SpawnRoleVariable_1_System_Object_ *)0x0)) &&
+     (pSVar2 = (other->fields).subscribableVariable,
+     pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0)) {
+    pOVar3 = (pSVar1->fields)._.value;
+    if (pOVar3 != (Object *)0x0) {
+      bVar4 = (*(code *)(pOVar3->klass->vtable).Equals.method)
+                        (pOVar3,(pSVar2->fields)._.value,(pOVar3->klass->vtable).Finalize.methodPtr)
+      ;
+      return bVar4;
     }
   }
   func_?();
@@ -48,36 +46,69 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (this == (SpawnRoleVariable_1_System_Object_ *)obj) {
     return 1;
   }
-  left._source = (CancellationTokenSource *)
-                 mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
+  left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
   if (this != (SpawnRoleVariable_1_System_Object_ *)0x0) {
-    right._source =
-         (CancellationTokenSource *)
-         mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    right = (XNamespace *)
+            mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    bVar1 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+    bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
                       (left,right,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       return 0;
     }
-    pIVar2 = (method->klass->rgctx_data[1].method)->virtualMethodPointer;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (pIVar3->initialized_and_no_error == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    pIVar2 = method->klass->rgctx_data->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?();
     }
-    if ((pIVar3->typeHierarchyDepth <= (obj->klass->_1).typeHierarchyDepth) &&
-       ((obj->klass->_1).typeHierarchy[pIVar3->typeHierarchyDepth - 1] == pIVar3)) {
-      bVar1 = (*pIVar2)(this);
-      return bVar1;
+    if (((obj->klass->_1).naturalAligment < pIVar2->naturalAligment) ||
+       ((obj->klass->_1).typeHierarchy[pIVar2->naturalAligment - 1] != pIVar2)) {
+      func_?();
     }
-    func_?();
+    else {
+      pSVar3 = (this->fields).subscribableVariable;
+      if (((pSVar3 != (SubscribableVariable_1_System_Object_ *)0x0) &&
+          (obj[1].klass != (Object__Class *)0x0)) &&
+         (pOVar4 = (pSVar3->fields)._.value, pOVar4 != (Object *)0x0)) {
+        bVar1 = (*(code *)(pOVar4->klass->vtable).Equals.method)();
+        return bVar1;
+      }
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar1 = (*pcVar5)();
+  return bVar1;
+}
+
+
+/* Int32 GetHashCode() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::
+        SpawnRoleVariable_1_System_Object__GetHashCode
+                  (SpawnRoleVariable_1_System_Object_ *this,MethodInfo *method)
+
+{
+  bVar1 = SubscribableVariableBase`1[System::Object]::
+          SubscribableVariableBase_1_System_Object__op_Inequality_2
+                    ((SubscribableVariableBase_1_System_Object_ *)
+                     (this->fields).subscribableVariable,
+                     (SubscribableVariableBase_1_System_Object_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
   }
   func_?();
   pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
-  return bVar1;
+  iVar3 = (*pcVar4)();
+  return iVar3;
 }
 
 
@@ -90,8 +121,9 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 
 {
   if ((this->fields).OnChange != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
-    (*(method->klass->rgctx_data[0xd].method)->virtualMethodPointer)
-              ((this->fields).OnChange,value,method->klass->rgctx_data[0xd].rgctxDataDummy);
+    pSVar1 = (this->fields).OnChange;
+    (*(pSVar1->fields)._._.invoke_impl)
+              ((pSVar1->fields)._._.method_code,value,(pSVar1->fields)._._.method);
   }
   return;
 }
@@ -105,61 +137,44 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                (SpawnRoleVariable_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pvVar1 = method->klass->rgctx_data[7].rgctxDataDummy;
-  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-    pvVar1 = (void *)func_?(pvVar1);
+  pIVar1 = method->klass->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pSVar2 = (SubscribableVariable_1_System_Object_ *)func_?(pvVar1);
-  if (pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0) {
-    (*(method->klass->rgctx_data[8].method)->virtualMethodPointer)
-              (pSVar2,value,method->klass->rgctx_data[8].rgctxDataDummy);
-    (this->fields).subscribableVariable = pSVar2;
-    func_?(&this->fields,pSVar2);
-    pSVar2 = (this->fields).subscribableVariable;
-    pvVar1 = method->klass->rgctx_data[10].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-      pvVar1 = (void *)func_?(pvVar1);
-    }
-    iVar3 = func_?(pvVar1);
-    if (iVar3 != 0) {
-      (*(method->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                (iVar3,this,method->klass->rgctx_data[9].rgctxDataDummy,
-                 method->klass->rgctx_data[0xb].rgctxDataDummy);
-      if (pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0) {
-        (*(method->klass->rgctx_data[0xc].method)->virtualMethodPointer)
-                  (pSVar2,iVar3,method->klass->rgctx_data[0xc].rgctxDataDummy);
-        return;
-      }
-    }
+  this_01 = (SubscribableVariable_1_System_Object_ *)func_?(pIVar1);
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)this_01,
+             (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)value,method->klass->rgctx_data[10].method);
+  (this->fields).subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
+  if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
+    func_?();
+  }
+  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_02,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
+             method->klass->rgctx_data[0xd].method);
+  if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+    SubscribableVariableBase`1[System::Single]::
+    SubscribableVariableBase_1_System_Single__add_OnChange
+              (this_00,(Action_1_Single_ *)this_02,method->klass->rgctx_data[0xe].method);
+    return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
-}
-
-
-/* Object get_Value() */
-
-Object * Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-         SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::
-         SpawnRoleVariable_1_System_Object__get_Value
-                   (SpawnRoleVariable_1_System_Object_ *this,MethodInfo *method)
-
-{
-  pSVar1 = (this->fields).subscribableVariable;
-  if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-    pOVar2 = (Object *)
-             (*(method->klass->rgctx_data[6].method)->virtualMethodPointer)
-                       (pSVar1,method->klass->rgctx_data[6].rgctxDataDummy);
-    return pOVar2;
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  pOVar2 = (Object *)(*pcVar3)();
-  return pOVar2;
 }
 
 
@@ -174,26 +189,20 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (a->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      uVar4 = (*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
       if (b != (Object *)0x0) {
-        bVar5 = (*(b->klass->vtable).Equals.methodPtr)(b,uVar4,(b->klass->vtable).Equals.method);
-        return bVar5;
+        bVar2 = (*(code *)(b->klass->vtable).Equals.method)
+                          (b,(pSVar1->fields)._.value,(b->klass->vtable).Finalize.methodPtr);
+        return bVar2;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 
@@ -208,26 +217,20 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (a->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      uVar4 = (*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
       if (b != (Object *)0x0) {
-        bVar5 = (*(b->klass->vtable).Equals.methodPtr)(b,uVar4,(b->klass->vtable).Equals.method);
-        return bVar5;
+        bVar2 = (*(code *)(b->klass->vtable).Equals.method)
+                          (b,(pSVar1->fields)._.value,(b->klass->vtable).Finalize.methodPtr);
+        return bVar2;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
-  return bVar5;
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 
@@ -243,40 +246,29 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (a->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      piVar4 = (int *)(*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
+      pOVar2 = (pSVar1->fields)._.value;
       if ((b != (SpawnRoleVariable_1_System_Object_ *)0x0) &&
          (pSVar1 = (b->fields).subscribableVariable,
          pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0)) {
-        pIVar2 = method->klass;
-        if (pIVar2->initialized_and_no_error == 0) {
-          pIVar2 = (Il2CppClass *)func_?(pIVar2);
+        if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+          func_?(method->klass);
         }
-        pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-        pIVar2 = method->klass;
-        if (pIVar2->initialized_and_no_error == 0) {
-          pIVar2 = (Il2CppClass *)func_?(pIVar2);
-        }
-        uVar5 = (*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
-        if (piVar4 != (int *)0x0) {
-          bVar6 = (**(code **)(*piVar4 + 0xbc))(piVar4,uVar5,*(undefined4 *)(*piVar4 + 0xc0));
-          return bVar6;
+        if (pOVar2 != (Object *)0x0) {
+          bVar3 = (*(code *)(pOVar2->klass->vtable).Equals.method)
+                            (pOVar2,(pSVar1->fields)._.value,
+                             (pOVar2->klass->vtable).Finalize.methodPtr);
+          return bVar3;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
 }
 
 
@@ -291,23 +283,16 @@ Object * Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::Spaw
   if (s != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (s->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      pOVar4 = (Object *)(*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
-      return pOVar4;
+      return (pSVar1->fields)._.value;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pOVar4 = (Object *)(*pcVar5)();
-  return pOVar4;
+  pcVar2 = (code *)swi(3);
+  pOVar3 = (Object *)(*pcVar2)();
+  return pOVar3;
 }
 
 
@@ -322,26 +307,20 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (a->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      uVar4 = (*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
       if (b != (Object *)0x0) {
-        cVar5 = (*(b->klass->vtable).Equals.methodPtr)(b,uVar4,(b->klass->vtable).Equals.method);
-        return cVar5 == '\0';
+        cVar2 = (*(code *)(b->klass->vtable).Equals.method)
+                          (b,(pSVar1->fields)._.value,(b->klass->vtable).Finalize.methodPtr);
+        return cVar2 == '\0';
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -356,19 +335,58 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
     pSVar1 = (a->fields).subscribableVariable;
     if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
+      if (((uint)method->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(method->klass);
       }
-      pIVar3 = (pIVar2->rgctx_data[6].method)->virtualMethodPointer;
-      pIVar2 = method->klass;
-      if (pIVar2->initialized_and_no_error == 0) {
-        pIVar2 = (Il2CppClass *)func_?(pIVar2);
-      }
-      uVar4 = (*pIVar3)(pSVar1,pIVar2->rgctx_data[6].rgctxDataDummy);
       if (b != (Object *)0x0) {
-        cVar5 = (*(b->klass->vtable).Equals.methodPtr)(b,uVar4,(b->klass->vtable).Equals.method);
-        return cVar5 == '\0';
+        cVar2 = (*(code *)(b->klass->vtable).Equals.method)
+                          (b,(pSVar1->fields)._.value,(b->klass->vtable).Finalize.methodPtr);
+        return cVar2 == '\0';
+      }
+    }
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
+}
+
+
+/* Boolean op_Inequality(SpawnRoleVariable`1[System.Object], SpawnRoleVariable`1[System.Object]) */
+
+bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+     SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::
+     SpawnRoleVariable_1_System_Object__op_Inequality_2
+               (SpawnRoleVariable_1_System_Object_ *a,SpawnRoleVariable_1_System_Object_ *b,
+               MethodInfo *method)
+
+{
+  pIVar1 = method->klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  }
+  if (a != (SpawnRoleVariable_1_System_Object_ *)0x0) {
+    pSVar2 = (a->fields).subscribableVariable;
+    if (pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0) {
+      pMVar3 = pIVar1->rgctx_data[0x11].method;
+      pIVar1 = pMVar3->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(pIVar1);
+      }
+      pOVar4 = (pSVar2->fields)._.value;
+      if ((b != (SpawnRoleVariable_1_System_Object_ *)0x0) &&
+         (pSVar2 = (b->fields).subscribableVariable,
+         pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0)) {
+        pIVar1 = pMVar3->klass;
+        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+          func_?(pIVar1);
+        }
+        if (pOVar4 != (Object *)0x0) {
+          cVar5 = (*(code *)(pOVar4->klass->vtable).Equals.method)
+                            (pOVar4,(pSVar2->fields)._.value,
+                             (pOVar4->klass->vtable).Finalize.methodPtr);
+          return cVar5 == '\0';
+        }
       }
     }
   }

@@ -8,22 +8,34 @@ void Assembly-CSharp.dll::DesktopPlayModeController+<>c::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
     cRam_? = '\x01';
   }
   if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0xc;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+    pIVar1 = handler->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pIVar1 = handler->klass;
+          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
+          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
+                    (handler,0xc,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
+    }
+    puVar5 = (undefined4 *)func_?(handler,TypeInfo__UnityEngine__EventSystems__IUIStack,3);
+    (*(code *)*puVar5)(handler,0xc,puVar5[1]);
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -38,17 +50,12 @@ void Assembly-CSharp.dll::DesktopPlayModeController+<>c::DesktopPlayModeControll
     func_?(&TypeInfo__DesktopPlayModeController____c);
     cRam_? = '\x01';
   }
-  value = (DesktopPlayModeController_c *)func_?(TypeInfo__DesktopPlayModeController____c);
-  if (value != (DesktopPlayModeController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__DesktopPlayModeController____c->static_fields->__9 = value;
-    func_?(TypeInfo__DesktopPlayModeController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__DesktopPlayModeController____c;
+  value = (DesktopPlayModeController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__DesktopPlayModeController____c->static_fields->__9 = value;
+  func_?(TypeInfo__DesktopPlayModeController____c->static_fields,value);
   return;
 }
 

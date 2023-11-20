@@ -32,6 +32,32 @@ public class UseInteractorVisualization : MonoBehaviour
 	public bool HasUseRequirements { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<UseRequirement, bool> __9__33_0;
+		public static Func<UseRequirement, bool> __9__33_1;
+		public static Func<UseRequirement, bool> __9__36_0;
+		public static Func<UseRequirement, bool> __9__41_0;
+		public static Func<UseRequirement, bool> __9__41_1;
+		public static Func<UseRequirement, bool> __9__42_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _Disable_b__33_0(UseRequirement _);
+		internal bool _Disable_b__33_1(UseRequirement requirement);
+		internal bool _UpdateData_b__36_0(UseRequirement _);
+		internal bool _PayUseCost_b__41_0(UseRequirement _);
+		internal bool _PayUseCost_b__41_1(UseRequirement requirement);
+		internal bool _DestroyRequirementObjects_b__42_0(UseRequirement _);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass21_0
 	{
@@ -69,32 +95,6 @@ public class UseInteractorVisualization : MonoBehaviour
 
 		// Methods
 		internal bool _Hide_b__1(UseRequirement requirement);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static Func<UseRequirement, bool> __9__33_0;
-		public static Func<UseRequirement, bool> __9__33_1;
-		public static Func<UseRequirement, bool> __9__36_0;
-		public static Func<UseRequirement, bool> __9__41_0;
-		public static Func<UseRequirement, bool> __9__41_1;
-		public static Func<UseRequirement, bool> __9__42_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal bool _Disable_b__33_0(UseRequirement _);
-		internal bool _Disable_b__33_1(UseRequirement requirement);
-		internal bool _UpdateData_b__36_0(UseRequirement _);
-		internal bool _PayUseCost_b__41_0(UseRequirement _);
-		internal bool _PayUseCost_b__41_1(UseRequirement requirement);
-		internal bool _DestroyRequirementObjects_b__42_0(UseRequirement _);
 	}
 
 	[CompilerGenerated]

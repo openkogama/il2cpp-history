@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar3 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar3 != '\0') {
         return;
       }
@@ -46,14 +46,12 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if ((x == (Object_1 *)0x0) ||
-         ((*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze),
+         ((*(code *)x->klass[1]._0.namespaze)
+                    (x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy),
          shooter == (MVPlayer *)0x0)) goto code_?;
-      pOVar4 = x->klass;
-      uVar5._0_2_ = pOVar4[1]._0.this_arg.attrs;
-      uVar5._2_1_ = pOVar4[1]._0.this_arg.type;
-      uVar5._3_1_ = pOVar4[1]._0.this_arg.field_0x7;
-      (*(code *)pOVar4[1]._0.this_arg.data)
-                (x,modType,(shooter->fields)._ActorNr_k__BackingField,0,uVar5);
+      (**(code **)&x->klass[1]._0.this_arg.attrs)
+                (x,modType,(shooter->fields)._ActorNr_k__BackingField,0,x->klass[1]._0.element_class
+                );
     }
     pGVar1 = (target->fields).gameObject;
     if (pGVar1 != (GameObject *)0x0) {
@@ -76,8 +74,8 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -115,7 +113,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_1
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar3 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar3 != '\0') {
         return;
       }
@@ -127,7 +125,8 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_1
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze);
+      (*(code *)x->klass[1]._0.namespaze)
+                (x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy);
     }
     pGVar1 = (target->fields).gameObject;
     if (pGVar1 != (GameObject *)0x0) {
@@ -188,7 +187,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_2
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar2 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar2 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar2 != '\0') {
         return;
       }
@@ -200,7 +199,8 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_2
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.name)(x,damage,shooter,killedByType,x->klass[1]._0.namespaze);
+      (*(code *)x->klass[1]._0.namespaze)
+                (x,damage,shooter,killedByType,x->klass[1]._0.byval_arg.data.dummy);
     }
     return;
   }
@@ -245,7 +245,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar3 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar3 != '\0') {
         return;
       }
@@ -257,12 +257,9 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
-      pOVar4 = x->klass;
-      uVar5._0_2_ = pOVar4[1]._0.this_arg.attrs;
-      uVar5._2_1_ = pOVar4[1]._0.this_arg.type;
-      uVar5._3_1_ = pOVar4[1]._0.this_arg.field_0x7;
-      (*(code *)pOVar4[1]._0.this_arg.data)
-                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,uVar5);
+      (**(code **)&x->klass[1]._0.this_arg.attrs)
+                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,
+                 x->klass[1]._0.element_class);
     }
     pGVar1 = (target->fields).gameObject;
     if (pGVar1 != (GameObject *)0x0) {
@@ -285,8 +282,8 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_3
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -303,15 +300,11 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4
                     MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
                    );
     func_?(&MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__);
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
   if ((target != (MVWorldObjectClient *)0x0) &&
      (pGVar1 = (target->fields).gameObject, pGVar1 != (GameObject *)0x0)) {
-    pOVar2 = (Object_1 *)&UNK_?;
-    pIVar3 = (Il2CppClass *)
-             MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
-    ;
     x = (Object_1 *)
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                   (pGVar1,
@@ -324,34 +317,28 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      pIVar3 = x->klass[1]._0.castClass;
-      pGVar1 = (GameObject *)0x11;
-      pOVar2 = x;
-      cVar5 = (*(code *)x->klass[1]._0.element_class)();
-      if (cVar5 != '\0') {
+      cVar3 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
+      if (cVar3 != '\0') {
         return;
       }
     }
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object,pOVar2,pGVar1,pIVar3);
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      pOVar6 = x->klass;
-      uVar7._0_2_ = pOVar6[1]._0.this_arg.attrs;
-      uVar7._2_1_ = pOVar6[1]._0.this_arg.type;
-      uVar7._3_1_ = pOVar6[1]._0.this_arg.field_0x7;
-      (*(code *)pOVar6[1]._0.this_arg.data)(x,modifierType,0xffffffff,0,uVar7);
+      (**(code **)&x->klass[1]._0.this_arg.attrs)
+                (x,modifierType,0xffffffff,0,x->klass[1]._0.element_class);
     }
     pGVar1 = (target->fields).gameObject;
     if (pGVar1 != (GameObject *)0x0) {
-      this_00 = (Behaviour *)
+      this_00 = (MVRigidBody *)
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                           (pGVar1,
                            MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
@@ -359,34 +346,19 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_4
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        if (this_00 == (Behaviour *)0x0) goto code_?;
-        if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-                         );
-          cRam_? = '\x01';
-        }
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                          (this_00,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          if (this_00[3].klass == (Behaviour__Class *)0x0) goto code_?;
-          func_?(this_00[3].klass,impulse._0_8_,impulse.z,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-                         );
-          (*(code *)this_00->klass[1]._0.generic_class)
-                    (this_00,this_00->klass[1]._0.typeMetadataHandle);
-        }
+      if (bVar2 != 0) {
+        if (this_00 == (MVRigidBody *)0x0) goto code_?;
+        MVRigidBody::MVRigidBody_AddImpulse(this_00,(MVPlayer *)0x0,impulse,1,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -424,7 +396,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_5
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar3 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar3 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar3 != '\0') {
         return;
       }
@@ -488,7 +460,7 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_6
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      cVar2 = (*(code *)x->klass[1]._0.element_class)(x,0x11,x->klass[1]._0.castClass);
+      cVar2 = (*(code *)x->klass[1]._0.castClass)(x,0x11,x->klass[1]._0.declaringType);
       if (cVar2 != '\0') {
         return;
       }
@@ -500,19 +472,16 @@ void Assembly-CSharp.dll::InteractionPackage::InteractionPackage_HandlePackage_6
                       (x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if ((shooter == (MVPlayer *)0x0) || (x == (Object_1 *)0x0)) goto code_?;
-      pOVar3 = x->klass;
-      uVar4._0_2_ = pOVar3[1]._0.this_arg.attrs;
-      uVar4._2_1_ = pOVar3[1]._0.this_arg.type;
-      uVar4._3_1_ = pOVar3[1]._0.this_arg.field_0x7;
-      (*(code *)pOVar3[1]._0.this_arg.data)
-                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,uVar4);
+      (**(code **)&x->klass[1]._0.this_arg.attrs)
+                (x,modifierType,(shooter->fields)._ActorNr_k__BackingField,0,
+                 x->klass[1]._0.element_class);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -536,7 +505,8 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsSpawnProtecte
     return 0;
   }
   if (targetInteractable != (MVInteractableBase *)0x0) {
-    bVar1 = (*(targetInteractable->klass->vtable).__unknown_3.methodPtr)(targetInteractable,0x11);
+    bVar1 = (*(code *)(targetInteractable->klass->vtable).__unknown_3.method)
+                      (targetInteractable,0x11);
     return bVar1;
   }
   func_?();
@@ -566,7 +536,8 @@ bool Assembly-CSharp.dll::InteractionPackage::InteractionPackage_IsValidTarget
     return 1;
   }
   if (targetInteractable != (MVInteractableBase *)0x0) {
-    cVar2 = (*(targetInteractable->klass->vtable).__unknown_3.methodPtr)(targetInteractable,0x11);
+    cVar2 = (*(code *)(targetInteractable->klass->vtable).__unknown_3.method)
+                      (targetInteractable,0x11);
     return cVar2 == '\0';
   }
   func_?();

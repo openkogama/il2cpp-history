@@ -39,120 +39,76 @@ Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster_CreatePostData
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pDVar6 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-           ::StringLiteral__;
-  pDStack_7 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)::StringLiteral__;
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).Parameters;
-  pDStack_8 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)::StringLiteral__;
+  pSVar6 = ::StringLiteral__;
+  pSStack_7 = ::StringLiteral__;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).Parameters;
+  pSStack_8 = ::StringLiteral__;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
     method_00 = (MethodInfo *)&UNK_?;
-    this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Keys
+    this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Keys__
                         );
     if (this_02 !=
-        (Dictionary_2_TKey_TValue_KeyCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
       pDVar9 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-               Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                          (&DStack_10,
-                          (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                          (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)this_02,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<System::String,_System::String>__GetEnumerator__
                          );
-      pDStack_11 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                    *)pDVar9->_currentValue;
+      pSStack_11 = (String *)pDVar9->_currentValue;
       DStack_10._version = 0;
       uStack_1 = 1;
       DStack_10._currentValue = (Object *)&stack0xffffffbc;
-      while (bVar12 = mscorlib.dll::System::Collections::Generic::
-                     Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
-                     Object,System::Object]::
-                     Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                               ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                                 *)&stack0xffffffbc,
-                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::String,_System::String>__MoveNext__
-                               ), bVar12 != 0) {
-        pDStack_13 = pDStack_11;
+      while( true ) {
+        bVar12 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
+                Object,UnityEngine::UIElements::TextureId]::
+                Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_UnityEngine_UIElements_TextureId__MoveNext
+                          ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Object_UnityEngine_UIElements_TextureId_
+                            *)&stack0xffffffbc,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::String,_System::String>__MoveNext__
+                          );
+        if (bVar12 == 0) break;
+        pSStack_13 = pSStack_11;
         values = (String__Array *)func_?(TypeInfo__System__String,5);
         if (values == (String__Array *)0x0) goto code_?;
-        if ((pDStack_7 !=
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             0x0) && (iVar14 = func_?(pDStack_7,(values->klass->_0).element_class),
-                     iVar14 == 0)) {
-          uVar15 = func_?();
-          func_?(uVar15,0);
-code_?:
+        if (values->max_length == 0) {
           func_?();
 code_?:
           DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)&UNK_?;
-          func_?();
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)0x0;
-          func_?();
-code_?:
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)&UNK_?;
           func_?();
 code_?:
           DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)&UNK_?;
-          func_?();
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)0x0;
-          func_?();
-code_?:
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)&UNK_?;
           func_?();
 code_?:
           DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)&UNK_?;
-          func_?();
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)0x0;
-          func_?();
-code_?:
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)&UNK_?;
           func_?();
 code_?:
           DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)&UNK_?;
-          func_?();
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)0x0;
-          func_?();
-code_?:
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)&UNK_?;
           func_?();
           goto code_?;
         }
-        if (values->max_length == 0) goto code_?;
-        values->vector[0] = (String *)pDStack_7;
-        func_?(values->vector,pDStack_7);
+        values->vector[0] = pSStack_7;
+        func_?(values->vector,pSStack_7);
         if (cRam_? == '\0') {
           func_?(&StringLiteral__20);
           func_?(&::StringLiteral__);
@@ -160,54 +116,34 @@ code_?:
           func_?(&::StringLiteral__);
           cRam_? = '\x01';
         }
-        if ((pDStack_13 ==
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             0x0) || (pSVar16 = mscorlib.dll::System::String::String_Replace_1
-                                         ((String *)pDStack_13,::StringLiteral__,StringLiteral__26,
-                                          (MethodInfo *)0x0), pSVar16 == (String *)0x0))
-        goto code_?;
-        pDStack_7 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)mscorlib.dll::System::String::String_Replace_1
-                                  (pSVar16,::StringLiteral__,StringLiteral__20,(MethodInfo *)0x0);
-        if (pDStack_7 !=
-            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            0x0) {
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(values->klass->_0).element_class;
-          iVar14 = func_?();
-          if (iVar14 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
+        if (pSStack_13 == (String *)0x0) goto code_?;
+        pSVar6 = mscorlib.dll::System::String::String_Replace_1
+                           (pSStack_13,::StringLiteral__,StringLiteral__26,(MethodInfo *)0x0);
+        if (pSVar6 == (String *)0x0) goto code_?;
+        DStack_10._dictionary =
+             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)mscorlib.dll::System::String::String_Replace_1
+                          (pSVar6,::StringLiteral__,StringLiteral__20,(MethodInfo *)0x0);
         if (values->max_length < 2) goto code_?;
-        values->vector[1] = (String *)pDStack_7;
-        DStack_10._dictionary = pDStack_7;
+        values->vector[1] = (String *)DStack_10._dictionary;
         func_?();
-        if (::StringLiteral__ != (String *)0x0) {
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(values->klass->_0).element_class;
-          iVar14 = func_?();
-          if (iVar14 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
         if (values->max_length < 3) goto code_?;
         DStack_10._dictionary =
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             ::StringLiteral__;
+             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)::StringLiteral__;
         values->vector[2] = ::StringLiteral__;
         func_?();
-        this_01 = (this->fields).Parameters;
-        if (this_01 == (Dictionary_2_System_String_System_String_ *)0x0) goto code_?;
-        pDStack_13 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                  ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                                   (Object *)pDStack_13,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
-                                  );
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (this->fields).Parameters;
+        if (this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+        goto code_?;
+        pSStack_7 = (String *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Object,UnityEngine::UIElements::TextureId]::
+                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                               (this_01,(Object *)pSStack_13,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
+                               );
         if (cRam_? == '\0') {
           func_?(&StringLiteral__20);
           func_?(&::StringLiteral__);
@@ -215,76 +151,52 @@ code_?:
           func_?(&::StringLiteral__);
           cRam_? = '\x01';
         }
-        if ((pDStack_13 ==
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             0x0) || (method_00 = (MethodInfo *)::StringLiteral__,
-                     pSVar16 = mscorlib.dll::System::String::String_Replace_1
-                                        ((String *)pDStack_13,::StringLiteral__,StringLiteral__26,
-                                         (MethodInfo *)0x0), pSVar16 == (String *)0x0))
-        goto code_?;
-        pDStack_13 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)mscorlib.dll::System::String::String_Replace_1
-                                  (pSVar16,::StringLiteral__,StringLiteral__20,(MethodInfo *)0x0);
-        if (pDStack_13 !=
-            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            0x0) {
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(values->klass->_0).element_class;
-          iVar14 = func_?();
-          if (iVar14 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
+        if (pSStack_7 == (String *)0x0) goto code_?;
+        method_00 = (MethodInfo *)::StringLiteral__;
+        pSVar6 = mscorlib.dll::System::String::String_Replace_1
+                           (pSStack_7,::StringLiteral__,StringLiteral__26,(MethodInfo *)0x0);
+        if (pSVar6 == (String *)0x0) goto code_?;
+        DStack_10._dictionary =
+             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)mscorlib.dll::System::String::String_Replace_1
+                          (pSVar6,::StringLiteral__,StringLiteral__20,(MethodInfo *)0x0);
         if (values->max_length < 4) goto code_?;
-        values->vector[3] = (String *)pDStack_13;
-        DStack_10._dictionary = pDStack_13;
+        values->vector[3] = (String *)DStack_10._dictionary;
         func_?();
-        if (::StringLiteral__ != (String *)0x0) {
-          DStack_10._dictionary =
-               (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(values->klass->_0).element_class;
-          iVar14 = func_?();
-          if (iVar14 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
         if (values->max_length < 5) goto code_?;
         DStack_10._dictionary =
-             (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-             ::StringLiteral__;
-        pDStack_11 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)(values->vector + 4);
+             (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)::StringLiteral__;
         values->vector[4] = ::StringLiteral__;
+        pSStack_11 = (String *)(values->vector + 4);
         func_?();
-        pDVar6 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                  *)mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-        pDStack_8 = pDVar6;
-        pDStack_7 = pDVar6;
+        pSVar6 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+        pSStack_8 = pSVar6;
+        pSStack_7 = pSVar6;
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&stack0xffffffbc,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
                  ,method_00);
       uStack_1 = 0xffffffff;
-      pEVar17 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
-      if (pEVar17 != (Encoding *)0x0) {
-        pBVar18 = (Byte__Array *)
-                  (*(pEVar17->klass->vtable).GetBytes_1.methodPtr)
-                            (pEVar17,pDVar6,(pEVar17->klass->vtable).GetBytes_1.method);
+      pEVar14 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+      if (pEVar14 != (Encoding *)0x0) {
+        pBVar15 = (Byte__Array *)
+                 (*(code *)(pEVar14->klass->vtable).GetBytes_1.method)
+                           (pEVar14,pSVar6,(pEVar14->klass->vtable).GetBytes_2.methodPtr);
         *unaff_FS_OFFSET = uStack_3;
-        return pBVar18;
+        return pBVar15;
       }
     }
   }
 code_?:
-  uVar15 = func_?();
-  func_?(uVar15);
-  pcVar19 = (code *)swi(3);
-  pBVar18 = (Byte__Array *)(*pcVar19)();
-  return pBVar18;
+  uVar16 = func_?();
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  pBVar15 = (Byte__Array *)(*pcVar17)();
+  return pBVar15;
 }
 
 
@@ -333,77 +245,74 @@ void Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster_PostForm
     func_?(&StringLiteral_Content_Type);
     cRam_? = '\x01';
   }
-  OStack_4.klass = (Object__Class *)0x0;
-  OStack_4.monitor = (MonitorData *)0x0;
-  puStack_5 = (undefined *)0x0;
   data = Post_FormPoster_CreatePostData(this,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+            );
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__set_Item
-              (this_00,(Object *)StringLiteral_Content_Type,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_Content_Type,
                (Object *)StringLiteral_application_x_www_form_urlencode,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__set_Item_System__String__System__String_
               );
     url = mscorlib.dll::System::String::String_Concat_3
                     ((this->fields).BaseUrl,(this->fields).RelUrl,(MethodInfo *)0x0);
-    this_01 = (MethodInfo *)func_?();
-    if (this_01 != (MethodInfo *)0x0) {
-      UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-      UnityWebRequest__ctor_1((UnityWebRequest *)this_01,url,StringLiteral_POST,(MethodInfo *)0x0);
-      method_00 = this_01;
-      this_02 = (UploadHandlerRaw *)func_?();
-      if (this_02 != (UploadHandlerRaw *)0x0) {
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandlerRaw::
-        UploadHandlerRaw__ctor(this_02,data,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandler::
-        UploadHandler_set_contentType
-                  ((UploadHandler *)this_02,StringLiteral_application_x_www_form_urlencode,
-                   (MethodInfo *)0x0);
+    this_01 = (UnityWebRequest *)func_?();
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest__ctor_1(this_01,url,StringLiteral_POST,(MethodInfo *)0x0);
+    this_02 = (UploadHandlerRaw *)func_?();
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandlerRaw::
+    UploadHandlerRaw__ctor(this_02,data,(MethodInfo *)0x0);
+    if (this_02 != (UploadHandlerRaw *)0x0) {
+      UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandler::
+      UploadHandler_set_contentType
+                ((UploadHandler *)this_02,StringLiteral_application_x_www_form_urlencode,
+                 (MethodInfo *)0x0);
+      if (this_01 != (UnityWebRequest *)0x0) {
         UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-        UnityWebRequest_set_uploadHandler
-                  ((UnityWebRequest *)this_01,(UploadHandler *)this_02,(MethodInfo *)0x0);
-        pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                           (&DStack_7,this_00,
+        UnityWebRequest_set_uploadHandler(this_01,(UploadHandler *)this_02,(MethodInfo *)0x0);
+        pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                            &stack0xffffffa8,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__GetEnumerator__
                            );
-        OStack_4.klass = (Object__Class *)pDVar6->_dictionary;
-        OStack_4.monitor = (MonitorData *)pDVar6->_version;
+        method_00 = (MethodInfo *)(pDVar4->_current).key;
+        uVar5 = *(undefined8 *)&(pDVar4->_current).value;
         uStack_1 = 1;
         while( true ) {
-          pDVar6 = (Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&OStack_4;
-          value = 
-          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__MoveNext__
-          ;
-          bVar8 = mscorlib.dll::System::Collections::Generic::
+          bVar6 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            (pDVar6,
+                            ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                             &stack0xffffffc0,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__MoveNext__
                             );
-          if (bVar8 == 0) break;
+          if (bVar6 == 0) break;
           UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
           UnityWebRequest_SetRequestHeader
-                    ((UnityWebRequest *)this_01,(String *)pDVar6,(String *)value,(MethodInfo *)0x0);
+                    (this_01,(String *)method_00,(String *)uVar5,(MethodInfo *)0x0);
         }
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (&OStack_4,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&stack0xffffffc0,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
                    ,method_00);
         uStack_1 = 0xffffffff;
         UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-        UnityWebRequest_SendWebRequest((UnityWebRequest *)this_01,(MethodInfo *)0x0);
+        UnityWebRequest_SendWebRequest(this_01,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
@@ -411,8 +320,8 @@ void Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster_PostForm
   }
   func_?();
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -424,7 +333,7 @@ void Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster__ctor
                Dictionary_2_System_String_System_String_ *parameters,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).BaseUrl = base_url;
   func_?(&(this->fields).BaseUrl,base_url);

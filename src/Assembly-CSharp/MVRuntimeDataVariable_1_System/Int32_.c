@@ -10,7 +10,7 @@ int32_t Assembly-CSharp.dll::MVRuntimeDataVariable`1[System::Int32]::
     unaff_ESI = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
                           ((MVRuntimeDataVariable *)this,(MethodInfo *)0x0);
     pIVar1 = method->klass->rgctx_data->klass;
-    if (pIVar1->initialized_and_no_error == 0) {
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
       pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
     if (unaff_ESI != (Object *)0x0) {
@@ -37,9 +37,6 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable`1[System::Int32]::
                (MVRuntimeDataVariable_1_System_Int32_ *this,int32_t value,MethodInfo *method)
 
 {
-  if ((*(byte *)((int)method->klass->rgctx_data->rgctxDataDummy + 0xba) & 1) == 0) {
-    func_?();
-  }
   value_00 = (Object *)func_?();
   if (this != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
     MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value

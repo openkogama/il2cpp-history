@@ -62,7 +62,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                 ((Object_1 *)obj,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&stack0xffffffc8,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_Failed_to_get_VehicleInteractabl,(MethodInfo *)0x0);
     }
     if ((this_01->fields)._size == 1) {
@@ -136,14 +136,14 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                          MethodInfo__System__Collections__Generic__List<VehicleInteractable>__get_Item_int_
                         );
       if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      (**(code **)(*(int *)RVar2 + 0x104))();
+      (**(code **)(*(int *)RVar2 + 0x108))();
     }
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       if ((this_00->fields)._size == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_Failed_to_get_rigid_bodies,(MethodInfo *)0x0);
       }
       iVar3 = (this_00->fields)._size;
@@ -151,7 +151,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_More_than_1_rigidBody__This_is_u,(MethodInfo *)0x0);
         iVar3 = (this_00->fields)._size;
       }
@@ -163,7 +163,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                            MethodInfo__System__Collections__Generic__List<MVRigidBody>__get_Item_int_
                           );
         if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        *(undefined1 *)((int)RVar2 + 0x20) = 1;
+        *(undefined1 *)((int)RVar2 + 0x24) = 1;
       }
       return;
     }
@@ -188,9 +188,7 @@ MVVehicleBase_LocalObjectsBase_GetLocalComponents
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa8;
-  puVar5 = &stack0xffffffa8;
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
                    );
@@ -203,81 +201,79 @@ MVVehicleBase_LocalObjectsBase_GetLocalComponents
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__GetEnumerator__
                    );
-    cRam_? = '\x01';
-    puVar5 = puStack_4;
-  }
-  puStack_4 = puVar5;
-  pvVar6 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-    pvVar6 = (void *)func_?(pvVar6);
-  }
-  pLVar7 = (List_1_System_Object_ *)func_?(pvVar6);
-  pLStack_8 = pLVar7;
-  if (pLVar7 != (List_1_System_Object_ *)0x0) {
-    (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-              (pLVar7,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).localComponents;
-    pLStack_9 = pLVar7;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_11,this_00,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__GetEnumerator__
-                         );
-      method_00 = (MethodInfo *)pLVar10->_version;
-      RVar12 = pLVar10->_current;
-      LStack_11._version = 0;
-      uStack_1 = 1;
-      LStack_11._current = (RegexCharClass_SingleRange)&stack0xffffffb4;
-      while( true ) {
-        while( true ) {
-          do {
-            bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
-                    ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb4,
-                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__MoveNext__
-                              );
-            if (bVar13 == 0) {
-              uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        ((Object *)&stack0xffffffb4,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
-                         ,method_00);
-              *unaff_FS_OFFSET = uStack_3;
-              return pLVar7;
-            }
-            if ((*(byte *)((int)(method->field7_0x1c).rgctx_data[2].rgctxDataDummy + 0xba) & 1) == 0
-               ) {
-              func_?();
-            }
-            iVar14 = func_?();
-            pLVar7 = pLStack_8;
-          } while (iVar14 == 0);
-          pIStack_15 = ((method->field7_0x1c).rgctx_data[3].method)->virtualMethodPointer;
-          IStack_16 = (method->field7_0x1c).rgctx_data[3];
-          uStack_17 = func_?();
-          pLVar7 = pLStack_8;
-          if (RVar12 != (RegexCharClass_SingleRange)0x0) break;
-          (*pIStack_15)();
-        }
-        iVar14 = func_?();
-        pLVar7 = pLStack_8;
-        if (iVar14 == 0) break;
-        (*pIStack_15)();
-      }
-      goto code_?;
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
     }
   }
-  func_?();
+  pIVar4 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar4 = (Il2CppClass *)func_?(pIVar4);
+  }
+  pLVar5 = (List_1_System_Object_ *)func_?(pIVar4);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
+             (method->field7_0x1c).rgctx_data[1].method);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).localComponents;
+  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
-  func_?();
-  func_?();
-  pcVar18 = (code *)swi(3);
-  pLVar7 = (List_1_System_Object_ *)(*pcVar18)();
-  return pLVar7;
+    func_?();
+    func_?();
+    pcVar6 = (code *)swi(3);
+    pLVar5 = (List_1_System_Object_ *)(*pcVar6)();
+    return pLVar5;
+  }
+  pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                       *)&stack0xffffffcc,this_00,
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__GetEnumerator__
+                     );
+  uStack_1 = 1;
+  RVar8 = pLVar7->_current;
+  do {
+    do {
+      RVar9 = RVar8;
+      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__MoveNext__
+                        );
+      if (bVar10 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&stack0xffffffbc,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Component>__Dispose__
+                   ,in_stack_11);
+        *unaff_FS_OFFSET = uStack_3;
+        return pLVar5;
+      }
+      RVar8 = (RegexCharClass_SingleRange)(method->field7_0x1c).rgctx_data[2].klass;
+      if ((*(byte *)((int)RVar8 + 0xbd) & 1) == 0) {
+        RVar8 = (RegexCharClass_SingleRange)func_?();
+      }
+      iVar12 = func_?();
+    } while (iVar12 == 0);
+    if (pLVar5 == (List_1_System_Object_ *)0x0) goto code_?;
+    method_00 = (method->field7_0x1c).rgctx_data[3].method;
+    func_?();
+    if (RVar9 == (RegexCharClass_SingleRange)0x0) {
+      item = (Object *)0x0;
+    }
+    else {
+      item = (Object *)func_?();
+      if (item == (Object *)0x0) {
+        func_?();
+        goto code_?;
+      }
+    }
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (pLVar5,item,method_00);
+  } while( true );
 }
 
 
@@ -323,7 +319,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_Failed_to_get_VehicleInteractabl,(MethodInfo *)0x0);
     }
     if ((pLVar2->fields)._size == 1) {
@@ -334,7 +330,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                          MethodInfo__System__Collections__Generic__List<VehicleInteractable>__get_Item_int_
                         );
       if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0xf4))(RVar3,0xe,0xffffffff);
+      (**(code **)(*(int *)RVar3 + 0xf8))(RVar3,0xe,0xffffffff);
     }
     pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              MVVehicleBase_LocalObjectsBase_GetLocalComponents
@@ -346,14 +342,14 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_Failed_to_get_rigid_bodies,(MethodInfo *)0x0);
       }
       if (1 < (pLVar2->fields)._size) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_More_than_1_rigidBody__This_is_u,(MethodInfo *)0x0);
       }
       if (0 < (pLVar2->fields)._size) {
@@ -364,7 +360,7 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
                            MethodInfo__System__Collections__Generic__List<MVRigidBody>__get_Item_int_
                           );
         if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        *(undefined1 *)((int)RVar3 + 0x20) = 0;
+        *(undefined1 *)((int)RVar3 + 0x24) = 0;
       }
       return;
     }
@@ -394,59 +390,64 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::
     func_?(&TypeInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0);
     cRam_? = '\x01';
   }
-  pOVar1 = (Object *)
-           func_?(TypeInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0);
-  if (pOVar1 != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-    piVar2 = (int *)(*(this->klass->vtable).__unknown_1.methodPtr)
-                              (this,(this->klass->vtable).__unknown_1.method);
-    if ((piVar2 != (int *)0x0) && (v != (Object *)0x0)) {
-      if ((v->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        puVar3 = (undefined4 *)func_?(v);
-        uVar4 = (**(code **)(*piVar2 + 0x39c))(piVar2,*puVar3,*(undefined4 *)(*piVar2 + 0x3a0));
-        if ((char)uVar4 == '\0') {
-          return;
-        }
+  method_00 = TypeInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0;
+  pOVar1 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pMVar2 = this;
+  this = (MVVehicleBase_LocalObjectsBase *)
+         (*(code *)(this->klass->vtable).__unknown_1.method)
+                   (this,(this->klass->vtable).Destroy.methodPtr);
+  if ((this != (MVVehicleBase_LocalObjectsBase *)0x0) && (v != (Object *)0x0)) {
+    if ((v->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+      puVar3 = (undefined4 *)func_?(v);
+      uVar4 = (*(code *)this->klass[2].vtable.Enter.method)
+                        (this,*puVar3,this->klass[2].vtable.Leave.methodPtr);
+      v = (Object *)CONCAT22(uVar4,v._0_2_);
+      if ((char)uVar4 == '\0') {
+        return;
+      }
+      if (pOVar1 != (Object *)0x0) {
         pOVar1[1].klass = (Object__Class *)0x0;
         func_?(pOVar1 + 1,0);
-        piVar2 = (int *)(*(this->klass->vtable).__unknown_1.methodPtr)
-                                  (this,(this->klass->vtable).__unknown_1.method);
-        this_02 = (UnityAction_1_System_Object_ *)
-                  func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
-        if ((this_02 != (UnityAction_1_System_Object_ *)0x0) &&
-           (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-            UnityAction_1_System_Object___ctor
-                      (this_02,pOVar1,
-                       MethodInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0___OnHealthChange_g__DetachLocalAvatar_0_MVWorldObjectClient_
-                       ,(MethodInfo *)0x0), piVar2 != (int *)0x0)) {
-          (**(code **)(*piVar2 + 0x224))(piVar2,this_02,*(undefined4 *)(*piVar2 + 0x228));
+        piVar5 = (int *)(*(code *)(pMVar2->klass->vtable).__unknown_1.method)
+                                  (pMVar2,(pMVar2->klass->vtable).Destroy.methodPtr);
+        this = (MVVehicleBase_LocalObjectsBase *)
+               func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
+        UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+        VideoCapture+OnVideoCaptureResourceCreatedCallback::
+        VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)this,pOVar1,
+                   MethodInfo__MVVehicleBase_LocalObjectsBase____c__DisplayClass15_0___OnHealthChange_g__DetachLocalAvatar_0_MVWorldObjectClient_
+                   ,(MethodInfo *)0x0);
+        if (piVar5 != (int *)0x0) {
+          (**(code **)(*piVar5 + 0x220))(piVar5,this,*(undefined4 *)(*piVar5 + 0x224));
           if ((MVAvatarLocal *)pOVar1[1].klass != (MVAvatarLocal *)0x0) {
             MVAvatarLocal::MVAvatarLocal_LeaveVehicle
                       ((MVAvatarLocal *)pOVar1[1].klass,0,(MethodInfo *)0x0);
           }
-          cStack_5 = (char)((ushort)uVar4 >> 8);
-          if (cStack_5 == '\0') {
-            (*(this->klass->vtable).Leave.methodPtr)(this,(this->klass->vtable).Leave.method);
+          if (v._3_1_ == '\0') {
+            (*(code *)(pMVar2->klass->vtable).Leave.method)
+                      (pMVar2,(pMVar2->klass->vtable).__unknown_2.methodPtr);
           }
           else {
             pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if (pMVar6 == (MVNetworkGame *)0x0) goto code_?;
             this_00 = (pMVar6->fields)._PlayerController_k__BackingField;
-            woID = (*(this->klass->vtable).__unknown.methodPtr)
-                             (this,(this->klass->vtable).__unknown.method);
+            woID = (*(code *)(pMVar2->klass->vtable).__unknown.method)
+                             (pMVar2,(pMVar2->klass->vtable).__unknown_1.methodPtr);
             if (this_00 == (MVLocalObjectController *)0x0) goto code_?;
             MVLocalObjectController::
             MVLocalObjectController_OverrideRemoveTimeForDismountedWorldObject
-                      (this_00,woID,(this->fields).timeBeforeUnregisterAfterDeath,(MethodInfo *)0x0)
-            ;
+                      (this_00,woID,(pMVar2->fields).timeBeforeUnregisterAfterDeath,
+                       (MethodInfo *)0x0);
           }
-          iVar7 = (*(this->klass->vtable).__unknown_1.methodPtr)
-                            (this,(this->klass->vtable).__unknown_1.method);
+          this = (MVVehicleBase_LocalObjectsBase *)(pMVar2->klass->vtable).Destroy.methodPtr;
+          iVar7 = (*(code *)(pMVar2->klass->vtable).__unknown_1.method)();
           if (iVar7 != 0) {
             this_01 = *(MVRuntimeDataVariable **)(iVar7 + 0xf8);
-            cStack_8 = cStack_5;
-            pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,&cStack_8);
+            this = (MVVehicleBase_LocalObjectsBase *)CONCAT13((char)((uint)v >> 0x18),this._0_3_);
+            pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
             if (this_01 != (MVRuntimeDataVariable *)0x0) {
               MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
                         (this_01,pOVar1,(MethodInfo *)0x0);
@@ -455,15 +456,15 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::
           }
         }
       }
-      else {
-        func_?(v,TypeInfo__System__Single);
-      }
+    }
+    else {
+      func_?(v,TypeInfo__System__Single);
     }
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -483,21 +484,16 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase::MVVehicleBase_LocalObj
   (this->fields).timeBeforeUnregisterAfterDeath = 3.0;
   this_00 = (List_1_UnityEngine_Component_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Component>);
-  if (this_00 != (List_1_UnityEngine_Component_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__List__);
-    method_00 = (MethodInfo *)&(this->fields).localComponents;
-    (this->fields).localComponents = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Component>__List__);
+  method_00 = (MethodInfo *)&(this->fields).localComponents;
+  (this->fields).localComponents = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

@@ -9,23 +9,19 @@ void MVWorldObject.dll::FlagReached::FlagReached_GameCountersQuery_OnCounterType
     func_?(&TypeInfo__System__EventArgs);
     cRam_? = '\x01';
   }
-  this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-  if (this_00 != (TweenRunner_1_FloatTween_ *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
-    (this->fields)._.instigatorCounterTypeChangedEvent = e;
-    (this->fields)._.forfilled = 1;
-    func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);
-    if ((this->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
-      pEVar1 = (this->fields)._.OnWinningConditionChanged;
-      (*(pEVar1->fields)._._.invoke_impl)
-                ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
-    }
-    return;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__System__EventArgs);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  (this->fields)._.forfilled = 1;
+  (this->fields)._.instigatorCounterTypeChangedEvent = e;
+  func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);
+  if ((this->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar1 = (this->fields)._.OnWinningConditionChanged;
+    (*(pEVar1->fields)._._.invoke_impl)
+              ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 

@@ -34,12 +34,6 @@ void Assembly-CSharp.dll::PopElement::PopElement_Pop(PopElement *this,MethodInfo
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -85,24 +79,18 @@ void Assembly-CSharp.dll::PopElement::PopElement_PopGroups(PopElement *this,Meth
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__PopElement___PopGroups_b__2_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__PopElement___PopGroups_b__2_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
   return;
 }
 
@@ -167,25 +155,44 @@ void Assembly-CSharp.dll::PopElement::PopElement__ctor(PopElement *this,MethodIn
   }
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UIGroupFlags>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<UIGroupFlags>__List__);
+  pMVar1 = MethodInfo__System__Collections__Generic__List<UIGroupFlags>__Add_UIGroupFlags_;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<UIGroupFlags>__List__);
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Add
-              (this_00,(RegexCharClass_SingleRange)0x0,
-               MethodInfo__System__Collections__Generic__List<UIGroupFlags>__Add_UIGroupFlags_);
-    (this->fields).popGroups = (List_1_UIGroupFlags_ *)this_00;
-    func_?(&(this->fields).popGroups,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
+    piVar2 = &(this_00->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    pRVar3 = (this_00->fields)._items;
+    if (pRVar3 != (RegexCharClass_SingleRange__Array *)0x0) {
+      uVar4 = (this_00->fields)._size;
+      if (pRVar3->max_length <= uVar4) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+        RegexCharClass+SingleRange]::
+        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                  (this_00,(RegexCharClass_SingleRange)0x0,pMVar1->klass->rgctx_data[0xe].method);
+code_?:
+        (this->fields).popGroups = (List_1_UIGroupFlags_ *)this_00;
+        func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+                  ((MonoBehaviour *)this,(MethodInfo *)0x0);
+        return;
+      }
+      (this_00->fields)._size = uVar4 + 1;
+      if (uVar4 < pRVar3->max_length) {
+        pRVar3->vector[uVar4].First = 0;
+        pRVar3->vector[uVar4].Last = 0;
+        goto code_?;
+      }
+      goto code_?;
+    }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

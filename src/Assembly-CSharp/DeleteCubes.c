@@ -21,48 +21,41 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Enter
     cubeCorners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
                             ((MethodInfo *)0x0);
     value = (DeleteCursor *)func_?(TypeInfo__DeleteCursor);
-    if (value != (DeleteCursor *)0x0) {
-      if (cRam_? == '\0') {
-        unaff_ESI = (MethodInfo *)&UNK_?;
-        func_?(&TypeInfo__CellCursor);
-        cRam_? = '\x01';
-      }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar1 != (PrefabPool *)0x0) {
-        material = (pPVar1->fields).cellCursorErrorMaterial;
-        this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
-        if (this_01 != (CellCursor *)0x0) {
-          CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-          (value->fields).deleteCursor = this_01;
-          func_?(&value->fields,this_01);
-          (this->fields).deleteCursor = value;
-          func_?(&(this->fields).deleteCursor,value);
-          pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if (((pGVar2 != (GameEventManager *)0x0) &&
-              (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
-              pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-             (this_00 = (pGVar3->fields).LaserCommands,
-             this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
-             ) {
-            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-            GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-                      (this_00,LaserPointerState__Enum_DeletingCubes,(MethodInfo *)0x0);
-            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
-                              (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-            (this->fields)._.waitForMouseUp = bVar4;
-            return;
-          }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__CellCursor);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar1 != (PrefabPool *)0x0) {
+      material = (pPVar1->fields).cellCursorErrorMaterial;
+      this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
+      CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+      (value->fields).deleteCursor = this_01;
+      func_?(&value->fields,this_01);
+      (this->fields).deleteCursor = value;
+      func_?(&(this->fields).deleteCursor,value);
+      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar2 != (GameEventManager *)0x0) &&
+          (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
+          pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (this_00 = (pGVar3->fields).LaserCommands,
+         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_00,LaserPointerState__Enum_DeletingCubes,(MethodInfo *)0x0);
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
+        bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+        (this->fields)._.waitForMouseUp = bVar4;
+        return;
       }
     }
   }
@@ -80,12 +73,12 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7c4);
+    func_?(0xdbf0);
     func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0x6154);
+    func_?(0xea68);
     cRam_? = '\x01';
   }
   pCVar1 = TypeInfo__CubeModelTool->static_fields;
@@ -311,7 +304,7 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_HideCursor(DeleteCubes *this,
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
       }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)array,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__

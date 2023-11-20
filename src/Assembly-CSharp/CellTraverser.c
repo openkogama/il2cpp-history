@@ -7,6 +7,7 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_DebugAll
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&StringLiteral_localChunkSpaceVoxelPos_);
     func_?(&StringLiteral_stepZ_);
     func_?(&StringLiteral_stepX_);
@@ -18,75 +19,64 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_DebugAll
     func_?(&StringLiteral_stepY_);
     cRam_? = '\x01';
   }
-  VStack_1.x = 0.0;
-  VStack_1.y = 0.0;
-  IStack_2.x = 0;
-  IStack_2.y = 0;
-  IStack_2.z = 0;
-  VStack_1.z = 0.0;
-  pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_ToString
-                     ((Ray *)&stack0xffffffd0,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_intersectRay_,pSVar3,(MethodInfo *)0x0);
+  IStack_1.x = 0;
+  IStack_1.y = 0;
+  IStack_1.z = 0;
+  pSVar2 = (String *)func_?(&stack0xffffffd0,0,0,0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_intersectRay_,pSVar2,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  VStack_1.z = (this->fields).tMax.z;
-  VStack_1.x = (this->fields).tMax.x;
-  VStack_1.y = (this->fields).tMax.y;
-  pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ToString
-                     (&VStack_1,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_tMax_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  IStack_2.x = (this->fields).localChunkSpaceVoxelPos.x;
-  IStack_2.y = (this->fields).localChunkSpaceVoxelPos.y;
-  IStack_2.z = (this->fields).localChunkSpaceVoxelPos.z;
-  pSVar3 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
-                     (&IStack_2,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_localChunkSpaceVoxelPos_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = (String *)func_?(&stack0xffffffe8,0,0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_tMax_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  IStack_1.x = (this->fields).localChunkSpaceVoxelPos.x;
+  IStack_1.y = (this->fields).localChunkSpaceVoxelPos.y;
+  IStack_1.z = (this->fields).localChunkSpaceVoxelPos.z;
+  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pSVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                     (&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_localChunkSpaceVoxelPos_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepX,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepX_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepX_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepY,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepY_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepY_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepZ,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepZ_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  VStack_1.z = (this->fields).tDelta.z;
-  VStack_1.x = (this->fields).tDelta.x;
-  VStack_1.y = (this->fields).tDelta.y;
-  pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ToString
-                     (&VStack_1,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_tDelta_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  IStack_2.x = (this->fields).stepDir.x;
-  IStack_2.y = (this->fields).stepDir.y;
-  IStack_2.z = (this->fields).stepDir.z;
-  pSVar3 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
-                     (&IStack_2,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepDir_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
-  VStack_1.z = (this->fields).initialtMax.z;
-  VStack_1.x = (this->fields).initialtMax.x;
-  VStack_1.y = (this->fields).initialtMax.y;
-  pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ToString
-                     (&VStack_1,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_initialtMax_,pSVar3,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar3,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepZ_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  puStack3 = &stack0xffffffe8;
+  pSVar2 = (String *)func_?();
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_tDelta_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  IStack_1.x = (this->fields).stepDir.x;
+  IStack_1.y = (this->fields).stepDir.y;
+  IStack_1.z = (this->fields).stepDir.z;
+  pSVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                     (&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepDir_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  puStack4 = &stack0xffffffe8;
+  pSVar2 = (String *)func_?();
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_initialtMax_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   return;
 }
 
@@ -100,323 +90,185 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_Init
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ICubeModelCollider);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
   pIVar1 = collisionState.cmb;
   if (collisionState.cmb != (ICubeModelCollider *)0x0) {
-    uVar2 = 0;
-    uVar3 = ((collisionState.cmb)->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = (collisionState.cmb)->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if ((collisionState.cmb)->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__ICubeModelCollider) {
-          pVVar4 = &((collisionState.cmb)->klass->vtable).get_PrototypeCubeModel +
-                    (collisionState.cmb)->klass->interfaceOffsets[uVar2].offset;
+          ppMVar5 = &(&((collisionState.cmb)->klass->vtable).get_PrototypeCubeModel)
+                      [(collisionState.cmb)->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    pVVar4 = (VirtualInvokeData *)
-              func_?(collisionState.cmb,TypeInfo__ICubeModelCollider,8);
+    ppMVar5 = (MethodInfo **)func_?(collisionState.cmb,TypeInfo__ICubeModelCollider,8);
 code_?:
-    iVar5 = (*pVVar4->methodPtr)(pIVar1,pVVar4->method);
-    if (iVar5 != 0) {
-      (this->fields).chunkSize = *(int32_t *)(iVar5 + 0x18);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
-      ParticleSystem_Particle_set_position
-                ((ParticleSystem_Particle *)&this->fields,localOrigin,(MethodInfo *)0x0);
-      value.y = collisionState.localDirection.y;
-      value.x = collisionState.localDirection.x;
-      value.z = collisionState.localDirection.z;
-      UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_set_direction
-                (&(this->fields).intersectRay,value,(MethodInfo *)0x0);
-      pRVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                          ((Regex_CachedCodeEntryKey *)&stack0xffffffd0,
-                           (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                            *)&this->fields,(MethodInfo *)0x0);
-      uVar7 = pRVar6->_options;
-      uVar8 = pRVar6->_cultureKey;
-      localPos.y = (float)uVar7;
-      localPos.x = (float)&stack0xffffffd4;
-      localPos.z = (float)uVar8;
-      IVar9 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-               CubeMathFunctions_LocalPosToLocalIntVector(localPos,(MethodInfo *)pRVar6->_pattern);
-      uVar10 = *IVar9._0_4_;
-      iVar11 = *(int16_t *)(IVar9._0_4_ + 1);
-      (this->fields).voxelPos.x = (short)uVar10;
-      (this->fields).voxelPos.y = (short)((uint)uVar10 >> 0x10);
-      (this->fields).voxelPos.z = iVar11;
-      this_00 = &(this->fields).voxelPos;
-      pSVar12 = (String *)collisionState.scanAxis;
-      iVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                         (&(this->fields).voxelPos,collisionState.scanAxis,(MethodInfo *)0x0);
-      iVar11 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+    iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    if (iVar6 != 0) {
+      (this->fields).chunkSize = *(int32_t *)(iVar6 + 0x18);
+      (this->fields).intersectRay.m_Origin.x = localOrigin.x;
+      (this->fields).intersectRay.m_Origin.y = localOrigin.y;
+      (this->fields).intersectRay.m_Origin.z = localOrigin.z;
+      VStack_7.z = collisionState.localDirection.z;
+      VStack_7.x = collisionState.localDirection.x;
+      VStack_7.y = collisionState.localDirection.y;
+      puVar8 = (undefined8 *)func_?(&stack0xffffffd8,&VStack_7,0);
+      uVar9 = *puVar8;
+      fVar10 = *(float *)(puVar8 + 1);
+      (this->fields).intersectRay.m_Direction.x = (float)(int)uVar9;
+      (this->fields).intersectRay.m_Direction.y = (float)(int)((ulonglong)uVar9 >> 0x20);
+      (this->fields).intersectRay.m_Direction.z = fVar10;
+      uVar11 = (this->fields).intersectRay.m_Origin.x;
+      uVar12 = (this->fields).intersectRay.m_Origin.y;
+      localPos.z = (float)uVar12;
+      localPos.y = (float)uVar11;
+      localPos.x = (float)&VStack_7.y;
+      IVar13 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+               CubeMathFunctions_LocalPosToLocalIntVector
+                         (localPos,(MethodInfo *)(this->fields).intersectRay.m_Origin.z);
+      iVar14 = collisionState.scanAxis;
+      uVar15 = *IVar13._0_4_;
+      iVar16 = *(int16_t *)(IVar13._0_4_ + 1);
+      (this->fields).voxelPos.x = (short)uVar15;
+      (this->fields).voxelPos.y = (short)((uint)uVar15 >> 0x10);
+      (this->fields).voxelPos.z = iVar16;
+      VStack_7.z = (float)collisionState.scanAxis;
+      if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__IntVector);
+      }
+      iVar17 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+                         (&(this->fields).voxelPos,iVar14,(MethodInfo *)0x0);
+      iVar16 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                          (&collisionState.minBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      iVar14 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+      iVar18 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                          (&collisionState.maxBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      if ((iVar11 <= iVar13) && (iVar11 = iVar13, iVar14 < iVar13)) {
-        iVar11 = iVar14;
+      if ((iVar16 <= iVar17) && (iVar16 = iVar17, iVar18 < iVar17)) {
+        iVar16 = iVar18;
       }
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                (this_00,(int32_t)pSVar12,iVar11,(MethodInfo *)0x0);
-      auStack_15._4_4_ = (String *)0x0;
-      uStack_16 = (String *)((uint)uStack_16._2_2_ << 0x10);
+                (&(this->fields).voxelPos,(int32_t)VStack_7.z,iVar16,(MethodInfo *)0x0);
+      auStack_19._4_4_ = 0;
+      uStack_20 = (uint)uStack_20._2_2_ << 0x10;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)(auStack_15 + 4),(uint)(ushort)(this->fields).voxelPos.x,
+                ((IntVector *)(auStack_19 + 4),(uint)(ushort)(this->fields).voxelPos.x,
                  (uint)(ushort)(this->fields).voxelPos.y,(uint)(ushort)(this->fields).voxelPos.z,
                  (MethodInfo *)0x0);
+      auVar21 = auStack_19;
       pIVar1 = collisionState.cmb;
-      (this->fields).localChunkSpaceVoxelPos.x = auStack_15._4_2_;
-      (this->fields).localChunkSpaceVoxelPos.y = auStack_15._6_2_;
-      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_16;
+      (this->fields).localChunkSpaceVoxelPos.x = auStack_19._4_2_;
+      (this->fields).localChunkSpaceVoxelPos.y = auStack_19._6_2_;
+      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_20;
+      VStack_7.z = (float)collisionState.cmb;
+      auStack_19 = auVar21;
       if (collisionState.cmb != (ICubeModelCollider *)0x0) {
-        uVar2 = 0;
-        uVar3 = ((collisionState.cmb)->klass->_1).interface_offsets_count;
+        pIVar2 = (collisionState.cmb)->klass;
+        uVar4 = 0;
+        uVar3._0_1_ = (pIVar2->_1).rank;
+        uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
         if (uVar3 != 0) {
           do {
-            if ((collisionState.cmb)->klass->interfaceOffsets[uVar2].interfaceType ==
+            if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
                 (Il2CppClass *)TypeInfo__ICubeModelCollider) {
-              pVVar4 = &((collisionState.cmb)->klass->vtable).CubePosToChunkPos +
-                        (collisionState.cmb)->klass->interfaceOffsets[uVar2].offset;
+              ppMVar5 = &(&((collisionState.cmb)->klass->vtable).CubePosToChunkPos)
+                          [(collisionState.cmb)->klass->interfaceOffsets[uVar4].offset].method;
               goto code_?;
             }
-            uVar2 = uVar2 + 1;
-          } while (uVar2 < uVar3);
+            uVar4 = uVar4 + 1;
+          } while (uVar4 < uVar3);
         }
-        pVVar4 = (VirtualInvokeData *)
-                  func_?(collisionState.cmb,TypeInfo__ICubeModelCollider,9);
+        ppMVar5 = (MethodInfo **)func_?(collisionState.cmb,TypeInfo__ICubeModelCollider,9)
+        ;
 code_?:
-        (*pVVar4->methodPtr)(pIVar1,&(this->fields).localChunkSpaceVoxelPos,pVVar4->method);
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)&stack0xffffffd0,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&this->fields,(MethodInfo *)0x0);
-        pSVar12 = (String *)pRVar6->_options;
+        (*(code *)*ppMVar5)(pIVar1,&(this->fields).localChunkSpaceVoxelPos,ppMVar5[1]);
+        VStack_7.z = (this->fields).intersectRay.m_Direction.z;
+        VStack_7.x = (this->fields).intersectRay.m_Direction.x;
+        VStack_7.y = (this->fields).intersectRay.m_Direction.y;
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Math);
         }
-        iVar17 = mscorlib.dll::System::Math::Math_Sign_2((float)pSVar12,(MethodInfo *)0x0);
-        (this->fields).stepX = iVar17;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)&stack0xffffffd0,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&this->fields,(MethodInfo *)0x0);
-        iVar17 = mscorlib.dll::System::Math::Math_Sign_2
-                           ((float)pRVar6->_cultureKey,(MethodInfo *)0x0);
-        (this->fields).stepY = iVar17;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)&stack0xffffffd0,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&this->fields,(MethodInfo *)0x0);
-        iVar17 = mscorlib.dll::System::Math::Math_Sign_2((float)pRVar6->_pattern,(MethodInfo *)0x0)
-        ;
-        (this->fields).stepZ = iVar17;
-        uVar10 = _UNK_?;
-        sVar18 = (this->fields).voxelPos.y;
-        iVar5 = (this->fields).stepX;
-        iVar19 = (this->fields).stepY;
-        sVar20 = (this->fields).voxelPos.x;
-        uStack_16 = (String *)0x7f800000;
-        sVar21 = (this->fields).voxelPos.z;
+        iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_7.x,(MethodInfo *)0x0);
+        (this->fields).stepX = iVar14;
+        VStack_7.x = (this->fields).intersectRay.m_Direction.x;
+        VStack_7.y = (this->fields).intersectRay.m_Direction.y;
+        VStack_7.z = (this->fields).intersectRay.m_Direction.z;
+        iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_7.y,(MethodInfo *)0x0);
+        (this->fields).stepY = iVar14;
+        VStack_7.x = (this->fields).intersectRay.m_Direction.x;
+        VStack_7.y = (this->fields).intersectRay.m_Direction.y;
+        VStack_7.z = (this->fields).intersectRay.m_Direction.z;
+        iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_7.z,(MethodInfo *)0x0);
+        (this->fields).stepZ = iVar14;
+        uVar15 = _UNK_?;
+        sVar22 = (this->fields).voxelPos.y;
+        iVar6 = (this->fields).stepX;
+        iVar23 = (this->fields).stepY;
+        sVar24 = (this->fields).voxelPos.x;
+        sVar25 = (this->fields).voxelPos.z;
         (this->fields).tMax.x = (float)_UNK_?;
-        (this->fields).tMax.y = (float)uVar10;
+        (this->fields).tMax.y = (float)uVar15;
         (this->fields).tMax.z = INFINITY;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)auStack_15,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&this->fields,(MethodInfo *)0x0);
-        if ((float)pRVar6->_options != 0.0) {
-          mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-          RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-          KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                    ((Regex_CachedCodeEntryKey *)auStack_15,
-                     (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)&this->fields,(MethodInfo *)0x0);
-          pSVar12 = (String *)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)auStack_15,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)&this->fields,(MethodInfo *)0x0);
+        fVar10 = _UNK_?;
+        uVar26 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar26 != 0.0) {
+          uVar27 = (this->fields).intersectRay.m_Origin.x;
+          uVar28 = (this->fields).intersectRay.m_Direction.x;
           (this->fields).tMax.x =
-               ((float)(int)((int)sVar20 + (uint)(0 < iVar5)) - ((float)pSVar12 + _UNK_?)) /
-               (float)pRVar6->_options;
+               ((float)(int)((int)sVar24 + (uint)(0 < iVar6)) - ((float)uVar27 + _UNK_?)) /
+               (float)uVar28;
         }
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)auStack_15,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&this->fields,(MethodInfo *)0x0);
-        if ((float)pRVar6->_cultureKey != 0.0) {
-          pRVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                              ((Regex_CachedCodeEntryKey *)auStack_15,
-                               (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)&this->fields,(MethodInfo *)0x0);
-          fVar22 = (float)pRVar6->_cultureKey + _UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)auStack_15,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)&this->fields,(MethodInfo *)0x0);
+        uVar29 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar29 != 0.0) {
+          uVar30 = (this->fields).intersectRay.m_Origin.y;
+          uVar31 = (this->fields).intersectRay.m_Direction.y;
           (this->fields).tMax.y =
-               ((float)(int)((uint)(0 < iVar19) + (int)sVar18) - fVar22) / (float)pRVar6->_cultureKey
-          ;
+               ((float)(int)((uint)(0 < iVar23) + (int)sVar22) - ((float)uVar30 + fVar10)) /
+               (float)uVar31;
         }
-        collisionState.localHitPoint.x = 0.0;
-        collisionState.localOrigin.z = (float)&this->fields;
-        collisionState.localOrigin.y = (float)auStack_15;
-        collisionState.localOrigin.x = (float)&UNK_?;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)collisionState.localOrigin.y,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)collisionState.localOrigin.z,(MethodInfo *)0x0);
-        if ((float)pRVar6->_pattern != 0.0) {
-          collisionState.localNormal.x = 0.0;
-          collisionState.localHitPoint.z = (float)&this->fields;
-          collisionState.localHitPoint.y = (float)auStack_15;
-          collisionState.localHitPoint.x = (float)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                              ((Regex_CachedCodeEntryKey *)collisionState.localHitPoint.y,
-                               (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)collisionState.localHitPoint.z,(MethodInfo *)0x0);
-          collisionState.localNormal.x = 0.0;
-          collisionState.localHitPoint.z = (float)&this->fields;
-          fVar22 = (float)pRVar6->_pattern + _UNK_?;
-          collisionState.localHitPoint.y = (float)auStack_15;
-          collisionState.localHitPoint.x = (float)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)collisionState.localHitPoint.y,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)collisionState.localHitPoint.z,(MethodInfo *)0x0);
+        if ((this->fields).intersectRay.m_Direction.z != 0.0) {
           (this->fields).tMax.z =
-               ((float)(int)((uint)(0 < iVar17) + (int)sVar21) - fVar22) / (float)pRVar6->_pattern;
+               ((float)(int)((uint)(0 < iVar14) + (int)sVar25) -
+               ((this->fields).intersectRay.m_Origin.z + fVar10)) /
+               (this->fields).intersectRay.m_Direction.z;
         }
-        fVar22 = (this->fields).tMax.z;
-        fVar23 = (this->fields).tMax.y;
+        fVar32 = (this->fields).tMax.y;
+        fVar10 = (this->fields).tMax.z;
         (this->fields).initialtMax.x = (this->fields).tMax.x;
-        (this->fields).initialtMax.y = fVar23;
-        (this->fields).initialtMax.z = fVar22;
-        uStack_16 = (String *)0x7f800000;
-        (this->fields).tDelta.x = (float)uVar10;
-        (this->fields).tDelta.y = (float)uVar10;
+        (this->fields).initialtMax.y = fVar32;
+        (this->fields).initialtMax.z = fVar10;
+        (this->fields).tDelta.x = (float)uVar15;
+        (this->fields).tDelta.y = (float)uVar15;
         (this->fields).tDelta.z = INFINITY;
-        collisionState.localDirection.z = (float)&this->fields;
-        collisionState.origin.x = 0.0;
-        collisionState.localDirection.y = (float)auStack_15;
-        collisionState.localDirection.x = (float)&UNK_?;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)collisionState.localDirection.y,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)collisionState.localDirection.z,(MethodInfo *)0x0);
-        if ((float)pRVar6->_options != 0.0) {
-          iVar5 = (this->fields).stepX;
-          collisionState.origin.z = (float)&this->fields;
-          collisionState.direction.x = 0.0;
-          collisionState.origin.y = (float)auStack_15;
-          collisionState.origin.x = (float)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)collisionState.origin.y,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)collisionState.origin.z,(MethodInfo *)0x0);
-          (this->fields).tDelta.x = (float)iVar5 / (float)pRVar6->_options;
+        uVar33 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar33 != 0.0) {
+          uVar34 = (this->fields).intersectRay.m_Direction.x;
+          (this->fields).tDelta.x = (float)(this->fields).stepX / (float)uVar34;
         }
-        collisionState.cmb = (ICubeModelCollider *)0x0;
-        collisionState.direction.z = (float)&this->fields;
-        collisionState.direction.y = (float)auStack_15;
-        collisionState.direction.x = (float)&UNK_?;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)collisionState.direction.y,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)collisionState.direction.z,(MethodInfo *)0x0);
-        if ((float)pRVar6->_cultureKey != 0.0) {
-          iVar5 = (this->fields).stepY;
-          collisionState.localToElipsoidSpace.m10 = (float)&this->fields;
-          collisionState.localToElipsoidSpace.m20 = 0.0;
-          collisionState.localToElipsoidSpace.m00 = (float)auStack_15;
-          collisionState.cmb = (ICubeModelCollider *)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)collisionState.localToElipsoidSpace.m00,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)collisionState.localToElipsoidSpace.m10,(MethodInfo *)0x0);
-          (this->fields).tDelta.y = (float)iVar5 / (float)pRVar6->_cultureKey;
+        uVar35 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar35 != 0.0) {
+          uVar36 = (this->fields).intersectRay.m_Direction.y;
+          (this->fields).tDelta.y = (float)(this->fields).stepY / (float)uVar36;
         }
-        collisionState.localToElipsoidSpace.m11 = 0.0;
-        collisionState.localToElipsoidSpace.m01 = (float)&this->fields;
-        collisionState.localToElipsoidSpace.m30 = (float)auStack_15;
-        collisionState.localToElipsoidSpace.m20 = (float)&UNK_?;
-        pRVar6 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                            ((Regex_CachedCodeEntryKey *)collisionState.localToElipsoidSpace.m30,
-                             (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)collisionState.localToElipsoidSpace.m01,(MethodInfo *)0x0);
-        if ((float)pRVar6->_pattern != 0.0) {
-          iVar5 = (this->fields).stepZ;
-          collisionState.localToElipsoidSpace.m31 = (float)&this->fields;
-          collisionState.localToElipsoidSpace.m02 = 0.0;
-          collisionState.localToElipsoidSpace.m21 = (float)auStack_15;
-          collisionState.localToElipsoidSpace.m11 = (float)&UNK_?;
-          pRVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                              ((Regex_CachedCodeEntryKey *)collisionState.localToElipsoidSpace.m21,
-                               (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)collisionState.localToElipsoidSpace.m31,(MethodInfo *)0x0);
-          (this->fields).tDelta.z = (float)iVar5 / (float)pRVar6->_pattern;
+        if ((this->fields).intersectRay.m_Direction.z != 0.0) {
+          (this->fields).tDelta.z =
+               (float)(this->fields).stepZ / (this->fields).intersectRay.m_Direction.z;
         }
         return;
       }
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar37 = (code *)swi(3);
+  (*pcVar37)();
   return;
 }
 
@@ -490,7 +342,7 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser__ctor(CellTraverser *this
             ((IntVector *)&stack0xfffffff4,0,0,0,(MethodInfo *)0x0);
   *(MethodInfo **)&(this->fields).voxelPos = method_00;
   (this->fields).voxelPos.z = 0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

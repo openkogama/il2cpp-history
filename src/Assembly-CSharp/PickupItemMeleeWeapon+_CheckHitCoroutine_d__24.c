@@ -19,17 +19,14 @@ bool Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__24::
                          (this_00,(MethodInfo *)0x0);
       if (pPVar2 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
         fVar3 = (pPVar2->fields)._.fireAnimationTime;
-        this_01 = (SubscribableVariableBase_1_System_Single_ *)
+        this_01 = (SubscribableVariable_1_System_Single_ *)
                   func_?(TypeInfo__UnityEngine__WaitForSeconds);
-        if (this_01 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-          SubscribableVariableBase`1[System::Single]::
-          SubscribableVariableBase_1_System_Single___ctor
-                    (this_01,fVar3 * _UNK_?,(MethodInfo *)0x0);
-          (this->fields).__2__current = (Object *)this_01;
-          func_?(&(this->fields).__2__current,this_01);
-          (this->fields).__1__state = 1;
-          return 1;
-        }
+        SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
+                  (this_01,fVar3 * _UNK_?,(MethodInfo *)0x0);
+        (this->fields).__2__current = (Object *)this_01;
+        func_?(&(this->fields).__2__current,this_01);
+        (this->fields).__1__state = 1;
+        return 1;
       }
     }
 code_?:
@@ -59,7 +56,6 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__24::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

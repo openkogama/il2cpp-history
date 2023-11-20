@@ -127,11 +127,11 @@ void Assembly-CSharp.dll::GamePassProgressionController::GamePassProgressionCont
     }
     else {
       pMStack1 = TypeInfo__MVGamePassProgressionDataObject;
-      if ((*(byte *)(*(int *)RVar2 + 0xb4) <
-           (TypeInfo__MVGamePassProgressionDataObject->_1).typeHierarchyDepth) ||
+      if ((*(byte *)(*(int *)RVar2 + 0xb8) <
+           (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment) ||
          (*(MVGamePassProgressionDataObject__Class **)
            (*(int *)(*(int *)RVar2 + 100) + -4 +
-           (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).typeHierarchyDepth * 4) !=
+           (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment * 4) !=
           TypeInfo__MVGamePassProgressionDataObject)) {
 code_?:
         func_?();
@@ -142,11 +142,11 @@ code_?:
       TypeInfo__GamePassProgressionController->static_fields->progressionDataObject =
            (MVGamePassProgressionDataObject *)RVar2;
       pMStack1 = TypeInfo__MVGamePassProgressionDataObject;
-      if ((*(byte *)(*(int *)RVar2 + 0xb4) <
-           (TypeInfo__MVGamePassProgressionDataObject->_1).typeHierarchyDepth) ||
+      if ((*(byte *)(*(int *)RVar2 + 0xb8) <
+           (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment) ||
          (*(MVGamePassProgressionDataObject__Class **)
            (*(int *)(*(int *)RVar2 + 100) + -4 +
-           (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).typeHierarchyDepth * 4) !=
+           (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment * 4) !=
           TypeInfo__MVGamePassProgressionDataObject)) goto code_?;
     }
     pMStack1 =
@@ -177,11 +177,10 @@ void Assembly-CSharp.dll::GamePassProgressionController::GamePassProgressionCont
   }
   pRVar1 = GamePassProgressionController_GetXPRewardRangeValidator(tier,(MethodInfo *)0x0);
   if (pRVar1 != (RangeValidator_1_System_Int32_ *)0x0) {
-    value_00 = (Object *)(pRVar1->fields).min;
-    if (((int)value_00 <= xpReward) &&
-       (pOVar2 = (Object *)(pRVar1->fields).max, value_00 = (Object *)xpReward,
-       (int)pOVar2 < xpReward)) {
-      value_00 = pOVar2;
+    value_00 = (pRVar1->fields).min;
+    if ((value_00 <= xpReward) &&
+       (iVar2 = (pRVar1->fields).max, value_00 = xpReward, iVar2 < xpReward)) {
+      value_00 = iVar2;
     }
     pMVar3 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
     if ((((pMVar3 != (MVGamePassProgressionDataObject *)0x0) &&
@@ -191,11 +190,11 @@ void Assembly-CSharp.dll::GamePassProgressionController::GamePassProgressionCont
          value != (GamePassProgressionDataObjectShared *)0x0)) &&
         (pGVar4 = (value->fields).xpTierRewards,
         pGVar4 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) &&
-       (this = (Dictionary_2_System_Object_System_Object_ *)(pGVar4->fields).xpTierRewards,
-       this != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this,(Object *)tier,value_00,
+       (this = (pGVar4->fields).xpTierRewards,
+       this != (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)0x0)) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::
+      Dictionary_2_System_ByteEnum_System_Int32__set_Item
+                ((Dictionary_2_System_ByteEnum_System_Int32_ *)this,tier,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_
                 );
       pMVar3 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;

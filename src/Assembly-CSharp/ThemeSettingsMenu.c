@@ -19,10 +19,11 @@ void Assembly-CSharp.dll::ThemeSettingsMenu::ThemeSettingsMenu_Initialize
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__ThemeSettingsMenu____c__DisplayClass2_0);
+  method_00 = TypeInfo__ThemeSettingsMenu____c__DisplayClass2_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)menuController;
     func_?(value + 1,menuController);
     parent = (Transform *)(this->fields)._.settingsArea;
@@ -62,17 +63,15 @@ void Assembly-CSharp.dll::ThemeSettingsMenu::ThemeSettingsMenu_Initialize
           this_01 = (UnityEvent *)(pBVar4->fields).m_OnClick;
           this_02 = (NavMesh_OnNavMeshPreUpdate *)
                     func_?(TypeInfo__UnityEngine__Events__UnityAction);
-          if (this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_02,value,
-                       MethodInfo__ThemeSettingsMenu____c__DisplayClass2_0___Initialize_b__0__,
-                       (MethodInfo *)0x0);
-            if (this_01 != (UnityEvent *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                        (this_01,(UnityAction *)this_02,(MethodInfo *)0x0);
-              return;
-            }
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (this_02,value,
+                     MethodInfo__ThemeSettingsMenu____c__DisplayClass2_0___Initialize_b__0__,
+                     (MethodInfo *)0x0);
+          if (this_01 != (UnityEvent *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                      (this_01,(UnityAction *)this_02,(MethodInfo *)0x0);
+            return;
           }
         }
       }

@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::UnityLogAppender::UnityLogAppender_Log
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)message_00,(MethodInfo *)0x0);
   return;
 }

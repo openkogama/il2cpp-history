@@ -27,19 +27,6 @@ public class FirstTimeActivatablePopupPressKeyToSkip : FirstTimeActivatableEleme
 	public override bool CanShow { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public GameObject instantiatedPopup;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -54,6 +41,19 @@ public class FirstTimeActivatablePopupPressKeyToSkip : FirstTimeActivatableEleme
 
 		// Methods
 		internal void _Clear_b__10_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public GameObject instantiatedPopup;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -10,21 +10,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     func_?(&TypeInfo__Assets__Scripts__AdIntegration__ConsentData);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  value = (ConsentData *)func_?(TypeInfo__Assets__Scripts__AdIntegration__ConsentData);
-  if (value != (ConsentData *)0x0) {
-    (value->fields).isAmerican = 1;
-    (value->fields).isEuropean = 1;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EBP);
-    (this->fields).consentData = value;
-    func_?(&this->fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__Assets__Scripts__AdIntegration__ConsentData;
+  value = (ConsentData *)func_?();
+  (value->fields).isAmerican = 1;
+  (value->fields).isEuropean = 1;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).consentData = value;
+  func_?(&this->fields,value);
   return;
 }
 

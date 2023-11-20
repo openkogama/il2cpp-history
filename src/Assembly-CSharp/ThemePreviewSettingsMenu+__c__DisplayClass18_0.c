@@ -18,19 +18,17 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu+<>c__DisplayClass18_0::
   }
   pSVar1 = (this->fields).msg;
   object = (this->fields).__4__this;
-  this_00 = (UnityAction_2_System_Boolean_System_Object_ *)
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
-  if (this_00 != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::
-    UnityAction_2_System_Boolean_System_Object___ctor
-              (this_00,(Object *)object,
-               MethodInfo__ThemePreviewSettingsMenu__OnThemeSwitchWarningResolved_bool__ConfirmationPopup_
-               ,(MethodInfo *)0x0);
-    if (x != (IModalPopupCreator *)0x0) {
-      func_?(3,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,pSVar1,this_00,
-                      StringLiteral_Theme_activation);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)object,
+             MethodInfo__ThemePreviewSettingsMenu__OnThemeSwitchWarningResolved_bool__ConfirmationPopup_
+             ,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(3,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,pSVar1,this_00,
+                    StringLiteral_Theme_activation);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

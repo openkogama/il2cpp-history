@@ -218,15 +218,15 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
       pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
       if ((pMVar9 != (MVLocalPlayer *)0x0) &&
          (pBVar10 = (pMVar9->fields).boostController, pBVar10 != (BoostController *)0x0)) {
-        this_01 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)BoostController::BoostController_GetAllBoosts(pBVar10,(MethodInfo *)0x0);
         if (this_01 !=
-            (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+            (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)0x0) {
           pDVar11 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                   Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                   Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+                   StyleSheetCache+SheetHandleKey,System::Object]::
+                   Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                              (&DStack_12,this_01,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
                              );
@@ -238,16 +238,16 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
             do {
               bVar14 = mscorlib.dll::System::Collections::Generic::
                       Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                      Object,System::Object]::
-                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                      UInt32,System::Object]::
+                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                                   *)&stack0xffffffc8,
                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
                                 );
               if (bVar14 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           ((Object *)&stack0xffffffc8,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
@@ -308,21 +308,21 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if ((pMVar2 != (MVLocalPlayer *)0x0) &&
      (pSVar3 = (pMVar2->fields).spawnRoleDataMediator, pSVar3 != (SpawnRoleDataMediator *)0x0)) {
-    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar3->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                           );
-    if ((value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) &&
-       (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-        UnityAction_1_System_Int32Enum___ctor
-                  ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                   MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
-                   ,(MethodInfo *)0x0), this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0))
-    {
+    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (pSVar3->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[UnityEngine::Vector3]::
-      SpawnRoleVariable_1_UnityEngine_Vector3__remove_OnChange
+      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__remove_OnChange
                 (this_00,value,
                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                 );
@@ -357,26 +357,25 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if ((pMVar1 != (MVLocalPlayer *)0x0) &&
      (pSVar2 = (pMVar1->fields).spawnRoleDataMediator, pSVar2 != (SpawnRoleDataMediator *)0x0)) {
-    this_00 = (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar2->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                           );
-    if (value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                 MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
-                 ,(MethodInfo *)0x0);
-      if (this_00 != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[UnityEngine::Vector3]::
-        SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                  (this_00,value,
-                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                  );
-        return;
-      }
+    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (pSVar2->fields).spawnRoleMode;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__BoostParticlesActivationEffect__OnAvatarModeChange_MV__Common__SpawnRoleModeType_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
+                (this_00,value,
+                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                );
+      return;
     }
   }
   func_?();
@@ -402,32 +401,34 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
   fVar2 = (this->fields).activationStartTime;
   fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (fVar1 + fVar2 <= fVar3) {
-    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).boostsToActivate;
-    if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).boostsToActivate;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    if (0 < (pLVar4->fields)._size) {
+    if (0 < (this_00->fields)._size) {
       typeToActivate =
            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar4,0,
+                     (this_00,0,
                       MethodInfo__System__Collections__Generic__List<BoostType>__get_Item_int_);
       BoostParticlesActivationEffect_ActivateParticles
                 (this,(BoostType__Enum)typeToActivate,(MethodInfo *)0x0);
-      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).boostsToActivate;
-      if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      this_01 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
+                (this->fields).boostsToActivate;
+      if (this_01 ==
+          (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)
       goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
-                (pLVar4,0,MethodInfo__System__Collections__Generic__List<BoostType>__RemoveAt_int_);
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+      Implementation::UIRStylePainter+RepeatRectUV]::
+      List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
+                (this_01,0,MethodInfo__System__Collections__Generic__List<BoostType>__RemoveAt_int_)
+      ;
     }
   }
   return;
@@ -447,20 +448,15 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
   }
   this_00 = (List_1_BoostType_ *)
             func_?(TypeInfo__System__Collections__Generic__List<BoostType>);
-  if (this_00 != (List_1_BoostType_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<BoostType>__List__);
-    (this->fields).boostsToActivate = this_00;
-    func_?(&(this->fields).boostsToActivate,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<BoostType>__List__);
+  (this->fields).boostsToActivate = this_00;
+  func_?(&(this->fields).boostsToActivate,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -113,12 +113,6 @@ void Assembly-CSharp.dll::ThemeMenuButton::ThemeMenuButton_OnClick
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ThemeMenuButton::IClickHandler>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_ThemeMenuButton_IClickHandler_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,

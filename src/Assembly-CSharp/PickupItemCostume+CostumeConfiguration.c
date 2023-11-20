@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::PickupItemCostume+CostumeConfiguration::
   method_00 = (MethodInfo *)&this->fields;
   func_?(method_00,::StringLiteral__);
   (this->fields)._.cubeModelId = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }

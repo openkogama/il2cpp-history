@@ -13,7 +13,7 @@ Assembly-CSharp.dll::MeleeWeaponHitPackage::MeleeWeaponHitPackage_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5
             (__return_storage_ptr__,InteractionPackageType__Enum_MeleeWeaponHit,damage,impulse,
              PlayerKilledByType__Enum_MeleeWeapon,(MethodInfo *)0x0);
   return __return_storage_ptr__;
@@ -27,6 +27,13 @@ void Assembly-CSharp.dll::MeleeWeaponHitPackage::MeleeWeaponHitPackage_ParseAndH
                ,InteractionData interactionStruct,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
   InteractionPackage::InteractionPackage_HandlePackage
             ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
              PlayerKilledByType__Enum_MeleeWeapon,interactionStruct.impulse,

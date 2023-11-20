@@ -86,13 +86,13 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
                                     (pGVar18,
                                      MVRigidBody_MethodInfo__UnityEngine__GameObject__GetComponent<MVRigidBody>__
                                     ), pMStack_3 != (MVRigidBody *)0x0)))) {
-          cVar19 = (*(pMStack_3->klass->vtable).__unknown.methodPtr)
-                             (pMStack_3,(pMStack_3->klass->vtable).__unknown.method);
+          cVar19 = (*(code *)(pMStack_3->klass->vtable).__unknown.method)
+                             (pMStack_3,(pMStack_3->klass->vtable).__unknown_1.methodPtr);
           if (cVar19 == '\0') {
             puVar20 = (undefined8 *)
-                      (*(pMStack_3->klass->vtable).__unknown_1.methodPtr)
+                      (*(code *)(pMStack_3->klass->vtable).__unknown_1.method)
                                 (&VStack_6,pMStack_3,
-                                 (pMStack_3->klass->vtable).__unknown_1.method);
+                                 (pMStack_3->klass->vtable).__unknown_2.methodPtr);
             VStack_16._0_8_ = *puVar20;
             VStack_16.z = *(float *)(puVar20 + 1);
             OStack_9.currentCryptoKey = 0;
@@ -147,8 +147,8 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
               MVRigidBody::MVRigidBody_AddImpulse_1(pMStack_3,impulse,1,(MethodInfo *)0x0);
             }
           }
-          cVar19 = (*(pPVar2->klass->vtable).get_IsAmmoDepleted.methodPtr)
-                             (pPVar2,(pPVar2->klass->vtable).get_IsAmmoDepleted.method);
+          cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)
+                             (pPVar2,(pPVar2->klass->vtable).get_Quantity.methodPtr);
           if (cVar19 == '\0') {
             fStack_21 = 0.0;
             pOVar24 = (Object *)func_?(TypeInfo__System__Int32,&fStack_21);
@@ -173,11 +173,7 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
                                (x,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar12 != 0) {
               if (x == (Object_1 *)0x0) goto code_?;
-              pOVar25 = x->klass;
-              uVar26._0_2_ = pOVar25[1]._0.byval_arg.attrs;
-              uVar26._2_1_ = pOVar25[1]._0.byval_arg.type;
-              uVar26._3_1_ = pOVar25[1]._0.byval_arg.field_0x7;
-              (*(code *)pOVar25[1]._0.byval_arg.data)(x,uVar26);
+              (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
             }
             return 0;
           }
@@ -187,8 +183,8 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
   }
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  bVar12 = (*pcVar27)();
+  pcVar25 = (code *)swi(3);
+  bVar12 = (*pcVar25)();
   return bVar12;
 }
 
@@ -202,7 +198,6 @@ void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

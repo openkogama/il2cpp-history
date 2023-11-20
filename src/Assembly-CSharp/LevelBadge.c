@@ -53,7 +53,6 @@ code_?:
     }
     pUVar5 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)this,MethodInfo__LevelBadge__OnLevelingInitialized__,
@@ -111,25 +110,21 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_OnDestroy(LevelBadge *this,Meth
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).badgeTextureAsset = (Texture2D *)0x0;
-    func_?(&(this->fields).badgeTextureAsset);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+  (this->fields).badgeTextureAsset = (Texture2D *)0x0;
+  func_?(&(this->fields).badgeTextureAsset);
   return;
 }
 
@@ -153,37 +148,38 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_OnLevelingInitialized
   if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
   iVar3 = (pMVar2->fields)._.level;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__BadgeManager);
     func_?(&
                     MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
                    );
     cRam_? = '\x01';
   }
-  pAVar4 = (Action_1_Object_ *)func_?();
-  if (pAVar4 == (Action_1_Object_ *)0x0) goto code_?;
-  mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-            (pAVar4,(Object *)this,
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
              MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BadgeManager);
   }
   BadgeManager::BadgeManager_GetBadgeTexture
-            (iVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pAVar4,(MethodInfo *)0x0);
+            (iVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
   pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
   if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
+  pUVar4 = (pMVar2->fields)._.OnLevelChanged;
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-  if (this_01 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
-  SVar5.m_value = (float)this;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
   UnityAction_1_System_Int32Enum___ctor
             (this_01,(Object *)this,MethodInfo__LevelBadge__UpdateBadge_int_,(MethodInfo *)0x0);
-  pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)SVar5.m_value,(Delegate *)this_01,(MethodInfo *)0x0);
-  if (pDVar6 == (Delegate *)0x0) {
+  pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pDVar5 == (Delegate *)0x0) {
     (pMVar2->fields)._.OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
     func_?();
@@ -191,7 +187,9 @@ code_?:
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-    this_02 = MVLocalPlayer::MVLocalPlayer_get_XPProgressData(pMVar2,(MethodInfo *)0x0);
+    this_02 = (XPProgressData *)
+              DayNightCycle::DayNightCycle_get__skyParamsList
+                        ((DayNightCycle *)pMVar2,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -203,82 +201,84 @@ code_?:
     iVar3 = XPProgressData::XPProgressData_get_XpNextRel(this_02,(MethodInfo *)0x0);
     if (iVar3 < 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        this = (LevelBadge *)&UNK_?;
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Can_t_calculate_update_progress_,(MethodInfo *)0x0);
     }
     else {
       iVar3 = XPProgressData::XPProgressData_get_XpRel(this_02,(MethodInfo *)0x0);
-      iVar7 = XPProgressData::XPProgressData_get_XpNextRel(this_02,(MethodInfo *)0x0);
-      SVar5.m_value = (float)iVar3 / (float)iVar7;
-      if (SVar5.m_value < 0.0) {
-        pSVar8 = mscorlib.dll::System::Single::Single_ToString
-                            ((Single *)&stack0xfffffff8,(MethodInfo *)0x0);
-        pSVar8 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_ProgressPercentage__,pSVar8,(MethodInfo *)0x0);
+      iVar6 = XPProgressData::XPProgressData_get_XpNextRel(this_02,(MethodInfo *)0x0);
+      value.m_value = (float)iVar3 / (float)iVar6;
+      if (value.m_value < 0.0) {
+        pSVar7 = mscorlib.dll::System::Single::Single_ToString
+                           ((Single *)&stack0xfffffff8,(MethodInfo *)0x0);
+        pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_ProgressPercentage__,pSVar7,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)pSVar8,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)pSVar7,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_processPercentage_invalid_,(MethodInfo *)0x0);
       }
-      this_03.m_value = (float)(this->fields).xpBar;
-      if ((ProgressBarAndroid *)this_03.m_value == (ProgressBarAndroid *)0x0) goto code_?;
+      this_04.m_value = (float)(this_02->fields).memberCount;
+      if ((ProgressBarAndroid *)this_04.m_value == (ProgressBarAndroid *)0x0) goto code_?;
       ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                ((ProgressBarAndroid *)this_03.m_value,SVar5.m_value,(MethodInfo *)0x0);
-      this_00 = (this->fields).subscriberXPBar;
-      if (this_00 == (ProgressBarAndroid *)0x0) goto code_?;
-      ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,this_03.m_value,(MethodInfo *)0x0)
-      ;
+                ((ProgressBarAndroid *)this_04.m_value,value.m_value,(MethodInfo *)0x0);
+      this = (LevelBadge *)(this_02->fields).xpDelta;
+      if (this == (LevelBadge *)0x0) goto code_?;
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress
+                ((ProgressBarAndroid *)this,this_04.m_value,(MethodInfo *)0x0);
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-    pAVar4 = (Action_1_Object_ *)func_?();
-    if (pAVar4 == (Action_1_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (pAVar4,(Object *)this,MethodInfo__LevelBadge__UpdateProgress_XPProgressData_,
+    pXVar8 = (pMVar2->fields).OnXPProgressData;
+    this_03 = (UnityAction_1_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_03,(Object *)this,MethodInfo__LevelBadge__UpdateProgress_XPProgressData_,
                (MethodInfo *)0x0);
-    pXVar9 = (XPProgress_OnXPProgressDataDelegate *)
+    pXVar8 = (XPProgress_OnXPProgressDataDelegate *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)this,(Delegate *)pAVar4,(MethodInfo *)0x0);
-    if (pXVar9 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
+                        ((Delegate *)pXVar8,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pXVar8 == (XPProgress_OnXPProgressDataDelegate *)0x0) {
       (pMVar2->fields).OnXPProgressData = (XPProgress_OnXPProgressDataDelegate *)0x0;
 code_?:
       func_?();
       return;
     }
-    pXVar10 = (XPProgress_OnXPProgressDataDelegate *)0x0;
-    if (pXVar9->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-      pXVar10 = pXVar9;
+    pXVar9 = (XPProgress_OnXPProgressDataDelegate *)0x0;
+    if (pXVar8->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
+      pXVar9 = pXVar8;
     }
-    if (pXVar10 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
-      (pMVar2->fields).OnXPProgressData = pXVar10;
-      pXVar10 = (XPProgress_OnXPProgressDataDelegate *)0x0;
-      if (pXVar9->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-        pXVar10 = pXVar9;
+    if (pXVar9 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+      (pMVar2->fields).OnXPProgressData = pXVar9;
+      pXVar9 = (XPProgress_OnXPProgressDataDelegate *)0x0;
+      if (pXVar8->klass == TypeInfo__XPProgress__OnXPProgressDataDelegate) {
+        pXVar9 = pXVar8;
       }
-      if (pXVar10 != (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
+      if (pXVar9 != (XPProgress_OnXPProgressDataDelegate *)0x0) goto code_?;
     }
   }
   else {
-    pUVar11 = (UnityAction_1_System_Int32_ *)func_?();
-    if (pUVar11 != (UnityAction_1_System_Int32_ *)0x0) {
-      (pMVar2->fields)._.OnLevelChanged = pUVar11;
-      iVar12 = func_?();
-      if (iVar12 != 0) goto code_?;
+    pUVar4 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar4 != (UnityAction_1_System_Int32_ *)0x0) {
+      (pMVar2->fields)._.OnLevelChanged = pUVar4;
+      iVar10 = func_?();
+      if (iVar10 != 0) goto code_?;
     }
     func_?();
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -396,23 +396,19 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_UpdateBadge
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BadgeManager::BadgeManager_GetBadgeTexture
-              (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__LevelBadge__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BadgeManager::BadgeManager_GetBadgeTexture
+            (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -436,7 +432,7 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_UpdateProgress
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Can_t_calculate_update_progress_,(MethodInfo *)0x0);
       return;
     }
@@ -453,9 +449,9 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_UpdateProgress
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_processPercentage_invalid_,(MethodInfo *)0x0);
     }
     pPVar4 = (this->fields).xpBar;

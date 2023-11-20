@@ -63,19 +63,6 @@ public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 	public override GamePassTier Tier { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass28_0
-	{
-		// Fields
-		public SpawnRoleSelectionSkillMenu skillMenu;
-
-		// Constructors
-		public __c__DisplayClass28_0();
-
-		// Methods
-		internal void _OnShowSkillMenu_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -104,6 +91,19 @@ public class SpawnRoleSelectionElement : DefaultSpawnRoleSelectionElement
 		internal void _PreviewTier_b__43_1(IModalPopupCreator x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__44_0(IUIStack x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__44_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass28_0
+	{
+		// Fields
+		public SpawnRoleSelectionSkillMenu skillMenu;
+
+		// Constructors
+		public __c__DisplayClass28_0();
+
+		// Methods
+		internal void _OnShowSkillMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

@@ -216,17 +216,6 @@ code_?:
 }
 
 
-/* Void OnSetHidden() */
-
-void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_OnSetHidden
-               (RotatingShieldLine *this,MethodInfo *method)
-
-{
-  (this->fields).recreatOrbs = 1;
-  return;
-}
-
-
 /* Void OnSetVisible() */
 
 void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_OnSetVisible
@@ -404,8 +393,8 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine__ctor
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
   (this->fields).positions = pVVar1;
   func_?(&(this->fields).positions,pVVar1);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

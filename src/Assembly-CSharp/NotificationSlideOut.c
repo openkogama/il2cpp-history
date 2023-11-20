@@ -42,8 +42,8 @@ void Assembly-CSharp.dll::NotificationSlideOut::NotificationSlideOut_Update
   pNVar1 = (this->fields).notification;
   if (pNVar1 != (Notification *)0x0) {
     fVar2 = (pNVar1->fields).timeSinceStart;
-    iVar3 = (*(pNVar1->klass->vtable).__unknown.methodPtr)
-                      (pNVar1,(pNVar1->klass->vtable).__unknown.method);
+    iVar3 = (*(code *)(pNVar1->klass->vtable).__unknown.method)
+                      (pNVar1,(pNVar1->klass->vtable).Initialize.methodPtr);
     fVar2 = fVar2 / (float)iVar3;
     pfVar4 = &(this->fields).slideOutStartTime;
     if (fVar2 < *pfVar4 || fVar2 == *pfVar4) {

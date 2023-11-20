@@ -31,20 +31,6 @@ public class EditModeClientShopController : MonoBehaviour, IPurchaseClientShopIt
 	private EditModeRepositoryController repositoryController;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass12_0
-	{
-		// Fields
-		public EditModeClientShopController __4__this;
-		public UIPushOption pushOption;
-
-		// Constructors
-		public __c__DisplayClass12_0();
-
-		// Methods
-		internal void _Activate_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -59,6 +45,20 @@ public class EditModeClientShopController : MonoBehaviour, IPurchaseClientShopIt
 
 		// Methods
 		internal void _Activate_b__12_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass12_0
+	{
+		// Fields
+		public EditModeClientShopController __4__this;
+		public UIPushOption pushOption;
+
+		// Constructors
+		public __c__DisplayClass12_0();
+
+		// Methods
+		internal void _Activate_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

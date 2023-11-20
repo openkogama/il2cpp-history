@@ -92,43 +92,41 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
   }
   (this->fields).limbRotator = limbRotator;
   func_?(&(this->fields).limbRotator,limbRotator);
-  if (limbManager != (AvatarLimbManager *)0x0) {
+  if (limbManager == (AvatarLimbManager *)0x0) {
+    func_?();
+  }
+  else {
     pAVar1 = (limbManager->fields).OnAvatarRotate;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,
-                 MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__,
-                 (MethodInfo *)0x0);
-      pAVar1 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pAVar1 == (Action *)0x0) {
-        (limbManager->fields).OnAvatarRotate = (Action *)0x0;
-        func_?();
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,
+               MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__,
+               (MethodInfo *)0x0);
+    pAVar1 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar1 == (Action *)0x0) {
+      (limbManager->fields).OnAvatarRotate = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 != (Action *)0x0) {
+      (limbManager->fields).OnAvatarRotate = pAVar2;
       pAVar2 = (Action *)0x0;
       if (pAVar1->klass == TypeInfo__System__Action) {
         pAVar2 = pAVar1;
       }
       if (pAVar2 != (Action *)0x0) {
-        (limbManager->fields).OnAvatarRotate = pAVar2;
-        pAVar2 = (Action *)0x0;
-        if (pAVar1->klass == TypeInfo__System__Action) {
-          pAVar2 = pAVar1;
-        }
-        if (pAVar2 != (Action *)0x0) {
-          func_?();
-          return;
-        }
+        func_?();
+        return;
       }
-      goto code_?;
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -149,7 +147,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
   }
   this_00 = (this->fields).limbRotator;
   (this->fields).idleTime = 0.0;
-  b = StringLiteral_Idle;
+  animation = StringLiteral_Idle;
   if (this_00 != (AvatarLimbManager_LimbRotator *)0x0) {
     if (cRam_? == '\0') {
       func_?(&
@@ -164,53 +162,19 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
     }
     this_01 = (this_00->fields).limbControllers;
     if ((this_01 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) &&
-       (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,
-                            MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
-                           ), pOVar2 != (Object *)0x0)) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                       );
-        cRam_? = '\x01';
-      }
-      this_02 = pOVar2[0x10].klass;
-      index = 0;
-      while (this_02 != (Object__Class *)0x0) {
-        if ((int)(this_02->_0).namespaze <= index) {
-          return;
-        }
-        if (pOVar2[0x10].klass == (Object__Class *)0x0) break;
-        a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       pOVar2[0x10].klass,index,
-                       MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                      );
-        bVar1 = mscorlib.dll::System::String::String_op_Equality((String *)a,b,(MethodInfo *)0x0);
-        this_02 = pOVar2[0x10].klass;
-        if (bVar1 != 0) {
-          if (this_02 != (Object__Class *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__RemoveAt
-                      ((List_1_System_Object_ *)this_02,index,
-                       MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_
-                      );
-            return;
-          }
-          break;
-        }
-        index = index + 1;
-      }
+       (this_02 = (LimbController *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,
+                             MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                            ), this_02 != (LimbController *)0x0)) {
+      LimbController::LimbController_StopBlendingWithAnimation(this_02,animation,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -322,71 +286,39 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
   fVar1 = (this->fields).idleTime;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 + fVar1;
-  bVar3 = fVar2 < _UNK_?;
+  bVar3 = _UNK_? <= fVar2;
   (this->fields).idleTime = fVar2;
-  b = StringLiteral_Idle;
+  animation = StringLiteral_Idle;
   if (bVar3) {
-    return;
-  }
-  this_00 = (this->fields).limbRotator;
-  if (this_00 != (AvatarLimbManager_LimbRotator *)0x0) {
+    this_00 = (this->fields).limbRotator;
+    if (this_00 == (AvatarLimbManager_LimbRotator *)0x0) {
+code_?:
+      func_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
                      );
       cRam_? = '\x01';
     }
-    bVar4 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController
+    bVar5 = AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_HasLimbController
                       (this_00,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      return;
-    }
-    this_01 = (this_00->fields).limbControllers;
-    if ((this_01 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) &&
-       (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,
-                            MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
-                           ), pOVar5 != (Object *)0x0)) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      index = 0;
-      pOVar6 = pOVar5[0x10].klass;
-      while (pOVar6 != (Object__Class *)0x0) {
-        this_02 = pOVar5[0x10].klass;
-        if ((int)(pOVar6->_0).namespaze <= index) {
-          if (this_02 != (Object__Class *)0x0) {
-            func_?(this_02,b,
-                            MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                           );
-            return;
-          }
-          break;
-        }
-        if (this_02 == (Object__Class *)0x0) break;
-        a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this_02,
-                       index,
-                       MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                      );
-        bVar4 = mscorlib.dll::System::String::String_op_Equality((String *)a,b,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          return;
-        }
-        index = index + 1;
-        pOVar6 = pOVar5[0x10].klass;
-      }
+    if (bVar5 != 0) {
+      this_01 = (this_00->fields).limbControllers;
+      if ((this_01 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) ||
+         (this_02 = (LimbController *)
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,0,
+                               MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                              ), this_02 == (LimbController *)0x0)) goto code_?;
+      LimbController::LimbController_StartBlendingWithAnimation(this_02,animation,(MethodInfo *)0x0)
+      ;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
   return;
 }
 
@@ -398,8 +330,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
                (AvatarLimbManager_AvatarHeadRotationHandler *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).UpdateIdleTimer.methodPtr)
-            (this,(this->klass->vtable).UpdateIdleTimer.method);
+  (*(code *)(this->klass->vtable).UpdateIdleTimer.method)(this,this->klass[1]._0.image);
   (this->fields).shouldLean = 1;
   return;
 }

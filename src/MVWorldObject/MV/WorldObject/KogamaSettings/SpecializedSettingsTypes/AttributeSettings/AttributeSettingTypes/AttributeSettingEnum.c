@@ -39,15 +39,15 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)0x0;
   DStack_7._version = 0;
   DStack_7._index = 0;
   DStack_7._current.key = 0;
   pSStack_8 = ::StringLiteral__;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).valueAttributeValueMap;
+  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).valueAttributeValueMap;
   DStack_7._current.value = 0;
   DStack_7._getEnumeratorRetType = 0;
-  if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  if (this_00 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
 code_?:
     uVar9 = func_?();
     func_?(uVar9);
@@ -65,28 +65,28 @@ code_?:
     func_?(uVar9);
   }
   else {
-    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff98,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
                        );
     uStack_11 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar10->_dictionary;
+    DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar10->_dictionary;
     DStack_7._version = pDVar10->_version;
     DStack_7._index = pDVar10->_index;
-    DStack_7._current.key = (int32_t)(pDVar10->_current).key;
+    DStack_7._current.key = (pDVar10->_current).key;
     DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
     uStack_1 = 1;
     apDStack_12[0] = &DStack_7;
     while (bVar13 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Int32Enum]::
-                   Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum__MoveNext
+                   Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Int32]::
+                   Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32__MoveNext
                              (&DStack_7,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
                              ), bVar13 != 0) {
-      pOStack_14 = (Object *)DStack_7._current.key;
-      pDStack_15 = (Dictionary_2_System_Int32Enum_System_Object_ *)DStack_7._current.value;
+      uStack_14 = DStack_7._current.key;
+      pDStack_15 = (Dictionary_2_System_Int32_System_Object_ *)DStack_7._current.value;
       pKStack_16 = (KogamaSettingEnum *)func_?();
       pDStack_17 = pDStack_15;
       pOVar18 = (Object *)func_?();
@@ -96,7 +96,7 @@ code_?:
       pSStack_8 = pSVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
@@ -108,8 +108,7 @@ code_?:
                      );
       cRam_? = '\x01';
     }
-    pDStack_15 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                 (this->fields).valueAttributeValueMap;
+    pDStack_15 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).valueAttributeValueMap;
     pKStack_16 = (this->fields)._.KogamaSettingEnum;
     if (pKStack_16 == (KogamaSettingEnum *)0x0) goto code_?;
     if (cRam_? == '\0') {
@@ -121,12 +120,12 @@ code_?:
     pIVar20 = TypeInfo__System__Int32;
     if ((pOVar18->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
     goto code_?;
-    pIVar21 = (Int32Enum__Enum *)func_?(pOVar18);
-    if (pDStack_15 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) goto code_?;
+    piVar21 = (int32_t *)func_?(pOVar18);
+    if (pDStack_15 == (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
     pSStack_8 = (String *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           (pDStack_15,*pIVar21,
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                           (pDStack_15,*piVar21,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
                            );
     pKStack_16 = (KogamaSettingEnum *)func_?(TypeInfo__System__Int32,&pSStack_8);
@@ -144,7 +143,7 @@ code_?:
     args->vector[1] = (Object *)pSVar6;
     func_?(args->vector + 1,pSVar6);
     apDStack_12[0] =
-         (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Int32Enum_ *)
+         (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32_ *)
          (this->fields)._ExclusivityFlag_k__BackingField;
     pOVar18 = (Object *)
              func_?(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingsExclusivityFlag
@@ -234,7 +233,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
     cRam_? = '\x01';
   }
   pKVar1 = (this->fields)._.KogamaSettingEnum;
-  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).valueAttributeValueMap;
+  this_00 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).valueAttributeValueMap;
   if (pKVar1 != (KogamaSettingEnum *)0x0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__Int32);
@@ -245,11 +244,11 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
       pIVar3 = TypeInfo__System__Int32;
       if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      pIVar4 = (Int32Enum__Enum *)func_?(pOVar2);
-      if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                           (this_00,*pIVar4,
+      piVar4 = (int32_t *)func_?(pOVar2);
+      if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                           (this_00,*piVar4,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
                            );
         return (int32_t)pOVar2;

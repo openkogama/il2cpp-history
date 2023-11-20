@@ -179,32 +179,32 @@ void Assembly-CSharp.dll::JoinStatusInfo::JoinStatusInfo__cctor(MethodInfo *meth
     func_?(&TypeInfo__JoinStatusInfo);
     cRam_? = '\x01';
   }
-  this = (HashSet_1_UnityEngine_Vector3_ *)
+  this = (HashSet_1_System_ByteEnum_ *)
          func_?(TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>);
-  if (this != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this,
-               MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__HashSet__
-              );
-    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-    HashSet_1_System_Object__Add
-              ((HashSet_1_System_Object_ *)this,(Object *)0x65,
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+  HashSet_1_System_ByteEnum___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__HashSet__)
+  ;
+  if (this != (HashSet_1_System_ByteEnum_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
+              (this,0x65,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
               );
-    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-    HashSet_1_System_Object__Add
-              ((HashSet_1_System_Object_ *)this,(Object *)0x66,
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
+              (this,0x66,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
               );
-    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-    HashSet_1_System_Object__Add
-              ((HashSet_1_System_Object_ *)this,(Object *)0x3d,
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
+              (this,0x3d,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVEventCodes>__Add_MV__Common__MVEventCodes_
               );
     TypeInfo__JoinStatusInfo->static_fields->createGameSnapshotEvents =
          (HashSet_1_MV_Common_MVEventCodes_ *)this;
-    func_?(TypeInfo__JoinStatusInfo->static_fields,this);
+    func_?(TypeInfo__JoinStatusInfo->static_fields);
     return;
   }
   func_?();

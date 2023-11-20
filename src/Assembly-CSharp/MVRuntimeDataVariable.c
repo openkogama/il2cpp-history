@@ -43,24 +43,25 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable::MVRuntimeDataVariable_Receive
   pOVar1 = (this->fields).variableId;
   if (pOVar1 != (ObscuredString *)0x0) {
     pOVar2 = (Object *)
-             (*(pOVar1->klass->vtable).ToString.methodPtr)
-                       (pOVar1,(pOVar1->klass->vtable).ToString.method);
+             (*(code *)(pOVar1->klass->vtable).ToString.method)(pOVar1,pOVar1->klass[1]._0.image);
     if (runtimeDataDelta != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)runtimeDataDelta,
-                         pOVar2,
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                         runtimeDataDelta,pOVar2,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
       if (bVar3 != 0) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (runtimeDataDelta,pOVar2,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
+        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                           runtimeDataDelta,pOVar2,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
         pOVar4 = ObscuredTypesConverter::ObscuredTypesConverter_CreateObscuredValue
-                           (pOVar2,(MethodInfo *)0x0);
+                           ((Object *)value.m_Index,(MethodInfo *)0x0);
         pOVar2 = (this->fields).value;
         (this->fields).value = pOVar4;
         func_?(&(this->fields).value,pOVar4);
@@ -107,8 +108,8 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable::MVRuntimeDataVariable_Send
   }
   pOVar1 = (this->fields).value;
   if (pOVar1 != (Object *)0x0) {
-    cVar2 = (*(pOVar1->klass->vtable).Equals.methodPtr)
-                      (pOVar1,(this->fields).sendValue,(pOVar1->klass->vtable).Equals.method);
+    cVar2 = (*(code *)(pOVar1->klass->vtable).Equals.method)
+                      (pOVar1,(this->fields).sendValue,(pOVar1->klass->vtable).Finalize.methodPtr);
     if (cVar2 == '\0') {
       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       if ((this->fields).lastSendTime + (this->fields).sendInterval < fVar3) {
@@ -157,7 +158,7 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable::MVRuntimeDataVariable__ctor
     cRam_? = '\x01';
   }
   (this->fields).lastSendTime = -INFINITY;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).cctor_finished_or_no_cctor
       == 0) {
@@ -188,16 +189,18 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable::MVRuntimeDataVariable__ctor
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar2,(MethodInfo *)0x0);
   }
   if (initialRuntimeData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (initialRuntimeData,(Object *)(this->fields).variableId,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    (this->fields).value = pOVar4;
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       initialRuntimeData,(Object *)(this->fields).variableId,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    (this->fields).value = (Object *)TVar4.m_Index;
     func_?();
     (this->fields).sendValue = (this->fields).value;
     func_?();

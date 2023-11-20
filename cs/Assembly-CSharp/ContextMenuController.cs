@@ -28,24 +28,6 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 	public bool MouseDown { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass10_0
-	{
-		// Fields
-		public bool isPreview;
-		public bool isPendingPrototype;
-		public ContextMenuController __4__this;
-
-		// Constructors
-		public __c__DisplayClass10_0();
-
-		// Methods
-		internal bool _ShowContextMenu_b__0();
-		internal bool _ShowContextMenu_b__1();
-		internal bool _ShowContextMenu_b__2();
-		internal void _ShowContextMenu_b__3(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -108,6 +90,24 @@ public class ContextMenuController : MonoBehaviour, IHandlePointerDownOnContextM
 		internal void _OnClosedStandaloneError_b__37_0(IUIStack x, BaseEventData y);
 		internal void _OnFailedToAddItem_b__39_0(IUIStack handler, BaseEventData data);
 		internal void _Delete_b__40_1(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass10_0
+	{
+		// Fields
+		public bool isPreview;
+		public bool isPendingPrototype;
+		public ContextMenuController __4__this;
+
+		// Constructors
+		public __c__DisplayClass10_0();
+
+		// Methods
+		internal bool _ShowContextMenu_b__0();
+		internal bool _ShowContextMenu_b__1();
+		internal bool _ShowContextMenu_b__2();
+		internal void _ShowContextMenu_b__3(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

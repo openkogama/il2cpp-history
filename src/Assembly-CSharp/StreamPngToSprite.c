@@ -25,37 +25,40 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_CancelDownload
                     ((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pRVar1 = (this->fields).rawImage;
-    if (pRVar1 == (RawImage *)0x0) goto code_?;
-    obj = (pRVar1->fields).m_Texture;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (pRVar1 != (RawImage *)0x0) {
+      obj = (pRVar1->fields).m_Texture;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
+      pRVar1 = (this->fields).rawImage;
+      if (pRVar1 != (RawImage *)0x0) {
+        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                  (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
+        goto code_?;
+      }
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    pRVar1 = (this->fields).rawImage;
-    if (pRVar1 == (RawImage *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-              (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
-  }
-  (this->fields).currentlyDownloading = 0;
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  (this->fields).currentlyDownloading = 0;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -127,37 +130,40 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_OnDestroy
                     ((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pRVar1 = (this->fields).rawImage;
-    if (pRVar1 == (RawImage *)0x0) goto code_?;
-    obj = (pRVar1->fields).m_Texture;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (pRVar1 != (RawImage *)0x0) {
+      obj = (pRVar1->fields).m_Texture;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
+      pRVar1 = (this->fields).rawImage;
+      if (pRVar1 != (RawImage *)0x0) {
+        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                  (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
+        goto code_?;
+      }
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    pRVar1 = (this->fields).rawImage;
-    if (pRVar1 == (RawImage *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-              (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
-  }
-  (this->fields).currentlyDownloading = 0;
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  (this->fields).currentlyDownloading = 0;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -216,19 +222,19 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_SetImageTexture
         func_?();
         cRam_? = '\x01';
       }
-      x_00 = (Object_1 *)in_stack_2[0x20];
+      x_00 = (Object_1 *)in_stack_2[0x21];
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object,unaff_retaddr);
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         (x_00,in_stack_3,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        in_stack_2[0x20] = (int)in_stack_3;
+        in_stack_2[0x21] = (int)in_stack_3;
         func_?();
-        (**(code **)(*in_stack_2 + 0x19c))
-                  (in_stack_2,*(undefined4 *)(*in_stack_2 + 0x1a0));
-        (**(code **)(*in_stack_2 + 0x1a4))
-                  (in_stack_2,*(undefined4 *)(*in_stack_2 + 0x1a8));
+        (**(code **)(*in_stack_2 + 0x1a0))
+                  (in_stack_2,*(undefined4 *)(*in_stack_2 + 0x1a4));
+        (**(code **)(*in_stack_2 + 0x1a8))
+                  (in_stack_2,*(undefined4 *)(*in_stack_2 + 0x1ac));
       }
       return;
     }
@@ -266,28 +272,22 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StartDownloading
   }
   pSVar1 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,downloadUrl,(MethodInfo *)0x0);
-  this_00 = (Action_1_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
-               ,(MethodInfo *)0x0);
-    this_01 = (AssetBundleRequest *)func_?();
-    if (this_01 != (AssetBundleRequest *)0x0) {
-      AssetBundleRequest::AssetBundleRequest__ctor
-                (this_01,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-                 WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-      if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
-      return;
-    }
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,
+             MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
+             ,(MethodInfo *)0x0);
+  this_01 = (AssetBundleRequest *)func_?(TypeInfo__CachedGetRequest);
+  AssetBundleRequest::AssetBundleRequest__ctor
+            (this_01,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+             WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
   return;
 }
 
@@ -352,8 +352,8 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StreamingTextureL
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Error_streaming_png_to_sprite,(MethodInfo *)0x0);
     return;
   }

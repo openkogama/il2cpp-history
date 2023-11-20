@@ -66,17 +66,14 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Command_AssetBundleCacheTest
           if (pKVar5 != (KoGaMaSettingsContainer *)0x0) {
             (pKVar5->fields).streamingAssetVersion = currentStreamingAssetVersion + iVar1;
             this = (Action_3_Object_Single_Int32_ *)func_?();
-            if (this != (Action_3_Object_Single_Int32_ *)0x0) {
-              mscorlib.dll::System::Action`3[Object,Single,Int32]::
-              Action_3_Object_Single_Int32___ctor
-                        (this,(Object *)0x0,
-                         MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_
-                         ,(MethodInfo *)0x0);
-              AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset
-                        ((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,
-                         currentStreamingAssetVersion,(MethodInfo *)0x0);
-              return;
-            }
+            mscorlib.dll::System::Action`3[Object,Single,Int32]::Action_3_Object_Single_Int32___ctor
+                      (this,(Object *)0x0,
+                       MethodInfo__AssetBundleCacheTest__OnFirstDownloadFinished_UnityEngine__Networking__UnityWebRequest__float__int_
+                       ,(MethodInfo *)0x0);
+            AssetBundleCacheTest::AssetBundleCacheTest_DownloadTestAsset
+                      ((Action_3_UnityEngine_Networking_UnityWebRequest_Single_Int32_ *)this,
+                       currentStreamingAssetVersion,(MethodInfo *)0x0);
+            return;
           }
         }
       }
@@ -153,44 +150,42 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Resolve(String *commandLine,M
   if (commandLine != (String *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Split
                        (commandLine,0x20,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-    command = (TextCommand_Command *)func_?(TypeInfo__TextCommand__Command);
-    if (command != (TextCommand_Command *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)command,ExceptionArgument__Enum_obj,unaff_EDI);
-      (command->fields).commandComponents = pSVar1;
-      func_?(&command->fields,pSVar1);
-      pSVar1 = (command->fields).commandComponents;
-      if (pSVar1 != (String__Array *)0x0) {
-        if (pSVar1->max_length == 0) goto code_?;
-        if (pSVar1->vector[0] != (String *)0x0) {
-          pSVar2 = mscorlib.dll::System::String::String_ToLower(pSVar1->vector[0],(MethodInfo *)0x0)
-          ;
-          bVar3 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar2,StringLiteral__abctest,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
+    method_00 = TypeInfo__TextCommand__Command;
+    command = (TextCommand_Command *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)command,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (command->fields).commandComponents = pSVar1;
+    func_?(&command->fields,pSVar1);
+    pSVar1 = (command->fields).commandComponents;
+    if (pSVar1 != (String__Array *)0x0) {
+      if (pSVar1->max_length == 0) goto code_?;
+      if (pSVar1->vector[0] != (String *)0x0) {
+        pSVar2 = mscorlib.dll::System::String::String_ToLower(pSVar1->vector[0],(MethodInfo *)0x0);
+        bVar3 = mscorlib.dll::System::String::String_op_Equality
+                          (pSVar2,StringLiteral__abctest,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
 code_?:
-            TextCommand_Command_AssetBundleCacheTest(command,(MethodInfo *)0x0);
+          TextCommand_Command_AssetBundleCacheTest(command,(MethodInfo *)0x0);
+          return;
+        }
+        bVar3 = mscorlib.dll::System::String::String_op_Equality
+                          (pSVar2,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
+        if (bVar3 != 0) goto code_?;
+        if (cRam_? == '\0') {
+          func_?(&StringLiteral__0__is_not_a_valid_command_);
+          cRam_? = '\x01';
+        }
+        pSVar1 = (command->fields).commandComponents;
+        if (pSVar1 != (String__Array *)0x0) {
+          if (pSVar1->max_length != 0) {
+            pSVar2 = mscorlib.dll::System::String::String_Format
+                               (StringLiteral__0__is_not_a_valid_command_,
+                                (Object *)pSVar1->vector[0],(MethodInfo *)0x0);
+            MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
+                      (MVGameMsgType__Enum_AdminMsg,pSVar2,(MethodInfo *)0x0);
             return;
           }
-          bVar3 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar2,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
-          if (bVar3 != 0) goto code_?;
-          if (cRam_? == '\0') {
-            func_?(&StringLiteral__0__is_not_a_valid_command_);
-            cRam_? = '\x01';
-          }
-          pSVar1 = (command->fields).commandComponents;
-          if (pSVar1 != (String__Array *)0x0) {
-            if (pSVar1->max_length != 0) {
-              pSVar2 = mscorlib.dll::System::String::String_Format
-                                 (StringLiteral__0__is_not_a_valid_command_,
-                                  (Object *)pSVar1->vector[0],(MethodInfo *)0x0);
-              MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                        (MVGameMsgType__Enum_AdminMsg,pSVar2,(MethodInfo *)0x0);
-              return;
-            }
-            goto code_?;
-          }
+          goto code_?;
         }
       }
     }

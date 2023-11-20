@@ -63,8 +63,8 @@ Vector3 * Assembly-CSharp.dll::InteractionDataHandlerBase::
   pCVar1 = (this->fields).closestPoint;
   if (pCVar1 != (ClosestPointBase *)0x0) {
     puVar2 = (undefined8 *)
-             (*(pCVar1->klass->vtable).__unknown.methodPtr)
-                       (&from,pCVar1,from._0_8_,from.z,(pCVar1->klass->vtable).__unknown.method);
+             (*(code *)(pCVar1->klass->vtable).__unknown.method)
+                       (&from,pCVar1,from._0_8_,from.z,pCVar1->klass[1]._0.image);
     uVar3 = *puVar2;
     fVar4 = *(float *)(puVar2 + 1);
     __return_storage_ptr__->x = (float)(int)uVar3;
@@ -86,10 +86,10 @@ bool Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
                ,MethodInfo *method)
 
 {
-  bVar1 = (*(this->klass->vtable).__unknown_1.methodPtr)
+  bVar1 = (*(code *)(this->klass->vtable).__unknown_1.method)
                     (this,0,interaction.damage,interaction.impulse.x,interaction.impulse.y,
                      interaction.impulse.z,interaction._16_4_,_interactionIsLocal,
-                     (this->klass->vtable).__unknown_1.method);
+                     (this->klass->vtable).OnValidate.methodPtr);
   return bVar1;
 }
 
@@ -119,8 +119,8 @@ bool Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
      (pMVar3 != (MVTeamManager *)0x0)) {
     MVar5 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
                       (pMVar3,(pMVar4->fields)._.ownerActorNr,(MethodInfo *)0x0);
-    MVar6 = (*(this->klass->vtable).__unknown.methodPtr)
-                      (this,(this->klass->vtable).__unknown.method);
+    MVar6 = (*(code *)(this->klass->vtable).__unknown.method)
+                      (this,(this->klass->vtable).CanHandle.methodPtr);
     if (MVar5 != MVar6) {
       return 0;
     }

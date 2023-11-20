@@ -10,8 +10,8 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnB
   pSVar2 = (this->fields).scrollRect;
   (this->fields).dragStart = fVar1;
   if (pSVar2 != (ScrollRect *)0x0) {
-    (*(pSVar2->klass->vtable).OnBeginDrag_1.methodPtr)
-              (pSVar2,eventData,(pSVar2->klass->vtable).OnBeginDrag_1.method);
+    (*(code *)(pSVar2->klass->vtable).OnBeginDrag_1.method)
+              (pSVar2,eventData,(pSVar2->klass->vtable).OnEndDrag_1.methodPtr);
     return;
   }
   func_?();
@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnD
                (ConsoleDragAndTapHandler *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if ((this->fields).scrollingEnabled != 0) {
     pSStack_2 = (this->fields).scrollRect;
     if (pSStack_2 == (ScrollRect *)0x0) {
@@ -37,9 +37,9 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnD
       (*pcVar4)();
       return;
     }
-    pMStack_1 = (pSStack_2->klass->vtable).OnDrag_1.method;
+    pIStack_1 = (pSStack_2->klass->vtable).SetContentAnchoredPosition.methodPtr;
     pPStack_5 = eventData;
-    (*(pSStack_2->klass->vtable).OnDrag_1.methodPtr)();
+    (*(code *)(pSStack_2->klass->vtable).OnDrag_1.method)();
   }
   return;
 }
@@ -61,8 +61,8 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnE
   }
   pSVar3 = (this->fields).scrollRect;
   if (pSVar3 != (ScrollRect *)0x0) {
-    (*(pSVar3->klass->vtable).OnEndDrag_1.methodPtr)
-              (pSVar3,eventData,(pSVar3->klass->vtable).OnEndDrag_1.method);
+    (*(code *)(pSVar3->klass->vtable).OnEndDrag_1.method)
+              (pSVar3,eventData,(pSVar3->klass->vtable).OnDrag_1.methodPtr);
     return;
   }
   func_?();

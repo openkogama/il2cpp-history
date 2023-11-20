@@ -1,57 +1,4 @@
 
-/* Void Sort() */
-
-void MVWorldObject.dll::HighScore::HighScore_Sort(HighScore *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderBy<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
-                   );
-    func_?(&
-                    System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
-                   );
-    func_?(&TypeInfo__System__Func<ScoreActorEntry,_int>);
-    func_?(&MethodInfo__HighScore___Sort_b__0_ScoreActorEntry_);
-    func_?(&TypeInfo__HighScore);
-    cRam_? = '\x01';
-  }
-  pLVar1 = (this->fields).highScoreEntries;
-  if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate1 ==
-      (Func_2_ScoreActorEntry_Int32_ *)0x0) {
-    this_00 = (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)
-              func_?(TypeInfo__System__Func<ScoreActorEntry,_int>);
-    if (this_00 == (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    mscorlib.dll::System::Reflection::RuntimePropertyInfo+Getter`2[System::Object,System::Object]::
-    RuntimePropertyInfo_Getter_2_System_Object_System_Object___ctor
-              (this_00,(Object *)0x0,MethodInfo__HighScore___Sort_b__0_ScoreActorEntry_,
-               (MethodInfo *)0x0);
-    TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate1 =
-         (Func_2_ScoreActorEntry_Int32_ *)this_00;
-    func_?(TypeInfo__HighScore->static_fields,this_00);
-  }
-  source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
-                     ((IEnumerable_1_System_Object_ *)pLVar1,
-                      (Func_2_Object_Single_ *)
-                      TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate1,
-                      System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderBy<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
-                     );
-  pLVar1 = (List_1_ScoreActorEntry_ *)
-           System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
-                     ((IEnumerable_1_System_Object_ *)source,
-                      System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
-                     );
-  (this->fields).highScoreEntries = pLVar1;
-  func_?(&this->fields,pLVar1);
-  return;
-}
-
-
 /* Void SortDescending() */
 
 void MVWorldObject.dll::HighScore::HighScore_SortDescending(HighScore *this,MethodInfo *method)
@@ -72,31 +19,25 @@ void MVWorldObject.dll::HighScore::HighScore_SortDescending(HighScore *this,Meth
   pLVar1 = (this->fields).highScoreEntries;
   if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 ==
       (Func_2_ScoreActorEntry_Int32_ *)0x0) {
-    this_00 = (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)
+    this_00 = (ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
               func_?(TypeInfo__System__Func<ScoreActorEntry,_int>);
-    if (this_00 == (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    mscorlib.dll::System::Reflection::RuntimePropertyInfo+Getter`2[System::Object,System::Object]::
-    RuntimePropertyInfo_Getter_2_System_Object_System_Object___ctor
+    Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
+    Metadata::__Il2CppFullySharedGenericType]::
+    ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_00,(Object *)0x0,MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_,
                (MethodInfo *)0x0);
     TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 =
          (Func_2_ScoreActorEntry_Int32_ *)this_00;
-    func_?(&TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3,
-                    this_00);
+    func_?(TypeInfo__HighScore->static_fields,this_00);
   }
-  source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_2
+  source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_1
                      ((IEnumerable_1_System_Object_ *)pLVar1,
-                      (Func_2_Object_Object_ *)
+                      (Func_2_Object_Int32_ *)
                       TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3,
                       System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderByDescending<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
                      );
   pLVar1 = (List_1_ScoreActorEntry_ *)
-           System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
+           System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
                      ((IEnumerable_1_System_Object_ *)source,
                       System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
                      );
@@ -169,7 +110,7 @@ String * MVWorldObject.dll::HighScore::HighScore_ToString(HighScore *this,Method
              mscorlib.dll::System::String::String_Concat_3((String *)str0,pSVar10,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&pOStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScoreActorEntry>__Dispose__
@@ -196,8 +137,6 @@ void MVWorldObject.dll::HighScore::HighScore__ctor
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
@@ -214,9 +153,9 @@ void MVWorldObject.dll::HighScore::HighScore__ctor
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<int,_ActorCounter>__get_Key__
                    );
-    in_stack_6 =
-         &MethodInfo__System__Collections__Generic__KeyValuePair<int,_ActorCounter>__get_Value__;
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_ActorCounter>__get_Value__
+                   );
     func_?(&
                     MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__Add_ScoreActorEntry_
                    );
@@ -224,124 +163,108 @@ void MVWorldObject.dll::HighScore::HighScore__ctor
     func_?(&TypeInfo__System__Collections__Generic__List<ScoreActorEntry>);
     func_?(&TypeInfo__ScoreActorEntry);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = 0;
-  DStack_7._current.value = (Object *)0x0;
-  DStack_7._getEnumeratorRetType = 0;
-  pLVar8 = (List_1_ScoreActorEntry_ *)
+  pLVar4 = (List_1_ScoreActorEntry_ *)
            func_?(TypeInfo__System__Collections__Generic__List<ScoreActorEntry>);
-  if (pLVar8 != (List_1_ScoreActorEntry_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar8,
-               MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__List__);
-    (this->fields).highScoreEntries = pLVar8;
-    func_?(&this->fields,pLVar8);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_6);
-    (this->fields).teamScore = teamScore;
-    if (actorCounters != (Dictionary_2_System_Int32_ActorCounter_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                          &stack0xffffffa0,
-                          (Dictionary_2_System_Object_System_Object_ *)actorCounters,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
-                         );
-      uStack_10 = 0;
-      DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9->_dictionary;
-      DStack_7._version = pDVar9->_version;
-      DStack_7._index = pDVar9->_index;
-      DStack_7._current.key = (int32_t)(pDVar9->_current).key;
-      DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
-      uStack_1 = 1;
-      pDStack_11 = &DStack_7;
-      while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                          (&DStack_7,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
-                          );
-        if (bVar12 == 0) break;
-        pLStack_13 = (this->fields).highScoreEntries;
-        pIStack_14 = (Int32__Array *)DStack_7._current.key;
-        if (DStack_7._current.value == (Object *)0x0) goto code_?;
-        pDStack_15 = (Dictionary_2_TKey_TValue_Entry_System_Int32_ActorCounter___Array *)
-                     DStack_7._current.value[1].klass;
-        value = (MethodInfo *)func_?();
-        if (value == (MethodInfo *)0x0) goto code_?;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)actorCounters);
-        ((Dictionary_2_System_Int32_ActorCounter___Fields *)&value->invoker_method)->_buckets =
-             pIStack_14;
-        value->name = (char *)pDStack_15;
-        if (pLStack_13 == (List_1_ScoreActorEntry_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLStack_13,(Object *)value,
-                   MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__Add_ScoreActorEntry_
-                  );
-        actorCounters = (Dictionary_2_System_Int32_ActorCounter_ *)value;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+             MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__List__);
+  pMVar5 = (MethodInfo *)&this->fields;
+  (this->fields).highScoreEntries = pLVar4;
+  func_?(pMVar5,pLVar4);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar5);
+  (this->fields).teamScore = teamScore;
+  if (actorCounters != (Dictionary_2_System_Int32_ActorCounter_ *)0x0) {
+    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffffa8,(Dictionary_2_System_UInt32_System_Object_ *)actorCounters,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
+                       );
+    method_00 = (Object__Class *)pDVar6->_dictionary;
+    pOVar7 = (Object__Class *)(pDVar6->_current).key;
+    uVar8 = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_1 = 1;
+    while( true ) {
+      bVar9 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                         &stack0xffffffc0,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
+                        );
+      if (bVar9 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&stack0xffffffc0,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
+                   ,(MethodInfo *)method_00);
+        uStack_1 = 0xffffffff;
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          cRam_? = '\x01';
+        }
+        pLVar4 = (this->fields).highScoreEntries;
+        if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 ==
+            (Func_2_ScoreActorEntry_Int32_ *)0x0) {
+          this_00 = (ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                    func_?();
+          Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType]::
+          ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (this_00,(Object *)0x0,
+                     MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_,(MethodInfo *)0x0)
+          ;
+          TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 =
+               (Func_2_ScoreActorEntry_Int32_ *)this_00;
+          func_?();
+        }
+        source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_1
+                           ((IEnumerable_1_System_Object_ *)pLVar4,
+                            (Func_2_Object_Int32_ *)
+                            TypeInfo__HighScore->static_fields->
+                            CS___9__CachedAnonymousMethodDelegate3,
+                            System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderByDescending<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
+                           );
+        pLVar4 = (List_1_ScoreActorEntry_ *)
+                 System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
+                           ((IEnumerable_1_System_Object_ *)source,
+                            System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
+                           );
+        (this->fields).highScoreEntries = pLVar4;
+        func_?();
+        *unaff_FS_OFFSET = uStack_3;
+        return;
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)&DStack_7,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
-                 ,in_stack_16);
-      uStack_1 = 0xffffffff;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      pLStack_13 = (this->fields).highScoreEntries;
-      if (TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 ==
-          (Func_2_ScoreActorEntry_Int32_ *)0x0) {
-        this_00 = (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)func_?();
-        if (this_00 == (RuntimePropertyInfo_Getter_2_System_Object_System_Object_ *)0x0)
-        goto code_?;
-        mscorlib.dll::System::Reflection::RuntimePropertyInfo+Getter`2[System::Object,System::
-        Object]::RuntimePropertyInfo_Getter_2_System_Object_System_Object___ctor
-                  (this_00,(Object *)0x0,
-                   MethodInfo__HighScore___SortDescending_b__2_ScoreActorEntry_,(MethodInfo *)0x0);
-        TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3 =
-             (Func_2_ScoreActorEntry_Int32_ *)this_00;
-        func_?(&TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3,
-                        this_00);
-      }
-      source = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderByDescending_2
-                         ((IEnumerable_1_System_Object_ *)pLStack_13,
-                          (Func_2_Object_Object_ *)
-                          TypeInfo__HighScore->static_fields->CS___9__CachedAnonymousMethodDelegate3
-                          ,
-                          System__Linq__IOrderedEnumerable<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__OrderByDescending<ScoreActorEntry,_int>_System__Collections__Generic__IEnumerable<ScoreActorEntry>__System__Func<ScoreActorEntry,_int>_
-                         );
-      pLVar8 = (List_1_ScoreActorEntry_ *)
-               System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_5
-                         ((IEnumerable_1_System_Object_ *)source,
-                          System__Collections__Generic__List<ScoreActorEntry>_MethodInfo__System__Linq__Enumerable__ToList<ScoreActorEntry>_System__Collections__Generic__IEnumerable<ScoreActorEntry>_
-                         );
-      (this->fields).highScoreEntries = pLVar8;
-      func_?();
-      *unaff_FS_OFFSET = uStack_3;
-      return;
+      pLVar4 = (this->fields).highScoreEntries;
+      pOStack_10 = (Object *)uVar8;
+      if (pOStack_10 == (Object *)0x0) break;
+      pOVar11 = pOStack_10[1].klass;
+      pMVar5 = (MethodInfo *)&UNK_?;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,pMVar5);
+      value[1].klass = pOVar7;
+      value[1].monitor = (MonitorData *)pOVar11;
+      if (pLVar4 == (List_1_ScoreActorEntry_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)pLVar4,value,
+                 MethodInfo__System__Collections__Generic__List<ScoreActorEntry>__Add_ScoreActorEntry_
+                );
     }
   }
-code_?:
-  uVar17 = func_?();
-  func_?(uVar17);
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  func_?();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

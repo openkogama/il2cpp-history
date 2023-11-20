@@ -22,20 +22,15 @@ Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_DoForSeconds
     func_?(&TypeInfo__TeleportAvatar___DoForSeconds_d__6);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__TeleportAvatar___DoForSeconds_d__6);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[2].klass = (Object__Class *)body;
-    value[1].klass = (Object__Class *)0x0;
-    value[2].monitor = (MonitorData *)duration;
-    func_?(value + 2,body);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__TeleportAvatar___DoForSeconds_d__6;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].monitor = (MonitorData *)duration;
+  value[2].klass = (Object__Class *)body;
+  func_?(value + 2,body);
+  return (IEnumerator *)value;
 }
 
 
@@ -59,31 +54,29 @@ void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_EndTeleportation
                     ((Object_1 *)rigidBody,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
     if (rigidBody == (MVRigidBody *)0x0) goto code_?;
-    (*(rigidBody->klass->vtable).__unknown_3.methodPtr)(rigidBody,0);
+    (*(code *)(rigidBody->klass->vtable).__unknown_3.method)(rigidBody,0);
   }
   pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
     this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper;
     this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-    if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_01,(Object *)unaff_EBX,
-                 MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_,
-                 (MethodInfo *)0x0);
-      if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
-        SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
-                  (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_01,(MethodInfo *)0x0);
-        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        (unaff_EBX,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)obj,(MethodInfo *)0x0);
-        return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_01,(Object *)unaff_EDI,
+               MethodInfo__TeleportAvatar__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_,
+               (MethodInfo *)0x0);
+    if (this_00 != (SpawnRoleModeTypeWrapper *)0x0) {
+      SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_remove_OnChange
+                (this_00,(Action_1_MV_Common_SpawnRoleModeType_ *)this_01,(MethodInfo *)0x0);
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      (unaff_EDI,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)obj,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:
@@ -115,19 +108,14 @@ Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_Start(TeleportAvatar *this,M
     func_?(&TypeInfo__TeleportAvatar___Start_d__8);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__TeleportAvatar___Start_d__8);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__TeleportAvatar___Start_d__8;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 

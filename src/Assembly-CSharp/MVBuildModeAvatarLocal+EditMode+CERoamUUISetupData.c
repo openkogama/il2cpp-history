@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode+CERoamUUISetupData::
                Vector3 lookAtPosition,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).centerPos.x = centerPos.x;
   (this->fields).centerPos.y = centerPos.y;

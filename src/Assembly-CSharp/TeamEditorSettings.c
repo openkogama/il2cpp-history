@@ -19,15 +19,15 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_InitInputfield
     cRam_? = '\x01';
   }
   key = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).teamData;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)key,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).teamData;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if (inputField != (SettingsInputField *)0x0) {
         SettingsInputField::SettingsInputField_Initialize
                   (inputField,key,::StringLiteral__,(MethodInfo *)0x0);
@@ -35,26 +35,27 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_InitInputfield
       }
     }
     else {
-      this_01 = (this->fields).teamData;
-      if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pSVar2 = (String *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (this_01,(Object *)key,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields).teamData;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar1,(Object *)key,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
         if (inputField != (SettingsInputField *)0x0) {
-          value = (String *)0x0;
-          if (pSVar2 == (String *)0x0) {
+          value.m_Index = 0;
+          if (TVar3.m_Index == 0) {
 code_?:
             SettingsInputField::SettingsInputField_Initialize
-                      (inputField,key,value,(MethodInfo *)0x0);
+                      (inputField,key,(String *)value.m_Index,(MethodInfo *)0x0);
             return;
           }
-          if (pSVar2->klass == TypeInfo__System__String) {
-            value = pSVar2;
+          if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+            value = TVar3;
           }
-          if (value != (String *)0x0) goto code_?;
+          if ((String *)value.m_Index != (String *)0x0) goto code_?;
           goto code_?;
         }
       }
@@ -63,8 +64,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -204,16 +205,21 @@ code_?:
                     (this_00,(Object *)key,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
                     );
-          this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-          if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-            ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                      ((ParameterOverride_1_System_Object_ *)this_02,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                      );
+          this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::StyleComplexSelector+PseudoStateData]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                    (this_02,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          if (this_02 !=
+              (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__Add
-                      (this_02,(Object *)key,(Object *)::StringLiteral__,
+                      ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,
+                       (Object *)::StringLiteral__,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                       );
             this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -221,7 +227,8 @@ code_?:
             if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
               MVNetworkGame+OperationRequests::
               MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                        (this_03,(this->fields).woID,this_02,(MethodInfo *)0x0);
+                        (this_03,(this->fields).woID,
+                         (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
               pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               handle = TypeRef__MV__WorldObject__MVTeam;
               if (pMVar6 != (MVNetworkGame *)0x0) {
@@ -290,10 +297,10 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_SetActiveButton
   }
   pGVar1 = (this->fields).blueTeamButton;
   if (teamData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)teamData,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)teamData,
                        (Object *)StringLiteral_Blue,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -301,10 +308,10 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_SetActiveButton
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,bVar2,(MethodInfo *)0x0);
       pGVar1 = (this->fields).redTeamButton;
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)teamData,
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)teamData,
                          (Object *)StringLiteral_Red,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -312,10 +319,10 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_SetActiveButton
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,bVar2,(MethodInfo *)0x0);
         pGVar1 = (this->fields).greenTeamButton;
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)teamData,
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)teamData,
                            (Object *)StringLiteral_Green,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
@@ -324,10 +331,10 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_SetActiveButton
                     (pGVar1,bVar2,(MethodInfo *)0x0);
           pGVar1 = (this->fields).yellowTeamButton;
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                            ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)teamData,
-                             (Object *)StringLiteral_Yellow,
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                             teamData,(Object *)StringLiteral_Yellow,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           if (pGVar1 != (GameObject *)0x0) {

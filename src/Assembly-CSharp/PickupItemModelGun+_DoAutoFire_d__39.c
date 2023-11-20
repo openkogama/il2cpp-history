@@ -138,9 +138,9 @@ code_?:
     if ((this_00->fields).fireMain != 0) {
       pMVar15 = (this_00->fields)._._.owner;
       if (pMVar15 == (MVPickupOwner *)0x0) goto code_?;
-      (*(this_00->klass->vtable).OnFire.methodPtr)
-                (this_00,(uint)(pMVar15->fields)._IsLocal_k__BackingField,
-                 (this_00->klass->vtable).OnFire.method);
+      (*(code *)(this_00->klass->vtable).OnFire.method)
+                (this_00,(pMVar15->fields)._IsLocal_k__BackingField,
+                 (this_00->klass->vtable).OnDestroy.methodPtr);
       this = (PickupItemModelGun_DoAutoFire_d_39 *)
              UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       (this_00->fields).prevFireTime = (float)this;
@@ -187,7 +187,6 @@ void Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

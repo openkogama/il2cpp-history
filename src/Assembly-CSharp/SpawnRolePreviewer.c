@@ -101,7 +101,7 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                     (pGVar2,iVar5,(MethodInfo *)0x0);
           pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
-                    RenderTexture_GetTemporary_1
+                    RenderTexture_GetTemporary_4
                               (textureWidth,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,
                                RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
           (this->fields).previewTexture = pRVar6;
@@ -261,11 +261,10 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
                                                         _PreviewGameObject_k__BackingField;
                                               if (pGVar2 != (GameObject *)0x0) {
                                                 pMVar19 = (MVBodyObject *)
-                                                          Newtonsoft::Json::Linq::LinqExtensions::
-                                                          LinqExtensions_Values_2
-                                                                    ((
-                                                  IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)
-                                                  pGVar2,
+                                                          UnityEngine.CoreModule.dll::UnityEngine::
+                                                          GameObject::
+                                                          GameObject_GetComponentInChildren_1
+                                                                    (pGVar2,
                                                   MVBodyObject_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVBodyObject>__
                                                   );
                                                 (pSVar1->fields).body = pMVar19;
@@ -460,8 +459,8 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_OnPreCull
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
     layersToChange.m_Mask =
-         (int32_t)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                            ((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
+         (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                  UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                       (StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
@@ -609,8 +608,8 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer__ctor
   (this->fields).pivotPoint.x = (pVVar1->zeroVector).x;
   (this->fields).pivotPoint.y = fVar2;
   (this->fields).pivotPoint.z = fVar3;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

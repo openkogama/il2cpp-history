@@ -10,8 +10,9 @@ void Assembly-CSharp.dll::GamePassesTextBubble::GamePassesTextBubble_Activate
     NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
     pTVar1 = (this->fields).text;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,textBubbleText,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,textBubbleText,
+                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       (this->fields).isActive = 1;
       return;
     }
@@ -35,48 +36,46 @@ void Assembly-CSharp.dll::GamePassesTextBubble::GamePassesTextBubble_OnDestroy
     cRam_? = '\x01';
   }
   pNVar1 = (this->fields).fader;
-  if (pNVar1 != (NotificationFade *)0x0) {
-    pAVar2 = (pNVar1->fields).OnFinished;
+  if (pNVar1 == (NotificationFade *)0x0) {
+    uVar2 = func_?();
+  }
+  else {
+    pAVar3 = (pNVar1->fields).OnFinished;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,MethodInfo__GamePassesTextBubble__OnFaderDone__,
-                 (MethodInfo *)0x0);
-      pAVar2 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-      if (pAVar2 == (Action *)0x0) {
-        (pNVar1->fields).OnFinished = (Action *)0x0;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__GamePassesTextBubble__OnFaderDone__,
+               (MethodInfo *)0x0);
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+    if (pAVar3 == (Action *)0x0) {
+      (pNVar1->fields).OnFinished = (Action *)0x0;
+      ppAStack4 = &(pNVar1->fields).OnFinished;
+      pAStack5 = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar6 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar3;
+    }
+    if (pAVar6 != (Action *)0x0) {
+      (pNVar1->fields).OnFinished = pAVar6;
+      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      pAStack5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAStack5 = pAVar3;
+      }
+      if (pAStack5 != (Action *)0x0) {
         ppAStack4 = &(pNVar1->fields).OnFinished;
-        pAStack5 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar6 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar6 = pAVar2;
-      }
-      if (pAVar6 != (Action *)0x0) {
-        (pNVar1->fields).OnFinished = pAVar6;
-        uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-        pAStack5 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAStack5 = pAVar2;
-        }
-        if (pAStack5 != (Action *)0x0) {
-          ppAStack4 = &(pNVar1->fields).OnFinished;
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  uVar3 = func_?();
-code_?:
-  _ppAStack0000000c = uVar3;
+  _ppAStack0000000c = uVar2;
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -120,48 +119,46 @@ void Assembly-CSharp.dll::GamePassesTextBubble::GamePassesTextBubble_Start
     cRam_? = '\x01';
   }
   pNVar1 = (this->fields).fader;
-  if (pNVar1 != (NotificationFade *)0x0) {
-    pAVar2 = (pNVar1->fields).OnFinished;
+  if (pNVar1 == (NotificationFade *)0x0) {
+    uVar2 = func_?();
+  }
+  else {
+    pAVar3 = (pNVar1->fields).OnFinished;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,MethodInfo__GamePassesTextBubble__OnFaderDone__,
-                 (MethodInfo *)0x0);
-      pAVar2 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-      if (pAVar2 == (Action *)0x0) {
-        (pNVar1->fields).OnFinished = (Action *)0x0;
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__GamePassesTextBubble__OnFaderDone__,
+               (MethodInfo *)0x0);
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+    if (pAVar3 == (Action *)0x0) {
+      (pNVar1->fields).OnFinished = (Action *)0x0;
+      ppAStack4 = &(pNVar1->fields).OnFinished;
+      pAStack5 = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar6 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar3;
+    }
+    if (pAVar6 != (Action *)0x0) {
+      (pNVar1->fields).OnFinished = pAVar6;
+      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+      pAStack5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAStack5 = pAVar3;
+      }
+      if (pAStack5 != (Action *)0x0) {
         ppAStack4 = &(pNVar1->fields).OnFinished;
-        pAStack5 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar6 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar6 = pAVar2;
-      }
-      if (pAVar6 != (Action *)0x0) {
-        (pNVar1->fields).OnFinished = pAVar6;
-        uVar3 = CONCAT44(TypeInfo__System__Action,pAVar2);
-        pAStack5 = (Action *)0x0;
-        if (pAVar2->klass == TypeInfo__System__Action) {
-          pAStack5 = pAVar2;
-        }
-        if (pAStack5 != (Action *)0x0) {
-          ppAStack4 = &(pNVar1->fields).OnFinished;
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  uVar3 = func_?();
-code_?:
-  _ppAStack0000000c = uVar3;
+  _ppAStack0000000c = uVar2;
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();

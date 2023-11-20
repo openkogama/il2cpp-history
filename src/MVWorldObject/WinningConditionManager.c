@@ -12,30 +12,28 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_AddWinn
   }
   if (parent == (WinningCondition *)0x0) {
     uVar1 = func_?(&TypeInfo__System__Collections__Generic__KeyNotFoundException);
-    parent = (WinningCondition *)func_?(uVar1);
-    func_?(parent);
+    this_01 = (KeyNotFoundException *)func_?(uVar1);
     pMVar2 = (MethodInfo *)0x0;
     pSVar3 = (String *)func_?(&StringLiteral_Could_not_find_winner_condition_);
     mscorlib.dll::System::Collections::Generic::KeyNotFoundException::KeyNotFoundException__ctor_1
-              ((KeyNotFoundException *)parent,pSVar3,pMVar2);
+              (this_01,pSVar3,pMVar2);
     uVar1 = func_?(&
                             MethodInfo__WinningConditionManager__AddWinnerConditionToNode_WinningCondition__WinningCondition_
                            );
-    func_?(parent,uVar1);
+    func_?(this_01,uVar1);
 code_?:
     func_?();
     pWVar4 = extraout_EDX;
   }
   else {
     pWVar5 = parent->klass;
-    if (((pWVar5->_1).typeHierarchyDepth < (TypeInfo__WinningConditionGroup->_1).typeHierarchyDepth)
-       || ((pWVar5->_1).typeHierarchy[(TypeInfo__WinningConditionGroup->_1).typeHierarchyDepth - 1]
-           != (Il2CppClass *)TypeInfo__WinningConditionGroup)) goto code_?;
+    if (((pWVar5->_1).naturalAligment < (TypeInfo__WinningConditionGroup->_1).naturalAligment) ||
+       ((pWVar5->_1).typeHierarchy[(TypeInfo__WinningConditionGroup->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__WinningConditionGroup)) goto code_?;
     pWVar4 = TypeInfo__WinningConditionGroup;
-    if (((TypeInfo__WinningConditionGroup->_1).typeHierarchyDepth <= (pWVar5->_1).typeHierarchyDepth
-        ) && ((pWVar5->_1).typeHierarchy
-              [(TypeInfo__WinningConditionGroup->_1).typeHierarchyDepth - 1] ==
-              (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
+    if (((TypeInfo__WinningConditionGroup->_1).naturalAligment <= (pWVar5->_1).naturalAligment) &&
+       ((pWVar5->_1).typeHierarchy[(TypeInfo__WinningConditionGroup->_1).naturalAligment - 1] ==
+        (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Add_int__IWinningCondition_
@@ -45,22 +43,20 @@ code_?:
       }
       if ((winnerCondition != (WinningCondition *)0x0) &&
          (parent[1].klass != (WinningCondition__Class *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)parent[1].klass,
-                   (Object *)(winnerCondition->fields).id,(Object *)winnerCondition,
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Add
+                  ((Dictionary_2_System_Int32_System_Object_ *)parent[1].klass,
+                   (winnerCondition->fields).id,(Object *)winnerCondition,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Add_int__IWinningCondition_
                   );
         this_00 = (UnityAction_2_System_Object_System_Object_ *)
                   func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-        if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_00,(Object *)parent,parent->klass[1]._0.gc_desc,(MethodInfo *)0x0);
-          WinningCondition::WinningCondition_add_OnWinningConditionChanged
-                    (winnerCondition,(EventHandler_1_EventArgs_ *)this_00,(MethodInfo *)0x0);
-          return;
-        }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (this_00,(Object *)parent,parent->klass[1]._0.name,(MethodInfo *)0x0);
+        WinningCondition::WinningCondition_add_OnWinningConditionChanged
+                  (winnerCondition,(EventHandler_1_EventArgs_ *)this_00,(MethodInfo *)0x0);
+        return;
       }
       goto code_?;
     }
@@ -68,15 +64,14 @@ code_?:
   func_?(parent,pWVar4);
 code_?:
   uVar1 = func_?(&TypeInfo__System__Exception);
-  this_01 = (Exception *)func_?(uVar1);
-  func_?(this_01);
+  this_02 = (Exception *)func_?(uVar1);
   pMVar2 = (MethodInfo *)0x0;
   pSVar3 = (String *)func_?(&StringLiteral_Type_not_winnerConditionGroup);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,pSVar3,pMVar2);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_02,pSVar3,pMVar2);
   uVar1 = func_?(&
                           MethodInfo__WinningConditionManager__AddWinnerConditionToNode_WinningCondition__WinningCondition_
                          );
-  func_?(this_01,uVar1);
+  func_?(this_02,uVar1);
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -89,42 +84,43 @@ bool MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CanPlac
                (WinningConditionManager *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
     func_?(&MethodInfo__WinningConditionManager__IsTimeLimit_IWinningCondition_);
-    cRam_? = '\x01';
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
   }
   pWVar1 = (WinningConditionGroup *)(this->fields).winnerConditionsRoot;
   if (pWVar1 != (WinningConditionGroup *)0x0) {
     iVar2 = WinningConditionGroup::WinningConditionGroup_get_Length(pWVar1,(MethodInfo *)0x0);
     if ((iVar2 < 1) ||
-       (iVar3 = (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                          (this,((method->field7_0x1c).rgctx_data)->rgctxDataDummy), iVar3 != 0)) {
+       (pOVar3 = WinningConditionManager_GetSingletonWinnerConditionByType
+                           (this,((method->field7_0x1c).rgctx_data)->method),
+       pOVar3 != (Object *)0x0)) {
       return 1;
     }
     pWVar1 = (WinningConditionGroup *)(this->fields).winnerConditionsRoot;
     if (pWVar1 != (WinningConditionGroup *)0x0) {
       iVar2 = WinningConditionGroup::WinningConditionGroup_get_Length(pWVar1,(MethodInfo *)0x0);
-      if (iVar2 != 1) {
-        return 0;
-      }
-      pWVar4 = (this->fields).winnerConditionsRoot;
-      this_00 = (Func_2_Object_Boolean_ *)
-                func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
-      if ((this_00 != (Func_2_Object_Boolean_ *)0x0) &&
-         (mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__WinningConditionManager__IsTimeLimit_IWinningCondition_,
-                     (MethodInfo *)0x0), pWVar4 != (WinningConditionOr *)0x0)) {
-        cVar5 = (*(pWVar4->klass->vtable).Traverse_1.methodPtr)
-                          (pWVar4,this_00,(pWVar4->klass->vtable).Traverse_1.method);
-        if (cVar5 == '\0') {
-          return 0;
+      if (iVar2 == 1) {
+        pWVar4 = (this->fields).winnerConditionsRoot;
+        this_00 = (Func_2_Object_Boolean_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__WinningConditionManager__IsTimeLimit_IWinningCondition_,
+                   (MethodInfo *)0x0);
+        if (pWVar4 == (WinningConditionOr *)0x0) goto code_?;
+        cVar5 = (*(code *)(pWVar4->klass->vtable).Traverse_1.method)
+                          (pWVar4,this_00,(pWVar4->klass->vtable).Reset_1.methodPtr);
+        if (cVar5 != '\0') {
+          return 1;
         }
-        return 1;
       }
+      return 0;
     }
   }
+code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   bVar7 = (*pcVar6)();
@@ -139,7 +135,8 @@ Object * MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Cre
                    MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  pMVar1 = method;
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeInfo__System__Int32);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<System::Object>__AddRange_System__Collections__Generic__IEnumerable<System::Object>_
@@ -150,50 +147,56 @@ Object * MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Cre
     func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
-    cRam_? = '\x01';
+    if ((pMVar1->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(pMVar1);
+    }
   }
-  pWVar1 = this;
-  pWVar2 = (WinningConditionManager *)(this->fields).winnerConditionIDCounter;
-  (this->fields).winnerConditionIDCounter = (int32_t)((int)&pWVar2->klass + 1);
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-    func_?(this_00,parent,
-                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
-                   );
-    this = pWVar2;
-    uVar3 = func_?(TypeInfo__System__Int32,&this);
-    func_?(this_00,uVar3,
-                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
-                   );
-    func_?(this_00,(pWVar1->fields).gameCounterManager,
-                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
-                   );
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__AddRange
-              (this_00,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)args,
+  pWVar2 = this;
+  method = (MethodInfo *)(this->fields).winnerConditionIDCounter;
+  (this->fields).winnerConditionIDCounter = (int32_t)((int)&method->methodPointer + 1);
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+  if (this_00 !=
+      (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
+      0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)parent,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    this = (WinningConditionManager *)method;
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,pOVar3,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)(pWVar2->fields).gameCounterManager,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+    List_1_System_Object__AddRange
+              ((List_1_System_Object_ *)this_00,(IEnumerable_1_System_Object_ *)args,
                MethodInfo__System__Collections__Generic__List<System::Object>__AddRange_System__Collections__Generic__IEnumerable<System::Object>_
               );
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-             UnitySynchronizationContext+WorkRequest]::
-             List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray
+    pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                        (this_00,
                         MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
-    puVar5 = &stack0xfffffff4;
-    pMVar6 = ((method->field7_0x1c).rgctx_data)->method;
-    func_?((&(pWVar1->klass->vtable).Equals)[pMVar6->slot].method);
-    pOVar7 = (Object *)(*(code *)pMVar6)(pWVar1,pUVar4,puVar5);
-    return pOVar7;
+    pMStack5 = ((pMVar1->field7_0x1c).rgctx_data)->method;
+    pIStack6 = (&(pWVar2->klass->vtable).Finalize)[pMStack5->slot].methodPtr;
+    puStack7 = (undefined *)func_?();
+    pWStack8 = pWVar2;
+    pMStack9 = pMVar4;
+    pOVar3 = (Object *)(**(code **)((int)puStack7 + 4))();
+    return pOVar3;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pOVar7 = (Object *)(*pcVar8)();
-  return pOVar7;
+  pcVar10 = (code *)swi(3);
+  pOVar3 = (Object *)(*pcVar10)();
+  return pOVar3;
 }
 
 
@@ -203,10 +206,12 @@ Object * MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Cre
                    (WinningConditionManager *this,Object__Array *args,MethodInfo *method)
 
 {
-  pOVar1 = (Object *)
-           (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                     (this,(this->fields).winnerConditionsRoot,args,
-                      ((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(method);
+  }
+  pOVar1 = WinningConditionManager_CreateWinnerConditionWithParent
+                     (this,(WinningCondition *)(this->fields).winnerConditionsRoot,args,
+                      ((method->field7_0x1c).rgctx_data)->method);
   return pOVar1;
 }
 
@@ -219,40 +224,92 @@ Object * MVWorldObject.dll::WinningConditionManager::
                    MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeInfo__System__EventArgs);
-    cRam_? = '\x01';
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
   }
-  pOVar1 = (Object *)
-           (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                     (this,((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+  pOVar1 = WinningConditionManager_GetSingletonWinnerConditionByType
+                     (this,((method->field7_0x1c).rgctx_data)->method);
   if (pOVar1 != (Object *)0x0) {
-    cVar2 = (*(code *)pOVar1->klass[1]._1.static_fields_size)
-                      (pOVar1,pOVar1->klass[1]._1.thread_static_fields_size);
+    cVar2 = (*(code *)pOVar1->klass[1]._1.cctor_finished_or_no_cctor)
+                      (pOVar1,pOVar1->klass[1]._1.cctor_thread);
     if (cVar2 != '\0') {
       return pOVar1;
     }
   }
-  winnerCondition =
-       (WinningCondition *)
-       (*((method->field7_0x1c).rgctx_data[3].method)->virtualMethodPointer)
-                 (this,parent,args,(method->field7_0x1c).rgctx_data[3].rgctxDataDummy);
-  WinningConditionManager_AddWinnerConditionToNode(this,parent,winnerCondition,(MethodInfo *)0x0);
-  if ((this->fields).OnWinningConditionAddedOrRemoved != (EventHandler_1_EventArgs_ *)0x0) {
-    pEVar3 = (this->fields).OnWinningConditionAddedOrRemoved;
-    this_00 = (TweenRunner_1_FloatTween_ *)func_?(TypeInfo__System__EventArgs);
-    if (this_00 == (TweenRunner_1_FloatTween_ *)0x0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      pOVar1 = (Object *)(*pcVar4)();
-      return pOVar1;
+  pMVar3 = (method->field7_0x1c).rgctx_data[3].method;
+  if ((pMVar3->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(&TypeInfo__System__Int32);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__AddRange_System__Collections__Generic__IEnumerable<System::Object>_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_
+                   );
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
+    func_?(&MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<System::Object>);
+    if ((pMVar3->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(pMVar3);
     }
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
-    (*(pEVar3->fields)._._.invoke_impl)
-              ((pEVar3->fields)._._.method_code,this,this_00,(pEVar3->fields)._._.method);
   }
-  return (Object *)winnerCondition;
+  (this->fields).winnerConditionIDCounter = (this->fields).winnerConditionIDCounter + 1;
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+  if (this_00 !=
+      (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
+      0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)parent,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Int32);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,pOVar1,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)(this->fields).gameCounterManager,
+               MethodInfo__System__Collections__Generic__List<System::Object>__Add_System__Object_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+    List_1_System_Object__AddRange
+              ((List_1_System_Object_ *)this_00,(IEnumerable_1_System_Object_ *)args,
+               MethodInfo__System__Collections__Generic__List<System::Object>__AddRange_System__Collections__Generic__IEnumerable<System::Object>_
+              );
+    pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                       (this_00,
+                        MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
+    pMStack5 = ((pMVar3->field7_0x1c).rgctx_data)->method;
+    pIStack6 = (&(this->klass->vtable).Finalize)[pMStack5->slot].methodPtr;
+    puStack7 = (undefined *)func_?();
+    pWStack8 = this;
+    pMStack9 = pMVar4;
+    parent_00 = (WinningCondition *)(**(code **)((int)puStack7 + 4))();
+    WinningConditionManager_AddWinnerConditionToNode(this,parent_00,parent_00,(MethodInfo *)0x0);
+    if ((this->fields).OnWinningConditionAddedOrRemoved != (EventHandler_1_EventArgs_ *)0x0) {
+      pEStack10 = TypeInfo__System__EventArgs;
+      pEVar11 = (this->fields).OnWinningConditionAddedOrRemoved;
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      pWStack12 = this;
+      pMStack5 = (pEVar11->fields)._._.method_code;
+      (*(pEVar11->fields)._._.invoke_impl)();
+    }
+    return (Object *)parent_00;
+  }
+  func_?();
+  pcVar13 = (code *)swi(3);
+  pOVar1 = (Object *)(*pcVar13)();
+  return pOVar1;
 }
 
 
@@ -262,7 +319,7 @@ Object * MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Fac
                    (WinningConditionManager *this,Object__Array *args,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeRef__AllCollectiblesCollected);
     func_?(&TypeInfo__AllCollectiblesCollected);
     func_?(&TypeInfo__System__Boolean);
@@ -292,674 +349,676 @@ Object * MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Fac
     func_?(&TypeInfo__WinningConditionOr);
     func_?(&TypeInfo__WinningConditionPresentStyle);
     func_?(&TypeInfo__WinningCondition);
-    cRam_? = '\x01';
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
   }
-  RVar1.value = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
+  handle.value = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
   }
-  gameCounterManager =
-       (WinningConditionOr__Class *)
-       mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-  pWVar2 = (WinningConditionOr__Class *)
+  pTVar1 = (TargetAssasinatedGroup__Class *)
+           mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+  pTVar2 = (TargetAssasinatedGroup__Class *)
            mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)TypeRef__AllCollectiblesCollected,(MethodInfo *)0x0);
   pIVar3 = TypeRef__WinningConditionOr;
-  if (gameCounterManager == pWVar2) {
-    if (args == (Object__Array *)0x0) goto code_?;
-    if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-       (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-    goto code_?;
-    gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-    pWVar2 = (WinningConditionOr__Class *)func_?(TypeInfo__AllCollectiblesCollected);
-    if (pWVar2 == (WinningConditionOr__Class *)0x0) goto code_?;
-    if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-       ((pWVar4 = gameCounterManager,
-        (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-        *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-        (*(GameStatCounterManager__Class **)
-          ((gameCounterManager->_0).image[2].typeCount +
-          ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-         TypeInfo__GameStatCounterManager)))) {
-      if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-      pWVar4 = unaff_EBX;
-      if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar5 = (int32_t *)func_?(unaff_EBX);
-        if (RVar1.value == (WinningConditionOr__Class *)0x0) {
-          AllCollectiblesCollected::AllCollectiblesCollected__ctor
-                    ((AllCollectiblesCollected *)pWVar2,(WinningCondition *)0x0,*piVar5,
-                     (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
+  pTVar4 = (TargetAssasinated *)method;
+  if (pTVar1 == pTVar2) {
+    if (args != (Object__Array *)0x0) {
+      if (((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2)) ||
+         (pTVar1 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3))
+      goto code_?;
+      gameCounterManager = (GameStatCounterManager *)args->vector[2];
+      pTVar4 = (TargetAssasinated *)func_?(TypeInfo__AllCollectiblesCollected);
+      if ((gameCounterManager != (GameStatCounterManager *)0x0) &&
+         ((pIVar5 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+          (gameCounterManager->klass->_1).naturalAligment <
+          (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+          ((gameCounterManager->klass->_1).typeHierarchy
+           [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+      if (pTVar1 != (TargetAssasinatedGroup__Class *)0x0) {
+        pIVar5 = TypeInfo__System__Int32;
+        pTVar2 = pTVar1;
+        if ((Il2CppClass *)((pTVar1->_0).image)->codeGenModule ==
+            (TypeInfo__System__Int32->_0).element_class) {
+          func_?(pTVar1);
+          if ((handle.value == (Il2CppClass *)0x0) ||
+             ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+              pWVar6 = TypeInfo__WinningCondition,
+              (TypeInfo__WinningCondition->_1).naturalAligment <= (pTVar2->_1).naturalAligment &&
+              ((pTVar2->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+               (Il2CppClass *)TypeInfo__WinningCondition)))) {
+            AllCollectiblesCollected::AllCollectiblesCollected__ctor
+                      ((AllCollectiblesCollected *)pTVar4,handle.value,0,gameCounterManager,
+                       (MethodInfo *)0x0);
+            this_00 = pTVar4;
+            goto code_?;
+          }
+          goto code_?;
         }
-        else {
-          unaff_EBX = (WinningConditionOr__Class *)
-                      (((WinningConditionOr__Class *)RVar1.value)->_0).image;
-          pWVar4 = RVar1.value;
-          if (((unaff_EBX->_1).typeHierarchyDepth <
-               (TypeInfo__WinningCondition->_1).typeHierarchyDepth) ||
-             ((unaff_EBX->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1]
-              != (Il2CppClass *)TypeInfo__WinningCondition)) goto code_?;
-          AllCollectiblesCollected::AllCollectiblesCollected__ctor
-                    ((AllCollectiblesCollected *)pWVar2,RVar1.value,*piVar5,
-                     (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-        }
-code_?:
-        pWVar6 = (method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
-        bVar7 = (pWVar6->_1).field_0x56;
-joined_?:
-        if ((bVar7 & 1) == 0) {
-          pWVar6 = (WinningConditionOr__Class *)func_?();
-        }
-        pOVar8 = (Object *)func_?(pWVar2);
-        gameCounterManager = pWVar2;
-joined_?:
-        RVar1.value = pWVar6;
-        pWVar4 = pWVar2;
-        if (pOVar8 != (Object *)0x0) {
-          return pOVar8;
-        }
+        goto code_?;
       }
     }
+    goto code_?;
+  }
+  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Type);
+  }
+  pTVar2 = (TargetAssasinatedGroup__Class *)
+           mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                     ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
+  pIVar7 = TypeRef__WinningConditionAnd;
+  if (pTVar1 == pTVar2) {
+    handle.value = pIVar3;
+    if (args == (Object__Array *)0x0) goto code_?;
+    if (((((args->max_length == 0) ||
+          (pIVar8 = (Il2CppClass *)args->vector[0], args->max_length < 2)) ||
+         (gameCounterManager = (GameStatCounterManager *)args->vector[1], args->max_length < 3)) ||
+        ((pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[2], args->max_length < 4 ||
+         (args->max_length < 5)))) || (handle.value = args->vector[4], args->max_length < 6))
+    goto code_?;
+    pTVar1 = (TargetAssasinatedGroup__Class *)args->vector[5];
+    pWVar9 = TypeInfo__WinningConditionOr;
+    pTVar4 = (TargetAssasinated *)func_?();
+    if (pTVar1 == (TargetAssasinatedGroup__Class *)0x0) goto code_?;
+    pWVar10 = TypeInfo__WinningConditionPresentStyle;
+    if ((Il2CppClass *)((pTVar1->_0).image)->codeGenModule ==
+        (TypeInfo__WinningConditionPresentStyle->_0).element_class) {
+      puVar11 = (undefined1 *)func_?(pTVar1);
+      uVar12 = *puVar11;
+      if (handle.value == (Il2CppClass *)0x0) goto code_?;
+      pGVar13 = TypeInfo__GameStatCounterType;
+      if ((((WinningCondition__Class *)((Il2CppClass *)handle.value)->image)->_0).element_class ==
+          (TypeInfo__GameStatCounterType->_0).element_class) {
+        puVar14 = (undefined1 *)func_?(handle.value);
+        uVar15 = *puVar14;
+        if (pWVar9 == (WinningConditionOr__Class *)0x0) {
 code_?:
-    func_?(pWVar4);
-    pWVar9 = extraout_EDX;
+          func_?();
+          pTVar2 = pTVar1;
 code_?:
-    func_?(RVar1.value,pWVar9);
-    pIVar10 = extraout_ECX;
-code_?:
-    func_?(unaff_EBX,pIVar10);
-    pGVar11 = extraout_EDX_00;
+          func_?(pTVar4,handle.value);
+          pWVar6 = extraout_EDX;
+          goto code_?;
+        }
+        pIVar5 = (Int32__Class *)TypeInfo__System__Boolean;
+        if ((Il2CppClass *)((pWVar9->_0).image)->codeGenModule ==
+            (TypeInfo__System__Boolean->_0).element_class) {
+          func_?(pWVar9);
+          if ((pTVar2 != (TargetAssasinatedGroup__Class *)0x0) &&
+             ((handle.value = (pTVar2->_0).image, pGVar16 = TypeInfo__GameStatCounterManager,
+              ((Il2CppClass *)handle.value)->naturalAligment <
+              (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+              (((Il2CppClass *)handle.value)->typeHierarchy
+               [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+               (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+          pTVar1 = pTVar2;
+          if (gameCounterManager != (GameStatCounterManager *)0x0) {
+            pIVar5 = TypeInfo__System__Int32;
+            if ((gameCounterManager->klass->_0).element_class ==
+                (TypeInfo__System__Int32->_0).element_class) {
+              handle.value = pIVar8;
+              piVar17 = (int32_t *)func_?();
+              if ((handle.value == (Il2CppClass *)0x0) ||
+                 ((pWVar6 = TypeInfo__WinningCondition,
+                  (TypeInfo__WinningCondition->_1).naturalAligment <=
+                  *(byte *)&((Il2CppClass *)handle.value)->image[4].assembly &&
+                  (*(WinningCondition__Class **)
+                    ((((Il2CppClass *)handle.value)->image[2].typeCount - 4) +
+                    (uint)(TypeInfo__WinningCondition->_1).naturalAligment * 4) ==
+                   TypeInfo__WinningCondition)))) {
+                WinningConditionOr::WinningConditionOr__ctor
+                          ((WinningConditionOr *)pTVar4,handle.value,*piVar17,
+                           (GameStatCounterManager *)pTVar2,(bool)gameCounterManager,
+                           CONCAT31((int3)((uint)puVar14 >> 8),uVar15),
+                           CONCAT31((int3)((uint)puVar11 >> 8),uVar12),(MethodInfo *)0x0);
+                this_00 = pTVar4;
+                goto code_?;
+              }
+              goto code_?;
+            }
+            goto code_?;
+          }
+          goto code_?;
+        }
+        goto code_?;
+      }
+      goto code_?;
+    }
   }
   else {
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    pWVar2 = (WinningConditionOr__Class *)
+    pTVar2 = (TargetAssasinatedGroup__Class *)
              mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
-    RVar1.value = TypeRef__WinningConditionAnd;
-    if (gameCounterManager == pWVar2) {
-      RVar1.value = pIVar3;
-      if (args != (Object__Array *)0x0) {
-        if (((((args->max_length == 0) ||
-              (pWVar6 = (WinningConditionOr__Class *)args->vector[0], args->max_length < 2)) ||
-             (pWVar2 = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3)) ||
-            ((args->max_length < 4 ||
-             (unaff_EBX = (WinningConditionOr__Class *)args->vector[3], args->max_length < 5)))) ||
-           (gameCounterManager = (WinningConditionOr__Class *)args->vector[4], args->max_length < 6)
-           ) goto code_?;
-        RVar1.value = args->vector[5];
-        pWVar12 = TypeInfo__WinningConditionOr;
-        iVar13 = func_?();
-        if ((iVar13 != 0) && (RVar1.value != (WinningConditionOr__Class *)0x0)) {
-          pWVar4 = RVar1.value;
-          if ((((WinningCondition__Class *)(((WinningConditionOr__Class *)RVar1.value)->_0).image)
-              ->_0).element_class == (TypeInfo__WinningConditionPresentStyle->_0).element_class) {
-            puVar14 = (undefined1 *)func_?(RVar1.value);
-            uVar15 = *puVar14;
-            if (gameCounterManager == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = gameCounterManager;
-            if ((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
-                (TypeInfo__GameStatCounterType->_0).element_class) {
-              puVar16 = (undefined1 *)func_?(gameCounterManager);
-              uVar17 = *puVar16;
-              if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-              pWVar4 = unaff_EBX;
-              if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                  (TypeInfo__System__Boolean->_0).element_class) {
-                RVar1.value = pWVar12;
-                pbVar18 = (bool *)func_?(unaff_EBX);
-                isBriefingNode = *pbVar18;
-                if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-                   ((gameCounterManager =
-                          (WinningConditionOr__Class *)
-                          (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-                    pWVar4 = RVar1.value,
-                    (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-                    (gameCounterManager->_1).typeHierarchyDepth &&
-                    ((gameCounterManager->_1).typeHierarchy
-                     [(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1] ==
-                     (Il2CppClass *)TypeInfo__GameStatCounterManager)))) {
-                  if (pWVar2 == (WinningConditionOr__Class *)0x0) goto code_?;
-                  pWVar4 = pWVar2;
-                  if ((((WinningCondition__Class *)(pWVar2->_0).image)->_0).element_class ==
+                       ((RuntimeTypeHandle)pIVar7,(MethodInfo *)0x0);
+    handle.value = TypeRef__CaptureTheFlag;
+    if (pTVar1 == pTVar2) {
+      handle.value = pIVar7;
+      if (args == (Object__Array *)0x0) goto code_?;
+      if (((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2)) ||
+         (pTVar1 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3))
+      goto code_?;
+      gameCounterManager = (GameStatCounterManager *)args->vector[2];
+      pTVar4 = (TargetAssasinated *)func_?(TypeInfo__WinningConditionAnd);
+      if ((gameCounterManager == (GameStatCounterManager *)0x0) ||
+         ((pIVar5 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+          (TypeInfo__GameStatCounterManager->_1).naturalAligment <=
+          (gameCounterManager->klass->_1).naturalAligment &&
+          ((gameCounterManager->klass->_1).typeHierarchy
+           [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] ==
+           (Il2CppClass *)TypeInfo__GameStatCounterManager)))) {
+        if (pTVar1 == (TargetAssasinatedGroup__Class *)0x0) goto code_?;
+        pIVar5 = TypeInfo__System__Int32;
+        pTVar2 = pTVar1;
+        if ((Il2CppClass *)((pTVar1->_0).image)->codeGenModule !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        piVar17 = (int32_t *)func_?(pTVar1);
+        if ((handle.value == (Il2CppClass *)0x0) ||
+           ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+            pWVar6 = TypeInfo__WinningCondition,
+            (TypeInfo__WinningCondition->_1).naturalAligment <= (pTVar2->_1).naturalAligment &&
+            ((pTVar2->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+             (Il2CppClass *)TypeInfo__WinningCondition)))) {
+          WinningConditionAnd::WinningConditionAnd__ctor
+                    ((WinningConditionAnd *)pTVar4,handle.value,*piVar17,gameCounterManager,
+                     (MethodInfo *)0x0);
+          this_00 = pTVar4;
+code_?:
+          handle.value = (method->field7_0x1c).rgctx_data[1].klass;
+          if (((uint)((Il2CppClass *)handle.value)->vtable[0].methodPtr & 0x100) == 0) {
+            handle.value = (void *)func_?(handle.value);
+          }
+          if (this_00 == (TargetAssasinated *)0x0) {
+            return (Object *)0x0;
+          }
+          goto code_?;
+        }
+code_?:
+        func_?(handle.value,pWVar6);
+        pIVar5 = extraout_ECX;
+        goto code_?;
+      }
+    }
+    else {
+      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Type);
+      }
+      pTVar2 = (TargetAssasinatedGroup__Class *)
+               mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+      pIVar3 = TypeRef__FlagReached;
+      if (pTVar1 == pTVar2) {
+        if (args == (Object__Array *)0x0) goto code_?;
+        if (((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2)) ||
+           (pTVar1 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3))
+        goto code_?;
+        gameCounterManager = (GameStatCounterManager *)args->vector[2];
+        pTVar4 = (TargetAssasinated *)func_?(TypeInfo__CaptureTheFlag);
+        if ((gameCounterManager != (GameStatCounterManager *)0x0) &&
+           ((pIVar5 = (Int32__Class *)TypeInfo__GameStatCounterManager,
+            (gameCounterManager->klass->_1).naturalAligment <
+            (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+            ((gameCounterManager->klass->_1).typeHierarchy
+             [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+             (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+        if (pTVar1 == (TargetAssasinatedGroup__Class *)0x0) goto code_?;
+        pIVar5 = TypeInfo__System__Int32;
+        pTVar2 = pTVar1;
+        if ((Il2CppClass *)((pTVar1->_0).image)->codeGenModule ==
+            (TypeInfo__System__Int32->_0).element_class) {
+          piVar17 = (int32_t *)func_?(pTVar1);
+          if ((handle.value == (Il2CppClass *)0x0) ||
+             ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+              pWVar6 = TypeInfo__WinningCondition,
+              (TypeInfo__WinningCondition->_1).naturalAligment <= (pTVar2->_1).naturalAligment &&
+              ((pTVar2->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+               (Il2CppClass *)TypeInfo__WinningCondition)))) {
+            CaptureTheFlag::CaptureTheFlag__ctor
+                      ((CaptureTheFlag *)pTVar4,handle.value,*piVar17,gameCounterManager,
+                       (MethodInfo *)0x0);
+            this_00 = pTVar4;
+            goto code_?;
+          }
+          goto code_?;
+        }
+code_?:
+        func_?(pTVar2,pIVar5);
+        pGVar16 = extraout_EDX_00;
+code_?:
+        func_?(pTVar4,pGVar16);
+        pWVar9 = extraout_ECX_00;
+        pIVar5 = extraout_EDX_01;
+        pTVar1 = pTVar2;
+code_?:
+        pIVar5 = (Int32__Class *)func_?(pWVar9,pIVar5);
+        pTVar2 = pTVar1;
+code_?:
+        func_?(pTVar4,pIVar5);
+        pIVar5 = extraout_ECX_01;
+code_?:
+        func_?(pTVar4,pIVar5);
+        pGVar16 = extraout_EDX_02;
+code_?:
+        uVar18 = func_?(pTVar2,pGVar16);
+      }
+      else {
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Type);
+        }
+        pTVar2 = (TargetAssasinatedGroup__Class *)
+                 mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
+        pIVar7 = TypeRef__KillLimit;
+        if (pTVar1 == pTVar2) {
+          handle.value = pIVar3;
+          if (args != (Object__Array *)0x0) {
+            if (((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2))
+               || (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3))
+            goto code_?;
+            pTVar4 = (TargetAssasinated *)args->vector[2];
+            this_00 = (TargetAssasinated *)func_?(TypeInfo__FlagReached);
+            if ((pTVar4 != (TargetAssasinated *)0x0) &&
+               ((pGVar16 = TypeInfo__GameStatCounterManager,
+                (((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).naturalAligment <
+                (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+                ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).typeHierarchy
+                 [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+                 (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+            pTVar1 = pTVar2;
+            if (pTVar2 != (TargetAssasinatedGroup__Class *)0x0) {
+              pIVar5 = TypeInfo__System__Int32;
+              if ((Il2CppClass *)((pTVar2->_0).image)->codeGenModule ==
+                  (TypeInfo__System__Int32->_0).element_class) {
+                piVar17 = (int32_t *)func_?(pTVar2);
+                if ((handle.value == (Il2CppClass *)0x0) ||
+                   ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+                    pWVar6 = TypeInfo__WinningCondition,
+                    (TypeInfo__WinningCondition->_1).naturalAligment <= (pTVar2->_1).naturalAligment
+                    && ((pTVar2->_1).typeHierarchy
+                        [(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+                        (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                  FlagReached::FlagReached__ctor
+                            ((FlagReached *)this_00,handle.value,*piVar17,
+                             (GameStatCounterManager *)pTVar4,(MethodInfo *)0x0);
+                  handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                  if (this_00 == (TargetAssasinated *)0x0) {
+                    return (Object *)0x0;
+                  }
+                  goto code_?;
+                }
+                goto code_?;
+              }
+              goto code_?;
+            }
+          }
+          goto code_?;
+        }
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Type);
+        }
+        pTVar2 = (TargetAssasinatedGroup__Class *)
+                 mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)pIVar7,(MethodInfo *)0x0);
+        handle.value = TypeRef__OculusKillLimit;
+        if (pTVar1 != pTVar2) {
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Type);
+          }
+          pTVar2 = (TargetAssasinatedGroup__Class *)
+                   mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+          pIVar3 = TypeRef__TargetAssasinated;
+          if (pTVar1 == pTVar2) {
+            if (args != (Object__Array *)0x0) {
+              if ((((args->max_length == 0) ||
+                   (handle.value = args->vector[0], args->max_length < 2)) ||
+                  (pTVar4 = (TargetAssasinated *)args->vector[1], args->max_length < 3)) ||
+                 (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[2], args->max_length < 4))
+              goto code_?;
+              pOVar19 = args->vector[3];
+              this_00 = (TargetAssasinated *)func_?();
+              uVar18 = CONCAT44(TypeInfo__System__Int32,pOVar19);
+              pTVar1 = pTVar2;
+              if (pOVar19 != (Object *)0x0) {
+                if ((pOVar19->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class
+                   ) goto code_?;
+                piVar17 = (int32_t *)func_?(pOVar19);
+                iVar20 = *piVar17;
+                if ((pTVar2 != (TargetAssasinatedGroup__Class *)0x0) &&
+                   ((pGVar16 = TypeInfo__GameStatCounterManager,
+                    *(byte *)&(pTVar2->_0).image[4].assembly <
+                    (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+                    (*(GameStatCounterManager__Class **)
+                      (((pTVar2->_0).image[2].typeCount - 4) +
+                      (uint)(TypeInfo__GameStatCounterManager->_1).naturalAligment * 4) !=
+                     TypeInfo__GameStatCounterManager)))) goto code_?;
+                if (pTVar4 != (TargetAssasinated *)0x0) {
+                  pIVar5 = TypeInfo__System__Int32;
+                  if ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_0).element_class !=
+                      (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                  piVar17 = (int32_t *)func_?(pTVar4);
+                  if ((handle.value == (Il2CppClass *)0x0) ||
+                     ((pTVar4 = (TargetAssasinated *)((Il2CppClass *)handle.value)->image,
+                      pWVar6 = TypeInfo__WinningCondition,
+                      (TypeInfo__WinningCondition->_1).naturalAligment <=
+                      *(byte *)&pTVar4[3].fields._.gameCounterManager &&
+                      (*(WinningCondition__Class **)
+                        (pTVar4[1].fields.assassineeActorNumber +
+                        (uint)(TypeInfo__WinningCondition->_1).naturalAligment * 4 + -4) ==
+                       TypeInfo__WinningCondition)))) {
+                    OculusKillLimit::OculusKillLimit__ctor
+                              ((OculusKillLimit *)this_00,handle.value,*piVar17,
+                               (GameStatCounterManager *)pTVar2,iVar20,(MethodInfo *)0x0);
+                    handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                    if (this_00 == (TargetAssasinated *)0x0) {
+                      return (Object *)0x0;
+                    }
+                    goto code_?;
+                  }
+                  goto code_?;
+                }
+              }
+            }
+            goto code_?;
+          }
+          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__System__Type);
+          }
+          pTVar2 = (TargetAssasinatedGroup__Class *)
+                   mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                             ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
+          pIVar7 = TypeRef__TargetAssasinatedGroup;
+          if (pTVar1 != pTVar2) {
+            if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__System__Type);
+            }
+            pTVar2 = (TargetAssasinatedGroup__Class *)
+                     mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                               ((RuntimeTypeHandle)pIVar7,(MethodInfo *)0x0);
+            handle.value = TypeRef__TimeLimit;
+            if (pTVar1 == pTVar2) {
+              handle.value = pIVar7;
+              if (args != (Object__Array *)0x0) {
+                if (((args->max_length == 0) ||
+                    (handle.value = args->vector[0], args->max_length < 2)) ||
+                   (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3)
+                   ) goto code_?;
+                pTVar4 = (TargetAssasinated *)args->vector[2];
+                this_00 = (TargetAssasinated *)func_?(TypeInfo__TargetAssasinatedGroup);
+                if ((pTVar4 != (TargetAssasinated *)0x0) &&
+                   ((pGVar16 = TypeInfo__GameStatCounterManager,
+                    (((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).naturalAligment <
+                    (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+                    ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).typeHierarchy
+                     [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+                     (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+                pTVar1 = pTVar2;
+                if (pTVar2 != (TargetAssasinatedGroup__Class *)0x0) {
+                  pIVar5 = TypeInfo__System__Int32;
+                  if ((Il2CppClass *)((pTVar2->_0).image)->codeGenModule ==
                       (TypeInfo__System__Int32->_0).element_class) {
-                    piVar5 = (int32_t *)func_?();
-                    unaff_EBX = pWVar6;
-                    if ((pWVar6 == (WinningConditionOr__Class *)0x0) ||
-                       ((gameCounterManager = (WinningConditionOr__Class *)(pWVar6->_0).image,
-                        pWVar4 = pWVar6,
-                        (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                        (gameCounterManager->_1).typeHierarchyDepth &&
-                        ((gameCounterManager->_1).typeHierarchy
-                         [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
+                    piVar17 = (int32_t *)func_?(pTVar2);
+                    if ((handle.value == (Il2CppClass *)0x0) ||
+                       ((pTVar2 = (TargetAssasinatedGroup__Class *)
+                                  ((Il2CppClass *)handle.value)->image,
+                        pWVar6 = TypeInfo__WinningCondition,
+                        (TypeInfo__WinningCondition->_1).naturalAligment <=
+                        (pTVar2->_1).naturalAligment &&
+                        ((pTVar2->_1).typeHierarchy
+                         [(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
                          (Il2CppClass *)TypeInfo__WinningCondition)))) {
-                      WinningConditionOr::WinningConditionOr__ctor
-                                ((WinningConditionOr *)pWVar2,(WinningCondition *)pWVar6,*piVar5,
-                                 RVar1.value,isBriefingNode,
-                                 CONCAT31((int3)((uint)puVar16 >> 8),uVar17),
-                                 CONCAT31((int3)((uint)puVar14 >> 8),uVar15),(MethodInfo *)0x0);
+                      TargetAssasinatedGroup::TargetAssasinatedGroup__ctor
+                                ((TargetAssasinatedGroup *)this_00,handle.value,*piVar17,
+                                 (GameStatCounterManager *)pTVar4,(MethodInfo *)0x0);
+                      handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                      if (this_00 == (TargetAssasinated *)0x0) {
+                        return (Object *)0x0;
+                      }
                       goto code_?;
                     }
+                    goto code_?;
                   }
+                  goto code_?;
                 }
               }
+              goto code_?;
             }
-          }
-          goto code_?;
-        }
-      }
+            if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__System__Type);
+            }
+            pTVar2 = (TargetAssasinatedGroup__Class *)
+                     mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+            pIVar3 = TypeRef__TimeAttackFlagReached;
+            if (pTVar1 == pTVar2) {
+              if (args != (Object__Array *)0x0) {
+                if (((args->max_length == 0) ||
+                    (handle.value = args->vector[0], args->max_length < 2)) ||
+                   (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3)
+                   ) goto code_?;
+                pTVar4 = (TargetAssasinated *)args->vector[2];
+                this_00 = (TargetAssasinated *)func_?(TypeInfo__TimeLimit);
+                if ((pTVar4 != (TargetAssasinated *)0x0) &&
+                   ((pGVar16 = TypeInfo__GameStatCounterManager,
+                    (((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).naturalAligment <
+                    (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+                    ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).typeHierarchy
+                     [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+                     (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+                pTVar1 = pTVar2;
+                if (pTVar2 != (TargetAssasinatedGroup__Class *)0x0) {
+                  pIVar5 = TypeInfo__System__Int32;
+                  if ((Il2CppClass *)((pTVar2->_0).image)->codeGenModule ==
+                      (TypeInfo__System__Int32->_0).element_class) {
+                    piVar17 = (int32_t *)func_?(pTVar2);
+                    if ((handle.value == (Il2CppClass *)0x0) ||
+                       ((pTVar2 = (TargetAssasinatedGroup__Class *)
+                                  ((Il2CppClass *)handle.value)->image,
+                        pWVar6 = TypeInfo__WinningCondition,
+                        (TypeInfo__WinningCondition->_1).naturalAligment <=
+                        (pTVar2->_1).naturalAligment &&
+                        ((pTVar2->_1).typeHierarchy
+                         [(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+                         (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                      TimeLimit::TimeLimit__ctor
+                                ((TimeLimit *)this_00,handle.value,*piVar17,
+                                 (GameStatCounterManager *)pTVar4,(MethodInfo *)0x0);
+                      handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                      if (this_00 == (TargetAssasinated *)0x0) {
+                        return (Object *)0x0;
+                      }
+                      goto code_?;
+                    }
+                    goto code_?;
+                  }
+                  goto code_?;
+                }
+              }
+              goto code_?;
+            }
+            if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__System__Type);
+            }
+            pTVar2 = (TargetAssasinatedGroup__Class *)
+                     mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                               ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
+            if (pTVar1 != pTVar2) {
+              return (Object *)0x0;
+            }
+            handle.value = pIVar3;
+            if (args == (Object__Array *)0x0) goto code_?;
+            if (((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2))
+               || (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[1], args->max_length < 3))
+            goto code_?;
+            pTVar4 = (TargetAssasinated *)args->vector[2];
+            this_00 = (TargetAssasinated *)func_?(TypeInfo__TimeAttackFlagReached);
+            if ((pTVar4 == (TargetAssasinated *)0x0) ||
+               ((pGVar16 = TypeInfo__GameStatCounterManager,
+                (TypeInfo__GameStatCounterManager->_1).naturalAligment <=
+                (((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).naturalAligment &&
+                ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_1).typeHierarchy
+                 [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] ==
+                 (Il2CppClass *)TypeInfo__GameStatCounterManager)))) {
+              pTVar1 = pTVar2;
+              if (pTVar2 == (TargetAssasinatedGroup__Class *)0x0) goto code_?;
+              pIVar5 = TypeInfo__System__Int32;
+              if ((Il2CppClass *)((pTVar2->_0).image)->codeGenModule !=
+                  (TypeInfo__System__Int32->_0).element_class) goto code_?;
+              piVar17 = (int32_t *)func_?(pTVar2);
+              if ((handle.value != (Il2CppClass *)0x0) &&
+                 ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+                  pWVar6 = TypeInfo__WinningCondition,
+                  (pTVar2->_1).naturalAligment < (TypeInfo__WinningCondition->_1).naturalAligment ||
+                  ((pTVar2->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).naturalAligment - 1]
+                   != (Il2CppClass *)TypeInfo__WinningCondition)))) goto code_?;
+              TimeAttackFlagReached::TimeAttackFlagReached__ctor
+                        ((TimeAttackFlagReached *)this_00,handle.value,*piVar17,
+                         (GameStatCounterManager *)pTVar4,(MethodInfo *)0x0);
+              handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+              if (this_00 == (TargetAssasinated *)0x0) {
+                return (Object *)0x0;
+              }
 code_?:
-      func_?();
-      pWVar4 = RVar1.value;
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    pIVar3 = TypeRef__CaptureTheFlag;
-    if (gameCounterManager == pWVar2) {
-      if (args != (Object__Array *)0x0) {
-        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-           (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-        goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-        iVar13 = func_?(TypeInfo__WinningConditionAnd);
-        if (iVar13 != 0) {
-          if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-             ((pWVar4 = gameCounterManager,
-              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-              (*(GameStatCounterManager__Class **)
-                ((gameCounterManager->_0).image[2].typeCount +
-                ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-               TypeInfo__GameStatCounterManager)))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-                 ((unaff_EBX = (WinningConditionOr__Class *)
-                               (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-                  pWVar4 = RVar1.value,
-                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                  (unaff_EBX->_1).typeHierarchyDepth &&
-                  ((unaff_EBX->_1).typeHierarchy
-                   [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
-                   (Il2CppClass *)TypeInfo__WinningCondition)))) {
-                pWVar2 = (WinningConditionOr__Class *)0x0;
-                WinningConditionAnd::WinningConditionAnd__ctor
-                          ((WinningConditionAnd *)0x0,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
+              pOVar19 = (Object *)func_?(this_00,handle.value);
+              pTVar4 = this_00;
+              if (pOVar19 != (Object *)0x0) {
+                return pOVar19;
+              }
+              goto code_?;
+            }
+            goto code_?;
+          }
+          handle.value = pIVar3;
+          if (args == (Object__Array *)0x0) goto code_?;
+          if ((((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2))
+              || (pWVar9 = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3)) ||
+             ((pTVar21 = (TargetAssasinated *)args->vector[2], args->max_length < 4 ||
+              (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[3], args->max_length < 5))))
+          goto code_?;
+          pTVar4 = (TargetAssasinated *)args->vector[4];
+          this_00 = (TargetAssasinated *)func_?(TypeInfo__TargetAssasinated);
+          pTVar1 = pTVar2;
+          if (pTVar4 == (TargetAssasinated *)0x0) goto code_?;
+          pIVar5 = TypeInfo__System__Int32;
+          if ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_0).element_class ==
+              (TypeInfo__System__Int32->_0).element_class) {
+            piVar17 = (int32_t *)func_?(pTVar4);
+            iVar20 = *piVar17;
+            if (pTVar2 != (TargetAssasinatedGroup__Class *)0x0) {
+              pIVar5 = TypeInfo__System__Int32;
+              if ((Il2CppClass *)((pTVar2->_0).image)->codeGenModule !=
+                  (TypeInfo__System__Int32->_0).element_class) goto code_?;
+              pTVar4 = pTVar21;
+              piVar17 = (int32_t *)func_?(pTVar2);
+              assassinatorActorNumber = *piVar17;
+              if ((pTVar4 != (TargetAssasinated *)0x0) &&
+                 ((pTVar2 = (TargetAssasinatedGroup__Class *)pTVar4->klass,
+                  pGVar16 = TypeInfo__GameStatCounterManager,
+                  (pTVar2->_1).naturalAligment <
+                  (TypeInfo__GameStatCounterManager->_1).naturalAligment ||
+                  ((pTVar2->_1).typeHierarchy
+                   [(TypeInfo__GameStatCounterManager->_1).naturalAligment - 1] !=
+                   (Il2CppClass *)TypeInfo__GameStatCounterManager)))) goto code_?;
+              pTVar1 = pTVar2;
+              if (pWVar9 != (WinningConditionOr__Class *)0x0) {
+                pIVar5 = TypeInfo__System__Int32;
+                if ((Il2CppClass *)((pWVar9->_0).image)->codeGenModule !=
+                    (TypeInfo__System__Int32->_0).element_class) goto code_?;
+                piVar17 = (int32_t *)func_?(pWVar9);
+                if ((handle.value == (Il2CppClass *)0x0) ||
+                   ((pTVar2 = (TargetAssasinatedGroup__Class *)((Il2CppClass *)handle.value)->image,
+                    pWVar6 = TypeInfo__WinningCondition,
+                    (TypeInfo__WinningCondition->_1).naturalAligment <= (pTVar2->_1).naturalAligment
+                    && ((pTVar2->_1).typeHierarchy
+                        [(TypeInfo__WinningCondition->_1).naturalAligment - 1] ==
+                        (Il2CppClass *)TypeInfo__WinningCondition)))) {
+                  TargetAssasinated::TargetAssasinated__ctor
+                            (this_00,handle.value,*piVar17,(GameStatCounterManager *)pTVar4,
+                             assassinatorActorNumber,iVar20,(MethodInfo *)0x0);
+                  handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                  if (this_00 == (TargetAssasinated *)0x0) {
+                    return (Object *)0x0;
+                  }
+                  goto code_?;
+                }
                 goto code_?;
               }
             }
+            goto code_?;
           }
           goto code_?;
         }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
-    RVar1.value = TypeRef__FlagReached;
-    if (gameCounterManager == pWVar2) {
-      RVar1.value = pIVar3;
-      if (args != (Object__Array *)0x0) {
-        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-           (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
+        handle.value = pIVar7;
+        if (args == (Object__Array *)0x0) goto code_?;
+        if ((((args->max_length == 0) || (handle.value = args->vector[0], args->max_length < 2)) ||
+            (pTVar4 = (TargetAssasinated *)args->vector[1], args->max_length < 3)) ||
+           (pTVar2 = (TargetAssasinatedGroup__Class *)args->vector[2], args->max_length < 4))
         goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-        iVar13 = func_?(TypeInfo__CaptureTheFlag);
-        if (iVar13 != 0) {
-          if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-             ((pWVar4 = gameCounterManager,
-              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
+        pOVar19 = args->vector[3];
+        this_00 = (TargetAssasinated *)func_?();
+        uVar18 = CONCAT44(TypeInfo__System__Int32,pOVar19);
+        pTVar1 = pTVar2;
+        if (pOVar19 == (Object *)0x0) goto code_?;
+        if ((pOVar19->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+          piVar17 = (int32_t *)func_?(pOVar19);
+          iVar20 = *piVar17;
+          if ((pTVar2 == (TargetAssasinatedGroup__Class *)0x0) ||
+             ((pGVar16 = TypeInfo__GameStatCounterManager,
+              (TypeInfo__GameStatCounterManager->_1).naturalAligment <=
+              *(byte *)&(pTVar2->_0).image[4].assembly &&
               (*(GameStatCounterManager__Class **)
-                ((gameCounterManager->_0).image[2].typeCount +
-                ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
+                (((pTVar2->_0).image[2].typeCount - 4) +
+                (uint)(TypeInfo__GameStatCounterManager->_1).naturalAligment * 4) ==
                TypeInfo__GameStatCounterManager)))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
+            if (pTVar4 == (TargetAssasinated *)0x0) goto code_?;
+            pIVar5 = TypeInfo__System__Int32;
+            if ((((TargetAssasinatedGroup__Class *)pTVar4->klass)->_0).element_class ==
                 (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-                 ((unaff_EBX = (WinningConditionOr__Class *)
-                               (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-                  pWVar4 = RVar1.value,
-                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                  (unaff_EBX->_1).typeHierarchyDepth &&
-                  ((unaff_EBX->_1).typeHierarchy
-                   [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
-                   (Il2CppClass *)TypeInfo__WinningCondition)))) {
-                pWVar2 = (WinningConditionOr__Class *)0x0;
-                CaptureTheFlag::CaptureTheFlag__ctor
-                          ((CaptureTheFlag *)0x0,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-                pWVar6 = (method->field7_0x1c).rgctx_data[1].rgctxDataDummy;
-                bVar7 = (pWVar6->_1).field_0x56;
-                goto joined_?;
-              }
-            }
-          }
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    pIVar3 = TypeRef__KillLimit;
-    if (gameCounterManager == pWVar2) {
-      if (args != (Object__Array *)0x0) {
-        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-           (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-        goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-        iVar13 = func_?(TypeInfo__FlagReached);
-        if (iVar13 != 0) {
-          if ((gameCounterManager != (WinningConditionOr__Class *)0x0) &&
-             ((pWVar4 = gameCounterManager,
-              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt <
-              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth ||
-              (*(GameStatCounterManager__Class **)
-                ((gameCounterManager->_0).image[2].typeCount +
-                ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) !=
-               TypeInfo__GameStatCounterManager)))) goto code_?;
-          if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-          pWVar4 = unaff_EBX;
-          if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule !=
-              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          piVar5 = (int32_t *)func_?(unaff_EBX);
-          if (RVar1.value == (WinningConditionOr__Class *)0x0) {
-            FlagReached::FlagReached__ctor
-                      ((FlagReached *)0x0,(WinningCondition *)0x0,*piVar5,
-                       (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-            pWVar6 = RVar1.value;
-          }
-          else {
-            unaff_EBX = (WinningConditionOr__Class *)
-                        (((WinningConditionOr__Class *)RVar1.value)->_0).image;
-            pWVar4 = RVar1.value;
-            if (((unaff_EBX->_1).typeHierarchyDepth <
-                 (TypeInfo__WinningCondition->_1).typeHierarchyDepth) ||
-               ((unaff_EBX->_1).typeHierarchy
-                [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] !=
-                (Il2CppClass *)TypeInfo__WinningCondition)) goto code_?;
-            pWVar6 = (WinningConditionOr__Class *)0x0;
-            FlagReached::FlagReached__ctor
-                      ((FlagReached *)0x0,RVar1.value,*piVar5,
-                       (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-          }
-code_?:
-          gameCounterManager =
-               (WinningConditionOr__Class *)func_?((method->field7_0x1c).rgctx_data,1);
-          pOVar8 = (Object *)func_?(pWVar6,gameCounterManager);
-          pWVar2 = pWVar6;
-          goto joined_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
-    RVar1.value = TypeRef__OculusKillLimit;
-    if (gameCounterManager == pWVar2) {
-      RVar1.value = pIVar3;
-      if (args != (Object__Array *)0x0) {
-        if ((((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-            (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3)) ||
-           (args->max_length < 4)) goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[3];
-        pWVar6 = (WinningConditionOr__Class *)TypeInfo__KillLimit;
-        pWVar2 = (WinningConditionOr__Class *)func_?();
-        if ((pWVar2 != (WinningConditionOr__Class *)0x0) &&
-           (gameCounterManager != (WinningConditionOr__Class *)0x0)) {
-          pWVar4 = gameCounterManager;
-          if (((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
-               (TypeInfo__System__Int32->_0).element_class) &&
-             ((func_?(gameCounterManager), gameCounterManager = pWVar6,
-              gameCounterManager == (WinningConditionOr__Class *)0x0 ||
-              ((pWVar4 = gameCounterManager,
-               (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-               *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-               (*(GameStatCounterManager__Class **)
-                 ((gameCounterManager->_0).image[2].typeCount +
-                 ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-                TypeInfo__GameStatCounterManager)))))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-                 ((unaff_EBX = (WinningConditionOr__Class *)
-                               (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-                  pWVar4 = RVar1.value,
-                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                  (unaff_EBX->_1).typeHierarchyDepth &&
-                  ((unaff_EBX->_1).typeHierarchy
-                   [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
-                   (Il2CppClass *)TypeInfo__WinningCondition)))) {
+              piVar17 = (int32_t *)func_?(pTVar4);
+              if ((handle.value == (Il2CppClass *)0x0) ||
+                 ((pTVar4 = (TargetAssasinated *)((Il2CppClass *)handle.value)->image,
+                  pWVar6 = TypeInfo__WinningCondition,
+                  (TypeInfo__WinningCondition->_1).naturalAligment <=
+                  *(byte *)&pTVar4[3].fields._.gameCounterManager &&
+                  (*(WinningCondition__Class **)
+                    (pTVar4[1].fields.assassineeActorNumber +
+                    (uint)(TypeInfo__WinningCondition->_1).naturalAligment * 4 + -4) ==
+                   TypeInfo__WinningCondition)))) {
                 KillLimit::KillLimit__ctor
-                          ((KillLimit *)pWVar2,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,0,(MethodInfo *)0x0);
-code_?:
-                pWVar6 = (WinningConditionOr__Class *)
-                         func_?((method->field7_0x1c).rgctx_data,1);
-                pOVar8 = (Object *)func_?(pWVar2,pWVar6);
-                gameCounterManager = pWVar2;
-                goto joined_?;
-              }
-            }
-          }
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    pIVar3 = TypeRef__TargetAssasinated;
-    if (gameCounterManager == pWVar2) {
-      if (args != (Object__Array *)0x0) {
-        if ((((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-            (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3)) ||
-           (args->max_length < 4)) goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[3];
-        pWVar6 = (WinningConditionOr__Class *)TypeInfo__OculusKillLimit;
-        pWVar2 = (WinningConditionOr__Class *)func_?();
-        if ((pWVar2 != (WinningConditionOr__Class *)0x0) &&
-           (gameCounterManager != (WinningConditionOr__Class *)0x0)) {
-          pWVar4 = gameCounterManager;
-          if (((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
-               (TypeInfo__System__Int32->_0).element_class) &&
-             ((func_?(gameCounterManager), gameCounterManager = pWVar6,
-              gameCounterManager == (WinningConditionOr__Class *)0x0 ||
-              ((pWVar4 = gameCounterManager,
-               (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-               *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-               (*(GameStatCounterManager__Class **)
-                 ((gameCounterManager->_0).image[2].typeCount +
-                 ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-                TypeInfo__GameStatCounterManager)))))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-                 ((unaff_EBX = (WinningConditionOr__Class *)
-                               (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-                  pWVar4 = RVar1.value,
-                  (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                  (unaff_EBX->_1).typeHierarchyDepth &&
-                  ((unaff_EBX->_1).typeHierarchy
-                   [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
-                   (Il2CppClass *)TypeInfo__WinningCondition)))) {
-                OculusKillLimit::OculusKillLimit__ctor
-                          ((OculusKillLimit *)pWVar2,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,0,(MethodInfo *)0x0);
+                          ((KillLimit *)this_00,handle.value,*piVar17,
+                           (GameStatCounterManager *)pTVar2,iVar20,(MethodInfo *)0x0);
+                handle.value = (void *)func_?((method->field7_0x1c).rgctx_data,1);
+                if (this_00 == (TargetAssasinated *)0x0) {
+                  return (Object *)0x0;
+                }
                 goto code_?;
               }
-            }
-          }
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
-    RVar1.value = TypeRef__TargetAssasinatedGroup;
-    if (gameCounterManager == pWVar2) {
-      RVar1.value = pIVar3;
-      if (args != (Object__Array *)0x0) {
-        if ((((args->max_length == 0) ||
-             (unaff_EBX = (WinningConditionOr__Class *)args->vector[0], args->max_length < 2)) ||
-            (pWVar6 = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3)) ||
-           ((pWVar12 = (WinningConditionOr__Class *)args->vector[2], args->max_length < 4 ||
-            (gameCounterManager = (WinningConditionOr__Class *)args->vector[3], args->max_length < 5
-            )))) goto code_?;
-        RVar1.value = args->vector[4];
-        pWVar2 = (WinningConditionOr__Class *)func_?(TypeInfo__TargetAssasinated);
-        if ((pWVar2 != (WinningConditionOr__Class *)0x0) &&
-           (RVar1.value != (WinningConditionOr__Class *)0x0)) {
-          pWVar4 = RVar1.value;
-          if ((((WinningCondition__Class *)(((WinningConditionOr__Class *)RVar1.value)->_0).image)
-              ->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-            piVar5 = (int32_t *)func_?(RVar1.value);
-            assassineeActorNumber = *piVar5;
-            if (gameCounterManager == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = gameCounterManager;
-            if ((Il2CppClass *)((gameCounterManager->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(gameCounterManager);
-              assassinatorActorNumber = *piVar5;
-              RVar1.value = pWVar12;
-              if ((pWVar12 == (WinningConditionOr__Class *)0x0) ||
-                 ((gameCounterManager = (WinningConditionOr__Class *)(pWVar12->_0).image,
-                  pWVar4 = pWVar12,
-                  (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-                  (gameCounterManager->_1).typeHierarchyDepth &&
-                  ((gameCounterManager->_1).typeHierarchy
-                   [(TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1] ==
-                   (Il2CppClass *)TypeInfo__GameStatCounterManager)))) {
-                if (pWVar6 == (WinningConditionOr__Class *)0x0) goto code_?;
-                pWVar4 = pWVar6;
-                if ((Il2CppClass *)((pWVar6->_0).image)->codeGenModule ==
-                    (TypeInfo__System__Int32->_0).element_class) {
-                  piVar5 = (int32_t *)func_?(pWVar6);
-                  if ((unaff_EBX == (WinningConditionOr__Class *)0x0) ||
-                     ((gameCounterManager = (WinningConditionOr__Class *)(unaff_EBX->_0).image,
-                      pWVar4 = unaff_EBX,
-                      (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-                      (gameCounterManager->_1).typeHierarchyDepth &&
-                      ((gameCounterManager->_1).typeHierarchy
-                       [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] ==
-                       (Il2CppClass *)TypeInfo__WinningCondition)))) {
-                    TargetAssasinated::TargetAssasinated__ctor
-                              ((TargetAssasinated *)pWVar2,(WinningCondition *)unaff_EBX,*piVar5,
-                               (GameStatCounterManager *)pWVar12,assassinatorActorNumber,
-                               assassineeActorNumber,(MethodInfo *)0x0);
-                    pWVar6 = (WinningConditionOr__Class *)
-                             func_?((method->field7_0x1c).rgctx_data,1);
-                    pOVar8 = (Object *)func_?(pWVar2,pWVar6);
-                    gameCounterManager = pWVar2;
-                    goto joined_?;
-                  }
-                }
-              }
-            }
-          }
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    pIVar3 = TypeRef__TimeLimit;
-    if (gameCounterManager == pWVar2) {
-      if (args != (Object__Array *)0x0) {
-        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-           (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-        goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-        pWVar6 = (WinningConditionOr__Class *)func_?(TypeInfo__TargetAssasinatedGroup);
-        if (pWVar6 != (WinningConditionOr__Class *)0x0) {
-          if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-             ((pWVar4 = gameCounterManager,
-              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-              (*(GameStatCounterManager__Class **)
-                ((gameCounterManager->_0).image[2].typeCount +
-                ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-               TypeInfo__GameStatCounterManager)))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if (RVar1.value == (WinningConditionOr__Class *)0x0) {
-                TargetAssasinatedGroup::TargetAssasinatedGroup__ctor
-                          ((TargetAssasinatedGroup *)pWVar6,(WinningCondition *)0x0,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-              }
-              else {
-                unaff_EBX = (WinningConditionOr__Class *)
-                            (((WinningConditionOr__Class *)RVar1.value)->_0).image;
-                pWVar4 = RVar1.value;
-                if (((unaff_EBX->_1).typeHierarchyDepth <
-                     (TypeInfo__WinningCondition->_1).typeHierarchyDepth) ||
-                   ((unaff_EBX->_1).typeHierarchy
-                    [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] !=
-                    (Il2CppClass *)TypeInfo__WinningCondition)) goto code_?;
-                TargetAssasinatedGroup::TargetAssasinatedGroup__ctor
-                          ((TargetAssasinatedGroup *)pWVar6,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-              }
               goto code_?;
             }
+            goto code_?;
           }
           goto code_?;
         }
       }
-      goto code_?;
+code_?:
+      func_?(uVar18);
+      pIVar5 = (Int32__Class *)TypeInfo__GameStatCounterManager;
+      gameCounterManager = extraout_EDX_03;
+      pTVar1 = pTVar2;
     }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
-    RVar1.value = TypeRef__TimeAttackFlagReached;
-    if (gameCounterManager == pWVar2) {
-      RVar1.value = pIVar3;
-      if (args != (Object__Array *)0x0) {
-        if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-           (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-        goto code_?;
-        gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-        pWVar6 = (WinningConditionOr__Class *)func_?(TypeInfo__TimeLimit);
-        if (pWVar6 != (WinningConditionOr__Class *)0x0) {
-          if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-             ((pWVar4 = gameCounterManager,
-              (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-              *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-              (*(GameStatCounterManager__Class **)
-                ((gameCounterManager->_0).image[2].typeCount +
-                ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-               TypeInfo__GameStatCounterManager)))) {
-            if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-            pWVar4 = unaff_EBX;
-            if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar5 = (int32_t *)func_?(unaff_EBX);
-              if (RVar1.value == (WinningConditionOr__Class *)0x0) {
-                TimeLimit::TimeLimit__ctor
-                          ((TimeLimit *)pWVar6,(WinningCondition *)0x0,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-              }
-              else {
-                unaff_EBX = (WinningConditionOr__Class *)
-                            (((WinningConditionOr__Class *)RVar1.value)->_0).image;
-                pWVar4 = RVar1.value;
-                if (((unaff_EBX->_1).typeHierarchyDepth <
-                     (TypeInfo__WinningCondition->_1).typeHierarchyDepth) ||
-                   ((unaff_EBX->_1).typeHierarchy
-                    [(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1] !=
-                    (Il2CppClass *)TypeInfo__WinningCondition)) goto code_?;
-                TimeLimit::TimeLimit__ctor
-                          ((TimeLimit *)pWVar6,RVar1.value,*piVar5,
-                           (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-              }
-              goto code_?;
-            }
-          }
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    pWVar2 = (WinningConditionOr__Class *)
-             mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar1,(MethodInfo *)0x0);
-    if (gameCounterManager != pWVar2) {
-      return (Object *)0x0;
-    }
-    if (args == (Object__Array *)0x0) goto code_?;
-    if (((args->max_length == 0) || (RVar1.value = args->vector[0], args->max_length < 2)) ||
-       (unaff_EBX = (WinningConditionOr__Class *)args->vector[1], args->max_length < 3))
-    goto code_?;
-    gameCounterManager = (WinningConditionOr__Class *)args->vector[2];
-    pWVar6 = (WinningConditionOr__Class *)func_?(TypeInfo__TimeAttackFlagReached);
-    if (pWVar6 == (WinningConditionOr__Class *)0x0) goto code_?;
-    if ((gameCounterManager == (WinningConditionOr__Class *)0x0) ||
-       ((pGVar11 = TypeInfo__GameStatCounterManager,
-        (TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth <=
-        *(byte *)&(gameCounterManager->_0).image[4].nameNoExt &&
-        (*(GameStatCounterManager__Class **)
-          ((gameCounterManager->_0).image[2].typeCount +
-          ((TypeInfo__GameStatCounterManager->_1).typeHierarchyDepth - 1) * 4) ==
-         TypeInfo__GameStatCounterManager)))) {
-      if (unaff_EBX == (WinningConditionOr__Class *)0x0) goto code_?;
-      pIVar10 = TypeInfo__System__Int32;
-      if ((Il2CppClass *)((unaff_EBX->_0).image)->codeGenModule ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar5 = (int32_t *)func_?(unaff_EBX);
-        if ((RVar1.value == (WinningConditionOr__Class *)0x0) ||
-           ((unaff_EBX = (WinningConditionOr__Class *)
-                         (((WinningConditionOr__Class *)RVar1.value)->_0).image,
-            pWVar9 = TypeInfo__WinningCondition,
-            (TypeInfo__WinningCondition->_1).typeHierarchyDepth <=
-            (unaff_EBX->_1).typeHierarchyDepth &&
-            ((unaff_EBX->_1).typeHierarchy[(TypeInfo__WinningCondition->_1).typeHierarchyDepth - 1]
-             == (Il2CppClass *)TypeInfo__WinningCondition)))) {
-          TimeAttackFlagReached::TimeAttackFlagReached__ctor
-                    ((TimeAttackFlagReached *)pWVar6,RVar1.value,*piVar5,
-                     (GameStatCounterManager *)gameCounterManager,(MethodInfo *)0x0);
-          goto code_?;
-        }
-        goto code_?;
-      }
-      goto code_?;
-    }
+code_?:
+    func_?(gameCounterManager,pIVar5);
+    pGVar13 = extraout_ECX_02;
+code_?:
+    pWVar10 = (WinningConditionPresentStyle__Enum__Class *)func_?(handle.value,pGVar13);
   }
-  func_?(gameCounterManager,pGVar11);
+  func_?(pTVar1,pWVar10);
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  pOVar8 = (Object *)(*pcVar19)();
-  return pOVar8;
+  pcVar22 = (code *)swi(3);
+  pOVar19 = (Object *)(*pcVar22)();
+  return pOVar19;
 }
 
 
@@ -976,48 +1035,45 @@ MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetForfilled
   }
   value = (Object *)
           func_?(TypeInfo__WinningConditionManager__ForfilledWinnerConditionGenerator);
-  if (value != (Object *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__WinningConditionManager__ForfilledWinnerConditionGenerator__HandleWinningConditionForReport_IWinningCondition_
-                     );
-      func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
-      func_?(&MethodInfo__System__Collections__Generic__List<IWinningCondition>__List__);
-      func_?(&TypeInfo__System__Collections__Generic__List<IWinningCondition>);
-      cRam_? = '\x01';
-    }
-    this_00 = (Object__Class *)
-              func_?(TypeInfo__System__Collections__Generic__List<IWinningCondition>);
-    if (this_00 != (Object__Class *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__List<IWinningCondition>__List__);
-      method_00 = (MethodInfo *)(value + 1);
-      value[1].klass = this_00;
-      func_?(method_00,this_00);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,method_00);
-      this_01 = (Func_2_Object_Boolean_ *)
-                func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
-      if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  (this_01,value,
-                   MethodInfo__WinningConditionManager__ForfilledWinnerConditionGenerator__HandleWinningConditionForReport_IWinningCondition_
-                   ,(MethodInfo *)0x0);
-        if ((this != (WinningConditionManager *)0x0) &&
-           (pWVar1 = (this->fields).winnerConditionsRoot, pWVar1 != (WinningConditionOr *)0x0)) {
-          (*(pWVar1->klass->vtable).Traverse_1.methodPtr)
-                    (pWVar1,this_01,(pWVar1->klass->vtable).Traverse_1.method);
-          return (List_1_IWinningCondition_ *)value[1].klass;
-        }
-      }
-    }
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__WinningConditionManager__ForfilledWinnerConditionGenerator__HandleWinningConditionForReport_IWinningCondition_
+                   );
+    func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
+    func_?(&MethodInfo__System__Collections__Generic__List<IWinningCondition>__List__);
+    func_?(&TypeInfo__System__Collections__Generic__List<IWinningCondition>);
+    cRam_? = '\x01';
+  }
+  this_00 = (Object__Class *)
+            func_?(TypeInfo__System__Collections__Generic__List<IWinningCondition>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<IWinningCondition>__List__);
+  method_00 = (MethodInfo *)(value + 1);
+  value[1].klass = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,method_00);
+  this_01 = (Func_2_Object_Boolean_ *)
+            func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
+  mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+            (this_01,value,
+             MethodInfo__WinningConditionManager__ForfilledWinnerConditionGenerator__HandleWinningConditionForReport_IWinningCondition_
+             ,(MethodInfo *)0x0);
+  if ((this != (WinningConditionManager *)0x0) &&
+     (pWVar1 = (this->fields).winnerConditionsRoot, pWVar1 != (WinningConditionOr *)0x0)) {
+    pWVar2 = pWVar1->klass;
+    pIStack3 = (pWVar2->vtable).Reset_1.methodPtr;
+    pFStack4 = this_01;
+    (*(code *)(pWVar2->vtable).Traverse_1.method)();
+    return (List_1_IWinningCondition_ *)value[1].klass;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (List_1_IWinningCondition_ *)(*pcVar2)();
-  return pLVar3;
+  pcVar5 = (code *)swi(3);
+  pLVar6 = (List_1_IWinningCondition_ *)(*pcVar5)();
+  return pLVar6;
 }
 
 
@@ -1028,152 +1084,109 @@ Object * MVWorldObject.dll::WinningConditionManager::
                    (WinningConditionManager *this,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pMVar2 = (MethodInfo *)
-           (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                     (this,((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
-  if (pMVar2 == (MethodInfo *)0x0) {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(method);
+  }
+  iVar1 = *(int *)(method->field7_0x1c).methodMetadataHandle;
+  if (*(int *)(iVar1 + 0x1c) == 0) {
+    func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
+    if (*(int *)(iVar1 + 0x1c) == 0) {
+      func_?(iVar1);
+    }
+  }
+  iVar2 = **(int **)(iVar1 + 0x1c);
+  if ((*(byte *)(iVar2 + 0xbd) & 1) == 0) {
+    iVar2 = func_?(iVar2);
+  }
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(iVar2);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            (this_00,*(MethodInfo **)(*(int *)(iVar1 + 0x1c) + 4));
+  iVar2 = *(int *)(*(int *)(iVar1 + 0x1c) + 8);
+  if ((*(byte *)(iVar2 + 0xbd) & 1) == 0) {
+    iVar2 = func_?(iVar2);
+  }
+  this_01 = (List_1_System_Object_ *)func_?(iVar2);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             *(MethodInfo **)(*(int *)(iVar1 + 0x1c) + 0xc));
+  if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
 code_?:
     func_?();
     pIVar3 = extraout_ECX;
   }
   else {
-    iVar4 = (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
-                      (pMVar2,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
-    if (iVar4 == 0) {
+    (this_00->fields)._._defaultValue_k__BackingField = this_01;
+    func_?(&this_00->fields,this_01);
+    pWVar4 = (this->fields).winnerConditionsRoot;
+    this_02 = (Func_2_Object_Boolean_ *)
+              func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+              (this_02,(Object *)this_00,*(void **)(*(int *)(iVar1 + 0x1c) + 0x10),(MethodInfo *)0x0
+              );
+    if (pWVar4 == (WinningConditionOr *)0x0) goto code_?;
+    (*(code *)(pWVar4->klass->vtable).Traverse_1.method)
+              (pWVar4,(pWVar4->klass->vtable).Reset_1.methodPtr);
+    this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this_00->fields)._._defaultValue_k__BackingField;
+    if (this_03 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    if ((this_03->fields)._size == 0) {
       return (Object *)0x0;
     }
-    iVar4 = (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
-                      (pMVar2,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
     pIVar3 = (method->field7_0x1c).rgctx_data;
-    if (1 < iVar4) goto code_?;
-    piVar5 = (int *)(*(pIVar3[4].method)->virtualMethodPointer)
-                              (pMVar2,0,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
-    if (piVar5 == (int *)0x0) goto code_?;
-    cVar6 = (**(code **)(*piVar5 + 0x16c))(piVar5,*(undefined4 *)(*piVar5 + 0x170));
+    if (1 < (this_03->fields)._size) goto code_?;
+    RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      (this_03,0,pIVar3[5].method);
+    if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
+    cVar6 = (**(code **)(*(int *)RVar5 + 0x150))(RVar5,*(undefined4 *)(*(int *)RVar5 + 0x154));
     pIVar3 = (method->field7_0x1c).rgctx_data;
     if (cVar6 != '\0') {
-      pOVar7 = (Object *)
-               (*(pIVar3[4].method)->virtualMethodPointer)
-                         (pMVar2,0,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
-      return pOVar7;
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_03,0,pIVar3[5].method);
+      return (Object *)RVar5;
     }
   }
-  RVar8.value = (void *)func_?(pIVar3,3);
-  uVar9 = func_?(&TypeInfo__System__Type);
-  func_?(uVar9);
-  pTVar10 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-  pMVar2 = (MethodInfo *)0x0;
+  RVar7.value = (void *)func_?(pIVar3,4);
+  uVar8 = func_?(&TypeInfo__System__Type);
+  func_?(uVar8);
+  pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar7,(MethodInfo *)0x0);
+  pMVar10 = (MethodInfo *)0x0;
   pSVar11 = (String *)func_?(&StringLiteral_Type_is_not_singleton__0_);
-  pSVar11 = mscorlib.dll::System::String::String_Format(pSVar11,(Object *)pTVar10,pMVar2);
-  uVar9 = func_?(&TypeInfo__System__Exception);
-  pEVar12 = (Exception *)func_?(uVar9);
-  func_?(pEVar12);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar12,pSVar11,(MethodInfo *)0x0);
-  pMVar2 = (MethodInfo *)
-           func_?(&
-                           System__Object_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<System::Object>__
-                          );
-  func_?();
-  pIVar3 = extraout_ECX_00;
+  this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            mscorlib.dll::System::String::String_Format(pSVar11,(Object *)pTVar9,pMVar10);
+  uVar8 = func_?();
+  pEVar12 = (Exception *)func_?(uVar8);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar12,(String *)this_03,(MethodInfo *)0x0);
+  pIVar3 = (Il2CppRGCTXData *)func_?();
 code_?:
-  method = pMVar2;
-  RVar8.value = (void *)func_?(pIVar3,3);
-  uVar9 = func_?(&TypeInfo__System__Type);
-  func_?(uVar9);
-  pTVar10 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar8,(MethodInfo *)0x0);
-  func_?(method);
-  uVar9 = func_?((pMVar1->field7_0x1c).rgctx_data,2);
-  pcVar13 = (code *)func_?(uVar9);
-  uVar9 = func_?((pMVar1->field7_0x1c).rgctx_data,2);
-  uStack_14 = (*pcVar13)(method,uVar9);
-  uVar9 = func_?(&TypeInfo__System__Int32,&uStack_14);
-  pOVar7 = (Object *)func_?(uVar9);
-  pMVar1 = (MethodInfo *)0x0;
+  RVar7.value = (void *)func_?(pIVar3,4);
+  uVar8 = func_?(&TypeInfo__System__Type);
+  func_?(uVar8);
+  pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar7,(MethodInfo *)0x0);
+  func_?(this_03);
+  uVar8 = func_?((method->field7_0x1c).rgctx_data,2);
+  func_?(this_03,uVar8);
+  uVar8 = func_?(&TypeInfo__System__Int32);
+  pOVar13 = (Object *)func_?(uVar8);
+  pMVar10 = (MethodInfo *)0x0;
   pSVar11 = (String *)func_?(&StringLiteral_Singleton_count_of_type__0__is__);
-  pSVar11 = mscorlib.dll::System::String::String_Format_1(pSVar11,(Object *)pTVar10,pOVar7,pMVar1);
-  uVar9 = func_?(&TypeInfo__System__Exception);
-  pEVar12 = (Exception *)func_?(uVar9);
-  func_?(pEVar12);
+  pSVar11 = mscorlib.dll::System::String::String_Format_1(pSVar11,(Object *)pTVar9,pOVar13,pMVar10);
+  uVar8 = func_?();
+  pEVar12 = (Exception *)func_?(uVar8);
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar12,pSVar11,(MethodInfo *)0x0);
-  uStack15 =
-       func_?(&
-                       System__Object_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<System::Object>__
-                      );
+  pMStack14 = method;
   func_?();
-  pcVar13 = (code *)swi(3);
-  pOVar7 = (Object *)(*pcVar13)();
-  return pOVar7;
-}
-
-
-/* WinningCondition GetWinnerConditionByID(Int32) */
-
-WinningCondition *
-MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetWinnerConditionByID
-          (WinningConditionManager *this,int32_t id,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
-    func_?(&
-                    MethodInfo__WinningConditionManager____c__DisplayClass6___GetWinnerConditionByID_b__5_IWinningCondition_
-                   );
-    func_?(&TypeInfo__WinningConditionManager____c__DisplayClass6);
-    cRam_? = '\x01';
-  }
-  value = (Object *)func_?(TypeInfo__WinningConditionManager____c__DisplayClass6);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    value[1].monitor = (MonitorData *)id;
-    value[1].klass = (Object__Class *)0x0;
-    func_?(value + 1,0);
-    pWVar1 = (this->fields).winnerConditionsRoot;
-    this_00 = (Func_2_Object_Boolean_ *)
-              func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
-    if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                (this_00,value,
-                 MethodInfo__WinningConditionManager____c__DisplayClass6___GetWinnerConditionByID_b__5_IWinningCondition_
-                 ,(MethodInfo *)0x0);
-      if (pWVar1 != (WinningConditionOr *)0x0) {
-        (*(pWVar1->klass->vtable).Traverse_1.methodPtr)
-                  (pWVar1,this_00,(pWVar1->klass->vtable).Traverse_1.method);
-        return (WinningCondition *)value[1].klass;
-      }
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pWVar3 = (WinningCondition *)(*pcVar2)();
-  return pWVar3;
-}
-
-
-/* Object GetWinnerConditionByTypeAndID[Object](Int32) */
-
-Object * MVWorldObject.dll::WinningConditionManager::
-         WinningConditionManager_GetWinnerConditionByTypeAndID
-                   (WinningConditionManager *this,int32_t id,MethodInfo *method)
-
-{
-  pWVar1 = WinningConditionManager_GetWinnerConditionByID(this,id,(MethodInfo *)0x0);
-  pvVar2 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
-    pvVar2 = (void *)func_?(pvVar2);
-  }
-  if (pWVar1 == (WinningCondition *)0x0) {
-    return (Object *)0x0;
-  }
-  pOVar3 = (Object *)func_?(pWVar1,pvVar2);
-  if (pOVar3 != (Object *)0x0) {
-    return pOVar3;
-  }
-  func_?(pWVar1,pvVar2);
-  pcVar4 = (code *)swi(3);
-  pOVar3 = (Object *)(*pcVar4)();
-  return pOVar3;
+  pcVar15 = (code *)swi(3);
+  pOVar13 = (Object *)(*pcVar15)();
+  return pOVar13;
 }
 
 
@@ -1184,47 +1197,50 @@ MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetWinnerCon
           (WinningConditionManager *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeInfo__System__Func<IWinningCondition,_bool>);
-    cRam_? = '\x01';
-  }
-  pvVar1 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-    pvVar1 = (void *)func_?(pvVar1);
-  }
-  object = (Object *)func_?(pvVar1);
-  if (object != (Object *)0x0) {
-    (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-              (object,(method->field7_0x1c).rgctx_data[1].method);
-    pvVar1 = (method->field7_0x1c).rgctx_data[2].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-      pvVar1 = (void *)func_?(pvVar1);
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
     }
-    pOVar2 = (Object__Class *)func_?(pvVar1);
-    if (pOVar2 != (Object__Class *)0x0) {
-      (*((method->field7_0x1c).rgctx_data[3].method)->virtualMethodPointer)
-                (pOVar2,(method->field7_0x1c).rgctx_data[3].method);
-      object[1].klass = pOVar2;
-      func_?(object + 1,pOVar2);
-      pWVar3 = (this->fields).winnerConditionsRoot;
-      this_00 = (Func_2_Object_Boolean_ *)
-                func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
-      if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  (this_00,object,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy,
-                   (MethodInfo *)0x0);
-        if (pWVar3 != (WinningConditionOr *)0x0) {
-          (*(pWVar3->klass->vtable).Traverse_1.methodPtr)
-                    (pWVar3,this_00,(pWVar3->klass->vtable).Traverse_1.method);
-          return (List_1_System_Object_ *)object[1].klass;
-        }
-      }
+  }
+  pIVar1 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  }
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(pIVar1);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            (this_00,(method->field7_0x1c).rgctx_data[1].method);
+  pIVar1 = (method->field7_0x1c).rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  }
+  pLVar2 = (List_1_System_Object_ *)func_?(pIVar1);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+             (method->field7_0x1c).rgctx_data[3].method);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00->fields,pLVar2);
+    pWVar3 = (this->fields).winnerConditionsRoot;
+    this_01 = (Func_2_Object_Boolean_ *)
+              func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+              (this_01,(Object *)this_00,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy,
+               (MethodInfo *)0x0);
+    if (pWVar3 != (WinningConditionOr *)0x0) {
+      (*(code *)(pWVar3->klass->vtable).Traverse_1.method)
+                (pWVar3,this_01,(pWVar3->klass->vtable).Reset_1.methodPtr);
+      return (this_00->fields)._._defaultValue_k__BackingField;
     }
   }
   func_?();
   pcVar4 = (code *)swi(3);
-  pLVar5 = (List_1_System_Object_ *)(*pcVar4)();
-  return pLVar5;
+  pLVar2 = (List_1_System_Object_ *)(*pcVar4)();
+  return pLVar2;
 }
 
 
@@ -1303,18 +1319,16 @@ code_?:
       pWVar5 = (this_00->fields).winnerConditionsRoot;
       this_01 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (this_01,(Object *)this_00,
-                   MethodInfo__WinningConditionManager__winnerConditionsRoot_OnWinningConditionChanged_System__Object__System__EventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pWVar5 != (WinningConditionOr *)0x0) {
-          WinningCondition::WinningCondition_add_OnWinningConditionChanged
-                    ((WinningCondition *)pWVar5,(EventHandler_1_EventArgs_ *)this_01,
-                     (MethodInfo *)0x0);
-          return;
-        }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_01,(Object *)this_00,
+                 MethodInfo__WinningConditionManager__winnerConditionsRoot_OnWinningConditionChanged_System__Object__System__EventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pWVar5 != (WinningConditionOr *)0x0) {
+        WinningCondition::WinningCondition_add_OnWinningConditionChanged
+                  ((WinningCondition *)pWVar5,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0
+                  );
+        return;
       }
       goto code_?;
     }
@@ -1343,30 +1357,13 @@ bool MVWorldObject.dll::WinningConditionManager::WinningConditionManager_IsTimeL
     cRam_? = '\x01';
   }
   if (winningCondition != (IWinningCondition *)0x0) {
-    if (((TypeInfo__TimeLimit->_1).typeHierarchyDepth <=
-         (winningCondition->klass->_1).typeHierarchyDepth) &&
-       ((winningCondition->klass->_1).typeHierarchy
-        [(TypeInfo__TimeLimit->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__TimeLimit)) {
+    if (((TypeInfo__TimeLimit->_1).naturalAligment <= (winningCondition->klass->_1).naturalAligment)
+       && ((winningCondition->klass->_1).typeHierarchy
+           [(TypeInfo__TimeLimit->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__TimeLimit)) {
       return 1;
     }
   }
   return 0;
-}
-
-
-/* Void PublishWinningConditionLimitChanged() */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_PublishWinningConditionLimitChanged
-               (WinningConditionManager *this,MethodInfo *method)
-
-{
-  if ((this->fields).OnWinningConditionStateChangedEditMode != (EventHandler_1_EventArgs_ *)0x0) {
-    pEVar1 = (this->fields).OnWinningConditionStateChangedEditMode;
-    (*(pEVar1->fields)._._.invoke_impl)
-              ((pEVar1->fields)._._.method_code,this,0,(pEVar1->fields)._._.method);
-  }
-  return;
 }
 
 
@@ -1396,39 +1393,39 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveW
     }
     pDVar2 = (object->fields)._.winnerConditions;
     if (pDVar2 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,id,
+      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+               Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,id,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_
                          );
       this_00 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      if ((this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (this_00,(Object *)object,
-                     (object->klass->vtable).winnerCondition_OnWinningConditionChanged.method,
-                     (MethodInfo *)0x0), pOVar3 != (Object *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_00,(Object *)object,object->klass[1]._0.image,(MethodInfo *)0x0);
+      if (pOVar3 != (Object *)0x0) {
         uVar4 = 0;
         uVar5 = 0;
         pOVar6 = pOVar3->klass;
-        uVar7 = (pOVar6->_1).interface_offsets_count;
+        uVar7._0_1_ = (pOVar6->_1).rank;
+        uVar7._1_1_ = (pOVar6->_1).minimumAlignment;
         pWVar8 = pWVar1;
         if (uVar7 != 0) {
           do {
             if (pOVar6->interfaceOffsets[uVar4].interfaceType ==
                 (Il2CppClass *)TypeInfo__IWinningCondition) {
-              ppIVar9 = &pOVar6[1]._0.image + pOVar6->interfaceOffsets[uVar4].offset * 2;
+              ppMVar9 = &(&(pOVar6->vtable).GetHashCode)[pOVar6->interfaceOffsets[uVar4].offset].
+                         method;
               goto code_?;
             }
             uVar4 = uVar4 + 1;
             object = pWVar1;
           } while (uVar4 < uVar7);
         }
-        ppIVar9 = (Il2CppImage **)func_?(pOVar3,TypeInfo__IWinningCondition,4);
+        ppMVar9 = (MethodInfo **)func_?(pOVar3,TypeInfo__IWinningCondition,2);
         pWVar1 = object;
 code_?:
-        (*(code *)*ppIVar9)(pOVar3,this_00,ppIVar9[1]);
+        (*(code *)*ppMVar9)(pOVar3,this_00,ppMVar9[1]);
         pDVar2 = (pWVar1->fields)._.winnerConditions;
         if (pDVar2 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
@@ -1438,11 +1435,11 @@ code_?:
                     );
           if ((this->fields).OnWinningConditionAddedOrRemoved != (EventHandler_1_EventArgs_ *)0x0) {
             pEVar10 = (this->fields).OnWinningConditionAddedOrRemoved;
-            this_01 = (TweenRunner_1_FloatTween_ *)
+            this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
                       func_?(TypeInfo__System__EventArgs,this_00,pWVar8,uVar5);
-            if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
-            UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-            TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
+            UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+            UxmlObjectListAttributeDescription`1[System::Object]::
+            UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
             (*(pEVar10->fields)._._.invoke_impl)
                       ((pEVar10->fields)._._.method_code,this,this_01,(pEVar10->fields)._._.method);
           }
@@ -1451,7 +1448,6 @@ code_?:
       }
     }
   }
-code_?:
   func_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
@@ -1475,129 +1471,59 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Reset
   (this->fields)._WinningConditionFound_k__BackingField = 0;
   if (TypeInfo__WinningConditionManager->static_fields->CS___9__CachedAnonymousMethodDelegate1 ==
       (Func_2_IWinningCondition_Boolean_ *)0x0) {
-    this_01 = (Func_2_Object_Boolean_ *)
+    this_02 = (Func_2_Object_Boolean_ *)
               func_?(TypeInfo__System__Func<IWinningCondition,_bool>);
-    if (this_01 == (Func_2_Object_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-              (this_01,(Object *)0x0,
+              (this_02,(Object *)0x0,
                MethodInfo__WinningConditionManager___Reset_b__0_IWinningCondition_,(MethodInfo *)0x0
               );
     TypeInfo__WinningConditionManager->static_fields->CS___9__CachedAnonymousMethodDelegate1 =
-         (Func_2_IWinningCondition_Boolean_ *)this_01;
-    func_?(TypeInfo__WinningConditionManager->static_fields,this_01);
+         (Func_2_IWinningCondition_Boolean_ *)this_02;
+    func_?(TypeInfo__WinningConditionManager->static_fields,this_02);
   }
   pWVar1 = (this->fields).winnerConditionsRoot;
   if (pWVar1 != (WinningConditionOr *)0x0) {
-    (*(pWVar1->klass->vtable).Traverse_1.methodPtr)
+    (*(code *)(pWVar1->klass->vtable).Traverse_1.method)
               (pWVar1,TypeInfo__WinningConditionManager->static_fields->
                       CS___9__CachedAnonymousMethodDelegate1,
-               (pWVar1->klass->vtable).Traverse_1.method);
+               (pWVar1->klass->vtable).Reset_1.methodPtr);
     this_00 = (this->fields).gameCounterManager;
     if (this_00 != (GameStatCounterManager *)0x0) {
-      GameStatCounterManager::GameStatCounterManager_Clear(this_00,(MethodInfo *)0x0);
-      if ((this->fields).OnWinningConditionReset != (EventHandler_1_EventArgs_ *)0x0) {
-        pEVar2 = (this->fields).OnWinningConditionReset;
-        if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__EventArgs);
-        }
-        (*(pEVar2->fields)._._.invoke_impl)
-                  ((pEVar2->fields)._._.method_code,this,
-                   TypeInfo__System__EventArgs->static_fields->Empty,(pEVar2->fields)._._.method);
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<GameStatCounterType,_TeamsCounter>__Clear__
+                       );
+        cRam_? = '\x01';
       }
-      return;
+      this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                 *)(this_00->fields).statTypeCounters;
+      if (this_01 !=
+          (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+           *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+        StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+        Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<GameStatCounterType,_TeamsCounter>__Clear__
+                  );
+        GameStatCounterManager::GameStatCounterManager_AddPersistentStats(this_00,(MethodInfo *)0x0)
+        ;
+        if ((this->fields).OnWinningConditionReset != (EventHandler_1_EventArgs_ *)0x0) {
+          pEVar2 = (this->fields).OnWinningConditionReset;
+          if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          (*(pEVar2->fields)._._.invoke_impl)
+                    ((pEVar2->fields)._._.method_code,this,
+                     TypeInfo__System__EventArgs->static_fields->Empty);
+        }
+        return;
+      }
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Void SetLimitForSingletonWinningConditionWithRoundReset[Object](Int32) */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_SetLimitForSingletonWinningConditionWithRoundReset
-               (WinningConditionManager *this,int32_t limit,MethodInfo *method)
-
-{
-  iVar1 = (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                    (this,((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
-  if (iVar1 == 0) goto code_?;
-  iVar2 = (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
-                    (iVar1,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
-  if (iVar2 == 0) {
-    return;
-  }
-  iVar2 = (*((method->field7_0x1c).rgctx_data[2].method)->virtualMethodPointer)
-                    (iVar1,(method->field7_0x1c).rgctx_data[2].rgctxDataDummy);
-  pIVar3 = (method->field7_0x1c).rgctx_data;
-  if (1 < iVar2) goto code_?;
-  piVar4 = (int *)(*(pIVar3[4].method)->virtualMethodPointer)
-                            (iVar1,0,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
-  if (piVar4 == (int *)0x0) {
-code_?:
-    func_?();
-    pIVar3 = extraout_ECX;
-  }
-  else {
-    cVar5 = (**(code **)(*piVar4 + 0x16c))(piVar4,*(undefined4 *)(*piVar4 + 0x170));
-    pIVar3 = (method->field7_0x1c).rgctx_data;
-    if (cVar5 != '\0') {
-      this_00 = (WinningCondition *)
-                (*(pIVar3[4].method)->virtualMethodPointer)
-                          (iVar1,0,(method->field7_0x1c).rgctx_data[4].rgctxDataDummy);
-      if (this_00 != (WinningCondition *)0x0) {
-        WinningCondition::WinningCondition_SetLimit
-                  (this_00,limit,(method->field7_0x1c).rgctx_data[7].method);
-        WinningConditionManager_PublishWinningConditionLimitChanged(this,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
-    }
-  }
-  RVar6.value = (void *)func_?(pIVar3,3);
-  uVar7 = func_?(&TypeInfo__System__Type);
-  func_?(uVar7);
-  pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar6,(MethodInfo *)0x0);
-  pMVar9 = (MethodInfo *)0x0;
-  pSVar10 = (String *)func_?(&StringLiteral_Type_is_not_singleton__0_);
-  pSVar10 = mscorlib.dll::System::String::String_Format(pSVar10,(Object *)pTVar8,pMVar9);
-  uVar7 = func_?(&TypeInfo__System__Exception);
-  pEVar11 = (Exception *)func_?(uVar7);
-  func_?(pEVar11);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar11,pSVar10,(MethodInfo *)0x0);
-  func_?(&
-                  void_MethodInfo__WinningConditionManager__SetLimitForSingletonWinningConditionWithRoundReset<System::Object>_int_
-                 );
-  func_?();
-  pIVar3 = extraout_ECX_00;
-code_?:
-  RVar6.value = (void *)func_?(pIVar3,3);
-  uVar7 = func_?(&TypeInfo__System__Type);
-  func_?(uVar7);
-  pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(RVar6,(MethodInfo *)0x0);
-  func_?(iVar1);
-  uVar7 = func_?((method->field7_0x1c).rgctx_data,2);
-  pcVar12 = (code *)func_?(uVar7);
-  uVar7 = func_?((method->field7_0x1c).rgctx_data,2);
-  uStack_13 = (*pcVar12)(iVar1,uVar7);
-  uVar7 = func_?(&TypeInfo__System__Int32,&uStack_13);
-  arg1 = (Object *)func_?(uVar7);
-  pMVar9 = (MethodInfo *)0x0;
-  pSVar10 = (String *)func_?(&StringLiteral_Singleton_count_of_type__0__is__);
-  pSVar10 = mscorlib.dll::System::String::String_Format_1(pSVar10,(Object *)pTVar8,arg1,pMVar9);
-  uVar7 = func_?(&TypeInfo__System__Exception);
-  pEVar11 = (Exception *)func_?(uVar7);
-  func_?(pEVar11);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar11,pSVar10,(MethodInfo *)0x0);
-  func_?(&
-                  void_MethodInfo__WinningConditionManager__SetLimitForSingletonWinningConditionWithRoundReset<System::Object>_int_
-                 );
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
   return;
 }
 
@@ -1635,12 +1561,12 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_Travers
                MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pWStack_2 = (this->fields).winnerConditionsRoot;
   if (pWStack_2 != (WinningConditionOr *)0x0) {
-    pMStack_1 = (pWStack_2->klass->vtable).Traverse_1.method;
+    pIStack_1 = (pWStack_2->klass->vtable).Reset_1.methodPtr;
     pFStack_3 = callBack;
-    (*(pWStack_2->klass->vtable).Traverse_1.methodPtr)();
+    (*(code *)(pWStack_2->klass->vtable).Traverse_1.method)();
     return;
   }
   uVar4 = func_?(&pWStack_2);
@@ -1665,7 +1591,7 @@ bool MVWorldObject.dll::WinningConditionManager::WinningConditionManager__Reset_
   if (winnerCondition != (IWinningCondition *)0x0) {
     pIStack_1 = winnerCondition;
     pIStack_2 = TypeInfo__IWinningCondition;
-    uStack_3 = 10;
+    uStack_3 = 5;
     func_?();
     return 0;
   }
@@ -1713,41 +1639,6 @@ void MVWorldObject.dll::WinningConditionManager::
 }
 
 
-/* Void add_OnWinningConditionChanged(EventHandler`1[EventArgs]) */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_add_OnWinningConditionChanged
-               (WinningConditionManager *this,EventHandler_1_EventArgs_ *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
-    cRam_? = '\x01';
-  }
-  a = (this->fields).OnWinningConditionChanged;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pEVar5 = (EventHandler_1_EventArgs_ *)
-             func_?(&(this->fields).OnWinningConditionChanged,iVar3,a);
-    bVar6 = pEVar5 != a;
-    a = pEVar5;
-  } while (bVar6);
-  return;
-}
-
-
 /* Void add_OnWinningConditionReset(EventHandler`1[EventArgs]) */
 
 void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_add_OnWinningConditionReset
@@ -1779,51 +1670,6 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_add_OnW
     a = pEVar5;
   } while (bVar6);
   return;
-}
-
-
-/* Void add_OnWinningConditionStateChangedEditMode(EventHandler`1[EventArgs]) */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_add_OnWinningConditionStateChangedEditMode
-               (WinningConditionManager *this,EventHandler_1_EventArgs_ *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
-    cRam_? = '\x01';
-  }
-  a = (this->fields).OnWinningConditionStateChangedEditMode;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pEVar5 = (EventHandler_1_EventArgs_ *)
-             func_?(&(this->fields).OnWinningConditionStateChangedEditMode,iVar3,a);
-    bVar6 = pEVar5 != a;
-    a = pEVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Boolean get_WinningConditionFound() */
-
-bool MVWorldObject.dll::WinningConditionManager::WinningConditionManager_get_WinningConditionFound
-               (WinningConditionManager *this,MethodInfo *method)
-
-{
-  return (this->fields)._WinningConditionFound_k__BackingField;
 }
 
 
@@ -1862,41 +1708,6 @@ void MVWorldObject.dll::WinningConditionManager::
 }
 
 
-/* Void remove_OnWinningConditionChanged(EventHandler`1[EventArgs]) */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_remove_OnWinningConditionChanged
-               (WinningConditionManager *this,EventHandler_1_EventArgs_ *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
-    cRam_? = '\x01';
-  }
-  source = (this->fields).OnWinningConditionChanged;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pEVar5 = (EventHandler_1_EventArgs_ *)
-             func_?(&(this->fields).OnWinningConditionChanged,iVar3,source);
-    bVar6 = pEVar5 != source;
-    source = pEVar5;
-  } while (bVar6);
-  return;
-}
-
-
 /* Void remove_OnWinningConditionReset(EventHandler`1[EventArgs]) */
 
 void MVWorldObject.dll::WinningConditionManager::
@@ -1928,52 +1739,6 @@ void MVWorldObject.dll::WinningConditionManager::
     bVar6 = pEVar5 != source;
     source = pEVar5;
   } while (bVar6);
-  return;
-}
-
-
-/* Void remove_OnWinningConditionStateChangedEditMode(EventHandler`1[EventArgs]) */
-
-void MVWorldObject.dll::WinningConditionManager::
-     WinningConditionManager_remove_OnWinningConditionStateChangedEditMode
-               (WinningConditionManager *this,EventHandler_1_EventArgs_ *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
-    cRam_? = '\x01';
-  }
-  source = (this->fields).OnWinningConditionStateChangedEditMode;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<System::EventArgs>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<System::EventArgs>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pEVar5 = (EventHandler_1_EventArgs_ *)
-             func_?(&(this->fields).OnWinningConditionStateChangedEditMode,iVar3,source);
-    bVar6 = pEVar5 != source;
-    source = pEVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Void set_WinningConditionFound(Boolean) */
-
-void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_set_WinningConditionFound
-               (WinningConditionManager *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._WinningConditionFound_k__BackingField = value;
   return;
 }
 

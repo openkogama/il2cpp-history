@@ -38,11 +38,11 @@ void Assembly-CSharp.dll::AvatarShieldDecay::AvatarShieldDecay_Update
       (*pcVar4)();
       return;
     }
-    fVar5 = (float10)(*(pMVar3->klass->vtable).get_Value.methodPtr)
-                               (pMVar3,(pMVar3->klass->vtable).get_Value.method);
-    (*(pMVar3->klass->vtable).set_Value.methodPtr)
-              (pMVar3,(float)fVar5 - (this->fields).accumulatedShieldDecay,
-               (pMVar3->klass->vtable).set_Value.method);
+    fVar5 = (float10)(*(code *)(pMVar3->klass->vtable).get_Value.method)
+                               (pMVar3,(pMVar3->klass->vtable).set_Value.methodPtr);
+    (*(code *)(pMVar3->klass->vtable).set_Value.method)
+              (pMVar3,(float)fVar5 - (this->fields).accumulatedShieldDecay,pMVar3->klass[1]._0.image
+              );
     (this->fields).accumulatedShieldDecay = 0.0;
   }
   return;

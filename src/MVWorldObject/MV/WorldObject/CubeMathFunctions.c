@@ -174,7 +174,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4
+  mscorlib.dll::System::Math::Math_Round_5
             ((double)fVar5,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
@@ -183,7 +183,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4
+  mscorlib.dll::System::Math::Math_Round_5
             ((double)(fVar4 + worldPos.z),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     method = (MethodInfo *)&TypeInfo__System__Math;
@@ -196,7 +196,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
     method = (MethodInfo *)pMVar6;
   }
   worldPos.x = (float)((ulonglong)(double)(float)method >> 0x20);
-  dVar7 = mscorlib.dll::System::Math::Math_Round_4
+  dVar7 = mscorlib.dll::System::Math::Math_Round_5
                     ((double)(float)method,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   *(undefined2 *)worldPos.x = 0;
   *(undefined2 *)((int)worldPos.x + 2) = 0;
@@ -240,7 +240,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4
+  mscorlib.dll::System::Math::Math_Round_5
             ((double)((fVar4 + worldPos.y) - fVar6),0,MidpointRounding__Enum_ToEven,
              (MethodInfo *)0x0);
   if (cRam_? == '\0') {
@@ -250,7 +250,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  mscorlib.dll::System::Math::Math_Round_4
+  mscorlib.dll::System::Math::Math_Round_5
             ((double)((fVar5 + worldPos.z) - fVar7),0,MidpointRounding__Enum_ToEven,
              (MethodInfo *)0x0);
   if (cRam_? == '\0') {
@@ -265,7 +265,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   dVar8 = (double)normal.x;
   worldPos.x = SUB84(dVar8,0);
   worldPos.y = (float)((ulonglong)dVar8 >> 0x20);
-  dVar8 = mscorlib.dll::System::Math::Math_Round_4
+  dVar8 = mscorlib.dll::System::Math::Math_Round_5
                     (dVar8,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   *(short *)worldPos.x = (short)(int)worldPos.y;
   *(undefined2 *)((int)worldPos.x + 2) = 0;

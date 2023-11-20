@@ -158,89 +158,86 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateLocalObjects
   }
   pGVar1 = (this->fields)._._._._._.gameObject;
   if (pGVar1 != (GameObject *)0x0) {
-    this_01 = (SmoothCharacterController *)
+    this_02 = (SmoothCharacterController *)
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                         (pGVar1,
                          SmoothCharacterController_MethodInfo__UnityEngine__GameObject__AddComponent<SmoothCharacterController>__
                         );
-    unaff_EBX = this_01;
-    if (this_01 != (SmoothCharacterController *)0x0) {
+    if (this_02 != (SmoothCharacterController *)0x0) {
       SmoothCharacterController::SmoothCharacterController_Init
-                (this_01,(this->fields)._._._._._.gameObject,(CullingSubscriberBase *)0x0,
+                (this_02,(this->fields)._._._._._.gameObject,(CullingSubscriberBase *)0x0,
                  (MVWorldObjectClient *)this,(MethodInfo *)0x0);
-      pMVar2 = (this_01->fields).controller;
+      this_00 = (this_02->fields).controller;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar4 = (pVVar3->upVector).x;
-      uVar5 = (pVVar3->upVector).y;
-      if (pMVar2 != (MvCharacterController *)0x0) {
-        center.y = (float)uVar5 * _UNK_?;
-        center.x = (float)uVar4 * _UNK_?;
-        center.z = (pVVar3->upVector).z * _UNK_?;
-        MvCharacterController::MvCharacterController_Init(pMVar2,1.3,2.0,center,(MethodInfo *)0x0);
-        pMVar2 = (this_01->fields).controller;
-        pHVar6 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar3 = (pVVar2->upVector).x;
+      uVar4 = (pVVar2->upVector).y;
+      unaff_ESI = (MvCharacterController *)0x0;
+      if (this_00 != (MvCharacterController *)0x0) {
+        center.y = (float)uVar4 * _UNK_?;
+        center.x = (float)uVar3 * _UNK_?;
+        center.z = (pVVar2->upVector).z * _UNK_?;
+        MvCharacterController::MvCharacterController_Init(this_00,1.3,2.0,center,(MethodInfo *)0x0);
+        unaff_ESI = (this_02->fields).controller;
+        pHVar5 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
                            ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-        if (pMVar2 != (MvCharacterController *)0x0) {
-          (pMVar2->fields).IgnoreWoIds = pHVar6;
+        if (unaff_ESI != (MvCharacterController *)0x0) {
+          (unaff_ESI->fields).IgnoreWoIds = pHVar5;
           func_?();
           pGVar1 = (this->fields)._._._._._.gameObject;
           if (pGVar1 != (GameObject *)0x0) {
-            this_02 = (HoverCraftMotor *)
+            this_03 = (HoverCraftMotor *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                                 (pGVar1,
                                  HoverCraftMotor_MethodInfo__UnityEngine__GameObject__AddComponent<HoverCraftMotor>__
                                 );
-            if (this_02 != (HoverCraftMotor *)0x0) {
+            if (this_03 != (HoverCraftMotor *)0x0) {
               HoverCraftMotor::HoverCraftMotor_UpdateConfiguration
-                        (this_02,(this->fields)._._._.blueprintData,(MethodInfo *)0x0);
-              pVVar7 = (this->fields)._._.seatManager;
-              if ((pVVar7 != (VehicleSeatManager *)0x0) &&
-                 (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            (pVVar7->fields).seats,
-                 this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+                        (this_03,(this->fields)._._._.blueprintData,(MethodInfo *)0x0);
+              pVVar6 = (this->fields)._._.seatManager;
+              if ((pVVar6 != (VehicleSeatManager *)0x0) &&
+                 (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            (pVVar6->fields).seats,
+                 this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  )) {
-                RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  (this_00,seatID,
+                                  (this_01,seatID,
                                    MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
                                   );
-                if (RVar8 != (RegexCharClass_SingleRange)0x0) {
-                  unaff_EBX = *(SmoothCharacterController **)((int)RVar8 + 0x14);
-                  iVar9 = func_?(unaff_EBX,TypeInfo__IVehicleCamera);
-                  if (iVar9 == 0) {
+                if (RVar7 != (RegexCharClass_SingleRange)0x0) {
+                  unaff_ESI = *(MvCharacterController **)((int)RVar7 + 0x18);
+                  iVar8 = func_?(unaff_ESI,TypeInfo__IVehicleCamera);
+                  if (iVar8 == 0) {
                     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                       func_?(TypeInfo__UnityEngine__Debug);
                     }
-                    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+                    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                               ((Object *)StringLiteral_Expected_camera_type_is_VehicleC,
                                (MethodInfo *)0x0);
                     return (MVVehicleBase_LocalObjectsBase *)0x0;
                   }
-                  pIStack_10 = TypeInfo__IVehicleCamera;
-                  if (unaff_EBX == (SmoothCharacterController *)0x0) {
-                    pIVar11 = (IVehicleCamera *)0x0;
-                  }
-                  else {
-                    pIVar11 = (IVehicleCamera *)func_?(unaff_EBX,TypeInfo__IVehicleCamera);
-                    if (pIVar11 == (IVehicleCamera *)0x0) goto code_?;
-                  }
-                  (this_02->fields)._._VehicleCamera_k__BackingField = pIVar11;
-                  func_?(&(this_02->fields)._._VehicleCamera_k__BackingField,pIVar11);
-                  this_03 = (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)
-                            func_?(TypeInfo__MVHoverCraft__LocalObjectsHoverCraft);
-                  unaff_EBX = (SmoothCharacterController *)0x0;
-                  if (this_03 != (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)0x0) {
+                  pIStack_9 = TypeInfo__IVehicleCamera;
+                  if (unaff_ESI == (MvCharacterController *)0x0) {
+                    pIVar10 = (IVehicleCamera *)0x0;
+code_?:
+                    (this_03->fields)._._VehicleCamera_k__BackingField = pIVar10;
+                    func_?(&(this_03->fields)._._VehicleCamera_k__BackingField,pIVar10);
+                    this_04 = (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)
+                              func_?(TypeInfo__MVHoverCraft__LocalObjectsHoverCraft);
                     MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::
                     MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle__ctor
-                              (this_03,(MVSimpleOneSeatVehicle *)this,this_01,
-                               (SimpleVehicleMotorBase *)this_02,(MethodInfo *)0x0);
-                    return (MVVehicleBase_LocalObjectsBase *)this_03;
+                              (this_04,(MVSimpleOneSeatVehicle *)this,this_02,
+                               (SimpleVehicleMotorBase *)this_03,(MethodInfo *)0x0);
+                    return (MVVehicleBase_LocalObjectsBase *)this_04;
                   }
+                  pIVar10 = (IVehicleCamera *)func_?(unaff_ESI,TypeInfo__IVehicleCamera);
+                  if (pIVar10 != (IVehicleCamera *)0x0) goto code_?;
+                  goto code_?;
                 }
               }
             }
@@ -251,10 +248,10 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateLocalObjects
   }
   func_?();
 code_?:
-  func_?(unaff_EBX,pIStack_10);
-  pcVar12 = (code *)swi(3);
-  pMVar13 = (MVVehicleBase_LocalObjectsBase *)(*pcVar12)();
-  return pMVar13;
+  func_?(unaff_ESI,pIStack_9);
+  pcVar11 = (code *)swi(3);
+  pMVar12 = (MVVehicleBase_LocalObjectsBase *)(*pcVar11)();
+  return pMVar12;
 }
 
 
@@ -310,25 +307,19 @@ Bounds * Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_GetLocalBounds
     cRam_? = '\x01';
   }
   pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-  BStack_2.m_Extents.x = (pVVar6->oneVector).x;
-  BStack_2.m_Extents.y = (pVVar6->oneVector).y;
-  BStack_2.m_Extents.z = (pVVar6->oneVector).z * _UNK_?;
-  fVar5 = BStack_2.m_Extents.x * _UNK_?;
-  fVar4 = BStack_2.m_Extents.y * _UNK_?;
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  center.z = fVar3;
-  center.x = (float)(undefined4)uStack_7;
-  center.y = (float)uStack_7._4_4_;
-  size.y = fVar4;
-  size.x = fVar5;
-  size.z = BStack_2.m_Extents.z;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-            (__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  uVar8 = (pVVar6->oneVector).x;
+  uVar9 = (pVVar6->oneVector).y;
+  fVar10 = (float)uVar8 * _UNK_?;
+  fVar11 = (float)uVar9 * _UNK_?;
+  fVar5 = (pVVar6->oneVector).z * _UNK_?;
+  (__return_storage_ptr__->m_Center).x = (float)(undefined4)uStack_7;
+  fVar4 = _UNK_?;
+  (__return_storage_ptr__->m_Center).y = (float)uStack_7._4_4_;
+  fVar5 = fVar5 * _UNK_?;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  (__return_storage_ptr__->m_Extents).x = fVar10 * fVar4;
+  (__return_storage_ptr__->m_Extents).y = fVar11 * fVar4;
+  (__return_storage_ptr__->m_Extents).z = fVar5;
   return __return_storage_ptr__;
 }
 
@@ -414,164 +405,214 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Initialize
     func_?(&StringLiteral_HoverCraftHull);
     cRam_? = '\x01';
   }
+  pOStack_1 = (Object *)0x0;
   MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_Initialize
             ((MVSimpleOneSeatVehicle *)this,(MethodInfo *)0x0);
-  pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
+  pIVar2 = (Il2CppClass *)
+           MVBlueprintBase::MVBlueprintBase_GetChild
                      ((MVBlueprintBase *)this,StringLiteral_HoverCraftHull,(MethodInfo *)0x0);
-  if (pMVar1 == (MVWorldObjectClient *)0x0) {
-    pMVar1 = (MVWorldObjectClient *)0x0;
-code_?:
-    pGVar2 = (this->fields)._._._._._.gameObject;
-    if (((pGVar2 == (GameObject *)0x0) ||
-        (this_00 = (HoverCraftVisualization *)
-                   Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                             ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar2,
-                              HoverCraftVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<HoverCraftVisualization>__
-                             ), this_00 == (HoverCraftVisualization *)0x0)) ||
-       (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_00,(MethodInfo *)0x0), pGVar2 == (GameObject *)0x0))
+  value_00 = TypeInfo__MVCubeModelInstance;
+  if ((pIVar2 == (Il2CppClass *)0x0) ||
+     (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar2->image[4].assembly &&
+      (*(MVCubeModelInstance__Class **)
+        ((pIVar2->image[2].typeCount - 4) +
+        (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) ==
+       TypeInfo__MVCubeModelInstance)))) {
+    pGVar3 = (this->fields)._._._._._.gameObject;
+    pIStack_4 = pIVar2;
+    if ((pGVar3 == (GameObject *)0x0) ||
+       ((pHVar5 = (HoverCraftVisualization *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_GetComponentInChildren_1
+                            (pGVar3,
+                             HoverCraftVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<HoverCraftVisualization>__
+                            ), uStack_6 = pHVar5, pHVar5 == (HoverCraftVisualization *)0x0 ||
+        (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pHVar5,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,1,(MethodInfo *)0x0);
-    cVar3 = (*(this->klass->vtable).get_IsInSpawner.methodPtr)();
-    if (cVar3 == '\0') {
-      pGVar2 = (this->fields)._._._._._.gameObject;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
+              (pGVar3,1,(MethodInfo *)0x0);
+    cVar7 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
+    if (cVar7 == '\0') {
+      pGVar3 = (this->fields)._._._._._.gameObject;
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                (pGVar2,
+                (pGVar3,
                  InteractionDataHandler_MethodInfo__UnityEngine__GameObject__AddComponent<InteractionDataHandler>__
                 );
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0);
-      this_01 = (CullingSubscriberDynamic *)func_?();
-      if (this_01 == (CullingSubscriberDynamic *)0x0) goto code_?;
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pHVar5,(MethodInfo *)0x0);
+      this_00 = (CullingSubscriberDynamic *)func_?();
       CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
-                (this_01,4.0,3,pGVar2,(GameObject__Array *)0x0,(MethodInfo *)0x0);
-      (this->fields).cullingSubscriberDynamic = this_01;
+                (this_00,4.0,3,pGVar3,(GameObject__Array *)0x0,(MethodInfo *)0x0);
+      (this->fields).cullingSubscriberDynamic = this_00;
       func_?();
-      if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
-      (*(pMVar1->klass->vtable).set_Visible.methodPtr)();
+      if (pIStack_4 == (Il2CppClass *)0x0) goto code_?;
+      (*(code *)pIStack_4->image[0x12].codeGenModule)();
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)this_00,1,(MethodInfo *)0x0);
+                ((Behaviour *)uStack_6,1,(MethodInfo *)0x0);
     }
-    pMVar4 = (this->fields)._._.IsVehicleDead;
-    if (pMVar4 == (MVRuntimeDataVariable *)0x0) goto code_?;
-    a = (pMVar4->fields).OnChange;
-    this_02 = (UnityAction_1_System_Object_ *)func_?();
-    if (this_02 == (UnityAction_1_System_Object_ *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (this_02,(Object *)this,MethodInfo__MVHoverCraft__OnIsDeadChange_System__Object_,
+    uStack_8 = (MVCubeModelInstance__Class *)(this->fields)._._.IsVehicleDead;
+    if (uStack_8 == (MVCubeModelInstance__Class *)0x0) goto code_?;
+    pIVar2 = ((Il2CppClass *)uStack_8)->element_class;
+    this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_01,(Object *)this,MethodInfo__MVHoverCraft__OnIsDeadChange_System__Object_,
                (MethodInfo *)0x0);
-    pMVar5 = (MVCubeModelInstance *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
-    cubeModelBase = (MVCubeModelInstance *)0x0;
-    if (pMVar5 == (MVCubeModelInstance *)0x0) {
-      (pMVar4->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    pIStack_4 = (Il2CppClass *)
+                 mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pIVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    pIVar2 = (Il2CppClass *)0x0;
+    if (pIStack_4 == (Il2CppClass *)0x0) {
+      ((Il2CppClass *)uStack_8)->element_class = (Il2CppClass *)0x0;
 code_?:
+      pIStack_4 = (Il2CppClass *)&((Il2CppClass *)uStack_8)->element_class;
+      uStack_8 = (MVCubeModelInstance__Class *)pIVar2;
       func_?();
-      pHVar6 = MVHoverCraft_CreateHoverCraftVisualizationSettings
+      pHVar9 = MVHoverCraft_CreateHoverCraftVisualizationSettings
                          ((HoverCraftVisualization_HoverCraftVisualizationSettings *)
-                          &stack0xffffffc8,this,(MethodInfo *)0x0);
-      uVar7._0_1_ = pHVar6->useThruster;
-      uVar7._1_3_ = *(undefined3 *)&pHVar6->field_0x1;
-      fVar8 = pHVar6->thrustersSize;
-      pTVar9 = (pHVar6->thrustersColor).colors;
-      if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
-         (pGVar2 = (pMVar1->fields).gameObject, pGVar2 == (GameObject *)0x0)) goto code_?;
+                          &stack0xffffffc4,this,(MethodInfo *)0x0);
+      uVar10._0_1_ = pHVar9->useThruster;
+      uVar10._1_3_ = *(undefined3 *)&pHVar9->field_0x1;
+      fVar11 = pHVar9->thrustersSize;
+      pTVar12 = (pHVar9->thrustersColor).colors;
+      if ((pIStack_4 == (Il2CppClass *)0x0) ||
+         ((GameObject *)pIStack_4->element_size == (GameObject *)0x0)) goto code_?;
       hoverCraftHull =
            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                     (pGVar2,(MethodInfo *)0x0);
+                     ((GameObject *)pIStack_4->element_size,(MethodInfo *)0x0);
       maxHealthVal = (this->fields)._.maxHealth;
       vsm = (this->fields)._._.seatManager;
       health = (this->fields)._.Health;
-      uVar10 = 0x54c6;
-      uVar11 = 0x1028;
-      bVar12 = (*(this->klass->vtable).get_IsInSpawner.methodPtr)();
-      hoverCraftVisualizationSettings.thrustersColor.alphas._2_2_ = uVar11;
-      hoverCraftVisualizationSettings.thrustersColor.alphas._0_2_ = uVar10;
-      hoverCraftVisualizationSettings.thrustersSize = fVar8;
-      hoverCraftVisualizationSettings.useThruster = (bool)uVar7;
-      hoverCraftVisualizationSettings._1_3_ = SUB43(uVar7,1);
-      hoverCraftVisualizationSettings.thrustersColor.colors._0_2_ = (int16_t)pTVar9;
-      hoverCraftVisualizationSettings.thrustersColor.colors._2_2_ = (short)((uint)pTVar9 >> 0x10);
+      pTVar13 = (ThrustersColorAlphaKey__Array *)&UNK_?;
+      bVar14 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
+      pHVar5 = uStack_6;
+      uStack_8 = (MVCubeModelInstance__Class *)CONCAT31(uStack_8._1_3_,bVar14);
+      hoverCraftVisualizationSettings.thrustersSize = fVar11;
+      hoverCraftVisualizationSettings.useThruster = (bool)uVar10;
+      hoverCraftVisualizationSettings._1_3_ = SUB43(uVar10,1);
+      hoverCraftVisualizationSettings.thrustersColor.colors._0_2_ = (int16_t)pTVar12;
+      hoverCraftVisualizationSettings.thrustersColor.colors._2_2_ = (short)((uint)pTVar12 >> 0x10);
+      hoverCraftVisualizationSettings.thrustersColor.alphas = pTVar13;
       HoverCraftVisualization::HoverCraftVisualization_Init
-                (this_00,hoverCraftHull,vsm,maxHealthVal,health,bVar12,
+                (uStack_6,hoverCraftHull,vsm,maxHealthVal,health,bVar14,
                  hoverCraftVisualizationSettings,(MethodInfo *)0x0);
-      (this->fields)._._.visualization = (VehicleVisualizationBase *)this_00;
+      (this->fields)._._.visualization = (VehicleVisualizationBase *)pHVar5;
       func_?();
+      pTVar13 = (ThrustersColorAlphaKey__Array *)0xfffffffe;
+      pcVar15 = (char *)0x0;
+      iVar16 = 0;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xffffffd8,-0x10,-2,0,(MethodInfo *)0x0);
-      uVar13._0_2_ = 0;
-      uVar13._2_2_ = 0;
-      iVar14 = 0;
+                ((IntVector *)&stack0xffffffd4,-0x10,-2,0,(MethodInfo *)0x0);
+      uVar17._0_2_ = 0;
+      uVar17._2_2_ = 0;
+      iVar18 = 0;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xffffffe0,2,5,6,(MethodInfo *)0x0);
-      this_03 = (EditableCubeModelWrapper *)func_?();
-      if (this_03 == (EditableCubeModelWrapper *)0x0) goto code_?;
-      max.z = iVar14;
-      max.x = (int16_t)uVar13;
-      max.y = SUB42(uVar13,2);
-      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                (this_03,cubeModelBase,(IntVector)0x32,max,0x32,(MethodInfo *)0x0);
-      (this->fields)._.editableCubeModelWrapper = this_03;
+                ((IntVector *)&stack0xffffffdc,2,5,6,(MethodInfo *)0x0);
+      method_00 = TypeInfo__EditableCubeModelWrapper;
+      value = (EditableCubeModelWrapper *)func_?();
+      uStack_8 = (MVCubeModelInstance__Class *)CONCAT22(iVar18,(undefined2)uStack_8);
+      uStack_6 = (HoverCraftVisualization *)CONCAT22(iVar16,(undefined2)uStack_6);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      pIVar2 = pIStack_4;
+      (value->fields).cubeModelBase = (MVCubeModelInstance *)pIStack_4;
+      func_?();
+      uVar19._0_1_ = pIVar2->naturalAligment;
+      uVar19._1_1_ = pIVar2->packingSize;
+      uVar19._2_2_ = *(undefined2 *)&pIVar2->field_0xba;
+      uVar19 = uVar19 | 0x10;
+      pIVar2->naturalAligment = (char)uVar19;
+      pIVar2->packingSize = (char)(uVar19 >> 8);
+      *(short *)&pIVar2->field_0xba = (short)(uVar19 >> 0x10);
+      bVar20 = cRam_? == '\0';
+      pIVar2->vtable[0].methodPtr = pIVar2->vtable[0].methodPtr;
+      if (bVar20) {
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      value_00 = (MVCubeModelInstance__Class *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar13);
+      if (value_00 == (MVCubeModelInstance__Class *)0x0) goto code_?;
+      (value_00->_0).name = (char *)value;
+      func_?();
+      (value_00->_0).namespaze = pcVar15;
+      *(undefined2 *)&(value_00->_0).byval_arg.data = uStack_6._2_2_;
+      *(undefined4 *)((int)&(value_00->_0).byval_arg.data + 2) = uVar17;
+      *(undefined2 *)&(value_00->_0).byval_arg.type = uStack_8._2_2_;
+      (value_00->_0).this_arg.data.__klassIndex = 0x32;
+      pMVar21 = (value->fields).cubeModelBase;
+      this_02 = (Func_1_Object_ *)func_?();
+      mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+                (this_02,(Object *)value_00,
+                 MethodInfo__EditableCubeModelWrapper____c__DisplayClass7_0___SetConstraints_b__0__,
+                 (MethodInfo *)0x0);
+      if (pMVar21 == (MVCubeModelInstance *)0x0) goto code_?;
+      (pMVar21->fields)._._ModelingConstraintBuilder_k__BackingField =
+           (Func_1_IModelingConstraint_ *)this_02;
+      func_?();
+      (this->fields)._.editableCubeModelWrapper = value;
       func_?();
       if ((((this->fields)._._._.blueprintData == (Dictionary_2_System_Object_System_Object_ *)0x0)
-          || (pSVar15 = StringLiteral_randomLeaveVehicle,
-             bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                               ((this->fields)._._._.blueprintData,
-                                (Object *)StringLiteral_randomLeaveVehicle,
-                                (Object **)&stack0xfffffff4,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                               ), bVar12 == 0)) || (pSVar15 == (String *)0x0)) {
+          || (bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                      ::Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                                ((this->fields)._._._.blueprintData,
+                                 (Object *)StringLiteral_randomLeaveVehicle,&pOStack_1,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                ), bVar14 == 0)) || (pOStack_1 == (Object *)0x0)) {
         return;
       }
-      pSVar16 = (String *)0x0;
-      if (pSVar15->klass == (String__Class *)TypeInfo__System__Single) {
-        pSVar16 = pSVar15;
+      pOVar22 = (Object *)0x0;
+      if ((Single__Class *)pOStack_1->klass == TypeInfo__System__Single) {
+        pOVar22 = pOStack_1;
       }
-      if (pSVar16 == (String *)0x0) {
+      if (pOVar22 == (Object *)0x0) {
         return;
       }
-      if ((pSVar15->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar17 = (float *)func_?();
-        (this->fields).randomLeaveVehicle = *pfVar17;
+      if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        pfVar23 = (float *)func_?();
+        (this->fields).randomLeaveVehicle = *pfVar23;
         return;
       }
       goto code_?;
     }
-    if (pMVar5->klass ==
-        (MVCubeModelInstance__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      cubeModelBase = pMVar5;
+    if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)pIStack_4->image ==
+        TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pIVar2 = pIStack_4;
     }
-    if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-      (pMVar4->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)cubeModelBase;
-      cubeModelBase = (MVCubeModelInstance *)0x0;
-      if (pMVar5->klass ==
-          (MVCubeModelInstance__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        cubeModelBase = pMVar5;
+    pIVar24 = (Il2CppClass *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+    if (pIVar2 != (Il2CppClass *)0x0) {
+      ((Il2CppClass *)uStack_8)->element_class = pIVar2;
+      pIVar2 = (Il2CppClass *)0x0;
+      if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)pIStack_4->image ==
+          TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pIVar2 = pIStack_4;
       }
-      if (cubeModelBase != (MVCubeModelInstance *)0x0) goto code_?;
+      value_00 = (MVCubeModelInstance__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate;
+      if (pIVar2 != (Il2CppClass *)0x0) goto code_?;
+      goto code_?;
     }
   }
   else {
-    if (((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <=
-         (pMVar1->klass->_1).typeHierarchyDepth) &&
-       ((MVCubeModelInstance__Class *)
-        (pMVar1->klass->_1).typeHierarchy
-        [(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] ==
-        TypeInfo__MVCubeModelInstance)) goto code_?;
     func_?();
 code_?:
-    func_?();
+    pIStack_4 = (Il2CppClass *)func_?();
+code_?:
+    uStack_8 = value_00;
+    pIStack_4 = (Il2CppClass *)func_?();
+    pIVar24 = extraout_ECX;
   }
+  uStack_8 = (MVCubeModelInstance__Class *)pIVar24;
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -589,11 +630,12 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_InitializeInventory
     cRam_? = '\x01';
   }
   MVGroup::MVGroup_InitializeInventory((MVGroup *)this,(MethodInfo *)0x0);
-  source = (this->fields)._._._._._.gameObject;
-  if (source != (GameObject *)0x0) {
+  this_00 = (this->fields)._._._._._.gameObject;
+  if (this_00 != (GameObject *)0x0) {
     pVVar1 = (VehicleVisualizationBase *)
-             Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentInChildren_1
+                       (this_00,
                         HoverCraftVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<HoverCraftVisualization>__
                        );
     (this->fields)._._.visualization = pVVar1;
@@ -625,10 +667,10 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnDataUpdate
   }
   this_00 = (HoverCraftVisualization *)(this->fields)._._.visualization;
   if (this_00 != (HoverCraftVisualization *)0x0) {
-    if (((TypeInfo__HoverCraftVisualization->_1).typeHierarchyDepth <=
-         (this_00->klass->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__HoverCraftVisualization->_1).naturalAligment <=
+         (this_00->klass->_1).naturalAligment) &&
        ((this_00->klass->_1).typeHierarchy
-        [(TypeInfo__HoverCraftVisualization->_1).typeHierarchyDepth - 1] ==
+        [(TypeInfo__HoverCraftVisualization->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
       pHVar1 = MVHoverCraft_CreateHoverCraftVisualizationSettings
                          ((HoverCraftVisualization_HoverCraftVisualizationSettings *)
@@ -676,118 +718,106 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnIsDeadChange
       cRam_? = '\x01';
     }
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-    VStack_4.x = (pVVar3->downVector).x;
-    VStack_4.y = (pVVar3->downVector).y;
-    VStack_4.z = (pVVar3->downVector).z;
-    pGVar5 = (this->fields)._._._._._.gameObject;
-    if ((pGVar5 != (GameObject *)0x0) &&
-       (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
-      pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                          ((Quaternion *)&stack0xffffffcc,pTVar6,(MethodInfo *)0x0);
-      puVar8 = (undefined *)pQVar7->x;
-      ppVVar9 = (Vector3__Class **)pQVar7->y;
-      fVar10 = pQVar7->z;
-      fVar11 = pQVar7->w;
+    uVar4 = (pVVar3->downVector).x;
+    uVar5 = (pVVar3->downVector).y;
+    fVar6 = (pVVar3->downVector).z;
+    pGVar7 = (this->fields)._._._._._.gameObject;
+    if ((pGVar7 != (GameObject *)0x0) &&
+       (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar7,(MethodInfo *)0x0), pTVar8 != (Transform *)0x0)) {
+      pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                          ((Quaternion *)&stack0xffffffb0,pTVar8,(MethodInfo *)0x0);
+      ppVVar10 = (Vector3__Class **)pQVar9->x;
+      fVar11 = pQVar9->y;
+      fVar12 = pQVar9->z;
+      fVar13 = pQVar9->w;
       if (cRam_? == '\0') {
-        ppVVar9 = &TypeInfo__UnityEngine__Vector3;
-        puVar8 = &UNK_?;
+        ppVVar10 = &TypeInfo__UnityEngine__Vector3;
         func_?();
         cRam_? = '\x01';
       }
-      rotation.y = (float)ppVVar9;
-      rotation.x = (float)puVar8;
-      rotation.z = fVar10;
-      rotation.w = fVar11;
-      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          ((Vector3 *)&stack0xffffffd0,rotation,
+      rotation.y = fVar11;
+      rotation.x = (float)ppVVar10;
+      rotation.z = fVar12;
+      rotation.w = fVar13;
+      pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          ((Vector3 *)&stack0xffffffb0,rotation,
                            TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                            (MethodInfo *)0x0);
-      VStack_13.x = pVVar12->x;
-      VStack_13.y = pVVar12->y;
-      VStack_13.z = pVVar12->z;
-      fVar10 = VStack_13.x + VStack_4.x;
-      fStack_14 = VStack_13.y + VStack_4.y;
-      fStack_15 = VStack_13.z + VStack_4.z;
+      uVar15 = pVVar14->x;
+      uVar16 = pVVar14->y;
+      fVar11 = (float)uVar15 + (float)uVar4;
+      fVar12 = (float)uVar16 + (float)uVar5;
+      fVar6 = pVVar14->z + fVar6;
       if ((this->fields)._._.localObjects == (MVVehicleBase_LocalObjectsBase *)0x0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar16 != (PrefabPool *)0x0) {
-          particlePrefab = (pPVar16->fields).particleExplosion;
-          pGVar5 = (this->fields)._._._._._.gameObject;
-          if ((pGVar5 != (GameObject *)0x0) &&
-             (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar5,(MethodInfo *)0x0),
-             pTVar6 != (Transform *)0x0)) {
-            pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                (&VStack_4,pTVar6,(MethodInfo *)0x0);
-            uVar17 = pVVar12->x;
-            uVar18 = pVVar12->y;
-            VStack_4.y = (float)uVar18 + fStack_14;
-            VStack_4.x = (float)uVar17 + fVar10;
-            VStack_4.z = pVVar12->z + fStack_15;
+        pPVar17 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar17 != (PrefabPool *)0x0) {
+          pPVar18 = (pPVar17->fields).particleExplosion;
+          pGVar7 = (this->fields)._._._._._.gameObject;
+          if ((pGVar7 != (GameObject *)0x0) &&
+             (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar7,(MethodInfo *)0x0),
+             pTVar8 != (Transform *)0x0)) {
+            pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffb0,pTVar8,(MethodInfo *)0x0);
+            uVar19 = pVVar14->x;
+            uVar20 = pVVar14->y;
+            fVar13 = pVVar14->z;
             if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
                 cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            this_00 = (ExplosionEvent *)0x0;
-            local = 1;
-code_?:
-            position.z = VStack_4.z;
-            position.x = VStack_4.x;
-            position.y = VStack_4.y;
+            position_00.y = (float)uVar20 + fVar12;
+            position_00.x = (float)uVar19 + fVar11;
+            position_00.z = fVar13 + fVar6;
             SharedWorldObjectGameplayFunctions+Explosion::
             SharedWorldObjectGameplayFunctions_Explosion_Explode
-                      (particlePrefab,position,40.0,10.0,2000.0,local,this_00,ignoreIDs,
+                      (pPVar18,position_00,40.0,10.0,2000.0,1,(ExplosionEvent *)0x0,ignoreIDs,
                        (MethodInfo *)0x0);
             return;
           }
         }
       }
       else {
-        pGVar5 = (this->fields)._._._._._.gameObject;
-        if ((pGVar5 != (GameObject *)0x0) &&
-           (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
-          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              (&VStack_13,pTVar6,(MethodInfo *)0x0);
-          uVar19._0_4_ = pVVar12->x;
-          uVar19._4_4_ = pVVar12->y;
-          fVar11 = pVVar12->z;
-          VStack_13.y = uVar19._4_4_ + fStack_14;
-          VStack_13.x = (float)uVar19 + fVar10;
-          VStack_13.z = fVar11 + fStack_15;
-          VStack_4._0_8_ = uVar19;
-          VStack_4.z = fVar11;
+        pGVar7 = (this->fields)._._._._._.gameObject;
+        if ((pGVar7 != (GameObject *)0x0) &&
+           (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar7,(MethodInfo *)0x0), pTVar8 != (Transform *)0x0)) {
+          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xffffffb0,pTVar8,(MethodInfo *)0x0);
+          uVar21 = pVVar14->x;
+          uVar22 = pVVar14->y;
+          fVar13 = pVVar14->z;
+          fVar23 = (float)uVar21 + fVar11;
           this_00 = (ExplosionEvent *)
                     func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-          if (this_00 != (ExplosionEvent *)0x0) {
-            worldPosition.z = VStack_13.z;
-            worldPosition.x = VStack_13.x;
-            worldPosition.y = VStack_13.y;
-            MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
-            ExplosionEvent__ctor_3
-                      (this_00,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__PrefabPool);
-              cRam_? = '\x01';
+          worldPosition.y = (float)uVar22 + fVar12;
+          worldPosition.x = fVar23;
+          worldPosition.z = fVar13 + fVar6;
+          MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2
+                    (this_00,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__PrefabPool);
+            cRam_? = '\x01';
+          }
+          pPVar17 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar17 != (PrefabPool *)0x0) {
+            pPVar18 = (pPVar17->fields).particleExplosion;
+            if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__SharedWorldObjectGameplayFunctions__Explosion);
             }
-            pPVar16 = TypeInfo__PrefabPool->static_fields->instance;
-            if (pPVar16 != (PrefabPool *)0x0) {
-              particlePrefab = (pPVar16->fields).particleExplosion;
-              VStack_4.y = uVar19._4_4_ + fStack_14;
-              VStack_4.x = (float)uVar19 + fVar10;
-              VStack_4.z = fVar11 + fStack_15;
-              if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__SharedWorldObjectGameplayFunctions__Explosion);
-              }
-              local = 0;
-              goto code_?;
-            }
+            position.z = fVar13 + fVar6;
+            position.x = (float)uVar21 + fVar11;
+            position.y = (float)uVar22 + fVar12;
+            SharedWorldObjectGameplayFunctions+Explosion::
+            SharedWorldObjectGameplayFunctions_Explosion_Explode
+                      (pPVar18,position,40.0,10.0,2000.0,0,this_00,ignoreIDs,(MethodInfo *)0x0);
+            return;
           }
         }
       }
@@ -798,8 +828,8 @@ code_?:
   pBVar1 = extraout_EDX;
 code_?:
   func_?(isDead,pBVar1);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -911,11 +941,10 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_get_HoverCraftVisualization
   if (pHVar1 == (HoverCraftVisualization *)0x0) {
     return (HoverCraftVisualization *)0x0;
   }
-  if (((TypeInfo__HoverCraftVisualization->_1).typeHierarchyDepth <=
-       (pHVar1->klass->_1).typeHierarchyDepth) &&
-     ((pHVar1->klass->_1).typeHierarchy
-      [(TypeInfo__HoverCraftVisualization->_1).typeHierarchyDepth - 1] ==
-      (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
+  if (((TypeInfo__HoverCraftVisualization->_1).naturalAligment <=
+       (pHVar1->klass->_1).naturalAligment) &&
+     ((pHVar1->klass->_1).typeHierarchy[(TypeInfo__HoverCraftVisualization->_1).naturalAligment - 1]
+      == (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
     return pHVar1;
   }
   func_?(pHVar1,TypeInfo__HoverCraftVisualization);

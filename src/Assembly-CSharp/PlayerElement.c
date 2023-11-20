@@ -27,10 +27,10 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_ActivateSubscriberUI
                 ((Behaviour *)this_01,0,(MethodInfo *)0x0);
       pTVar1 = (this->fields).rank;
       if (pTVar1 != (Text *)0x0) {
-        CStack_2.b = (float)(pTVar1->klass->vtable).set_text.method;
+        CStack_2.b = (float)(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
         CStack_2.g = (float)::StringLiteral__;
         CStack_2.r = (float)pTVar1;
-        (*(pTVar1->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar1->klass->vtable).set_text.method)();
         if (isFriend == 0) {
           pTVar1 = (this->fields).playerName;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
@@ -38,9 +38,9 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_ActivateSubscriberUI
           }
           pCVar3 = Styles::Styles_GetColor(&CStack_2,ColorStyle__Enum_OffWhite,(MethodInfo *)0x0);
           if (pTVar1 == (Text *)0x0) goto code_?;
-          (*(pTVar1->klass->vtable).set_color.methodPtr)
+          (*(code *)(pTVar1->klass->vtable).set_color.method)
                     (pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
-                     (pTVar1->klass->vtable).set_color.method);
+                     (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
         }
         pTVar1 = (this->fields).score;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
@@ -48,9 +48,9 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_ActivateSubscriberUI
         }
         pCVar3 = Styles::Styles_GetColor(&CStack_2,ColorStyle__Enum_OffWhite,(MethodInfo *)0x0);
         if (pTVar1 != (Text *)0x0) {
-          (*(pTVar1->klass->vtable).set_color.methodPtr)
+          (*(code *)(pTVar1->klass->vtable).set_color.method)
                     (pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
-                     (pTVar1->klass->vtable).set_color.method);
+                     (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
           index = 0;
           pLVar4 = (this->fields).backgrounds;
           while (pLVar4 != (List_1_UnityEngine_UI_Image_ *)0x0) {
@@ -72,9 +72,9 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_ActivateSubscriberUI
             }
             pCVar3 = Styles::Styles_GetColor(&CStack_2,ColorStyle__Enum_Gray,(MethodInfo *)0x0);
             if (RVar5 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar5 + 0x174))
+            (**(code **)(*(int *)RVar5 + 0x178))
                       (RVar5,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
-                       *(undefined4 *)(*(int *)RVar5 + 0x178));
+                       *(undefined4 *)(*(int *)RVar5 + 0x17c));
             index = index + 1;
             pLVar4 = (this->fields).backgrounds;
           }
@@ -149,11 +149,11 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_Initialize
               pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if (((pMVar1 == (MVNetworkGame *)0x0) ||
                   (pFVar2 = (pMVar1->fields)._Friends_k__BackingField, pFVar2 == (FriendList *)0x0))
-                 || (this_01 = (Dictionary_2_System_Object_System_Object_ *)(pFVar2->fields).friends
-                    , this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0))
+                 || (this_01 = (Dictionary_2_System_UInt32_System_Object_ *)(pFVar2->fields).friends
+                    , this_01 == (Dictionary_2_System_UInt32_System_Object_ *)0x0))
               goto code_?;
-              bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__ContainsValue
+              bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
+                      ::Object]::Dictionary_2_System_UInt32_System_Object__ContainsValue
                                 (this_01,value,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__ContainsValue_Friend_
                                 );
@@ -203,7 +203,7 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_Initialize
                           ((Color *)&stack0xffffffe0,ColorStyle__Enum_LocalPlayerBackground,
                            (MethodInfo *)0x0);
                 if (RVar13 == (RegexCharClass_SingleRange)0x0) break;
-                (**(code **)(*(int *)RVar13 + 0x174))();
+                (**(code **)(*(int *)RVar13 + 0x178))();
                 index = index + 1;
                 pLVar12 = (this->fields).backgrounds;
               }
@@ -233,7 +233,7 @@ code_?:
                             ((Color *)&stack0xffffffe0,ColorStyle__Enum_FriendGreen,
                              (MethodInfo *)0x0);
                   if (pTVar14 == (Text *)0x0) goto code_?;
-                  (*(pTVar14->klass->vtable).set_color.methodPtr)();
+                  (*(code *)(pTVar14->klass->vtable).set_color.method)();
                 }
                 pUVar15 = (((MVLocalPlayer *)player)->fields)._._UserProfileData_k__BackingField;
                 if (pUVar15 != (UserProfileData *)0x0) {
@@ -241,7 +241,7 @@ code_?:
                   func_?();
                   pTVar14 = (this->fields).playerName;
                   if (pTVar14 != (Text *)0x0) {
-                    (*(pTVar14->klass->vtable).set_text.methodPtr)();
+                    (*(code *)(pTVar14->klass->vtable).set_text.method)();
                     pTVar14 = (this->fields).score;
                     if ((pTVar14 != (Text *)0x0) &&
                        (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -327,19 +327,20 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_OnPlayerClicked
     func_?(&TypeInfo__PlayerElement____c__DisplayClass18_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__PlayerElement____c__DisplayClass18_0);
+  method_00 = TypeInfo__PlayerElement____c__DisplayClass18_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).playerSocialPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      PlayerSocialPopup_MethodInfo__UnityEngine__Object__Instantiate<PlayerSocialPopup>_PlayerSocialPopup_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).playerSocialPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        PlayerSocialPopup_MethodInfo__UnityEngine__Object__Instantiate<PlayerSocialPopup>_PlayerSocialPopup_
-                       );
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     if (value[1].klass != (Object__Class *)0x0) {
@@ -353,22 +354,20 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_OnPlayerClicked
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                           );
-      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                   MethodInfo__PlayerElement____c__DisplayClass18_0___OnPlayerClicked_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        return;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__PlayerElement____c__DisplayClass18_0___OnPlayerClicked_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
   }
   func_?();
@@ -451,14 +450,14 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_UpdateScoreIndex
         pTVar4 = (this->fields).rank;
         if (pTVar4 == (Text *)0x0) goto code_?;
         pTVar5 = pTVar4->klass;
-        pMStack6 = (pTVar5->vtable).set_text.method;
-        (*(pTVar5->vtable).set_text.methodPtr)();
+        pIStack6 = (pTVar5->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar5->vtable).set_text.method)();
       }
       pTVar4 = (this->fields).memberRank;
       if (pTVar4 != (Text *)0x0) {
         pTVar5 = pTVar4->klass;
-        pMStack6 = (pTVar5->vtable).set_text.method;
-        (*(pTVar5->vtable).set_text.methodPtr)();
+        pIStack6 = (pTVar5->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar5->vtable).set_text.method)();
         return;
       }
     }
@@ -477,11 +476,11 @@ String * Assembly-CSharp.dll::PlayerElement::PlayerElement_get_PlayerName
                    (PlayerElement *this,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pTStack_2 = (this->fields).playerName;
   if (pTStack_2 != (Text *)0x0) {
-    pMStack_1 = (pTStack_2->klass->vtable).get_text.method;
-    pSVar3 = (String *)(*(pTStack_2->klass->vtable).get_text.methodPtr)();
+    pIStack_1 = (pTStack_2->klass->vtable).set_text.methodPtr;
+    pSVar3 = (String *)(*(code *)(pTStack_2->klass->vtable).get_text.method)();
     return pSVar3;
   }
   uVar4 = func_?(&puStack_5);

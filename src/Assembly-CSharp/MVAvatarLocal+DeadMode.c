@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_Activat
   if ((pMVar3 == (MVAvatarLocal *)0x0) ||
      (pAVar4 = (pMVar3->fields).avatarEquipable, pAVar4 == (AvatarEquipable *)0x0))
   goto code_?;
-  (*(pAVar4->klass->vtable).Unequip.methodPtr)();
+  (*(code *)(pAVar4->klass->vtable).Unequip.method)();
   pMVar3 = (this->fields)._.mvAvatar;
   if (pMVar3 == (MVAvatarLocal *)0x0) goto code_?;
   bVar5 = MVAvatar::MVAvatar_get_IsSeated((MVAvatar *)pMVar3,(MethodInfo *)0x0);
@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_Activat
     if (this_03 == (MainCameraManager *)0x0) goto code_?;
     pMVar6 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_03,(MethodInfo *)0x0);
     if (pMVar6 == (MVCameraBase *)0x0) goto code_?;
-    iVar7 = (*(pMVar6->klass->vtable).__unknown.methodPtr)();
+    iVar7 = (*(code *)(pMVar6->klass->vtable).__unknown.method)();
     if (iVar7 != 0x10) goto code_?;
     pMVar3 = (this->fields)._.mvAvatar;
     if (pMVar3 == (MVAvatarLocal *)0x0) goto code_?;
@@ -102,17 +102,15 @@ code_?:
        (pGVar10 = (pMVar9->fields).GameEventManager, pGVar10 != (GameEventManager *)0x0)) {
       this_01 = (pGVar10->fields).AvatarCommandsBuildMode;
       this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (this_04 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_04,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__OnEnterEditMode__,
-                   (MethodInfo *)0x0);
-        if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
-          GameEventManager+AvatarCommandsBuildModeManager::
-          GameEventManager_AvatarCommandsBuildModeManager_add_OnSetToEditMode
-                    (this_01,(Action *)this_04,(MethodInfo *)0x0);
-          return;
-        }
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_04,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__OnEnterEditMode__,
+                 (MethodInfo *)0x0);
+      if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+        GameEventManager+AvatarCommandsBuildModeManager::
+        GameEventManager_AvatarCommandsBuildModeManager_add_OnSetToEditMode
+                  (this_01,(Action *)this_04,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -137,35 +135,29 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_DeActiv
   }
   if ((undefined1)toMode == AvatarRuntimeState__Enum_Playing) {
     this_00 = (this->fields)._.mvAvatar;
-    if ((this_00 == (MVAvatarLocal *)0x0) ||
-       (pAVar1 = (this_00->fields).interactableLocal, pAVar1 == (AvatarInteractable *)0x0))
-    goto code_?;
-    (*(pAVar1->klass->vtable).AddModifier.methodPtr)
-              (pAVar1,0x11,0xffffffff,0,(pAVar1->klass->vtable).AddModifier.method);
-    MVAvatarLocal::MVAvatarLocal_SetToSpawnTransform(this_00,(MethodInfo *)0x0);
+    if (this_00 == (MVAvatarLocal *)0x0) goto code_?;
+    MVAvatarLocal::MVAvatarLocal_OnRespawn(this_00,(MethodInfo *)0x0);
   }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar2 != (MVNetworkGame *)0x0) &&
-     (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) {
-    this_01 = (pGVar3->fields).AvatarCommandsBuildMode;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (pGVar2 = (pMVar1->fields).GameEventManager, pGVar2 != (GameEventManager *)0x0)) {
+    this_01 = (pGVar2->fields).AvatarCommandsBuildMode;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_02,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__OnEnterEditMode__,
-                 (MethodInfo *)0x0);
-      if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
-        GameEventManager+AvatarCommandsBuildModeManager::
-        GameEventManager_AvatarCommandsBuildModeManager_remove_OnSetToEditMode
-                  (this_01,(Action *)this_02,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_02,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__OnEnterEditMode__,
+               (MethodInfo *)0x0);
+    if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+      GameEventManager+AvatarCommandsBuildModeManager::
+      GameEventManager_AvatarCommandsBuildModeManager_remove_OnSetToEditMode
+                (this_01,(Action *)this_02,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -227,10 +219,11 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_FrameUp
                       ((Behaviour *)pAVar2,(MethodInfo *)0x0);
     if (bVar3 != 0) {
       pMVar1 = (this->fields)._.mvAvatar;
-      if ((pMVar1 == (MVAvatarLocal *)0x0) ||
-         (pAVar2 = (pMVar1->fields).avatarMotor, pAVar2 == (AvatarMotor *)0x0))
-      goto code_?;
-      AvatarMotor::AvatarMotor_UpdateFunction(pAVar2,(MethodInfo *)0x0);
+      if (((pMVar1 == (MVAvatarLocal *)0x0) ||
+          (pAVar2 = (pMVar1->fields).avatarMotor, pAVar2 == (AvatarMotor *)0x0)) ||
+         (this_00 = (pAVar2->fields).smoothCharacterController,
+         this_00 == (SmoothCharacterController *)0x0)) goto code_?;
+      SmoothCharacterController::SmoothCharacterController_SmoothMove(this_00,(MethodInfo *)0x0);
     }
     if (((this->fields).setDeadCamDelayed == 0) ||
        (fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
@@ -395,38 +388,35 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode__ctor
   (this->fields).deadInterval = 4.0;
   value = (MVAvatarLocal_DeadMode_AvatarInputControllerDead *)
           func_?(TypeInfo__MVAvatarLocal_DeadMode__AvatarInputControllerDead);
-  if (value == (MVAvatarLocal_DeadMode_AvatarInputControllerDead *)0x0) {
-code_?:
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
+  }
+  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar2 = (pQVar1->identityQuaternion).y;
+  fVar3 = (pQVar1->identityQuaternion).z;
+  fVar4 = (pQVar1->identityQuaternion).w;
+  (value->fields).rot.x = (pQVar1->identityQuaternion).x;
+  (value->fields).rot.y = fVar2;
+  (value->fields).rot.z = fVar3;
+  (value->fields).rot.w = fVar4;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
+  method_00 = (MethodInfo *)&(this->fields).inputController;
+  (this->fields).inputController = value;
+  func_?(method_00,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields)._.mvAvatar = mvAvatar;
+  func_?(&this->fields,mvAvatar);
+  (this->fields)._.modeTypes = 2;
+  if (mvAvatar == (MVAvatarLocal *)0x0) {
     func_?();
   }
   else {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
-      cRam_? = '\x01';
-    }
-    pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar2 = (pQVar1->identityQuaternion).y;
-    fVar3 = (pQVar1->identityQuaternion).z;
-    fVar4 = (pQVar1->identityQuaternion).w;
-    (value->fields).rot.x = (pQVar1->identityQuaternion).x;
-    (value->fields).rot.y = fVar2;
-    (value->fields).rot.z = fVar3;
-    (value->fields).rot.w = fVar4;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    method_00 = (MethodInfo *)&(this->fields).inputController;
-    (this->fields).inputController = value;
-    func_?(method_00,value);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields)._.mvAvatar = mvAvatar;
-    func_?(&this->fields,mvAvatar);
-    (this->fields)._.modeTypes = 2;
-    if (mvAvatar == (MVAvatarLocal *)0x0) goto code_?;
     pAVar5 = (mvAvatar->fields).OnKilled;
     this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
               func_?(TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>);
-    if (this_00 == (Action_3_Int32_Int32_ByteEnum_ *)0x0) goto code_?;
     mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
               (this_00,(Object *)this,
                MethodInfo__MVAvatarLocal__DeadMode__HandleDeathBriefingPause_int__int__MV__Common__PlayerKilledByType_
@@ -447,7 +437,6 @@ code_?:
     func_?();
     pAVar8 = (mvAvatar->fields).OnSuicide;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__HandleResetUIPause__,

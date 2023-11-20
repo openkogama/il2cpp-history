@@ -47,141 +47,131 @@ void Assembly-CSharp.dll::AccessoryShinyButton::AccessoryShinyButton_Update
   pTVar4 = (Transform *)(this->fields).shine;
   if (pTVar4 != (Transform *)0x0) {
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffe4,pTVar4,(MethodInfo *)0x0);
+    uVar6 = pVVar5->y;
     fVar1 = pVVar5->z;
-    pRVar6 = (this->fields).buttonRect;
-    if (pRVar6 != (RectTransform *)0x0) {
-      pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                          ((Rect *)&stack0xffffffdc,pRVar6,(MethodInfo *)0x0);
-      fVar2 = SubscribableVariableBase`1[System::Single]::
-               SubscribableVariableBase_1_System_Single__get_Value
-                         ((SubscribableVariableBase_1_System_Single_ *)pRVar7->m_XMin,
-                          (MethodInfo *)pRVar7->m_YMin);
+    pRVar7 = (this->fields).buttonRect;
+    if (pRVar7 != (RectTransform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                ((Rect *)&stack0xffffffe0,pRVar7,(MethodInfo *)0x0);
       pAVar8 = (this->fields).buttonShinePositionCurve;
       if (pAVar8 != (AnimationCurve *)0x0) {
-        fVar9 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                            (pAVar8,(this->fields).currentProgress,(MethodInfo *)0x0);
-        pRVar6 = (this->fields).shine;
-        if (pRVar6 != (RectTransform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                    ((Rect *)&stack0xffffffdc,pRVar6,(MethodInfo *)0x0);
-          uVar10 = 0;
-          fVar11 = SubscribableVariableBase`1[System::Single]::
-                   SubscribableVariableBase_1_System_Single__get_Value
-                             ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffcc,
-                              (MethodInfo *)0x0);
+        pRVar7 = (this->fields).shine;
+        if (pRVar7 != (RectTransform *)0x0) {
+          puVar9 = &UNK_?;
+          pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                              ((Rect *)&stack0xffffffd0,pRVar7,(MethodInfo *)0x0);
           pTVar4 = (Transform *)(this->fields).shine;
-          value_01.y = (float)uVar10;
-          value_01.x = fVar9 * fVar2 - fVar11;
           if (pTVar4 != (Transform *)0x0) {
+            value_01.y = (float)uVar6;
+            value_01.x = fVar2 * (float)puVar9 - pRVar10->m_Width;
             value_01.z = fVar1;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                       (pTVar4,value_01,(MethodInfo *)0x0);
-            pIVar12 = (this->fields).topFlare;
-            if (pIVar12 != (Image *)0x0) {
+            pIVar11 = (this->fields).topFlare;
+            if (pIVar11 != (Image *)0x0) {
               pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pIVar12,(MethodInfo *)0x0);
+                                  ((Component *)pIVar11,(MethodInfo *)0x0);
               if (pTVar4 != (Transform *)0x0) {
                 pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                           Transform_get_localPosition
-                                    ((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
-                uVar10 = pVVar5->y;
+                                    ((Vector3 *)&stack0xffffffe4,pTVar4,(MethodInfo *)0x0);
+                uVar12 = pVVar5->y;
                 fVar1 = pVVar5->z;
-                pRVar6 = (this->fields).buttonRect;
-                if (pRVar6 != (RectTransform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                            ((Rect *)&stack0xffffffdc,pRVar6,(MethodInfo *)0x0);
-                  fVar2 = SubscribableVariableBase`1[System::Single]::
-                           SubscribableVariableBase_1_System_Single__get_Value
-                                     ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffcc,
-                                      (MethodInfo *)0x0);
+                pRVar7 = (this->fields).buttonRect;
+                if (pRVar7 != (RectTransform *)0x0) {
+                  pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                            RectTransform_get_rect
+                                      ((Rect *)&stack0xffffffd0,pRVar7,(MethodInfo *)0x0);
+                  fVar2 = pRVar10->m_Width;
                   pAVar8 = (this->fields).topFlarePositionCurve;
                   if (pAVar8 != (AnimationCurve *)0x0) {
-                    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
                              AnimationCurve_Evaluate
                                        (pAVar8,(this->fields).currentProgress,(MethodInfo *)0x0);
-                    pIVar12 = (this->fields).topFlare;
-                    uVar13 = CONCAT44(uVar10,fVar9 * fVar2);
-                    if (pIVar12 != (Image *)0x0) {
+                    fVar13 = fVar13 * fVar2;
+                    pIVar11 = (this->fields).topFlare;
+                    if (pIVar11 != (Image *)0x0) {
                       pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_transform((Component *)pIVar12,(MethodInfo *)0x0);
+                                Component_get_transform((Component *)pIVar11,(MethodInfo *)0x0);
                       if (pTVar4 != (Transform *)0x0) {
+                        value.y = (float)uVar12;
+                        value.x = fVar13;
                         value.z = fVar1;
-                        value.x = (float)(int)uVar13;
-                        value.y = (float)(int)((ulonglong)uVar13 >> 0x20);
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_set_localPosition(pTVar4,value,(MethodInfo *)0x0);
-                        pIVar12 = (this->fields).topFlare;
-                        if (pIVar12 != (Image *)0x0) {
-                          pIVar14 = pIVar12->klass;
-                          pMStack15 = (pIVar14->vtable).get_color.method;
-                          (*(pIVar14->vtable).get_color.methodPtr)();
+                        pIVar11 = (this->fields).topFlare;
+                        if (pIVar11 != (Image *)0x0) {
+                          pIVar14 = pIVar11->klass;
+                          pIStack15 = (pIVar14->vtable).set_color.methodPtr;
+                          (*(code *)(pIVar14->vtable).get_color.method)();
                           pAVar8 = (this->fields).flareAlphaCurve;
                           if (pAVar8 != (AnimationCurve *)0x0) {
                             UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
                             AnimationCurve_Evaluate
                                       (pAVar8,(this->fields).currentProgress,(MethodInfo *)0x0);
-                            pIVar12 = (this->fields).topFlare;
-                            if (pIVar12 != (Image *)0x0) {
-                              pIVar14 = pIVar12->klass;
-                              pMStack15 = (pIVar14->vtable).set_color.method;
-                              (*(pIVar14->vtable).set_color.methodPtr)();
-                              pIVar12 = (this->fields).bottomFlare;
-                              if (pIVar12 != (Image *)0x0) {
+                            pIVar11 = (this->fields).topFlare;
+                            if (pIVar11 != (Image *)0x0) {
+                              pIVar14 = pIVar11->klass;
+                              pIStack15 = (pIVar14->vtable).get_raycastTarget.methodPtr;
+                              (*(code *)(pIVar14->vtable).set_color.method)();
+                              pIVar11 = (this->fields).bottomFlare;
+                              if (pIVar11 != (Image *)0x0) {
                                 pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                           Component_get_transform
-                                                    ((Component *)pIVar12,(MethodInfo *)0x0);
+                                                    ((Component *)pIVar11,(MethodInfo *)0x0);
                                 if (pTVar4 != (Transform *)0x0) {
                                   pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                             Transform_get_localPosition
-                                                      ((Vector3 *)&stack0xffffffe0,pTVar4,
+                                                      ((Vector3 *)&stack0xffffffe4,pTVar4,
                                                        (MethodInfo *)0x0);
                                   uVar16 = pVVar5->y;
                                   fVar1 = pVVar5->z;
-                                  pRVar6 = (this->fields).buttonRect;
-                                  if (pRVar6 != (RectTransform *)0x0) {
-                                    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                    RectTransform_get_rect
-                                              ((Rect *)&stack0xffffffdc,pRVar6,(MethodInfo *)0x0);
-                                    fVar2 = SubscribableVariableBase`1[System::Single]::
-                                             SubscribableVariableBase_1_System_Single__get_Value
-                                                       ((SubscribableVariableBase_1_System_Single_ *
-                                                        )&stack0xffffffcc,(MethodInfo *)0x0);
+                                  pRVar7 = (this->fields).buttonRect;
+                                  if (pRVar7 != (RectTransform *)0x0) {
+                                    pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform
+                                              ::RectTransform_get_rect
+                                                        ((Rect *)&stack0xffffffd0,pRVar7,
+                                                         (MethodInfo *)0x0);
+                                    fVar2 = pRVar10->m_Width;
                                     pAVar8 = (this->fields).bottomFlarePositionCurve;
                                     if (pAVar8 != (AnimationCurve *)0x0) {
-                                      fVar9 = UnityEngine.CoreModule.dll::UnityEngine::
+                                      fVar13 = UnityEngine.CoreModule.dll::UnityEngine::
                                                AnimationCurve::AnimationCurve_Evaluate
                                                          (pAVar8,(this->fields).currentProgress,
                                                           (MethodInfo *)0x0);
-                                      pIVar12 = (this->fields).bottomFlare;
-                                      uVar13 = CONCAT44(uVar16,fVar9 * fVar2);
-                                      if (pIVar12 != (Image *)0x0) {
+                                      fVar13 = fVar13 * fVar2;
+                                      pIVar11 = (this->fields).bottomFlare;
+                                      if (pIVar11 != (Image *)0x0) {
                                         pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component
                                                   ::Component_get_transform
-                                                            ((Component *)pIVar12,(MethodInfo *)0x0);
+                                                            ((Component *)pIVar11,(MethodInfo *)0x0);
                                         if (pTVar4 != (Transform *)0x0) {
+                                          value_00.y = (float)uVar16;
+                                          value_00.x = fVar13;
                                           value_00.z = fVar1;
-                                          value_00.x = (float)(int)uVar13;
-                                          value_00.y = (float)(int)((ulonglong)uVar13 >> 0x20);
                                           UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                           Transform_set_localPosition
                                                     (pTVar4,value_00,(MethodInfo *)0x0);
-                                          pIVar12 = (this->fields).bottomFlare;
-                                          if (pIVar12 != (Image *)0x0) {
-                                            pIVar14 = pIVar12->klass;
-                                            pMStack15 = (pIVar14->vtable).get_color.method;
-                                            (*(pIVar14->vtable).get_color.methodPtr)();
+                                          pIVar11 = (this->fields).bottomFlare;
+                                          if (pIVar11 != (Image *)0x0) {
+                                            pIVar14 = pIVar11->klass;
+                                            pIStack15 = (pIVar14->vtable).set_color.methodPtr;
+                                            (*(code *)(pIVar14->vtable).get_color.method)();
                                             pAVar8 = (this->fields).flareAlphaCurve;
                                             if (pAVar8 != (AnimationCurve *)0x0) {
                                               UnityEngine.CoreModule.dll::UnityEngine::
                                               AnimationCurve::AnimationCurve_Evaluate
                                                         (pAVar8,(this->fields).currentProgress,
                                                          (MethodInfo *)0x0);
-                                              pIVar12 = (this->fields).bottomFlare;
-                                              if (pIVar12 != (Image *)0x0) {
-                                                pIVar14 = pIVar12->klass;
-                                                pMStack15 = (pIVar14->vtable).set_color.method;
-                                                (*(pIVar14->vtable).set_color.methodPtr)();
+                                              pIVar11 = (this->fields).bottomFlare;
+                                              if (pIVar11 != (Image *)0x0) {
+                                                pIVar14 = pIVar11->klass;
+                                                pIStack15 =
+                                                     (pIVar14->vtable).get_raycastTarget.methodPtr;
+                                                (*(code *)(pIVar14->vtable).set_color.method)();
                                                 return;
                                               }
                                             }

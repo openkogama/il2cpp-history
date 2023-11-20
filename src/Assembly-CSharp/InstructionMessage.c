@@ -19,42 +19,45 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_Initialize
   }
   this_00 = data;
   pIVar1 = this;
-  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Reset
-            ((LogicObjectManager *)this,(MethodInfo *)data);
+  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   pTVar2 = (pIVar1->fields).text;
   data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
   pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,pOVar3,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                       pOVar3,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     if (pTVar2 != (Text *)0x0) {
-      if (pOVar3 != (Object *)0x0) {
-        pOVar4 = (Object *)0x0;
-        if ((String__Class *)pOVar3->klass == TypeInfo__System__String) {
-          pOVar4 = pOVar3;
+      if (TVar4.m_Index != 0) {
+        TVar5.m_Index = 0;
+        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+          TVar5 = TVar4;
         }
         this = (InstructionMessage *)TypeInfo__System__String;
-        if (pOVar4 == (Object *)0x0) goto code_?;
+        if (TVar5.m_Index == 0) goto code_?;
       }
-      this = (InstructionMessage *)(pTVar2->klass->vtable).set_text.method;
-      (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2);
+      this = (InstructionMessage *)
+             (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+      (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
       (pIVar1->fields).currentTime = 0.0;
       this = (InstructionMessage *)CONCAT13(2,this._0_3_);
       pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-      pIVar5 = (InstructionMessage *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_00,pOVar3,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pIVar5 != (InstructionMessage *)0x0) {
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                         pOVar3,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar4.m_Index != 0) {
         this = (InstructionMessage *)TypeInfo__NotificationLifetime;
-        if ((pIVar5->klass->_0).element_class == (TypeInfo__NotificationLifetime->_0).element_class)
-        {
-          this = pIVar5;
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+            (TypeInfo__NotificationLifetime->_0).element_class) {
+          this = (InstructionMessage *)TVar4;
           piVar6 = (int32_t *)func_?();
           (pIVar1->fields).lifeTime = *piVar6;
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -63,7 +66,7 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_Initialize
           }
           method = (MethodInfo *)StringLiteral_Initialize;
           data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                     ((Object *)StringLiteral_Initialize,(MethodInfo *)0x0);
           return;
         }
@@ -127,7 +130,8 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_Update
   this_00 = (this->fields).canvasGroup;
   this_01 = (this->fields).fadeCurve;
   (this->fields).currentTime = fVar2;
-  iVar4 = (*(pIVar3->vtable).get_Lifetime.methodPtr)(this,(pIVar3->vtable).get_Lifetime.method);
+  iVar4 = (*(code *)(pIVar3->vtable).get_Lifetime.method)
+                    (this,(pIVar3->vtable).Initialize.methodPtr);
   if (this_01 != (AnimationCurve *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_01,fVar2 / (float)iVar4,(MethodInfo *)0x0);

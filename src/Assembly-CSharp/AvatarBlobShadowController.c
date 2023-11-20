@@ -17,34 +17,32 @@ void Assembly-CSharp.dll::AvatarBlobShadowController::AvatarBlobShadowController
   pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
   this_00 = (UnityAction_1_System_Int32Enum_ *)
             func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,
+             MethodInfo__AvatarBlobShadowController__OnQualityLevelChanged_int_,(MethodInfo *)0x0);
+  pMStack2 =
+       (MVQualitySettings_OnQualityLevedChanged *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
+         (MVQualitySettings_OnQualityLevedChanged *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
+  if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
+    pMVar1 = pMStack2;
+  }
+  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     func_?();
     pMStack2 = extraout_ECX;
     pMStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__AvatarBlobShadowController__OnQualityLevelChanged_int_,(MethodInfo *)0x0)
-    ;
-    pMStack2 =
-         (MVQualitySettings_OnQualityLevedChanged *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMStack2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-      TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-           (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar1 = pMStack2;
-    }
-    pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
-    if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
     TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar1;
     pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
     if (pMStack2->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
@@ -53,9 +51,6 @@ code_?:
     pMStack3 = TypeInfo__MVQualitySettings__OnQualityLevedChanged;
     if (pMVar1 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
   }
-  pMStack3 = (MVQualitySettings_OnQualityLevedChanged__Class *)func_?();
-  pMStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -182,33 +177,31 @@ void Assembly-CSharp.dll::AvatarBlobShadowController::AvatarBlobShadowController
   pMVar1 = TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged;
   this_00 = (UnityAction_1_System_Int32Enum_ *)
             func_?(TypeInfo__MVQualitySettings__OnQualityLevedChanged);
-  if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,
+             MethodInfo__AvatarBlobShadowController__OnQualityLevelChanged_int_,(MethodInfo *)0x0);
+  pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
+    TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
+         (MVQualitySettings_OnQualityLevedChanged *)0x0;
+code_?:
+    func_?();
+    level = MVQualitySettings::MVQualitySettings_get_CurrentLevel((MethodInfo *)0x0);
+    AvatarBlobShadowController_OnQualityLevelChanged(this,level,(MethodInfo *)0x0);
+    (this->fields).forceHidden = 0;
+    return;
+  }
+  pMVar2 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
+  if (pMVar1->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
+    pMVar2 = pMVar1;
+  }
+  if (pMVar2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
     func_?();
   }
   else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__AvatarBlobShadowController__OnQualityLevelChanged_int_,(MethodInfo *)0x0)
-    ;
-    pMVar1 = (MVQualitySettings_OnQualityLevedChanged *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMVar1 == (MVQualitySettings_OnQualityLevedChanged *)0x0) {
-      TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged =
-           (MVQualitySettings_OnQualityLevedChanged *)0x0;
-code_?:
-      func_?();
-      level = MVQualitySettings::MVQualitySettings_get_CurrentLevel((MethodInfo *)0x0);
-      AvatarBlobShadowController_OnQualityLevelChanged(this,level,(MethodInfo *)0x0);
-      (this->fields).forceHidden = 0;
-      return;
-    }
-    pMVar2 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
-    if (pMVar1->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
-      pMVar2 = pMVar1;
-    }
-    if (pMVar2 == (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
     TypeInfo__MVQualitySettings->static_fields->onQualityLevelChanged = pMVar2;
     pMVar2 = (MVQualitySettings_OnQualityLevedChanged *)0x0;
     if (pMVar1->klass == TypeInfo__MVQualitySettings__OnQualityLevedChanged) {
@@ -216,8 +209,6 @@ code_?:
     }
     if (pMVar2 != (MVQualitySettings_OnQualityLevedChanged *)0x0) goto code_?;
   }
-  func_?();
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();

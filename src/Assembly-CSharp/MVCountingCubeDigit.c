@@ -12,14 +12,12 @@ void Assembly-CSharp.dll::MVCountingCubeDigit::MVCountingCubeDigit_Awake
   this_00 = MVCountingCubeDigit_get_MeshRenderer(this,(MethodInfo *)0x0);
   source = (this->fields).CountingCubeDigitMaterial;
   this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-  if (this_01 != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-              (this_01,source,(MethodInfo *)0x0);
-    if (this_00 != (MeshRenderer *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                ((Renderer *)this_00,this_01,(MethodInfo *)0x0);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+            (this_01,source,(MethodInfo *)0x0);
+  if (this_00 != (MeshRenderer *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+              ((Renderer *)this_00,this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

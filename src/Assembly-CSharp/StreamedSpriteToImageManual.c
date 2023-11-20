@@ -21,40 +21,35 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::StreamedSpriteToImageManu
   pUVar1 = (this->fields)._._.onAssetSetAction;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    func_?();
-  }
-  else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
-               (MethodInfo *)0x0);
-    pUVar1 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pUVar1 == (UnityAction *)0x0) {
-      (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
+             (MethodInfo *)0x0);
+  pUVar1 = (UnityAction *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar1 == (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
 code_?:
-      func_?();
-      StreamingAsset`2[System::Object,System::Object]::
-      StreamingAsset_2_System_Object_System_Object__DownloadWhenPossible
-                ((StreamingAsset_2_System_Object_System_Object_ *)this,
-                 MethodInfo__StreamingAsset<UnityEngine::Sprite,_UnityEngine::Texture2D>__DownloadWhenPossible__
-                );
-      return;
-    }
+    func_?();
+    StreamingAsset`2[System::Object,System::Object]::
+    StreamingAsset_2_System_Object_System_Object__DownloadWhenPossible
+              ((StreamingAsset_2_System_Object_System_Object_ *)this,
+               MethodInfo__StreamingAsset<UnityEngine::Sprite,_UnityEngine::Texture2D>__DownloadWhenPossible__
+              );
+    return;
+  }
+  pUVar2 = (UnityAction *)0x0;
+  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar2 = pUVar1;
+  }
+  if (pUVar2 != (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = pUVar2;
     pUVar2 = (UnityAction *)0x0;
     if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
       pUVar2 = pUVar1;
     }
-    if (pUVar2 != (UnityAction *)0x0) {
-      (this->fields)._._.onAssetSetAction = pUVar2;
-      pUVar2 = (UnityAction *)0x0;
-      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar2 = pUVar1;
-      }
-      if (pUVar2 != (UnityAction *)0x0) goto code_?;
-    }
+    if (pUVar2 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -102,49 +97,43 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::
   pUVar1 = (this->fields)._._.onAssetSetAction;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    uVar2 = func_?();
-  }
-  else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
-               (MethodInfo *)0x0);
-    pUVar1 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
-    pUStack3 = (UnityAction *)0x0;
-    if (pUVar1 == (UnityAction *)0x0) {
-      (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
+             (MethodInfo *)0x0);
+  pUStack2 =
+       (UnityAction *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUStack3 = (UnityAction__Class *)0x0;
+  if (pUStack2 == (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
 code_?:
-      ppUStack4 = &(this->fields)._._.onAssetSetAction;
-      func_?();
-      if ((this->fields).onAssetSetManual != (UnityAction *)0x0) {
-        pUVar1 = (this->fields).onAssetSetManual;
-        pUStack3 = (pUVar1->fields)._._.method;
-        ppUStack4 = (pUVar1->fields)._._.method_code;
-        (*(pUVar1->fields)._._.invoke_impl)();
-      }
-      return;
+    pUStack2 = (UnityAction *)&(this->fields)._._.onAssetSetAction;
+    func_?();
+    if ((this->fields).onAssetSetManual != (UnityAction *)0x0) {
+      pUVar1 = (this->fields).onAssetSetManual;
+      pUStack3 = (pUVar1->fields)._._.method;
+      pUStack2 = (pUVar1->fields)._._.method_code;
+      (*(pUVar1->fields)._._.invoke_impl)();
     }
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUStack3 = pUVar1;
-    }
-    if (pUStack3 != (UnityAction *)0x0) {
-      (this->fields)._._.onAssetSetAction = pUStack3;
-      uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
-      pUStack3 = (UnityAction *)0x0;
-      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUStack3 = pUVar1;
-      }
-      if (pUStack3 != (UnityAction *)0x0) goto code_?;
-    }
+    return;
   }
-  _ppUStack0000000c = uVar2;
+  if (pUStack2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUStack3 = (UnityAction__Class *)pUStack2;
+  }
+  if (pUStack3 != (UnityAction__Class *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)pUStack3;
+    pUStack3 = (UnityAction__Class *)(UnityAction *)0x0;
+    if (pUStack2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUStack3 = (UnityAction__Class *)pUStack2;
+    }
+    if (pUStack3 != (UnityAction__Class *)0x0) goto code_?;
+  }
+  pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

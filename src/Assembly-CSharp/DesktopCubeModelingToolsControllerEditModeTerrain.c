@@ -24,47 +24,41 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsControllerEditModeTerrain::
     pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,
-                 MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_0__
-                 ,(MethodInfo *)0x0);
-      if (pUVar2 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                  (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-        pBVar1 = (this->fields)._.deletecube;
-        if (pBVar1 != (Button *)0x0) {
-          pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-          pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
-                   func_?(TypeInfo__UnityEngine__Events__UnityAction);
-          if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,
+               MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_0__
+               ,(MethodInfo *)0x0);
+    if (pUVar2 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+      pBVar1 = (this->fields)._.deletecube;
+      if (pBVar1 != (Button *)0x0) {
+        pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+        pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar3,(Object *)this,
+                   MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_1__
+                   ,(MethodInfo *)0x0);
+        if (pUVar2 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                    (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+          pBVar1 = (this->fields)._.paintCube;
+          if (pBVar1 != (Button *)0x0) {
+            pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+            pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                     func_?(TypeInfo__UnityEngine__Events__UnityAction);
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
                       (pNVar3,(Object *)this,
-                       MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_1__
+                       MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_2__
                        ,(MethodInfo *)0x0);
             if (pUVar2 != (UnityEvent *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                         (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-              pBVar1 = (this->fields)._.paintCube;
-              if (pBVar1 != (Button *)0x0) {
-                pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-                pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
-                         func_?(TypeInfo__UnityEngine__Events__UnityAction);
-                if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                  NavMesh_OnNavMeshPreUpdate__ctor
-                            (pNVar3,(Object *)this,
-                             MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_2__
-                             ,(MethodInfo *)0x0);
-                  if (pUVar2 != (UnityEvent *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::
-                    UnityEvent_AddListener(pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-                    return;
-                  }
-                }
-              }
+              return;
             }
           }
         }

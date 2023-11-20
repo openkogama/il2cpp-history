@@ -21,25 +21,20 @@ bool Assembly-CSharp.dll::BoostMenuController+<FixContentPivot>d__9::
   (this->fields).__1__state = -1;
   if ((pBVar2 != (BoostMenuController *)0x0) &&
      (pRVar3 = (pBVar2->fields).boostItemsScrollRect, pRVar3 != (RectTransform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              (&RStack_4,pRVar3,(MethodInfo *)0x0);
-    RStack_4.m_Height =
-         SubscribableVariableBase`1[System::Single]::
-         SubscribableVariableBase_1_System_Single__get_Value
-                   ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffdc,(MethodInfo *)0x0)
-    ;
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                       (&RStack_5,pRVar3,(MethodInfo *)0x0);
+    RStack_5.m_XMin = pRVar4->m_Width;
     pRVar3 = (pBVar2->fields).boostItemsContent;
+    RStack_5.m_YMin = RStack_5.m_XMin;
+    RStack_5.m_Width = RStack_5.m_XMin;
+    RStack_5.m_Height = RStack_5.m_XMin;
     if (pRVar3 != (RectTransform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                ((Rect *)&stack0xffffffcc,pRVar3,(MethodInfo *)0x0);
-      fVar5 = SubscribableVariableBase`1[System::Single]::
-              SubscribableVariableBase_1_System_Single__get_Value
-                        ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffdc,
-                         (MethodInfo *)0x0);
-      if (RStack_4.m_Height < fVar5) {
+      pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                         ((Rect *)&stack0xffffffdc,pRVar3,(MethodInfo *)0x0);
+      if (RStack_5.m_XMin < pRVar4->m_Width) {
         pRVar3 = (pBVar2->fields).boostItemsContent;
-        RStack_4.m_Width = 0.0;
-        RStack_4.m_Height = 0.5;
+        RStack_5.m_Width = 0.0;
+        RStack_5.m_Height = 0.5;
         if (pRVar3 == (RectTransform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
                   (pRVar3,(Vector2)0x3f00000000000000,(MethodInfo *)0x0);
@@ -64,7 +59,6 @@ void Assembly-CSharp.dll::BoostMenuController+<FixContentPivot>d__9::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

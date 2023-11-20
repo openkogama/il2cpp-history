@@ -36,50 +36,52 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoriesBy
   }
   pLVar4 = (List_1_AccessoryDataClient_ *)
            func_?(TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
-  if (pLVar4 != (List_1_AccessoryDataClient_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar4,
-               MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
-    pAVar5 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
-    if ((pAVar5 != (AccessoryShopDataClient *)0x0) &&
-       (this = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(pAVar5->fields).accessoryDatas,
-       this != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)0x0)) {
-      this_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                          (this,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__get_Values__
-                          );
-      if (this_00 !=
-          (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-           *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System
-        ::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-        Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                  ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                    *)&stack0xffffffd4,this_00,
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_AccessoryDataClient>__GetEnumerator__
-                  );
-        method_00 = (MethodInfo *)0x0;
-        uStack_1 = 1;
-        while( true ) {
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+             MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
+  pAVar5 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
+  if ((pAVar5 != (AccessoryShopDataClient *)0x0) &&
+     (this = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)(pAVar5->fields).accessoryDatas,
+     this != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+              *)0x0)) {
+    this_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                        (this,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__get_Values__
+                        );
+    if (this_00 !=
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                  *)&stack0xffffffd4,this_00,
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_AccessoryDataClient>__GetEnumerator__
+                );
+      method_00 = (MethodInfo *)0x0;
+      uStack_1 = 1;
+      while( true ) {
+        do {
           item = 
           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_AccessoryDataClient>__MoveNext__
           ;
           bVar6 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                               *)&stack0xffffffc4,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_AccessoryDataClient>__MoveNext__
                             );
           if (bVar6 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&stack0xffffffc4,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_AccessoryDataClient>__Dispose__
@@ -87,18 +89,18 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoriesBy
             *unaff_FS_OFFSET = uStack_3;
             return pLVar4;
           }
-          if (item == (MethodInfo *)0x0) break;
-          if (item->token == category) {
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)pLVar4,(Object *)item,
-                       MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
-                      );
-          }
-        }
+          if (item == (MethodInfo *)0x0) goto code_?;
+        } while (item->token != category);
+        if (pLVar4 == (List_1_AccessoryDataClient_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)pLVar4,(Object *)item,
+                   MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
+                  );
       }
     }
   }
+code_?:
   func_?();
   func_?();
   pcVar7 = (code *)swi(3);
@@ -162,82 +164,81 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoriesCa
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>
                            );
-  if (this_00 != (MethodInfo *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__Dictionary__
-              );
-    pAVar4 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
-    if ((pAVar4 != (AccessoryShopDataClient *)0x0) &&
-       (this = (Dictionary_2_System_Object_System_Object_ *)(pAVar4->fields).accessoryDatas,
-       this != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-      pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                          &stack0xffffffa0,this,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__GetEnumerator__
-                         );
-      uVar6 = *(undefined8 *)&(pDVar5->_current).value;
-      uStack_1 = 1;
-      while( true ) {
-        bVar7 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-                Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
-                           &stack0xffffffb8,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__MoveNext__
-                          );
-        if (bVar7 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)&stack0xffffffb8,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__Dispose__
-                     ,in_stack_8);
-          *unaff_FS_OFFSET = uStack_3;
-          return (Dictionary_2_MV_Common_AccessoryCategory_List_1_AccessoryDataClient_ *)this_00;
-        }
-        pOStack_9 = (Object *)uVar6;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__Dictionary__
+            );
+  pAVar4 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
+  if ((pAVar4 != (AccessoryShopDataClient *)0x0) &&
+     (this = (Dictionary_2_System_UInt32_System_Object_ *)(pAVar4->fields).accessoryDatas,
+     this != (Dictionary_2_System_UInt32_System_Object_ *)0x0)) {
+    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &stack0xffffffa0,this,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__GetEnumerator__
+                       );
+    uVar6 = *(undefined8 *)&(pDVar5->_current).value;
+    uStack_1 = 1;
+    while( true ) {
+      bVar7 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                         &stack0xffffffb8,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__MoveNext__
+                        );
+      if (bVar7 == 0) {
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&stack0xffffffb8,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__Dispose__
+                   ,in_stack_8);
+        *unaff_FS_OFFSET = uStack_3;
+        return (Dictionary_2_MV_Common_AccessoryCategory_List_1_AccessoryDataClient_ *)this_00;
+      }
+      pOStack_9 = (Object *)uVar6;
+      if ((pOStack_9 == (Object *)0x0) || (this_00 == (MethodInfo *)0x0)) break;
+      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+              Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                        ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,
+                         (Int32Enum__Enum)pOStack_9[4].monitor,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__ContainsKey_MV__Common__AccessoryCategory_
+                        );
+      if (bVar7 == 0) {
         if (pOStack_9 == (Object *)0x0) break;
-        bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_00,
-                           (Object *)pOStack_9[4].monitor,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__ContainsKey_MV__Common__AccessoryCategory_
-                          );
-        if (bVar7 == 0) {
-          if (pOStack_9 == (Object *)0x0) break;
-          key = (Object *)pOStack_9[4].monitor;
-          this_01 = (LowLevelList_1_System_Object_ *)func_?();
-          if (this_01 == (LowLevelList_1_System_Object_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-          LowLevelList_1_System_Object___ctor
-                    (this_01,
-                     MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,key,(Object *)this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__Add_MV__Common__AccessoryCategory__System__Collections__Generic__List<AccessoryDataClient>_
-                    );
-        }
-        else if (pOStack_9 == (Object *)0x0) break;
-        in_stack_8 = this_00;
-        this_02 = (List_1_System_Object_ *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-                             (Int32Enum__Enum)pOStack_9[4].monitor,
-                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__get_Item_MV__Common__AccessoryCategory_
-                            );
-        if (this_02 == (List_1_System_Object_ *)0x0) break;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  (this_02,pOStack_9,
-                   MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
+        key = pOStack_9[4].monitor;
+        this_01 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                  func_?();
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__Add
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,
+                   (Object *)this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__Add_MV__Common__AccessoryCategory__System__Collections__Generic__List<AccessoryDataClient>_
                   );
       }
+      else if (pOStack_9 == (Object *)0x0) break;
+      in_stack_8 = this_00;
+      this_02 = (List_1_System_Object_ *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                           (Int32Enum__Enum)pOStack_9[4].monitor,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__get_Item_MV__Common__AccessoryCategory_
+                          );
+      if (this_02 == (List_1_System_Object_ *)0x0) break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                (this_02,pOStack_9,
+                 MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
+                );
     }
   }
   func_?();
@@ -282,7 +283,7 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoryData
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
@@ -290,31 +291,31 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoryData
   DStack_6._getEnumeratorRetType = 0;
   pAVar7 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
   if ((pAVar7 != (AccessoryShopDataClient *)0x0) &&
-     (this = (Dictionary_2_System_Object_System_Object_ *)(pAVar7->fields).accessoryDatas,
-     this != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
+     (this = (Dictionary_2_System_UInt32_System_Object_ *)(pAVar7->fields).accessoryDatas,
+     this != (Dictionary_2_System_UInt32_System_Object_ *)0x0)) {
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        (&DStack_9,this,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__GetEnumerator__
                        );
     uStack_10 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar8->_dictionary;
+    DStack_6._dictionary = pDVar8->_dictionary;
     DStack_6._version = pDVar8->_version;
     DStack_6._index = pDVar8->_index;
-    DStack_6._current.key = (int32_t)(pDVar8->_current).key;
+    DStack_6._current.key = (pDVar8->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
     pDStack_11 = &DStack_6;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
+              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                         (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__MoveNext__
                         );
       if (bVar12 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__Dispose__
@@ -326,7 +327,7 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoryData
       if ((AccessoryDataClient *)DStack_6._current.value == (AccessoryDataClient *)0x0) break;
       if ((((AccessoryDataClient__Fields *)((int)DStack_6._current.value + 8))->_).aMDID == id) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_AccessoryDataClient>__Dispose__
@@ -358,39 +359,37 @@ Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_GetAccessoryData
   }
   pAVar1 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
   if ((pAVar1 != (AccessoryShopDataClient *)0x0) &&
-     (this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-             (pAVar1->fields).accessoryDatas,
-     this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this,(Object *)id,
+     (pDVar2 = (pAVar1->fields).accessoryDatas,
+     pDVar2 != (Dictionary_2_System_Int32_AccessoryDataClient_ *)0x0)) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+            Dictionary_2_System_Int32_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar2,id,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__ContainsKey_int_
                       );
-    if (bVar2 == 0) {
+    if (bVar3 == 0) {
       return (AccessoryDataClient *)0x0;
     }
     pAVar1 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
     if ((pAVar1 != (AccessoryShopDataClient *)0x0) &&
-       (this_00 = (pAVar1->fields).accessoryDatas,
-       this_00 != (Dictionary_2_System_Int32_AccessoryDataClient_ *)0x0)) {
-      pAVar3 = (AccessoryDataClient *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-                          (Int32Enum__Enum)
+       (pDVar2 = (pAVar1->fields).accessoryDatas,
+       pDVar2 != (Dictionary_2_System_Int32_AccessoryDataClient_ *)0x0)) {
+      pAVar4 = (AccessoryDataClient *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+               Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,
+                          (int32_t)
                           MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__get_Item_int_
                           ,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__get_Item_int_
                          );
-      return pAVar3;
+      return pAVar4;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  pAVar3 = (AccessoryDataClient *)(*pcVar5)();
-  return pAVar3;
+  uVar5 = func_?(&stack0xfffffff0);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  pAVar4 = (AccessoryDataClient *)(*pcVar6)();
+  return pAVar4;
 }
 
 
@@ -430,34 +429,34 @@ void Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_SetAccessor
     cRam_? = '\x01';
   }
   this = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<System::String>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__AccessoryDataManager__SetAccessoryData_System__String_,(MethodInfo *)0x0)
-    ;
-    if (this != (MVNetworkGame *)0x0) {
-      MVNetworkGame::MVNetworkGame_remove_ReceivedAccessoryData
-                (this,(Action_1_String_ *)this_00,(MethodInfo *)0x0);
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pAVar1 = (AccessoryShopDataClient *)
-               Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
-                         ((String *)0x0,
-                          AccessoryShopDataClient_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AccessoryShopDataClient>_System__String_
-                         );
-      TypeInfo__AccessoryDataManager->static_fields->accessoryShopData = pAVar1;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)0x0,
+             MethodInfo__AccessoryDataManager__SetAccessoryData_System__String_,(MethodInfo *)0x0);
+  if (this != (MVNetworkGame *)0x0) {
+    MVNetworkGame::MVNetworkGame_remove_ReceivedAccessoryData
+              (this,(Action_1_String_ *)this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      TypeInfo__AccessoryDataManager->static_fields->accessoriesReady = 1;
-      if (TypeInfo__AccessoryDataManager->static_fields->readyCallback != (UnityAction *)0x0) {
-        pUVar2 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
-        pvStack3 = (pUVar2->fields)._._.method;
-        pvStack4 = (pUVar2->fields)._._.method_code;
-        (*(pUVar2->fields)._._.invoke_impl)();
-      }
-      return;
     }
+    pAVar1 = (AccessoryShopDataClient *)
+             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                       ((String *)0x0,
+                        AccessoryShopDataClient_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AccessoryShopDataClient>_System__String_
+                       );
+    TypeInfo__AccessoryDataManager->static_fields->accessoryShopData = pAVar1;
+    func_?();
+    TypeInfo__AccessoryDataManager->static_fields->accessoriesReady = 1;
+    if (TypeInfo__AccessoryDataManager->static_fields->readyCallback != (UnityAction *)0x0) {
+      pUVar2 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+      pvStack3 = (pUVar2->fields)._._.method;
+      pvStack4 = (pUVar2->fields)._._.method_code;
+      (*(pUVar2->fields)._._.invoke_impl)();
+    }
+    return;
   }
   func_?();
   pcVar5 = (code *)swi(3);
@@ -515,9 +514,9 @@ void Assembly-CSharp.dll::AccessoryDataManager::AccessoryDataManager_SetToOwns
   if ((pAVar1 != (AccessoryShopDataClient *)0x0) &&
      (this = (pAVar1->fields).accessoryDatas,
      this != (Dictionary_2_System_Int32_AccessoryDataClient_ *)0x0)) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this,streamingAssetId,
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+             ::Dictionary_2_System_Int32_System_Object__get_Item
+                       ((Dictionary_2_System_Int32_System_Object_ *)this,streamingAssetId,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__get_Item_int_
                        );
     if (pOVar2 != (Object *)0x0) {

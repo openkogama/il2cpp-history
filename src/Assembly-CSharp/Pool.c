@@ -23,85 +23,86 @@ void Assembly-CSharp.dll::Pool::Pool_Initialize(Pool *this,Transform *parent,Met
   (this->fields).pool = pMVar2;
   func_?(&(this->fields).pool,pMVar2);
   capacity = (this->fields).poolSize;
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<int>);
-  if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-code_?:
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
-  }
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-  UnitySynchronizationContext+WorkRequest]::
-  List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-            (this_00,capacity,MethodInfo__System__Collections__Generic__List<int>__List_int_);
-  (this->fields).available = (List_1_System_Int32_ *)this_00;
-  func_?(&(this->fields).available,this_00);
-  uVar5 = 0;
+  this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(TypeInfo__System__Collections__Generic__List<int>);
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_01,capacity,MethodInfo__System__Collections__Generic__List<int>__List_int_);
+  (this->fields).available = (List_1_System_Int32_ *)this_01;
+  func_?(&(this->fields).available,this_01);
+  item = 0;
   if (0 < (this->fields).poolSize) {
     this = (Pool *)0x10;
     do {
       original = (pPVar1->fields).prefab;
       pMVar2 = (pPVar1->fields).pool;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)original,
-                           UnityEngine__MonoBehaviour_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
-                          );
+      pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)original,
+                          UnityEngine__MonoBehaviour_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
+                         );
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
-      if ((pOVar6 != (Object *)0x0) && (iVar7 = func_?(), iVar7 == 0))
-      goto code_?;
-      if (pMVar2->max_length <= uVar5) goto code_?;
-      *(Object **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum) = pOVar6;
-      func_?((int)pMVar2->vector + (int)&this[-1].fields.poolEnum,pOVar6);
-      pMVar8 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-      pLVar9 = (pPVar1->fields).available;
-      if (pLVar9 == (List_1_System_Int32_ *)0x0) goto code_?;
-      piVar10 = &(pLVar9->fields)._version;
-      *piVar10 = *piVar10 + 1;
-      pIVar11 = (pLVar9->fields)._items;
-      if (pIVar11 == (Int32__Array *)0x0) goto code_?;
-      uVar12 = (pLVar9->fields)._size;
-      if (uVar12 < pIVar11->max_length) {
-        (pLVar9->fields)._size = uVar12 + 1;
-        if (pIVar11->max_length <= uVar12) goto code_?;
-        pIVar11->vector[uVar12] = uVar5;
+      if ((pOVar3 != (Object *)0x0) &&
+         (iVar4 = func_?(pOVar3,(pMVar2->klass->_0).element_class), iVar4 == 0)) {
+code_?:
+        uVar5 = func_?(0);
+        func_?(uVar5);
+code_?:
+        func_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      if (pMVar2->max_length <= item) goto code_?;
+      *(Object **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum) = pOVar3;
+      func_?((int)pMVar2->vector + (int)&this[-1].fields.poolEnum,pOVar3);
+      pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      this_00 = (pPVar1->fields).available;
+      if (this_00 == (List_1_System_Int32_ *)0x0) {
+code_?:
+        func_?();
+        goto code_?;
+      }
+      piVar8 = &(this_00->fields)._version;
+      *piVar8 = *piVar8 + 1;
+      pIVar9 = (this_00->fields)._items;
+      if (pIVar9 == (Int32__Array *)0x0) goto code_?;
+      uVar10 = (this_00->fields)._size;
+      if (uVar10 < pIVar9->max_length) {
+        (this_00->fields)._size = uVar10 + 1;
+        if (pIVar9->max_length <= uVar10) goto code_?;
+        pIVar9->vector[uVar10] = item;
       }
       else {
-        (*(pMVar8->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-                  (pLVar9,uVar5,pMVar8->klass->rgctx_data[0xb].rgctxDataDummy);
+        mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+        List_1_System_Int32__AddWithResize(this_00,item,pMVar7->klass->rgctx_data[0xe].method);
       }
       pMVar2 = (pPVar1->fields).pool;
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
-      if (pMVar2->max_length <= uVar5) goto code_?;
-      pCVar13 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
-      if ((pCVar13 == (Component *)0x0) ||
-         (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              (pCVar13,(MethodInfo *)0x0), this_01 == (GameObject *)0x0))
+      if (pMVar2->max_length <= item) goto code_?;
+      pCVar11 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
+      if ((pCVar11 == (Component *)0x0) ||
+         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (pCVar11,(MethodInfo *)0x0), this_02 == (GameObject *)0x0))
       goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
+                (this_02,0,(MethodInfo *)0x0);
       pMVar2 = (pPVar1->fields).pool;
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
-      if (pMVar2->max_length <= uVar5) goto code_?;
-      pCVar13 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
-      if ((pCVar13 == (Component *)0x0) ||
-         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (pCVar13,(MethodInfo *)0x0), this_02 == (Transform *)0x0))
+      if (pMVar2->max_length <= item) goto code_?;
+      pCVar11 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
+      if ((pCVar11 == (Component *)0x0) ||
+         (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              (pCVar11,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
       goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                (this_02,(Transform *)&UNK_?,(MethodInfo *)0x0);
-      uVar5 = uVar5 + 1;
+                (this_03,(Transform *)&UNK_?,(MethodInfo *)0x0);
+      item = item + 1;
       this = (Pool *)&this->monitor;
-    } while ((int)uVar5 < (pPVar1->fields).poolSize);
+    } while ((int)item < (pPVar1->fields).poolSize);
   }
   return;
 }
@@ -112,24 +113,27 @@ code_?:
 Object * Assembly-CSharp.dll::Pool::Pool_Instantiate(Pool *this,MethodInfo *method)
 
 {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(method);
+  }
   pMVar1 = Pool_get_Next(this,(MethodInfo *)0x0);
-  pvVar2 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
-    pvVar2 = (void *)func_?(pvVar2);
+  pIVar2 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
   }
-  pvVar3 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-  if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
-    pvVar3 = (void *)func_?(pvVar3);
+  pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
   }
-  iVar4 = func_?(pMVar1,pvVar3);
+  iVar4 = func_?(pMVar1,pIVar3);
   if (iVar4 == 0) {
     return (Object *)0x0;
   }
-  pOVar5 = (Object *)func_?(iVar4,pvVar2);
+  pOVar5 = (Object *)func_?(iVar4,pIVar2);
   if (pOVar5 != (Object *)0x0) {
     return pOVar5;
   }
-  func_?(iVar4,pvVar2);
+  func_?(iVar4,pIVar2);
   pcVar6 = (code *)swi(3);
   pOVar5 = (Object *)(*pcVar6)();
   return pOVar5;
@@ -227,60 +231,61 @@ MonoBehaviour * Assembly-CSharp.dll::Pool::Pool_get_Next(Pool *this,MethodInfo *
     func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).available;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((pLVar1->fields)._size < 1) {
-      pMVar2 = (this->fields).prefab;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).available;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size < 1) {
+      pMVar1 = (this->fields).prefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pMVar2 = (MonoBehaviour *)
+      pMVar1 = (MonoBehaviour *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pMVar2,
+                         ((Object *)pMVar1,
                           UnityEngine__MonoBehaviour_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
                          );
-      return pMVar2;
+      return pMVar1;
     }
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
       cRam_? = '\x01';
     }
-    pLVar3 = (this->fields).available;
-    if ((pLVar3 != (List_1_System_Int32_ *)0x0) &&
-       (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar2 = (this->fields).available;
+    if ((pLVar2 != (List_1_System_Int32_ *)0x0) &&
+       (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar1,(pLVar3->fields)._size + -1,
+                        (this_00,(pLVar2->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).available;
+      this_01 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
+                (this->fields).available;
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
         cRam_? = '\x01';
       }
-      pLVar3 = (this->fields).available;
-      if ((pLVar3 != (List_1_System_Int32_ *)0x0) &&
-         (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-        RegexCharClass+SingleRange]::
-        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__RemoveAt
-                  (pLVar1,(pLVar3->fields)._size + -1,
+      pLVar2 = (this->fields).available;
+      if ((pLVar2 != (List_1_System_Int32_ *)0x0) &&
+         (this_01 !=
+          (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+        Implementation::UIRStylePainter+RepeatRectUV]::
+        List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
+                  (this_01,(pLVar2->fields)._size + -1,
                    MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
-        pMVar5 = (this->fields).pool;
-        if (pMVar5 != (MonoBehaviour__Array *)0x0) {
-          if (pMVar5->max_length <= (uint)RVar4) goto code_?;
-          if (pMVar5->vector[(int)RVar4] != (MonoBehaviour *)0x0) {
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pMVar5->vector[(int)RVar4],(MethodInfo *)0x0);
-            if (this_00 != (GameObject *)0x0) {
+        pMVar4 = (this->fields).pool;
+        if (pMVar4 != (MonoBehaviour__Array *)0x0) {
+          if (pMVar4->max_length <= (uint)RVar3) goto code_?;
+          if (pMVar4->vector[(int)RVar3] != (MonoBehaviour *)0x0) {
+            this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pMVar4->vector[(int)RVar3],(MethodInfo *)0x0);
+            if (this_02 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (this_00,1,(MethodInfo *)0x0);
-              pMVar5 = (this->fields).pool;
-              if (pMVar5 != (MonoBehaviour__Array *)0x0) {
-                if ((uint)RVar4 < pMVar5->max_length) {
-                  return pMVar5->vector[(int)RVar4];
+                        (this_02,1,(MethodInfo *)0x0);
+              pMVar4 = (this->fields).pool;
+              if (pMVar4 != (MonoBehaviour__Array *)0x0) {
+                if ((uint)RVar3 < pMVar4->max_length) {
+                  return pMVar4->vector[(int)RVar3];
                 }
                 goto code_?;
               }
@@ -293,9 +298,9 @@ MonoBehaviour * Assembly-CSharp.dll::Pool::Pool_get_Next(Pool *this,MethodInfo *
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pMVar2 = (MonoBehaviour *)(*pcVar6)();
-  return pMVar2;
+  pcVar5 = (code *)swi(3);
+  pMVar1 = (MonoBehaviour *)(*pcVar5)();
+  return pMVar1;
 }
 
 

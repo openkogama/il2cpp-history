@@ -202,7 +202,7 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_SetCursorCube
         if (pTVar3 != (Transform *)0x0) {
           value_00.x._2_2_ = uStack_10;
           value_00.x._0_2_ = uVar9;
-          in_stack_5 = 0x102c;
+          in_stack_5 = 0x1034;
           value_00.y = (float)puVar11;
           value_00.z = (float)uVar8;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
@@ -365,6 +365,20 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor__ctor(GUICellCursor *this
 }
 
 
+/* IntVector get_LocalPos() */
+
+IntVector Assembly-CSharp.dll::GUICellCursor::GUICellCursor_get_LocalPos
+                    (GUICellCursor *this,MethodInfo *method)
+
+{
+  IVar1.z = (int16_t)method;
+  IVar1._0_4_ = this;
+  this->klass = (GUICellCursor__Class *)method->klass;
+  *(undefined2 *)&this->monitor = *(undefined2 *)&method->return_type;
+  return IVar1;
+}
+
+
 /* Void set_FadeOverride(FadeOverride) */
 
 void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_set_FadeOverride
@@ -411,17 +425,11 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_set_FadeState
         fVar2 = (this->fields).baseAlpha;
         fVar3 = (this->fields).currentAlpha;
         fVar4 = (this->fields).currentAlpha;
-        value_00 = (GUICellCursor_Fader *)func_?(TypeInfo__GUICellCursor__Fader);
-        if (value_00 == (GUICellCursor_Fader *)0x0) {
-code_?:
-          func_?();
-          pcVar5 = (code *)swi(3);
-          (*pcVar5)();
-          return;
-        }
+        pGVar5 = TypeInfo__GUICellCursor__Fader;
+        value_00 = (GUICellCursor_Fader *)func_?();
         fVar1 = ((fVar2 - fVar3) / fVar2) * fVar1;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         (value_00->fields).end = fVar3 + fVar1;
         (value_00->fields).durationInv = _UNK_? / fVar1;
@@ -439,11 +447,11 @@ code_?:
         fVar1 = (this->fields).fadeOutTime;
         fVar2 = (this->fields).currentAlpha;
         fVar3 = (this->fields).baseAlpha;
-        value_00 = (GUICellCursor_Fader *)func_?(TypeInfo__GUICellCursor__Fader);
-        if (value_00 == (GUICellCursor_Fader *)0x0) goto code_?;
+        pGVar5 = TypeInfo__GUICellCursor__Fader;
+        value_00 = (GUICellCursor_Fader *)func_?();
         fVar1 = (fVar2 / fVar3) * fVar1;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)pGVar5);
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         (value_00->fields).endValue = 0.0;
         (value_00->fields).end = fVar3 + fVar1;

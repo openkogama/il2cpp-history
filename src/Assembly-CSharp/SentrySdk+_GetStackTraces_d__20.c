@@ -76,63 +76,65 @@ code_?:
                         (pSVar3,iVar8 + 1,5,(MethodInfo *)0x0);
     bVar7 = mscorlib.dll::System::String::String_op_Inequality
                       (pSVar10,StringLiteral___at_,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
-      pSVar9 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_failed_parsing_,pSVar3,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (bVar7 == 0) {
+      iVar2 = (pSVar3->fields)._stringLength;
+      iVar11 = mscorlib.dll::System::String::String_LastIndexOf_2
+                         (pSVar3,0x3a,iVar2 + -1,iVar2 - iVar8,(MethodInfo *)0x0);
+      if (iVar8 == (pSVar3->fields)._stringLength + -1) goto code_?;
+      if (iVar11 != -1) {
+        pSVar10 = mscorlib.dll::System::String::String_Substring_1
+                            (pSVar3,iVar8 + 6,(iVar11 - iVar8) + -6,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                            (pSVar3,iVar11 + 1,((pSVar3->fields)._stringLength - iVar11) + -2,
+                             (MethodInfo *)0x0);
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        iVar8 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar3,(MethodInfo *)0x0);
+        goto code_?;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)pSVar9,(MethodInfo *)0x0);
-      pSVar9 = pSVar3;
-      goto code_?;
-    }
-    iVar2 = (pSVar3->fields)._stringLength;
-    iVar11 = mscorlib.dll::System::String::String_LastIndexOf_2
-                       (pSVar3,0x3a,iVar2 + -1,iVar2 - iVar8,(MethodInfo *)0x0);
-    if (iVar8 == (pSVar3->fields)._stringLength + -1) goto code_?;
-    if (iVar11 == -1) {
       pSVar10 = mscorlib.dll::System::String::String_Substring_1
                           (pSVar3,iVar8 + 6,((pSVar3->fields)._stringLength - iVar8) + -7,
                            (MethodInfo *)0x0);
       goto code_?;
     }
-    pSVar10 = mscorlib.dll::System::String::String_Substring_1
-                        (pSVar3,iVar8 + 6,(iVar11 - iVar8) + -6,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                        (pSVar3,iVar11 + 1,((pSVar3->fields)._stringLength - iVar11) + -2,
-                         (MethodInfo *)0x0);
-    if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+    pSVar9 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_failed_parsing_,pSVar3,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    iVar8 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar9,(MethodInfo *)0x0);
+    iVar8 = -1;
+    pSVar10 = TypeInfo__System__String->static_fields->Empty;
+    pSVar9 = pSVar3;
   }
+code_?:
+  pSVar3 = pSVar9;
   bVar7 = mscorlib.dll::System::String::String_op_Equality
                     (pSVar10,TypeInfo__System__String->static_fields->Empty,(MethodInfo *)0x0);
   if (bVar7 == 0) {
     if (pSVar10 == (String *)0x0) goto code_?;
     uVar12 = mscorlib.dll::System::String::String_get_Chars(pSVar10,0,(MethodInfo *)0x0);
-    if ((uVar12 == 0x3c) &&
+    if ((uVar12 != 0x3c) ||
        (uVar12 = mscorlib.dll::System::String::String_get_Chars
                           (pSVar10,(pSVar10->fields)._stringLength + -1,(MethodInfo *)0x0),
-       uVar12 == 0x3e)) goto code_?;
-    bVar7 = mscorlib.dll::System::String::String_Contains
-                      (pSVar10,StringLiteral_Assets_,(MethodInfo *)0x0);
+       uVar12 != 0x3e)) {
+      bVar7 = mscorlib.dll::System::String::String_Contains
+                        (pSVar10,StringLiteral_Assets_,(MethodInfo *)0x0);
+      goto code_?;
+    }
   }
-  else {
-code_?:
-    pSVar10 = TypeInfo__System__String->static_fields->Empty;
-    if (pSVar9 == (String *)0x0) goto code_?;
+  pSVar10 = TypeInfo__System__String->static_fields->Empty;
+  if (pSVar9 != (String *)0x0) {
     bVar7 = mscorlib.dll::System::String::String_Contains
                       (pSVar9,StringLiteral_UnityEngine_,(MethodInfo *)0x0);
     bVar7 = bVar7 == 0;
-  }
-  this_00 = (StackTraceSpec *)func_?();
-  if (this_00 != (StackTraceSpec *)0x0) {
+code_?:
+    this_00 = (StackTraceSpec *)func_?();
     Sentry::StackTraceSpec::StackTraceSpec__ctor
-              (this_00,pSVar10,pSVar9,iVar8,bVar7,(MethodInfo *)0x0);
+              (this_00,pSVar10,pSVar3,iVar8,bVar7,(MethodInfo *)0x0);
     (this->fields).__2__current = this_00;
-    func_?(&(this->fields).__2__current,this_00);
+    func_?();
     (this->fields).__1__state = 1;
     *unaff_FS_OFFSET = uVar1;
     return 1;
@@ -157,36 +159,35 @@ SentrySdk_GetStackTraces_d_20_System_Collections_IEnumerable_GetEnumerator
     func_?(&TypeInfo__SentrySdk___GetStackTraces_d__20);
     cRam_? = '\x01';
   }
-  if (((this->fields).__1__state == -2) &&
-     (iVar1 = (this->fields).__l__initialThreadId,
-     iVar2 = mscorlib.dll::System::Environment::Environment_get_CurrentManagedThreadId
-                       ((MethodInfo *)0x0), iVar1 == iVar2)) {
-    (this->fields).__1__state = 0;
-    pSVar3 = (this->fields).__3__stackTrace;
-    if (this == (SentrySdk_GetStackTraces_d_20 *)0x0) goto code_?;
-  }
-  else {
-    value = (SentrySdk_GetStackTraces_d_20 *)
-            func_?(TypeInfo__SentrySdk___GetStackTraces_d__20);
-    if (value == (SentrySdk_GetStackTraces_d_20 *)0x0) {
-code_?:
-      func_?();
-      pcVar4 = (code *)swi(3);
-      pIVar5 = (IEnumerator *)(*pcVar4)();
-      return pIVar5;
-    }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    (value->fields).__1__state = 0;
+  if ((this->fields).__1__state == -2) {
+    iVar1 = (this->fields).__l__initialThreadId;
     iVar2 = mscorlib.dll::System::Environment::Environment_get_CurrentManagedThreadId
                       ((MethodInfo *)0x0);
-    (value->fields).__l__initialThreadId = iVar2;
-    pSVar3 = (this->fields).__3__stackTrace;
-    this = value;
+    if (iVar1 == iVar2) {
+      (this->fields).__1__state = 0;
+      value = this;
+      goto code_?;
+    }
   }
-  (this->fields).stackTrace = pSVar3;
-  func_?(&(this->fields).stackTrace,pSVar3);
-  return (IEnumerator *)this;
+  value = (SentrySdk_GetStackTraces_d_20 *)
+          func_?(TypeInfo__SentrySdk___GetStackTraces_d__20);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,in_stack_3);
+  (value->fields).__1__state = 0;
+  iVar2 = mscorlib.dll::System::Environment::Environment_get_CurrentManagedThreadId
+                    ((MethodInfo *)0x0);
+  (value->fields).__l__initialThreadId = iVar2;
+code_?:
+  pSVar4 = (this->fields).__3__stackTrace;
+  if (value != (SentrySdk_GetStackTraces_d_20 *)0x0) {
+    (value->fields).stackTrace = pSVar4;
+    func_?(&(value->fields).stackTrace,pSVar4);
+    return (IEnumerator *)value;
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  pIVar6 = (IEnumerator *)(*pcVar5)();
+  return pIVar6;
 }
 
 
@@ -199,7 +200,6 @@ void Assembly-CSharp.dll::SentrySdk+<GetStackTraces>d__20::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

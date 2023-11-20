@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ExitGames.Client.Photon.Encryption;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -86,60 +86,24 @@ namespace ExitGames.Client.Photon
 		protected internal IPhotonEncryptor Encryptor;
 	
 		// Properties
-		[Obsolete("See remarks.")]
-		public int CommandBufferSize { [CompilerGenerated] get; [CompilerGenerated] set; }
-		[Obsolete("See remarks.")]
-		public int LimitOfUnreliableCommands { [CompilerGenerated] get; [CompilerGenerated] set; }
-		[Obsolete("Should be replaced by: SupportClass.GetTickCount(). Internally this is used, too.")]
-		public int LocalTimeInMilliSeconds { get; }
 		protected internal byte ClientSdkIdShifted { get; }
 		public string ClientVersion { get; }
-		public SerializationProtocol SerializationProtocolType { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public SerializationProtocol SerializationProtocolType { [CompilerGenerated] get; }
 		public System.Type SocketImplementation { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public IPhotonPeerListener Listener { [CompilerGenerated] get; [CompilerGenerated] protected set; }
-		public bool ReuseEventInstance { get; set; }
-		public long BytesIn { get; }
-		public long BytesOut { get; }
-		public int ByteCountCurrentDispatch { get; }
-		public string CommandInfoCurrentDispatch { get; }
-		public int ByteCountLastOperation { get; }
-		public int CommandLogSize { get; set; }
-		public bool EnableServerTracing { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public byte QuickResendAttempts { get; set; }
-		public PeerStateValue PeerState { get; }
-		public string PeerID { get; }
-		public int QueuedIncomingCommands { get; }
-		public int QueuedOutgoingCommands { get; }
-		public bool CrcEnabled { get; set; }
-		public int PacketLossByCrc { get; }
-		public int PacketLossByChallenge { get; }
-		public int SentReliableCommandsCount { get; }
-		public int ResentReliableCommands { get; }
+		public bool ReuseEventInstance { get; }
+		public bool EnableServerTracing { [CompilerGenerated] get; }
+		public byte QuickResendAttempts { get; }
+		public bool CrcEnabled { get; }
 		public int ServerTimeInMilliSeconds { get; }
-		public SupportClass.IntegerMillisecondsDelegate LocalMsTimestampDelegate { set; }
-		public int ConnectionTime { get; }
-		public int LastSendAckTime { get; }
-		public int LastSendOutgoingTime { get; }
-		public int LongestSentCall { get; set; }
 		public int RoundTripTime { get; }
-		public int RoundTripTimeVariance { get; }
-		public int LastRoundTripTime { get; }
-		public int TimestampOfLastSocketReceive { get; }
-		public string ServerAddress { get; set; }
-		public string ServerIpAddress { get; }
-		public ConnectionProtocol UsedProtocol { get; }
 		public ConnectionProtocol TransportProtocol { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public virtual bool IsSimulationEnabled { get; set; }
-		public NetworkSimulationSet NetworkSimulationSettings { get; }
-		public int MaximumTransferUnit { get; set; }
-		public bool IsEncryptionAvailable { get; }
-		public bool IsSendingOnlyAcks { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public int MaximumTransferUnit { get; }
+		public bool IsSendingOnlyAcks { [CompilerGenerated] get; }
 		public TrafficStats TrafficStatsIncoming { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public TrafficStats TrafficStatsOutgoing { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public TrafficStatsGameLevel TrafficStatsGameLevel { [CompilerGenerated] get; [CompilerGenerated] internal set; }
-		public long TrafficStatsElapsedMs { get; }
-		public bool TrafficStatsEnabled { get; set; }
-		public System.Type EncryptorType { get; set; }
+		public bool TrafficStatsEnabled { get; }
 	
 		// Constructors
 		public PhotonPeer(ConnectionProtocol protocolType);
@@ -147,32 +111,14 @@ namespace ExitGames.Client.Photon
 		static PhotonPeer();
 	
 		// Methods
-		public string CommandLogToString();
-		public static void MessageBufferPoolTrim(int countOfBuffers);
-		public void TrafficStatsReset();
 		internal void InitializeTrafficStats();
-		public string VitalStatsToString(bool all);
 		public virtual bool Connect(string serverAddress, string applicationName);
 		public virtual bool Connect(string serverAddress, string applicationName, object custom);
 		private void CreatePeerBase();
 		public virtual void Disconnect();
-		public virtual void StopThread();
-		public virtual void FetchServerTimestamp();
-		public bool EstablishEncryption();
-		public bool InitDatagramEncryption(byte[] encryptionSecret, byte[] hmacSecret, bool randomizedSequenceNumbers = false);
-		public void InitPayloadEncryption(byte[] secret);
 		public virtual void Service();
 		public virtual bool SendOutgoingCommands();
-		public virtual bool SendAcksOnly();
 		public virtual bool DispatchIncomingCommands();
 		public virtual bool SendOperation(byte operationCode, Dictionary<byte, object> operationParameters, SendOptions sendOptions);
-		[Obsolete("Use SendOperation() or SendMessage().")]
-		public virtual bool OpCustom(byte customOpCode, Dictionary<byte, object> customOpParameters, bool sendReliable, byte channelId = 0, bool encrypt = false);
-		[Obsolete("Use SendOperation() or SendMessage().")]
-		public virtual bool OpCustom(OperationRequest operationRequest, bool sendReliable, byte channelId, bool encrypt);
-		public static bool RegisterType(System.Type customType, byte code, SerializeMethod serializeMethod, DeserializeMethod constructor);
-		public static bool RegisterType(System.Type customType, byte code, SerializeStreamMethod serializeMethod, DeserializeStreamMethod constructor);
-		[CompilerGenerated]
-		private bool _EstablishEncryption_b__179_0();
 	}
 }

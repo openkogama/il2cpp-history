@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
                (AdminMenuButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppImage *)&stack0xfffffffc;
   if ((this->fields).isMouseOver != 0) {
     if (eventData == (PointerEventData *)0x0) {
       uVar2 = func_?(&puStack_3);
@@ -16,9 +16,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
       return;
     }
     if ((eventData->fields)._button_k__BackingField == 0) {
-      pMStack_1 = (this->klass->vtable).__unknown.method;
+      pIStack_1 = this->klass[1]._0.image;
       pAStack_5 = this;
-      (*(this->klass->vtable).__unknown.methodPtr)();
+      (*(code *)(this->klass->vtable).__unknown.method)();
     }
   }
   return;

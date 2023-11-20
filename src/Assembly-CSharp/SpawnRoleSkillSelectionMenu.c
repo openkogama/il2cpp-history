@@ -63,11 +63,11 @@ code_?:
     ;
     if (((
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         ->_1).typeHierarchyDepth <= (skillSetting->klass->_1).typeHierarchyDepth) &&
+         ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
        ((skillSetting->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         ->_1).typeHierarchyDepth - 1] ==
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
        )) {
@@ -173,31 +173,31 @@ code_?:
     pKVar9 = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
     ;
-    if ((((*ppKVar8)->_1).typeHierarchyDepth <
+    if ((((*ppKVar8)->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-         ->_1).typeHierarchyDepth) ||
+         ->_1).naturalAligment) ||
        (((*ppKVar8)->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-         ->_1).typeHierarchyDepth - 1] !=
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) goto code_?;
     if (((KogamaSettingWrapperBase *)((int)pMVar1 + 0x10))->klass !=
         (KogamaSettingWrapperBase__Class *)0x0) {
-      pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
+      pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+               Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          (&DStack_11,
-                          (Dictionary_2_System_Object_System_Object_ *)
+                          (Dictionary_2_System_UInt32_System_Object_ *)
                           ((KogamaSettingWrapperBase *)((int)pMVar1 + 0x10))->klass,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                          );
       uStack_12 = 0;
-      DStack_7._dictionary = pDVar10->_dictionary;
+      DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar10->_dictionary;
       DStack_7._version = pDVar10->_version;
       DStack_7._index = pDVar10->_index;
-      DStack_7._current.key = (pDVar10->_current).key;
+      DStack_7._current.key = (Object *)(pDVar10->_current).key;
       DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
       uStack_2 = 1;
       pDStack_13 = &DStack_7;
@@ -224,7 +224,7 @@ code_?:
         }
       }
       uStack_2 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__

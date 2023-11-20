@@ -76,6 +76,35 @@ public class WinningConditionBriefing : LobbyFlowMenu
 		public WinningConditionBriefingDef();
 	}
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnPlayPressed_b__37_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass37_0
+	{
+		// Fields
+		public SpawnRoleMenu spawnRoleMenu;
+
+		// Constructors
+		public __c__DisplayClass37_0();
+
+		// Methods
+		internal void _OnPlayPressed_b__1(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class _FixAspectRatioDelay_d__34 : IEnumerator<object>
 	{
@@ -98,35 +127,6 @@ public class WinningConditionBriefing : LobbyFlowMenu
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass37_0
-	{
-		// Fields
-		public SpawnRoleMenu spawnRoleMenu;
-
-		// Constructors
-		public __c__DisplayClass37_0();
-
-		// Methods
-		internal void _OnPlayPressed_b__1(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _OnPlayPressed_b__37_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

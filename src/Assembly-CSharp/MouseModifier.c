@@ -14,9 +14,9 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Destroy
   {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(pMVar2->klass->vtable).set_Scale.methodPtr)
-              (pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method
-              );
+    (*(code *)(pMVar2->klass->vtable).set_Scale.method)
+              (pMVar2,uVar3,(this->fields)._.defaultScale.z,
+               (pMVar2->klass->vtable).get_WorldPosition.methodPtr);
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                     ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -62,10 +62,10 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_OnDisable
       fVar5 = (this->fields)._.sizeModifier;
       pMVar6 = (pAVar1->fields).mvAvatar;
       if (pMVar6 != (MVAvatar *)0x0) {
-        (*(pMVar6->klass->vtable).set_Scale.methodPtr)
+        (*(code *)(pMVar6->klass->vtable).set_Scale.method)
                   (pMVar6,(float)uVar3 * fVar5,(float)uVar4 * fVar5,
-                   (this->fields)._.defaultScale.z * fVar5,(pMVar6->klass->vtable).set_Scale.method)
-        ;
+                   (this->fields)._.defaultScale.z * fVar5,
+                   (pMVar6->klass->vtable).get_WorldPosition.methodPtr);
         return;
       }
     }
@@ -74,9 +74,9 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_OnDisable
           (pMVar6 = (pAVar1->fields).mvAvatar, pMVar6 != (MVAvatar *)0x0)) {
     uVar7 = (this->fields)._.defaultScale.x;
     uVar8 = (this->fields)._.defaultScale.y;
-    (*(pMVar6->klass->vtable).set_Scale.methodPtr)
+    (*(code *)(pMVar6->klass->vtable).set_Scale.method)
               (pMVar6,uVar7,uVar8,(this->fields)._.defaultScale.z,
-               (pMVar6->klass->vtable).set_Scale.method);
+               (pMVar6->klass->vtable).get_WorldPosition.methodPtr);
     MouseModifier_Destroy(this,(MethodInfo *)0x0);
     return;
   }
@@ -102,16 +102,16 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
   {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(pMVar2->klass->vtable).set_Scale.methodPtr)
-              (pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method
-              );
+    (*(code *)(pMVar2->klass->vtable).set_Scale.method)
+              (pMVar2,uVar3,(this->fields)._.defaultScale.z,
+               (pMVar2->klass->vtable).get_WorldPosition.methodPtr);
     pAVar1 = (this->fields)._._.owner;
     if (pAVar1 != (Avatar *)0x0) {
       pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)pAVar1,(MethodInfo *)0x0);
       if (pGVar4 != (GameObject *)0x0) {
         bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
+                 GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
         if (bVar5 == 0) {
           pAVar1 = (this->fields)._._.owner;
           if (pAVar1 != (Avatar *)0x0) {
@@ -120,10 +120,10 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
             fVar8 = (this->fields)._.sizeModifier;
             pMVar2 = (pAVar1->fields).mvAvatar;
             if (pMVar2 != (MVAvatar *)0x0) {
-              (*(pMVar2->klass->vtable).set_Scale.methodPtr)
+              (*(code *)(pMVar2->klass->vtable).set_Scale.method)
                         (pMVar2,CONCAT44((float)uVar7 * fVar8,(float)uVar6 * fVar8),
                          (this->fields)._.defaultScale.z * fVar8,
-                         (pMVar2->klass->vtable).set_Scale.method);
+                         (pMVar2->klass->vtable).get_WorldPosition.methodPtr);
               return;
             }
           }
@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
                                 ((Component *)pAVar9,(MethodInfo *)0x0);
             if (pGVar4 != (GameObject *)0x0) {
               bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
+                       GameObject_get_activeInHierarchy(pGVar4,(MethodInfo *)0x0);
               if (bVar5 != 0) {
                 pAVar9 = (this->fields)._.audioSource;
                 if (pAVar9 == (AudioSource *)0x0) goto code_?;
@@ -145,17 +145,31 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
               fVar8 = (this->fields)._.timeToSize;
               body = (SizeModifier_ActionDelegate *)
                      func_?(TypeInfo__SizeModifier__ActionDelegate);
-              if (body != (SizeModifier_ActionDelegate *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-                UnityAction_1_System_Single___ctor
-                          ((UnityAction_1_System_Single_ *)body,(Object *)this,
-                           MethodInfo__MouseModifier___Scale_b__2_0_float_,(MethodInfo *)0x0);
-                routine = SizeModifier::SizeModifier_DoForSeconds
-                                    ((SizeModifier *)this,fVar8,body,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-                return;
+              pMVar10 = MethodInfo__MouseModifier___Scale_b__2_0_float_;
+              (body->fields)._._.method_ptr =
+                   MethodInfo__MouseModifier___Scale_b__2_0_float_->virtualMethodPointer;
+              ppOVar11 = &(body->fields)._._.m_target;
+              (body->fields)._._.method = pMVar10;
+              (body->fields)._._.m_target = (Object *)this;
+              pMVar12 = this;
+              func_?();
+              uVar13 = pMVar10->parameters_count;
+              (body->fields)._._.method_code = body;
+              cVar14 = func_?(pMVar10,ppOVar11,pMVar12);
+              if ((cVar14 == '\0') || (uVar13 != 1)) {
+                (body->fields)._._.method_code = (body->fields)._._.m_target;
+                puVar15 = (body->fields)._._.method_ptr;
               }
+              else {
+                puVar15 = &UNK_?;
+              }
+              (body->fields)._._.invoke_impl = puVar15;
+              (body->fields)._._.extra_arg = &UNK_?;
+              routine = SizeModifier::SizeModifier_DoForSeconds
+                                  ((SizeModifier *)this,fVar8,body,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -164,8 +178,8 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Scale(MouseModifier *this
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -188,16 +202,17 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
     fVar4 = (this->fields)._.sizeModifier;
     pMVar5 = (pAVar1->fields).mvAvatar;
     if (pMVar5 != (MVAvatar *)0x0) {
-      (*(pMVar5->klass->vtable).set_Scale.methodPtr)
+      (*(code *)(pMVar5->klass->vtable).set_Scale.method)
                 (pMVar5,CONCAT44((float)uVar3 * fVar4,(float)uVar2 * fVar4),
-                 (this->fields)._.defaultScale.z * fVar4,(pMVar5->klass->vtable).set_Scale.method);
+                 (this->fields)._.defaultScale.z * fVar4,
+                 (pMVar5->klass->vtable).get_WorldPosition.methodPtr);
       pAVar1 = (this->fields)._._.owner;
       if (pAVar1 != (Avatar *)0x0) {
         pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pAVar1,(MethodInfo *)0x0);
+                            ((Component *)pAVar1,(MethodInfo *)0x0);
         if (pGVar6 != (GameObject *)0x0) {
           bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
+                   GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
           if (bVar7 == 0) {
             MouseModifier_Destroy(this,(MethodInfo *)0x0);
             return;
@@ -205,10 +220,10 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
           pAVar8 = (this->fields)._.audioSource;
           if (pAVar8 != (AudioSource *)0x0) {
             pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pAVar8,(MethodInfo *)0x0);
+                                ((Component *)pAVar8,(MethodInfo *)0x0);
             if (pGVar6 != (GameObject *)0x0) {
               bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
+                       GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
               if (bVar7 != 0) {
                 pAVar8 = (this->fields)._.audioSource;
                 if (pAVar8 == (AudioSource *)0x0) goto code_?;
@@ -218,17 +233,31 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
               fVar4 = (this->fields)._.timeToSize;
               body = (SizeModifier_ActionDelegate *)
                      func_?(TypeInfo__SizeModifier__ActionDelegate);
-              if (body != (SizeModifier_ActionDelegate *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-                UnityAction_1_System_Single___ctor
-                          ((UnityAction_1_System_Single_ *)body,(Object *)this,
-                           MethodInfo__MouseModifier___UnScale_b__3_0_float_,(MethodInfo *)0x0);
-                routine = SizeModifier::SizeModifier_DoForSeconds
-                                    ((SizeModifier *)this,fVar4,body,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-                return;
+              pMVar9 = MethodInfo__MouseModifier___UnScale_b__3_0_float_;
+              (body->fields)._._.method_ptr =
+                   MethodInfo__MouseModifier___UnScale_b__3_0_float_->virtualMethodPointer;
+              ppOVar10 = &(body->fields)._._.m_target;
+              (body->fields)._._.method = pMVar9;
+              (body->fields)._._.m_target = (Object *)this;
+              pMVar11 = this;
+              func_?();
+              uVar12 = pMVar9->parameters_count;
+              (body->fields)._._.method_code = body;
+              cVar13 = func_?(pMVar9,ppOVar10,pMVar11);
+              if ((cVar13 == '\0') || (uVar12 != 1)) {
+                (body->fields)._._.method_code = (body->fields)._._.m_target;
+                puVar14 = (body->fields)._._.method_ptr;
               }
+              else {
+                puVar14 = &UNK_?;
+              }
+              (body->fields)._._.invoke_impl = puVar14;
+              (body->fields)._._.extra_arg = &UNK_?;
+              routine = SizeModifier::SizeModifier_DoForSeconds
+                                  ((SizeModifier *)this,fVar4,body,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+              MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -237,8 +266,8 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_UnScale
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -280,9 +309,9 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Update
     uStack_16 = CONCAT44(fVar13 * fVar1 + (float)uVar7 * fVar3,
                          fVar12 * fVar1 + (float)uVar6 * fVar3);
     if (pMVar9 != (MVAvatar *)0x0) {
-      (*(pMVar9->klass->vtable).set_Scale.methodPtr)
+      (*(code *)(pMVar9->klass->vtable).set_Scale.method)
                 (pMVar9,uStack_16,fVar14 * fVar1 + fVar8 * fVar3,
-                 (pMVar9->klass->vtable).set_Scale.method);
+                 (pMVar9->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }
   }
@@ -325,9 +354,9 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__Scale_b__2_0
     uStack_14 = CONCAT44((float)uVar10 * fVar6 * fVar13 + (float)uVar3 * fVar8,
                          (float)uVar9 * fVar6 * fVar13 + (float)uVar2 * fVar8);
     if (pMVar4 != (MVAvatar *)0x0) {
-      (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+      (*(code *)(pMVar4->klass->vtable).set_Scale.method)
                 (pMVar4,uStack_14,fVar11 * fVar6 * fVar13 + fVar5 * fVar8,
-                 (pMVar4->klass->vtable).set_Scale.method);
+                 (pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       if (t != (this->fields)._.timeToSize) {
         return;
       }
@@ -338,10 +367,10 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__Scale_b__2_0
         fVar8 = (this->fields)._.sizeModifier;
         pMVar4 = (pAVar1->fields).mvAvatar;
         if (pMVar4 != (MVAvatar *)0x0) {
-          (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+          (*(code *)(pMVar4->klass->vtable).set_Scale.method)
                     (pMVar4,CONCAT44((float)uVar16 * fVar8,(float)uVar15 * fVar8),
                      (this->fields)._.defaultScale.z * fVar8,
-                     (pMVar4->klass->vtable).set_Scale.method);
+                     (pMVar4->klass->vtable).get_WorldPosition.methodPtr);
           return;
         }
       }
@@ -382,9 +411,9 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__UnScale_b__3_0
     uStack_14 = CONCAT44((float)uVar10 * fVar8 * fVar13 + (float)uVar3 * fVar6,
                          (float)uVar9 * fVar8 * fVar13 + (float)uVar2 * fVar6);
     if (pMVar4 != (MVAvatar *)0x0) {
-      (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+      (*(code *)(pMVar4->klass->vtable).set_Scale.method)
                 (pMVar4,uStack_14,fVar11 * fVar8 * fVar13 + fVar5 * fVar6,
-                 (pMVar4->klass->vtable).set_Scale.method);
+                 (pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       if (t == (this->fields)._.timeToSize) {
         MouseModifier_Destroy(this,(MethodInfo *)0x0);
       }
@@ -418,8 +447,8 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__ctor(MouseModifier *this
   (this->fields)._.defaultScale.x = (pVVar1->oneVector).x;
   (this->fields)._.defaultScale.y = fVar2;
   (this->fields)._.defaultScale.z = fVar3;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

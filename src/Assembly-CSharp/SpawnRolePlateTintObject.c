@@ -118,8 +118,8 @@ void Assembly-CSharp.dll::SpawnRolePlateTintObject::SpawnRolePlateTintObject_Tea
   }
   pCVar1 = Styles::Styles_GetColor(&CStack_2,colorStyle,(MethodInfo *)0x0);
   CStack_2.r = pCVar1->a;
-  CStack_2.g = (float)(this->klass->vtable).Tint.method;
-  (*(this->klass->vtable).Tint.methodPtr)(this,pCVar1->r,pCVar1->g,pCVar1->b);
+  CStack_2.g = (float)(this->klass->vtable).TeamTint.methodPtr;
+  (*(code *)(this->klass->vtable).Tint.method)(this,pCVar1->r,pCVar1->g,pCVar1->b);
   return;
 }
 

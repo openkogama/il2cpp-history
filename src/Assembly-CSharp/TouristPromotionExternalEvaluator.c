@@ -18,56 +18,47 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
   if ((pMVar3 != (MVNetworkGame *)0x0) &&
      (pCVar4 = (pMVar3->fields)._CreySettings_k__BackingField, pCVar4 != (CreySettings *)0x0)) {
     pMVar5 = (MonitorData *)(pCVar4->fields)._TouristPromotionCreyFrequencyPercent_k__BackingField;
-    pOVar6 = (Object *)
-             func_?(
-                            TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef
-                            );
-    if (pOVar6 != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (pOVar6,ExceptionArgument__Enum_obj,unaff_ESI);
-      pOVar6[1].klass = pOVar2;
-      func_?(pOVar6 + 1,pOVar2);
-      pOVar6[1].monitor = pMVar5;
-      if (pLVar1 != (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar1,pOVar6,
-                   MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__Add_TouristPromotionExternalEvaluator__TouristPromotionExternalDef_
-                  );
-        pLVar1 = (this->fields).availablePromotions;
-        pOVar2 = (Object__Class *)(this->fields).customPromotionPrefab;
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar3 != (MVNetworkGame *)0x0) &&
-           (pCVar7 = (pMVar3->fields)._CustomTouristPromotionSettings_k__BackingField,
-           pCVar7 != (CustomTouristPromotionSettings *)0x0)) {
-          pMVar5 = (MonitorData *)(pCVar7->fields)._FrequencyPercent_k__BackingField;
-          pOVar6 = (Object *)
-                   func_?(
-                                  TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef
-                                  );
-          if (pOVar6 != (Object *)0x0) {
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      (pOVar6,ExceptionArgument__Enum_obj,unaff_ESI);
-            pOVar6[1].klass = pOVar2;
-            func_?(pOVar6 + 1,pOVar2);
-            pOVar6[1].monitor = pMVar5;
-            if (pLVar1 != (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)
-                          0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLVar1,pOVar6,
-                         MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__Add_TouristPromotionExternalEvaluator__TouristPromotionExternalDef_
-                        );
-              return;
-            }
-          }
+    pTVar6 = TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef;
+    pOVar7 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
+    pOVar7[1].klass = pOVar2;
+    func_?(pOVar7 + 1,pOVar2);
+    pOVar7[1].monitor = pMVar5;
+    if (pLVar1 != (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)pLVar1,pOVar7,
+                 MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__Add_TouristPromotionExternalEvaluator__TouristPromotionExternalDef_
+                );
+      pOVar2 = (Object__Class *)(this->fields).customPromotionPrefab;
+      pLVar1 = (this->fields).availablePromotions;
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar3 != (MVNetworkGame *)0x0) &&
+         (pCVar8 = (pMVar3->fields)._CustomTouristPromotionSettings_k__BackingField,
+         pCVar8 != (CustomTouristPromotionSettings *)0x0)) {
+        pMVar5 = (MonitorData *)(pCVar8->fields)._FrequencyPercent_k__BackingField;
+        pTVar6 = TypeInfo__TouristPromotionExternalEvaluator__TouristPromotionExternalDef;
+        pOVar7 = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)pTVar6);
+        pOVar7[1].klass = pOVar2;
+        func_?(pOVar7 + 1,pOVar2);
+        pOVar7[1].monitor = pMVar5;
+        if (pLVar1 != (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)0x0)
+        {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLVar1,pOVar7,
+                     MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__Add_TouristPromotionExternalEvaluator__TouristPromotionExternalDef_
+                    );
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -129,21 +120,16 @@ void Assembly-CSharp.dll::TouristPromotionExternalEvaluator::TouristPromotionExt
             func_?(
                            TypeInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>
                            );
-  if (this_00 != (List_1_TouristPromotionExternalEvaluator_TouristPromotionExternalDef_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__List__
-              );
-    (this->fields).availablePromotions = this_00;
-    func_?(&(this->fields).availablePromotions,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<TouristPromotionExternalEvaluator::TouristPromotionExternalDef>__List__
+            );
+  (this->fields).availablePromotions = this_00;
+  func_?(&(this->fields).availablePromotions,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

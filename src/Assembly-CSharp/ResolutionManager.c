@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_PostDestroyCleanu
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_OnReferenceResolution_still_have,(MethodInfo *)0x0);
     TypeInfo__ResolutionManager->static_fields->OnReferenceResolution =
          (UnityAction_1_UnityEngine_Vector2_ *)0x0;

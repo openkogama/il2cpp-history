@@ -11,10 +11,10 @@ void Assembly-CSharp.dll::GameTierProgressBar+<>c__DisplayClass23_0::
     func_?();
     cRam_? = '\x01';
   }
-  source = (this->fields).informationPopup;
-  if (source != (GameObject *)0x0) {
-    mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-              ((Void *)source,(MethodInfo *)0x0);
+  ptr = (this->fields).informationPopup;
+  if (ptr != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+    UnsafeUtility_AsRef_1((Void *)ptr,(MethodInfo *)0x0);
     if (x != (IUIStack *)0x0) {
       pIStack_1 = x;
       func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack);

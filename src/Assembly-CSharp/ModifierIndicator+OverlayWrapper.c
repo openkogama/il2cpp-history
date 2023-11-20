@@ -1,4 +1,24 @@
 
+/* Void Reset() */
+
+void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper_Reset
+               (ModifierIndicator_OverlayWrapper *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).image.image;
+  if (this_00 != (Image *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)this_00,0,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void Update(Boolean) */
 
 void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper_Update
@@ -70,7 +90,7 @@ void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::ModifierIndicator_Ov
                AnimationCurve *fadeOutCurve,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).image.image = overlayImage.image;
   (this->fields).image.animator = overlayImage.animator;
@@ -132,27 +152,6 @@ float Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::
   pcVar6 = (code *)swi(3);
   fVar3 = (float10)(*pcVar6)();
   return (float)fVar3;
-}
-
-
-/* Void set_Alpha(Single) */
-
-void Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::
-     ModifierIndicator_OverlayWrapper_set_Alpha
-               (ModifierIndicator_OverlayWrapper *this,float value,MethodInfo *method)
-
-{
-  this_00 = (this->fields).image.alphaHandler;
-  if (this_00 != (CanvasGroup *)0x0) {
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (this_00,value,(MethodInfo *)0x0);
-    return;
-  }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
 }
 
 

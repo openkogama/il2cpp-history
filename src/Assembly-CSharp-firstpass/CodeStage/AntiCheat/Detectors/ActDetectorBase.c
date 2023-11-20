@@ -71,7 +71,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
                   ((Object *)pSVar3,(Object_1 *)pGVar4,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -99,8 +99,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
      ActDetectorBase_OnApplicationQuit(ActDetectorBase *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).DisposeInternal.methodPtr)
-            (this,(this->klass->vtable).DisposeInternal.method);
+  (*(code *)(this->klass->vtable).DisposeInternal.method)
+            (this,(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr);
   return;
 }
 
@@ -129,10 +129,11 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
   }
   pAVar3 = this->klass;
   if ((this->fields).autoDispose == 0) {
-    (*(pAVar3->vtable).__unknown_1.methodPtr)(this,(pAVar3->vtable).__unknown_1.method);
+    (*(code *)(pAVar3->vtable).__unknown_1.method)(this,(pAVar3->vtable).__unknown_2.methodPtr);
     return;
   }
-  (*(pAVar3->vtable).DisposeInternal.methodPtr)(this,(pAVar3->vtable).DisposeInternal.method);
+  (*(code *)(pAVar3->vtable).DisposeInternal.method)
+            (this,(pAVar3->vtable).DetectorHasAdditionalCallbacks.methodPtr);
   return;
 }
 
@@ -154,19 +155,20 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
     func_?(&StringLiteral_Anti_Cheat_Toolkit_Detectors);
     cRam_? = '\x01';
   }
-  (*(this->klass->vtable).__unknown_1.methodPtr)(this,(this->klass->vtable).__unknown_1.method);
+  (*(code *)(this->klass->vtable).__unknown_1.method)
+            (this,(this->klass->vtable).__unknown_2.methodPtr);
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
     iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                       (this_00,(MethodInfo *)0x0);
     if (iVar1 == 0) {
-      pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                         ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+      pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                         ((Component *)this,
                           UnityEngine__Component__MethodInfo__UnityEngine__Component__GetComponentsInChildren<MethodInfo::UnityEngine::Component>______
                          );
-      if (pIVar2 == (IEnumerable_1_System_Object_ *)0x0) goto code_?;
-      if ((int)pIVar2[1].monitor < 3) goto code_?;
+      if (pOVar2 == (Object__Array *)0x0) goto code_?;
+      if ((int)pOVar2->max_length < 3) goto code_?;
     }
     a = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                   ((Object_1 *)this,(MethodInfo *)0x0);
@@ -175,12 +177,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
     if (bVar3 == 0) {
       return;
     }
-    pIVar2 = Assembly-CSharp.dll::Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                       ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                       ((Component *)this,
                         CodeStage__AntiCheat__Detectors__ActDetectorBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<CodeStage::AntiCheat::Detectors::ActDetectorBase>______
                        );
-    if (pIVar2 != (IEnumerable_1_System_Object_ *)0x0) {
-      if (1 < (int)pIVar2[1].monitor) {
+    if (pOVar2 != (Object__Array *)0x0) {
+      if (1 < (int)pOVar2->max_length) {
         return;
       }
 code_?:
@@ -209,7 +211,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
 
 {
   if ((this->fields).started != 0) {
-    (*(this->klass->vtable).__unknown_2.methodPtr)(this,(this->klass->vtable).__unknown_2.method);
+    (*(code *)(this->klass->vtable).__unknown_2.method)
+              (this,(this->klass->vtable).__unknown_3.methodPtr);
   }
   return;
 }
@@ -224,12 +227,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
   if ((this->fields).started != 0) {
     if ((((this->fields).detectionEventHasListener == 0) &&
         ((this->fields).detectionAction == (UnityAction *)0x0)) &&
-       (cVar1 = (*(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr)
-                          (this,(this->klass->vtable).DetectorHasAdditionalCallbacks.method),
-       cVar1 == '\0')) {
+       (cVar1 = (*(code *)(this->klass->vtable).DetectorHasAdditionalCallbacks.method)
+                          (this,(this->klass->vtable).OnCheatingDetected.methodPtr), cVar1 == '\0'))
+    {
       return;
     }
-    (*(this->klass->vtable).__unknown_3.methodPtr)(this,(this->klass->vtable).__unknown_3.method);
+    (*(code *)(this->klass->vtable).__unknown_3.method)(this,this->klass[1]._0.image);
   }
   return;
 }
@@ -276,7 +279,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ActDetector
     }
   }
   if (((this->fields).autoStart != 0) && ((this->fields).started == 0)) {
-    (*(this->klass->vtable).__unknown.methodPtr)();
+    (*(code *)(this->klass->vtable).__unknown.method)();
   }
   return;
 }

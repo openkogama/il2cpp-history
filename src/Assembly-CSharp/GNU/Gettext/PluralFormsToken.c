@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsToken::PluralFormsToken__ctor
                (PluralFormsToken *this,PluralFormsToken *src,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (src != (PluralFormsToken *)0x0) {
     (this->fields).type = (src->fields).type;

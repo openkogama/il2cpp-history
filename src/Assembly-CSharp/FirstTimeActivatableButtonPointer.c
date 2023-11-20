@@ -24,38 +24,33 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::FirstTimeActivatabl
     this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,(this->klass->vtable).OnShown.method,(MethodInfo *)0x0);
-      if (this_00 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                  (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                            );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                     MethodInfo__FirstTimeActivatableButtonPointer___Clear_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                    );
-          return;
-        }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__FirstTimeActivatableButtonPointer___Clear_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                );
+      return;
     }
   }
   func_?();
@@ -92,24 +87,18 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-              );
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+            );
   return;
 }
 
@@ -126,80 +115,72 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
     func_?(&TypeInfo__UnityEngine__RectTransform);
     cRam_? = '\x01';
   }
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                      ((Component *)this,(MethodInfo *)0x0);
-  if (this_01 != (Transform *)0x0) {
-    unaff_EDI = (NavMesh_OnNavMeshPreUpdate *)
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                          (this_01,(MethodInfo *)0x0);
+  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar1 != (Transform *)0x0) {
+    unaff_EDI = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                          (pTVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__UI__LayoutRebuilder);
     }
-    layoutRoot = (NavMesh_OnNavMeshPreUpdate *)0x0;
-    if (unaff_EDI != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      if (unaff_EDI->klass ==
-          (NavMesh_OnNavMeshPreUpdate__Class *)TypeInfo__UnityEngine__RectTransform) {
-        layoutRoot = unaff_EDI;
+    pTVar1 = (Transform *)0x0;
+    if (unaff_EDI != (Transform *)0x0) {
+      if (unaff_EDI->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+        pTVar1 = unaff_EDI;
       }
-      pRVar1 = TypeInfo__UnityEngine__RectTransform;
-      if (layoutRoot == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+      pRVar2 = TypeInfo__UnityEngine__RectTransform;
+      if (pTVar1 == (Transform *)0x0) goto code_?;
     }
     UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-    LayoutRebuilder_ForceRebuildLayoutImmediate((RectTransform *)layoutRoot,(MethodInfo *)0x0);
+    LayoutRebuilder_ForceRebuildLayoutImmediate((RectTransform *)pTVar1,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pBVar2 = (this->fields).button;
-    if (pBVar2 != (Button *)0x0) {
-      this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick;
-      unaff_EDI = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      if (unaff_EDI != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (unaff_EDI,(Object *)this,(this->klass->vtable).OnShown.method,(MethodInfo *)0x0);
-        if (this_00 != (UnityEvent *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                    (this_00,(UnityAction *)unaff_EDI,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?();
-            func_?();
-            func_?();
-            func_?();
-            cRam_? = '\x01';
-          }
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          unaff_EDI = (NavMesh_OnNavMeshPreUpdate *)0x0;
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this
-                       ,
-                       MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                      );
-            return;
-          }
+    pBVar3 = (this->fields).button;
+    if (pBVar3 != (Button *)0x0) {
+      this_00 = (UnityEvent *)(pBVar3->fields).m_OnClick;
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      unaff_EDI = (Transform *)0x0;
+      if (this_00 != (UnityEvent *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                  (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          func_?();
+          func_?();
+          cRam_? = '\x01';
         }
+        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                  );
+        return;
       }
     }
   }
   func_?();
-  pRVar1 = extraout_ECX;
+  pRVar2 = extraout_ECX;
 code_?:
-  func_?(unaff_EDI,pRVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(unaff_EDI,pRVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -234,45 +215,40 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
     this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,(this->klass->vtable).OnShown.method,(MethodInfo *)0x0);
-      if (this_00 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                  (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                            );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                     MethodInfo__FirstTimeActivatableButtonPointer___Clear_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                    );
-          FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                    ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)this,(MethodInfo *)0x0);
-          return;
-        }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__FirstTimeActivatableButtonPointer___Clear_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                );
+      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)this,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -298,51 +274,46 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
     this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,(this->klass->vtable).OnShown.method,(MethodInfo *)0x0);
-      if (this_00 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                  (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(&
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                         );
-          func_?(&
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                         );
-          func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          func_?(&
-                          MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                         );
-          cRam_? = '\x01';
-        }
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                            );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                     MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                    );
-          return;
-        }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                       );
+        func_?(&
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                       );
+        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?(&
+                        MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                       );
+        cRam_? = '\x01';
       }
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__FirstTimeActivatableButtonPointer___CreateBubble_b__11_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                );
+      return;
     }
   }
   func_?();
@@ -381,6 +352,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
       uVar4 = pVVar2->y;
       fVar5 = (float)uVar3 + (this->fields).pointerBodyDirectionOffset.x;
       fVar6 = (float)uVar4 + (this->fields).pointerBodyDirectionOffset.y;
+      fVar6 = fVar6 + fVar6;
       lifeTime = (this->fields).bubbleLifetimeWhileShown;
       content = (this->fields).bubbleContent;
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -388,7 +360,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
       if (x != (TextBubbleController *)0x0) {
         anchoredPosition.y = 0.0;
         anchoredPosition.x = (float)pTVar1;
-        targetCenterPoint.y = fVar6 + fVar6;
+        targetCenterPoint.y = fVar6;
         targetCenterPoint.x = fVar5 + fVar5;
         iVar7 = TextBubbleController::TextBubbleController_ShowBubble2D
                           (x,anchoredPosition,targetCenterPoint,lifeTime,content,pTVar1,
@@ -406,13 +378,14 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
                             ((Object *)original,
                              UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
                             );
-        if ((this_01 != (Component *)0x0) &&
-           (this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(),
-           this_02 != (NavMesh_OnNavMeshPreUpdate *)0x0)) {
-          this_00 = (this->klass->vtable).SkipEvent.method;
+        if (this_01 != (Component *)0x0) {
+          this_00 = this_01[0xf].klass;
+          this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor(this_02,(Object *)this,this_00,(MethodInfo *)0x0);
-          if (this_00 != (MethodInfo *)0x0) {
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (this_02,(Object *)this,(this->klass->vtable).get_CanShow_1.methodPtr,
+                     (MethodInfo *)this_02);
+          if (this_00 != (Component__Class *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                       ((UnityEvent *)this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
             iVar7 = (this->fields).bubbleId;
@@ -422,8 +395,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointer::
             if (pTVar8 == (Transform *)0x0) {
 code_?:
               TextBubbleController::TextBubbleController_AddFirstElement
-                        ((TextBubbleController *)0x0,iVar7,(RectTransform *)pTVar1,(MethodInfo *)0x0
-                        );
+                        ((TextBubbleController *)&UNK_?,iVar7,(RectTransform *)pTVar1,
+                         (MethodInfo *)0x0);
               return;
             }
             if (pTVar8->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {

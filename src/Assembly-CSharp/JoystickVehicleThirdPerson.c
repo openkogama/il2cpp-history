@@ -16,27 +16,19 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
            func_?(
                           TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
                           );
-  if (pCVar2 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-    UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-    CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-    (this->fields).m_HorizontalVirtualAxis = pCVar2;
-    func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
-    pSVar1 = (this->fields).verticalAxisName;
-    pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
-             func_?(
-                            TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
-                            );
-    if (pCVar2 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-      UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
-      CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-      (this->fields).m_VerticalVirtualAxis = pCVar2;
-      func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
+  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
+  (this->fields).m_HorizontalVirtualAxis = pCVar2;
+  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  pSVar1 = (this->fields).verticalAxisName;
+  pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
+           func_?(
+                          TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager__VirtualAxis
+                          );
+  UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
+  CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
+  (this->fields).m_VerticalVirtualAxis = pCVar2;
+  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
   return;
 }
 
@@ -277,8 +269,8 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
   func_?(&(this->fields).horizontalAxisName,StringLiteral_Horizontal);
   (this->fields).verticalAxisName = StringLiteral_Vertical;
   func_?(&(this->fields).verticalAxisName,StringLiteral_Vertical);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

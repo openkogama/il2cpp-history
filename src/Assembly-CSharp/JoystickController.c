@@ -25,12 +25,12 @@ void Assembly-CSharp.dll::JoystickController::JoystickController_OnDrag
                (JoystickController *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   pJStack_2 = (this->fields).joystick;
   if (pJStack_2 != (JoystickBase *)0x0) {
-    pMStack_1 = (pJStack_2->klass->vtable).__unknown.method;
+    pIStack_1 = (pJStack_2->klass->vtable).__unknown_1.methodPtr;
     pPStack_3 = eventData;
-    (*(pJStack_2->klass->vtable).__unknown.methodPtr)();
+    (*(code *)(pJStack_2->klass->vtable).__unknown.method)();
     return;
   }
   uVar4 = func_?(&pJStack_2);
@@ -53,8 +53,8 @@ void Assembly-CSharp.dll::JoystickController::JoystickController_OnPointerDown
               (this_00,(this->fields).alphaOn,(MethodInfo *)0x0);
     pJVar1 = (this->fields).joystick;
     if (pJVar1 != (JoystickBase *)0x0) {
-      (*(pJVar1->klass->vtable).__unknown_1.methodPtr)
-                (pJVar1,eventData,(pJVar1->klass->vtable).__unknown_1.method);
+      (*(code *)(pJVar1->klass->vtable).__unknown_1.method)
+                (pJVar1,eventData,(pJVar1->klass->vtable).__unknown_2.methodPtr);
       this_01 = (Transform *)(this->fields).startPosVisulization;
       if (eventData != (PointerEventData *)0x0) {
         if (this_01 != (Transform *)0x0) {
@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::JoystickController::JoystickController_OnPointerUp
               (this_00,0.0,(MethodInfo *)0x0);
     pJVar1 = (this->fields).joystick;
     if (pJVar1 != (JoystickBase *)0x0) {
-      (*(pJVar1->klass->vtable).__unknown_2.methodPtr)(pJVar1);
+      (*(code *)(pJVar1->klass->vtable).__unknown_2.method)(pJVar1);
       return;
     }
   }
@@ -154,11 +154,19 @@ void Assembly-CSharp.dll::JoystickController::JoystickController_Start
                (JoystickController *this,MethodInfo *method)
 
 {
-  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-          Single,System::Object]::
-          SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__System_Collections_ICollection_get_IsSynchronized
-                    ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                     in_stack_2);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Application);
+  }
+  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
+          IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Collections_ICollection_get_IsSynchronized
+                    ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                      *)0x0,in_stack_2);
   if (bVar1 != 0) {
     return;
   }

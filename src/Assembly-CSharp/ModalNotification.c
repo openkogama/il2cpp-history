@@ -26,64 +26,70 @@ void Assembly-CSharp.dll::ModalNotification::ModalNotification_Initialize
   pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_00 = data;
   if ((data != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-     (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (data,pOVar3,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         ), pTVar2 != (Text *)0x0)) {
-    pOVar4 = (Object *)0x0;
-    if (pOVar3 == (Object *)0x0) {
+     (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar3
+                         ,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        ), pTVar2 != (Text *)0x0)) {
+    TVar5.m_Index = 0;
+    if (TVar4.m_Index == 0) {
 code_?:
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pOVar4,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,TVar5.m_Index,
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pOVar3 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_00,pOVar3,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pOVar3 != (Object *)0x0) {
-        pSVar5 = (String__Class *)TypeInfo__NotificationLifetime;
-        if ((pOVar3->klass->_0).element_class != (TypeInfo__NotificationLifetime->_0).element_class)
-        goto code_?;
-        piVar6 = (int32_t *)func_?(pOVar3);
-        (pMVar1->fields).lifeTime = *piVar6;
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                         pOVar3,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar4.m_Index != 0) {
+        pSVar6 = (String__Class *)TypeInfo__NotificationLifetime;
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+            (TypeInfo__NotificationLifetime->_0).element_class) goto code_?;
+        piVar7 = (int32_t *)func_?(TVar4.m_Index);
+        (pMVar1->fields).lifeTime = *piVar7;
         pOVar3 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
-        bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_00,pOVar3,
+        bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                           pOVar3,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        pIVar8 = (pMVar1->fields).image;
-        if (bVar7 == 0) {
-          if (pIVar8 != (Image *)0x0) {
-            value = (pMVar1->fields).defaultSprite;
+        pIVar9 = (pMVar1->fields).image;
+        if (bVar8 == 0) {
+          if (pIVar9 != (Image *)0x0) {
+            TVar5.m_Index = (int32_t)(pMVar1->fields).defaultSprite;
 code_?:
             UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                      (pIVar8,value,(MethodInfo *)0x0);
-            pIVar8 = (pMVar1->fields).image;
-            if (pIVar8 != (Image *)0x0) {
-              pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pIVar8,(MethodInfo *)0x0);
-              if (pTVar9 != (Transform *)0x0) {
-                pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_localScale((Vector3 *)&puStack_11,pTVar9,(MethodInfo *)0x0)
+                      (pIVar9,(Sprite *)TVar5.m_Index,(MethodInfo *)0x0);
+            pIVar9 = (pMVar1->fields).image;
+            if (pIVar9 != (Image *)0x0) {
+              pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pIVar9,(MethodInfo *)0x0);
+              if (pTVar10 != (Transform *)0x0) {
+                pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                          Transform_get_localScale((Vector3 *)&puStack_12,pTVar10,(MethodInfo *)0x0)
                 ;
-                uVar12 = pVVar10->y;
-                fVar13 = pVVar10->z;
-                pIVar8 = (pMVar1->fields).image;
-                uVar14 = CONCAT44(uVar12,0xbf800000);
-                if ((pIVar8 != (Image *)0x0) &&
-                   (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0),
-                   pTVar9 != (Transform *)0x0)) {
+                uVar13 = pVVar11->y;
+                fVar14 = pVVar11->z;
+                pIVar9 = (pMVar1->fields).image;
+                uVar15 = CONCAT44(uVar13,0xbf800000);
+                if ((pIVar9 != (Image *)0x0) &&
+                   (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_transform((Component *)pIVar9,(MethodInfo *)0x0),
+                   pTVar10 != (Transform *)0x0)) {
                   this = (ModalNotification *)0x0;
-                  value_00.z = fVar13;
-                  value_00.x = (float)(int)uVar14;
-                  value_00.y = (float)(int)((ulonglong)uVar14 >> 0x20);
+                  value.z = fVar14;
+                  value.x = (float)(int)uVar15;
+                  value.y = (float)(int)((ulonglong)uVar15 >> 0x20);
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                            (pTVar9,value_00,(MethodInfo *)0x0);
+                            (pTVar10,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -93,20 +99,21 @@ code_?:
         else {
           this = (ModalNotification *)CONCAT13(3,this._0_3_);
           pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-          pSVar15 = (Sprite *)
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__get_Item
-                              (this_00,pOVar3,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-          if (pIVar8 != (Image *)0x0) {
-            value = (Sprite *)0x0;
-            if (pSVar15 != (Sprite *)0x0) {
-              if (pSVar15->klass == TypeInfo__UnityEngine__Sprite) {
-                value = pSVar15;
+          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00
+                             ,pOVar3,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+          if (pIVar9 != (Image *)0x0) {
+            TVar5.m_Index = 0;
+            if (TVar4.m_Index != 0) {
+              if (*(Sprite__Class **)TVar4.m_Index == TypeInfo__UnityEngine__Sprite) {
+                TVar5 = TVar4;
               }
               pSVar16 = TypeInfo__UnityEngine__Sprite;
-              if (value == (Sprite *)0x0) goto code_?;
+              if ((Sprite *)TVar5.m_Index == (Sprite *)0x0) goto code_?;
             }
             goto code_?;
           }
@@ -114,20 +121,20 @@ code_?:
       }
     }
     else {
-      if ((String__Class *)pOVar3->klass == TypeInfo__System__String) {
-        pOVar4 = pOVar3;
+      if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
+        TVar5 = TVar4;
       }
-      pSVar5 = TypeInfo__System__String;
-      if (pOVar4 != (Object *)0x0) goto code_?;
+      pSVar6 = TypeInfo__System__String;
+      if (TVar5.m_Index != 0) goto code_?;
 code_?:
-      func_?(pOVar3,pSVar5);
+      func_?(TVar4.m_Index,pSVar6);
     }
   }
   func_?();
-  pSVar15 = extraout_ECX;
+  TVar4.m_Index = extraout_ECX;
   pSVar16 = extraout_EDX;
 code_?:
-  func_?(pSVar15,pSVar16);
+  func_?(TVar4.m_Index,pSVar16);
   pcVar17 = (code *)swi(3);
   (*pcVar17)();
   return;

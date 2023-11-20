@@ -38,6 +38,22 @@ public class TierLockedDetailsPopup : MonoBehaviour
 	private UnityAction onPurchaseSuccessful;
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnEnable_b__20_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass11_0
 	{
@@ -62,22 +78,6 @@ public class TierLockedDetailsPopup : MonoBehaviour
 
 		// Methods
 		internal void _ShowLockedTier_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _OnEnable_b__20_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

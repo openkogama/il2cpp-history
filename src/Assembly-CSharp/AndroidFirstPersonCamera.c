@@ -220,26 +220,20 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera__ct
   (this->fields)._.cameraOffset.z = 0.0;
   (this->fields)._.pitchSensitivity = 0.5;
   (this->fields)._.yawSensitivity = 0.5;
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>)
-  ;
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2
-              (this_00,0x20,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_)
-    ;
-    (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-    func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
-    (this->fields)._._.cameraRadius = 0.3;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>
+                              );
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  MultiColumnCollectionHeader+ViewState+ColumnState]::
+  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+            (this_00,0x20,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
+  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
+  (this->fields)._._.cameraRadius = 0.3;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

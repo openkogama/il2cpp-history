@@ -14,8 +14,9 @@ void Assembly-CSharp.dll::ThemeTimeSlider::ThemeTimeSlider_Initialize
   (this->fields).onChange = onChange;
   func_?(&(this->fields).onChange,onChange);
   if ((attrib != (FloatAttribute *)0x0) && (pTVar1 = (this->fields).label, pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,(attrib->fields)._.name,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).slider;
     if (this_00 != (SettingsSlider *)0x0) {
       SettingsSlider::SettingsSlider_Initialize
@@ -58,8 +59,9 @@ code_?:
                            ((double)(int)*pfVar3,(MethodInfo *)0x0);
       pSVar5 = mscorlib.dll::System::TimeSpan::TimeSpan_ToString(&TStack_4,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)
-                  (pTVar1,pSVar5,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar5,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         return;
       }
     }

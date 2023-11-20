@@ -12,28 +12,26 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefingCamera::TimeAttackFlagDebriefi
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+  this_00 = (HashSet_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    pMVar1 = (this->fields).avatarLocal;
-    if (pMVar1 != (MVAvatarLocal *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-      HashSet_1_System_Object__Add
-                ((HashSet_1_System_Object_ *)this_00,(Object *)(pMVar1->fields)._._._._.id,
-                 MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-      (this->fields).ignoreAvatarId = (HashSet_1_System_Int32_ *)this_00;
-      func_?(&(this->fields).ignoreAvatarId,this_00);
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_01 != (MainCameraManager *)0x0) {
-        MainCameraManager::MainCameraManager_StartTransitionCam(this_01,0.5,0,(MethodInfo *)0x0);
-        pTVar2 = TimeAttackFlagDebriefingCamera_GetClosestTimeAttackFlag(this,(MethodInfo *)0x0);
-        (this->fields).flagTransform = pTVar2;
-        func_?(&(this->fields).flagTransform,pTVar2);
-        return;
-      }
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  pMVar1 = (this->fields).avatarLocal;
+  if ((pMVar1 != (MVAvatarLocal *)0x0) && (this_00 != (HashSet_1_System_Int32_ *)0x0)) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+              (this_00,(pMVar1->fields)._._._._.id,
+               MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    (this->fields).ignoreAvatarId = this_00;
+    func_?(&(this->fields).ignoreAvatarId,this_00);
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (this_01 != (MainCameraManager *)0x0) {
+      MainCameraManager::MainCameraManager_StartTransitionCam(this_01,0.5,0,(MethodInfo *)0x0);
+      pTVar2 = TimeAttackFlagDebriefingCamera_GetClosestTimeAttackFlag(this,(MethodInfo *)0x0);
+      (this->fields).flagTransform = pTVar2;
+      func_?(&(this->fields).flagTransform,pTVar2);
+      return;
     }
   }
   func_?();
@@ -91,7 +89,8 @@ TimeAttackFlagDebriefingCamera_GetClosestTimeAttackFlag
       if ((this_01->fields)._size == 0) goto code_?;
       pMVar3 = (this->fields).avatarLocal;
       if (pMVar3 != (MVAvatarLocal *)0x0) {
-        puVar4 = (undefined8 *)(*(pMVar3->klass->vtable).get_Position.methodPtr)(&uStack_5,pMVar3);
+        puVar4 = (undefined8 *)
+                 (*(code *)(pMVar3->klass->vtable).get_Position.method)(&uStack_5,pMVar3);
         index = 0;
         uStack_6 = *puVar4;
         fStack_7 = *(float *)(puVar4 + 1);
@@ -106,8 +105,8 @@ TimeAttackFlagDebriefingCamera_GetClosestTimeAttackFlag
                              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                             );
           if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-          uStack_5 = CONCAT44(uStack_5._4_4_,*(undefined4 *)(*(int *)RVar8 + 0xe0));
-          puVar4 = (undefined8 *)(**(code **)(*(int *)RVar8 + 0xdc))();
+          uStack_5 = CONCAT44(uStack_5._4_4_,*(undefined4 *)(*(int *)RVar8 + 0xe4));
+          puVar4 = (undefined8 *)(**(code **)(*(int *)RVar8 + 0xe0))();
           uVar9 = *puVar4;
           fStack_10 = *(float *)(puVar4 + 1);
           uStack_5._0_4_ = (float)uVar9;
@@ -136,7 +135,6 @@ TimeAttackFlagDebriefingCamera_GetClosestTimeAttackFlag
 code_?:
   uVar12 = func_?();
   this_02 = (Exception *)func_?(uVar12);
-  func_?(this_02);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Entered_TimeAttackFlagDebriefing);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,method_00);
@@ -193,94 +191,79 @@ Vector3 * Assembly-CSharp.dll::TimeAttackFlagDebriefingCamera::
     func_?(&StringLiteral_Not_within_line_segment);
     cRam_? = '\x01';
   }
-  func_?(auStack_1,0,0x48);
-  uVar2 = 0;
-  fVar3 = desiredPosition.z - moveToPosition.z;
-  func_?(&stack0xffffff40,0);
+  func_?(&puStack_1,0,0x48);
+  puStack_2 = (undefined *)(desiredPosition.x - moveToPosition.x);
+  distance = desiredPosition.z - moveToPosition.z;
+  uStack_3 = CONCAT44(uStack_3._4_4_,distance);
+  fVar4 = (float10)func_?(&puStack_2,0);
+  fStack_5 = (float)fVar4;
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-            ((Vector3 *)&stack0xffffff40,(MethodInfo *)0x0);
-  origin.y = moveToPosition.y;
-  origin.x = (float)uVar2;
-  origin.z = moveToPosition.z;
-  direction.y = (float)in_stack_4;
-  direction.x = fVar3;
-  direction.z = in_stack_5;
-  UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray__ctor
-            ((Ray *)&stack0xffffff88,origin,direction,(MethodInfo *)0x0);
-  iVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+            ((Vector3 *)&puStack_2,(MethodInfo *)0x0);
+  uStack_3 = CONCAT44(in_stack_6,distance);
+  fVar7 = moveToPosition.z;
+  puVar8 = (undefined8 *)func_?((int)&uStack_9 + 4,&uStack_3,0);
+  uVar10 = *puVar8;
+  uVar11 = *(undefined4 *)(puVar8 + 1);
+  iVar12 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_Default,(MethodInfo *)0x0);
-  ray.m_Direction.z = fStack_7;
-  ray.m_Direction.y = fStack_8;
-  ray.m_Origin.y = in_stack_9;
-  ray.m_Origin.x = (float)puStack_10;
-  ray.m_Origin.z = (float)in_stack_11;
-  ray.m_Direction.x = (float)uStack_12;
+  ray.m_Origin.y = (float)(int)uVar10;
+  ray.m_Origin.x = fVar7;
+  ray.m_Origin.z = (float)(int)((ulonglong)uVar10 >> 0x20);
+  ray.m_Direction.x = (float)uVar11;
+  ray.m_Direction.y = 0.0;
+  ray.m_Direction.z = moveToPosition.y;
   bVar13 = CollisionDetection::CollisionDetection_MVSphereCast
-                    (ray,(this->fields)._.cameraRadius,(VoxelHit *)&stack0xffffffd8,fStack_14,
-                     (this->fields).ignoreAvatarId,1 << ((byte)iVar6 & 0x1f),(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= (float)in_stack_15) &&
-     (bVar13 != 0)) {
-    fVar3 = 0.0;
+                    (ray,(this->fields)._.cameraRadius,(VoxelHit *)&stack0xffffffb8,distance,
+                     (this->fields).ignoreAvatarId,1 << ((byte)iVar12 & 0x1f),(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= moveToPosition.x) && (bVar13 != 0)) {
+    uStack_9 = 0;
+    fStack_14 = 0.0;
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 != (Transform *)0x0) {
-      pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0x00000000,this_00,(MethodInfo *)0x0);
-      uVar17 = pVVar16->x;
-      uVar18 = pVVar16->y;
-      point.y = fStack_19;
-      point.x = (float)puStack_20;
-      point.z = desiredPosition.y;
+      pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (&VStack_16,this_00,(MethodInfo *)0x0);
+      uVar17 = pVVar15->x;
+      uVar18 = pVVar15->y;
+      point.z = (float)pTStack_19;
+      point.x = (float)(undefined4)uStack_9;
+      point.y = (float)uStack_9._4_4_;
+      lineStart.y = (float)iStack_20;
+      lineStart.x = (float)uStack_21;
       lineStart.z = moveToPosition.z;
-      lineStart.x = VStack_21.x;
-      lineStart.y = VStack_21.y;
-      lineEnd.y = fVar3 + (float)uVar18;
-      lineEnd.x = in_stack_9 + (float)uVar17;
-      lineEnd.z = pVVar16->z + 0.0;
+      lineEnd.y = (float)puStack_1 + (float)uVar18;
+      lineEnd.x = fStack_14 + (float)uVar17;
+      lineEnd.z = in_stack_22 + pVVar15->z;
       bVar13 = MathFunctions::MathFunctions_DistancePointLine_1
-                        (point,lineStart,lineEnd,(float *)&stack0xffffffcc,
-                         (Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
+                        (point,lineStart,lineEnd,(float *)&stack0xffffff98,
+                         (Vector3 *)&stack0xffffffb0,(MethodInfo *)0x0);
       if (bVar13 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_Not_within_line_segment,(MethodInfo *)0x0);
-        VStack_21.y = in_stack_22;
         message = (Object *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
       }
-      VStack_21.z = (float)this;
-      fStack_19 = (this->fields)._.cameraRadius;
-      fStack_19 = fStack_19 * fStack_19;
-      VStack_21._0_8_ = CONCAT44(__return_storage_ptr__,unaff_retaddr);
-      pRVar23 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::
-               RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current
-                         ((Regex_CachedCodeEntryKey *)&stack0x0000003c,
-                          (Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                           *)&method,(MethodInfo *)0x0);
-      uVar24._0_4_ = pRVar23->_options;
-      uVar24._4_4_ = pRVar23->_cultureKey;
-      pSVar25 = pRVar23->_pattern;
-      dVar26 = (double)(VStack_21.z - moveToPosition.x);
-      if (dVar26 < 0.0) {
+      fVar7 = (this->fields)._.cameraRadius;
+      dVar23 = (double)(fVar7 * fVar7 - fStack_24 * fStack_24);
+      if (dVar23 < 0.0) {
         func_?();
       }
       else {
-        dVar26 = SQRT(dVar26);
+        dVar23 = SQRT(dVar23);
       }
-      fVar3 = (float)dVar26;
-      pSVar25->klass = (String__Class *)(fStack_27 - (float)uVar24 * fVar3);
-      pSVar25->monitor = (MonitorData *)(fStack_28 - (float)((ulonglong)uVar24 >> 0x20) * fVar3);
-      (pSVar25->fields)._stringLength = (int32_t)(fStack_29 - (float)pSVar25 * fVar3);
-      return (Vector3 *)pSVar25;
+      fVar7 = (float)dVar23;
+      __return_storage_ptr__->x = VStack_16.x - fStack_25 * fVar7;
+      __return_storage_ptr__->y = VStack_16.y - unaff_EBP * fVar7;
+      __return_storage_ptr__->z = VStack_16.z - unaff_retaddr * fVar7;
+      return __return_storage_ptr__;
     }
     func_?();
-    pcVar30 = (code *)swi(3);
-    pVVar16 = (Vector3 *)(*pcVar30)();
-    return pVVar16;
+    pcVar26 = (code *)swi(3);
+    pVVar15 = (Vector3 *)(*pcVar26)();
+    return pVVar15;
   }
   __return_storage_ptr__->x = (float)(int)desiredPosition._0_8_;
   __return_storage_ptr__->y = (float)(int)((ulonglong)desiredPosition._0_8_ >> 0x20);

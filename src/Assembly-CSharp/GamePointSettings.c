@@ -30,32 +30,33 @@ void Assembly-CSharp.dll::GamePointSettings::GamePointSettings_Initialize
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_04,woID,(MethodInfo *)0x0);
       if ((pMVar1 != (MVWorldObject *)0x0) &&
-         (this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data,
-         this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+         (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                    (pMVar1->fields).data,
+         this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (this_01,(Object *)StringLiteral_gamePointAmount,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
         if (bVar2 == 0) {
-          pOVar3 = (Object *)func_?();
+          value_00 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
                     ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                     (Object *)StringLiteral_gamePointAmount,pOVar3,
+                     (Object *)StringLiteral_gamePointAmount,value_00,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
         }
-        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                            (Object *)StringLiteral_gamePointAmount,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if (pOVar3 != (Object *)0x0) {
-          if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-          goto code_?;
+        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_01,(Object *)StringLiteral_gamePointAmount,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if (TVar3.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+              (TypeInfo__System__Int32->_0).element_class) goto code_?;
           piVar4 = (int32_t *)func_?();
           this_02 = (this->fields).gamePointsAwardedSlider;
           if (this_02 != (SettingsSlider *)0x0) {
@@ -117,28 +118,33 @@ void Assembly-CSharp.dll::GamePointSettings::GamePointSettings_OnDestroy
     if ((int)fVar2 != 0) {
       return;
     }
-    this_02 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_02,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      this = (GamePointSettings *)0x0;
-      value = (Object *)func_?(TypeInfo__System__Int32,&this);
+    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_02,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    this = (GamePointSettings *)0x0;
+    value = (Object *)func_?(TypeInfo__System__Int32,&this);
+    if (this_02 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_02,(Object *)StringLiteral_gamePointAmount,value,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_gamePointAmount,value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::
         MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                  (this_03,(pGVar1->fields).woID,this_02,(MethodInfo *)0x0);
+                  (this_03,(pGVar1->fields).woID,
+                   (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
         this_01 = (pGVar1->fields).settingsBase;
         if (this_01 != (SettingsBase *)0x0) {
           SettingsBase::SettingsBase_RemoveData

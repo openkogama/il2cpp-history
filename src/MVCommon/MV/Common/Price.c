@@ -1,41 +1,7 @@
 
-/* Int32[] ToArray() */
-
-Int32__Array * MVCommon.dll::MV::Common::Price::Price_ToArray(Price *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__System__Int32;
-    func_?();
-    cRam_? = '\x01';
-  }
-  ppIStack_1 = (Int32__Array__Class **)0x1;
-  pIStack_2 = TypeInfo__System__Int32;
-  pIVar3 = (Int32__Array *)func_?();
-  if (pIVar3 != (Int32__Array *)0x0) {
-    if (pIVar3->max_length != 0) {
-      pIVar3->vector[0] = this->gold;
-      return pIVar3;
-    }
-    ppIStack_1 = (Int32__Array__Class **)0x0;
-    pIStack_2 = (Int32__Array__Class *)func_?();
-    func_?();
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (Int32__Array *)(*pcVar4)();
-    return pIVar3;
-  }
-  ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  pIVar3 = (Int32__Array *)(*pcVar4)();
-  return pIVar3;
-}
-
-
 /* Price(Int32[]) */
 
-void MVCommon.dll::MV::Common::Price::Price__ctor_1
+void MVCommon.dll::MV::Common::Price::Price__ctor
                (Price *this,Int32__Array *price,MethodInfo *method)
 
 {

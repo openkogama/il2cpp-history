@@ -29,69 +29,66 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_Initialize
   func_?(&(this->fields).key,key);
   (this->fields).possibleWOData = possibleWOData;
   func_?(&(this->fields).possibleWOData,possibleWOData);
-  value_00 = (String__Class *)
+  value_00 = (List_1_UnityEngine_UI_Dropdown_OptionData_ *)
              func_?(
                             TypeInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>
                             );
-  if (value_00 != (String__Class *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)value_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__List__
-              );
-    uVar1 = 0;
-    if (options != (String__Array *)0x0) {
-      key = (String *)options->vector;
-      for (; (int)uVar1 < (int)options->max_length; uVar1 = uVar1 + 1) {
-        this_01 = (TweenRunner_1_FloatTween_ *)
-                  func_?(TypeInfo__UnityEngine__UI__Dropdown__OptionData);
-        if (this_01 == (TweenRunner_1_FloatTween_ *)0x0) goto code_?;
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-        TweenRunner_1_FloatTween___ctor(this_01,(MethodInfo *)0x0);
-        if (options->max_length <= uVar1) goto code_?;
-        value_00 = key->klass;
-        (this_01->fields).m_CoroutineContainer = (MonoBehaviour *)value_00;
-        func_?(&this_01->fields);
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)value_00,(Object *)this_01,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__Add_UnityEngine__UI__Dropdown__OptionData_
-                  );
-        key = (String *)&key->monitor;
-      }
-      pDVar2 = (this->fields).dropdown;
-      if (pDVar2 != (Dropdown *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_options
-                  (pDVar2,(List_1_UnityEngine_UI_Dropdown_OptionData_ *)value_00,(MethodInfo *)0x0);
-        if (possibleWOData != (List_1_System_Int32_ *)0x0) {
-          value_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__IndexOf
-                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )possibleWOData,(RegexCharClass_SingleRange)value,
-                                MethodInfo__System__Collections__Generic__List<int>__IndexOf_int_);
-          pDVar2 = (this->fields).dropdown;
-          if (pDVar2 != (Dropdown *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_value
-                      (pDVar2,value_01,(MethodInfo *)0x0);
-            pDVar2 = (this->fields).dropdown;
-            if (pDVar2 != (Dropdown *)0x0) {
-              this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pDVar2->fields).m_OnValueChanged;
-              this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
-              if (this_02 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-                UnityAction_1_System_Int32Enum___ctor
-                          (this_02,(Object *)this,MethodInfo__SettingsDropdown__ValueChanged_int_,
-                           (MethodInfo *)0x0);
-                if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::
-                  Vector2]::UnityEvent_1_UnityEngine_Vector2__AddListener
-                            (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_02,
-                             MethodInfo__UnityEngine__Events__UnityEvent<int>__AddListener_UnityEngine__Events__UnityAction<int>_
-                            );
-                  return;
-                }
-              }
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)value_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__List__
+            );
+  uVar1 = 0;
+  if (options != (String__Array *)0x0) {
+    ppSVar2 = options->vector;
+    for (; (int)uVar1 < (int)options->max_length; uVar1 = uVar1 + 1) {
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__UnityEngine__UI__Dropdown__OptionData);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      if (options->max_length <= uVar1) goto code_?;
+      if (this_01 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
+      goto code_?;
+      pLVar3 = (List_1_System_Object_ *)*ppSVar2;
+      (this_01->fields)._._defaultValue_k__BackingField = pLVar3;
+      func_?(&this_01->fields,pLVar3);
+      if (value_00 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)value_00,(Object *)this_01,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__Add_UnityEngine__UI__Dropdown__OptionData_
+                );
+      ppSVar2 = ppSVar2 + 1;
+    }
+    pDVar4 = (this->fields).dropdown;
+    if (pDVar4 != (Dropdown *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_options
+                (pDVar4,value_00,(MethodInfo *)0x0);
+      if (possibleWOData != (List_1_System_Int32_ *)0x0) {
+        value_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+                   List_1_System_Int32__IndexOf
+                             (possibleWOData,value,
+                              MethodInfo__System__Collections__Generic__List<int>__IndexOf_int_);
+        pDVar4 = (this->fields).dropdown;
+        if (pDVar4 != (Dropdown *)0x0) {
+          UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_value
+                    (pDVar4,value_01,(MethodInfo *)0x0);
+          pDVar4 = (this->fields).dropdown;
+          if (pDVar4 != (Dropdown *)0x0) {
+            this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pDVar4->fields).m_OnValueChanged;
+            this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+            UnityAction_1_System_Int32Enum___ctor
+                      (this_02,(Object *)this,MethodInfo__SettingsDropdown__ValueChanged_int_,
+                       (MethodInfo *)0x0);
+            if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
+              UnityEvent_1_UnityEngine_Vector2__AddListener
+                        (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_02,
+                         MethodInfo__UnityEngine__Events__UnityEvent<int>__AddListener_UnityEngine__Events__UnityAction<int>_
+                        );
+              return;
             }
           }
         }
@@ -102,8 +99,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -151,10 +148,11 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_ValueChanged
     func_?(&TypeInfo__SettingsDropdown____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  value_00 = (Object *)func_?(TypeInfo__SettingsDropdown____c__DisplayClass4_0);
+  method_00 = TypeInfo__SettingsDropdown____c__DisplayClass4_0;
+  value_00 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value_00 != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value_00,ExceptionArgument__Enum_obj,unaff_EDI);
     value_00[1].klass = (Object__Class *)this;
     func_?(value_00 + 1,this);
     value_00[1].monitor = (MonitorData *)value;
@@ -165,22 +163,19 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_ValueChanged
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
-                 MethodInfo__SettingsDropdown____c__DisplayClass4_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
+               MethodInfo__SettingsDropdown____c__DisplayClass4_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
+              );
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

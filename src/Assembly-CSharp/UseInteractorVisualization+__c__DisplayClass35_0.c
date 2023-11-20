@@ -10,9 +10,9 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c__DisplayClass35_0::
   if (requirement != (UseRequirement *)0x0) {
     uVar1._0_4_ = (this->fields).scale.x;
     uVar1._4_4_ = (this->fields).scale.y;
-    (*(requirement->klass->vtable).__unknown_9.methodPtr)
+    (*(code *)(requirement->klass->vtable).__unknown_9.method)
               (requirement,uVar1,(this->fields).scale.z,
-               (requirement->klass->vtable).__unknown_9.method);
+               (requirement->klass->vtable).__unknown_10.methodPtr);
     return 1;
   }
   func_?();

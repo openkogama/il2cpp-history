@@ -11,18 +11,20 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::InventoryItemCubeModelH
   pIVar1 = (this->fields)._.item;
   if ((pIVar1 != (InventoryItem *)0x0) && (pTVar2 = (this->fields)._.title, pTVar2 != (Text *)0x0))
   {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)
-              (pTVar2,(pIVar1->fields).name,(pTVar2->klass->vtable).set_text.method);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,(pIVar1->fields).name,
+               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pIVar1 = (this->fields)._.item;
     if ((pIVar1 != (InventoryItem *)0x0) &&
        (pTVar2 = (this->fields)._.description, pTVar2 != (Text *)0x0)) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,(pIVar1->fields).description,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,(pIVar1->fields).description,
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       this_00 = (this->fields)._.previewImage;
       if (image != (RawImage *)0x0) {
         value = (Texture *)
-                (*(image->klass->vtable).get_mainTexture.methodPtr)
-                          (image,(image->klass->vtable).get_mainTexture.method);
+                (*(code *)(image->klass->vtable).get_mainTexture.method)
+                          (image,(image->klass->vtable).OnCullingChanged.methodPtr);
         if (this_00 != (RawImage *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                     (this_00,value,(MethodInfo *)0x0);
@@ -67,24 +69,18 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__InventoryItemCubeModelHandler___OnDeleteClicked_b__5_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-              );
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__InventoryItemCubeModelHandler___OnDeleteClicked_b__5_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+            );
   return;
 }
 
@@ -111,11 +107,12 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    in_stack_1 = &TypeInfo__IEditModeUI;
+    func_?(&TypeInfo__IEditModeUI);
+    in_stack_1 =
+         &
+         MethodInfo__InventoryItemCubeModelHandler____c___OnDeleteConfirmation_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+    ;
     func_?();
-    func_?(&
-                    MethodInfo__InventoryItemCubeModelHandler____c___OnDeleteConfirmation_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
     func_?(&
                     MethodInfo__InventoryItemCubeModelHandler____c__DisplayClass7_0___OnDeleteConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    );
@@ -131,97 +128,87 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::
     }
     value = (Object *)func_?(TypeInfo__InventoryItemCubeModelHandler____c__DisplayClass7_0)
     ;
-    if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      pIVar2 = (this->fields).previewedItem;
-      if ((pIVar2 != (InventoryItem *)0x0) && (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RemoveItemFromInventory
-                  (this_00,(pIVar2->fields).itemID,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__MVGameControllerBase);
-          cRam_? = '\x01';
-        }
-        pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-        if ((pIVar3 != (IEditModeUI *)0x0) &&
-           (this_01 = (PlayerShopInventoryRepository *)
-                      func_?(4,TypeInfo__IEditModeUI,pIVar3),
-           this_01 != (PlayerShopInventoryRepository *)0x0)) {
-          UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
-          PlayerShopInventoryRepository_RemoveInventoryItem
-                    (this_01,(this->fields).previewedItem,(MethodInfo *)0x0);
-          pIVar2 = (this->fields).previewedItem;
-          if (pIVar2 != (InventoryItem *)0x0) {
-            pOVar4 = (Object__Class *)(pIVar2->fields).name;
-            value[1].klass = pOVar4;
-            func_?(value + 1,pOVar4);
-            bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                              ((String *)value[1].klass,(MethodInfo *)0x0);
-            if (bVar5 != 0) {
-              value[1].klass = (Object__Class *)StringLiteral_item;
-              func_?(value + 1,StringLiteral_item);
-            }
-            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this,(MethodInfo *)0x0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    pIVar2 = (this->fields).previewedItem;
+    if ((pIVar2 != (InventoryItem *)0x0) && (this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RemoveItemFromInventory
+                (this_00,(pIVar2->fields).itemID,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if ((pIVar3 != (IEditModeUI *)0x0) &&
+         (this_01 = (PlayerShopInventoryRepository *)func_?(4,TypeInfo__IEditModeUI,pIVar3)
+         , this_01 != (PlayerShopInventoryRepository *)0x0)) {
+        UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
+        PlayerShopInventoryRepository_RemoveInventoryItem
+                  (this_01,(this->fields).previewedItem,(MethodInfo *)0x0);
+        pIVar2 = (this->fields).previewedItem;
+        if ((pIVar2 != (InventoryItem *)0x0) &&
+           (pOVar4 = (Object__Class *)(pIVar2->fields).name, value != (Object *)0x0)) {
+          value[1].klass = pOVar4;
+          func_?(value + 1,pOVar4);
+          bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                            ((String *)value[1].klass,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
+            value[1].klass = (Object__Class *)StringLiteral_item;
+            func_?(value + 1,StringLiteral_item);
+          }
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
+          if ((TypeInfo__InventoryItemCubeModelHandler____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          callbackFunction = TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0;
+          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
             if ((TypeInfo__InventoryItemCubeModelHandler____c->_1).cctor_finished_or_no_cctor == 0)
             {
               func_?();
             }
-            callbackFunction = TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0
+            object = TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9;
+            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                       (Object *)object,
+                       MethodInfo__InventoryItemCubeModelHandler____c___OnDeleteConfirmation_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0 = callbackFunction
             ;
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-              if ((TypeInfo__InventoryItemCubeModelHandler____c->_1).cctor_finished_or_no_cctor == 0
-                 ) {
-                func_?();
-              }
-              object = TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9;
-              callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-              if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-              goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                         (Object *)object,
-                         MethodInfo__InventoryItemCubeModelHandler____c___OnDeleteConfirmation_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0 =
-                   callbackFunction;
-              func_?(&TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0
-                              ,callbackFunction);
-            }
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (pGVar6,(BaseEventData *)0x0,
-                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this,(MethodInfo *)0x0);
-            callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-            if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                         MethodInfo__InventoryItemCubeModelHandler____c__DisplayClass7_0___OnDeleteConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        (pGVar6,(BaseEventData *)0x0,callbackFunction_00,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                        );
-              return;
-            }
+            pGVar6 = (GameObject *)&UNK_?;
+            func_?(&TypeInfo__InventoryItemCubeModelHandler____c->static_fields->__9__7_0);
           }
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (pGVar6,(BaseEventData *)0x0,
+                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                     MethodInfo__InventoryItemCubeModelHandler____c__DisplayClass7_0___OnDeleteConfirmation_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (pGVar6,(BaseEventData *)0x0,callbackFunction_00,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                    );
+          return;
         }
       }
     }
   }
-code_?:
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -265,12 +252,6 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::InventoryItemCubeModelH
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -301,13 +282,15 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::InventoryItemCubeModelH
   pIVar1 = (this->fields).previewedItem;
   if ((pIVar1 != (InventoryItem *)0x0) && (pTVar2 = (this->fields)._.title, pTVar2 != (Text *)0x0))
   {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)
-              (pTVar2,(pIVar1->fields).name,(pTVar2->klass->vtable).set_text.method);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,(pIVar1->fields).name,
+               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pIVar1 = (this->fields).previewedItem;
     if ((pIVar1 != (InventoryItem *)0x0) &&
        (pTVar2 = (this->fields)._.description, pTVar2 != (Text *)0x0)) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,(pIVar1->fields).description,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,(pIVar1->fields).description,
+                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }
@@ -356,19 +339,17 @@ void Assembly-CSharp.dll::InventoryItemCubeModelHandler::
     cRam_? = '\x01';
   }
   TM::TM__(StringLiteral_This_will_remove_the_current_ite,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_System_Boolean_System_Object_ *)
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
-  if (this_00 != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::
-    UnityAction_2_System_Boolean_System_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__InventoryItemCubeModelHandler__OnDeleteConfirmation_bool__ConfirmationPopup_
-               ,(MethodInfo *)0x0);
-    TM::TM__(StringLiteral_Remove,(MethodInfo *)0x0);
-    if (x != (IModalPopupCreator *)0x0) {
-      func_?(3);
-      return;
-    }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__InventoryItemCubeModelHandler__OnDeleteConfirmation_bool__ConfirmationPopup_
+             ,(MethodInfo *)0x0);
+  TM::TM__(StringLiteral_Remove,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(3);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

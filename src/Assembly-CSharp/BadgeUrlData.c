@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor(BadgeUrlData *this,Me
   method_00 = (MethodInfo *)&(this->fields).url;
   func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
@@ -58,7 +58,7 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor_1
   method_00 = (MethodInfo *)&(this->fields).url;
   func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).level = level;
   (this->fields).url = url;

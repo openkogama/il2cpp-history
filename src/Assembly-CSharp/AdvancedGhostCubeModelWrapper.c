@@ -301,8 +301,10 @@ void Assembly-CSharp.dll::AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelW
                Transform *transformParent,MethodInfo *method)
 
 {
-  puStack_1 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &puStack_1;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerable);
@@ -320,70 +322,76 @@ void Assembly-CSharp.dll::AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelW
   (this->fields).transformParent = transformParent;
   func_?(&(this->fields).transformParent,transformParent);
   AdvancedGhostCubeModelWrapper_SetToTransformParent(this,(MethodInfo *)0x0);
-  uVar2 = 0;
+  puStack_4 = (undefined1 *)0x0;
+  uStack_5 = (undefined1 *)((uint)uStack_5._2_2_ << 0x10);
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xffffffd0,-0xb,-4,-0xb,(MethodInfo *)0x0);
-  uVar3 = 0;
+            ((IntVector *)&puStack_4,-0xb,-4,-0xb,(MethodInfo *)0x0);
+  piStack_6 = (int *)0x0;
+  iVar7 = 0;
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xffffffdc,0xb,4,0xb,(MethodInfo *)0x0);
-  min.y = 0;
-  min.x = uVar2;
-  min.z = (int16_t)uVar3;
-  max.z = 0;
-  max.x = (short)uVar3;
-  max.y = (short)(uVar3 >> 0x10);
+            ((IntVector *)&piStack_6,0xb,4,0xb,(MethodInfo *)0x0);
+  max.z = iVar7;
+  max._0_4_ = piStack_6;
+  min.z = (int16_t)uStack_5;
+  min._0_4_ = puStack_4;
   EditableCubeModelWrapper::EditableCubeModelWrapper_SetConstraints
             ((EditableCubeModelWrapper *)this,min,max,0xb4,(MethodInfo *)0x0);
   if ((cubeModelBase != (MVCubeModelInstance *)0x0) &&
      ((cubeModelBase->fields)._.chunkInstances != (ChunkInstances *)0x0)) {
-    piVar4 = (int *)func_?();
-    while (piVar4 != (int *)0x0) {
-      cVar5 = func_?();
-      if (cVar5 == '\0') {
-        iVar6 = func_?();
-        if (iVar6 != 0) {
+    piVar8 = (int *)func_?();
+    puStack_4 = &stack0xffffffe8;
+    uStack_5 = &stack0xffffffe4;
+    uStack_1 = 1;
+    while (piVar8 != (int *)0x0) {
+      cVar9 = func_?();
+      if (cVar9 == '\0') {
+        uStack_1 = 0xffffffff;
+        iVar10 = func_?();
+        if (iVar10 != 0) {
           func_?();
-          *unaff_FS_OFFSET = puStack_1;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        *unaff_FS_OFFSET = puStack_1;
+        *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (piVar4 == (int *)0x0) break;
-      uVar7 = 0;
-      uVar2 = *(ushort *)(*piVar4 + 0xb2);
-      if (uVar2 != 0) {
+      piStack_6 = piVar8;
+      if (piVar8 == (int *)0x0) break;
+      uVar11 = 0;
+      uVar12 = *(ushort *)(*piVar8 + 0xb6);
+      if (uVar12 != 0) {
         do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar7 * 8) ==
+          if (*(IEnumerator__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar11 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
-            puVar8 = (undefined4 *)
-                     (*(int *)(*(int *)(*piVar4 + 0x58) + 4 + (uint)uVar7 * 8) * 8 + 0xc4 + *piVar4)
-            ;
+            puVar13 = (undefined4 *)
+                     (*piVar8 +
+                     (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x19) * 8);
             goto code_?;
           }
-          uVar7 = uVar7 + 1;
-        } while (uVar7 < uVar2);
+          uVar11 = uVar11 + 1;
+        } while (uVar11 < uVar12);
       }
-      puVar8 = (undefined4 *)func_?();
+      puVar13 = (undefined4 *)func_?();
 code_?:
-      piVar9 = (int *)(*(code *)*puVar8)();
-      if (piVar9 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar9 + 0x20) !=
+      piVar8 = (int *)(*(code *)*puVar13)();
+      if (piVar8 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar8 + 0x20) !=
           (
           TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
           ->_0).element_class) goto code_?;
-      iVar6 = func_?();
-      pRStack_10 = (Renderer *)*(undefined8 *)(iVar6 + 0x10);
-      if (pRStack_10 == (Renderer *)0x0) break;
+      iVar10 = func_?();
+      this_00 = (Renderer *)*(undefined8 *)(iVar10 + 0x20);
+      if (this_00 == (Renderer *)0x0) break;
+      piVar8 = (int *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                (pRStack_10,1,(MethodInfo *)0x0);
+                (this_00,1,(MethodInfo *)0x0);
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

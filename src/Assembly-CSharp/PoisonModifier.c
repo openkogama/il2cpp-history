@@ -33,19 +33,14 @@ Assembly-CSharp.dll::PoisonModifier::PoisonModifier_DoFadeAndDestroy
     func_?(&TypeInfo__PoisonModifier___DoFadeAndDestroy_d__7);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__PoisonModifier___DoFadeAndDestroy_d__7);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__PoisonModifier___DoFadeAndDestroy_d__7;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -55,37 +50,39 @@ void Assembly-CSharp.dll::PoisonModifier::PoisonModifier_OnActivated
                (PoisonModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  if (((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0))
-     && (this_00 = (pMVar1->fields).body, this_00 != (MVBody *)0x0)) {
-    this_03 = MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0);
-    if (this_03 != (BodyData *)0x0) {
-      parent = BodyData::BodyData_GetPartBone
-                         (this_03,BodyData_PartIndex__Enum_Head,(MethodInfo *)0x0);
-      if (this_02 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                  (this_02,parent,0,(MethodInfo *)0x0);
-        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
-        if (this_04 != (GameObject *)0x0) {
-          bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_get_activeInHierarchy(this_04,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
-            this_01 = (this->fields).poisonParticles;
-            if (this_01 == (ParticleSystem *)0x0) goto code_?;
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                      (this_01,(MethodInfo *)0x0);
-          }
+  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
+       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
+     (((pMVar3 = (pMVar2->fields).bodyObject, pMVar3 != (MVBodyObject *)0x0 &&
+       (pBVar4 = (pMVar3->fields).bodyData, pBVar4 != (BodyData *)0x0)) &&
+      (pTVar5 = (pBVar4->fields).PartBones, pTVar5 != (Transform__Array *)0x0)))) {
+    if (pTVar5->max_length == 0) goto code_?;
+    if (this_01 != (Transform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (this_01,pTVar5->vector[0],0,(MethodInfo *)0x0);
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (this_02 != (GameObject *)0x0) {
+        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
+        if (bVar6 != 0) {
+          return;
+        }
+        this_00 = (this->fields).poisonParticles;
+        if (this_00 != (ParticleSystem *)0x0) {
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
+                    (this_00,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -115,24 +112,22 @@ void Assembly-CSharp.dll::PoisonModifier::PoisonModifier_OnDeactivated
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_02 != (Transform *)0x0) {
-        method_00 = (MethodInfo *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_02,(Transform *)0x0,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
+        method_00 = TypeInfo__PoisonModifier___DoFadeAndDestroy_d__7;
         value = (Object *)func_?();
-        if (value != (Object *)0x0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    (value,ExceptionArgument__Enum_obj,method_00);
-          value[1].klass = (Object__Class *)0x0;
-          value[2].klass = (Object__Class *)this;
-          func_?(value + 2,this);
-          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-          return;
-        }
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = (Object__Class *)this;
+        func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                  ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+        return;
       }
     }
   }

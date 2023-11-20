@@ -15,9 +15,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_AddChild
     pMVar1 = (MVWorldObjectClient *)0x0;
   }
   else {
-    if (((child->klass->_1).typeHierarchyDepth < (TypeInfo__MVBody->_1).typeHierarchyDepth) ||
+    if (((child->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
        ((MVBody__Class *)
-        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).typeHierarchyDepth - 1] !=
+        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
         TypeInfo__MVBody)) {
       bVar2 = false;
     }
@@ -29,9 +29,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_AddChild
       pMVar3 = (MVBody *)child;
     }
     (this->fields).body = pMVar3;
-    if (((child->klass->_1).typeHierarchyDepth < (TypeInfo__MVBody->_1).typeHierarchyDepth) ||
+    if (((child->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
        ((MVBody__Class *)
-        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).typeHierarchyDepth - 1] !=
+        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
         TypeInfo__MVBody)) {
       bVar2 = false;
     }
@@ -180,11 +180,11 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_UpdateControllerL
 
 {
   pAVar1 = (this->fields).limbManager;
-  puVar2 = (undefined8 *)(*(this->klass->vtable).__unknown.methodPtr)();
+  puVar2 = (undefined8 *)(*(code *)(this->klass->vtable).__unknown.method)();
   if (pAVar1 != (AvatarLimbManager *)0x0) {
-    (*(pAVar1->klass->vtable).UpdateLimbRotations.methodPtr)
+    (*(code *)(pAVar1->klass->vtable).UpdateLimbRotations.method)
               (pAVar1,*puVar2,*(undefined4 *)(puVar2 + 1),
-               (pAVar1->klass->vtable).UpdateLimbRotations.method);
+               (pAVar1->klass->vtable).__unknown.methodPtr);
     return;
   }
   func_?();
@@ -213,62 +213,61 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar__ctor
     func_?(&StringLiteral_pointRotationYaw);
     cRam_? = '\x01';
   }
-  pLVar1 = (LimbRotationRuntimeData *)func_?(TypeInfo__LimbRotationRuntimeData);
-  if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)pLVar1,(MethodInfo *)0x0);
-    (this->fields).limbRotationRuntimeData = pLVar1;
-    func_?(&(this->fields).limbRotationRuntimeData,pLVar1);
-    MVGroup::MVGroup__ctor((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  method_00 = TypeInfo__LimbRotationRuntimeData;
+  pLVar1 = (LimbRotationRuntimeData *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pLVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).limbRotationRuntimeData = pLVar1;
+  func_?(&(this->fields).limbRotationRuntimeData,pLVar1);
+  MVGroup::MVGroup__ctor((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  pMVar2 = (this->fields)._._.runtimeDataVariables;
+  if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
+    pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                       (pMVar2,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
+    (this->fields).CurrentItem = pMVar3;
+    func_?();
     pMVar2 = (this->fields)._._.runtimeDataVariables;
+    pLVar1 = (this->fields).limbRotationRuntimeData;
     if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
       pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                         (pMVar2,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
-      (this->fields).CurrentItem = pMVar3;
-      func_?(&(this->fields).CurrentItem,pMVar3);
-      pMVar2 = (this->fields)._._.runtimeDataVariables;
-      pLVar1 = (this->fields).limbRotationRuntimeData;
-      if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-        pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                           (pMVar2,StringLiteral_headRotationYaw,0.8,0,(MethodInfo *)0x0);
-        if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-          (pLVar1->fields).HeadRotationYaw = pMVar3;
-          func_?(&pLVar1->fields,pMVar3);
-          pMVar2 = (this->fields)._._.runtimeDataVariables;
-          pLVar1 = (this->fields).limbRotationRuntimeData;
-          if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-            pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                               (pMVar2,StringLiteral_headRotationPitch,0.8,0,(MethodInfo *)0x0);
-            if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-              (pLVar1->fields).HeadRotationPitch = pMVar3;
-              func_?(&(pLVar1->fields).HeadRotationPitch,pMVar3);
-              pMVar2 = (this->fields)._._.runtimeDataVariables;
-              pLVar1 = (this->fields).limbRotationRuntimeData;
-              if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                   (pMVar2,StringLiteral_pointRotationYaw,0.8,0,(MethodInfo *)0x0);
-                if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                  (pLVar1->fields).PointRotationYaw = pMVar3;
-                  func_?(&(pLVar1->fields).PointRotationYaw,pMVar3);
-                  pMVar2 = (this->fields)._._.runtimeDataVariables;
-                  pLVar1 = (this->fields).limbRotationRuntimeData;
-                  if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                    pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                       (pMVar2,StringLiteral_pointRotationPitch,0.8,0,
-                                        (MethodInfo *)0x0);
-                    if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                      (pLVar1->fields).PointRotationPitch = pMVar3;
-                      func_?(&(pLVar1->fields).PointRotationPitch,pMVar3);
-                      pMVar2 = (this->fields)._._.runtimeDataVariables;
-                      pLVar1 = (this->fields).limbRotationRuntimeData;
-                      if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                        pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                           (pMVar2,StringLiteral_emote,0.5,0,(MethodInfo *)0x0);
-                        if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                          (pLVar1->fields).Emote = pMVar3;
-                          func_?(&(pLVar1->fields).Emote,pMVar3);
-                          return;
-                        }
+                         (pMVar2,StringLiteral_headRotationYaw,0.8,0,(MethodInfo *)0x0);
+      if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+        (pLVar1->fields).HeadRotationYaw = pMVar3;
+        func_?();
+        pMVar2 = (this->fields)._._.runtimeDataVariables;
+        pLVar1 = (this->fields).limbRotationRuntimeData;
+        if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
+          pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                             (pMVar2,StringLiteral_headRotationPitch,0.8,0,(MethodInfo *)0x0);
+          if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+            (pLVar1->fields).HeadRotationPitch = pMVar3;
+            func_?();
+            pMVar2 = (this->fields)._._.runtimeDataVariables;
+            pLVar1 = (this->fields).limbRotationRuntimeData;
+            if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
+              pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                 (pMVar2,StringLiteral_pointRotationYaw,0.8,0,(MethodInfo *)0x0);
+              if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+                (pLVar1->fields).PointRotationYaw = pMVar3;
+                func_?();
+                pMVar2 = (this->fields)._._.runtimeDataVariables;
+                pLVar1 = (this->fields).limbRotationRuntimeData;
+                if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
+                  pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                     (pMVar2,StringLiteral_pointRotationPitch,0.8,0,
+                                      (MethodInfo *)0x0);
+                  if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+                    (pLVar1->fields).PointRotationPitch = pMVar3;
+                    func_?();
+                    pMVar2 = (this->fields)._._.runtimeDataVariables;
+                    pLVar1 = (this->fields).limbRotationRuntimeData;
+                    if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
+                      pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                         (pMVar2,StringLiteral_emote,0.5,0,(MethodInfo *)0x0);
+                      if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
+                        (pLVar1->fields).Emote = pMVar3;
+                        func_?();
+                        return;
                       }
                     }
                   }

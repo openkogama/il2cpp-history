@@ -36,10 +36,11 @@ void Assembly-CSharp.dll::AdvancedGhostTriggerBase::AdvancedGhostTriggerBase_Add
         bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                           ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar3 == 0) {
-          if (t[1].klass == (Transform__Class *)0x0) goto code_?;
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-          HashSet_1_System_Object__Add
-                    ((HashSet_1_System_Object_ *)t[1].klass,(Object *)(this_01->fields)._.id,
+          if ((HashSet_1_System_Int32_ *)t[1].monitor == (HashSet_1_System_Int32_ *)0x0)
+          goto code_?;
+          System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+          HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                    ((HashSet_1_System_Int32_ *)t[1].monitor,(this_01->fields)._.id,
                      MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
         }
       }
@@ -64,10 +65,12 @@ void Assembly-CSharp.dll::AdvancedGhostTriggerBase::AdvancedGhostTriggerBase_OnD
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).attackTargets;
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3__Clear
+  this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            (this->fields).attackTargets;
+  if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     return;
   }
@@ -124,11 +127,11 @@ code_?:
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 == 0) {
-        this_00 = (HashSet_1_System_Object_ *)(this->fields).attackTargets;
-        if (this_00 == (HashSet_1_System_Object_ *)0x0) goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-        HashSet_1_System_Object__Add
-                  (this_00,(Object *)(this_02->fields)._.id,
+        this_00 = (this->fields).attackTargets;
+        if (this_00 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+        HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                  (this_00,(this_02->fields)._.id,
                    MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
       }
     }
@@ -198,21 +201,15 @@ void Assembly-CSharp.dll::AdvancedGhostTriggerBase::AdvancedGhostTriggerBase__ct
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)
+  this_00 = (HashSet_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    (this->fields).attackTargets = (HashSet_1_System_Int32_ *)this_00;
-    func_?(&(this->fields).attackTargets,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  (this->fields).attackTargets = this_00;
+  func_?(&(this->fields).attackTargets,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -230,7 +227,7 @@ Assembly-CSharp.dll::AdvancedGhostTriggerBase::AdvancedGhostTriggerBase_get_Atta
                    );
     cRam_? = '\x01';
   }
-  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray_1
+  pIVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray
                      ((IEnumerable_1_System_Int32_ *)(this->fields).attackTargets,
                       System__Int32__MethodInfo__System__Linq__Enumerable__ToArray<int>_System__Collections__Generic__IEnumerable<int>_____
                      );

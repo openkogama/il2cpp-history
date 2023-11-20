@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_Enter
                (DeadCamera *this,MVCameraController *camController,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,(ExceptionArgument__Enum)camController,(MethodInfo *)0x0);
   this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);

@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPopup::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsEventAllowedInMode
                     ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);

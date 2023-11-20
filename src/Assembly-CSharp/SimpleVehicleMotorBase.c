@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_DealImp
     if (fVar1 != _UNK_?) {
       pMVar2 = (this->fields).interactableLocal;
       if (pMVar2 == (MVInteractableBase *)0x0) goto code_?;
-      (*(pMVar2->klass->vtable).__unknown.methodPtr)();
+      (*(code *)(pMVar2->klass->vtable).__unknown.method)();
     }
     return;
   }
@@ -69,7 +69,7 @@ void Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_Init
     func_?(&TypeInfo__MVRigidBody__StuckEvaluator);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).smoothController = smoothController;
   func_?(&(this->fields).smoothController,smoothController);
@@ -78,16 +78,17 @@ void Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_Init
      (pMVar2 = (pSVar1->fields).controller, pMVar2 == (MvCharacterController *)0x0)) {
 code_?:
     func_?();
+code_?:
+    func_?();
   }
   else {
     pAVar3 = (pMVar2->fields).OnControllerColliderHit;
     pAVar4 = (Action_1_MVControllerColliderHit_ *)
              func_?(TypeInfo__System__Action<MVControllerColliderHit>);
-    if ((pAVar4 == (Action_1_MVControllerColliderHit_ *)0x0) ||
-       (interactableLocalParam == (VehicleInteractable *)0x0)) goto code_?;
+    if (interactableLocalParam == (VehicleInteractable *)0x0) goto code_?;
     mscorlib.dll::System::Action`1[MVControllerColliderHit]::Action_1_MVControllerColliderHit___ctor
-              (pAVar4,(Object *)interactableLocalParam,
-               (interactableLocalParam->klass->vtable).HandleMoveHit.method,(MethodInfo *)0x0);
+              (pAVar4,(Object *)interactableLocalParam,interactableLocalParam->klass[1]._0.image,
+               (MethodInfo *)0x0);
     pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar3,(Delegate *)pAVar4,(MethodInfo *)0x0);
     if (pDVar5 == (Delegate *)0x0) {
@@ -101,14 +102,13 @@ code_?:
       if (iVar6 == 0) goto code_?;
     }
     func_?();
-    if ((smoothController == (SmoothCharacterController *)0x0) ||
-       (pMVar2 = (smoothController->fields).controller, pMVar2 == (MvCharacterController *)0x0))
-    goto code_?;
+    if (smoothController == (SmoothCharacterController *)0x0) goto code_?;
+    pMVar2 = (smoothController->fields).controller;
+    if (pMVar2 == (MvCharacterController *)0x0) goto code_?;
     pAVar3 = (pMVar2->fields).OnControllerColliderHit;
     object = (this->fields).impactState;
     pAVar4 = (Action_1_MVControllerColliderHit_ *)
              func_?(TypeInfo__System__Action<MVControllerColliderHit>);
-    if (pAVar4 == (Action_1_MVControllerColliderHit_ *)0x0) goto code_?;
     mscorlib.dll::System::Action`1[MVControllerColliderHit]::Action_1_MVControllerColliderHit___ctor
               (pAVar4,(Object *)object,
                MethodInfo__ImpactState__HandleMoveHit_MVControllerColliderHit_,(MethodInfo *)0x0);
@@ -116,82 +116,73 @@ code_?:
                        ((Delegate *)pAVar3,(Delegate *)pAVar4,(MethodInfo *)0x0);
     if (pDVar5 == (Delegate *)0x0) {
       (pMVar2->fields).OnControllerColliderHit = (Action_1_MVControllerColliderHit_ *)0x0;
-      iVar6 = 0;
+      p_Var10 = (Il2CppMetadataTypeHandle)0x0;
 code_?:
-      ppAVar7 = &(pMVar2->fields).OnControllerColliderHit;
       func_?();
-      this_00 = (TweenRunner_1_FloatTween_ *)func_?();
-      if (this_00 != (TweenRunner_1_FloatTween_ *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-        TweenRunner_1_FloatTween___ctor(this_00,(MethodInfo *)0x0);
-        (this->fields).movableMotorState = (MVMovableMotorState *)this_00;
-        func_?(&(this->fields).movableMotorState,this_00);
-        pSVar1 = (this->fields).smoothController;
-        if (pSVar1 != (SmoothCharacterController *)0x0) {
-          pMVar2 = (pSVar1->fields).controller;
-          this_01 = (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)
-                    func_?(
-                                   TypeInfo__System__Func<System::Collections::Generic::List<MVOverlapResult>_>
-                                   );
-          if (this_01 != (RuntimePropertyInfo_StaticGetter_1_System_Object_ *)0x0) {
-            mscorlib.dll::System::Reflection::RuntimePropertyInfo+StaticGetter`1[System::Object]::
-            RuntimePropertyInfo_StaticGetter_1_System_Object___ctor
-                      (this_01,(Object *)pMVar2,
-                       MethodInfo__MvCharacterController__GetOverlappingObjects__,(MethodInfo *)0x0)
-            ;
-            this_02 = (MVRigidBody_StuckEvaluator *)
-                      func_?(TypeInfo__MVRigidBody__StuckEvaluator);
-            if (this_02 != (MVRigidBody_StuckEvaluator *)0x0) {
-              MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator__ctor
-                        (this_02,(Func_1_System_Collections_Generic_List_1_MVOverlapResult_ *)
-                                 this_01,(MethodInfo *)0x0);
-              (this->fields).stuckEvaluator = this_02;
-              func_?(&(this->fields).stuckEvaluator,this_02);
-              this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-              if (this_03 != (GameObject *)0x0) {
-                pVVar8 = (VehicleEnergyContainer *)
-                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_AddComponent_1
-                                   (this_03,
-                                    WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__GameObject__AddComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
-                                   );
-                (this->fields).vehicleEnergyContainer = pVVar8;
-                func_?(&(this->fields).vehicleEnergyContainer,pVVar8);
-                pVVar8 = (this->fields).vehicleEnergyContainer;
-                if (pVVar8 != (VehicleEnergyContainer *)0x0) {
-                  config.storage = vehicleEnergyContainerConfig.storage;
-                  config._0_4_ = iVar6;
-                  config.consumption = vehicleEnergyContainerConfig.consumption;
-                  WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
-                  VehicleEnergyContainer_Init(pVVar8,config,(MethodInfo *)0x0);
-                  pVVar8 = (this->fields).vehicleEnergyContainer;
-                  if (pVVar8 != (VehicleEnergyContainer *)0x0) {
-                    (pVVar8->fields).consumingEnergy = 1;
-                    (this->fields).interactableLocal = (MVInteractableBase *)ppAVar7;
-                    func_?(&(this->fields).interactableLocal,ppAVar7);
-                    return;
-                  }
-                }
-              }
+      this_01 = TypeInfo__MVMovableMotorState;
+      this_02 = (Il2CppGenericClass *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor
+                ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_02,(MethodInfo *)0x0);
+      (this_01->_0).generic_class = this_02;
+      func_?(&(this_01->_0).generic_class);
+      pIVar7 = (this_01->_0).interopData;
+      if (pIVar7 != (Il2CppInteropData *)0x0) {
+        object_00 = (Object *)pIVar7->createCCWFunction;
+        this_03 = (Func_1_Object_ *)
+                  func_?(
+                                 TypeInfo__System__Func<System::Collections::Generic::List<MVOverlapResult>_>
+                                 );
+        mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+                  (this_03,object_00,MethodInfo__MvCharacterController__GetOverlappingObjects__,
+                   (MethodInfo *)0x0);
+        this_04 = (Il2CppClass *)func_?(TypeInfo__MVRigidBody__StuckEvaluator);
+        MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator__ctor
+                  ((MVRigidBody_StuckEvaluator *)this_04,
+                   (Func_1_System_Collections_Generic_List_1_MVOverlapResult_ *)this_03,
+                   (MethodInfo *)0x0);
+        (this_01->_0).klass = this_04;
+        func_?(&(this_01->_0).klass,this_04);
+        this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this_01,(MethodInfo *)0x0);
+        if (this_05 != (GameObject *)0x0) {
+          pFVar8 = (FieldInfo *)
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                              (this_05,
+                               WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__GameObject__AddComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
+                              );
+          (this_01->_0).fields = pFVar8;
+          func_?(&(this_01->_0).fields,pFVar8);
+          this_00 = (VehicleEnergyContainer *)(this_01->_0).fields;
+          if (this_00 != (VehicleEnergyContainer *)0x0) {
+            WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::VehicleEnergyContainer_Init
+                      (this_00,vehicleEnergyContainerConfig,(MethodInfo *)0x0);
+            pFVar8 = (this_01->_0).fields;
+            if (pFVar8 != (FieldInfo *)0x0) {
+              *(undefined1 *)((int)&pFVar8->token + 1) = 1;
+              (this_01->_0).typeMetadataHandle = p_Var10;
+              func_?(&(this_01->_0).typeMetadataHandle,p_Var10);
+              return;
             }
           }
         }
       }
       goto code_?;
     }
-    pAVar3 = (Action_1_MVControllerColliderHit_ *)func_?();
-    if (pAVar3 != (Action_1_MVControllerColliderHit_ *)0x0) {
-      (pMVar2->fields).OnControllerColliderHit = pAVar3;
-      iVar6 = func_?();
-      if (iVar6 != 0) goto code_?;
+    pvVar9 = (void *)func_?();
+    if (pvVar9 != (void *)0x0) {
+      pDVar5[1].fields.interp_invoke_impl = pvVar9;
+      p_Var10 = (Il2CppMetadataTypeHandle)func_?();
+      if (p_Var10 != (Il2CppMetadataTypeHandle)0x0) goto code_?;
+      goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -202,9 +193,9 @@ bool Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_IsStuck
                (SimpleVehicleMotorBase *this,MethodInfo *method)
 
 {
-  this_02 = (this->fields).stuckEvaluator;
-  if (this_02 != (MVRigidBody_StuckEvaluator *)0x0) {
-    this_09 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+  this_00 = (this->fields).stuckEvaluator;
+  if (this_00 != (MVRigidBody_StuckEvaluator *)0x0) {
+    this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                *)*unaff_FS_OFFSET;
     *unaff_FS_OFFSET = &stack0xfffffff0;
     if (cRam_? == '\0') {
@@ -298,114 +289,114 @@ bool Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_IsStuck
     }
     pOStack_1 = (Object__Class *)0x0;
     pMVar2 = (MethodInfo *)0x0;
-    OStack_3.klass = (Object__Class *)0x0;
-    OStack_3.monitor = (MonitorData *)0x0;
+    pOStack_3 = (Object__Class *)0x0;
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar4 - (this_02->fields).updateTime < (this_02->fields).updateInterval) {
-      pDVar5 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(this_02->fields).stuckObjects;
-      if (pDVar5 == (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    if (fVar4 - (this_00->fields).updateTime < (this_00->fields).updateInterval) {
+      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                *)(this_00->fields).stuckObjects;
+      if (pDVar5 == (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0) goto code_?;
-      iVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+      iVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                         (pDVar5,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Count__
                         );
       if (iVar6 == 0) goto code_?;
     }
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    this_09 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+    this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                *)0x0;
-    (this_02->fields).updateTime = fVar4;
-    this_03 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
+    (this_00->fields).updateTime = fVar4;
+    this_01 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
               MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator_GetOverlapDictionary
-                        (this_02,(MethodInfo *)0x0);
-    if (this_03 == (MVRigidBody_StuckEvaluator_StuckObject__Class *)0x0) {
-      pDVar5 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                *)(this_02->fields).stuckObjects;
-      if (pDVar5 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                        (this_00,(MethodInfo *)0x0);
+    if (this_01 == (MVRigidBody_StuckEvaluator_StuckObject__Class *)0x0) {
+      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                *)(this_00->fields).stuckObjects;
+      if (pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-        Regex+CachedCodeEntryKey,System::Object]::
-        Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+        StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+        Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
                   (pDVar5,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__Clear__
                   );
 code_?:
-        *unaff_FS_OFFSET = this_09;
+        *unaff_FS_OFFSET = this_06;
         return 0;
       }
     }
     else {
-      this_04 = (MethodInfo *)func_?();
-      if (this_04 != (MethodInfo *)0x0) {
-        OStack_3.monitor = (MonitorData *)&UNK_?;
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-        LowLevelList_1_System_Object___ctor
-                  ((LowLevelList_1_System_Object_ *)this_04,
-                   MethodInfo__System__Collections__Generic__List<int>__List__);
-        pDVar5 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                  *)(this_02->fields).stuckObjects;
-        if ((pDVar5 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                        *)0x0) &&
-           (this_05 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                      RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Keys
-                                (pDVar5,
-                                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Keys__
-                                ),
-           this_05 !=
-           (Dictionary_2_TKey_TValue_KeyCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-            *)0x0)) {
-          pDVar7 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                   Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                               *)&stack0xffffffa4,
-                              (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                               *)this_05,
-                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_MVRigidBody_StuckEvaluator::StuckObject>__GetEnumerator__
-                             );
-          key_00 = (MethodInfo *)pDVar7->_currentValue;
-          while( true ) {
-            bVar8 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
-                    Int32Enum,System::Single]::
-                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__MoveNext
-                              ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single_
-                                *)&pOStack_1,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__MoveNext__
-                              );
-            if (bVar8 == 0) break;
-            in_stack_9 = key_00;
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,GUILoginHandler+PlanetData]::
-                    Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_03,
-                               (Object *)key_00,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__ContainsKey_int_
-                              );
-            if (bVar8 == 0) {
-              pMVar10 = this_04;
-              func_?();
-              in_stack_11 = this_04;
-              this_04 = pMVar10;
-            }
+      this_02 = (MethodInfo *)func_?();
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+                 MethodInfo__System__Collections__Generic__List<int>__List__);
+      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                *)(this_00->fields).stuckObjects;
+      if ((pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                      *)0x0) &&
+         (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
+                    ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
+                              (pDVar5,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Keys__
+                              ),
+         this_03 !=
+         (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          *)0x0)) {
+        pDVar7 = mscorlib.dll::System::Collections::Generic::
+                 Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+                 StyleSheetCache+SheetHandleKey,System::Object]::
+                 Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                             *)&stack0xffffffa4,
+                            (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                             *)this_03,
+                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_MVRigidBody_StuckEvaluator::StuckObject>__GetEnumerator__
+                           );
+        key_00 = (MethodInfo *)pDVar7->_currentValue;
+        while( true ) {
+          bVar8 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                              *)&pOStack_1,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__MoveNext__
+                            );
+          if (bVar8 == 0) break;
+          in_stack_9 = key_00;
+          bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Int32,PendingPrototypeData]::
+                  Dictionary_2_System_Int32_PendingPrototypeData__ContainsKey
+                            ((Dictionary_2_System_Int32_PendingPrototypeData_ *)this_01,
+                             (int32_t)key_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__ContainsKey_int_
+                            );
+          if (bVar8 == 0) {
+            if (this_02 == (MethodInfo *)0x0) goto code_?;
+            pMVar10 = this_02;
+            func_?();
+            in_stack_11 = this_02;
+            this_02 = pMVar10;
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)&pOStack_1,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
-                     ,in_stack_11);
+        }
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&pOStack_1,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
+                   ,in_stack_11);
+        if (this_02 != (MethodInfo *)0x0) {
           pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                *)&stack0xffffffa4,
                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              this_04,
+                              this_02,
                               MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
           key = pLVar12->_current;
           while (bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
@@ -415,159 +406,151 @@ code_?:
                                      *)&stack0xffffff78,
                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                                    ), bVar8 != 0) {
-            this_00 = (this_02->fields).stuckObjects;
-            if (this_00 == (Dictionary_2_System_Int32_MVRigidBody_StuckEvaluator_StuckObject_ *)0x0)
+            pDVar13 = (this_00->fields).stuckObjects;
+            if (pDVar13 == (Dictionary_2_System_Int32_MVRigidBody_StuckEvaluator_StuckObject_ *)0x0)
             goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Remove
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)key,
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar13,(int32_t)key,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__Remove_int_
                       );
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffff78,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
                      ,pMVar2);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[Newtonsoft::Json::Serialization::
-          DefaultSerializationBinder+TypeNameKey,System::Object]::
-          Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_Enumerator_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+          StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                    ((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                       *)&stack0xffffff98,
-                     (Dictionary_2_Newtonsoft_Json_Serialization_DefaultSerializationBinder_TypeNameKey_System_Object_
-                      *)this_03,
+                     (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                      *)this_01,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__GetEnumerator__
                     );
           while( true ) {
-            this_08 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData_ *)
+            this_05 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData_ *)
                       &stack0xffffffb4;
-            pOVar13 = (Object__Class *)
+            pOVar14 = (Object__Class *)
                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__MoveNext__
             ;
             bVar8 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::Int32,PendingPrototypeData]::
                     Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData__MoveNext
-                              (this_08,
+                              (this_05,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__MoveNext__
                               );
             if (bVar8 == 0) break;
-            pSVar14 = (String *)&UNK_?;
-            this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-                      (this_02->fields).stuckObjects;
-            if (this_01 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+            key_01 = &UNK_?;
+            pDVar13 = (this_00->fields).stuckObjects;
+            if (pDVar13 == (Dictionary_2_System_Int32_MVRigidBody_StuckEvaluator_StuckObject_ *)0x0)
             goto code_?;
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,GUILoginHandler+PlanetData]::
-                    Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                              (this_01,(Object *)&UNK_?,
+            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                    Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
+                              ((Dictionary_2_System_Int32_System_Single_ *)pDVar13,0xADDR,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__ContainsKey_int_
                               );
-            pMVar2 = (MethodInfo *)(this_02->fields).stuckObjects;
+            pMVar2 = (MethodInfo *)(this_00->fields).stuckObjects;
             if (bVar8 == 0) {
-              this_03 = TypeInfo__MVRigidBody_StuckEvaluator__StuckObject;
+              this_01 = TypeInfo__MVRigidBody_StuckEvaluator__StuckObject;
               pMVar15 = (MVRigidBody_StuckEvaluator_StuckObject *)func_?();
-              if (pMVar15 == (MVRigidBody_StuckEvaluator_StuckObject *)0x0) goto code_?;
-              pSVar14 = (String *)0x0;
-              overlapResult.localCubePos = (IntVector__Array *)pOVar13;
-              overlapResult.woId = (int32_t)this_08;
+              iVar6 = 0;
+              overlapResult.localCubePos = (IntVector__Array *)pOVar14;
+              overlapResult.woId = (int32_t)this_05;
               MVRigidBody+StuckEvaluator+StuckObject::MVRigidBody_StuckEvaluator_StuckObject__ctor
                         (pMVar15,overlapResult,(MethodInfo *)0x0);
               if (pMVar2 == (MethodInfo *)0x0) goto code_?;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)pMVar2,(Object *)pSVar14,
-                         (Object *)pMVar15,
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__Add
+                        ((Dictionary_2_System_Int32_System_Object_ *)pMVar2,iVar6,(Object *)pMVar15,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__Add_int__MVRigidBody_StuckEvaluator__StuckObject_
                         );
             }
             else {
               if ((pMVar2 == (MethodInfo *)0x0) ||
-                 (this_03 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
+                 (this_01 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Item_int_
                  , pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Int32Enum,System::Object]::
-                            Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pMVar2,
-                                       (Int32Enum__Enum)pSVar14,
+                            Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                      ((Dictionary_2_System_Int32_System_Object_ *)pMVar2,
+                                       (int32_t)key_01,
                                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Item_int_
                                       ), pOVar16 == (Object *)0x0)) goto code_?;
-              pOVar16[1].monitor = (MonitorData *)this_08;
-              pOVar16[2].klass = pOVar13;
+              pOVar16[1].monitor = (MonitorData *)this_05;
+              pOVar16[2].klass = pOVar14;
               func_?();
               in_stack_9 = pMVar2;
             }
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffb4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__Dispose__
                      ,in_stack_9);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions
-          ::Regex+CachedCodeEntryKey,System::Object]::
-          Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
-                    ((Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)this_03,
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+          StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+                    ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                      *)this_01,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__Clear__
                     );
-          pDVar5 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                    *)(this_02->fields).stuckObjects;
-          if ((pDVar5 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+          pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                    *)(this_00->fields).stuckObjects;
+          if ((pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                           *)0x0) &&
-             (this_06 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                        RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                        Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+             (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                        UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                        Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                                   (pDVar5,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Values__
                                   ),
-             this_06 !=
-             (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+             this_04 !=
+             (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)0x0)) {
             pDVar7 = mscorlib.dll::System::Collections::Generic::
-                     Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                     Regex+CachedCodeEntryKey,System::Object]::
-                     Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                               ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                 *)&stack0xffffffa4,this_06,
+                     Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets
+                     ::StyleSheetCache+SheetHandleKey,System::Object]::
+                     Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                               ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                                 *)&stack0xffffffa4,this_04,
                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVRigidBody_StuckEvaluator::StuckObject>__GetEnumerator__
                                );
-            OStack_3.klass = (Object__Class *)pDVar7->_dictionary;
-            OStack_3.monitor = (MonitorData *)pDVar7->_index;
+            pOStack_3 = (Object__Class *)pDVar7->_dictionary;
             pMVar15 = (MVRigidBody_StuckEvaluator_StuckObject *)pDVar7->_currentValue;
             while( true ) {
-              this_07 = pMVar15;
-              this_09 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                         *)&OStack_3;
+              this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                         *)&pOStack_3;
               bVar8 = mscorlib.dll::System::Collections::Generic::
                       Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                      Object,System::Object]::
-                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                (this_09,
+                      UInt32,System::Object]::
+                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                                (this_06,
                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__MoveNext__
                                 );
               if (bVar8 == 0) break;
-              if (this_07 == (MVRigidBody_StuckEvaluator_StuckObject *)0x0) goto code_?;
-              pMVar15 = this_07;
+              if (pMVar15 == (MVRigidBody_StuckEvaluator_StuckObject *)0x0) goto code_?;
               fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                ((MethodInfo *)0x0);
-              if (_UNK_? <= fVar4 - (this_07->fields).stuckTime) {
+                                 ((MethodInfo *)0x0);
+              if (_UNK_? <= fVar4 - (pMVar15->fields).stuckTime) {
                 unaff_retaddr = (MethodInfo *)0x0;
                 bVar8 = MVRigidBody+StuckEvaluator+StuckObject::
                         MVRigidBody_StuckEvaluator_StuckObject_HandleFineGrained
-                                  (this_07,(MethodInfo *)0x0);
+                                  (pMVar15,(MethodInfo *)0x0);
                 if (bVar8 == 0) {
                   mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                            (&OStack_3,
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                            ((Object *)&pOStack_3,
                              (ExceptionArgument__Enum)
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
                              ,in_stack_17);
-                  *unaff_FS_OFFSET = this_09;
+                  *unaff_FS_OFFSET = this_06;
                   return 1;
                 }
               }
             }
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      (&OStack_3,
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)&pOStack_3,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
                        ,unaff_retaddr);
@@ -596,10 +579,10 @@ void Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_Move
   pSVar1 = (this->fields).smoothController;
   if ((pSVar1 != (SmoothCharacterController *)0x0) &&
      (pMVar2 = (pSVar1->fields).controller, pMVar2 != (MvCharacterController *)0x0)) {
-    (*(pMVar2->klass->vtable).__unknown_1.methodPtr)
+    (*(code *)(pMVar2->klass->vtable).__unknown_1.method)
               (pMVar2,(velocity.x + baseVelocity.x) * deltaTime,
                (velocity.y + baseVelocity.y) * deltaTime,(velocity.z + baseVelocity.z) * deltaTime,
-               (pMVar2->klass->vtable).__unknown_1.method);
+               (pMVar2->klass->vtable).__unknown_2.methodPtr);
     pSVar1 = (this->fields).smoothController;
     if ((pSVar1 != (SmoothCharacterController *)0x0) &&
        (this_00 = (this->fields)._.groundState, this_00 != (MVGroundState *)0x0)) {
@@ -881,7 +864,8 @@ code_?:
         if ((this_00->fields).worldObjectOwner != (MVWorldObjectClient *)0x0) {
           if (((this_00->fields).current == (SmoothPhysicsMovement_Package *)0x0) ||
              ((this_00->fields).next == (SmoothPhysicsMovement_Package *)0x0)) break;
-          (*(((this_00->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.methodPtr)();
+          (*(code *)(((this_00->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.method)
+                    ();
           pSVar6 = (this_00->fields).current;
           this_01 = (this_00->fields).worldObjectOwner;
           if ((pSVar6 == (SmoothPhysicsMovement_Package *)0x0) ||
@@ -1021,37 +1005,11 @@ void Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase__ctor
              __831D17CBF55E6A6EBB90B45C3EC4F41A557F6262DCEE4D6EA14D12FBD179E5BD_Field,
              (MethodInfo *)0x0);
   this_00 = (ImpactState *)func_?(TypeInfo__ImpactState);
-  if (this_00 != (ImpactState *)0x0) {
-    ImpactState::ImpactState__ctor(this_00,explosionEvents,(MethodInfo *)0x0);
-    (this->fields).impactState = this_00;
-    func_?(&(this->fields).impactState,this_00);
-    MVRigidBody::MVRigidBody__ctor((MVRigidBody *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ImpactState::ImpactState__ctor(this_00,explosionEvents,(MethodInfo *)0x0);
+  (this->fields).impactState = this_00;
+  func_?(&(this->fields).impactState,this_00);
+  MVRigidBody::MVRigidBody__ctor((MVRigidBody *)this,(MethodInfo *)0x0);
   return;
-}
-
-
-/* MvCharacterController get_Controller() */
-
-MvCharacterController *
-Assembly-CSharp.dll::SimpleVehicleMotorBase::SimpleVehicleMotorBase_get_Controller
-          (SimpleVehicleMotorBase *this,MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  pSVar2 = (this->fields).smoothController;
-  if (pSVar2 != (SmoothCharacterController *)0x0) {
-    return (pSVar2->fields).controller;
-  }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  pMVar6 = (MvCharacterController *)(*pcVar5)();
-  return pMVar6;
 }
 
 

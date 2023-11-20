@@ -12,9 +12,9 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase+<>c__DisplayClass15_0::
     cRam_? = '\x01';
   }
   if (((wo != (MVWorldObjectClient *)0x0) &&
-      ((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= (wo->klass->_1).typeHierarchyDepth)) &&
+      ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (wo->klass->_1).naturalAligment)) &&
      ((MVAvatarLocal__Class *)
-      (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] ==
+      (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
       TypeInfo__MVAvatarLocal)) {
     (this->fields).localAvatar = (MVAvatarLocal *)wo;
     func_?(&this->fields,wo);

@@ -29,7 +29,7 @@ void Assembly-CSharp-firstpass.dll::MeshContainer::MeshContainer__ctor
                (MeshContainer *this,Mesh *m,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).mesh = m;
   func_?(&this->fields,m);

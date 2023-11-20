@@ -27,7 +27,7 @@ int32_t Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Constrai
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Fog_mode_is_outside_expected_ran,(MethodInfo *)0x0);
     }
     return iVar4;
@@ -66,7 +66,7 @@ code_?:
     }
     if ((pTVar2->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
        (pTVar4 != (Text *)0x0)) {
-      (*(pTVar4->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar4->klass->vtable).set_text.method)();
       pTVar2 = (this->fields).availableModes;
       pAVar6 = (this->fields).onChange;
       if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
@@ -116,7 +116,7 @@ code_?:
       }
       if ((pTVar1->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
          (pTVar4 != (Text *)0x0)) {
-        (*(pTVar4->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar4->klass->vtable).set_text.method)();
         pTVar1 = (this->fields).availableModes;
         pAVar6 = (this->fields).onChange;
         if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
@@ -171,8 +171,9 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Initialize
     (this->fields).modeIndex = iVar5;
     if ((attrib != (IntAttribute *)0x0) &&
        (pTVar6 = (this->fields).settingNameLabel, pTVar6 != (Text *)0x0)) {
-      (*(pTVar6->klass->vtable).set_text.methodPtr)
-                (pTVar6,(attrib->fields)._.name,(pTVar6->klass->vtable).set_text.method);
+      (*(code *)(pTVar6->klass->vtable).set_text.method)
+                (pTVar6,(attrib->fields)._.name,
+                 (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar1 = (this->fields).availableModes;
       pTVar6 = (this->fields).presetNameLabel;
       if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
@@ -180,9 +181,9 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Initialize
         if (pTVar1->max_length <= uVar2) goto code_?;
         if ((pTVar1->vector[uVar2] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
            (pTVar6 != (Text *)0x0)) {
-          (*(pTVar6->klass->vtable).set_text.methodPtr)
+          (*(code *)(pTVar6->klass->vtable).set_text.method)
                     (pTVar6,(pTVar1->vector[uVar2]->fields)._Name_k__BackingField,
-                     (pTVar6->klass->vtable).set_text.method);
+                     (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }
@@ -212,7 +213,7 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_OnSettingCh
     if (pTVar2->max_length <= uVar1) goto code_?;
     if ((pTVar2->vector[uVar1] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
        (pTVar3 != (Text *)0x0)) {
-      (*(pTVar3->klass->vtable).set_text.methodPtr)
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
                 (pTVar3,(pTVar2->vector[uVar1]->fields)._Name_k__BackingField);
       pTVar2 = (this->fields).availableModes;
       pAVar4 = (this->fields).onChange;
@@ -254,8 +255,10 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector__ctor
   (this->fields).modeIndex = -1;
   pTVar1 = (ThemeFogTypeSelector_NamedFogMode__Array *)
            func_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode,2);
-  pTVar2 = (ThemeFogTypeSelector_NamedFogMode *)
-           func_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+  method_00 = TypeInfo__ThemeFogTypeSelector__NamedFogMode;
+  pTVar2 = (ThemeFogTypeSelector_NamedFogMode *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)pTVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode *)0x0) {
 code_?:
     func_?();
@@ -264,8 +267,6 @@ code_?:
     func_?(uVar3);
   }
   else {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pTVar2,ExceptionArgument__Enum_obj,unaff_EDI);
     (pTVar2->fields)._Mode_k__BackingField = 2;
     pSVar4 = StringLiteral_Light;
     (pTVar2->fields)._Name_k__BackingField = StringLiteral_Light;
@@ -278,9 +279,9 @@ code_?:
     func_?(pTVar1->vector,pTVar2);
     pTVar2 = (ThemeFogTypeSelector_NamedFogMode *)
              func_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)pTVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode *)0x0) goto code_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)pTVar2,ExceptionArgument__Enum_obj,unaff_EDI);
     (pTVar2->fields)._Mode_k__BackingField = 3;
     pSVar4 = StringLiteral_Heavy;
     (pTVar2->fields)._Name_k__BackingField = StringLiteral_Heavy;

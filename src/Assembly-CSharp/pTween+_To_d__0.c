@@ -74,7 +74,6 @@ void Assembly-CSharp.dll::pTween+<To>d__0::pTween_To_d_0_System_Collections_IEnu
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__pTween___To_d__0__System_Collections_IEnumerator_Reset__);

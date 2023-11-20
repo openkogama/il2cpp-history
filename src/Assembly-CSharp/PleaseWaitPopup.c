@@ -26,23 +26,23 @@ void Assembly-CSharp.dll::PleaseWaitPopup::PleaseWaitPopup_Update
     this = pPVar6;
     pIVar7 = (pPVar1->fields).fullScreenBackGround;
     if (pIVar7 != (Image *)0x0) {
-      puVar8 = (undefined4 *)(*(pIVar7->klass->vtable).get_color.methodPtr)(&uStack_9);
+      puVar8 = (undefined4 *)(*(code *)(pIVar7->klass->vtable).get_color.method)(&uStack_9);
       pIVar10 = (pPVar1->fields).fullScreenBackGround;
       uStack_11 = *puVar8;
       uStack_12 = *(undefined8 *)(puVar8 + 1);
       pPStack_13 = (PleaseWaitPopup *)puVar8[3];
       if (pIVar10 != (Image *)0x0) {
-        puVar8 = (undefined4 *)(*(pIVar10->klass->vtable).get_color.methodPtr)(&uStack_9);
+        puVar8 = (undefined4 *)(*(code *)(pIVar10->klass->vtable).get_color.method)(&uStack_9);
         pIVar10 = (pPVar1->fields).fullScreenBackGround;
         uStack_9 = *puVar8;
         uStack_14 = puVar8[1];
         uStack_15 = puVar8[2];
         uStack_16 = puVar8[3];
         if (pIVar10 != (Image *)0x0) {
-          iVar17 = (*(pIVar10->klass->vtable).get_color.methodPtr)(&stack0xffffffc0);
+          iVar17 = (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffc0);
           uStack_12 = CONCAT44(*(undefined4 *)(iVar17 + 8),uStack_14);
           pPStack_13 = this;
-          (*(pIVar7->klass->vtable).set_color.methodPtr)
+          (*(code *)(pIVar7->klass->vtable).set_color.method)
                     (pIVar7,uStack_11,uStack_14,*(undefined4 *)(iVar17 + 8));
           pAVar5 = (pPVar1->fields).alphaCurveOverTime;
           this_00 = (pPVar1->fields).popUpcanvasGroup;
@@ -98,8 +98,8 @@ void Assembly-CSharp.dll::PleaseWaitPopup::PleaseWaitPopup__ctor
   (this->fields).direction.y = 0.0;
   (this->fields).spinSpeed = 5.0;
   (this->fields).direction.z = 1.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

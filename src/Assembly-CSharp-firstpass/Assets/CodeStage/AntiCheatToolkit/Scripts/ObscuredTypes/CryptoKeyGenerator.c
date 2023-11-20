@@ -23,10 +23,10 @@ int32_t Assembly-CSharp-firstpass.dll::Assets::CodeStage::AntiCheatToolkit::Scri
   pRVar2 = TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
            ->static_fields->rand;
   if (pRVar2 != (Random *)0x0) {
-    pCStack_1 = (CryptoKeyGenerator__Class *)(pRVar2->klass->vtable).Next_1.method;
+    pCStack_1 = (CryptoKeyGenerator__Class *)(pRVar2->klass->vtable).Next_2.methodPtr;
     puStack_3 = (undefined *)to;
     iStack_4 = from;
-    iVar5 = (*(pRVar2->klass->vtable).Next_1.methodPtr)(pRVar2);
+    iVar5 = (*(code *)(pRVar2->klass->vtable).Next_1.method)(pRVar2);
     return iVar5;
   }
   pCStack_1 = (CryptoKeyGenerator__Class *)&stack0xfffffffc;
@@ -52,17 +52,11 @@ void Assembly-CSharp-firstpass.dll::Assets::CodeStage::AntiCheatToolkit::Scripts
     cRam_? = '\x01';
   }
   this = (Random *)func_?(TypeInfo__System__Random);
-  if (this != (Random *)0x0) {
-    mscorlib.dll::System::Random::Random__ctor(this,(MethodInfo *)0x0);
-    TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator->
-    static_fields->rand = this;
-    func_?(TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-                    ->static_fields,this);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Random::Random__ctor(this,(MethodInfo *)0x0);
+  TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator->
+  static_fields->rand = this;
+  func_?(TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                  ->static_fields,this);
   return;
 }
 

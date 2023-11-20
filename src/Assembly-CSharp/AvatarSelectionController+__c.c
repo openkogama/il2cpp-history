@@ -37,20 +37,38 @@ void Assembly-CSharp.dll::AvatarSelectionController+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
     func_?(&StringLiteral_Error);
     func_?(&StringLiteral_You_cannot_sell_your_avatar_thro);
     cRam_? = '\x01';
   }
-  TM::TM__(StringLiteral_You_cannot_sell_your_avatar_thro,(MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+  pSVar1 = TM::TM__(StringLiteral_You_cannot_sell_your_avatar_thro,(MethodInfo *)0x0);
+  pSVar2 = StringLiteral_Error;
+  if (x == (IModalPopupCreator *)0x0) {
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff8);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = 0;
+  pIVar5 = x->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)
+                   [x->klass->interfaceOffsets[uVar4].offset].method;
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar6);
+  }
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
+code_?:
+  (*(code *)*ppMVar7)(x,pSVar1,pSVar2,ppMVar7[1]);
   return;
 }
 
@@ -94,17 +112,12 @@ void Assembly-CSharp.dll::AvatarSelectionController+<>c::AvatarSelectionControll
     func_?(&TypeInfo__AvatarSelectionController____c);
     cRam_? = '\x01';
   }
-  value = (AvatarSelectionController_c *)func_?(TypeInfo__AvatarSelectionController____c);
-  if (value != (AvatarSelectionController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__AvatarSelectionController____c->static_fields->__9 = value;
-    func_?(TypeInfo__AvatarSelectionController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__AvatarSelectionController____c;
+  value = (AvatarSelectionController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__AvatarSelectionController____c->static_fields->__9 = value;
+  func_?(TypeInfo__AvatarSelectionController____c->static_fields,value);
   return;
 }
 

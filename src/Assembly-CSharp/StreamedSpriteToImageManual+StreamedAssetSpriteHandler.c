@@ -87,25 +87,20 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual+StreamedAssetSpriteHandler
     func_?(&TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_UnityEngine_Sprite_ *)
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>
                         );
-  if (this != (Dictionary_2_System_String_UnityEngine_Sprite_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__Dictionary__
-              );
-    TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites = this
-    ;
-    func_?(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields
-                    ,this);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityEngine::Sprite>__Dictionary__
+            );
+  TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields->sprites =
+       (Dictionary_2_System_String_UnityEngine_Sprite_ *)this;
+  func_?(TypeInfo__StreamedSpriteToImageManual__StreamedAssetSpriteHandler->static_fields,
+                  this);
   return;
 }
 

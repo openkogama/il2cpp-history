@@ -7,12 +7,12 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c__DisplayClass36_0::
                MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (requirement != (UseRequirement *)0x0) {
-    pMStack_1 = (requirement->klass->vtable).__unknown_3.method;
+    pIStack_1 = (requirement->klass->vtable).__unknown_4.methodPtr;
     iStack_2 = (this->fields).ownerID;
     pDStack_3 = (this->fields).data;
-    (*(requirement->klass->vtable).__unknown_3.methodPtr)(requirement);
+    (*(code *)(requirement->klass->vtable).__unknown_3.method)(requirement);
     return 1;
   }
   uVar4 = func_?(&pDStack_3);

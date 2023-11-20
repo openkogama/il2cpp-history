@@ -13,33 +13,26 @@ void Assembly-CSharp.dll::AccessoryShopDataClient::AccessoryShopDataClient__ctor
     func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_AccessoryDataClient_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_AccessoryDataClient_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__Dictionary__
-              );
-    (this->fields).accessoryDatas = this_00;
-    func_?(&this->fields,this_00);
-    this_01 = (AccessoryBundle *)func_?(TypeInfo__AccessoryBundleClient);
-    if (this_01 != (AccessoryBundle *)0x0) {
-      MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryBundle::AccessoryBundle__ctor
-                (this_01,(MethodInfo *)0x0);
-      method_00 = (MethodInfo *)&(this->fields).accessoryBundle;
-      (this->fields).accessoryBundle = (AccessoryBundleClient *)this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_AccessoryDataClient>__Dictionary__
+            );
+  (this->fields).accessoryDatas = (Dictionary_2_System_Int32_AccessoryDataClient_ *)this_00;
+  func_?(&this->fields,this_00);
+  this_01 = (AccessoryBundle *)func_?(TypeInfo__AccessoryBundleClient);
+  MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryBundle::AccessoryBundle__ctor
+            (this_01,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).accessoryBundle;
+  (this->fields).accessoryBundle = (AccessoryBundleClient *)this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

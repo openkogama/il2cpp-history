@@ -56,19 +56,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	private bool isGhost;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass22_0
-	{
-		// Fields
-		public bool readyForAd;
-
-		// Constructors
-		public __c__DisplayClass22_0();
-
-		// Methods
-		internal void _Initialize_b__0(IDeathPromotionSelector x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -91,6 +78,19 @@ public class DeathUIBoostMenuController : MonoBehaviour
 		internal void _Update_b__25_2(IUIStack x, BaseEventData y);
 		internal void _ReadyToSpawn_b__29_0(IUIStack x, BaseEventData y);
 		internal void _LockCursorAndPop_b__30_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass22_0
+	{
+		// Fields
+		public bool readyForAd;
+
+		// Constructors
+		public __c__DisplayClass22_0();
+
+		// Methods
+		internal void _Initialize_b__0(IDeathPromotionSelector x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

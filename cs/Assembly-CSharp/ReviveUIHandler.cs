@@ -24,20 +24,6 @@ public class ReviveUIHandler : ReviveUIHandlerBase
 	protected override AdContext AdContext { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass9_0
-	{
-		// Fields
-		public bool isBlocked;
-		public ReviveUIHandler __4__this;
-
-		// Constructors
-		public __c__DisplayClass9_0();
-
-		// Methods
-		internal void _Update_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -68,6 +54,20 @@ public class ReviveUIHandler : ReviveUIHandlerBase
 
 		// Methods
 		internal void _OnRewardedAdWatched_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass9_0
+	{
+		// Fields
+		public bool isBlocked;
+		public ReviveUIHandler __4__this;
+
+		// Constructors
+		public __c__DisplayClass9_0();
+
+		// Methods
+		internal void _Update_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

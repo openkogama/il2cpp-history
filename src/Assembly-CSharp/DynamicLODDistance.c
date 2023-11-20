@@ -46,14 +46,14 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_MathTest(Method
     func_?();
   }
   SVar2.m_value = (float)&UNK_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::Single::Single_ToString
                      ((Single *)(SVar2.m_value * _UNK_? * SVar2.m_value * SVar2.m_value),
                       (MethodInfo *)0x0);
   SStack_3.m_value = (float)&UNK_?;
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_Area__,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   dVar4 = (double)((float)pSVar1 / _UNK_?);
   func_?();
   SStack_3.m_value = (float)dVar4;
@@ -62,7 +62,7 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_MathTest(Method
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_VolumeToRadius__,pSVar1,(MethodInfo *)0x0);
   SVar2.m_value = (float)&UNK_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   dVar4 = (double)((float)pSVar1 / _UNK_?);
   func_?();
   if ((float)((uint)((float)dVar4 - SVar2.m_value) & _UNK_?) <= _UNK_?) {
@@ -70,7 +70,6 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_MathTest(Method
   }
   func_?();
   this = (Exception *)func_?();
-  func_?();
   method_00 = (MethodInfo *)0x0;
   pSVar1 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(this,pSVar1,method_00);
@@ -107,9 +106,9 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_Test(MethodInfo
     cRam_? = '\x01';
   }
   this = (DynamicLODDistance *)func_?(TypeInfo__DynamicLODDistance);
+  DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
+  iVar1 = 0;
   if (this != (DynamicLODDistance *)0x0) {
-    DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
-    iVar1 = 5;
     do {
       iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
       WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
@@ -121,10 +120,10 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_Test(MethodInfo
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
-      iVar1 = iVar1 + -1;
-    } while (iVar1 != 0);
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < 5);
     return;
   }
   func_?();
@@ -146,9 +145,9 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_TickTest(Method
     cRam_? = '\x01';
   }
   this = (DynamicLODDistance *)func_?(TypeInfo__DynamicLODDistance);
+  DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
+  iVar1 = 0;
   if (this != (DynamicLODDistance *)0x0) {
-    DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
-    iVar1 = 5;
     do {
       iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
       iVar3 = WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
@@ -160,10 +159,10 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_TickTest(Method
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar4,(MethodInfo *)0x0);
-      iVar1 = iVar1 + -1;
-    } while (iVar1 != 0);
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < 5);
     return;
   }
   func_?();
@@ -219,12 +218,14 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_UpdateTest(Meth
   }
   SStack_1.m_value = 0.0;
   this = (DynamicLODDistance *)func_?(TypeInfo__DynamicLODDistance);
+  DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
+  iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
   if (this != (DynamicLODDistance *)0x0) {
-    DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
-    iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
     (this->fields).prevTick = iVar2;
     fVar3 = 0.0 / (float)(this->fields).maxNumObjects;
+    SStack_1.m_value = (float)&UNK_?;
     iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
+    SStack_1.m_value = (float)&UNK_?;
     iVar4 = WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
     fVar5 = (this->fields).maxVolume;
     (this->fields).prevTick = iVar2;
@@ -263,21 +264,21 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_UpdateTest(Meth
       auVar8._0_8_ = (double)(fVar5 / _UNK_?);
       auVar8._8_8_ = 0;
       func_?();
-      fVar5 = (this->fields).minRadius;
+      puVar9 = (undefined *)(this->fields).minRadius;
       SStack_1.m_value = (float)auVar8._0_8_;
-      if ((SStack_1.m_value < fVar5) ||
-         (fVar5 = (this->fields).maxRadius, fVar5 < SStack_1.m_value)) {
-        SStack_1.m_value = fVar5;
+      if ((SStack_1.m_value < (float)puVar9) ||
+         (puVar9 = (undefined *)(this->fields).maxRadius, (float)puVar9 < SStack_1.m_value)) {
+        SStack_1.m_value = (float)puVar9;
       }
       (this->fields).currentRadius = SStack_1.m_value;
-      pSVar9 = mscorlib.dll::System::Single::Single_ToString(&SStack_1,(MethodInfo *)0x0);
-      pSVar9 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_Radius__,pSVar9,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::Single::Single_ToString(&SStack_1,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Radius__,pSVar10,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)pSVar9,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar10,(MethodInfo *)0x0);
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
     iVar7 = 6;
@@ -295,31 +296,31 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_UpdateTest(Meth
         fVar5 = ((float)iVar4 / _UNK_?) * (this->fields).volumePercentChangePrSecond *
                  fVar5 + fVar3 * _UNK_? * fVar3 * fVar3;
       }
-      auVar10._0_8_ = (double)(fVar5 / _UNK_?);
-      auVar10._8_8_ = 0;
+      auVar11._0_8_ = (double)(fVar5 / _UNK_?);
+      auVar11._8_8_ = 0;
       func_?();
-      fVar5 = (this->fields).minRadius;
-      SStack_1.m_value = (float)auVar10._0_8_;
-      if ((SStack_1.m_value < fVar5) ||
-         (fVar5 = (this->fields).maxRadius, fVar5 < SStack_1.m_value)) {
-        SStack_1.m_value = fVar5;
+      puVar9 = (undefined *)(this->fields).minRadius;
+      SStack_1.m_value = (float)auVar11._0_8_;
+      if ((SStack_1.m_value < (float)puVar9) ||
+         (puVar9 = (undefined *)(this->fields).maxRadius, (float)puVar9 < SStack_1.m_value)) {
+        SStack_1.m_value = (float)puVar9;
       }
       (this->fields).currentRadius = SStack_1.m_value;
-      pSVar9 = mscorlib.dll::System::Single::Single_ToString(&SStack_1,(MethodInfo *)0x0);
-      pSVar9 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_Radius__,pSVar9,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::Single::Single_ToString(&SStack_1,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Radius__,pSVar10,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                ((Object *)pSVar9,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar10,(MethodInfo *)0x0);
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
     return;
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -346,12 +347,11 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance__ctor
   (this->fields).volumePercentChangePrSecond = 0.1;
   iVar1 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
   (this->fields).prevTick = iVar1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (minRadius <= 0.0) {
     func_?();
     pEVar2 = (Exception *)func_?();
-    func_?(pEVar2);
     pSVar3 = (String *)func_?();
     mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar3,(MethodInfo *)0x0);
     func_?();
@@ -371,7 +371,6 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance__ctor
   }
   func_?();
   pEVar2 = (Exception *)func_?();
-  func_?(pEVar2);
   pSVar3 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar3,(MethodInfo *)0x0);
   func_?();
@@ -379,7 +378,6 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance__ctor
 code_?:
   func_?();
   pEVar2 = (Exception *)func_?();
-  func_?(pEVar2);
   pSVar3 = (String *)func_?();
   mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar3,(MethodInfo *)0x0);
   func_?();

@@ -19,20 +19,20 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_AddChild
   }
   if (child != (MVWorldObjectClient *)0x0) {
     puVar1 = (undefined8 *)
-             (*(child->klass->vtable).get_Position.methodPtr)
-                       (auStack_2,child,(child->klass->vtable).get_Position.method);
+             (*(code *)(child->klass->vtable).get_Position.method)
+                       (auStack_2,child,(child->klass->vtable).set_Position.methodPtr);
     uStack_3 = *puVar1;
     uVar4 = *(undefined4 *)(puVar1 + 1);
     puVar5 = (undefined4 *)
-             (*(child->klass->vtable).get_Rotation.methodPtr)
-                       (&uStack_6,child,(child->klass->vtable).get_Rotation.method);
+             (*(code *)(child->klass->vtable).get_Rotation.method)
+                       (&uStack_6,child,(child->klass->vtable).set_Rotation.methodPtr);
     uStack_6 = *puVar5;
     uStack_7 = puVar5[1];
     uStack_8 = puVar5[2];
     puStack_9 = (undefined *)puVar5[3];
     puVar1 = (undefined8 *)
-             (*(child->klass->vtable).get_Scale.methodPtr)
-                       (&stack0xffffffd4,child,(child->klass->vtable).get_Scale.method);
+             (*(code *)(child->klass->vtable).get_Scale.method)
+                       (&stack0xffffffd4,child,(child->klass->vtable).set_Scale.methodPtr);
     this_00 = (child->fields).transform;
     uStack_10 = *puVar1;
     uStack_11 = *(undefined4 *)(puVar1 + 1);
@@ -43,41 +43,42 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_AddChild
       if (this_00 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_00,value,(MethodInfo *)0x0);
-        (*(child->klass->vtable).set_Position.methodPtr)
-                  (child,uStack_3,uVar4,(child->klass->vtable).set_Position.method);
-        (*(child->klass->vtable).set_Rotation.methodPtr)
+        (*(code *)(child->klass->vtable).set_Position.method)
+                  (child,uStack_3,uVar4,(child->klass->vtable).get_Rotation.methodPtr);
+        (*(code *)(child->klass->vtable).set_Rotation.method)
                   (child,uStack_6,uStack_7,uStack_8,puStack_9,
-                   (child->klass->vtable).set_Rotation.method);
-        (*(child->klass->vtable).set_Scale.methodPtr)
-                  (child,uStack_10,uStack_11,(child->klass->vtable).set_Scale.method);
-        this_02 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).children;
-        if (this_02 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-          bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                            (this_02,(Object *)(child->fields)._.id,
+                   (child->klass->vtable).get_Scale.methodPtr);
+        (*(code *)(child->klass->vtable).set_Scale.method)
+                  (child,uStack_10,uStack_11,(child->klass->vtable).get_WorldPosition.methodPtr);
+        pDVar12 = (this->fields).children;
+        if (pDVar12 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+          bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
+                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar12,(child->fields)._.id
+                             ,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
                             );
-          if (bVar12 != 0) {
-            IStack_13.m_value = (this->fields)._._.id;
-            pSVar14 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_13,(MethodInfo *)0x0);
-            IStack_13.m_value = (child->fields)._.id;
-            str3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_13,(MethodInfo *)0x0);
-            pSVar14 = mscorlib.dll::System::String::String_Concat_5
-                               (StringLiteral_Group_,pSVar14,StringLiteral_already_contains_child_,
+          if (bVar13 != 0) {
+            IStack_14.m_value = (this->fields)._._.id;
+            pSVar15 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_14,(MethodInfo *)0x0);
+            IStack_14.m_value = (child->fields)._.id;
+            str3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_14,(MethodInfo *)0x0);
+            pSVar15 = mscorlib.dll::System::String::String_Concat_5
+                               (StringLiteral_Group_,pSVar15,StringLiteral_already_contains_child_,
                                 str3,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                      ((Object *)pSVar14,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)pSVar15,(MethodInfo *)0x0);
             return;
           }
-          this_03 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).children;
-          if (this_03 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (this_03,(Object *)(child->fields)._.id,(Object *)child,
+          pDVar12 = (this->fields).children;
+          if (pDVar12 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Add
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar12,(child->fields)._.id,
+                       (Object *)child,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Add_int__MVWorldObjectClient_
                       );
             return;
@@ -87,8 +88,8 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_AddChild
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -133,24 +134,21 @@ Assembly-CSharp.dll::MVGroup::MVGroup_Clone
     func_?(&TypeInfo__MVGroup____c);
     cRam_? = '\x01';
   }
-  OStack_4.klass = (Object__Class *)0x0;
-  OStack_4.monitor = (MonitorData *)0x0;
+  pOStack_4 = (Object__Class *)0x0;
   pMVar5 = MVWorldObjectClient::MVWorldObjectClient_Clone
                      ((MVWorldObjectClient *)this,ownerActorNumber,cloneGroupId,cloneBookkeeping,
                       worldObjects,prototypes,(MethodInfo *)0x0);
   if (pMVar5 == (MVWorldObjectClient *)0x0) {
     pMVar5 = (MVWorldObjectClient *)0x0;
   }
-  else if (((pMVar5->klass->_1).typeHierarchyDepth < (TypeInfo__MVGroup->_1).typeHierarchyDepth) ||
+  else if (((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
           ((MVGroup__Class *)
-           (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).typeHierarchyDepth - 1] !=
+           (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
            TypeInfo__MVGroup)) {
-    OStack_4.monitor = (MonitorData *)&UNK_?;
     func_?();
     goto code_?;
   }
-  OStack_4.monitor = (MonitorData *)&UNK_?;
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             MVGroup_get_Children(this,(MethodInfo *)0x0);
   if ((TypeInfo__MVGroup____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -162,47 +160,41 @@ Assembly-CSharp.dll::MVGroup::MVGroup_Clone
     }
     object = TypeInfo__MVGroup____c->static_fields->__9;
     this_01 = (Comparison_1_MVWorldObjectClient_ *)func_?();
-    if (this_01 == (Comparison_1_MVWorldObjectClient_ *)0x0) goto code_?;
-    OStack_4.monitor = (MonitorData *)&UNK_?;
-    mscorlib.dll::System::Func`3[Object,Object,Int32]::Func_3_Object_Object_Int32___ctor
-              ((Func_3_Object_Object_Int32_ *)this_01,(Object *)object,
+    Newtonsoft.Json.dll::Newtonsoft::Json::Utilities::MethodCall`2[System::Object,System::Object]::
+    MethodCall_2_System_Object_System_Object___ctor
+              ((MethodCall_2_System_Object_System_Object_ *)this_01,(Object *)object,
                MethodInfo__MVGroup____c___Clone_b__15_0_MVWorldObjectClient__MVWorldObjectClient_,
                (MethodInfo *)0x0);
     TypeInfo__MVGroup____c->static_fields->__9__15_0 = this_01;
     func_?();
   }
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-    UnitySynchronizationContext+WorkRequest]::
-    List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__Sort_1
-              (this_00,(Comparison_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)this_01,
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Sort_1
+              ((List_1_System_Object_ *)this_00,(Comparison_1_Object_ *)this_01,
                MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Sort_System__Comparison<MVWorldObjectClient>_
               );
     pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffd8,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this_00
-                        ,
+                         *)&stack0xffffffd8,this_00,
                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                        );
-    OStack_4.klass = (Object__Class *)pLVar6->_list;
+    pOStack_4 = (Object__Class *)pLVar6->_list;
     uStack_1 = 1;
     while( true ) {
-      OStack_4.monitor = (MonitorData *)&UNK_?;
       pMVar7 = 
       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
       ;
       bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&OStack_4,
+                        ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                         );
       if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (&OStack_4,
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)&pOStack_4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                    ,in_stack_9);
@@ -210,9 +202,8 @@ Assembly-CSharp.dll::MVGroup::MVGroup_Clone
         return pMVar5;
       }
       if ((pMVar5 == (MVWorldObjectClient *)0x0) || (pMVar7 == (MethodInfo *)0x0)) break;
-      OStack_4.monitor = (MonitorData *)(pMVar5->fields)._.id;
-      OStack_4.klass = (Object__Class *)ownerActorNumber;
-      (**(code **)(pMVar7->methodPointer + 0x23c))();
+      pOStack_4 = (Object__Class *)ownerActorNumber;
+      (**(code **)(pMVar7->methodPointer + 0x238))();
     }
   }
 code_?:
@@ -241,92 +232,87 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeBoundsForWOs
     cRam_? = '\x01';
   }
   if (woList != (List_1_MVWorldObjectClient_ *)0x0) {
-    if ((woList->fields)._size != 0) {
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    if ((woList->fields)._size == 0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
+      }
+      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+      VStack_2.x = (pVVar1->zeroVector).x;
+      VStack_2.y = (pVVar1->zeroVector).y;
+      fVar3 = (pVVar1->zeroVector).z;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
+      }
+      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar4 = (pVVar1->zeroVector).x;
+      uVar5 = (pVVar1->zeroVector).y;
+      BStack_6.m_Extents.z = (pVVar1->zeroVector).z * _UNK_?;
+      BStack_6.m_Extents.x = (float)uVar4 * _UNK_?;
+      BStack_6.m_Extents.y = (float)uVar5 * _UNK_?;
+      BStack_6.m_Center._0_8_ = VStack_2._0_8_;
+      BStack_6.m_Center.z = fVar3;
+    }
+    else {
+      RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)woList
                          ,0,
                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                         );
-      pBVar2 = MVGroup_ComputeLocalChildBounds
-                          ((Bounds *)&stack0xffffffc4,(MVWorldObjectClient *)RVar1,boundsContext,
-                           (MethodInfo *)0x0);
-      fVar3 = (pBVar2->m_Center).x;
-      fVar4 = (pBVar2->m_Center).y;
-      fVar5 = (pBVar2->m_Center).z;
-      fVar6 = (pBVar2->m_Extents).x;
-      uVar7._0_4_ = (pBVar2->m_Extents).y;
-      uStack_8 = (pBVar2->m_Extents).z;
-      for (index = 1; index < (woList->fields)._size; index = index + 1) {
-        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+      pBVar8 = MVGroup_ComputeLocalChildBounds
+                         (&BStack_9,(MVWorldObjectClient *)RVar7,boundsContext,(MethodInfo *)0x0);
+      BStack_6.m_Center.x = (pBVar8->m_Center).x;
+      BStack_6.m_Center.y = (pBVar8->m_Center).y;
+      BStack_6.m_Center.z = (pBVar8->m_Center).z;
+      BStack_6.m_Extents.x = (pBVar8->m_Extents).x;
+      uVar10 = (pBVar8->m_Extents).y;
+      uVar11 = (pBVar8->m_Extents).z;
+      BStack_6.m_Extents.y = (float)uVar10;
+      BStack_6.m_Extents.z = (float)uVar11;
+      for (VStack_2.z = 1.4013e-45; (int)VStack_2.z < (woList->fields)._size;
+          VStack_2.z = (float)((int)VStack_2.z + 1)) {
+        RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           woList,index,
+                           woList,(int32_t)VStack_2.z,
                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                           );
-        pBVar2 = MVGroup_ComputeLocalChildBounds
-                            ((Bounds *)&stack0xffffffc4,(MVWorldObjectClient *)RVar1,boundsContext,
-                             (MethodInfo *)0x0);
-        fVar3 = (pBVar2->m_Center).z;
-        fVar4 = (pBVar2->m_Extents).x;
-        uVar7 = uVar7 & 0xffffffff00000000;
-        fVar5 = (pBVar2->m_Extents).y;
-        fVar6 = (pBVar2->m_Extents).z;
-        uVar9 = (pBVar2->m_Center).x;
-        uVar10 = (pBVar2->m_Center).y;
-        uVar11 = (pBVar2->m_Center).z;
-        bounds.m_Center.z = (float)uVar11;
-        bounds.m_Center.y = (float)uVar10;
-        bounds.m_Center.x = (float)uVar9;
-        uVar12 = (pBVar2->m_Extents).x;
-        uVar13 = (pBVar2->m_Extents).y;
-        bounds.m_Extents.y = (float)uVar13;
-        bounds.m_Extents.x = (float)uVar12;
-        bounds.m_Extents.z = fVar6;
-        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate_1
-                  ((Bounds *)&stack0xffffffdc,bounds,(MethodInfo *)0x0);
+        pBVar8 = MVGroup_ComputeLocalChildBounds
+                           ((Bounds *)&puStack_12,(MVWorldObjectClient *)RVar7,boundsContext,
+                            (MethodInfo *)0x0);
+        BStack_9.m_Extents.y = (pBVar8->m_Extents).y;
+        BStack_9.m_Extents.z = (pBVar8->m_Extents).z;
+        fVar3 = (pBVar8->m_Extents).x;
+        fVar13 = (pBVar8->m_Center).z - BStack_9.m_Extents.z;
+        point.y = (pBVar8->m_Center).y - BStack_9.m_Extents.y;
+        point.x = (pBVar8->m_Center).x - fVar3;
+        point.z = fVar13;
+        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
+                  (&BStack_6,point,(MethodInfo *)0x0);
+        fStack_14 = BStack_9.m_Extents.z + 3.5102553e-29;
+        point_00.y = BStack_9.m_Extents.y + fVar13;
+        point_00.x = fVar3 + (pBVar8->m_Center).x;
+        point_00.z = fStack_14;
+        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
+                  (&BStack_6,point_00,(MethodInfo *)0x0);
       }
-      (__return_storage_ptr__->m_Center).x = fVar3;
-      (__return_storage_ptr__->m_Center).y = fVar4;
-      (__return_storage_ptr__->m_Center).z = fVar5;
-      (__return_storage_ptr__->m_Extents).x = fVar6;
-      uStack_8 = (undefined4)(uVar7 >> 0x20);
-      (__return_storage_ptr__->m_Extents).y = (float)(undefined4)uVar7;
-      (__return_storage_ptr__->m_Extents).z = (float)uStack_8;
-      return __return_storage_ptr__;
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    fVar14 = 0.0;
-    fVar15 = 0.0;
-    fVar5 = 0.0;
-    fVar6 = 0.0;
-    fVar3 = 0.0;
-    fVar4 = 0.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-              ((Bounds *)&stack0xffffffc4,center,
-               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-    (__return_storage_ptr__->m_Center).x = fVar5;
-    (__return_storage_ptr__->m_Center).y = fVar6;
-    (__return_storage_ptr__->m_Center).z = fVar3;
-    (__return_storage_ptr__->m_Extents).x = fVar4;
-    (__return_storage_ptr__->m_Extents).y = fVar14;
-    (__return_storage_ptr__->m_Extents).z = fVar15;
+    (__return_storage_ptr__->m_Center).x = BStack_6.m_Center.x;
+    (__return_storage_ptr__->m_Center).y = BStack_6.m_Center.y;
+    (__return_storage_ptr__->m_Center).z = BStack_6.m_Center.z;
+    (__return_storage_ptr__->m_Extents).x = BStack_6.m_Extents.x;
+    (__return_storage_ptr__->m_Extents).y = BStack_6.m_Extents.y;
+    (__return_storage_ptr__->m_Extents).z = BStack_6.m_Extents.z;
     return __return_storage_ptr__;
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  pBVar2 = (Bounds *)(*pcVar16)();
-  return pBVar2;
+  pcVar15 = (code *)swi(3);
+  pBVar8 = (Bounds *)(*pcVar15)();
+  return pBVar8;
 }
 
 
@@ -377,7 +363,7 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeLocalChildBounds
     QStack_6.y = pMVar11->m13;
     QStack_6.z = pMVar11->m23;
     QStack_6.w = pMVar11->m33;
-    pBVar15 = (Bounds *)(*(wo->klass->vtable).GetLocalBounds.methodPtr)();
+    pBVar15 = (Bounds *)(*(code *)(wo->klass->vtable).GetLocalBounds.method)();
     m.m10 = fStack_8;
     m.m00 = fStack_7;
     m.m20 = fStack_9;
@@ -475,7 +461,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_DeSelect(MVGroup *this,MethodInfo *me
                         );
       if (bVar4 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -484,7 +470,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_DeSelect(MVGroup *this,MethodInfo *me
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1f].fields._size)();
+      (*(code *)this_01->_list[0x1f].fields._items)();
     }
   }
   func_?();
@@ -507,11 +493,11 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetChild(MVGroup *this,int32_t woID,Method
     cRam_? = '\x01';
   }
   pMStack_1 = (MVWorldObjectClient *)0x0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).children;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryGetValue
-              (this_00,(Object *)woID,(Object **)&pMStack_1,
+  this_00 = (this->fields).children;
+  if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__TryGetValue
+              ((Dictionary_2_System_Int32_System_Object_ *)this_00,woID,(Object **)&pMStack_1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
               );
     return pMStack_1;
@@ -602,15 +588,15 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorldObjectIDs(MVGroup *this,M
     cRam_? = '\x01';
   }
   this_00 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            ((HashSet_1_System_Int32_ *)this_00,
+             MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
   if (this_00 != (MethodInfo *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              ((HashSet_1_UnityEngine_Vector3_ *)this_00,
-               MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
     method_01 = this_00;
-    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-    HashSet_1_System_Object__Add
-              ((HashSet_1_System_Object_ *)this_00,(Object *)(this->fields)._._.id,
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+              ((HashSet_1_System_Int32_ *)this_00,(this->fields)._._.id,
                MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
     this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               MVGroup_get_Children(this,(MethodInfo *)0x0);
@@ -635,7 +621,7 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorldObjectIDs(MVGroup *this,M
                           );
         if (bVar7 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc0,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -644,14 +630,14 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorldObjectIDs(MVGroup *this,M
           return (HashSet_1_System_Int32_ *)this_00;
         }
         if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
-        if ((*(byte *)(*(int *)RVar6 + 0xb4) < (TypeInfo__MVGroup->_1).typeHierarchyDepth) ||
+        if ((*(byte *)(*(int *)RVar6 + 0xb8) < (TypeInfo__MVGroup->_1).naturalAligment) ||
            (*(MVGroup__Class **)
-             (*(int *)(*(int *)RVar6 + 100) + -4 +
-             (uint)(TypeInfo__MVGroup->_1).typeHierarchyDepth * 4) != TypeInfo__MVGroup)) {
+             (*(int *)(*(int *)RVar6 + 100) + -4 + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4
+             ) != TypeInfo__MVGroup)) {
           if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-          HashSet_1_System_Object__Add
-                    ((HashSet_1_System_Object_ *)this_00,*(Object **)((int)RVar6 + 8),
+          System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+          HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                    ((HashSet_1_System_Int32_ *)this_00,(int32_t)*(InvokerMethod *)((int)RVar6 + 8),
                      MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
         }
         else {
@@ -688,92 +674,19 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_GetLocalBounds
                    MethodInfo *method)
 
 {
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            MVGroup_get_Children(this,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                   );
-    cRam_? = '\x01';
-  }
-  BStack_1.m_Extents.y = 0.0;
-  BStack_1.m_Extents.z = 0.0;
-  BStack_1.m_Center.x = 0.0;
-  BStack_1.m_Center.y = 0.0;
-  BStack_1.m_Center.z = 0.0;
-  BStack_1.m_Extents.x = 0.0;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((this_00->fields)._size != 0) {
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,0,
-                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                        );
-      pBVar3 = MVGroup_ComputeLocalChildBounds
-                         ((Bounds *)&stack0xffffffac,(MVWorldObjectClient *)RVar2,boundsContext,
-                          (MethodInfo *)0x0);
-      BStack_1.m_Center.x = (pBVar3->m_Center).x;
-      BStack_1.m_Center.y = (pBVar3->m_Center).y;
-      BStack_1.m_Center.z = (pBVar3->m_Center).z;
-      BStack_1.m_Extents.x = (pBVar3->m_Extents).x;
-      BStack_1.m_Extents.y = (pBVar3->m_Extents).y;
-      BStack_1.m_Extents.z = (pBVar3->m_Extents).z;
-      for (index = 1; index < (this_00->fields)._size; index = index + 1) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,index,
-                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                          );
-        pBVar3 = MVGroup_ComputeLocalChildBounds
-                           ((Bounds *)&stack0xffffff94,(MVWorldObjectClient *)RVar2,boundsContext,
-                            (MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate_1
-                  (&BStack_1,*pBVar3,(MethodInfo *)0x0);
-      }
-      (__return_storage_ptr__->m_Center).x = BStack_1.m_Center.x;
-      (__return_storage_ptr__->m_Center).y = BStack_1.m_Center.y;
-      (__return_storage_ptr__->m_Center).z = BStack_1.m_Center.z;
-      (__return_storage_ptr__->m_Extents).x = BStack_1.m_Extents.x;
-      (__return_storage_ptr__->m_Extents).y = BStack_1.m_Extents.y;
-      (__return_storage_ptr__->m_Extents).z = BStack_1.m_Extents.z;
-      return __return_storage_ptr__;
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_5._0_4_ = (pVVar4->zeroVector).x;
-    uStack_5._4_4_ = (pVVar4->zeroVector).y;
-    fVar6 = (pVVar4->zeroVector).z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    fVar7 = 0.0;
-    center.z = fVar6;
-    center.x = (float)(undefined4)uStack_5;
-    center.y = (float)uStack_5._4_4_;
-    UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-              ((Bounds *)&stack0xffffffc4,center,
-               TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-    (__return_storage_ptr__->m_Center).x = fVar7;
-    (__return_storage_ptr__->m_Center).y = 0.0;
-    (__return_storage_ptr__->m_Center).z = 0.0;
-    (__return_storage_ptr__->m_Extents).x = 0.0;
-    (__return_storage_ptr__->m_Extents).y = 0.0;
-    (__return_storage_ptr__->m_Extents).z = 0.0;
-    return __return_storage_ptr__;
-  }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pBVar3 = (Bounds *)(*pcVar8)();
-  return pBVar3;
+  woList = MVGroup_get_Children(this,(MethodInfo *)0x0);
+  pBVar1 = MVGroup_ComputeBoundsForWOs(&BStack_2,woList,boundsContext,(MethodInfo *)0x0);
+  fVar3 = (pBVar1->m_Center).y;
+  fVar4 = (pBVar1->m_Center).z;
+  fVar5 = (pBVar1->m_Extents).x;
+  (__return_storage_ptr__->m_Center).x = (pBVar1->m_Center).x;
+  (__return_storage_ptr__->m_Center).y = fVar3;
+  (__return_storage_ptr__->m_Center).z = fVar4;
+  (__return_storage_ptr__->m_Extents).x = fVar5;
+  fVar3 = (pBVar1->m_Extents).z;
+  (__return_storage_ptr__->m_Extents).y = (pBVar1->m_Extents).y;
+  (__return_storage_ptr__->m_Extents).z = fVar3;
+  return __return_storage_ptr__;
 }
 
 
@@ -807,7 +720,7 @@ int32_t Assembly-CSharp.dll::MVGroup::MVGroup_GetParentBelow
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)message,(MethodInfo *)0x0);
     }
     else if ((pMVar2->fields).groupId != -1) {
@@ -875,8 +788,11 @@ int32_t Assembly-CSharp.dll::MVGroup::MVGroup_GetParentBelow_1
 void Assembly-CSharp.dll::MVGroup::MVGroup_Initialize(MVGroup *this,MethodInfo *method)
 
 {
-  uVar1 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+               *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &pUStack_3;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
@@ -897,94 +813,113 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Initialize(MVGroup *this,MethodInfo *
   }
   MVWorldObjectClient::MVWorldObjectClient_Initialize((MVWorldObjectClient *)this,(MethodInfo *)0x0)
   ;
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).children;
-  if (this_00 ==
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-  goto code_?;
-  this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-            Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                      (this_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
-                      );
-  if (this_01 ==
-      (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-       *)0x0) goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::Text
-  ::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-  Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-              *)&stack0xffffffdc,this_01,
-             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
-            );
-  while( true ) {
-    pMVar2 = 
-    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
-    ;
-    bVar3 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Object,System
-            ::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                      ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                        *)&stack0xffffffc8,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
-                      );
-    if (bVar3 == 0) break;
-    if (pMVar2 == (MethodInfo *)0x0) goto code_?;
-    (**(code **)(pMVar2->methodPointer + 0x24c))();
-  }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)&stack0xffffffc8,
-             (ExceptionArgument__Enum)
-             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
-             ,in_stack_4);
-  if ((this->fields)._._.groupId == -1) goto code_?;
-  iVar5 = (this->fields)._._.groupId;
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-  pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup
-                     (this_02,(MethodInfo *)0x0);
-  if (pMVar6 == (MVGroup *)0x0) goto code_?;
-  if (iVar5 == (pMVar6->fields)._._.id) goto code_?;
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  pMVar6 = (this->fields)._.group;
-  if (pMVar6 == (MVGroup *)0x0) goto code_?;
-  this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-  if (this_03 == (UnityAction_2_System_Object_System_Object_ *)0x0) goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (this_03,(Object *)this,
-             MethodInfo__MVGroup__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,
-             (MethodInfo *)0x0);
-  uVar1 = 0;
-  pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)this,(Delegate *)this_03,(MethodInfo *)0x0);
-  if (pDVar7 == (Delegate *)0x0) {
-    (pMVar6->fields)._.PositionChanged =
-         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).children;
+  if (this_00 !=
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                        (this_00,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
+                        );
+    if (this_01 !=
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                  *)&stack0xffffffdc,this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
+                );
+      uStack_1 = 1;
+      while( true ) {
+        pMVar4 = 
+        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
+        ;
+        bVar5 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                            *)&stack0xffffffc8,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
+                          );
+        if (bVar5 == 0) break;
+        if (pMVar4 == (MethodInfo *)0x0) goto code_?;
+        (**(code **)(pMVar4->methodPointer + 0x248))();
+      }
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                ((Object *)&stack0xffffffc8,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
+                 ,in_stack_6);
+      uStack_1 = 0xffffffff;
+      if ((this->fields)._._.groupId == -1) goto code_?;
+      iVar7 = (this->fields)._._.groupId;
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_02 != (MVWorldObjectClientManager *)0x0) {
+        pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup
+                           (this_02,(MethodInfo *)0x0);
+        if (pMVar8 != (MVGroup *)0x0) {
+          if (iVar7 == (pMVar8->fields)._._.id) goto code_?;
+          if (cRam_? == '\0') {
+            pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                         &
+                         MethodInfo__MVGroup__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+            ;
+            func_?();
+            func_?();
+            cRam_? = '\x01';
+          }
+          pMVar8 = (this->fields)._.group;
+          if (pMVar8 != (MVGroup *)0x0) {
+            pUStack_3 = 
+            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+            ;
+            a = (pMVar8->fields)._.PositionChanged;
+            this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (this_03,(Object *)this,
+                       MethodInfo__MVGroup__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                       ,(MethodInfo *)0x0);
+            pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                               ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
+            if (pDVar9 == (Delegate *)0x0) {
+              this_03[1].fields._._.method_info = (MethodInfo_1 *)0x0;
+            }
+            else {
+              pMVar10 = (MethodInfo_1 *)func_?();
+              if (pMVar10 == (MethodInfo_1 *)0x0) {
+                func_?();
+                goto code_?;
+              }
+              this_03[1].fields._._.method_info = pMVar10;
+              iVar7 = func_?();
+              if (iVar7 == 0) goto code_?;
+            }
+            func_?();
 code_?:
-    func_?();
+            *unaff_FS_OFFSET = pUStack_3;
+            return;
+          }
+        }
+      }
+    }
+  }
 code_?:
-    *unaff_FS_OFFSET = uVar1;
-    return;
-  }
-  pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-  if (pUVar8 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-    (pMVar6->fields)._.PositionChanged = pUVar8;
-    iVar5 = func_?();
-    if (iVar5 != 0) goto code_?;
-  }
+  pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+               func_?();
   func_?();
 code_?:
   func_?();
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1016,25 +951,27 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_InitializeInventory(MVGroup *this,Met
                    );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).children;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).children;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
                         );
     if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::
-      Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                   *)&stack0xffffffd8,this_01,
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
                 );
@@ -1046,15 +983,15 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_InitializeInventory(MVGroup *this,Met
         ;
         bVar4 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                Object,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                             *)&stack0xffffffc8,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
                           );
         if (bVar4 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
@@ -1118,16 +1055,16 @@ bool Assembly-CSharp.dll::MVGroup::MVGroup_OnEnterObject
   if (pMVar1 != (MainCameraManager *)0x0) {
     pMVar2 = MainCameraManager::MainCameraManager_get_CurrentCamera(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (MVCameraBase *)0x0) {
-      (*(pMVar2->klass->vtable).FocusOnObject.methodPtr)(pMVar2,this,0x40000000,0,0,0,0);
+      (*(code *)(pMVar2->klass->vtable).FocusOnObject.method)(pMVar2,this,0x40000000,0,0,0,0);
       pSVar3 = (String *)
-               (*(this->klass->vtable).ToString.methodPtr)
-                         (this,(this->klass->vtable).ToString.method);
+               (*(code *)(this->klass->vtable).ToString.method)
+                         (this,(this->klass->vtable).get_Position.methodPtr);
       pSVar3 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_PtrPtrPtr_Entering_group__,pSVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
       if (e != (EditorStateMachine *)0x0) {
         EditorStateMachine::EditorStateMachine_EnterGroup(e,this,(MethodInfo *)0x0);
@@ -1163,8 +1100,8 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_OnPositionChanged
                PositionChangedEventArgs *positionChangedEventArgs,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).PositionChangedNotify.methodPtr)
-            (this,(this->klass->vtable).PositionChangedNotify.method);
+  (*(code *)(this->klass->vtable).PositionChangedNotify.method)
+            (this,(this->klass->vtable).get_WorldPivot.methodPtr);
   return;
 }
 
@@ -1196,25 +1133,27 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PlayModeInitialize(MVGroup *this,Meth
                    );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).children;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).children;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
                         );
     if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::
-      Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                   *)&stack0xffffffd8,this_01,
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
                 );
@@ -1226,15 +1165,15 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PlayModeInitialize(MVGroup *this,Meth
         ;
         bVar5 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                Object,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                             *)&stack0xffffffc8,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
                           );
         if (bVar5 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
@@ -1243,7 +1182,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PlayModeInitialize(MVGroup *this,Meth
           return;
         }
         if (pMVar4 == (MethodInfo *)0x0) break;
-        (**(code **)(pMVar4->methodPointer + 0x25c))();
+        (**(code **)(pMVar4->methodPointer + 600))();
       }
     }
   }
@@ -1293,18 +1232,18 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PositionChangedNotify(MVGroup *this,M
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_root_group_cannot_notify_as_this,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       MVWorldObjectClient::MVWorldObjectClient_PositionChangedNotify
                 ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).children;
-      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                           ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+      this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).children;
+      if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+        pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                             &stack0xffffffb0,this_00,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__GetEnumerator__
                            );
@@ -1313,15 +1252,15 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PositionChangedNotify(MVGroup *this,M
         uStack_1 = 1;
         while( true ) {
           bVar8 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::
-                  Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object_ *)
+                  Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                              &stack0xffffffc8,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
                             );
           if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&stack0xffffffc8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
@@ -1331,7 +1270,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_PositionChangedNotify(MVGroup *this,M
           }
           pOStack_9 = (Object *)uVar7;
           if (pOStack_9 == (Object *)0x0) break;
-          (*(code *)pOStack_9->klass[2]._0.namespaze)();
+          (*(code *)pOStack_9->klass[2]._0.name)();
         }
       }
     }
@@ -1418,7 +1357,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select(MVGroup *this,MethodInfo *meth
                         );
       if (bVar4 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -1427,7 +1366,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select(MVGroup *this,MethodInfo *meth
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1e].fields._syncRoot)();
+      (*(code *)this_01->_list[0x1e].fields._version)();
     }
   }
   func_?();
@@ -1484,7 +1423,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select_1(MVGroup *this,Color color,Me
                         );
       if (bVar4 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
@@ -1493,7 +1432,7 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_Select_1(MVGroup *this,Color color,Me
         return;
       }
       if (this_01 == (List_1_T_Enumerator_System_Object_ *)0x0) break;
-      (*(code *)this_01->_list[0x1f].monitor)();
+      (*(code *)this_01->_list[0x1f].klass)();
     }
   }
   func_?();
@@ -1518,40 +1457,38 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_SetupTranformation(MVGroup *this,Meth
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._.group;
-  if (pMVar1 != (MVGroup *)0x0) {
+  if (pMVar1 == (MVGroup *)0x0) {
+    func_?();
+  }
+  else {
     pUVar2 = (pMVar1->fields)._.PositionChanged;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(
                              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                              );
-    if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__MVGroup__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                 ,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (pMVar1->fields)._.PositionChanged =
-             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVGroup__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+               ,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields)._.PositionChanged =
+           (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      func_?();
+      return;
+    }
+    pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+      (pMVar1->fields)._.PositionChanged = pUVar2;
+      iVar4 = func_?();
+      if (iVar4 != 0) {
         func_?();
         return;
       }
-      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        (pMVar1->fields)._.PositionChanged = pUVar2;
-        iVar4 = func_?();
-        if (iVar4 != 0) {
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -1581,9 +1518,9 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TransferChild
       pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (pMVar1,(value->fields).groupId,(MethodInfo *)0x0);
       if (pMVar2 != (MVWorldObject *)0x0) {
-        if (((pMVar2->klass->_1).typeHierarchyDepth < (TypeInfo__MVGroup->_1).typeHierarchyDepth) ||
+        if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
            ((MVGroup__Class *)
-            (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).typeHierarchyDepth - 1] !=
+            (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
             TypeInfo__MVGroup)) goto code_?;
         if (cRam_? == '\0') {
           func_?();
@@ -1607,10 +1544,9 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TransferChild
             func_?();
             this_02 = (this_00->vtable).ToString.method;
             if (this_02 != (MethodInfo *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)id,
-                         (Object *)value,
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__Add
+                        ((Dictionary_2_System_Int32_System_Object_ *)this_02,id,(Object *)value,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Add_int__MVWorldObjectClient_
                         );
               return;
@@ -1661,35 +1597,35 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TraverseRecursiveTail
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._index = 0;
   DStack_6._version = 0;
   DStack_6._currentValue = (Object *)0x0;
   if (callBack != (MVWorldObjectClient_CallBackDelegate *)0x0) {
     (*(callBack->fields)._._.invoke_impl)
               ((callBack->fields)._._.method_code,this,(callBack->fields)._._.method);
-    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )(this->fields).children;
+    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+               *)(this->fields).children;
     if (this_00 !=
-        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-    {
-      this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                           (this_00,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
                           );
       if (this_01 !=
-          (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+          (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
            *)0x0) {
         pDVar7 = mscorlib.dll::System::Collections::Generic::
-                 Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                 Regex+CachedCodeEntryKey,System::Object]::
-                 Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+                 Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+                 StyleSheetCache+SheetHandleKey,System::Object]::
+                 Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                            (&DStack_8,this_01,
                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
                            );
-        DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+        DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
         DStack_6._index = pDVar7->_index;
         DStack_6._version = pDVar7->_version;
         DStack_6._currentValue = pDVar7->_currentValue;
@@ -1699,14 +1635,14 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TraverseRecursiveTail
         while( true ) {
           bVar9 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                             (&DStack_6,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
                             );
           if (bVar9 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&DStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
@@ -1715,9 +1651,9 @@ void Assembly-CSharp.dll::MVGroup::MVGroup_TraverseRecursiveTail
             return;
           }
           if (DStack_6._currentValue == (Object *)0x0) break;
-          (*(code *)(DStack_6._currentValue)->klass[2]._1.initializationExceptionGCHandle)
+          (*(DStack_6._currentValue)->klass[2]._1.unity_user_data)
                     (DStack_6._currentValue,callBack,
-                     (DStack_6._currentValue)->klass[2]._1.cctor_started);
+                     (DStack_6._currentValue)->klass[2]._1.initializationExceptionGCHandle);
         }
       }
     }
@@ -1746,32 +1682,27 @@ void Assembly-CSharp.dll::MVGroup::MVGroup__ctor
     func_?(&TypeInfo__MVWorldObjectClient);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-              );
-    (this->fields).children = this_00;
-    func_?(&(this->fields).children,this_00);
-    if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVWorldObjectClient);
-    }
-    MVWorldObjectClient::MVWorldObjectClient__ctor
-              ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
-    piVar2 = &(this->fields)._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
-    *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
-    return;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields).children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00;
+  func_?(&(this->fields).children,this_00);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVWorldObjectClient);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  MVWorldObjectClient::MVWorldObjectClient__ctor
+            ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
+  piVar2 = &(this->fields)._.interactionFlags;
+  *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
   return;
 }
 
@@ -1793,32 +1724,27 @@ void Assembly-CSharp.dll::MVGroup::MVGroup__ctor_1
     func_?(&TypeInfo__MVWorldObjectClient);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-              );
-    (this->fields).children = this_00;
-    func_?(&(this->fields).children,this_00);
-    if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVWorldObjectClient);
-    }
-    MVWorldObjectClient::MVWorldObjectClient__ctor_1
-              ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-    uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
-    piVar2 = &(this->fields)._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
-    *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
-    return;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields).children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00;
+  func_?(&(this->fields).children,this_00);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVWorldObjectClient);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  MVWorldObjectClient::MVWorldObjectClient__ctor_1
+            ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
+  piVar2 = &(this->fields)._.interactionFlags;
+  *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
   return;
 }
 
@@ -1839,32 +1765,27 @@ void Assembly-CSharp.dll::MVGroup::MVGroup__ctor_2
     func_?(&TypeInfo__MVWorldObjectClient);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-              );
-    (this->fields).children = this_00;
-    func_?(&(this->fields).children,this_00);
-    if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVWorldObjectClient);
-    }
-    MVWorldObjectClient::MVWorldObjectClient__ctor_2
-              ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
-    uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
-    piVar2 = &(this->fields)._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
-    *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
-    return;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields).children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00;
+  func_?(&(this->fields).children,this_00);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVWorldObjectClient);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  MVWorldObjectClient::MVWorldObjectClient__ctor_2
+            ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
+  uVar1 = *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4);
+  piVar2 = &(this->fields)._.interactionFlags;
+  *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._.interactionFlags + 4) = uVar1;
   return;
 }
 
@@ -1904,68 +1825,86 @@ Assembly-CSharp.dll::MVGroup::MVGroup_get_Children(MVGroup *this,MethodInfo *met
   }
   pLVar4 = (List_1_MVWorldObjectClient_ *)
            func_?(TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
-  if (pLVar4 != (List_1_MVWorldObjectClient_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar4,
-               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )(this->fields).children;
-    if (this_00 !=
-        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-    {
-      this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                          (this_00,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
-                          );
-      if (this_01 !=
-          (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-           *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System
-        ::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-        Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                  ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                    *)&stack0xffffffd4,this_01,
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
-                  );
-        method_00 = (MethodInfo *)0x0;
-        uStack_1 = 1;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).children;
+  if (this_00 !=
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                        (this_00,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Values__
+                        );
+    if (this_01 !=
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                  *)&stack0xffffffd0,this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVWorldObjectClient>__GetEnumerator__
+                );
+      method_00 = (MethodInfo *)0x0;
+      uStack_1 = 1;
+      while( true ) {
         while( true ) {
-          item = 
-          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
+          item = (MVWorldObjectClient *)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
           ;
           bVar5 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                              *)&stack0xffffffc4,
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                              *)&stack0xffffffc0,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__MoveNext__
                             );
-          if (bVar5 == 0) break;
+          pMVar6 = 
+          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+          ;
+          if (bVar5 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)&stack0xffffffc0,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
+                       ,method_00);
+            *unaff_FS_OFFSET = uStack_3;
+            return pLVar4;
+          }
+          if (pLVar4 == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
+          piVar7 = &(pLVar4->fields)._version;
+          *piVar7 = *piVar7 + 1;
+          pMVar8 = (pLVar4->fields)._items;
+          uVar9 = (pLVar4->fields)._size;
+          if (pMVar8 == (MVWorldObjectClient__Array *)0x0) goto code_?;
+          if (uVar9 < pMVar8->max_length) break;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
+          List_1_System_Object__AddWithResize
                     ((List_1_System_Object_ *)pLVar4,(Object *)item,
-                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                    );
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  ((Object *)&stack0xffffffc4,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVWorldObjectClient>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = uStack_3;
-        return pLVar4;
+        (pLVar4->fields)._size = uVar9 + 1;
+        if (pMVar8->max_length <= uVar9) break;
+        pMVar8->vector[uVar9] = item;
+        func_?();
       }
+      func_?();
     }
   }
+code_?:
   func_?();
   func_?();
-  pcVar6 = (code *)swi(3);
-  pLVar4 = (List_1_MVWorldObjectClient_ *)(*pcVar6)();
+  pcVar10 = (code *)swi(3);
+  pLVar4 = (List_1_MVWorldObjectClient_ *)(*pcVar10)();
   return pLVar4;
 }
 

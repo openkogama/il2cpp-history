@@ -35,14 +35,14 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_D
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__AvatarAccessoryEquipPopup____c___DontEquip_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__10_0 = callbackFunction;
-    func_?();
+    func_?(&TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__10_0,
+                    callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -54,13 +54,14 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_D
             );
   pUVar1 = (this->fields).resultCallback;
   if (pUVar1 != (UnityAction *)0x0) {
+    puStack2 = (pUVar1->fields)._._.method;
+    pvStack3 = (pUVar1->fields)._._.method_code;
     (*(pUVar1->fields)._._.invoke_impl)();
     return;
   }
-code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -101,62 +102,56 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_E
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAttachToBody>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__AvatarAccessoryEquipPopup___Equip_b__9_0_UnityEngine__EventSystems__IAttachToBody__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAttachToBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAttachToBody>_
-              );
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pGVar2 = pGVar1;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__AvatarAccessoryEquipPopup___Equip_b__9_0_UnityEngine__EventSystems__IAttachToBody__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAttachToBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAttachToBody>_
+            );
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__AvatarAccessoryEquipPopup____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  callbackFunction_00 = TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__9_1;
+  if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__AvatarAccessoryEquipPopup____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    callbackFunction_00 = TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__9_1;
-    if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      pGVar1 = pGVar2;
-      if ((TypeInfo__AvatarAccessoryEquipPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pGVar1 = pGVar2;
-      }
-      object = TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9;
-      callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-      goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,
-                 MethodInfo__AvatarAccessoryEquipPopup____c___Equip_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__9_1 = callbackFunction_00;
-      func_?();
-    }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    pUVar3 = (this->fields).resultCallback;
-    if (pUVar3 != (UnityAction *)0x0) {
-      (*(pUVar3->fields)._._.invoke_impl)();
-      return;
-    }
+    object = TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9;
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,
+               MethodInfo__AvatarAccessoryEquipPopup____c___Equip_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__AvatarAccessoryEquipPopup____c->static_fields->__9__9_1 = callbackFunction_00;
+    func_?();
   }
-code_?:
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar1,(BaseEventData *)0x0,
+             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
+  pUVar2 = (this->fields).resultCallback;
+  if (pUVar2 != (UnityAction *)0x0) {
+    puStack3 = (pUVar2->fields)._._.method;
+    pvStack4 = (pUVar2->fields)._._.method_code;
+    (*(pUVar2->fields)._._.invoke_impl)();
+    return;
+  }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -187,27 +182,25 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_I
                   (pGVar1,0,(MethodInfo *)0x0);
         pSVar2 = (this->fields).preview;
         this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-        if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__AvatarAccessoryEquipPopup__OnPreviewImageDownLoaded__,
-                     (MethodInfo *)0x0);
-          if (pSVar2 != (StreamedSpriteToImageManual *)0x0) {
-            StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
-                      (pSVar2,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
-            (this->fields).resultCallback = resultCallback;
-            func_?(&(this->fields).resultCallback,resultCallback);
-            this_00 = (this->fields).itemBackground;
-            if (this_00 != (AccessoryItemBackground *)0x0) {
-              AccessoryItemBackground::AccessoryItemBackground_Initialize
-                        (this_00,accessoryData,(MethodInfo *)0x0);
-              (this->fields).accessoryDataClient = accessoryData;
-              func_?(&(this->fields).accessoryDataClient,accessoryData);
-              (this->fields).accessoryOffset = accessoryOffset;
-              (this->fields).accessoryScale = accessoryScale;
-              return;
-            }
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_01,(Object *)this,
+                   MethodInfo__AvatarAccessoryEquipPopup__OnPreviewImageDownLoaded__,
+                   (MethodInfo *)0x0);
+        if (pSVar2 != (StreamedSpriteToImageManual *)0x0) {
+          StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
+                    (pSVar2,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
+          (this->fields).resultCallback = resultCallback;
+          func_?(&(this->fields).resultCallback,resultCallback);
+          this_00 = (this->fields).itemBackground;
+          if (this_00 != (AccessoryItemBackground *)0x0) {
+            AccessoryItemBackground::AccessoryItemBackground_Initialize
+                      (this_00,accessoryData,(MethodInfo *)0x0);
+            (this->fields).accessoryDataClient = accessoryData;
+            func_?(&(this->fields).accessoryDataClient,accessoryData);
+            (this->fields).accessoryOffset = accessoryOffset;
+            (this->fields).accessoryScale = accessoryScale;
+            return;
           }
         }
       }
@@ -262,37 +255,23 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup__
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAttachToBody);
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IAttachToBody;
+    func_?();
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).accessoryDataClient;
-  if (pAVar1 != (AccessoryDataClient *)0x0) {
-    fVar2 = (this->fields).accessoryOffset;
-    fVar3 = (this->fields).accessoryScale;
-    iVar4 = (pAVar1->fields)._.sAID;
-    if (x != (IAttachToBody *)0x0) {
-      uVar5 = 0;
-      uVar6 = (x->klass->_1).interface_offsets_count;
-      if (uVar6 != 0) {
-        do {
-          if (x->klass->interfaceOffsets[uVar5].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAttachToBody) {
-            pIVar7 = &x->klass->vtable + x->klass->interfaceOffsets[uVar5].offset;
-            goto code_?;
-          }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar6);
-      }
-      pIVar7 = (IAttachToBody__VTable *)
-               func_?(x,TypeInfo__UnityEngine__EventSystems__IAttachToBody,0);
-code_?:
-      (*(pIVar7->AttachToBody).methodPtr)(x,iVar4,fVar2,fVar3,(pIVar7->AttachToBody).method);
-      return;
-    }
+  pAVar2 = (this->fields).accessoryDataClient;
+  if ((pAVar2 != (AccessoryDataClient *)0x0) && (x != (IAttachToBody *)0x0)) {
+    ppIStack_1 = (IAttachToBody__Class **)(this->fields).accessoryScale;
+    puStack_3 = (undefined *)(this->fields).accessoryOffset;
+    iStack_4 = (pAVar2->fields)._.sAID;
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IAttachToBody,x);
+    return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  ppIStack_1 = (IAttachToBody__Class **)&stack0xfffffffc;
+  uVar5 = func_?(&iStack_4);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

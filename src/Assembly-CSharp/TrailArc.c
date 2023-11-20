@@ -93,92 +93,87 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_Start(TrailArc *this,MethodInfo *me
         (this->fields).tRatio = _UNK_? / (float)(this->fields).segmentsPerPoint;
         (this->fields).pointSqrDistance = fVar2 * fVar2;
         pGVar3 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                  (pGVar3,StringLiteral_Trail,(MethodInfo *)0x0);
+        (this->fields).trail = pGVar3;
+        func_?(&(this->fields).trail,pGVar3);
+        pGVar3 = (this->fields).trail;
         if (pGVar3 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                    (pGVar3,StringLiteral_Trail,(MethodInfo *)0x0);
-          (this->fields).trail = pGVar3;
-          func_?(&(this->fields).trail,pGVar3);
-          pGVar3 = (this->fields).trail;
-          if (pGVar3 != (GameObject *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar3,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Vector3);
-              cRam_? = '\x01';
-            }
-            if (pTVar4 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                        (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                         (MethodInfo *)0x0);
-              pGVar3 = (this->fields).trail;
-              if (pGVar3 != (GameObject *)0x0) {
-                pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                if (pTVar4 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                            (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->
-                                    identityQuaternion,(MethodInfo *)0x0);
-                  pGVar3 = (this->fields).trail;
-                  if (pGVar3 != (GameObject *)0x0) {
-                    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                    if (cRam_? == '\0') {
-                      func_?();
-                      cRam_? = '\x01';
-                    }
-                    if (pTVar4 != (Transform *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                                (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
-                                 (MethodInfo *)0x0);
+          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar3,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__UnityEngine__Vector3);
+            cRam_? = '\x01';
+          }
+          if (pTVar4 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                      (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                       (MethodInfo *)0x0);
+            pGVar3 = (this->fields).trail;
+            if (pGVar3 != (GameObject *)0x0) {
+              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (pGVar3,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              if (pTVar4 != (Transform *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                          (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->
+                                  identityQuaternion,(MethodInfo *)0x0);
+                pGVar3 = (this->fields).trail;
+                if (pGVar3 != (GameObject *)0x0) {
+                  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                           GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
+                  if (cRam_? == '\0') {
+                    func_?();
+                    cRam_? = '\x01';
+                  }
+                  if (pTVar4 != (Transform *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                              (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
+                               (MethodInfo *)0x0);
+                    pGVar3 = (this->fields).trail;
+                    if (pGVar3 != (GameObject *)0x0) {
+                      this_00 = (MeshFilter *)
+                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                GameObject_AddComponent_1
+                                          (pGVar3,
+                                           UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
+                                          );
                       pGVar3 = (this->fields).trail;
                       if (pGVar3 != (GameObject *)0x0) {
-                        this_00 = (MeshFilter *)
-                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_AddComponent_1
-                                            (pGVar3,
-                                             UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
-                                            );
-                        pGVar3 = (this->fields).trail;
-                        if (pGVar3 != (GameObject *)0x0) {
-                          pRVar5 = (Renderer *)
-                                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                   GameObject_AddComponent_1
-                                             (pGVar3,
-                                              UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
-                                             );
-                          (this->fields).mRenderer = pRVar5;
-                          func_?();
-                          if (this_00 != (MeshFilter *)0x0) {
-                            pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                                     MeshFilter_get_mesh(this_00,(MethodInfo *)0x0);
-                            (this->fields).mesh = pMVar6;
-                            func_?(&(this->fields).mesh,pMVar6);
-                            pMVar7 = (this->fields).material;
-                            this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-                            if (this_01 != (Material *)0x0) {
-                              UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-                                        (this_01,pMVar7,(MethodInfo *)0x0);
-                              (this->fields).trailMaterial = this_01;
-                              func_?(&(this->fields).trailMaterial,this_01);
-                              pMVar7 = (this->fields).trailMaterial;
-                              if (pMVar7 != (Material *)0x0) {
-                                pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::
-                                         Material_GetVector((Vector4 *)&stack0xffffffec,pMVar7,
-                                                            StringLiteral__TintColor,
-                                                            (MethodInfo *)0x0);
-                                (this->fields).fadeOutRatio = pVVar8->w;
-                                pRVar5 = (this->fields).mRenderer;
-                                if (pRVar5 != (Renderer *)0x0) {
-                                  UnityEngine.CoreModule.dll::UnityEngine::Renderer::
-                                  Renderer_set_sharedMaterial
-                                            (pRVar5,(this->fields).trailMaterial,(MethodInfo *)0x0);
-                                  return;
-                                }
-                              }
+                        pRVar5 = (Renderer *)
+                                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                 GameObject_AddComponent_1
+                                           (pGVar3,
+                                            UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                                           );
+                        (this->fields).mRenderer = pRVar5;
+                        func_?();
+                        if (this_00 != (MeshFilter *)0x0) {
+                          pMVar6 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                                   MeshFilter_get_mesh(this_00,(MethodInfo *)0x0);
+                          (this->fields).mesh = pMVar6;
+                          func_?(&(this->fields).mesh,pMVar6);
+                          pMVar7 = (this->fields).material;
+                          this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
+                          UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+                                    (this_01,pMVar7,(MethodInfo *)0x0);
+                          (this->fields).trailMaterial = this_01;
+                          func_?(&(this->fields).trailMaterial,this_01);
+                          pMVar7 = (this->fields).trailMaterial;
+                          if (pMVar7 != (Material *)0x0) {
+                            pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Material::
+                                     Material_GetVector((Vector4 *)&stack0xffffffec,pMVar7,
+                                                        StringLiteral__TintColor,(MethodInfo *)0x0);
+                            (this->fields).fadeOutRatio = pVVar8->w;
+                            pRVar5 = (this->fields).mRenderer;
+                            if (pRVar5 != (Renderer *)0x0) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Renderer::
+                              Renderer_set_sharedMaterial
+                                        (pRVar5,(this->fields).trailMaterial,(MethodInfo *)0x0);
+                              return;
                             }
                           }
                         }
@@ -1210,102 +1205,73 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_printAllPoints(TrailArc *this,Metho
     func_?(&StringLiteral_u0009Pos__);
     cRam_? = '\x01';
   }
-  uStack_1._0_4_ = 0.0;
-  uStack_1._4_4_ = 0.0;
+  uStack_1 = 0;
+  pSStack_2 = (String__Array__Class *)0x0;
   if ((this->fields).pointCnt != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Single::Single_ToString
+    pSVar3 = mscorlib.dll::System::Single::Single_ToString
                        ((Single *)&stack0xfffffff4,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_Points_at_time_,pSVar2,StringLiteral__u000A,(MethodInfo *)0x0)
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_Points_at_time_,pSVar3,StringLiteral__u000A,(MethodInfo *)0x0)
     ;
     if (0 < (this->fields).pointCnt) {
       do {
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = TypeInfo__System__String;
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         values = (String__Array *)func_?();
         if (values == (String__Array *)0x0) {
 code_?:
           func_?();
 code_?:
           func_?();
-          uStack_1._4_4_ = (float)&UNK_?;
-          func_?();
-code_?:
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        if (pSVar2 != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
         if (values->max_length == 0) goto code_?;
-        values->vector[0] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)values->vector;
+        values->vector[0] = pSVar3;
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_Index__ != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 2) goto code_?;
         values->vector[1] = StringLiteral_Index__;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 1);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
                            ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-        if (pSVar2 != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 3) goto code_?;
-        values->vector[2] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        values->vector[2] = pSVar3;
+        pSStack_2 = (String__Array__Class *)(values->vector + 2);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_u0009Pos__ != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 4) goto code_?;
         values->vector[3] = StringLiteral_u0009Pos__;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 3);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
         pVVar5 = (this->fields).points;
         if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
-        if ((String *)pVVar5->max_length <= (uint)unaff_ESI.m_value) goto code_?;
-        uVar6 = pVVar5->vector[unaff_ESI.m_value].x;
-        uStack_1._4_4_ = (float)&UNK_?;
-        uStack_1._0_4_ = (float)uVar6;
-        pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ToString
-                           ((Vector3 *)&uStack_1,(MethodInfo *)0x0);
-        if ((pSVar2 != (String *)0x0) &&
-           (unaff_ESI.m_value = (int32_t)pSVar2, iVar4 = func_?(), iVar4 == 0))
-        goto code_?;
+        if (pVVar5->max_length <= (uint)unaff_ESI.m_value) goto code_?;
+        pSStack_2 = (String__Array__Class *)0x0;
+        uStack_1 = ZEXT48(&uStack_1);
+        pSVar3 = (String *)func_?();
         if (values->max_length < 5) goto code_?;
-        values->vector[4] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        values->vector[4] = pSVar3;
+        pSStack_2 = (String__Array__Class *)(values->vector + 4);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_u000A != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 6) goto code_?;
         values->vector[5] = StringLiteral_u000A;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 5);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         unaff_ESI.m_value = unaff_ESI.m_value + 1;
       } while (unaff_ESI.m_value < (this->fields).pointCnt);
     }
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_print
-              ((Object *)pSVar2,(MethodInfo *)0x0);
+              ((Object *)pSVar3,(MethodInfo *)0x0);
   }
   return;
 }
@@ -1325,102 +1291,73 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_printPoints(TrailArc *this,MethodIn
     func_?(&StringLiteral_u0009Pos__);
     cRam_? = '\x01';
   }
-  uStack_1._0_4_ = 0.0;
-  uStack_1._4_4_ = 0.0;
+  uStack_1 = 0;
+  pSStack_2 = (String__Array__Class *)0x0;
   if ((this->fields).savedCnt != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::Single::Single_ToString
+    pSVar3 = mscorlib.dll::System::Single::Single_ToString
                        ((Single *)&stack0xfffffff4,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_Saved_Points_at_time_,pSVar2,StringLiteral__u000A,
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_Saved_Points_at_time_,pSVar3,StringLiteral__u000A,
                         (MethodInfo *)0x0);
     if (0 < (this->fields).savedCnt) {
       do {
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = TypeInfo__System__String;
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         values = (String__Array *)func_?();
         if (values == (String__Array *)0x0) {
 code_?:
           func_?();
 code_?:
           func_?();
-          uStack_1._4_4_ = (float)&UNK_?;
-          func_?();
-code_?:
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        if (pSVar2 != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 != 0) goto code_?;
-          goto code_?;
-        }
-code_?:
         if (values->max_length == 0) goto code_?;
-        values->vector[0] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)values->vector;
+        values->vector[0] = pSVar3;
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_Index__ != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 2) goto code_?;
         values->vector[1] = StringLiteral_Index__;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 1);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
+        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
                            ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-        if (pSVar2 != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 3) goto code_?;
-        values->vector[2] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        values->vector[2] = pSVar3;
+        pSStack_2 = (String__Array__Class *)(values->vector + 2);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_u0009Pos__ != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 4) goto code_?;
         values->vector[3] = StringLiteral_u0009Pos__;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 3);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
         pVVar5 = (this->fields).saved;
         if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
-        if ((String *)pVVar5->max_length <= (uint)unaff_ESI.m_value) goto code_?;
-        uVar6 = pVVar5->vector[unaff_ESI.m_value].x;
-        uStack_1._4_4_ = (float)&UNK_?;
-        uStack_1._0_4_ = (float)uVar6;
-        pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_ToString
-                           ((Vector3 *)&uStack_1,(MethodInfo *)0x0);
-        if ((pSVar2 != (String *)0x0) &&
-           (unaff_ESI.m_value = (int32_t)pSVar2, iVar4 = func_?(), iVar4 == 0))
-        goto code_?;
+        if (pVVar5->max_length <= (uint)unaff_ESI.m_value) goto code_?;
+        pSStack_2 = (String__Array__Class *)0x0;
+        uStack_1 = ZEXT48(&uStack_1);
+        pSVar3 = (String *)func_?();
         if (values->max_length < 5) goto code_?;
-        values->vector[4] = pSVar2;
-        uStack_1._4_4_ = (float)&UNK_?;
+        values->vector[4] = pSVar3;
+        pSStack_2 = (String__Array__Class *)(values->vector + 4);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        if (StringLiteral_u000A != (String *)0x0) {
-          uStack_1._4_4_ = (float)&UNK_?;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
         if (values->max_length < 6) goto code_?;
         values->vector[5] = StringLiteral_u000A;
-        uStack_1._4_4_ = (float)&UNK_?;
+        pSStack_2 = (String__Array__Class *)(values->vector + 5);
+        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         func_?();
-        pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         unaff_ESI.m_value = unaff_ESI.m_value + 1;
       } while (unaff_ESI.m_value < (this->fields).savedCnt);
     }
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_print
-              ((Object *)pSVar2,(MethodInfo *)0x0);
+              ((Object *)pSVar3,(MethodInfo *)0x0);
   }
   return;
 }

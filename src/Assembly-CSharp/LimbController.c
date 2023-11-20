@@ -10,8 +10,8 @@ Assembly-CSharp.dll::LimbController::LimbController_AddAndClampRotations
   fVar1 = (rotation1.w * rotation2.x + rotation2.w * rotation1.x + rotation2.z * rotation1.y) -
           rotation1.z * rotation2.y;
   fVar2 = (rotation1.w * rotation2.y + rotation2.w * rotation1.y + rotation1.z * rotation2.x) -
-          rotation2.z * rotation1.x;
-  fVar3 = (rotation2.w * rotation1.z + rotation1.w * rotation2.z + rotation2.y * rotation1.x) -
+           rotation2.z * rotation1.x;
+  fVar3 = (rotation1.w * rotation2.z + rotation2.w * rotation1.z + rotation2.y * rotation1.x) -
           rotation1.y * rotation2.x;
   rotation1.w = rotation2.w * rotation1.w;
   rotation2.w = ((rotation1.w - rotation2.x * rotation1.x) - rotation2.y * rotation1.y) -
@@ -20,38 +20,57 @@ Assembly-CSharp.dll::LimbController::LimbController_AddAndClampRotations
   __return_storage_ptr__->y = fVar2;
   __return_storage_ptr__->z = fVar3;
   __return_storage_ptr__->w = rotation2.w;
+  rotation.y = fVar2;
+  rotation.x = fVar1;
+  rotation.z = fVar3;
+  rotation.w = rotation2.w;
   rotation2.x = fVar1;
   rotation2.y = fVar2;
   rotation2.z = fVar3;
-  puVar4 = (undefined8 *)func_?(&rotation1.y,__return_storage_ptr__,0);
-  rotation2.y = (float)*puVar4;
-  rotation2.z = (float)((ulonglong)*puVar4 >> 0x20);
-  pfVar5 = &(this->fields).maxPitch;
-  fVar3 = rotation2.y;
-  if ((*pfVar5 <= rotation2.y && rotation2.y != *pfVar5) && (rotation2.y <= _UNK_?)) {
+  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
+                     ((Vector3 *)&rotation1.y,rotation,(MethodInfo *)0x0);
+  uVar5 = pVVar4->x;
+  uVar6 = pVVar4->y;
+  rotation2.w = pVVar4->z * _UNK_?;
+  euler_00.y = (float)uVar6 * _UNK_?;
+  euler_00.x = (float)uVar5 * _UNK_?;
+  euler_00.z = rotation2.w;
+  rotation2.y = (float)uVar5;
+  rotation2.z = (float)uVar6;
+  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
+                     ((Vector3 *)&stack0xffffffec,euler_00,(MethodInfo *)0x0);
+  uVar7 = pVVar4->x;
+  uVar8 = pVVar4->y;
+  pfVar9 = &(this->fields).maxPitch;
+  fVar3 = (float)uVar7;
+  if ((*pfVar9 <= (float)uVar7 && (float)uVar7 != *pfVar9) && ((float)uVar7 <= _UNK_?)) {
     fVar3 = (this->fields).maxPitch;
   }
   if ((fVar3 < _UNK_? - (this->fields).maxPitch) && (_UNK_? < fVar3)) {
     fVar3 = _UNK_? - (this->fields).maxPitch;
   }
-  pfVar5 = &(this->fields).maxYaw;
-  fVar1 = rotation2.z;
-  if ((*pfVar5 <= rotation2.z && rotation2.z != *pfVar5) && (rotation2.z <= _UNK_?)) {
+  pfVar9 = &(this->fields).maxYaw;
+  fVar1 = (float)uVar8;
+  if ((*pfVar9 <= (float)uVar8 && (float)uVar8 != *pfVar9) && ((float)uVar8 <= _UNK_?)) {
     fVar1 = (this->fields).maxYaw;
   }
   if ((fVar1 < _UNK_? - (this->fields).maxYaw) && (_UNK_? < fVar1)) {
     fVar1 = _UNK_? - (this->fields).maxYaw;
   }
-  rotation2.w = *(float *)(puVar4 + 1) * _UNK_?;
+  rotation1.x = pVVar4->z * _UNK_?;
+  rotation1.y = 0.0;
   euler.y = fVar1 * _UNK_?;
   euler.x = fVar3 * _UNK_?;
-  euler.z = rotation2.w;
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+  euler.z = rotation1.x;
+  rotation2.y = (float)uVar7;
+  rotation2.z = (float)uVar8;
+  rotation2.w = rotation1.x;
+  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                      (&rotation2,euler,(MethodInfo *)0x0);
-  fVar3 = pQVar6->y;
-  fVar1 = pQVar6->z;
-  fVar2 = pQVar6->w;
-  __return_storage_ptr__->x = pQVar6->x;
+  fVar3 = pQVar10->y;
+  fVar1 = pQVar10->z;
+  fVar2 = pQVar10->w;
+  __return_storage_ptr__->x = pQVar10->x;
   __return_storage_ptr__->y = fVar3;
   __return_storage_ptr__->z = fVar1;
   __return_storage_ptr__->w = fVar2;
@@ -102,10 +121,10 @@ Assembly-CSharp.dll::LimbController::LimbController_CalculateBlendedRotation
       fVar5 = pQVar11->y;
       fVar12 = pQVar11->z;
       fVar13 = pQVar11->w;
-      gradientDirection.y = (float)uVar10;
-      gradientDirection.x = (float)uVar9;
-      gradientDirection.z = fVar3;
-      MVGroundState::MVGroundState_GetGradientAngle(gradientDirection,(MethodInfo *)0x0);
+      localDirection.y = (float)uVar10;
+      localDirection.x = (float)uVar9;
+      localDirection.z = fVar3;
+      MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -184,7 +203,7 @@ Assembly-CSharp.dll::LimbController::LimbController_GetPitchRotation
           MethodInfo *method)
 
 {
-  fVar1 = MVGroundState::MVGroundState_GetGradientAngle(localDirection,(MethodInfo *)0x0);
+  fVar1 = MathFunctions::MathFunctions_PitchFromLocalDirection(localDirection,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -259,83 +278,75 @@ void Assembly-CSharp.dll::LimbController::LimbController_Initialize
   func_?(&(this->fields).cancelAnimations,cancelAnimations);
   (this->fields).maxYaw = maxYaw;
   (this->fields).maxPitch = maxPitch;
-  if (body != (MVBody *)0x0) {
-    this_00 = MVBody::MVBody_get_BodyData(body,(MethodInfo *)0x0);
-    if (this_00 != (BodyData *)0x0) {
-      pTVar1 = BodyData::BodyData_GetPartBone(this_00,partIndex,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pTVar1,(MethodInfo *)0x0);
-        (this->fields).limbTransform = pTVar1;
-        func_?(&(this->fields).limbTransform);
-        pTVar1 = (this->fields).limbTransform;
-        if (pTVar1 != (Transform *)0x0) {
-          pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                             (&modelRotationOffset,pTVar1,(MethodInfo *)0x0);
-          fVar3 = pQVar2->y;
-          fVar4 = pQVar2->z;
-          fVar5 = pQVar2->w;
-          (this->fields).previousLimbRotation.x = pQVar2->x;
-          (this->fields).previousLimbRotation.y = fVar3;
-          (this->fields).previousLimbRotation.z = fVar4;
-          (this->fields).previousLimbRotation.w = fVar5;
-          (this->fields).limbsOriginalRotation.x = originalRotation.x;
-          (this->fields).limbsOriginalRotation.y = originalRotation.y;
-          (this->fields).limbsOriginalRotation.z = originalRotation.z;
-          (this->fields).limbsOriginalRotation.w = originalRotation.w;
-          if (limbManager != (AvatarLimbManager *)0x0) {
-            pAVar6 = (limbManager->fields).OnAvatarRotate;
-            this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-            if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-              NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_01,(Object *)this,MethodInfo__LimbController__FinishInterpolation__,
-                         (MethodInfo *)0x0);
-              pAVar6 = (Action *)
-                       mscorlib.dll::System::Delegate::Delegate_Combine
-                                 ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
-              uVar7._4_4_ = (float)TypeInfo__System__Action;
-              uVar7._0_4_ = (float)pAVar6;
-              if (pAVar6 == (Action *)0x0) {
-                (limbManager->fields).OnAvatarRotate = (Action *)0x0;
-                modelRotationOffset.z = (float)&limbManager->fields;
-                modelRotationOffset.w = 0.0;
-                modelRotationOffset.y = (float)&UNK_?;
-                func_?();
-                return;
-              }
-              pAVar8 = (Action *)0x0;
-              if (pAVar6->klass == TypeInfo__System__Action) {
-                pAVar8 = pAVar6;
-              }
-              if (pAVar8 != (Action *)0x0) {
-                (limbManager->fields).OnAvatarRotate = pAVar8;
-                uVar7._4_4_ = (float)TypeInfo__System__Action;
-                modelRotationOffset.w = (float)(Action *)0x0;
-                if (pAVar6->klass == TypeInfo__System__Action) {
-                  modelRotationOffset.w = (float)pAVar6;
-                }
-                if ((Action *)modelRotationOffset.w != (Action *)0x0) {
-                  modelRotationOffset.z = (float)&limbManager->fields;
-                  modelRotationOffset.y = (float)&UNK_?;
-                  func_?();
-                  return;
-                }
-              }
-              goto code_?;
-            }
-          }
-        }
-      }
+  if ((((body == (MVBody *)0x0) ||
+       (pMVar1 = (body->fields).bodyObject, pMVar1 == (MVBodyObject *)0x0)) ||
+      (pBVar2 = (pMVar1->fields).bodyData, pBVar2 == (BodyData *)0x0)) ||
+     (pTVar3 = (pBVar2->fields).PartBones, pTVar3 == (Transform__Array *)0x0))
+  goto code_?;
+  if (partIndex < pTVar3->max_length) {
+    if (pTVar3->vector[partIndex] == (Transform *)0x0) {
+code_?:
+      func_?();
+      goto code_?;
+    }
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pTVar3->vector[partIndex],(MethodInfo *)0x0);
+    (this->fields).limbTransform = pTVar4;
+    func_?(&(this->fields).limbTransform,pTVar4);
+    pTVar4 = (this->fields).limbTransform;
+    if (pTVar4 == (Transform *)0x0) goto code_?;
+    pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                       (&modelRotationOffset,pTVar4,(MethodInfo *)0x0);
+    fVar6 = pQVar5->y;
+    fVar7 = pQVar5->z;
+    fVar8 = pQVar5->w;
+    (this->fields).previousLimbRotation.x = pQVar5->x;
+    (this->fields).previousLimbRotation.y = fVar6;
+    (this->fields).previousLimbRotation.z = fVar7;
+    (this->fields).previousLimbRotation.w = fVar8;
+    (this->fields).limbsOriginalRotation.x = originalRotation.x;
+    (this->fields).limbsOriginalRotation.y = originalRotation.y;
+    (this->fields).limbsOriginalRotation.z = originalRotation.z;
+    (this->fields).limbsOriginalRotation.w = originalRotation.w;
+    if (limbManager == (AvatarLimbManager *)0x0) goto code_?;
+    pAVar9 = (limbManager->fields).OnAvatarRotate;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__LimbController__FinishInterpolation__,
+               (MethodInfo *)0x0);
+    pAVar9 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar9,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar9 == (Action *)0x0) {
+      (limbManager->fields).OnAvatarRotate = (Action *)0x0;
+      func_?();
+      return;
+    }
+    pAVar10 = (Action *)0x0;
+    if (pAVar9->klass == TypeInfo__System__Action) {
+      pAVar10 = pAVar9;
+    }
+    if (pAVar10 == (Action *)0x0) goto code_?;
+    (limbManager->fields).OnAvatarRotate = pAVar10;
+    pAVar10 = (Action *)0x0;
+    if (pAVar9->klass == TypeInfo__System__Action) {
+      pAVar10 = pAVar9;
+    }
+    if (pAVar10 != (Action *)0x0) {
+      func_?();
+      return;
     }
   }
-  uVar7 = func_?();
+  else {
 code_?:
-  modelRotationOffset.y = (float)&UNK_?;
-  modelRotationOffset._8_8_ = uVar7;
+    func_?();
+  }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+code_?:
+  func_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -556,9 +567,11 @@ code_?:
               (this->fields).blendAnimations;
     if ((pLVar1->fields)._size <= index) {
       if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        func_?(this_00,animation,
-                        MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                       );
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)animation,
+                   MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                  );
         return;
       }
       goto code_?;
@@ -905,38 +918,6 @@ void Assembly-CSharp.dll::LimbController::LimbController__ctor
 
 {
   (this->fields).interpolationSpeed = 5.0;
-  return;
-}
-
-
-/* Single get_InterpolationSpeed() */
-
-float Assembly-CSharp.dll::LimbController::LimbController_get_InterpolationSpeed
-                (LimbController *this,MethodInfo *method)
-
-{
-  return (this->fields).interpolationSpeed;
-}
-
-
-/* Void set_InterpolationSpeed(Single) */
-
-void Assembly-CSharp.dll::LimbController::LimbController_set_InterpolationSpeed
-               (LimbController *this,float value,MethodInfo *method)
-
-{
-  (this->fields).interpolationSpeed = value;
-  return;
-}
-
-
-/* Void set_IsEventControllingLimb(Boolean) */
-
-void Assembly-CSharp.dll::LimbController::LimbController_set_IsEventControllingLimb
-               (LimbController *this,bool value,MethodInfo *method)
-
-{
-  (this->fields).isEventControllingLimb = value;
   return;
 }
 

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                (HackingToolDetector_HackingToolReport *this,ApplicationDesc *app,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 0;
@@ -23,7 +23,7 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 1;
@@ -42,7 +42,7 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 2;
@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,String *exactFind,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).app = app;
   (this->fields).kind = 3;

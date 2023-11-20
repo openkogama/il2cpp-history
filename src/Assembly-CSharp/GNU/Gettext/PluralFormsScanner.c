@@ -368,22 +368,17 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsScanner::PluralFormsScanner__
     func_?(&TypeInfo__GNU__Gettext__PluralFormsToken);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).str = str;
   func_?(&this->fields,str);
-  value = (PluralFormsToken *)func_?(TypeInfo__GNU__Gettext__PluralFormsToken);
-  if (value != (PluralFormsToken *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EBP);
-    (this->fields).token = value;
-    func_?(&(this->fields).token,value);
-    PluralFormsScanner_NextToken(this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__GNU__Gettext__PluralFormsToken;
+  value = (PluralFormsToken *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).token = value;
+  func_?(&(this->fields).token,value);
+  PluralFormsScanner_NextToken(this,(MethodInfo *)0x0);
   return;
 }
 

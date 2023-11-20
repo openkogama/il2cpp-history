@@ -24,8 +24,8 @@ Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSystem_In
                         OneShotPooledParticleSystem_MethodInfo__EnumPoolManager__Instantiate<OneShotPooledParticleSystem>_PoolEnums_
                        );
     if (pOVar2 != (Object *)0x0) {
-      pOVar2[2].klass = (Object__Class *)type;
-      return (ParticleSystem *)pOVar2[1].monitor;
+      pOVar2[2].monitor = (MonitorData *)type;
+      return (ParticleSystem *)pOVar2[2].klass;
     }
   }
   func_?();
@@ -68,7 +68,7 @@ Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSystem_In
                          OneShotPooledParticleSystem_MethodInfo__EnumPoolManager__Instantiate<OneShotPooledParticleSystem>_PoolEnums_
                         );
     if (this_00 != (Component *)0x0) {
-      this_00[1].monitor = (MonitorData *)type;
+      this_00[1].fields._.m_CachedPtr = (void *)type;
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           (this_00,(MethodInfo *)0x0);
       if (this_01 != (Transform *)0x0) {
@@ -78,12 +78,12 @@ Assembly-CSharp.dll::OneShotPooledParticleSystem::OneShotPooledParticleSystem_In
                   (this_01,rotation,(MethodInfo *)0x0);
         if (particleColor.hasValue == 0) {
 code_?:
-          return (ParticleSystem *)this_00[1].klass;
+          return (ParticleSystem *)this_00[1].monitor;
         }
-        if (this_00[1].klass != (Component__Class *)0x0) {
+        if ((Component *)this_00[1].monitor != (Component *)0x0) {
           this_02 = (Renderer *)
                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                              ((Component *)this_00[1].klass,
+                              ((Component *)this_00[1].monitor,
                                UnityEngine__ParticleSystemRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystemRenderer>__
                               );
           if (this_02 != (Renderer *)0x0) {

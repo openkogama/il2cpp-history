@@ -73,36 +73,40 @@ Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_GetClosestFlags
                              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                             );
         } while (((RVar1 == (RegexCharClass_SingleRange)0x0) ||
-                 (*(byte *)(*(int *)RVar1 + 0xb4) < (TypeInfo__MVFlag->_1).typeHierarchyDepth)) ||
+                 (*(byte *)(*(int *)RVar1 + 0xb8) < (TypeInfo__MVFlag->_1).naturalAligment)) ||
                 (*(MVFlag__Class **)
                   (*(int *)(*(int *)RVar1 + 100) + -4 +
-                  (uint)(TypeInfo__MVFlag->_1).typeHierarchyDepth * 4) != TypeInfo__MVFlag));
-        if (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)((int)RVar1 + 0x58) ==
-            (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) goto code_?;
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                          (*(Dictionary_2_System_Object_GUILoginHandler_PlanetData_ **)
+                  (uint)(TypeInfo__MVFlag->_1).naturalAligment * 4) != TypeInfo__MVFlag));
+        if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar1 + 0x58) ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+        goto code_?;
+        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                          (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
                             ((int)RVar1 + 0x58),(Object *)StringLiteral_team,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
       } while (bVar2 == 0);
-      this_00 = *(Dictionary_2_System_Object_System_Object_ **)((int)RVar1 + 0x58);
-      if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_00,(Object *)StringLiteral_team,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
+      this_00 = *(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
+                 ((int)RVar1 + 0x58);
+      if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_00,(Object *)StringLiteral_team,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
       pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (((pMVar4 == (MVNetworkGame *)0x0) ||
           (this_01 = (pMVar4->fields).teamManager, this_01 == (MVTeamManager *)0x0)) ||
          (iVar5 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0),
-         pOVar3 == (Object *)0x0)) break;
-      if ((pOVar3->klass->_0).element_class != (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
-         ) goto code_?;
+         TVar3.m_Index == 0)) break;
+      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+          (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) goto code_?;
       puVar6 = (undefined4 *)func_?();
-      if (((Dictionary_2_System_Object_System_Object_ *)*puVar6 != this_00) || (iVar5 < 2)) {
+      if (((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*puVar6 != this_00) ||
+         (iVar5 < 2)) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__RemoveAt
                   ((List_1_System_Object_ *)this_03,index,
@@ -138,10 +142,11 @@ void Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_InitializeG
       MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
                 (this_00,GameStatCounterType__Enum_Flag,(pMVar2->fields)._._Team_k__BackingField,
                  (pMVar2->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
-      lobbyState_00 = (this->klass->vtable).UpdateValue.method;
-      (*(this->klass->vtable).UpdateValue.methodPtr)();
+      lobbyState_00 =
+           (RectTransform *)(this->klass->vtable).CanWinningConditionBeFullfilledForTeam.methodPtr;
+      (*(code *)(this->klass->vtable).UpdateValue.method)();
       WinningConditionBase::WinningConditionBase_InitializeGameUI
-                ((WinningConditionBase *)this,(RectTransform *)lobbyState_00,(MethodInfo *)0x0);
+                ((WinningConditionBase *)this,lobbyState_00,(MethodInfo *)0x0);
       return;
     }
   }
@@ -168,8 +173,9 @@ void Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_RoundEndRes
     cRam_? = '\x01';
   }
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,StringLiteral______,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,StringLiteral______,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     WinningConditionBase::WinningConditionBase_RoundEndReset
               ((WinningConditionBase *)this,(MethodInfo *)0x0);
     return;
@@ -267,9 +273,9 @@ void Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_UpdateValue
            WinningConditionControl::WinningConditionControl_MakeIntoScoreText
                      (score,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
       if (pTVar3 != (Text *)0x0) {
-        pMStack5 = (pTVar3->klass->vtable).set_text.method;
+        pIStack5 = (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
         pTStack6 = pTVar3;
-        (*(pTVar3->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar3->klass->vtable).set_text.method)();
         return;
       }
     }
@@ -303,7 +309,7 @@ bool Assembly-CSharp.dll::FlagWinningCondition::
   if (this_00 != (MVNetworkGame *)0x0) {
     pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (pMVar1 != (MVLocalPlayer *)0x0) {
-      bVar2 = (*(this->klass->vtable).CanWinningConditionBeFullfilledForTeam.methodPtr)
+      bVar2 = (*(code *)(this->klass->vtable).CanWinningConditionBeFullfilledForTeam.method)
                         (this,(pMVar1->fields)._._Team_k__BackingField);
       return bVar2;
     }

@@ -448,7 +448,7 @@ void Assembly-CSharp.dll::AvatarInputControllerAndroid::AvatarInputControllerAnd
   (this->fields).rotation.y = fVar3;
   (this->fields).rotation.z = fVar2;
   (this->fields).rotation.w = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);

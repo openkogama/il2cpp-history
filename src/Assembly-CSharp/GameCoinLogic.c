@@ -210,10 +210,10 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_DestroyRequirement
               ((Object_1 *)obj,(MethodInfo *)0x0);
   }
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                        (Object *)StringLiteral_gameCoinAmount,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -311,6 +311,7 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_OnDataUpdate
                MethodInfo *method)
 
 {
+  method = (MethodInfo *)0x0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
@@ -332,23 +333,27 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_OnDataUpdate
     func_?(&StringLiteral_gameCoinAmount);
     cRam_? = '\x01';
   }
+  this_01 = data;
   if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                      (Object *)StringLiteral_gameCoinAmount,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
   if (bVar1 != 0) {
     iVar2 = (this->fields).purchaseAmount;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)StringLiteral_gameCoinAmount,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar3 == (Object *)0x0) goto code_?;
-    if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                       (Object *)StringLiteral_gameCoinAmount,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) {
       func_?();
       goto code_?;
     }
@@ -401,40 +406,46 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_OnDataUpdate
         func_?();
         pGVar8 = (this->fields).displayGO;
         if (pGVar8 == (GameObject *)0x0) goto code_?;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (pGVar8,(MethodInfo *)0x0);
         pGVar8 = (this->fields).displayObjectRoot;
         if (pGVar8 == (GameObject *)0x0) goto code_?;
         value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (pGVar8,(MethodInfo *)0x0);
-        if (this_01 == (Transform *)0x0) goto code_?;
+        if (this_02 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (this_01,value,(MethodInfo *)0x0);
+                  (this_02,value,(MethodInfo *)0x0);
       }
       iVar2 = (this->fields).purchaseAmount;
     }
     if (iVar2 == 0) {
-      this_02 = (Dictionary_2_System_Object_System_Object_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                               );
-      if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_02,
+      this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_03,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      pOVar3 = (Object *)func_?();
+      data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      value_00 = (Object *)func_?(TypeInfo__System__Int32,&data);
+      if (this_03 ==
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_02,(Object *)StringLiteral_gameCoinAmount,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this_03,
+                 (Object *)StringLiteral_gameCoinAmount,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+      this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_04 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
       MVNetworkGame+OperationRequests::
       MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                (this_03,ownerID,this_02,(MethodInfo *)0x0);
+                (this_04,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_03,
+                 (MethodInfo *)0x0);
       pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -537,23 +548,27 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_SetAmount
     func_?(&StringLiteral_gameCoinAmount);
     cRam_? = '\x01';
   }
+  this_01 = data;
   if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-          Object,GUILoginHandler+PlanetData]::
-          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                    ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                      (Object *)StringLiteral_gameCoinAmount,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
   if (bVar1 != 0) {
     iVar2 = (this->fields).purchaseAmount;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)StringLiteral_gameCoinAmount,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar3 == (Object *)0x0) goto code_?;
-    if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                       (Object *)StringLiteral_gameCoinAmount,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) {
       func_?();
       goto code_?;
     }
@@ -606,40 +621,46 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_SetAmount
         func_?();
         pGVar8 = (this->fields).displayGO;
         if (pGVar8 == (GameObject *)0x0) goto code_?;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (pGVar8,(MethodInfo *)0x0);
         pGVar8 = (this->fields).displayObjectRoot;
         if (pGVar8 == (GameObject *)0x0) goto code_?;
         value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (pGVar8,(MethodInfo *)0x0);
-        if (this_01 == (Transform *)0x0) goto code_?;
+        if (this_02 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (this_01,value,(MethodInfo *)0x0);
+                  (this_02,value,(MethodInfo *)0x0);
       }
       iVar2 = (this->fields).purchaseAmount;
     }
     if (iVar2 == 0) {
-      this_02 = (Dictionary_2_System_Object_System_Object_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                               );
-      if (this_02 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_02,
+      this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)func_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (this_03,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      pOVar3 = (Object *)func_?();
+      data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      value_00 = (Object *)func_?(TypeInfo__System__Int32,&data);
+      if (this_03 ==
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_02,(Object *)StringLiteral_gameCoinAmount,pOVar3,
+                ((Dictionary_2_System_Object_System_Object_ *)this_03,
+                 (Object *)StringLiteral_gameCoinAmount,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+      this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_04 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
       MVNetworkGame+OperationRequests::
       MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                (this_03,ownerID,this_02,(MethodInfo *)0x0);
+                (this_04,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_03,
+                 (MethodInfo *)0x0);
       pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -724,7 +745,7 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor
   (this->fields).requirementType = 1;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   (this->fields).displayObjectRoot = root;
@@ -745,7 +766,7 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor_1
   (this->fields).requirementType = 1;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   uVar1 = (this->fields).displayObjectOffset.x;
   uVar2 = (this->fields).displayObjectOffset.y;
@@ -757,5 +778,30 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor_1
   (this->fields).displayObjectRoot = root;
   func_?(&(this->fields).displayObjectRoot,root);
   return;
+}
+
+
+/* GameObject get_GameObject() */
+
+GameObject *
+Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_get_GameObject
+          (GameCoinLogic *this,MethodInfo *method)
+
+{
+  pGStack_1 = (GameCoinDisplayObject *)&stack0xfffffffc;
+  pGVar2 = (this->fields).displayObject;
+  if (pGVar2 != (GameCoinDisplayObject *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    pGStack_1 = pGVar2;
+    pGVar3 = (GameObject *)(*pcRam_?)();
+    return pGVar3;
+  }
+  uVar4 = func_?(auStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  pGVar3 = (GameObject *)(*pcVar6)();
+  return pGVar3;
 }
 

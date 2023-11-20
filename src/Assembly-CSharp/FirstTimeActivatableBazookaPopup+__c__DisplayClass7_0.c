@@ -8,23 +8,39 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup+<>c__DisplayClass7_0:
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IPlayerInventory;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
     cRam_? = '\x01';
   }
-  pIVar2 = (this->fields).prioritizedItem;
-  if ((pIVar2 != (InventoryItem *)0x0) && (x != (IPlayerInventory *)0x0)) {
-    ppIStack_1 = (IPlayerInventory__Class **)(pIVar2->fields).slotPosition;
-    puStack_3 = (undefined *)(pIVar2->fields).itemCategoryID;
-    uStack_4 = 1;
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,x);
-    return;
+  pIVar1 = (this->fields).prioritizedItem;
+  if (pIVar1 != (InventoryItem *)0x0) {
+    iVar2 = (pIVar1->fields).itemCategoryID;
+    iVar3 = (((this->fields).prioritizedItem)->fields).slotPosition;
+    if (x != (IPlayerInventory *)0x0) {
+      pIVar4 = x->klass;
+      uVar5 = 0;
+      uVar6._0_1_ = (pIVar4->_1).rank;
+      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+      if (uVar6 != 0) {
+        do {
+          if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPlayerInventory) {
+            ppMVar7 = &(&(x->klass->vtable).ActivateAtCategoryWithSlot)
+                       [x->klass->interfaceOffsets[uVar5].offset].method;
+            goto code_?;
+          }
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
+      }
+      ppMVar7 = (MethodInfo **)
+                func_?(x,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,1);
+code_?:
+      (*(code *)*ppMVar7)(x,1,iVar2,iVar3,ppMVar7[1]);
+      return;
+    }
   }
-  ppIStack_1 = (IPlayerInventory__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&uStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

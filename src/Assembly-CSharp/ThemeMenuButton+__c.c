@@ -36,17 +36,12 @@ void Assembly-CSharp.dll::ThemeMenuButton+<>c::ThemeMenuButton_c__cctor(MethodIn
     func_?(&TypeInfo__ThemeMenuButton____c);
     cRam_? = '\x01';
   }
-  value = (ThemeMenuButton_c *)func_?(TypeInfo__ThemeMenuButton____c);
-  if (value != (ThemeMenuButton_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__ThemeMenuButton____c->static_fields->__9 = value;
-    func_?(TypeInfo__ThemeMenuButton____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__ThemeMenuButton____c;
+  value = (ThemeMenuButton_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__ThemeMenuButton____c->static_fields->__9 = value;
+  func_?(TypeInfo__ThemeMenuButton____c->static_fields,value);
   return;
 }
 

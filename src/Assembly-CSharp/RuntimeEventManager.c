@@ -7,63 +7,59 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ExecuteRuntim
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x5814);
+    func_?(0xbe28);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
     pEVar1 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
              ExplosionEvent_get_ExplosionValuesStruct
-                       ((ExplosionEvent_ExplosionValues *)&stack0xffffffd0,explosion,
+                       ((ExplosionEvent_ExplosionValues *)&stack0xffffffd4,explosion,
                         (MethodInfo *)0x0);
     radius = pEVar1->radius;
     centerDamage = pEVar1->centerDamage;
     damageFallOffType = pEVar1->damageFallOffType;
     cm = (this->fields).cubeModelPrototypeTerrain;
-    fineGrainedTerrainLocalPos = (explosion->fields)._.position;
     fineGrainedTerrainWorldObject = (this->fields).cubeModelFineGrainedTerrain;
+    fineGrainedTerrainLocalPos = (explosion->fields)._.position;
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 != (MVNetworkGame *)0x0) {
       object = (pMVar2->fields)._MaterialRepository_k__BackingField;
       this_00 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)func_?();
-      if (this_00 != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-        mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
-        Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
-                  (this_00,(Object *)object,
-                   MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_,
-                   (MethodInfo *)0x0);
-        bVar3 = RemoveCubes+RemoveCubesWithinRadius::
-                RemoveCubes_RemoveCubesWithinRadius_HandleRemoveCubes
-                          ((MVCubeModelBase *)cm,(float)radius,fineGrainedTerrainLocalPos,
-                           (float)centerDamage,damageFallOffType,
-                           (MVCubeModelBase *)fineGrainedTerrainWorldObject,this_00,
-                           (MethodInfo *)0x0);
-        if (bVar3 == 0) {
-          return;
+      mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
+      Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
+                (this_00,(Object *)object,
+                 MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_,
+                 (MethodInfo *)0x0);
+      bVar3 = RemoveCubes+RemoveCubesWithinRadius::
+              RemoveCubes_RemoveCubesWithinRadius_HandleRemoveCubes
+                        ((MVCubeModelBase *)cm,(float)radius,fineGrainedTerrainLocalPos,
+                         (float)centerDamage,damageFallOffType,
+                         (MVCubeModelBase *)fineGrainedTerrainWorldObject,this_00,(MethodInfo *)0x0)
+      ;
+      if ((bVar3 == 0) || ((this->fields).doEffects == 0)) {
+        return;
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar4 != (PrefabPool *)0x0) {
+        particlePrefab = (pPVar4->fields).particleCubeDust;
+        pVVar5 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+                 CubeMathFunctions_FineGrainedLocalPosToWorldPos
+                           ((Vector3 *)&stack0xffffffd4,(explosion->fields)._.position,
+                            (MethodInfo *)0x0);
+        radius_00 = _UNK_?;
+        if (_UNK_? <= (float)radius) {
+          radius_00 = (float)radius;
         }
-        if ((this->fields).doEffects != 0) {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__PrefabPool);
-            cRam_? = '\x01';
-          }
-          pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-          if (pPVar4 == (PrefabPool *)0x0) goto code_?;
-          particlePrefab = (pPVar4->fields).particleCubeDust;
-          pVVar5 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-                   CubeMathFunctions_FineGrainedLocalPosToWorldPos
-                             ((Vector3 *)&stack0xffffffd0,(explosion->fields)._.position,
-                              (MethodInfo *)0x0);
-          radius_00 = _UNK_?;
-          if (_UNK_? <= (float)radius) {
-            radius_00 = (float)radius;
-          }
-          SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
-                    (particlePrefab,*pVVar5,radius_00,(MethodInfo *)0x0);
-        }
+        SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
+                  (particlePrefab,*pVVar5,radius_00,(MethodInfo *)0x0);
         return;
       }
     }
   }
-code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
@@ -89,39 +85,38 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_HandleEvent
       iVar3 = (singleCubeFineGrainedEvent->fields)._.position.z;
       material = (singleCubeFineGrainedEvent->fields).material;
       this_00 = (CubeBase *)func_?(TypeInfo__MV__WorldObject__CubeBase);
-      if ((this_00 != (CubeBase *)0x0) &&
-         (MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor_2
-                    (this_00,material,(MethodInfo *)0x0),
-         pMVar2 != (MVCubeModelFineGrainedTerrain *)0x0)) {
-        (*(pMVar2->klass->vtable).AddCubeNetworkUpdate_1.methodPtr)
-                  (pMVar2,uVar1,iVar3,(short)this_00,
-                   (pMVar2->klass->vtable).AddCubeNetworkUpdate_1.method);
-        return 1;
+      MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor_2
+                (this_00,material,(MethodInfo *)0x0);
+      if (pMVar2 == (MVCubeModelFineGrainedTerrain *)0x0) goto code_?;
+      (*(code *)(pMVar2->klass->vtable).AddCubeNetworkUpdate_1.method)
+                (pMVar2,uVar1,iVar3,(short)this_00,
+                 (pMVar2->klass->vtable).DirtyChunksRegeneratedHandler.methodPtr);
+    }
+    else if (((singleCubeFineGrainedEvent->fields)._._RuntimeEventType_k__BackingField == 2) ||
+            ((singleCubeFineGrainedEvent->fields)._._RuntimeEventType_k__BackingField == 5)) {
+      bVar4 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_HandleRemoveOneCube
+                        ((singleCubeFineGrainedEvent->fields)._.position,
+                         (ICubeModel *)(this->fields).cubeModelPrototypeTerrain,
+                         (ICubeModel *)(this->fields).cubeModelFineGrainedTerrain,(MethodInfo *)0x0)
+      ;
+      if ((bVar4 != 0) && ((this->fields).doEffects != 0)) {
+        iVar5 = func_?();
+        if (iVar5 != 0) {
+          particlePrefab = *(ParticleSystem **)(iVar5 + 0x218);
+          pVVar6 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+                   CubeMathFunctions_FineGrainedLocalPosToWorldPos
+                             ((Vector3 *)&stack0xffffffec,
+                              (singleCubeFineGrainedEvent->fields)._.position,(MethodInfo *)0x0);
+          SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
+                    (particlePrefab,*pVVar6,1.0,(MethodInfo *)0x0);
+          return 1;
+        }
+        goto code_?;
       }
     }
-    else {
-      if (((((singleCubeFineGrainedEvent->fields)._._RuntimeEventType_k__BackingField != 2) &&
-           ((singleCubeFineGrainedEvent->fields)._._RuntimeEventType_k__BackingField != 5)) ||
-          (bVar4 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_HandleRemoveOneCube
-                             ((singleCubeFineGrainedEvent->fields)._.position,
-                              (ICubeModel *)(this->fields).cubeModelPrototypeTerrain,
-                              (ICubeModel *)(this->fields).cubeModelFineGrainedTerrain,
-                              (MethodInfo *)0x0), bVar4 == 0)) || ((this->fields).doEffects == 0)) {
-        return 1;
-      }
-      iVar5 = func_?();
-      if (iVar5 != 0) {
-        particlePrefab = *(ParticleSystem **)(iVar5 + 0x210);
-        pVVar6 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-                 CubeMathFunctions_FineGrainedLocalPosToWorldPos
-                           ((Vector3 *)&stack0xffffffec,
-                            (singleCubeFineGrainedEvent->fields)._.position,(MethodInfo *)0x0);
-        SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
-                  (particlePrefab,*pVVar6,1.0,(MethodInfo *)0x0);
-        return 1;
-      }
-    }
+    return 1;
   }
+code_?:
   func_?();
   pcVar7 = (code *)swi(3);
   bVar4 = (*pcVar7)();
@@ -137,63 +132,59 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_HandleEvent_1
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<unsigned_char,_MV::WorldObject::PhysicalProperties>);
-    func_?(0x5814);
+    func_?(0xbe28);
     cRam_? = '\x01';
   }
   if (explosion != (ExplosionEvent *)0x0) {
     pEVar1 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
              ExplosionEvent_get_ExplosionValuesStruct
-                       ((ExplosionEvent_ExplosionValues *)&stack0xffffffd0,explosion,
+                       ((ExplosionEvent_ExplosionValues *)&stack0xffffffd4,explosion,
                         (MethodInfo *)0x0);
     radius = pEVar1->radius;
     centerDamage = pEVar1->centerDamage;
     damageFallOffType = pEVar1->damageFallOffType;
     cm = (this->fields).cubeModelPrototypeTerrain;
-    fineGrainedTerrainLocalPos = (explosion->fields)._.position;
     fineGrainedTerrainWorldObject = (this->fields).cubeModelFineGrainedTerrain;
+    fineGrainedTerrainLocalPos = (explosion->fields)._.position;
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 != (MVNetworkGame *)0x0) {
       object = (pMVar2->fields)._MaterialRepository_k__BackingField;
       this_00 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)func_?();
-      if (this_00 != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-        mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
-        Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
-                  (this_00,(Object *)object,
-                   MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_,
-                   (MethodInfo *)0x0);
-        bVar3 = RemoveCubes+RemoveCubesWithinRadius::
-                RemoveCubes_RemoveCubesWithinRadius_HandleRemoveCubes
-                          ((MVCubeModelBase *)cm,(float)radius,fineGrainedTerrainLocalPos,
-                           (float)centerDamage,damageFallOffType,
-                           (MVCubeModelBase *)fineGrainedTerrainWorldObject,this_00,
-                           (MethodInfo *)0x0);
-        if (bVar3 == 0) {
-          return 0;
+      mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
+      Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
+                (this_00,(Object *)object,
+                 MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_,
+                 (MethodInfo *)0x0);
+      bVar3 = RemoveCubes+RemoveCubesWithinRadius::
+              RemoveCubes_RemoveCubesWithinRadius_HandleRemoveCubes
+                        ((MVCubeModelBase *)cm,(float)radius,fineGrainedTerrainLocalPos,
+                         (float)centerDamage,damageFallOffType,
+                         (MVCubeModelBase *)fineGrainedTerrainWorldObject,this_00,(MethodInfo *)0x0)
+      ;
+      if ((bVar3 == 0) || ((this->fields).doEffects == 0)) {
+        return bVar3;
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar4 != (PrefabPool *)0x0) {
+        particlePrefab = (pPVar4->fields).particleCubeDust;
+        pVVar5 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+                 CubeMathFunctions_FineGrainedLocalPosToWorldPos
+                           ((Vector3 *)&stack0xffffffd4,(explosion->fields)._.position,
+                            (MethodInfo *)0x0);
+        radius_00 = _UNK_?;
+        if (_UNK_? <= (float)radius) {
+          radius_00 = (float)radius;
         }
-        if ((this->fields).doEffects != 0) {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__PrefabPool);
-            cRam_? = '\x01';
-          }
-          pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-          if (pPVar4 == (PrefabPool *)0x0) goto code_?;
-          particlePrefab = (pPVar4->fields).particleCubeDust;
-          pVVar5 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-                   CubeMathFunctions_FineGrainedLocalPosToWorldPos
-                             ((Vector3 *)&stack0xffffffd0,(explosion->fields)._.position,
-                              (MethodInfo *)0x0);
-          radius_00 = _UNK_?;
-          if (_UNK_? <= (float)radius) {
-            radius_00 = (float)radius;
-          }
-          SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
-                    (particlePrefab,*pVVar5,radius_00,(MethodInfo *)0x0);
-        }
+        SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
+                  (particlePrefab,*pVVar5,radius_00,(MethodInfo *)0x0);
         return bVar3;
       }
     }
   }
-code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   bVar3 = (*pcVar6)();
@@ -244,10 +235,12 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ResetTerrain
 {
   pMVar1 = (this->fields).cubeModelFineGrainedTerrain;
   if (pMVar1 != (MVCubeModelFineGrainedTerrain *)0x0) {
-    (*(pMVar1->klass->vtable).Reset.methodPtr)(pMVar1,(pMVar1->klass->vtable).Reset.method);
+    (*(code *)(pMVar1->klass->vtable).Reset.method)
+              (pMVar1,(pMVar1->klass->vtable).OnObjectLinkChanged.methodPtr);
     pMVar2 = (this->fields).cubeModelPrototypeTerrain;
     if (pMVar2 != (MVCubeModelPrototypeTerrain *)0x0) {
-      (*(pMVar2->klass->vtable).Reset.methodPtr)(pMVar2,(pMVar2->klass->vtable).Reset.method);
+      (*(code *)(pMVar2->klass->vtable).Reset.method)
+                (pMVar2,(pMVar2->klass->vtable).OnObjectLinkChanged.methodPtr);
       pRVar3 = (this->fields).localAccumulatedCubeDamages;
       if (pRVar3 != (RuntimeEventManager_AccumulatedCubeDamages *)0x0) {
         if (cRam_? == '\0') {
@@ -256,14 +249,14 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_ResetTerrain
                          );
           cRam_? = '\x01';
         }
-        this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)(pRVar3->fields).accumulatedCubeDamages;
         if (this_00 !=
-            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions
-          ::Regex+CachedCodeEntryKey,System::Object]::
-          Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear
+            (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+          StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
                     (this_00,
                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Clear__
                     );
@@ -302,94 +295,92 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
     if (pMVar3 == (MVWorldObject *)0x0) {
       return 0;
     }
-    if ((pMVar3->klass->_1).typeHierarchyDepth < (TypeInfo__MVCubeModelBase->_1).typeHierarchyDepth)
-    {
+    if ((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment) {
       return 0;
     }
     if ((MVCubeModelBase__Class *)
-        (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).typeHierarchyDepth - 1] !=
+        (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelBase) {
       return 0;
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if ((pMVar2 != (MVWorldObjectClientManager *)0x0) &&
-       (this_01 = (MVCubeModelBase *)
+       (this_00 = (MVCubeModelBase *)
                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                             (pMVar2,voxelHit._36_4_,(MethodInfo *)0x0),
-       this_01 != (MVCubeModelBase *)0x0)) {
-      if (((this_01->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVCubeModelBase->_1).typeHierarchyDepth) ||
-         ((MVCubeModelBase__Class *)
-          (this_01->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).typeHierarchyDepth - 1]
-          != TypeInfo__MVCubeModelBase)) goto code_?;
-      pIVar4 = (Il2CppMethodPointer)&UNK_?;
+       this_00 != (MVCubeModelBase *)0x0)) {
+      if (((this_00->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment)
+         || ((MVCubeModelBase__Class *)
+             (this_00->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1]
+             != TypeInfo__MVCubeModelBase)) goto code_?;
+      uStack_4 = (undefined2)((uint)this_00 >> 0x10);
       iVar5 = voxelHit.cubePos.x;
-      pCVar6 = MVCubeModelBase::MVCubeModelBase_GetCube
-                         (this_01,voxelHit._20_6_,
+      iVar6 = voxelHit.cubePos.x;
+      pCVar7 = MVCubeModelBase::MVCubeModelBase_GetCube
+                         (this_00,voxelHit._20_6_,
                           (MethodInfo *)((uint)(ushort)voxelHit.cubePos.x << 0x10));
-      cubeBase = pCVar6;
+      cubeBase = pCVar7;
       if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      fVar7 = 0.0;
+      fVar8 = 0.0;
       this = (RuntimeEventManager *)0x0;
-      bVar8 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                        ((CubeBase *)pCVar6,(CubeBase *)0x0,(MethodInfo *)0x0);
-      if (bVar8 != 0) {
+      bVar9 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+                        ((CubeBase *)pCVar7,(CubeBase *)0x0,(MethodInfo *)0x0);
+      if (bVar9 != 0) {
         voxelHit.point.z = 0.0;
         voxelHit.point.y = voxelHit.normal.y;
         this = (RuntimeEventManager *)voxelHit.normal.y;
-        uVar9._4_4_ = (Il2CppType *)fVar1;
-        uVar9._0_4_ = (Il2CppClass *)&stack0xfffffff0;
+        uVar10 = CONCAT44(fVar1,&stack0xffffffe8);
+        iVar5 = 0x2795;
+        uStack_4 = 0x1055;
         worldPos_00.z = voxelHit.normal.x;
-        worldPos_00.x = (float)&stack0xfffffff0;
+        worldPos_00.x = (float)&stack0xffffffe8;
         worldPos_00.y = fVar1;
         normal.y = fVar1;
         normal.x = voxelHit.normal.y;
         normal.z = voxelHit.normal.x;
-        IVar10 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+        IVar11 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
                  CubeMathFunctions_WorldPosToFineGrainedLocalPos_1
                            (worldPos_00,normal,(MethodInfo *)voxelHit.normal.y);
-        iVar5 = SUB82(uVar9,2);
+        iVar6 = (int16_t)((ulonglong)uVar10 >> 0x10);
         if (*(MVCubeModelBase **)((int)voxelHit.normal.y + 0xc) == (MVCubeModelBase *)0x0)
         goto code_?;
-        voxelHit.isCubeHit = 0;
-        voxelHit._37_1_ = 0;
-        voxelHit._38_2_ = 0;
-        pCVar6 = MVCubeModelBase::MVCubeModelBase_GetCube
-                           (*(MVCubeModelBase **)((int)voxelHit.normal.y + 0xc),*IVar10._0_4_,
+        voxelHit.face._0_2_ = (IVar11._0_4_)->z;
+        pCVar7 = MVCubeModelBase::MVCubeModelBase_GetCube
+                           (*(MVCubeModelBase **)((int)voxelHit.normal.y + 0xc),*IVar11._0_4_,
                             (MethodInfo *)0x0);
-        fVar7 = fVar1;
-        cubeBase = pCVar6;
+        fVar8 = fVar1;
+        cubeBase = pCVar7;
         if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          fVar7 = fVar1;
+          fVar8 = fVar1;
         }
-        bVar8 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                          ((CubeBase *)pCVar6,(CubeBase *)0x0,(MethodInfo *)0x0);
+        bVar9 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
+                          ((CubeBase *)pCVar7,(CubeBase *)0x0,(MethodInfo *)0x0);
         voxelHit.point.x = voxelHit.normal.x;
-        if (bVar8 != 0) {
+        if (bVar9 != 0) {
           return 0;
         }
       }
-      method_00 = (MethodInfo *)CONCAT22(voxelHit._38_2_,voxelHit._36_2_);
-      if (*(int *)(pIVar4 + 0x54) == 8) {
-        method_00 = (MethodInfo *)&stack0xffffffe8;
-        worldPos.y = fVar7;
-        worldPos.x = (float)method_00;
+      if (*(int *)(CONCAT22(uStack_4,iVar5) + 0x54) == 8) {
+        voxelHit.face._0_2_ = 0x282c;
+        voxelHit.face._2_2_ = 0x1055;
+        worldPos.y = fVar8;
+        worldPos.x = (float)&stack0xffffffe8;
         worldPos.z = voxelHit.point.x;
         normal_00.y = voxelHit.point.z;
         normal_00.x = voxelHit.point.y;
         normal_00.z = voxelHit.normal.x;
-        IVar10 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+        IVar11 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
                  CubeMathFunctions_WorldPosToFineGrainedLocalPos_1
                            (worldPos,normal_00,(MethodInfo *)voxelHit.normal.y);
-        voxelHit.cubePos.x = *(int16_t *)(IVar10._0_4_ + 1);
-        voxelHit.normal.z = *IVar10._0_4_;
-        iVar5 = voxelHit.cubePos.x;
+        voxelHit.cubePos.x = *(int16_t *)(IVar11._0_4_ + 1);
+        voxelHit.normal.z = *IVar11._0_4_;
+        iVar6 = voxelHit.cubePos.x;
       }
-      pRVar11 = (this->fields).localAccumulatedCubeDamages;
-      if (pRVar11 != (RuntimeEventManager_AccumulatedCubeDamages *)0x0) {
+      pRVar12 = (this->fields).localAccumulatedCubeDamages;
+      if (pRVar12 != (RuntimeEventManager_AccumulatedCubeDamages *)0x0) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -397,109 +388,92 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
           func_?();
           cRam_? = '\x01';
         }
-        this_00 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
-                  (pRVar11->fields).accumulatedCubeDamages;
-        if (this_00 !=
-            (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0) {
-          IVar10.z = voxelHit.cubePos.x;
-          IVar10._0_4_ = voxelHit.normal.z;
-          bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                  IntVector,ChunkInstances+ChunkInstanceVariables]::
-                  Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__ContainsKey
-                            (this_00,IVar10,
+        pDVar13 = (pRVar12->fields).accumulatedCubeDamages;
+        if (pDVar13 !=
+            (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
+             *)0x0) {
+          IVar11.z = voxelHit.cubePos.x;
+          IVar11._0_4_ = voxelHit.normal.z;
+          bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                  IntVector,System::Object]::
+                  Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey
+                            ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar13,IVar11,
                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_
                             );
-          if (bVar8 == 0) {
-            pDVar12 = (pRVar11->fields).accumulatedCubeDamages;
-            voxelHit.cubePos.x = iVar5;
-            pOVar13 = (Object *)func_?();
-            if (pOVar13 != (Object *)0x0) {
-              pOVar14 = (Object__Class *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                  ((MethodInfo *)0x0);
-              pOVar13[1].klass = pOVar14;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        (pOVar13,ExceptionArgument__Enum_obj,method_00);
-              if (pDVar12 !=
-                  (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-                   *)0x0) {
-                key.z = voxelHit.cubePos.x;
-                key._0_4_ = voxelHit.normal.z;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add
-                          ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar12,key,
-                           pOVar13,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Add_MV__WorldObject__IntVector__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage_
-                          );
-                goto code_?;
-              }
-            }
+          if (bVar9 == 0) {
+            pDVar13 = (pRVar12->fields).accumulatedCubeDamages;
+            uVar14 = func_?();
+            uVar15 = (undefined2)uVar14;
+            uStack_4 = (undefined2)((uint)uVar14 >> 0x10);
+            fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0);
+            *(float *)(CONCAT22(uStack_4,uVar15) + 8) = fVar1;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)CONCAT22(uStack_4,uVar15),ExceptionArgument__Enum_obj,
+                       (MethodInfo *)CONCAT22(voxelHit.face._2_2_,(int16_t)voxelHit.face));
+            if (pDVar13 ==
+                (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
+                 *)0x0) goto code_?;
+            key.z = voxelHit.cubePos.x;
+            key._0_4_ = voxelHit.normal.z;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+            IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add
+                      ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar13,key,
+                       (Object *)CONCAT22(uStack_4,uVar15),
+                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Add_MV__WorldObject__IntVector__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage_
+                      );
           }
-          else {
-code_?:
-            pDVar12 = (pRVar11->fields).accumulatedCubeDamages;
-            if ((pDVar12 !=
-                 (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-                  *)0x0) &&
-               (key_00.z = voxelHit.cubePos.x, key_00._0_4_ = voxelHit.normal.z,
-               pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                        IntVector,System::Object]::
-                        Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
-                                  ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar12,
-                                   key_00,
-                                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__get_Item_MV__WorldObject__IntVector_
-                                  ), pOVar13 != (Object *)0x0)) {
-              pOVar14 = (Object__Class *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                  ((MethodInfo *)0x0);
-              damage_00 = (MonitorData *)
-                          (voxelHit.interactionFlags._4_4_ + (float)pOVar13[1].monitor);
-              pOVar13[1].klass = pOVar14;
-              pOVar13[1].monitor = damage_00;
-              pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar15 != (MVNetworkGame *)0x0) {
-                object = (pMVar15->fields)._MaterialRepository_k__BackingField;
-                this_02 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)func_?();
-                if (this_02 != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-                  mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
-                  Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
-                            (this_02,(Object *)object,
-                             MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_
-                             ,(MethodInfo *)0x0);
-                  CVar16 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube
-                                    ((CubeBase *)cubeBase,(float)damage_00,this_02,(MethodInfo *)0x0
-                                    );
-                  if (CVar16 == CubeDamageState__Enum_NoDamage) {
-                    return 0;
-                  }
-                  if (CVar16 == CubeDamageState__Enum_ReceivedDamage) {
-                    iVar17 = func_?();
-                    if (iVar17 != 0) {
-                      position.y = voxelHit.point.x;
-                      position.x = fVar7;
-                      position.z = voxelHit.point.y;
-                      SharedWorldObjectGameplayFunctions::
-                      SharedWorldObjectGameplayFunctions_DustEfffect
-                                (*(ParticleSystem **)(iVar17 + 0x20c),position,1.0,(MethodInfo *)0x0
-                                );
-                      return 1;
-                    }
-                  }
-                  else {
-                    if (CVar16 != CubeDamageState__Enum_Destroyed) {
-                      return 1;
-                    }
-                    this_03 = (SingleCubeFineGrainedEvent *)func_?();
-                    if (this_03 != (SingleCubeFineGrainedEvent *)0x0) {
-                      position_00.z = voxelHit.cubePos.x;
-                      position_00._0_4_ = voxelHit.normal.z;
-                      MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent
-                      ::SingleCubeFineGrainedEvent__ctor_1(this_03,position_00,(MethodInfo *)0x0);
-                      RuntimeEventManager_SendRuntimeEvent_1(this,this_03,(MethodInfo *)0x0);
-                      return 1;
-                    }
-                  }
+          pDVar13 = (pRVar12->fields).accumulatedCubeDamages;
+          if ((pDVar13 !=
+               (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
+                *)0x0) &&
+             (key_00.z = voxelHit.cubePos.x, key_00._0_4_ = voxelHit.normal.z,
+             pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+                      IntVector,System::Object]::
+                      Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                                ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar13,
+                                 key_00,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__get_Item_MV__WorldObject__IntVector_
+                                ), pOVar16 != (Object *)0x0)) {
+            pOVar17 = (Object__Class *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                ((MethodInfo *)0x0);
+            pOVar16[1].klass = pOVar17;
+            pOVar16[1].monitor =
+                 (MonitorData *)(voxelHit.interactionFlags._4_4_ + (float)pOVar16[1].monitor);
+            pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (pMVar18 != (MVNetworkGame *)0x0) {
+              object = (pMVar18->fields)._MaterialRepository_k__BackingField;
+              this_01 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)func_?();
+              mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::
+              Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor
+                        (this_01,(Object *)object,
+                         MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_
+                         ,(MethodInfo *)0x0);
+              CVar19 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube
+                                 ((CubeBase *)cubeBase,4.2038817e-29,this_01,(MethodInfo *)0x0);
+              if (CVar19 == CubeDamageState__Enum_NoDamage) {
+                return 0;
+              }
+              if (CVar19 != CubeDamageState__Enum_ReceivedDamage) {
+                if (CVar19 == CubeDamageState__Enum_Destroyed) {
+                  this_02 = (SingleCubeFineGrainedEvent *)func_?();
+                  position_00.z = iVar6;
+                  position_00._0_4_ = voxelHit.normal.z;
+                  MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
+                  SingleCubeFineGrainedEvent__ctor_1(this_02,position_00,(MethodInfo *)0x0);
+                  RuntimeEventManager_SendRuntimeEvent_1(this,this_02,(MethodInfo *)0x0);
                 }
+                return 1;
+              }
+              iVar20 = func_?();
+              if (iVar20 != 0) {
+                position.y = voxelHit.point.x;
+                position.x = fVar8;
+                position.z = voxelHit.point.y;
+                SharedWorldObjectGameplayFunctions::SharedWorldObjectGameplayFunctions_DustEfffect
+                          (*(ParticleSystem **)(iVar20 + 0x214),position,1.0,(MethodInfo *)0x0);
+                return 1;
               }
             }
           }
@@ -511,9 +485,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar8 = (*pcVar18)();
-  return bVar8;
+  pcVar21 = (code *)swi(3);
+  bVar9 = (*pcVar21)();
+  return bVar9;
 }
 
 
@@ -536,17 +510,18 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRuntimeEv
       func_?();
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if ((this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-       (Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)this_00,
-                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-                  ), in_stack_3 != (int *)0x0)) {
-      value = (Object *)(**(code **)(*in_stack_3 + 0xdc))();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0xf5,value,
+    this_00 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+    Dictionary_2_System_Byte_System_Object___ctor
+              (this_00,
+               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+              );
+    if ((in_stack_3 != (int *)0x0) &&
+       (value = (Object *)(**(code **)(*in_stack_3 + 0xe0))(),
+       this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0)) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+      Dictionary_2_System_Byte_System_Object__Add
+                (this_00,0xf5,value,
                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                 );
       piVar4 = *(int **)(in_stack_5 + 0x10);
@@ -554,7 +529,7 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRuntimeEv
         func_?();
       }
       if (piVar4 != (int *)0x0) {
-        (**(code **)(*piVar4 + 0x134))(piVar4);
+        (**(code **)(*piVar4 + 0x110))(piVar4);
         return;
       }
     }
@@ -628,51 +603,44 @@ void Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager__ctor
   }
   value = (RuntimeEventManager_AccumulatedCubeDamages *)
           func_?(TypeInfo__RuntimeEventManager__AccumulatedCubeDamages);
-  if (value != (RuntimeEventManager_AccumulatedCubeDamages *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
-                     );
-      func_?(&TypeInfo__UpdateController);
-      cRam_? = '\x01';
-    }
-    this_00 = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-               *)func_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
-                                );
-    if (this_00 !=
-        (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
-         *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
-                );
-      pMVar1 = (MethodInfo *)&value->fields;
-      (value->fields).accumulatedCubeDamages = this_00;
-      func_?(pMVar1,this_00);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UpdateController::UpdateController_AddUpdateObject
-                ((IUpdatecontrollerSubscriberUpdate *)value,
-                 UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
-      pMVar1 = (MethodInfo *)&(this->fields).localAccumulatedCubeDamages;
-      (this->fields).localAccumulatedCubeDamages = value;
-      func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
-      return;
-    }
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
+                   );
+    func_?(&TypeInfo__UpdateController);
+    cRam_? = '\x01';
   }
+  this_00 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
+                           );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+  IntVector,ChunkInstances+ChunkInstanceVariables]::
+  Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
+            );
+  pMVar1 = (MethodInfo *)&value->fields;
+  (value->fields).accumulatedCubeDamages =
+       (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
+        *)this_00;
+  func_?(pMVar1,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UpdateController::UpdateController_AddUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)value,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1
+             ,(MethodInfo *)0x0);
+  pMVar1 = (MethodInfo *)&(this->fields).localAccumulatedCubeDamages;
+  (this->fields).localAccumulatedCubeDamages = value;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
   return;
 }
 

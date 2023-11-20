@@ -37,30 +37,6 @@ public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttach
 	private bool firstTimeSetup;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class _OpenAccessoryViewDelayed_d__21 : IEnumerator<object>
-	{
-		// Fields
-		private int __1__state;
-		private object __2__current;
-		public AccessoryShopController __4__this;
-
-		// Properties
-		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _OpenAccessoryViewDelayed_d__21(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -127,6 +103,30 @@ public class AccessoryShopController : MonoBehaviour, IInventoryChanged, IAttach
 		// Methods
 		internal void _AttachToBody_b__0(IGetCurrentBody x, BaseEventData y);
 		internal void _AttachToBody_b__1(MVBody body);
+	}
+
+	[CompilerGenerated]
+	private sealed class _OpenAccessoryViewDelayed_d__21 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public AccessoryShopController __4__this;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _OpenAccessoryViewDelayed_d__21(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors

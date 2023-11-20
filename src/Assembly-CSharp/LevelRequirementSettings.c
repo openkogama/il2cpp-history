@@ -26,25 +26,26 @@ void Assembly-CSharp.dll::LevelRequirementSettings::LevelRequirementSettings_Ini
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_04,woID,(MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObject *)0x0) {
-        this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data;
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (pMVar1->fields).data;
         value = 0;
-        if (this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                             (this_01,(Object *)StringLiteral_levelAmount,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           if (bVar2 != 0) {
-            pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                                (Object *)StringLiteral_levelAmount,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            if (pOVar3 == (Object *)0x0) goto code_?;
-            if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-            goto code_?;
+            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (this_01,(Object *)StringLiteral_levelAmount,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+            if (TVar3.m_Index == 0) goto code_?;
+            if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                (TypeInfo__System__Int32->_0).element_class) goto code_?;
             piVar4 = (int32_t *)func_?();
             value = *piVar4;
           }

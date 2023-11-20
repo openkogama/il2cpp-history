@@ -6,35 +6,20 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__OnClick_b__1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    func_?();
     func_?(&StringLiteral_Destructible_material_only_avail);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
-  pSVar2 = ::StringLiteral__;
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
     return;
   }
-  uVar4 = 0;
-  uVar5 = (x->klass->_1).interface_offsets_count;
-  if (uVar5 != 0) {
-    do {
-      if (x->klass->interfaceOffsets[uVar4].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        pVVar6 = &(x->klass->vtable).Create_3 + x->klass->interfaceOffsets[uVar4].offset;
-        goto code_?;
-      }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
-  }
-  pVVar6 = (VirtualInvokeData *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
-code_?:
-  (*pVVar6->methodPtr)(x,pSVar1,pSVar2,pVVar6->method);
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -102,17 +87,12 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__cctor(Method
     func_?(&TypeInfo__MaterialViewItem____c);
     cRam_? = '\x01';
   }
-  value = (MaterialViewItem_c *)func_?(TypeInfo__MaterialViewItem____c);
-  if (value != (MaterialViewItem_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__MaterialViewItem____c->static_fields->__9 = value;
-    func_?(TypeInfo__MaterialViewItem____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__MaterialViewItem____c;
+  value = (MaterialViewItem_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__MaterialViewItem____c->static_fields->__9 = value;
+  func_?(TypeInfo__MaterialViewItem____c->static_fields,value);
   return;
 }
 

@@ -20,9 +20,10 @@ Assembly-CSharp.dll::BoostIconManager::BoostIconManager_CreateBoosterIcon
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterIconPrefabs;
+  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+           (this->fields).boosterIconPrefabs;
   do {
-    if (pLVar1 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
       pcVar2 = (code *)swi(3);
@@ -38,23 +39,26 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar5,(MethodInfo *)0x0);
       return (GameObject *)0x0;
     }
-    pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterIconPrefabs;
-    if (pLVar1 == (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) goto code_?;
-    TVar6 = mscorlib.dll::System::Collections::Generic::
-            List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-            List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterIconPrefabs;
+    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    goto code_?;
+    XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                       (pLVar1,index,
                        MethodInfo__System__Collections__Generic__List<BoosterIcon>__get_Item_int_);
-    pLVar1 = (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)(this->fields).boosterIconPrefabs;
-    if (TVar6.tabID == type) {
-      if (pLVar1 != (List_1_TabMenuButtonAccessory_AccessoryTabDef_ *)0x0) {
-        TVar6 = mscorlib.dll::System::Collections::Generic::
-                List`1[TabMenuButtonAccessory+AccessoryTabDef]::
-                List_1_TabMenuButtonAccessory_AccessoryTabDef__get_Item
+    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+             (this->fields).boosterIconPrefabs;
+    if (XVar6.qname == (XmlQualifiedName *)type) {
+      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                           (pLVar1,index,
                            MethodInfo__System__Collections__Generic__List<BoosterIcon>__get_Item_int_
                           );
@@ -63,7 +67,7 @@ code_?:
         }
         pGVar3 = (GameObject *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)TVar6.streamedImagePrefab,
+                           ((Object *)XVar6.xso,
                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                            );
         return pGVar3;

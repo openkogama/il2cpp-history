@@ -161,16 +161,16 @@ int32_t Assembly-CSharp.dll::WinningConditionNotificationManager::
   pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar6 != (MVNetworkGame *)0x0) &&
      (this = (pMVar6->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    this_01 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this,(MethodInfo *)0x0);
     if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
       pDVar7 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-               Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)&stack0xffffffcc,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
@@ -180,15 +180,15 @@ int32_t Assembly-CSharp.dll::WinningConditionNotificationManager::
         do {
           bVar8 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                               *)&pOStack_5,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                             );
           if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&pOStack_5,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
@@ -373,21 +373,52 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      uVar6 = func_?();
-      bVar7 = (byte)((ulonglong)uVar6 >> 0x28);
-      bVar8 = CARRY1(bRam_?,bVar7);
-      bRam_? = bRam_? + bVar7;
-      bVar9 = (byte)((ulonglong)uVar6 >> 0x20);
-      bVar10 = *unaff_ESI + bVar9;
-      bVar11 = CARRY1(*unaff_ESI,bVar9) || CARRY1(bVar10,bVar8);
-      *unaff_ESI = bVar10 + bVar8;
-      bVar8 = CARRY1(bRam_?,bVar7);
-      bVar7 = bRam_? + bVar7;
-      bRam_? = bVar7 + bVar11;
-      pcVar12 = (char *)((int)((ulonglong)uVar6 >> 0x20) + 0x1f + ((uint)uVar6 & 0xd3101f93) * 4);
-      *pcVar12 = *pcVar12 + (char)unaff_EBX + (bVar8 || CARRY1(bVar7,bVar11));
-      pcVar13 = (code *)swi(3);
-      bVar3 = (*pcVar13)();
+      iVar6 = func_?();
+      iVar6 = iVar6 + 1;
+      in_AF = 9 < ((byte)iVar6 & 0xf) | in_AF;
+      bVar7 = (byte)iVar6 + in_AF * '\x06';
+      bVar8 = (byte)((uint)unaff_EBX >> 8);
+      in_AF = 9 < (bVar7 & 0xf) | in_AF;
+      uVar9 = CONCAT31((int3)((uint)iVar6 >> 8),bVar7 + in_AF * -6) & 0xffffff0f;
+      bVar10 = (byte)uVar9;
+      bVar11 = 9 < bVar10 | in_AF;
+      bVar12 = 0x99 < bVar10 | in_AF;
+      bVar13 = bVar10 + bVar11 * '\x06' + bVar12 * '`';
+      bVar7 = in_stack_14 + bVar13 + bVar12;
+      bVar11 = 9 < (bVar13 & 0xf) | bVar11;
+      bVar15 = 0x99 < bVar13 ||
+              (CARRY1(in_stack_14,bVar13) || CARRY1(in_stack_14 + bVar13,bVar12));
+      bVar12 = *unaff_ESI;
+      bVar16 = *unaff_ESI;
+      *unaff_ESI = bVar16 + bVar8 + bVar15;
+      iVar6 = CONCAT31((int3)(CONCAT22((short)(uVar9 >> 0x10),
+                                        CONCAT11((char)((uint)iVar6 >> 8) - in_AF,bVar10)) >> 8),
+                        bVar13 + bVar11 * '\x06' + bVar15 * '`') + 1;
+      bVar10 = (byte)iVar6;
+      bVar11 = 9 < (bVar10 & 0xf) | bVar11;
+      bVar15 = 0x99 < bVar10 || (CARRY1(bVar12,bVar8) || CARRY1(bVar16 + bVar8,bVar15));
+      bVar16 = *unaff_ESI;
+      bVar12 = *unaff_ESI;
+      *unaff_ESI = bVar12 + bVar8 + bVar15;
+      iVar6 = CONCAT31((int3)((uint)iVar6 >> 8),bVar10 + bVar11 * '\x06' + bVar15 * '`') + 1;
+      bVar10 = (byte)iVar6;
+      bVar11 = 9 < (bVar10 & 0xf) | bVar11;
+      bVar15 = 0x99 < bVar10 || (CARRY1(bVar16,bVar8) || CARRY1(bVar12 + bVar8,bVar15));
+      bVar16 = bVar10 + bVar11 * '\x06' + bVar15 * '`';
+      bVar11 = 9 < (bVar16 & 0xf) | bVar11;
+      bVar15 = 0x99 < bVar16 || (CARRY1(bVar7,bVar16) || CARRY1(bVar7 + bVar16,bVar15));
+      bVar7 = *unaff_ESI;
+      bVar12 = *unaff_ESI;
+      *unaff_ESI = bVar12 + bVar8 + bVar15;
+      iVar6 = CONCAT31((int3)((uint)iVar6 >> 8),bVar16 + bVar11 * '\x06' + bVar15 * '`') + 1;
+      bVar16 = (byte)iVar6;
+      bVar15 = 0x99 < bVar16 || (CARRY1(bVar7,bVar8) || CARRY1(bVar12 + bVar8,bVar15));
+      pcVar17 = (char *)(CONCAT31((int3)((uint)iVar6 >> 8),
+                                 bVar16 + (9 < (bVar16 & 0xf) | bVar11) * '\x06' + bVar15 * '`') * 3 +
+                       0x27);
+      *pcVar17 = *pcVar17 + (char)((uint)iVar6 >> 8) + bVar15;
+      pcVar18 = (code *)swi(3);
+      bVar3 = (*pcVar18)();
       return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
@@ -417,7 +448,7 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
 void Assembly-CSharp.dll::WinningConditionNotificationManager::
@@ -458,97 +489,283 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
                    );
     cRam_? = '\x01';
   }
-  uVar3 = (counterType & 0xff) - GameStatCounterType__Enum_Kill;
-  if (uVar3 < 8) {
-    (**(code **)(&UNK_? + uVar3 * 4))();
-    return;
+  score = (undefined *)0x0;
+  switch(counterType & 0xff) {
+  case GameStatCounterType__Enum_Kill:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+    ;
+    break;
+  case GameStatCounterType__Enum_Flag:
+  case GameStatCounterType__Enum_TimeAttackFlag:
+    score = (undefined *)scoreCount;
+    goto code_?;
+  case GameStatCounterType__Enum_Collectible:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+    ;
+    break;
+  default:
+    goto code_?;
+  case GameStatCounterType__Enum_OculusKill:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+    ;
   }
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar4 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar4->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
-      switch(counterType & 0xff) {
-      case GameStatCounterType__Enum_Kill:
-      case GameStatCounterType__Enum_Collectible:
-      case GameStatCounterType__Enum_OculusKill:
-        break;
-      case GameStatCounterType__Enum_TimeAttackFlag:
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        iVar2 = actorNumber;
-        if ((pMVar4 == (MVNetworkGame *)0x0) ||
-           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-           pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar6->fields)._._ActorNr_k__BackingField == actorNumber) {
-          return;
-        }
-      case GameStatCounterType__Enum_Flag:
-      }
+  if (this != (WinningConditionManager *)0x0) {
+    pOVar4 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType(this,method_00);
+    pOVar5 = (Object__Class *)0x0;
+    if (pOVar4 != (Object *)0x0) {
+      pOVar5 = pOVar4[2].klass;
     }
-    return;
+    score = (undefined *)((int)pOVar5 - scoreCount);
+code_?:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar3 != (MVNetworkGame *)0x0) &&
+       (pMVar6 = (pMVar3->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) {
+      bVar7 = MVPlayerContainer::MVPlayerContainer_ContainsKey(pMVar6,actorNumber,(MethodInfo *)0x0)
+      ;
+      if (bVar7 != 0) {
+        iVar2 = actorNumber;
+        switch(counterType & 0xff) {
+        case GameStatCounterType__Enum_Kill:
+        case GameStatCounterType__Enum_Collectible:
+        case GameStatCounterType__Enum_OculusKill:
+          if (((score == (undefined *)0x1) || (score == (undefined *)0x5)) ||
+             (score == (undefined *)0xf)) {
+code_?:
+            score_00.m_value = (int32_t)score;
+            if (cRam_? == '\0') {
+              score_00.m_value = (int32_t)&UNK_?;
+              func_?();
+              cRam_? = '\x01';
+            }
+            unaff_ESI = ::StringLiteral__;
+                    /* WARNING (jumptable): Sanity check requires truncation of jumptable */
+                    /* WARNING: Could not find normalized switch variable to match jumptable */
+            switch(counterType & 0xff) {
+            case GameStatCounterType__Enum_None:
+code_?:
+              pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar3 != (MVNetworkGame *)0x0) &&
+                 (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+                 pMVar8 != (MVLocalPlayer *)0x0)) {
+                if ((pMVar8->fields)._._ActorNr_k__BackingField == actorNumber) {
+                  return;
+                }
+code_?:
+                if (score == (undefined *)0x0) {
+                  return;
+                }
+                pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar3 != (MVNetworkGame *)0x0) &&
+                   (pMVar6 = (pMVar3->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0))
+                goto code_?;
+              }
+              goto code_?;
+            default:
+              unaff_ESI = mscorlib.dll::System::Int32::Int32_ToString
+                                    ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
+              break;
+            case GameStatCounterType__Enum_Flag:
+            case GameStatCounterType__Enum_TimeAttackFlag:
+              unaff_ESI = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                                    (score_00.m_value,GameStatCounterType__Enum_TimeAttackFlag,
+                                     (MethodInfo *)0x0);
+              break;
+            case GameStatCounterType__Enum_Time_1:
+            case GameStatCounterType__Enum_FlagCaptured:
+            case GameStatCounterType__Enum_GameCoin:
+              break;
+            }
+            this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                      (this_00,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            this_01 = TypeInfo__System__Byte;
+            pOVar4 = (Object *)func_?();
+            value = TM::TM__(unaff_ESI,(MethodInfo *)0x0);
+            if (this_01 != (Byte__Class *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,(Object *)value
+                         ,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        );
+              pOVar4 = (Object *)func_?(TypeInfo__System__Byte);
+              pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe0);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        );
+              pOVar4 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffff9);
+              pOVar9 = (Object *)func_?(TypeInfo__GameStatCounterType,&stack0xfffffff8);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        );
+              pOVar4 = (Object *)func_?();
+              notificationType = TypeInfo__System__Int32;
+              pOVar9 = (Object *)func_?();
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__Add
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                        );
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              NotificationController::NotificationController_PushNotification_2
+                        ((NotificationType__Enum)notificationType,
+                         (Dictionary_2_System_Object_System_Object_ *)this_01,
+                         NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+              return;
+            }
+            goto code_?;
+          }
+          break;
+        case GameStatCounterType__Enum_Flag:
+          goto code_?;
+        case GameStatCounterType__Enum_TimeAttackFlag:
+          goto code_?;
+        }
+      }
+      return;
+    }
   }
 code_?:
-  bVar7 = 0;
-  cVar8 = func_?();
-  bVar9 = *extraout_ECX;
-  bVar10 = (byte)((uint)extraout_ECX >> 8);
-  bVar11 = *extraout_ECX;
-  *extraout_ECX = bVar11 + bVar10 + bVar7;
-  bVar12 = (byte)((uint)&stack0xfffffffc >> 8);
-  bVar13 = CARRY1(bVar12,(byte)&stack0xfffffffc) ||
-           CARRY1(bVar12 + (byte)&stack0xfffffffc,
-                  CARRY1(bVar9,bVar10) || CARRY1(bVar11 + bVar10,bVar7));
-  pbVar14 = (byte *)(extraout_EDX * 4 + -0x6ad3efe1);
-  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
-  *pbVar14 = *pbVar14 + bVar10 + bVar13;
-  bVar9 = *extraout_ECX + cVar8 + 8U;
-  bVar13 = CARRY1(*extraout_ECX,cVar8 + 8U) || CARRY1(bVar9,bVar15);
-  *extraout_ECX = bVar9 + bVar15;
-  pbVar14 = (byte *)(extraout_EDX * 4 + -0x6ad6efe1);
-  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
-  *pbVar14 = *pbVar14 + bVar10 + bVar13;
-  pbVar14 = (byte *)(extraout_EDX + -0x6b);
-  bVar9 = (byte)((uint)iVar2 >> 8);
-  bVar13 = CARRY1(*pbVar14,bVar9) || CARRY1(*pbVar14 + bVar9,bVar15);
-  *pbVar14 = *pbVar14 + bVar9 + bVar15;
-  bVar12 = bVar9 + (byte)&stack0xffffffdc;
-  bVar15 = CARRY1(bVar9,(byte)&stack0xffffffdc) || CARRY1(bVar12,bVar13);
-  bVar12 = bVar12 + bVar13;
-  pbVar14 = (byte *)(extraout_EDX + -0x6b);
-  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar15);
-  *pbVar14 = *pbVar14 + bVar12 + bVar15;
-  bVar16 = (byte)extraout_ECX;
-  bVar9 = (byte)extraout_EDX + bVar16;
-  bVar15 = CARRY1((byte)extraout_EDX,bVar16) || CARRY1(bVar9,bVar13);
-  bVar9 = bVar9 + bVar13;
-  bVar7 = bVar9 + bVar16;
-  bVar13 = CARRY1(bVar9,bVar16) || CARRY1(bVar7,bVar15);
-  bVar7 = bVar7 + bVar15;
-  pbVar14 = (byte *)(CONCAT31((int3)((uint)extraout_EDX >> 8),bVar7) + -0x6b);
-  bVar9 = *pbVar14;
-  bVar11 = *pbVar14;
-  *pbVar14 = bVar11 + bVar12 + bVar13;
-  bVar13 = CARRY1(bVar7,bVar16) ||
-           CARRY1(bVar7 + bVar16,CARRY1(bVar9,bVar12) || CARRY1(bVar11 + bVar12,bVar13));
-  pbVar14 = extraout_ECX + 0x68101f95;
-  bVar9 = *pbVar14 + (byte)iVar2;
-  bVar15 = CARRY1(*pbVar14,(byte)iVar2) || CARRY1(bVar9,bVar13);
-  *pbVar14 = bVar9 + bVar13;
-  pbVar14 = (byte *)(unaff_ESI + -0x6a);
-  bVar13 = CARRY1(*pbVar14,bVar12) || CARRY1(*pbVar14 + bVar12,bVar15);
-  *pbVar14 = *pbVar14 + bVar12 + bVar15;
-  pbVar14 = (byte *)(unaff_ESI + -0x6a);
-  bVar15 = CARRY1(*pbVar14,bVar10) || CARRY1(*pbVar14 + bVar10,bVar13);
-  *pbVar14 = *pbVar14 + bVar10 + bVar13;
-  pbVar14 = (byte *)(unaff_ESI + -0x77efe06a);
-  bVar13 = CARRY1(*pbVar14,bVar16) || CARRY1(*pbVar14 + bVar16,bVar15);
-  *pbVar14 = *pbVar14 + bVar16 + bVar15;
-  bVar15 = CARRY1(bRam_?,bVar10);
-  bVar10 = bRam_? + bVar10;
-  bRam_? = bVar10 + bVar13;
-  cRam_? = cRam_? + bVar16 + (bVar15 || CARRY1(bVar10,bVar13));
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  bVar10 = 0;
+  uVar11 = func_?();
+  iVar12 = (int)((ulonglong)uVar11 >> 0x20);
+  bVar13 = (byte)uVar11;
+  in_AF = 9 < (bVar13 & 0xf) | in_AF;
+  bVar10 = 0x99 < bVar13 | bVar10;
+  bVar13 = bVar13 + in_AF * '\x06' + bVar10 * '`';
+  bVar14 = (byte)((ulonglong)uVar11 >> 8);
+  bVar15 = bVar14 * '\x02' + bVar10;
+  pbVar16 = (byte *)(extraout_ECX + 1);
+  in_AF = 9 < (bVar13 & 0xf) | in_AF;
+  uVar17 = (undefined3)(CONCAT22((short)((ulonglong)uVar11 >> 0x10),CONCAT11(bVar15,bVar13)) >> 8);
+  bVar18 = 0x99 < bVar13 || (CARRY1(bVar14,bVar14) || CARRY1(bVar14 * '\x02',bVar10));
+  bVar14 = bVar13 + in_AF * '\x06' + bVar18 * '`';
+  iVar19 = CONCAT31(uVar17,bVar14);
+  pbVar20 = (byte *)(iVar12 + 0x28 + iVar19 * 2);
+  bVar21 = (byte)pbVar16;
+  bVar22 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar18);
+  *pbVar20 = *pbVar20 + bVar21 + bVar18;
+  pbVar20 = (byte *)(iVar12 + 0x28 + iVar19 * 2);
+  bVar18 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar22);
+  *pbVar20 = *pbVar20 + bVar21 + bVar22;
+  bVar13 = *pbVar16;
+  bVar10 = *pbVar16;
+  *pbVar16 = bVar10 + bVar15 + bVar18;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar13,bVar15) || CARRY1(bVar10 + bVar15,bVar18));
+  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)(iVar12 + 0x29 + CONCAT31(uVar17,bVar14) * 2);
+  bVar22 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar18);
+  *pbVar20 = *pbVar20 + bVar21 + bVar18;
+  pbVar20 = (byte *)(extraout_ECX + 0x43);
+  bVar10 = *pbVar20;
+  bVar13 = *pbVar20;
+  *pbVar20 = bVar13 + bVar21 + bVar22;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar21) || CARRY1(bVar13 + bVar21,bVar22));
+  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)(iVar12 + -0x18efd8bc);
+  bVar10 = *pbVar20;
+  bVar23 = (byte)iVar2;
+  bVar13 = *pbVar20;
+  *pbVar20 = bVar13 + bVar23 + bVar18;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
+  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)(iVar12 + -0x1defd8bb);
+  bVar10 = *pbVar20;
+  bVar13 = *pbVar20;
+  *pbVar20 = bVar13 + bVar23 + bVar18;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
+  bVar13 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  bVar14 = (byte)(iVar12 + 3);
+  bVar10 = bVar14 + bVar15;
+  iVar19 = CONCAT31((int3)((uint)(iVar12 + 3) >> 8),bVar10 + bVar18);
+  in_AF = 9 < (bVar13 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar13 || (CARRY1(bVar14,bVar15) || CARRY1(bVar10,bVar18));
+  bVar14 = bVar13 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)(iVar19 + -0x1defd8be);
+  bVar10 = *pbVar20;
+  bVar13 = *pbVar20;
+  *pbVar20 = bVar13 + bVar23 + bVar18;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
+  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)(extraout_ECX + 0x7e102743);
+  bVar10 = *pbVar20;
+  bVar15 = (byte)((uint)iVar2 >> 8);
+  bVar13 = *pbVar20 + bVar15;
+  *pbVar20 = bVar13 + bVar18;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar15) || CARRY1(bVar13,bVar18));
+  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
+  pbVar20 = (byte *)((int)&unaff_ESI[0x7e10274].klass + 3);
+  bVar10 = *pbVar20;
+  bVar13 = *pbVar20;
+  *pbVar20 = bVar13 + bVar21 + bVar18;
+  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar21) || CARRY1(bVar13 + bVar21,bVar18));
+  pcVar24 = (char *)((int)&unaff_ESI[4].klass + 3);
+  *pcVar24 = *pcVar24 + (char)((uint)(iVar2 + 3) >> 8) +
+            (0x99 < (byte)(bVar14 + (9 < (bVar14 & 0xf) | in_AF) * '\x06' + bVar18 * '`') ||
+            (CARRY1(in_stack_25,bVar23 + 2) || CARRY1(in_stack_25 + bVar23 + 2,bVar18)))
+  ;
+  in((short)iVar19);
+  *(undefined4 *)(actorNumber + 0x10) = 2;
+  puVar26 = (undefined1 *)0x49102744;
+  if (cRam_? == '\0') {
+    ppORam49102740 = &TypeInfo__UnityEngine__Object;
+    puVar27 = (undefined1 *)0x4910273c;
+    puRam_? = &UNK_?;
+    func_?();
+    puVar26 = puVar27 + 4;
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    *(Object_1__Class **)(puVar26 + -4) = TypeInfo__UnityEngine__Object;
+    *(undefined **)(puVar26 + -8) = &UNK_?;
+    func_?();
+  }
+  uRam_? = 0;
   return;
+code_?:
+  pMVar28 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar6,actorNumber,(MethodInfo *)0x0);
+  if (pMVar28 == (MVPlayer *)0x0) {
+    return;
+  }
+  bVar7 = WinningConditionNotificationManager_IsFlagScoreBestInGame
+                    ((int32_t)score,actorNumber,(MethodInfo *)0x0);
+  if (bVar7 == 0) {
+    return;
+  }
+  goto code_?;
 }
 

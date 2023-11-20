@@ -74,6 +74,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
                    (int32_t score,GameStatCounterType__Enum statType,MethodInfo *method)
 
 {
+  puVar1 = (undefined4 *)&stack0xfffffffc;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__String);
     func_?(&::StringLiteral__);
@@ -82,11 +83,11 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     func_?(&StringLiteral__0);
     cRam_? = '\x01';
   }
-  pSVar1 = ::StringLiteral__;
+  pSVar2 = ::StringLiteral__;
   switch(statType & 0xff) {
   default:
-    pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&score,(MethodInfo *)0x0);
-    return pSVar1;
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&score,(MethodInfo *)0x0);
+    return pSVar2;
   case GameStatCounterType__Enum_Flag:
   case GameStatCounterType__Enum_TimeAttackFlag:
     break;
@@ -94,237 +95,80 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   if (score == 0) {
     return StringLiteral______;
   }
-  IVar2.m_value =
+  IVar3.m_value =
        (int32_t)((float)(score + (int)((float)score / _UNK_?) * -1000) / _UNK_?);
   score = (int32_t)((float)score / _UNK_?);
-  IVar3.m_value = score % 0x3c;
-  iVar4 = func_?((float)score / _UNK_?,0);
-  if (0x3b < iVar4) {
-    func_?((float)iVar4 / _UNK_?,0);
-    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
-                        ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_4
-                       (pSVar1,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
+  IVar4.m_value = score % 0x3c;
+  iVar5 = func_?((float)score / _UNK_?,0);
+  if (0x3b < iVar5) {
+    func_?((float)iVar5 / _UNK_?,0);
+    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&stack0xffffffec,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                       (pSVar2,pSVar6,::StringLiteral__,(MethodInfo *)0x0);
   }
-  pSVar5 = ::StringLiteral__;
-  if (IVar2.m_value < 10) {
-    pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
-  }
-  pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0)
-  ;
-  pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar6,(MethodInfo *)0x0);
-  pSVar5 = ::StringLiteral__;
+  pSVar6 = ::StringLiteral__;
   if (IVar3.m_value < 10) {
-    pSVar6 = StringLiteral__0;
-    pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+    pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
-  ;
-  IVar2.m_value = 0;
-  statType = (GameStatCounterType__Enum)
-             mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
-  pSVar5 = ::StringLiteral__;
-  if (IVar2.m_value < 10) {
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar6,pSVar7,(MethodInfo *)0x0);
+  pSVar6 = ::StringLiteral__;
+  if (IVar4.m_value < 10) {
+    pSVar7 = StringLiteral__0;
+    pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+  }
+  pSVar8 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
+  IVar3.m_value = 0;
+  mscorlib.dll::System::String::String_Concat_3(pSVar6,pSVar8,(MethodInfo *)0x0);
+  pSVar6 = ::StringLiteral__;
+  if (IVar3.m_value < 10) {
     method = (MethodInfo *)0x0;
     statType = (GameStatCounterType__Enum)StringLiteral__0;
     score = (int32_t)::StringLiteral__;
-    pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
+    pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                       (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0)
-  ;
+  pSVar8 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
   method = (MethodInfo *)&UNK_?;
-  pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
+  statType = (GameStatCounterType__Enum)
+             mscorlib.dll::System::String::String_Concat_3(pSVar6,pSVar8,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
-  bVar8 = 0;
-  if (values == (String__Array *)0x0) goto code_?;
-  if (pSVar1 == (String *)0x0) {
-code_?:
+  if (values != (String__Array *)0x0) {
+    uStack9 = 0;
+    pSStack10 = pSVar2;
     func_?();
-    if (pSVar5 != (String *)0x0) {
-      iVar4 = func_?();
-      bVar8 = 0;
-      if (iVar4 == 0) goto code_?;
-    }
+    puStack11 = (undefined *)statType;
+    uStack12 = 1;
     func_?();
-    if (::StringLiteral__ != (String *)0x0) {
-      iVar4 = func_?();
-      bVar8 = 0;
-      if (iVar4 == 0) goto code_?;
-    }
+    pSStack13 = ::StringLiteral__;
     func_?();
-    pSVar5 = (String *)statType;
-    if (statType != GameStatCounterType__Enum_None) {
-      method = (MethodInfo *)&UNK_?;
-      iVar4 = func_?();
-      bVar8 = 0;
-      if (iVar4 == 0) goto code_?;
-    }
     method = (MethodInfo *)&UNK_?;
     func_?();
-    if (::StringLiteral__ != (String *)0x0) {
-      method = (MethodInfo *)(values->klass->_0).element_class;
-      statType = (GameStatCounterType__Enum)::StringLiteral__;
-      score = (int32_t)&UNK_?;
-      iVar4 = func_?();
-      bVar8 = 0;
-      if (iVar4 == 0) goto code_?;
-    }
-    pSVar5 = pSVar6;
     method = (MethodInfo *)::StringLiteral__;
     statType = GameStatCounterType__Enum_Time_1;
     score = (int32_t)&UNK_?;
     func_?();
-    if (pSVar5 == (String *)0x0) {
-code_?:
-      score = (int32_t)pSVar5;
-      func_?();
-      pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-      return pSVar1;
-    }
-    score = (int32_t)(values->klass->_0).element_class;
-    iVar4 = func_?();
-    bVar8 = 0;
-    if (iVar4 != 0) goto code_?;
-  }
-  else {
-    iVar4 = func_?();
-    bVar8 = 0;
-    if (iVar4 != 0) goto code_?;
+    score = (int32_t)pSVar7;
     func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    method = (MethodInfo *)&UNK_?;
-    func_?();
-code_?:
-    method = (MethodInfo *)0x0;
-    statType = (GameStatCounterType__Enum)&UNK_?;
-    statType = func_?();
-    score = (int32_t)&UNK_?;
-    func_?();
-  }
-  score = 0;
-  func_?();
-  func_?();
-code_?:
-  func_?();
-  LOCK();
-  uVar9 = *(undefined1 *)&pSVar1->klass;
-  *(char *)&pSVar1->klass = (char)pSVar5;
-  UNLOCK();
-  bVar10 = (byte)((uint)pSVar5 >> 8);
-  bVar11 = CARRY1(bRam_?,bVar10) || CARRY1(bRam_? + bVar10,bVar8);
-  bRam_? = bRam_? + bVar10 + bVar8;
-  LOCK();
-  uVar12 = *(undefined1 *)&pSVar1->klass;
-  *(undefined1 *)&pSVar1->klass = uVar9;
-  UNLOCK();
-  bVar13 = CARRY1(bRam_?,bVar10);
-  bVar8 = bRam_? + bVar10;
-  bRam_? = bVar8 + bVar11;
-  LOCK();
-  uVar9 = *(undefined1 *)&pSVar1->klass;
-  *(undefined1 *)&pSVar1->klass = uVar12;
-  UNLOCK();
-  cRam_? = cRam_? + bVar10 + (bVar13 || CARRY1(bVar8,bVar11));
-  LOCK();
-  *(undefined1 *)&pSVar1->klass = uVar9;
-  UNLOCK();
-  in(extraout_DX);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  iVar14 = score;
-  *(undefined1 *)score = 0;
-  pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar15 != (MVNetworkGame *)0x0) &&
-     (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
-     pWVar16 != (WinningConditionManager *)0x0)) {
-    pOVar17 = MVWorldObject.dll::WinningConditionManager::
-              WinningConditionManager_GetSingletonWinnerConditionByType
-                        (pWVar16,
-                         FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
-                        );
-    if (pOVar17 != (Object *)0x0) {
-      *(undefined1 *)iVar14 = 2;
-      return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-    }
-    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar15 != (MVNetworkGame *)0x0) &&
-       (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
-       pWVar16 != (WinningConditionManager *)0x0)) {
-      pOVar17 = MVWorldObject.dll::WinningConditionManager::
-                WinningConditionManager_GetSingletonWinnerConditionByType
-                          (pWVar16,
-                           TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
-                          );
-      if (pOVar17 != (Object *)0x0) {
-        *(undefined1 *)iVar14 = 8;
-        return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-      }
-      pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar15 != (MVNetworkGame *)0x0) &&
-         (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
-         pWVar16 != (WinningConditionManager *)0x0)) {
-        pOVar17 = MVWorldObject.dll::WinningConditionManager::
-                  WinningConditionManager_GetSingletonWinnerConditionByType
-                            (pWVar16,
-                             AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                            );
-        if (pOVar17 != (Object *)0x0) {
-          *(undefined1 *)iVar14 = 3;
-          return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-        }
-        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar15 != (MVNetworkGame *)0x0) &&
-           (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
-           pWVar16 != (WinningConditionManager *)0x0)) {
-          pOVar17 = MVWorldObject.dll::WinningConditionManager::
-                    WinningConditionManager_GetSingletonWinnerConditionByType
-                              (pWVar16,
-                               KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                              );
-          if (pOVar17 != (Object *)0x0) {
-            *(undefined1 *)iVar14 = 1;
-            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-          }
-          pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar15 != (MVNetworkGame *)0x0) &&
-             (pWVar16 = (pMVar15->fields)._WinningConditionManager_k__BackingField,
-             pWVar16 != (WinningConditionManager *)0x0)) {
-            pOVar17 = MVWorldObject.dll::WinningConditionManager::
-                      WinningConditionManager_GetSingletonWinnerConditionByType
-                                (pWVar16,
-                                 OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                                );
-            if (pOVar17 == (Object *)0x0) {
-              return (String *)0x0;
-            }
-            *(undefined1 *)iVar14 = 6;
-            return (String *)CONCAT31((int3)((uint)pOVar17 >> 8),1);
-          }
-        }
-      }
-    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+    return pSVar2;
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar18)();
-  return pSVar1;
+  puVar14 = &stack0x0000002c;
+  cVar15 = '\x0f';
+  do {
+    puVar1 = puVar1 + -1;
+    puVar14 = puVar14 + -1;
+    *puVar14 = *puVar1;
+    cVar15 = cVar15 + -1;
+  } while ('\0' < cVar15);
+  pcVar16 = (code *)swi(3);
+  pSStack10 = (String *)&stack0xfffffffc;
+  pSVar2 = (String *)(*pcVar16)();
+  return pSVar2;
 }
 
 

@@ -32,30 +32,48 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                MethodInfo *method)
 
 {
-  UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-  TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)this,(MethodInfo *)0x0);
-  pvVar1 = method->klass->rgctx_data[2].rgctxDataDummy;
-  if ((*(byte *)((int)pvVar1 + 0xba) & 1) == 0) {
-    pvVar1 = (void *)func_?(pvVar1);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
+  pMVar1 = method;
+  pIVar2 = method->klass->rgctx_data[3].klass;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
   }
-  pRVar2 = (RangeValidator_1_System_Single_ *)func_?(pvVar1);
-  if (pRVar2 != (RangeValidator_1_System_Single_ *)0x0) {
-    (*(method->klass->rgctx_data[4].method)->virtualMethodPointer)
-              (pRVar2,min,max,method->klass->rgctx_data[4].rgctxDataDummy);
-    (this->fields).RangeValidator = pRVar2;
-    func_?(&(this->fields).RangeValidator,pRVar2);
-    pRVar2 = (this->fields).RangeValidator;
-    if (pRVar2 != (RangeValidator_1_System_Single_ *)0x0) {
-      (*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-                (pRVar2,value,0,method->klass->rgctx_data[3].rgctxDataDummy);
-      (*(method->klass->rgctx_data[5].method)->virtualMethodPointer)
-                (this,value,method->klass->rgctx_data[5].rgctxDataDummy);
+  pRVar3 = (RangeValidator_1_System_Single_ *)func_?(pIVar2);
+  AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single___ctor_1
+            (pRVar3,min,max,pMVar1->klass->rgctx_data[5].method);
+  (this->fields).RangeValidator = pRVar3;
+  func_?(&(this->fields).RangeValidator,pRVar3);
+  pRVar3 = (this->fields).RangeValidator;
+  if (pRVar3 != (RangeValidator_1_System_Single_ *)0x0) {
+    AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+              (pRVar3,value,0,pMVar1->klass->rgctx_data[4].method);
+    value_00 = value;
+    pRVar3 = (this->fields).RangeValidator;
+    if (pRVar3 != (RangeValidator_1_System_Single_ *)0x0) {
+      pMVar1 = pMVar1->klass->rgctx_data[6].method;
+      method = pMVar1->klass->rgctx_data[4].method;
+      max = 1.4013e-45;
+      min = value;
+      value = (float)pRVar3;
+      value = AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+                        (pRVar3,value_00,1,method);
+      method = (MethodInfo *)&value;
+      max = *(float *)(pMVar1->klass->rgctx_data + 1);
+      min = (float)&UNK_?;
+      value = (float)func_?();
+      min = 0.0;
+      KogamaSettingBase::KogamaSettingBase_set_Value
+                ((KogamaSettingBase *)this,(Object *)value,(MethodInfo *)0x0);
       return;
     }
   }
+  method = (MethodInfo *)&UNK_?;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -86,7 +104,7 @@ KogamaSettingNumeric_1_System_Single__get_KogamaSettingValueType
   if (pTVar2 != pTVar3) {
     IVar1 = *method->klass->rgctx_data;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__Type);
     }
     pTVar2 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)IVar1,(MethodInfo *)0x0);
@@ -104,9 +122,8 @@ KogamaSettingNumeric_1_System_Single__get_KogamaSettingValueType
     message = mscorlib.dll::System::String::String_Concat(arg0,(Object *)pTVar2,method_00);
     func_?();
     this_00 = (Exception *)func_?();
-    func_?();
     mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-    uStack4 = func_?();
+    pMStack4 = method;
     pEStack5 = this_00;
     func_?();
     pcVar6 = (code *)swi(3);
@@ -128,7 +145,7 @@ float MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Ko
   if (this != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
     pOVar1 = (this->fields)._.value;
     pIVar2 = method->klass->rgctx_data[1].klass;
-    if (pIVar2->initialized_and_no_error == 0) {
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
       pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
     if (pOVar1 != (Object *)0x0) {
@@ -156,23 +173,20 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 
 {
   pMVar1 = method;
-  pRVar2 = (this->fields).RangeValidator;
-  if (pRVar2 != (RangeValidator_1_System_Single_ *)0x0) {
-    fVar3 = (float10)(*(method->klass->rgctx_data[3].method)->virtualMethodPointer)
-                               (pRVar2,value,1,method->klass->rgctx_data[3].rgctxDataDummy);
-    value = (float)fVar3;
-    pvVar4 = pMVar1->klass->rgctx_data[1].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar4 + 0xba) & 1) == 0) {
-      pvVar4 = (void *)func_?(pvVar4);
-    }
-    value_00 = (Object *)func_?(pvVar4,&value);
+  this_01 = this;
+  this_00 = (this->fields).RangeValidator;
+  if (this_00 != (RangeValidator_1_System_Single_ *)0x0) {
+    this = (KogamaSettingNumeric_1_System_Single_ *)
+           AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
+                     (this_00,value,1,method->klass->rgctx_data[4].method);
+    value_00 = (Object *)func_?(pMVar1->klass->rgctx_data[1].rgctxDataDummy,&this);
     KogamaSettingBase::KogamaSettingBase_set_Value
-              ((KogamaSettingBase *)this,value_00,(MethodInfo *)0x0);
+              ((KogamaSettingBase *)this_01,value_00,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

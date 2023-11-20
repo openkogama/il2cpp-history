@@ -63,11 +63,11 @@ code_?:
                     (pSVar6,(pRVar5->fields).max,(MethodInfo *)0x0);
           pSVar6 = (this->fields).slider;
           if (pSVar6 != (Slider *)0x0) {
-            (*(pSVar6->klass->vtable).set_value.methodPtr)();
+            (*(code *)(pSVar6->klass->vtable).set_value.method)();
             pSVar6 = (this->fields).slider;
             this_00 = (this->fields).inputField;
             if (pSVar6 != (Slider *)0x0) {
-              fVar7 = (float10)(*(pSVar6->klass->vtable).get_value.methodPtr)();
+              fVar7 = (float10)(*(code *)(pSVar6->klass->vtable).get_value.method)();
               SStack_8.m_value = (float)fVar7;
               value = mscorlib.dll::System::Single::Single_ToString(&SStack_8,(MethodInfo *)0x0);
               if (this_00 != (InputField *)0x0) {
@@ -85,23 +85,23 @@ code_?:
   else {
     if (((
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).typeHierarchyDepth <= (skillSetting->klass->_1).typeHierarchyDepth) &&
+         ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
        ((skillSetting->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).typeHierarchyDepth - 1] ==
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
        )) {
       (this->fields).skillPercentageSetting = (AttributeSettingFloat *)skillSetting;
       if (((
            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).typeHierarchyDepth <= (skillSetting->klass->_1).typeHierarchyDepth) &&
+           ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
          (pKVar1 = skillSetting,
          (skillSetting->klass->_1).typeHierarchy
          [(
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-          ->_1).typeHierarchyDepth - 1] ==
+          ->_1).naturalAligment - 1] ==
          (Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
          )) goto code_?;
@@ -164,12 +164,14 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Inp
   pSVar3 = (pSVar1->fields).slider;
   this = (SkillSettingFloatDecimal *)(float)dVar2;
   if (pSVar3 != (Slider *)0x0) {
-    SStack_4.m_value = (float)(pSVar3->klass->vtable).get_value.methodPtr;
-    fVar5 = (float10)(*(code *)SStack_4.m_value)(pSVar3,(pSVar3->klass->vtable).get_value.method);
+    SStack_4.m_value = (float)(pSVar3->klass->vtable).get_value.method;
+    fVar5 = (float10)(*(code *)SStack_4.m_value)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr)
+    ;
     fVar5 = (float10)func_?((double)(fVar5 * (float10)(float)this));
     SStack_4.m_value = (float)fVar5;
-    (*(pSVar3->klass->vtable).set_value.methodPtr)
-              (pSVar3,SStack_4.m_value / (float)this,(pSVar3->klass->vtable).set_value.method);
+    (*(code *)(pSVar3->klass->vtable).set_value.method)
+              (pSVar3,SStack_4.m_value / (float)this,
+               (pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
     pIVar6 = (pSVar1->fields).inputField;
     this = (SkillSettingFloatDecimal *)0x0;
     if (pIVar6 != (InputField *)0x0) {
@@ -177,13 +179,13 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Inp
                 ((pIVar6->fields).m_Text,(float *)&this,(MethodInfo *)0x0);
       pSVar3 = (pSVar1->fields).slider;
       if (pSVar3 != (Slider *)0x0) {
-        (*(pSVar3->klass->vtable).set_value.methodPtr)
-                  (pSVar3,this,(pSVar3->klass->vtable).set_value.method);
+        (*(code *)(pSVar3->klass->vtable).set_value.method)
+                  (pSVar3,this,(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
         pSVar3 = (pSVar1->fields).slider;
         pIVar6 = (pSVar1->fields).inputField;
         if (pSVar3 != (Slider *)0x0) {
-          this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.methodPtr;
-          fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).get_value.method);
+          this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.method;
+          fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr);
           SStack_4.m_value = (float)fVar5;
           value = mscorlib.dll::System::Single::Single_ToString(&SStack_4,(MethodInfo *)0x0);
           if (pIVar6 != (InputField *)0x0) {
@@ -191,12 +193,12 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Inp
                       (pIVar6,value,(MethodInfo *)0x0);
             pSVar3 = (pSVar1->fields).slider;
             if (pSVar3 != (Slider *)0x0) {
-              this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.methodPtr;
-              fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).get_value.method);
+              this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.method;
+              fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr);
               fStack_7 = (float)fVar5;
               uVar8 = func_?(TypeInfo__System__Single,&fStack_7);
-              (*(pSVar1->klass->vtable).UpdateSkillData.methodPtr)
-                        (pSVar1,uVar8,(pSVar1->klass->vtable).UpdateSkillData.method);
+              (*(code *)(pSVar1->klass->vtable).UpdateSkillData.method)
+                        (pSVar1,uVar8,(pSVar1->klass->vtable).InitializeInfoButton.methodPtr);
               return;
             }
           }
@@ -225,17 +227,19 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Sli
   func_?();
   pSVar2 = (this->fields).slider;
   if (pSVar2 != (Slider *)0x0) {
-    SStack_3.m_value = (float)(pSVar2->klass->vtable).get_value.methodPtr;
-    fVar4 = (float10)(*(code *)SStack_3.m_value)(pSVar2,(pSVar2->klass->vtable).get_value.method);
+    SStack_3.m_value = (float)(pSVar2->klass->vtable).get_value.method;
+    fVar4 = (float10)(*(code *)SStack_3.m_value)(pSVar2,(pSVar2->klass->vtable).set_value.methodPtr)
+    ;
     fVar4 = (float10)func_?((double)(fVar4 * (float10)(float)dVar1));
     SStack_3.m_value = (float)fVar4;
-    (*(pSVar2->klass->vtable).set_value.methodPtr)
-              (pSVar2,SStack_3.m_value / (float)dVar1,(pSVar2->klass->vtable).set_value.method);
+    (*(code *)(pSVar2->klass->vtable).set_value.method)
+              (pSVar2,SStack_3.m_value / (float)dVar1,
+               (pSVar2->klass->vtable).SetValueWithoutNotify.methodPtr);
     pSVar2 = (this->fields).slider;
     this_00 = (this->fields).inputField;
     if (pSVar2 != (Slider *)0x0) {
-      fVar4 = (float10)(*(pSVar2->klass->vtable).get_value.methodPtr)
-                                 (pSVar2,(pSVar2->klass->vtable).get_value.method);
+      fVar4 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)
+                                 (pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
       SStack_3.m_value = (float)fVar4;
       value = mscorlib.dll::System::Single::Single_ToString(&SStack_3,(MethodInfo *)0x0);
       if (this_00 != (InputField *)0x0) {
@@ -243,12 +247,12 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Sli
                   (this_00,value,(MethodInfo *)0x0);
         pSVar2 = (this->fields).slider;
         if (pSVar2 != (Slider *)0x0) {
-          fVar4 = (float10)(*(pSVar2->klass->vtable).get_value.methodPtr)
-                                     (pSVar2,(pSVar2->klass->vtable).get_value.method);
+          fVar4 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)
+                                     (pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
           fStack_5 = (float)fVar4;
           uVar6 = func_?(TypeInfo__System__Single,&fStack_5);
-          (*(this->klass->vtable).UpdateSkillData.methodPtr)
-                    (this,uVar6,(this->klass->vtable).UpdateSkillData.method);
+          (*(code *)(this->klass->vtable).UpdateSkillData.method)
+                    (this,uVar6,(this->klass->vtable).InitializeInfoButton.methodPtr);
           return;
         }
       }
@@ -334,8 +338,8 @@ code_?:
                     );
           pSVar8 = (this->fields).slider;
           if (pSVar8 != (Slider *)0x0) {
-            (*(pSVar8->klass->vtable).set_value.methodPtr)
-                      (pSVar8,value,(pSVar8->klass->vtable).set_value.method);
+            (*(code *)(pSVar8->klass->vtable).set_value.method)
+                      (pSVar8,value,(pSVar8->klass->vtable).SetValueWithoutNotify.methodPtr);
             SkillSettingFloatDecimal_UpdateTextInputFieldWithSliderValue(this,(MethodInfo *)0x0);
             pUVar9 = (this->fields)._.cantUpdateSkillCallback;
             if (pUVar9 != (UnityAction *)0x0) {
@@ -381,8 +385,8 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::
   this_00 = (this->fields).inputField;
   SStack_2.m_value = in_ECX;
   if (pSVar1 != (Slider *)0x0) {
-    fVar3 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar3 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     SStack_2.m_value = (float)fVar3;
     value = mscorlib.dll::System::Single::Single_ToString(&SStack_2,(MethodInfo *)0x0);
     if (this_00 != (InputField *)0x0) {

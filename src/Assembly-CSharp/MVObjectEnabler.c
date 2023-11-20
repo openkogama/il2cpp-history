@@ -13,50 +13,46 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_Destroy
   }
   MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    func_?();
     cRam_? = '\x01';
   }
-  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+  if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
       (IEditModeUI *)0x0) {
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    cRam_? = '\x01';
-  }
-  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-  if (pIVar1 != (IEditModeUI *)0x0) {
-    pDVar2 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar1);
-    this_00 = (UnityAction_1_System_ByteEnum_ *)
-              func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-    unaff_EBX = (Action_1_EditModeChangeArgs___Class *)0x0;
-    if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-      UnityAction_1_System_ByteEnum___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__MVObjectEnabler__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0
-                );
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         (pDVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = TypeInfo__System__Action<EditModeChangeArgs>;
-      pAStack3 = (Action_1_EditModeChangeArgs___Class *)0x0;
-      if (pDVar2 == (Delegate *)0x0) {
-code_?:
-        func_?();
-        return;
-      }
-      pAStack3 = TypeInfo__System__Action<EditModeChangeArgs>;
-      pAStack3 = (Action_1_EditModeChangeArgs___Class *)func_?();
-      if (pAStack3 != (Action_1_EditModeChangeArgs___Class *)0x0) goto code_?;
-      goto code_?;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
     }
-  }
-  func_?();
+    pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+    if (pIVar1 == (IEditModeUI *)0x0) {
+      func_?();
 code_?:
-  pAStack3 = unaff_EBX;
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+      pDStack2 = unaff_ESI;
+      pAStack3 = unaff_EDI;
+      func_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    source = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar1);
+    this_00 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__System__Action<EditModeChangeArgs>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,
+               MethodInfo__MVObjectEnabler__OnEditModeChange_EditModeChangeArgs_,(MethodInfo *)0x0);
+    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove
+                          (source,(Delegate *)this_00,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<EditModeChangeArgs>;
+    pAStack3 = (Action_1_EditModeChangeArgs___Class *)0x0;
+    if (unaff_ESI != (Delegate *)0x0) {
+      pAStack3 = TypeInfo__System__Action<EditModeChangeArgs>;
+      pDStack2 = unaff_ESI;
+      pAStack3 = (Action_1_EditModeChangeArgs___Class *)func_?();
+      if (pAStack3 == (Action_1_EditModeChangeArgs___Class *)0x0) goto code_?;
+    }
+    pDStack2 = (Delegate *)pIVar1;
+    func_?();
+  }
   return;
 }
 
@@ -78,101 +74,97 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_Initialize
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  this_00 = (Action_2_Int32Enum_Object_ *)
+  this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-  if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MVObjectEnabler__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-               ,(MethodInfo *)0x0);
-    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                       ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                        (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-    func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
-    (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
-    MVObjectEnabler_UpdateShowObjects(this,(MethodInfo *)0x0);
-    pOVar2 = (this->fields).goObjectEnabler;
-    if (pOVar2 != (ObjectEnabler *)0x0) {
-      lodGameObject =
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)pOVar2,(MethodInfo *)0x0);
-      MVLogicObject::MVLogicObject_SetupCulling
-                ((MVLogicObject *)this,lodGameObject,2.0,(MethodInfo *)0x0);
-      pOVar2 = (this->fields).goObjectEnabler;
-      if (pOVar2 != (ObjectEnabler *)0x0) {
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UpdateController);
-          func_?(&StringLiteral_Default);
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UpdateController);
-        }
-        UpdateController::UpdateController_AddUpdateObject
-                  ((IUpdatecontrollerSubscriberUpdate *)pOVar2,
-                   UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
-        iVar3 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Default,(MethodInfo *)0x0);
-        (pOVar2->fields).nameToLayer = iVar3;
-        pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0)
-        ;
-        (pOVar2->fields).mainCamera = pCVar4;
-        func_?(&(pOVar2->fields).mainCamera,pCVar4);
-        (this->fields).isInitialized = 1;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__MVGameControllerBase);
-          cRam_? = '\x01';
-        }
-        if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-            (IEditModeUI *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+  UnityAction_2_System_Int32_System_Int32___ctor
+            (this_01,(Object *)this,
+             MethodInfo__MVObjectEnabler__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+             ,(MethodInfo *)0x0);
+  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                     ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                      (Action_2_LogicInputState_LogicObjectManager_ *)this_01,(MethodInfo *)0x0);
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  (*(code *)(this->klass->vtable).OnDataUpdate.method)
+            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+  MVObjectEnabler_UpdateShowObjects(this,(MethodInfo *)0x0);
+  this_00 = (this->fields).goObjectEnabler;
+  if (this_00 != (ObjectEnabler *)0x0) {
+    lodGameObject =
+         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this_00,(MethodInfo *)0x0);
+    MVLogicObject::MVLogicObject_SetupCulling
+              ((MVLogicObject *)this,lodGameObject,2.0,(MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)(this->fields).goObjectEnabler;
+    if (this_01 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UpdateController::UpdateController_AddUpdateObject
+                ((IUpdatecontrollerSubscriberUpdate *)this_01,
+                 UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
+      pvVar2 = (void *)UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                                 (StringLiteral_Default,(MethodInfo *)0x0);
+      (this_01->fields)._._.extra_arg = pvVar2;
+      pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      (this_01->fields)._._.interp_method = pCVar3;
+      func_?();
+      (this->fields).isInitialized = 1;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+          (IEditModeUI *)0x0) {
+        return;
+      }
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if (pIVar4 != (IEditModeUI *)0x0) {
+        a = (Delegate *)func_?();
+        this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_02,(Object *)this,
+                   MethodInfo__MVObjectEnabler__OnEditModeChange_EditModeChangeArgs_,
+                   (MethodInfo *)0x0);
+        this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            (a,(Delegate *)this_02,(MethodInfo *)0x0);
+        unaff_EDI = TypeInfo__System__Action<EditModeChangeArgs>;
+        pAStack5 = (Action_1_EditModeChangeArgs___Class *)0x0;
+        if (this_01 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+code_?:
+          pIStack6 = TypeInfo__IEditModeUI;
+          uStack7 = 3;
+          pUStack8 = (UnityAction_2_System_Int32_System_Int32_ *)pIVar4;
+          func_?();
           return;
         }
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__MVGameControllerBase);
-          cRam_? = '\x01';
-        }
-        pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-        if (pIVar5 != (IEditModeUI *)0x0) {
-          a = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar5);
-          this_01 = (UnityAction_1_System_ByteEnum_ *)
-                    func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-          unaff_EBX = (Action_1_EditModeChangeArgs___Class *)0x0;
-          if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-            UnityAction_1_System_ByteEnum___ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__MVObjectEnabler__OnEditModeChange_EditModeChangeArgs_,
-                       (MethodInfo *)0x0);
-            this = (MVObjectEnabler *)
-                   mscorlib.dll::System::Delegate::Delegate_Combine
-                             (a,(Delegate *)this_01,(MethodInfo *)0x0);
-            unaff_EBX = TypeInfo__System__Action<EditModeChangeArgs>;
-            pAStack6 = (Action_1_EditModeChangeArgs___Class *)0x0;
-            if (this == (MVObjectEnabler *)0x0) {
-code_?:
-              pMStack7 = (MVObjectEnabler *)pIVar5;
-              func_?();
-              return;
-            }
-            pAStack6 = TypeInfo__System__Action<EditModeChangeArgs>;
-            pMStack7 = this;
-            pAStack6 = (Action_1_EditModeChangeArgs___Class *)func_?();
-            if (pAStack6 != (Action_1_EditModeChangeArgs___Class *)0x0)
-            goto code_?;
-            goto code_?;
-          }
-        }
+        pAStack5 = TypeInfo__System__Action<EditModeChangeArgs>;
+        pUStack8 = this_01;
+        pAStack5 = (Action_1_EditModeChangeArgs___Class *)func_?();
+        if (pAStack5 != (Action_1_EditModeChangeArgs___Class *)0x0) goto code_?;
+        goto code_?;
       }
     }
   }
   func_?();
 code_?:
-  pMStack7 = this;
-  pAStack6 = unaff_EBX;
+  pUStack8 = this_01;
+  pAStack5 = unaff_EDI;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -199,34 +191,22 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
     func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
                    );
+    func_?(&TypeInfo__Extensions);
     func_?(&StringLiteral_showOutline);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_showOutline,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar2 = (bool *)func_?();
-        (this->fields).showingOutline = *pbVar2;
-        return;
-      }
-      goto code_?;
-    }
+  hashtable = (this->fields)._._._.data;
+  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__Extensions);
   }
-  pOVar1 = (Object *)func_?();
-code_?:
-  func_?(pOVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  bVar1 = Extensions::Extensions_GetValueOrDefault
+                    (hashtable,StringLiteral_showOutline,1,
+                     bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                    );
+  (this->fields).showingOutline = bVar1;
   return;
 }
 
@@ -242,32 +222,16 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_OnEditModeChange
 }
 
 
-/* Void OnObjectLinkChanged() */
+/* Void OnObjectLinkChanged(ObjectLinkChangeType, ObjectLink) */
 
 void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_OnObjectLinkChanged
-               (MVObjectEnabler *this,MethodInfo *method)
+               (MVObjectEnabler *this,ObjectLinkChangeType__Enum changeType,ObjectLink *objectLink,
+               MethodInfo *method)
 
 {
-  if ((this->fields).isInitialized == 0) {
-    return;
+  if ((this->fields).isInitialized != 0) {
+    MVObjectEnabler_UpdateShowObjects(this,(MethodInfo *)0x0);
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__IInputSignalReceiver);
-    cRam_? = '\x01';
-  }
-  pIVar1 = (this->fields)._InputSignalReceiver_k__BackingField;
-  if (pIVar1 != (IInputSignalReceiver *)0x0) {
-    visible = func_?(1,TypeInfo__IInputSignalReceiver,pIVar1);
-    MVObjectEnabler_ShowObjects(this,visible,(MethodInfo *)0x0);
-    pOVar2 = (this->fields).goObjectEnabler;
-    if (pOVar2 != (ObjectEnabler *)0x0) {
-      (pOVar2->fields)._IsDrawingEnabled_k__BackingField = visible;
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -365,7 +329,7 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects
                           );
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffc0,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__Dispose__
@@ -388,11 +352,10 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects
         pMStack_16 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                                (pMVar14,(pMVar15->fields).groupId,(MethodInfo *)0x0);
         if (((pMStack_16 == (MVWorldObject *)0x0) ||
-            ((pMStack_16->klass->_1).typeHierarchyDepth <
-             (TypeInfo__MVMovable->_1).typeHierarchyDepth)) ||
-           ((MVMovable__Class *)
-            (pMStack_16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).typeHierarchyDepth - 1]
-            != TypeInfo__MVMovable)) {
+            ((pMStack_16->klass->_1).naturalAligment < (TypeInfo__MVMovable->_1).naturalAligment))
+           || ((MVMovable__Class *)
+               (pMStack_16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1]
+               != TypeInfo__MVMovable)) {
           iVar17 = func_?();
           if (iVar17 != 0) goto code_?;
           RStack_13 = _visible;
@@ -461,10 +424,9 @@ bool Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ValidateObjectLinkTar
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <=
-         (wo->klass->_1).typeHierarchyDepth) &&
+    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
        ((MVCubeModelInstance__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] ==
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
         TypeInfo__MVCubeModelInstance)) {
       return wo != (MVWorldObjectClient *)0x0;
     }
@@ -505,10 +467,10 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler__ctor
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
     if (unaff_EDI != (ObjectPrefab *)0x0) {
-      if (((unaff_EDI->klass->_1).typeHierarchyDepth <
-           (TypeInfo__MVObjectEnablerObject->_1).typeHierarchyDepth) ||
+      if (((unaff_EDI->klass->_1).naturalAligment <
+           (TypeInfo__MVObjectEnablerObject->_1).naturalAligment) ||
          ((unaff_EDI->klass->_1).typeHierarchy
-          [(TypeInfo__MVObjectEnablerObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVObjectEnablerObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVObjectEnablerObject)) goto code_?;
       (this->fields).goObjectEnabler = (ObjectEnabler *)unaff_EDI[1].klass;
       unaff_EDI = pOVar2;
@@ -538,15 +500,5 @@ Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_get_DocumentationType
 
 {
   return MVWorldObjectDocumentationType__Enum_ModelToggle;
-}
-
-
-/* Boolean get_ShowingOutline() */
-
-bool Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_get_ShowingOutline
-               (MVObjectEnabler *this,MethodInfo *method)
-
-{
-  return (this->fields).showingOutline;
 }
 

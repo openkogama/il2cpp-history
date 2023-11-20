@@ -83,24 +83,22 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_TeamTint
 {
   switch(team) {
   case MVTeam__Enum_Blue:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3d99999a,0x3ebe76c9,0x3f5be76d,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)
+              (this,0x3d99999a,0x3ebe76c9,0x3f5be76d,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Red:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3f5ae148,0,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)(this,0x3f5ae148,0,0,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Green:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0,0x3f27ae14,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)(this,0,0x3f27ae14,0,0,this->klass[1]._0.image);
     return;
   case MVTeam__Enum_Yellow:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3f333333,0x3f333333,0,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)
+              (this,0x3f333333,0x3f333333,0,0,this->klass[1]._0.image);
     return;
   default:
-    (*(this->klass->vtable).Tint_1.methodPtr)
-              (this,0x3f51eb85,0x3f51eb85,0x3f800000,0,(this->klass->vtable).Tint_1.method);
+    (*(code *)(this->klass->vtable).Tint_1.method)
+              (this,0x3f51eb85,0x3f51eb85,0x3f800000,0,this->klass[1]._0.image);
     return;
   }
 }

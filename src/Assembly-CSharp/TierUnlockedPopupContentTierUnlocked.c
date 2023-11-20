@@ -20,14 +20,14 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentTierUnlocked::
   mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
     IStack_2.m_value = (int32_t)pTVar1;
-    (*(pTVar1->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar1->klass->vtable).set_text.method)();
     pTVar1 = (this->fields)._.titleText;
     str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
     mscorlib.dll::System::String::String_Concat_4
               (StringLiteral_TIER_,str1,StringLiteral__UNLOCKED_,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
       IStack_2.m_value = (int32_t)pTVar1;
-      (*(pTVar1->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar1->klass->vtable).set_text.method)();
       return;
     }
   }

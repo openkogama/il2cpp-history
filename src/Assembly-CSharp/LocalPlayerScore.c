@@ -64,23 +64,23 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Activate
         pTVar7 = (this_02->fields).rankingText;
         mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
         if (pTVar7 != (Text *)0x0) {
-          (*(pTVar7->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar7->klass->vtable).set_text.method)();
           pTVar7 = (this_02->fields).memberRankingText;
           mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
           if (pTVar7 != (Text *)0x0) {
-            (*(pTVar7->klass->vtable).set_text.methodPtr)();
+            (*(code *)(pTVar7->klass->vtable).set_text.method)();
             pTVar7 = (this_02->fields).scoreText;
             WinningConditionControl::WinningConditionControl_MakeIntoScoreText
                       ((int32_t)localScore,statType,(MethodInfo *)0x0);
             if (pTVar7 != (Text *)0x0) {
-              (*(pTVar7->klass->vtable).set_text.methodPtr)();
+              (*(code *)(pTVar7->klass->vtable).set_text.method)();
               pIVar8 = (this_02->fields).background;
               if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               Styles::Styles_GetTeamColor((Color *)&puStack_9,team,0,(MethodInfo *)0x0);
               if (pIVar8 != (Image *)0x0) {
-                (*(pIVar8->klass->vtable).set_color.methodPtr)();
+                (*(code *)(pIVar8->klass->vtable).set_color.method)();
                 return;
               }
             }
@@ -137,16 +137,16 @@ int32_t Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_GetLocalPlayerRa
   pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar6 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar6->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
     if (this_02 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
       pDVar7 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-               Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)&stack0xffffffcc,this_02,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
@@ -156,15 +156,15 @@ int32_t Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_GetLocalPlayerRa
         do {
           bVar8 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                               *)&pOStack_5,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                             );
           if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&pOStack_5,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
@@ -211,7 +211,7 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Initialize
     if (((pMVar2 != (MVLocalPlayer *)0x0) &&
         (pUVar3 = (pMVar2->fields)._._UserProfileData_k__BackingField,
         pUVar3 != (UserProfileData *)0x0)) && (pTVar1 != (Text *)0x0)) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,(pUVar3->fields).UserName);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,(pUVar3->fields).UserName);
       return;
     }
   }
@@ -241,23 +241,23 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Show
     pTVar1 = (this->fields).rankingText;
     mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&currentRanking,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar1->klass->vtable).set_text.method)();
       pTVar1 = (this->fields).memberRankingText;
       mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&currentRanking,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar1->klass->vtable).set_text.method)();
         pTVar1 = (this->fields).scoreText;
         WinningConditionControl::WinningConditionControl_MakeIntoScoreText
                   (localScore,statType,(MethodInfo *)0x0);
         if (pTVar1 != (Text *)0x0) {
-          (*(pTVar1->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar1->klass->vtable).set_text.method)();
           pIVar2 = (this->fields).background;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,localTeam,0,(MethodInfo *)0x0);
           if (pIVar2 != (Image *)0x0) {
-            (*(pIVar2->klass->vtable).set_color.methodPtr)(pIVar2);
+            (*(code *)(pIVar2->klass->vtable).set_color.method)(pIVar2);
             return;
           }
         }

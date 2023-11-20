@@ -7,8 +7,8 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
 {
   pIVar1 = (this->fields).progressBarImage;
   if (pIVar1 != (Image *)0x0) {
-    pfVar2 = (float *)(*(pIVar1->klass->vtable).get_color.methodPtr)
-                                (auStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    pfVar2 = (float *)(*(code *)(pIVar1->klass->vtable).get_color.method)
+                                (auStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
     fVar4 = pfVar2[1];
     fVar5 = pfVar2[2];
     fVar6 = pfVar2[3];
@@ -38,22 +38,15 @@ VehicleEnergyMeter_BlinkingBar(VehicleEnergyMeter *this,MethodInfo *method)
                    );
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(
-                         TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17
-                         );
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = 
+  TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -175,70 +168,67 @@ code_?:
           fVar8 = fVar8 - (pVVar5->WarningColor).g;
           fVar9 = fVar9 - (pVVar5->WarningColor).b;
           fVar3 = fVar3 - (pVVar5->WarningColor).a;
-          if (_UNK_? <= fVar7 * fVar7 + fVar8 * fVar8 + fVar9 * fVar9 + fVar3 * fVar3)
-          {
+          if (_UNK_? <= fVar7 * fVar7 + fVar8 * fVar8 + fVar9 * fVar9 + fVar3 * fVar3) {
             return;
           }
           VehicleEnergyMeter_StopBlinkingBar(this,(MethodInfo *)0x0);
           return;
         }
       }
+      goto code_?;
     }
-    else {
-      pVVar2 = (this->fields).vehicleEnergyContainer;
-      if (pVVar2 != (VehicleEnergyContainer *)0x0) {
-        pVVar10 = (this->fields).vehicleEnergyContainer;
-        (this->fields).updateEnergy = (pVVar2->fields)._UsingEnergy_k__BackingField;
-        if (pVVar10 != (VehicleEnergyContainer *)0x0) {
-          pAVar11 = (pVVar10->fields).OnRefill;
-          this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-          if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_01,(Object *)this,
-                       MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter__OnRefillCallback__
-                       ,(MethodInfo *)0x0);
-            pAVar11 = (Action *)
-                     mscorlib.dll::System::Delegate::Delegate_Combine
-                               ((Delegate *)pAVar11,(Delegate *)this_01,(MethodInfo *)0x0);
-            if (pAVar11 == (Action *)0x0) {
-              (pVVar10->fields).OnRefill = (Action *)0x0;
-            }
-            else {
-              pAVar12 = (Action *)0x0;
-              if (pAVar11->klass == TypeInfo__System__Action) {
-                pAVar12 = pAVar11;
-              }
-              if (pAVar12 == (Action *)0x0) goto code_?;
-              (pVVar10->fields).OnRefill = pAVar12;
-              pAVar12 = (Action *)0x0;
-              if (pAVar11->klass == TypeInfo__System__Action) {
-                pAVar12 = pAVar11;
-              }
-              if (pAVar12 == (Action *)0x0) goto code_?;
-            }
-            func_?();
-            goto code_?;
-          }
-        }
-      }
+    pVVar2 = (this->fields).vehicleEnergyContainer;
+    if (pVVar2 == (VehicleEnergyContainer *)0x0) goto code_?;
+    (this->fields).updateEnergy = (pVVar2->fields)._UsingEnergy_k__BackingField;
+    pVVar2 = (this->fields).vehicleEnergyContainer;
+    if (pVVar2 == (VehicleEnergyContainer *)0x0) goto code_?;
+    pAVar10 = (pVVar2->fields).OnRefill;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,
+               MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter__OnRefillCallback__
+               ,(MethodInfo *)0x0);
+    pAVar10 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar10,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar10 == (Action *)0x0) {
+      (pVVar2->fields).OnRefill = (Action *)0x0;
+code_?:
+      func_?();
+      goto code_?;
     }
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
+    }
+    if (pAVar11 == (Action *)0x0) goto code_?;
+    (pVVar2->fields).OnRefill = pAVar11;
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
+    }
+    if (pAVar11 != (Action *)0x0) goto code_?;
   }
-  else if (rigidBody != (MVRigidBody *)0x0) {
-    pVVar2 = (VehicleEnergyContainer *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                       ((Component *)rigidBody,
-                        WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__Component__GetComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
-                       );
-    (this->fields).vehicleEnergyContainer = pVVar2;
-    func_?(&(this->fields).vehicleEnergyContainer,pVVar2);
-    goto code_?;
+  else {
+    if (rigidBody != (MVRigidBody *)0x0) {
+      pVVar2 = (VehicleEnergyContainer *)
+               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)rigidBody,
+                          WorldObjectTypes__VehicleEnergy__VehicleEnergyContainer_MethodInfo__UnityEngine__Component__GetComponent<WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer>__
+                         );
+      (this->fields).vehicleEnergyContainer = pVVar2;
+      func_?(&(this->fields).vehicleEnergyContainer,pVVar2);
+      goto code_?;
+    }
+code_?:
+    func_?();
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -355,22 +345,15 @@ VehicleEnergyMeter_StopBlinking(VehicleEnergyMeter *this,MethodInfo *method)
                    );
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(
-                         TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___StopBlinking_d__14
-                         );
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = 
+  TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___StopBlinking_d__14;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -380,13 +363,27 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
      VehicleEnergyMeter_StopBlinkingBar(VehicleEnergyMeter *this,MethodInfo *method)
 
 {
-  routine = VehicleEnergyMeter_BlinkingBar(this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&
+                    TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17
+                   );
+    cRam_? = '\x01';
+  }
+  method_00 = 
+  TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(value + 2,this);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
-            ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+            ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
   pIVar1 = (this->fields).progressBarImage;
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
-              (pIVar1,(this->fields).originalColor.r,(this->fields).originalColor.g);
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
+              (pIVar1,(this->fields).originalColor.r,(this->fields).originalColor.g,
+               (this->fields).originalColor.b);
     *(undefined4 *)&(this->fields).currentColor = 0;
     (this->fields).currentColor.value.r = 0.0;
     (this->fields).currentColor.value.g = 0.0;

@@ -14,6 +14,7 @@ void Assembly-CSharp.dll::SharedWorldObjectGameplayFunctions+Explosion::
     func_?();
     func_?();
     func_?();
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
@@ -24,10 +25,12 @@ void Assembly-CSharp.dll::SharedWorldObjectGameplayFunctions+Explosion::
   {
     func_?();
   }
+  iVar2 = TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->static_fields->layerMask;
+  if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
   iVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                    (position,damageRadius,pCVar1,
-                     TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->static_fields->
-                     layerMask,(MethodInfo *)0x0);
+                    (position,damageRadius,pCVar1,iVar2,(MethodInfo *)0x0);
   uVar3 = 0;
   if (0 < iVar2) {
     iStack_4 = 0x10;
@@ -54,9 +57,9 @@ code_?:
                           (pTVar6,(MethodInfo *)0x0);
       if (this_01 != (MVWorldObjectClient *)0x0) {
         if (ignoreIDs == (HashSet_1_System_Int32_ *)0x0) goto code_?;
-        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-                HashSet_1_System_Int32__Contains
-                          (ignoreIDs,(this_01->fields)._.id,
+        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                HashSet_1_System_Int32Enum__Contains
+                          ((HashSet_1_System_Int32Enum_ *)ignoreIDs,(this_01->fields)._.id,
                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
         if (bVar7 == 0) {
           if (((this_01->fields)._.type == 8) && (explosionEvent != (ExplosionEvent *)0x0)) {

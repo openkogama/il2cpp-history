@@ -10,11 +10,11 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_AddLogicObjectToU
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).logicWorldObjects;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)worldObjectID,(Object *)logicWorldObject,
+  this_00 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).logicWorldObjects;
+  if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+    Dictionary_2_System_Int32_System_Object__Add
+              (this_00,worldObjectID,(Object *)logicWorldObject,
                MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Add_int__IInputSignalReceiver_
               );
     return;
@@ -37,10 +37,12 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ClearDebugIds
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).updatedIds;
-  if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3__Clear
+  this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            (this->fields).updatedIds;
+  if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
               (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     return;
   }
@@ -63,19 +65,18 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DebugAddId
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).updatedIds;
-  if (this_00 != (HashSet_1_System_Int32_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-            HashSet_1_System_Int32__Contains
+  this_00 = (HashSet_1_System_Int32Enum_ *)(this->fields).updatedIds;
+  if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
                       (this_00,id,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
     if (bVar1 != 0) goto code_?;
-    this_01 = (HashSet_1_System_Object_ *)(this->fields).updatedIds;
-    if (this_01 != (HashSet_1_System_Object_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-      HashSet_1_System_Object__Add
-                (this_01,(Object *)id,
-                 MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    this_01 = (this->fields).updatedIds;
+    if (this_01 != (HashSet_1_System_Int32_ *)0x0) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+      HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                (this_01,id,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
       return;
     }
   }
@@ -83,7 +84,6 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DebugAddId
 code_?:
   uVar2 = func_?();
   this_02 = (Exception *)func_?(uVar2);
-  func_?(this_02);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Id_already_evaluated__This_is_a_);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,method_00);
@@ -153,7 +153,7 @@ bool MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DoesLinkExist
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -164,7 +164,7 @@ bool MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DoesLinkExist
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
       if (*(int *)((int)LStack_6._current + 0x10) == inputWOID) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -196,13 +196,11 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_RemoveLogicObject
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
-            (this->fields).logicWorldObjects;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)worldObjectID,
+  this_00 = (this->fields).logicWorldObjects;
+  if (this_00 != (Dictionary_2_System_Int32_IInputSignalReceiver_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+            Dictionary_2_System_Int32_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,worldObjectID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__ContainsKey_int_
                       );
     if (bVar1 != 0) {
@@ -247,14 +245,13 @@ int32_t MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
-  this = (HashSet_1_UnityEngine_Vector3_ *)
+  this = (HashSet_1_System_Int32_ *)
          func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  if (this != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-    HashSet_1_UnityEngine_Vector3___ctor
-              (this,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    LogicObjectManager_ResetNode
-              (woID,(HashSet_1_System_Int32_ *)this,worldObjectManager,(MethodInfo *)0x0);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  LogicObjectManager_ResetNode(woID,this,worldObjectManager,(MethodInfo *)0x0);
+  if (this != (HashSet_1_System_Int32_ *)0x0) {
     return (this->fields)._count;
   }
   func_?();
@@ -309,9 +306,9 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetNode
   LStack_8._version = 0;
   LStack_8._current = (Object *)0x0;
   if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
-    bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-            HashSet_1_System_Int32__Contains
-                      (resetNodes,woID,
+    bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
+                      ((HashSet_1_System_Int32Enum_ *)resetNodes,woID,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
     if (bVar9 != 0) {
 code_?:
@@ -332,10 +329,10 @@ code_?:
             iVar13 = func_?(0,TypeInfo__ILogicWorldObject,iVar13);
             if (iVar13 != 0) {
               func_?(3,TypeInfo__IInputSignalReceiver,iVar13);
-              (**(code **)(*piVar10 + 0x14c))(piVar10,*(undefined4 *)(*piVar10 + 0x150));
-              System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-              HashSet_1_System_Object__Add
-                        ((HashSet_1_System_Object_ *)resetNodes,(Object *)woID,
+              (**(code **)(*piVar10 + 0x150))(piVar10,*(undefined4 *)(*piVar10 + 0x154));
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+              HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                        (resetNodes,woID,
                          MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
               if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)piVar10[7] !=
                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -369,7 +366,7 @@ code_?:
                 }
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           ((Object *)&LStack_7,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -408,7 +405,7 @@ code_?:
                   }
                   uStack_1 = 0xffffffff;
                   mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                             ((Object *)&LStack_8,
                              (ExceptionArgument__Enum)
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -447,22 +444,24 @@ String * MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ToString
     func_?(&StringLiteral_logicWorldObjects_Count__0__);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).logicWorldObjects;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).logicWorldObjects;
   if (this_00 !=
-      (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-              RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-              Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
+      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+       *)0x0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
                         );
     if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::
-      Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Count
+      mscorlib.dll::System::Collections::Generic::
+      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+      StyleSheetCache+SheetHandleKey,System::Object]::
+      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                 (this_01,
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__get_Count__
                 );
@@ -513,33 +512,34 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._index = 0;
   DStack_6._version = 0;
   DStack_6._currentValue = (Object *)0x0;
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            (this->fields).logicWorldObjects;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)(this->fields).logicWorldObjects;
   if ((this_00 !=
-       (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-     && (this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::
-                   RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                             (this_00,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
-                             ),
-        this_02 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-         *)0x0)) {
+       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        *)0x0) &&
+     (this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                          (this_00,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
+                          ),
+     this_02 !=
+     (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      *)0x0)) {
     method_00 = (MethodInfo *)&UNK_?;
     pDVar7 = mscorlib.dll::System::Collections::Generic::
-             Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-             Regex+CachedCodeEntryKey,System::Object]::
-             Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
+             Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+             StyleSheetCache+SheetHandleKey,System::Object]::
+             Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                        (&DStack_8,this_02,
                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
                        );
     DStack_8._currentValue = (Object *)&DStack_6;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+    DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
     DStack_6._index = pDVar7->_index;
     DStack_6._version = pDVar7->_version;
     DStack_6._currentValue = pDVar7->_currentValue;
@@ -547,9 +547,9 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
     uStack_1 = 1;
 code_?:
     bVar9 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Object,System
+            Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System
             ::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+            Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                       (&DStack_6,
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
                       );
@@ -560,67 +560,73 @@ code_?:
       pOStack_12 = (DStack_6._currentValue)->klass;
       uVar13 = 0;
       uStack_14 = 0;
-      uVar15 = (pOStack_12->_1).interface_offsets_count;
+      uVar15._0_1_ = (pOStack_12->_1).rank;
+      uVar15._1_1_ = (pOStack_12->_1).minimumAlignment;
       uStack_16 = (uint)uVar15;
       if (uVar15 != 0) {
         do {
           if (pOStack_12->interfaceOffsets[uVar13].interfaceType ==
               (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-            pVVar17 = &((DStack_6._currentValue)->klass->vtable).GetHashCode +
-                     (DStack_6._currentValue)->klass->interfaceOffsets[uVar13].offset;
+            ppMVar17 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
+                       [(DStack_6._currentValue)->klass->interfaceOffsets[uVar13].offset].method;
             goto code_?;
           }
           uVar13 = uVar13 + 1;
         } while (uVar13 < uVar15);
       }
-      pVVar17 = (VirtualInvokeData *)
-               func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
+      ppMVar17 = (MethodInfo **)
+                func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
 code_?:
-      uVar18 = (*pVVar17->methodPtr)(pOVar10,pVVar17->method);
+      uVar18 = (*(code *)*ppMVar17)(pOVar10,ppMVar17[1]);
       pMStack_19 = (MethodInfo *)CONCAT31(pMStack_19._1_3_,uVar18);
       if (pOVar10 == (Object *)0x0) goto code_?;
       pOStack_12 = pOVar10->klass;
-      uVar13 = 0;
+      uVar15 = 0;
       uStack_16 = 0;
-      uVar15 = (pOStack_12->_1).interface_offsets_count;
-      uStack_14 = (uint)uVar15;
-      if (uVar15 != 0) {
+      uVar13._0_1_ = (pOStack_12->_1).rank;
+      uVar13._1_1_ = (pOStack_12->_1).minimumAlignment;
+      uStack_14 = (uint)uVar13;
+      if (uVar13 != 0) {
         do {
-          if (pOStack_12->interfaceOffsets[uVar13].interfaceType ==
+          if (pOStack_12->interfaceOffsets[uVar15].interfaceType ==
               (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-            pVVar17 = &(pOStack_11->klass->vtable).Equals +
-                     pOStack_11->klass->interfaceOffsets[uVar13].offset;
+            pOVar20 = pOStack_11->klass;
+            iVar21 = pOVar20->interfaceOffsets[uVar15].offset;
             method_00 = pMStack_19;
-            (*pVVar17->methodPtr)(pOStack_11,pMStack_19,pVVar17->method);
+            (*(code *)(&(pOVar20->vtable).Equals)[iVar21].method)
+                      (pOStack_11,pMStack_19,(&(pOVar20->vtable).Finalize)[iVar21].methodPtr);
             goto code_?;
           }
-          uVar13 = uVar13 + 1;
+          uVar15 = uVar15 + 1;
           pOVar10 = pOStack_11;
-        } while (uVar13 < uVar15);
+        } while (uVar15 < uVar13);
       }
-      puVar20 = (undefined4 *)func_?(pOVar10,TypeInfo__IInputSignalReceiver,0);
+      puVar22 = (undefined4 *)func_?(pOVar10,TypeInfo__IInputSignalReceiver,0);
       method_00 = pMStack_19;
-      (*(code *)*puVar20)(pOVar10,pMStack_19,puVar20[1]);
+      (*(code *)*puVar22)(pOVar10,pMStack_19,puVar22[1]);
       goto code_?;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__
                ,method_00);
     uStack_1 = 0xffffffff;
-    piVar21 = &(this->fields)._TimeStamp_k__BackingField;
-    *piVar21 = *piVar21 + 100;
+    piVar23 = &(this->fields)._TimeStamp_k__BackingField;
+    *piVar23 = *piVar23 + 100;
     if ((this->fields).trackLoops != 0) {
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
         cRam_? = '\x01';
       }
-      this_01 = (HashSet_1_UnityEngine_Vector3_ *)(this->fields).updatedIds;
-      if (this_01 == (HashSet_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3__Clear
+      this_01 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                (this->fields).updatedIds;
+      if (this_01 == (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
+      goto code_?;
+      System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
                 (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
     }
     *unaff_FS_OFFSET = uStack_3;
@@ -628,8 +634,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -675,7 +681,7 @@ MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateLink
       return LogicObjectManager_ValidateLinkStatus__Enum_InputObjectIsNull;
     }
     if (piVar2 != (int *)0x0) {
-      cVar3 = (**(code **)(*piVar2 + 0x134))(piVar2,*(undefined4 *)(*piVar2 + 0x138));
+      cVar3 = (**(code **)(*piVar2 + 0x138))(piVar2,*(undefined4 *)(*piVar2 + 0x13c));
       if (cVar3 == '\0') {
         *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
         return LogicObjectManager_ValidateLinkStatus__Enum_InputObjectDoesNotHaveConnector;
@@ -786,7 +792,7 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateLink_1
                    loopDetected,(MethodInfo *)0x0);
       } while (*loopDetected == 0);
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&LStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
@@ -846,27 +852,29 @@ MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateObjectLink
         return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWO;
       }
       if (pMStack_1 != (MVWorldObject *)0x0) {
-        cVar3 = (*(pMStack_1->klass->vtable).get_HasObjectConnector.methodPtr)
-                          (pMStack_1,(pMStack_1->klass->vtable).get_HasObjectConnector.method);
+        cVar3 = (*(code *)(pMStack_1->klass->vtable).get_HasObjectConnector.method)
+                          (pMStack_1,(pMStack_1->klass->vtable).OnInputStateChanged.methodPtr);
         if (cVar3 == '\0') {
           *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
           return 
           LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectConnectorHasNoObjectConnector;
         }
         if (pMStack_1 != (MVWorldObject *)0x0) {
-          bVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_ContainObjectLink
+          iVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_GetIndexOfObjectLink
                             (pMStack_1,objectLink,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
+          if (iVar5 != -1) {
             *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
             return 
             LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectConnectorContainsLinkAlready;
           }
           if (pMStack_2 != (MVWorldObject *)0x0) {
-            bVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_ContainObjectLink
+            iVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_GetIndexOfObjectLink
                               (pMStack_2,objectLink,(MethodInfo *)0x0);
             *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-            return (bVar5 == 0) +
-                   LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWOContainsLinkAlready;
+            if (iVar5 != -1) {
+              return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWOContainsLinkAlready;
+            }
+            return LogicObjectManager_ValidateObjectLinkStatus__Enum_Ok;
           }
         }
       }
@@ -894,58 +902,30 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager__ctor
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
-                           );
-  if (this_00 != (Dictionary_2_System_Int32_IInputSignalReceiver_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
-              );
-    (this->fields).logicWorldObjects = this_00;
-    func_?(&this->fields,this_00);
-    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-              func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      method_00 = (MethodInfo *)&(this->fields).updatedIds;
-      (this->fields).updatedIds = (HashSet_1_System_Int32_ *)this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields).trackLoops = trackLoops;
-      (this->fields)._TimeStamp_k__BackingField = timeStamp;
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Int32 get_FrameCount() */
-
-int32_t MVWorldObject.dll::LogicObjectManager::LogicObjectManager_get_FrameCount
-                  (LogicObjectManager *this,MethodInfo *method)
-
-{
-  return (this->fields)._TimeStamp_k__BackingField / 100;
-}
-
-
-/* Void set_TimeStamp(Int32) */
-
-void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_set_TimeStamp
-               (LogicObjectManager *this,int32_t value,MethodInfo *method)
-
-{
-  (this->fields)._TimeStamp_k__BackingField = value;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
+            );
+  (this->fields).logicWorldObjects = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)this_00;
+  func_?(&this->fields,this_00);
+  this_01 = (HashSet_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+  HashSet_1_System_Int32___ctor
+            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  method_00 = (MethodInfo *)&(this->fields).updatedIds;
+  (this->fields).updatedIds = this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).trackLoops = trackLoops;
+  (this->fields)._TimeStamp_k__BackingField = timeStamp;
   return;
 }
 

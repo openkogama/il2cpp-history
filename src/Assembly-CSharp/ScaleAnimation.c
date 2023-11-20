@@ -74,16 +74,51 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Play
 }
 
 
+/* Void Stop() */
+
+void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stop
+               (ScaleAnimation *this,MethodInfo *method)
+
+{
+  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar1 = (this->fields)._.originalScale.z;
+  this_00 = (this->fields)._.target;
+  uVar2 = (this->fields)._.originalScale.x;
+  uVar3 = (this->fields)._.originalScale.y;
+  this_01 = (this->fields).animationCurve;
+  if (this_01 != (AnimationCurve *)0x0) {
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                      (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
+    if (this_00 != (Transform *)0x0) {
+      value.y = (float)uVar3 * fVar4;
+      value.x = (float)uVar2 * fVar4;
+      value.z = fVar1 * fVar4;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                (this_00,value,(MethodInfo *)0x0);
+      pSVar5 = (this->fields)._.OnScaleAnimationStopped;
+      (this->fields)._.state = 1;
+      if (pSVar5 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        (*(pSVar5->fields)._._.invoke_impl)();
+      }
+      return;
+    }
+  }
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
 /* Void Stopped(Single) */
 
 void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stopped
                (ScaleAnimation *this,float extraTime,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields)._.OnScaleAnimationStopped;
   (this->fields)._.state = 1;
+  pSVar1 = (this->fields)._.OnScaleAnimationStopped;
   if (pSVar1 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-    pSVar1 = (this->fields)._.OnScaleAnimationStopped;
     (*(pSVar1->fields)._._.invoke_impl)
               ((pSVar1->fields)._._.method_code,extraTime,(pSVar1->fields)._._.method);
   }
@@ -98,7 +133,7 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Update
 
 {
   if ((this->fields)._.testState == 2) {
-    (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
+    (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
     (this->fields)._.testState = 0;
   }
   if ((this->fields)._.state != 2) {
@@ -122,12 +157,12 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Update
         value_00.z = fVar3 * fVar1;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                   (this_00,value_00,(MethodInfo *)0x0);
+        pSVar6 = (this->fields)._.OnScaleAnimationStopped;
         (this->fields)._.state = 1;
-        if ((this->fields)._.OnScaleAnimationStopped ==
-            (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        if (pSVar6 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
           return;
         }
-        (*(((this->fields)._.OnScaleAnimationStopped)->fields)._._.invoke_impl)();
+        (*(pSVar6->fields)._._.invoke_impl)();
         return;
       }
     }
@@ -145,8 +180,8 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Update
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

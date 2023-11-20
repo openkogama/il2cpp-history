@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::TimedPlayReward+RewardTracker::
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_TimedPlayReward_RewardTracker_Co,(MethodInfo *)0x0);
     TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
     func_?(&TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged,0);

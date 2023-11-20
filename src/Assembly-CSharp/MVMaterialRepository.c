@@ -19,26 +19,24 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AddMaterial
     this_00 = (this->fields).materials;
     materialId = (this_00->fields)._size;
     if (physicalProperties != (Single__Array *)0x0) {
-      if ((((physicalProperties->max_length == 0) || (physicalProperties->max_length < 2)) ||
-          (physicalProperties->max_length < 3)) ||
-         ((physicalProperties->max_length < 4 || (physicalProperties->max_length < 5))))
-      goto code_?;
-      PStack_1.toughness = 0.0;
-      PStack_1.friction = 0.0;
-      PStack_1.bouncyness = 0.0;
-      PStack_1.softness = 0.0;
-      PStack_1.staticFriction = 0.0;
-      MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties__ctor
-                (&PStack_1,physicalProperties->vector[0],physicalProperties->vector[1],
-                 physicalProperties->vector[2],physicalProperties->vector[3],
-                 physicalProperties->vector[4],(MethodInfo *)0x0);
-      this_01 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
-      if (this_01 != (MVMaterial *)0x0) {
-        physicalProperties_00.bouncyness = PStack_1.bouncyness;
-        physicalProperties_00.friction = PStack_1.friction;
-        physicalProperties_00.softness = PStack_1.softness;
-        physicalProperties_00.staticFriction = PStack_1.staticFriction;
-        physicalProperties_00.toughness = PStack_1.toughness;
+      if ((((physicalProperties->max_length != 0) && (1 < physicalProperties->max_length)) &&
+          (2 < physicalProperties->max_length)) &&
+         ((3 < physicalProperties->max_length && (4 < physicalProperties->max_length)))) {
+        fVar1 = 0.0;
+        fVar2 = 0.0;
+        fVar3 = 0.0;
+        fVar4 = 0.0;
+        UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::GlyphMetrics::
+        GlyphMetrics__ctor((GlyphMetrics *)&stack0xffffffe8,physicalProperties->vector[0],
+                           physicalProperties->vector[1],physicalProperties->vector[2],
+                           physicalProperties->vector[3],physicalProperties->vector[4],
+                           (MethodInfo *)0x0);
+        this_01 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
+        physicalProperties_00.bouncyness = fVar2;
+        physicalProperties_00.friction = fVar1;
+        physicalProperties_00.softness = fVar3;
+        physicalProperties_00.staticFriction = fVar4;
+        physicalProperties_00.toughness = 0.0;
         MVMaterial::MVMaterial__ctor_1
                   (this_01,materialId,name,description,physicalProperties_00,materialSound,
                    modifierPackageType,priceGold,isUnlocked,materialButtonTextureGenerator,
@@ -49,13 +47,14 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AddMaterial
                    MethodInfo__System__Collections__Generic__List<MVMaterial>__Add_MVMaterial_);
         return;
       }
+      goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -126,7 +125,7 @@ bool Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository_AllMaterial
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)&LStack_8,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVMaterial>__Dispose__
@@ -369,111 +368,111 @@ void Assembly-CSharp.dll::MVMaterialRepository::MVMaterialRepository__ctor
   }
   this_00 = (List_1_MVMaterial_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVMaterial>);
-  if (this_00 != (List_1_MVMaterial_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
-    (this->fields).materials = this_00;
-    func_?(&this->fields,this_00);
-    method_01 = (MethodInfo *)0x0;
-    method_00 = (MethodInfo *)&UNK_?;
-    MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties__ctor
-              ((PhysicalProperties *)&stack0xffffffe0,0.43,0.0,1.0,20.0,0.0,(MethodInfo *)0x0);
-    (this->fields).physicalPropertiesDefault.friction = (float)method_01;
-    (this->fields).physicalPropertiesDefault.bouncyness = 0.0;
-    (this->fields).physicalPropertiesDefault.softness = 0.0;
-    (this->fields).physicalPropertiesDefault.staticFriction = 0.0;
-    (this->fields).physicalPropertiesDefault.toughness = 0.0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_01);
-    if (TypeInfo__MVMaterialRepository->static_fields->instance != (MVMaterialRepository *)0x0) {
-      return;
-    }
-    TypeInfo__MVMaterialRepository->static_fields->instance = this;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVMaterial>__List__);
+  (this->fields).materials = this_00;
+  func_?(&this->fields,this_00);
+  fVar1 = 0.0;
+  pMVar2 = (MethodInfo *)0x0;
+  fVar3 = 0.0;
+  fVar4 = 0.0;
+  fVar5 = 0.0;
+  UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::GlyphMetrics::GlyphMetrics__ctor
+            ((GlyphMetrics *)&stack0xffffffe4,0.43,0.0,1.0,20.0,0.0,(MethodInfo *)0x0);
+  (this->fields).physicalPropertiesDefault.friction = (float)pMVar2;
+  (this->fields).physicalPropertiesDefault.bouncyness = fVar3;
+  (this->fields).physicalPropertiesDefault.softness = fVar4;
+  (this->fields).physicalPropertiesDefault.staticFriction = fVar5;
+  (this->fields).physicalPropertiesDefault.toughness = fVar1;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,pMVar2);
+  if (TypeInfo__MVMaterialRepository->static_fields->instance != (MVMaterialRepository *)0x0) {
+    return;
+  }
+  TypeInfo__MVMaterialRepository->static_fields->instance = this;
+  func_?();
+  if ((TypeInfo__MaterialDescription->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
-    if ((TypeInfo__MaterialDescription->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MaterialDescription);
-    }
-    pMVar1 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
-    if (pMVar1 != (MaterialDescription__Array *)0x0) {
-      if (pMVar1->max_length < 0x19) goto code_?;
-      if (pMVar1->vector[0x18] != (MaterialDescription *)0x0) {
-        pSVar2 = (pMVar1->vector[0x18]->fields)._Name_k__BackingField;
-        pMVar3 = TypeInfo__MaterialDescription->static_fields->materialDescriptions->vector[0x18];
-        if (pMVar3 != (MaterialDescription *)0x0) {
-          pSVar4 = (pMVar3->fields)._Description_k__BackingField;
-          fVar5 = (this->fields).physicalPropertiesDefault.friction;
-          fVar6 = (this->fields).physicalPropertiesDefault.bouncyness;
-          fVar7 = (this->fields).physicalPropertiesDefault.softness;
-          fVar8 = (this->fields).physicalPropertiesDefault.staticFriction;
-          fVar9 = (this->fields).physicalPropertiesDefault.toughness;
-          pMVar10 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
-          if (pMVar10 != (MVMaterial *)0x0) {
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Object);
-              cRam_? = '\x01';
-            }
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)pMVar10,ExceptionArgument__Enum_obj,method_00);
-            (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
-            (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar5;
-            (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar6;
-            (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar7;
-            (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar8;
-            (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar9;
-            MVMaterial::MVMaterial_GenerateCube(pMVar10,0x18,(MethodInfo *)0x0);
-            MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-            if (MVar11 != MVGameMode__Enum_Play) {
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Object);
-              }
-              bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                 ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
-              if (bVar12 != 0) goto code_?;
-            }
-            (pMVar10->fields).unlockPriceGold = 0;
-            (pMVar10->fields).isUnlocked = 0;
-            (pMVar10->fields)._Name_k__BackingField = pSVar2;
-            func_?(&(pMVar10->fields)._Name_k__BackingField,pSVar2);
-            (pMVar10->fields)._Description_k__BackingField = pSVar4;
-            func_?(&(pMVar10->fields)._Description_k__BackingField,pSVar4);
-            (this->fields).noMaterial = pMVar10;
-            func_?(&(this->fields).noMaterial,pMVar10);
-            if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__MVPhysics);
-            }
-            pMVar13 = TypeInfo__MVPhysics->static_fields;
-            fVar5 = (pMVar13->airPhysicalProperties).friction;
-            fVar6 = (pMVar13->airPhysicalProperties).bouncyness;
-            fVar7 = (pMVar13->airPhysicalProperties).softness;
-            fVar8 = (pMVar13->airPhysicalProperties).staticFriction;
-            fVar9 = (pMVar13->airPhysicalProperties).toughness;
-            pMVar10 = (MVMaterial *)func_?(TypeInfo__MVMaterial);
-            if (pMVar10 != (MVMaterial *)0x0) {
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                        ((Object *)pMVar10,ExceptionArgument__Enum_obj,unaff_EBX);
-              (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
-              (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar5;
-              (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar6;
-              (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar7;
-              (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar8;
-              (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar9;
-              (this->fields).inAirMaterial = pMVar10;
-              func_?(&(this->fields).inAirMaterial,pMVar10);
-              return;
-            }
-          }
+  }
+  pMVar6 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
+  if (pMVar6 != (MaterialDescription__Array *)0x0) {
+    if (pMVar6->max_length < 0x19) goto code_?;
+    if (pMVar6->vector[0x18] != (MaterialDescription *)0x0) {
+      pSVar7 = (pMVar6->vector[0x18]->fields)._Name_k__BackingField;
+      pMVar8 = TypeInfo__MaterialDescription->static_fields->materialDescriptions->vector[0x18];
+      if (pMVar8 != (MaterialDescription *)0x0) {
+        pSVar9 = (pMVar8->fields)._Description_k__BackingField;
+        pMVar2 = (MethodInfo *)(this->fields).physicalPropertiesDefault.softness;
+        fVar4 = (this->fields).physicalPropertiesDefault.staticFriction;
+        fVar3 = (this->fields).physicalPropertiesDefault.toughness;
+        pMVar10 = (MVMaterial *)func_?();
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
         }
+        fVar5 = 0.0;
+        pMVar11 = pMVar10;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  ((Object *)pMVar10,ExceptionArgument__Enum_obj,pMVar2);
+        (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
+        (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = (float)pMVar11;
+        (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar5;
+        (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = (float)pMVar2;
+        (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar4;
+        (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar3;
+        MVMaterial::MVMaterial_GenerateCube(pMVar10,0x18,(MethodInfo *)0x0);
+        MVar12 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar12 == MVGameMode__Enum_Play) {
+code_?:
+          (pMVar10->fields).unlockPriceGold = 0;
+          (pMVar10->fields).isUnlocked = 0;
+          (pMVar10->fields)._Name_k__BackingField = pSVar7;
+          func_?();
+          (pMVar10->fields)._Description_k__BackingField = pSVar9;
+          func_?();
+          (this->fields).noMaterial = pMVar10;
+          func_?();
+          if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          method_00 = TypeInfo__MVMaterial;
+          pMVar13 = TypeInfo__MVPhysics->static_fields;
+          fVar4 = (pMVar13->airPhysicalProperties).friction;
+          fVar5 = (pMVar13->airPhysicalProperties).bouncyness;
+          fVar1 = (pMVar13->airPhysicalProperties).softness;
+          fVar14 = (pMVar13->airPhysicalProperties).staticFriction;
+          fVar3 = (pMVar13->airPhysicalProperties).toughness;
+          pMVar10 = (MVMaterial *)func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)pMVar10,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          (pMVar10->fields)._ModifierPackageType_k__BackingField = 0;
+          (pMVar10->fields)._PhysicalProperties_k__BackingField.friction = fVar4;
+          (pMVar10->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar5;
+          (pMVar10->fields)._PhysicalProperties_k__BackingField.softness = fVar1;
+          (pMVar10->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar14;
+          (pMVar10->fields)._PhysicalProperties_k__BackingField.toughness = fVar3;
+          (this->fields).inAirMaterial = pMVar10;
+          func_?();
+          return;
+        }
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pSVar9 = (String *)0x0;
+        bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                          ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar15 == 0) goto code_?;
       }
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

@@ -28,19 +28,6 @@ public class PickController : MonoBehaviour
 	private int pickedWoId;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass7_0
-	{
-		// Fields
-		public PickHelper picker;
-
-		// Constructors
-		public __c__DisplayClass7_0();
-
-		// Methods
-		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -55,6 +42,19 @@ public class PickController : MonoBehaviour
 
 		// Methods
 		internal void _SelectionChanged_b__8_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public PickHelper picker;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _Initialize_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

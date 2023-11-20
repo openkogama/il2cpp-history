@@ -10,34 +10,13 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.BytePackerFunctions
 {
 	public static class BytePackerFunctionsVersion11
 	{
-		// Nested types
-		[CompilerGenerated]
-		private sealed class __c__DisplayClass1
-		{
-			// Fields
-			public List<MVWorldObject> woList;
-			public int numWO;
-			public KogamaDataPackage kogamaDataPackage;
-			public bool writeRuntimeData;
-	
-			// Constructors
-			public __c__DisplayClass1();
-	
-			// Methods
-			public void _GetBytePackerFromKogamaDataPackage_b__0(MVWorldObject worldObject);
-		}
-	
 		// Methods
-		public static BytePacker GetBytePackerFromKogamaDataPackage(KogamaDataPackage kogamaDataPackage, bool writeRuntimeData);
-		private static bool IsSerializable(int id, Dictionary<int, MVWorldObject> worldObjects);
-		private static void WriteWorldObjectOwnerState(BytePacker bp, MVWorldObject wo);
-		private static void WriteDataToBytePacker(BytePacker bp, Dictionary<object, object> data);
 		public static Dictionary<object, object> GetDataParameters(BytePacker bp, KogamaDataType kogamaDataType, bool readRuntimeData);
 		private static Dictionary<object, object> GetPrototypeDataParameters(BytePacker bp);
 		private static Dictionary<object, object> GetWorldObjectDataParameters(BytePacker bp, bool readRuntimeData);

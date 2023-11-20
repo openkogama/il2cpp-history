@@ -89,18 +89,12 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets+Preset::
   (this->fields).name = pSVar1;
   func_?(&this->fields,pSVar1);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
-               MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__,
-               (MethodInfo *)0x0);
-    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,
+             MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__,
+             (MethodInfo *)0x0);
+  TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
   return;
 }
 

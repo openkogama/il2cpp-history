@@ -44,22 +44,23 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_SetEyeState
         if (pOVar2 != (Object *)0x0) {
           pOVar3 = pOVar2->klass;
           uVar4 = 0;
-          uVar5 = (pOVar3->_1).interface_offsets_count;
+          uVar5._0_1_ = (pOVar3->_1).rank;
+          uVar5._1_1_ = (pOVar3->_1).minimumAlignment;
           if (uVar5 != 0) {
             do {
               if (pOVar3->interfaceOffsets[uVar4].interfaceType ==
                   (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-                pVVar6 = &(pOVar2->klass->vtable).Equals +
-                         pOVar2->klass->interfaceOffsets[uVar4].offset;
+                ppMVar6 = &(&(pOVar2->klass->vtable).Equals)
+                           [pOVar2->klass->interfaceOffsets[uVar4].offset].method;
                 goto code_?;
               }
               uVar4 = uVar4 + 1;
             } while (uVar4 < uVar5);
           }
-          pVVar6 = (VirtualInvokeData *)
-                   func_?(pOVar2,TypeInfo__GhostEye__IGhostEyeState,0,pOVar2,pOVar3,0);
+          ppMVar6 = (MethodInfo **)
+                    func_?(pOVar2,TypeInfo__GhostEye__IGhostEyeState,0,pOVar2,pOVar3,0);
 code_?:
-          (*pVVar6->methodPtr)(pOVar2,this,pVVar6->method);
+          (*(code *)*ppMVar6)(pOVar2,this,ppMVar6[1]);
           (this->fields).currentEyeState = ghostEyeState;
           return;
         }
@@ -134,74 +135,74 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_Update(GhostEye *this,MethodInfo *m
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).ghostEyeStates;
-  if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       (this_00,(this->fields).currentEyeState,
-                        MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      uVar2 = 0;
-      uVar3 = (pOVar1->klass->_1).interface_offsets_count;
-      if (uVar3 != 0) {
-        do {
-          if (pOVar1->klass->interfaceOffsets[uVar2].interfaceType ==
-              (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-            pVVar4 = &(pOVar1->klass->vtable).Finalize +
-                     pOVar1->klass->interfaceOffsets[uVar2].offset;
-            goto code_?;
-          }
-          uVar2 = uVar2 + 1;
-        } while (uVar2 < uVar3);
-      }
-      pVVar4 = (VirtualInvokeData *)func_?(pOVar1,TypeInfo__GhostEye__IGhostEyeState,1);
+  if ((this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) &&
+     (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         (this_00,(this->fields).currentEyeState,
+                          MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
+                         ), pOVar1 != (Object *)0x0)) {
+    pOStack_2 = pOVar1->klass;
+    uVar3 = 0;
+    uStack_4 = 0;
+    uVar5._0_1_ = (pOStack_2->_1).rank;
+    uVar5._1_1_ = (pOStack_2->_1).minimumAlignment;
+    if (uVar5 != 0) {
+      do {
+        if (pOStack_2->interfaceOffsets[uVar3].interfaceType ==
+            (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
+          ppMVar6 = &(&(pOStack_2->vtable).Finalize)[pOStack_2->interfaceOffsets[uVar3].offset].
+                     method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar5);
+    }
+    ppMVar6 = (MethodInfo **)func_?(pOVar1,TypeInfo__GhostEye__IGhostEyeState,1);
 code_?:
-      pfVar5 = (float *)(*pVVar4->methodPtr)(&QStack_6,pOVar1,this,pVVar4->method);
-      this_01 = (this->fields).eyeBall;
-      QStack_7.x = *pfVar5;
-      QStack_7.y = pfVar5[1];
-      QStack_7.z = pfVar5[2];
-      QStack_7.w = pfVar5[3];
-      if (_UNK_? < (this->fields).currentTransitionTime) {
-        fVar8 = *pfVar5;
-        fVar9 = pfVar5[1];
-        fVar10 = pfVar5[2];
-        fVar11 = pfVar5[3];
-        if (this_01 == (Transform *)0x0) goto code_?;
-      }
-      else {
-        if (this_01 == (Transform *)0x0) goto code_?;
-        pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                           (&QStack_6,this_01,(MethodInfo *)0x0);
-        b.y = QStack_7.y;
-        b.x = QStack_7.x;
-        b.z = QStack_7.z;
-        b.w = QStack_7.w;
-        pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                           (&QStack_7,*pQVar12,b,
-                            (this->fields).currentTransitionTime / _UNK_?,(MethodInfo *)0x0);
-        fVar8 = pQVar12->x;
-        fVar9 = pQVar12->y;
-        fVar10 = pQVar12->z;
-        fVar11 = pQVar12->w;
-      }
-      value.y = fVar9;
-      value.x = fVar8;
-      value.z = fVar10;
-      value.w = fVar11;
+    pfVar7 = (float *)(*(code *)*ppMVar6)(&QStack_8,pOVar1,this,ppMVar6[1]);
+    this_01 = (this->fields).eyeBall;
+    QStack_9.x = *pfVar7;
+    QStack_9.y = pfVar7[1];
+    QStack_9.z = pfVar7[2];
+    QStack_9.w = pfVar7[3];
+    if (_UNK_? < (this->fields).currentTransitionTime) {
+      fVar10 = *pfVar7;
+      fVar11 = pfVar7[1];
+      fVar12 = pfVar7[2];
+      fVar13 = pfVar7[3];
+      if (this_01 != (Transform *)0x0) goto code_?;
+    }
+    else if (this_01 != (Transform *)0x0) {
+      pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+                         (&QStack_8,this_01,(MethodInfo *)0x0);
+      b.y = QStack_9.y;
+      b.x = QStack_9.x;
+      b.z = QStack_9.z;
+      b.w = QStack_9.w;
+      pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                         (&QStack_9,*pQVar14,b,(this->fields).currentTransitionTime / _UNK_?,
+                          (MethodInfo *)0x0);
+      fVar10 = pQVar14->x;
+      fVar11 = pQVar14->y;
+      fVar12 = pQVar14->z;
+      fVar13 = pQVar14->w;
+code_?:
+      value.y = fVar11;
+      value.x = fVar10;
+      value.z = fVar12;
+      value.w = fVar13;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                 (this_01,value,(MethodInfo *)0x0);
-      fVar8 = (this->fields).currentTransitionTime;
-      fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+      fVar10 = (this->fields).currentTransitionTime;
+      fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                          ((MethodInfo *)0x0);
-      (this->fields).currentTransitionTime = fVar9 + fVar8;
+      (this->fields).currentTransitionTime = fVar11 + fVar10;
       return;
     }
   }
-code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -228,10 +229,10 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_UpdateLookAtTarget
                           );
     if (unaff_EDI != (Object *)0x0) {
       pGVar1 = TypeInfo__GhostEye__LookAtTarget;
-      if (((TypeInfo__GhostEye__LookAtTarget->_1).typeHierarchyDepth <=
-           (unaff_EDI->klass->_1).typeHierarchyDepth) &&
+      if (((TypeInfo__GhostEye__LookAtTarget->_1).naturalAligment <=
+           (unaff_EDI->klass->_1).naturalAligment) &&
          ((unaff_EDI->klass->_1).typeHierarchy
-          [(TypeInfo__GhostEye__LookAtTarget->_1).typeHierarchyDepth - 1] ==
+          [(TypeInfo__GhostEye__LookAtTarget->_1).naturalAligment - 1] ==
           (Il2CppClass *)TypeInfo__GhostEye__LookAtTarget)) {
         unaff_EDI[1].klass = (Object__Class *)target.x;
         unaff_EDI[1].monitor = (MonitorData *)target.y;
@@ -275,85 +276,80 @@ void Assembly-CSharp.dll::GhostEye::GhostEye__ctor(GhostEye *this,MethodInfo *me
     func_?(&TypeInfo__GhostEye__SneakySideToSide);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>
                            );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Dictionary__
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Dictionary__
+            );
+  method_01 = TypeInfo__GhostEye__RandomEyeRoll;
+  pOVar1 = (Object *)func_?();
+  pOVar1[1].klass = (Object__Class *)0x3f000000;
+  pOVar1[2].klass = (Object__Class *)0x3f800000;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
               );
-    pOVar1 = (Object *)func_?(TypeInfo__GhostEye__RandomEyeRoll);
-    if (pOVar1 != (Object *)0x0) {
-      pOVar1[1].klass = (Object__Class *)0x3f000000;
-      pOVar1[2].klass = (Object__Class *)0x3f800000;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this_00,(Object *)0x0,pOVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
-                );
-      pOVar1 = (Object *)func_?(TypeInfo__GhostEye__LookAtTarget);
-      if (pOVar1 != (Object *)0x0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)0x1,pOVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
-                  );
-        pOVar1 = (Object *)func_?(TypeInfo__GhostEye__DieRollback);
-        if (pOVar1 != (Object *)0x0) {
-          QStack_2.w = 0.0;
-          euler.y = 0.0;
-          euler.z = 0.0;
-          euler.x = (float)_UNK_?;
-          pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                   Quaternion_Internal_FromEulerRad(&QStack_2,euler,(MethodInfo *)0x0);
-          pOVar4 = (Object__Class *)pQVar3->y;
-          pMVar5 = (MonitorData *)pQVar3->z;
-          pOVar6 = (Object__Class *)pQVar3->w;
-          pOVar1[1].monitor = (MonitorData *)pQVar3->x;
-          pOVar1[2].klass = pOVar4;
-          pOVar1[2].monitor = pMVar5;
-          pOVar1[3].klass = pOVar6;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this_00,(Object *)0x2,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
-                    );
-          pOVar1 = (Object *)func_?(TypeInfo__GhostEye__SneakySideToSide);
-          if (pOVar1 != (Object *)0x0) {
-            pOVar1[1].klass = (Object__Class *)0x3f000000;
-            pOVar1[2].klass = (Object__Class *)0x3f800000;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      (pOVar1,ExceptionArgument__Enum_obj,unaff_EDI);
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (this_00,(Object *)0x3,pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
-                      );
-            (this->fields).ghostEyeStates =
-                 (Dictionary_2_GhostEye_GhostEyeState_GhostEye_IGhostEyeState_ *)this_00;
-            func_?(&(this->fields).ghostEyeStates,this_00);
-            (this->fields).maxPitch = 20.0;
-            (this->fields).maxYaw = 70.0;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                      ((Transform *)this,(MethodInfo *)0x0);
-            return;
-          }
-        }
-      }
-    }
+    method_02 = TypeInfo__GhostEye__LookAtTarget;
+    pOVar1 = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
+              );
+    pOVar1 = (Object *)func_?();
+    euler.y = 0.0;
+    euler.z = 0.0;
+    euler.x = (float)_UNK_?;
+    pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                       ((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
+    pOVar3 = (Object__Class *)pQVar2->y;
+    pMVar4 = (MonitorData *)pQVar2->z;
+    pOVar5 = (Object__Class *)pQVar2->w;
+    pOVar1[1].monitor = (MonitorData *)pQVar2->x;
+    pOVar1[2].klass = pOVar3;
+    pOVar1[2].monitor = pMVar4;
+    pOVar1[3].klass = pOVar5;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar1,ExceptionArgument__Enum_obj,in_stack_6);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
+              );
+    method_00 = TypeInfo__GhostEye__SneakySideToSide;
+    pOVar1 = (Object *)func_?();
+    pOVar1[1].klass = (Object__Class *)0x3f000000;
+    pOVar1[2].klass = (Object__Class *)0x3f800000;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__Add_GhostEye__GhostEyeState__GhostEye__IGhostEyeState_
+              );
+    pDStack7 = this_00;
+    _UNK_? = this_00;
+    func_?();
+    _UNK_? = 0x41a00000;
+    _UNK_? = 0x428c0000;
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+              ((MonoBehaviour *)&UNK_?,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

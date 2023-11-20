@@ -37,30 +37,28 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
     if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_01,0,(MethodInfo *)0x0);
-      this_02 = (Component__Class *)func_?();
-      if (this_02 != (Component__Class *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-        UnityAction_1_System_Int32Enum___ctor
-                  ((UnityAction_1_System_Int32Enum_ *)this_02,(Object *)this,
-                   MethodInfo__GamePointGainEffectController__OnGamePointReached_int_,
-                   (MethodInfo *)0x0);
-        if ((this->fields).gamePointGainEffectPool != (List_1_GamePointGainEffect_ *)0x0) {
-          pLVar1 = (this->fields).gamePointGainEffectCurrentlyUsed;
+      this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_02,(Object *)this,
+                 MethodInfo__GamePointGainEffectController__OnGamePointReached_int_,
+                 (MethodInfo *)0x0);
+      if ((this->fields).gamePointGainEffectPool != (List_1_GamePointGainEffect_ *)0x0) {
+        pLVar1 = (this->fields).gamePointGainEffectCurrentlyUsed;
+        if (pLVar1 != (List_1_GamePointGainEffect_ *)0x0) {
+          iVar2 = (pLVar1->fields)._size;
+          this_00[4].monitor = (MonitorData *)this_02;
+          puVar3 = &UNK_?;
+          func_?(&this_00[4].monitor);
+          this_00[4].fields._.m_CachedPtr = puVar3 + iVar2;
+          pLVar1 = (this->fields).gamePointGainEffectPool;
           if (pLVar1 != (List_1_GamePointGainEffect_ *)0x0) {
-            iVar2 = (pLVar1->fields)._size;
-            this_00[4].klass = this_02;
-            puVar3 = &UNK_?;
-            func_?(this_00 + 4);
-            this_00[4].monitor = (MonitorData *)(puVar3 + iVar2);
-            pLVar1 = (this->fields).gamePointGainEffectPool;
-            if (pLVar1 != (List_1_GamePointGainEffect_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLVar1,(Object *)this_00,
-                         MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__Add_GamePointGainEffect_
-                        );
-              return;
-            }
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)pLVar1,(Object *)this_00,
+                       MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__Add_GamePointGainEffect_
+                      );
+            return;
           }
         }
       }
@@ -173,42 +171,36 @@ void Assembly-CSharp.dll::GamePointGainEffectController::GamePointGainEffectCont
     func_?(&MethodInfo__GamePointGainEffectController__OnFakeGainEffect_int_);
     cRam_? = '\x01';
   }
-  source = (Action_1_Int32___Class *)
-           TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect;
+  pAVar1 = TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect;
   this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
-  if (this_00 == (UnityAction_1_System_Int32Enum_ *)0x0) {
-    func_?();
-  }
-  else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__GamePointGainEffectController__OnFakeGainEffect_int_,(MethodInfo *)0x0);
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
-    source = TypeInfo__System__Action<int>;
-    if (pDVar1 == (Delegate *)0x0) {
-      TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect =
-           (Action_1_Int32_ *)0x0;
-      pAStack2 = (Action_1_Int32___Class *)0x0;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,MethodInfo__GamePointGainEffectController__OnFakeGainEffect_int_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar3 = TypeInfo__System__Action<int>;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect =
+         (Action_1_Int32_ *)0x0;
+    pAStack4 = (Action_1_Int32___Class *)0x0;
 code_?:
-      func_?();
-      return;
-    }
-    pAStack2 = TypeInfo__System__Action<int>;
-    pAVar3 = (Action_1_Int32_ *)func_?();
-    if (pAVar3 != (Action_1_Int32_ *)0x0) {
-      TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect = pAVar3;
-      source = TypeInfo__System__Action<int>;
-      pAStack2 = TypeInfo__System__Action<int>;
-      pAStack2 = (Action_1_Int32___Class *)func_?();
-      if (pAStack2 != (Action_1_Int32___Class *)0x0) goto code_?;
-    }
+    func_?();
+    return;
   }
-  pAStack2 = source;
+  pAStack4 = TypeInfo__System__Action<int>;
+  pAVar1 = (Action_1_Int32_ *)func_?();
+  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+    TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect = pAVar1;
+    pAVar3 = TypeInfo__System__Action<int>;
+    pAStack4 = TypeInfo__System__Action<int>;
+    pAStack4 = (Action_1_Int32___Class *)func_?();
+    if (pAStack4 != (Action_1_Int32___Class *)0x0) goto code_?;
+  }
+  pAStack4 = pAVar3;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -315,7 +307,7 @@ code_?:
                        ((Int32 *)&(pGVar5->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0
                        );
     if (pTVar6 != (Text *)0x0) {
-      (*(pTVar6->klass->vtable).set_text.methodPtr)(pTVar6,pSVar7);
+      (*(code *)(pTVar6->klass->vtable).set_text.method)(pTVar6,pSVar7);
       return;
     }
   }
@@ -362,7 +354,7 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
                             (pLVar2,index,
                              MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__get_Item_int_
                             ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      if (*(int *)((int)RVar3 + 0x34) == id) {
+      if (*(int *)((int)RVar3 + 0x38) == id) {
         pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).gamePointGainEffectCurrentlyUsed;
         if (((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
@@ -431,8 +423,9 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
                                 ((Int32 *)&(pGVar4->fields).currentGamePointAmountDisplayed,
                                  (MethodInfo *)0x0);
             if (pTVar9 != (Text *)0x0) {
-              (*(pTVar9->klass->vtable).set_text.methodPtr)
-                        (pTVar9,pSVar10,(pTVar9->klass->vtable).set_text.method);
+              (*(code *)(pTVar9->klass->vtable).set_text.method)
+                        (pTVar9,pSVar10,
+                         (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
               return;
             }
           }
@@ -464,8 +457,8 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
                        ((Int32 *)&(pGVar1->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0
                        );
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       GamePointGainEffectController_StopAllGainEffects(this,(MethodInfo *)0x0);
       pGVar1 = (this->fields).countController;
       if ((pGVar1 != (GamePointGainEffectCountController *)0x0) &&
@@ -520,7 +513,7 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
       mscorlib.dll::System::Int32::Int32_ToString
                 ((Int32 *)&(pGVar2->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
       if (pTVar3 != (Text *)0x0) {
-        (*(pTVar3->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar3->klass->vtable).set_text.method)();
         GamePointGainEffectController_StopAllGainEffects(this,(MethodInfo *)0x0);
         pGVar2 = (this->fields).countController;
         if ((pGVar2 != (GamePointGainEffectCountController *)0x0) &&
@@ -640,12 +633,12 @@ void Assembly-CSharp.dll::GamePointGainEffectController::GamePointGainEffectCont
   if (bVar1 == 0) {
 code_?:
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
     if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__GamePassesManager);
         cRam_? = '\x01';
       }
       pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
@@ -653,8 +646,7 @@ code_?:
       (this->fields).currentGamePoints = (pPVar2->fields).highScoreGamePoints;
     }
     pAVar3 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)this,
@@ -665,98 +657,97 @@ code_?:
                        ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pAVar3 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-code_?:
-      func_?();
-      pAVar4 = TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect;
-      pUVar5 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      if (pUVar5 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (pUVar5,(Object *)this,
-                 MethodInfo__GamePointGainEffectController__OnFakeGainEffect_int_,(MethodInfo *)0x0)
-      ;
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-      if (pDVar6 != (Delegate *)0x0) {
-        pAVar4 = (Action_1_Int32_ *)func_?();
-        if (pAVar4 != (Action_1_Int32_ *)0x0) {
-          TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect =
-               pAVar4;
-          iVar7 = func_?();
-          if (iVar7 != 0) goto code_?;
-        }
+    }
+    else {
+      pAVar4 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar4 = pAVar3;
+      }
+      if (pAVar4 == (Action *)0x0) {
+        func_?();
         goto code_?;
       }
+      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar4;
+      pAVar4 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar4 = pAVar3;
+      }
+      if (pAVar4 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    pAVar5 = TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect;
+    pUVar6 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (pUVar6,(Object *)this,
+               MethodInfo__GamePointGainEffectController__OnFakeGainEffect_int_,(MethodInfo *)0x0);
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
+    if (pDVar7 == (Delegate *)0x0) {
       TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect =
            (Action_1_Int32_ *)0x0;
 code_?:
       func_?();
-      pAVar4 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
-      pUVar5 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      if (pUVar5 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
+      pAVar5 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
+      pUVar6 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar5,(Object *)this,
+                (pUVar6,(Object *)this,
                  MethodInfo__GamePointGainEffectController__OnHaveShownGainEffect_int_,
                  (MethodInfo *)0x0);
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-      if (pDVar6 == (Delegate *)0x0) {
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
         TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown =
              (Action_1_Int32_ *)0x0;
 code_?:
         func_?();
-        pAVar4 = TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown;
-        pUVar5 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        if (pUVar5 == (UnityAction_1_System_Int32Enum_ *)0x0) goto code_?;
+        pAVar5 = TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown;
+        pUVar6 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar5,(Object *)this,
+                  (pUVar6,(Object *)this,
                    MethodInfo__GamePointGainEffectController__OnInGameGainEffectShown_int_,
                    (MethodInfo *)0x0);
-        pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-        if (pDVar6 == (Delegate *)0x0) {
+        pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pAVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
+        if (pDVar7 == (Delegate *)0x0) {
           TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown =
                (Action_1_Int32_ *)0x0;
 code_?:
           func_?();
-          iVar7 = 5;
+          iVar8 = 5;
           do {
             GamePointGainEffectController_CreateGamePointGainEffect(this,(MethodInfo *)0x0);
-            iVar7 = iVar7 + -1;
-          } while (iVar7 != 0);
+            iVar8 = iVar8 + -1;
+          } while (iVar8 != 0);
           return;
         }
-        pAVar4 = (Action_1_Int32_ *)func_?();
-        if (pAVar4 != (Action_1_Int32_ *)0x0) {
-          TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown = pAVar4
+        pAVar5 = (Action_1_Int32_ *)func_?();
+        if (pAVar5 != (Action_1_Int32_ *)0x0) {
+          TypeInfo__GamePointGainEffectManager->static_fields->OnInGamePointGainEffectShown = pAVar5
           ;
-          iVar7 = func_?();
-          if (iVar7 != 0) goto code_?;
+          iVar8 = func_?();
+          if (iVar8 != 0) goto code_?;
         }
       }
       else {
-        pAVar4 = (Action_1_Int32_ *)func_?();
-        if (pAVar4 != (Action_1_Int32_ *)0x0) {
-          TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown = pAVar4;
-          iVar7 = func_?();
-          if (iVar7 != 0) goto code_?;
+        pAVar5 = (Action_1_Int32_ *)func_?();
+        if (pAVar5 != (Action_1_Int32_ *)0x0) {
+          TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown = pAVar5;
+          iVar8 = func_?();
+          if (iVar8 != 0) goto code_?;
         }
       }
-      goto code_?;
     }
-    pAVar8 = (Action *)0x0;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar3;
+    else {
+      pAVar5 = (Action_1_Int32_ *)func_?();
+      if (pAVar5 != (Action_1_Int32_ *)0x0) {
+        TypeInfo__FakeGamePointGainEffectManager->static_fields->OnFakeGamePointGainEffect = pAVar5;
+        iVar8 = func_?();
+        if (iVar8 != 0) goto code_?;
+      }
     }
-    if (pAVar8 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar8;
-    pAVar8 = (Action *)0x0;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar3;
-    }
-    if (pAVar8 != (Action *)0x0) goto code_?;
   }
   else {
     pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -775,8 +766,6 @@ code_?:
         }
       }
     }
-code_?:
-    func_?();
 code_?:
     func_?();
   }
@@ -842,26 +831,26 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
                       (pTVar2,(this->fields).gainEffectSpawnOffset,(MethodInfo *)0x0);
           }
           pTVar2 = (this->fields).gamePointEffectTargetTransform;
-          *(Transform **)((int)this_00 + 0x2c) = pTVar2;
-          func_?((int)this_00 + 0x2c,pTVar2);
-          *(undefined4 *)((int)this_00 + 0x18) = 0;
+          *(Transform **)((int)this_00 + 0x30) = pTVar2;
+          func_?((int)this_00 + 0x30,pTVar2);
+          *(undefined4 *)((int)this_00 + 0x1c) = 0;
           fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                            (*(float *)((int)this_00 + 0x14),*(float *)((int)this_00 + 0x10),
+                            (*(float *)((int)this_00 + 0x18),*(float *)((int)this_00 + 0x14),
                              (MethodInfo *)0x0);
-          *(float *)((int)this_00 + 0x1c) = fVar3;
+          *(float *)((int)this_00 + 0x20) = fVar3;
           fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                             (-0.6,0.6,(MethodInfo *)0x0);
-          *(float *)((int)this_00 + 0x20) = fVar3;
+          *(float *)((int)this_00 + 0x24) = fVar3;
           if (0.0 < fVar3) {
             fVar3 = fVar3 + _UNK_?;
           }
           else {
             fVar3 = fVar3 - _UNK_?;
           }
-          *(float *)((int)this_00 + 0x20) = fVar3;
+          *(float *)((int)this_00 + 0x24) = fVar3;
           fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                             (-0.8,0.8,(MethodInfo *)0x0);
-          *(float *)((int)this_00 + 0x24) = fVar3;
+          *(float *)((int)this_00 + 0x28) = fVar3;
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this_00,(MethodInfo *)0x0);
           if (this_01 != (GameObject *)0x0) {
@@ -1011,30 +1000,24 @@ void Assembly-CSharp.dll::GamePointGainEffectController::GamePointGainEffectCont
   (this->fields).gainEffectSpawnOffset.z = 1.0;
   pLVar2 = (List_1_GamePointGainEffect_ *)
            func_?(TypeInfo__System__Collections__Generic__List<GamePointGainEffect>);
-  if (pLVar2 != (List_1_GamePointGainEffect_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)pLVar2,
-               MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__List__);
-    (this->fields).gamePointGainEffectPool = pLVar2;
-    func_?(&(this->fields).gamePointGainEffectPool,pLVar2);
-    pLVar2 = (List_1_GamePointGainEffect_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<GamePointGainEffect>);
-    if (pLVar2 != (List_1_GamePointGainEffect_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)pLVar2,
-                 MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__List__);
-      (this->fields).gamePointGainEffectCurrentlyUsed = pLVar2;
-      func_?(&(this->fields).gamePointGainEffectCurrentlyUsed,pLVar2);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-                ((Transform *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+             MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__List__);
+  (this->fields).gamePointGainEffectPool = pLVar2;
+  func_?(&(this->fields).gamePointGainEffectPool,pLVar2);
+  pLVar2 = (List_1_GamePointGainEffect_ *)
+           func_?(TypeInfo__System__Collections__Generic__List<GamePointGainEffect>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+             MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__List__);
+  (this->fields).gamePointGainEffectCurrentlyUsed = pLVar2;
+  func_?(&(this->fields).gamePointGainEffectCurrentlyUsed,pLVar2);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -19,27 +19,25 @@ void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_GotoRunState
                (AsyncWebRequest *this,MethodInfo *method)
 
 {
-  pUVar1 = (UnityWebRequest *)
-           (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method)
-  ;
-  (this->fields).request = pUVar1;
-  func_?(&(this->fields).request,pUVar1);
-  pUVar1 = (this->fields).request;
+  puStack_1 = &DAT_?;
+  uStack_2 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_2;
+  uStack_3 = 0;
+  pUVar4 = (UnityWebRequest *)
+           (*(code *)(this->klass->vtable).__unknown.method)(this,this->klass[1]._0.image);
+  (this->fields).request = pUVar4;
+  func_?(&(this->fields).request,pUVar4);
+  pUVar4 = (this->fields).request;
   (this->fields).state = 1;
-  if (pUVar1 != (UnityWebRequest *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?(&UNK_?,unaff_EBP);
-    }
-    iVar2 = (*pcRam_?)(pUVar1);
-    if (iVar2 != 0) {
-      *(UnityWebRequest **)(iVar2 + 0x10) = pUVar1;
-      func_?(iVar2 + 0x10,pUVar1);
-    }
+  if (pUVar4 != (UnityWebRequest *)0x0) {
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_SendWebRequest(pUVar4,(MethodInfo *)0x0);
+    *unaff_FS_OFFSET = uStack_2;
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -89,6 +87,7 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_ReadyToDoCallback
   puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AsyncWWWManager);
+    func_?(&TypeInfo__System__Char);
     func_?(&TypeInfo__System__DateTime);
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -139,7 +138,7 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_ReadyToDoCallback
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar9,(MethodInfo *)0x0);
   }
   pUVar8 = (this->fields).request;
@@ -176,14 +175,14 @@ code_?:
                         UnityWebRequest::UnityWebRequest_GetResponseHeaders
                                   (pUVar8,(MethodInfo *)0x0),
              this_00 != (Dictionary_2_System_String_System_String_ *)0x0)) {
-            pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__GetEnumerator
-                                ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *
+            pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
+                      ::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                                ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *
                                  )&stack0xffffffa0,
-                                 (Dictionary_2_System_Object_System_Object_ *)this_00,
+                                 (Dictionary_2_System_UInt32_System_Object_ *)this_00,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__GetEnumerator__
                                 );
-            pOVar16 = (pDVar15->_current).key;
+            pOVar16 = (Object *)(pDVar15->_current).key;
             uVar17 = *(undefined8 *)&(pDVar15->_current).value;
             TStack_14._ticks = ZEXT48((Object *)&stack0xffffffb8) << 0x20;
             uStack_1 = 1;
@@ -199,13 +198,13 @@ code_?:
               if (bVar18 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                           ((Object *)&stack0xffffffb8,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
                            ,method_00);
                 uStack_1 = 0xffffffff;
-                pUVar8 = (UnityWebRequest *)(*(this->klass->vtable).__unknown.methodPtr)();
+                pUVar8 = (UnityWebRequest *)(*(code *)(this->klass->vtable).__unknown.method)();
                 (this->fields).request = pUVar8;
                 func_?();
                 *unaff_FS_OFFSET = uStack_3;
@@ -232,7 +231,7 @@ code_?:
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogFormat
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogFormat
                         (StringLiteral__0___1_,args,(MethodInfo *)0x0);
             }
           }
@@ -262,6 +261,9 @@ code_?:
     goto code_?;
     uVar24 = mscorlib.dll::System::String::String_get_Chars(pSVar9,0,(MethodInfo *)0x0);
     uStack_7 = (uint)uVar24;
+    if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
     pSVar9 = mscorlib.dll::System::Char::Char_ToString((Char *)&uStack_7,(MethodInfo *)0x0);
     bVar18 = mscorlib.dll::System::Int32::Int32_TryParse(pSVar9,&iStack_6,(MethodInfo *)0x0);
     if ((bVar18 == 0) || (iStack_6 != 4)) goto code_?;
@@ -275,13 +277,13 @@ code_?:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)pSVar9,(MethodInfo *)0x0);
     pUVar8 = (this->fields).request;
     if (pUVar8 != (UnityWebRequest *)0x0) {
       pSVar9 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                UnityWebRequest_get_error(pUVar8,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar9,(MethodInfo *)0x0);
 code_?:
       *unaff_FS_OFFSET = uStack_3;
@@ -305,8 +307,8 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_Update
   iVar1 = (this->fields).state;
   if (iVar1 != 0) {
     if (iVar1 == 1) {
-      cVar2 = (*(this->klass->vtable).UpdateRunningState.methodPtr)
-                        (this,(this->klass->vtable).UpdateRunningState.method);
+      cVar2 = (*(code *)(this->klass->vtable).UpdateRunningState.method)
+                        (this,(this->klass->vtable).__unknown.methodPtr);
       return cVar2 != '\0';
     }
     if (iVar1 != 2) {
@@ -412,7 +414,7 @@ void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest__ctor
   }
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields).retryTime._dateData = DVar1._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).requestPriority = requestPriority;
   (this->fields).path = path;

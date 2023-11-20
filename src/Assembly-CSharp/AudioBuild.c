@@ -12,9 +12,9 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild_Awake(AudioBuild *this,MethodIn
     cRam_? = '\x01';
   }
   this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this_00,(MethodInfo *)0x0)
+  ;
   if (this_00 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
-              (this_00,(MethodInfo *)0x0);
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -295,19 +295,13 @@ void Assembly-CSharp.dll::AudioBuild::AudioBuild__ctor(AudioBuild *this,MethodIn
     func_?(&TypeInfo__UnityEngine__AudioSource);
     cRam_? = '\x01';
   }
-  this_00 = (AudioSource *)func_?(TypeInfo__UnityEngine__AudioSource);
-  if (this_00 != (AudioSource *)0x0) {
-    Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-    Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).buildSource = this_00;
-    func_?(&(this->fields).buildSource,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Singleton_1_System_Object_ *)func_?(TypeInfo__UnityEngine__AudioSource);
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).buildSource = (AudioSource *)this_00;
+  func_?(&(this->fields).buildSource,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -8,7 +8,7 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xf8);
+    func_?(0xa8);
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent);
     cRam_? = '\x01';
   }
@@ -20,23 +20,23 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
     if (this_03 == (MVCubeModelBase *)0x0) {
       return 0;
     }
-    if ((this_03->klass->_1).typeHierarchyDepth <
-        (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth) {
+    if ((this_03->klass->_1).naturalAligment <
+        (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment) {
       return 0;
     }
     if ((MVCubeModelFineGrainedTerrain__Class *)
         (this_03->klass->_1).typeHierarchy
-        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelFineGrainedTerrain) {
       return 0;
     }
     pMVar1 = TypeInfo__MVCubeModelFineGrainedTerrain;
     unaff_ESI = this_03;
-    if (((this_03->klass->_1).typeHierarchyDepth <
-         (TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth) ||
+    if (((this_03->klass->_1).naturalAligment <
+         (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment) ||
        ((MVCubeModelFineGrainedTerrain__Class *)
         (this_03->klass->_1).typeHierarchy
-        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).typeHierarchyDepth - 1] !=
+        [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelFineGrainedTerrain)) goto code_?;
     pIVar2 = (this->fields).overlapResult.localCubePos;
     unaff_ESI = (MVCubeModelBase *)0x0;
@@ -89,14 +89,14 @@ bool Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
           this_04 = (SingleCubeFineGrainedEvent *)
                     func_?(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent
                                     ,fVar12,fVar13,fVar14);
-          if ((this_04 == (SingleCubeFineGrainedEvent *)0x0) ||
-             (IVar6.z._1_1_ = (char)((ushort)iVar5 >> 8), IVar6._0_5_ = uVar7,
-             MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
-             SingleCubeFineGrainedEvent__ctor_1(this_04,IVar6,(MethodInfo *)0x0),
-             this_01 == (RuntimeEventManager *)0x0)) break;
+          IVar6.z._1_1_ = (char)((ushort)iVar5 >> 8);
+          IVar6._0_5_ = uVar7;
+          MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::
+          SingleCubeFineGrainedEvent__ctor_1(this_04,IVar6,(MethodInfo *)0x0);
+          if (this_01 == (RuntimeEventManager *)0x0) break;
           RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent_1
                     (this_01,this_04,(MethodInfo *)0x0);
-          func_?(0x65,this_03,uVar4,iVar5);
+          func_?(100,this_03,uVar4,iVar5);
           unaff_ESI = (MVCubeModelBase *)((int)&unaff_ESI->klass + 1);
           pIVar3 = pIVar3 + 1;
         }
@@ -139,7 +139,7 @@ void Assembly-CSharp.dll::MVRigidBody+StuckEvaluator+StuckObject::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).overlapResult.woId = overlapResult.woId;
   (this->fields).overlapResult.localCubePos = overlapResult.localCubePos;

@@ -33,56 +33,39 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Cre
     (this->fields).desktopPlayButton = pPVar1;
     func_?(&(this->fields).desktopPlayButton,pPVar1);
     pPVar1 = (this->fields).desktopPlayButton;
-    if (pPVar1 != (PlayButton *)0x0) {
-      pAVar2 = (pPVar1->fields).OnPlayButtonPressed;
-      pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar3,(Object *)this,MethodInfo__WinningConditionBriefing__OnPlayPressed__,
-                   (MethodInfo *)0x0);
-        pAVar2 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-        if (pAVar2 == (Action *)0x0) {
-          (pPVar1->fields).OnPlayButtonPressed = (Action *)0x0;
-        }
-        else {
-          pAVar4 = (Action *)0x0;
-          if (pAVar2->klass == TypeInfo__System__Action) {
-            pAVar4 = pAVar2;
-          }
-          if (pAVar4 == (Action *)0x0) goto code_?;
-          (pPVar1->fields).OnPlayButtonPressed = pAVar4;
-          pAVar4 = (Action *)0x0;
-          if (pAVar2->klass == TypeInfo__System__Action) {
-            pAVar4 = pAVar2;
-          }
-          if (pAVar4 == (Action *)0x0) goto code_?;
-        }
-        func_?();
-        pPVar1 = (this->fields).desktopPlayButton;
-        if (pPVar1 != (PlayButton *)0x0) {
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pPVar1,(MethodInfo *)0x0);
+    if (pPVar1 == (PlayButton *)0x0) goto code_?;
+    pAVar2 = (pPVar1->fields).OnPlayButtonPressed;
+    pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__WinningConditionBriefing__OnPlayPressed__,
+               (MethodInfo *)0x0);
+    pAVar2 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+    if (pAVar2 == (Action *)0x0) {
+      (pPVar1->fields).OnPlayButtonPressed = (Action *)0x0;
 code_?:
-          (this->fields).playButton = pGVar5;
-          func_?(&(this->fields).playButton,pGVar5);
-          pGVar5 = (this->fields).playButton;
-          if (pGVar5 != (GameObject *)0x0) {
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar5,(MethodInfo *)0x0);
-            parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)this,(MethodInfo *)0x0);
-            if (this_00 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (this_00,parent,0,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
+      func_?();
+      pPVar1 = (this->fields).desktopPlayButton;
+      if (pPVar1 != (PlayButton *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pPVar1,(MethodInfo *)0x0);
+        goto code_?;
       }
+      goto code_?;
     }
+    pAVar5 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar5 = pAVar2;
+    }
+    if (pAVar5 == (Action *)0x0) goto code_?;
+    (pPVar1->fields).OnPlayButtonPressed = pAVar5;
+    pAVar5 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar5 = pAVar2;
+    }
+    if (pAVar5 != (Action *)0x0) goto code_?;
   }
   else {
     pPVar6 = (this->fields).AndroidPlayButtonPrefab;
@@ -100,40 +83,55 @@ code_?:
     if (pPVar6 != (PlayButtonTouch *)0x0) {
       pAVar2 = (pPVar6->fields).OnPlayButtonPressed;
       pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar3,(Object *)this,MethodInfo__WinningConditionBriefing__OnPlayPressed__,
-                   (MethodInfo *)0x0);
-        pAVar2 = (Action *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
-        if (pAVar2 == (Action *)0x0) {
-          (pPVar6->fields).OnPlayButtonPressed = (Action *)0x0;
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar3,(Object *)this,MethodInfo__WinningConditionBriefing__OnPlayPressed__,
+                 (MethodInfo *)0x0);
+      pAVar2 = (Action *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
+      if (pAVar2 == (Action *)0x0) {
+        (pPVar6->fields).OnPlayButtonPressed = (Action *)0x0;
+      }
+      else {
+        pAVar5 = (Action *)0x0;
+        if (pAVar2->klass == TypeInfo__System__Action) {
+          pAVar5 = pAVar2;
         }
-        else {
-          pAVar4 = (Action *)0x0;
-          if (pAVar2->klass == TypeInfo__System__Action) {
-            pAVar4 = pAVar2;
-          }
-          if (pAVar4 == (Action *)0x0) goto code_?;
-          (pPVar6->fields).OnPlayButtonPressed = pAVar4;
-          pAVar4 = (Action *)0x0;
-          if (pAVar2->klass == TypeInfo__System__Action) {
-            pAVar4 = pAVar2;
-          }
-          if (pAVar4 == (Action *)0x0) goto code_?;
+        if (pAVar5 == (Action *)0x0) goto code_?;
+        (pPVar6->fields).OnPlayButtonPressed = pAVar5;
+        pAVar5 = (Action *)0x0;
+        if (pAVar2->klass == TypeInfo__System__Action) {
+          pAVar5 = pAVar2;
         }
-        func_?();
-        pPVar6 = (this->fields).androidPlayButton;
-        if (pPVar6 != (PlayButtonTouch *)0x0) {
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pPVar6,(MethodInfo *)0x0);
-          goto code_?;
+        if (pAVar5 == (Action *)0x0) goto code_?;
+      }
+      func_?();
+      pPVar6 = (this->fields).androidPlayButton;
+      if (pPVar6 != (PlayButtonTouch *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pPVar6,(MethodInfo *)0x0);
+code_?:
+        (this->fields).playButton = pGVar4;
+        func_?(&(this->fields).playButton,pGVar4);
+        pGVar4 = (this->fields).playButton;
+        if (pGVar4 != (GameObject *)0x0) {
+          this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGVar4,(MethodInfo *)0x0);
+          parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)this,(MethodInfo *)0x0);
+          if (this_00 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                      (this_00,parent,0,(MethodInfo *)0x0);
+            return;
+          }
         }
       }
     }
+code_?:
+    func_?();
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -154,19 +152,14 @@ Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_FixAspec
     func_?(&TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -209,16 +202,16 @@ int32_t Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_
   pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar5 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar5->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
     if (this_02 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
       pDVar6 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-               Regex+CachedCodeEntryKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)&stack0xffffffcc,this_02,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
@@ -230,15 +223,15 @@ int32_t Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_
           pOVar7 = team;
           bVar8 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  Object,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                               *)&pOStack_4,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                             );
           if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                       ((Object *)&pOStack_4,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
@@ -396,78 +389,74 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
       }
       return;
     }
+    method_00 = (MethodInfo *)&UNK_?;
     value = (Object *)func_?(TypeInfo__WinningConditionBriefing____c__DisplayClass37_0);
-    if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,in_stack_5);
-      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,method_00);
+    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if ((TypeInfo__WinningConditionBriefing____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    callbackFunction = TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__WinningConditionBriefing____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      callbackFunction = TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__WinningConditionBriefing____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        object = TypeInfo__WinningConditionBriefing____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__WinningConditionBriefing____c___OnPlayPressed_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0 = callbackFunction;
-        func_?();
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar6,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      original = (this->fields)._.spawnRoleMenuPrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pOVar7 = (Object__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
-                          SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
-                         );
-      value[1].klass = pOVar7;
+      object = TypeInfo__WinningConditionBriefing____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 callbackFunction,(MethodInfo *)0x0);
+      TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0 = callbackFunction;
+      pGVar5 = (GameObject *)&UNK_?;
+      func_?(&TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0,
+                      callbackFunction);
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar5,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    original = (this->fields)._.spawnRoleMenuPrefab;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pOVar6 = (Object__Class *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_
+                       );
+    if (value != (Object *)0x0) {
+      value[1].klass = pOVar6;
       func_?();
       if (value[1].klass != (Object__Class *)0x0) {
         SpawnRoleMenu::SpawnRoleMenu_Initialize
                   ((SpawnRoleMenu *)value[1].klass,(this->fields)._.selectedTeam,(MethodInfo *)0x0);
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-        if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                     MethodInfo__WinningConditionBriefing____c__DisplayClass37_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar6,(BaseEventData *)0x0,callbackFunction_00,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
-        }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                   MethodInfo__WinningConditionBriefing____c__DisplayClass37_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar5,(BaseEventData *)0x0,callbackFunction_00,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -504,206 +493,205 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Set
     func_?(&StringLiteral_winConType__);
     cRam_? = '\x01';
   }
-  GVar1 = in_stack_2 & 0xffffff00;
   this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (this_02 == (MainCameraManager *)0x0) goto code_?;
   MainCameraManager::MainCameraManager_set_CamMaskMode
             (this_02,MaskMode__Enum_SkyBoxOnly,(MethodInfo *)0x0);
-  pAVar3 = (this->fields).initializeCallback;
+  pAVar1 = (this->fields).initializeCallback;
   this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_03 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_03,(Object *)this,MethodInfo__WinningConditionBriefing__SetupBriefing__,
              (MethodInfo *)0x0);
-  pAVar3 = (Action *)
+  pAVar1 = (Action *)
             mscorlib.dll::System::Delegate::Delegate_Remove
-                      ((Delegate *)pAVar3,(Delegate *)this_03,(MethodInfo *)0x0);
-  if (pAVar3 == (Action *)0x0) {
+                      ((Delegate *)pAVar1,(Delegate *)this_03,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
     (this->fields).initializeCallback = (Action *)0x0;
 code_?:
-    ppAVar4 = &(this->fields).initializeCallback;
+    gameStatType = &(this->fields).initializeCallback;
     func_?();
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).winningConditionMapping;
-    iVar6 = 0;
-    while (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      if ((pLVar5->fields)._size <= iVar6) {
+    iVar3 = 0;
+    while (pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((pLVar2->fields)._size <= iVar3) {
 code_?:
-        pSVar7 = mscorlib.dll::System::Enum::Enum_ToString
+        pSVar4 = mscorlib.dll::System::Enum::Enum_ToString
                             ((Enum *)&stack0xffffffe0,(MethodInfo *)0x0);
-        pSVar7 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_winConType__,pSVar7,(MethodInfo *)0x0);
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_winConType__,pSVar4,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                  ((Object *)pSVar7,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)pSVar4,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_WinningConditionData_is_null__bu,(MethodInfo *)0x0);
 code_?:
         if ((this->fields).winConType != 6) {
           this_00 = (this->fields).headerMap;
-          pTVar8 = (this->fields).winningConditionHeader;
+          pTVar5 = (this->fields).winningConditionHeader;
           if ((this_00 == (Dictionary_2_WinningConditionType_System_String_ *)0x0) ||
-             (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+             (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32Enum,System::Object]::
                         Dictionary_2_System_Int32Enum_System_Object__get_Item
                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
                                    (this->fields).winConType,
                                    MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__get_Item_WinningConditionType_
-                                  ), pTVar8 == (Text *)0x0)) break;
-          (*(pTVar8->klass->vtable).set_text.methodPtr)(pTVar8,pOVar9);
-          bVar10 = WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
+                                  ), pTVar5 == (Text *)0x0)) break;
+          (*(code *)(pTVar5->klass->vtable).set_text.method)(pTVar5,pOVar6);
+          bVar7 = WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
                             ((GameStatCounterType__Enum *)&stack0xfffffff8,(MethodInfo *)0x0);
-          if (bVar10 != 0) {
-            pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar11 == (MVNetworkGame *)0x0) ||
-               (this_01 = (pMVar11->fields).teamManager, this_01 == (MVTeamManager *)0x0)) break;
-            iVar12 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
-            if (iVar12 < 2) {
-              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar11 == (MVNetworkGame *)0x0) break;
-              pGVar13 = (pMVar11->fields).gameStatCounterManager;
-              GVar14 = CONCAT31((int3)((uint)ppAVar4 >> 8),(char)GVar1);
-              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar11 == (MVNetworkGame *)0x0) ||
-                 (pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0),
-                 pMVar15 == (MVLocalPlayer *)0x0)) break;
-              team = (pMVar15->fields)._._Team_k__BackingField;
-              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar11 == (MVNetworkGame *)0x0) ||
-                 ((pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0)
-                  , pMVar15 == (MVLocalPlayer *)0x0 || (pGVar13 == (GameStatCounterManager *)0x0))))
+          if (bVar7 != 0) {
+            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar8 == (MVNetworkGame *)0x0) ||
+               (this_01 = (pMVar8->fields).teamManager, this_01 == (MVTeamManager *)0x0)) break;
+            iVar9 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+            if (iVar9 < 2) {
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (pMVar8 == (MVNetworkGame *)0x0) break;
+              pGVar10 = (pMVar8->fields).gameStatCounterManager;
+              GVar11 = CONCAT31((int3)((uint)in_stack_12 >> 8),(char)gameStatType);
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar8 == (MVNetworkGame *)0x0) ||
+                 (pMVar13 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0),
+                 pMVar13 == (MVLocalPlayer *)0x0)) break;
+              team = (pMVar13->fields)._._Team_k__BackingField;
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar8 == (MVNetworkGame *)0x0) ||
+                 ((pMVar13 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0)
+                  , pMVar13 == (MVLocalPlayer *)0x0 || (pGVar10 == (GameStatCounterManager *)0x0))))
               break;
-              iVar6 = MVWorldObject.dll::GameStatCounterManager::
+              iVar3 = MVWorldObject.dll::GameStatCounterManager::
                        GameStatCounterManager_GetActorCount
-                                 (pGVar13,GVar14,team,(pMVar15->fields)._._ActorNr_k__BackingField,
+                                 (pGVar10,GVar11,team,(pMVar13->fields)._._ActorNr_k__BackingField,
                                   (MethodInfo *)0x0);
             }
             else {
-              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar11 == (MVNetworkGame *)0x0) break;
-              pGVar13 = (pMVar11->fields).gameStatCounterManager;
-              GVar14 = CONCAT31((int3)((uint)ppAVar4 >> 8),(char)GVar1);
-              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (((pMVar11 == (MVNetworkGame *)0x0) ||
-                  (pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0)
-                  , pMVar15 == (MVLocalPlayer *)0x0)) || (pGVar13 == (GameStatCounterManager *)0x0))
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (pMVar8 == (MVNetworkGame *)0x0) break;
+              pGVar10 = (pMVar8->fields).gameStatCounterManager;
+              GVar11 = CONCAT31((int3)((uint)in_stack_12 >> 8),(char)gameStatType);
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (((pMVar8 == (MVNetworkGame *)0x0) ||
+                  (pMVar13 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0)
+                  , pMVar13 == (MVLocalPlayer *)0x0)) || (pGVar10 == (GameStatCounterManager *)0x0))
               break;
-              iVar6 = MVWorldObject.dll::GameStatCounterManager::
+              iVar3 = MVWorldObject.dll::GameStatCounterManager::
                        GameStatCounterManager_GetTeamCount
-                                 (pGVar13,GVar14,(pMVar15->fields)._._Team_k__BackingField,
+                                 (pGVar10,GVar11,(pMVar13->fields)._._Team_k__BackingField,
                                   (MethodInfo *)0x0);
             }
-            iVar12 = WinningConditionControl::WinningConditionControl_GetPrioritizedStatLimit
-                               (GVar1,(MethodInfo *)0x0);
-            if ((iVar12 == 0) &&
+            iVar9 = WinningConditionControl::WinningConditionControl_GetPrioritizedStatLimit
+                               ((GameStatCounterType__Enum)gameStatType,(MethodInfo *)0x0);
+            if ((iVar9 == 0) &&
                (((this->fields).winConType == 1 || ((this->fields).winConType == 5)))) {
-              pGVar16 = (this->fields).progressableWinningConditionPresent;
-              if (pGVar16 == (GameObject *)0x0) break;
+              pGVar14 = (this->fields).progressableWinningConditionPresent;
+              if (pGVar14 == (GameObject *)0x0) break;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar16,0,(MethodInfo *)0x0);
-              pGVar16 = (this->fields).reachTheFlagPresent;
-              if (pGVar16 == (GameObject *)0x0) break;
+                        (pGVar14,0,(MethodInfo *)0x0);
+              pGVar14 = (this->fields).reachTheFlagPresent;
+              if (pGVar14 == (GameObject *)0x0) break;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar16,1,(MethodInfo *)0x0);
-              pTVar8 = (this->fields).flagScoreText;
-              iVar12 = WinningConditionBriefing_GetHighScore
+                        (pGVar14,1,(MethodInfo *)0x0);
+              pTVar5 = (this->fields).flagScoreText;
+              iVar9 = WinningConditionBriefing_GetHighScore
                                  (this,(this->fields).winConType,(MethodInfo *)0x0);
-              GVar1 = GameStatCounterType__Enum_None;
-              IVar17.m_value = 2;
+              GVar11 = GameStatCounterType__Enum_None;
+              IVar15.m_value = 2;
               WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                        (iVar12,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
-              if (pTVar8 == (Text *)0x0) break;
+                        (iVar9,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
+              if (pTVar5 == (Text *)0x0) break;
               func_?();
             }
             else {
-              pGVar16 = (this->fields).reachTheFlagPresent;
-              if (pGVar16 == (GameObject *)0x0) break;
+              pGVar14 = (this->fields).reachTheFlagPresent;
+              if (pGVar14 == (GameObject *)0x0) break;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar16,0,(MethodInfo *)0x0);
-              pGVar16 = (this->fields).progressableWinningConditionPresent;
-              if (pGVar16 == (GameObject *)0x0) break;
-              GVar1 = GameStatCounterType__Enum_None;
-              IVar17.m_value = 1;
+                        (pGVar14,0,(MethodInfo *)0x0);
+              pGVar14 = (this->fields).progressableWinningConditionPresent;
+              if (pGVar14 == (GameObject *)0x0) break;
+              GVar11 = GameStatCounterType__Enum_None;
+              IVar15.m_value = 1;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar16,1,(MethodInfo *)0x0);
+                        (pGVar14,1,(MethodInfo *)0x0);
             }
-            pTVar8 = (this->fields).scoreLimit;
+            pTVar5 = (this->fields).scoreLimit;
             mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0)
             ;
-            if (pTVar8 == (Text *)0x0) break;
-            (*(pTVar8->klass->vtable).set_text.methodPtr)();
-            pPVar18 = (ProgressBarAndroid *)(this->fields).scoreProgressBar;
-            if (pPVar18 == (ProgressBarAndroid *)0x0) break;
+            if (pTVar5 == (Text *)0x0) break;
+            (*(code *)(pTVar5->klass->vtable).set_text.method)();
+            pPVar16 = (ProgressBarAndroid *)(this->fields).scoreProgressBar;
+            if (pPVar16 == (ProgressBarAndroid *)0x0) break;
             ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                      (pPVar18,(float)iVar6 / (float)IVar17.m_value,(MethodInfo *)0x0);
-            pTVar8 = (this->fields).scoreText;
-            pSVar7 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                                (iVar6,GVar1,(MethodInfo *)0x0);
-            if (pTVar8 == (Text *)0x0) break;
-            (*(pTVar8->klass->vtable).set_text.methodPtr)
-                      (pTVar8,pSVar7,(pTVar8->klass->vtable).set_text.method);
+                      (pPVar16,(float)iVar3 / (float)IVar15.m_value,(MethodInfo *)0x0);
+            pTVar5 = (this->fields).scoreText;
+            pSVar4 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                                (iVar3,GVar11,(MethodInfo *)0x0);
+            if (pTVar5 == (Text *)0x0) break;
+            (*(code *)(pTVar5->klass->vtable).set_text.method)
+                      (pTVar5,pSVar4,
+                       (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           }
-          pSVar19 = (this->fields).scoreBoardController;
-          if ((pSVar19 == (ScoreBoardController *)0x0) ||
+          pSVar17 = (this->fields).scoreBoardController;
+          if ((pSVar17 == (ScoreBoardController *)0x0) ||
              (this_04 = ScoreBoardController::ScoreBoardController_GetInstantiatedScoreboard
-                                  (pSVar19,(this->fields).winConType,(MethodInfo *)0x0),
+                                  (pSVar17,(this->fields).winConType,(MethodInfo *)0x0),
              this_04 == (ScoreBoardBase *)0x0)) break;
-          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this_04,(MethodInfo *)0x0);
-          pSVar19 = (this->fields).scoreBoardController;
-          if ((pSVar19 == (ScoreBoardController *)0x0) ||
-             (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pSVar19,(MethodInfo *)0x0),
-             pTVar20 == (Transform *)0x0)) break;
+          pSVar17 = (this->fields).scoreBoardController;
+          if ((pSVar17 == (ScoreBoardController *)0x0) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pSVar17,(MethodInfo *)0x0),
+             pTVar18 == (Transform *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar20,pTVar21,0,(MethodInfo *)0x0);
-          iVar6 = 0;
-          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                    (pTVar18,pTVar19,0,(MethodInfo *)0x0);
+          iVar3 = 0;
+          pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this_04,(MethodInfo *)0x0);
-          if (pTVar20 == (Transform *)0x0) break;
+          if (pTVar18 == (Transform *)0x0) break;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
-                    (pTVar20,(MethodInfo *)0x0);
-          (*(this_04->klass->vtable).Initialize.methodPtr)();
-          if (iVar6 == 0) break;
-          pOVar9 = *(Object **)(iVar6 + 0x10);
+                    (pTVar18,(MethodInfo *)0x0);
+          (*(code *)(this_04->klass->vtable).Initialize.method)();
+          if (iVar3 == 0) break;
+          pOVar6 = *(Object **)(iVar3 + 0x10);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pIVar22 = (Image *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                       (pOVar9,
+          pIVar20 = (Image *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                       (pOVar6,
                                         UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
                                        );
-          (this->fields).winConImage = pIVar22;
-          func_?(&(this->fields).winConImage,pIVar22);
-          pIVar22 = (this->fields).winConImage;
-          if (pIVar22 == (Image *)0x0) break;
-          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pIVar22,(MethodInfo *)0x0);
-          pGVar16 = (this->fields).winningConditionImageBackground;
-          if ((pGVar16 == (GameObject *)0x0) ||
-             (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar16,(MethodInfo *)0x0),
-             pTVar20 == (Transform *)0x0)) break;
+          (this->fields).winConImage = pIVar20;
+          func_?(&(this->fields).winConImage,pIVar20);
+          pIVar20 = (this->fields).winConImage;
+          if (pIVar20 == (Image *)0x0) break;
+          pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pIVar20,(MethodInfo *)0x0);
+          pGVar14 = (this->fields).winningConditionImageBackground;
+          if ((pGVar14 == (GameObject *)0x0) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar14,(MethodInfo *)0x0),
+             pTVar18 == (Transform *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar20,pTVar21,0,(MethodInfo *)0x0);
-          pCVar23 = (Component *)
+                    (pTVar18,pTVar19,0,(MethodInfo *)0x0);
+          pCVar21 = (Component *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              (*(Object **)(iVar6 + 0xc),
+                              (*(Object **)(iVar3 + 0xc),
                                UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
                               );
-          if (pCVar23 == (Component *)0x0) break;
-          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (pCVar23,(MethodInfo *)0x0);
-          pGVar16 = (this->fields).scoreGameObject;
-          if ((pGVar16 == (GameObject *)0x0) ||
-             (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar16,(MethodInfo *)0x0),
-             pTVar20 == (Transform *)0x0)) break;
+          if (pCVar21 == (Component *)0x0) break;
+          pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              (pCVar21,(MethodInfo *)0x0);
+          pGVar14 = (this->fields).scoreGameObject;
+          if ((pGVar14 == (GameObject *)0x0) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar14,(MethodInfo *)0x0),
+             pTVar18 == (Transform *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar20,pTVar21,0,(MethodInfo *)0x0);
+                    (pTVar18,pTVar19,0,(MethodInfo *)0x0);
         }
         this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (this_05 == (MVWorldObjectClientManager *)0x0) break;
@@ -712,36 +700,36 @@ code_?:
                              WorldObjectClientRef<MVRoundCube>_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObjectRef<MVRoundCube>__
                             );
         if (this_06 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-          pPVar24 = (this->fields).roundTimeProgressBar;
-          if ((pPVar24 == (ProgressBar *)0x0) ||
-             (pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pPVar24,(MethodInfo *)0x0),
-             pGVar16 == (GameObject *)0x0)) break;
+          pPVar22 = (this->fields).roundTimeProgressBar;
+          if ((pPVar22 == (ProgressBar *)0x0) ||
+             (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pPVar22,(MethodInfo *)0x0),
+             pGVar14 == (GameObject *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar16,1,(MethodInfo *)0x0);
-          pPVar18 = (ProgressBarAndroid *)(this->fields).roundTimeProgressBar;
-          pMVar25 = (MVRoundCube *)
+                    (pGVar14,1,(MethodInfo *)0x0);
+          pPVar16 = (ProgressBarAndroid *)(this->fields).roundTimeProgressBar;
+          pMVar23 = (MVRoundCube *)
                     WorldObjectClientRef`1[System::Object]::
                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                               (this_06,
                                MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__
                               );
-          if (pMVar25 == (MVRoundCube *)0x0) break;
-          iVar12 = MVRoundCube::MVRoundCube_GetTimeLeft(pMVar25,(MethodInfo *)0x0);
-          pMVar25 = (MVRoundCube *)
+          if (pMVar23 == (MVRoundCube *)0x0) break;
+          iVar9 = MVRoundCube::MVRoundCube_GetTimeLeft(pMVar23,(MethodInfo *)0x0);
+          pMVar23 = (MVRoundCube *)
                     WorldObjectClientRef`1[System::Object]::
                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                               (this_06,
                                MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__
                               );
-          if ((pMVar25 == (MVRoundCube *)0x0) ||
-             (iVar26 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds
-                                 (pMVar25,(MethodInfo *)0x0), pPVar18 == (ProgressBarAndroid *)0x0))
+          if ((pMVar23 == (MVRoundCube *)0x0) ||
+             (iVar24 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds
+                                 (pMVar23,(MethodInfo *)0x0), pPVar16 == (ProgressBarAndroid *)0x0))
           break;
           ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                    (pPVar18,(float)iVar12 / (float)iVar26,(MethodInfo *)0x0);
-          pTVar8 = (this->fields).roundTimeText;
-          pMVar25 = (MVRoundCube *)
+                    (pPVar16,(float)iVar9 / (float)iVar24,(MethodInfo *)0x0);
+          pTVar5 = (this->fields).roundTimeText;
+          pMVar23 = (MVRoundCube *)
                     WorldObjectClientRef`1[System::Object]::
                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                               (this_06,
@@ -754,31 +742,32 @@ code_?:
                                MethodInfo__WorldObjectClientRef<MVRoundCube>__get_WorldObjectClient__
                               );
           if ((this_07 == (MVRoundCube *)0x0) ||
-             ((iVar12 = MVRoundCube::MVRoundCube_GetTimeLeft(this_07,(MethodInfo *)0x0),
-              pMVar25 == (MVRoundCube *)0x0 ||
-              (pSVar7 = MVRoundCube::MVRoundCube_MakeTimeIntoText(pMVar25,iVar12,(MethodInfo *)0x0)
-              , pTVar8 == (Text *)0x0)))) break;
-          (*(pTVar8->klass->vtable).set_text.methodPtr)
-                    (pTVar8,pSVar7,(pTVar8->klass->vtable).set_text.method);
-          pIVar22 = (this->fields).roundTimeIconPrefab;
+             ((iVar9 = MVRoundCube::MVRoundCube_GetTimeLeft(this_07,(MethodInfo *)0x0),
+              pMVar23 == (MVRoundCube *)0x0 ||
+              (pSVar4 = MVRoundCube::MVRoundCube_MakeTimeIntoText(pMVar23,iVar9,(MethodInfo *)0x0)
+              , pTVar5 == (Text *)0x0)))) break;
+          (*(code *)(pTVar5->klass->vtable).set_text.method)
+                    (pTVar5,pSVar4,
+                     (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+          pIVar20 = (this->fields).roundTimeIconPrefab;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pCVar23 = (Component *)
+          pCVar21 = (Component *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)pIVar22,
+                              ((Object *)pIVar20,
                                UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
                               );
-          if (pCVar23 == (Component *)0x0) break;
-          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (pCVar23,(MethodInfo *)0x0);
-          pPVar24 = (this->fields).roundTimeProgressBar;
-          if ((pPVar24 == (ProgressBar *)0x0) ||
-             (pTVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pPVar24,(MethodInfo *)0x0),
-             pTVar20 == (Transform *)0x0)) break;
+          if (pCVar21 == (Component *)0x0) break;
+          pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              (pCVar21,(MethodInfo *)0x0);
+          pPVar22 = (this->fields).roundTimeProgressBar;
+          if ((pPVar22 == (ProgressBar *)0x0) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pPVar22,(MethodInfo *)0x0),
+             pTVar18 == (Transform *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar20,pTVar21,0,(MethodInfo *)0x0);
+                    (pTVar18,pTVar19,0,(MethodInfo *)0x0);
         }
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
                   ((MonoBehaviour *)this,(MethodInfo *)0x0);
@@ -787,53 +776,53 @@ code_?:
                   ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
         return;
       }
-      pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).winningConditionMapping;
-      iVar27 = (this->fields).winConType;
-      if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar28 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      iVar25 = (this->fields).winConType;
+      if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+         (RVar26 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar5,iVar6,
+                             (pLVar2,iVar3,
                               MethodInfo__System__Collections__Generic__List<WinningConditionBriefing::WinningConditionBriefingDef>__get_Item_int_
-                             ), RVar28 == (RegexCharClass_SingleRange)0x0)) break;
-      pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             ), RVar26 == (RegexCharClass_SingleRange)0x0)) break;
+      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).winningConditionMapping;
-      if (iVar27 == *(int *)((int)RVar28 + 8)) {
-        if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RVar28 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      if (iVar25 == *(int *)((int)RVar26 + 8)) {
+        if (pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          RVar26 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar5,iVar6,
+                             (pLVar2,iVar3,
                               MethodInfo__System__Collections__Generic__List<WinningConditionBriefing::WinningConditionBriefingDef>__get_Item_int_
                              );
-          if (RVar28 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          if (RVar26 == (RegexCharClass_SingleRange)0x0) goto code_?;
           goto code_?;
         }
         break;
       }
-      iVar6 = iVar6 + 1;
+      iVar3 = iVar3 + 1;
     }
   }
   else {
-    pAVar29 = (Action *)0x0;
-    if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar29 = pAVar3;
+    pAVar27 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar27 = pAVar1;
     }
-    if (pAVar29 != (Action *)0x0) {
-      (this->fields).initializeCallback = pAVar29;
-      pAVar29 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar29 = pAVar3;
+    if (pAVar27 != (Action *)0x0) {
+      (this->fields).initializeCallback = pAVar27;
+      pAVar27 = (Action *)0x0;
+      if (pAVar1->klass == TypeInfo__System__Action) {
+        pAVar27 = pAVar1;
       }
-      if (pAVar29 != (Action *)0x0) goto code_?;
+      if (pAVar27 != (Action *)0x0) goto code_?;
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -861,39 +850,41 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Sta
   }
   pAVar4 = (this->fields).initializeCallback;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__WinningConditionBriefing__SetupBriefing__,
-               (MethodInfo *)0x0);
-    pAVar4 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar4 == (Action *)0x0) {
-      (this->fields).initializeCallback = (Action *)0x0;
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__WinningConditionBriefing__SetupBriefing__,
+             (MethodInfo *)0x0);
+  pAStack5 =
+       (Action *)
+       mscorlib.dll::System::Delegate::Delegate_Combine
+                 ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAStack5 == (Action *)0x0) {
+    (this->fields).initializeCallback = (Action *)0x0;
+    pAStack5 = (Action *)&(this->fields).initializeCallback;
+    pAStack6 = (Action__Class *)0x0;
+    func_?();
+    return;
+  }
+  pAVar4 = (Action *)0x0;
+  if (pAStack5->klass == TypeInfo__System__Action) {
+    pAVar4 = pAStack5;
+  }
+  if (pAVar4 != (Action *)0x0) {
+    (this->fields).initializeCallback = pAVar4;
+    pAStack6 = (Action__Class *)(Action *)0x0;
+    if (pAStack5->klass == TypeInfo__System__Action) {
+      pAStack6 = (Action__Class *)pAStack5;
+    }
+    if (pAStack6 != (Action__Class *)0x0) {
+      pAStack5 = (Action *)&(this->fields).initializeCallback;
       func_?();
       return;
     }
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
-    }
-    if (pAVar5 != (Action *)0x0) {
-      (this->fields).initializeCallback = pAVar5;
-      pAVar5 = (Action *)0x0;
-      if (pAVar4->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar4;
-      }
-      if (pAVar5 != (Action *)0x0) {
-        func_?();
-        return;
-      }
-    }
-    func_?();
   }
+  pAStack6 = TypeInfo__System__Action;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -923,9 +914,19 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Upd
     (this->fields).screensize.y = (float)iVar3;
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
               ((MonoBehaviour *)this,(MethodInfo *)0x0);
-    routine = WinningConditionBriefing_FixAspectRatioDelay(this,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?();
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_01 != (MVWorldObjectClientManager *)0x0) {
@@ -972,9 +973,9 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Upd
             (pSStack6 =
                   MVRoundCube::MVRoundCube_MakeTimeIntoText(pMVar4,iVar2,(MethodInfo *)0x0),
             pTVar5 != (Text *)0x0)))) {
-          pMStack7 = (pTVar5->klass->vtable).set_text.method;
+          pIStack7 = (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
           pTStack8 = pTVar5;
-          (*(pTVar5->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar5->klass->vtable).set_text.method)();
           return;
         }
       }
@@ -1009,57 +1010,55 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing__ct
     func_?(&StringLiteral_ELIMINATE_THE_OCULI_);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>
                            );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Dictionary__
-              );
-    pSVar1 = TM::TM__(StringLiteral_REACH_THE_FLAG_,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x1,(Object *)pSVar1,
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Dictionary__
+            );
+  pSVar1 = TM::TM__(StringLiteral_REACH_THE_FLAG_,(MethodInfo *)0x0);
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,1,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_FIND_ALL_THE_STARS_,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x0,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_ELIMINATE_YOUR_ENEMIES_,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x2,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,2,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_ELIMINATE_THE_OCULI_,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x3,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_
               );
     pSVar1 = TM::TM__(StringLiteral_REACH_THE_FLAG_,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x5,(Object *)pSVar1,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__Add
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,(Object *)pSVar1,
                MethodInfo__System__Collections__Generic__Dictionary<WinningConditionType,_System::String>__Add_WinningConditionType__System__String_
               );
-    ppDStack2 = &(this->fields).headerMap;
     (this->fields).headerMap = (Dictionary_2_WinningConditionType_System_String_ *)this_00;
-    pDStack3 = this_00;
     func_?();
-    LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0)
-    ;
+    LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -34,30 +34,35 @@ code_?:
     func_?(uVar2);
   }
   else {
-    pDVar3 = (pMVar1->fields).data;
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
     (this->fields).woID = woID;
-    if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pDVar3 = (Dictionary_2_System_Object_System_Object_ *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar3,(Object *)StringLiteral_BlueprintData,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar3,(Object *)StringLiteral_BlueprintData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar4.m_Index == 0) {
       (this->fields).blueprintData = (Dictionary_2_System_Object_System_Object_ *)0x0;
 code_?:
       func_?();
-      pDVar3 = (this->fields).blueprintData;
-      if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar3,(Object *)StringLiteral_AngularSpeed,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar2 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if (pOVar4 == (Object *)0x0) goto code_?;
-      if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar5 = (float *)func_?(pOVar4);
+      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields).blueprintData;
+      if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+      goto code_?;
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar3,(Object *)StringLiteral_AngularSpeed,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar2 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (TVar4.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
+        pfVar5 = (float *)func_?(TVar4.m_Index);
         this_01 = (this->fields).slider;
         if (this_01 != (SettingsSlider *)0x0) {
           value = *pfVar5;
@@ -76,19 +81,19 @@ code_?:
       goto code_?;
     }
     if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth <= (pDVar3->klass->_1).typeHierarchyDepth) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar3->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         typeHierarchyDepth - 1] ==
+         naturalAligment <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      (this->fields).blueprintData = pDVar3;
+      (this->fields).blueprintData = (Dictionary_2_System_Object_System_Object_ *)TVar4.m_Index;
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (pDVar3->klass->_1).typeHierarchyDepth) &&
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (pDVar3->klass->_1).typeHierarchy
-          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] ==
+           naturalAligment <= *(byte *)(*(int *)TVar4.m_Index + 0xb8)) &&
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)TVar4.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
     }
@@ -97,10 +102,9 @@ code_?:
 code_?:
   func_?();
   this_04 = (NotImplementedException *)func_?();
-  func_?();
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_04,(MethodInfo *)0x0);
-  func_?(&MethodInfo__RotatorSettings__Initialize_int__UnityEngine__GameObject_);
+  func_?();
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();

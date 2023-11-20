@@ -6,10 +6,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::
                (FirstTimeActivatableBazookaPopup *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  uVar1 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -55,191 +53,188 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::
     func_?(&StringLiteral_item_in_inventory_missing_docume);
     cRam_? = '\x01';
   }
-  pOVar4 = (Object *)
-           func_?(TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0);
-  if (pOVar4 != (Object *)0x0) {
-    object = pOVar4;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (pOVar4,ExceptionArgument__Enum_obj,unaff_EDI);
-    pTVar5 = (this->fields).tabGroup;
-    (this->fields).showing = 1;
-    if (pTVar5 != (TabMenu *)0x0) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pTVar5,(MethodInfo *)0x0);
+  method_01 = TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0;
+  value = (Debug_2__Class *)func_?();
+  object_00 = value;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pTVar2 = (this->fields).tabGroup;
+  (this->fields).showing = 1;
+  if (pTVar2 != (TabMenu *)0x0) {
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pTVar2,(MethodInfo *)0x0);
+    if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    callbackFunction = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)0x0) {
       if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                   TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0;
-      if (pEStack_6 == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        object_00 = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9;
-        pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-        if (pEStack_6 == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEStack_6,(Object *)object_00,
-                   MethodInfo__FirstTimeActivatableBazookaPopup____c___DoShowing_b__7_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0 =
-             (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)pEStack_6;
-        func_?();
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,pEStack_6,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                );
-      pIVar7 = (this->fields).slots;
-      if ((pIVar7 != (InventorySlots *)0x0) &&
-         (pMVar8 = (MethodInfo *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pIVar7,(MethodInfo *)0x0), pMVar8 != (MethodInfo *)0x0))
-      {
-        iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
-                          ((Transform *)pMVar8,(MethodInfo *)0x0);
-        if (iVar9 < 1) {
+      object = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__FirstTimeActivatableBazookaPopup____c___DoShowing_b__7_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0 = callbackFunction;
+      func_?();
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar3,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+              );
+    pIVar4 = (this->fields).slots;
+    if ((pIVar4 != (InventorySlots *)0x0) &&
+       (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pIVar4,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+                        (this_02,(MethodInfo *)0x0);
+      if (iVar5 < 1) {
 code_?:
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        pOVar4[1].klass = (Object__Class *)0x0;
+        *unaff_FS_OFFSET = uVar1;
+        return;
+      }
+      if (value != (Debug_2__Class *)0x0) {
+        (value->_0).name = (char *)0x0;
         func_?();
-        pIVar7 = (this->fields).slots;
-        pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)0x0;
-        if (((pIVar7 != (InventorySlots *)0x0) &&
-            (this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                        *)(pIVar7->fields).inventorySlots,
+        pIVar4 = (this->fields).slots;
+        this_05 = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+        if (((pIVar4 != (InventorySlots *)0x0) &&
+            (this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                        *)(pIVar4->fields).inventorySlots,
             this_00 !=
-            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            0x0)) && (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                                          (this_00,
-                                           MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
-                                          ),
-                     this_03 !=
-                     (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)0x0)) {
-          pDVar11 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                   Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                               *)&stack0xffffffd0,this_03,
-                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
-                             );
-          this_04 = (InventorySlot *)pDVar11->_currentValue;
-          uStack_1 = 1;
-          while (bVar12 = mscorlib.dll::System::Collections::Generic::
-                         Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                         Object,System::Object]::
-                         Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                   ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                                     *)&stack0xffffffb8,
-                                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                                   ), bVar12 != 0) {
-            if (((this_04 == (InventorySlot *)0x0) ||
-                (pMVar8 = (MethodInfo *)
-                          InventorySlot::InventorySlot_get_Item(this_04,(MethodInfo *)0x0),
-                pMVar8 == (MethodInfo *)0x0)) ||
-               (pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+            (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)0x0)) &&
+           (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                                (this_00,
+                                 MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
+                                ),
+           this_03 !=
+           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+            *)0x0)) {
+          mscorlib.dll::System::Collections::Generic::
+          Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+          StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                      *)&stack0xffffffc8,this_03,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
+                    );
+          method_00.rgctx_data = ((Il2CppRGCTXData *)&stack0xffffffb8).rgctx_data;
+          while( true ) {
+            this_04 = (CancellationTokenSource *)&stack0xffffffb8;
+            bVar6 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    UInt32,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                *)this_04,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                              );
+            if (bVar6 == 0) break;
+            if (((this_04 == (CancellationTokenSource *)0x0) ||
+                (method_00.methodMetadataHandle =
+                      (Il2CppMetadataMethodDefinitionHandle)
+                      InventorySlot::InventorySlot_get_Item
+                                ((InventorySlot *)this_04,(MethodInfo *)0x0),
+                method_00.rgctx_data == (Il2CppRGCTXData *)0x0)) ||
+               (pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                          GameObject_GetComponent_1
-                                   ((GameObject *)pMVar8,
+                                   ((GameObject *)method_00.methodMetadataHandle,
                                     PlayerInventoryPreviewItem_MethodInfo__UnityEngine__GameObject__GetComponent<PlayerInventoryPreviewItem>__
-                                   ), pOVar4 == (Object *)0x0)) goto code_?;
-            if (pOVar4[10].monitor == (MonitorData *)0x0) {
+                                   ), pOVar7 == (Object *)0x0)) goto code_?;
+            if (pOVar7[0xb].klass == (Object__Class *)0x0) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                object_00 = TypeInfo__UnityEngine__Debug;
                 func_?();
               }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                         ((Object *)StringLiteral_item_in_inventory_missing_docume,(MethodInfo *)0x0)
               ;
             }
             else {
-              pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)0x0;
-              this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+              pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+              this_01 = (Dictionary_2_System_Int32Enum_System_Single_ *)
                         (this->fields).priorityDictionary;
-              if (this_01 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+              if (this_01 == (Dictionary_2_System_Int32Enum_System_Single_ *)0x0)
               goto code_?;
-              pMVar8 = (MethodInfo *)&UNK_?;
-              bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,GUILoginHandler+PlanetData]::
-                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                                (this_01,(Object *)pOVar4[10].monitor,
+              method_00.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
+              object_00 = (Debug_2__Class *)
+                          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__ContainsKey_MVWorldObjectDocumentationType_
+              ;
+              bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Single]::
+                      Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                                (this_01,(Int32Enum__Enum)pOVar7[0xb].klass,
                                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__ContainsKey_MVWorldObjectDocumentationType_
                                 );
-              if (bVar12 != 0) {
-                this_02 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+              if (bVar6 != 0) {
+                this_05 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                           (this->fields).priorityDictionary;
-                if (this_02 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)
+                if (this_05 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)
                 goto code_?;
-                object = (Object *)pOVar4[10].monitor;
-                pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                         MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
-                ;
-                pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Int32Enum,System::Object]::
-                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                       (this_02,(Int32Enum__Enum)object,
-                                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
-                                       );
+                object_00 = (Debug_2__Class *)&UNK_?;
+                pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32Enum,System::Object]::
+                         Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                   (this_05,(Int32Enum__Enum)pOVar7[0xb].klass,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
+                                   );
               }
-              if ((int)pEVar10 < (int)pEStack_6) {
-                object[1].klass = pOVar4[9].klass;
+              if ((int)this_05 < (int)pDVar8) {
+                (object_00->_0).name = (char *)pOVar7[9].monitor;
+                this_05 = pDVar8;
                 func_?();
-                pEVar10 = pEStack_6;
               }
             }
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                     ,pMVar8);
-          uStack_1 = 0xffffffff;
-          if (object[1].klass == (Object__Class *)0x0) {
+                     ,(MethodInfo *)method_00.methodMetadataHandle);
+          if ((object_00->_0).name == (char *)0x0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                       ((Object *)StringLiteral_prioritizedItem_in_first_time_pl,(MethodInfo *)0x0);
             goto code_?;
           }
-          pTVar5 = (this->fields).tabGroup;
-          if (pTVar5 != (TabMenu *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)pTVar5,(MethodInfo *)0x0);
-            pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-            if (pEVar10 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-              pMVar8 = 
-              MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-              ;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)pEVar10,object,
-                         MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        ((GameObject *)pMVar8,(BaseEventData *)0x0,pEVar10,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                        );
-              *unaff_FS_OFFSET = uStack_3;
-              return;
+          pTVar2 = (this->fields).tabGroup;
+          if (pTVar2 != (TabMenu *)0x0) {
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar2,(MethodInfo *)0x0);
+            callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                       (Object *)object_00,
+                       MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
             }
+            pMVar9 = 
+            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+            ;
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+                      );
+            *unaff_FS_OFFSET = pMVar9;
+            return;
           }
         }
       }
@@ -248,8 +243,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -263,10 +258,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
   if ((this->fields).showing != 0) {
     return;
   }
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  uVar1 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -312,191 +305,188 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
     func_?(&StringLiteral_item_in_inventory_missing_docume);
     cRam_? = '\x01';
   }
-  pOVar4 = (Object *)
-           func_?(TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0);
-  if (pOVar4 != (Object *)0x0) {
-    object = pOVar4;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (pOVar4,ExceptionArgument__Enum_obj,unaff_EDI);
-    pTVar5 = (this->fields).tabGroup;
-    (this->fields).showing = 1;
-    if (pTVar5 != (TabMenu *)0x0) {
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pTVar5,(MethodInfo *)0x0);
+  method_01 = TypeInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0;
+  value = (Debug_2__Class *)func_?();
+  object_00 = value;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pTVar2 = (this->fields).tabGroup;
+  (this->fields).showing = 1;
+  if (pTVar2 != (TabMenu *)0x0) {
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pTVar2,(MethodInfo *)0x0);
+    if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    callbackFunction = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)0x0) {
       if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                   TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0;
-      if (pEStack_6 == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        if ((TypeInfo__FirstTimeActivatableBazookaPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        object_00 = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9;
-        pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-        if (pEStack_6 == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0)
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEStack_6,(Object *)object_00,
-                   MethodInfo__FirstTimeActivatableBazookaPopup____c___DoShowing_b__7_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0 =
-             (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)pEStack_6;
-        func_?();
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,pEStack_6,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                );
-      pIVar7 = (this->fields).slots;
-      if ((pIVar7 != (InventorySlots *)0x0) &&
-         (pMVar8 = (MethodInfo *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pIVar7,(MethodInfo *)0x0), pMVar8 != (MethodInfo *)0x0))
-      {
-        iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
-                          ((Transform *)pMVar8,(MethodInfo *)0x0);
-        if (iVar9 < 1) {
+      object = TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9;
+      callbackFunction = (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                 MethodInfo__FirstTimeActivatableBazookaPopup____c___DoShowing_b__7_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9__7_0 = callbackFunction;
+      func_?();
+    }
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar3,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+              );
+    pIVar4 = (this->fields).slots;
+    if ((pIVar4 != (InventorySlots *)0x0) &&
+       (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pIVar4,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+                        (this_02,(MethodInfo *)0x0);
+      if (iVar5 < 1) {
 code_?:
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        pOVar4[1].klass = (Object__Class *)0x0;
+        *unaff_FS_OFFSET = uVar1;
+        return;
+      }
+      if (value != (Debug_2__Class *)0x0) {
+        (value->_0).name = (char *)0x0;
         func_?();
-        pIVar7 = (this->fields).slots;
-        pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)0x0;
-        if (((pIVar7 != (InventorySlots *)0x0) &&
-            (this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                        *)(pIVar7->fields).inventorySlots,
+        pIVar4 = (this->fields).slots;
+        this_05 = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+        if (((pIVar4 != (InventorySlots *)0x0) &&
+            (this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                        *)(pIVar4->fields).inventorySlots,
             this_00 !=
-            (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)
-            0x0)) && (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                                Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values
-                                          (this_00,
-                                           MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
-                                          ),
-                     this_03 !=
-                     (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                      *)0x0)) {
-          pDVar11 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::
-                   Regex+CachedCodeEntryKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                               *)&stack0xffffffd0,this_03,
-                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
-                             );
-          this_04 = (InventorySlot *)pDVar11->_currentValue;
-          uStack_1 = 1;
-          while (bVar12 = mscorlib.dll::System::Collections::Generic::
-                         Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                         Object,System::Object]::
-                         Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                   ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_
-                                     *)&stack0xffffffb8,
-                                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                                   ), bVar12 != 0) {
-            if (((this_04 == (InventorySlot *)0x0) ||
-                (pMVar8 = (MethodInfo *)
-                          InventorySlot::InventorySlot_get_Item(this_04,(MethodInfo *)0x0),
-                pMVar8 == (MethodInfo *)0x0)) ||
-               (pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+            (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+             *)0x0)) &&
+           (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                                (this_00,
+                                 MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
+                                ),
+           this_03 !=
+           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+            *)0x0)) {
+          mscorlib.dll::System::Collections::Generic::
+          Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+          StyleSheetCache+SheetHandleKey,System::Object]::
+          Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                      *)&stack0xffffffc8,this_03,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
+                    );
+          method_00.rgctx_data = ((Il2CppRGCTXData *)&stack0xffffffb8).rgctx_data;
+          while( true ) {
+            this_04 = (CancellationTokenSource *)&stack0xffffffb8;
+            bVar6 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                    UInt32,System::Object]::
+                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                *)this_04,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                              );
+            if (bVar6 == 0) break;
+            if (((this_04 == (CancellationTokenSource *)0x0) ||
+                (method_00.methodMetadataHandle =
+                      (Il2CppMetadataMethodDefinitionHandle)
+                      InventorySlot::InventorySlot_get_Item
+                                ((InventorySlot *)this_04,(MethodInfo *)0x0),
+                method_00.rgctx_data == (Il2CppRGCTXData *)0x0)) ||
+               (pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                          GameObject_GetComponent_1
-                                   ((GameObject *)pMVar8,
+                                   ((GameObject *)method_00.methodMetadataHandle,
                                     PlayerInventoryPreviewItem_MethodInfo__UnityEngine__GameObject__GetComponent<PlayerInventoryPreviewItem>__
-                                   ), pOVar4 == (Object *)0x0)) goto code_?;
-            if (pOVar4[10].monitor == (MonitorData *)0x0) {
+                                   ), pOVar7 == (Object *)0x0)) goto code_?;
+            if (pOVar7[0xb].klass == (Object__Class *)0x0) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                object_00 = TypeInfo__UnityEngine__Debug;
                 func_?();
               }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                         ((Object *)StringLiteral_item_in_inventory_missing_docume,(MethodInfo *)0x0)
               ;
             }
             else {
-              pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)0x0;
-              this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+              pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+              this_01 = (Dictionary_2_System_Int32Enum_System_Single_ *)
                         (this->fields).priorityDictionary;
-              if (this_01 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+              if (this_01 == (Dictionary_2_System_Int32Enum_System_Single_ *)0x0)
               goto code_?;
-              pMVar8 = (MethodInfo *)&UNK_?;
-              bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,GUILoginHandler+PlanetData]::
-                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                                (this_01,(Object *)pOVar4[10].monitor,
+              method_00.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
+              object_00 = (Debug_2__Class *)
+                          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__ContainsKey_MVWorldObjectDocumentationType_
+              ;
+              bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Single]::
+                      Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                                (this_01,(Int32Enum__Enum)pOVar7[0xb].klass,
                                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__ContainsKey_MVWorldObjectDocumentationType_
                                 );
-              if (bVar12 != 0) {
-                this_02 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+              if (bVar6 != 0) {
+                this_05 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                           (this->fields).priorityDictionary;
-                if (this_02 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)
+                if (this_05 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)
                 goto code_?;
-                object = (Object *)pOVar4[10].monitor;
-                pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                         MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
-                ;
-                pEStack_6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Int32Enum,System::Object]::
-                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                       (this_02,(Int32Enum__Enum)object,
-                                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
-                                       );
+                object_00 = (Debug_2__Class *)&UNK_?;
+                pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32Enum,System::Object]::
+                         Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                   (this_05,(Int32Enum__Enum)pOVar7[0xb].klass,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__get_Item_MVWorldObjectDocumentationType_
+                                   );
               }
-              if ((int)pEVar10 < (int)pEStack_6) {
-                object[1].klass = pOVar4[9].klass;
+              if ((int)this_05 < (int)pDVar8) {
+                (object_00->_0).name = (char *)pOVar7[9].monitor;
+                this_05 = pDVar8;
                 func_?();
-                pEVar10 = pEStack_6;
               }
             }
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                     ,pMVar8);
-          uStack_1 = 0xffffffff;
-          if (object[1].klass == (Object__Class *)0x0) {
+                     ,(MethodInfo *)method_00.methodMetadataHandle);
+          if ((object_00->_0).name == (char *)0x0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                       ((Object *)StringLiteral_prioritizedItem_in_first_time_pl,(MethodInfo *)0x0);
             goto code_?;
           }
-          pTVar5 = (this->fields).tabGroup;
-          if (pTVar5 != (TabMenu *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)pTVar5,(MethodInfo *)0x0);
-            pEVar10 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-            if (pEVar10 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-              pMVar8 = 
-              MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-              ;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)pEVar10,object,
-                         MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        ((GameObject *)pMVar8,(BaseEventData *)0x0,pEVar10,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                        );
-              *unaff_FS_OFFSET = uStack_3;
-              return;
+          pTVar2 = (this->fields).tabGroup;
+          if (pTVar2 != (TabMenu *)0x0) {
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar2,(MethodInfo *)0x0);
+            callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                       (Object *)object_00,
+                       MethodInfo__FirstTimeActivatableBazookaPopup____c__DisplayClass7_0___DoShowing_b__1_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
             }
+            pMVar9 = 
+            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+            ;
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+                      );
+            *unaff_FS_OFFSET = pMVar9;
+            return;
           }
         }
       }
@@ -505,8 +495,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -529,39 +519,40 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
+  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>
                            );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Dictionary__
-              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x4,(Object *)0x2710,
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Dictionary__
+            );
+  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+    Dictionary_2_System_Int32Enum_System_Int32__Add
+              ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,4,10000,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x2,(Object *)0x1f4,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+    Dictionary_2_System_Int32Enum_System_Int32__Add
+              ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,2,500,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x13,(Object *)0x12c,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+    Dictionary_2_System_Int32Enum_System_Int32__Add
+              ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,0x13,300,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x3,(Object *)0xc8,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+    Dictionary_2_System_Int32Enum_System_Int32__Add
+              ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,3,200,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x9,(Object *)0x64,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::
+    Dictionary_2_System_Int32Enum_System_Int32__Add
+              ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,9,100,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_
               );
     (this->fields).priorityDictionary =

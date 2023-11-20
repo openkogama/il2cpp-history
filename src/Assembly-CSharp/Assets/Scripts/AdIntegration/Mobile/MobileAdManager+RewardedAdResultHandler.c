@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_RewardedAdResult,(MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
@@ -94,7 +94,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   (this->fields).rewardedAdResult = rewardedAdResult;
   (this->fields).IsDone = 1;
   return;
@@ -116,12 +116,12 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
     func_?(&StringLiteral_MobileAdManager_RewardedAdResult);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_RewardedAdResult,(MethodInfo *)0x0);
   (this->fields).context = context;
   (this->fields).adUIManager = adUIManager;

@@ -25,8 +25,12 @@ void Assembly-CSharp.dll::EffectStyleObject::EffectStyleObject_OnValidate
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Application);
     func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Application);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_isPlaying
                     ((MethodInfo *)0x0);

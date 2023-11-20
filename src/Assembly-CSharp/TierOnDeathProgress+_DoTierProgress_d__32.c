@@ -23,18 +23,17 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
   switch((this->fields).__1__state) {
   case 0:
     (this->fields).__1__state = -1;
-    unaff_ESI = (Text *)TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator;
+    this_00 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
     pPVar4 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
     if (((pPVar4 == (PlayerPlanetData *)0x0) || (pTVar3 == (TierOnDeathProgress *)0x0)) ||
-       (unaff_ESI == (Text *)0x0)) goto code_?;
+       (this_00 == (PlayerTierStateCalculator *)0x0)) goto code_?;
     pDVar5 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator::
               PlayerTierStateCalculator_GetTierPricingState
-                        ((PlayerTierStateCalculator *)unaff_ESI,
-                         (pPVar4->fields).progressionGamePoints,
+                        (this_00,(pPVar4->fields).progressionGamePoints,
                          (int)(pTVar3->fields).tierToInterpolateFrom,(MethodInfo *)0x0);
     (this->fields)._gameTierShopStatus_5__2 = pDVar5;
     func_?(&(this->fields)._gameTierShopStatus_5__2,pDVar5);
@@ -42,8 +41,7 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
       func_?(&TypeInfo__GamePointGainEffectManager);
       cRam_? = '\x01';
     }
-    pTVar6 = (TierOnDeathProgress_DoTierProgress_d_32 *)
-             TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown;
+    iVar6 = TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
@@ -53,38 +51,28 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
     iVar7 = (pPVar4->fields).progressionGamePoints;
     iVar8 = func_?((pTVar3->fields).tierToInterpolateFrom,0);
     iVar9 = func_?((pTVar3->fields).tierToInterpolateTo,0);
-    (this->fields)._current_5__4 = iVar8;
     (this->fields)._to_5__3 = iVar9;
+    (this->fields)._current_5__4 = iVar8;
     (this->fields)._stopped_5__5 = 0;
-    (pTVar3->fields).fromProgress = (float)(int)pTVar6;
+    (pTVar3->fields).fromProgress = (float)iVar6;
     (pTVar3->fields).toProgress = (float)iVar7;
     GamePointGainEffectManager::
     GamePointGainEffectManager_HaveShownTierProgressBarGamePointGainEffect(iVar7,(MethodInfo *)0x0)
     ;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__GamePointGainEffectManager);
-      cRam_? = '\x01';
-    }
-    TypeInfo__GamePointGainEffectManager->static_fields->progressBarGamePointAmountShown = iVar7;
-    if (TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown !=
-        (Action_1_Int32_ *)0x0) {
-      pAVar10 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
-      (*(pAVar10->fields)._._.invoke_impl)
-                ((pAVar10->fields)._._.method_code,iVar7,(pAVar10->fields)._._.method);
-    }
-    pSVar11 = mscorlib.dll::System::Single::Single_ToString
+    GamePointGainEffectManager::GamePointGainEffectManager_HaveShownGamePointGainEffect
+              (iVar7,(MethodInfo *)0x0);
+    pSVar10 = mscorlib.dll::System::Single::Single_ToString
                         ((Single *)&(pTVar3->fields).fromProgress,(MethodInfo *)0x0);
-    str3 = mscorlib.dll::System::Single::Single_ToString
-                     ((Single *)&(pTVar3->fields).toProgress,(MethodInfo *)0x0);
-    unaff_ESI = (Text *)mscorlib.dll::System::String::String_Concat_5
-                                  (StringLiteral_From_To_,pSVar11,::StringLiteral__,str3,
-                                   (MethodInfo *)0x0);
+    pSVar11 = mscorlib.dll::System::Single::Single_ToString
+                        ((Single *)&(pTVar3->fields).toProgress,(MethodInfo *)0x0);
+    pSVar10 = mscorlib.dll::System::String::String_Concat_5
+                        (StringLiteral_From_To_,pSVar10,::StringLiteral__,pSVar11,(MethodInfo *)0x0)
+    ;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-              ((Object *)unaff_ESI,(MethodInfo *)0x0);
-    this = pTVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar10,(MethodInfo *)0x0)
+    ;
     break;
   case 1:
     (this->fields).__1__state = -1;
@@ -98,30 +86,30 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
   default:
     return 0;
   }
-  iVar12 = (pTVar1->fields)._current_5__4;
-  if ((iVar12 <= (pTVar1->fields)._to_5__3) && ((pTVar1->fields)._stopped_5__5 == 0)) {
+  iVar7 = (this->fields)._current_5__4;
+  if ((iVar7 <= (this->fields)._to_5__3) && ((this->fields)._stopped_5__5 == 0)) {
     if (pTVar3 == (TierOnDeathProgress *)0x0) goto code_?;
-    unaff_ESI = (pTVar3->fields).nextTierText;
-    if (iVar12 == 3) {
-      pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
-                          ((Int32 *)&(pTVar1->fields)._current_5__4,(MethodInfo *)0x0);
-      if (unaff_ESI == (Text *)0x0) goto code_?;
-      func_?(0x4b,unaff_ESI,pSVar11);
+    pTVar12 = (pTVar3->fields).nextTierText;
+    if (iVar7 == 3) {
+      pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
+                          ((Int32 *)&(this->fields)._current_5__4,(MethodInfo *)0x0);
+      if (pTVar12 == (Text *)0x0) goto code_?;
+      func_?(0x4b,pTVar12,pSVar10);
       pPVar13 = (ProgressBarAndroid *)(pTVar3->fields).tierProgressBar;
       if (pPVar13 == (ProgressBarAndroid *)0x0) goto code_?;
       ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar13,1.0,(MethodInfo *)0x0);
       goto code_?;
     }
-    IStack_2.m_value = iVar12 + 1;
-    pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-    if (unaff_ESI == (Text *)0x0) goto code_?;
-    func_?(0x4b,unaff_ESI,pSVar11);
-    pDVar5 = (pTVar1->fields)._gameTierShopStatus_5__2;
+    IStack_2.m_value = iVar7 + 1;
+    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+    if (pTVar12 == (Text *)0x0) goto code_?;
+    func_?(0x4b,pTVar12,pSVar10);
+    pDVar5 = (this->fields)._gameTierShopStatus_5__2;
     if (pDVar5 ==
         (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
     goto code_?;
     this = (TierOnDeathProgress_DoTierProgress_d_32 *)
-           CONCAT31(this._1_3_,(char)(pTVar1->fields)._current_5__4 + '\x01');
+           CONCAT31(this._1_3_,(char)(this->fields)._current_5__4 + '\x01');
     pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar5,(ByteEnum__Enum)this
@@ -148,16 +136,16 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
     method_00 = (MethodInfo *)&UNK_?;
     fVar17 = (float10)func_?(SUB84((double)(((pTVar3->fields).toProgress - fVar16) * fVar15
                                                     + fVar16),0));
-    iVar7 = (pTVar1->fields)._current_5__4;
-    unaff_ESI = (Text *)(int)fVar17;
-    pTVar18 = unaff_ESI;
+    iVar6 = (pTVar1->fields)._current_5__4;
+    iVar18 = (int)fVar17;
+    iVar7 = iVar18;
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                      );
       cRam_? = '\x01';
     }
-    key = (byte)((char)iVar7 + 1) - 1;
+    key = (byte)((char)iVar6 + 1) - 1;
     if (0 < (int)key) {
       if (pDVar5 ==
           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
@@ -169,114 +157,110 @@ bool Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                             );
         if (pOVar14 == (Object *)0x0) goto code_?;
-        unaff_ESI = (Text *)((int)unaff_ESI - (int)pOVar14[3].klass);
-        if ((int)unaff_ESI < 1) {
-          unaff_ESI = (Text *)0x0;
+        iVar18 = iVar18 - (int)pOVar14[3].klass;
+        if (iVar18 < 1) {
+          iVar18 = 0;
         }
         key = key - 1;
-        pTVar18 = unaff_ESI;
+        iVar7 = iVar18;
       } while (0 < (int)key);
     }
     if ((pTVar3->fields).tierProgressBar == (ProgressBar *)0x0) goto code_?;
     fVar16 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                       ((float)(int)unaff_ESI / (float)(pTVar3->fields).gamePointsRequired,
-                        (MethodInfo *)0x0);
+                       ((float)iVar18 / (float)(pTVar3->fields).gamePointsRequired,(MethodInfo *)0x0
+                       );
     ProgressBarAndroid::ProgressBarAndroid_set_Progress
               ((ProgressBarAndroid *)(pTVar3->fields).tierProgressBar,fVar16,method_00);
     fVar17 = (float10)func_?();
-    pTVar19 = (pTVar3->fields).crystalsGainedSinceDeath;
+    pTVar12 = (pTVar3->fields).crystalsGainedSinceDeath;
     (pTVar3->fields).currentCrystalValue = (float)fVar17;
-    pSVar11 = mscorlib.dll::System::Single::Single_ToString
+    pSVar10 = mscorlib.dll::System::Single::Single_ToString
                         ((Single *)&(pTVar3->fields).currentCrystalValue,(MethodInfo *)0x0);
-    if (pTVar19 == (Text *)0x0) goto code_?;
-    func_?(0x4b,pTVar19,pSVar11);
-    pRVar20 = (pTVar3->fields).lockImage;
-    if ((pRVar20 == (RectTransform *)0x0) ||
-       (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)pRVar20,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0))
+    if (pTVar12 == (Text *)0x0) goto code_?;
+    func_?(0x4b,pTVar12,pSVar10);
+    pRVar19 = (pTVar3->fields).lockImage;
+    if ((pRVar19 == (RectTransform *)0x0) ||
+       (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pRVar19,(MethodInfo *)0x0), pGVar20 == (GameObject *)0x0))
     goto code_?;
-    bVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                       (pGVar21,(MethodInfo *)0x0);
-    if (bVar22 != 0) {
-      this_00 = (pTVar3->fields).lockShakeCurve;
-      if (this_00 == (AnimationCurve *)0x0) goto code_?;
+    bVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                       (pGVar20,(MethodInfo *)0x0);
+    if (bVar21 != 0) {
+      this_01 = (pTVar3->fields).lockShakeCurve;
+      if (this_01 == (AnimationCurve *)0x0) goto code_?;
       fVar16 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                         (this_00,(pTVar1->fields)._totalProgress_5__6,(MethodInfo *)0x0);
-      uVar23 = (pTVar3->fields).lockStartRot.x;
-      uVar24 = (pTVar3->fields).lockStartRot.y;
-      this_01 = (Transform *)(pTVar3->fields).lockImage;
-      euler.y = (float)uVar24 * _UNK_?;
-      euler.x = (float)uVar23 * _UNK_?;
-      euler.z = fVar16 * (pTVar3->fields).intensity * _UNK_? * _UNK_?;
-      pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                Quaternion_Internal_FromEulerRad
-                          ((Quaternion *)&stack0xffffffd8,euler,(MethodInfo *)0x0);
-      if (this_01 == (Transform *)0x0) goto code_?;
+                         (this_01,(pTVar1->fields)._totalProgress_5__6,(MethodInfo *)0x0);
+      this_02 = (Transform *)(pTVar3->fields).lockImage;
+      uVar22._0_4_ = (pTVar3->fields).lockStartRot.x;
+      uVar22._4_4_ = (pTVar3->fields).lockStartRot.y;
+      pQVar23 = (Quaternion *)
+                func_?(&stack0xffffffd8,uVar22,
+                                fVar16 * (pTVar3->fields).intensity * _UNK_?,0);
+      if (this_02 == (Transform *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                (this_01,*pQVar25,(MethodInfo *)0x0);
+                (this_02,*pQVar23,(MethodInfo *)0x0);
     }
-    pGVar21 = (pTVar3->fields).progressBarDivider;
-    if (pGVar21 == (GameObject *)0x0) goto code_?;
-    bVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                       (pGVar21,(MethodInfo *)0x0);
-    if (bVar22 != 0) {
-      pPVar26 = (pTVar3->fields).tierProgressBar;
-      if (pPVar26 == (ProgressBar *)0x0) goto code_?;
-      if ((pPVar26->fields).progress <= 0.0) {
-        pGVar21 = (pTVar3->fields).progressBarDivider;
-        if (pGVar21 == (GameObject *)0x0) goto code_?;
+    pGVar20 = (pTVar3->fields).progressBarDivider;
+    if (pGVar20 == (GameObject *)0x0) goto code_?;
+    bVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                       (pGVar20,(MethodInfo *)0x0);
+    if (bVar21 != 0) {
+      pPVar24 = (pTVar3->fields).tierProgressBar;
+      if (pPVar24 == (ProgressBar *)0x0) goto code_?;
+      if ((pPVar24->fields).progress <= 0.0) {
+        pGVar20 = (pTVar3->fields).progressBarDivider;
+        if (pGVar20 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar21,0,(MethodInfo *)0x0);
+                  (pGVar20,0,(MethodInfo *)0x0);
       }
     }
-    (pTVar3->fields).unlockingTier =
-         (float)(pTVar3->fields).gamePointsRequired <= (float)(int)unaff_ESI;
-    pTVar19 = (pTVar3->fields).progressText;
-    unaff_ESI = (Text *)mscorlib.dll::System::Int32::Int32_ToString
-                                  ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
+    (pTVar3->fields).unlockingTier = (float)(pTVar3->fields).gamePointsRequired <= (float)iVar18;
+    pTVar12 = (pTVar3->fields).progressText;
+    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
+                        ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
     pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
                         ((Int32 *)&(pTVar3->fields).gamePointsRequired,(MethodInfo *)0x0);
-    pSVar11 = mscorlib.dll::System::String::String_Concat_4
-                        ((String *)unaff_ESI,::StringLiteral____,pSVar11,(MethodInfo *)0x0);
-    if (pTVar19 == (Text *)0x0) goto code_?;
-    func_?(0x4b,pTVar19,pSVar11);
+    pSVar10 = mscorlib.dll::System::String::String_Concat_4
+                        (pSVar10,::StringLiteral____,pSVar11,(MethodInfo *)0x0);
+    if (pTVar12 == (Text *)0x0) goto code_?;
+    func_?(0x4b,pTVar12,pSVar10);
     if ((pTVar3->fields).unlockingTier != 0) {
-      pRVar20 = (pTVar3->fields).lockImage;
-      (pTVar3->fields).fromProgress = (float)(int)pTVar18;
-      if ((pRVar20 == (RectTransform *)0x0) ||
-         (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pRVar20,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0
-         )) goto code_?;
+      pRVar19 = (pTVar3->fields).lockImage;
+      (pTVar3->fields).fromProgress = (float)iVar7;
+      if ((pRVar19 == (RectTransform *)0x0) ||
+         (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pRVar19,(MethodInfo *)0x0), pGVar20 == (GameObject *)0x0)
+         ) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar21,0,(MethodInfo *)0x0);
-      pCVar27 = (pTVar3->fields).unlockImage;
-      if ((pCVar27 == (CanvasGroup *)0x0) ||
-         (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pCVar27,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0
-         )) goto code_?;
+                (pGVar20,0,(MethodInfo *)0x0);
+      pCVar25 = (pTVar3->fields).unlockImage;
+      if ((pCVar25 == (CanvasGroup *)0x0) ||
+         (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pCVar25,(MethodInfo *)0x0), pGVar20 == (GameObject *)0x0)
+         ) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar21,1,(MethodInfo *)0x0);
+                (pGVar20,1,(MethodInfo *)0x0);
       (pTVar1->fields)._lockLerpTimer_5__7 = 0.0;
 code_?:
-      pCVar27 = (pTVar3->fields).unlockImage;
-      if ((pCVar27 == (CanvasGroup *)0x0) ||
-         (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pCVar27,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0
-         )) goto code_?;
-      bVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                         (pGVar21,(MethodInfo *)0x0);
-      if (bVar22 != 0) {
+      pCVar25 = (pTVar3->fields).unlockImage;
+      if ((pCVar25 == (CanvasGroup *)0x0) ||
+         (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pCVar25,(MethodInfo *)0x0), pGVar20 == (GameObject *)0x0)
+         ) goto code_?;
+      bVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                         (pGVar20,(MethodInfo *)0x0);
+      if (bVar21 != 0) {
         fVar16 = (pTVar1->fields)._lockLerpTimer_5__7 / (pTVar3->fields).lockFadeLerpDuration;
-        pCVar27 = (pTVar3->fields).unlockImage;
+        pCVar25 = (pTVar3->fields).unlockImage;
         if (fVar16 < 0.0) {
           fVar16 = 0.0;
         }
         else if (_UNK_? < fVar16) {
           fVar16 = _UNK_?;
         }
-        if (pCVar27 == (CanvasGroup *)0x0) goto code_?;
+        if (pCVar25 == (CanvasGroup *)0x0) goto code_?;
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (pCVar27,fVar16 * _UNK_? + _UNK_?,(MethodInfo *)0x0);
+                  (pCVar25,fVar16 * _UNK_? + _UNK_?,(MethodInfo *)0x0);
         fVar16 = (pTVar1->fields)._lockLerpTimer_5__7;
         fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                            ((MethodInfo *)0x0);
@@ -290,30 +274,30 @@ code_?:
         }
       }
       IStack_2.m_value = (pTVar1->fields)._current_5__4;
-      iVar12 = IStack_2.m_value + 1;
-      (pTVar1->fields)._current_5__4 = iVar12;
-      if (iVar12 == (pTVar1->fields)._to_5__3) {
+      iVar7 = IStack_2.m_value + 1;
+      (pTVar1->fields)._current_5__4 = iVar7;
+      if (iVar7 == (pTVar1->fields)._to_5__3) {
         (pTVar1->fields)._stopped_5__5 = 1;
       }
-      else if (iVar12 != 3) {
+      else if (iVar7 != 3) {
         pPVar13 = (ProgressBarAndroid *)(pTVar3->fields).tierProgressBar;
         if (pPVar13 == (ProgressBarAndroid *)0x0) goto code_?;
         ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar13,0.0,(MethodInfo *)0x0);
-        pRVar20 = (pTVar3->fields).lockImage;
+        pRVar19 = (pTVar3->fields).lockImage;
         (pTVar3->fields).timer = 0.0;
-        if ((pRVar20 == (RectTransform *)0x0) ||
-           (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pRVar20,(MethodInfo *)0x0),
-           pGVar21 == (GameObject *)0x0)) goto code_?;
+        if ((pRVar19 == (RectTransform *)0x0) ||
+           (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pRVar19,(MethodInfo *)0x0),
+           pGVar20 == (GameObject *)0x0)) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar21,1,(MethodInfo *)0x0);
-        pCVar27 = (pTVar3->fields).unlockImage;
-        if ((pCVar27 == (CanvasGroup *)0x0) ||
-           (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pCVar27,(MethodInfo *)0x0),
-           pGVar21 == (GameObject *)0x0)) goto code_?;
+                  (pGVar20,1,(MethodInfo *)0x0);
+        pCVar25 = (pTVar3->fields).unlockImage;
+        if ((pCVar25 == (CanvasGroup *)0x0) ||
+           (pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pCVar25,(MethodInfo *)0x0),
+           pGVar20 == (GameObject *)0x0)) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar21,0,(MethodInfo *)0x0);
+                  (pGVar20,0,(MethodInfo *)0x0);
       }
     }
     if ((pTVar1->fields)._totalProgress_5__6 < _UNK_?) {
@@ -325,18 +309,14 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    uVar28 = func_?();
-    puVar29 = (uint *)(extraout_ECX + 0x3b);
-    uVar30 = (uint)((uint)((ulonglong)uVar28 >> 0x20) < *(uint *)uVar28);
-    uVar31 = *puVar29;
-    uVar32 = *puVar29;
-    *puVar29 = uVar32 + 0x3b519510 + uVar30;
-    *(char *)&unaff_ESI->klass =
-         *(char *)&unaff_ESI->klass + (char)((ulonglong)uVar28 >> 0x20) +
-         (0xc4ae6aef < uVar31 || CARRY4(uVar32 + 0x3b519510,uVar30));
-    pcVar33 = (code *)swi(3);
-    bVar22 = (*pcVar33)();
-    return bVar22;
+    cVar26 = '\0';
+    func_?();
+    pcVar27 = (char *)(CONCAT22((short)((uint)pTVar3 >> 0x10),CONCAT11(0x43,(char)pTVar3)) +
+                     0x81043b7);
+    *pcVar27 = *pcVar27 + extraout_DH + cVar26;
+    do {
+                    /* WARNING: Do nothing block with infinite loop */
+    } while( true );
   }
 code_?:
   (pTVar3->fields)._IsShowingTierProgress_k__BackingField = 0;
@@ -356,7 +336,6 @@ void Assembly-CSharp.dll::TierOnDeathProgress+<DoTierProgress>d__32::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

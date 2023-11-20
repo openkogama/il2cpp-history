@@ -31,43 +31,43 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
         mscorlib.dll::System::Array::Array_Clear
                   ((Array *)(pLVar3->fields)._items,0,length,(MethodInfo *)0x0);
       }
-      source = (pGVar1->fields).pickupObject;
-      if (source != (GameObject *)0x0) {
-        pLVar5 = (List_1_System_Object_ *)
-                 Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                           ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
-                            UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                           );
-        uVar6 = 0;
-        if (pLVar5 != (List_1_System_Object_ *)0x0) {
-          ppMVar7 = (MonitorData **)&(pLVar5->fields)._version;
+      this_00 = (pGVar1->fields).pickupObject;
+      if (this_00 != (GameObject *)0x0) {
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_GetComponentsInChildren
+                            (this_00,
+                             UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                            );
+        uVar5 = 0;
+        if (this_02 != (Object__Array *)0x0) {
+          ppOVar6 = this_02->vector;
           while( true ) {
-            if ((pLVar5->fields)._size <= (int)uVar6) {
+            method_00 = TypeInfo__GreyOutObjectScript__PickupOriginalMaterials;
+            if ((int)this_02->max_length <= (int)uVar5) {
               return;
             }
-            if ((uint)(pLVar5->fields)._size <= uVar6) break;
-            this_00 = (Object__Class *)*ppMVar7;
+            if (this_02->max_length <= uVar5) break;
+            this_01 = (Object__Class *)*ppOVar6;
             value = (Object *)func_?();
-            if (value == (Object *)0x0) goto code_?;
             *(undefined1 *)&value[2].klass = 1;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      (value,ExceptionArgument__Enum_obj,unaff_EDI);
-            value[1].klass = this_00;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            value[1].klass = this_01;
             func_?();
-            if (this_00 == (Object__Class *)0x0) goto code_?;
-            pMVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
-                               ((Renderer *)this_00,(MethodInfo *)0x0);
-            value[1].monitor = (MonitorData *)pMVar8;
+            if (this_01 == (Object__Class *)0x0) goto code_?;
+            pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
+                               ((Renderer *)this_01,(MethodInfo *)0x0);
+            value[1].monitor = (MonitorData *)pMVar7;
             func_?();
-            if (_UNK_? == (List_1_System_Object_ *)0x0) goto code_?;
-            pLVar5 = _UNK_?;
+            this_02 = (Object__Array *)(this_01->_0).this_arg.data.type;
+            if (this_02 == (Object__Array *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add
-                      (_UNK_?,value,
+                      ((List_1_System_Object_ *)this_02,value,
                        MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
                       );
-            uVar6 = uVar6 + 1;
-            ppMVar7 = &value->monitor;
+            uVar5 = uVar5 + 1;
+            ppOVar6 = (Object **)&value->monitor;
           }
           func_?();
         }
@@ -75,10 +75,10 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
     }
   }
 code_?:
-  uVar9 = func_?(&ppMStack_2);
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  uVar8 = func_?(&ppMStack_2);
+  func_?(uVar8);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

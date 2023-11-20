@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::Friend::Friend__ctor
   (this->fields).profileID = -1;
   (this->fields).friendID = -1;
   (this->fields).status = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).friendID = friendID;
   (this->fields).profileID = id;

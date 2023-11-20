@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_ParticleSystemPrefab_is_null,(MethodInfo *)0x0);
     return;
   }
@@ -72,7 +72,7 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_ParticleSystemInstance_is_null,(MethodInfo *)0x0);
         return;
       }

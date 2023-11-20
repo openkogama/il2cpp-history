@@ -16,8 +16,8 @@ Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_Create
   }
   if (owner != (MVSentryGun *)0x0) {
     puVar1 = (undefined8 *)
-             (*(owner->klass->vtable).get_WorldPosition_1.methodPtr)
-                       (&QStack_2.y,owner,(owner->klass->vtable).get_WorldPosition_1.method);
+             (*(code *)(owner->klass->vtable).get_WorldPosition_1.method)
+                       (&QStack_2.y,owner,(owner->klass->vtable).set_WorldPosition.methodPtr);
     uStack_3 = *puVar1;
     fVar4 = *(float *)(puVar1 + 1);
     pQVar5 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
@@ -146,66 +146,10 @@ void Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_Update
               ((Object_1 *)obj,(MethodInfo *)0x0);
     return;
   }
-  (*(this->klass->vtable).OnUpdate.methodPtr)(this,(this->klass->vtable).OnUpdate.method);
+  (*(code *)(this->klass->vtable).OnUpdate.method)(this,this->klass[1]._0.image);
   fVar1 = (this->fields).deleteTimer;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   (this->fields).deleteTimer = fVar1 - fVar2;
-  return;
-}
-
-
-/* Vector3 get_EndPosition() */
-
-Vector3 * Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_get_EndPosition
-                    (Vector3 *__return_storage_ptr__,SentryGunBeam *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._EndPosition_k__BackingField.y;
-  fVar2 = (this->fields)._EndPosition_k__BackingField.z;
-  __return_storage_ptr__->x = (this->fields)._EndPosition_k__BackingField.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
-}
-
-
-/* Vector3 get_StartPosition() */
-
-Vector3 * Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_get_StartPosition
-                    (Vector3 *__return_storage_ptr__,SentryGunBeam *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._StartPosition_k__BackingField.y;
-  fVar2 = (this->fields)._StartPosition_k__BackingField.z;
-  __return_storage_ptr__->x = (this->fields)._StartPosition_k__BackingField.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
-}
-
-
-/* Void set_EndPosition(Vector3) */
-
-void Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_set_EndPosition
-               (SentryGunBeam *this,Vector3 value,MethodInfo *method)
-
-{
-  (this->fields)._EndPosition_k__BackingField.x = value.x;
-  (this->fields)._EndPosition_k__BackingField.y = value.y;
-  (this->fields)._EndPosition_k__BackingField.z = value.z;
-  return;
-}
-
-
-/* Void set_StartPosition(Vector3) */
-
-void Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_set_StartPosition
-               (SentryGunBeam *this,Vector3 value,MethodInfo *method)
-
-{
-  (this->fields)._StartPosition_k__BackingField.x = value.x;
-  (this->fields)._StartPosition_k__BackingField.y = value.y;
-  (this->fields)._StartPosition_k__BackingField.z = value.z;
   return;
 }
 

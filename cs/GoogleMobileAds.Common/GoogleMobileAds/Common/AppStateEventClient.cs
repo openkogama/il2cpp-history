@@ -8,11 +8,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 28: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common
 {
-	public class AppStateEventClient : MonoBehaviour, IAppStateEventClient
+	public class AppStateEventClient : MonoBehaviour
 	{
 		// Fields
 		private static AppStateEventClient instance;
@@ -35,6 +35,6 @@ namespace GoogleMobileAds.Common
 		// Methods
 		private void OnApplicationPause(bool isPaused);
 		[CompilerGenerated]
-		private static void _AppStateChanged_m__0(AppState param_0000a0b4);
+		private static void _AppStateChanged_m__0(AppState param_0001129a);
 	}
 }

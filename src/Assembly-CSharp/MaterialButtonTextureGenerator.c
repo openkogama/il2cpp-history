@@ -91,10 +91,10 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)pCVar1,1,(MethodInfo *)0x0);
         iVar2 = (this->fields).previewResolution;
-        this_01 = (RenderTexture *)func_?();
+        this_01 = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
+        UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
+                  (this_01,iVar2,iVar2,0x10,(MethodInfo *)0x0);
         if (this_01 != (RenderTexture *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
-                    (this_01,iVar2,iVar2,0x10,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
                     ((Texture *)this_01,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
@@ -115,25 +115,22 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
                           ((Behaviour *)pCVar1,0,(MethodInfo *)0x0);
                 iVar2 = (this->fields).previewResolution;
                 pTVar3 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
+                UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
+                          (pTVar3,iVar2,iVar2,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
+                          (this_01,(MethodInfo *)0x0);
+                iVar4 = (*(code *)(this_01->klass->vtable).get_width.method)
+                                  (this_01,(this_01->klass->vtable).set_width.methodPtr);
+                uVar5 = 0;
+                uVar6 = 0;
+                fVar7 = (float)iVar4;
+                iVar4 = (*(code *)(this_01->klass->vtable).get_height.method)
+                                  (this_01,(this_01->klass->vtable).set_height.methodPtr);
                 if (pTVar3 != (Texture2D *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_2
-                            (pTVar3,iVar2,iVar2,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_active
-                            (this_01,(MethodInfo *)0x0);
-                  iVar4 = (*(this_01->klass->vtable).get_width.methodPtr)
-                                    (this_01,(this_01->klass->vtable).get_width.method);
-                  iVar5 = (*(this_01->klass->vtable).get_height.methodPtr)
-                                    (this_01,(this_01->klass->vtable).get_height.method);
-                  fVar6 = 0.0;
-                  fVar7 = 0.0;
-                  fVar8 = 0.0;
-                  UnityEngine.CoreModule.dll::UnityEngine::Vector4::Vector4__ctor
-                            ((Vector4 *)&stack0xffffffec,0.0,0.0,(float)iVar4,(float)iVar5,
-                             (MethodInfo *)0x0);
-                  source.m_YMin = fVar7;
-                  source.m_XMin = fVar6;
-                  source.m_Width = fVar8;
-                  source.m_Height = 0.0;
+                  source.m_YMin = (float)uVar6;
+                  source.m_XMin = (float)uVar5;
+                  source.m_Width = fVar7;
+                  source.m_Height = (float)iVar4;
                   UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_ReadPixels_1
                             (pTVar3,source,0,0,(MethodInfo *)0x0);
                   UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
@@ -160,8 +157,8 @@ Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonTextureGenera
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  pTVar3 = (Texture2D *)(*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  pTVar3 = (Texture2D *)(*pcVar8)();
   return pTVar3;
 }
 

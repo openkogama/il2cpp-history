@@ -98,8 +98,8 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_SetSi
     pDVar1 = (this->fields).slider;
     this_01 = (this->fields).cycle;
     if (pDVar1 != (DayNightSlider *)0x0) {
-      (*(pDVar1->klass->vtable).get_value.methodPtr)
-                (pDVar1,(pDVar1->klass->vtable).get_value.method);
+      (*(code *)(pDVar1->klass->vtable).get_value.method)
+                (pDVar1,(pDVar1->klass->vtable).set_value.methodPtr);
       if (this_01 != (DayNightCycle *)0x0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__ThemeTimers__ITimer);
@@ -108,19 +108,17 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_SetSi
         }
         cycleLength = (this_01->fields).cycleLength;
         this_02 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-        if (this_02 != (Timer_1 *)0x0) {
-          ThemeTimers::Timer::Timer_1__ctor(this_02,0.0,cycleLength,(MethodInfo *)0x0);
-          (this_01->fields).timer = (ITimer *)this_02;
-          func_?(&(this_01->fields).timer,this_02);
-          if ((this_01->fields).initialized != 0) {
-            pIVar2 = (this_01->fields).timer;
-            if (pIVar2 == (ITimer *)0x0) goto code_?;
-            fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
-            DayNightCycle::DayNightCycle_Update_1(this_01,(float)fVar3,(MethodInfo *)0x0);
-          }
-          DayNightCycleController_UpdateTrackBackground(this,(MethodInfo *)0x0);
-          return;
+        ThemeTimers::Timer::Timer_1__ctor(this_02,unaff_ESI,cycleLength,(MethodInfo *)0x0);
+        (this_01->fields).timer = (ITimer *)this_02;
+        func_?(&(this_01->fields).timer,this_02);
+        if ((this_01->fields).initialized != 0) {
+          pIVar2 = (this_01->fields).timer;
+          if (pIVar2 == (ITimer *)0x0) goto code_?;
+          fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+          DayNightCycle::DayNightCycle_Update_1(this_01,(float)fVar3,(MethodInfo *)0x0);
         }
+        DayNightCycleController_UpdateTrackBackground(this,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -149,8 +147,8 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_Updat
     if (pIVar3 != (ITimer *)0x0) {
       fVar4 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar3);
       if (pDVar2 != (DayNightSlider *)0x0) {
-        (*(pDVar2->klass->vtable).Set.methodPtr)
-                  (pDVar2,(float)fVar4,0,(pDVar2->klass->vtable).Set.method);
+        (*(code *)(pDVar2->klass->vtable).Set.method)
+                  (pDVar2,(float)fVar4,0,(pDVar2->klass->vtable).OnDrag_1.methodPtr);
         DayNightCycleController_UpdateTrackBackground(this,(MethodInfo *)0x0);
         return;
       }

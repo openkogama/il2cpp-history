@@ -25,54 +25,55 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_StartPlaying
     pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (pMVar1 != (MVLocalPlayer *)0x0) {
       bVar2 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(pMVar1,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_01 == (MVNetworkGame *)0x0) goto code_?;
+      if (bVar2 == 0) goto code_?;
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_01 != (MVNetworkGame *)0x0) {
         pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-        if (pMVar1 == (MVLocalPlayer *)0x0) goto code_?;
-        if ((pMVar1->fields)._.playerState == 3) {
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-          if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Observe
-                    (this_02,0,(MethodInfo *)0x0);
-        }
-      }
-      if (*(char *)&(this_00->fields).ReceivedAccessoryData != '\0') {
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0);
-        if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        callbackFunction = TypeInfo__PlayButtonBase____c->static_fields->__9__3_0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        if (pMVar1 != (MVLocalPlayer *)0x0) {
+          if ((pMVar1->fields)._.playerState == 3) {
+            this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                ((MethodInfo *)0x0);
+            if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Observe
+                      (this_02,0,(MethodInfo *)0x0);
           }
-          object = TypeInfo__PlayButtonBase____c->static_fields->__9;
-          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-          goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
-                     MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__PlayButtonBase____c->static_fields->__9__3_0 = callbackFunction;
-          func_?();
+code_?:
+          if ((char)(this_00->fields).connState != '\0') {
+            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this_00,(MethodInfo *)0x0);
+            if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            callbackFunction = TypeInfo__PlayButtonBase____c->static_fields->__9__3_0;
+            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+              if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              object = TypeInfo__PlayButtonBase____c->static_fields->__9;
+              callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                         (Object *)object,
+                         MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              TypeInfo__PlayButtonBase____c->static_fields->__9__3_0 = callbackFunction;
+              func_?();
+            }
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (root,(BaseEventData *)0x0,
+                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                      );
+          }
+          return;
         }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
       }
-      return;
     }
   }
 code_?:
@@ -127,8 +128,8 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_UpdateButton
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar7,0,(MethodInfo *)0x0);
             }
-            pMStack9 = (this->klass->vtable).OnCountDownEnd.method;
-            (*(this->klass->vtable).OnCountDownEnd.methodPtr)();
+            pIStack9 = this->klass[1]._0.image;
+            (*(code *)(this->klass->vtable).OnCountDownEnd.method)();
             return;
           }
           goto code_?;

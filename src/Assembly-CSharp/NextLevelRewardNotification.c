@@ -25,8 +25,8 @@ void Assembly-CSharp.dll::NextLevelRewardNotification::NextLevelRewardNotificati
     arg0 = (Object *)func_?(TypeInfo__System__Int32,&this);
     pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,arg0,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar2 = (pNVar1->fields).goldAmount;
       pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar4 != (MVNetworkGame *)0x0) &&
@@ -36,8 +36,9 @@ void Assembly-CSharp.dll::NextLevelRewardNotification::NextLevelRewardNotificati
         pSVar3 = mscorlib.dll::System::String::String_Concat_3
                            (pSVar3,::StringLiteral__,(MethodInfo *)0x0);
         if (pTVar2 != (Text *)0x0) {
-          (*(pTVar2->klass->vtable).set_text.methodPtr)
-                    (pTVar2,pSVar3,(pTVar2->klass->vtable).set_text.method);
+          (*(code *)(pTVar2->klass->vtable).set_text.method)
+                    (pTVar2,pSVar3,
+                     (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }

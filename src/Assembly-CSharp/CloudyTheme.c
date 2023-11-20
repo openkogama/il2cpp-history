@@ -71,20 +71,15 @@ void Assembly-CSharp.dll::CloudyTheme::CloudyTheme__ctor(CloudyTheme *this,Metho
   }
   this_00 = (List_1_ThemeComponent_ *)
             func_?(TypeInfo__System__Collections__Generic__List<ThemeComponent>);
-  if (this_00 != (List_1_ThemeComponent_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
-    (this->fields)._._.components = this_00;
-    func_?(&(this->fields)._._.components,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
+  (this->fields)._._.components = this_00;
+  func_?(&(this->fields)._._.components,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -29,28 +29,30 @@ void Assembly-CSharp.dll::LoggerManager+Logger::LoggerManager_Logger_Log
     }
     pIVar3 = (pLVar1->fields).appender;
     if (pIVar3 != (IAppender *)0x0) {
-      uVar4 = 0;
-      uVar5 = (pIVar3->klass->_1).interface_offsets_count;
-      if (uVar5 != 0) {
+      pIVar4 = pIVar3->klass;
+      uVar5 = 0;
+      uVar6._0_1_ = (pIVar4->_1).rank;
+      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+      if (uVar6 != 0) {
         do {
-          if (pIVar3->klass->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__IAppender) {
-            pVVar6 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar4].offset].Log;
+          if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IAppender) {
+            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar5].offset].Log.
+                       method;
             goto code_?;
           }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
       }
-      pVVar6 = (VirtualInvokeData *)func_?(pIVar3,TypeInfo__IAppender,0);
+      ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__IAppender,0);
 code_?:
-      (*pVVar6->methodPtr)(pIVar3,item,message,pVVar6->method);
+      (*(code *)*ppMVar7)(pIVar3,item,message,ppMVar7[1]);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

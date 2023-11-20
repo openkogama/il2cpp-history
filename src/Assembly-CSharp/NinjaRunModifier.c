@@ -30,19 +30,14 @@ Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_DoFadeAndDestroy
     func_?(&TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -164,18 +159,16 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_OnDeactivated
       func_?();
       cRam_? = '\x01';
     }
-    method_00 = (MethodInfo *)&UNK_?;
+    method_00 = TypeInfo__NinjaRunModifier___DoFadeAndDestroy_d__17;
     value = (Object *)func_?();
-    if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,method_00);
-      value[1].klass = (Object__Class *)0x0;
-      value[2].klass = (Object__Class *)this;
-      func_?(value + 2,this);
-      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this;
+    func_?(value + 2,this);
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -224,7 +217,7 @@ void Assembly-CSharp.dll::NinjaRunModifier::NinjaRunModifier_Update
     if ((this_00 == (MainCameraManager *)0x0) ||
        (pMVar3 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0),
        pMVar3 == (MVCameraBase *)0x0)) goto code_?;
-    iVar4 = (*(pMVar3->klass->vtable).__unknown.methodPtr)(pMVar3);
+    iVar4 = (*(code *)(pMVar3->klass->vtable).__unknown.method)(pMVar3);
     value = iVar4 != 0x10;
   }
   if (pTVar2 == (TrailRenderer *)0x0) goto code_?;

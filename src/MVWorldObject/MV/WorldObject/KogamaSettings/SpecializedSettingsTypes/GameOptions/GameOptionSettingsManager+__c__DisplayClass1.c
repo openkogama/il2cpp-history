@@ -20,11 +20,11 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
   if (((settingNode != (KogamaSettingWrapperBase *)0x0) &&
       ((
        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-       ->_1).typeHierarchyDepth <= (settingNode->klass->_1).typeHierarchyDepth)) &&
+       ->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment)) &&
      ((settingNode->klass->_1).typeHierarchy
       [(
        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-       ->_1).typeHierarchyDepth - 1] ==
+       ->_1).naturalAligment - 1] ==
       (Il2CppClass *)
       TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
      )) {
@@ -41,11 +41,11 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
       ;
       if (((
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           ->_1).typeHierarchyDepth <= (settingNode->klass->_1).typeHierarchyDepth) &&
+           ->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment) &&
          ((settingNode->klass->_1).typeHierarchy
           [(
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           ->_1).typeHierarchyDepth - 1] ==
+           ->_1).naturalAligment - 1] ==
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
          )) {

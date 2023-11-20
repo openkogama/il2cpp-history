@@ -227,7 +227,7 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
   ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
   pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    (*(pBVar1->klass->vtable).OnDeselect_1.methodPtr)();
+    (*(code *)(pBVar1->klass->vtable).OnDeselect_1.method)();
     pBVar1 = (this->fields).button;
     if (pBVar1 != (Button *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
@@ -413,8 +413,8 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_U
 {
   pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    cVar2 = (*(pBVar1->klass->vtable).IsInteractable.methodPtr)
-                      (pBVar1,(pBVar1->klass->vtable).IsInteractable.method);
+    cVar2 = (*(code *)(pBVar1->klass->vtable).IsInteractable.method)
+                      (pBVar1,(pBVar1->klass->vtable).InstantClearState.methodPtr);
     if (cVar2 == '\0') {
       ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
     }

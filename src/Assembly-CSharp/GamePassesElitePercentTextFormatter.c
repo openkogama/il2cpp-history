@@ -14,8 +14,8 @@ void Assembly-CSharp.dll::GamePassesElitePercentTextFormatter::
   pTVar1 = (this->fields).textElement;
   if (pTVar1 != (Text *)0x0) {
     pSVar2 = (String *)
-             (*(pTVar1->klass->vtable).get_text.methodPtr)
-                       (pTVar1,(pTVar1->klass->vtable).get_text.method);
+             (*(code *)(pTVar1->klass->vtable).get_text.method)
+                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
     if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SubscriberRewardDataManager);
     }
@@ -43,8 +43,9 @@ void Assembly-CSharp.dll::GamePassesElitePercentTextFormatter::
         fStack_4 = (_UNK_? - (pKVar3->fields).subscribedUserVat) * _UNK_?;
         arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_4);
         pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,arg0,arg1,(MethodInfo *)0x0);
-        (*(pTVar1->klass->vtable).set_text.methodPtr)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         return;
       }
     }

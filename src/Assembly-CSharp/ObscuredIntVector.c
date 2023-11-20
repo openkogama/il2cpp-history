@@ -22,6 +22,9 @@ bool Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_Equals
       pOVar3 = obj;
     }
     if (pOVar3 != (Object *)0x0) {
+      if ((TypeInfo__ObscuredIntVector->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__ObscuredIntVector);
+      }
       if ((obj->klass->_0).element_class == (TypeInfo__ObscuredIntVector->_0).element_class) {
         pauVar4 = (undefined1 (*) [20])func_?(obj);
         uVar5 = (undefined4)((ulonglong)*(undefined8 *)(*pauVar4 + 0x10) >> 0x20);
@@ -207,6 +210,7 @@ String * Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_ToString
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
     func_?(&TypeInfo__System__String);
     func_?(&StringLiteral_x__);
     func_?(&StringLiteral__y__);
@@ -214,97 +218,67 @@ String * Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_ToString
     cRam_? = '\x01';
   }
   values = (String__Array *)func_?(TypeInfo__System__String,6);
+  pSVar1 = StringLiteral_x__;
   if (values == (String__Array *)0x0) {
     func_?();
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
-code_?:
-    uVar1 = func_?(0);
-    func_?(uVar1);
   }
-  else {
-    if ((StringLiteral_x__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral_x__,(values->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral_x__;
-    if (values->max_length == 0) goto code_?;
+  else if (values->max_length != 0) {
     values->vector[0] = StringLiteral_x__;
-    func_?(values->vector,pSVar3);
-    OStack_4.currentCryptoKey = (this->x).currentCryptoKey;
-    OStack_4.hiddenValue = (this->x).hiddenValue;
-    OStack_4.fakeValue = (this->x).fakeValue;
-    OStack_4.inited = (this->x).inited;
-    OStack_4._7_1_ = (this->x).field_0x7;
-    pSVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-             ObscuredShort_ToString(&OStack_4,(MethodInfo *)0x0);
-    if ((pSVar3 != (String *)0x0) &&
-       (iVar2 = func_?(pSVar3,(values->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    if (values->max_length < 2) goto code_?;
-    values->vector[1] = pSVar3;
-    func_?(values->vector + 1,pSVar3);
-    if ((StringLiteral__y__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral__y__,(values->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral__y__;
-    if (values->max_length < 3) goto code_?;
-    values->vector[2] = StringLiteral__y__;
-    func_?(values->vector + 2,pSVar3);
-    OStack_4.currentCryptoKey = (this->y).currentCryptoKey;
-    OStack_4.hiddenValue = (this->y).hiddenValue;
-    OStack_4.fakeValue = (this->y).fakeValue;
-    OStack_4.inited = (this->y).inited;
-    OStack_4._7_1_ = (this->y).field_0x7;
-    pSVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-             ObscuredShort_ToString(&OStack_4,(MethodInfo *)0x0);
-    if ((pSVar3 != (String *)0x0) &&
-       (iVar2 = func_?(pSVar3,(values->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    if (values->max_length < 4) goto code_?;
-    values->vector[3] = pSVar3;
-    func_?(values->vector + 3,pSVar3);
-    if ((StringLiteral__z__ != (String *)0x0) &&
-       (iVar2 = func_?(StringLiteral__z__,(values->klass->_0).element_class), iVar2 == 0))
-    goto code_?;
-    pSVar3 = StringLiteral__z__;
-    if (values->max_length < 5) goto code_?;
-    values->vector[4] = StringLiteral__z__;
-    func_?(values->vector + 4,pSVar3);
-    OStack_4.currentCryptoKey = (this->z).currentCryptoKey;
-    OStack_4.hiddenValue = (this->z).hiddenValue;
-    OStack_4.fakeValue = (this->z).fakeValue;
-    OStack_4.inited = (this->z).inited;
-    OStack_4._7_1_ = (this->z).field_0x7;
-    pSVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-             ObscuredShort_ToString(&OStack_4,(MethodInfo *)0x0);
-    if ((pSVar3 == (String *)0x0) ||
-       (iVar2 = func_?(pSVar3,(values->klass->_0).element_class), iVar2 != 0)) {
-      if (5 < values->max_length) {
-        values->vector[5] = pSVar3;
-        func_?(values->vector + 5,pSVar3);
-        pSVar3 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-        return pSVar3;
+    func_?(values->vector,pSVar1);
+    OStack_2.currentCryptoKey = (this->x).currentCryptoKey;
+    OStack_2.hiddenValue = (this->x).hiddenValue;
+    OStack_2.fakeValue = (this->x).fakeValue;
+    OStack_2.inited = (this->x).inited;
+    OStack_2._7_1_ = (this->x).field_0x7;
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+    }
+    pSVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+             ObscuredShort_ToString(&OStack_2,(MethodInfo *)0x0);
+    if (1 < values->max_length) {
+      values->vector[1] = pSVar1;
+      func_?(values->vector + 1,pSVar1);
+      pSVar1 = StringLiteral__y__;
+      if (2 < values->max_length) {
+        values->vector[2] = StringLiteral__y__;
+        func_?(values->vector + 2,pSVar1);
+        OStack_2.currentCryptoKey = (this->y).currentCryptoKey;
+        OStack_2.hiddenValue = (this->y).hiddenValue;
+        OStack_2.fakeValue = (this->y).fakeValue;
+        OStack_2.inited = (this->y).inited;
+        OStack_2._7_1_ = (this->y).field_0x7;
+        pSVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+                 ObscuredShort_ToString(&OStack_2,(MethodInfo *)0x0);
+        if (3 < values->max_length) {
+          values->vector[3] = pSVar1;
+          func_?(values->vector + 3,pSVar1);
+          pSVar1 = StringLiteral__z__;
+          if (4 < values->max_length) {
+            values->vector[4] = StringLiteral__z__;
+            func_?(values->vector + 4,pSVar1);
+            OStack_2.currentCryptoKey = (this->z).currentCryptoKey;
+            OStack_2.hiddenValue = (this->z).hiddenValue;
+            OStack_2.fakeValue = (this->z).fakeValue;
+            OStack_2.inited = (this->z).inited;
+            OStack_2._7_1_ = (this->z).field_0x7;
+            pSVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                     ObscuredShort::ObscuredShort_ToString(&OStack_2,(MethodInfo *)0x0);
+            if (5 < values->max_length) {
+              values->vector[5] = pSVar1;
+              func_?(values->vector + 5,pSVar1);
+              pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+              return pSVar1;
+            }
+          }
+        }
       }
-      goto code_?;
     }
   }
-  uVar1 = func_?(0);
-  func_?(uVar1);
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  pSVar3 = (String *)(*pcVar5)();
-  return pSVar3;
+  pcVar3 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar3)();
+  return pSVar1;
 }
 
 
@@ -513,7 +487,6 @@ int16_t Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_get_Item
     if (key != 2) {
       uVar1 = func_?(&TypeInfo__System__IndexOutOfRangeException);
       this_00 = (IndexOutOfRangeException *)func_?(uVar1);
-      func_?(this_00);
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
                 (this_00,(MethodInfo *)0x0);
       uVar1 = func_?(&MethodInfo__ObscuredIntVector__get_Item_int_);
@@ -642,6 +615,13 @@ bool Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op_Equality
                (ObscuredIntVector a,ObscuredIntVector b,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ObscuredIntVector);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__ObscuredIntVector->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ObscuredIntVector);
+  }
   bVar1 = ObscuredIntVector_Equals_1(&a,b,(MethodInfo *)0x0);
   return bVar1;
 }
@@ -671,6 +651,13 @@ bool Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op_Inequality
   OStack_1.y.inited = a.y.inited;
   OStack_1.y._7_1_ = a.y._7_1_;
   OStack_1.z = a.z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ObscuredIntVector);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__ObscuredIntVector->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ObscuredIntVector);
+  }
   bVar2 = ObscuredIntVector_Equals_1(&OStack_1,b,(MethodInfo *)0x0);
   return bVar2 == 0;
 }
@@ -947,7 +934,6 @@ void Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_set_Item
   }
   uVar2 = func_?(&TypeInfo__System__IndexOutOfRangeException);
   this_00 = (IndexOutOfRangeException *)func_?(uVar2);
-  func_?(this_00);
   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
             (this_00,(MethodInfo *)0x0);
   uVar2 = func_?(&MethodInfo__ObscuredIntVector__set_Item_int__short_);

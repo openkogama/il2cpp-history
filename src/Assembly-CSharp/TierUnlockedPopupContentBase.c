@@ -241,8 +241,7 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentBase::TierUnlockedPopupContent
 {
   iVar1 = (this->fields).currentState;
   if ((iVar1 != 0) && (iVar1 == 1)) {
-    (*(this->klass->vtable).HandleDisplaying.methodPtr)
-              (this,(this->klass->vtable).HandleDisplaying.method);
+    (*(code *)(this->klass->vtable).HandleDisplaying.method)(this,this->klass[1]._0.image);
   }
   return;
 }

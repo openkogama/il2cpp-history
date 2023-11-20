@@ -21,48 +21,41 @@ void Assembly-CSharp.dll::PaintCubes::PaintCubes_Enter
     cubeCorners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
                             ((MethodInfo *)0x0);
     value = (PaintCursor *)func_?(TypeInfo__PaintCursor);
-    if (value != (PaintCursor *)0x0) {
-      if (cRam_? == '\0') {
-        unaff_ESI = (MethodInfo *)&UNK_?;
-        func_?(&TypeInfo__CellCursor);
-        cRam_? = '\x01';
-      }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar1 != (PrefabPool *)0x0) {
-        material = (pPVar1->fields).cellCursorMaterial;
-        this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
-        if (this_01 != (CellCursor *)0x0) {
-          CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-          (value->fields).paintCursor = this_01;
-          func_?(&value->fields,this_01);
-          (this->fields).paintCursor = value;
-          func_?(&(this->fields).paintCursor,value);
-          pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if (((pGVar2 != (GameEventManager *)0x0) &&
-              (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
-              pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-             (this_00 = (pGVar3->fields).LaserCommands,
-             this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)
-             ) {
-            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-            GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-                      (this_00,LaserPointerState__Enum_PaintCubes,(MethodInfo *)0x0);
-            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
-                              (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-            (this->fields)._.waitForMouseUp = bVar4;
-            return;
-          }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__CellCursor);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar1 != (PrefabPool *)0x0) {
+      material = (pPVar1->fields).cellCursorMaterial;
+      this_01 = (CellCursor *)func_?(TypeInfo__CellCursor);
+      CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+      (value->fields).paintCursor = this_01;
+      func_?(&value->fields,this_01);
+      (this->fields).paintCursor = value;
+      func_?(&(this->fields).paintCursor,value);
+      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar2 != (GameEventManager *)0x0) &&
+          (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
+          pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (this_00 = (pGVar3->fields).LaserCommands,
+         this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
+                  (this_00,LaserPointerState__Enum_PaintCubes,(MethodInfo *)0x0);
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
         }
+        bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+        (this->fields)._.waitForMouseUp = bVar4;
+        return;
       }
     }
   }
@@ -297,7 +290,7 @@ void Assembly-CSharp.dll::PaintCubes::PaintCubes_Exit
     GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
               (this_00,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
-    (*(this->klass->vtable).HideCursor.methodPtr)();
+    (*(code *)(this->klass->vtable).HideCursor.method)();
     return;
   }
   uVar3 = func_?(&stack0xfffffff4);

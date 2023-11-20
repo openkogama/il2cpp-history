@@ -39,10 +39,10 @@ void Assembly-CSharp.dll::AllCollectiblesCollectedClient::
     func_?(&TypeInfo__IDebriefing);
     cRam_? = '\x01';
   }
-  uVar1 = (*(this->klass->vtable).get_HighScores_1.methodPtr)
-                    (this,(this->klass->vtable).get_HighScores_1.method);
-  bVar2 = (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)
-                    (this,(this->klass->vtable).get_IsTeamMode_1.method);
+  uVar1 = (*(code *)(this->klass->vtable).get_HighScores.method)
+                    (this,(this->klass->vtable).Traverse_1.methodPtr);
+  bVar2 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
+                    (this,(this->klass->vtable).get_HighScores.methodPtr);
   this = (AllCollectiblesCollectedClient *)(uint)bVar2;
   if (winningConditionDebriefingView != (IDebriefing *)0x0) {
     func_?(0,TypeInfo__IDebriefing,winningConditionDebriefingView,0,uVar1,this);

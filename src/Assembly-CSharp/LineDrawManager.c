@@ -91,7 +91,7 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
                     (color.r,color.g,color.b,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
-                    (color.a,0.0,4.2317833e-29,(MethodInfo *)0x0);
+                    (color.a,0.0,4.2638163e-29,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
           pCVar1 = this_01;
         }
@@ -212,13 +212,13 @@ void Assembly-CSharp.dll::LineDrawManager::LineDrawManager_OnPostRender
           if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__MVInputWrapper);
           }
-          pVVar7 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                   StandaloneInput_MousePosition
-                             (&VStack_8,(StandaloneInput *)0x0,in_stack_3);
+          pVVar7 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                   DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition
+                             (&VStack_8,(DefaultEventSystem_Input *)0x0,in_stack_3);
           fVar9 = pVVar7->x;
-          pVVar7 = UnityStandardAssets::CrossPlatformInput::PlatformSpecific::StandaloneInput::
-                   StandaloneInput_MousePosition
-                             (&VStack_8,(StandaloneInput *)0x0,in_stack_3);
+          pVVar7 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                   DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition
+                             (&VStack_8,(DefaultEventSystem_Input *)0x0,in_stack_3);
           pLStack_6 = (LinkObjectScript *)pVVar7->y;
           this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
           pOVar10 = (this->fields).tempObjectLink;
@@ -361,20 +361,13 @@ void Assembly-CSharp.dll::LineDrawManager::LineDrawManager__ctor
   this_00 = (Queue_1_LineDrawManager_LinkLine_ *)
             func_?(TypeInfo__System__Collections__Generic__Queue<LineDrawManager::LinkLine>
                            );
-  if (this_00 != (Queue_1_LineDrawManager_LinkLine_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::
-    Stack_1_System_Object___ctor
-              ((Stack_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Queue<LineDrawManager::LinkLine>__Queue__);
-    (this->fields).linkLines = this_00;
-    func_?(&(this->fields).linkLines,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32]::Stack_1_System_Int32___ctor
+            ((Stack_1_System_Int32_ *)this_00,
+             MethodInfo__System__Collections__Generic__Queue<LineDrawManager::LinkLine>__Queue__);
+  (this->fields).linkLines = this_00;
+  func_?(&(this->fields).linkLines,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

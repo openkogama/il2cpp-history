@@ -21,9 +21,9 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_AddRequirement
                 );
       if ((this_00->fields).hasInputBlockingRequirement == 0) {
         if (useRequirement == (UseRequirement *)0x0) goto code_?;
-        cVar1 = (*(useRequirement->klass->vtable).get_IsInputBlocking.methodPtr)
-                          (useRequirement,(useRequirement->klass->vtable).get_IsInputBlocking.method
-                          );
+        cVar1 = (*(code *)(useRequirement->klass->vtable).get_IsInputBlocking.method)
+                          (useRequirement,
+                           (useRequirement->klass->vtable).get_IsInputBlockingNow.methodPtr);
       }
       else {
         cVar1 = '\x01';
@@ -105,7 +105,7 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__
                           );
         if (bVar9 == 0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&LStack_5,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__
@@ -115,7 +115,7 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
         }
         if ((RegexCharClass_SingleRange)LStack_5._current == (RegexCharClass_SingleRange)0x0)
         break;
-        UVar10 = (**(code **)(*(int *)LStack_5._current + 0xdc))();
+        UVar10 = (**(code **)(*(int *)LStack_5._current + 0xe0))();
         UVar6 = UVar6 | UVar10;
       }
     }
@@ -192,7 +192,7 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__
                           );
         if (bVar9 == 0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                     ((Object *)&LStack_5,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__
@@ -202,7 +202,7 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
         }
         if ((RegexCharClass_SingleRange)LStack_5._current == (RegexCharClass_SingleRange)0x0)
         break;
-        SVar10 = (**(code **)(*(int *)LStack_5._current + 0xfc))();
+        SVar10 = (**(code **)(*(int *)LStack_5._current + 0x100))();
         SVar6 = SVar6 | SVar10;
       }
     }
@@ -257,10 +257,9 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetUseInteractorHandler
       return (UseInteractorHandler *)0x0;
     }
     if (((((this->fields)._UsedInVehicles_k__BackingField != 0) &&
-         ((TypeInfo__MVVehicleBase->_1).typeHierarchyDepth <=
-          (this_02->klass->_1).typeHierarchyDepth)) &&
+         ((TypeInfo__MVVehicleBase->_1).naturalAligment <= (this_02->klass->_1).naturalAligment)) &&
         ((MVVehicleBase__Class *)
-         (this_02->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).typeHierarchyDepth - 1] ==
+         (this_02->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] ==
          TypeInfo__MVVehicleBase)) &&
        (pMVar1 = MVVehicleBase::MVVehicleBase_GetDriver((MVVehicleBase *)this_02,(MethodInfo *)0x0),
        pMVar1 != (MVAvatar *)0x0)) {
@@ -324,22 +323,22 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_OnDestroy
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass42_0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,unaff_EBP);
       value[1].klass = (Object__Class *)data;
       func_?(value + 1,data);
       if ((TypeInfo__UseInteractorVisualization____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UseInteractorVisualization____c);
       }
       this_01 = TypeInfo__UseInteractorVisualization____c->static_fields->__9__42_0;
       if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) {
         if ((TypeInfo__UseInteractorVisualization____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__UseInteractorVisualization____c);
         }
         object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
-        this_01 = (Func_2_UseRequirement_Boolean_ *)func_?();
-        if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
+        this_01 = (Func_2_UseRequirement_Boolean_ *)
+                  func_?(TypeInfo__System__Func<UseRequirement,_bool>);
         mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
                   ((Func_2_Object_Boolean_ *)this_01,(Object *)object,
                    MethodInfo__UseInteractorVisualization____c___DestroyRequirementObjects_b__42_0_UseRequirement_
@@ -348,19 +347,17 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_OnDestroy
         func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__42_0,this_01
                        );
       }
-      this_02 = (Func_2_Object_Boolean_ *)func_?();
-      if (this_02 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  (this_02,value,
-                   MethodInfo__UseInteractorVisualization____c__DisplayClass42_0___DestroyRequirementObjects_b__1_UseRequirement_
-                   ,(MethodInfo *)0x0);
-        UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
-                  (this_00,this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
-        return;
-      }
+      this_02 = (Func_2_Object_Boolean_ *)
+                func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                (this_02,value,
+                 MethodInfo__UseInteractorVisualization____c__DisplayClass42_0___DestroyRequirementObjects_b__1_UseRequirement_
+                 ,(MethodInfo *)0x0);
+      UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
+                (this_00,this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -398,7 +395,6 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_PayUseCost
       pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
       this_01 = (Func_2_UseRequirement_Boolean_ *)
                 func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
       mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
                 ((Func_2_Object_Boolean_ *)this_01,(Object *)pUVar1,
                  MethodInfo__UseInteractorVisualization____c___PayUseCost_b__41_0_UseRequirement_,
@@ -417,7 +413,6 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_PayUseCost
       pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
       this_02 = (Func_2_UseRequirement_Boolean_ *)
                 func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_02 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
       mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
                 ((Func_2_Object_Boolean_ *)this_02,(Object *)pUVar1,
                  MethodInfo__UseInteractorVisualization____c___PayUseCost_b__41_1_UseRequirement_,
@@ -429,7 +424,6 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_PayUseCost
               (this_00,this_01,this_02,(MethodInfo *)0x0);
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -452,17 +446,19 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
       func_?(&
                       MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_
                      );
-      func_?(&
-                      MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
-                     );
+      in_stack_2 =
+           &
+           MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+      ;
+      func_?();
       func_?(&TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
       func_?(&TypeInfo__UseInteractorVisualization____c);
       cRam_? = '\x01';
     }
     value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_2);
     if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                (value,ExceptionArgument__Enum_obj,unaff_EDI);
       value[1].klass = (Object__Class *)data;
       func_?(value + 1,data);
       value[1].monitor = pMVar1;
@@ -477,7 +473,6 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
         object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
         this_01 = (Func_2_UseRequirement_Boolean_ *)
                   func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-        if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
         mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
                   ((Func_2_Object_Boolean_ *)this_01,(Object *)object,
                    MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_,
@@ -488,23 +483,20 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
       }
       this_02 = (Func_2_Object_Boolean_ *)
                 func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_02 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  (this_02,value,
-                   MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
-                   ,(MethodInfo *)0x0);
-        UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
-                  (this_00,this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
-        UseInteractorVisualization::UseInteractorVisualization_CalculateSpacing
-                  (this_00,(MethodInfo *)0x0);
-        return;
-      }
+      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                (this_02,value,
+                 MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+                 ,(MethodInfo *)0x0);
+      UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
+                (this_00,this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
+      UseInteractorVisualization::UseInteractorVisualization_CalculateSpacing
+                (this_00,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -548,28 +540,32 @@ bool Assembly-CSharp.dll::UseInteractor::UseInteractor_Use
         UVar3 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability
                           (pUVar2,(MethodInfo *)0x0);
         if ((UVar3 & UseGUIResult__Enum_CannotAfford) != 0) {
-          this_00 = (MethodInfo *)func_?();
-          if (this_00 == (MethodInfo *)0x0) goto code_?;
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)this_00,
+          this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::StyleComplexSelector+PseudoStateData]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                    (this_00,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                     );
           this = (UseInteractor *)CONCAT13(10,this._0_3_);
           key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
           value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+          if (this_00 ==
+              (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
                     ((Dictionary_2_System_Object_System_Object_ *)this_00,key,value,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-            method = (MethodInfo *)&UNK_?;
+            userWoID = (int32_t)TypeInfo__NotificationController;
+            this = (UseInteractor *)&UNK_?;
             func_?();
           }
-          userWoID = 10;
-          this = (UseInteractor *)&UNK_?;
-          method = this_00;
+          userWoID = 0;
+          this = (UseInteractor *)this_00;
           NotificationController::NotificationController_OnNotificationReceived
                     (NotificationType__Enum_Requirement,
                      (Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
@@ -602,7 +598,7 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
                    );
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (owner != (GameObject *)0x0) {
     pUVar1 = (UseInteractorVisualization *)
@@ -690,11 +686,12 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_triggerBoxEvents_TriggerE
         cRam_? = '\x01';
       }
       if ((this != (UseInteractor *)0x0) &&
-         (this_00 = (Dictionary_2_System_Object_System_Object_ *)(x->fields).useInteractors,
-         this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this_00,(Object *)(this->fields).woOwnerID,(Object *)this,
+         (this_00 = (x->fields).useInteractors,
+         this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Add
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields).woOwnerID,
+                   (Object *)this,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Add_int__UseInteractor_
                   );
         return;

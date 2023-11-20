@@ -31,11 +31,11 @@ Object * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::Helpers::Si
     cRam_? = '\x01';
   }
   pIVar1 = method->klass;
-  if (pIVar1->initialized_and_no_error == 0) {
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pIVar1 = pIVar1->rgctx_data->klass;
-  if (pIVar1->initialized_and_no_error == 0) {
+  pIVar1 = pIVar1->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
   x = *(Object_1 **)pIVar1->static_fields;
@@ -49,103 +49,99 @@ Object * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::Helpers::Si
       func_?(TypeInfo__UnityEngine__Object);
     }
     pIVar1 = method->klass;
-    if (pIVar1->initialized_and_no_error == 0) {
+    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
       pIVar1 = (Il2CppClass *)func_?(pIVar1);
     }
-    pIVar3 = (pIVar1->rgctx_data[2].method)->virtualMethodPointer;
-    pIVar1 = method->klass;
-    if (pIVar1->initialized_and_no_error == 0) {
-      pIVar1 = (Il2CppClass *)func_?(pIVar1);
-    }
-    iVar4 = (*pIVar3)(pIVar1->rgctx_data[2].rgctxDataDummy);
-    if (iVar4 == 0) {
+    pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectsOfType_1
+                       (pIVar1->rgctx_data[3].method);
+    if (pOVar3 == (Object__Array *)0x0) {
       func_?();
 code_?:
       func_?();
-      pcVar5 = (code *)swi(3);
-      pOVar6 = (Object *)(*pcVar5)();
-      return pOVar6;
+      pcVar4 = (code *)swi(3);
+      pOVar5 = (Object *)(*pcVar4)();
+      return pOVar5;
     }
-    if (*(int *)(iVar4 + 0xc) == 1) {
-      if (*(int *)(iVar4 + 0xc) == 0) goto code_?;
+    if (pOVar3->max_length == 1) {
+      if (pOVar3->max_length == 0) goto code_?;
       pIVar1 = method->klass;
-      uVar7 = *(undefined4 *)(iVar4 + 0x10);
-      if (pIVar1->initialized_and_no_error == 0) {
+      pOVar5 = pOVar3->vector[0];
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      pIVar1 = pIVar1->rgctx_data->klass;
-      if (pIVar1->initialized_and_no_error == 0) {
+      pIVar1 = pIVar1->rgctx_data[2].klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      *(undefined4 *)pIVar1->static_fields = uVar7;
+      *(Object **)pIVar1->static_fields = pOVar5;
       pIVar1 = method->klass;
-      if (pIVar1->initialized_and_no_error == 0) {
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      pIVar1 = pIVar1->rgctx_data->klass;
-      if (pIVar1->initialized_and_no_error == 0) {
+      pIVar1 = pIVar1->rgctx_data[2].klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      func_?(pIVar1->static_fields,uVar7);
+      func_?(pIVar1->static_fields,pOVar5);
     }
     else {
       pIVar1 = method->klass;
-      if (*(int *)(iVar4 + 0xc) < 2) {
-        if (pIVar1->initialized_and_no_error == 0) {
+      if ((int)pOVar3->max_length < 2) {
+        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
           pIVar1 = (Il2CppClass *)func_?(pIVar1);
         }
-        IVar8 = pIVar1->rgctx_data[3];
+        IVar6 = pIVar1->rgctx_data[5];
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Type);
         }
-        pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
-        if (pTVar9 == (Type *)0x0) {
+        pTVar7 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)IVar6,(MethodInfo *)0x0);
+        if (pTVar7 == (Type *)0x0) {
           str0 = (String *)0x0;
-          pSVar10 = StringLiteral___Instance_doesn_t_exist_in_the_;
+          pSVar8 = StringLiteral___Instance_doesn_t_exist_in_the_;
         }
         else {
           str0 = (String *)
-                 (*(pTVar9->klass->vtable).ToString.methodPtr)
-                           (pTVar9,(pTVar9->klass->vtable).ToString.method);
-          pSVar10 = StringLiteral___Instance_doesn_t_exist_in_the_;
+                 (*(code *)(pTVar7->klass->vtable).ToString.method)
+                           (pTVar7,(pTVar7->klass->vtable).GetCustomAttributes.methodPtr);
+          pSVar8 = StringLiteral___Instance_doesn_t_exist_in_the_;
         }
       }
       else {
-        if (pIVar1->initialized_and_no_error == 0) {
+        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
           pIVar1 = (Il2CppClass *)func_?(pIVar1);
         }
-        IVar8 = pIVar1->rgctx_data[3];
+        IVar6 = pIVar1->rgctx_data[5];
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Type);
         }
-        pTVar9 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)IVar8,(MethodInfo *)0x0);
-        if (pTVar9 == (Type *)0x0) {
+        pTVar7 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                           ((RuntimeTypeHandle)IVar6,(MethodInfo *)0x0);
+        if (pTVar7 == (Type *)0x0) {
           str0 = (String *)0x0;
-          pSVar10 = StringLiteral___There_is_more_than_1_instance_;
+          pSVar8 = StringLiteral___There_is_more_than_1_instance_;
         }
         else {
           str0 = (String *)
-                 (*(pTVar9->klass->vtable).ToString.methodPtr)
-                           (pTVar9,(pTVar9->klass->vtable).ToString.method);
-          pSVar10 = StringLiteral___There_is_more_than_1_instance_;
+                 (*(code *)(pTVar7->klass->vtable).ToString.method)
+                           (pTVar7,(pTVar7->klass->vtable).GetCustomAttributes.methodPtr);
+          pSVar8 = StringLiteral___There_is_more_than_1_instance_;
         }
       }
-      pSVar10 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar10,(MethodInfo *)0x0);
+      pSVar8 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar8,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                ((Object *)pSVar10,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar8,(MethodInfo *)0x0);
     }
   }
   pIVar1 = method->klass;
-  if (pIVar1->initialized_and_no_error == 0) {
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?();
   }
-  pIVar1 = pIVar1->rgctx_data->klass;
-  if (pIVar1->initialized_and_no_error == 0) {
+  pIVar1 = pIVar1->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?();
   }
   return *(Object **)pIVar1->static_fields;

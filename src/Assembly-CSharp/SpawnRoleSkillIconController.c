@@ -8,19 +8,19 @@ void Assembly-CSharp.dll::SpawnRoleSkillIconController::SpawnRoleSkillIconContro
 {
   pIVar1 = (this->fields).skillIcon;
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
               (pIVar1,newIconColor.r,newIconColor.g,newIconColor.b,newIconColor.a,
-               (pIVar1->klass->vtable).set_color.method);
+               (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
     pIVar1 = (this->fields).negativeIcon;
     if (pIVar1 != (Image *)0x0) {
-      (*(pIVar1->klass->vtable).set_color.methodPtr)
+      (*(code *)(pIVar1->klass->vtable).set_color.method)
                 (pIVar1,newIconColor.r,newIconColor.g,newIconColor.b,newIconColor.a,
-                 (pIVar1->klass->vtable).set_color.method);
+                 (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
       pIVar1 = (this->fields).negativeBackgroundIcon;
       if (pIVar1 != (Image *)0x0) {
-        (*(pIVar1->klass->vtable).set_color.methodPtr)
+        (*(code *)(pIVar1->klass->vtable).set_color.method)
                   (pIVar1,newBackgroundColor.r,newBackgroundColor.g,newBackgroundColor.b,
-                   newBackgroundColor.a,(pIVar1->klass->vtable).set_color.method);
+                   newBackgroundColor.a,(pIVar1->klass->vtable).get_raycastTarget.methodPtr);
         return;
       }
     }

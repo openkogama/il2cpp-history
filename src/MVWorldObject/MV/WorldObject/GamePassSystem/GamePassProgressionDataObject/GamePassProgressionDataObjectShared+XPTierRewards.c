@@ -41,60 +41,60 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgression
   }
   puStack_4 = puVar5;
   pSVar6 = StringLiteral_Tier_XP_rewardsu000A;
-  auStack_7._0_4_ = (Object__Class *)0x0;
-  auStack_7._4_4_ = (MonitorData *)0x0;
-  auStack_7._8_4_ = 0;
-  auStack_8._0_4_ = 0;
-  pSStack_9 = StringLiteral_Tier_XP_rewardsu000A;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).xpTierRewards;
-  auStack_8._4_4_ = 0;
-  auStack_8._8_4_ = 0;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+  DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  DStack_7._current._1_3_ = 0;
+  pSStack_8 = StringLiteral_Tier_XP_rewardsu000A;
+  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).xpTierRewards;
+  DStack_7._current.value = 0;
+  DStack_7._getEnumeratorRetType = 0;
+  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff9c,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__GetEnumerator__
                        );
-    uStack_11 = 0;
-    auStack_7._0_4_ = pDVar10->_dictionary;
-    auStack_7._4_4_ = pDVar10->_version;
-    auStack_7._8_4_ = pDVar10->_index;
-    auStack_8._0_4_ = (pDVar10->_current).key;
-    auStack_8._4_8_ = *(undefined8 *)&(pDVar10->_current).value;
+    uStack_10 = 0;
+    DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar9->_dictionary;
+    DStack_7._version = pDVar9->_version;
+    DStack_7._index = pDVar9->_index;
+    DStack_7._current._0_4_ = (pDVar9->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
-    pOStack_12 = (Object *)auStack_7;
+    pDStack_11 = &DStack_7;
     while( true ) {
-      bVar13 = mscorlib.dll::System::Collections::Generic::
+      bVar12 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Int32]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32_ *)
-                         auStack_7,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__MoveNext__
                         );
-      if (bVar13 == 0) break;
-      iStack_14 = auStack_8._4_4_;
-      pOStack_15 = (Object *)func_?();
-      iStack_16 = iStack_14;
+      if (bVar12 == 0) break;
+      iStack_13 = DStack_7._current.value;
+      pOStack_14 = (Object *)func_?();
+      iStack_15 = iStack_13;
       arg1 = (Object *)func_?();
       str1 = mscorlib.dll::System::String::String_Format_1
-                       (StringLiteral_____0____1__u000A,pOStack_15,arg1,(MethodInfo *)0x0);
+                       (StringLiteral_____0____1__u000A,pOStack_14,arg1,(MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_9 = pSVar6;
+      pSStack_8 = pSVar6;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)auStack_7,
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__Dispose__
-               ,in_stack_17);
+               ,in_stack_16);
     *unaff_FS_OFFSET = uStack_3;
     return pSVar6;
   }
-  uVar18 = func_?();
-  func_?(uVar18);
-  pcVar19 = (code *)swi(3);
-  pSVar6 = (String *)(*pcVar19)();
+  uVar17 = func_?();
+  func_?(uVar17);
+  pcVar18 = (code *)swi(3);
+  pSVar6 = (String *)(*pcVar18)();
   return pSVar6;
 }
 
@@ -119,40 +119,44 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Dictionary__
-              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x1,(Object *)0x32,
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+  RuntimeEvents::ExplosionEvent+ExplosionValues]::
+  Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Dictionary__
+            );
+  if (this_00 !=
+      (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)
+      0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::
+    Dictionary_2_System_ByteEnum_System_Int32__Add
+              ((Dictionary_2_System_ByteEnum_System_Int32_ *)this_00,1,0x32,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x2,(Object *)0x64,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::
+    Dictionary_2_System_ByteEnum_System_Int32__Add
+              ((Dictionary_2_System_ByteEnum_System_Int32_ *)this_00,2,100,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_
               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)0x3,(Object *)0xc8,
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::
+    Dictionary_2_System_ByteEnum_System_Int32__Add
+              ((Dictionary_2_System_ByteEnum_System_Int32_ *)this_00,3,200,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_
               );
+    method_00 = (MethodInfo *)&this->fields;
     (this->fields).xpTierRewards = (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)this_00;
-    func_?(&this->fields,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_1);
+    func_?(method_00,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

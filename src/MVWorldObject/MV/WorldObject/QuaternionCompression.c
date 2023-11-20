@@ -85,49 +85,6 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
 }
 
 
-/* Void Test() */
-
-void MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression_Test
-               (MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
-  }
-  pBVar1 = QuaternionCompression_ToBytes((Quaternion)ZEXT816(0),(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (pBVar1 == (Byte__Array *)0x0) {
-    func_?();
-  }
-  else if (((pBVar1->max_length != 0) && (1 < pBVar1->max_length)) &&
-          (bVar2 = pBVar1->vector[1], 2 < pBVar1->max_length)) {
-    pQVar3 = (QuaternionCompression__Class *)(float)pBVar1->vector[0];
-    bVar4 = pBVar1->vector[2];
-    if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-      pQVar3 = TypeInfo__MV__WorldObject__QuaternionCompression;
-      func_?();
-    }
-    fVar5 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
-    eulerAngles.y = (float)bVar2 * fVar5;
-    eulerAngles.x = (float)pQVar3 * fVar5;
-    eulerAngles.z = (float)bVar4 * fVar5;
-    QuaternionCompression_FromEuler((Quaternion *)&stack0xffffffd0,eulerAngles,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
-}
-
-
 /* Byte[] ToBytes(Quaternion) */
 
 Byte__Array *

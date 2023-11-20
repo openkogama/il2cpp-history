@@ -6,13 +6,13 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass5_0::
                (ThemeMenuController_c_DisplayClass5_0 *this,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppImage *)&stack0xfffffffc;
   pTVar2 = (this->fields).theme;
   if ((pTVar2 != (Theme *)0x0) &&
      (pSStack_3 = (pTVar2->fields)._Settings_k__BackingField, pSStack_3 != (SettingsWrapper *)0x0))
   {
-    pMStack_1 = (pSStack_3->klass->vtable).__unknown.method;
-    (*(pSStack_3->klass->vtable).__unknown.methodPtr)();
+    pIStack_1 = pSStack_3->klass[1]._0.image;
+    (*(code *)(pSStack_3->klass->vtable).__unknown.method)();
     return;
   }
   uVar4 = func_?(&puStack_5);

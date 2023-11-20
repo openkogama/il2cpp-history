@@ -7,12 +7,12 @@ float Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpec
 
 {
   if (raw != 0) {
-    fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetAxisRaw
-                      (name,(MethodInfo *)0x0);
+    fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
+            InputUnsafeUtility_GetAxisRaw(name,(MethodInfo *)0x0);
     return fVar1;
   }
-  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetAxis
-                    (name,(MethodInfo *)0x0);
+  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
+          InputUnsafeUtility_GetAxis(name,(MethodInfo *)0x0);
   return fVar1;
 }
 
@@ -23,8 +23,8 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
      ::StandaloneInput_GetButton(StandaloneInput *this,String *name,MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetButton
-                    (name,(MethodInfo *)0x0);
+  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
+          InputUnsafeUtility_GetButton(name,(MethodInfo *)0x0);
   return bVar1;
 }
 
@@ -35,27 +35,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
      ::StandaloneInput_GetButtonUp(StandaloneInput *this,String *name,MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetButtonUp
-                    (name,(MethodInfo *)0x0);
+  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
+          InputUnsafeUtility_GetButtonUp(name,(MethodInfo *)0x0);
   return bVar1;
-}
-
-
-/* Vector3 MousePosition() */
-
-Vector3 * Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpecific::
-          StandaloneInput::StandaloneInput_MousePosition
-                    (Vector3 *__return_storage_ptr__,StandaloneInput *this,MethodInfo *method)
-
-{
-  pVVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  __return_storage_ptr__->x = pVVar1->x;
-  __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = fVar4;
-  return __return_storage_ptr__;
 }
 
 
@@ -67,7 +49,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -89,7 +70,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -111,7 +91,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -133,7 +112,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -155,7 +133,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
@@ -177,7 +154,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  func_?(this_00);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);

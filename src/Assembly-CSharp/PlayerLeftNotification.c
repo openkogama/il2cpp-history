@@ -22,16 +22,18 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
   if (pMVar1 != (MVNetworkGame *)0x0) {
     this_00 = (pMVar1->fields).playerContainer;
     data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
+    key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
     if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_01,pOVar2,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if ((this_00 != (MVPlayerContainer *)0x0) && (pOVar2 != (Object *)0x0)) {
-        if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
+      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,key
+                         ,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if ((this_00 != (MVPlayerContainer *)0x0) && (TVar2.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
         piVar3 = (int32_t *)func_?();
         pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(this_00,*piVar3,(MethodInfo *)0x0);
         pTVar5 = (this->fields)._.NameLabel;
@@ -42,16 +44,16 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
           str1 = TM::TM__(StringLiteral__left_,(MethodInfo *)0x0);
           pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,str1,(MethodInfo *)0x0);
           if (pTVar5 != (Text *)0x0) {
-            (*(pTVar5->klass->vtable).set_text.methodPtr)(pTVar5,pSVar7);
+            (*(code *)(pTVar5->klass->vtable).set_text.method)(pTVar5,pSVar7);
             return;
           }
         }
       }
     }
   }
-  pOVar2 = (Object *)func_?();
+  TVar2.m_Index = func_?();
 code_?:
-  func_?(pOVar2);
+  func_?(TVar2.m_Index);
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;

@@ -22,11 +22,12 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_AddRespawnTime
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this_03,(this->fields).woID,(MethodInfo *)0x0);
     if ((pMVar1 != (MVWorldObject *)0x0) &&
-       (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data,
-       this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+       (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (pMVar1->fields).data,
+       this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (this_00,(Object *)StringLiteral_respawnTime,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -89,11 +90,12 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_HandleActiveToggle
         (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                             (this_02,(this_01->fields).woID,(MethodInfo *)0x0),
         pMVar1 != (MVWorldObject *)0x0)) &&
-       (this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data,
-       this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+       (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (pMVar1->fields).data,
+       this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (this_00,(Object *)StringLiteral_respawnTime,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -138,28 +140,33 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_HandleActiveToggle
       func_?(&StringLiteral_respawnTime);
       cRam_? = '\x01';
     }
-    this_03 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_03 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_03,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      this = (RespawnSettings *)0x0;
-      pOVar4 = (Object *)func_?(TypeInfo__System__Int32);
+    this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_03,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    this = (RespawnSettings *)0x0;
+    pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&this);
+    if (this_03 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                (this_03,(Object *)StringLiteral_respawnTime,pOVar4,
+                ((Dictionary_2_System_Object_System_Object_ *)this_03,
+                 (Object *)StringLiteral_respawnTime,pOVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
       this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (this_04 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::
         MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                  (this_04,(this_01->fields).woID,this_03,(MethodInfo *)0x0);
+                  (this_04,(this_01->fields).woID,
+                   (Dictionary_2_System_Object_System_Object_ *)this_03,(MethodInfo *)0x0);
         pSVar5 = (this_01->fields).settingsBase;
         if (pSVar5 != (SettingsBase *)0x0) {
           SettingsBase::SettingsBase_RemoveData(pSVar5,StringLiteral_respawnTime,(MethodInfo *)0x0);
@@ -205,26 +212,27 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_Initialize
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_04,woID,(MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObject *)0x0) {
-        this_01 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pMVar1->fields).data;
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                  (pMVar1->fields).data;
         value = 0x1e;
-        if (this_01 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                             (this_01,(Object *)StringLiteral_respawnTime,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
           (this->fields).isRespawnActive = bVar2;
           if (bVar2 != 0) {
-            pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                               ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                                (Object *)StringLiteral_respawnTime,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            if (pOVar3 == (Object *)0x0) goto code_?;
-            if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-            goto code_?;
+            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                              (this_01,(Object *)StringLiteral_respawnTime,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                              );
+            if (TVar3.m_Index == 0) goto code_?;
+            if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                (TypeInfo__System__Int32->_0).element_class) goto code_?;
             piVar4 = (int32_t *)func_?();
             value = *piVar4;
           }
@@ -328,28 +336,32 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_RemoveRespawnTime
     func_?(&StringLiteral_respawnTime);
     cRam_? = '\x01';
   }
-  this_01 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    uStack_1 = 0;
-    value = (Object *)func_?(TypeInfo__System__Int32,&uStack_1);
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
+  if (this_01 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_01,(Object *)StringLiteral_respawnTime,value,
+              ((Dictionary_2_System_Object_System_Object_ *)this_01,
+               (Object *)StringLiteral_respawnTime,value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
       MVNetworkGame+OperationRequests::
       MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                (this_02,(this->fields).woID,this_01,(MethodInfo *)0x0);
+                (this_02,(this->fields).woID,(Dictionary_2_System_Object_System_Object_ *)this_01,
+                 (MethodInfo *)0x0);
       this_00 = (this->fields).settingsBase;
       if (this_00 != (SettingsBase *)0x0) {
         SettingsBase::SettingsBase_RemoveData(this_00,StringLiteral_respawnTime,(MethodInfo *)0x0);
@@ -359,8 +371,8 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_RemoveRespawnTime
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -374,16 +386,16 @@ void Assembly-CSharp.dll::RespawnSettings::RespawnSettings_SetRespawnUIVisibilit
   pGVar1 = (this->fields).respawnTimeSettingsUI;
   if (pGVar1 != (GameObject *)0x0) {
     pGVar1 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar1,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar1,(MethodInfo *)0x0);
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,isRespawnActive,(MethodInfo *)0x0);
       pGVar1 = (this->fields).respawnActiveCheckmark;
       if (pGVar1 != (GameObject *)0x0) {
         pGVar1 = (GameObject *)
-                 mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                           ((Void *)pGVar1,(MethodInfo *)0x0);
+                 UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+                 UnsafeUtility_AsRef_1((Void *)pGVar1,(MethodInfo *)0x0);
         if (pGVar1 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar1,isRespawnActive,(MethodInfo *)0x0);

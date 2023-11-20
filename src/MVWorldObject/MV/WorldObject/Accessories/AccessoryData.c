@@ -13,9 +13,8 @@ bool MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::AccessoryDa
     return bVar2;
   }
   if ((this_00->fields).timeLimit != 0) {
-    TStack_3 = AccessoryTimelimit::AccessoryTimelimit_GetTimeLeft(this_00,(MethodInfo *)0x0);
-    dVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_get_TotalSeconds(&TStack_3,(MethodInfo *)0x0);
-    if (dVar4 <= _UNK_?) {
+    bVar2 = AccessoryTimelimit::AccessoryTimelimit_GetHasTimeLeft(this_00,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       return 0;
     }
   }
@@ -197,21 +196,15 @@ void MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::AccessoryDa
     func_?(&TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit);
     cRam_? = '\x01';
   }
-  value = (AccessoryTimelimit *)
-          func_?(TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit);
-  if (value != (AccessoryTimelimit *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    method_00 = (MethodInfo *)&(this->fields).time;
-    (this->fields).time = value;
-    func_?(method_00,value);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_01 = TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit;
+  value = (AccessoryTimelimit *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  method_00 = (MethodInfo *)&(this->fields).time;
+  (this->fields).time = value;
+  func_?(method_00,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

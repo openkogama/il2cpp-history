@@ -6,13 +6,13 @@ void Assembly-CSharp.dll::FlipDrawPlane::FlipDrawPlane_Awake(FlipDrawPlane *this
 {
   pIVar1 = (this->fields).XAxisImage;
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,(this->fields).NormalColor.r);
+    (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,(this->fields).NormalColor.r);
     pIVar1 = (this->fields).YAxisImage;
     if (pIVar1 != (Image *)0x0) {
-      (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,(this->fields).SelectedColor.r);
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,(this->fields).SelectedColor.r);
       pIVar1 = (this->fields).ZAxisImage;
       if (pIVar1 != (Image *)0x0) {
-        (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,(this->fields).NormalColor.r);
+        (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,(this->fields).NormalColor.r);
         pIVar1 = (this->fields).YAxisImage;
         (this->fields).currentlySelectedImage = pIVar1;
         func_?(&(this->fields).currentlySelectedImage,pIVar1);
@@ -84,10 +84,10 @@ void Assembly-CSharp.dll::FlipDrawPlane::FlipDrawPlane_HighlightImages
   DVar1 = DrawPlane::DrawPlane_get_Orientation((MethodInfo *)0x0);
   pIVar2 = (this->fields).currentlySelectedImage;
   if (pIVar2 == (Image *)0x0) goto code_?;
-  (*(pIVar2->klass->vtable).set_color.methodPtr)
+  (*(code *)(pIVar2->klass->vtable).set_color.method)
             (pIVar2,(this->fields).NormalColor.r,(this->fields).NormalColor.g,
              (this->fields).NormalColor.b,(this->fields).NormalColor.a,
-             (pIVar2->klass->vtable).set_color.method);
+             (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
   if (DVar1 == DrawPlaneAxis__Enum_X) {
     pIVar2 = (this->fields).XAxisImage;
 code_?:
@@ -106,10 +106,10 @@ code_?:
   }
   pIVar2 = (this->fields).currentlySelectedImage;
   if (pIVar2 != (Image *)0x0) {
-    (*(pIVar2->klass->vtable).set_color.methodPtr)
+    (*(code *)(pIVar2->klass->vtable).set_color.method)
               (pIVar2,(this->fields).SelectedColor.r,(this->fields).SelectedColor.g,
                (this->fields).SelectedColor.b,(this->fields).SelectedColor.a,
-               (pIVar2->klass->vtable).set_color.method);
+               (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
     return;
   }
 code_?:
@@ -128,22 +128,22 @@ void Assembly-CSharp.dll::FlipDrawPlane::FlipDrawPlane_InitalizeImages
 {
   pIVar1 = (this->fields).XAxisImage;
   if (pIVar1 != (Image *)0x0) {
-    (*(pIVar1->klass->vtable).set_color.methodPtr)
+    (*(code *)(pIVar1->klass->vtable).set_color.method)
               (pIVar1,(this->fields).NormalColor.r,(this->fields).NormalColor.g,
                (this->fields).NormalColor.b,(this->fields).NormalColor.a,
-               (pIVar1->klass->vtable).set_color.method);
+               (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
     pIVar1 = (this->fields).YAxisImage;
     if (pIVar1 != (Image *)0x0) {
-      (*(pIVar1->klass->vtable).set_color.methodPtr)
+      (*(code *)(pIVar1->klass->vtable).set_color.method)
                 (pIVar1,(this->fields).SelectedColor.r,(this->fields).SelectedColor.g,
                  (this->fields).SelectedColor.b,(this->fields).SelectedColor.a,
-                 (pIVar1->klass->vtable).set_color.method);
+                 (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
       pIVar1 = (this->fields).ZAxisImage;
       if (pIVar1 != (Image *)0x0) {
-        (*(pIVar1->klass->vtable).set_color.methodPtr)
+        (*(code *)(pIVar1->klass->vtable).set_color.method)
                   (pIVar1,(this->fields).NormalColor.r,(this->fields).NormalColor.g,
                    (this->fields).NormalColor.b,(this->fields).NormalColor.a,
-                   (pIVar1->klass->vtable).set_color.method);
+                   (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
         pIVar1 = (this->fields).YAxisImage;
         (this->fields).currentlySelectedImage = pIVar1;
         func_?(&(this->fields).currentlySelectedImage,pIVar1);
@@ -214,31 +214,87 @@ void Assembly-CSharp.dll::FlipDrawPlane::FlipDrawPlane__ctor(FlipDrawPlane *this
     func_?(&TypeInfo__System__Collections__Generic__List<DrawPlaneAxis>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_DrawPlaneAxis_ *)
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             func_?(TypeInfo__System__Collections__Generic__List<DrawPlaneAxis>);
-  if (this_00 != (List_1_DrawPlaneAxis_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__List__);
-    func_?(this_00,1,
-                    MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_
-                   );
-    func_?(this_00,0,
-                    MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_
-                   );
-    func_?(this_00,2,
-                    MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_
-                   );
-    (this->fields).drawPlaneAxises = this_00;
-    func_?(&(this->fields).drawPlaneAxises,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-              ((Transform *)this,(MethodInfo *)0x0);
-    return;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__List__);
+  pMVar1 = MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    piVar2 = &(this_00->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    pRVar3 = (this_00->fields)._items;
+    if (pRVar3 != (RegexCharClass_SingleRange__Array *)0x0) {
+      uVar4 = (this_00->fields)._size;
+      if (uVar4 < pRVar3->max_length) {
+        (this_00->fields)._size = uVar4 + 1;
+        if (pRVar3->max_length <= uVar4) goto code_?;
+        pRVar3->vector[uVar4].First = 1;
+        pRVar3->vector[uVar4].Last = 0;
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+        RegexCharClass+SingleRange]::
+        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                  (this_00,(RegexCharClass_SingleRange)0x1,pMVar1->klass->rgctx_data[0xe].method);
+      }
+      pMVar1 = MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_;
+      piVar2 = &(this_00->fields)._version;
+      *piVar2 = *piVar2 + 1;
+      pRVar3 = (this_00->fields)._items;
+      if (pRVar3 != (RegexCharClass_SingleRange__Array *)0x0) {
+        uVar4 = (this_00->fields)._size;
+        if (uVar4 < pRVar3->max_length) {
+          (this_00->fields)._size = uVar4 + 1;
+          if (pRVar3->max_length <= uVar4) goto code_?;
+          pRVar3->vector[uVar4].First = 0;
+          pRVar3->vector[uVar4].Last = 0;
+        }
+        else {
+          this = (FlipDrawPlane *)0x0;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+          RegexCharClass+SingleRange]::
+          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                    (this_00,(RegexCharClass_SingleRange)0x0,pMVar1->klass->rgctx_data[0xe].method);
+        }
+        pMVar1 = MethodInfo__System__Collections__Generic__List<DrawPlaneAxis>__Add_DrawPlaneAxis_;
+        piVar2 = &(this_00->fields)._version;
+        *piVar2 = *piVar2 + 1;
+        pRVar3 = (this_00->fields)._items;
+        if (pRVar3 != (RegexCharClass_SingleRange__Array *)0x0) {
+          uVar4 = (this_00->fields)._size;
+          if (pRVar3->max_length <= uVar4) {
+            this = (FlipDrawPlane *)0x2;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                      (this_00,(RegexCharClass_SingleRange)0x2,pMVar1->klass->rgctx_data[0xe].method
+                      );
+code_?:
+            (this->fields).drawPlaneAxises = (List_1_DrawPlaneAxis_ *)this_00;
+            func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+                      ((MonoBehaviour *)this,(MethodInfo *)0x0);
+            return;
+          }
+          (this_00->fields)._size = uVar4 + 1;
+          if (uVar4 < pRVar3->max_length) {
+            pRVar3->vector[uVar4].First = 2;
+            pRVar3->vector[uVar4].Last = 0;
+            goto code_?;
+          }
+          goto code_?;
+        }
+      }
+    }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -59,19 +59,19 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_showVideoAd,(MethodInfo *)0x0);
       pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
                                );
-      if ((this_00 != (UnityAction_1_System_Int32Enum_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_00,(Object *)this,
-                     MethodInfo__TouristAdStateHandler__InterstitialCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_
-                     ,(MethodInfo *)0x0), pIVar1 != (IAdManager *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__TouristAdStateHandler__InterstitialCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_
+                 ,(MethodInfo *)0x0);
+      if (pIVar1 != (IAdManager *)0x0) {
         func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this_00,3);
         return;
       }

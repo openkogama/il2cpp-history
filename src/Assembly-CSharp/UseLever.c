@@ -30,12 +30,12 @@ code_?:
       pUVar3 = (pUVar1->fields).useInteractor;
       pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      if ((pUVar4 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-         (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar4,(Object *)pUVar3,
-                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                     ,(MethodInfo *)0x0), pTVar2 != (TriggerBoxEvents *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar4,(Object *)pUVar3,
+                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (pTVar2 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
                   (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
         pUVar1 = (this->fields).useLeverObject;
@@ -44,12 +44,12 @@ code_?:
           pUVar3 = (pUVar1->fields).useInteractor;
           pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          if ((pUVar4 != (UnityAction_2_System_Object_System_Object_ *)0x0) &&
-             (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        (pUVar4,(Object *)pUVar3,
-                         MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                         ,(MethodInfo *)0x0), pTVar2 != (TriggerBoxEvents *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (pUVar4,(Object *)pUVar3,
+                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pTVar2 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
                       (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
             pUVar1 = (this->fields).useLeverObject;
@@ -73,20 +73,20 @@ code_?:
     pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
     if (pIVar5 != (IEditModeUI *)0x0) {
       pDVar6 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar5);
-      this_00 = (UnityAction_1_System_ByteEnum_ *)
+      this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      if (this_00 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_00,(Object *)this,MethodInfo__UseLever__OnEditModeChange_EditModeChangeArgs_
-                   ,(MethodInfo *)0x0);
-        pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
-                           (pDVar6,(Delegate *)this_00,(MethodInfo *)0x0);
-        if ((pDVar6 != (Delegate *)0x0) && (iVar7 = func_?(), iVar7 == 0))
-        goto code_?;
-        func_?(3,TypeInfo__IEditModeUI);
-        goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_00,(Object *)this,MethodInfo__UseLever__OnEditModeChange_EditModeChangeArgs_,
+                 (MethodInfo *)0x0);
+      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         (pDVar6,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar6 != (Delegate *)0x0) {
+        iVar7 = func_?();
+        if (iVar7 == 0) goto code_?;
       }
+      func_?(3,TypeInfo__IEditModeUI);
+      goto code_?;
     }
   }
   func_?();
@@ -170,18 +170,16 @@ Bounds * Assembly-CSharp.dll::UseLever::UseLever_GetLocalBounds
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
-  size.y = (float)_UNK_?;
-  size.x = (float)_UNK_?;
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  size.z = 0.2;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor
-            (__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (__return_storage_ptr__->m_Center).x = (pVVar1->zeroVector).x;
+  uVar4 = _UNK_?;
+  (__return_storage_ptr__->m_Center).y = fVar2;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar4;
+  (__return_storage_ptr__->m_Extents).z = 0.1;
   return __return_storage_ptr__;
 }
 
@@ -235,31 +233,26 @@ code_?:
         if (pUVar2 != (UseLeverObject *)0x0) {
           MVLogicObject::MVLogicObject_SetupCulling
                     ((MVLogicObject *)this,(pUVar2->fields).visualRoot,2.0,(MethodInfo *)0x0);
-          this_02 = (Action_3_Boolean_Boolean_Object_ *)func_?();
-          if (this_02 != (Action_3_Boolean_Boolean_Object_ *)0x0) {
-            mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::
-            Action_3_Boolean_Boolean_Object___ctor
-                      (this_02,(Object *)this,
-                       MethodInfo__UseLever__SignalCallback_bool__bool__LogicObjectManager_,
-                       (MethodInfo *)0x0);
-            pIVar4 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
-                               ((MVWorldObject *)this,1,
-                                (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_02,
-                                (MethodInfo *)0x0);
-            (this->fields)._InputSignalReceiver_k__BackingField = pIVar4;
-            func_?();
-            woId = (this->fields)._._._.id;
-            this_03 = (WorldObjectClientRef_1_System_Object_ *)func_?();
-            if (this_03 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-              WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                        (this_03,woId,(MethodInfo *)0x0);
-              (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_03;
-              func_?();
-              bVar5 = UseLever_get_IsActivated(this,(MethodInfo *)0x0);
-              (this->fields).localIsDown = bVar5;
-              return;
-            }
-          }
+          this_02 = (Action_3_Int32_Int32_ByteEnum_ *)func_?();
+          mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+                    (this_02,(Object *)this,
+                     MethodInfo__UseLever__SignalCallback_bool__bool__LogicObjectManager_,
+                     (MethodInfo *)0x0);
+          pIVar4 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
+                             ((MVWorldObject *)this,1,
+                              (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_02,
+                              (MethodInfo *)0x0);
+          (this->fields)._InputSignalReceiver_k__BackingField = pIVar4;
+          func_?();
+          woId = (this->fields)._._._.id;
+          this_03 = (WorldObjectClientRef_1_System_Object_ *)func_?();
+          WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
+                    (this_03,woId,(MethodInfo *)0x0);
+          (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_03;
+          func_?();
+          bVar5 = UseLever_get_IsActivated(this,(MethodInfo *)0x0);
+          (this->fields).localIsDown = bVar5;
+          return;
         }
       }
     }
@@ -272,20 +265,20 @@ code_?:
     pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
     if (pIVar6 != (IEditModeUI *)0x0) {
       pDVar7 = (Delegate *)func_?(2,TypeInfo__IEditModeUI,pIVar6);
-      this_01 = (UnityAction_1_System_ByteEnum_ *)
+      this_01 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__System__Action<EditModeChangeArgs>);
-      if (this_01 != (UnityAction_1_System_ByteEnum_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-        UnityAction_1_System_ByteEnum___ctor
-                  (this_01,(Object *)this,MethodInfo__UseLever__OnEditModeChange_EditModeChangeArgs_
-                   ,(MethodInfo *)0x0);
-        pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           (pDVar7,(Delegate *)this_01,(MethodInfo *)0x0);
-        if ((pDVar7 != (Delegate *)0x0) && (iVar8 = func_?(), iVar8 == 0))
-        goto code_?;
-        func_?();
-        goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_01,(Object *)this,MethodInfo__UseLever__OnEditModeChange_EditModeChangeArgs_,
+                 (MethodInfo *)0x0);
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (pDVar7,(Delegate *)this_01,(MethodInfo *)0x0);
+      if (pDVar7 != (Delegate *)0x0) {
+        iVar8 = func_?();
+        if (iVar8 == 0) goto code_?;
       }
+      func_?();
+      goto code_?;
     }
   }
   func_?();
@@ -404,7 +397,7 @@ void Assembly-CSharp.dll::UseLever::UseLever_OnIsFiringChanged
 void Assembly-CSharp.dll::UseLever::UseLever_OnUpdate(UseLever *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   pUVar1 = (this->fields).useLeverObject;
   if ((this->fields).localIsDown == 0) {
@@ -502,15 +495,18 @@ void Assembly-CSharp.dll::UseLever::UseLever_Reset(UseLever *this,MethodInfo *me
     func_?(&StringLiteral_beginActivated);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_beginActivated,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_beginActivated,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
         pbVar2 = (bool *)func_?();
         UseLever_set_IsActivated(this,*pbVar2,(MethodInfo *)0x0);
         (this->fields).requestSend = 0;
@@ -521,9 +517,9 @@ void Assembly-CSharp.dll::UseLever::UseLever_Reset(UseLever *this,MethodInfo *me
       goto code_?;
     }
   }
-  pOVar1 = (Object *)func_?();
+  TVar1.m_Index = func_?();
 code_?:
-  func_?(pOVar1);
+  func_?(TVar1.m_Index);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -669,22 +665,22 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
     uVar4 = *(uint *)((int)&(this->fields)._._.interactionFlags + 4);
     *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar2 | 0xADDR;
     *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar4 | 2;
-    unaff_EDI = TypeInfo__UseLeverObject;
+    unaff_EDI = (UseLever *)TypeInfo__UseLeverObject;
     if (pUVar3 == (UseLeverObject *)0x0) {
       (this->fields).useLeverObject = (UseLeverObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__UseLeverObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).naturalAligment <
+           (TypeInfo__UseLeverObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchy
-          [(TypeInfo__UseLeverObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__UseLeverObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__UseLeverObject)) goto code_?;
       (this->fields).useLeverObject = pUVar3;
-      unaff_EDI = TypeInfo__UseLeverObject;
-      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__UseLeverObject->_1).typeHierarchyDepth) ||
+      unaff_EDI = (UseLever *)TypeInfo__UseLeverObject;
+      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).naturalAligment <
+           (TypeInfo__UseLeverObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchy
-          [(TypeInfo__UseLeverObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__UseLeverObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__UseLeverObject)) goto code_?;
     }
     func_?(&(this->fields).useLeverObject,pUVar3);
@@ -692,148 +688,113 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
     if (pUVar3 != (UseLeverObject *)0x0) {
       pGVar5 = (pUVar3->fields).useInteractionRotator;
       triggerCollider = (((this->fields).useLeverObject)->fields).leverCollider;
-      this_00 = (Predicate_1_Int32Enum_ *)func_?(TypeInfo__System__Func<int,_bool>);
-      if (this_00 != (Predicate_1_Int32Enum_ *)0x0) {
-        mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
-                  (this_00,(Object *)this,MethodInfo__UseLever__Use_int_,(MethodInfo *)0x0);
-        unaff_EDI = (UseLeverObject__Class *)func_?(TypeInfo__UseInteractor);
-        if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-          UseInteractor::UseInteractor__ctor
-                    ((UseInteractor *)unaff_EDI,(MVWorldObjectClient *)this,pGVar5,0,triggerCollider
-                     ,(Func_2_Int32_Boolean_ *)this_00,
-                     (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-          (pUVar3->fields).useInteractor = (UseInteractor *)unaff_EDI;
-          func_?(&(pUVar3->fields).useInteractor,unaff_EDI);
+      this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                (this_00,(Object *)this,MethodInfo__UseLever__Use_int_,(MethodInfo *)0x0);
+      pUVar6 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      UseInteractor::UseInteractor__ctor
+                (pUVar6,(MVWorldObjectClient *)this,pGVar5,0,triggerCollider,
+                 (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
+                 2.5,0,(MethodInfo *)0x0);
+      (pUVar3->fields).useInteractor = pUVar6;
+      func_?(&(pUVar3->fields).useInteractor,pUVar6);
+      pUVar3 = (this->fields).useLeverObject;
+      unaff_EDI = this;
+      if (pUVar3 != (UseLeverObject *)0x0) {
+        pTVar7 = (pUVar3->fields).triggerBoxEvents;
+        pUVar6 = (((this->fields).useLeverObject)->fields).useInteractor;
+        pUVar8 = (UnityAction_2_System_Object_System_Object_ *)
+                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar8,(Object *)pUVar6,
+                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pTVar7 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                    (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
           pUVar3 = (this->fields).useLeverObject;
           if (pUVar3 != (UseLeverObject *)0x0) {
-            pTVar6 = (pUVar3->fields).triggerBoxEvents;
-            pUVar7 = (((this->fields).useLeverObject)->fields).useInteractor;
-            unaff_EDI = (UseLeverObject__Class *)
-                        func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,(Object *)pUVar7,
-                         MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                         ,(MethodInfo *)0x0);
-              if (pTVar6 != (TriggerBoxEvents *)0x0) {
-                TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                          (pTVar6,(EventHandler_1_TriggerEventArgs_ *)unaff_EDI,(MethodInfo *)0x0);
+            pTVar7 = (pUVar3->fields).triggerBoxEvents;
+            pUVar6 = (((this->fields).useLeverObject)->fields).useInteractor;
+            pUVar8 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar8,(Object *)pUVar6,
+                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if (pTVar7 != (TriggerBoxEvents *)0x0) {
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                        (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
+              pUVar3 = (this->fields).useLeverObject;
+              if (pUVar3 != (UseLeverObject *)0x0) {
+                pGVar5 = (pUVar3->fields).useInteractionRotator;
+                uVar9 = _UNK_?;
+                this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
+                displayObjectOffset.y = (float)_UNK_?;
+                displayObjectOffset.x = (float)uVar9;
+                displayObjectOffset.z = 0.0;
+                GameCoinLogic::GameCoinLogic__ctor_1
+                          (this_01,pGVar5,displayObjectOffset,1,(MethodInfo *)0x0);
                 pUVar3 = (this->fields).useLeverObject;
-                if (pUVar3 != (UseLeverObject *)0x0) {
-                  pTVar6 = (pUVar3->fields).triggerBoxEvents;
-                  pUVar7 = (pUVar3->fields).useInteractor;
-                  unaff_EDI = (UseLeverObject__Class *)
-                              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                  if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                    Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,
-                               (Object *)pUVar7,
-                               MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                               ,(MethodInfo *)0x0);
-                    if (pTVar6 != (TriggerBoxEvents *)0x0) {
-                      TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                (pTVar6,(EventHandler_1_TriggerEventArgs_ *)unaff_EDI,
-                                 (MethodInfo *)0x0);
+                if ((pUVar3 != (UseLeverObject *)0x0) &&
+                   (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)) {
+                  UseInteractor::UseInteractor_AddRequirement
+                            (pUVar6,(UseRequirement *)this_01,(MethodInfo *)0x0);
+                  pUVar3 = (this->fields).useLeverObject;
+                  if (pUVar3 != (UseLeverObject *)0x0) {
+                    pGVar5 = (pUVar3->fields).useInteractionRotator;
+                    this_02 = (LevelBasedUseRequirement *)
+                              func_?(TypeInfo__LevelBasedUseRequirement);
+                    LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
+                              (this_02,pGVar5,1,(MethodInfo *)0x0);
+                    pUVar3 = (this->fields).useLeverObject;
+                    if ((pUVar3 != (UseLeverObject *)0x0) &&
+                       (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)) {
+                      UseInteractor::UseInteractor_AddRequirement
+                                (pUVar6,(UseRequirement *)this_02,(MethodInfo *)0x0);
                       pUVar3 = (this->fields).useLeverObject;
                       if (pUVar3 != (UseLeverObject *)0x0) {
                         pGVar5 = (pUVar3->fields).useInteractionRotator;
-                        uVar8 = 0x3f000000;
-                        uVar9 = 0x3f800000;
-                        unaff_EDI = (UseLeverObject__Class *)
-                                    func_?(TypeInfo__GameCoinLogic);
-                        if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                          displayObjectOffset.y = (float)uVar9;
-                          displayObjectOffset.x = (float)uVar8;
-                          displayObjectOffset.z = 0.0;
-                          GameCoinLogic::GameCoinLogic__ctor_1
-                                    ((GameCoinLogic *)unaff_EDI,pGVar5,displayObjectOffset,1,
-                                     (MethodInfo *)0x0);
+                        this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
+                        StarRequirement::StarRequirement__ctor(this_03,pGVar5,1,(MethodInfo *)0x0);
+                        pUVar3 = (this->fields).useLeverObject;
+                        if ((pUVar3 != (UseLeverObject *)0x0) &&
+                           (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)
+                           ) {
+                          UseInteractor::UseInteractor_AddRequirement
+                                    (pUVar6,(UseRequirement *)this_03,(MethodInfo *)0x0);
                           pUVar3 = (this->fields).useLeverObject;
-                          if ((pUVar3 != (UseLeverObject *)0x0) &&
-                             (pUVar7 = (pUVar3->fields).useInteractor,
-                             pUVar7 != (UseInteractor *)0x0)) {
-                            UseInteractor::UseInteractor_AddRequirement
-                                      (pUVar7,(UseRequirement *)unaff_EDI,(MethodInfo *)0x0);
+                          if (pUVar3 != (UseLeverObject *)0x0) {
+                            pGVar5 = (pUVar3->fields).useInteractionRotator;
+                            this_04 = (GameRankRequirement *)
+                                      func_?(TypeInfo__GameRankRequirement);
+                            GameRankRequirement::GameRankRequirement__ctor
+                                      (this_04,pGVar5,(MVWorldObjectClient *)this,1,
+                                       (MethodInfo *)0x0);
                             pUVar3 = (this->fields).useLeverObject;
-                            if (pUVar3 != (UseLeverObject *)0x0) {
-                              pGVar5 = (pUVar3->fields).useInteractionRotator;
-                              unaff_EDI = (UseLeverObject__Class *)
-                                          func_?(TypeInfo__LevelBasedUseRequirement);
-                              if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                                LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                                          ((LevelBasedUseRequirement *)unaff_EDI,pGVar5,1,
-                                           (MethodInfo *)0x0);
-                                pUVar3 = (this->fields).useLeverObject;
-                                if ((pUVar3 != (UseLeverObject *)0x0) &&
-                                   (pUVar7 = (pUVar3->fields).useInteractor,
-                                   pUVar7 != (UseInteractor *)0x0)) {
-                                  UseInteractor::UseInteractor_AddRequirement
-                                            (pUVar7,(UseRequirement *)unaff_EDI,(MethodInfo *)0x0);
-                                  pUVar3 = (this->fields).useLeverObject;
-                                  if (pUVar3 != (UseLeverObject *)0x0) {
-                                    pGVar5 = (pUVar3->fields).useInteractionRotator;
-                                    unaff_EDI = (UseLeverObject__Class *)
-                                                func_?(TypeInfo__StarRequirement);
-                                    if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                                      StarRequirement::StarRequirement__ctor
-                                                ((StarRequirement *)unaff_EDI,pGVar5,1,
-                                                 (MethodInfo *)0x0);
-                                      pUVar3 = (this->fields).useLeverObject;
-                                      if ((pUVar3 != (UseLeverObject *)0x0) &&
-                                         (pUVar7 = (pUVar3->fields).useInteractor,
-                                         pUVar7 != (UseInteractor *)0x0)) {
-                                        UseInteractor::UseInteractor_AddRequirement
-                                                  (pUVar7,(UseRequirement *)unaff_EDI,
-                                                   (MethodInfo *)0x0);
-                                        pUVar3 = (this->fields).useLeverObject;
-                                        if (pUVar3 != (UseLeverObject *)0x0) {
-                                          pGVar5 = (pUVar3->fields).useInteractionRotator;
-                                          unaff_EDI = (UseLeverObject__Class *)
-                                                      func_?(TypeInfo__GameRankRequirement)
-                                          ;
-                                          if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                                            GameRankRequirement::GameRankRequirement__ctor
-                                                      ((GameRankRequirement *)unaff_EDI,pGVar5,
-                                                       (MVWorldObjectClient *)this,1,
-                                                       (MethodInfo *)0x0);
-                                            pUVar3 = (this->fields).useLeverObject;
-                                            if ((pUVar3 != (UseLeverObject *)0x0) &&
-                                               (pUVar7 = (pUVar3->fields).useInteractor,
-                                               pUVar7 != (UseInteractor *)0x0)) {
-                                              UseInteractor::UseInteractor_AddRequirement
-                                                        (pUVar7,(UseRequirement *)unaff_EDI,
-                                                         (MethodInfo *)0x0);
-                                              pUVar3 = (this->fields).useLeverObject;
-                                              if (pUVar3 != (UseLeverObject *)0x0) {
-                                                pGVar5 = (pUVar3->fields).useInteractionRotator;
-                                                unaff_EDI = (UseLeverObject__Class *)
-                                                            func_?(
+                            if ((pUVar3 != (UseLeverObject *)0x0) &&
+                               (pUVar6 = (pUVar3->fields).useInteractor,
+                               pUVar6 != (UseInteractor *)0x0)) {
+                              UseInteractor::UseInteractor_AddRequirement
+                                        (pUVar6,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                              pUVar3 = (this->fields).useLeverObject;
+                              if (pUVar3 != (UseLeverObject *)0x0) {
+                                pGVar5 = (pUVar3->fields).useInteractionRotator;
+                                this_05 = (RewardedAdRequirement *)
+                                          func_?(
                                                   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
                                                   );
-                                                if (unaff_EDI != (UseLeverObject__Class *)0x0) {
-                                                  WorldObjectInteractionSystem::UseSystem::
-                                                  RewardedAdRequirement::RewardedAdRequirement__ctor
-                                                            ((RewardedAdRequirement *)unaff_EDI,
-                                                             pGVar5,(MethodInfo *)0x0);
-                                                  pUVar3 = (this->fields).useLeverObject;
-                                                  if ((pUVar3 != (UseLeverObject *)0x0) &&
-                                                     (pUVar7 = (pUVar3->fields).useInteractor,
-                                                     pUVar7 != (UseInteractor *)0x0)) {
-                                                    UseInteractor::UseInteractor_AddRequirement
-                                                              (pUVar7,(UseRequirement *)unaff_EDI,
-                                                               (MethodInfo *)0x0);
-                                                    return;
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
+                                WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
+                                RewardedAdRequirement__ctor(this_05,pGVar5,(MethodInfo *)0x0);
+                                pUVar3 = (this->fields).useLeverObject;
+                                if ((pUVar3 != (UseLeverObject *)0x0) &&
+                                   (pUVar6 = (pUVar3->fields).useInteractor,
+                                   pUVar6 != (UseInteractor *)0x0)) {
+                                  UseInteractor::UseInteractor_AddRequirement
+                                            (pUVar6,(UseRequirement *)this_05,(MethodInfo *)0x0);
+                                  return;
                                 }
                               }
                             }
@@ -871,15 +832,18 @@ bool Assembly-CSharp.dll::UseLever::UseLever_get_BeginActivated(UseLever *this,M
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_beginActivated,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_beginActivated,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
         pbVar2 = (bool *)func_?();
         return *pbVar2;
       }
@@ -907,16 +871,6 @@ Assembly-CSharp.dll::UseLever::UseLever_get_DocumentationType(UseLever *this,Met
 }
 
 
-/* IInputSignalReceiver get_InputSignalReceiver() */
-
-IInputSignalReceiver *
-Assembly-CSharp.dll::UseLever::UseLever_get_InputSignalReceiver(UseLever *this,MethodInfo *method)
-
-{
-  return (this->fields)._InputSignalReceiver_k__BackingField;
-}
-
-
 /* Boolean get_IsActivated() */
 
 bool Assembly-CSharp.dll::UseLever::UseLever_get_IsActivated(UseLever *this,MethodInfo *method)
@@ -929,8 +883,8 @@ bool Assembly-CSharp.dll::UseLever::UseLever_get_IsActivated(UseLever *this,Meth
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -969,18 +923,6 @@ Vector3 * Assembly-CSharp.dll::UseLever::UseLever_get_OutputConnectorOffset
 }
 
 
-/* Void set_InputSignalReceiver(IInputSignalReceiver) */
-
-void Assembly-CSharp.dll::UseLever::UseLever_set_InputSignalReceiver
-               (UseLever *this,IInputSignalReceiver *value,MethodInfo *method)
-
-{
-  (this->fields)._InputSignalReceiver_k__BackingField = value;
-  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,value);
-  return;
-}
-
-
 /* Void set_IsActivated(Boolean) */
 
 void Assembly-CSharp.dll::UseLever::UseLever_set_IsActivated
@@ -997,8 +939,8 @@ void Assembly-CSharp.dll::UseLever::UseLever_set_IsActivated
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                        (this,(this->klass->vtable).get_RunTimeData.method);
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
@@ -1009,7 +951,7 @@ void Assembly-CSharp.dll::UseLever::UseLever_set_IsActivated
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  Extensions::Extensions_SetObscuredType_1
+  Extensions::Extensions_SetObscuredType
             (hashtable,StringLiteral_a,value_00,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredBool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool_
             );

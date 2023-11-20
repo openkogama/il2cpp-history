@@ -336,34 +336,37 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_OnDataUpdate
     func_?(&StringLiteral_starAmount);
     cRam_? = '\x01';
   }
-  pDVar1 = data;
+  this_01 = data;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
                        (Object *)StringLiteral_starAmount,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar2 == 0) {
+    if (bVar1 == 0) {
       return;
     }
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar1,(Object *)StringLiteral_starAmount,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar3 != (Object *)0x0) {
-      if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        puVar4 = (undefined4 *)func_?();
-        pOVar5 = pOVar3[4].klass;
-        pOVar3[1].monitor = (MonitorData *)*puVar4;
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                       (Object *)StringLiteral_starAmount,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        puVar3 = (undefined4 *)func_?();
+        x = *(Object_1 **)(TVar2.m_Index + 0x20);
+        *(undefined4 *)(TVar2.m_Index + 0xc) = *puVar3;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pOVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
+        bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                          (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar1 != 0) {
           if (cRam_? == '\0') {
             func_?(&
                             StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
@@ -378,91 +381,95 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_OnDataUpdate
             func_?(&TypeInfo__PrefabPool);
             cRam_? = '\x01';
           }
-          pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
-          if ((pPVar6 == (PrefabPool *)0x0) ||
-             (this_00 = (pPVar6->fields).starDisplayPrefab, this_00 == (StarDisplayObject *)0x0))
+          pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+          if ((pPVar4 == (PrefabPool *)0x0) ||
+             (this_00 = (pPVar4->fields).starDisplayPrefab, this_00 == (StarDisplayObject *)0x0))
           goto code_?;
-          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this_00,(MethodInfo *)0x0);
-          if ((GameObject *)pOVar3[4].monitor == (GameObject *)0x0) goto code_?;
-          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             ((GameObject *)pOVar3[4].monitor,(MethodInfo *)0x0);
+          if (*(GameObject **)(TVar2.m_Index + 0x24) == (GameObject *)0x0) goto code_?;
+          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (*(GameObject **)(TVar2.m_Index + 0x24),(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                              ((Object *)pGVar7,pTVar8,1,
+          pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                              ((Object *)pGVar5,pTVar6,1,
                                UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                               );
-          pOVar3[3].monitor = (MonitorData *)pOVar9;
-          func_?(&pOVar3[3].monitor,pOVar9);
-          if (((GameObject *)pOVar3[3].monitor == (GameObject *)0x0) ||
-             (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 ((GameObject *)pOVar3[3].monitor,(MethodInfo *)0x0),
-             pTVar8 == (Transform *)0x0)) goto code_?;
+          *(Object **)(TVar2.m_Index + 0x1c) = pOVar7;
+          func_?(TVar2.m_Index + 0x1c,pOVar7);
+          if ((*(GameObject **)(TVar2.m_Index + 0x1c) == (GameObject *)0x0) ||
+             (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (*(GameObject **)(TVar2.m_Index + 0x1c),(MethodInfo *)0x0),
+             pTVar6 == (Transform *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar8,*(Vector3 *)(pOVar3 + 2),(MethodInfo *)0x0);
-          if ((GameObject *)pOVar3[3].monitor == (GameObject *)0x0) goto code_?;
-          pOVar5 = (Object__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                              ((GameObject *)pOVar3[3].monitor,
+                    (pTVar6,*(Vector3 *)(TVar2.m_Index + 0x10),(MethodInfo *)0x0);
+          if (*(GameObject **)(TVar2.m_Index + 0x1c) == (GameObject *)0x0) goto code_?;
+          pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                              (*(GameObject **)(TVar2.m_Index + 0x1c),
                                StarDisplayObject_MethodInfo__UnityEngine__GameObject__GetComponent<StarDisplayObject>__
                               );
-          pOVar3[4].klass = pOVar5;
-          func_?(pOVar3 + 4,pOVar5);
+          *(Object **)(TVar2.m_Index + 0x20) = pOVar7;
+          func_?(TVar2.m_Index + 0x20,pOVar7);
         }
-        pMVar10 = pOVar3[1].monitor;
-        if (0 < (int)pMVar10) {
-          pOVar5 = pOVar3[4].klass;
-          if (pOVar5 == (Object__Class *)0x0) goto code_?;
-          data = (Dictionary_2_System_Object_System_Object_ *)pOVar3[1].monitor;
-          pTVar11 = (TextMesh *)(pOVar5->_0).namespaze;
-          pSVar12 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
-          if (pTVar11 == (TextMesh *)0x0) goto code_?;
+        iVar8 = *(int *)(TVar2.m_Index + 0xc);
+        if (0 < iVar8) {
+          iVar8 = *(int *)(TVar2.m_Index + 0x20);
+          if (iVar8 == 0) goto code_?;
+          data = *(Dictionary_2_System_Object_System_Object_ **)(TVar2.m_Index + 0xc);
+          pTVar9 = *(TextMesh **)(iVar8 + 0x10);
+          pSVar10 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
+          if (pTVar9 == (TextMesh *)0x0) goto code_?;
           UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                    (pTVar11,pSVar12,(MethodInfo *)0x0);
-          pTVar11 = (TextMesh *)(pOVar5->_0).byval_arg.data.typeHandle;
-          pSVar12 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
-          if (pTVar11 == (TextMesh *)0x0) goto code_?;
+                    (pTVar9,pSVar10,(MethodInfo *)0x0);
+          pTVar9 = *(TextMesh **)(iVar8 + 0x14);
+          pSVar10 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&data,(MethodInfo *)0x0);
+          if (pTVar9 == (TextMesh *)0x0) goto code_?;
           data = (Dictionary_2_System_Object_System_Object_ *)0x0;
           UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                    (pTVar11,pSVar12,(MethodInfo *)0x0);
-          pMVar10 = pOVar3[1].monitor;
+                    (pTVar9,pSVar10,(MethodInfo *)0x0);
+          iVar8 = *(int *)(TVar2.m_Index + 0xc);
         }
-        if (pMVar10 != (MonitorData *)0x0) {
+        if (iVar8 != 0) {
           return;
         }
-        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-                  func_?(
-                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                 );
-        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)pDVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
-          data = (Dictionary_2_System_Object_System_Object_ *)0x0;
-          pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&data);
+        this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?(
+                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                    );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (this_02,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&data);
+        if (this_02 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)StringLiteral_starAmount,pOVar9,
+                    ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                     (Object *)StringLiteral_starAmount,pOVar7,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+          this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                               ((MethodInfo *)0x0);
-          if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+          if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
             MVNetworkGame+OperationRequests::
             MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
-                      (this_01,ownerID,pDVar1,(MethodInfo *)0x0);
-            if (pOVar3[4].klass != (Object__Class *)0x0) {
-              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pOVar3[4].klass,(MethodInfo *)0x0);
+                      (this_03,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_02,
+                       (MethodInfo *)0x0);
+            if (*(Component **)(TVar2.m_Index + 0x20) != (Component *)0x0) {
+              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 (*(Component **)(TVar2.m_Index + 0x20),(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                        ((Object_1 *)pGVar7,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar5,(MethodInfo *)0x0);
               return;
             }
           }
@@ -475,8 +482,8 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement_OnDataUpdate
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -491,7 +498,7 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement__ctor
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   (this->fields).displayObjectRoot = root;
@@ -511,7 +518,7 @@ void Assembly-CSharp.dll::StarRequirement::StarRequirement__ctor_1
   (this->fields).displayObjectOffset.y = 0.0;
   (this->fields).displayObjectOffset.z = 0.0;
   (this->fields).hasUseWhenFree = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   uVar1 = (this->fields).displayObjectOffset.x;
   uVar2 = (this->fields).displayObjectOffset.y;

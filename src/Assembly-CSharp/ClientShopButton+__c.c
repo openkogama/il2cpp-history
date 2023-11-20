@@ -35,17 +35,12 @@ void Assembly-CSharp.dll::ClientShopButton+<>c::ClientShopButton_c__cctor(Method
     func_?(&TypeInfo__ClientShopButton____c);
     cRam_? = '\x01';
   }
-  value = (ClientShopButton_c *)func_?(TypeInfo__ClientShopButton____c);
-  if (value != (ClientShopButton_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__ClientShopButton____c->static_fields->__9 = value;
-    func_?(TypeInfo__ClientShopButton____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__ClientShopButton____c;
+  value = (ClientShopButton_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__ClientShopButton____c->static_fields->__9 = value;
+  func_?(TypeInfo__ClientShopButton____c->static_fields,value);
   return;
 }
 

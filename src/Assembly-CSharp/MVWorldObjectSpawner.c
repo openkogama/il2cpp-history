@@ -43,140 +43,118 @@ int32_t Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_GetDataB
     func_?(&StringLiteral__without_);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._._.data;
-  if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (this->fields)._._._._.data;
+  if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
     func_?();
   }
   else {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar1,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar2 != 0) {
-      pDVar3 = (this->fields)._._._._.data;
-      if ((pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-         (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar3,(Object *)key,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar4 != (Object *)0x0)) {
-        if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._._.data;
+      if ((pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+         (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)key,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), TVar3.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+            (TypeInfo__System__Int32->_0).element_class) {
 code_?:
-          piVar5 = (int32_t *)func_?();
-          return *piVar5;
+          piVar4 = (int32_t *)func_?();
+          return *piVar4;
         }
         goto code_?;
       }
       goto code_?;
     }
-    pDVar1 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._.blueprintData;
-    if (pDVar1 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
+    if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar1,(Object *)key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar2 != 0) {
-      pDVar3 = (this->fields)._.blueprintData;
-      if ((pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-         (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                   Object]::Dictionary_2_System_Object_System_Object__get_Item
-                             (pDVar3,(Object *)key,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pOVar4 != (Object *)0x0)) {
-        if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
-        goto code_?;
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.blueprintData;
+      if ((pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+         (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar1,(Object *)key,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), TVar3.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
         goto code_?;
       }
       goto code_?;
     }
     values = (String__Array *)func_?();
     if (values == (String__Array *)0x0) goto code_?;
-    if ((StringLiteral_MVWorldObjectSpawner_with_type_ != (String *)0x0) &&
-       (iVar6 = func_?(), iVar6 == 0)) goto code_?;
-    if (values->max_length == 0) goto code_?;
-    values->vector[0] = StringLiteral_MVWorldObjectSpawner_with_type_;
-    func_?();
-    pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-    if (pTVar7 != (Type *)0x0) {
-      pSVar8 = (String *)(*(pTVar7->klass->vtable).ToString.methodPtr)();
-      if ((pSVar8 == (String *)0x0) || (iVar6 = func_?(), iVar6 != 0))
-      goto code_?;
-      goto code_?;
-    }
-    pSVar8 = (String *)0x0;
-code_?:
-    if (values->max_length < 2) goto code_?;
-    values->vector[1] = pSVar8;
-    func_?();
-    if ((StringLiteral__without_ != (String *)0x0) && (iVar6 = func_?(), iVar6 == 0))
-    goto code_?;
-    if (values->max_length < 3) goto code_?;
-    values->vector[2] = StringLiteral__without_;
-    func_?();
-    if ((key != (String *)0x0) && (iVar6 = func_?(), iVar6 == 0)) goto code_?;
-    if (values->max_length < 4) goto code_?;
-    values->vector[3] = key;
-    func_?();
-    if ((StringLiteral__defined__falling_back_to_defaul != (String *)0x0) &&
-       (iVar6 = func_?(), iVar6 == 0)) goto code_?;
-    if (4 < values->max_length) {
-      values->vector[4] = StringLiteral__defined__falling_back_to_defaul;
+    if (values->max_length != 0) {
+      values->vector[0] = StringLiteral_MVWorldObjectSpawner_with_type_;
       func_?();
-      pSVar8 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&defaultValue,(MethodInfo *)0x0)
-      ;
-      if ((pSVar8 == (String *)0x0) || (iVar6 = func_?(), iVar6 != 0)) {
-        if (5 < values->max_length) {
-          values->vector[5] = pSVar8;
-          func_?();
-          pSVar8 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
-            defaultValue = (int32_t)&UNK_?;
-            func_?();
-          }
-          method = (MethodInfo *)0x0;
-          defaultValue = (int32_t)pSVar8;
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
-                    ((Object *)pSVar8,(MethodInfo *)0x0);
-          return defaultValue;
-        }
-        goto code_?;
+      pTVar5 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+      if (pTVar5 == (Type *)0x0) {
+        pSVar6 = (String *)0x0;
       }
-      goto code_?;
+      else {
+        pSVar6 = (String *)(*(code *)(pTVar5->klass->vtable).ToString.method)();
+      }
+      if (1 < values->max_length) {
+        values->vector[1] = pSVar6;
+        func_?();
+        if (2 < values->max_length) {
+          values->vector[2] = StringLiteral__without_;
+          func_?();
+          if (3 < values->max_length) {
+            values->vector[3] = key;
+            func_?();
+            if (4 < values->max_length) {
+              values->vector[4] = StringLiteral__defined__falling_back_to_defaul;
+              func_?();
+              pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                                 ((Int32 *)&defaultValue,(MethodInfo *)0x0);
+              if (5 < values->max_length) {
+                values->vector[5] = pSVar6;
+                func_?();
+                pSVar6 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                  method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
+                  defaultValue = (int32_t)&UNK_?;
+                  func_?();
+                }
+                method = (MethodInfo *)0x0;
+                defaultValue = (int32_t)pSVar6;
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                          ((Object *)pSVar6,(MethodInfo *)0x0);
+                return defaultValue;
+              }
+            }
+          }
+        }
+      }
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  iVar10 = (*pcVar9)();
-  return iVar10;
+  pcVar7 = (code *)swi(3);
+  iVar8 = (*pcVar7)();
+  return iVar8;
 }
 
 
@@ -212,14 +190,14 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Initialize
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
   SVar1 = MVWorldObjectSpawner_ReadRespawnStateConfiguration(this,(MethodInfo *)0x0);
   iVar2 = SVar1.respawnCount;
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)
-           (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                     (this,(this->klass->vtable).get_RunTimeData.method);
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)
+              (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions,iVar2);
   }
   value = (SpawnStateWrapper *)
-          Extensions::Extensions_GetObscuredType(pDVar3,StringLiteral_UseTime,(MethodInfo *)0x0);
+          Extensions::Extensions_GetObscuredType(hashtable,StringLiteral_UseTime,(MethodInfo *)0x0);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?();
@@ -228,90 +206,92 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Initialize
   if ((value->klass->_0).element_class !=
       (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class)
   goto code_?;
-  pOVar4 = (ObscuredInt *)func_?();
+  pOVar3 = (ObscuredInt *)func_?();
   Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-  ObscuredInt_op_Implicit_1(*pOVar4,(MethodInfo *)0x0);
+  ObscuredInt_op_Implicit_1(*pOVar3,(MethodInfo *)0x0);
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-  if (this_01 == (UnityAction_1_System_Int32Enum_ *)0x0) {
+  pMVar4 = this;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_01,(Object *)this,(this->klass->vtable).__unknown.methodPtr,(MethodInfo *)0x0);
+  puVar5 = &UNK_?;
+  value = (SpawnStateWrapper *)func_?(TypeInfo__SpawnStateWrapper);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,in_stack_6);
+  (value->fields).respawnInterval = SVar1.respawnInterval;
+  (value->fields).respawnCount = (int32_t)puVar5;
+  (value->fields).stateChangeCallback = (Action_1_SpawnState_ *)this_01;
+  func_?();
+  (value->fields).takenTime = (int32_t)pMVar4;
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UpdateController::UpdateController_AddUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)value,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1
+             ,(MethodInfo *)0x0);
+  (this->fields).spawnStateWrapper = value;
+  func_?();
+  pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (this->fields)._.childIdMap;
+  if (pDVar7 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
-    pOVar5 = (Object *)func_?();
+    TVar8.m_Index = func_?();
   }
   else {
-    pUVar6 = this_01;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_01,(Object *)this,(this->klass->vtable).OnSpawnStateChange.method,
-               (MethodInfo *)0x0);
-    value = (SpawnStateWrapper *)func_?();
-    if (value == (SpawnStateWrapper *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    puVar7 = &UNK_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)SVar1.respawnInterval);
-    (value->fields).respawnInterval = SVar1.respawnInterval;
-    (value->fields).respawnCount = (int32_t)puVar7;
-    (value->fields).stateChangeCallback = (Action_1_SpawnState_ *)this_01;
-    func_?(&(value->fields).stateChangeCallback);
-    (value->fields).takenTime = (int32_t)pUVar6;
-    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UpdateController::UpdateController_AddUpdateObject
-              ((IUpdatecontrollerSubscriberUpdate *)value,UpdatePriority__Enum_UPDATEBUCKET_STANDARD
-               ,1,(MethodInfo *)0x0);
-    (this->fields).spawnStateWrapper = value;
-    func_?();
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.childIdMap;
-    if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)
-    goto code_?;
-    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_spawnWorldObjectID,
+    bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar7,(Object *)StringLiteral_spawnWorldObjectID,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar8 == 0) {
+    if (bVar9 == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_No_spawnWorldObject,(MethodInfo *)0x0);
       return;
     }
-    pDVar3 = (this->fields)._.childIdMap;
-    if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar3,(Object *)StringLiteral_spawnWorldObjectID,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar5 == (Object *)0x0) goto code_?;
-    if ((pOVar5->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      piVar9 = (int32_t *)func_?();
-      (this->fields).spawnWorldObjectID = *piVar9;
-      source = (this->fields)._._._.gameObject;
-      if (source != (GameObject *)0x0) {
-        pTVar10 = (TriggerBoxEvents *)
-                 Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                           ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,
+    pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._.childIdMap;
+    if (pDVar7 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar7,(Object *)StringLiteral_spawnWorldObjectID,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar8.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar8.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar10 = (int32_t *)func_?();
+      (this->fields).spawnWorldObjectID = *piVar10;
+      this_00 = (this->fields)._._._.gameObject;
+      if (this_00 != (GameObject *)0x0) {
+        pTVar11 = (TriggerBoxEvents *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                 GameObject_GetComponentInChildren_1
+                           (this_00,
                             TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<TriggerBoxEvents>__
                            );
-        (this->fields).triggerBoxEvents = pTVar10;
+        (this->fields).triggerBoxEvents = pTVar11;
         func_?(&(this->fields).triggerBoxEvents);
-        pTVar10 = (this->fields).triggerBoxEvents;
+        pTVar11 = (this->fields).triggerBoxEvents;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pTVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
+        bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                          ((Object_1 *)pTVar11,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar9 != 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_Did_not_find_triggerBoxEvents,(MethodInfo *)0x0);
         }
         return;
@@ -319,11 +299,11 @@ code_?:
       goto code_?;
     }
   }
-  func_?(pOVar5);
+  func_?(TVar8.m_Index);
 code_?:
   func_?(value);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -367,7 +347,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_OnSpawnStat
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_SpawnState_is_none,(MethodInfo *)0x0);
   }
   else {
@@ -375,7 +355,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_OnSpawnStat
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_Switch_to_listening,(MethodInfo *)0x0);
       return;
     }
@@ -383,7 +363,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_OnSpawnStat
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_Switch_to_taken,(MethodInfo *)0x0);
       return;
     }
@@ -429,8 +409,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_RollbackPre
     return;
   }
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                     (this,(this->klass->vtable).get_RunTimeData.method);
+           (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                     (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -440,8 +420,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_RollbackPre
     return;
   }
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                     (this,(this->klass->vtable).get_RunTimeData.method);
+           (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                     (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -467,7 +447,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_RollbackPre
     pMVar5 = this->klass;
     (this->fields).predictTakeTime = -1;
     pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(pMVar5->vtable).get_RunTimeData.methodPtr)();
+             (*(code *)(pMVar5->vtable).get_RunTimeData.method)();
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -485,7 +465,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_RollbackPre
     value.fakeValue = iVar8;
     value.inited = pOVar4->inited;
     value._13_3_ = *(undefined3 *)&pOVar4->field_0xd;
-    Extensions::Extensions_SetObscuredType_3
+    Extensions::Extensions_SetObscuredType_2
               (pDVar1,StringLiteral_UseTime,value,
                void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
               );
@@ -522,8 +502,8 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Take
   pMVar1 = this->klass;
   (this->fields).predictTakeTime = -1;
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(pMVar1->vtable).get_RunTimeData.methodPtr)
-                        (this,(pMVar1->vtable).get_RunTimeData.method);
+              (*(code *)(pMVar1->vtable).get_RunTimeData.method)
+                        (this,(pMVar1->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
@@ -543,7 +523,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner_Take
   value.fakeValue = OStack_3.fakeValue;
   value.inited = OStack_3.inited;
   value._13_3_ = OStack_3._13_3_;
-  Extensions::Extensions_SetObscuredType_3
+  Extensions::Extensions_SetObscuredType_2
             (hashtable,StringLiteral_UseTime,value,
              void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
             );
@@ -599,55 +579,20 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    (this->fields)._.idChildMap = this_00;
-    func_?(&(this->fields)._.idChildMap,this_00);
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-                     );
-      func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>)
-      ;
-      func_?(&TypeInfo__MVWorldObjectClient);
-      cRam_? = '\x01';
-    }
-    this_01 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                             );
-    if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-                );
-      (this->fields)._._.children = this_01;
-      func_?(&(this->fields)._._.children,this_01);
-      if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVWorldObjectClient);
-      }
-      MVWorldObjectClient::MVWorldObjectClient__ctor_2
-                ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
-      uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-      piVar2 = &(this->fields)._._._.interactionFlags;
-      *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
-      *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
-      MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields)._.idChildMap,this_00);
+  MVGroup::MVGroup__ctor_2((MVGroup *)this,data,worldObjects,(MethodInfo *)0x0);
+  MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -672,55 +617,20 @@ void Assembly-CSharp.dll::MVWorldObjectSpawner::MVWorldObjectSpawner__ctor_1
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    (this->fields)._.idChildMap = this_00;
-    func_?(&(this->fields)._.idChildMap,this_00);
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-                     );
-      func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>)
-      ;
-      func_?(&TypeInfo__MVWorldObjectClient);
-      cRam_? = '\x01';
-    }
-    this_01 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                             );
-    if (this_01 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-                );
-      (this->fields)._._.children = this_01;
-      func_?(&(this->fields)._._.children,this_01);
-      if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVWorldObjectClient);
-      }
-      MVWorldObjectClient::MVWorldObjectClient__ctor_1
-                ((MVWorldObjectClient *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-      uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-      piVar2 = &(this->fields)._._._.interactionFlags;
-      *(uint *)piVar2 = (uint)*piVar2 | 0x82101;
-      *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
-      MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields)._.idChildMap,this_00);
+  MVGroup::MVGroup__ctor_1((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
+  MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   return;
 }
 

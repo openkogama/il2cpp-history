@@ -42,27 +42,24 @@ Assembly-CSharp.dll::ThemeAttributes::FloatAttribute::FloatAttribute_GetSettings
                        ThemeAttributes__FloatAttribute__Setter_MethodInfo__UnityEngine__Object__Instantiate<ThemeAttributes::FloatAttribute::Setter>_ThemeAttributes__FloatAttribute__Setter_
                       );
   this_01 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
-  if (this_01 != (UnityAction_1_System_Single_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-    UnityAction_1_System_Single___ctor
-              (this_01,(Object *)this,(this->klass->vtable).OnSettingsChanged.method,
-               (MethodInfo *)0x0);
-    if (this_00 != (Component *)0x0) {
-      (*(code *)this_00->klass[1]._0.image)(this_00,this);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         (this_00,(MethodInfo *)0x0);
-      pTVar2 = (Transform *)0x0;
-      if (pTVar1 != (Transform *)0x0) {
-        if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-          pTVar2 = pTVar1;
-        }
-        if (pTVar2 == (Transform *)0x0) {
-          func_?();
-          goto code_?;
-        }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+  UnityAction_1_System_Single___ctor
+            (this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+  if (this_00 != (Component *)0x0) {
+    (*this_00->klass[1]._0.gc_desc)(this_00,this);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       (this_00,(MethodInfo *)0x0);
+    pTVar2 = (Transform *)0x0;
+    if (pTVar1 != (Transform *)0x0) {
+      if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+        pTVar2 = pTVar1;
       }
-      return (RectTransform *)pTVar2;
+      if (pTVar2 == (Transform *)0x0) {
+        func_?();
+        goto code_?;
+      }
     }
+    return (RectTransform *)pTVar2;
   }
 code_?:
   func_?();
@@ -171,9 +168,8 @@ void Assembly-CSharp.dll::ThemeAttributes::FloatAttribute::FloatAttribute__ctor
     ;
     cRam_? = '\x01';
   }
-  StreamedAssetToCallback`2[System::Object,System::Object]::
-  StreamedAssetToCallback_2_System_Object_System_Object___ctor
-            ((StreamedAssetToCallback_2_System_Object_System_Object_ *)this,
+  NamedThemeAttribute`1[System::Single]::NamedThemeAttribute_1_System_Single___ctor
+            ((NamedThemeAttribute_1_System_Single_ *)this,
              MethodInfo__ThemeAttributes__NamedThemeAttribute<float>__NamedThemeAttribute__);
   return;
 }

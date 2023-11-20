@@ -129,25 +129,28 @@ int32_t Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_DeserializeWor
   if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__KoGaMaDataHandler);
   }
-  this = MVWorldObject.dll::MV::WorldObject::KogamaDataHandlerWrapper::
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+         MVWorldObject.dll::MV::WorldObject::KogamaDataHandlerWrapper::
          KogamaDataHandlerWrapper_GetDataParameters
                    (TypeInfo__KoGaMaDataHandler->static_fields->serializeVersion,bp,
                     KogamaDataType__Enum_WorldObjects,readRuntimeData,(MethodInfo *)0x0);
-  pOVar1 = (Object *)
-           func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffb);
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+  key = (Object *)
+        func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffb);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     if (callBack !=
         (UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
          *)0x0) {
       (*(callBack->fields)._._.invoke_impl)();
       KoGaMaDataHandler_HandleService((MethodInfo *)0x0);
-      if (pOVar1 != (Object *)0x0) {
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+      if (TVar1.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+            (TypeInfo__System__Int32->_0).element_class) {
           piVar2 = (int32_t *)func_?();
           return *piVar2;
         }
@@ -182,21 +185,19 @@ void Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_Execute(MethodInf
   if (bVar1 == 0) {
     pNVar2 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
-      pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      this = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
-      if (this != (MonoBehaviour *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  (this,pIVar3,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
+    pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+    if (this != (MonoBehaviour *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                (this,pIVar3,(MethodInfo *)0x0);
+      return;
     }
     goto code_?;
   }
@@ -219,46 +220,49 @@ void Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_Execute(MethodInf
           func_?();
         }
         pKVar4 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
-        if (pKVar4 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) goto code_?;
-        if ((pKVar4->fields).waitOneFrameBeforeDoneCallback == 0) {
-          if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        if (pKVar4 != (KoGaMaDataHandler_AsyncBookkeeping *)0x0) {
+          if ((pKVar4->fields).waitOneFrameBeforeDoneCallback == 0) {
+            if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pKVar4 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
+            if ((pKVar4 != (KoGaMaDataHandler_AsyncBookkeeping *)0x0) &&
+               (pUVar5 = (pKVar4->fields).doneCallback, pUVar5 != (UnityAction_1_System_Int32_ *)0x0
+               )) {
+              (*(pUVar5->fields)._._.invoke_impl)
+                        ((pUVar5->fields)._._.method_code,(pKVar4->fields).rootId);
+              TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping =
+                   (KoGaMaDataHandler_AsyncBookkeeping *)0x0;
+              func_?(TypeInfo__KoGaMaDataHandler->static_fields,0);
+              return;
+            }
           }
-          pKVar4 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
-          if ((pKVar4 != (KoGaMaDataHandler_AsyncBookkeeping *)0x0) &&
-             (pUVar5 = (pKVar4->fields).doneCallback, pUVar5 != (UnityAction_1_System_Int32_ *)0x0))
-          {
-            (*(pUVar5->fields)._._.invoke_impl)
-                      ((pUVar5->fields)._._.method_code,(pKVar4->fields).rootId);
-            TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping =
-                 (KoGaMaDataHandler_AsyncBookkeeping *)0x0;
-            func_?(TypeInfo__KoGaMaDataHandler->static_fields,0);
-            return;
+          else {
+            if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pKVar4 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
+            if (pKVar4 != (KoGaMaDataHandler_AsyncBookkeeping *)0x0) {
+              (pKVar4->fields).waitOneFrameBeforeDoneCallback = 0;
+              goto code_?;
+            }
           }
-          goto code_?;
         }
-        if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pKVar4 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
-        if (pKVar4 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) goto code_?;
-        (pKVar4->fields).waitOneFrameBeforeDoneCallback = 0;
+code_?:
+        func_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
       }
     }
   }
-  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-  if (pNVar2 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
-    pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
-    Coroutines::Coroutines_Start(pIVar3,(MethodInfo *)0x0);
-    return;
-  }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
+  pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
+  Coroutines::Coroutines_Start(pIVar3,(MethodInfo *)0x0);
   return;
 }
 
@@ -439,42 +443,36 @@ void Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaDataAsyn
       func_?(TypeInfo__KoGaMaDataHandler);
     }
     TypeInfo__KoGaMaDataHandler->static_fields->timeSinceService = iVar1;
-    value = (KoGaMaDataHandler_AsyncBookkeeping *)
-            func_?(TypeInfo__KoGaMaDataHandler__AsyncBookkeeping);
-    if (value != (KoGaMaDataHandler_AsyncBookkeeping *)0x0) {
-      (value->fields).numberOfPrototypes = -1;
-      (value->fields).numberOfWorldObjects = -1;
-      (value->fields).numberOfLinks = -1;
-      (value->fields).numberOfObjectLinks = -1;
-      (value->fields).rootId = -1;
-      (value->fields).waitOneFrameBeforeDoneCallback = 1;
-      (value->fields).workTime = 1.0;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value,ExceptionArgument__Enum_obj,unaff_retaddr);
-      (value->fields).bp = bp;
-      func_?(&(value->fields).bp,bp);
-      (value->fields).callBack = callBack;
-      func_?(&(value->fields).callBack,callBack);
-      (value->fields).readRuntimeData = readRuntimeData;
-      (value->fields).doneCallback = doneCallback;
-      func_?(&(value->fields).doneCallback,doneCallback);
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
-                        ((MethodInfo *)0x0);
-      (value->fields).workStartTime = fVar2;
-      TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping = value;
-      func_?(TypeInfo__KoGaMaDataHandler->static_fields,value);
-      KoGaMaDataHandler_Execute((MethodInfo *)0x0);
-      return;
-    }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    method_00 = TypeInfo__KoGaMaDataHandler__AsyncBookkeeping;
+    value = (KoGaMaDataHandler_AsyncBookkeeping *)func_?();
+    (value->fields).numberOfPrototypes = -1;
+    (value->fields).numberOfWorldObjects = -1;
+    (value->fields).numberOfLinks = -1;
+    (value->fields).numberOfObjectLinks = -1;
+    (value->fields).rootId = -1;
+    (value->fields).waitOneFrameBeforeDoneCallback = 1;
+    (value->fields).workTime = 1.0;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (value->fields).bp = bp;
+    func_?(&(value->fields).bp,bp);
+    (value->fields).callBack = callBack;
+    func_?(&(value->fields).callBack,callBack);
+    (value->fields).readRuntimeData = readRuntimeData;
+    (value->fields).doneCallback = doneCallback;
+    func_?(&(value->fields).doneCallback,doneCallback);
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+                      ((MethodInfo *)0x0);
+    (value->fields).workStartTime = fVar2;
+    TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping = value;
+    func_?(TypeInfo__KoGaMaDataHandler->static_fields,value);
+    KoGaMaDataHandler_Execute((MethodInfo *)0x0);
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
             ((Object *)StringLiteral_Already_doing_async_download_,(MethodInfo *)0x0);
   return;
 }
@@ -928,7 +926,7 @@ code_?:
     func_?();
     pIVar1 = extraout_ECX;
 code_?:
-    func_?(unaff_ESI,pIVar1);
+    func_?(unaff_ESI.m_Index,pIVar1);
     pcVar2 = (code *)swi(3);
     iVar3 = (*pcVar2)();
     return iVar3;
@@ -955,16 +953,18 @@ code_?:
       if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__KoGaMaDataHandler);
       }
-      this = MVWorldObject.dll::MV::WorldObject::KogamaDataHandlerWrapper::
+      this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             MVWorldObject.dll::MV::WorldObject::KogamaDataHandlerWrapper::
              KogamaDataHandlerWrapper_GetDataParameters
                        (TypeInfo__KoGaMaDataHandler->static_fields->serializeVersion,bp,
                         KogamaDataType__Enum_WorldObjects,readRuntimeData,(MethodInfo *)0x0);
       uStack_7 = 0;
       key = (Object *)
             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStack_7);
-      if ((this == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-         (unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+      if ((this == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                                 (this,key,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 ),
@@ -974,11 +974,11 @@ code_?:
       (*(callBack->fields)._._.invoke_impl)
                 ((callBack->fields)._._.method_code,this,1,(callBack->fields)._._.method);
       KoGaMaDataHandler_HandleService((MethodInfo *)0x0);
-      if (unaff_ESI == (Object *)0x0) goto code_?;
+      if (unaff_ESI.m_Index == 0) goto code_?;
       pIVar1 = TypeInfo__System__Int32;
-      if ((unaff_ESI->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-      goto code_?;
-      piVar8 = (int32_t *)func_?(unaff_ESI);
+      if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar8 = (int32_t *)func_?(unaff_ESI.m_Index);
       if (iStack_6 == -1) {
         iStack_6 = *piVar8;
       }

@@ -17,9 +17,9 @@ void Assembly-CSharp.dll::FirstTimeEventPopupWithProgress::
                      (pSVar2,::StringLiteral____,str2,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
     pTVar3 = pTVar1->klass;
-    max = (float)(pTVar3->vtable).set_text.method;
+    max = (float)(pTVar3->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     current = (float)pSVar2;
-    (*(pTVar3->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar3->vtable).set_text.method)();
     (this->fields).interpolateToSize = current / max;
     return;
   }

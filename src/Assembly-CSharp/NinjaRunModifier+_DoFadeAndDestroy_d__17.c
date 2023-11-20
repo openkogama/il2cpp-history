@@ -35,15 +35,13 @@ bool Assembly-CSharp.dll::NinjaRunModifier+<DoFadeAndDestroy>d__17::
               if (pTVar2 != (TrailRenderer *)0x0) {
                 value = UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::
                         TrailRenderer_get_time(pTVar2,(MethodInfo *)0x0);
-                this_03 = (SubscribableVariableBase_1_System_Single_ *)func_?();
-                if (this_03 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-                  SubscribableVariableBase`1[System::Single]::
-                  SubscribableVariableBase_1_System_Single___ctor(this_03,value,(MethodInfo *)0x0);
-                  (this->fields).__2__current = (Object *)this_03;
-                  func_?();
-                  (this->fields).__1__state = 1;
-                  return 1;
-                }
+                this_03 = (SubscribableVariable_1_System_Single_ *)func_?();
+                SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
+                          (this_03,value,(MethodInfo *)0x0);
+                (this->fields).__2__current = (Object *)this_03;
+                func_?();
+                (this->fields).__1__state = 1;
+                return 1;
               }
             }
           }
@@ -86,7 +84,6 @@ void Assembly-CSharp.dll::NinjaRunModifier+<DoFadeAndDestroy>d__17::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

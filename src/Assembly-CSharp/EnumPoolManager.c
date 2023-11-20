@@ -85,7 +85,7 @@ void Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Awake
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)pSVar7,(MethodInfo *)0x0);
       }
       pLVar1 = (this->fields).pool;
@@ -111,13 +111,15 @@ Object * Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager_Instantiate
                    (EnumPoolManager *this,PoolEnums__Enum pEnum,MethodInfo *method)
 
 {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    func_?(method);
+  }
   pPVar1 = (this->fields).lookupTable;
   if (pPVar1 != (Pool__Array *)0x0) {
     if (pPVar1->max_length <= pEnum) goto code_?;
     if (pPVar1->vector[pEnum] != (Pool *)0x0) {
-      pOVar2 = (Object *)
-               (*((method->field7_0x1c).rgctx_data)->method->virtualMethodPointer)
-                         (pPVar1->vector[pEnum],((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+      pOVar2 = Pool::Pool_Instantiate
+                         (pPVar1->vector[pEnum],((method->field7_0x1c).rgctx_data)->method);
       return pOVar2;
     }
   }
@@ -227,8 +229,8 @@ void Assembly-CSharp.dll::EnumPoolManager::EnumPoolManager__ctor
   pPVar1 = (Pool__Array *)func_?(TypeInfo__Pool,0x20);
   (this->fields).lookupTable = pPVar1;
   func_?(&(this->fields).lookupTable,pPVar1);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

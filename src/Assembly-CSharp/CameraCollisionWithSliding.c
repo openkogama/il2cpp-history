@@ -199,7 +199,6 @@ Vector3 * Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSl
   }
   uVar10 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar10);
-  func_?(this_00);
   mscorlib.dll::System::Exception::Exception__ctor(this_00,(MethodInfo *)0x0);
   uVar10 = func_?(&
                           MethodInfo__CameraCollisionWithSliding__GetSlideDir_UnityEngine__Vector3__UnityEngine__Vector3__UnityEngine__Vector3__UnityEngine__Vector3_
@@ -284,7 +283,7 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::
   fStack_4 = 0.0;
   end.z = newPos.z + (targetPosition.z - newPos.z);
   fStack_5 = newPos.x;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine_2(newPos,end,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(newPos,end,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -335,7 +334,7 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::
   end_00.y = newPos.y + slideVector.y * fVar1;
   end_00.x = fStack_4 + slideVector.x * fVar1;
   end_00.z = fStack_3;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine_2(start,end_00,(MethodInfo *)0x0)
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(start,end_00,(MethodInfo *)0x0)
   ;
   return fStack_3;
 }

@@ -147,49 +147,49 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_UploadData
     func_?(&StringLiteral_UploadData_called_even_though_us);
     cRam_? = '\x01';
   }
-  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[System::
-          Single,System::Object]::
-          SortedList_2_TKey_TValue_ValueList_System_Single_System_Object__get_IsReadOnly
-                    ((SortedList_2_TKey_TValue_ValueList_System_Single_System_Object_ *)0x0,
-                     unaff_EBP);
+  bVar1 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+          VerticalVirtualizationController`1[System::Object]::
+          VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
+                    ((VerticalVirtualizationController_1_System_Object_ *)0x0,unaff_EBP);
   if (bVar1 == 1) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_UploadData_called_even_though_us,(MethodInfo *)0x0);
-    return;
   }
-  if (TypeInfo__DataUploadManager->static_fields->bytePacker != (BytePacker *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-              ((Object *)StringLiteral_DataUpload_already_in_progress,(MethodInfo *)0x0);
-    return;
-  }
-  this = MVGameControllerBase::MVGameControllerBase_get_TextureIntegrityChecker((MethodInfo *)0x0);
-  if (this != (TextureIntegrityChecker *)0x0) {
-    bVar1 = AntiHack::TextureIntegrityChecker::TextureIntegrityChecker_VerifyTextureIntegrity
-                      (this,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
+  else {
+    if (TypeInfo__DataUploadManager->static_fields->bytePacker != (BytePacker *)0x0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_DataUpload_already_in_progress,(MethodInfo *)0x0);
       return;
     }
-    TypeInfo__DataUploadManager->static_fields->doneNotification = doneNotification;
-    func_?();
-    this_00 = (BytePacker *)func_?();
-    if (this_00 != (BytePacker *)0x0) {
-      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                (this_00,(Byte__Array *)0x0,(MethodInfo *)0x0);
-      TypeInfo__DataUploadManager->static_fields->bytePacker = this_00;
+    this = MVGameControllerBase::MVGameControllerBase_get_TextureIntegrityChecker((MethodInfo *)0x0)
+    ;
+    if (this == (TextureIntegrityChecker *)0x0) {
       func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    bVar1 = AntiHack::TextureIntegrityChecker::TextureIntegrityChecker_VerifyTextureIntegrity
+                      (this,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      TypeInfo__DataUploadManager->static_fields->doneNotification = doneNotification;
+      pDVar3 = TypeInfo__DataUploadManager->static_fields;
+      func_?();
+      this_00 = (BytePacker *)func_?();
+      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
+                (this_00,(Byte__Array *)&pDVar3->doneNotification,(MethodInfo *)0x0);
+      TypeInfo__DataUploadManager->static_fields->bytePacker = this_00;
+      func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,this_00);
       DataUploadManager_SendChunk((MethodInfo *)0x0);
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 

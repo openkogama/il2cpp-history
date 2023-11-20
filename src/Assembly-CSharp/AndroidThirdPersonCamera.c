@@ -81,23 +81,22 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Ent
                        (this_00,(MethodInfo *)0x0);
     (this->fields).lookAtTransform = pTVar2;
     func_?(&(this->fields).lookAtTransform,pTVar2);
-    this_01 = (HashSet_1_UnityEngine_Vector3_ *)
+    this_01 = (HashSet_1_System_Int32_ *)
               func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-    if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-      HashSet_1_UnityEngine_Vector3___ctor
-                (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      pMVar1 = (this->fields).avatarLocal;
-      if (pMVar1 != (MVAvatarLocal *)0x0) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-        HashSet_1_System_Object__Add
-                  ((HashSet_1_System_Object_ *)this_01,(Object *)(pMVar1->fields)._._._._.id,
-                   MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-        (this->fields).ignoreAvatarId = (HashSet_1_System_Int32_ *)this_01;
-        func_?(&(this->fields).ignoreAvatarId,this_01);
-        (*(this->klass->vtable).Reset.methodPtr)(this,(this->klass->vtable).Reset.method);
-        return;
-      }
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32___ctor
+              (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    pMVar1 = (this->fields).avatarLocal;
+    if ((pMVar1 != (MVAvatarLocal *)0x0) && (this_01 != (HashSet_1_System_Int32_ *)0x0)) {
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+      HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
+                (this_01,(pMVar1->fields)._._._._.id,
+                 MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+      (this->fields).ignoreAvatarId = this_01;
+      func_?(&(this->fields).ignoreAvatarId,this_01);
+      (*(code *)(this->klass->vtable).Reset.method)
+                (this,(this->klass->vtable).FocusOnObject.methodPtr);
+      return;
     }
   }
   func_?();
@@ -202,16 +201,10 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Ini
   func_?(&(this->fields).avatarLocal,al);
   camMoveTowardsOffset = (this->fields).lookAtOffset;
   this_00 = (AvatarCameraDistTransparency *)func_?(TypeInfo__AvatarCameraDistTransparency);
-  if (this_00 != (AvatarCameraDistTransparency *)0x0) {
-    AvatarCameraDistTransparency::AvatarCameraDistTransparency__ctor
-              (this_00,camMoveTowardsOffset,2.0,1.0,(MethodInfo *)0x0);
-    (this->fields).avatarCameraDistTransparency = this_00;
-    func_?(&(this->fields).avatarCameraDistTransparency,this_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AvatarCameraDistTransparency::AvatarCameraDistTransparency__ctor
+            (this_00,camMoveTowardsOffset,2.0,1.0,(MethodInfo *)0x0);
+  (this->fields).avatarCameraDistTransparency = this_00;
+  func_?(&(this->fields).avatarCameraDistTransparency,this_00);
   return;
 }
 
@@ -333,7 +326,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Res
                (AndroidThirdPersonCamera *this,MVCameraController *camController,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).Reset.methodPtr)(this,(this->klass->vtable).Reset.method);
+  (*(code *)(this->klass->vtable).Reset.method)(this,(this->klass->vtable).FocusOnObject.methodPtr);
   return;
 }
 
@@ -491,7 +484,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
           fStack_9 = pVVar10->y;
           fStack_7 = pVVar10->z;
           if (pMVar15 != (MVAvatarLocal *)0x0) {
-            puVar16 = (undefined8 *)(*(pMVar15->klass->vtable).get_VelocityRelative.methodPtr)();
+            puVar16 = (undefined8 *)(*(code *)(pMVar15->klass->vtable).get_VelocityRelative.method)();
             VStack_11._0_8_ = *puVar16;
             VStack_11.z = *(float *)(puVar16 + 1);
             fVar17 = (float10)func_?();
@@ -555,17 +548,20 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::
     cRam_? = '\x01';
   }
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (data,(Object *)StringLiteral_distanceToAvatar,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
+                       (Object *)StringLiteral_distanceToAvatar,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
         puVar2 = (undefined4 *)func_?();
-        pMVar3 = (MonitorData *)*puVar2;
-        pOVar1[0xb].monitor = pMVar3;
-        pOVar1[0xc].monitor = pMVar3;
+        uVar3 = *puVar2;
+        *(undefined4 *)(TVar1.m_Index + 0x60) = uVar3;
+        *(undefined4 *)(TVar1.m_Index + 0x68) = uVar3;
         return;
       }
       func_?();
@@ -574,8 +570,8 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::
       return;
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -770,30 +766,23 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera__ct
   (this->fields).minimumY = -60.0;
   (this->fields).maximumY = 60.0;
   (this->fields).lookAtHeightOffsetBase.z = 0.0;
-  value = (CameraCollisionWithSliding *)func_?(TypeInfo__CameraCollisionWithSliding);
-  if (value != (CameraCollisionWithSliding *)0x0) {
-    (value->fields).checkDistanceFactor = 0.5;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).cameraCollision = value;
-    func_?(&(this->fields).cameraCollision,value);
-    value_00 = (CameraLerpToDesiredDistance *)func_?(TypeInfo__CameraLerpToDesiredDistance)
-    ;
-    if (value_00 != (CameraLerpToDesiredDistance *)0x0) {
-      (value_00->fields).newDistance = INFINITY;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this->fields).cameraLerpToDesiredDistance = value_00;
-      func_?(&(this->fields).cameraLerpToDesiredDistance,value_00);
-      (this->fields).distanceToAvatarBase = 5.0;
-      TimeAttackFlagCountdownCamera::TimeAttackFlagCountdownCamera__ctor
-                ((TimeAttackFlagCountdownCamera *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  method_01 = TypeInfo__CameraCollisionWithSliding;
+  value = (CameraCollisionWithSliding *)func_?();
+  (value->fields).checkDistanceFactor = 0.5;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  (this->fields).cameraCollision = value;
+  func_?(&(this->fields).cameraCollision,value);
+  method_00 = TypeInfo__CameraLerpToDesiredDistance;
+  value_00 = (CameraLerpToDesiredDistance *)func_?();
+  (value_00->fields).newDistance = INFINITY;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).cameraLerpToDesiredDistance = value_00;
+  func_?(&(this->fields).cameraLerpToDesiredDistance,value_00);
+  (this->fields).distanceToAvatarBase = 5.0;
+  TimeAttackFlagCountdownCamera::TimeAttackFlagCountdownCamera__ctor
+            ((TimeAttackFlagCountdownCamera *)this,(MethodInfo *)0x0);
   return;
 }
 

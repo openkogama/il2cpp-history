@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::InputSignalReceiverClient::InputSignalReceiverClient__
              defaultInput,logicObjectManager,(MethodInfo *)0x0);
   if (worldObject != (MVWorldObject *)0x0) {
     hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                (*(worldObject->klass->vtable).get_RunTimeData.methodPtr)();
+                (*(code *)(worldObject->klass->vtable).get_RunTimeData.method)();
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::InputSignalReceiverClient::InputSignalReceiverClient__
         value = (ObscuredBool)CONCAT84(uVar6,uVar4);
         Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool::
         ObscuredBool_op_Implicit_1(value,(MethodInfo *)0x0);
-        (*(pIVar1->klass->vtable).set_CurrentlyIsHot.methodPtr)();
+        (*(code *)(pIVar1->klass->vtable).set_CurrentlyIsHot.method)();
         (pIVar1->fields)._.firstFrame = 0;
         return;
       }

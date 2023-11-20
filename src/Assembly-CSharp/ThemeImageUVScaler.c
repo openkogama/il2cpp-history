@@ -46,60 +46,37 @@ void Assembly-CSharp.dll::ThemeImageUVScaler::ThemeImageUVScaler_Update
     }
     if (this_00 == (Transform *)0x0) goto code_?;
     pRVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffd4,(RectTransform *)this_00,(MethodInfo *)0x0);
+                       ((Rect *)&stack0xffffffcc,(RectTransform *)this_00,(MethodInfo *)0x0);
     pRVar4 = (this->fields).image;
-    pSVar5 = (SubscribableVariableBase_1_System_Single___Class *)pRVar3->m_XMin;
-    pMVar6 = (MonitorData *)pRVar3->m_YMin;
-    fVar7 = pRVar3->m_Width;
-    pSVar8 = (SubscribableVariableBase_1_System_Single___Class *)pRVar3->m_Height;
+    fVar5 = pRVar3->m_Width;
+    fVar6 = pRVar3->m_Height;
+    fVar7 = fVar6;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    fVar8 = 0.0;
+    fVar9 = 0.0;
+    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar9 == 0) {
+    if (bVar10 == 0) {
       return;
     }
-    pMVar10 = (MonitorData *)0x0;
-    rhs.m_YMin = (float)pMVar6;
-    rhs.m_XMin = (float)pSVar5;
-    rhs.m_Width = fVar7;
-    rhs.m_Height = (float)pSVar8;
-    pSVar5 = pSVar8;
-    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_op_Inequality
-                      ((this->fields).prevRect,rhs,(MethodInfo *)0x0);
-    if (bVar9 == 0) {
+    if (((((this->fields).prevRect.m_XMin == (float)pRVar4) &&
+         ((this->fields).prevRect.m_YMin == fVar9)) && ((this->fields).prevRect.m_Width == fVar5))
+       && ((this->fields).prevRect.m_Height == fVar6)) {
       return;
     }
-    (this->fields).prevRect.m_XMin = (float)pSVar5;
-    (this->fields).prevRect.m_YMin = (float)pMVar10;
-    (this->fields).prevRect.m_Width = fVar7;
-    (this->fields).prevRect.m_Height = (float)pSVar8;
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-    ParticleSystem_Burst_set_time((ParticleSystem_Burst *)&stack0xffffffe4,0.0,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::FloatTween::FloatTween_set_startValue
-              ((FloatTween *)&stack0xffffffe4,0.0,(MethodInfo *)0x0);
-    fVar11 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-            Int32Enum,System::Single]::
-            Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single__get_Current
-                      ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Int32Enum_System_Single_
-                        *)&stack0xffffffe4,(MethodInfo *)0x0);
-    fVar12 = SubscribableVariableBase`1[System::Single]::
-             SubscribableVariableBase_1_System_Single__get_Value
-                       ((SubscribableVariableBase_1_System_Single_ *)&stack0xffffffe4,
-                        (MethodInfo *)0x0);
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::HableCurve::
-    HableCurve_set_inverseWhitePoint
-              ((HableCurve *)&stack0xffffffe4,fVar11 / fVar12,(MethodInfo *)0x0);
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::HableCurve::
-    HableCurve_set_whitePoint((HableCurve *)&stack0xffffffe4,1.0,(MethodInfo *)0x0);
+    (this->fields).prevRect.m_XMin = (float)pRVar4;
+    (this->fields).prevRect.m_YMin = fVar9;
+    (this->fields).prevRect.m_Width = fVar8;
+    (this->fields).prevRect.m_Height = fVar7;
     pRVar4 = (this->fields).image;
     if (pRVar4 != (RawImage *)0x0) {
-      value.m_YMin = (float)pMVar10;
-      value.m_XMin = (float)pSVar5;
-      value.m_Width = fVar7;
-      value.m_Height = (float)pSVar8;
+      auVar11 = ZEXT412(0x3f800000) << 0x40;
+      value.m_Height = fVar6 / fVar5;
+      value.m_XMin = (float)auVar11._0_4_;
+      value.m_YMin = (float)auVar11._4_4_;
+      value.m_Width = (float)auVar11._8_4_;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_uvRect
                 (pRVar4,value,(MethodInfo *)0x0);
       return;
@@ -108,8 +85,8 @@ void Assembly-CSharp.dll::ThemeImageUVScaler::ThemeImageUVScaler_Update
   uVar2 = func_?();
 code_?:
   func_?(uVar2);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

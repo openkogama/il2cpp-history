@@ -217,56 +217,46 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Inp
                (SettingsInputFieldSlider *this,MethodInfo *method)
 
 {
-  ppBStack_1 = (BitConverter__Class **)0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  pSVar1 = (SettingsInputFieldSlider *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&::StringLiteral__);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pIVar4 = (this->fields).inputField;
-  if ((pIVar4 == (InputField *)0x0) || (pSVar5 = (pIVar4->fields).m_Text, pSVar5 == (String *)0x0))
+  pIVar2 = (this->fields).inputField;
+  if ((pIVar2 == (InputField *)0x0) || (pSVar3 = (pIVar2->fields).m_Text, pSVar3 == (String *)0x0))
   goto code_?;
-  bVar6 = mscorlib.dll::System::String::String_EndsWith(pSVar5,::StringLiteral__,(MethodInfo *)0x0);
-  if (bVar6 == 0) {
-    bVar6 = mscorlib.dll::System::String::String_EndsWith
-                      (pSVar5,::StringLiteral__,(MethodInfo *)0x0);
-    if ((bVar6 == 0) && ((pSVar5->fields)._stringLength != 0)) {
-      ppBStack_1 = (BitConverter__Class **)0x0;
-      fVar7 = SettingsInputFieldSlider_ConvertStringToFloat(this,pSVar5,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        ppBStack_1 = &TypeInfo__System__BitConverter;
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__BitConverter);
-      }
-      if ((uint)ABS(fVar7) < 0x7f800001) {
-        fVar7 = SettingsInputFieldSlider_GetInputFieldValue(this,fVar7,(MethodInfo *)0x0);
-        pSVar5 = SettingsInputFieldSlider_ConvertFloatToString(fVar7,(MethodInfo *)0x0);
-        pIVar4 = (this->fields).inputField;
-        if (pIVar4 != (InputField *)0x0) {
+  bVar4 = mscorlib.dll::System::String::String_EndsWith(pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    bVar4 = mscorlib.dll::System::String::String_EndsWith
+                      (pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+    if ((bVar4 == 0) && ((pSVar3->fields)._stringLength != 0)) {
+      fVar5 = SettingsInputFieldSlider_ConvertStringToFloat(this,pSVar3,(MethodInfo *)0x0);
+      if ((uint)ABS(fVar5) < 0x7f800001) {
+        pSVar1 = this;
+        fVar5 = SettingsInputFieldSlider_GetInputFieldValue(this,fVar5,(MethodInfo *)0x0);
+        pSVar3 = SettingsInputFieldSlider_ConvertFloatToString(fVar5,(MethodInfo *)0x0);
+        pIVar2 = (this->fields).inputField;
+        if (pIVar2 != (InputField *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                    (pIVar4,pSVar5,(MethodInfo *)0x0);
-          pIVar4 = (this->fields).inputField;
-          if (pIVar4 != (InputField *)0x0) {
-            SettingsInputFieldSlider_ValueChanged(this,(pIVar4->fields).m_Text,(MethodInfo *)0x0);
+                    (pIVar2,pSVar3,(MethodInfo *)0x0);
+          pIVar2 = (this->fields).inputField;
+          if (pIVar2 != (InputField *)0x0) {
+            SettingsInputFieldSlider_ValueChanged(this,(pIVar2->fields).m_Text,(MethodInfo *)0x0);
             goto code_?;
           }
         }
 code_?:
         func_?();
-        pcVar8 = (code *)swi(3);
-        (*pcVar8)();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
     }
   }
 code_?:
-  *unaff_FS_OFFSET = uStack_3;
+  *unaff_FS_OFFSET = pSVar1;
   return;
 }
 
@@ -327,8 +317,8 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Sli
   pSVar1 = (this->fields).settingsSlider;
   if ((pSVar1 == (SettingsSlider *)0x0) ||
      (pSVar2 = (pSVar1->fields).slider, pSVar2 == (Slider *)0x0)) goto code_?;
-  this = (SettingsInputFieldSlider *)(pSVar2->klass->vtable).get_value.methodPtr;
-  fVar3 = (float10)(*(code *)this)(pSVar2,(pSVar2->klass->vtable).get_value.method);
+  this = (SettingsInputFieldSlider *)(pSVar2->klass->vtable).get_value.method;
+  fVar3 = (float10)(*(code *)this)(pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
   pSVar1 = (this_00->fields).settingsSlider;
   pSVar4 = (SettingsInputFieldSlider *)(float)fVar3;
   this = pSVar4;
@@ -431,10 +421,11 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
     func_?(&TypeInfo__SettingsInputFieldSlider____c__DisplayClass16_0);
     cRam_? = '\x01';
   }
-  value_00 = (Object *)func_?(TypeInfo__SettingsInputFieldSlider____c__DisplayClass16_0);
+  method_00 = TypeInfo__SettingsInputFieldSlider____c__DisplayClass16_0;
+  value_00 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value_00 != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value_00,ExceptionArgument__Enum_obj,unaff_EDI);
     value_00[1].klass = (Object__Class *)this;
     func_?(value_00 + 1,this);
     pMVar1 = (MonitorData *)
@@ -453,8 +444,9 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
         pSVar3 = (this->fields).settingsSlider;
         if ((pSVar3 != (SettingsSlider *)0x0) &&
            (pSVar4 = (pSVar3->fields).slider, pSVar4 != (Slider *)0x0)) {
-          (*(pSVar4->klass->vtable).set_value.methodPtr)
-                    (pSVar4,value_00[1].monitor,(pSVar4->klass->vtable).set_value.method);
+          (*(code *)(pSVar4->klass->vtable).set_value.method)
+                    (pSVar4,value_00[1].monitor,
+                     (pSVar4->klass->vtable).SetValueWithoutNotify.methodPtr);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -462,23 +454,21 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Val
                func_?(
                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>
                               );
-          if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
-                       MethodInfo__SettingsInputFieldSlider____c__DisplayClass16_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
-                      );
-            return;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value_00,
+                     MethodInfo__SettingsInputFieldSlider____c__DisplayClass16_0___ValueChanged_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_
+                    );
+          return;
         }
       }
     }
@@ -505,24 +495,5 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider__ct
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;
-}
-
-
-/* Slider get_Slider() */
-
-Slider * Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_get_Slider
-                   (SettingsInputFieldSlider *this,MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  pSVar2 = (this->fields).settingsSlider;
-  if (pSVar2 != (SettingsSlider *)0x0) {
-    return (pSVar2->fields).slider;
-  }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  pSVar6 = (Slider *)(*pcVar5)();
-  return pSVar6;
 }
 

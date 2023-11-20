@@ -47,11 +47,11 @@ code_?:
     IStack_7.m_value = (pLVar6->fields)._size;
     mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
     if (pTVar5 == (Text *)0x0) goto code_?;
-    (*(pTVar5->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar5->klass->vtable).set_text.method)();
     pTVar5 = (this->fields).score;
     if (pTVar5 == (Text *)0x0) goto code_?;
     pTVar8 = pTVar5->klass;
-    pMVar9 = (pTVar8->vtable).set_text.method;
+    pIVar9 = (pTVar8->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
     pSVar10 = ::StringLiteral__;
   }
   else {
@@ -73,7 +73,7 @@ code_?:
     IStack_7.m_value = (pLVar6->fields)._size;
     mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
     if (pTVar5 == (Text *)0x0) goto code_?;
-    (*(pTVar5->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar5->klass->vtable).set_text.method)();
     pTVar5 = (this->fields).score;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar1 == (MVNetworkGame *)0x0) ||
@@ -84,9 +84,9 @@ code_?:
                        (score,statToDisplay,(MethodInfo *)0x0);
     if (pTVar5 == (Text *)0x0) goto code_?;
     pTVar8 = pTVar5->klass;
-    pMVar9 = (pTVar8->vtable).set_text.method;
+    pIVar9 = (pTVar8->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
   }
-  (*(pTVar8->vtable).set_text.methodPtr)(pTVar5,pSVar10,pMVar9);
+  (*(code *)(pTVar8->vtable).set_text.method)(pTVar5,pSVar10,pIVar9);
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);
   }
@@ -113,8 +113,8 @@ code_?:
                              (pLVar3,iVar16,
                               MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_
                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar4 + 0x174))
-                (RVar4,fVar12,fVar13,fVar14,fVar15,*(undefined4 *)(*(int *)RVar4 + 0x178));
+      (**(code **)(*(int *)RVar4 + 0x178))
+                (RVar4,fVar12,fVar13,fVar14,fVar15,*(undefined4 *)(*(int *)RVar4 + 0x17c));
       pLVar21 = (this->fields).teamColoredImages;
       iVar16 = iVar16 + 1;
       if (pLVar21 == (List_1_UnityEngine_UI_Image_ *)0x0) goto code_?;
@@ -129,8 +129,8 @@ code_?:
   (*pcVar22)();
   return;
   while( true ) {
-    (**(code **)(*(int *)RVar4 + 0x174))
-              (RVar4,fVar17,fVar18,fVar19,fVar20,*(undefined4 *)(*(int *)RVar4 + 0x178));
+    (**(code **)(*(int *)RVar4 + 0x178))
+              (RVar4,fVar17,fVar18,fVar19,fVar20,*(undefined4 *)(*(int *)RVar4 + 0x17c));
     pLVar21 = (this->fields).darkTeamColoredImages;
     iVar16 = iVar16 + 1;
     if (pLVar21 == (List_1_UnityEngine_UI_Image_ *)0x0) break;

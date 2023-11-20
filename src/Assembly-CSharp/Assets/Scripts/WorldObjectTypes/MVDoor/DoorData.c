@@ -27,32 +27,27 @@ Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorDa
   ;
   if (this != (Dictionary_2_Assets_Scripts_WorldObjectTypes_MVDoor_DoorType_Dictionary_2_System_Object_System_Object_
                *)0x0) {
-    dictionary = (IDictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                  *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,doorType,
-                               MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__get_Item_Assets__Scripts__WorldObjectTypes__MVDoor__DoorType_
-                              );
-    this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *
-              )func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
-    if (this_00 !=
-        (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0)
-    {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::
-      Regex+CachedCodeEntryKey,System::Object]::
-      Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object___ctor_1
-                (this_00,dictionary,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-                );
-      return (Dictionary_2_System_Object_System_Object_ *)this_00;
-    }
+    dictionary = (IDictionary_2_System_Object_System_Object_ *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this,doorType,
+                            MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__get_Item_Assets__Scripts__WorldObjectTypes__MVDoor__DoorType_
+                           );
+    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
+             func_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object___ctor_1
+              (pDVar1,dictionary,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+              );
+    return pDVar1;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar1)();
-  return pDVar2;
+  pcVar2 = (code *)swi(3);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
+  return pDVar1;
 }
 
 
@@ -103,7 +98,7 @@ Object * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorDat
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)message,(MethodInfo *)0x0);
         return (Object *)0x0;
       }
@@ -141,7 +136,7 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorDa
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)message,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         animationRoot = (Transform *)&TypeInfo__UnityEngine__Vector3;
@@ -196,7 +191,7 @@ Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorDa
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)message,(MethodInfo *)0x0);
     return Enums_Vector3Axis__Enum_X;
   }
@@ -240,7 +235,7 @@ Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorDa
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)message,(MethodInfo *)0x0);
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                 ((IntVector *)&stack0xffffffec,0,0,0,(MethodInfo *)0x0);
@@ -258,8 +253,8 @@ Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorDa
       (__return_storage_ptr__->Item2).y = 0;
       (__return_storage_ptr__->Item2).z = 0;
       method = (MethodInfo *)__return_storage_ptr__;
-      doorType._0_2_ = 0xe3b7;
-      doorType._2_2_ = 0x1044;
+      doorType._0_2_ = 0x6cf7;
+      doorType._2_2_ = 0x104d;
       item1.z = iVar2;
       item1.x = (int16_t)uVar3;
       item1.y = SUB42(uVar3,2);
@@ -355,126 +350,134 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
     func_?(&StringLiteral_Sliding_Door);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)
+  this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                         );
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this,
-               MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Dictionary__
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+            (this,
+             MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Dictionary__
+            );
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (pDVar1,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->_1).
+      cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+               (Object *)
+               TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+               Name,(Object *)StringLiteral_Door,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-             func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                            );
-    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-      ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                ((ParameterOverride_1_System_Object_ *)pDVar1,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys);
-      }
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)
-                        TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
-                        static_fields->Name,(Object *)StringLiteral_Door,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               BeginOpen;
-      pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffb);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               PlayersCanOpen;
-      pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffa);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               ReverseOpenDirection;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               OpenValue;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               CloseValue;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               ToggleTime;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               DoorType;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
-               DocType;
-      pOVar3 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)pSVar2,pOVar3,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (this,(Object *)0x0,(Object *)pDVar1,
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             BeginOpen;
+    pOVar3 = (Object *)func_?(TypeInfo__System__Boolean);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             PlayersCanOpen;
+    pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffa);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             ReverseOpenDirection;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             OpenValue;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             CloseValue;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             ToggleTime;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             DoorType;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields->
+             DocType;
+    pOVar3 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+      Dictionary_2_System_Int32Enum_System_Object__Add
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0,(Object *)pDVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Add_Assets__Scripts__WorldObjectTypes__MVDoor__DoorType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                 );
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-        ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                  ((ParameterOverride_1_System_Object_ *)pDVar1,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)func_?();
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::StyleComplexSelector+PseudoStateData]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                (pDVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)
-                          TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
-                          static_fields->Name,(Object *)StringLiteral_Sliding_Door,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                   (Object *)
+                   TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
+                   static_fields->Name,(Object *)StringLiteral_Sliding_Door,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
                  ->BeginOpen;
-        pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff8);
+        pOVar3 = (Object *)func_?(TypeInfo__System__Boolean);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -482,7 +485,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff7);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -490,7 +493,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -498,7 +501,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -506,7 +509,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -514,7 +517,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -522,7 +525,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
         pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->static_fields
@@ -530,34 +533,38 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
         pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (pDVar1,(Object *)pSVar2,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (this,(Object *)0x1,(Object *)pDVar1,
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__Add
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,(Object *)pDVar1,
                    MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Add_Assets__Scripts__WorldObjectTypes__MVDoor__DoorType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                   );
-        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-          ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-                    ((ParameterOverride_1_System_Object_ *)pDVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                    );
+        pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (pDVar1,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)
-                            TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
-                            static_fields->Name,(Object *)StringLiteral_Trap_Door,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                     (Object *)
+                     TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
+                     static_fields->Name,(Object *)StringLiteral_Trap_Door,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
                    static_fields->BeginOpen;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff5);
+          pOVar3 = (Object *)func_?(TypeInfo__System__Boolean);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -565,7 +572,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffff4);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -573,7 +580,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -581,7 +588,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -589,7 +596,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -597,7 +604,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -605,7 +612,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
           pSVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->
@@ -613,12 +620,12 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::D
           pOVar3 = (Object *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,(Object *)pSVar2,pOVar3,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)pSVar2,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this,(Object *)0x2,(Object *)pDVar1,
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__Add
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,(Object *)pDVar1,
                      MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::WorldObjectTypes::MVDoor::DoorType,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>__Add_Assets__Scripts__WorldObjectTypes__MVDoor__DoorType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                     );
           TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData->static_fields->

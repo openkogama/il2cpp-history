@@ -143,7 +143,7 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localPositi
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_localPosition_invalid,(MethodInfo *)0x0);
     return;
   }
@@ -176,7 +176,7 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localRotati
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_localRotation_invalid,(MethodInfo *)0x0);
     return;
   }
@@ -212,7 +212,7 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_localScale
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_localScale_invalid,(MethodInfo *)0x0);
     return;
   }
@@ -247,7 +247,7 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_position
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_position_invalid,(MethodInfo *)0x0);
     return;
   }
@@ -280,7 +280,7 @@ void Assembly-CSharp.dll::ProtectedTransform::ProtectedTransform_set_rotation
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_rotation_invalid,(MethodInfo *)0x0);
     return;
   }

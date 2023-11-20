@@ -10,19 +10,14 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFlaming
     func_?(&TypeInfo__PickupItemFlamethrower___DoFlaming_d__16);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__PickupItemFlamethrower___DoFlaming_d__16);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -37,19 +32,14 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFuelBurn
     func_?(&TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -79,7 +69,7 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   AStack_1 = (ACTkByte4)(this->fields).maxFuelTime.currentCryptoKey;
   AStack_2 = (this->fields).maxFuelTime.hiddenValue;
@@ -100,8 +90,8 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
   value._17_3_ = *(undefined3 *)&(this->fields).maxFuelTime.field_0x11;
   fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
           ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar5 = (*(this->klass->vtable).GetAmmoMultiplier.methodPtr)
-                    (this,(int)fVar4,(this->klass->vtable).GetAmmoMultiplier.method);
+  iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
+                    (this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
   pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
            ObscuredFloat_op_Implicit
                      ((ObscuredFloat *)&stack0xffffffe8,(float)iVar5,(MethodInfo *)0x0);
@@ -152,56 +142,42 @@ code_?:
       pMVar4 = (this_01->fields)._.owner;
       (this_01->fields).isFlaming = 1;
       if (pMVar4 != (MVPickupOwner *)0x0) {
-        if ((pMVar4->fields)._IsLocal_k__BackingField == 0) {
-          return;
-        }
-        if (cRam_? == '\0') {
-          instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
-          this = (PickupItemFlamethrower *)&UNK_?;
-          func_?();
-          cRam_? = '\x01';
-        }
-        this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
-        pPVar5 = (PickupItemFlamethrower *)func_?();
-        if (pPVar5 != (PickupItemFlamethrower *)0x0) {
-          instigatorActorNr = 0;
-          this = pPVar5;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                    ((Object *)pPVar5,ExceptionArgument__Enum_obj,method);
-          this = (PickupItemFlamethrower *)&(pPVar5->fields)._.owner;
-          (pPVar5->fields)._._._._._.m_CachedPtr = (void *)0x0;
-          instigatorActorNr = (int32_t)this_01;
-          (pPVar5->fields)._.owner = (MVPickupOwner *)this_01;
-          func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                    ((MonoBehaviour *)this_01,(IEnumerator *)pPVar5,(MethodInfo *)0x0);
+        if ((pMVar4->fields)._IsLocal_k__BackingField != 0) {
           if (cRam_? == '\0') {
-            in_stack_6 = &TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
-            in_stack_7 = &UNK_?;
+            instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+            this = (PickupItemFlamethrower *)&UNK_?;
             func_?();
             cRam_? = '\x01';
           }
-          in_stack_6 =
-               (PickupItemFlamethrower_DoFuelBurn_d_17__Class **)
-               TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
-          in_stack_7 = &UNK_?;
-          pPVar5 = (PickupItemFlamethrower *)func_?();
-          if (pPVar5 != (PickupItemFlamethrower *)0x0) {
-            instigatorActorNr = 0;
-            this = pPVar5;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                      ((Object *)pPVar5,ExceptionArgument__Enum_obj,method);
-            this = (PickupItemFlamethrower *)&(pPVar5->fields)._.owner;
-            (pPVar5->fields)._._._._._.m_CachedPtr = (void *)0x0;
-            instigatorActorNr = (int32_t)this_01;
-            (pPVar5->fields)._.owner = (MVPickupOwner *)this_01;
+          this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+          pOVar5 = (Object *)func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    (pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)this);
+          pOVar5[1].klass = (Object__Class *)0x0;
+          pOVar5[2].klass = (Object__Class *)this_01;
+          func_?(pOVar5 + 2);
+          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                    ((MonoBehaviour *)this_01,(IEnumerator *)pOVar5,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
             func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-            MonoBehaviour_StartCoroutine_Auto
-                      ((MonoBehaviour *)this_01,(IEnumerator *)pPVar5,(MethodInfo *)0x0);
-            return;
+            cRam_? = '\x01';
           }
+          method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
+          pOVar5 = (Object *)func_?();
+          method = (MethodInfo *)&UNK_?;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    (pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          pOVar5[1].klass = (Object__Class *)0x0;
+          pOVar5[2].klass = (Object__Class *)this_01;
+          method = (MethodInfo *)&UNK_?;
+          func_?();
+          method = (MethodInfo *)0x0;
+          this = this_01;
+          instigatorActorNr = (int32_t)pOVar5;
+          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                    ((MonoBehaviour *)this_01,(IEnumerator *)pOVar5,(MethodInfo *)0x0);
         }
+        return;
       }
       goto code_?;
     }

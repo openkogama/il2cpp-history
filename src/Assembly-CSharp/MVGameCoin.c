@@ -17,90 +17,87 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_Destroy(MVGameCoin *this,Method
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+  if ((pMVar1 == (MVNetworkGame *)0x0) ||
      (this_00 = (pMVar1->fields)._GameCoinManager_k__BackingField,
-     this_00 != (MVGameCoinManager *)0x0)) {
+     this_00 == (MVGameCoinManager *)0x0)) {
+code_?:
+    func_?();
+  }
+  else {
     MVGameCoinManager::MVGameCoinManager_ReportPickupChangeInEditor(this_00,(MethodInfo *)0x0);
-    if ((this->fields).useInteractor == (UseInteractor *)0x0) {
-code_?:
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 == (MVNetworkGame *)0x0) {
-code_?:
-        MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
-        return;
-      }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 != (MVNetworkGame *)0x0) {
-        pDVar2 = (Delegate *)&UNK_?;
-        this_01 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-        if (this_01 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVGameCoin__OnWinningConditionFulfilled_IWinningCondition_,
-                     (MethodInfo *)0x0);
-          pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                             (pDVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-          if (pDVar2 == (Delegate *)0x0) {
-            (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-          }
-          else {
-            pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-            if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
-            (pMVar1->fields).OnWinningConditionFulfilled = pAVar3;
-            iVar4 = func_?();
-            if (iVar4 == 0) goto code_?;
-          }
-          func_?();
-          goto code_?;
-        }
-      }
-    }
-    else {
-      pMVar5 = (this->fields).pickupObject;
-      if (pMVar5 != (MVGameCoinObject *)0x0) {
-        pTVar6 = (pMVar5->fields).triggerBoxEvents;
-        pUVar7 = (this->fields).useInteractor;
-        pUVar8 = (UnityAction_2_System_Object_System_Object_ *)
+    if ((this->fields).useInteractor != (UseInteractor *)0x0) {
+      pMVar2 = (this->fields).pickupObject;
+      if (pMVar2 != (MVGameCoinObject *)0x0) {
+        pTVar3 = (pMVar2->fields).triggerBoxEvents;
+        pUVar4 = (this->fields).useInteractor;
+        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        if (pUVar8 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar8,(Object *)pUVar7,
-                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                     ,(MethodInfo *)0x0);
-          if (pTVar6 != (TriggerBoxEvents *)0x0) {
-            TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                      (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
-            pMVar5 = (this->fields).pickupObject;
-            if (pMVar5 != (MVGameCoinObject *)0x0) {
-              pTVar6 = (pMVar5->fields).triggerBoxEvents;
-              pUVar7 = (this->fields).useInteractor;
-              pUVar8 = (UnityAction_2_System_Object_System_Object_ *)
-                       func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-              if (pUVar8 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (pUVar8,(Object *)pUVar7,
-                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                           ,(MethodInfo *)0x0);
-                if (pTVar6 != (TriggerBoxEvents *)0x0) {
-                  TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                            (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pUVar8,(MethodInfo *)0x0);
-                  pUVar7 = (this->fields).useInteractor;
-                  if (pUVar7 != (UseInteractor *)0x0) {
-                    UseInteractor::UseInteractor_OnDestroy
-                              (pUVar7,(this->fields)._._._.data,(MethodInfo *)0x0);
-                    (this->fields).useInteractor = (UseInteractor *)0x0;
-                    func_?(&(this->fields).useInteractor,0);
-                    goto code_?;
-                  }
-                }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar5,(Object *)pUVar4,
+                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pTVar3 != (TriggerBoxEvents *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
+                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+          pMVar2 = (this->fields).pickupObject;
+          if (pMVar2 != (MVGameCoinObject *)0x0) {
+            pTVar3 = (pMVar2->fields).triggerBoxEvents;
+            pUVar4 = (this->fields).useInteractor;
+            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar5,(Object *)pUVar4,
+                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if (pTVar3 != (TriggerBoxEvents *)0x0) {
+              TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
+                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+              pUVar4 = (this->fields).useInteractor;
+              if (pUVar4 != (UseInteractor *)0x0) {
+                UseInteractor::UseInteractor_OnDestroy
+                          (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
+                (this->fields).useInteractor = (UseInteractor *)0x0;
+                func_?(&(this->fields).useInteractor,0);
+                goto code_?;
               }
             }
           }
         }
       }
+      goto code_?;
     }
+code_?:
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    source = (pMVar1->fields).OnWinningConditionFulfilled;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__MVGameCoin__OnWinningConditionFulfilled_IWinningCondition_,
+               (MethodInfo *)0x0);
+    iVar6 = 0;
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar7 == (Delegate *)0x0) {
+      *(undefined4 *)(iVar6 + 0xb8) = 0;
+code_?:
+      func_?();
+code_?:
+      MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+      return;
+    }
+    iVar8 = func_?();
+    if (iVar8 == 0) goto code_?;
+    *(int *)(iVar6 + 0xb8) = iVar8;
+    iVar6 = func_?();
+    if (iVar6 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -184,65 +181,71 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_Initialize(MVGameCoin *this,Met
   }
   MVGameCoin_SetupUserInteractor(this,(MethodInfo *)0x0);
   this_00 = (this->fields).useInteractor;
-  if (this_00 != (UseInteractor *)0x0) {
+  if (this_00 == (UseInteractor *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     UseInteractor::UseInteractor_UpdateData(this_00,(this->fields)._._._.data,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+    if ((pMVar1 == (MVNetworkGame *)0x0) ||
        (this_01 = (pMVar1->fields)._GameCoinManager_k__BackingField,
-       this_01 != (MVGameCoinManager *)0x0)) {
-      MVGameCoinManager::MVGameCoinManager_ReportPickupChangeInEditor(this_01,(MethodInfo *)0x0);
-      MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-      pMVar2 = (this->fields).pickupObject;
-      if (pMVar2 != (MVGameCoinObject *)0x0) {
-        MVLogicObject::MVLogicObject_SetupCulling
-                  ((MVLogicObject *)this,(pMVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pAVar3 = (pMVar1->fields).OnWinningConditionFulfilled;
-          this_02 = (Action_1_Object_ *)func_?();
-          unaff_EBX = (Action_1_IWinningCondition___Class *)0x0;
-          if (this_02 != (Action_1_Object_ *)0x0) {
-            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-                      (this_02,(Object *)this,
-                       MethodInfo__MVGameCoin__OnWinningConditionFulfilled_IWinningCondition_,
-                       (MethodInfo *)0x0);
-            this = (MVGameCoin *)
-                   mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pAVar3,(Delegate *)this_02,(MethodInfo *)0x0);
-            unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-            if (this == (MVGameCoin *)0x0) {
-              (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-              pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+       this_01 == (MVGameCoinManager *)0x0)) goto code_?;
+    MVGameCoinManager::MVGameCoinManager_ReportPickupChangeInEditor(this_01,(MethodInfo *)0x0);
+    MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
+    pMVar2 = (this->fields).pickupObject;
+    if (pMVar2 == (MVGameCoinObject *)0x0) goto code_?;
+    MVLogicObject::MVLogicObject_SetupCulling
+              ((MVLogicObject *)this,(pMVar2->fields).visualObject,2.0,(MethodInfo *)0x0);
+    pAVar3 = (Action_1_IWinningCondition___Class *)
+             MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pAVar3 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    a = *(Delegate **)&(pAVar3->_1).naturalAligment;
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_02,(Object *)this,
+               MethodInfo__MVGameCoin__OnWinningConditionFulfilled_IWinningCondition_,
+               (MethodInfo *)0x0);
+    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                          (a,(Delegate *)this_02,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+    if (unaff_ESI == (Delegate *)0x0) {
+      (pAVar3->_1).naturalAligment = 0;
+      (pAVar3->_1).packingSize = 0;
+      *(undefined2 *)&(pAVar3->_1).field_0x56 = 0;
+      pAStack5 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-              pMStack5 = (MVGameCoin *)&(pMVar1->fields).OnWinningConditionFulfilled;
-              func_?();
-              return;
-            }
-            pAStack4 = TypeInfo__System__Action<IWinningCondition>;
-            pMStack5 = this;
-            pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-            if (pAVar3 != (Action_1_IWinningCondition_ *)0x0) {
-              (pMVar1->fields).OnWinningConditionFulfilled = pAVar3;
-              unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-              pAStack4 = TypeInfo__System__Action<IWinningCondition>;
-              pMStack5 = this;
-              pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
-              if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0)
-              goto code_?;
-            }
-            goto code_?;
-          }
-        }
-      }
+      pDStack6 = (Delegate *)&(pAVar3->_1).naturalAligment;
+      func_?();
+      return;
     }
+    pAStack5 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack6 = unaff_ESI;
+    iVar7 = func_?();
+    if (iVar7 == 0) goto code_?;
+    (pAVar3->_1).naturalAligment = (char)iVar7;
+    this = (MVGameCoin *)TypeInfo__System__Action<IWinningCondition>;
+    (pAVar3->_1).packingSize = (char)((uint)iVar7 >> 8);
+    *(short *)&(pAVar3->_1).field_0x56 = (short)((uint)iVar7 >> 0x10);
+    pAStack5 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack6 = unaff_ESI;
+    pAStack5 = (Action_1_IWinningCondition___Class *)func_?();
+    unaff_EDI = pAVar3;
+    if (pAStack5 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
   }
+  pDStack6 = unaff_ESI;
+  pAStack5 = (Action_1_IWinningCondition___Class *)this;
   func_?();
 code_?:
-  pMStack5 = this;
-  pAStack4 = unaff_EBX;
+  pDStack6 = unaff_ESI;
+  pAStack5 = unaff_EDI;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -266,7 +269,7 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_OnDataUpdate(MVGameCoin *this,M
   this_00 = (this->fields).useInteractor;
   if (this_00 != (UseInteractor *)0x0) {
     UseInteractor::UseInteractor_UpdateData(this_00,(this->fields)._._._.data,(MethodInfo *)0x0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
               ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
     return;
   }
@@ -515,83 +518,59 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_SetupUserInteractor
                    );
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).pickupObject;
-  if (pMVar1 != (MVGameCoinObject *)0x0) {
-    pGVar2 = (pMVar1->fields).useInteractionRotator;
-    pTVar3 = (((this->fields).pickupObject)->fields).triggerBoxEvents;
-    if (pTVar3 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar3,(MethodInfo *)0x0);
-      this_00 = (Predicate_1_Int32Enum_ *)func_?(TypeInfo__System__Func<int,_bool>);
-      if (this_00 != (Predicate_1_Int32Enum_ *)0x0) {
-        mscorlib.dll::System::Predicate`1[Int32Enum]::Predicate_1_Int32Enum___ctor
-                  (this_00,(Object *)this,(this->klass->vtable).OnPickup.method,(MethodInfo *)0x0);
-        this_01 = (Func_3_Int32_Object_Boolean_ *)
-                  func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
-        if (this_01 != (Func_3_Int32_Object_Boolean_ *)0x0) {
-          mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVGameCoin__IsCoinTakeable_int__MVInteractableBase_,
-                     (MethodInfo *)0x0);
-          pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-          if (pUVar4 != (UseInteractor *)0x0) {
-            UseInteractor::UseInteractor__ctor
-                      (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
-                       (Func_2_Int32_Boolean_ *)this_00,
-                       (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-            (this->fields).useInteractor = pUVar4;
-            func_?(&(this->fields).useInteractor,pUVar4);
-            pMVar1 = (this->fields).pickupObject;
-            if (pMVar1 != (MVGameCoinObject *)0x0) {
-              pGVar2 = (pMVar1->fields).useInteractionRotator;
-              this_02 = (LevelBasedUseRequirement *)
-                        func_?(TypeInfo__LevelBasedUseRequirement);
-              if (this_02 != (LevelBasedUseRequirement *)0x0) {
-                LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                          (this_02,pGVar2,0,(MethodInfo *)0x0);
-                pUVar4 = (this->fields).useInteractor;
-                if (pUVar4 != (UseInteractor *)0x0) {
-                  UseInteractor::UseInteractor_AddRequirement
-                            (pUVar4,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                  pMVar1 = (this->fields).pickupObject;
-                  if (pMVar1 != (MVGameCoinObject *)0x0) {
-                    pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                    pUVar4 = (this->fields).useInteractor;
-                    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                    if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                (pUVar5,(Object *)pUVar4,
-                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                                 ,(MethodInfo *)0x0);
-                      if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                   (MethodInfo *)0x0);
-                        pMVar1 = (this->fields).pickupObject;
-                        if (pMVar1 != (MVGameCoinObject *)0x0) {
-                          pTVar3 = (pMVar1->fields).triggerBoxEvents;
-                          pUVar4 = (this->fields).useInteractor;
-                          pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-                                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>)
-                          ;
-                          if (pUVar5 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                            Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                      (pUVar5,(Object *)pUVar4,
-                                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                                       ,(MethodInfo *)0x0);
-                            if (pTVar3 != (TriggerBoxEvents *)0x0) {
-                              TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                                         (MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+  if ((this->fields).pickupObject != (MVGameCoinObject *)0x0) {
+    pTVar1 = (((this->fields).pickupObject)->fields).triggerBoxEvents;
+    if (pTVar1 != (TriggerBoxEvents *)0x0) {
+      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
+      this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                (this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      this_01 = (Func_3_Int32_Object_Boolean_ *)
+                func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
+      mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__MVGameCoin__IsCoinTakeable_int__MVInteractableBase_,(MethodInfo *)0x0);
+      pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      UseInteractor::UseInteractor__ctor
+                (pUVar2,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,
+                 (Func_2_Int32_Boolean_ *)this_00,
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
+      pURam402000fc = pUVar2;
+      func_?();
+      if (iRam_? != 0) {
+        root = *(GameObject **)(iRam_? + 0x30);
+        this_02 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
+        LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_02,root,0,(MethodInfo *)0x0);
+        if (pURam402000fc != (UseInteractor *)0x0) {
+          UseInteractor::UseInteractor_AddRequirement
+                    (pURam402000fc,(UseRequirement *)this_02,(MethodInfo *)0x0);
+          pUVar2 = pURam402000fc;
+          if (iRam_? != 0) {
+            pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      (pUVar3,(Object *)pUVar2,
+                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if (pTVar1 != (TriggerBoxEvents *)0x0) {
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                        (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+              pUVar2 = pURam402000fc;
+              if (iRam_? != 0) {
+                pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+                pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          (pUVar3,(Object *)pUVar2,
+                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                           ,(MethodInfo *)0x0);
+                if (pTVar1 != (TriggerBoxEvents *)0x0) {
+                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                            (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -601,8 +580,8 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_SetupUserInteractor
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -643,16 +622,16 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin__ctor
       (this->fields).pickupObject = (MVGameCoinObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVGameCoinObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVGameCoinObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGameCoinObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVGameCoinObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVGameCoinObject)) goto code_?;
       (this->fields).pickupObject = pMVar2;
-      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth <
-           (TypeInfo__MVGameCoinObject->_1).typeHierarchyDepth) ||
+      if (((((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment <
+           (TypeInfo__MVGameCoinObject->_1).naturalAligment) ||
          ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGameCoinObject->_1).typeHierarchyDepth - 1] !=
+          [(TypeInfo__MVGameCoinObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__MVGameCoinObject)) goto code_?;
     }
     func_?(&(this->fields).pickupObject);
@@ -672,15 +651,15 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin__ctor
         pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
         if (pTVar7 != (Type *)0x0) {
           pSVar8 = (String *)
-                   (*(pTVar7->klass->vtable).__unknown.methodPtr)
-                             (pTVar7,(pTVar7->klass->vtable).__unknown.method);
+                   (*(code *)(pTVar7->klass->vtable).__unknown.method)
+                             (pTVar7,(pTVar7->klass->vtable).get_DeclaringType.methodPtr);
           pSVar8 = mscorlib.dll::System::String::String_Concat_3
                              (StringLiteral_A_TriggerBoxEvents_object_is_mis,pSVar8,
                               (MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                     ((Object *)pSVar8,(MethodInfo *)0x0);
 code_?:
           if ((this->fields).isVisible == 0) {
@@ -708,17 +687,15 @@ code_?:
           pTVar5 = (pMVar2->fields).triggerBoxEvents;
           this_02 = (UnityAction_2_System_Object_System_Object_ *)
                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (this_02,(Object *)this,
-                       MethodInfo__MVGameCoin__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                       ,(MethodInfo *)0x0);
-            if (pTVar5 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                        (pTVar5,(EventHandler_1_TriggerEventArgs_ *)this_02,(MethodInfo *)0x0);
-              goto code_?;
-            }
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (this_02,(Object *)this,
+                     MethodInfo__MVGameCoin__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                     ,(MethodInfo *)0x0);
+          if (pTVar5 != (TriggerBoxEvents *)0x0) {
+            TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                      (pTVar5,(EventHandler_1_TriggerEventArgs_ *)this_02,(MethodInfo *)0x0);
+            goto code_?;
           }
         }
       }
@@ -732,17 +709,6 @@ code_?:
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVGameCoin::MVGameCoin_get_DocumentationType
-          (MVGameCoin *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_Coin;
 }
 
 
@@ -763,7 +729,7 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_triggerBoxEvents_TriggerEnter
        (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (this_01,(e->fields).instigatorWOID,(MethodInfo *)0x0),
        pMVar2 != (MVWorldObject *)0x0)) {
-      (*(this->klass->vtable).OnPickup.methodPtr)();
+      (*(code *)(this->klass->vtable).OnPickup.method)();
       return;
     }
   }

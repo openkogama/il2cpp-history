@@ -22,8 +22,8 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentXP::TierUnlockedPopupContentXP
        mscorlib.dll::System::String::String_Concat_3(str0,StringLiteral__XP_,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
     pTVar4 = pTVar2->klass;
-    pMStack5 = (pTVar4->vtable).set_text.method;
-    (*(pTVar4->vtable).set_text.methodPtr)();
+    pIStack5 = (pTVar4->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+    (*(code *)(pTVar4->vtable).set_text.method)();
     return;
   }
   func_?();

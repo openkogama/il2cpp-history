@@ -20,8 +20,7 @@ void Assembly-CSharp.dll::RequirementPanel::RequirementPanel_SetCanAfford
     if (bVar3 == 0) {
       return;
     }
-    pIVar1 = (this->fields).canUseSprite;
-    if (pIVar1 != (Image *)0x0) {
+    if ((this->fields).canUseSprite != (Image *)0x0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Object);
         cRam_? = '\x01';
@@ -43,33 +42,34 @@ void Assembly-CSharp.dll::RequirementPanel::RequirementPanel_SetCanAfford
         }
         if (in_stack_5 != (Sprite *)0x0) {
           pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_rect
-                             ((Rect *)&stack0xffffffe8,in_stack_5,(MethodInfo *)0x0);
-          VVar7 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_get_size
-                            ((Rect *)pRVar6->m_YMin,(MethodInfo *)pRVar6->m_Width);
+                             ((Rect *)&stack0xffffffc0,in_stack_5,(MethodInfo *)0x0);
+          ppVVar7 = (Vector2__Class **)pRVar6->m_Width;
+          fVar8 = pRVar6->m_Height;
           if (cRam_? == '\0') {
+            ppVVar7 = &TypeInfo__UnityEngine__Vector2;
             func_?();
             cRam_? = '\x01';
           }
-          this = (RequirementPanel *)VVar7.y;
-          fVar8 = VVar7.x - (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-          fVar9 = (float)this - (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+          fVar9 = (float)ppVVar7 - (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+          fVar8 = fVar8 - (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
           (in_stack_4->fields)._._.m_SkipLayoutUpdate =
-               fVar9 * fVar9 + fVar8 * fVar8 < _UNK_?;
-          canAffordSprite =
-               (Sprite *)
-               UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
-                         (in_stack_5,(MethodInfo *)0x0);
+               fVar8 * fVar8 + fVar9 * fVar9 < _UNK_?;
+          x = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                        (in_stack_5,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          method = (MethodInfo *)0x0;
+          y = (Texture2D *)0x0;
 code_?:
           bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)canAffordSprite,(Object_1 *)method,(MethodInfo *)0x0);
+                            ((Object_1 *)x,(Object_1 *)y,(MethodInfo *)0x0);
           (in_stack_4->fields)._._.m_SkipMaterialUpdate = bVar3;
           (in_stack_4->fields).m_Sprite = in_stack_5;
           func_?();
-          (*(in_stack_4->klass->vtable).SetAllDirty.methodPtr)();
+          UnityEngine.UI.dll::UnityEngine::UI::Image::
+          Image__set_sprite_g__ResetAlphaHitThresholdIfNeeded_11_0
+                    (in_stack_4,(MethodInfo *)0x0);
+          (*(code *)(in_stack_4->klass->vtable).SetAllDirty.method)();
           UnityEngine.UI.dll::UnityEngine::UI::Image::Image_TrackSprite
                     (in_stack_4,(MethodInfo *)0x0);
           return;
@@ -88,29 +88,26 @@ code_?:
         pSVar2 = (in_stack_4->fields).m_Sprite;
         if (pSVar2 != (Sprite *)0x0) {
           pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_rect
-                             ((Rect *)&stack0xffffffe8,pSVar2,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_get_size
-                    ((Rect *)pRVar6->m_YMin,(MethodInfo *)pRVar6->m_Width);
+                             ((Rect *)&stack0xffffffc0,pSVar2,(MethodInfo *)0x0);
+          fVar8 = pRVar6->m_Height;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          uVar10 = ZEXT48(in_stack_5);
+          pRVar6 = (Rect *)0x0;
           bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                             ((Object_1 *)in_stack_5,(MethodInfo *)0x0);
           if (bVar3 == 0) {
-            fVar8 = (float)func_?();
+            uVar10 = func_?();
           }
           else {
             if (in_stack_5 == (Sprite *)0x0) goto code_?;
-            puVar11 = &UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_rect
-                      ((Rect *)&stack0xfffffff8,in_stack_5,(MethodInfo *)0x0);
-            uVar10 = CONCAT44(&UNK_?,puVar11);
-            VVar7 = UnityEngine.CoreModule.dll::UnityEngine::Rect::Rect_get_size
-                              ((Rect *)&stack0xffffffd8,(MethodInfo *)0x0);
-            fVar8 = VVar7.x;
+            pRVar6 = (Rect *)&stack0xffffffe8;
+            pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_rect
+                               (pRVar6,in_stack_5,(MethodInfo *)0x0);
+            uVar10._0_4_ = pRVar11->m_Width;
+            uVar10._4_4_ = pRVar11->m_Height;
           }
-          if (((float)uVar10 == fVar8) && ((float)(uVar10 >> 0x20) == (float)pIVar1)) {
+          if (((float)pRVar6 == (float)uVar10) && (fVar8 == (float)((ulonglong)uVar10 >> 0x20))) {
             bVar3 = 1;
           }
           else {
@@ -119,26 +116,24 @@ code_?:
           (in_stack_4->fields)._._.m_SkipLayoutUpdate = bVar3;
           pSVar2 = (in_stack_4->fields).m_Sprite;
           if (pSVar2 != (Sprite *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
-                      (pSVar2,(MethodInfo *)0x0);
+            x = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                          (pSVar2,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                               ((Object_1 *)in_stack_5,(MethodInfo *)0x0);
             if (bVar3 == 0) {
-              method = (MethodInfo *)0x0;
+              y = (Texture2D *)0x0;
             }
             else {
               if (in_stack_5 == (Sprite *)0x0) goto code_?;
-              method = (MethodInfo *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
-                                 (in_stack_5,(MethodInfo *)0x0);
+              y = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                            (in_stack_5,(MethodInfo *)0x0);
             }
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            canAffordSprite = (Sprite *)0x0;
             goto code_?;
           }
         }
@@ -166,8 +161,8 @@ void Assembly-CSharp.dll::RequirementPanel::RequirementPanel_SetRequirementCostT
   pTVar1 = (this->fields).requirementCost;
   pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&cost,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();

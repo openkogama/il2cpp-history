@@ -27,35 +27,21 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
     pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
-                 (MethodInfo *)0x0);
-      if (pUVar2 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                  (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-        pBVar1 = (this->fields).open;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          pBVar1 = (this->fields).open;
-          if (pBVar1 == (Button *)0x0) goto code_?;
-          pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-          pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
-                   func_?(TypeInfo__UnityEngine__Events__UnityAction);
-          if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
-                     (MethodInfo *)0x0);
-          if (pUVar2 == (UnityEvent *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                    (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-        }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
+               (MethodInfo *)0x0);
+    if (pUVar2 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+      pBVar1 = (this->fields).open;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+code_?:
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -63,27 +49,38 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
                             );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                     MethodInfo__InventoryPointerController___ClearImmediate_b__14_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                    );
-          return;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__InventoryPointerController___ClearImmediate_b__14_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                  );
+        return;
+      }
+      pBVar1 = (this->fields).open;
+      if (pBVar1 != (Button *)0x0) {
+        pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+        pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
+                   (MethodInfo *)0x0);
+        if (pUVar2 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                    (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+          goto code_?;
         }
       }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -142,16 +139,14 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                MethodInfo__InventoryPointerController____c___CreateBubble_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     TypeInfo__InventoryPointerController____c->static_fields->__9__11_0 = callbackFunction;
-    category = (int32_t)&TypeInfo__InventoryPointerController____c->static_fields->__9__11_0;
-    func_?();
-    slot = (int32_t)callbackFunction;
+    func_?(&TypeInfo__InventoryPointerController____c->static_fields->__9__11_0,
+                    callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -162,37 +157,34 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   InventoryPointerController_ClearImmediate(this,(MethodInfo *)0x0);
-  pBVar2 = (this->fields).button;
   (this->fields).slotToHighlight = slot;
   (this->fields).categoryToOpen = category;
+  pBVar2 = (this->fields).button;
   if (pBVar2 != (Button *)0x0) {
     this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    if ((this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) &&
-       (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_01,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
-                   (MethodInfo *)0x0), this_00 != (UnityEvent *)0x0)) {
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
+               (MethodInfo *)0x0);
+    if (this_00 != (UnityEvent *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                 (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      if (callbackFunction_00 != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
-                   MethodInfo__InventoryPointerController___CreateBubble_b__11_1_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                  );
-        return;
-      }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,
+                 MethodInfo__InventoryPointerController___CreateBubble_b__11_1_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar1,(BaseEventData *)0x0,callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                );
+      return;
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -226,25 +218,19 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
        func_?(
                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
                       );
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__InventoryPointerController___OpenAtSlot_b__13_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-              );
-    InventoryPointerController_ClearImmediate(this,(MethodInfo *)0x0);
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+             MethodInfo__InventoryPointerController___OpenAtSlot_b__13_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,callbackFunction,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+            );
+  InventoryPointerController_ClearImmediate(this,(MethodInfo *)0x0);
   return;
 }
 
@@ -277,35 +263,21 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
     pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
     pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (pNVar3 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
-                 (MethodInfo *)0x0);
-      if (pUVar2 != (UnityEvent *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                  (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-        pBVar1 = (this->fields).open;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          pBVar1 = (this->fields).open;
-          if (pBVar1 == (Button *)0x0) goto code_?;
-          pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-          pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
-                   func_?(TypeInfo__UnityEngine__Events__UnityAction);
-          if (pNVar3 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
-                     (MethodInfo *)0x0);
-          if (pUVar2 == (UnityEvent *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
-                    (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-        }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__RemoveBubbles__,
+               (MethodInfo *)0x0);
+    if (pUVar2 != (UnityEvent *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+      pBVar1 = (this->fields).open;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+code_?:
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -313,27 +285,38 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
                             );
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                     MethodInfo__InventoryPointerController___ClearImmediate_b__14_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                    );
-          return;
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                   MethodInfo__InventoryPointerController___ClearImmediate_b__14_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (root,(BaseEventData *)0x0,callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                  );
+        return;
+      }
+      pBVar1 = (this->fields).open;
+      if (pBVar1 != (Button *)0x0) {
+        pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+        pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar3,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
+                   (MethodInfo *)0x0);
+        if (pUVar2 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_RemoveListener
+                    (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+          goto code_?;
         }
       }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -361,48 +344,45 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
   if (pIVar1 != (IEditModeUI *)0x0) {
     iVar2 = func_?(4,TypeInfo__IEditModeUI,pIVar1);
     if (iVar2 != 0) {
-      unaff_EBX = *(Action_3_Int32_Int32_Boolean___Class **)(iVar2 + 0x14);
+      a = *(Delegate **)(iVar2 + 0x14);
       this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
                 func_?(TypeInfo__System__Action<int,_int,_bool>);
-      unaff_EDI = (Delegate *)0x0;
-      if (this_00 != (Action_3_Int32_Int32_ByteEnum_ *)0x0) {
-        mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__InventoryPointerController__CreateBubble_int__int__bool_,
-                   (MethodInfo *)0x0);
-        unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-        unaff_EBX = TypeInfo__System__Action<int,_int,_bool>;
-        if (unaff_EDI == (Delegate *)0x0) {
-          *(undefined4 *)(iVar2 + 0x14) = 0;
+      mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__InventoryPointerController__CreateBubble_int__int__bool_,
+                 (MethodInfo *)0x0);
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (a,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<int,_int,_bool>;
+      if (unaff_ESI == (Delegate *)0x0) {
+        *(undefined4 *)(iVar2 + 0x14) = 0;
+        pDStack3 = (Delegate *)(iVar2 + 0x14);
+        pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)unaff_ESI;
+        func_?();
+        return;
+      }
+      pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
+      pDStack3 = unaff_ESI;
+      iVar5 = func_?();
+      if (iVar5 != 0) {
+        *(int *)(iVar2 + 0x14) = iVar5;
+        unaff_EDI = TypeInfo__System__Action<int,_int,_bool>;
+        pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
+        pDStack3 = unaff_ESI;
+        pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)func_?();
+        if (pAStack4 != (Action_3_Int32_Int32_Boolean___Class *)0x0) {
           pDStack3 = (Delegate *)(iVar2 + 0x14);
-          pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)unaff_EDI;
           func_?();
           return;
         }
-        pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
-        pDStack3 = unaff_EDI;
-        iVar5 = func_?();
-        if (iVar5 != 0) {
-          *(int *)(iVar2 + 0x14) = iVar5;
-          unaff_EBX = TypeInfo__System__Action<int,_int,_bool>;
-          pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
-          pDStack3 = unaff_EDI;
-          pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)func_?();
-          if (pAStack4 != (Action_3_Int32_Int32_Boolean___Class *)0x0) {
-            pDStack3 = (Delegate *)(iVar2 + 0x14);
-            func_?();
-            return;
-          }
-        }
-        goto code_?;
       }
+      goto code_?;
     }
   }
   func_?();
 code_?:
-  pDStack3 = unaff_EDI;
-  pAStack4 = unaff_EBX;
+  pDStack3 = unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
@@ -487,32 +467,30 @@ void Assembly-CSharp.dll::InventoryPointerController::
       if (pBVar10 != (Button *)0x0) {
         this_00 = (UnityEvent *)(pBVar10->fields).m_OnClick;
         this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-        if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (this_01,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
-                     (MethodInfo *)0x0);
-          if (this_00 != (UnityEvent *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                      (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-            pBVar10 = (this->fields).open;
-            iVar9 = (this->fields).bubbleId;
-            if (pBVar10 != (Button *)0x0) {
-              pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pBVar10,(MethodInfo *)0x0);
-              pTVar1 = (Transform *)0x0;
-              if (pTVar11 == (Transform *)0x0) {
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_01,(Object *)this,MethodInfo__InventoryPointerController__OpenAtSlot__,
+                   (MethodInfo *)0x0);
+        if (this_00 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                    (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+          pBVar10 = (this->fields).open;
+          iVar9 = (this->fields).bubbleId;
+          if (pBVar10 != (Button *)0x0) {
+            pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pBVar10,(MethodInfo *)0x0);
+            pTVar1 = (Transform *)0x0;
+            if (pTVar11 == (Transform *)0x0) {
 code_?:
-                TextBubbleController::TextBubbleController_AddElement
-                          (x,iVar9,(RectTransform *)pTVar1,(MethodInfo *)0x0);
-                return;
-              }
-              if (pTVar11->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-                pTVar1 = pTVar11;
-              }
-              if (pTVar1 != (Transform *)0x0) goto code_?;
-              goto code_?;
+              TextBubbleController::TextBubbleController_AddElement
+                        (x,iVar9,(RectTransform *)pTVar1,(MethodInfo *)0x0);
+              return;
             }
+            if (pTVar11->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+              pTVar1 = pTVar11;
+            }
+            if (pTVar1 != (Transform *)0x0) goto code_?;
+            goto code_?;
           }
         }
       }
@@ -535,22 +513,36 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IPlayerInventory;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
     cRam_? = '\x01';
   }
-  if (x != (IPlayerInventory *)0x0) {
-    ppIStack_1 = (IPlayerInventory__Class **)(this->fields).slotToHighlight;
-    puStack_2 = (undefined *)(this->fields).categoryToOpen;
-    uStack_3 = 1;
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,x);
+  iVar1 = (this->fields).categoryToOpen;
+  iVar2 = (this->fields).slotToHighlight;
+  if (x == (IPlayerInventory *)0x0) {
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  ppIStack_1 = (IPlayerInventory__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pIVar4 = x->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPlayerInventory) {
+        ppMVar7 = &(&(x->klass->vtable).ActivateAtCategoryWithSlot)
+                   [x->klass->interfaceOffsets[uVar5].offset].method;
+        goto code_?;
+      }
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar6);
+  }
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,1);
+code_?:
+  (*(code *)*ppMVar7)(x,1,iVar1,iVar2,ppMVar7[1]);
   return;
 }
 

@@ -16,30 +16,31 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup+<>c__DisplayClass4_0::
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
     if (x != (IUIStack *)0x0) {
-      uVar2 = 0;
-      uVar3 = (x->klass->_1).interface_offsets_count;
-      if (uVar3 != 0) {
+      pIVar2 = x->klass;
+      uVar3 = 0;
+      uVar4._0_1_ = (pIVar2->_1).rank;
+      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+      if (uVar4 != 0) {
         do {
-          if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-            pVVar4 = &(x->klass->vtable).IsUIElementBlocked +
-                     x->klass->interfaceOffsets[uVar2].offset;
+            ppMVar5 = &(&(x->klass->vtable).IsUIElementBlocked)
+                       [x->klass->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
-          uVar2 = uVar2 + 1;
-        } while (uVar2 < uVar3);
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
       }
-      pVVar4 = (VirtualInvokeData *)
-               func_?(x,TypeInfo__UnityEngine__EventSystems__IUIStack,6);
+      ppMVar5 = (MethodInfo **)func_?(x,TypeInfo__UnityEngine__EventSystems__IUIStack,6);
 code_?:
-      bVar5 = (*pVVar4->methodPtr)(x,pGVar1,pVVar4->method);
-      (this->fields).isBlocked = bVar5;
+      bVar6 = (*(code *)*ppMVar5)(x,pGVar1,ppMVar5[1]);
+      (this->fields).isBlocked = bVar6;
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

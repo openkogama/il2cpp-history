@@ -7,10 +7,10 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_ChangeValue
 {
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
-    (*(pSVar1->klass->vtable).set_value.methodPtr)
-              (pSVar1,(float)fVar2 + value,(pSVar1->klass->vtable).set_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
+    (*(code *)(pSVar1->klass->vtable).set_value.method)
+              (pSVar1,(float)fVar2 + value,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
     return;
   }
   func_?();
@@ -55,50 +55,46 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_Initialize
            func_?(
                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
                           );
-      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                   MethodInfo__AccessorySizeSlider___Initialize_b__7_0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
-                  );
-        return;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+                 MethodInfo__AccessorySizeSlider___Initialize_b__7_0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
+                );
+      return;
     }
-    else {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVGameControllerBase);
-        cRam_? = '\x01';
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+        (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) &&
+       (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+       this_01 != (MVLocalPlayer *)0x0)) {
+      this_02 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
+      (this->fields).avatarBody = this_02;
+      func_?(&(this->fields).avatarBody,this_02);
+      pSVar3 = (this->fields).slider;
+      if ((this->fields).isInPreview == 0) {
+        if ((this_02 != (MVBody *)0x0) &&
+           (fVar4 = MVBody::MVBody_GetAccessoryScale
+                              (this_02,(this->fields).accessorySlot,(MethodInfo *)0x0),
+           pSVar3 != (Slider *)0x0)) goto code_?;
       }
-      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (((pMVar2 != (MVGameControllerBase *)0x0) &&
-          (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) &&
-         (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
-         this_01 != (MVLocalPlayer *)0x0)) {
-        this_02 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
-        (this->fields).avatarBody = this_02;
-        func_?(&(this->fields).avatarBody,this_02);
-        pSVar3 = (this->fields).slider;
-        if ((this->fields).isInPreview == 0) {
-          if ((this_02 != (MVBody *)0x0) &&
-             (fVar4 = MVBody::MVBody_GetAccessoryScale
-                                (this_02,(this->fields).accessorySlot,(MethodInfo *)0x0),
-             pSVar3 != (Slider *)0x0)) goto code_?;
-        }
-        else if (pSVar3 != (Slider *)0x0) {
-          fVar4 = (this->fields).defaultValue;
+      else if (pSVar3 != (Slider *)0x0) {
+        fVar4 = (this->fields).defaultValue;
 code_?:
-          (*(pSVar3->klass->vtable).set_value.methodPtr)
-                    (pSVar3,fVar4,(pSVar3->klass->vtable).set_value.method);
-          return;
-        }
+        (*(code *)(pSVar3->klass->vtable).set_value.method)
+                  (pSVar3,fVar4,(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
+        return;
       }
     }
   }
@@ -127,8 +123,8 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_Initialize_1
   else if (pSVar1 != (Slider *)0x0) {
     fVar2 = (this->fields).defaultValue;
 code_?:
-    (*(pSVar1->klass->vtable).set_value.methodPtr)
-              (pSVar1,fVar2,(pSVar1->klass->vtable).set_value.method);
+    (*(code *)(pSVar1->klass->vtable).set_value.method)
+              (pSVar1,fVar2,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
     return;
   }
   func_?();
@@ -171,8 +167,8 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_SyncScale
   this_00 = (this->fields).avatarBody;
   slot = (this->fields).accessorySlot;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     if (this_00 != (MVBody *)0x0) {
       MVBody::MVBody_SyncScale(this_00,slot,(float)fVar2,(MethodInfo *)0x0);
       return;
@@ -193,8 +189,8 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_ValueChanged
 {
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     this_00 = (this->fields).avatarBody;
     if (this_00 != (MVBody *)0x0) {
       MVBody::MVBody_ApplyAccessorySize
@@ -221,15 +217,16 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider__Initialize_b
     func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<MVBody>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor
-              (this_00,(Object *)this,MethodInfo__AccessorySizeSlider__Initialize_MVBody_,
-               (MethodInfo *)0x0);
-    if (x != (IGetCurrentBody *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
-      return;
-    }
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<MVBody>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_00,(Object *)this,MethodInfo__AccessorySizeSlider__Initialize_MVBody_,
+             (MethodInfo *)0x0);
+  if (x != (IGetCurrentBody *)0x0) {
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);

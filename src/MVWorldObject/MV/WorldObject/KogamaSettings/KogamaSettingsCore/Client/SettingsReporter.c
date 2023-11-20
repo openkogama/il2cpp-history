@@ -17,17 +17,17 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
     cRam_? = '\x01';
   }
   if ((this->fields).DeltaData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    (this->fields).DeltaData = this_00;
+    (this->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)this_00;
     func_?(&(this->fields).DeltaData,this_00);
   }
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
@@ -42,7 +42,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
     }
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -68,18 +67,18 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
     cRam_? = '\x01';
   }
   if ((this->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
-    if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    (this->fields).DeltaRemovalData = this_00;
-    func_?(&(this->fields).DeltaRemovalData);
+    (this->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)this_00;
+    func_?(&(this->fields).DeltaRemovalData,this_00);
   }
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
             ((this->fields).DeltaRemovalData,deltaChange,(MethodInfo *)0x0);
@@ -93,7 +92,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
     }
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -154,7 +152,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                *partialDataRemove,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).worldObject = worldObject;
   func_?(&this->fields,worldObject);
@@ -257,96 +255,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
 
 
 /* Void 
-   add_partialDataRemove(Action`2[Int32,System.Collections.Generic.Dictionary`2[System.Object,System.Object]])
-    */
-
-void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-     SettingsReporter::SettingsReporter_add_partialDataRemove
-               (SettingsReporter *this,
-               Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-               *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    cRam_? = '\x01';
-  }
-  a = (this->fields).partialDataRemove;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
-    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-    ;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
-                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(&(this->fields).partialDataRemove,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Void 
-   add_partialDataUpdate(Action`2[Int32,System.Collections.Generic.Dictionary`2[System.Object,System.Object]])
-    */
-
-void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-     SettingsReporter::SettingsReporter_add_partialDataUpdate
-               (SettingsReporter *this,
-               Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-               *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    cRam_? = '\x01';
-  }
-  a = (this->fields).partialDataUpdate;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
-    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-    ;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
-                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(&(this->fields).partialDataUpdate,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Void 
    remove_OnValueChangedLocal(Action`1[System.Collections.Generic.Dictionary`2[System.Object,System.Object]])
     */
 
@@ -429,96 +337,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
     }
     pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
              func_?(&(this->fields).OnValueRemovedLocal,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Void 
-   remove_partialDataRemove(Action`2[Int32,System.Collections.Generic.Dictionary`2[System.Object,System.Object]])
-    */
-
-void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-     SettingsReporter::SettingsReporter_remove_partialDataRemove
-               (SettingsReporter *this,
-               Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-               *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    cRam_? = '\x01';
-  }
-  source = (this->fields).partialDataRemove;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
-    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-    ;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
-                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(&(this->fields).partialDataRemove,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
-  return;
-}
-
-
-/* Void 
-   remove_partialDataUpdate(Action`2[Int32,System.Collections.Generic.Dictionary`2[System.Object,System.Object]])
-    */
-
-void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-     SettingsReporter::SettingsReporter_remove_partialDataUpdate
-               (SettingsReporter *this,
-               Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-               *value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    cRam_? = '\x01';
-  }
-  source = (this->fields).partialDataUpdate;
-  do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
-    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-    ;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
-                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-    }
-    pAVar5 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(&(this->fields).partialDataUpdate,iVar3,source);
     bVar6 = pAVar5 != source;
     source = pAVar5;
   } while (bVar6);

@@ -72,8 +72,8 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor_Start(InsertCursor *this,Me
     cRam_? = '\x01';
   }
   pMVar1 = (MeshRenderer__Array *)
-           Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2
-                     ((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)this,
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
+                     ((Component *)this,
                       UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                      );
   (this->fields).renderers = pMVar1;
@@ -96,8 +96,8 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor__ctor(InsertCursor *this,Me
   pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
   (this->fields).renderers = pMVar1;
   func_?(&(this->fields).renderers,pMVar1);
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

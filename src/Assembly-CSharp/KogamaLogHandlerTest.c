@@ -38,31 +38,26 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_Start
     cRam_? = '\x01';
   }
   pPVar1 = (ProxyLogHandler *)func_?(TypeInfo__ProxyLogHandler);
+  ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
+  (this->fields).kogamaLogHandler = pPVar1;
+  func_?(&(this->fields).kogamaLogHandler,pPVar1);
+  pPVar1 = (this->fields).kogamaLogHandler;
+  this_00 = (UnityAction_2_System_Object_System_Object_ *)
+            func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__KogamaLogHandlerTest__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
+             ,(MethodInfo *)0x0);
   if (pPVar1 != (ProxyLogHandler *)0x0) {
-    ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
-    (this->fields).kogamaLogHandler = pPVar1;
-    func_?(&(this->fields).kogamaLogHandler,pPVar1);
-    pPVar1 = (this->fields).kogamaLogHandler;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)
-              func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-    if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__KogamaLogHandlerTest__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_
-                 ,(MethodInfo *)0x0);
-      if (pPVar1 != (ProxyLogHandler *)0x0) {
-        ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
-                  (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_00,(MethodInfo *)0x0
-                  );
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)StringLiteral_test,(MethodInfo *)0x0);
-        return;
-      }
+    ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
+              (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_00,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)StringLiteral_test,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);

@@ -58,19 +58,6 @@ public class GamePassesHighScoreList : MonoBehaviour
 		public int topRank;
 	}
 
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass15_0
-	{
-		// Fields
-		public GameObject informationPopup;
-
-		// Constructors
-		public __c__DisplayClass15_0();
-
-		// Methods
-		internal void _Start_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -85,6 +72,19 @@ public class GamePassesHighScoreList : MonoBehaviour
 
 		// Methods
 		internal void _Exit_b__31_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass15_0
+	{
+		// Fields
+		public GameObject informationPopup;
+
+		// Constructors
+		public __c__DisplayClass15_0();
+
+		// Methods
+		internal void _Start_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

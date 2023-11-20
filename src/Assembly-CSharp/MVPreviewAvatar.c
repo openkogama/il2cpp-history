@@ -21,22 +21,21 @@ Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clone
                      ((MVGroup *)this,ownerActorNumber,cloneGroupId,cloneBookkeeping,worldObjects,
                       prototypes,(MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    left = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar1,(MethodInfo *)0x0);
+    lhs = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar1,(MethodInfo *)0x0);
     handle = TypeRef__MVAvatarLocal;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    right = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                      ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)left,(Object **)right,(MethodInfo *)0x0);
+    rhs = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                    ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals((Int32Enum__Enum)lhs,(Int32Enum__Enum)rhs,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       pMStack3 = TypeInfo__MVAvatarLocal;
-      if (((pMVar1->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth
-          ) || ((MVAvatarLocal__Class *)
-                (pMVar1->klass->_1).typeHierarchy
-                [(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarLocal))
-      goto code_?;
+      if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+         ((MVAvatarLocal__Class *)
+          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal)) goto code_?;
       pMVar1[1].fields.previewLayerMask = _UNK_?;
     }
     return pMVar1;

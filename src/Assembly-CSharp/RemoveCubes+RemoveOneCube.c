@@ -64,7 +64,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
       pCStack_4 = (CubeBase *)&TypeInfo__MV__WorldObject__CubeBase;
       func_?();
       func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-      uVar1 = 0x102b;
+      uVar1 = 0x1035;
       func_?(&TypeInfo__MoveCubeFromCoarseToFine);
       cRam_? = '\x01';
     }
@@ -83,7 +83,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
       return bVar3;
     }
     pIStack_6 = TypeInfo__MV__WorldObject__ICubeModel;
-    uStack_8 = 2;
+    uStack_8 = 1;
     pCStack_4 = (CubeBase *)func_?();
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -135,7 +135,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
     return bVar3;
   }
   a = (CubeBase *)
-      func_?(2,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
+      func_?(1,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
                       fineGrainedPosition._0_4_,fineGrainedPosition.z);
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__CubeBase);
@@ -145,7 +145,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (bVar3 == 0) {
     return 0;
   }
-  func_?(6,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
+  func_?(3,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
                   fineGrainedPosition._0_4_,CONCAT22(uVar1,fineGrainedPosition.z));
   return 1;
 }
@@ -163,7 +163,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x102b;
+    uVar1 = 0x1035;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }
@@ -180,7 +180,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
     bVar5 = (*pcVar4)();
     return bVar5;
   }
-  a = (CubeBase *)func_?(2,TypeInfo__MV__WorldObject__ICubeModel,terrainWorldObject);
+  a = (CubeBase *)func_?(1,TypeInfo__MV__WorldObject__ICubeModel,terrainWorldObject);
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -196,9 +196,9 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
             (terrainWorldObject,fineGrainedTerrainWorldObject,IVar3,(MethodInfo *)0x0);
   uStack6 = 0;
   func_?();
-  uStack6 = 0x102b;
+  uStack6 = 0x1035;
   RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-            ((IntVector)0x6102b8f46,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+            ((IntVector)0x31035aa76,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
   return 1;
 }
 

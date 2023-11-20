@@ -176,17 +176,12 @@ void Assembly-CSharp.dll::SellAvatarController+<>c::SellAvatarController_c__ccto
     func_?(&TypeInfo__SellAvatarController____c);
     cRam_? = '\x01';
   }
-  value = (SellAvatarController_c *)func_?(TypeInfo__SellAvatarController____c);
-  if (value != (SellAvatarController_c *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    TypeInfo__SellAvatarController____c->static_fields->__9 = value;
-    func_?(TypeInfo__SellAvatarController____c->static_fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__SellAvatarController____c;
+  value = (SellAvatarController_c *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  TypeInfo__SellAvatarController____c->static_fields->__9 = value;
+  func_?(TypeInfo__SellAvatarController____c->static_fields,value);
   return;
 }
 

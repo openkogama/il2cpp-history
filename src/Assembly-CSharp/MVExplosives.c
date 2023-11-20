@@ -17,67 +17,55 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_Explode(MVExplosives *this,
                        (pGVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_4,pTVar2,(MethodInfo *)0x0);
-      VStack_5.y = pVVar3->x;
-      VStack_5.z = pVVar3->y;
-      fVar6 = pVVar3->z;
+                         ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+      VVar4 = *pVVar3;
       this_00 = (ExplosionEvent *)
                 func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-      if (this_00 != (ExplosionEvent *)0x0) {
-        worldPosition.z = fVar6;
-        worldPosition.x = VStack_5.y;
-        worldPosition.y = VStack_5.z;
-        MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_3
-                  (this_00,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__PrefabPool);
-          cRam_? = '\x01';
-        }
-        pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar7 != (PrefabPool *)0x0) {
-          particlePrefab = (pPVar7->fields).particleExplosion;
-          pGVar1 = (this->fields)._._.gameObject;
-          if (pGVar1 != (GameObject *)0x0) {
-            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar1,(MethodInfo *)0x0);
-            if (pTVar2 != (Transform *)0x0) {
-              pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 (&VStack_5,pTVar2,(MethodInfo *)0x0);
-              VStack_4.y = pVVar3->x;
-              VStack_4.z = pVVar3->y;
-              fStack_8 = (this->fields).damageValue;
-              fStack_9 = (this->fields).damageRadius;
-              fVar6 = (this->fields).shockwaveAcceleration;
-              VStack_5.z = pVVar3->z;
-              this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-                        func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-              if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-                System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-                HashSet_1_UnityEngine_Vector3___ctor
-                          (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__
-                          );
-                if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__SharedWorldObjectGameplayFunctions__Explosion);
-                }
-                position.z = VStack_5.z;
-                position.x = VStack_4.y;
-                position.y = VStack_4.z;
-                SharedWorldObjectGameplayFunctions+Explosion::
-                SharedWorldObjectGameplayFunctions_Explosion_Explode
-                          (particlePrefab,position,fStack_8,fStack_9,fVar6,1,this_00,
-                           (HashSet_1_System_Int32_ *)this_01,(MethodInfo *)0x0);
-                return;
-              }
+      MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2
+                (this_00,RuntimeEventType__Enum_Bazooka,VVar4,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar5 != (PrefabPool *)0x0) {
+        particlePrefab = (pPVar5->fields).particleExplosion;
+        pGVar1 = (this->fields)._._.gameObject;
+        if (pGVar1 != (GameObject *)0x0) {
+          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar1,(MethodInfo *)0x0);
+          if (pTVar2 != (Transform *)0x0) {
+            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffe8,pTVar2,(MethodInfo *)0x0);
+            fVar6 = pVVar3->z;
+            damageValue = (this->fields).damageValue;
+            damageRadius = (this->fields).damageRadius;
+            shockwaveAcceleration = (this->fields).shockwaveAcceleration;
+            this_01 = (HashSet_1_System_Int32_ *)
+                      func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+            System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+            HashSet_1_System_Int32___ctor
+                      (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+            if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?();
             }
+            VVar4.y = (float)this_01;
+            VVar4.x = (float)this_00;
+            VVar4.z = fVar6;
+            SharedWorldObjectGameplayFunctions+Explosion::
+            SharedWorldObjectGameplayFunctions_Explosion_Explode
+                      (particlePrefab,VVar4,damageValue,damageRadius,shockwaveAcceleration,1,this_00
+                       ,this_01,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -98,19 +86,21 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_Initialize
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pOVar1 = (this->fields)._._.component;
-  pMVar2 = TypeInfo__MVExplosivesObject;
-  if (pOVar1 != (ObjectPrefab *)0x0) {
-    if (((pOVar1->klass->_1).typeHierarchyDepth <
-         (TypeInfo__MVExplosivesObject->_1).typeHierarchyDepth) ||
-       ((pOVar1->klass->_1).typeHierarchy[(TypeInfo__MVExplosivesObject->_1).typeHierarchyDepth - 1]
-        != (Il2CppClass *)TypeInfo__MVExplosivesObject)) goto code_?;
-    MVLogicObject::MVLogicObject_SetupCulling
-              ((MVLogicObject *)this,(GameObject *)pOVar1[1].klass,2.0,(MethodInfo *)0x0);
-    this_00 = (Action_2_Int32Enum_Object_ *)
-              func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-    pMVar2 = (MVExplosivesObject__Class *)0x0;
-    if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+  if (pOVar1 == (ObjectPrefab *)0x0) {
+    func_?();
+    pMVar2 = extraout_EDX;
+  }
+  else {
+    pMVar2 = TypeInfo__MVExplosivesObject;
+    if (((TypeInfo__MVExplosivesObject->_1).naturalAligment <= (pOVar1->klass->_1).naturalAligment)
+       && ((pOVar1->klass->_1).typeHierarchy[(TypeInfo__MVExplosivesObject->_1).naturalAligment - 1]
+           == (Il2CppClass *)TypeInfo__MVExplosivesObject)) {
+      MVLogicObject::MVLogicObject_SetupCulling
+                ((MVLogicObject *)this,(GameObject *)pOVar1[1].klass,2.0,(MethodInfo *)0x0);
+      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+                func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+      UnityAction_2_System_Int32_System_Int32___ctor
                 (this_00,(Object *)this,
                  MethodInfo__MVExplosives__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
                  ,(MethodInfo *)0x0);
@@ -124,9 +114,6 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_Initialize
       return;
     }
   }
-  func_?();
-  pOVar1 = extraout_EDX;
-code_?:
   func_?(pOVar1,pMVar2);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -156,63 +143,52 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_InputStateUpdateCallback
      (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                          (pGVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
-    VStack_5.y = pVVar3->x;
-    VStack_5.z = pVVar3->y;
-    fVar6 = pVVar3->z;
+                       ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+    VVar4 = *pVVar3;
     this_00 = (ExplosionEvent *)
               func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-    if (this_00 != (ExplosionEvent *)0x0) {
-      worldPosition.z = fVar6;
-      worldPosition.x = VStack_5.y;
-      worldPosition.y = VStack_5.z;
-      MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_3
-                (this_00,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PrefabPool);
-        cRam_? = '\x01';
-      }
-      pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar7 != (PrefabPool *)0x0) {
-        particlePrefab = (pPVar7->fields).particleExplosion;
-        pGVar1 = (this->fields)._._.gameObject;
-        if ((pGVar1 != (GameObject *)0x0) &&
-           (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_5,pTVar2,(MethodInfo *)0x0);
-          VStack_4.y = pVVar3->x;
-          VStack_4.z = pVVar3->y;
-          fStack_8 = (this->fields).damageValue;
-          fStack_9 = (this->fields).damageRadius;
-          fVar6 = (this->fields).shockwaveAcceleration;
-          VStack_5.z = pVVar3->z;
-          this_01 = (HashSet_1_UnityEngine_Vector3_ *)
-                    func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-          if (this_01 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-            System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::
-            HashSet_1_UnityEngine_Vector3___ctor
-                      (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-            if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__SharedWorldObjectGameplayFunctions__Explosion);
-            }
-            position.z = VStack_5.z;
-            position.x = VStack_4.y;
-            position.y = VStack_4.z;
-            SharedWorldObjectGameplayFunctions+Explosion::
-            SharedWorldObjectGameplayFunctions_Explosion_Explode
-                      (particlePrefab,position,fStack_8,fStack_9,fVar6,1,this_00,
-                       (HashSet_1_System_Int32_ *)this_01,(MethodInfo *)0x0);
-            return;
-          }
+    MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2
+              (this_00,RuntimeEventType__Enum_Bazooka,VVar4,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PrefabPool);
+      cRam_? = '\x01';
+    }
+    pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar5 != (PrefabPool *)0x0) {
+      particlePrefab = (pPVar5->fields).particleExplosion;
+      pGVar1 = (this->fields)._._.gameObject;
+      if ((pGVar1 != (GameObject *)0x0) &&
+         (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0xffffffe8,pTVar2,(MethodInfo *)0x0);
+        fVar6 = pVVar3->z;
+        damageValue = (this->fields).damageValue;
+        damageRadius = (this->fields).damageRadius;
+        shockwaveAcceleration = (this->fields).shockwaveAcceleration;
+        this_01 = (HashSet_1_System_Int32_ *)
+                  func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+        HashSet_1_System_Int32___ctor
+                  (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+        if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).cctor_finished_or_no_cctor
+            == 0) {
+          func_?();
         }
+        VVar4.y = (float)this_01;
+        VVar4.x = (float)this_00;
+        VVar4.z = fVar6;
+        SharedWorldObjectGameplayFunctions+Explosion::
+        SharedWorldObjectGameplayFunctions_Explosion_Explode
+                  (particlePrefab,VVar4,damageValue,damageRadius,shockwaveAcceleration,1,this_00,
+                   this_01,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -247,16 +223,5 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives__ctor
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVExplosives::MVExplosives_get_DocumentationType
-          (MVExplosives *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_Explosives;
 }
 

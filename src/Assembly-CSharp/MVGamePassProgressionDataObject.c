@@ -11,12 +11,12 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::
     func_?(&TypeInfo__GamePassProgressionController);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)this,(MethodInfo *)0x0);
   if (TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate !=
       (Action *)0x0) {
     (*(TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate->fields
@@ -36,14 +36,10 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::MVGamePassProgression
 
 {
   if (cRam_? == '\0') {
-    pMStack_1 = (MVWorldObjectClient__Class *)&TypeInfo__MVWorldObjectClient;
-    uStack_2 = CONCAT44(&UNK_?,(undefined4)uStack_2);
     func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-    pMStack_1 = TypeInfo__MVWorldObjectClient;
-    uStack_2 = CONCAT44(&UNK_?,(undefined4)uStack_2);
     func_?();
   }
   if (cRam_? == '\0') {
@@ -56,72 +52,60 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::MVGamePassProgression
   (this->fields)._.previewLayerMask = 1;
   MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject__ctor
             ((MVWorldObject *)this,(MethodInfo *)0x0);
-  pGVar3 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  if (pGVar3 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1
-              (pGVar3,(MethodInfo *)0x0);
-    (this->fields)._.gameObject = pGVar3;
-    func_?(&(this->fields)._.gameObject,pGVar3);
-    pGVar3 = (this->fields)._.gameObject;
-    if (pGVar3 != (GameObject *)0x0) {
-      iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                        ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-      (this->fields)._.goId = iVar4;
-      pGVar3 = (this->fields)._.gameObject;
-      if (pGVar3 != (GameObject *)0x0) {
-        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0);
-        (this->fields)._.transform = pTVar5;
-        func_?(&(this->fields)._.transform,pTVar5);
-        pMVar6 = MVWorldObjectClient::MVWorldObjectClient_GetTransformData
-                           (&MStack_7,(MVWorldObjectClient *)this,data,(MethodInfo *)0x0);
-        pTVar5 = (this->fields)._.transform;
-        fStack_8 = (pMVar6->rotation).w;
-        fStack_9 = (pMVar6->position).x;
-        fStack_10 = (pMVar6->position).y;
-        fStack_11 = (pMVar6->position).z;
-        fStack_12 = (pMVar6->rotation).x;
-        uStack_13._0_4_ = (pMVar6->rotation).y;
-        uStack_13._4_4_ = (pMVar6->rotation).z;
-        fStack_14 = (pMVar6->position).x;
-        fStack_15 = (pMVar6->position).y;
-        fStack_16 = (pMVar6->position).z;
-        fStack_17 = (pMVar6->rotation).x;
-        uStack_2._0_4_ = (pMVar6->rotation).y;
-        uStack_2._4_4_ = (pMVar6->rotation).z;
-        if (pTVar5 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar5,pMVar6->position,(MethodInfo *)0x0);
-          pTVar5 = (this->fields)._.transform;
-          if (pTVar5 != (Transform *)0x0) {
-            value.y = (float)(undefined4)uStack_13;
-            value.x = fStack_12;
-            value.z = (float)uStack_13._4_4_;
-            value.w = fStack_8;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar5,value,(MethodInfo *)0x0);
-            pGVar3 = (this->fields)._.gameObject;
-            if (pGVar3 != (GameObject *)0x0) {
-              pCVar18 = (Collider *)
-                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                       GameObject_GetComponent_1
-                                 (pGVar3,
-                                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
-                                 );
-              (this->fields)._.collider = pCVar18;
-              func_?(&(this->fields)._.collider,pCVar18);
-              MVWorldObjectClient::MVWorldObjectClient_CreateWorldObject
-                        ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
-              return;
-            }
+  pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
+  (this->fields)._.gameObject = pGVar1;
+  func_?(&(this->fields)._.gameObject,pGVar1);
+  pGVar1 = (this->fields)._.gameObject;
+  if (pGVar1 != (GameObject *)0x0) {
+    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                      ((Object_1 *)pGVar1,(MethodInfo *)0x0);
+    (this->fields)._.goId = iVar2;
+    pGVar1 = (this->fields)._.gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      (this->fields)._.transform = pTVar3;
+      func_?();
+      pMVar4 = MVWorldObjectClient::MVWorldObjectClient_GetTransformData
+                         ((MVWorldObjectClient_TransformData *)&stack0xffffffa8,
+                          (MVWorldObjectClient *)this,data,(MethodInfo *)0x0);
+      pTVar3 = (this->fields)._.transform;
+      fVar5 = (pMVar4->rotation).w;
+      uVar6 = (pMVar4->rotation).z;
+      uVar7 = (pMVar4->rotation).x;
+      uVar8 = (pMVar4->rotation).y;
+      value.y = (float)uVar8;
+      value.x = (float)uVar7;
+      if (pTVar3 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                  (pTVar3,pMVar4->position,(MethodInfo *)0x0);
+        pTVar3 = (this->fields)._.transform;
+        if (pTVar3 != (Transform *)0x0) {
+          value.z = (float)uVar6;
+          value.w = fVar5;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                    (pTVar3,value,(MethodInfo *)0x0);
+          pGVar1 = (this->fields)._.gameObject;
+          if (pGVar1 != (GameObject *)0x0) {
+            pCVar9 = (Collider *)
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                                (pGVar1,
+                                 UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
+                                );
+            (this->fields)._.collider = pCVar9;
+            func_?();
+            MVWorldObjectClient::MVWorldObjectClient_CreateWorldObject
+                      ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -139,15 +123,17 @@ bool Assembly-CSharp.dll::MVGamePassProgressionDataObject::
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (this_00,(Object *)StringLiteral_gamePassProgressionEnabled,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_gamePassProgressionEnabled,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
+          (TypeInfo__System__Boolean->_0).element_class) {
         pbVar2 = (bool *)func_?();
         return *pbVar2;
       }
@@ -185,34 +171,34 @@ MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared
     func_?(&StringLiteral_gamePassProgressionDataObject);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    unaff_ESI = (String *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (this_00,(Object *)StringLiteral_gamePassProgressionDataObject,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    value = (String *)0x0;
-    if (unaff_ESI != (String *)0x0) {
-      if (unaff_ESI->klass == TypeInfo__System__String) {
+    value.m_Index = 0;
+    if (unaff_ESI.m_Index != 0) {
+      if (*(String__Class **)unaff_ESI.m_Index == TypeInfo__System__String) {
         value = unaff_ESI;
       }
-      if (value == (String *)0x0) goto code_?;
+      if ((String *)value.m_Index == (String *)0x0) goto code_?;
     }
     pGVar1 = (GamePassProgressionDataObjectShared *)
-             Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
-                       (value,
+             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                       ((String *)value.m_Index,
                         MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectShared_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectShared>_System__String_
                        );
     return pGVar1;
   }
   func_?();
 code_?:
-  func_?(unaff_ESI);
+  func_?(unaff_ESI.m_Index);
   pcVar2 = (code *)swi(3);
   pGVar1 = (GamePassProgressionDataObjectShared *)(*pcVar2)();
   return pGVar1;
@@ -239,8 +225,8 @@ MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectSharedValidator
     cRam_? = '\x01';
   }
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                     (this,(this->klass->vtable).get_RunTimeData.method);
+           (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                     (this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -248,8 +234,8 @@ MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectSharedValidator
                     (pDVar1,StringLiteral_gamePassProgressionDataObjectVal,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-             (*(this->klass->vtable).get_RunTimeData.methodPtr)
-                       (this,(this->klass->vtable).get_RunTimeData.method);
+             (*(code *)(this->klass->vtable).get_RunTimeData.method)
+                       (this,(this->klass->vtable).set_RunTimeData.methodPtr);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
@@ -279,7 +265,7 @@ MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectSharedValidator
       func_?();
     }
     pGVar5 = (GamePassProgressionDataObjectSharedValidator *)
-             Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6
+             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                        (value_00,
                         MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::GamePassProgressionDataObject::GamePassProgressionDataObjectSharedValidator>_System__String_
                        );
@@ -314,30 +300,34 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
-  value_00 = Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
+  value_00 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
                        ((Object *)value,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                           );
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (this_00,(Object *)StringLiteral_gamePassProgressionDataObject,(Object *)value_00,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_gamePassProgressionDataObject,(Object *)value_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    (*(this->klass->vtable).PartialUpdateWOData.methodPtr)
-              (this,this_00,(this->klass->vtable).PartialUpdateWOData.method);
+    (*(code *)(this->klass->vtable).PartialUpdateWOData.method)(this,this_00);
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
       MVNetworkGame+OperationRequests::
       MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
-                (this_01,(this->fields)._._.id,this_00,(MethodInfo *)0x0);
+                (this_01,(this->fields)._._.id,(Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (MethodInfo *)0x0);
       return;
     }
   }

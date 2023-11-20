@@ -16,14 +16,15 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_Initialize
     pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(teamData->fields).playersCount,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)
-                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar1 = (this->fields).score;
       pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&(teamData->fields).score,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(pTVar1->klass->vtable).set_text.methodPtr)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         team = (teamData->fields).team;
         pIVar3 = (this->fields).header;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
@@ -104,14 +105,13 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_TeamSelected
       }
       object = TypeInfo__TeamMenuQuadrant____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                  MethodInfo__TeamMenuQuadrant____c___TeamSelected_b__7_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__TeamMenuQuadrant____c->static_fields->__9__7_0 = callbackFunction;
-      func_?(&TypeInfo__TeamMenuQuadrant____c->static_fields->__9__7_0,callbackFunction);
+      func_?(&TypeInfo__TeamMenuQuadrant____c->static_fields->__9__7_0);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -123,7 +123,6 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_TeamSelected
               );
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

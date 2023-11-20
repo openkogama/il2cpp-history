@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 28: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 50: GoogleMobileAds.Common.dll - Assembly: GoogleMobileAds.Common, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Common
 {
@@ -19,9 +19,6 @@ namespace GoogleMobileAds.Common
 		private ILoadAdErrorClient _LoadAdErrorClient_k__BackingField;
 	
 		// Properties
-		public ILoadAdErrorClient LoadAdErrorClient { [CompilerGenerated] get; [CompilerGenerated] set; }
-	
-		// Constructors
-		public LoadAdErrorClientEventArgs();
+		public ILoadAdErrorClient LoadAdErrorClient { [CompilerGenerated] get; }
 	}
 }

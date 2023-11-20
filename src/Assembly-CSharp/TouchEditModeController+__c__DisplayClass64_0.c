@@ -21,22 +21,24 @@ void Assembly-CSharp.dll::TouchEditModeController+<>c__DisplayClass64_0::
     return;
   }
   uVar4 = 0;
-  uVar5 = (x->klass->_1).interface_offsets_count;
-  if (uVar5 != 0) {
+  pIVar5 = x->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
     do {
-      if (x->klass->interfaceOffsets[uVar4].interfaceType ==
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        pVVar6 = &(x->klass->vtable).CreateErrorNotificationPopup +
-                 x->klass->interfaceOffsets[uVar4].offset;
+        ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)
+                   [x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
+    } while (uVar4 < uVar6);
   }
-  pVVar6 = (VirtualInvokeData *)
-           func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,1);
 code_?:
-  (*pVVar6->methodPtr)(x,pSVar2,pSVar1,pVVar6->method);
+  (*(code *)*ppMVar7)(x,pSVar2,pSVar1,ppMVar7[1]);
   return;
 }
 

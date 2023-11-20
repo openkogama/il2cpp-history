@@ -81,28 +81,27 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Rem
     func_?(&TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0);
+  method_00 = TypeInfo__MVGameModeChangeNotifier____c__DisplayClass4_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)obj;
     func_?(value + 1,obj);
     this_00 = (List_1_System_Object_ *)(this->fields).UpdateList;
     this_01 = (Predicate_1_Object_ *)
               func_?(TypeInfo__System__Predicate<IGameStateControllerSubscriber>);
-    if (this_01 != (Predicate_1_Object_ *)0x0) {
-      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                (this_01,value,
-                 MethodInfo__MVGameModeChangeNotifier____c__DisplayClass4_0___RemoveObject_b__0_IGameStateControllerSubscriber_
-                 ,(MethodInfo *)0x0);
-      if (this_00 != (List_1_System_Object_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__RemoveAll
-                  (this_00,this_01,
-                   MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
-                  );
-        return;
-      }
+    mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+              (this_01,value,
+               MethodInfo__MVGameModeChangeNotifier____c__DisplayClass4_0___RemoveObject_b__0_IGameStateControllerSubscriber_
+               ,(MethodInfo *)0x0);
+    if (this_00 != (List_1_System_Object_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__RemoveAll
+                (this_00,this_01,
+                 MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__RemoveAll_System__Predicate<IGameStateControllerSubscriber>_
+                );
+      return;
     }
   }
   func_?();
@@ -158,13 +157,12 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Upd
     }
     object = TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9;
     this_02 = (Predicate_1_IGameStateControllerSubscriber_ *)func_?();
-    if (this_02 == (Predicate_1_IGameStateControllerSubscriber_ *)0x0) goto code_?;
     mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
               ((Predicate_1_Object_ *)this_02,(Object *)object,
                MethodInfo__MVGameModeChangeNotifier____c___UpdateControllerUpdate_b__6_0_IGameStateControllerSubscriber_
                ,(MethodInfo *)0x0);
     TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9__6_0 = this_02;
-    func_?();
+    func_?(&TypeInfo__MVGameModeChangeNotifier____c->static_fields->__9__6_0);
   }
   if (this_00 != (List_1_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -198,7 +196,7 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier_Upd
         }
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 ((Object *)&stack0xffffffc0,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<IGameStateControllerSubscriber>__Dispose__
@@ -236,30 +234,25 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier__ct
             func_?(
                            TypeInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>
                            );
-  if (this_00 != (List_1_IGameStateControllerSubscriber_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__
-              );
-    method_00 = (MethodInfo *)&(this->fields).UpdateList;
-    (this->fields).UpdateList = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
-    (this->fields)._currentState = UVar1;
-    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UpdateController::UpdateController_AddUpdateObject
-              ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,
-               1,(MethodInfo *)0x0);
-    return;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__)
+  ;
+  method_00 = (MethodInfo *)&(this->fields).UpdateList;
+  (this->fields).UpdateList = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  UVar1 = MVGameModeChangeNotifier_GetPresentState(this,(MethodInfo *)0x0);
+  (this->fields)._currentState = UVar1;
+  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UpdateController::UpdateController_AddUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
+             (MethodInfo *)0x0);
   return;
 }
 

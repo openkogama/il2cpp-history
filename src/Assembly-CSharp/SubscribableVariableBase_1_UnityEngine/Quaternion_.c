@@ -12,18 +12,14 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     fStack_2 = (other->fields).value.y;
     fStack_3 = (other->fields).value.z;
     fStack_4 = (other->fields).value.w;
-    pvVar5 = method->klass->rgctx_data[7].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar5 + 0xba) & 1) == 0) {
-      pvVar5 = (void *)func_?(pvVar5);
-    }
-    uVar6 = func_?(pvVar5,&fStack_1);
-    bVar7 = func_?(&this->fields,uVar6,method->klass->rgctx_data[8].rgctxDataDummy);
-    return bVar7;
+    uVar5 = func_?(method->klass->rgctx_data[5].rgctxDataDummy,&fStack_1);
+    bVar6 = func_?(&this->fields,uVar5,method->klass->rgctx_data[9].rgctxDataDummy);
+    return bVar6;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar7 = (*pcVar8)();
-  return bVar7;
+  pcVar7 = (code *)swi(3);
+  bVar6 = (*pcVar7)();
+  return bVar6;
 }
 
 
@@ -45,35 +41,33 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
   if (this == (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)obj) {
     return 1;
   }
-  left._source = (CancellationTokenSource *)
-                 mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
+  left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
   if (this != (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0) {
-    right._source =
-         (CancellationTokenSource *)
-         mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    right = (XNamespace *)
+            mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
+      func_?();
     }
-    bVar1 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality
+    bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
                       (left,right,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       return 0;
     }
-    pIVar2 = (method->klass->rgctx_data[1].method)->virtualMethodPointer;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (pIVar3->initialized_and_no_error == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    pIVar2 = method->klass->rgctx_data->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?();
     }
-    if ((pIVar3->typeHierarchyDepth <= (obj->klass->_1).typeHierarchyDepth) &&
-       ((obj->klass->_1).typeHierarchy[pIVar3->typeHierarchyDepth - 1] == pIVar3)) {
-      bVar1 = (*pIVar2)(this);
+    if ((pIVar2->naturalAligment <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[pIVar2->naturalAligment - 1] == pIVar2)) {
+      func_?();
+      bVar1 = func_?(&this->fields);
       return bVar1;
     }
     func_?();
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 
@@ -85,18 +79,55 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]
                   (SubscribableVariableBase_1_UnityEngine_Quaternion_ *this,MethodInfo *method)
 
 {
-  piVar1 = (int *)(*(method->klass->rgctx_data[2].method)->virtualMethodPointer)
-                            (method->klass->rgctx_data[2].rgctxDataDummy);
-  if (piVar1 != (int *)0x0) {
-    iVar2 = (**(code **)(*piVar1 + 0x104))
-                      (piVar1,(this->fields).value.x,(this->fields).value.y,(this->fields).value.z,
-                       (this->fields).value.w,*(undefined4 *)(*piVar1 + 0x108));
-    return iVar2;
+  pMVar1 = method->klass->rgctx_data[2].method;
+  pIVar2 = pMVar1->klass;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  }
+  pIVar2 = pIVar2->rgctx_data[2].klass;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  }
+  pEVar3 = *(EqualityComparer_1_UnityEngine_Quaternion_ **)pIVar2->static_fields;
+  func_?();
+  if (pEVar3 == (EqualityComparer_1_UnityEngine_Quaternion_ *)0x0) {
+    pIVar2 = pMVar1->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    pEVar3 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[UnityEngine::Quaternion]
+             ::EqualityComparer_1_UnityEngine_Quaternion__CreateComparer
+                       (pIVar2->rgctx_data[3].method);
+    func_?();
+    pIVar2 = pMVar1->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    pIVar2 = pIVar2->rgctx_data[2].klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    *(EqualityComparer_1_UnityEngine_Quaternion_ **)pIVar2->static_fields = pEVar3;
+    pIVar2 = pMVar1->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    pIVar2 = pIVar2->rgctx_data[2].klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
+    }
+    func_?(pIVar2->static_fields,pEVar3);
+  }
+  if (pEVar3 != (EqualityComparer_1_UnityEngine_Quaternion_ *)0x0) {
+    iVar4 = (*(code *)(pEVar3->klass->vtable).__unknown_1.method)
+                      (pEVar3,(this->fields).value.x,(this->fields).value.y,(this->fields).value.z,
+                       (this->fields).value.w,(pEVar3->klass->vtable).IndexOf.methodPtr);
+    return iVar4;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  iVar2 = (*pcVar3)();
-  return iVar2;
+  pcVar5 = (code *)swi(3);
+  iVar4 = (*pcVar5)();
+  return iVar4;
 }
 
 
@@ -108,29 +139,11 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
 
 {
   if ((this->fields).OnChange != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-    (*(method->klass->rgctx_data[0xb].method)->virtualMethodPointer)
-              ((this->fields).OnChange,(this->fields).value.x,(this->fields).value.y,
-               (this->fields).value.z,(this->fields).value.w,
-               method->klass->rgctx_data[0xb].rgctxDataDummy);
+    pAVar1 = (this->fields).OnChange;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(this->fields).value.x,(this->fields).value.y,
+               (this->fields).value.z,(this->fields).value.w,(pAVar1->fields)._._.method);
   }
-  return;
-}
-
-
-/* SubscribableVariableBase`1[UnityEngine.Quaternion](Quaternion) */
-
-void Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
-     SubscribableVariableBase_1_UnityEngine_Quaternion___ctor
-               (SubscribableVariableBase_1_UnityEngine_Quaternion_ *this,Quaternion value,
-               MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).value.x = value.x;
-  (this->fields).value.y = value.y;
-  (this->fields).value.z = value.z;
-  (this->fields).value.w = value.w;
   return;
 }
 
@@ -147,17 +160,17 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
   do {
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pvVar2 = method->klass->rgctx_data[6].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
-      pvVar2 = (void *)func_?(pvVar2);
+    pIVar2 = method->klass->rgctx_data[7].klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
     if (pDVar1 == (Delegate *)0x0) {
       iVar3 = 0;
     }
     else {
-      iVar3 = func_?(pDVar1,pvVar2);
+      iVar3 = func_?(pDVar1,pIVar2);
       if (iVar3 == 0) {
-        func_?(pDVar1,pvVar2);
+        func_?(pDVar1,pIVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
@@ -168,26 +181,6 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     a = pAVar5;
   } while (bVar6);
   return;
-}
-
-
-/* Quaternion get_Value() */
-
-Quaternion *
-Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
-SubscribableVariableBase_1_UnityEngine_Quaternion__get_Value
-          (Quaternion *__return_storage_ptr__,
-          SubscribableVariableBase_1_UnityEngine_Quaternion_ *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields).value.y;
-  fVar2 = (this->fields).value.z;
-  fVar3 = (this->fields).value.w;
-  __return_storage_ptr__->x = (this->fields).value.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  __return_storage_ptr__->w = fVar3;
-  return __return_storage_ptr__;
 }
 
 
@@ -205,25 +198,21 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     fStack_3 = (a->fields).value.z;
     fStack_4 = (a->fields).value.w;
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    pvVar6 = pIVar5->rgctx_data[7].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-      pvVar6 = (void *)func_?(pvVar6);
-    }
-    uVar7 = func_?(pvVar6,&fStack_1);
+    uVar6 = func_?(pIVar5->rgctx_data[5].rgctxDataDummy,&fStack_1);
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    bVar8 = func_?(&b,uVar7,pIVar5->rgctx_data[8].rgctxDataDummy);
-    return bVar8;
+    bVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return bVar7;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar7 = (*pcVar8)();
+  return bVar7;
 }
 
 
@@ -241,25 +230,21 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     fStack_3 = (a->fields).value.z;
     fStack_4 = (a->fields).value.w;
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    pvVar6 = pIVar5->rgctx_data[7].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-      pvVar6 = (void *)func_?(pvVar6);
-    }
-    uVar7 = func_?(pvVar6,&fStack_1);
+    uVar6 = func_?(pIVar5->rgctx_data[5].rgctxDataDummy,&fStack_1);
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    bVar8 = func_?(&b,uVar7,pIVar5->rgctx_data[8].rgctxDataDummy);
-    return bVar8;
+    bVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return bVar7;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar7 = (*pcVar8)();
+  return bVar7;
 }
 
 
@@ -279,26 +264,22 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
       fStack_3 = (b->fields).value.z;
       fStack_4 = (b->fields).value.w;
       pIVar5 = method->klass;
-      if (pIVar5->initialized_and_no_error == 0) {
+      if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
         pIVar5 = (Il2CppClass *)func_?(pIVar5);
       }
-      pvVar6 = pIVar5->rgctx_data[7].rgctxDataDummy;
-      if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-        pvVar6 = (void *)func_?(pvVar6);
-      }
-      uVar7 = func_?(pvVar6,&fStack_1);
+      uVar6 = func_?(pIVar5->rgctx_data[5].rgctxDataDummy,&fStack_1);
       pIVar5 = method->klass;
-      if (pIVar5->initialized_and_no_error == 0) {
+      if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
         pIVar5 = (Il2CppClass *)func_?(pIVar5);
       }
-      bVar8 = func_?(&a->fields,uVar7,pIVar5->rgctx_data[8].rgctxDataDummy);
-      return bVar8;
+      bVar7 = func_?(&a->fields,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+      return bVar7;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar7 = (*pcVar8)();
+  return bVar7;
 }
 
 
@@ -344,25 +325,21 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     fStack_3 = (a->fields).value.z;
     fStack_4 = (a->fields).value.w;
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    pvVar6 = pIVar5->rgctx_data[7].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-      pvVar6 = (void *)func_?(pvVar6);
-    }
-    uVar7 = func_?(pvVar6,&fStack_1);
+    uVar6 = func_?(pIVar5->rgctx_data[5].rgctxDataDummy,&fStack_1);
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    cVar8 = func_?(&b,uVar7,pIVar5->rgctx_data[8].rgctxDataDummy);
-    return cVar8 == '\0';
+    cVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return cVar7 == '\0';
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 
@@ -380,20 +357,56 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     fStack_3 = (a->fields).value.z;
     fStack_4 = (a->fields).value.w;
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    pvVar6 = pIVar5->rgctx_data[7].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar6 + 0xba) & 1) == 0) {
-      pvVar6 = (void *)func_?(pvVar6);
-    }
-    uVar7 = func_?(pvVar6,&fStack_1);
+    uVar6 = func_?(pIVar5->rgctx_data[5].rgctxDataDummy,&fStack_1);
     pIVar5 = method->klass;
-    if (pIVar5->initialized_and_no_error == 0) {
+    if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    cVar8 = func_?(&b,uVar7,pIVar5->rgctx_data[8].rgctxDataDummy);
-    return cVar8 == '\0';
+    cVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return cVar7 == '\0';
+  }
+  func_?();
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
+}
+
+
+/* Boolean op_Inequality(SubscribableVariableBase`1[UnityEngine.Quaternion],
+   SubscribableVariableBase`1[UnityEngine.Quaternion]) */
+
+bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
+     SubscribableVariableBase_1_UnityEngine_Quaternion__op_Inequality_2
+               (SubscribableVariableBase_1_UnityEngine_Quaternion_ *a,
+               SubscribableVariableBase_1_UnityEngine_Quaternion_ *b,MethodInfo *method)
+
+{
+  pIVar1 = method->klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  }
+  pMVar2 = pIVar1->rgctx_data[10].method;
+  if (a != (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0) {
+    if (b != (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0) {
+      fStack_3 = (b->fields).value.x;
+      fStack_4 = (b->fields).value.y;
+      fStack_5 = (b->fields).value.z;
+      fStack_6 = (b->fields).value.w;
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      uVar7 = func_?(pIVar1->rgctx_data[5].rgctxDataDummy,&fStack_3);
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      cVar8 = func_?(&a->fields,uVar7,pIVar1->rgctx_data[9].rgctxDataDummy);
+      return cVar8 == '\0';
+    }
   }
   func_?();
   pcVar9 = (code *)swi(3);
@@ -414,17 +427,17 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
   do {
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pvVar2 = method->klass->rgctx_data[6].rgctxDataDummy;
-    if ((*(byte *)((int)pvVar2 + 0xba) & 1) == 0) {
-      pvVar2 = (void *)func_?(pvVar2);
+    pIVar2 = method->klass->rgctx_data[7].klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
     if (pDVar1 == (Delegate *)0x0) {
       iVar3 = 0;
     }
     else {
-      iVar3 = func_?(pDVar1,pvVar2);
+      iVar3 = func_?(pDVar1,pIVar2);
       if (iVar3 == 0) {
-        func_?(pDVar1,pvVar2);
+        func_?(pDVar1,pIVar2);
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;

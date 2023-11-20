@@ -9,8 +9,8 @@ void Assembly-CSharp.dll::PickHelper::PickHelper_Initialize
 {
   pTVar1 = (this->fields).message;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)
-              (pTVar1,msg,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,msg,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     (this->fields).pickCallback = onPickCallback;
     func_?(&(this->fields).pickCallback,onPickCallback);
     return;
@@ -68,8 +68,8 @@ code_?:
       t = (Transform *)&UNK_?;
       func_?();
     }
-    bVar3 = mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AreSame_2
-                      ((Object **)type,(Object **)0x0,(MethodInfo *)0x0);
+    bVar3 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+            UnsafeUtility_EnumEquals((Int32Enum__Enum)type,0,(MethodInfo *)0x0);
     if (bVar3 != 0) {
       return 1;
     }
@@ -83,8 +83,8 @@ code_?:
       }
       pTVar4 = mscorlib.dll::System::Object::Object_GetType((Object *)t,(MethodInfo *)0x0);
       if (type != (Type *)0x0) {
-        cVar5 = (*(type->klass->vtable).IsAssignableFrom.methodPtr)
-                          (type,pTVar4,(type->klass->vtable).IsAssignableFrom.method);
+        cVar5 = (*(code *)(type->klass->vtable).IsAssignableFrom.method)
+                          (type,pTVar4,(type->klass->vtable).GetType.methodPtr);
         if (cVar5 != '\0') {
           return 1;
         }
@@ -156,7 +156,7 @@ void Assembly-CSharp.dll::PickHelper::PickHelper_Update(PickHelper *this,MethodI
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                       ((Object *)pSVar7,(MethodInfo *)0x0);
             return;
           }

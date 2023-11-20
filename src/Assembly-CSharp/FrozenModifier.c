@@ -10,19 +10,14 @@ Assembly-CSharp.dll::FrozenModifier::FrozenModifier_DoFadeAndDestroy
     func_?(&TypeInfo__FrozenModifier___DoFadeAndDestroy_d__7);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__FrozenModifier___DoFadeAndDestroy_d__7);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_ESI);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?(value + 2,this);
-    return (IEnumerator *)value;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__FrozenModifier___DoFadeAndDestroy_d__7;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -32,15 +27,14 @@ void Assembly-CSharp.dll::FrozenModifier::FrozenModifier_OnActivated
                (FrozenModifier *this,Avatar *target,MethodInfo *method)
 
 {
-  if (((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0))
-     && (this_00 = (pMVar1->fields).body, this_00 != (MVBody *)0x0)) {
-    MVBody::MVBody_StartBlinking(this_00,BlinkType__Enum_Frozen,INFINITY,(MethodInfo *)0x0);
+  if (target != (Avatar *)0x0) {
+    Avatar::Avatar_StartBlinking(target,BlinkType__Enum_Frozen,INFINITY,(MethodInfo *)0x0);
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -56,22 +50,21 @@ void Assembly-CSharp.dll::FrozenModifier::FrozenModifier_OnDeactivated
     cRam_? = '\x01';
   }
   (this->fields).isDeactivating = 1;
-  if (((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0))
-     && (this_00 = (pMVar1->fields).body, this_00 != (MVBody *)0x0)) {
-    MVBody::MVBody_StopBlinking(this_00,BlinkType__Enum_Frozen,(MethodInfo *)0x0);
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  if (target != (Avatar *)0x0) {
+    Avatar::Avatar_StopBlinking(target,BlinkType__Enum_Frozen,(MethodInfo *)0x0);
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                        (pGVar2,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    if (pGVar1 != (GameObject *)0x0) {
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                        (pGVar1,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)pGVar2,(MethodInfo *)0x0);
+                  ((Object_1 *)pGVar1,(MethodInfo *)0x0);
         return;
       }
       if (cRam_? == '\0') {
@@ -80,21 +73,19 @@ void Assembly-CSharp.dll::FrozenModifier::FrozenModifier_OnDeactivated
       }
       method_00 = TypeInfo__FrozenModifier___DoFadeAndDestroy_d__7;
       value = (Object *)func_?();
-      if (value != (Object *)0x0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        value[1].klass = (Object__Class *)0x0;
-        value[2].klass = (Object__Class *)this;
-        func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-        return;
-      }
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)this;
+      func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

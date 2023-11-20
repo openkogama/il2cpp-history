@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x6064);
+    func_?(0xe900);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -50,8 +50,8 @@ code_?:
             IVar14.x = uVar12;
             this._2_2_ = (pCVar4->fields).iLocalPos.z;
             if (cRam_? == '\0') {
+              this._2_2_ = 0x119a;
               func_?();
-              this._2_2_ = 0x103d;
               func_?();
               cRam_? = '\x01';
             }
@@ -87,18 +87,16 @@ code_?:
           func_?(TypeInfo__Cube);
         }
         IVar8.z = uVar17;
-        IVar8._0_4_ = &stack0xfffffff4;
+        IVar8._0_4_ = &stack0xffffffe8;
         IVar8 = Cube::Cube_GetCubePosAboveFace(IVar8,CONCAT22(uVar2,iVar16),method_00);
         pIVar18 = IVar8._0_4_;
         pCVar4 = (this->fields)._SelectedCube_k__BackingField;
-        uVar19 = pIVar18->x;
-        uVar20 = pIVar18->y;
-        requestedCubePos.y = uVar20;
-        requestedCubePos.x = uVar19;
-        pos = *pIVar18;
-        IVar14 = *pIVar18;
-        IVar8 = *pIVar18;
         iVar16 = pIVar18->z;
+        uVar2 = pIVar18->x;
+        uVar19 = pIVar18->y;
+        IVar14 = *pIVar18;
+        IVar20 = *pIVar18;
+        IVar8 = *pIVar18;
         pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((((pMVar9 != (MVNetworkGame *)0x0) && (pCVar4 != (CubePickingInfo *)0x0)) &&
             (pCVar5 = (pCVar4->fields).cube, pCVar5 != (Cube *)0x0)) &&
@@ -107,12 +105,11 @@ code_?:
           bVar7 = MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked
                              (pMVar10,(pCVar5->fields)._.faceMaterials,(MethodInfo *)0x0);
           if (bVar7 == 0) goto code_?;
-          requestedCubePos.z = iVar16;
-          CVar11 = CubeModelingStateMachine_CanAddCubeAt_1(this,requestedCubePos,(MethodInfo *)0x0);
+          CVar11 = CubeModelingStateMachine_CanAddCubeAt_1(this,IVar8,(MethodInfo *)0x0);
           if (CVar11 != CanPerformCubeActionResult__Enum_Yes) goto code_?;
           pMVar15 = (this->fields)._TargetCubeModel_k__BackingField;
           if (pMVar15 != (MVCubeModelBase *)0x0) {
-            pCVar5 = MVCubeModelBase::MVCubeModelBase_GetCube(pMVar15,IVar8,(MethodInfo *)0x0);
+            pCVar5 = MVCubeModelBase::MVCubeModelBase_GetCube(pMVar15,IVar20,(MethodInfo *)0x0);
             if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MV__WorldObject__CubeBase);
             }
@@ -127,7 +124,7 @@ code_?:
             pMVar15 = (this->fields)._TargetCubeModel_k__BackingField;
             if (pCVar4 != (CubePickingInfo *)0x0) {
               pCVar5 = (pCVar4->fields).cube;
-              FVar6 = (((this->fields)._SelectedCube_k__BackingField)->fields).pickedFace;
+              FVar6 = (pCVar4->fields).pickedFace;
               if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__Cube);
               }
@@ -140,11 +137,13 @@ code_?:
               material = CubeModelingStateMachine_get_CurrentMaterialId(this,(MethodInfo *)0x0);
               faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
               pCVar5 = (Cube *)func_?(TypeInfo__Cube);
-              if ((pCVar5 != (Cube *)0x0) &&
-                 (Cube::Cube__ctor(pCVar5,byteCorners,faceMaterials,(MethodInfo *)0x0),
-                 pMVar15 != (MVCubeModelBase *)0x0)) {
+              Cube::Cube__ctor(pCVar5,byteCorners,faceMaterials,(MethodInfo *)0x0);
+              if (pMVar15 != (MVCubeModelBase *)0x0) {
+                IVar20.y = uVar19;
+                IVar20.x = uVar2;
+                IVar20.z = iVar16;
                 MVCubeModelBase::MVCubeModelBase_AddCube
-                          (pMVar15,pos,(CubeBase *)pCVar5,(MethodInfo *)0x0);
+                          (pMVar15,IVar20,(CubeBase *)pCVar5,(MethodInfo *)0x0);
                 return EditCubeChange__Enum_CubeAdded;
               }
             }
@@ -156,10 +155,9 @@ code_?:
   func_?();
 code_?:
   uVar2 = func_?(&
-                           TypeInfo__UnityEngine__EventSystems__EditorStateMachine__CubeModelingStateMachine__UnlockMaterialException
-                          );
+                          TypeInfo__UnityEngine__EventSystems__EditorStateMachine__CubeModelingStateMachine__UnlockMaterialException
+                         );
   this_00 = (UnlockMaterialException *)func_?(uVar2);
-  func_?(this_00);
   Assembly-CSharp.dll::UnityEngine::EventSystems::EditorStateMachine::CubeModelingStateMachine::
   UnlockMaterialException::UnlockMaterialException__ctor(this_00,(MethodInfo *)0x0);
   uVar21 = func_?(&MethodInfo__CubeModelingStateMachine__AddCube__);
@@ -209,6 +207,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_CanAddCu
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__IModelingConstraint);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&StringLiteral__not_within_constraint_);
     func_?(&StringLiteral_Pos_);
     cRam_? = '\x01';
@@ -223,6 +222,9 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_CanAddCu
         uStack_3._0_2_ = requestedCubePos.x;
         uStack_3._2_2_ = requestedCubePos.y;
         uStack_3._4_4_ = (undefined *)CONCAT22(uStack_3._6_2_,requestedCubePos.z);
+        if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MV__WorldObject__IntVector);
+        }
         pSVar4 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
                            ((IntVector *)&uStack_3,(MethodInfo *)0x0);
         pSVar4 = mscorlib.dll::System::String::String_Concat_4
@@ -232,7 +234,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_CanAddCu
           func_?();
         }
         uStack_3._4_4_ = &UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)pSVar4,(MethodInfo *)0x0);
         return CanPerformCubeActionResult__Enum_No;
       }
@@ -390,50 +392,47 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_DoPickin
     cRam_? = '\x01';
   }
   pCVar1 = (CubePickingInfo *)func_?(TypeInfo__CubePickingInfo);
-  if (pCVar1 != (CubePickingInfo *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::CoroutineTween::TweenRunner`1[FloatTween]::
-    TweenRunner_1_FloatTween___ctor((TweenRunner_1_FloatTween_ *)pCVar1,(MethodInfo *)0x0);
-    pCStack_2 = pCVar1;
-    bVar3 = EditModeObjectPicker::EditModeObjectPicker_GetPickingInfo
-                      ((this->fields)._TargetCubeModel_k__BackingField,&pCStack_2,(MethodInfo *)0x0)
-    ;
-    if (bVar3 == 0) {
-      return (CubePickingInfo *)0x0;
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    VStack_5.x = (pVVar4->zeroVector).x;
-    VStack_5.y = (pVVar4->zeroVector).y;
-    VStack_5.z = (pVVar4->zeroVector).z;
-    bVar3 = DrawPlane::DrawPlane_Pick(&VStack_5,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return pCStack_2;
-    }
-    this_00 = (this->fields).mainCamera;
-    if ((this_00 != (Camera *)0x0) &&
-       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0))
-    {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                ((Vector3 *)&stack0xffffffcc,this_01,(MethodInfo *)0x0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar1,(MethodInfo *)0x0);
+  pCStack_2 = pCVar1;
+  bVar3 = EditModeObjectPicker::EditModeObjectPicker_GetPickingInfo
+                    ((this->fields)._TargetCubeModel_k__BackingField,&pCStack_2,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    return (CubePickingInfo *)0x0;
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  VStack_5.x = (pVVar4->zeroVector).x;
+  VStack_5.y = (pVVar4->zeroVector).y;
+  VStack_5.z = (pVVar4->zeroVector).z;
+  bVar3 = DrawPlane::DrawPlane_Pick(&VStack_5,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    return pCStack_2;
+  }
+  this_00 = (this->fields).mainCamera;
+  if ((this_00 != (Camera *)0x0) &&
+     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+              ((Vector3 *)&stack0xffffffd0,this_01,(MethodInfo *)0x0);
+    fVar6 = (float10)func_?();
+    if (pCStack_2 != (CubePickingInfo *)0x0) {
+      fStack_7 = (float)fVar6 - _UNK_?;
       fVar6 = (float10)func_?();
-      fStack_7 = (float)fVar6;
-      if (pCStack_2 != (CubePickingInfo *)0x0) {
-        fStack_8 = fStack_7 - _UNK_?;
-        fVar6 = (float10)func_?();
-        if ((float)fVar6 <= fStack_8) {
-          return pCStack_2;
-        }
-        return (CubePickingInfo *)0x0;
+      if ((float)fVar6 <= fStack_7) {
+        return pCStack_2;
       }
+      return (CubePickingInfo *)0x0;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  pCVar1 = (CubePickingInfo *)(*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  pCVar1 = (CubePickingInfo *)(*pcVar8)();
   return pCVar1;
 }
 
@@ -467,7 +466,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x60b4);
+    func_?(0xe978);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {
@@ -549,18 +548,17 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Rem
     func_?(&TypeInfo__CubeModelTool);
     cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_set_visible(1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(1,(MethodInfo *)0x0);
   pCVar1 = TypeInfo__CubeModelTool;
   pIVar2 = (this->fields)._.currentState;
   if (pIVar2 == (IState *)0x0) {
     func_?();
     pIVar2 = extraout_EDX;
   }
-  else if (((TypeInfo__CubeModelTool->_1).typeHierarchyDepth <=
-            (pIVar2->klass->_1).typeHierarchyDepth) &&
-          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).typeHierarchyDepth - 1]
-           == (Il2CppClass *)TypeInfo__CubeModelTool)) {
-    (*(code *)pIVar2->klass[1]._0.properties)(pIVar2,pIVar2->klass[1]._0.methods);
+  else if (((TypeInfo__CubeModelTool->_1).naturalAligment <= (pIVar2->klass->_1).naturalAligment) &&
+          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).naturalAligment - 1] ==
+           (Il2CppClass *)TypeInfo__CubeModelTool)) {
+    (*(code *)pIVar2->klass[1]._0.methods)(pIVar2,pIVar2->klass[1]._0.nestedTypes);
     return;
   }
   func_?(pIVar2,pCVar1);
@@ -642,14 +640,11 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Upd
                     (this_01,(rpcm->fields).prototypeId,prototypeData,(MethodInfo *)0x0);
         }
         else if ((rpcm->fields).prototypeState == 1) {
-          this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                    (rpcm->fields).pendingDeltaCubes;
-          if (this_00 == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) break;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-          UnitySynchronizationContext+WorkRequest]::
-          List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__AddRange
-                    (this_00,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)
-                             prototypeData,
+          this_00 = (rpcm->fields).pendingDeltaCubes;
+          if (this_00 == (List_1_System_Byte_ *)0x0) break;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Byte]::
+          List_1_System_Byte__AddRange
+                    (this_00,(IEnumerable_1_System_Byte_ *)prototypeData,
                      MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
                     );
         }
@@ -689,20 +684,15 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine__ct
   (this->fields).gameObject = gameObject;
   func_?(&(this->fields).gameObject,gameObject);
   this_00 = (CubeModelingTransitionTable *)func_?(TypeInfo__CubeModelingTransitionTable);
-  if (this_00 != (CubeModelingTransitionTable *)0x0) {
-    CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
-    func_?();
-    value = (Object *)func_?(TypeInfo__CubeModelingEvent,&stack0xfffffff8);
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)this,value,(MethodInfo *)0x0);
-    pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    (this->fields).mainCamera = pCVar2;
-    func_?(&(this->fields).mainCamera,pCVar2);
-    return;
-  }
+  CubeModelingTransitionTable::CubeModelingTransitionTable__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
+  func_?(&this->fields,this_00);
+  uStack_2 = 0;
+  value = (Object *)func_?(TypeInfo__CubeModelingEvent,&uStack_2);
+  FSMEntity::FSMEntity_set_Event((FSMEntity *)this,value,(MethodInfo *)0x0);
+  pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+  (this->fields).mainCamera = pCVar3;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -727,29 +717,33 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::
   }
   uVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredByte::
           ObscuredByte_op_Implicit_1(value,(MethodInfo *)0x0);
-  this = (CubeModelingStateMachine *)CONCAT31(this._1_3_,uVar1);
+  this = (CubeModelingStateMachine *)(uint)uVar1;
   if (x != (IHandleMaterial *)0x0) {
-    uVar2 = 0;
-    uVar3 = (x->klass->_1).interface_offsets_count;
-    if (uVar3 != 0) {
+    pIVar2 = x->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
       do {
-        if (x->klass->interfaceOffsets[uVar2].interfaceType ==
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleMaterial) {
-          pVVar4 = &(x->klass->vtable).OnMaterialChanged + x->klass->interfaceOffsets[uVar2].offset;
-          (*pVVar4->methodPtr)(x,this,pVVar4->method);
+          pIVar2 = x->klass;
+          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
+          (*(code *)(&(pIVar2->vtable).OnMaterialChanged)[iVar5].method)
+                    (x,this,(&(pIVar2->vtable).ShowMaterialInventory)[iVar5].methodPtr);
           return;
         }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar5 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IHandleMaterial,0)
+    puVar6 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IHandleMaterial,0)
     ;
-    (*(code *)*puVar5)(x,this,puVar5[1]);
+    (*(code *)*puVar6)(x,this,puVar6[1]);
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -851,11 +845,10 @@ bool Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_get
     func_?();
     pIVar2 = extraout_EDX;
   }
-  else if (((TypeInfo__CubeModelTool->_1).typeHierarchyDepth <=
-            (pIVar2->klass->_1).typeHierarchyDepth) &&
-          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).typeHierarchyDepth - 1]
-           == (Il2CppClass *)TypeInfo__CubeModelTool)) {
-    bVar3 = (*(code *)pIVar2->klass[1]._0.element_class)(pIVar2,pIVar2->klass[1]._0.castClass);
+  else if (((TypeInfo__CubeModelTool->_1).naturalAligment <= (pIVar2->klass->_1).naturalAligment) &&
+          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).naturalAligment - 1] ==
+           (Il2CppClass *)TypeInfo__CubeModelTool)) {
+    bVar3 = (*(code *)pIVar2->klass[1]._0.castClass)(pIVar2,pIVar2->klass[1]._0.declaringType);
     return bVar3;
   }
   func_?(pIVar2,pCVar1);
@@ -904,22 +897,19 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_set
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleMaterial>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                 MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__14_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleMaterial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleMaterial>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+               MethodInfo__CubeModelingStateMachine___set_CurrentMaterialId_b__14_0_UnityEngine__EventSystems__IHandleMaterial__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (root,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleMaterial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleMaterial>_
+              );
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -944,11 +934,10 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_set
     func_?();
     pIVar2 = extraout_EDX;
   }
-  else if (((TypeInfo__CubeModelTool->_1).typeHierarchyDepth <=
-            (pIVar2->klass->_1).typeHierarchyDepth) &&
-          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).typeHierarchyDepth - 1]
-           == (Il2CppClass *)TypeInfo__CubeModelTool)) {
-    (*(code *)pIVar2->klass[1]._0.declaringType)(pIVar2,_value,pIVar2->klass[1]._0.parent);
+  else if (((TypeInfo__CubeModelTool->_1).naturalAligment <= (pIVar2->klass->_1).naturalAligment) &&
+          ((pIVar2->klass->_1).typeHierarchy[(TypeInfo__CubeModelTool->_1).naturalAligment - 1] ==
+           (Il2CppClass *)TypeInfo__CubeModelTool)) {
+    (*(code *)pIVar2->klass[1]._0.parent)(pIVar2,_value,pIVar2->klass[1]._0.generic_class);
     return;
   }
   func_?(pIVar2,pCVar1);

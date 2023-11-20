@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::TranslateData::TranslateData__ctor
                (TranslateData *this,MVWorldObjectClient *wo,float gridSize,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((wo != (MVWorldObjectClient *)0x0) && (this_00 != (MVWorldObjectClientManager *)0x0)) {
@@ -14,15 +14,16 @@ void Assembly-CSharp.dll::TranslateData::TranslateData__ctor
     (this->fields).worldObjectClientRef = pWVar1;
     func_?(&this->fields);
     puVar2 = (undefined8 *)
-             (*(wo->klass->vtable).get_WorldPosition_1.methodPtr)
-                       (&stack0xfffffff0,wo,(wo->klass->vtable).get_WorldPosition_1.method);
+             (*(code *)(wo->klass->vtable).get_WorldPosition_1.method)
+                       (&stack0xfffffff0,wo,(wo->klass->vtable).set_WorldPosition.methodPtr);
     uVar3 = *puVar2;
     fVar4 = *(float *)(puVar2 + 1);
     (this->fields).ungridifiedPosition.x = (float)(int)uVar3;
     (this->fields).ungridifiedPosition.y = (float)(int)((ulonglong)uVar3 >> 0x20);
     (this->fields).ungridifiedPosition.z = fVar4;
     puVar2 = (undefined8 *)
-             (*(wo->klass->vtable).GetClosestGridPoint.methodPtr)(&stack0xfffffff0,wo,gridSize);
+             (*(code *)(wo->klass->vtable).GetClosestGridPoint.method)(&stack0xfffffff0,wo,gridSize)
+    ;
     uVar3 = *puVar2;
     fVar4 = *(float *)(puVar2 + 1);
     (this->fields).gridifiedPosition.x = (float)(int)uVar3;

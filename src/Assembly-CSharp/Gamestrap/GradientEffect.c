@@ -10,29 +10,29 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyMesh
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
     cRam_? = '\x01';
   }
-  cVar1 = (*(this->klass->vtable).IsActive.methodPtr)(this,(this->klass->vtable).IsActive.method);
-  if (cVar1 == '\0') {
-    return;
-  }
-  stream = (List_1_UnityEngine_UIVertex_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
-  if ((stream != (List_1_UnityEngine_UIVertex_ *)0x0) &&
-     (mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-      LowLevelList_1_System_Object___ctor
-                ((LowLevelList_1_System_Object_ *)stream,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__),
-     vh != (VertexHelper *)0x0)) {
+  cVar1 = (*(code *)(this->klass->vtable).IsActive.method)
+                    (this,(this->klass->vtable).OnRectTransformDimensionsChange.methodPtr);
+  if (cVar1 != '\0') {
+    stream = (List_1_UnityEngine_UIVertex_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::UIVertex>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)stream,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__List__);
+    if (vh == (VertexHelper *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
     UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_GetUIVertexStream
               (vh,stream,(MethodInfo *)0x0);
     GradientEffect_ModifyVertices(this,stream,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_Clear(vh,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::VertexHelper::VertexHelper_AddUIVertexTriangleStream
               (vh,stream,(MethodInfo *)0x0);
-    return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -49,7 +49,7 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
     func_?();
     cRam_? = '\x01';
   }
-  cVar1 = (*(this->klass->vtable).IsActive.methodPtr)();
+  cVar1 = (*(code *)(this->klass->vtable).IsActive.method)();
   if (cVar1 != '\0') {
     if (vertexList == (List_1_UnityEngine_UIVertex_ *)0x0) {
       func_?();

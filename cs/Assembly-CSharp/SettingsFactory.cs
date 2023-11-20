@@ -127,30 +127,32 @@ public class SettingsFactory : MonoBehaviour
 	[SerializeField]
 	private CostumeSettings costumeSettingsPrefab;
 	[SerializeField]
+	private ObjectTransparencySettings objectTransparencySettingsPrefab;
+	[SerializeField]
 	private CubeModelPopup changeScaleSettingsPrefab;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass56_0
+	private sealed class __c__DisplayClass57_0
 	{
 		// Fields
 		public SpawnRoleEditorMenu spawnRoleEditor;
 
 		// Constructors
-		public __c__DisplayClass56_0();
+		public __c__DisplayClass57_0();
 
 		// Methods
 		internal void _CreateSettingsDialog_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass62_0
+	private sealed class __c__DisplayClass63_0
 	{
 		// Fields
 		public CubeModelPopup cubeModelPopup;
 
 		// Constructors
-		public __c__DisplayClass62_0();
+		public __c__DisplayClass63_0();
 
 		// Methods
 		internal void _CreateChangeScaleSettings_b__0(IUIStack x, BaseEventData y);

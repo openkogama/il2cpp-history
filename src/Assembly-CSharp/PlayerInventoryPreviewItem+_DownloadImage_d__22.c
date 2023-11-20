@@ -48,7 +48,7 @@ code_?:
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)message,(MethodInfo *)0x0);
         if ((pPVar2 != (PlayerInventoryPreviewItem *)0x0) &&
            (this_02 = (pPVar2->fields).previewImage, this_02 != (RawImage *)0x0)) {
@@ -78,10 +78,12 @@ code_?:
             this_02 = (pPVar2->fields).previewImage;
             if ((pUVar3 != (UnityWebRequest *)0x0) &&
                (pDVar6 = (DownloadHandlerTexture *)
-                         mscorlib.dll::System::Collections::Generic::ValueListBuilder`1[System::
-                         Object]::ValueListBuilder_1_System_Object__1_get_Length
-                                   ((ValueListBuilder_1_System_Object__1 *)pUVar3,(MethodInfo *)0x0)
-               , pDVar6 != (DownloadHandlerTexture *)0x0)) {
+                         System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
+                         __Il2CppFullySharedGenericType]::
+                         WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
+                                   ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                     *)pUVar3,(MethodInfo *)0x0),
+               pDVar6 != (DownloadHandlerTexture *)0x0)) {
               pDVar7 = (DownloadHandlerTexture *)0x0;
               if (pDVar6->klass == TypeInfo__UnityEngine__Networking__DownloadHandlerTexture) {
                 pDVar7 = pDVar6;
@@ -92,7 +94,7 @@ code_?:
                 pDVar7 = pDVar6;
               }
               value = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-                      DownloadHandlerTexture::DownloadHandlerTexture_InternalGetTexture
+                      DownloadHandlerTexture::DownloadHandlerTexture_InternalGetTextureNative
                                 (pDVar7,(MethodInfo *)0x0);
               if (this_02 == (RawImage *)0x0) goto code_?;
               goto code_?;
@@ -121,7 +123,6 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem+<DownloadImage>d__22::
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&

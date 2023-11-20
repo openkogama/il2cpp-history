@@ -31,11 +31,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     cRam_? = '\x01';
   }
   pHVar1 = this;
-  pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._.bluePrintData;
-  if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (this->fields)._.bluePrintData;
+  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar2,(Object *)StringLiteral_overrideHealth,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
@@ -50,12 +51,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
     }
-    pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (pHVar1->fields)._.bluePrintData;
-    if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (pDVar2,(Object *)StringLiteral_randomLeaveVehicle,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
@@ -71,12 +72,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
       }
-      pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (pHVar1->fields)._.bluePrintData;
-      if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Object,GUILoginHandler+PlanetData]::
-                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (pDVar2,(Object *)StringLiteral_speed,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
@@ -92,12 +93,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                     );
         }
-        pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                  (pHVar1->fields)._.bluePrintData;
-        if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+        if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
           bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,GUILoginHandler+PlanetData]::
-                  Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                             (pDVar2,(Object *)StringLiteral_jumpHeight,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                             );
@@ -113,12 +114,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                       );
           }
-          pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+          pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                    (pHVar1->fields)._.bluePrintData;
-          if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+          if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
             bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,GUILoginHandler+PlanetData]::
-                    Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                               (pDVar2,(Object *)StringLiteral_thrustersOn,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                               );
@@ -134,12 +135,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                         );
             }
-            pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+            pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                      (pHVar1->fields)._.bluePrintData;
-            if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+            if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
               bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,GUILoginHandler+PlanetData]::
-                      Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                 (pDVar2,(Object *)StringLiteral_turningSpeed,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                 );
@@ -156,12 +157,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                           );
               }
-              pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                        (pHVar1->fields)._.bluePrintData;
-              if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+              if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
                 bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,GUILoginHandler+PlanetData]::
-                        Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                   (pDVar2,(Object *)StringLiteral_thrustersSize,
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                   );
@@ -178,12 +179,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                             );
                 }
-                pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                          (pHVar1->fields)._.bluePrintData;
-                if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
                   bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,GUILoginHandler+PlanetData]::
-                          Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                     (pDVar2,(Object *)StringLiteral_thrustersColor,
                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                     );
@@ -201,12 +202,13 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                     WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
                     ThrustersColorSerializer_FillInData(pDVar4,toAdd,(MethodInfo *)0x0);
                   }
-                  pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                            (pHVar1->fields)._.bluePrintData;
-                  if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+                  {
                     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,GUILoginHandler+PlanetData]::
-                            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                            Object,UnityEngine::UIElements::TextureId]::
+                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                       (pDVar2,(Object *)StringLiteral_vehicleEnergyUse,
                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                       );
@@ -223,12 +225,13 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                                 );
                     }
-                    pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                              (pHVar1->fields)._.bluePrintData;
-                    if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                  0x0) {
                       bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                              Object,GUILoginHandler+PlanetData]::
-                              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                              Object,UnityEngine::UIElements::TextureId]::
+                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                         (pDVar2,(Object *)StringLiteral_vehicleEnergyStorage,
                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                         );
@@ -245,12 +248,13 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                                   );
                       }
-                      pDVar2 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)
+                      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                                (pHVar1->fields)._.bluePrintData;
-                      if (pDVar2 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+                      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                    0x0) {
                         bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Object,GUILoginHandler+PlanetData]::
-                                Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
+                                Object,UnityEngine::UIElements::TextureId]::
+                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                                           (pDVar2,(Object *)StringLiteral_vehicleEnergyConsumption,
                                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                                           );
@@ -320,95 +324,110 @@ HoverCraftSettings_FillDefaultBlueprintData(HoverCraftSettings *this,MethodInfo 
     func_?(&StringLiteral_overrideHealth);
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_00,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  pOVar1 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_overrideHealth,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_overrideHealth,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff0);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Single);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_randomLeaveVehicle,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_randomLeaveVehicle,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffec);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_speed,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_speed,
+               pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_jumpHeight,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_jumpHeight,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_thrustersOn,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_thrustersOn,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack3 = &stack0xffffffe4;
+    pOVar1 = (Object *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_turningSpeed,pOVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    puStack_2 = (undefined *)0x3f5f3b64;
+    ppuStack3 = &puStack_2;
     pSStack4 = TypeInfo__System__Single;
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_turningSpeed,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_thrustersSize,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_thrustersSize,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyUse,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyUse,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyStorage,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
-    puStack5 = &stack0xffffffdc;
+    puStack5 = &stack0xffffffd8;
     pIStack6 = TypeInfo__System__Int32;
-    pOVar2 = (Object *)func_?();
+    pOVar1 = (Object *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyStorage,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (pDVar1,(Object *)StringLiteral_vehicleEnergyConsumption,pOVar2,
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_vehicleEnergyConsumption,pOVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     if ((TypeInfo__HoverCraftVisualization->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    toAdd = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
-            ThrustersColorSerializer_Serialize
-                      (TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor,
-                       (MethodInfo *)0x0);
+    pDVar7 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
+             ThrustersColorSerializer_Serialize
+                       (TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor,
+                        (MethodInfo *)0x0);
     WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
-    ThrustersColorSerializer_FillInData(pDVar1,toAdd,(MethodInfo *)0x0);
-    return pDVar1;
+    ThrustersColorSerializer_FillInData
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,pDVar7,(MethodInfo *)0x0);
+    return (Dictionary_2_System_Object_System_Object_ *)this_00;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar7)();
-  return pDVar1;
+  pcVar8 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
+  return pDVar7;
 }
 
 
@@ -515,116 +534,105 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     func_?(&StringLiteral_overrideHealth);
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral_overrideHealth;
-  this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).healthSlider;
-  if (cRam_? == '\0') {
-    func_?(&StringLiteral_BlueprintData_);
-    cRam_? = '\x01';
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-  pDVar2 = (this->fields)._.bluePrintData;
-  if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  this_01.m_Index = (int32_t)(this->fields).healthSlider;
+  pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                     (StringLiteral_overrideHealth,(MethodInfo *)0x0);
+  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+           (this->fields)._.bluePrintData;
+  if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
 code_?:
     uVar3 = func_?();
   }
   else {
-    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-             ::Dictionary_2_System_Object_System_Object__get_Item
-                       (pDVar2,(Object *)StringLiteral_overrideHealth,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-    if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
-    goto code_?;
-    if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar5 = (float *)func_?(pOVar4);
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar2,(Object *)StringLiteral_overrideHealth,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+    if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+       || (TVar4.m_Index == 0)) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)this_01,pSVar1,*pfVar5,1.0,500.0,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_overrideHealth;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).healthInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_overrideHealth,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsSlider *)this_01.m_Index,pSVar1,*pfVar5,1.0,500.0,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).healthInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_overrideHealth,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_overrideHealth,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*pfVar5,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_randomLeaveVehicle;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).randomLeaveVehicleSlider;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_randomLeaveVehicle,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*pfVar5,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).randomLeaveVehicleSlider;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_randomLeaveVehicle,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_randomLeaveVehicle,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)this_01,pSVar1,*pfVar5,0.0,100.0,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_randomLeaveVehicle;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).randomLeaveVehicleInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_randomLeaveVehicle,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsSlider *)this_01.m_Index,pSVar1,*pfVar5,0.0,100.0,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).randomLeaveVehicleInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_randomLeaveVehicle,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_randomLeaveVehicle,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*pfVar5,(MethodInfo *)0x0);
-      this_01 = (ThrustersColorAlphaKey__Array *)StringLiteral_speed;
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*pfVar5,(MethodInfo *)0x0);
       this_00 = (this->fields).speedSlider;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,(String *)this_01,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      this_01 = (ThrustersColorAlphaKey__Array *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__get_Item
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_speed,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+      goto code_?;
+      this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           (pDVar2,(Object *)StringLiteral_speed,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
@@ -634,205 +642,189 @@ code_?:
       pLVar6 = TypeInfo__HoverCraftMotor->static_fields->speedDragXZMap;
       if (((pLVar6 == (List_1_System_Single_ *)0x0) ||
           (maxValue = (pLVar6->fields)._size, this_00 == (SettingsSlider *)0x0)) ||
-         (this_01 == (ThrustersColorAlphaKey__Array *)0x0)) goto code_?;
+         (this_01.m_Index == 0)) goto code_?;
       pIVar7 = TypeInfo__System__Int32;
-      if ((((SettingsSlider__Class *)this_01->klass)->_0).element_class !=
+      if (*(Il2CppClass **)(*(int *)this_01.m_Index + 0x20) !=
           (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar8 = (int32_t *)func_?(this_01);
+      piVar8 = (int32_t *)func_?(this_01.m_Index);
       SettingsSlider::SettingsSlider_Initialize_1
                 (this_00,pSVar1,*piVar8,1,maxValue,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_speed;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).speedInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_speed,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Int32,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+      this_01.m_Index = (int32_t)(this->fields).speedInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_speed,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-      goto code_?;
-      piVar8 = (int32_t *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_speed,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar8 = (int32_t *)func_?(TVar4.m_Index);
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*piVar8,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_jumpHeight;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).jumpHeightSlider;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_jumpHeight,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*piVar8,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).jumpHeightSlider;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_jumpHeight,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_jumpHeight,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)this_01,pSVar1,*pfVar5,0.0,20.0,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_jumpHeight;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).jumpHeightInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_jumpHeight,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsSlider *)this_01.m_Index,pSVar1,*pfVar5,0.0,20.0,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).jumpHeightInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_jumpHeight,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_jumpHeight,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*pfVar5,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_thrustersOn;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).enginesOnToggle;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_thrustersOn,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Boolean,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*pfVar5,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).enginesOnToggle;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_thrustersOn,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
-      pbVar9 = (bool *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_thrustersOn,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Boolean,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+      pbVar9 = (bool *)func_?(TVar4.m_Index);
       SettingsToggle::SettingsToggle_Initialize
-                ((SettingsToggle *)this_01,pSVar1,*pbVar9,(MethodInfo *)0x0);
-      pSVar1 = StringLiteral_turningSpeed;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).turningSpeedSlider;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_turningSpeed,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+                ((SettingsToggle *)this_01.m_Index,pSVar1,*pbVar9,(MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).turningSpeedSlider;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_turningSpeed,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_turningSpeed,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)this_01,pSVar1,*pfVar5 * _UNK_?,5.0,60.0,(MethodInfo *)0x0
-                );
-      pSVar1 = StringLiteral_turningSpeed;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).turningSpeedInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_turningSpeed,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
-      goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*pfVar5 * _UNK_?,
+                ((SettingsSlider *)this_01.m_Index,pSVar1,*pfVar5 * _UNK_?,5.0,60.0,
                  (MethodInfo *)0x0);
-      pSVar1 = StringLiteral_thrustersSize;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).thrustersSizeSlider;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_thrustersSize,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+      this_01.m_Index = (int32_t)(this->fields).turningSpeedInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_turningSpeed,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_turningSpeed,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
+      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*pfVar5 * _UNK_?,
+                 (MethodInfo *)0x0);
+      this_01.m_Index = (int32_t)(this->fields).thrustersSizeSlider;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_thrustersSize,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_thrustersSize,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsSlider::SettingsSlider_Initialize
-                ((SettingsSlider *)this_01,pSVar1,*pfVar5 * _UNK_?,20.0,95.0,
+                ((SettingsSlider *)this_01.m_Index,pSVar1,*pfVar5 * _UNK_?,20.0,95.0,
                  (MethodInfo *)0x0);
-      pSVar1 = StringLiteral_thrustersSize;
-      this_01 = (ThrustersColorAlphaKey__Array *)(this->fields).thrustersSizeInputField;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_BlueprintData_);
-        cRam_? = '\x01';
-      }
-      pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar1,(MethodInfo *)0x0);
-      pDVar2 = (this->fields)._.bluePrintData;
-      if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (pDVar2,(Object *)StringLiteral_thrustersSize,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar3 = CONCAT44(TypeInfo__System__Single,pOVar4);
-      if ((this_01 == (ThrustersColorAlphaKey__Array *)0x0) || (pOVar4 == (Object *)0x0))
+      this_01.m_Index = (int32_t)(this->fields).thrustersSizeInputField;
+      pSVar1 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                         (StringLiteral_thrustersSize,(MethodInfo *)0x0);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._.bluePrintData;
+      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      pfVar5 = (float *)func_?(pOVar4);
+      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_thrustersSize,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      uVar3 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      if (((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+         || (TVar4.m_Index == 0)) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          (TypeInfo__System__Single->_0).element_class) goto code_?;
+      pfVar5 = (float *)func_?(TVar4.m_Index);
       SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)this_01,pSVar1,*pfVar5 * _UNK_?,
+                ((SettingsInputFieldSlider *)this_01.m_Index,pSVar1,*pfVar5 * _UNK_?,
                  (MethodInfo *)0x0);
       TVar10 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
                ThrustersColorSerializer_Deserialize
                          ((this->fields)._.bluePrintData,(MethodInfo *)0x0);
-      this_01 = TVar10.alphas;
+      this_01.m_Index = (int32_t)TVar10.alphas;
       pTVar11 = TVar10.colors;
       pIVar12 = (this->fields).thrustersColorImage1;
       if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings->
@@ -841,39 +833,52 @@ code_?:
                        TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
                        );
       }
-      if (this_01 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
-      if ((InputField *)this_01->max_length != (InputField *)0x0) {
+      if ((ThrustersColorAlphaKey__Array *)this_01.m_Index == (ThrustersColorAlphaKey__Array *)0x0)
+      goto code_?;
+      if ((CancellationTokenSource *)((ThrustersColorAlphaKey__Array *)this_01.m_Index)->max_length
+          != (CancellationTokenSource *)0x0) {
         if (pTVar11 != (ThrustersColorColorKey__Array *)0x0) {
           if (pTVar11->max_length == 0) goto code_?;
           if (pIVar12 != (Image *)0x0) {
-            (*(pIVar12->klass->vtable).set_color.methodPtr)
+            (*(code *)(pIVar12->klass->vtable).set_color.method)
                       (pIVar12,pTVar11->vector[0].color.r,pTVar11->vector[0].color.g,
-                       pTVar11->vector[0].color.b,(SettingsSlider *)this_01->vector[0].alpha,
-                       (pIVar12->klass->vtable).set_color.method);
+                       pTVar11->vector[0].color.b,
+                       (InputField *)
+                       ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->vector[0].alpha,
+                       (pIVar12->klass->vtable).get_raycastTarget.methodPtr);
             pIVar12 = (this->fields).thrustersColorImage2;
-            if (((InputField *)this_01->max_length < (InputField *)0x2) || (pTVar11->max_length < 2)
-               ) goto code_?;
+            if (((CancellationTokenSource *)
+                 ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->max_length <
+                 (CancellationTokenSource *)0x2) || (pTVar11->max_length < 2))
+            goto code_?;
             if (pIVar12 != (Image *)0x0) {
-              (*(pIVar12->klass->vtable).set_color.methodPtr)
+              (*(code *)(pIVar12->klass->vtable).set_color.method)
                         (pIVar12,pTVar11->vector[1].color.r,pTVar11->vector[1].color.g,
-                         pTVar11->vector[1].color.b,(String *)this_01->vector[1].alpha,
-                         (pIVar12->klass->vtable).set_color.method);
+                         pTVar11->vector[1].color.b,
+                         ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->vector[1].alpha,
+                         (pIVar12->klass->vtable).get_raycastTarget.methodPtr);
               pIVar12 = (this->fields).thrustersColorImage3;
-              if (((InputField *)this_01->max_length < (InputField *)0x3) ||
-                 (pTVar11->max_length < 3)) goto code_?;
+              if (((CancellationTokenSource *)
+                   ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->max_length <
+                   (CancellationTokenSource *)0x3) || (pTVar11->max_length < 3))
+              goto code_?;
               if (pIVar12 != (Image *)0x0) {
-                (*(pIVar12->klass->vtable).set_color.methodPtr)
+                (*(code *)(pIVar12->klass->vtable).set_color.method)
                           (pIVar12,pTVar11->vector[2].color.r,pTVar11->vector[2].color.g,
-                           pTVar11->vector[2].color.b,this_01->vector[2].alpha,
-                           (pIVar12->klass->vtable).set_color.method);
+                           pTVar11->vector[2].color.b,
+                           ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->vector[2].alpha,
+                           (pIVar12->klass->vtable).get_raycastTarget.methodPtr);
                 pIVar12 = (this->fields).thrustersColorImage4;
-                if (((InputField *)this_01->max_length < (InputField *)0x4) ||
-                   (pTVar11->max_length < 4)) goto code_?;
+                if (((CancellationTokenSource *)
+                     ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->max_length <
+                     (CancellationTokenSource *)0x4) || (pTVar11->max_length < 4))
+                goto code_?;
                 if (pIVar12 != (Image *)0x0) {
-                  (*(pIVar12->klass->vtable).set_color.methodPtr)
+                  (*(code *)(pIVar12->klass->vtable).set_color.method)
                             (pIVar12,pTVar11->vector[3].color.r,pTVar11->vector[3].color.g,
-                             pTVar11->vector[3].color.b,this_01->vector[3].alpha,
-                             (pIVar12->klass->vtable).set_color.method);
+                             pTVar11->vector[3].color.b,
+                             ((ThrustersColorAlphaKey__Array *)this_01.m_Index)->vector[3].alpha,
+                             (pIVar12->klass->vtable).get_raycastTarget.methodPtr);
                   return;
                 }
               }
@@ -889,7 +894,7 @@ code_?:
   func_?(uVar3);
   pIVar7 = extraout_ECX;
 code_?:
-  func_?(this_01,pIVar7);
+  func_?(this_01.m_Index,pIVar7);
   pcVar13 = (code *)swi(3);
   (*pcVar13)();
   return;
@@ -970,113 +975,107 @@ code_?:
         fVar8 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
         pSVar5 = (this->fields).thrustersColorAlpha;
         if ((pSVar5 != (SettingsSlider *)0x0) &&
-           (method_00 = (MethodInfo *)
-                        SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0),
+           (pMVar9 = (MethodInfo *)
+                      SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0),
            x != (Image *)0x0)) {
-          (*(x->klass->vtable).set_color.methodPtr)();
+          (*(code *)(x->klass->vtable).set_color.method)();
           thrustersColor =
                WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
                ThrustersColorSerializer_Deserialize
                          ((this->fields)._.bluePrintData,(MethodInfo *)0x0);
-          pTVar9 = thrustersColor.alphas;
-          pTVar10 = thrustersColor.colors;
-          uVar11 = (this->fields).editingThrusterColor;
+          pTVar10 = thrustersColor.alphas;
+          pTVar11 = thrustersColor.colors;
+          uVar12 = (this->fields).editingThrusterColor;
           pSVar5 = (this->fields).thrustersColorAlpha;
           if (pSVar5 != (SettingsSlider *)0x0) {
-            fVar12 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
-            uVar13 = (this->fields).editingThrusterColor;
-            if (pTVar9 != (ThrustersColorAlphaKey__Array *)0x0) {
-              if ((uVar13 < pTVar9->max_length) &&
-                 (fVar14 = pTVar9->vector[uVar13].time, uVar11 < pTVar9->max_length)) {
-                pTVar9->vector[uVar11].alpha = fVar12;
-                pTVar9->vector[uVar11].time = fVar14;
-                uVar11 = (this->fields).editingThrusterColor;
-                if (pTVar10 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
-                if ((uVar11 < pTVar10->max_length) &&
-                   (fVar12 = pTVar10->vector[uVar11].time, uVar11 < pTVar10->max_length)) {
-                  pTVar15 = pTVar10->vector + uVar11;
-                  (pTVar15->color).r = fVar6;
-                  (pTVar15->color).g = fVar7;
-                  (pTVar15->color).b = fVar8;
-                  pTVar15->time = fVar12;
-                  this_02 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
+            fVar13 = SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+            uVar14 = (this->fields).editingThrusterColor;
+            if (pTVar10 != (ThrustersColorAlphaKey__Array *)0x0) {
+              if ((uVar14 < pTVar10->max_length) &&
+                 (fVar15 = pTVar10->vector[uVar14].time, uVar12 < pTVar10->max_length)) {
+                pTVar10->vector[uVar12].alpha = fVar13;
+                pTVar10->vector[uVar12].time = fVar15;
+                uVar12 = (this->fields).editingThrusterColor;
+                if (pTVar11 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
+                if ((uVar12 < pTVar11->max_length) &&
+                   (fVar13 = pTVar11->vector[uVar12].time, uVar12 < pTVar11->max_length)) {
+                  pTVar16 = pTVar11->vector + uVar12;
+                  (pTVar16->color).r = fVar6;
+                  (pTVar16->color).g = fVar7;
+                  (pTVar16->color).b = fVar8;
+                  pTVar16->time = fVar13;
+                  this_01 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
                             ThrustersColorSerializer_Serialize(thrustersColor,(MethodInfo *)0x0);
-                  if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                    pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Object,System::Object]::
-                             Dictionary_2_System_Object_System_Object__GetEnumerator
-                                       ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
-                                         *)&stack0xffffffbc,this_02,
+                  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                    pDVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             UInt32,System::Object]::
+                             Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                         *)&stack0xffffffbc,
+                                        (Dictionary_2_System_UInt32_System_Object_ *)this_01,
                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                                        );
+                    uVar18 = *(undefined8 *)&(pDVar17->_current).value;
                     uStack_1 = 1;
-                    value = (pDVar16->_current).value;
-                    while (pMStack_17 = 
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                          , bVar4 = mscorlib.dll::System::Collections::Generic::
-                                    Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::
-                                    Object]::
-                                    Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                              ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
-                                                *)&stack0xffffffa0,
-                                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                                              ), bVar4 != 0) {
-                      this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                    while( true ) {
+                      value = (Object *)uVar18;
+                      pMVar19 = 
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                      ;
+                      bVar4 = mscorlib.dll::System::Collections::Generic::
+                              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                        ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
+                                          *)&stack0xffffffa0,
+                                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                                        );
+                      if (bVar4 == 0) break;
+                      this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                                           ((MethodInfo *)0x0);
-                      method_00 = (MethodInfo *)(this->fields)._.vehicleWoID;
-                      if (pMStack_17 != (MethodInfo *)0x0) {
-                        pMVar18 = (MethodInfo *)0x0;
-                        if ((String__Class *)pMStack_17->methodPointer == TypeInfo__System__String)
-                        {
-                          pMVar18 = pMStack_17;
+                      worldObjectID = (this->fields)._.vehicleWoID;
+                      pMVar9 = (MethodInfo *)0x0;
+                      if (pMVar19 != (MethodInfo *)0x0) {
+                        if ((String__Class *)pMVar19->methodPointer == TypeInfo__System__String) {
+                          pMVar9 = pMVar19;
                         }
-                        pMStack_17 = pMVar18;
-                        if (pMVar18 == (MethodInfo *)0x0) goto code_?;
+                        if (pMVar9 == (MethodInfo *)0x0) goto code_?;
                       }
-                      if (cRam_? == '\0') {
-                        func_?();
-                        cRam_? = '\x01';
-                      }
-                      keyPath = mscorlib.dll::System::String::String_Concat_3
-                                          (StringLiteral_BlueprintData_,(String *)pMStack_17,
-                                           (MethodInfo *)0x0);
-                      if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-                      pOVar19 = (Object *)&UNK_?;
+                      pMVar9 = (MethodInfo *)
+                                VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                                          ((String *)pMVar9,(MethodInfo *)0x0);
+                      if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                      uVar18._4_4_ = worldObjectID;
+                      uVar18._0_4_ = (Object *)this_02;
                       MVNetworkGame+OperationRequests::
                       MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-                                (this_03,(int32_t)method_00,keyPath,value,(MethodInfo *)0x0);
-                      value = pOVar19;
+                                (this_02,worldObjectID,(String *)pMVar9,value,(MethodInfo *)0x0);
                     }
                     uStack_1 = 0xffffffff;
                     mscorlib.dll::System::ThrowHelper::
-                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                               ((Object *)&stack0xffffffa0,
                                (ExceptionArgument__Enum)
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                               ,method_00);
+                               ,pMVar9);
                     uStack_1 = 0xffffffff;
                     pMVar20 = (this->fields)._.vehicleBase;
                     if (pMVar20 != (MVVehicleBase *)0x0) {
-                      (*(pMVar20->klass->vtable).OnDataUpdate.methodPtr)();
+                      (*(code *)(pMVar20->klass->vtable).OnDataUpdate.method)();
                       (this->fields).editingThrusterColor = -1;
                       if ((
                           TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
                           ->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      this_00 = (this->fields)._.canvas;
-                      if (this_00 != (RectTransform *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                        RectTransform_set_sizeDelta
-                                  (this_00,TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-                                           ->static_fields->NormalEditingCanvasSize,
-                                   (MethodInfo *)0x0);
-                        this_01 = (this->fields).colorPicker;
-                        if (this_01 != (GameObject *)0x0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (this_01,0,(MethodInfo *)0x0);
-                          goto code_?;
-                        }
+                      VehicleBaseSettings::VehicleBaseSettings_SetCanvasSize
+                                ((VehicleBaseSettings *)this,
+                                 TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                                 ->static_fields->NormalEditingCanvasSize,(MethodInfo *)0x0);
+                      this_00 = (this->fields).colorPicker;
+                      if (this_00 != (GameObject *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                  (this_00,0,(MethodInfo *)0x0);
+                        goto code_?;
                       }
                     }
                   }
@@ -1095,7 +1094,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -1145,25 +1145,22 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                         (pSVar4,StringLiteral_alpha,0.0,0.0,1.0,(MethodInfo *)0x0);
               pIVar5 = (this->fields).colorPickerPreview;
               if (pIVar5 != (Image *)0x0) {
-                (*(pIVar5->klass->vtable).set_color.methodPtr)();
+                (*(code *)(pIVar5->klass->vtable).set_color.method)();
                 (this->fields).editingThrusterColor = pos;
                 if ((
                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
                     ->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                this_00 = (this->fields)._.canvas;
-                if (this_00 != (RectTransform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                  RectTransform_set_sizeDelta
-                            (this_00,TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-                                     ->static_fields->ColorEditingCanvasSize,(MethodInfo *)0x0);
-                  this_01 = (this->fields).colorPicker;
-                  if (this_01 != (GameObject *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (this_01,1,(MethodInfo *)0x0);
-                    return;
-                  }
+                VehicleBaseSettings::VehicleBaseSettings_SetCanvasSize
+                          ((VehicleBaseSettings *)this,
+                           TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                           ->static_fields->ColorEditingCanvasSize,(MethodInfo *)0x0);
+                this_00 = (this->fields).colorPicker;
+                if (this_00 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (this_00,1,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -1211,27 +1208,16 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     cRam_? = '\x01';
   }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(key,(MethodInfo *)0x0);
-  pSVar2 = StringLiteral_overrideHealth;
   if (bVar1 != 0) {
     return;
   }
-  key = (String *)0x0;
-  if (cRam_? == '\0') {
-    func_?(&StringLiteral_BlueprintData_);
-    cRam_? = '\x01';
-  }
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
-  bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+  pSVar2 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                     (StringLiteral_overrideHealth,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    pSVar2 = StringLiteral_randomLeaveVehicle;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
-    bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+    pSVar2 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
+                       (StringLiteral_randomLeaveVehicle,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -1247,12 +1233,14 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     }
     pSVar2 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
                        (StringLiteral_speed,(MethodInfo *)0x0);
-    bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       pSVar2 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
                          (StringLiteral_jumpHeight,(MethodInfo *)0x0);
+      key._3_1_ = '\0';
+      cVar4 = key._3_1_;
+      key._3_1_ = '\0';
       bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
-      key = a;
       if (bVar1 == 0) {
         pSVar2 = VehicleBaseSettings::VehicleBaseSettings_SettingsKey
                            (StringLiteral_turningSpeed,(MethodInfo *)0x0);
@@ -1281,22 +1269,22 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                 if (3 < (uint)(this->fields).editingThrusterColor) {
                   return;
                 }
-                pSVar4 = (this->fields).thrustersColorR;
-                pIVar5 = (this->fields).colorPickerPreview;
-                if (pSVar4 != (SettingsSlider *)0x0) {
-                  SettingsSlider::SettingsSlider_get_Value(pSVar4,(MethodInfo *)0x0);
-                  pSVar4 = (this->fields).thrustersColorG;
-                  if (pSVar4 != (SettingsSlider *)0x0) {
-                    SettingsSlider::SettingsSlider_get_Value(pSVar4,(MethodInfo *)0x0);
-                    pSVar4 = (this->fields).thrustersColorB;
-                    if (pSVar4 != (SettingsSlider *)0x0) {
-                      fStack6 =
-                           SettingsSlider::SettingsSlider_get_Value(pSVar4,(MethodInfo *)0x0);
-                      pSVar4 = (this->fields).thrustersColorAlpha;
-                      if ((pSVar4 != (SettingsSlider *)0x0) &&
-                         (fStack7 =
-                               SettingsSlider::SettingsSlider_get_Value(pSVar4,(MethodInfo *)0x0),
-                         pIVar5 != (Image *)0x0)) {
+                pSVar5 = (this->fields).thrustersColorR;
+                pIVar6 = (this->fields).colorPickerPreview;
+                if (pSVar5 != (SettingsSlider *)0x0) {
+                  SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+                  pSVar5 = (this->fields).thrustersColorG;
+                  if (pSVar5 != (SettingsSlider *)0x0) {
+                    SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+                    pSVar5 = (this->fields).thrustersColorB;
+                    if (pSVar5 != (SettingsSlider *)0x0) {
+                      fStack7 =
+                           SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0);
+                      pSVar5 = (this->fields).thrustersColorAlpha;
+                      if ((pSVar5 != (SettingsSlider *)0x0) &&
+                         (fStack8 =
+                               SettingsSlider::SettingsSlider_get_Value(pSVar5,(MethodInfo *)0x0),
+                         pIVar6 != (Image *)0x0)) {
                         func_?();
                         return;
                       }
@@ -1322,10 +1310,11 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                 if (this_01 == (VehicleEnergyForVehicleSettings *)0x0) goto code_?;
                 value = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_ValueToSend
                                   (this_01,a,value,(MethodInfo *)0x0);
+                key._3_1_ = cVar4;
               }
             }
             else {
-              key = (String *)0x1000000;
+              key._3_1_ = '\x01';
             }
           }
           else {
@@ -1341,7 +1330,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
             mscorlib.dll::System::Convert::Convert_ToSingle
                       (value,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
             value = (Object *)func_?();
-            key = (String *)0x1000000;
+            key._3_1_ = '\x01';
           }
           goto code_?;
         }
@@ -1374,23 +1363,22 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
       func_?();
     }
     mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-    key = (String *)&UNK_?;
+    key._3_1_ = (char)((uint)&stack0xffffffec >> 0x18);
     value = (Object *)func_?();
   }
   else {
     if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__Globalization__CultureInfo);
     }
-    provider = (Convert__Class *)
-               mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
-                         ((MethodInfo *)0x0);
+    pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture
+                       ((MethodInfo *)0x0);
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-      provider = TypeInfo__System__Convert;
       func_?();
     }
     mscorlib.dll::System::Convert::Convert_ToSingle
-              (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
+              (value,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
 code_?:
+    key._3_1_ = '\0';
     value = (Object *)func_?();
   }
 code_?:
@@ -1401,16 +1389,16 @@ code_?:
     if (key._3_1_ == '\0') {
       return;
     }
-    pMVar8 = (this->fields)._.vehicleBase;
-    if (pMVar8 != (MVVehicleBase *)0x0) {
-      (*(pMVar8->klass->vtable).OnDataUpdate.methodPtr)();
+    pMVar9 = (this->fields)._.vehicleBase;
+    if (pMVar9 != (MVVehicleBase *)0x0) {
+      (*(code *)(pMVar9->klass->vtable).OnDataUpdate.method)();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

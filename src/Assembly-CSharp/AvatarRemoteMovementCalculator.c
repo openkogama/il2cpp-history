@@ -96,8 +96,8 @@ void Assembly-CSharp.dll::AvatarRemoteMovementCalculator::AvatarRemoteMovementCa
   (this->fields).velocityEstimate.x = (pVVar1->zeroVector).x;
   (this->fields).velocityEstimate.y = fVar2;
   (this->fields).velocityEstimate.z = fVar3;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor
-            ((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

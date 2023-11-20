@@ -60,7 +60,7 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Inp
                 (pIVar2,value,(MethodInfo *)0x0);
       pSVar3 = (this->fields).slider;
       if (pSVar3 != (Slider *)0x0) {
-        (*(pSVar3->klass->vtable).set_value.methodPtr)();
+        (*(code *)(pSVar3->klass->vtable).set_value.method)();
         fVar4 = _UNK_?;
         if (SVar1.m_value != _UNK_?) {
           if (SVar1.m_value < _UNK_?) {
@@ -166,8 +166,8 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Sli
   this_01 = this;
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)
-                               (pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
+                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     this = (MouseSensitivitySettings *)(float)fVar2;
     this = (MouseSensitivitySettings *)
            MouseSensitivitySettings_RoundValue(this_01,(float)this,(MethodInfo *)0x0);
@@ -245,8 +245,8 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Sta
               (this_00,value,(MethodInfo *)0x0);
     pSStack5 = (this->fields).slider;
     if (pSStack5 != (Slider *)0x0) {
-      pMStack6 = (pSStack5->klass->vtable).set_value.method;
-      (*(pSStack5->klass->vtable).set_value.methodPtr)();
+      pIStack6 = (pSStack5->klass->vtable).SetValueWithoutNotify.methodPtr;
+      (*(code *)(pSStack5->klass->vtable).set_value.method)();
       return;
     }
   }

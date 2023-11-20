@@ -27,9 +27,11 @@ void Assembly-CSharp.dll::FlagDebriefingControl::FlagDebriefingControl_ResetToSp
   if (this_00 != (MVNetworkGame *)0x0) {
     this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVLocalPlayer *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Stack`1[T]+Enumerator[System::Object]::
-      Stack_1_T_Enumerator_System_Object__Dispose
-                ((Stack_1_T_Enumerator_System_Object_ *)this_01,(MethodInfo *)0x0);
+      mscorlib.dll::System::Collections::Generic::Stack`1[T]+Enumerator[System::Dynamic::
+      BindingRestrictions+TestBuilder+AndNode]::
+      Stack_1_T_Enumerator_System_Dynamic_BindingRestrictions_TestBuilder_AndNode__Dispose
+                ((Stack_1_T_Enumerator_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_ *)
+                 this_01,(MethodInfo *)0x0);
       return;
     }
   }

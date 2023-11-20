@@ -24,19 +24,20 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
     func_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass19_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__DesktopLobbyStateController____c__DisplayClass19_0);
+  method_00 = TypeInfo__DesktopLobbyStateController____c__DisplayClass19_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pGVar1 = (this->fields).startGoldRewardPopupPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar2 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)pGVar1,
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pGVar1 = (this->fields).startGoldRewardPopupPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pGVar1,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                       );
     value[1].klass = pOVar2;
     func_?(value + 1,pOVar2);
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -46,22 +47,19 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                         );
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__DesktopLobbyStateController____c__DisplayClass19_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar1,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+    UnityAction_2_System_Object_System_Object___ctor
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__DesktopLobbyStateController____c__DisplayClass19_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar1,(BaseEventData *)0x0,callbackFunction,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -205,13 +203,9 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?();
+    func_?();
+    func_?();
     func_?(&
                     BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
                    );
@@ -222,56 +216,54 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
     func_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass18_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__DesktopLobbyStateController____c__DisplayClass18_0);
+  method_00 = TypeInfo__DesktopLobbyStateController____c__DisplayClass18_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).boosterMenu;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
+                     );
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-              (value,ExceptionArgument__Enum_obj,unaff_EDI);
-    original = (this->fields).boosterMenu;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
-                       );
     value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
+    func_?();
     if (value[1].klass != (Object__Class *)0x0) {
       BoostMenuController::BoostMenuController_Initialize
                 ((BoostMenuController *)value[1].klass,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                   MethodInfo__DesktopLobbyStateController____c__DisplayClass18_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        this_00 = (this->fields).playButton;
-        if (this_00 != (LobbyStateButton *)0x0) {
-          LobbyStateButton::LobbyStateButton_OnEnable(this_00,(MethodInfo *)0x0);
-          return;
-        }
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__DesktopLobbyStateController____c__DisplayClass18_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      pLVar2 = (this->fields).playButton;
+      if ((pLVar2 != (LobbyStateButton *)0x0) &&
+         (this_00 = (pLVar2->fields).lobbyStateButton, this_00 != (Button *)0x0)) {
+        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
+                  ((Selectable *)this_00,1,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -439,16 +431,16 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
   if (bVar1 == 0) {
     if (pIVar2 == (Image *)0x0) goto code_?;
     pIVar3 = pIVar2->klass;
-    pMVar4 = (pIVar3->vtable).set_raycastTarget.method;
+    pIVar4 = (pIVar3->vtable).SetAllDirty.methodPtr;
     uVar5 = 0;
   }
   else {
     if (pIVar2 == (Image *)0x0) goto code_?;
     pIVar3 = pIVar2->klass;
-    pMVar4 = (pIVar3->vtable).set_raycastTarget.method;
+    pIVar4 = (pIVar3->vtable).SetAllDirty.methodPtr;
     uVar5 = 1;
   }
-  (*(pIVar3->vtable).set_raycastTarget.methodPtr)(pIVar2,uVar5,pMVar4);
+  (*(code *)(pIVar3->vtable).set_raycastTarget.method)(pIVar2,uVar5,pIVar4);
   pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if ((pSVar6 == (SpawnRoleDataMediator *)0x0) ||
@@ -460,8 +452,8 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
     pGVar8 = (this->fields).respawnButton;
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     pGVar8 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar8,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0);
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar8,(MethodInfo *)0x0);
@@ -469,8 +461,8 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
     pGVar8 = (this->fields).respawnButton;
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     pGVar8 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar8,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0);
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     bVar1 = 0;
   }
@@ -493,8 +485,8 @@ code_?:
       return;
     }
     pGVar8 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar8,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0);
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar8,(MethodInfo *)0x0);
@@ -502,8 +494,8 @@ code_?:
     pGVar8 = (this->fields).respawnButton;
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     pGVar8 = (GameObject *)
-             mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4
-                       ((Void *)pGVar8,(MethodInfo *)0x0);
+             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+             UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0);
     if (pGVar8 == (GameObject *)0x0) goto code_?;
     bVar1 = 1;
   }

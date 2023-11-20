@@ -17,46 +17,46 @@ void Assembly-CSharp.dll::WaterSplashComponent::WaterSplashComponent_Initialize
     (*pcVar1)();
     return;
   }
-  uVar2 = 0;
-  uVar3 = (obj->klass->_1).interface_offsets_count;
-  if (uVar3 != 0) {
+  pIVar2 = obj->klass;
+  uVar3 = 0;
+  uVar4._0_1_ = (pIVar2->_1).rank;
+  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+  if (uVar4 != 0) {
     do {
-      if (obj->klass->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IMovable) {
-        pVVar4 = &(obj->klass->vtable).get_Bounds + obj->klass->interfaceOffsets[uVar2].offset;
+      if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IMovable) {
+        ppMVar5 = &(&(obj->klass->vtable).get_Bounds)[obj->klass->interfaceOffsets[uVar3].offset].
+                    method;
         goto code_?;
       }
-      uVar2 = uVar2 + 1;
-    } while (uVar2 < uVar3);
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar4);
   }
-  pVVar4 = (VirtualInvokeData *)func_?(obj,TypeInfo__IMovable,1);
+  ppMVar5 = (MethodInfo **)func_?(obj,TypeInfo__IMovable,1);
 code_?:
-  pfVar5 = (float *)(*pVVar4->methodPtr)(auStack_6,obj,pVVar4->method);
-  fVar7 = pfVar5[1];
-  fVar8 = pfVar5[2];
-  fVar9 = pfVar5[3];
-  fVar10 = pfVar5[4];
-  fVar11 = pfVar5[5];
-  (this->fields).bounds.m_Center.x = *pfVar5;
-  (this->fields).bounds.m_Center.y = fVar7;
-  (this->fields).bounds.m_Center.z = fVar8;
-  (this->fields).bounds.m_Extents.x = fVar9;
-  (this->fields).bounds.m_Extents.y = fVar10;
-  (this->fields).bounds.m_Extents.z = fVar11;
-  pRVar12 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-            RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-            KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                      (&RStack_13,
-                       (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                        *)&(this->fields).bounds,(MethodInfo *)0x0);
-  uStack_14._0_4_ = (float)pRVar12->_options;
-  uStack_14._4_4_ = (float)pRVar12->_cultureKey;
-  pSStack_15 = pRVar12->_pattern;
-  puVar16 = (undefined8 *)func_?(auStack_17,2,TypeInfo__IMovable,obj);
-  RStack_13._0_8_ = *puVar16;
-  RStack_13._pattern = (String *)((float)pSStack_15 - *(float *)(puVar16 + 1));
-  (this->fields).offset.x = (float)uStack_14 - (float)RStack_13._options;
-  (this->fields).offset.y = uStack_14._4_4_ - (float)RStack_13._cultureKey;
-  (this->fields).offset.z = (float)RStack_13._pattern;
+  pfVar6 = (float *)(*(code *)*ppMVar5)(auStack_7,obj,ppMVar5[1]);
+  fVar8 = pfVar6[1];
+  fVar9 = pfVar6[2];
+  fVar10 = pfVar6[3];
+  fVar11 = pfVar6[4];
+  fVar12 = pfVar6[5];
+  (this->fields).bounds.m_Center.x = *pfVar6;
+  (this->fields).bounds.m_Center.y = fVar8;
+  (this->fields).bounds.m_Center.z = fVar9;
+  (this->fields).bounds.m_Extents.x = fVar10;
+  (this->fields).bounds.m_Extents.y = fVar11;
+  (this->fields).bounds.m_Extents.z = fVar12;
+  fStack_13 = (this->fields).bounds.m_Center.z;
+  uStack_14._0_4_ = (this->fields).bounds.m_Center.x;
+  uStack_14._4_4_ = (this->fields).bounds.m_Center.y;
+  puVar15 = (undefined8 *)func_?(auStack_16,2,TypeInfo__IMovable,obj);
+  uVar17 = *puVar15;
+  uStack_18._0_4_ = (float)uVar17;
+  uStack_18._4_4_ = (float)((ulonglong)uVar17 >> 0x20);
+  fStack_19 = fStack_13 - *(float *)(puVar15 + 1);
+  (this->fields).offset.x = (float)uStack_14 - (float)uStack_18;
+  (this->fields).offset.y = uStack_14._4_4_ - uStack_18._4_4_;
+  (this->fields).offset.z = fStack_19;
+  uStack_18 = uVar17;
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
   return;
@@ -133,19 +133,16 @@ void Assembly-CSharp.dll::WaterSplashComponent::WaterSplashComponent_Update
       uVar6 = *puVar4;
       uVar7 = (this->fields).offset.x;
       uVar8 = (this->fields).offset.y;
+      uStack_9._0_4_ = (float)uVar6;
       uStack_9._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
       fStack_10 = (this->fields).offset.z;
-      uStack_9._0_4_ = (float)uVar6;
       fStack_11 = fStack_10 + *(float *)(puVar4 + 1);
-      value.y = uStack_9._4_4_ + (float)uVar8;
-      value.x = (float)uVar7 + (float)uStack_9;
-      value.z = fStack_11;
+      (this->fields).bounds.m_Center.x = (float)uStack_9 + (float)uVar7;
+      (this->fields).bounds.m_Center.y = uStack_9._4_4_ + (float)uVar8;
+      (this->fields).bounds.m_Center.z = fStack_11;
       uStack_9 = uVar6;
       fStack_5 = (float)uVar7;
       fStack_12 = (float)uVar8;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Particle::
-      ParticleSystem_Particle_set_position
-                ((ParticleSystem_Particle *)&(this->fields).bounds,value,(MethodInfo *)0x0);
       pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
       if (pWVar1 != (WaterPlaneManager *)0x0) {
         fVar13 = (this->fields).bounds.m_Extents.x;

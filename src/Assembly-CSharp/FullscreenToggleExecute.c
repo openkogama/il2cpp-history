@@ -18,74 +18,69 @@ void Assembly-CSharp.dll::FullscreenToggleExecute::FullscreenToggleExecute_Awake
     func_?(TypeInfo__FullScreenController);
   }
   pUVar1 = TypeInfo__FullScreenController->static_fields->OnFullScreenChange;
-  this_00 = (UnityAction_1_System_ByteEnum_ *)
+  this_00 = (UnityAction_1_System_Int32Enum_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
-  if (this_00 == (UnityAction_1_System_ByteEnum_ *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_00,(Object *)this,MethodInfo__FullscreenToggleExecute__FullscreenChanged_bool_,
+             (MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__FullScreenController->static_fields->OnFullScreenChange =
+         (UnityAction_1_System_Boolean_ *)0x0;
 code_?:
     func_?();
-  }
-  else {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-    UnityAction_1_System_ByteEnum___ctor
-              (this_00,(Object *)this,MethodInfo__FullscreenToggleExecute__FullscreenChanged_bool_,
-               (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      TypeInfo__FullScreenController->static_fields->OnFullScreenChange =
-           (UnityAction_1_System_Boolean_ *)0x0;
-    }
-    else {
-      pUVar1 = (UnityAction_1_System_Boolean_ *)func_?();
-      if (pUVar1 == (UnityAction_1_System_Boolean_ *)0x0) goto code_?;
-      TypeInfo__FullScreenController->static_fields->OnFullScreenChange = pUVar1;
-      iVar3 = func_?();
-      if (iVar3 == 0) goto code_?;
-    }
-    func_?();
-    pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-    if (pIVar4 == (IAdManager *)0x0) goto code_?;
-    cVar5 = func_?(10,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
-    if (cVar5 != '\0') {
+    pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar3 == (IAdManager *)0x0) goto code_?;
+    cVar4 = func_?();
+    if (cVar4 != '\0') {
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
       if (this_01 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_01,0,(MethodInfo *)0x0);
     }
-    pTVar6 = (this->fields).toggleStateHandler;
-    if (pTVar6 == (ToggleStateHandler *)0x0) goto code_?;
-    pTVar7 = (pTVar6->fields)._.OnStartSetValue;
-    this_02 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-              func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
-    if (this_02 == (Func_1_System_Threading_Tasks_VoidTaskResult_ *)0x0) goto code_?;
+    pTVar5 = (this->fields).toggleStateHandler;
+    if (pTVar5 == (ToggleStateHandler *)0x0) goto code_?;
+    pTVar6 = (pTVar5->fields)._.OnStartSetValue;
+    this_02 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
     mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
     Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-              (this_02,(Object *)this,MethodInfo__FullscreenToggleExecute__StartSetValue__,
-               (MethodInfo *)0x0);
-    pTVar7 = (ToggleStateHandlerOnStartSetValue *)
+              (this_02,(Object *)MethodInfo__FullscreenToggleExecute__StartSetValue__,
+               MethodInfo__FullscreenToggleExecute__StartSetValue__,(MethodInfo *)0x0);
+    pTVar6 = (ToggleStateHandlerOnStartSetValue *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pTVar7,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pTVar7 == (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar6->fields)._.OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
+                       ((Delegate *)pTVar6,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pTVar6 == (ToggleStateHandlerOnStartSetValue *)0x0) {
+      (pTVar5->fields)._.OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
       func_?();
       return;
     }
-    pTVar8 = (ToggleStateHandlerOnStartSetValue *)0x0;
-    if (pTVar7->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar8 = pTVar7;
+    pTVar7 = (ToggleStateHandlerOnStartSetValue *)0x0;
+    if (pTVar6->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+      pTVar7 = pTVar6;
     }
-    if (pTVar8 != (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar6->fields)._.OnStartSetValue = pTVar8;
-      pTVar8 = (ToggleStateHandlerOnStartSetValue *)0x0;
-      if (pTVar7->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-        pTVar8 = pTVar7;
+    if (pTVar7 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+      (pTVar5->fields)._.OnStartSetValue = pTVar7;
+      pTVar7 = (ToggleStateHandlerOnStartSetValue *)0x0;
+      if (pTVar6->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+        pTVar7 = pTVar6;
       }
-      if (pTVar8 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+      if (pTVar7 != (ToggleStateHandlerOnStartSetValue *)0x0) {
         func_?();
         return;
       }
     }
+  }
+  else {
+    pUVar1 = (UnityAction_1_System_Boolean_ *)func_?();
+    if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+      TypeInfo__FullScreenController->static_fields->OnFullScreenChange = pUVar1;
+      iVar8 = func_?();
+      if (iVar8 != 0) goto code_?;
+    }
+    func_?();
   }
   func_?();
 code_?:
@@ -133,7 +128,6 @@ void Assembly-CSharp.dll::FullscreenToggleExecute::FullscreenToggleExecute_Execu
       FullScreenController::FullScreenController_set_FullScreen(toggleState,(MethodInfo *)0x0);
       return;
     }
-code_?:
     func_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
@@ -142,7 +136,7 @@ code_?:
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                    ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__FullscreenToggleExecute____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__FullscreenToggleExecute____c);
+    func_?();
   }
   callbackFunction = TypeInfo__FullscreenToggleExecute____c->static_fields->__9__3_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
@@ -155,8 +149,6 @@ code_?:
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
                         );
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0)
-    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -195,11 +187,11 @@ void Assembly-CSharp.dll::FullscreenToggleExecute::FullscreenToggleExecute_Fulls
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Overriding_toggle_state_while_wa,(MethodInfo *)0x0);
     }
     (pTVar1->fields)._.toggleState = fullscreenState;
-    (*(pTVar1->klass->vtable).UpdateToggleState.methodPtr)();
+    (*(code *)(pTVar1->klass->vtable).UpdateToggleState.method)();
     return;
   }
   uVar2 = func_?(&stack0xfffffff0);

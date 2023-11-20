@@ -26,99 +26,88 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
     cRam_? = '\x01';
   }
   this_00 = (this->fields).vehicleUIGroup;
-  if (this_00 != (CanvasGroup *)0x0) {
+  if (this_00 == (CanvasGroup *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
               (this_00,0.0,(MethodInfo *)0x0);
     this_01 = (this->fields).rectTransform;
-    if (this_01 != (RectTransform *)0x0) {
-      VVar1 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
-                        (this_01,(MethodInfo *)0x0);
-      (this->fields).originalSize.x = fStack_2;
-      fStack_3 = VVar1.y;
-      (this->fields).originalSize.y = fStack_3;
-      pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                         ((MethodInfo *)0x0);
-      if (pSVar4 != (SpawnRoleDataMediator *)0x0) {
-        unaff_EBX = (Action_2_Boolean_Single___Class *)(pSVar4->fields).isInVehicle;
-        value = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)
-                func_?(
-                               TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<bool>
-                               );
-        if (value != (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::ByteEnum]::
-          UnityAction_1_System_ByteEnum___ctor
-                    ((UnityAction_1_System_ByteEnum_ *)value,(Object *)this,
-                     MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnIsInVehicleChange_bool_
-                     ,(MethodInfo *)0x0);
-          if (unaff_EBX != (Action_2_Boolean_Single___Class *)0x0) {
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[UnityEngine::Vector3]::
-            SpawnRoleVariable_1_UnityEngine_Vector3__add_OnChange
-                      ((SpawnRoleVariable_1_UnityEngine_Vector3_ *)unaff_EBX,value,
-                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<bool>_
-                      );
-            pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-            if (pMVar5 != (MVLocalPlayer *)0x0) {
-              unaff_EBX = (Action_2_Boolean_Single___Class *)(pMVar5->fields)._.spawnRolesManager;
-              this_02 = (UnityAction_1_System_Int32Enum_ *)
-                        func_?(TypeInfo__System__Action<int>);
-              if (this_02 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-                UnityAction_1_System_Int32Enum___ctor
-                          (this_02,(Object *)this,
-                           MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnSpawnRoleModeChange_int_
-                           ,(MethodInfo *)0x0);
-                if (unaff_EBX != (Action_2_Boolean_Single___Class *)0x0) {
-                  SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
-                            ((SpawnRolesManager *)unaff_EBX,(Action_1_Int32_ *)this_02,
-                             (MethodInfo *)0x0);
-                  pSVar6 = (this->fields).speedOMeter;
-                  if (pSVar6 != (SpeedOMeter *)0x0) {
-                    pAVar7 = (pSVar6->fields).OnShowHide;
-                    this_03 = (Action_2_Boolean_Single_ *)
-                              func_?(TypeInfo__System__Action<bool,_float>);
-                    unaff_EBX = (Action_2_Boolean_Single___Class *)0x0;
-                    if (this_03 != (Action_2_Boolean_Single_ *)0x0) {
-                      mscorlib.dll::System::Action`2[Boolean,Single]::Action_2_Boolean_Single___ctor
-                                (this_03,(Object *)this,
-                                 MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnSpeedOMeterShowHide_bool__float_
-                                 ,(MethodInfo *)0x0);
-                      pAStack8 =
-                           (Action_2_Boolean_Single___Class *)
-                           mscorlib.dll::System::Delegate::Delegate_Combine
-                                     ((Delegate *)pAVar7,(Delegate *)this_03,(MethodInfo *)0x0);
-                      unaff_EBX = TypeInfo__System__Action<bool,_float>;
-                      if (pAStack8 == (Action_2_Boolean_Single___Class *)0x0) {
-                        (pSVar6->fields).OnShowHide = (Action_2_Boolean_Single_ *)0x0;
-                        func_?();
-                        return;
-                      }
-                      pAStack8 = TypeInfo__System__Action<bool,_float>;
-                      pAVar7 = (Action_2_Boolean_Single_ *)func_?();
-                      if (pAVar7 != (Action_2_Boolean_Single_ *)0x0) {
-                        (pSVar6->fields).OnShowHide = pAVar7;
-                        unaff_EBX = TypeInfo__System__Action<bool,_float>;
-                        pAStack8 = TypeInfo__System__Action<bool,_float>;
-                        pAStack8 = (Action_2_Boolean_Single___Class *)func_?();
-                        if (pAStack8 != (Action_2_Boolean_Single___Class *)0x0) {
-                          func_?();
-                          return;
-                        }
-                      }
-                      goto code_?;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    if (this_01 == (RectTransform *)0x0) goto code_?;
+    VVar1 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
+                      (this_01,(MethodInfo *)0x0);
+    (this->fields).originalSize.x = fStack_2;
+    fStack_3 = VVar1.y;
+    (this->fields).originalSize.y = fStack_3;
+    pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                       ((MethodInfo *)0x0);
+    if (pSVar4 == (SpawnRoleDataMediator *)0x0) goto code_?;
+    unaff_ESI = (Action_2_Boolean_Single___Class *)(pSVar4->fields).isInVehicle;
+    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
+            )func_?(
+                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<bool>
+                            );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
+               MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnIsInVehicleChange_bool_
+               ,(MethodInfo *)0x0);
+    if (unaff_ESI == (Action_2_Boolean_Single___Class *)0x0) goto code_?;
+    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+    SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
+              ((SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)unaff_ESI,
+               value,
+               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<bool>_
+              );
+    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
+    unaff_ESI = (Action_2_Boolean_Single___Class *)(pMVar5->fields)._.spawnRolesManager;
+    this_02 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_02,(Object *)this,
+               MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnSpawnRoleModeChange_int_
+               ,(MethodInfo *)0x0);
+    if (unaff_ESI == (Action_2_Boolean_Single___Class *)0x0) goto code_?;
+    SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
+              ((SpawnRolesManager *)unaff_ESI,(Action_1_Int32_ *)this_02,(MethodInfo *)0x0);
+    pSVar6 = (this->fields).speedOMeter;
+    if (pSVar6 == (SpeedOMeter *)0x0) goto code_?;
+    a = (pSVar6->fields).OnShowHide;
+    this_03 = (Action_2_Int32_Single_ *)func_?(TypeInfo__System__Action<bool,_float>);
+    mscorlib.dll::System::Action`2[Int32,Single]::Action_2_Int32_Single___ctor
+              (this_03,(Object *)this,
+               MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleUIController__OnSpeedOMeterShowHide_bool__float_
+               ,(MethodInfo *)0x0);
+    pAStack7 =
+         (Action_2_Boolean_Single___Class *)
+         mscorlib.dll::System::Delegate::Delegate_Combine
+                   ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
+    unaff_ESI = TypeInfo__System__Action<bool,_float>;
+    if (pAStack7 == (Action_2_Boolean_Single___Class *)0x0) {
+      (pSVar6->fields).OnShowHide = (Action_2_Boolean_Single_ *)0x0;
+      func_?();
+      return;
+    }
+    pAStack7 = TypeInfo__System__Action<bool,_float>;
+    iVar8 = func_?();
+    this = (VehicleUIController *)TypeInfo__System__Action<bool,_float>;
+    if (iVar8 == 0) goto code_?;
+    unaff_ESI = (Action_2_Boolean_Single___Class *)&UNK_?;
+    pAStack7 = TypeInfo__System__Action<bool,_float>;
+    _UNK_? = iVar8;
+    pAStack7 = (Action_2_Boolean_Single___Class *)func_?();
+    if (pAStack7 != (Action_2_Boolean_Single___Class *)0x0) {
+      func_?();
+      return;
     }
   }
+  pAStack7 = (Action_2_Boolean_Single___Class *)this;
   func_?();
 code_?:
-  pAStack8 = unaff_EBX;
+  pAStack7 = unaff_ESI;
   func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
@@ -143,26 +132,26 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
       func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    if (*(char *)(in_stack_1 + 0x18) == '\0') {
+    if (*(char *)(in_stack_1 + 0x1c) == '\0') {
       return;
     }
-    if (*(VehicleEnergyContainer **)(in_stack_1 + 0x1c) != (VehicleEnergyContainer *)0x0) {
+    if (*(VehicleEnergyContainer **)(in_stack_1 + 0x20) != (VehicleEnergyContainer *)0x0) {
       fVar2 = WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
               VehicleEnergyContainer_get_EnergyStatus
-                        (*(VehicleEnergyContainer **)(in_stack_1 + 0x1c),(MethodInfo *)0x0);
+                        (*(VehicleEnergyContainer **)(in_stack_1 + 0x20),(MethodInfo *)0x0);
       iVar3 = (int)(fVar2 * _UNK_?);
-      if (iVar3 < *(int *)(in_stack_1 + 0x20)) {
-        *(int *)(in_stack_1 + 0x20) = iVar3;
+      if (iVar3 < *(int *)(in_stack_1 + 0x24)) {
+        *(int *)(in_stack_1 + 0x24) = iVar3;
       }
-      else if (*(int *)(in_stack_1 + 0x20) < iVar3) {
-        *(int *)(in_stack_1 + 0x20) = *(int *)(in_stack_1 + 0x20) + 1;
+      else if (*(int *)(in_stack_1 + 0x24) < iVar3) {
+        *(int *)(in_stack_1 + 0x24) = *(int *)(in_stack_1 + 0x24) + 1;
       }
-      piVar4 = *(int **)(in_stack_1 + 0x14);
+      piVar4 = *(int **)(in_stack_1 + 0x18);
       unaff_retaddr = (int *)0x0;
       mscorlib.dll::System::Int32::Int32_ToString
-                ((Int32 *)(in_stack_1 + 0x20),(MethodInfo *)0x0);
+                ((Int32 *)(in_stack_1 + 0x24),(MethodInfo *)0x0);
       if (piVar4 != (int *)0x0) {
-        (**(code **)(*piVar4 + 0x314))(piVar4);
+        (**(code **)(*piVar4 + 0x318))(piVar4);
         unaff_retaddr = piVar4;
         if (cRam_? == '\0') {
           func_?(&
@@ -171,8 +160,8 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
           cRam_? = '\x01';
           unaff_retaddr = piVar4;
         }
-        piVar4 = *(int **)(in_stack_1 + 0x14);
-        if (*(int *)(in_stack_1 + 0x20) < 0x14) {
+        piVar4 = *(int **)(in_stack_1 + 0x18);
+        if (*(int *)(in_stack_1 + 0x24) < 0x14) {
           if ((TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?(
@@ -182,36 +171,36 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
           pVVar5 = TypeInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeterText->
                    static_fields;
           if (piVar4 != (int *)0x0) {
-            (**(code **)(*piVar4 + 0x174))
+            (**(code **)(*piVar4 + 0x178))
                       (piVar4,(pVVar5->WarningColor).r,(pVVar5->WarningColor).g,
                        (pVVar5->WarningColor).b,(pVVar5->WarningColor).a,
-                       *(undefined4 *)(*piVar4 + 0x178));
-            if (3 < *(int *)(in_stack_1 + 0x24)) {
-              *(undefined4 *)(in_stack_1 + 0x24) = 0xfffffffc;
+                       *(undefined4 *)(*piVar4 + 0x17c));
+            if (3 < *(int *)(in_stack_1 + 0x28)) {
+              *(undefined4 *)(in_stack_1 + 0x28) = 0xfffffffc;
             }
-            if ((*(Component **)(in_stack_1 + 0x14) != (Component *)0x0) &&
+            if ((*(Component **)(in_stack_1 + 0x18) != (Component *)0x0) &&
                (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   (*(Component **)(in_stack_1 + 0x14),(MethodInfo *)0x0),
+                                   (*(Component **)(in_stack_1 + 0x18),(MethodInfo *)0x0),
                pTVar6 != (Transform *)0x0)) {
               pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                        Transform_get_localPosition
                                  ((Vector3 *)&stack0xfffffff8,pTVar6,(MethodInfo *)0x0);
-              if (*(int *)(in_stack_1 + 0x24) < 0) {
+              if (*(int *)(in_stack_1 + 0x28) < 0) {
                 fVar2 = pVVar7->y + _UNK_?;
               }
               else {
                 fVar2 = pVVar7->y - _UNK_?;
               }
-              if (*(Component **)(in_stack_1 + 0x14) != (Component *)0x0) {
+              if (*(Component **)(in_stack_1 + 0x18) != (Component *)0x0) {
                 pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   (*(Component **)(in_stack_1 + 0x14),(MethodInfo *)0x0);
+                                   (*(Component **)(in_stack_1 + 0x18),(MethodInfo *)0x0);
                 if (pTVar6 != (Transform *)0x0) {
                   value.y = fVar2;
-                  value.x = (float)*(undefined4 *)(in_stack_1 + 0x38);
-                  value.z = *(float *)(in_stack_1 + 0x40);
+                  value.x = (float)*(undefined4 *)(in_stack_1 + 0x3c);
+                  value.z = *(float *)(in_stack_1 + 0x44);
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                             (pTVar6,value,(MethodInfo *)0x0);
-                  *(int *)(in_stack_1 + 0x24) = *(int *)(in_stack_1 + 0x24) + 1;
+                  *(int *)(in_stack_1 + 0x28) = *(int *)(in_stack_1 + 0x28) + 1;
                   return;
                 }
               }
@@ -219,17 +208,17 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
           }
         }
         else if (piVar4 != (int *)0x0) {
-          (**(code **)(*piVar4 + 0x174))
-                    (piVar4,*(undefined4 *)(in_stack_1 + 0x28),
-                     *(undefined4 *)(in_stack_1 + 0x2c),
+          (**(code **)(*piVar4 + 0x178))
+                    (piVar4,*(undefined4 *)(in_stack_1 + 0x2c),
                      *(undefined4 *)(in_stack_1 + 0x30),
-                     *(undefined4 *)(in_stack_1 + 0x34),*(undefined4 *)(*piVar4 + 0x178));
-          if ((*(Component **)(in_stack_1 + 0x14) != (Component *)0x0) &&
+                     *(undefined4 *)(in_stack_1 + 0x34),
+                     *(undefined4 *)(in_stack_1 + 0x38),*(undefined4 *)(*piVar4 + 0x17c));
+          if ((*(Component **)(in_stack_1 + 0x18) != (Component *)0x0) &&
              (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 (*(Component **)(in_stack_1 + 0x14),(MethodInfo *)0x0),
+                                 (*(Component **)(in_stack_1 + 0x18),(MethodInfo *)0x0),
              pTVar6 != (Transform *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar6,*(Vector3 *)(in_stack_1 + 0x38),(MethodInfo *)0x0);
+                      (pTVar6,*(Vector3 *)(in_stack_1 + 0x3c),(MethodInfo *)0x0);
             return;
           }
         }
@@ -316,14 +305,14 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
   VehicleUIController_UpdateRigidBody(this,(MethodInfo *)0x0);
   pSVar1 = (in_stack_2->fields).speedOMeter;
   if (pSVar1 != (SpeedOMeter *)0x0) {
-    (*(pSVar1->klass->vtable).Initialize.methodPtr)
-              (pSVar1,(uint)(in_stack_2->fields).insideVehicle,
-               (in_stack_2->fields).rigidBody,(pSVar1->klass->vtable).Initialize.method);
+    (*(code *)(pSVar1->klass->vtable).Initialize.method)
+              (pSVar1,(in_stack_2->fields).insideVehicle,
+               (in_stack_2->fields).rigidBody,pSVar1->klass[1]._0.image);
     pVVar3 = (in_stack_2->fields).vehicleEnergyMeter;
     if (pVVar3 != (VehicleEnergyMeterText *)0x0) {
-      (*(pVVar3->klass->vtable).Initialize.methodPtr)
-                (pVVar3,(uint)(in_stack_2->fields).insideVehicle,
-                 (in_stack_2->fields).rigidBody,(pVVar3->klass->vtable).Initialize.method);
+      (*(code *)(pVVar3->klass->vtable).Initialize.method)
+                (pVVar3,(in_stack_2->fields).insideVehicle,
+                 (in_stack_2->fields).rigidBody,pVVar3->klass[1]._0.image);
       VehicleUIController_UpdateVisibility(in_stack_2,(MethodInfo *)0x0);
       return;
     }
@@ -403,14 +392,14 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleUI
 {
   pSVar1 = (this->fields).speedOMeter;
   if (pSVar1 != (SpeedOMeter *)0x0) {
-    (*(pSVar1->klass->vtable).Initialize.methodPtr)
-              (pSVar1,(uint)(this->fields).insideVehicle,(this->fields).rigidBody,
-               (pSVar1->klass->vtable).Initialize.method);
+    (*(code *)(pSVar1->klass->vtable).Initialize.method)
+              (pSVar1,(this->fields).insideVehicle,(this->fields).rigidBody,
+               pSVar1->klass[1]._0.image);
     pVVar2 = (this->fields).vehicleEnergyMeter;
     if (pVVar2 != (VehicleEnergyMeterText *)0x0) {
-      (*(pVVar2->klass->vtable).Initialize.methodPtr)
-                (pVVar2,(uint)(this->fields).insideVehicle,(this->fields).rigidBody,
-                 (pVVar2->klass->vtable).Initialize.method);
+      (*(code *)(pVVar2->klass->vtable).Initialize.method)
+                (pVVar2,(this->fields).insideVehicle,(this->fields).rigidBody,
+                 pVVar2->klass[1]._0.image);
       VehicleUIController_UpdateVisibility(this,(MethodInfo *)0x0);
       return;
     }

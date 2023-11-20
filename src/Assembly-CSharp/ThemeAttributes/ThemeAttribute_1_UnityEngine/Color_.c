@@ -6,9 +6,9 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]:
                (ThemeAttribute_1_UnityEngine_Color_ *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).__unknown_2.methodPtr)
+  (*(code *)(this->klass->vtable).__unknown_2.method)
             (this,(this->fields).value.r,(this->fields).value.g,(this->fields).value.b,
-             (this->fields).value.a,(this->klass->vtable).__unknown_2.method);
+             (this->fields).value.a,this->klass[1]._0.image);
   return;
 }
 

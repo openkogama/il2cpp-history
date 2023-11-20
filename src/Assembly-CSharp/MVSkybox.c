@@ -71,37 +71,35 @@ void Assembly-CSharp.dll::MVSkybox::MVSkybox_Initialize(MVSkybox *this,MethodInf
         MVLogicObject::MVLogicObject_SetupCulling
                   ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
         this_01 = TypeInfo__System__Action<LogicInputState,_LogicObjectManager>;
-        this_03 = (Action_2_Int32Enum_Object_ *)func_?();
-        if (this_03 != (Action_2_Int32Enum_Object_ *)0x0) {
-          mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
-                    (this_03,(Object *)this,
-                     MethodInfo__MVSkybox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                     ,(MethodInfo *)0x0);
-          pIVar2 = LogicClientsideFactory::
-                   LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                             ((MVWorldObject *)this,1,
-                              (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                              (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
-                              (MethodInfo *)0x0);
-          (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
-          func_?();
-          if ((this->fields).skybox != (SkyboxManager *)0x0) {
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (*(char *)&this_01->interfaceOffsets != '\0') {
-              SkyboxManager::SkyboxManager_ComputeSkyboxSettings
-                        ((SkyboxManager *)this_01,(Color *)&(this_01->_0).fields,
-                         (float *)&(this_01->_0).nestedTypes,
-                         (float *)&(this_01->_0).implementedInterfaces,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine_2
-                        ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine
-                        ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
-            }
-            return;
+        this_03 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]
+        ::UnityAction_2_System_Int32_System_Int32___ctor
+                  (this_03,(Object *)this,
+                   MethodInfo__MVSkybox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+                   ,(MethodInfo *)0x0);
+        pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                           ((MVWorldObject *)this,1,
+                            (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                            (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
+                            (MethodInfo *)0x0);
+        (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
+        func_?();
+        if ((this->fields).skybox != (SkyboxManager *)0x0) {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
+          if (*(char *)&this_01->static_fields != '\0') {
+            SkyboxManager::SkyboxManager_ComputeSkyboxSettings
+                      ((SkyboxManager *)this_01,(Color *)&(this_01->_0).events,
+                       (float *)&(this_01->_0).implementedInterfaces,
+                       (float *)&this_01->interfaceOffsets,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine_2
+                      ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine
+                      ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
+          }
+          return;
         }
       }
     }
@@ -235,16 +233,6 @@ void Assembly-CSharp.dll::MVSkybox::MVSkybox__ctor
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum
-Assembly-CSharp.dll::MVSkybox::MVSkybox_get_DocumentationType(MVSkybox *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_Skybox;
-}
-
-
 /* Single get_FogDensity() */
 
 float Assembly-CSharp.dll::MVSkybox::MVSkybox_get_FogDensity(MVSkybox *this,MethodInfo *method)
@@ -263,47 +251,52 @@ float Assembly-CSharp.dll::MVSkybox::MVSkybox_get_FogDensity(MVSkybox *this,Meth
     func_?(&StringLiteral_fogDensity);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_fogDensity,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_fogDensity,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Skybox_data_does_not_contain_fog,(MethodInfo *)0x0);
       return _UNK_?;
     }
-    this_01 = (this->fields)._._._.data;
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_01,(Object *)StringLiteral_fogDensity,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pOVar2 != (Object *)0x0) {
-        pSStack3 = TypeInfo__System__Single;
-        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-          pSStack3 = (Single__Class *)pOVar2;
-          pfVar4 = (float *)func_?();
-          return *pfVar4;
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar1,(Object *)StringLiteral_fogDensity,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar3.m_Index != 0) {
+        TStack4.m_Index = (int32_t)TypeInfo__System__Single;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+            (TypeInfo__System__Single->_0).element_class) {
+          TStack4 = TVar3;
+          pfVar5 = (float *)func_?();
+          return *pfVar5;
         }
         goto code_?;
       }
     }
   }
+  TStack4.m_Index = (int32_t)&UNK_?;
   func_?();
-  pSStack3 = extraout_EDX;
+  TStack4.m_Index = (int32_t)extraout_EDX;
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  pcVar6 = (code *)swi(3);
+  fVar7 = (float10)(*pcVar6)();
+  return (float)fVar7;
 }
 
 
@@ -353,64 +346,68 @@ Color * Assembly-CSharp.dll::MVSkybox::MVSkybox_get_SkyboxColor
     func_?(&StringLiteral_Skybox_data_does_not_contain_col);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
   }
   else {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_color,
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_color,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Skybox_data_does_not_contain_col,(MethodInfo *)0x0);
       if ((TypeInfo__SkyboxManager->_1).cctor_finished_or_no_cctor == 0) {
         __return_storage_ptr__ = (Color *)&UNK_?;
         func_?();
       }
-      pSVar2 = TypeInfo__SkyboxManager->static_fields;
-      fVar3 = (pSVar2->defaultColor).g;
-      fVar4 = (pSVar2->defaultColor).b;
-      fVar5 = (pSVar2->defaultColor).a;
-      __return_storage_ptr__->r = (pSVar2->defaultColor).r;
-      __return_storage_ptr__->g = fVar3;
-      __return_storage_ptr__->b = fVar4;
-      __return_storage_ptr__->a = fVar5;
+      pSVar3 = TypeInfo__SkyboxManager->static_fields;
+      fVar4 = (pSVar3->defaultColor).g;
+      fVar5 = (pSVar3->defaultColor).b;
+      fVar6 = (pSVar3->defaultColor).a;
+      __return_storage_ptr__->r = (pSVar3->defaultColor).r;
+      __return_storage_ptr__->g = fVar4;
+      __return_storage_ptr__->b = fVar5;
+      __return_storage_ptr__->a = fVar6;
       return __return_storage_ptr__;
     }
-    this_01 = (this->fields)._._._.data;
-    if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    pCVar6 = (Color *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__get_Item
-                                (this_01,(Object *)StringLiteral_color,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                );
-    if (pCVar6 == (Color *)0x0) goto code_?;
-    iVar7 = func_?();
-    if (iVar7 == 0) goto code_?;
-    if (((*(int *)(iVar7 + 0xc) != 0) && (1 < *(uint *)(iVar7 + 0xc))) &&
-       (pMVar8 = *(MonitorData **)(iVar7 + 0x14), 2 < *(uint *)(iVar7 + 0xc))) {
-      fVar3 = *(float *)(iVar7 + 0x18);
-      pCVar6->r = (float)*(Object__Class **)(iVar7 + 0x10);
-      pCVar6->g = (float)pMVar8;
-      pCVar6->b = fVar3;
-      pCVar6->a = 1.0;
-      return pCVar6;
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar1,(Object *)StringLiteral_color,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (TVar7.m_Index == 0) goto code_?;
+    iVar8 = func_?();
+    if (iVar8 == 0) goto code_?;
+    if (((*(int *)(iVar8 + 0xc) != 0) && (1 < *(uint *)(iVar8 + 0xc))) &&
+       (uVar9 = *(undefined4 *)(iVar8 + 0x14), 2 < *(uint *)(iVar8 + 0xc))) {
+      uVar10 = *(undefined4 *)(iVar8 + 0x18);
+      *(undefined4 *)TVar7.m_Index = *(undefined4 *)(iVar8 + 0x10);
+      *(undefined4 *)(TVar7.m_Index + 4) = uVar9;
+      *(undefined4 *)(TVar7.m_Index + 8) = uVar10;
+      *(undefined4 *)(TVar7.m_Index + 0xc) = 0x3f800000;
+      return (Color *)TVar7.m_Index;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  pCVar6 = (Color *)(*pcVar9)();
-  return pCVar6;
+  pcVar11 = (code *)swi(3);
+  pCVar12 = (Color *)(*pcVar11)();
+  return pCVar12;
 }
 
 
@@ -432,46 +429,51 @@ float Assembly-CSharp.dll::MVSkybox::MVSkybox_get_SunAngle(MVSkybox *this,Method
     func_?(&StringLiteral_sunAngle);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-            Object,GUILoginHandler+PlanetData]::
-            Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                      (this_00,(Object *)StringLiteral_sunAngle,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar1,(Object *)StringLiteral_sunAngle,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar1 == 0) {
+    if (bVar2 == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Skybox_data_does_not_contain_sun,(MethodInfo *)0x0);
       return _UNK_?;
     }
-    this_01 = (this->fields)._._._.data;
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-               Object]::Dictionary_2_System_Object_System_Object__get_Item
-                         (this_01,(Object *)StringLiteral_sunAngle,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (pOVar2 != (Object *)0x0) {
-        pSStack3 = TypeInfo__System__Single;
-        if ((pOVar2->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-          pSStack3 = (Single__Class *)pOVar2;
-          pfVar4 = (float *)func_?();
-          return *pfVar4;
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar1,(Object *)StringLiteral_sunAngle,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      if (TVar3.m_Index != 0) {
+        TStack4.m_Index = (int32_t)TypeInfo__System__Single;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+            (TypeInfo__System__Single->_0).element_class) {
+          TStack4 = TVar3;
+          pfVar5 = (float *)func_?();
+          return *pfVar5;
         }
         goto code_?;
       }
     }
   }
+  TStack4.m_Index = (int32_t)&UNK_?;
   func_?();
-  pSStack3 = extraout_EDX;
+  TStack4.m_Index = (int32_t)extraout_EDX;
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  pcVar6 = (code *)swi(3);
+  fVar7 = (float10)(*pcVar6)();
+  return (float)fVar7;
 }
 

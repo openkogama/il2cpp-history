@@ -18,117 +18,114 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New
   }
   pMVar1 = (this->fields).owner;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                          (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                        (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
     pMVar2 = (MVRuntimeDataVariable *)func_?(TypeInfo__MVRuntimeDataVariable);
-    if (pMVar2 != (MVRuntimeDataVariable *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Debug);
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-        func_?(&TypeInfo__Extensions);
-        func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
-        func_?(&StringLiteral_Initial_runtime_data_does_not_co);
-        cRam_? = '\x01';
-      }
-      (pMVar2->fields).lastSendTime = -INFINITY;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_EDI);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+      func_?(&TypeInfo__Extensions);
+      func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
+      func_?(&StringLiteral_Initial_runtime_data_does_not_co);
+      cRam_? = '\x01';
+    }
+    (pMVar2->fields).lastSendTime = -INFINITY;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)pMVar2,ExceptionArgument__Enum_obj,unaff_ESI);
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
+        cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
+    }
+    pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
+             ObscuredString_op_Implicit(variableId,(MethodInfo *)0x0);
+    (pMVar2->fields).variableId = pOVar3;
+    func_?(&pMVar2->fields,pOVar3);
+    (pMVar2->fields).sendInterval = sendInterval;
+    (pMVar2->fields).writeThrough = writeThrough;
+    pSVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
+             ObscuredString_op_Implicit_1((pMVar2->fields).variableId,(MethodInfo *)0x0);
+    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Extensions);
+    }
+    bVar5 = Extensions::Extensions_ContainsObscuredKey
+                      ((Dictionary_2_System_Object_System_Object_ *)this_01,pSVar4,(MethodInfo *)0x0
+                      );
+    if (bVar5 == 0) {
+      pOVar3 = (pMVar2->fields).variableId;
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
           cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
       }
-      pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
-               ObscuredString_op_Implicit(variableId,(MethodInfo *)0x0);
-      (pMVar2->fields).variableId = pOVar3;
-      func_?(&pMVar2->fields,pOVar3);
-      (pMVar2->fields).sendInterval = sendInterval;
-      (pMVar2->fields).writeThrough = writeThrough;
       pSVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString::
-               ObscuredString_op_Implicit_1((pMVar2->fields).variableId,(MethodInfo *)0x0);
-      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Extensions);
+               ObscuredString_op_Implicit_1(pOVar3,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Initial_runtime_data_does_not_co,pSVar4,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
       }
-      bVar5 = Extensions::Extensions_ContainsObscuredKey(hashtable,pSVar4,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        pOVar3 = (pMVar2->fields).variableId;
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
-        }
-        pSVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredString
-                 ::ObscuredString_op_Implicit_1(pOVar3,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_Initial_runtime_data_does_not_co,pSVar4,(MethodInfo *)0x0)
-        ;
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError
-                  ((Object *)pSVar4,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)pSVar4,(MethodInfo *)0x0);
+    }
+    if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_01,(Object *)(pMVar2->fields).variableId,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+      (pMVar2->fields).value = (Object *)TVar6.m_Index;
+      func_?(&(pMVar2->fields).value,TVar6.m_Index);
+      pOVar7 = (pMVar2->fields).value;
+      (pMVar2->fields).sendValue = pOVar7;
+      func_?(&(pMVar2->fields).sendValue,pOVar7);
+      pMVar8 = (pMVar2->fields).OnWriteThrough;
+      this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+                func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                (this_02,(Object *)this,
+                 MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
+                 (MethodInfo *)0x0);
+      pMVar8 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar8,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pMVar8 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+        (pMVar2->fields).OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
       }
-      if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (hashtable,(Object *)(pMVar2->fields).variableId,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        (pMVar2->fields).value = pOVar6;
-        func_?(&(pMVar2->fields).value,pOVar6);
-        pOVar6 = (pMVar2->fields).value;
-        (pMVar2->fields).sendValue = pOVar6;
-        func_?(&(pMVar2->fields).sendValue,pOVar6);
-        pMVar7 = (pMVar2->fields).OnWriteThrough;
-        this_01 = (UnityAction_1_System_Object_ *)
-                  func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-        if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-          UnityAction_1_System_Object___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                     (MethodInfo *)0x0);
-          pMVar7 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-                   mscorlib.dll::System::Delegate::Delegate_Combine
-                             ((Delegate *)pMVar7,(Delegate *)this_01,(MethodInfo *)0x0);
-          if (pMVar7 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-            (pMVar2->fields).OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          }
-          else {
-            pMVar8 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-            if (pMVar7->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-              pMVar8 = pMVar7;
-            }
-            if (pMVar8 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0)
-            goto code_?;
-            (pMVar2->fields).OnWriteThrough = pMVar8;
-            pMVar8 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-            if (pMVar7->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-              pMVar8 = pMVar7;
-            }
-            if (pMVar8 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0)
-            goto code_?;
-          }
-          func_?();
-          this_00 = (this->fields).variables;
-          if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
-                       MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                      );
-            return pMVar2;
-          }
+      else {
+        pMVar9 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar8->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar9 = pMVar8;
         }
+        if (pMVar9 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        (pMVar2->fields).OnWriteThrough = pMVar9;
+        pMVar9 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar8->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar9 = pMVar8;
+        }
+        if (pMVar9 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+      }
+      func_?();
+      this_00 = (this->fields).variables;
+      if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
+                   MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
+                  );
+        return pMVar2;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  pMVar2 = (MVRuntimeDataVariable *)(*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  pMVar2 = (MVRuntimeDataVariable *)(*pcVar10)();
   return pMVar2;
 }
 
@@ -154,63 +151,60 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFl
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     initialRuntimeData =
          (Dictionary_2_System_Object_System_Object_ *)
-         (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                   (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
+         (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                   (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
     pMVar2 = (MVRuntimeDataVariableClampedFloat *)
              func_?(TypeInfo__MVRuntimeDataVariableClampedFloat);
-    if (pMVar2 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_
-                       );
-        cRam_? = '\x01';
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_
+                     );
+      cRam_? = '\x01';
+    }
+    MVRuntimeDataVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pMVar2
+               ,variableId,sendInterval,initialRuntimeData,writeThrough,
+               MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_
+              );
+    (pMVar2->fields).min = minValue;
+    (pMVar2->fields).max = maxValue;
+    pMVar3 = (pMVar2->fields)._._.OnWriteThrough;
+    this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
+              func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+              (this_01,(Object *)this,
+               MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,(MethodInfo *)0x0)
+    ;
+    pMVar3 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pMVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+      (pMVar2->fields)._._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+    }
+    else {
+      pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+        pMVar4 = pMVar3;
       }
-      MVRuntimeDataVariable`1[System::Single]::MVRuntimeDataVariable_1_System_Single___ctor
-                ((MVRuntimeDataVariable_1_System_Single_ *)pMVar2,variableId,sendInterval,
-                 initialRuntimeData,writeThrough,
-                 MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_
+      if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+      (pMVar2->fields)._._.OnWriteThrough = pMVar4;
+      pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+        pMVar4 = pMVar3;
+      }
+      if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+    }
+    func_?();
+    this_00 = (this->fields).variables;
+    if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
+                 MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
                 );
-      (pMVar2->fields).min = minValue;
-      (pMVar2->fields).max = maxValue;
-      pMVar3 = (pMVar2->fields)._._.OnWriteThrough;
-      this_01 = (UnityAction_1_System_Object_ *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                   (MethodInfo *)0x0);
-        pMVar3 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-          (pMVar2->fields)._._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        }
-        else {
-          pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar4 = pMVar3;
-          }
-          if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-          (pMVar2->fields)._._.OnWriteThrough = pMVar4;
-          pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar4 = pMVar3;
-          }
-          if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-        }
-        func_?();
-        this_00 = (this->fields).variables;
-        if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)pMVar2,
-                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                    );
-          return pMVar2;
-        }
-      }
+      return pMVar2;
     }
   }
   func_?();
@@ -222,231 +216,162 @@ code_?:
 }
 
 
-/* MVRuntimeDataVariable`1[System.Int32] New[Int32](String, Single, Boolean) */
+/* MVRuntimeDataVariable`1[System.Single] New[Single](String, Single, Boolean) */
 
-MVRuntimeDataVariable_1_System_Int32_ *
-Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_1
-          (MVRuntimeDataVariables *this,String *variableId,float sendInterval,bool writeThrough,
-          MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                   );
-    func_?(&MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_);
-    func_?(&TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-    cRam_? = '\x01';
-  }
-  pMVar1 = (this->fields).owner;
-  if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    uVar2 = (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                      (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
-    pvVar3 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
-      pvVar3 = (void *)func_?(pvVar3);
-    }
-    pMVar4 = (MVRuntimeDataVariable_1_System_Int32_ *)func_?(pvVar3);
-    if (pMVar4 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
-      (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-                (pMVar4,variableId,sendInterval,uVar2,_writeThrough,
-                 (method->field7_0x1c).rgctx_data[1].method);
-      pMVar5 = (pMVar4->fields)._.OnWriteThrough;
-      this_01 = (UnityAction_1_System_Object_ *)
-                func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                   (MethodInfo *)0x0);
-        pMVar5 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pMVar5 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-          (pMVar4->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-        }
-        else {
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-          (pMVar4->fields)._.OnWriteThrough = pMVar6;
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-        }
-        func_?();
-        this_00 = (this->fields).variables;
-        if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)pMVar4,
-                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                    );
-          return pMVar4;
-        }
-      }
-    }
-  }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pMVar4 = (MVRuntimeDataVariable_1_System_Int32_ *)(*pcVar7)();
-  return pMVar4;
-}
-
-
-/* MVRuntimeDataVariable`1[System.Object] New[Object](String, Single, Boolean) */
-
-MVRuntimeDataVariable_1_System_Object_ *
+MVRuntimeDataVariable_1_System_Single_ *
 Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_2
           (MVRuntimeDataVariables *this,String *variableId,float sendInterval,bool writeThrough,
           MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
                    );
     func_?(&MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_);
     func_?(&TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-    cRam_? = '\x01';
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
   }
   pMVar1 = (this->fields).owner;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    uVar2 = (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                      (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
-    pvVar3 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
-      pvVar3 = (void *)func_?(pvVar3);
+    initialRuntimeData =
+         (Dictionary_2_System_Object_System_Object_ *)
+         (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                   (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
+    pIVar2 = ((method->field7_0x1c).rgctx_data)->klass;
+    if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
-    pMVar4 = (MVRuntimeDataVariable_1_System_Object_ *)func_?(pvVar3);
-    if (pMVar4 != (MVRuntimeDataVariable_1_System_Object_ *)0x0) {
-      (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-                (pMVar4,variableId,sendInterval,uVar2,_writeThrough,
-                 (method->field7_0x1c).rgctx_data[1].method);
-      pMVar5 = (pMVar4->fields)._.OnWriteThrough;
-      this_01 = (UnityAction_1_System_Object_ *)
+    this_01 = (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              func_?(pIVar2);
+    MVRuntimeDataVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,variableId,sendInterval,initialRuntimeData,writeThrough,
+               (method->field7_0x1c).rgctx_data[1].method);
+    if (this_01 !=
+        (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      pMVar3 = (this_01->fields)._.OnWriteThrough;
+      this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
                 func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                   (MethodInfo *)0x0);
-        pMVar5 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pMVar5 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-          (pMVar4->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                (this_02,(Object *)this,
+                 MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
+                 (MethodInfo *)0x0);
+      pMVar3 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar3,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pMVar3 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+        (this_01->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      }
+      else {
+        pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar4 = pMVar3;
         }
-        else {
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-          (pMVar4->fields)._.OnWriteThrough = pMVar6;
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        (this_01->fields)._.OnWriteThrough = pMVar4;
+        pMVar4 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar3->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar4 = pMVar3;
         }
-        func_?();
-        this_00 = (this->fields).variables;
-        if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)pMVar4,
-                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                    );
-          return pMVar4;
-        }
+        if (pMVar4 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+      }
+      func_?();
+      this_00 = (List_1_System_Object_ *)this_01[1].fields._.variableId;
+      if (this_00 != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  (this_00,(Object *)this_01,
+                   MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
+                  );
+        return (MVRuntimeDataVariable_1_System_Single_ *)this_01;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pMVar4 = (MVRuntimeDataVariable_1_System_Object_ *)(*pcVar7)();
-  return pMVar4;
+  pcVar5 = (code *)swi(3);
+  pMVar6 = (MVRuntimeDataVariable_1_System_Single_ *)(*pcVar5)();
+  return pMVar6;
 }
 
 
-/* MVRuntimeDataVariable`1[System.Single] New[Single](String, Single, Boolean) */
+/* MVRuntimeDataVariable`1[Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType]
+   New[__Il2CppFullySharedGenericType](String, Single, Boolean) */
 
-MVRuntimeDataVariable_1_System_Single_ *
+MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
 Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_3
           (MVRuntimeDataVariables *this,String *variableId,float sendInterval,bool writeThrough,
           MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
+  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
                    );
     func_?(&MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_);
     func_?(&TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-    cRam_? = '\x01';
+    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      func_?(method);
+    }
   }
   pMVar1 = (this->fields).owner;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    uVar2 = (*(pMVar1->klass->vtable).get_RunTimeData.methodPtr)
-                      (pMVar1,(pMVar1->klass->vtable).get_RunTimeData.method);
-    pvVar3 = ((method->field7_0x1c).rgctx_data)->rgctxDataDummy;
-    if ((*(byte *)((int)pvVar3 + 0xba) & 1) == 0) {
-      pvVar3 = (void *)func_?(pvVar3);
+    uVar2 = (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
+                      (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
+    pIVar3 = ((method->field7_0x1c).rgctx_data)->klass;
+    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar3 = (Il2CppClass *)func_?(pIVar3);
     }
-    pMVar4 = (MVRuntimeDataVariable_1_System_Single_ *)func_?(pvVar3);
-    if (pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-      (*((method->field7_0x1c).rgctx_data[1].method)->virtualMethodPointer)
-                (pMVar4,variableId,sendInterval,uVar2,_writeThrough,
-                 (method->field7_0x1c).rgctx_data[1].method);
+    pMVar4 = (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+             func_?(pIVar3);
+    (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
+              (pMVar4,variableId,sendInterval,uVar2,_writeThrough,
+               (method->field7_0x1c).rgctx_data[1].method);
+    if (pMVar4 != (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0
+       ) {
       pMVar5 = (pMVar4->fields)._.OnWriteThrough;
-      this_01 = (UnityAction_1_System_Object_ *)
+      this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
                 func_?(TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate);
-      if (this_01 != (UnityAction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
-                  (this_01,(Object *)this,
-                   MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
-                   (MethodInfo *)0x0);
-        pMVar5 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
-                 mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pMVar5 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
-          (pMVar4->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                (this_01,(Object *)this,
+                 MethodInfo__MVRuntimeDataVariables__OnWriteThrough_System__Object_,
+                 (MethodInfo *)0x0);
+      pMVar5 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+      if (pMVar5 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) {
+        (pMVar4->fields)._.OnWriteThrough = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+      }
+      else {
+        pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar6 = pMVar5;
         }
-        else {
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
-          (pMVar4->fields)._.OnWriteThrough = pMVar6;
-          pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
-          if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
-            pMVar6 = pMVar5;
-          }
-          if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+        (pMVar4->fields)._.OnWriteThrough = pMVar6;
+        pMVar6 = (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0;
+        if (pMVar5->klass == TypeInfo__MVRuntimeDataVariable__OnWriteThroughDelegate) {
+          pMVar6 = pMVar5;
         }
-        func_?();
-        this_00 = (this->fields).variables;
-        if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)pMVar4,
-                     MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
-                    );
-          return pMVar4;
-        }
+        if (pMVar6 == (MVRuntimeDataVariable_OnWriteThroughDelegate *)0x0) goto code_?;
+      }
+      func_?();
+      this_00 = (List_1_System_Object_ *)pMVar4[1].fields._.variableId;
+      if (this_00 != (List_1_System_Object_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  (this_00,(Object *)pMVar4,
+                   MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__Add_MVRuntimeDataVariable_
+                  );
+        return pMVar4;
       }
     }
   }
@@ -454,7 +379,8 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_New_3
 code_?:
   func_?();
   pcVar7 = (code *)swi(3);
-  pMVar4 = (MVRuntimeDataVariable_1_System_Single_ *)(*pcVar7)();
+  pMVar4 = (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+           (*pcVar7)();
   return pMVar4;
 }
 
@@ -545,7 +471,7 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Receive
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   ((Object *)&stack0xffffffc4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__Dispose__
@@ -561,55 +487,57 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Receive
       }
       piVar12 = *(int **)((int)RStack_10 + 8);
       if (piVar12 == (int *)0x0) break;
-      pOVar13 = (Object *)(**(code **)(*piVar12 + 0xd4))(piVar12,*(undefined4 *)(*piVar12 + 0xd8));
+      key = (Object *)(**(code **)(*piVar12 + 0xd8))(piVar12,*(undefined4 *)(*piVar12 + 0xdc));
       if (runtimeData == (Dictionary_2_System_Object_System_Object_ *)0x0) break;
-      bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Object,GUILoginHandler+PlanetData]::
-              Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey
-                        ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)runtimeData,
-                         pOVar13,
+      bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)runtimeData
+                         ,key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
       RVar9 = RStack_10;
       if (bVar11 != 0) {
-        pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                 Object]::Dictionary_2_System_Object_System_Object__get_Item
-                           (runtimeData,pOVar13,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
+        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                           runtimeData,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
         LStack_8._list =
              (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              ObscuredTypesConverter::ObscuredTypesConverter_CreateObscuredValue
-                       (pOVar13,(MethodInfo *)0x0);
+                       ((Object *)value.m_Index,(MethodInfo *)0x0);
         pLVar6 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
                   ((int)RStack_10 + 0xc);
         RVar9 = (RegexCharClass_SingleRange)((int)RStack_10 + 0xc);
         *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
          ((int)RStack_10 + 0xc) = LStack_8._list;
         method_00 = (MethodInfo *)&UNK_?;
-        pLStack_14 = LStack_8._list;
+        pLStack_13 = LStack_8._list;
         func_?();
-        if (pLVar6 != pLStack_14) {
+        if (pLVar6 != pLStack_13) {
           if (*(int *)((int)RStack_10 + 0x20) != 0) {
-            iVar15 = *(int *)((int)RStack_10 + 0x20);
+            iVar14 = *(int *)((int)RStack_10 + 0x20);
             ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
                       (*(Object **)((int)RStack_10 + 0xc),(MethodInfo *)0x0);
-            (**(code **)(iVar15 + 0xc))();
+            (**(code **)(iVar14 + 0xc))();
           }
           if ((*(char *)((int)RStack_10 + 0x1c) != '\0') && (*(int *)((int)RStack_10 + 0x24) != 0))
           {
-            iVar15 = *(int *)((int)RStack_10 + 0x24);
+            iVar14 = *(int *)((int)RStack_10 + 0x24);
             ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
                       (*(Object **)((int)RStack_10 + 0xc),(MethodInfo *)0x0);
-            (**(code **)(iVar15 + 0xc))();
+            (**(code **)(iVar14 + 0xc))();
           }
         }
       }
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -646,98 +574,101 @@ Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables_Send
                    );
     cRam_? = '\x01';
   }
-  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                          );
-  if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::
-    ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor
-              ((ParameterOverride_1_System_Object_ *)pDVar4,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).variables;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                           *)&stack0xffffffcc,this_00,
-                          MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__GetEnumerator__
-                         );
-      uStack_1 = 1;
-      RVar6 = pLVar5->_current;
-      while( true ) {
-        RVar7 = RVar6;
-        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__MoveNext__
-                          );
-        if (bVar8 == 0) break;
-        if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        if (cRam_? == '\0') {
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).variables;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                         *)&stack0xffffffd0,this_00,
+                        MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__GetEnumerator__
+                       );
+    uStack_1 = 1;
+    RVar5 = pLVar4->_current;
+    while( true ) {
+      RVar6 = RVar5;
+      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__MoveNext__
+                        );
+      if (bVar7 == 0) break;
+      if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if (*(int **)((int)RVar6 + 0xc) == (int *)0x0) goto code_?;
+      iVar8 = **(int **)((int)RVar6 + 0xc);
+      RVar5 = *(RegexCharClass_SingleRange *)(iVar8 + 0xc4);
+      cVar9 = (**(code **)(iVar8 + 0xc0))();
+      if (cVar9 == '\0') {
+        fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        bVar7 = immediateSend;
+        if (*(float *)((int)RVar6 + 0x14) + *(float *)((int)RVar6 + 0x18) < fVar10) {
+          bVar7 = 1;
+        }
+        if (bVar7 != 0) {
+          if (this_01 ==
+              (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__set_Item
+                    ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                     *(Object **)((int)RVar6 + 8),*(Object **)((int)RVar6 + 0xc),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                    );
+          *(undefined4 *)((int)RVar6 + 0x10) = *(undefined4 *)((int)RVar6 + 0xc);
+          in_stack_11 = (MethodInfo *)((int)RVar6 + 0x10);
+          RVar5 = (RegexCharClass_SingleRange)&UNK_?;
           func_?();
-          cRam_? = '\x01';
-        }
-        if (*(int **)((int)RVar7 + 0xc) == (int *)0x0) goto code_?;
-        iVar9 = **(int **)((int)RVar7 + 0xc);
-        RVar6 = *(RegexCharClass_SingleRange *)(iVar9 + 0xc0);
-        cVar10 = (**(code **)(iVar9 + 0xbc))();
-        if (cVar10 == '\0') {
-          fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-          bVar8 = immediateSend;
-          if (*(float *)((int)RVar7 + 0x14) + *(float *)((int)RVar7 + 0x18) < fVar11) {
-            bVar8 = 1;
-          }
-          if (bVar8 != 0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__set_Item
-                      (pDVar4,*(Object **)((int)RVar7 + 8),*(Object **)((int)RVar7 + 0xc),
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                      );
-            *(undefined4 *)((int)RVar7 + 0x10) = *(undefined4 *)((int)RVar7 + 0xc);
-            in_stack_12 = (MethodInfo *)((int)RVar7 + 0x10);
-            RVar6 = (RegexCharClass_SingleRange)&UNK_?;
-            func_?();
-            *(float *)((int)RVar7 + 0x18) = fVar11;
-          }
+          *(float *)((int)RVar6 + 0x18) = fVar10;
         }
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
-                ((Object *)&stack0xffffffbc,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__Dispose__
-                 ,in_stack_12);
-      uStack_1 = 0xffffffff;
-      pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
-               ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
-                         ((Object *)pDVar4,(MethodInfo *)0x0);
-      if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        *unaff_FS_OFFSET = uStack_3;
-        return (Dictionary_2_System_Object_System_Object_ *)0x0;
-      }
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth <= (pDVar4->klass->_1).typeHierarchyDepth) &&
-         ((Dictionary_2_System_Object_System_Object___Class *)
-          (pDVar4->klass->_1).typeHierarchy
-          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           typeHierarchyDepth - 1] ==
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        *unaff_FS_OFFSET = uStack_3;
-        return pDVar4;
-      }
-      func_?();
     }
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              ((Object *)&stack0xffffffc0,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVRuntimeDataVariable>__Dispose__
+               ,in_stack_11);
+    uStack_1 = 0xffffffff;
+    pDVar12 = (Dictionary_2_System_Object_System_Object_ *)
+             ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
+                       ((Object *)this_01,(MethodInfo *)0x0);
+    if (pDVar12 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      *unaff_FS_OFFSET = uStack_3;
+      return (Dictionary_2_System_Object_System_Object_ *)0x0;
+    }
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment <= (pDVar12->klass->_1).naturalAligment) &&
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar12->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment - 1] ==
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      *unaff_FS_OFFSET = uStack_3;
+      return pDVar12;
+    }
+    func_?();
   }
 code_?:
   func_?();
   func_?();
   pcVar13 = (code *)swi(3);
-  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar13)();
-  return pDVar4;
+  pDVar12 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar13)();
+  return pDVar12;
 }
 
 
@@ -752,24 +683,19 @@ void Assembly-CSharp.dll::MVRuntimeDataVariables::MVRuntimeDataVariables__ctor
     func_?(&TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).owner = owner;
   func_?(&this->fields,owner);
   this_00 = (List_1_MVRuntimeDataVariable_ *)
             func_?(TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
-  if (this_00 != (List_1_MVRuntimeDataVariable_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::
-    LowLevelList_1_System_Object___ctor
-              ((LowLevelList_1_System_Object_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
-    (this->fields).variables = this_00;
-    func_?(&(this->fields).variables,this_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+  (this->fields).variables = this_00;
+  func_?(&(this->fields).variables,this_00);
   return;
 }
 

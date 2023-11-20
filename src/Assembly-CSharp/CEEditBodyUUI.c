@@ -31,18 +31,16 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Enter
     cRam_? = '\x01';
   }
   ESStateBase::ESStateBase_Enter((ESStateBase *)this,esm,(MethodInfo *)0x0);
+  pMVar2 = (MVCubeModelInstance__Class *)0x0;
   if (esm == (EditorStateMachine *)0x0) goto code_?;
   root = (esm->fields).gameObject;
-  pGVar2 = root;
   if ((TypeInfo__CEEditBodyUUI____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CEEditBodyUUI____c);
   }
   callbackFunction = TypeInfo__CEEditBodyUUI____c->static_fields->__9__6_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)0x0) {
-    root = pGVar2;
     if ((TypeInfo__CEEditBodyUUI____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CEEditBodyUUI____c);
-      root = pGVar2;
     }
     object = TypeInfo__CEEditBodyUUI____c->static_fields->__9;
     callbackFunction =
@@ -50,9 +48,6 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Enter
          func_?(
                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditUIState>
                         );
-    unaff_EDI = (MVCubeModelInstance__Class *)0x0;
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)0x0)
-    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -73,9 +68,9 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Enter
                       ((MethodInfo *)0x0);
   (this->fields)._.tintedWo = pWVar3;
   func_?(&(this->fields)._.tintedWo,pWVar3);
-  unaff_EDI = (MVCubeModelInstance__Class *)
-              EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-  if (unaff_EDI == (MVCubeModelInstance__Class *)0x0) {
+  pMVar2 = (MVCubeModelInstance__Class *)
+            EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
+  if (pMVar2 == (MVCubeModelInstance__Class *)0x0) {
     pcVar4 = (char *)0xffffffff;
 code_?:
     (this->fields).targetCubeModelId = (int32_t)pcVar4;
@@ -108,23 +103,22 @@ code_?:
        (this_00 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
                             (pMVar6,(MethodInfo *)0x0), this_00 == (MVWorldObjectClientManager *)0x0
        )) goto code_?;
-    unaff_EDI = (MVCubeModelInstance__Class *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_00,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    if ((unaff_EDI != (MVCubeModelInstance__Class *)0x0) &&
-       ((pIVar10 = (unaff_EDI->_0).image, pMVar7 = TypeInfo__MVCubeModelInstance,
-        *(byte *)&pIVar10[4].nameNoExt < (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth ||
+    pMVar2 = (MVCubeModelInstance__Class *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_00,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
+    if ((pMVar2 != (MVCubeModelInstance__Class *)0x0) &&
+       ((pIVar10 = (pMVar2->_0).image, pMVar7 = TypeInfo__MVCubeModelInstance,
+        *(byte *)&pIVar10[4].assembly < (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
         (pMVar8 = pMVar9,
         *(MVCubeModelInstance__Class **)
-         ((pIVar10[2].typeCount - 4) +
-         (uint)(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth * 4) !=
-        TypeInfo__MVCubeModelInstance)))) goto code_?;
-    if ((unaff_EDI == (MVCubeModelInstance__Class *)0x0) ||
+         ((pIVar10[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4)
+        != TypeInfo__MVCubeModelInstance)))) goto code_?;
+    if ((pMVar2 == (MVCubeModelInstance__Class *)0x0) ||
        (pMVar8 == (MVWorldObjectClientManager *)0x0)) goto code_?;
-    unaff_EDI = (MVCubeModelInstance__Class *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar8,(int32_t)(unaff_EDI->_0).namespaze,(MethodInfo *)0x0);
-    if (unaff_EDI == (MVCubeModelInstance__Class *)0x0) {
+    pMVar2 = (MVCubeModelInstance__Class *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (pMVar8,(int32_t)(pMVar2->_0).namespaze,(MethodInfo *)0x0);
+    if (pMVar2 == (MVCubeModelInstance__Class *)0x0) {
       (this->fields).modelBody = (IWorldObjectWithModelingConstraint *)0x0;
       this_01 = (EditorStateMachine *)0x0;
     }
@@ -141,12 +135,12 @@ code_?:
     if (bVar12 == 0) {
       pMVar13 = EditorStateMachine::EditorStateMachine_get_ParentGroup(this_01,(MethodInfo *)0x0);
       if (pMVar13 == (MVGroup *)0x0) goto code_?;
-      unaff_EDI = (MVCubeModelInstance__Class *)(pMVar13->fields)._.transform;
+      pMVar2 = (MVCubeModelInstance__Class *)(pMVar13->fields)._.transform;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SharedCubeFunctions);
       }
       SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively
-                ((Transform *)unaff_EDI,0,(MethodInfo *)0x0);
+                ((Transform *)pMVar2,0,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVCubeModelInstance);
@@ -165,21 +159,20 @@ code_?:
        )) goto code_?;
     pMVar14 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                         (pMVar8,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    unaff_EDI = TypeInfo__MVCubeModelInstance;
+    pMVar2 = TypeInfo__MVCubeModelInstance;
     if ((pMVar14 == (MVWorldObject *)0x0) ||
-       (((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <=
-         (pMVar14->klass->_1).typeHierarchyDepth &&
-        ((MVCubeModelInstance__Class *)
-         (pMVar14->klass->_1).typeHierarchy
-         [(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] ==
-         TypeInfo__MVCubeModelInstance)))) {
+       (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar14->klass->_1).naturalAligment
+        && ((MVCubeModelInstance__Class *)
+            (pMVar14->klass->_1).typeHierarchy
+            [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
+            TypeInfo__MVCubeModelInstance)))) {
       if (pMVar14 != (MVWorldObject *)0x0) {
-        unaff_EDI = (MVCubeModelInstance__Class *)pMVar14[1].fields.ownerActorNr;
+        pMVar2 = (MVCubeModelInstance__Class *)pMVar14[1].fields.ownerActorNr;
         if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__SharedCubeFunctions);
         }
         SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively
-                  ((Transform *)unaff_EDI,1,(MethodInfo *)0x0);
+                  ((Transform *)pMVar2,1,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&TypeInfo__MVCubeModelInstance);
           cRam_? = '\x01';
@@ -197,13 +190,13 @@ code_?:
              pMVar8 != (MVWorldObjectClientManager *)0x0)) {
             pMVar14 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                                 (pMVar8,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-            unaff_EDI = TypeInfo__MVCubeModelInstance;
+            pMVar2 = TypeInfo__MVCubeModelInstance;
             if ((pMVar14 != (MVWorldObject *)0x0) &&
-               (((pMVar14->klass->_1).typeHierarchyDepth <
-                 (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth ||
+               (((pMVar14->klass->_1).naturalAligment <
+                 (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
                 ((MVCubeModelInstance__Class *)
                  (pMVar14->klass->_1).typeHierarchy
-                 [(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] !=
+                 [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
                  TypeInfo__MVCubeModelInstance)))) goto code_?;
             if (pMVar14 != (MVWorldObject *)0x0) {
               value = pMVar14[1].fields.inputLinkRefs;
@@ -211,17 +204,17 @@ code_?:
                 func_?(&TypeInfo__DrawPlane);
                 cRam_? = '\x01';
               }
-              unaff_EDI = (MVCubeModelInstance__Class *)
-                          TypeInfo__DrawPlane->static_fields->drawPlaneController;
-              if ((unaff_EDI != (MVCubeModelInstance__Class *)0x0) &&
-                 (pWVar15 = (WorldEditorDrawPlane *)(unaff_EDI->_0).byval_arg.data.typeHandle,
+              pMVar2 = (MVCubeModelInstance__Class *)
+                        TypeInfo__DrawPlane->static_fields->drawPlaneController;
+              if ((pMVar2 != (MVCubeModelInstance__Class *)0x0) &&
+                 (pWVar15 = *(WorldEditorDrawPlane **)&(pMVar2->_0).byval_arg.attrs,
                  pWVar15 != (WorldEditorDrawPlane *)0x0)) {
                 WorldEditorDrawPlane::WorldEditorDrawPlane_CachePos(pWVar15,(MethodInfo *)0x0);
-                pWVar15 = (WorldEditorDrawPlane *)(unaff_EDI->_0).byval_arg.data.typeHandle;
+                pWVar15 = *(WorldEditorDrawPlane **)&(pMVar2->_0).byval_arg.attrs;
                 if (pWVar15 != (WorldEditorDrawPlane *)0x0) {
                   WorldEditorDrawPlane::WorldEditorDrawPlane_set_TargetGameObject
                             (pWVar15,(GameObject *)value,(MethodInfo *)0x0);
-                  pWVar15 = (WorldEditorDrawPlane *)(unaff_EDI->_0).byval_arg.data.typeHandle;
+                  pWVar15 = *(WorldEditorDrawPlane **)&(pMVar2->_0).byval_arg.attrs;
                   if (pWVar15 != (WorldEditorDrawPlane *)0x0) {
                     WorldEditorDrawPlane::WorldEditorDrawPlane_SetToTargetGameObjectZero
                               (pWVar15,(MethodInfo *)0x0);
@@ -252,26 +245,28 @@ code_?:
                                 MVWorldObjectClientManager_GetWorldObject
                                           (pMVar8,(pCVar1->fields).targetCubeModelId,
                                            (MethodInfo *)0x0);
-                      unaff_EDI = pMVar16;
+                      pMVar2 = pMVar16;
                       if (pMVar16 == (MVCubeModelInstance__Class *)0x0) goto code_?;
                       pIVar10 = (pMVar16->_0).image;
                       pMVar7 = TypeInfo__MVCubeModelInstance;
-                      if ((*(byte *)&pIVar10[4].nameNoExt <
-                           (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth) ||
+                      if ((*(byte *)&pIVar10[4].assembly <
+                           (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
                          (*(MVCubeModelInstance__Class **)
                            ((pIVar10[2].typeCount - 4) +
-                           (uint)(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth * 4) !=
+                           (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) !=
                           TypeInfo__MVCubeModelInstance)) goto code_?;
                     }
                     if (pIVar11 != (IWorldObjectWithModelingConstraint *)0x0) {
                       pIVar17 = pIVar11->klass;
                       uVar18 = 0;
-                      uVar19 = (pIVar17->_1).interface_offsets_count;
+                      uVar19._0_1_ = (pIVar17->_1).rank;
+                      uVar19._1_1_ = (pIVar17->_1).minimumAlignment;
                       if (uVar19 != 0) {
                         do {
                           if (pIVar17->interfaceOffsets[uVar18].interfaceType ==
                               (Il2CppClass *)TypeInfo__IWorldObjectWithModelingConstraint) {
-                            pIVar20 = &pIVar17->vtable + pIVar17->interfaceOffsets[uVar18].offset;
+                            ppMVar20 = &(&pIVar17->vtable)[pIVar17->interfaceOffsets[uVar18].offset].
+                                        GetModelConstaint.method;
                             goto code_?;
                           }
                           uVar18 = uVar18 + 1;
@@ -279,23 +274,23 @@ code_?:
                         } while (uVar18 < uVar19);
                       }
                       this = pCVar1;
-                      pIVar20 = (IWorldObjectWithModelingConstraint__VTable *)
-                                func_?(pIVar11,TypeInfo__IWorldObjectWithModelingConstraint
-                                                ,0,uVar19,0);
+                      ppMVar20 = (MethodInfo **)
+                                 func_?(pIVar11,
+                                                 TypeInfo__IWorldObjectWithModelingConstraint,0,
+                                                 uVar19,0);
 code_?:
                       constraint = (IModelingConstraint *)
-                                   (*(pIVar20->GetModelConstaint).methodPtr)
-                                             (pIVar11,pMVar16,(pIVar20->GetModelConstaint).method);
-                      unaff_EDI = (MVCubeModelInstance__Class *)
-                                  func_?(TypeInfo__UnityEngine__GameObject);
-                      if (unaff_EDI != (MVCubeModelInstance__Class *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                                  ((GameObject *)unaff_EDI,StringLiteral_constrainVisualizer,
-                                   (MethodInfo *)0x0);
+                                   (*(code *)*ppMVar20)(pIVar11,pMVar16,ppMVar20[1]);
+                      pMVar2 = (MVCubeModelInstance__Class *)
+                                func_?(TypeInfo__UnityEngine__GameObject);
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                                ((GameObject *)pMVar2,StringLiteral_constrainVisualizer,
+                                 (MethodInfo *)0x0);
+                      if (pMVar2 != (MVCubeModelInstance__Class *)0x0) {
                         pCVar21 = (ConstraintVisualizer *)
                                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                   GameObject_AddComponent_1
-                                            ((GameObject *)unaff_EDI,
+                                            ((GameObject *)pMVar2,
                                              ConstraintVisualizer_MethodInfo__UnityEngine__GameObject__AddComponent<ConstraintVisualizer>__
                                             );
                         (this->fields).constraintVisualizer = pCVar21;
@@ -327,28 +322,28 @@ code_?:
                                     MVWorldObjectClientManager::
                                     MVWorldObjectClientManager_GetWorldObject
                                               (pMVar8,(int32_t)pCVar22,(MethodInfo *)0x0);
-                          unaff_EDI = pMVar16;
+                          pMVar2 = pMVar16;
                           if (pMVar16 == (MVCubeModelInstance__Class *)0x0) goto code_?;
                           pIVar10 = (pMVar16->_0).image;
                           pMVar7 = TypeInfo__MVCubeModelInstance;
-                          if ((*(byte *)&pIVar10[4].nameNoExt <
-                               (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth) ||
+                          if ((*(byte *)&pIVar10[4].assembly <
+                               (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
                              (*(MVCubeModelInstance__Class **)
                                ((pIVar10[2].typeCount - 4) +
-                               (uint)(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth * 4) !=
+                               (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) !=
                               TypeInfo__MVCubeModelInstance)) goto code_?;
                         }
                         if (pCVar22 != (ConstraintVisualizer *)0x0) {
                           ConstraintVisualizer::ConstraintVisualizer_Init
                                     (pCVar22,(MVCubeModelBase *)pMVar16,constraint,
                                      StringLiteral_UIItems,(MethodInfo *)0x0);
-                          unaff_EDI = (MVCubeModelInstance__Class *)
-                                      (this_01->fields).cubeModelingStateMachine;
+                          pMVar2 = (MVCubeModelInstance__Class *)
+                                    (this_01->fields).cubeModelingStateMachine;
                           targetCubeModel =
                                CEEditBodyUUI_get_TargetCubeModel(this,(MethodInfo *)0x0);
-                          if (unaff_EDI != (MVCubeModelInstance__Class *)0x0) {
+                          if (pMVar2 != (MVCubeModelInstance__Class *)0x0) {
                             CubeModelingStateMachine::CubeModelingStateMachine_StartEdit
-                                      ((CubeModelingStateMachine *)unaff_EDI,
+                                      ((CubeModelingStateMachine *)pMVar2,
                                        (MVCubeModelBase *)targetCubeModel,constraint,
                                        (MethodInfo *)0x0);
                             if (cRam_? == '\0') {
@@ -356,39 +351,33 @@ code_?:
                               cRam_? = '\x01';
                             }
                             pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
-                            if ((pMVar5 != (MVGameControllerBase *)0x0) &&
-                               (pMVar6 = (pMVar5->fields).game, pMVar6 != (MVNetworkGame *)0x0)) {
-                              pGVar23 = (pMVar6->fields).GameEventManager;
-                              unaff_EDI = (MVCubeModelInstance__Class *)0x0;
-                              if (pGVar23 != (GameEventManager *)0x0) {
-                                iVar24 = (this->fields)._.stateType;
-                                unaff_EDI = (MVCubeModelInstance__Class *)
-                                            (pGVar23->fields).AvatarCommandsBuildMode;
-                                pMVar25 = EditorStateMachine::
-                                          EditorStateMachine_get_SingleSelectedWO
-                                                    (this_01,(MethodInfo *)0x0);
-                                if (pMVar25 != (MVWorldObjectClient *)0x0) {
-                                  value_00 = (pMVar25->fields)._.id;
-                                  this_02 = (SubscribableVariableBase_1_System_Int32Enum_ *)
-                                            func_?(
+                            if (((pMVar5 != (MVGameControllerBase *)0x0) &&
+                                (pMVar6 = (pMVar5->fields).game, pMVar6 != (MVNetworkGame *)0x0)) &&
+                               (pGVar23 = (pMVar6->fields).GameEventManager,
+                               pGVar23 != (GameEventManager *)0x0)) {
+                              pGVar24 = (pGVar23->fields).AvatarCommandsBuildMode;
+                              pMVar25 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                                                  (this_01,(MethodInfo *)0x0);
+                              if (pMVar25 != (MVWorldObjectClient *)0x0) {
+                                pMVar2 = (MVCubeModelInstance__Class *)(pMVar25->fields)._.id;
+                                puVar26 = &UNK_?;
+                                this_02 = (SubscribableVariable_1_System_Int32Enum_ *)
+                                          func_?(
                                                   TypeInfo__MVBuildModeAvatarLocal_EditMode__CEEditBodyUUIData
                                                   );
-                                  if ((this_02 !=
-                                       (SubscribableVariableBase_1_System_Int32Enum_ *)0x0) &&
-                                     (SubscribableVariableBase`1[System::Int32Enum]::
-                                      SubscribableVariableBase_1_System_Int32Enum___ctor
-                                                (this_02,value_00,(MethodInfo *)0x0),
-                                     unaff_EDI != (MVCubeModelInstance__Class *)0x0)) {
-                                    if ((((Transform__Fields *)&(unaff_EDI->_0).name)->_)._.
-                                        m_CachedPtr != (void *)0x0) {
-                                      pvVar26 = (((Transform__Fields *)&(unaff_EDI->_0).name)->_)._.
-                                               m_CachedPtr;
-                                      (**(code **)((int)pvVar26 + 0xc))
-                                                (*(undefined4 *)((int)pvVar26 + 0x20),iVar24,this_02,
-                                                 *(undefined4 *)((int)pvVar26 + 0x14));
-                                    }
-                                    return;
+                                SubscribableVariable`1[System::Int32Enum]::
+                                SubscribableVariable_1_System_Int32Enum___ctor
+                                          (this_02,(Int32Enum__Enum)pMVar2,(MethodInfo *)0x0);
+                                if (pGVar24 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0
+                                   ) {
+                                  if ((pGVar24->fields).OnEnterBuildStateEvent !=
+                                      (Action_2_EditorEvent_Object_ *)0x0) {
+                                    pAVar27 = (pGVar24->fields).OnEnterBuildStateEvent;
+                                    (*(pAVar27->fields)._._.invoke_impl)
+                                              ((pAVar27->fields)._._.method_code,puVar26,this_02,
+                                               (pAVar27->fields)._._.method);
                                   }
+                                  return;
                                 }
                               }
                             }
@@ -407,26 +396,25 @@ code_?:
     }
   }
   else {
-    pIVar10 = (unaff_EDI->_0).image;
+    pIVar10 = (pMVar2->_0).image;
     pMVar7 = TypeInfo__MVCubeModelInstance;
-    if (((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <= *(byte *)&pIVar10[4].nameNoExt) &&
+    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar10[4].assembly) &&
        (*(MVCubeModelInstance__Class **)
-         ((pIVar10[2].typeCount - 4) +
-         (uint)(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth * 4) ==
-        TypeInfo__MVCubeModelInstance)) {
-      pcVar4 = (unaff_EDI->_0).name;
+         ((pIVar10[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4)
+        == TypeInfo__MVCubeModelInstance)) {
+      pcVar4 = (pMVar2->_0).name;
       goto code_?;
     }
 code_?:
-    func_?(unaff_EDI,pMVar7);
+    func_?(pMVar2,pMVar7);
     pMVar14 = extraout_EDX_00;
   }
 code_?:
-  func_?(pMVar14,unaff_EDI);
+  func_?(pMVar14,pMVar2);
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -441,7 +429,7 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Execute
     func_?(&TypeInfo__EditorEvent);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,(ExceptionArgument__Enum)esm,(MethodInfo *)0x0);
   pMVar1 = CEEditBodyUUI_get_TargetCubeModel(this,(MethodInfo *)0x0);
   if (pMVar1 == (MVCubeModelInstance *)0x0) {
@@ -454,7 +442,7 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Execute
   else if ((esm != (EditorStateMachine *)0x0) &&
           (pCVar2 = (esm->fields).cubeModelingStateMachine,
           pCVar2 != (CubeModelingStateMachine *)0x0)) {
-    (*(pCVar2->klass->vtable).Update.methodPtr)();
+    (*(code *)(pCVar2->klass->vtable).Update.method)();
     return;
   }
   func_?();
@@ -476,7 +464,7 @@ void Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_Exit
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
             ((Object *)this,(ExceptionArgument__Enum)esm,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__DrawPlane);
@@ -616,12 +604,11 @@ Assembly-CSharp.dll::CEEditBodyUUI::CEEditBodyUUI_get_TargetCubeModel
     if (pMVar2 == (MVCubeModelInstance *)0x0) {
       return (MVCubeModelInstance *)0x0;
     }
-    if (((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <=
-         (pMVar2->klass->_1).typeHierarchyDepth) &&
-       ((MVCubeModelInstance__Class *)
-        (pMVar2->klass->_1).typeHierarchy
-        [(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] ==
-        TypeInfo__MVCubeModelInstance)) {
+    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)
+       && ((MVCubeModelInstance__Class *)
+           (pMVar2->klass->_1).typeHierarchy
+           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
+           TypeInfo__MVCubeModelInstance)) {
       return pMVar2;
     }
     func_?();

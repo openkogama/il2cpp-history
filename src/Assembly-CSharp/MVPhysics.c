@@ -143,19 +143,19 @@ void Assembly-CSharp.dll::MVPhysics::MVPhysics__cctor(MethodInfo *method)
   (pMVar7->gravity).inited = bVar5;
   *(undefined3 *)&(pMVar7->gravity).field_0x11 = uVar6;
   func_?(&(TypeInfo__MVPhysics->static_fields->gravity).hiddenValueOld,0);
-  PStack_8.toughness = 0.0;
-  PStack_8.friction = 0.0;
-  PStack_8.bouncyness = 0.0;
-  PStack_8.softness = 0.0;
-  PStack_8.staticFriction = 0.0;
-  MVWorldObject.dll::MV::WorldObject::PhysicalProperties::PhysicalProperties__ctor
-            (&PStack_8,0.0,0.0,0.0,0.0,0.0,(MethodInfo *)0x0);
+  GStack_8.m_HorizontalAdvance = 0.0;
+  GStack_8.m_Width = 0.0;
+  GStack_8.m_Height = 0.0;
+  GStack_8.m_HorizontalBearingX = 0.0;
+  GStack_8.m_HorizontalBearingY = 0.0;
+  UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::GlyphMetrics::GlyphMetrics__ctor
+            (&GStack_8,0.0,0.0,0.0,0.0,0.0,(MethodInfo *)0x0);
   pMVar7 = TypeInfo__MVPhysics->static_fields;
-  (pMVar7->airPhysicalProperties).friction = PStack_8.friction;
-  (pMVar7->airPhysicalProperties).bouncyness = PStack_8.bouncyness;
-  (pMVar7->airPhysicalProperties).softness = PStack_8.softness;
-  (pMVar7->airPhysicalProperties).staticFriction = PStack_8.staticFriction;
-  (pMVar7->airPhysicalProperties).toughness = PStack_8.toughness;
+  (pMVar7->airPhysicalProperties).friction = GStack_8.m_Width;
+  (pMVar7->airPhysicalProperties).bouncyness = GStack_8.m_Height;
+  (pMVar7->airPhysicalProperties).softness = GStack_8.m_HorizontalBearingX;
+  (pMVar7->airPhysicalProperties).staticFriction = GStack_8.m_HorizontalBearingY;
+  (pMVar7->airPhysicalProperties).toughness = GStack_8.m_HorizontalAdvance;
   return;
 }
 
