@@ -40,19 +40,6 @@ public class PlayerLists : MonoBehaviour
 		private int PlayerValue(MVPlayer data);
 	}
 
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass10_0
-	{
-		// Fields
-		public PlayerLists newPlayerLists;
-
-		// Constructors
-		public __c__DisplayClass10_0();
-
-		// Methods
-		internal void _ReCreate_b__2(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -69,6 +56,19 @@ public class PlayerLists : MonoBehaviour
 		// Methods
 		internal void _ReCreate_b__10_0(IUIStack x, BaseEventData y);
 		internal void _ReCreate_b__10_1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass10_0
+	{
+		// Fields
+		public PlayerLists newPlayerLists;
+
+		// Constructors
+		public __c__DisplayClass10_0();
+
+		// Methods
+		internal void _ReCreate_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

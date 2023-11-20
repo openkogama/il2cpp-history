@@ -25,19 +25,6 @@ public class FirstTimeActivatableBazookaPopup : FirstTimeActivatableElementBase
 	public override bool CanShow { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass7_0
-	{
-		// Fields
-		public InventoryItem prioritizedItem;
-
-		// Constructors
-		public __c__DisplayClass7_0();
-
-		// Methods
-		internal void _DoShowing_b__1(IPlayerInventory x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -52,6 +39,19 @@ public class FirstTimeActivatableBazookaPopup : FirstTimeActivatableElementBase
 
 		// Methods
 		internal void _DoShowing_b__7_0(IPlayerInventory x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public InventoryItem prioritizedItem;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _DoShowing_b__1(IPlayerInventory x, BaseEventData y);
 	}
 
 	// Constructors

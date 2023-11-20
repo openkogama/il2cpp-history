@@ -88,19 +88,6 @@ public class AccessoryView : MonoBehaviour
 	private string previewImageUrl;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass42_0
-	{
-		// Fields
-		public AvatarAccessoryEquipPopup popup;
-
-		// Constructors
-		public __c__DisplayClass42_0();
-
-		// Methods
-		internal void _OnDisable_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -123,6 +110,19 @@ public class AccessoryView : MonoBehaviour
 		internal void _BackToShop_b__50_1(IAccessoryInventoryControl x, BaseEventData y);
 		internal void _EquipPopupResultCallback_b__52_0(IAccessoryClicked x, BaseEventData y);
 		internal void _EquipPopupResultCallback_b__52_1(IAccessoryInventoryControl x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass42_0
+	{
+		// Fields
+		public AvatarAccessoryEquipPopup popup;
+
+		// Constructors
+		public __c__DisplayClass42_0();
+
+		// Methods
+		internal void _OnDisable_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

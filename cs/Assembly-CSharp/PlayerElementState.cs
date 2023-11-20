@@ -33,32 +33,6 @@ public class PlayerElementState : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass9_0
-	{
-		// Fields
-		public AdminToolController adminTools;
-
-		// Constructors
-		public __c__DisplayClass9_0();
-
-		// Methods
-		internal void _OpenUserManagement_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass9_1
-	{
-		// Fields
-		public OwnerToolController ownerTools;
-
-		// Constructors
-		public __c__DisplayClass9_1();
-
-		// Methods
-		internal void _OpenUserManagement_b__1(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
 	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
@@ -87,6 +61,32 @@ public class PlayerElementState : MonoBehaviour
 
 		// Methods
 		internal void _SetupButtons_b__4(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass9_0
+	{
+		// Fields
+		public AdminToolController adminTools;
+
+		// Constructors
+		public __c__DisplayClass9_0();
+
+		// Methods
+		internal void _OpenUserManagement_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass9_1
+	{
+		// Fields
+		public OwnerToolController ownerTools;
+
+		// Constructors
+		public __c__DisplayClass9_1();
+
+		// Methods
+		internal void _OpenUserManagement_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -8,14 +8,13 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 11: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 25: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.Common
 {
 	public static class CommonValues
 	{
 		// Fields
-		public const string errorCountString = "errorcount";
 		public static int GameCoinBoostTime;
 	
 		// Properties

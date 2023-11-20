@@ -91,6 +91,30 @@ namespace WorldObjectTypes.MVDoor
 		}
 	
 		[CompilerGenerated]
+		private sealed class _BeginOpenCoroutine_d__62 : IEnumerator<object>
+		{
+			// Fields
+			private int __1__state;
+			private object __2__current;
+			public MVDoor __4__this;
+	
+			// Properties
+			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+			object IEnumerator.Current { [DebuggerHidden] get; }
+	
+			// Constructors
+			[DebuggerHidden]
+			public _BeginOpenCoroutine_d__62(int __1__state);
+	
+			// Methods
+			[DebuggerHidden]
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			[DebuggerHidden]
+			void IEnumerator.Reset();
+		}
+	
+		[CompilerGenerated]
 		private sealed class _CollisionCheckCoroutine_d__57 : IEnumerator<object>
 		{
 			// Fields
@@ -107,30 +131,6 @@ namespace WorldObjectTypes.MVDoor
 			// Constructors
 			[DebuggerHidden]
 			public _CollisionCheckCoroutine_d__57(int __1__state);
-	
-			// Methods
-			[DebuggerHidden]
-			void IDisposable.Dispose();
-			private bool MoveNext();
-			[DebuggerHidden]
-			void IEnumerator.Reset();
-		}
-	
-		[CompilerGenerated]
-		private sealed class _BeginOpenCoroutine_d__62 : IEnumerator<object>
-		{
-			// Fields
-			private int __1__state;
-			private object __2__current;
-			public MVDoor __4__this;
-	
-			// Properties
-			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-			object IEnumerator.Current { [DebuggerHidden] get; }
-	
-			// Constructors
-			[DebuggerHidden]
-			public _BeginOpenCoroutine_d__62(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]

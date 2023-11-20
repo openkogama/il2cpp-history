@@ -15,15 +15,15 @@ public class CubeModelChunk
 {
 	// Fields
 	public const bool UseAOShadows = true;
-	private IntVector chunkPos;
-	private List<ChunkInstances.ChunkInstanceVariables> instances;
+	private readonly IntVector chunkPos;
+	private readonly Dictionary<Guid, ChunkInstances.ChunkInstanceVariables> instances;
 	private SharedMeshData sharedMeshData;
 	private Bounds meshBounds;
 	private readonly string name;
 	private int cubeCount;
 	private int triangleCount;
 	private int activeInstances;
-	private Dictionary<IntVector, Cell> cells;
+	private readonly Dictionary<IntVector, Cell> cells;
 	private static FaceData[] faceData;
 	private static readonly Vector2[] uvs;
 	private static readonly Vector2 uvOffsetVector0;
@@ -47,6 +47,22 @@ public class CubeModelChunk
 		public FaceData();
 	}
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<string, Guid, string> __9__27_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal string _Guids_b__27_0(string current, Guid instancesKey);
+	}
+
 	// Constructors
 	public CubeModelChunk(IntVector iVector);
 	static CubeModelChunk();
@@ -61,6 +77,7 @@ public class CubeModelChunk
 	public IntVector GetFirstSolidCubePos();
 	public void RemoveFromChunk(IntVector iVector);
 	public void Destroy();
+	public string Guids();
 	public void RebuildChunk(Vector3 scale);
 	public SharedMeshData GetMeshData();
 	private void EvaluateReferenceCount(int oldReferenceCount, int newReferenceCount);
@@ -68,6 +85,7 @@ public class CubeModelChunk
 	private void RestoreSharedMeshOnInstances();
 	private void UpdateInstances();
 	public void SetInstanceDataRef(IntVector chunkPos, MVCubeModelBase cubeInstance);
+	private void ChunkInstancesChanged(object sender, ChunkInstancesChanged e);
 	private void SetCubeVisibilityWithNeighbors(IntVector pos);
 	private void SetCubeVisibility(IntVector iVector);
 	public void SetCubeVisibility();

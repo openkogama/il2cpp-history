@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(CanvasRenderer))]
-public class RoundedRectangle : Graphic
+public class RoundedRectangle : Image
 {
 	// Fields
 	public float radius;

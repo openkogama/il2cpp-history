@@ -18,19 +18,6 @@ public class CreateNewCubeModel : MonoBehaviour
 	private byte currentByteMaterial;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass3_0
-	{
-		// Fields
-		public CubeModelPopup popup;
-
-		// Constructors
-		public __c__DisplayClass3_0();
-
-		// Methods
-		internal void _OnAddCubeModelPressed_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -45,6 +32,19 @@ public class CreateNewCubeModel : MonoBehaviour
 
 		// Methods
 		internal void _OnAddCubeModelPressed_b__3_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass3_0
+	{
+		// Fields
+		public CubeModelPopup popup;
+
+		// Constructors
+		public __c__DisplayClass3_0();
+
+		// Methods
+		internal void _OnAddCubeModelPressed_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

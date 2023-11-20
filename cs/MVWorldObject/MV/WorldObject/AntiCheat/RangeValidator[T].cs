@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.AntiCheat
 {
@@ -24,7 +24,6 @@ namespace MV.WorldObject.AntiCheat
 		public RangeValidator(T min, T max);
 	
 		// Methods
-		public void ValidateRange();
 		public T Validate(T value, bool fixIfInValid);
 		public override string ToString();
 	}

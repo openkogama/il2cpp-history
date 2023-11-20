@@ -17,9 +17,15 @@ public class MaterialLoader : MonoBehaviour
 	[SerializeField]
 	private Material cubeModelMaterialHigh;
 	[SerializeField]
+	private Material cubeModelMaterialHighTransp;
+	[SerializeField]
 	private Material cubeModelMaterialLow;
 	[SerializeField]
+	private Material cubeModelMaterialLowTransp;
+	[SerializeField]
 	private Material cubeModelMaterialMobile;
+	[SerializeField]
+	private Material cubeModelMaterialMobileTransp;
 	[SerializeField]
 	private Shader pickupItemShader;
 	[SerializeField]
@@ -30,16 +36,22 @@ public class MaterialLoader : MonoBehaviour
 	private Texture2D lowResMaterials;
 	[CompilerGenerated]
 	private Material _CubeModelMaterial_k__BackingField;
+	[CompilerGenerated]
+	private Material _CubeModelMaterialTransp_k__BackingField;
 	private uint atlasHash;
+	private static readonly int MaterialSizeShaderProperty;
+	private static readonly int MaxMipLevelShaderProperty;
 
 	// Properties
 	public Material CubeModelMaterial { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public Material CubeModelMaterialTransp { [CompilerGenerated] get; [CompilerGenerated] private set; }
 	public Shader PickupItemShader { get; }
 	public Shader WireframeShader { get; }
 	public Shader DefaultDiffuseShader { get; }
 
 	// Constructors
 	public MaterialLoader();
+	static MaterialLoader();
 
 	// Methods
 	protected void Awake();

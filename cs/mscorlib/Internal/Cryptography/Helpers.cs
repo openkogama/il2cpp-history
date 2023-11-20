@@ -17,8 +17,11 @@ namespace Internal.Cryptography
 	{
 		// Methods
 		public static void WriteInt(uint i, byte[] arr, int offset);
+		private static char NibbleToHex(byte b);
 	
 		// Extension methods
 		public static byte[] CloneByteArray(this byte[] src);
+		public static char[] ToHexArrayUpper(this byte[] bytes);
+		public static string ToHexStringUpper(this byte[] bytes);
 	}
 }

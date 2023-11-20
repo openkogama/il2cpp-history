@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -46,13 +46,12 @@ namespace ExitGames.Client.Photon
 		protected internal int MTU { get; }
 		public PhotonSocketState State { [CompilerGenerated] get; [CompilerGenerated] protected set; }
 		public bool Connected { get; }
-		public string ConnectAddress { get; }
 		public string ServerAddress { [CompilerGenerated] get; [CompilerGenerated] protected set; }
-		public static string ServerIpAddress { [CompilerGenerated] get; [CompilerGenerated] protected set; }
+		protected static string ServerIpAddress { [CompilerGenerated] set; }
 		public int ServerPort { [CompilerGenerated] get; [CompilerGenerated] protected set; }
 		public bool AddressResolvedAsIpv6 { [CompilerGenerated] get; [CompilerGenerated] protected internal set; }
-		public string UrlProtocol { [CompilerGenerated] get; [CompilerGenerated] protected set; }
-		public string UrlPath { [CompilerGenerated] get; [CompilerGenerated] protected set; }
+		protected string UrlProtocol { [CompilerGenerated] set; }
+		protected string UrlPath { [CompilerGenerated] set; }
 	
 		// Nested types
 		[Serializable]
@@ -78,17 +77,13 @@ namespace ExitGames.Client.Photon
 		public virtual bool Connect();
 		public abstract bool Disconnect();
 		public abstract PhotonSocketError Send(byte[] data, int length);
-		public abstract PhotonSocketError Receive(out byte[] data);
 		public void HandleReceivedDatagram(byte[] inBuffer, int length, bool willBeReused);
 		public bool ReportDebugOfLevel(DebugLevel levelOfMessage);
 		public void EnqueueDebugReturn(DebugLevel debugLevel, string message);
 		protected internal void HandleException(StatusCode statusCode);
 		protected internal bool TryParseAddress(string url, out string address, out ushort port, out string urlProtocol, out string urlPath);
-		protected internal bool IsIpv6SimpleCheck(IPAddress address);
 		protected internal IPAddress[] GetIpAddresses(string hostname);
 		private int AddressSortComparer(IPAddress x, IPAddress y);
-		[Obsolete("Use GetIpAddresses instead.")]
-		protected internal static IPAddress GetIpAddress(string address);
 		[CompilerGenerated]
 		private void _HandleException_b__47_0();
 	}

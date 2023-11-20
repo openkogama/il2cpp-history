@@ -9,15 +9,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameOptions.GameOptionsPrototypeSettings
 {
 	public static class GameOptionsPrototypeManager
 	{
-		// Fields
-		public const string root = "GameOptionsRoot";
-	
 		// Methods
 		public static KogamaSettingWrapperBase CreateOptionSettingPrototypes();
 	}

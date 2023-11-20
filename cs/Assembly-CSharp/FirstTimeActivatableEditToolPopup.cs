@@ -31,20 +31,6 @@ public class FirstTimeActivatableEditToolPopup : FirstTimeActivatableElementBase
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass9_0
-	{
-		// Fields
-		public bool blocked;
-		public FirstTimeActivatableEditToolPopup __4__this;
-
-		// Constructors
-		public __c__DisplayClass9_0();
-
-		// Methods
-		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
 	private sealed class __c__DisplayClass11_0
 	{
 		// Fields
@@ -69,6 +55,20 @@ public class FirstTimeActivatableEditToolPopup : FirstTimeActivatableElementBase
 
 		// Methods
 		internal void _OnPopupRemoved_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass9_0
+	{
+		// Fields
+		public bool blocked;
+		public FirstTimeActivatableEditToolPopup __4__this;
+
+		// Constructors
+		public __c__DisplayClass9_0();
+
+		// Methods
+		internal void _OnShow_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

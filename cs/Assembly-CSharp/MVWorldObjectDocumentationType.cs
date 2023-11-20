@@ -88,6 +88,7 @@ public enum MVWorldObjectDocumentationType
 	Door = 75,
 	SlidingDoor = 76,
 	TrapDoor = 77,
-	Costume = 78
+	Costume = 78,
+	ModelTransparency = 79
 }
 

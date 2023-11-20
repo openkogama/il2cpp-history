@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Image 3: UnityEngine.CoreModule.dll - Assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 6: UnityEngine.CoreModule.dll - Assembly: UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace Microsoft.CodeAnalysis
 {

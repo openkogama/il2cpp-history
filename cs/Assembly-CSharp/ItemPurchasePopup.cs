@@ -29,19 +29,6 @@ public class ItemPurchasePopup : MonoBehaviour
 	private ShopItem item;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass10_0
-	{
-		// Fields
-		public ItemPurchaseConfirmationPopup popup;
-
-		// Constructors
-		public __c__DisplayClass10_0();
-
-		// Methods
-		internal void _OnPurchaseClicked_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -58,6 +45,19 @@ public class ItemPurchasePopup : MonoBehaviour
 		// Methods
 		internal void _ConfirmationCallback_b__12_1(IUIStack handler, BaseEventData data);
 		internal void _ConfirmationCallback_b__12_2(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass10_0
+	{
+		// Fields
+		public ItemPurchaseConfirmationPopup popup;
+
+		// Constructors
+		public __c__DisplayClass10_0();
+
+		// Methods
+		internal void _OnPurchaseClicked_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

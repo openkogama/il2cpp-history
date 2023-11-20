@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using MV.Common;
 using MV.WorldObject.AntiCheat;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.GamePassSystem.GamePassProgressionDataObject
 {
@@ -34,7 +34,6 @@ namespace MV.WorldObject.GamePassSystem.GamePassProgressionDataObject
 				public RangeValidator<int> rangeValidator;
 	
 				// Constructors
-				public XPTierRewardValidator();
 				public XPTierRewardValidator(bool isRemovalAllowed, RangeValidator<int> rangeValidator);
 	
 				// Methods
@@ -44,7 +43,6 @@ namespace MV.WorldObject.GamePassSystem.GamePassProgressionDataObject
 	
 			// Constructors
 			public XPTiersRewardsValidator();
-			public XPTiersRewardsValidator(Dictionary<GamePassTier, XPTierRewardValidator> xpTierRewardsValidators);
 			public XPTiersRewardsValidator(Dictionary<GamePassTier, RangeValidator<int>> xpRangeValidators, Dictionary<GamePassTier, bool> xpRewardRemovalAllowed);
 	
 			// Methods

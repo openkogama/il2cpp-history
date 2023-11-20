@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -103,8 +103,6 @@ namespace ExitGames.Client.Photon
 		internal byte ReadByte(StreamBuffer stream);
 		internal short ReadInt16(StreamBuffer stream);
 		internal ushort ReadUShort(StreamBuffer stream);
-		internal int ReadInt32(StreamBuffer stream);
-		internal long ReadInt64(StreamBuffer stream);
 		internal float ReadSingle(StreamBuffer stream);
 		internal double ReadDouble(StreamBuffer stream);
 		internal byte[] ReadByteArray(StreamBuffer stream);
@@ -112,7 +110,6 @@ namespace ExitGames.Client.Photon
 		public override EventData DeserializeEventData(StreamBuffer din, EventData target = null);
 		private Dictionary<byte, object> ReadParameterTable(StreamBuffer stream, Dictionary<byte, object> target = null);
 		public Hashtable ReadHashtable(StreamBuffer stream);
-		public int[] ReadIntArray(StreamBuffer stream);
 		public override OperationRequest DeserializeOperationRequest(StreamBuffer din);
 		public override OperationResponse DeserializeOperationResponse(StreamBuffer stream);
 		internal string ReadString(StreamBuffer stream);
@@ -165,7 +162,6 @@ namespace ExitGames.Client.Photon
 		internal void WriteSingleArray(StreamBuffer stream, float[] values, bool setType);
 		internal void WriteDoubleArray(StreamBuffer stream, double[] values, bool setType);
 		internal void WriteStringArray(StreamBuffer stream, object value0, bool writeType);
-		private void WriteObjectArray(StreamBuffer stream, object array, bool writeType);
 		private void WriteObjectArray(StreamBuffer stream, IList array, bool writeType);
 		private void WriteArrayInArray(StreamBuffer stream, object value, bool writeType);
 		private void WriteCustomTypeBody(CustomType customType, StreamBuffer stream, object value);
@@ -179,7 +175,6 @@ namespace ExitGames.Client.Photon
 		private void WriteHashtableArray(StreamBuffer stream, object value, bool writeType);
 		private void WriteDictionaryArray(StreamBuffer stream, IDictionary[] dictArray, bool writeType);
 		private void WriteIntLength(StreamBuffer stream, int value);
-		private void WriteVarInt32(StreamBuffer stream, int value, bool writeType);
 		private void WriteCompressedInt32(StreamBuffer stream, int value, bool writeType);
 		private void WriteCompressedInt64(StreamBuffer stream, long value, bool writeType);
 		private void WriteCompressedUInt32(StreamBuffer stream, uint value);

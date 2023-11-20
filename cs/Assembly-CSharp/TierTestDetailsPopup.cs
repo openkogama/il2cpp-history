@@ -24,19 +24,6 @@ public class TierTestDetailsPopup : MonoBehaviour
 	private GamePassTier tierToPurchase;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass5_0
-	{
-		// Fields
-		public GamePassesShop gamePassesShop;
-
-		// Constructors
-		public __c__DisplayClass5_0();
-
-		// Methods
-		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -53,6 +40,19 @@ public class TierTestDetailsPopup : MonoBehaviour
 		// Methods
 		internal void _Test_b__6_0(IUIStack x, BaseEventData y);
 		internal void _OnEnable_b__7_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass5_0
+	{
+		// Fields
+		public GamePassesShop gamePassesShop;
+
+		// Constructors
+		public __c__DisplayClass5_0();
+
+		// Methods
+		internal void _ShowTier_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

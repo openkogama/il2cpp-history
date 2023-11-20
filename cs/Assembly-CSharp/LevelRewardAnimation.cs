@@ -80,7 +80,7 @@ public class LevelRewardAnimation : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayAndFadePrevBadge_d__28 : IEnumerator<object>
+	private sealed class _DisplayAndFadeGoldIcon_d__30 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -94,7 +94,7 @@ public class LevelRewardAnimation : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisplayAndFadePrevBadge_d__28(int __1__state);
+		public _DisplayAndFadeGoldIcon_d__30(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -130,7 +130,7 @@ public class LevelRewardAnimation : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class _DisplayAndFadeGoldIcon_d__30 : IEnumerator<object>
+	private sealed class _DisplayAndFadePrevBadge_d__28 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -144,7 +144,7 @@ public class LevelRewardAnimation : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _DisplayAndFadeGoldIcon_d__30(int __1__state);
+		public _DisplayAndFadePrevBadge_d__28(int __1__state);
 
 		// Methods
 		[DebuggerHidden]

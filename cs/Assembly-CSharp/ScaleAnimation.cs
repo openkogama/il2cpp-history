@@ -25,5 +25,6 @@ public class ScaleAnimation : ScaleAnimationBase
 	private void Stopped(float extraTime);
 	private void Awake();
 	private void Update();
+	public override void Stop();
 }
 

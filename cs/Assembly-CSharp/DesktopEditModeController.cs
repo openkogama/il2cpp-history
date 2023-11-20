@@ -71,6 +71,35 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 	public Action<EditModeChangeArgs> EditModeChange { get; set; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__61_1;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _DeleteWoid_b__61_1(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass61_0
+	{
+		// Fields
+		public string errorText;
+
+		// Constructors
+		public __c__DisplayClass61_0();
+
+		// Methods
+		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class _HandleCursorVisible_d__52 : IEnumerator<object>
 	{
@@ -92,35 +121,6 @@ public class DesktopEditModeController : ModeControllerBase, IEditStateCommands,
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass61_0
-	{
-		// Fields
-		public string errorText;
-
-		// Constructors
-		public __c__DisplayClass61_0();
-
-		// Methods
-		internal void _DeleteWoid_b__0(IModalPopupCreator x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__61_1;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _DeleteWoid_b__61_1(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors

@@ -55,45 +55,6 @@ public class PlayerInventoryPreviewItem : MonoBehaviour
 	public MVWorldObjectDocumentationType DocumentationType;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class _DownloadImage_d__22 : IEnumerator<object>
-	{
-		// Fields
-		private int __1__state;
-		private object __2__current;
-		public string url;
-		public PlayerInventoryPreviewItem __4__this;
-		private UnityWebRequest _request_5__2;
-
-		// Properties
-		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _DownloadImage_d__22(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass28_0
-	{
-		// Fields
-		public InventoryItemPreview itemPreviewer;
-
-		// Constructors
-		public __c__DisplayClass28_0();
-
-		// Methods
-		internal void _AdditionalItemSettingsPressed_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -114,6 +75,32 @@ public class PlayerInventoryPreviewItem : MonoBehaviour
 		internal void _OnInventoryItemFailedToLoad_b__30_0(IModalPopupCreator x, BaseEventData y);
 		internal void _AddItemToWorldFromInventory_b__31_0(IUIStack x, BaseEventData y);
 		internal void _ShowPurchasePopUp_b__34_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass28_0
+	{
+		// Fields
+		public InventoryItemPreview itemPreviewer;
+
+		// Constructors
+		public __c__DisplayClass28_0();
+
+		// Methods
+		internal void _AdditionalItemSettingsPressed_b__1(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass34_0
+	{
+		// Fields
+		public ItemPurchasePopup purchasePopup;
+
+		// Constructors
+		public __c__DisplayClass34_0();
+
+		// Methods
+		internal void _ShowPurchasePopUp_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
@@ -142,16 +129,29 @@ public class PlayerInventoryPreviewItem : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass34_0
+	private sealed class _DownloadImage_d__22 : IEnumerator<object>
 	{
 		// Fields
-		public ItemPurchasePopup purchasePopup;
+		private int __1__state;
+		private object __2__current;
+		public string url;
+		public PlayerInventoryPreviewItem __4__this;
+		private UnityWebRequest _request_5__2;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
 
 		// Constructors
-		public __c__DisplayClass34_0();
+		[DebuggerHidden]
+		public _DownloadImage_d__22(int __1__state);
 
 		// Methods
-		internal void _ShowPurchasePopUp_b__1(IUIStack x, BaseEventData y);
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors

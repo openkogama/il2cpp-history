@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -93,7 +93,6 @@ namespace ExitGames.Client.Photon
 		private void SerializeByteArray(StreamBuffer dout, byte[] serObject, bool setType);
 		private void SerializeByteArraySegment(StreamBuffer dout, byte[] serObject, int offset, int count, bool setType);
 		private void SerializeIntArrayOptimized(StreamBuffer inWriter, int[] serObject, bool setType);
-		private void SerializeStringArray(StreamBuffer dout, string[] serObject, bool setType);
 		private void SerializeObjectArray(StreamBuffer dout, IList objects, bool setType);
 		private void SerializeHashTable(StreamBuffer dout, Hashtable serObject, bool setType);
 		private void SerializeDictionary(StreamBuffer dout, IDictionary serObject, bool setType);

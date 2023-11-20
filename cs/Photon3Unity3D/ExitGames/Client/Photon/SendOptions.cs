@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -22,7 +22,7 @@ namespace ExitGames.Client.Photon
 		public byte Channel;
 	
 		// Properties
-		public bool Reliability { get; set; }
+		public bool Reliability { set; }
 	
 		// Constructors
 		static SendOptions();

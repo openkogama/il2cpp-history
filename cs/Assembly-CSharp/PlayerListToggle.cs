@@ -19,20 +19,6 @@ public class PlayerListToggle : MonoBehaviour
 	private PlayerListsHold playerListsPrefab;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass5_0
-	{
-		// Fields
-		public PlayerListsHold newPlayerLists;
-		public PlayerListToggle __4__this;
-
-		// Constructors
-		public __c__DisplayClass5_0();
-
-		// Methods
-		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -49,6 +35,20 @@ public class PlayerListToggle : MonoBehaviour
 		// Methods
 		internal void _CreatePlayerList_b__5_0(IUIStack x, BaseEventData y);
 		internal void _LateUpdate_b__7_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass5_0
+	{
+		// Fields
+		public PlayerListsHold newPlayerLists;
+		public PlayerListToggle __4__this;
+
+		// Constructors
+		public __c__DisplayClass5_0();
+
+		// Methods
+		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

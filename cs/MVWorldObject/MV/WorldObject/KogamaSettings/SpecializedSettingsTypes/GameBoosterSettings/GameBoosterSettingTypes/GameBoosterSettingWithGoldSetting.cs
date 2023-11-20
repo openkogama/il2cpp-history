@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MV.WorldObject.KogamaSettings.KogamaSettingsCore.KogamaSettingTypes;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameBoosterSettings.GameBoosterSettingTypes
 {
@@ -22,7 +22,6 @@ namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameBoosterSett
 	
 		// Properties
 		public KogamaSettingNumericBase<int> GoldPrice { get; }
-		public KogamaSettingNumericBase<int> BoostTime { get; }
 		public KogamaSettingValueWrapperBase Setting { get; }
 	
 		// Constructors
@@ -31,7 +30,6 @@ namespace MV.WorldObject.KogamaSettings.SpecializedSettingsTypes.GameBoosterSett
 		// Methods
 		public override void AddChild(KogamaSettingWrapperBase kogamaSetting);
 		public override KogamaSettingsCollectionBase CopyWithOutChildren(KogamaSettingsCollectionBase parent);
-		public void Validate();
 		public override string ToString();
 	}
 }

@@ -19,19 +19,6 @@ public class PlayerListHoldHotkey : MonoBehaviour
 	private bool registeredHotkeys;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass4_0
-	{
-		// Fields
-		public PlayerListsLayout newPlayerLists;
-
-		// Constructors
-		public __c__DisplayClass4_0();
-
-		// Methods
-		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -54,6 +41,19 @@ public class PlayerListHoldHotkey : MonoBehaviour
 		internal void _OnDestroy_b__6_0(IUIStack x, BaseEventData y);
 		internal void _OnDestroy_b__6_1(IShortcutKeyUnRegister x, BaseEventData y);
 		internal void _OnDestroy_b__6_2(IShortcutKeyUnRegister x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass4_0
+	{
+		// Fields
+		public PlayerListsLayout newPlayerLists;
+
+		// Constructors
+		public __c__DisplayClass4_0();
+
+		// Methods
+		internal void _CreatePlayerList_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

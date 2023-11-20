@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -67,11 +67,10 @@ namespace ExitGames.Client.Photon
 		public int UnreliableCommandBytes { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public int FragmentCommandBytes { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public int ControlCommandBytes { [CompilerGenerated] get; [CompilerGenerated] internal set; }
-		public int TotalCommandCount { get; }
 		public int TotalCommandBytes { get; }
 		public int TotalPacketBytes { get; }
-		public int TimestampOfLastAck { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public int TimestampOfLastReliableCommand { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public int TimestampOfLastAck { [CompilerGenerated] set; }
+		public int TimestampOfLastReliableCommand { [CompilerGenerated] set; }
 	
 		// Constructors
 		internal TrafficStats(int packageHeaderSize);

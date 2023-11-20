@@ -57,6 +57,19 @@ public class RegisteredPromotionPopup : MonoBehaviour
 	}
 
 	[CompilerGenerated]
+	private sealed class __c__DisplayClass19_0
+	{
+		// Fields
+		public GameObject popUp;
+
+		// Constructors
+		public __c__DisplayClass19_0();
+
+		// Methods
+		internal void _ShowGoToKogamaPopup_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
 	private sealed class _FadeOutAndPopPromotion_d__17 : IEnumerator<object>
 	{
 		// Fields
@@ -78,19 +91,6 @@ public class RegisteredPromotionPopup : MonoBehaviour
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass19_0
-	{
-		// Fields
-		public GameObject popUp;
-
-		// Constructors
-		public __c__DisplayClass19_0();
-
-		// Methods
-		internal void _ShowGoToKogamaPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

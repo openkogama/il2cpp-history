@@ -25,6 +25,19 @@ public class NotificationObjectPool : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
+	private sealed class __c__DisplayClass11_0
+	{
+		// Fields
+		public NotificationType type;
+
+		// Constructors
+		public __c__DisplayClass11_0();
+
+		// Methods
+		internal bool _CreateTempPanel_b__0(NotificationObjectPoolElement x);
+	}
+
+	[CompilerGenerated]
 	private sealed class __c__DisplayClass6_0
 	{
 		// Fields
@@ -50,19 +63,6 @@ public class NotificationObjectPool : MonoBehaviour
 		// Methods
 		internal bool _GetPanel_b__0(Notification x);
 		internal bool _GetPanel_b__1(Notification x);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass11_0
-	{
-		// Fields
-		public NotificationType type;
-
-		// Constructors
-		public __c__DisplayClass11_0();
-
-		// Methods
-		internal bool _CreateTempPanel_b__0(NotificationObjectPoolElement x);
 	}
 
 	// Constructors

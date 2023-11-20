@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -98,7 +98,7 @@ namespace MV.WorldObject
 		BuildModeAvatar = 133,
 		AvatarSpawnRoleCreator = 134,
 		GameOptionsDataObject = 135,
-		Christian7 = 136,
+		ModelTransparency = 136,
 		Christian8 = 137,
 		Christian9 = 138,
 		Christian10 = 139,

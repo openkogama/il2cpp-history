@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.WorldObject;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -39,7 +40,7 @@ public class MVObjectEnabler : MVLogicObject, ILogicWorldObject
 	public override void PlayModeInitialize();
 	public override void Reset();
 	private void UpdateShowObjects();
-	public override void OnObjectLinkChanged();
+	public override void OnObjectLinkChanged(ObjectLinkChangeType changeType, ObjectLink objectLink);
 	public override void OnDataUpdate();
 	private void ShowObjects(bool visible);
 }

@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -74,23 +74,15 @@ namespace ExitGames.Client.Photon
 		public int EventByteCount { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int EventCount { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int LongestOpResponseCallback { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public byte LongestOpResponseCallbackOpCode { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public byte LongestOpResponseCallbackOpCode { [CompilerGenerated] set; }
 		public int LongestEventCallback { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int LongestMessageCallback { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int LongestRawMessageCallback { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public byte LongestEventCallbackCode { [CompilerGenerated] get; [CompilerGenerated] set; }
+		public byte LongestEventCallbackCode { [CompilerGenerated] set; }
 		public int LongestDeltaBetweenDispatching { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int LongestDeltaBetweenSending { [CompilerGenerated] get; [CompilerGenerated] set; }
-		[Obsolete("Use DispatchIncomingCommandsCalls, which has proper naming.")]
-		public int DispatchCalls { get; }
 		public int DispatchIncomingCommandsCalls { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public int SendOutgoingCommandsCalls { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public int TotalByteCount { get; }
-		public int TotalMessageCount { get; }
-		public int TotalIncomingByteCount { get; }
-		public int TotalIncomingMessageCount { get; }
-		public int TotalOutgoingByteCount { get; }
-		public int TotalOutgoingMessageCount { get; }
 	
 		// Constructors
 		public TrafficStatsGameLevel();
@@ -105,8 +97,6 @@ namespace ExitGames.Client.Photon
 		internal void TimeForRawMessageCallback(int time);
 		internal void DispatchIncomingCommandsCalled();
 		internal void SendOutgoingCommandsCalled();
-		public void ResetMaximumCounters();
 		public override string ToString();
-		public string ToStringVitalStats();
 	}
 }

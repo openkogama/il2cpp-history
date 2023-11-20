@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -35,12 +35,12 @@ namespace ExitGames.Client.Photon
 	
 		// Properties
 		protected internal bool IsSimulationEnabled { get; set; }
-		public int OutgoingLag { get; set; }
-		public int OutgoingJitter { get; set; }
-		public int OutgoingLossPercentage { get; set; }
-		public int IncomingLag { get; set; }
-		public int IncomingJitter { get; set; }
-		public int IncomingLossPercentage { get; set; }
+		public int OutgoingLag { get; }
+		public int OutgoingJitter { get; }
+		public int OutgoingLossPercentage { get; }
+		public int IncomingLag { get; }
+		public int IncomingJitter { get; }
+		public int IncomingLossPercentage { get; }
 		public int LostPackagesOut { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 		public int LostPackagesIn { [CompilerGenerated] get; [CompilerGenerated] internal set; }
 	

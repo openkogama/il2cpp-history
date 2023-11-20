@@ -26,20 +26,6 @@ public class AvatarShopController : MonoBehaviour, IPurchaseAvatar
 	private AvatarRepository avatarRepository;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass10_0
-	{
-		// Fields
-		public AvatarShopController __4__this;
-		public UIPushOption pushOption;
-
-		// Constructors
-		public __c__DisplayClass10_0();
-
-		// Methods
-		internal void _Activate_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -54,6 +40,20 @@ public class AvatarShopController : MonoBehaviour, IPurchaseAvatar
 
 		// Methods
 		internal void _Activate_b__10_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass10_0
+	{
+		// Fields
+		public AvatarShopController __4__this;
+		public UIPushOption pushOption;
+
+		// Constructors
+		public __c__DisplayClass10_0();
+
+		// Methods
+		internal void _Activate_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

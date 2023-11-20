@@ -15,10 +15,11 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 {
 	// Fields
 	protected RuntimePrototypeCubeModel prototypeCubeModel;
-	protected ChunkInstances chunkInstances;
+	protected readonly ChunkInstances chunkInstances;
 	[CompilerGenerated]
 	private Func<IModelingConstraint> _ModelingConstraintBuilder_k__BackingField;
 	private bool beingEdited;
+	private static readonly int AlphaShaderProperty;
 	private Queue<CubeModelChangedEventArgs> changedEventArgsQueue;
 	public Action<CubeModelChangedEventArgs> Changed;
 	public Action<HashSet<IntVector>> ChunksChanged;
@@ -44,8 +45,17 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 		remove;
 	}
 
+	// Nested types
+	private struct CurrentTransparencySettings
+	{
+		// Fields
+		public bool active;
+		public float alphaToUse;
+	}
+
 	// Constructors
 	public MVCubeModelBase(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects, Dictionary<int, RuntimePrototypeCubeModel> prototypes);
+	static MVCubeModelBase();
 
 	// Methods
 	public override void Initialize();
@@ -54,7 +64,7 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 	public CubeBase GetCubeBase(IntVector pos);
 	public Cube GetCube(IntVector pos);
 	public bool ContainsCube(IntVector pos);
-	private void MakeUnique();
+	protected void MakeUnique();
 	private bool HasInstances();
 	public void RemoveCube(IntVector pos);
 	public void AddCube(IntVector pos, CubeBase cube);
@@ -70,12 +80,15 @@ public class MVCubeModelBase : MVWorldObjectClient, ICubeModel, ICubeModelCollid
 	public Bounds GetBounds();
 	public override Bounds GetLocalBounds(BoundsContext boundsContext);
 	public Vector3 GetWorldCenterPos();
-	public override void OnObjectLinkChanged();
+	public override void OnObjectLinkChanged(ObjectLinkChangeType changeType, ObjectLink objectLink);
 	public void ObjectLinkChanged(bool visible);
+	public void ObjectLinkTransparency();
+	private CurrentTransparencySettings CalculateCurrentTransparencySettings();
 	protected virtual void DirtyChunksRegeneratedHandler(HashSet<IntVector> chunksChanged);
 	public override void Destroy();
 	public void UpdatePrototypeScale(float scale);
+	public void AddToChunkInstances(IntVector chunkPos, ChunkInstances.ChunkInstanceVariables civ);
 	[CompilerGenerated]
-	private IModelingConstraint _.ctor_b__27_0();
+	private IModelingConstraint _.ctor_b__28_0();
 }
 

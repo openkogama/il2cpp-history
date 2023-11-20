@@ -19,19 +19,6 @@ public class PlayerRepository : ARepository
 	public IDictionary<int, MVItem> PlayerInventory { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass5_0
-	{
-		// Fields
-		public int[] itemCategories;
-
-		// Constructors
-		public __c__DisplayClass5_0();
-
-		// Methods
-		internal bool _GetItemsByItemCategory_b__0(KeyValuePair<int, MVItem> p);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -48,6 +35,19 @@ public class PlayerRepository : ARepository
 		// Methods
 		internal int _GetItemsByItemCategory_b__5_1(KeyValuePair<int, MVItem> pair);
 		internal MVItem _GetItemsByItemCategory_b__5_2(KeyValuePair<int, MVItem> pair);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass5_0
+	{
+		// Fields
+		public int[] itemCategories;
+
+		// Constructors
+		public __c__DisplayClass5_0();
+
+		// Methods
+		internal bool _GetItemsByItemCategory_b__0(KeyValuePair<int, MVItem> p);
 	}
 
 	[CompilerGenerated]
