@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices(
             pSVar5 = mscorlib.dll::System::String::String_Concat_4(::StringLiteral__,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
           }
           if (pTVar2 == (Text *)0x0) goto code_?;
-          (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar5,(pTVar2->klass->vtable).set_text.method);
+          (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar5,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           iVar6 = (this->fields).originalPrice;
           if (cRam_? == '\0') {
             func_?();
@@ -98,7 +98,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices(
           this_00.m_value = (this->fields).originalPrice - (int)fVar7;
           pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1((Int32 *)&(this->fields).originalPrice,StringLiteral_N0,(MethodInfo *)0x0);
           if ((pSVar5 == (String *)0x0) || (pSVar5 = mscorlib.dll::System::String::String_Replace_1(pSVar5,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0), pTVar2 == (Text *)0x0)) goto code_?;
-          (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar5);
+          (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar5);
         }
         pGVar3 = (this->fields).freeLabel;
         if (pGVar3 != (GameObject *)0x0) {
@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices(
           pTVar2 = (this->fields).priceText;
           pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1((Int32 *)&stack0xfffffff4,StringLiteral_N0,(MethodInfo *)0x0);
           if ((pSVar5 != (String *)0x0) && (pSVar5 = mscorlib.dll::System::String::String_Replace_1(pSVar5,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0), pTVar2 != (Text *)0x0)) {
-            (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar5,(pTVar2->klass->vtable).set_text.method);
+            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar5,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             return;
           }
         }
@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_Initialize(Bu
   pTVar1 = (this->fields).priceText;
   pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&price,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     BundlePurchasePopUp_HandlePrices(this,(this->fields).bundleDataClient,(MethodInfo *)0x0);
     pAVar3 = (this->fields).bundleDataClient;
     if ((pAVar3 != (AccessoryBundleClient *)0x0) && (pAVar4 = (this->fields).timeLimitDisplayer, pAVar4 != (AccessoryTimeLimitDisplayer *)0x0)) {
@@ -197,12 +197,6 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_OnGoldPurchas
     }
     object = TypeInfo__BundlePurchasePopUp____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__BundlePurchasePopUp____c___OnGoldPurchaseDialogResult_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__BundlePurchasePopUp____c->static_fields->__9__12_0 = callbackFunction;
     func_?(&TypeInfo__BundlePurchasePopUp____c->static_fields->__9__12_0,callbackFunction);
@@ -211,40 +205,31 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_OnGoldPurchas
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-  if (result != 0) {
-    if (cRam_? == '\0') {
-      ppMStack2 = (MVGameControllerBase__Class **)&TypeInfo__BrowserComm;
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (cRam_? == '\0') {
-      ppMStack2 = &TypeInfo__MVGameControllerBase;
-      func_?();
-      cRam_? = '\x01';
-    }
-    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar3 != (GameSessionData *)0x0) {
-      url = (pGVar3->fields).purchaseGoldURL;
-      if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-      }
-      return;
-    }
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (result == 0) {
     return;
   }
+  if (cRam_? == '\0') {
+    ppMStack1 = (MVGameControllerBase__Class **)&TypeInfo__BrowserComm;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    ppMStack1 = &TypeInfo__MVGameControllerBase;
+    func_?();
+    cRam_? = '\x01';
+  }
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 != (GameSessionData *)0x0) {
+    url = (pGVar2->fields).purchaseGoldURL;
+    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -273,12 +258,6 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_Pop(BundlePur
     }
     object = TypeInfo__BundlePurchasePopUp____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__BundlePurchasePopUp____c___Pop_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__BundlePurchasePopUp____c->static_fields->__9__13_0 = callbackFunction;
     func_?(&TypeInfo__BundlePurchasePopUp____c->static_fields->__9__13_0,callbackFunction);

@@ -64,93 +64,58 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>);
-  if (this != (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Dictionary__);
-    value_06.BanDurationFormat = (String *)0x1;
-    value_06.BanReason = (String *)0x40400000;
-    value_06.BanDuration = (String *)0x42c80000;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x3,value_06,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value.BanDurationFormat = (String *)0x1;
-    value.BanReason = (String *)0x3f000000;
-    value.BanDuration = (String *)0x41c8cccd;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x4,value,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_00.BanDurationFormat = (String *)0x1;
-    value_00.BanReason = (String *)0x3f19999a;
-    value_00.BanDuration = (String *)0x42486666;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x7,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_01.BanDurationFormat = (String *)0x1;
-    value_01.BanReason = (String *)0x3f333333;
-    value_01.BanDuration = (String *)0x42963333;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x8,value_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_02.BanDurationFormat = (String *)0x1;
-    value_02.BanReason = (String *)0x3f800000;
-    value_02.BanDuration = (String *)0x41c8cccd;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x6,value_02,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_03.BanDurationFormat = (String *)0x1;
-    value_03.BanReason = (String *)0x3f99999a;
-    value_03.BanDuration = (String *)0x42486666;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x9,value_03,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_04.BanDurationFormat = (String *)0x1;
-    value_04.BanReason = (String *)0x3fb33333;
-    value_04.BanDuration = (String *)0x42963333;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0xa,value_04,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    value_05.BanDurationFormat = (String *)0x1;
-    value_05.BanReason = (String *)0x3e99999a;
-    value_05.BanDuration = (String *)0x42c80000;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0xf,value_05,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this,(Object *)0x10,(AdminToolController_DefaultBan)ZEXT812(0x42c800003fc00000),MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
-    TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->static_fields->explosionValues = (Dictionary_2_MV_Common_RuntimeEventType_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this;
+  this = (Dictionary_2_MV_Common_RuntimeEventType_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Dictionary__);
+  if (this != (Dictionary_2_MV_Common_RuntimeEventType_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)0x0) {
+    value_05.centerDamage = 100.0;
+    value_05.radius = (float)MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_;
+    value_05.damageFallOffType = 1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,3,value_05,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    fVar1 = 25.1;
+    method = (MethodInfo *)0x1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,4,(ExplosionEvent_ExplosionValues)CONCAT84(CONCAT44(method,fVar1),0.5),MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value.damageFallOffType = 1;
+    value.radius = 0.6;
+    value.centerDamage = 50.1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,7,value,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value_00.damageFallOffType = 1;
+    value_00.radius = 0.7;
+    value_00.centerDamage = 75.1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,8,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value_01.damageFallOffType = 1;
+    value_01.radius = 1.0;
+    value_01.centerDamage = 25.1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,6,value_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value_02.damageFallOffType = 1;
+    value_02.radius = 1.2;
+    value_02.centerDamage = 50.1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,9,value_02,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value_03.damageFallOffType = 1;
+    value_03.radius = 1.4;
+    value_03.centerDamage = 75.1;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,10,value_03,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    value_04.damageFallOffType = 1;
+    value_04.radius = 0.3;
+    value_04.centerDamage = 100.0;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,0xf,value_04,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__Add((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)this,0x10,(ExplosionEvent_ExplosionValues)ZEXT812(0x42c800003fc00000),MethodInfo__System__Collections__Generic__Dictionary<MV::Common::RuntimeEventType,_MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionValues>__Add_MV__Common__RuntimeEventType__MV__WorldObject__RuntimeEvents__ExplosionEvent__ExplosionValues_);
+    TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->static_fields->explosionValues = this;
     func_?();
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* ExplosionEvent(RuntimeEventType, Byte[]) */
-
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,Byte__Array *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    cRam_? = '\x01';
-  }
-  this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-  pBStack_1 = this_00;
-  if (this_00 != (BytePacker *)0x0) {
-    BytePacker::BytePacker__ctor_1(this_00,data,(MethodInfo *)0x0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
-    uVar2 = BytePacker::BytePacker_ReadInt16(this_00,(MethodInfo *)0x0);
-    uVar3 = BytePacker::BytePacker_ReadInt16(this_00,(MethodInfo *)0x0);
-    uVar4 = BytePacker::BytePacker_ReadInt16(pBStack_1,(MethodInfo *)0x0);
-    IStack_5.x = 0;
-    IStack_5.y = 0;
-    IStack_5.z = 0;
-    IntVector::IntVector__ctor_1(&IStack_5,(uint)uVar2,(uint)uVar3,(uint)uVar4,(MethodInfo *)0x0);
-    (this->fields)._.position.x = IStack_5.x;
-    (this->fields)._.position.y = IStack_5.y;
-    (this->fields)._.position.z = IStack_5.z;
-    return;
-  }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
 /* ExplosionEvent(RuntimeEventType, BytePacker) */
 
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_1(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,BytePacker *bytePacker,MethodInfo *method)
+void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,BytePacker *bytePacker,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   if (bytePacker != (BytePacker *)0x0) {
     uVar1 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
@@ -174,10 +139,10 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
 
 /* ExplosionEvent(RuntimeEventType, Vector3, Vector3) */
 
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,Vector3 worldPosition,Vector3 normal,MethodInfo *method)
+void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_1(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,Vector3 worldPosition,Vector3 normal,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   worldPos.y = worldPosition.x;
   worldPos.z = worldPosition.y;
@@ -197,10 +162,10 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::Explosio
 
 /* ExplosionEvent(RuntimeEventType, Vector3) */
 
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_3(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,Vector3 worldPosition,MethodInfo *method)
+void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2(ExplosionEvent *this,RuntimeEventType__Enum runtimeEventType,Vector3 worldPosition,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   worldPos.y = worldPosition.x;
   worldPos.x = (float)&worldPosition.y;
@@ -225,12 +190,12 @@ Byte__Array * MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent:
     cRam_? = '\x01';
   }
   this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+  BytePacker::BytePacker__ctor(this_00,(MethodInfo *)0x0);
   if (this_00 != (BytePacker *)0x0) {
-    BytePacker::BytePacker__ctor(this_00,(MethodInfo *)0x0);
     BytePacker::BytePacker_Write(this_00,(this->fields)._._RuntimeEventType_k__BackingField,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.x,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.y,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.z,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.x,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.y,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.z,(MethodInfo *)0x0);
     pBVar1 = BytePacker::BytePacker_ToArray(this_00,(MethodInfo *)0x0);
     return pBVar1;
   }

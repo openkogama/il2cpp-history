@@ -125,10 +125,10 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState(BounceState
     VStack_4._0_8_ = *(undefined8 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x24);
     VStack_4.z = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x2c);
     if (pMVar1 != (MVInteractable *)0x0) {
-      pIStack_5 = (pMVar1->klass->vtable).HandleModifierEffect.methodPtr;
-      fVar6 = (float10)(*pIStack_5)(pMVar1,0xd,uStack_3,(pMVar1->klass->vtable).HandleModifierEffect.method);
-      pIStack_5 = (Il2CppMethodPointer)(float)fVar6;
-      if (0.0 < (float)pIStack_5) {
+      pMStack_5 = (pMVar1->klass->vtable).HandleModifierEffect.method;
+      fVar6 = (float10)(*(code *)pMStack_5)(pMVar1,0xd,uStack_3,(pMVar1->klass->vtable).ClearModifiers.methodPtr);
+      pMStack_5 = (MethodInfo *)(float)fVar6;
+      if (0.0 < (float)pMStack_5) {
         VStack_4.z = mvControllerColliderHit.impactVelocity.y;
         VStack_4.x = mvControllerColliderHit.slopeNormal.z;
         VStack_4.y = mvControllerColliderHit.impactVelocity.x;
@@ -151,9 +151,9 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState(BounceState
           if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__MVPhysics);
           }
-          fStack_9 = (float)pIStack_5 * 10.0;
+          fStack_9 = (float)pMStack_5 * 10.0;
           fVar14 = MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity((float)fVar6,(MethodInfo *)0x0);
-          fVar14 = fVar14 * (float)pIStack_5;
+          fVar14 = fVar14 * (float)pMStack_5;
           if (fVar14 < 0.0) {
             fVar14 = 0.0;
           }
@@ -210,7 +210,7 @@ void Assembly-CSharp.dll::BounceState::BounceState__ctor(BounceState *this,MVInt
   (this->fields).bounceVelocity.x = (pVVar1->zeroVector).x;
   (this->fields).bounceVelocity.y = fVar2;
   (this->fields).bounceVelocity.z = fVar3;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactable = interactable;
   func_?(&(this->fields).interactable,interactable);
   return;

@@ -87,12 +87,3 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
   return;
 }
 
-
-/* Boolean get_Holster() */
-
-bool Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_get_Holster(InputToInGameAction *this,MethodInfo *method)
-
-{
-  return (this->fields).holster;
-}
-

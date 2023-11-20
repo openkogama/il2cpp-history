@@ -52,9 +52,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_);
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualButtons;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this_00,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualButtons;
+    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this_00,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
       if (bVar2 != 0) {
         this_01 = (pVVar1->fields).m_VirtualButtons;
         if (this_01 == (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_ *)0x0) goto code_?;
@@ -78,7 +78,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = 1;
@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
 {
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
   func_?(&this->fields,name);
   (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;

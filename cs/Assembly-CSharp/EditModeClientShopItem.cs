@@ -33,19 +33,6 @@ public class EditModeClientShopItem : MonoBehaviour
 	public MVWorldObjectDocumentationType DocumentationType { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass12_0
-	{
-		// Fields
-		public InventoryItem inventoryItem;
-
-		// Constructors
-		public __c__DisplayClass12_0();
-
-		// Methods
-		internal void _SlotPressed_b__1(IAddItemFromInventory x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -62,6 +49,19 @@ public class EditModeClientShopItem : MonoBehaviour
 		// Methods
 		internal void _SlotPressed_b__12_0(IUIStack handler, BaseEventData data);
 		internal void _ShowPurchasePopUp_b__13_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass12_0
+	{
+		// Fields
+		public InventoryItem inventoryItem;
+
+		// Constructors
+		public __c__DisplayClass12_0();
+
+		// Methods
+		internal void _SlotPressed_b__1(IAddItemFromInventory x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

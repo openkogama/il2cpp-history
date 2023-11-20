@@ -12,26 +12,25 @@ void Assembly-CSharp.dll::GamePointHighScoreTracker::GamePointHighScoreTracker_O
   }
   pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__GamePointHighScoreTracker__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
+  pAStack2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAStack2 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pAVar1 = (Action *)0x0;
+  if (pAStack2->klass == TypeInfo__System__Action) {
+    pAVar1 = pAStack2;
+  }
+  if (pAVar1 == (Action *)0x0) {
+    pAStack3 = TypeInfo__System__Action;
     func_?();
     pAStack2 = extraout_ECX;
     pAStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__GamePointHighScoreTracker__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
-    pAStack2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAStack2 == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pAVar1 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAStack2;
-    }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar1 == (Action *)0x0) goto code_?;
     TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar1;
     pAVar1 = (Action *)0x0;
     if (pAStack2->klass == TypeInfo__System__Action) {
@@ -40,9 +39,6 @@ code_?:
     pAStack3 = TypeInfo__System__Action;
     if (pAVar1 != (Action *)0x0) goto code_?;
   }
-  pAStack3 = (Action__Class *)func_?();
-  pAStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -69,7 +65,7 @@ void Assembly-CSharp.dll::GamePointHighScoreTracker::GamePointHighScoreTracker_O
   }
   pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
   if ((pPVar2 != (PlayerPlanetData *)0x0) && (pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&pPVar2->fields,(MethodInfo *)0x0), pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar3,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();
@@ -93,26 +89,25 @@ void Assembly-CSharp.dll::GamePointHighScoreTracker::GamePointHighScoreTracker_S
   GamePointHighScoreTracker_UpdateHighScoreText(this,(MethodInfo *)0x0);
   pAVar1 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  if (this_00 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__GamePointHighScoreTracker__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
+  pAStack2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAStack2 == (Action *)0x0) {
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
+code_?:
+    func_?();
+    return;
+  }
+  pAVar1 = (Action *)0x0;
+  if (pAStack2->klass == TypeInfo__System__Action) {
+    pAVar1 = pAStack2;
+  }
+  if (pAVar1 == (Action *)0x0) {
+    pAStack3 = TypeInfo__System__Action;
     func_?();
     pAStack2 = extraout_ECX;
     pAStack3 = extraout_EDX;
   }
   else {
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__GamePointHighScoreTracker__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
-    pAStack2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAStack2 == (Action *)0x0) {
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-code_?:
-      func_?();
-      return;
-    }
-    pAVar1 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAStack2;
-    }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar1 == (Action *)0x0) goto code_?;
     TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar1;
     pAVar1 = (Action *)0x0;
     if (pAStack2->klass == TypeInfo__System__Action) {
@@ -121,9 +116,6 @@ code_?:
     pAStack3 = TypeInfo__System__Action;
     if (pAVar1 != (Action *)0x0) goto code_?;
   }
-  pAStack3 = (Action__Class *)func_?();
-  pAStack2 = extraout_ECX_00;
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -150,7 +142,7 @@ void Assembly-CSharp.dll::GamePointHighScoreTracker::GamePointHighScoreTracker_U
   }
   pPVar2 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
   if ((pPVar2 != (PlayerPlanetData *)0x0) && (pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&pPVar2->fields,(MethodInfo *)0x0), pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar3,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();

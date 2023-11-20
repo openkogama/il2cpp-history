@@ -157,7 +157,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)fVar4,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)fVar4,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -165,7 +165,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)((float)uVar3 * 1.5 + worldPos.z),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)((float)uVar3 * 1.5 + worldPos.z),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     method = (MethodInfo *)&TypeInfo__System__Math;
     func_?();
@@ -177,7 +177,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
     method = (MethodInfo *)pMVar5;
   }
   worldPos.x = (float)((ulonglong)(double)(float)method >> 0x20);
-  dVar6 = mscorlib.dll::System::Math::Math_Round_4((double)(float)method,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar6 = mscorlib.dll::System::Math::Math_Round_5((double)(float)method,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   *(undefined2 *)worldPos.x = 0;
   *(undefined2 *)((int)worldPos.x + 2) = 0;
   *(short *)((int)worldPos.x + 4) = (short)(int)dVar6;
@@ -214,7 +214,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)(((float)uVar2 * 1.5 + worldPos.y) - normal.y * 0.01),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)(((float)uVar2 * 1.5 + worldPos.y) - normal.y * 0.01),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -222,7 +222,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)(((float)uVar3 * 1.5 + worldPos.z) - normal.z * 0.01),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)(((float)uVar3 * 1.5 + worldPos.z) - normal.z * 0.01),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     normal.x = (float)&UNK_?;
     func_?();
@@ -235,7 +235,7 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctio
   dVar4 = (double)normal.x;
   worldPos.x = SUB84(dVar4,0);
   worldPos.y = (float)((ulonglong)dVar4 >> 0x20);
-  dVar4 = mscorlib.dll::System::Math::Math_Round_4(dVar4,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar4 = mscorlib.dll::System::Math::Math_Round_5(dVar4,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   *(short *)worldPos.x = (short)(int)worldPos.y;
   *(undefined2 *)((int)worldPos.x + 2) = 0;
   *(short *)((int)worldPos.x + 4) = (short)(int)dVar4;

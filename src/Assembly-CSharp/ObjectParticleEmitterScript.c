@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_ParticleSystemPrefab_is_null,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_ParticleSystemPrefab_is_null,(MethodInfo *)0x0);
     return;
   }
   pPVar2 = (this->fields).particleSystemPrefab;
@@ -57,7 +57,7 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_ParticleSystemInstance_is_null,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_ParticleSystemInstance_is_null,(MethodInfo *)0x0);
         return;
       }
       pPVar2 = (pOVar1->fields).particleSystemInstance;

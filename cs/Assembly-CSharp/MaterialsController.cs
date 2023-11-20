@@ -30,21 +30,6 @@ public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMater
 	public UnityAction materialsPop;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass12_0
-	{
-		// Fields
-		public MaterialsController __4__this;
-		public UIPushOption pushOption;
-		public UnityAction onPop;
-
-		// Constructors
-		public __c__DisplayClass12_0();
-
-		// Methods
-		internal void _Push_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -61,6 +46,21 @@ public class MaterialsController : MonoBehaviour, IMaterialClicked, IHandleMater
 		// Methods
 		internal void _OnMaterialClicked_b__16_0(IUIStack x, BaseEventData y);
 		internal void _ShowInventory_b__17_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass12_0
+	{
+		// Fields
+		public MaterialsController __4__this;
+		public UIPushOption pushOption;
+		public UnityAction onPop;
+
+		// Constructors
+		public __c__DisplayClass12_0();
+
+		// Methods
+		internal void _Push_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

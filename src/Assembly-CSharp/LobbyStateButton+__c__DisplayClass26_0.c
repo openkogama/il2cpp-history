@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c__DisplayClass26_0::LobbyStateButt
           func_?(&bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_);
           cRam_? = '\x01';
         }
-        bVar4 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct((bool *)0x98,0,bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_);
+        bVar4 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct((bool *)0x9c,0,bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_);
         if (bVar4 != 0) {
           if (cRam_? == '\0') {
             if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0) {

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 29: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -22,10 +22,7 @@ namespace GoogleMobileAds.Api
 		private double _Amount_k__BackingField;
 	
 		// Properties
-		public string Type { [CompilerGenerated] get; [CompilerGenerated] set; }
-		public double Amount { [CompilerGenerated] get; [CompilerGenerated] set; }
-	
-		// Constructors
-		public Reward();
+		public string Type { [CompilerGenerated] get; }
+		public double Amount { [CompilerGenerated] get; }
 	}
 }

@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::FirstTimeAc
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_firstTimeMessageParentTransform_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_firstTimeMessageParentTransform_,(MethodInfo *)0x0);
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     (this->fields)._.firstTimeMessageParentTransform = pTVar3;
     func_?();
@@ -76,8 +76,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::FirstTimeAc
           pFVar1 = (this->fields)._.firstTimeEventMessage;
           pSStack5 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
           if ((pFVar1 != (FirstTimeEventMessage *)0x0) && (pTStack6 = (pFVar1->fields).message, pTStack6 != (Text *)0x0)) {
-            pMStack7 = (pTStack6->klass->vtable).set_text.method;
-            (*(pTStack6->klass->vtable).set_text.methodPtr)();
+            pIStack7 = (pTStack6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+            (*(code *)(pTStack6->klass->vtable).set_text.method)();
             (this->fields).isShown = 1;
             return;
           }
@@ -107,16 +107,15 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::FirstTimeAc
         cRam_? = '\x01';
       }
       this_00 = (this->fields)._.firstTimeEventMessage;
-      this_02 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-      if (this_02 == (Action_1_Object_ *)0x0) {
+      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,(MethodInfo *)0x0);
+      if (this_00 == (FirstTimeEventMessage *)0x0) {
 code_?:
         func_?();
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;
       }
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_02,(Object *)this,MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,(MethodInfo *)0x0);
-      if (this_00 == (FirstTimeEventMessage *)0x0) goto code_?;
       this_01 = (this_00->fields).fader;
       targetGameObject = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
       if (this_01 == (FirstTimeFadeHandler *)0x0) goto code_?;

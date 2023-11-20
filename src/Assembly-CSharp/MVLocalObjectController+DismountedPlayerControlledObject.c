@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObje
 void Assembly-CSharp.dll::MVLocalObjectController+DismountedPlayerControlledObject::MVLocalObjectController_DismountedPlayerControlledObject__ctor(MVLocalObjectController_DismountedPlayerControlledObject *this,ILocalObject *playerControlledObject,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).playerControlledObject = playerControlledObject;
   func_?(&(this->fields).playerControlledObject,playerControlledObject);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);

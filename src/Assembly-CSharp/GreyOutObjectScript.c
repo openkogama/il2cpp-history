@@ -35,30 +35,31 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake(GreyOut
     }
     pGVar1 = (this->fields).pickupObject;
     if (pGVar1 != (GameObject *)0x0) {
-      pIVar5 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
-      pMVar6 = (MonitorData *)0x0;
-      if (pIVar5 != (IEnumerable_1_System_Object_ *)0x0) {
-        pIVar7 = pIVar5 + 2;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar1,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
+      uVar5 = 0;
+      if (this_01 != (Object__Array *)0x0) {
+        ppOVar6 = this_01->vector;
         while( true ) {
-          if ((int)pIVar5[1].monitor <= (int)pMVar6) {
+          method_00 = TypeInfo__GreyOutObjectScript__PickupOriginalMaterials;
+          if ((int)this_01->max_length <= (int)uVar5) {
             return;
           }
-          if (pIVar5[1].monitor <= pMVar6) break;
-          this_00 = (Object__Class *)pIVar7->klass;
+          if (this_01->max_length <= uVar5) break;
+          this_00 = (Object__Class *)*ppOVar6;
           value = (Object *)func_?();
-          if (value == (Object *)0x0) goto code_?;
           *(undefined1 *)&value[2].klass = 1;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_retaddr);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
           value[1].klass = this_00;
-          func_?(value + 1,this_00);
+          func_?();
           if (this_00 == (Object__Class *)0x0) goto code_?;
-          pMVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials((Renderer *)this_00,(MethodInfo *)0x0);
-          value[1].monitor = (MonitorData *)pMVar8;
-          func_?(&value[1].monitor,pMVar8);
-          pIVar5 = (IEnumerable_1_System_Object_ *)0x8468dff;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)0x8468dff,value,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_);
-          pMVar6 = pMVar6 + 1;
-          pIVar7 = (IEnumerable_1_System_Object_ *)&value->monitor;
+          pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials((Renderer *)this_00,(MethodInfo *)0x0);
+          value[1].monitor = (MonitorData *)pMVar7;
+          func_?(&value[1].monitor,pMVar7);
+          this_01 = (Object__Array *)(this_00->_0).this_arg.data.type;
+          if (this_01 == (Object__Array *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_01,value,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_);
+          uVar5 = uVar5 + 1;
+          ppOVar6 = (Object **)&value->monitor;
         }
         func_?();
       }
@@ -66,8 +67,8 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Awake(GreyOut
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -138,16 +139,10 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyIn(GreyOu
     func_?(&MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-    GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).isGreyedIn = 1;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+  GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
+  (this->fields).isGreyedIn = 1;
   return;
 }
 
@@ -182,16 +177,10 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyOut(GreyO
     func_?(&MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-    GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
-    (this->fields).isGreyedIn = 0;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+  GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
+  (this->fields).isGreyedIn = 0;
   return;
 }
 
@@ -237,15 +226,9 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_Hide(GreyOutO
     func_?(&MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-    GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+  GreyOutObjectScript_ExecuteOnMaterials(this,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -294,34 +277,35 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_InitializeOri
     if (0 < length) {
       mscorlib.dll::System::Array::Array_Clear((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
     }
-    source = (this->fields).pickupObject;
-    if (source != (GameObject *)0x0) {
-      pMVar3 = (MethodInfo *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
+    this_00 = (this->fields).pickupObject;
+    if (this_00 != (GameObject *)0x0) {
+      pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(this_00,UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______);
       pcVar4 = (char *)0x0;
-      if (pMVar3 != (MethodInfo *)0x0) {
-        method_00 = (MethodInfo *)&pMVar3->klass;
+      if (pOVar3 != (Object__Array *)0x0) {
+        ppOVar5 = pOVar3->vector;
         while( true ) {
-          if ((int)pMVar3->name <= (int)pcVar4) {
+          if ((int)pOVar3->max_length <= (int)pcVar4) {
             return;
           }
-          if (pMVar3->name <= pcVar4) break;
-          this_00 = (Il2CppClass *)method_00->methodPointer;
+          if ((char *)pOVar3->max_length <= pcVar4) break;
+          this_01 = (Object__Class *)*ppOVar5;
+          method_00 = TypeInfo__GreyOutObjectScript__PickupOriginalMaterials;
           value = (Object *)func_?();
-          if (value == (Object *)0x0) goto code_?;
           *(undefined1 *)&value[2].klass = 1;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,method_00);
-          value[1].klass = (Object__Class *)this_00;
-          func_?(value + 1,this_00);
-          if (this_00 == (Il2CppClass *)0x0) goto code_?;
-          pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials((Renderer *)this_00,(MethodInfo *)0x0);
-          value[1].monitor = (MonitorData *)pMVar5;
-          func_?(&value[1].monitor,pMVar5);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          pOVar6 = value + 1;
+          value[1].klass = this_01;
+          func_?(pOVar6,this_01);
+          if (this_01 == (Object__Class *)0x0) goto code_?;
+          pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials((Renderer *)this_01,(MethodInfo *)0x0);
+          value[1].monitor = (MonitorData *)pMVar7;
+          func_?(&value[1].monitor,pMVar7);
           pLVar1 = (this->fields).pickupOriginalMaterials;
           if (pLVar1 == (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) goto code_?;
-          pMVar3 = MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_;
+          pOVar3 = (Object__Array *)MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar1,value,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_);
           pcVar4 = pcVar4 + 1;
-          method_00 = (MethodInfo *)&method_00->virtualMethodPointer;
+          ppOVar5 = (Object **)&pOVar6->monitor;
         }
         func_?();
       }
@@ -329,8 +313,8 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_InitializeOri
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -346,17 +330,11 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript__ctor(GreyOut
     cRam_? = '\x01';
   }
   this_00 = (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)func_?(TypeInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>);
-  if (this_00 != (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__List__);
-    (this->fields).pickupOriginalMaterials = this_00;
-    func_?(&(this->fields).pickupOriginalMaterials,this_00);
-    (this->fields).isGreyedIn = 1;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__List__);
+  (this->fields).pickupOriginalMaterials = this_00;
+  func_?(&(this->fields).pickupOriginalMaterials,this_00);
+  (this->fields).isGreyedIn = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

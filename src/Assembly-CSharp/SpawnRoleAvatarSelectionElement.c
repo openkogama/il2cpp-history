@@ -13,9 +13,10 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelect
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -34,9 +35,10 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelect
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -132,8 +134,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelect
       if (pTVar3 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
         this_01 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(this_01,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
         if (this_01 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(this_01,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_01,(MethodInfo *)0x0);
           pSVar1 = (this->fields).spawnRolePreviewer;
           if (pSVar1 != (SpawnRolePreviewer *)0x0) {

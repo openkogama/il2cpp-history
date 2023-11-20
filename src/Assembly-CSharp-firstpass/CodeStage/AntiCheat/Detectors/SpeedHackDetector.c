@@ -17,7 +17,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
     func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector);
     cRam_? = '\x01';
   }
-  cVar1 = (*(this->klass->vtable).Init.methodPtr)(this,TypeInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector->static_fields->_Instance_k__BackingField,StringLiteral_Speed_Hack_Detector,(this->klass->vtable).Init.method);
+  cVar1 = (*(code *)(this->klass->vtable).Init.method)(this,TypeInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector->static_fields->_Instance_k__BackingField,StringLiteral_Speed_Hack_Detector,(this->klass->vtable).DisposeInternal.methodPtr);
   if (cVar1 != '\0') {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector);
@@ -27,17 +27,11 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
     func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector->static_fields->_Instance_k__BackingField,this);
   }
   this_00 = (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::SceneManagement::Scene,_UnityEngine::SceneManagement::LoadSceneMode>);
-  if (this_00 != (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,System::Int32Enum]::UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor(this_00,(Object *)this,MethodInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector__OnLevelWasLoadedNew_UnityEngine__SceneManagement__Scene__UnityEngine__SceneManagement__LoadSceneMode_,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_add_sceneLoaded((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_LoadSceneMode_ *)this_00,(MethodInfo *)0x0);
-    return;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::SceneManagement::Scene,System::Int32Enum]::UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor(this_00,(Object *)this,MethodInfo__CodeStage__AntiCheat__Detectors__SpeedHackDetector__OnLevelWasLoadedNew_UnityEngine__SceneManagement__Scene__UnityEngine__SceneManagement__LoadSceneMode_,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_add_sceneLoaded((UnityAction_2_UnityEngine_SceneManagement_Scene_UnityEngine_SceneManagement_LoadSceneMode_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -74,8 +68,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       return;
     }
     pSVar5 = pSVar1->klass;
-    ppSStack3 = (SpeedHackDetector__Class **)(pSVar5->vtable).DisposeInternal.method;
-    (*(pSVar5->vtable).DisposeInternal.methodPtr)();
+    ppSStack3 = (SpeedHackDetector__Class **)(pSVar5->vtable).DetectorHasAdditionalCallbacks.methodPtr;
+    (*(code *)(pSVar5->vtable).DisposeInternal.method)();
   }
   return;
 }
@@ -174,7 +168,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       return;
     }
   }
-  (*(this->klass->vtable).DisposeInternal.methodPtr)(this,(this->klass->vtable).DisposeInternal.method);
+  (*(code *)(this->klass->vtable).DisposeInternal.method)(this,(this->klass->vtable).DetectorHasAdditionalCallbacks.methodPtr);
   return;
 }
 
@@ -252,7 +246,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral__ACTk__Speed_Hack_Detector__can_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral__ACTk__Speed_Hack_Detector__can_,(MethodInfo *)0x0);
     return;
   }
   if (cRam_? == '\0') {
@@ -321,7 +315,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__disa,(Object_1 *)this,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__disa,(Object_1 *)this,(MethodInfo *)0x0);
       return;
     }
     bVar1 = (this->fields)._.detectionEventHasListener;
@@ -330,7 +324,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__was_,(Object_1 *)this,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__was_,(Object_1 *)this,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
         return;
       }
@@ -339,7 +333,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__has_,(Object_1 *)this,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__has_,(Object_1 *)this,(MethodInfo *)0x0);
     }
     (this->fields)._.detectionAction = callback;
     func_?(&(this->fields)._.detectionAction,callback);
@@ -356,7 +350,7 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__alre,(Object_1 *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral__ACTk__Speed_Hack_Detector__alre,(Object_1 *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -484,8 +478,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       return;
     }
     pSVar5 = pSVar1->klass;
-    ppSStack3 = (SpeedHackDetector__Class **)(pSVar5->vtable).StopDetectionInternal.method;
-    (*(pSVar5->vtable).StopDetectionInternal.methodPtr)();
+    ppSStack3 = (SpeedHackDetector__Class **)(pSVar5->vtable).PauseDetector.methodPtr;
+    (*(code *)(pSVar5->vtable).StopDetectionInternal.method)();
   }
   return;
 }
@@ -617,14 +611,12 @@ SpeedHackDetector * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detecto
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       pGVar3 = (GameObject *)func_?();
-      if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(pGVar3,StringLiteral_Anti_Cheat_Toolkit_Detectors,(MethodInfo *)0x0);
       TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->detectorsContainer = pGVar3;
       func_?();
     }
     pGVar3 = TypeInfo__CodeStage__AntiCheat__Detectors__ActDetectorBase->static_fields->detectorsContainer;
     if (pGVar3 == (GameObject *)0x0) {
-code_?:
       func_?();
       pcVar4 = (code *)swi(3);
       pSVar1 = (SpeedHackDetector *)(*pcVar4)();

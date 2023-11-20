@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send(
       bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__);
       if (bVar7 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__,method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
@@ -37,14 +37,14 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send(
       if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0)) goto code_?;
       iVar8 = *piVar9;
       uVar10 = 0;
-      if (*(ushort *)(iVar8 + 0xb2) != 0) {
+      if (*(ushort *)(iVar8 + 0xb6) != 0) {
         do {
           if (*(ILogicWorldObject__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) == TypeInfo__ILogicWorldObject) {
-            puVar11 = (undefined4 *)(*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xbc + iVar8);
+            puVar11 = (undefined4 *)(iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb2));
+        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
       }
       puVar11 = (undefined4 *)func_?();
 code_?:
@@ -52,14 +52,14 @@ code_?:
       if (piVar9 == (int *)0x0) break;
       iVar8 = *piVar9;
       uVar10 = 0;
-      if (*(ushort *)(iVar8 + 0xb2) != 0) {
+      if (*(ushort *)(iVar8 + 0xb6) != 0) {
         do {
           if (*(IInputSignalReceiver__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) == TypeInfo__IInputSignalReceiver) {
-            puVar11 = (undefined4 *)(*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xbc + iVar8);
+            puVar11 = (undefined4 *)(iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb2));
+        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
       }
       puVar11 = (undefined4 *)func_?();
 code_?:

@@ -18,7 +18,7 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_Ini
       gpt = (GamePassTier__Enum)(this->fields).slider;
       if ((Slider *)gpt != (Slider *)0x0) {
         method = (MethodInfo *)(float)(int)GVar3;
-        (*(((Slider *)gpt)->klass->vtable).set_value.methodPtr)();
+        (*(code *)(((Slider *)gpt)->klass->vtable).set_value.method)();
         this_00 = (this->fields).inputField;
         value = (MethodInfo *)mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&gpt,(MethodInfo *)0x0);
         GVar3 = gpt;
@@ -79,8 +79,8 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_OnI
         UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text(pIVar2,value,(MethodInfo *)0x0);
         pSVar4 = (this_00->fields).slider;
         if (pSVar4 != (Slider *)0x0) {
-          xpRewardAmount = (pSVar4->klass->vtable).set_value.method;
-          (*(pSVar4->klass->vtable).set_value.methodPtr)(pSVar4,(float)(int)fVar7);
+          xpRewardAmount = (pSVar4->klass->vtable).SetValueWithoutNotify.methodPtr;
+          (*(code *)(pSVar4->klass->vtable).set_value.method)(pSVar4,(float)(int)fVar7);
           GamePassesXPRewardOption_UpdateBonusXpAmountText(this_00,(int32_t)xpRewardAmount,(MethodInfo *)0x0);
           return;
         }
@@ -110,20 +110,20 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_OnO
   }
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    pIVar2 = (pSVar1->klass->vtable).get_value.methodPtr;
-    fVar3 = (float10)(*pIVar2)(pSVar1,(pSVar1->klass->vtable).get_value.method);
+    pMVar2 = (pSVar1->klass->vtable).get_value.method;
+    fVar3 = (float10)(*(code *)pMVar2)();
     fVar4 = (float)fVar3;
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Math);
       cRam_? = '\x01';
     }
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__Math);
     }
     pGVar5 = &this->fields;
-    this = (GamePassesXPRewardOption *)CONCAT31((int3)((uint)pIVar2 >> 8),pGVar5->gamePassTier);
+    this = (GamePassesXPRewardOption *)CONCAT31((int3)((uint)pMVar2 >> 8),pGVar5->gamePassTier);
     fVar3 = (float10)func_?((double)fVar4);
-    pOVar6 = (Object *)(int)fVar3;
+    iVar6 = (int)fVar3;
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
       func_?(&TypeInfo__GamePassProgressionController);
@@ -134,31 +134,30 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_OnO
     }
     pRVar7 = GamePassProgressionController::GamePassProgressionController_GetXPRewardRangeValidator((GamePassTier__Enum)this,(MethodInfo *)0x0);
     if (pRVar7 != (RangeValidator_1_System_Int32_ *)0x0) {
-      value_00 = (Object *)(pRVar7->fields).min;
-      if (((int)value_00 <= (int)pOVar6) && (pOVar8 = (Object *)(pRVar7->fields).max, value_00 = pOVar6, (int)pOVar8 < (int)pOVar6)) {
-        value_00 = pOVar8;
+      value_00 = (pRVar7->fields).min;
+      if ((value_00 <= iVar6) && (iVar8 = (pRVar7->fields).max, value_00 = iVar6, iVar8 < iVar6)) {
+        value_00 = iVar8;
       }
       pMVar9 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
-      if ((((pMVar9 != (MVGamePassProgressionDataObject *)0x0) && (value = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared(pMVar9,(MethodInfo *)0x0), value != (GamePassProgressionDataObjectShared *)0x0)) && (pGVar10 = (value->fields).xpTierRewards, pGVar10 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) && (this_00 = (Dictionary_2_System_Object_System_Object_ *)(pGVar10->fields).xpTierRewards, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_00,(Object *)this,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
+      if ((((pMVar9 != (MVGamePassProgressionDataObject *)0x0) && (value = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared(pMVar9,(MethodInfo *)0x0), value != (GamePassProgressionDataObjectShared *)0x0)) && (pGVar10 = (value->fields).xpTierRewards, pGVar10 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) && (this_00 = (pGVar10->fields).xpTierRewards, this_00 != (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::Dictionary_2_System_ByteEnum_System_Int32__set_Item((Dictionary_2_System_ByteEnum_System_Int32_ *)this_00,(ByteEnum__Enum)this,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
         pMVar9 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
         if (pMVar9 != (MVGamePassProgressionDataObject *)0x0) {
           MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_set_GamePassProgressionDataObjectShared(pMVar9,value,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
           if ((TypeInfo__GamePassesXPRewardOption____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__GamePassesXPRewardOption____c);
           }
           callbackFunction = TypeInfo__GamePassesXPRewardOption____c->static_fields->__9__8_0;
           if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
             if ((TypeInfo__GamePassesXPRewardOption____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+              func_?(TypeInfo__GamePassesXPRewardOption____c);
             }
             object = TypeInfo__GamePassesXPRewardOption____c->static_fields->__9;
-            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
+            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__GamePassesXPRewardOption____c___OnOkayPressed_b__8_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
             TypeInfo__GamePassesXPRewardOption____c->static_fields->__9__8_0 = callbackFunction;
-            func_?(&TypeInfo__GamePassesXPRewardOption____c->static_fields->__9__8_0,callbackFunction);
+            func_?(&TypeInfo__GamePassesXPRewardOption____c->static_fields->__9__8_0);
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -169,7 +168,6 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_OnO
       }
     }
   }
-code_?:
   func_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
@@ -185,7 +183,7 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_OnS
   this_01 = this;
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)(pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)(pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -240,7 +238,7 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_Upd
   mscorlib.dll::System::String::String_Concat_3(str0,StringLiteral__XP_for_Elites,(MethodInfo *)0x0);
   if (pTVar2 != (Text *)0x0) {
     uStack_3 = (double)CONCAT44(&UNK_?,(undefined4)uStack_3);
-    (*(pTVar2->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar2->klass->vtable).set_text.method)();
     return;
   }
   func_?();
@@ -266,13 +264,13 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_Upd
   }
   pRVar1 = GamePassProgressionController::GamePassProgressionController_GetXPRewardRangeValidator((GamePassTier__Enum)this,(MethodInfo *)0x0);
   if (pRVar1 != (RangeValidator_1_System_Int32_ *)0x0) {
-    value_00 = (Object *)(pRVar1->fields).min;
-    if (((int)value_00 <= xpAmount) && (pOVar2 = (Object *)(pRVar1->fields).max, value_00 = (Object *)xpAmount, (int)pOVar2 < xpAmount)) {
-      value_00 = pOVar2;
+    value_00 = (pRVar1->fields).min;
+    if ((value_00 <= xpAmount) && (iVar2 = (pRVar1->fields).max, value_00 = xpAmount, iVar2 < xpAmount)) {
+      value_00 = iVar2;
     }
     pMVar3 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
-    if ((((pMVar3 != (MVGamePassProgressionDataObject *)0x0) && (value = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared(pMVar3,(MethodInfo *)0x0), value != (GamePassProgressionDataObjectShared *)0x0)) && (pGVar4 = (value->fields).xpTierRewards, pGVar4 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) && (this_00 = (Dictionary_2_System_Object_System_Object_ *)(pGVar4->fields).xpTierRewards, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_00,(Object *)this,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
+    if ((((pMVar3 != (MVGamePassProgressionDataObject *)0x0) && (value = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared(pMVar3,(MethodInfo *)0x0), value != (GamePassProgressionDataObjectShared *)0x0)) && (pGVar4 = (value->fields).xpTierRewards, pGVar4 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) && (this_00 = (pGVar4->fields).xpTierRewards, this_00 != (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)0x0)) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::Dictionary_2_System_ByteEnum_System_Int32__set_Item((Dictionary_2_System_ByteEnum_System_Int32_ *)this_00,(ByteEnum__Enum)this,value_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
       pMVar3 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
       if (pMVar3 != (MVGamePassProgressionDataObject *)0x0) {
         MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_set_GamePassProgressionDataObjectShared(pMVar3,value,(MethodInfo *)0x0);

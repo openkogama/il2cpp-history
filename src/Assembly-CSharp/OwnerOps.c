@@ -27,10 +27,9 @@ void Assembly-CSharp.dll::OwnerOps::OwnerOps_RevokeEditRightsAndKick(MonoBehavio
         }
         object = TypeInfo__OwnerOps____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
         TypeInfo__OwnerOps____c->static_fields->__9__1_0 = callbackFunction;
-        func_?(&TypeInfo__OwnerOps____c->static_fields->__9__1_0,callbackFunction);
+        func_?(&TypeInfo__OwnerOps____c->static_fields->__9__1_0);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -39,7 +38,6 @@ void Assembly-CSharp.dll::OwnerOps::OwnerOps_RevokeEditRightsAndKick(MonoBehavio
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -73,7 +71,6 @@ void Assembly-CSharp.dll::OwnerOps::OwnerOps_RevokeEditRightsAndKick_1(GameObjec
       }
       object = TypeInfo__OwnerOps____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       TypeInfo__OwnerOps____c->static_fields->__9__1_0 = callbackFunction;
       func_?(&TypeInfo__OwnerOps____c->static_fields->__9__1_0,callbackFunction);
@@ -84,7 +81,6 @@ void Assembly-CSharp.dll::OwnerOps::OwnerOps_RevokeEditRightsAndKick_1(GameObjec
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy((GameObject *)UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

@@ -24,7 +24,6 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass3_0::ThemeMenuCon
       }
       object = TypeInfo__ThemeMenuController____c->static_fields->__9;
       this_01 = (UnityAction *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 == (UnityAction *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor((NavMesh_OnNavMeshPreUpdate *)this_01,(Object *)object,MethodInfo__ThemeMenuController____c___OpenThemesMenu_b__3_1__,(MethodInfo *)0x0);
       TypeInfo__ThemeMenuController____c->static_fields->__9__3_1 = this_01;
       func_?(&TypeInfo__ThemeMenuController____c->static_fields->__9__3_1,this_01);
@@ -34,7 +33,6 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass3_0::ThemeMenuCon
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

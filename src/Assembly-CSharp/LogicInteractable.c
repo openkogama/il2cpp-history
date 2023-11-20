@@ -1,13 +1,4 @@
 
-/* Single HandleModifierEffect(AvatarModifierEffect, Single) */
-
-float Assembly-CSharp.dll::LogicInteractable::LogicInteractable_HandleModifierEffect(LogicInteractable *this,AvatarModifierEffect__Enum avatarModifierEffect,float baseValue,MethodInfo *method)
-
-{
-  return baseValue;
-}
-
-
 /* Void TakeDamage(Single, MVPlayer, PlayerKilledByType) */
 
 void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamage(LogicInteractable *this,float amount,MVPlayer *damageDealer,PlayerKilledByType__Enum damageType,MethodInfo *method)
@@ -20,12 +11,6 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamage(LogicI
   if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
     pEVar1 = (this->fields).OnDamageEvent;
     this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
-    if (this_00 == (TakeDamageEventArgs *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
     TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,amount,damageDealer,damageType,(MethodInfo *)0x0);
     (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
   }
@@ -43,17 +28,15 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_TakeDamageOverTim
     cRam_? = '\x01';
   }
   if (damageDealer != (MVPlayer *)0x0) {
-    (*(this->klass->vtable).AddModifier.methodPtr)(this,type,(damageDealer->fields)._ActorNr_k__BackingField,0,(this->klass->vtable).AddModifier.method);
+    (*(code *)(this->klass->vtable).AddModifier.method)(this,type,(damageDealer->fields)._ActorNr_k__BackingField,0,(this->klass->vtable).HasModifier.methodPtr);
     if ((this->fields).OnDamageEvent != (EventHandler_1_TakeDamageEventArgs_ *)0x0) {
       pEVar1 = (this->fields).OnDamageEvent;
       this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
-      if (this_00 == (TakeDamageEventArgs *)0x0) goto code_?;
       TakeDamageEventArgs::TakeDamageEventArgs__ctor(this_00,0.0,damageDealer,damageType,(MethodInfo *)0x0);
       (*(pEVar1->fields)._._.invoke_impl)((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
     }
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

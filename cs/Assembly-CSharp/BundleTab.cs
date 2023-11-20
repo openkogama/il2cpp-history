@@ -41,22 +41,6 @@ public class BundleTab : TabMenuButtonBase
 	private int highlightId;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass13_0
-	{
-		// Fields
-		public BundleTab __4__this;
-		public int tabId;
-		public ExecuteEvents.EventFunction<ITabSelected> __9__1;
-
-		// Constructors
-		public __c__DisplayClass13_0();
-
-		// Methods
-		internal void _Initialize_b__0();
-		internal void _Initialize_b__1(ITabSelected x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -75,6 +59,22 @@ public class BundleTab : TabMenuButtonBase
 		internal void _SetAsSelected_b__17_0(IAccessoryClicked x, BaseEventData y);
 		internal void _SetAsSelected_b__17_1(IAccessoryClicked x, BaseEventData y);
 		internal void _SetAsSelected_b__17_2(IBundleController x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass13_0
+	{
+		// Fields
+		public BundleTab __4__this;
+		public int tabId;
+		public ExecuteEvents.EventFunction<ITabSelected> __9__1;
+
+		// Constructors
+		public __c__DisplayClass13_0();
+
+		// Methods
+		internal void _Initialize_b__0();
+		internal void _Initialize_b__1(ITabSelected x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

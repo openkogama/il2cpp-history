@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__ctor(AwayMonitor_IdleKickTimes *this,int32_t warnAfterMinutes,int32_t kickAfterMinutes,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).idleKickTimeMinutes = kickAfterMinutes;
   (this->fields).warningTimeMinutes = warnAfterMinutes;
   TStack_1._ticks = 0;

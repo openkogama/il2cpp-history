@@ -171,7 +171,7 @@ float Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper_NormalizedDistance
 void Assembly-CSharp.dll::UIElipsoidHelper::UIElipsoidHelper__ctor(UIElipsoidHelper *this,float width,float height,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).width = width;
   fStack_1 = width;
   uStack_2 = 0;

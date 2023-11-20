@@ -53,15 +53,18 @@ Bounds * Assembly-CSharp.dll::MVCountingCube::MVCountingCube_GetLocalBounds(Boun
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  center = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
-  size = (this->fields).ObjectSize;
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor(__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (__return_storage_ptr__->m_Center).x = (pVVar1->zeroVector).x;
+  (__return_storage_ptr__->m_Center).y = fVar2;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  uVar4 = (this->fields).ObjectSize.x;
+  uVar5 = (this->fields).ObjectSize.y;
+  fVar3 = (this->fields).ObjectSize.z;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar4 * 0.5;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar5 * 0.5;
+  (__return_storage_ptr__->m_Extents).z = fVar3 * 0.5;
   return __return_storage_ptr__;
 }
 
@@ -81,34 +84,31 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_Initialize(MVCountingCu
   pMVar1 = (this->fields).cubeObject;
   if (pMVar1 != (MVCountingCubeObject *)0x0) {
     MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(pMVar1->fields).visualObject,2.0,(MethodInfo *)0x0);
-    this_00 = (Action_2_Int32Enum_Object_ *)func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-    if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-      mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_00,(Object *)this,MethodInfo__MVCountingCube__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
-      pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-      (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
-      func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar2);
-      iVar3 = (this->fields)._._._.id;
-      this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?(TypeInfo__OutputSignalTransmitter);
-      if (this_01 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-        WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,iVar3,(MethodInfo *)0x0);
-        (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
-        func_?(&(this->fields).outputSignalTransmitter,this_01);
-        uVar4 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-        piVar5 = &(this->fields)._._.interactionFlags;
-        *(uint *)piVar5 = (uint)*piVar5 | 0x8000;
-        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar4;
-        MVCountingCube_SetText(this,(MethodInfo *)0x0);
-        iVar3 = MVCountingCube_get_CurrentValue(this,(MethodInfo *)0x0);
-        if (iVar3 == 0) {
-          (this->fields).isHot = 1;
-        }
-        return;
-      }
+    this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__MVCountingCube__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
+    pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
+    func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar2);
+    iVar3 = (this->fields)._._._.id;
+    pOStack4 = TypeInfo__OutputSignalTransmitter;
+    this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?();
+    WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,iVar3,(MethodInfo *)0x0);
+    (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
+    func_?();
+    uVar5 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    piVar6 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar6 = (uint)*piVar6 | 0x8000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar5;
+    MVCountingCube_SetText(this,(MethodInfo *)0x0);
+    iVar3 = MVCountingCube_get_CurrentValue(this,(MethodInfo *)0x0);
+    if (iVar3 == 0) {
+      (this->fields).isHot = 1;
     }
+    return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -131,11 +131,11 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_InputStateUpdateCallbac
         func_?(&StringLiteral_reset);
         cRam_? = '\x01';
       }
-      this_00 = (this->fields)._._._.data;
-      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_reset,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-        if (pOVar2 != (Object *)0x0) {
-          if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
+      if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_reset,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+        if (TVar2.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Boolean->_0).element_class) goto code_?;
           pcVar3 = (char *)func_?();
           if (*pcVar3 == '\0') goto code_?;
           iVar1 = MVCountingCube_get_StartingValue(this,(MethodInfo *)0x0);
@@ -217,6 +217,7 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_PlaySound(MVCountingCub
 void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_Reset(MVCountingCube *this,MethodInfo *method)
 
 {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   value = MVCountingCube_get_StartingValue(this,(MethodInfo *)0x0);
   MVCountingCube_set_CurrentValue(this,value,(MethodInfo *)0x0);
   (this->fields).isHot = 0;
@@ -236,6 +237,7 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_SetText(MVCountingCube 
     MVCountingCube_get_CurrentValue(this,(MethodInfo *)0x0);
     if (pMVar2 != (MVCountingCubeDigits *)0x0) {
       if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Char);
         func_?(&StringLiteral__0);
         cRam_? = '\x01';
       }
@@ -247,6 +249,9 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_SetText(MVCountingCube 
         }
         uVar4 = mscorlib.dll::System::String::String_get_Chars(pSVar3,0,(MethodInfo *)0x0);
         this = (MVCountingCube *)(uint)uVar4;
+        if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Char);
+        }
         s = mscorlib.dll::System::Char::Char_ToString((Char *)&this,(MethodInfo *)0x0);
         value = mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
         uVar4 = mscorlib.dll::System::String::String_get_Chars(pSVar3,1,(MethodInfo *)0x0);
@@ -316,10 +321,10 @@ code_?:
       return;
     }
     unaff_EDI = TypeInfo__MVCountingCubeObject;
-    if (((TypeInfo__MVCountingCubeObject->_1).typeHierarchyDepth <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) {
+    if (((TypeInfo__MVCountingCubeObject->_1).naturalAligment <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) {
       (this->fields).cubeObject = pMVar2;
       unaff_EDI = TypeInfo__MVCountingCubeObject;
-      if (((TypeInfo__MVCountingCubeObject->_1).typeHierarchyDepth <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchyDepth) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) goto code_?;
+      if (((TypeInfo__MVCountingCubeObject->_1).naturalAligment <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) goto code_?;
     }
   }
   func_?(pMVar2,unaff_EDI);
@@ -340,7 +345,7 @@ int32_t Assembly-CSharp.dll::MVCountingCube::MVCountingCube_get_CurrentValue(MVC
     func_?(&StringLiteral_currentValue);
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(this->klass->vtable).get_RunTimeData.methodPtr)(this,(this->klass->vtable).get_RunTimeData.method);
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(code *)(this->klass->vtable).get_RunTimeData.method)(this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -360,15 +365,6 @@ int32_t Assembly-CSharp.dll::MVCountingCube::MVCountingCube_get_CurrentValue(MVC
   pcVar4 = (code *)swi(3);
   iVar3 = (*pcVar4)();
   return iVar3;
-}
-
-
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum Assembly-CSharp.dll::MVCountingCube::MVCountingCube_get_DocumentationType(MVCountingCube *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_CountingCube;
 }
 
 
@@ -423,11 +419,11 @@ bool Assembly-CSharp.dll::MVCountingCube::MVCountingCube_get_ResetDataValue(MVCo
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_reset,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_reset,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
         pbVar2 = (bool *)func_?();
         return *pbVar2;
       }
@@ -456,11 +452,11 @@ int32_t Assembly-CSharp.dll::MVCountingCube::MVCountingCube_get_StartingValue(MV
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_startingValue,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_startingValue,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) == (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
         return *piVar2;
       }
@@ -490,7 +486,7 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_set_CurrentValue(MVCoun
     func_?(&StringLiteral_currentValue);
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(this->klass->vtable).get_RunTimeData.methodPtr)(this,(this->klass->vtable).get_RunTimeData.method);
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(code *)(this->klass->vtable).get_RunTimeData.method)(this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
@@ -508,7 +504,7 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_set_CurrentValue(MVCoun
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3(hashtable,StringLiteral_currentValue,value_00,void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_);
+  Extensions::Extensions_SetObscuredType_2(hashtable,StringLiteral_currentValue,value_00,void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_);
   return;
 }
 

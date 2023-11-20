@@ -37,7 +37,7 @@ public class SwitchThemeButton : MonoBehaviour
 	public SwitchThemeButton();
 
 	// Methods
-	public void Initialize(int levelReq, int goldReq);
+	public void Initialize(int levelRequirement, int goldReq);
 	private void OnLevelTextureReceived(UnityWebRequest www);
 	protected void OnDestroy();
 	protected void Reset();

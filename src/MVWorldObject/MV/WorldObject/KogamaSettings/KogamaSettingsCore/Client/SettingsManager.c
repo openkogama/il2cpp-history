@@ -13,10 +13,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
       cRam_? = '\x01';
     }
     if ((pSVar1->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-      if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-      (pSVar1->fields).DeltaRemovalData = this_00;
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+      (pSVar1->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)this_00;
       func_?(&(pSVar1->fields).DeltaRemovalData,this_00);
     }
     MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable((pSVar1->fields).DeltaRemovalData,source,(MethodInfo *)0x0);
@@ -30,7 +29,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
       return;
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -83,10 +81,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
       cRam_? = '\x01';
     }
     if ((pSVar1->fields).DeltaData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-      if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-      (pSVar1->fields).DeltaData = this_00;
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+      (pSVar1->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)this_00;
       func_?(&(pSVar1->fields).DeltaData,this_00);
     }
     MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable((pSVar1->fields).DeltaData,source,(MethodInfo *)0x0);
@@ -100,7 +97,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
       return;
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

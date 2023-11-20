@@ -24,20 +24,20 @@ void Assembly-CSharp.dll::RollingNumberCounterAndroid::RollingNumberCounterAndro
             if (pRVar1->max_length <= uVar4) goto code_?;
             iVar3 = *(int *)((int)pRVar1->vector + iStack_5 + -0x10);
             if (iVar3 == 0) break;
-            *(undefined4 *)(iVar3 + 0x2c) = 0;
-            *(float *)(iVar3 + 0x24) = (float)(*(int *)(iVar3 + 0x10) + 1) * *(float *)(iVar3 + 0x18) - ABS(*(float *)(iVar3 + 0x14));
-            if (*(Transform **)(iVar3 + 0xc) == (Transform *)0x0) break;
-            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffd4,*(Transform **)(iVar3 + 0xc),(MethodInfo *)0x0);
+            *(undefined4 *)(iVar3 + 0x30) = 0;
+            *(float *)(iVar3 + 0x28) = (float)(*(int *)(iVar3 + 0x14) + 1) * *(float *)(iVar3 + 0x1c) - ABS(*(float *)(iVar3 + 0x18));
+            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffd4,*(Transform **)(iVar3 + 0x10),(MethodInfo *)0x0);
             uVar7 = pVVar6->x;
-            if (*(Transform **)(iVar3 + 0xc) == (Transform *)0x0) break;
-            value_00.y = (float)*(undefined4 *)(iVar3 + 0x24);
+            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
+            value_00.y = (float)*(undefined4 *)(iVar3 + 0x28);
             value_00.x = (float)uVar7;
             value_00.z = pVVar6->z;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(*(Transform **)(iVar3 + 0xc),value_00,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(*(Transform **)(iVar3 + 0x10),value_00,(MethodInfo *)0x0);
             uVar4 = uVar4 + 1;
             iStack_5 = iStack_5 + 4;
-            *(undefined4 *)(iVar3 + 0x10) = 9;
-            *(float *)(iVar3 + 0x20) = *(float *)(iVar3 + 0x18) * 10.0 - ABS(*(float *)(iVar3 + 0x14));
+            *(undefined4 *)(iVar3 + 0x14) = 9;
+            *(float *)(iVar3 + 0x24) = *(float *)(iVar3 + 0x1c) * 10.0 - ABS(*(float *)(iVar3 + 0x18));
             if ((int)iVar2 <= (int)uVar4) {
               return;
             }

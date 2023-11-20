@@ -24,7 +24,7 @@ code_?:
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.this_arg.data)(x);
+      (**(code **)&x->klass[1]._0.this_arg.attrs)(x);
     }
   }
   (this->fields).owner = avatar;
@@ -79,7 +79,7 @@ code_?:
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar2 != 0) {
       if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.element_class)(x,x->klass[1]._0.castClass);
+      (*(code *)x->klass[1]._0.castClass)(x,x->klass[1]._0.declaringType);
     }
   }
   return;
@@ -109,7 +109,7 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_RemoveCamera(VehicleS
     if (pMVar2 != (MVAvatar *)0x0) {
       pAVar3 = (pMVar2->fields).avatar;
       if (pAVar3 != (Avatar *)0x0) {
-        if (((pAVar3->klass->_1).typeHierarchyDepth < (TypeInfo__AvatarLocal->_1).typeHierarchyDepth) || ((pAVar3->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__AvatarLocal)) {
+        if (((pAVar3->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) || ((pAVar3->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__AvatarLocal)) {
           func_?(pAVar3,TypeInfo__AvatarLocal);
         }
         else if (pAVar3[1].klass != (Avatar__Class *)0x0) {
@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_RemoveCamera(VehicleS
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
   return;
 }
 
@@ -155,7 +155,7 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_SetCamera(VehicleSeat
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
     return;
   }
   pAVar2 = (AvatarLocal__Class *)(this->fields).seatCamera;
@@ -168,18 +168,18 @@ code_?:
     func_?(pAVar2,pMVar4);
     pMVar6 = extraout_EDX;
   }
-  else if ((pMVar3 == (MVAvatar *)0x0) || ((pMVar6 = TypeInfo__MVAvatarLocal, (TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= *(byte *)&((Il2CppClass_0 *)&pMVar3->klass)->image[4].nameNoExt && (*(MVAvatarLocal__Class **)((((Il2CppClass_0 *)&pMVar3->klass)->image[2].typeCount - 4) + (uint)(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth * 4) == TypeInfo__MVAvatarLocal)))) {
+  else if ((pMVar3 == (MVAvatar *)0x0) || ((pMVar6 = TypeInfo__MVAvatarLocal, (TypeInfo__MVAvatarLocal->_1).naturalAligment <= *(byte *)&((Il2CppClass_0 *)&pMVar3->klass)->image[4].assembly && (*(MVAvatarLocal__Class **)((((Il2CppClass_0 *)&pMVar3->klass)->image[2].typeCount - 4) + (uint)(TypeInfo__MVAvatarLocal->_1).naturalAligment * 4) == TypeInfo__MVAvatarLocal)))) {
     pMVar4 = (MVAvatar *)TypeInfo__IVehicleCamera;
     piVar7 = (int *)func_?(pAVar2,TypeInfo__IVehicleCamera,TypeInfo__IVehicleCamera);
     if (piVar7 != (int *)0x0) {
       iVar5 = *piVar7;
       uVar8 = 0;
-      uVar9 = *(ushort *)(iVar5 + 0xb2);
+      uVar9 = *(ushort *)(iVar5 + 0xb6);
       pMVar4 = (MVAvatar *)(uint)uVar9;
       if (uVar9 != 0) {
         do {
           if (*(IVehicleCamera__Class **)(*(int *)(iVar5 + 0x58) + (uint)uVar8 * 8) == TypeInfo__IVehicleCamera) {
-            puVar10 = (undefined4 *)(*(int *)(*(int *)(iVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xcc + iVar5);
+            puVar10 = (undefined4 *)(iVar5 + (*(int *)(*(int *)(iVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x1a) * 8);
             goto code_?;
           }
           uVar8 = uVar8 + 1;
@@ -193,7 +193,7 @@ code_?:
       if ((pMVar3 == (MVAvatar *)0x0) || (pAVar11 = (pMVar3->fields).avatar, pAVar11 == (Avatar *)0x0)) goto code_?;
       pMVar12 = (MVAvatar *)pAVar11->klass;
       pMVar3 = pMVar12;
-      if (((TypeInfo__AvatarLocal->_1).typeHierarchyDepth <= (byte)(pMVar12->fields)._._.field_0xac) && (pMVar3 = pMVar4, *(AvatarLocal__Class **)((int)(pMVar12->fields)._._._.OnInputLinkChanged + (uint)(TypeInfo__AvatarLocal->_1).typeHierarchyDepth * 4 + -4) == TypeInfo__AvatarLocal)) {
+      if (((TypeInfo__AvatarLocal->_1).naturalAligment <= (byte)(pMVar12->fields)._._.interactionFlags) && (pMVar3 = pMVar4, *(AvatarLocal__Class **)((int)(pMVar12->fields)._._._.OnInputLinkChanged + (uint)(TypeInfo__AvatarLocal->_1).naturalAligment * 4 + -4) == TypeInfo__AvatarLocal)) {
         if (pAVar11[1].klass != (Avatar__Class *)0x0) {
           func_?(5,TypeInfo__IAvatarCameraController,pAVar11[1].klass,(this->fields).seatCamera);
           return;
@@ -227,7 +227,7 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_set_SeatID(VehicleSea
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_Trying_to_re_set_seatID,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Trying_to_re_set_seatID,(MethodInfo *)0x0);
     return;
   }
   (this->fields).seatID = value;

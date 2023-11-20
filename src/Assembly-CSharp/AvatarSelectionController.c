@@ -4,6 +4,7 @@
 void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_AvatarSlotClicked(AvatarSelectionController *this,int32_t slotIndex,MethodInfo *method)
 
 {
+  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<int,_UnityEngine::Texture2D>);
     func_?(&MethodInfo__AvatarSelectionController__OnPicUpdateForPrevAvatar_int__UnityEngine__Texture2D_);
@@ -15,12 +16,11 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_A
   if (slotIndex == (this->fields).currSelectedSlot) {
     return;
   }
-  key = (Object *)(this->fields).currSelectedSlot;
   AvatarSelectionController_set_CurrentlySelectedSlotIndex(slotIndex,(MethodInfo *)0x0);
   pAVar1 = (this->fields).avatarBodyController;
   if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
     AvatarEditModeBodyController::AvatarEditModeBodyController_SetCurrentBody(pAVar1,slotIndex,(MethodInfo *)0x0);
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     pAVar1 = (this->fields).avatarBodyController;
     if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
       if (cRam_? == '\0') {
@@ -28,30 +28,69 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_A
         cRam_? = '\x01';
       }
       pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pAVar1->fields).bodies;
-      if (((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) && (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(pAVar1->fields).currentBodyIndex,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_), RVar3 != (RegexCharClass_SingleRange)0x0)) && (this_03 != (MVNetworkGame_OperationRequests *)0x0)) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetActiveAvatar(this_03,*(int32_t *)((int)RVar3 + 8),(MethodInfo *)0x0);
-        AvatarSelectionController_SetStateToRoam(this,(MethodInfo *)0x0);
-        this_00 = (this->fields).avatarSlots;
-        if ((this_00 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) && (this_04 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_), this_04 != (Component *)0x0)) {
-          obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_04,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+      if (((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) && (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(pAVar1->fields).currentBodyIndex,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_), RVar3 != (RegexCharClass_SingleRange)0x0)) && (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
+        this = (AvatarSelectionController *)0x0;
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetActiveAvatar(this_02,*(int32_t *)((int)RVar3 + 8),(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          func_?();
+          this = (AvatarSelectionController *)&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSetBodyGroup>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>_;
+          func_?();
+          func_?();
+          func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+          func_?(&MethodInfo__AvatarSelectionController____c___SetStateToRoam_b__15_1_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_);
+          func_?(&TypeInfo__AvatarSelectionController____c);
+          cRam_? = '\x01';
+        }
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
+        callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,MethodInfo__AvatarSelectionController___SetStateToRoam_b__15_0_UnityEngine__EventSystems__IAvatarSetBodyGroup__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar4,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSetBodyGroup>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>_);
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
+        if ((TypeInfo__AvatarSelectionController____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__AvatarSelectionController____c);
+        }
+        callbackFunction_00 = TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1;
+        if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)0x0) {
+          if ((TypeInfo__AvatarSelectionController____c->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__AvatarSelectionController____c);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
-          this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarSlots;
-          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_01,key,(Object *)0x0,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
-            pAVar1 = (this->fields).avatarBodyController;
-            this_05 = (Action_2_Int32Enum_Object_ *)func_?();
-            if ((this_05 != (Action_2_Int32Enum_Object_ *)0x0) && (mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_05,(Object *)this,MethodInfo__AvatarSelectionController__OnPicUpdateForPrevAvatar_int__UnityEngine__Texture2D_,(MethodInfo *)0x0), pAVar1 != (AvatarEditModeBodyController *)0x0)) {
+          object = TypeInfo__AvatarSelectionController____c->static_fields->__9;
+          callbackFunction_00 = (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,MethodInfo__AvatarSelectionController____c___SetStateToRoam_b__15_1_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+          TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1 = callbackFunction_00;
+          func_?(&TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1,callbackFunction_00);
+        }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar4,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_);
+        pDVar5 = (this_01->fields).avatarSlots;
+        if ((pDVar5 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) && (this_03 = (Component *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar5,(int32_t)this,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_), this_03 != (Component *)0x0)) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_03,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar4,(MethodInfo *)0x0);
+          pDVar5 = (this_01->fields).avatarSlots;
+          if (pDVar5 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__set_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar5,(int32_t)this,(Object *)0x0,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
+            pAVar1 = (this_01->fields).avatarBodyController;
+            this_04 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<int,_UnityEngine::Texture2D>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_04,(Object *)this_01,MethodInfo__AvatarSelectionController__OnPicUpdateForPrevAvatar_int__UnityEngine__Texture2D_,(MethodInfo *)0x0);
+            if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
               if (cRam_? == '\0') {
-                func_?();
+                func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
                 cRam_? = '\x01';
               }
               pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pAVar1->fields).bodies;
-              this_02 = (pAVar1->fields).pictureTaker;
-              if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) && (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(int32_t)key,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_), this_02 != (AvatarPictureTakerUGUI *)0x0)) {
-                AvatarPictureTakerUGUI::AvatarPictureTakerUGUI_TakePicture(this_02,(MVWorldObjectClient *)RVar3,(int32_t)key,(Action_2_Int32_UnityEngine_Texture2D_ *)this_05,0,(MethodInfo *)0x0);
+              this_00 = (pAVar1->fields).pictureTaker;
+              if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) && (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,(int32_t)this,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_), this_00 != (AvatarPictureTakerUGUI *)0x0)) {
+                AvatarPictureTakerUGUI::AvatarPictureTakerUGUI_TakePicture(this_00,(MVWorldObjectClient *)RVar3,(int32_t)this,(Action_2_Int32_UnityEngine_Texture2D_ *)this_04,0,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -61,8 +100,8 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_A
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -104,8 +143,9 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_I
     func_?(&(pAVar1->fields).publishAvatarBtn,pGVar2);
     AvatarEditModeBodyController::AvatarEditModeBodyController_SetPublishAvatarButtonActive(pAVar1,(MethodInfo *)0x0);
     pAVar1 = (this->fields).avatarBodyController;
-    this_00 = (Action_2_Int32Enum_Object_ *)func_?(TypeInfo__System__Action<int,_UnityEngine::Texture2D>);
-    if ((this_00 != (Action_2_Int32Enum_Object_ *)0x0) && (mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_00,(Object *)this,MethodInfo__AvatarSelectionController__OnPictureTakenCallback_int__UnityEngine__Texture2D_,(MethodInfo *)0x0), pAVar1 != (AvatarEditModeBodyController *)0x0)) {
+    this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<int,_UnityEngine::Texture2D>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__AvatarSelectionController__OnPictureTakenCallback_int__UnityEngine__Texture2D_,(MethodInfo *)0x0);
+    if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
         cRam_? = '\x01';
@@ -148,19 +188,19 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_O
   }
   this_02 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,AvatarSelectionSlot_MethodInfo__UnityEngine__Object__Instantiate<AvatarSelectionSlot>_AvatarSelectionSlot_);
   if (this_02 != (Component *)0x0) {
-    this_00 = this_02[1].klass;
-    this_02[1].fields._.m_CachedPtr = (void *)index;
-    if (this_00 != (Component__Class *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture((RawImage *)this_00,(Texture *)image,(MethodInfo *)0x0);
+    this_00 = (RawImage *)this_02[1].monitor;
+    this_02[2].klass = (Component__Class *)index;
+    if (this_00 != (RawImage *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_00,(Texture *)image,(MethodInfo *)0x0);
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_02,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar1,(Transform *)(this->fields).avatarSelectionContentRoot,0,(MethodInfo *)0x0);
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_02,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex(pTVar1,index,(MethodInfo *)0x0);
-          this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarSlots;
-          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_01,(Object *)index,(Object *)this_02,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
+          this_01 = (this->fields).avatarSlots;
+          if (this_01 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__set_Item((Dictionary_2_System_Int32_System_Object_ *)this_01,index,(Object *)this_02,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
             return;
           }
         }
@@ -189,32 +229,33 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_O
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  this_02 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,AvatarSelectionSlot_MethodInfo__UnityEngine__Object__Instantiate<AvatarSelectionSlot>_AvatarSelectionSlot_);
-  if (this_02 != (Component *)0x0) {
-    this_00 = this_02[1].klass;
-    this_02[1].fields._.m_CachedPtr = (void *)index;
-    if (this_00 != (Component__Class *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture((RawImage *)this_00,(Texture *)image,(MethodInfo *)0x0);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_02,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar1,(Transform *)(this->fields).avatarSelectionContentRoot,0,(MethodInfo *)0x0);
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_02,(MethodInfo *)0x0);
-        if (pTVar1 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex(pTVar1,index,(MethodInfo *)0x0);
-          this_01 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).avatarSlots;
-          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_01,(Object *)index,(Object *)this_02,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
+  pCVar1 = (Component *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,AvatarSelectionSlot_MethodInfo__UnityEngine__Object__Instantiate<AvatarSelectionSlot>_AvatarSelectionSlot_);
+  if (pCVar1 != (Component *)0x0) {
+    this_00 = (RawImage *)pCVar1[1].monitor;
+    pCVar1[2].klass = (Component__Class *)index;
+    if (this_00 != (RawImage *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_00,(Texture *)image,(MethodInfo *)0x0);
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar1,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1(pTVar2,(Transform *)(this->fields).avatarSelectionContentRoot,0,(MethodInfo *)0x0);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(pCVar1,(MethodInfo *)0x0);
+        if (pTVar2 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex(pTVar2,index,(MethodInfo *)0x0);
+          this_01 = (this->fields).avatarSlots;
+          if (this_01 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__set_Item((Dictionary_2_System_Int32_System_Object_ *)this_01,index,(Object *)pCVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__set_Item_int__AvatarSelectionSlot_);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            pAVar2 = TypeInfo__AvatarSelectionController->static_fields->instance;
-            if (pAVar2 != (AvatarSelectionController *)0x0) {
-              if (index != (pAVar2->fields).currSelectedSlot) {
+            pAVar3 = TypeInfo__AvatarSelectionController->static_fields->instance;
+            if (pAVar3 != (AvatarSelectionController *)0x0) {
+              if (index != (pAVar3->fields).currSelectedSlot) {
                 return;
               }
-              if (((Component *)this_02[1].monitor != (Component *)0x0) && (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02[1].monitor,(MethodInfo *)0x0), this_03 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_03,1,(MethodInfo *)0x0);
+              pCVar1 = pCVar1[1].fields._.m_CachedPtr;
+              if ((pCVar1 != (Component *)0x0) && (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(pCVar1,(MethodInfo *)0x0), this_02 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_02,1,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -224,8 +265,8 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_O
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -254,12 +295,6 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_O
     }
     object = TypeInfo__AvatarSelectionController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__AvatarSelectionController____c___OpenAvatarShop_b__20_0_UnityEngine__EventSystems__IActivateUIElement__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__AvatarSelectionController____c->static_fields->__9__20_0 = callbackFunction;
     func_?(&TypeInfo__AvatarSelectionController____c->static_fields->__9__20_0,callbackFunction);
@@ -277,12 +312,12 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_O
 void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_ResetCurrentAvatar(AvatarSelectionController *this,MethodInfo *method)
 
 {
-  this_02 = (this->fields).avatarBodyController;
-  if (this_02 != (AvatarEditModeBodyController *)0x0) {
+  this_01 = (this->fields).avatarBodyController;
+  if (this_01 != (AvatarEditModeBodyController *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       func_?();
-      func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
+      func_?();
       func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
       func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       func_?(&ResetAvatarHandler_MethodInfo__UnityEngine__Object__Instantiate<ResetAvatarHandler>_ResetAvatarHandler_);
@@ -291,86 +326,44 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_R
       func_?(&TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0);
       cRam_? = '\x01';
     }
-    value = (Object *)func_?(TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0);
-    if (value != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_retaddr);
-      original = (this_02->fields).resetAvatarHandler;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,ResetAvatarHandler_MethodInfo__UnityEngine__Object__Instantiate<ResetAvatarHandler>_ResetAvatarHandler_);
-      value[1].klass = pOVar1;
+    this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__AvatarEditModeBodyController____c__DisplayClass25_0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+    pRVar1 = (this_01->fields).resetAvatarHandler;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0);
-      pGVar2 = (GameObject *)&UNK_?;
+    }
+    pLVar2 = (List_1_System_Object_ *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pRVar1,ResetAvatarHandler_MethodInfo__UnityEngine__Object__Instantiate<ResetAvatarHandler>_ResetAvatarHandler_);
+    if (this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_02->fields)._._defaultValue_k__BackingField = pLVar2;
+      func_?();
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__AvatarEditModeBodyController____c__DisplayClass25_0___ResetCurrentBody_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-        pOVar1 = value[1].klass;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this_02->fields).bodies;
-        if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,(this_02->fields).currentBodyIndex,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-          this_03 = (Object_1__Class **)func_?();
-          if (((NavMesh_OnNavMeshPreUpdate *)this_03 != (NavMesh_OnNavMeshPreUpdate *)0x0) && (UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor((NavMesh_OnNavMeshPreUpdate *)this_03,(Object *)this_02,MethodInfo__AvatarEditModeBodyController__ExecuteReset__,(MethodInfo *)0x0), pOVar1 != (Object__Class *)0x0)) {
-            if (cRam_? == '\0') {
-              func_?();
-              this_03 = &TypeInfo__UnityEngine__Object;
-              func_?();
-              cRam_? = '\x01';
-            }
-            (pOVar1->_0).typeMetadataHandle = (Il2CppMetadataTypeHandle)this_03;
-            func_?();
-            (pOVar1->_0).interopData = (Il2CppInteropData *)RVar3;
-            func_?();
-            pIVar4 = (pOVar1->_0).klass;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pIVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar5 != 0) {
-              pGVar2 = (GameObject *)func_?();
-              if (pGVar2 == (GameObject *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar2,(MethodInfo *)0x0);
-              pIVar4 = (Il2CppClass *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
-              (pOVar1->_0).klass = pIVar4;
-              func_?();
-            }
-            if (RVar3 != (RegexCharClass_SingleRange)0x0) {
-              if (cRam_? == '\0') {
-                func_?();
-                func_?();
-                cRam_? = '\x01';
-              }
-              pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              avatarWoID = &UNK_?;
-              this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-              if ((this_04 != (UnityAction_2_System_Object_System_Object_ *)0x0) && (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_04,(Object *)pOVar1,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0), pMVar6 != (MVNetworkGame *)0x0)) {
-                MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery(pMVar6,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_04,(MethodInfo *)0x0);
-                pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar6 != (MVNetworkGame *)0x0) && (this_01 = (pMVar6->fields).operationRequests, this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
-                  MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetResetAvatar(this_01,(int32_t)avatarWoID,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
-          }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_02,MethodInfo__AvatarEditModeBodyController____c__DisplayClass25_0___ResetCurrentBody_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
+      pRVar1 = (ResetAvatarHandler *)(this_02->fields)._._defaultValue_k__BackingField;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this_01->fields).bodies;
+      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        currentBody = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,(this_01->fields).currentBodyIndex,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+        this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_03,(Object *)this_01,MethodInfo__AvatarEditModeBodyController__ExecuteReset__,(MethodInfo *)0x0);
+        if (pRVar1 != (ResetAvatarHandler *)0x0) {
+          ResetAvatarHandler::ResetAvatarHandler_ResetAvatar(pRVar1,(MVBody *)currentBody,(Action *)this_03,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
-code_?:
-  uVar7 = func_?(&stack0xfffffff0);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -399,12 +392,6 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_S
     }
     object = TypeInfo__AvatarSelectionController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__AvatarSelectionController____c___SellCurrentAvatar_b__17_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__AvatarSelectionController____c->static_fields->__9__17_0 = callbackFunction;
     func_?(&TypeInfo__AvatarSelectionController____c->static_fields->__9__17_0,callbackFunction);
@@ -435,38 +422,30 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_S
   }
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>);
-  if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__AvatarSelectionController___SetStateToRoam_b__15_0_UnityEngine__EventSystems__IAvatarSetBodyGroup__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSetBodyGroup>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>_);
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__AvatarSelectionController___SetStateToRoam_b__15_0_UnityEngine__EventSystems__IAvatarSetBodyGroup__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSetBodyGroup>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>_);
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+  if ((TypeInfo__AvatarSelectionController____c->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  callbackFunction_00 = TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1;
+  if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)0x0) {
     if ((TypeInfo__AvatarSelectionController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    callbackFunction_00 = TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1;
-    if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)0x0) {
-      if ((TypeInfo__AvatarSelectionController____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      object = TypeInfo__AvatarSelectionController____c->static_fields->__9;
-      callbackFunction_00 = (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)func_?();
-      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,MethodInfo__AvatarSelectionController____c___SetStateToRoam_b__15_1_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1 = callbackFunction_00;
-      func_?(&TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1,callbackFunction_00);
-    }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_);
-    return;
+    object = TypeInfo__AvatarSelectionController____c->static_fields->__9;
+    callbackFunction_00 = (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)object,MethodInfo__AvatarSelectionController____c___SetStateToRoam_b__15_1_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__AvatarSelectionController____c->static_fields->__9__15_1 = callbackFunction_00;
+    func_?();
   }
-code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_);
   return;
 }
 
@@ -533,7 +512,6 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_T
       }
       object = TypeInfo__AvatarEditModeBodyController____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__AvatarEditModeBodyController____c___TakeScreenshot_b__34_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__34_0 = callbackFunction;
       func_?(&TypeInfo__AvatarEditModeBodyController____c->static_fields->__9__34_0,callbackFunction);
@@ -544,7 +522,6 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_T
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_);
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -594,17 +571,11 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController__
     cRam_? = '\x01';
   }
   (this->fields).currSelectedSlot = -1;
-  this_00 = (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>);
-  if (this_00 != (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__Dictionary__);
-    (this->fields).avatarSlots = this_00;
-    func_?(&(this->fields).avatarSlots,this_00);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__Dictionary__);
+  (this->fields).avatarSlots = (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)this_00;
+  func_?(&(this->fields).avatarSlots,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -646,16 +617,16 @@ void Assembly-CSharp.dll::AvatarSelectionController::AvatarSelectionController_s
     pAVar1 = TypeInfo__AvatarSelectionController->static_fields->instance;
     pDVar2 = (pAVar1->fields).avatarSlots;
     if (pDVar2 == (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0) goto code_?;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,(pAVar1->fields).currSelectedSlot,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_);
-    if ((pOVar3 == (Object *)0x0) || (pOVar3[2].klass == (Object__Class *)0x0)) goto code_?;
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar3[2].klass,(MethodInfo *)0x0);
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(pAVar1->fields).currSelectedSlot,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_);
+    if ((pOVar3 == (Object *)0x0) || ((Component *)pOVar3[2].monitor == (Component *)0x0)) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar3[2].monitor,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
     pAVar1 = TypeInfo__AvatarSelectionController->static_fields->instance;
     if ((pAVar1 == (AvatarSelectionController *)0x0) || (pDVar2 = (pAVar1->fields).avatarSlots, pDVar2 == (Dictionary_2_System_Int32_AvatarSelectionSlot_ *)0x0)) goto code_?;
-    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,value,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_);
-    if ((pOVar3 == (Object *)0x0) || (pOVar3[2].klass == (Object__Class *)0x0)) goto code_?;
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar3[2].klass,(MethodInfo *)0x0);
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar2,value,MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarSelectionSlot>__get_Item_int_);
+    if ((pOVar3 == (Object *)0x0) || ((Component *)pOVar3[2].monitor == (Component *)0x0)) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pOVar3[2].monitor,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
   }

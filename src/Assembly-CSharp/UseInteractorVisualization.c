@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)useRequirement,MethodInfo__System__Collections__Generic__List<UseRequirement>__Add_UseRequirement_);
     if ((this->fields).hasInputBlockingRequirement == 0) {
       if (useRequirement == (UseRequirement *)0x0) goto code_?;
-      cVar1 = (*(useRequirement->klass->vtable).get_IsInputBlocking.methodPtr)(useRequirement,(useRequirement->klass->vtable).get_IsInputBlocking.method);
+      cVar1 = (*(code *)(useRequirement->klass->vtable).get_IsInputBlocking.method)(useRequirement,(useRequirement->klass->vtable).get_IsInputBlockingNow.methodPtr);
     }
     else {
       cVar1 = '\x01';
@@ -102,14 +102,14 @@ code_?:
   RStack_15 = (RegexCharClass_SingleRange)&stack0xffffffb8;
   while (bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__), bVar16 != 0) {
     if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    cVar17 = (**(code **)(*(int *)RVar14 + 0x114))(RVar14,*(undefined4 *)(*(int *)RVar14 + 0x118));
+    cVar17 = (**(code **)(*(int *)RVar14 + 0x118))(RVar14,*(undefined4 *)(*(int *)RVar14 + 0x11c));
     if (cVar17 != '\0') {
       piVar18 = &(this->fields).active;
       *piVar18 = *piVar18 + 1;
     }
   }
   uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,(MethodInfo *)uVar10);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,(MethodInfo *)uVar10);
   uStack_1 = 0xffffffff;
   if ((this->fields).active == 1) {
     (this->fields).dist = 0.01;
@@ -131,7 +131,7 @@ code_?:
   while (bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__), bVar16 != 0) {
     RStack_15 = RVar14;
     if (RVar14 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    cVar17 = (**(code **)(*(int *)RVar14 + 0x114))();
+    cVar17 = (**(code **)(*(int *)RVar14 + 0x118))();
     if (cVar17 != '\0') {
       if (RStack_15 == (RegexCharClass_SingleRange)0x0) goto code_?;
       uVar21._0_4_ = (this->fields).pivot.x;
@@ -141,7 +141,7 @@ code_?:
     }
   }
   uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EBX);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EBX);
   uStack_1 = 0xffffffff;
   if ((this->fields)._HasUseRequirements_k__BackingField != 0) {
     if ((this->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
@@ -180,16 +180,10 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
     startValue = (this->fields).scale;
     this_00 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
-    if (this_00 != (UnityAction_1_System_Single_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Hide_b__32_0_float_,(MethodInfo *)0x0);
-      routine = pTween::pTween_To(1.0,startValue,0.0,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-      (this->fields).visible = 0;
-      return;
-    }
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Hide_b__32_0_float_,(MethodInfo *)0x0);
+    routine = pTween::pTween_To(1.0,startValue,0.0,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+    (this->fields).visible = 0;
     return;
   }
   return;
@@ -236,7 +230,7 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
         pOVar10 = LStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EBX);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EBX);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
@@ -271,71 +265,55 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
         cRam_? = '\x01';
       }
       this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
-      if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
-        unaff_EDI = (Delegate *)func_?(TypeInfo__CullingSubscriberBase);
-        if (unaff_EDI != (Delegate *)0x0) {
-          CullingSubscriberBase::CullingSubscriberBase__ctor_1((CullingSubscriberBase *)unaff_EDI,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
-          CullingSubscriberBase::CullingSubscriberBase_set_Radius((CullingSubscriberBase *)unaff_EDI,2.0,(MethodInfo *)0x0);
-          (unaff_EDI->fields).invoke_impl = (void *)0x1;
-          (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)unaff_EDI;
-          func_?(&(this->fields).cullingSubscriberBase,unaff_EDI);
-          pMVar1 = (this->fields).wo;
-          if (pMVar1 != (MVWorldObjectClient *)0x0) {
-            in_stack_2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)(pMVar1->fields).PositionChanged;
-            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-            unaff_EDI = (Delegate *)0x0;
-            if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar3,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-              unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)in_stack_2,(Delegate *)pUVar3,(MethodInfo *)0x0);
-              in_stack_2 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-              if (unaff_EDI == (Delegate *)0x0) {
-                (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-                iVar4 = 0;
-              }
-              else {
-                uStack_5 = CONCAT44(uStack_5._4_4_,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-                pDStack_6 = unaff_EDI;
-                pUVar7 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-                if (pUVar7 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-                (pMVar1->fields).PositionChanged = pUVar7;
-                in_stack_2 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-                uStack_5 = CONCAT44(uStack_5._4_4_,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-                pDStack_6 = unaff_EDI;
-                iVar4 = func_?();
-                if (iVar4 == 0) goto code_?;
-              }
-              uStack_5 = CONCAT44(uStack_5._4_4_,iVar4);
-              pDStack_6 = (Delegate *)&(pMVar1->fields).PositionChanged;
-              func_?();
-              pMVar1 = (this->fields).wo;
-              if (pMVar1 != (MVWorldObjectClient *)0x0) {
-                puVar8 = (undefined8 *)(*(pMVar1->klass->vtable).get_WorldPosition_1.methodPtr)(&fStack_9,pMVar1,(pMVar1->klass->vtable).get_WorldPosition_1.method);
-                pCVar10 = (this->fields).cullingSubscriberBase;
-                uStack_5._0_4_ = (this->fields).pivot.x;
-                uStack_5._4_4_ = (this->fields).pivot.y;
-                fStack_9 = (float)(undefined4)uStack_5 + (float)*puVar8;
-                puStack_11 = (undefined *)((float)uStack_5._4_4_ + (float)((ulonglong)*puVar8 >> 0x20));
-                pDStack_6 = (Delegate *)(*(float *)(puVar8 + 1) + (this->fields).pivot.z);
-                if (pCVar10 != (CullingSubscriberBase *)0x0) {
-                  value.y = (float)puStack_11;
-                  value.x = fStack_9;
-                  value.z = (float)pDStack_6;
-                  CullingSubscriberBase::CullingSubscriberBase_set_Position(pCVar10,value,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
+      pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+      CullingSubscriberBase::CullingSubscriberBase__ctor_1(pCVar1,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
+      if (pCVar1 == (CullingSubscriberBase *)0x0) {
+code_?:
+        func_?();
+      }
+      else {
+        CullingSubscriberBase::CullingSubscriberBase_set_Radius(pCVar1,2.0,(MethodInfo *)0x0);
+        (pCVar1->fields)._DistanceBandIndex_k__BackingField = 1;
+        (this->fields).cullingSubscriberBase = pCVar1;
+        func_?();
+        pMVar2 = (this->fields).wo;
+        if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
+        pUVar3 = (pMVar2->fields).PositionChanged;
+        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar4,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+        pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
+        if (pDVar5 == (Delegate *)0x0) {
+          (pMVar2->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
+          func_?();
+          pMVar2 = (this->fields).wo;
+          if (pMVar2 != (MVWorldObjectClient *)0x0) {
+            puVar6 = (undefined8 *)(*(code *)(pMVar2->klass->vtable).get_WorldPosition_1.method)();
+            pCVar1 = (this->fields).cullingSubscriberBase;
+            uVar7 = (this->fields).pivot.x;
+            uVar8 = (this->fields).pivot.y;
+            if (pCVar1 != (CullingSubscriberBase *)0x0) {
+              value.y = (float)uVar8 + (float)((ulonglong)*puVar6 >> 0x20);
+              value.x = (float)uVar7 + (float)*puVar6;
+              value.z = *(float *)(puVar6 + 1) + (this->fields).pivot.z;
+              CullingSubscriberBase::CullingSubscriberBase_set_Position(pCVar1,value,(MethodInfo *)0x0);
+              return;
             }
           }
+          goto code_?;
         }
+        pMVar9 = (MethodInfo_1 *)func_?();
+        if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
+        pDVar5[1].fields.original_method_info = pMVar9;
+        iVar10 = func_?();
+        if (iVar10 != 0) goto code_?;
       }
       func_?();
 code_?:
-      uStack_5 = CONCAT44(uStack_5._4_4_,in_stack_2);
-      pDStack_6 = unaff_EDI;
       func_?();
-      pcVar12 = (code *)swi(3);
-      (*pcVar12)();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
     if ((this->fields)._HasUseRequirements_k__BackingField != 0) {
@@ -353,43 +331,40 @@ code_?:
   if ((this->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) goto code_?;
   if ((this->fields).wo == (MVWorldObjectClient *)0x0) {
 code_?:
-    pCVar10 = (this->fields).cullingSubscriberBase;
-    if (pCVar10 != (CullingSubscriberBase *)0x0) {
-      CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar10,(MethodInfo *)0x0);
+    pCVar1 = (this->fields).cullingSubscriberBase;
+    if (pCVar1 != (CullingSubscriberBase *)0x0) {
+      CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar1,(MethodInfo *)0x0);
       (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
       func_?();
 code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
       return;
     }
+    func_?();
   }
   else {
-    pMVar1 = (this->fields).wo;
-    pUVar7 = (pMVar1->fields).PositionChanged;
-    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    if (pUVar3 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      uStack_5 = CONCAT44(&UNK_?,(undefined4)uStack_5);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar3,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-      pDVar13 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar7,(Delegate *)pUVar3,(MethodInfo *)0x0);
-      if (pDVar13 == (Delegate *)0x0) {
-        (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      }
-      else {
-        pUVar7 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar7 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-        (pMVar1->fields).PositionChanged = pUVar7;
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
-      }
+    pMVar2 = (this->fields).wo;
+    pUVar3 = (pMVar2->fields).PositionChanged;
+    pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar4,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
+    if (pDVar5 == (Delegate *)0x0) {
+      (pMVar2->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
       func_?();
       goto code_?;
     }
+    pMVar9 = (MethodInfo_1 *)func_?();
+    if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
+    pDVar5[1].fields.original_method_info = pMVar9;
+    iVar10 = func_?();
+    if (iVar10 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -407,9 +382,10 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&TypeInfo__UseInteractorVisualization____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass42_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass42_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)data;
     func_?(value + 1,data);
     if ((TypeInfo__UseInteractorVisualization____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -422,21 +398,17 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
       }
       object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
       this_00 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_00 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
       mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_00,(Object *)object,MethodInfo__UseInteractorVisualization____c___DestroyRequirementObjects_b__42_0_UseRequirement_,(MethodInfo *)0x0);
       TypeInfo__UseInteractorVisualization____c->static_fields->__9__42_0 = this_00;
       func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__42_0,this_00);
     }
     this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass42_0___DestroyRequirementObjects_b__1_UseRequirement_,(MethodInfo *)0x0);
-      if (this != (UseInteractorVisualization *)0x0) {
-        UseInteractorVisualization_ChangeUseRequirements(this,this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass42_0___DestroyRequirementObjects_b__1_UseRequirement_,(MethodInfo *)0x0);
+    if (this != (UseInteractorVisualization *)0x0) {
+      UseInteractorVisualization_ChangeUseRequirements(this,this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -466,7 +438,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     }
     pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
     this_00 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_00,(Object *)pUVar1,MethodInfo__UseInteractorVisualization____c___Disable_b__33_0_UseRequirement_,(MethodInfo *)0x0);
     TypeInfo__UseInteractorVisualization____c->static_fields->__9__33_0 = this_00;
     func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__33_0,this_00);
@@ -481,7 +452,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     }
     pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
     this_01 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_01,(Object *)pUVar1,MethodInfo__UseInteractorVisualization____c___Disable_b__33_1_UseRequirement_,(MethodInfo *)0x0);
     TypeInfo__UseInteractorVisualization____c->static_fields->__9__33_1 = this_01;
     func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__33_1,this_01);
@@ -490,7 +460,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     UseInteractorVisualization_ChangeUseRequirements(this,this_00,this_01,(MethodInfo *)0x0);
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -542,12 +511,12 @@ UseGUIResult__Enum Assembly-CSharp.dll::UseInteractorVisualization::UseInteracto
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__);
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return UVar7;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      UVar11 = (**(code **)(*(int *)LStack_6._current + 0xdc))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe0));
+      UVar11 = (**(code **)(*(int *)LStack_6._current + 0xe0))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe4));
       UVar7 = UVar7 | UVar11;
     }
   }
@@ -603,12 +572,12 @@ ShowUseOption__Enum Assembly-CSharp.dll::UseInteractorVisualization::UseInteract
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__);
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return SVar7;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      SVar11 = (**(code **)(*(int *)LStack_6._current + 0xfc))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0x100));
+      SVar11 = (**(code **)(*(int *)LStack_6._current + 0x100))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0x104));
       SVar7 = SVar7 | SVar11;
     }
   }
@@ -633,16 +602,10 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
   startValue = (this->fields).scale;
   this_00 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
-  if (this_00 != (UnityAction_1_System_Single_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Hide_b__32_0_float_,(MethodInfo *)0x0);
-    routine = pTween::pTween_To(1.0,startValue,0.0,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-    (this->fields).visible = 0;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Hide_b__32_0_float_,(MethodInfo *)0x0);
+  routine = pTween::pTween_To(1.0,startValue,0.0,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+  (this->fields).visible = 0;
   return;
 }
 
@@ -704,27 +667,25 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
       return;
     }
+    func_?();
   }
   else {
     pMVar1 = (this->fields).wo;
-    pUVar2 = (pMVar1->fields).PositionChanged;
+    source = (pMVar1->fields).PositionChanged;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      }
-      else {
-        pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-        (pMVar1->fields).PositionChanged = pUVar2;
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
       func_?();
       goto code_?;
     }
+    pMVar3 = (MethodInfo_1 *)func_?();
+    if (pMVar3 == (MethodInfo_1 *)0x0) goto code_?;
+    pDVar2[1].fields.original_method_info = pMVar3;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -747,22 +708,19 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass34_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass34_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)0x0;
     value[1].monitor = (MonitorData *)0x0;
     value[2].klass = (Object__Class *)0x0;
     this_00 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
-      this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass34_0___OnDisable_b__0_UseRequirement_,(MethodInfo *)0x0);
-        UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
+    this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass34_0___OnDisable_b__0_UseRequirement_,(MethodInfo *)0x0);
+    UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -783,23 +741,20 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass35_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass35_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)0x0;
     value[1].monitor = (MonitorData *)0x0;
     value[2].klass = (Object__Class *)0x0;
     this_00 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
-      this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass35_0___OnEnable_b__0_UseRequirement_,(MethodInfo *)0x0);
-        UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        UseInteractorVisualization_Show(this,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
+    this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass35_0___OnEnable_b__0_UseRequirement_,(MethodInfo *)0x0);
+    UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+    UseInteractorVisualization_Show(this,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -847,28 +802,26 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass21_0);
-  if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
-    pCVar1 = (this->fields).cullingSubscriberBase;
-    if (pCVar1 != (CullingSubscriberBase *)0x0) {
-      distanceBandIndex = (pCVar1->fields)._DistanceBandIndex_k__BackingField;
-      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CullingApiWrapper);
-      }
-      bVar2 = CullingApiWrapper::CullingApiWrapper_Visible(cullingGroupEvent,distanceBandIndex,(MethodInfo *)0x0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass21_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pCVar1 = (this->fields).cullingSubscriberBase;
+  if (pCVar1 != (CullingSubscriberBase *)0x0) {
+    distanceBandIndex = (pCVar1->fields)._DistanceBandIndex_k__BackingField;
+    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CullingApiWrapper);
+    }
+    bVar2 = CullingApiWrapper::CullingApiWrapper_Visible(cullingGroupEvent,distanceBandIndex,(MethodInfo *)0x0);
+    if (value != (Object *)0x0) {
       *(bool *)&value[1].klass = bVar2;
-      this_00 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
-        this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-        if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-          mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass21_0___OnStateChanged_b__0_UseRequirement_,(MethodInfo *)0x0);
-          UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,*(bool *)&value[1].klass,(MethodInfo *)0x0);
-          return;
-        }
-      }
+      this_00 = TypeInfo__System__Func<UseRequirement,_bool>;
+      this_01 = (Func_2_Object_Boolean_ *)func_?();
+      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
+      this_02 = (Func_2_Object_Boolean_ *)func_?();
+      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_02,value,MethodInfo__UseInteractorVisualization____c__DisplayClass21_0___OnStateChanged_b__0_UseRequirement_,(MethodInfo *)0x0);
+      UseInteractorVisualization_ChangeUseRequirements((UseInteractorVisualization *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_00,*(bool *)&value[1].klass,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -900,7 +853,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     }
     pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
     this_00 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_00,(Object *)pUVar1,MethodInfo__UseInteractorVisualization____c___PayUseCost_b__41_0_UseRequirement_,(MethodInfo *)0x0);
     TypeInfo__UseInteractorVisualization____c->static_fields->__9__41_0 = this_00;
     func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__41_0,this_00);
@@ -915,7 +867,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     }
     pUVar1 = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
     this_01 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_01,(Object *)pUVar1,MethodInfo__UseInteractorVisualization____c___PayUseCost_b__41_1_UseRequirement_,(MethodInfo *)0x0);
     TypeInfo__UseInteractorVisualization____c->static_fields->__9__41_1 = this_01;
     func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__41_1,this_01);
@@ -924,7 +875,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     UseInteractorVisualization_ChangeUseRequirements(this,this_00,this_01,(MethodInfo *)0x0);
     return;
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -954,27 +904,25 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
       return;
     }
+    func_?();
   }
   else {
     pMVar1 = (this->fields).wo;
-    pUVar2 = (pMVar1->fields).PositionChanged;
+    source = (pMVar1->fields).PositionChanged;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pUVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      }
-      else {
-        pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-        (pMVar1->fields).PositionChanged = pUVar2;
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
       func_?();
       goto code_?;
     }
+    pMVar3 = (MethodInfo_1 *)func_?();
+    if (pMVar3 == (MethodInfo_1 *)0x0) goto code_?;
+    pDVar2[1].fields.original_method_info = pMVar3;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
   }
   func_?();
 code_?:
@@ -991,7 +939,7 @@ bool Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
 
 {
   if (useRequirement != (UseRequirement *)0x0) {
-    this = (GameObject *)(*(useRequirement->klass->vtable).__unknown_10.methodPtr)();
+    this = (GameObject *)(*(code *)(useRequirement->klass->vtable).__unknown_10.method)();
     if (this != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this,b,(MethodInfo *)0x0);
       return 1;
@@ -1011,7 +959,7 @@ bool Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
 
 {
   if (useRequirement != (UseRequirement *)0x0) {
-    (*(useRequirement->klass->vtable).__unknown_9.methodPtr)(useRequirement,scale._0_8_,scale.z,(useRequirement->klass->vtable).__unknown_9.method);
+    (*(code *)(useRequirement->klass->vtable).__unknown_9.method)(useRequirement,scale._0_8_,scale.z,(useRequirement->klass->vtable).__unknown_10.methodPtr);
     return 1;
   }
   func_?();
@@ -1034,78 +982,58 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__OnStateChanged_UnityEngine__CullingGroupEvent_);
     cRam_? = '\x01';
   }
-  this_01 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
-  if (this_01 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
-    unaff_EDI = (Delegate *)func_?(TypeInfo__CullingSubscriberBase);
-    if (unaff_EDI != (Delegate *)0x0) {
-      CullingSubscriberBase::CullingSubscriberBase__ctor_1((CullingSubscriberBase *)unaff_EDI,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,(MethodInfo *)0x0);
-      CullingSubscriberBase::CullingSubscriberBase_set_Radius((CullingSubscriberBase *)unaff_EDI,2.0,(MethodInfo *)0x0);
-      (unaff_EDI->fields).invoke_impl = (void *)0x1;
-      (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)unaff_EDI;
-      func_?(&(this->fields).cullingSubscriberBase,unaff_EDI);
-      pMVar1 = (this->fields).wo;
-      if (pMVar1 != (MVWorldObjectClient *)0x0) {
-        pUStack_2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)(pMVar1->fields).PositionChanged;
-        this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-        unaff_EDI = (Delegate *)0x0;
-        if (this_02 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-          unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUStack_2,(Delegate *)this_02,(MethodInfo *)0x0);
-          pUStack_2 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-          if (unaff_EDI == (Delegate *)0x0) {
-            (pMVar1->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-            iVar3 = 0;
-          }
-          else {
-            uStack_4 = CONCAT44(uStack_4._4_4_,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-            pDStack_5 = unaff_EDI;
-            pUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-            if (pUVar6 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-            (pMVar1->fields).PositionChanged = pUVar6;
-            uStack_4 = CONCAT44(uStack_4._4_4_,TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-            pUStack_2 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-            pDStack_5 = unaff_EDI;
-            iVar3 = func_?();
-            if (iVar3 == 0) goto code_?;
-          }
-          uStack_4 = CONCAT44(uStack_4._4_4_,iVar3);
-          pDStack_5 = (Delegate *)&(pMVar1->fields).PositionChanged;
-          func_?();
-          pMVar1 = (this->fields).wo;
-          if (pMVar1 != (MVWorldObjectClient *)0x0) {
-            puVar7 = (undefined8 *)(*(pMVar1->klass->vtable).get_WorldPosition_1.methodPtr)(&fStack_8,pMVar1,(pMVar1->klass->vtable).get_WorldPosition_1.method);
-            this_00 = (this->fields).cullingSubscriberBase;
-            uVar9 = *puVar7;
-            fStack_10 = *(float *)(puVar7 + 1);
-            uStack_4._0_4_ = (this->fields).pivot.x;
-            uStack_4._4_4_ = (this->fields).pivot.y;
-            uStack_11._0_4_ = (float)uVar9;
-            fStack_8 = (float)(undefined4)uStack_4 + (float)uStack_11;
-            fStack_12 = (this->fields).pivot.z;
-            uStack_11._4_4_ = (float)((ulonglong)uVar9 >> 0x20);
-            puStack_13 = (undefined *)((float)uStack_4._4_4_ + uStack_11._4_4_);
-            pDStack_5 = (Delegate *)(fStack_10 + fStack_12);
-            uStack_11 = uVar9;
-            if (this_00 != (CullingSubscriberBase *)0x0) {
-              value.y = (float)puStack_13;
-              value.x = fStack_8;
-              value.z = (float)pDStack_5;
-              CullingSubscriberBase::CullingSubscriberBase_set_Position(this_00,value,(MethodInfo *)0x0);
-              return;
-            }
-          }
+  this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
+  pCVar1 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+  CullingSubscriberBase::CullingSubscriberBase__ctor_1(pCVar1,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
+  if (pCVar1 == (CullingSubscriberBase *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    CullingSubscriberBase::CullingSubscriberBase_set_Radius(pCVar1,2.0,(MethodInfo *)0x0);
+    (pCVar1->fields)._DistanceBandIndex_k__BackingField = 1;
+    (this->fields).cullingSubscriberBase = pCVar1;
+    func_?();
+    pMVar2 = (this->fields).wo;
+    if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
+    a = (pMVar2->fields).PositionChanged;
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar2->fields).PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+code_?:
+      func_?();
+      pMVar2 = (this->fields).wo;
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
+        puVar4 = (undefined8 *)(*(code *)(pMVar2->klass->vtable).get_WorldPosition_1.method)();
+        pCVar1 = (this->fields).cullingSubscriberBase;
+        uVar5 = (this->fields).pivot.x;
+        uVar6 = (this->fields).pivot.y;
+        fStack_7 = (float)*puVar4;
+        fStack_8 = (float)((ulonglong)*puVar4 >> 0x20);
+        if (pCVar1 != (CullingSubscriberBase *)0x0) {
+          value.y = (float)uVar6 + fStack_8;
+          value.x = (float)uVar5 + fStack_7;
+          value.z = *(float *)(puVar4 + 1) + (this->fields).pivot.z;
+          CullingSubscriberBase::CullingSubscriberBase_set_Position(pCVar1,value,(MethodInfo *)0x0);
+          return;
         }
       }
+      goto code_?;
     }
+    pMVar9 = (MethodInfo_1 *)func_?();
+    if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
+    pDVar3[1].fields.original_method_info = pMVar9;
+    iVar10 = func_?();
+    if (iVar10 != 0) goto code_?;
   }
   func_?();
 code_?:
-  uStack_4 = CONCAT44(uStack_4._4_4_,pUStack_2);
-  pDStack_5 = unaff_EDI;
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1123,16 +1051,10 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
   endValue = (this->fields).scale;
   this_00 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
-  if (this_00 != (UnityAction_1_System_Single_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Show_b__31_0_float_,(MethodInfo *)0x0);
-    routine = pTween::pTween_To(1.0,0.0,endValue,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-    (this->fields).visible = 1;
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_00,(Object *)this,MethodInfo__UseInteractorVisualization___Show_b__31_0_float_,(MethodInfo *)0x0);
+  routine = pTween::pTween_To(1.0,0.0,endValue,(Action_1_Single_ *)this_00,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+  (this->fields).visible = 1;
   return;
 }
 
@@ -1191,7 +1113,6 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
         fVar7 = (this->fields).scale;
         this_02 = (UnityAction_1_System_Single_ *)func_?();
-        if (this_02 == (UnityAction_1_System_Single_ *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor(this_02,(Object *)this,MethodInfo__UseInteractorVisualization___Hide_b__32_0_float_,(MethodInfo *)0x0);
         routine = pTween::pTween_To(1.0,fVar7,0.0,(Action_1_Single_ *)this_02,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
@@ -1207,7 +1128,7 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
           bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__);
           if (bVar13 == 0) break;
           if (RVar15 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          cVar16 = (**(code **)(*(int *)RVar15 + 0x134))();
+          cVar16 = (**(code **)(*(int *)RVar15 + 0x138))();
           if (cVar16 != '\0') {
             if (RVar15 == (RegexCharClass_SingleRange)0x0) goto code_?;
             cVar16 = func_?();
@@ -1220,7 +1141,7 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
           }
         }
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffac,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,(MethodInfo *)method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffac,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__,(MethodInfo *)method_00);
       }
       *unaff_FS_OFFSET = uStack_3;
       return;
@@ -1247,9 +1168,10 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&TypeInfo__UseInteractorVisualization____c);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass36_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)data;
     func_?(value + 1,data);
     value[1].monitor = (MonitorData *)ownerID;
@@ -1263,22 +1185,18 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
       }
       object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
       this_00 = (Func_2_UseRequirement_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_00 == (Func_2_UseRequirement_Boolean_ *)0x0) goto code_?;
       mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor((Func_2_Object_Boolean_ *)this_00,(Object *)object,MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_,(MethodInfo *)0x0);
       TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0 = this_00;
       func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0,this_00);
     }
     this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_,(MethodInfo *)0x0);
-      if (this != (UseInteractorVisualization *)0x0) {
-        UseInteractorVisualization_ChangeUseRequirements(this,this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        UseInteractorVisualization_CalculateSpacing(this,(MethodInfo *)0x0);
-        return;
-      }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_,(MethodInfo *)0x0);
+    if (this != (UseInteractorVisualization *)0x0) {
+      UseInteractorVisualization_ChangeUseRequirements(this,this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+      UseInteractorVisualization_CalculateSpacing(this,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
@@ -1313,11 +1231,11 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
 bool Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization_UseRequirementActive(UseRequirement *useRequirement,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (useRequirement != (UseRequirement *)0x0) {
-    pMStack_1 = (useRequirement->klass->vtable).__unknown_7.method;
+    pIStack_1 = (useRequirement->klass->vtable).__unknown_8.methodPtr;
     pUStack_2 = useRequirement;
-    bVar3 = (*(useRequirement->klass->vtable).__unknown_7.methodPtr)();
+    bVar3 = (*(code *)(useRequirement->klass->vtable).__unknown_7.method)();
     return bVar3;
   }
   uVar4 = func_?(&puStack_5);
@@ -1340,23 +1258,20 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass32_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass32_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     OVar1.monitor = (MonitorData *)t;
     OVar1.klass = (Object__Class *)t;
     value[1] = OVar1;
     value[2].klass = (Object__Class *)t;
     this_00 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
-      this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass32_0___Hide_b__1_UseRequirement_,(MethodInfo *)0x0);
-        UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
+    this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass32_0___Hide_b__1_UseRequirement_,(MethodInfo *)0x0);
+    UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -1377,23 +1292,20 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     func_?(&MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass31_0);
+  method_00 = TypeInfo__UseInteractorVisualization____c__DisplayClass31_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     OVar1.monitor = (MonitorData *)t;
     OVar1.klass = (Object__Class *)t;
     value[1] = OVar1;
     value[2].klass = (Object__Class *)t;
     this_00 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-    if (this_00 != (Func_2_Object_Boolean_ *)0x0) {
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
-      this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      if (this_01 != (Func_2_Object_Boolean_ *)0x0) {
-        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass31_0___Show_b__1_UseRequirement_,(MethodInfo *)0x0);
-        UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_00,(Object *)0x0,MethodInfo__UseInteractorVisualization__UseRequirementActive_UseRequirement_,(MethodInfo *)0x0);
+    this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+    mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor(this_01,value,MethodInfo__UseInteractorVisualization____c__DisplayClass31_0___Show_b__1_UseRequirement_,(MethodInfo *)0x0);
+    UseInteractorVisualization_ChangeUseRequirements(this,(Func_2_UseRequirement_Boolean_ *)this_00,(Func_2_UseRequirement_Boolean_ *)this_01,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -1413,22 +1325,16 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     cRam_? = '\x01';
   }
   this_00 = (List_1_UseRequirement_ *)func_?(TypeInfo__System__Collections__Generic__List<UseRequirement>);
-  if (this_00 != (List_1_UseRequirement_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<UseRequirement>__List__);
-    (this->fields).useRequirements = this_00;
-    func_?(&(this->fields).useRequirements,this_00);
-    (this->fields).pivot.x = 0.0;
-    (this->fields).pivot.y = 2.5;
-    (this->fields).pivot.z = 0.0;
-    (this->fields).dist = 0.01;
-    (this->fields).spacing = 120.0;
-    (this->fields).scale = 1.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UseRequirement>__List__);
+  (this->fields).useRequirements = this_00;
+  func_?(&(this->fields).useRequirements,this_00);
+  (this->fields).pivot.x = 0.0;
+  (this->fields).pivot.y = 2.5;
+  (this->fields).pivot.z = 0.0;
+  (this->fields).dist = 0.01;
+  (this->fields).spacing = 120.0;
+  (this->fields).scale = 1.0;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

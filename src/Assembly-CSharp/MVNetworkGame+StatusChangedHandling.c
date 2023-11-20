@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::MVNetworkGame_Sta
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar3,(MethodInfo *)0x0);
   }
   return;
 }
@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::MVNetworkGame_Sta
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   this_00 = (this->fields).reconnectWithAlternatePortHandler;
   if (this_00 == (MVNetworkGame_ReconnectWithAlternatePortHandler *)0x0) goto code_?;
   bVar2 = MVNetworkGame+ReconnectWithAlternatePortHandler::MVNetworkGame_ReconnectWithAlternatePortHandler_IsHandling(this_00,returnCode,(MethodInfo *)0x0);
@@ -103,7 +103,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::MVNetworkGame_Sta
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)pSVar1,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar1,(MethodInfo *)0x0);
       goto code_?;
     }
   }
@@ -121,7 +121,7 @@ code_?:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
     pMVar4 = (this->fields).networkGame;
     if (pMVar4 != (MVNetworkGame *)0x0) {
       if ((pMVar4->fields).connState == 1) {
@@ -138,7 +138,6 @@ code_?:
         }
         object = TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9;
         this_02 = (UnityAction *)func_?();
-        if (this_02 == (UnityAction *)0x0) break;
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor((NavMesh_OnNavMeshPreUpdate *)this_02,(Object *)object,MethodInfo__MVNetworkGame_StatusChangedHandling____c___OnStatusChanged_b__5_0__,(MethodInfo *)0x0);
         TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0 = this_02;
         func_?();
@@ -174,17 +173,15 @@ code_?:
         pMVar4 = (pMVar6->fields).networkGame;
         if (pMVar4 != (MVNetworkGame *)0x0) {
           (pMVar4->fields).connState = 3;
-          this_01 = (ParameterOverride_1_System_Object_ *)func_?();
-          if (this_01 != (ParameterOverride_1_System_Object_ *)0x0) {
-            Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__);
-            pPVar5 = (pMVar6->fields).peer;
-            if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            if (pPVar5 != (PhotonPeer *)0x0) {
-              (*(pPVar5->klass->vtable).SendOperation.methodPtr)();
-              return;
-            }
+          this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__);
+          pPVar5 = (pMVar6->fields).peer;
+          if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          if (pPVar5 != (PhotonPeer *)0x0) {
+            (*(code *)(pPVar5->klass->vtable).SendOperation.method)();
+            return;
           }
         }
       }
@@ -200,7 +197,7 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_Expecting_that_this_disconnect_i,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_Expecting_that_this_disconnect_i,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -212,28 +209,14 @@ code_?:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  cVar7 = '\0';
-  pcVar8 = (char *)func_?();
-  iVar9 = iRam_?;
-  bVar10 = (byte)extraout_ECX;
-  iRam_? = iRam_? >> (bVar10 & 0x1f);
-  bVar11 = ((uint)extraout_ECX & 0x1f) == 0;
-  cVar12 = (char)pcVar8;
-  *pcVar8 = *pcVar8 + cVar12 + (CARRY1(in_stack_13,bVar10) || CARRY1(in_stack_13 + bVar10,bVar11 * cVar7 | !bVar11 * ((iVar9 >> (bVar10 & 0x1f) - 1 & 1U) != 0)));
-  *extraout_ECX = *extraout_ECX + cVar12;
-  piVar14 = (int *)(CONCAT31((int3)((uint)pcVar8 >> 8),cVar12 + *pcVar8) + *unaff_EBX);
-  pcVar8 = (char *)((int)piVar14 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar14);
-  cVar12 = (char)pcVar8;
-  *pcVar8 = *pcVar8 + cVar12;
-  *pcVar8 = *pcVar8 + cVar12;
-  *pcVar8 = *pcVar8 + cVar12;
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
-  return;
+  fVar7 = (float10)func_?();
+  *(int *)(unaff_EBX + 0x10) = (int)ROUND(fVar7);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -246,21 +229,16 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::MVNetworkGame_Sta
     func_?(&TypeInfo__MVNetworkGame__ReconnectWithAlternatePortHandler);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).networkGame = networkGame;
   func_?(&(this->fields).networkGame,networkGame);
-  value = (MVNetworkGame_ReconnectWithAlternatePortHandler *)func_?(TypeInfo__MVNetworkGame__ReconnectWithAlternatePortHandler);
-  if (value != (MVNetworkGame_ReconnectWithAlternatePortHandler *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)value,ExceptionArgument__Enum_obj,unaff_EBX);
-    (value->fields).networkGame = networkGame;
-    func_?(&(value->fields).networkGame,networkGame);
-    (this->fields).reconnectWithAlternatePortHandler = value;
-    func_?(&this->fields,value);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  method_00 = TypeInfo__MVNetworkGame__ReconnectWithAlternatePortHandler;
+  value = (MVNetworkGame_ReconnectWithAlternatePortHandler *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (value->fields).networkGame = networkGame;
+  func_?(&(value->fields).networkGame,networkGame);
+  (this->fields).reconnectWithAlternatePortHandler = value;
+  func_?(&this->fields,value);
   return;
 }
 

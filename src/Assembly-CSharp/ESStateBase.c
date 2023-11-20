@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_DeTintCurrent(ESStateBase *th
     }
     pWVar1 = (this->fields).tintedWo;
     if ((pWVar1 != (WorldObjectClientRef *)0x0) && (pOVar2 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)pWVar1,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__), pOVar2 != (Object *)0x0)) {
-      (*(code *)pOVar2->klass[3].rgctx_data)();
+      (*(code *)pOVar2->klass[3].static_fields)();
       pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef((MethodInfo *)0x0);
       (this->fields).tintedWo = pWVar1;
       func_?(&(this->fields).tintedWo,pWVar1);
@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter(ESStateBase *this,Edito
   iStack_3 = (this->fields).stateType;
   EStack_2.monitor = (MonitorData *)0xffffffff;
   str1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
-  pEStack_4 = (Enum__Class *)mscorlib.dll::System::String::String_Concat_3(StringLiteral_Enter_,str1,(MethodInfo *)0x0);
+  pEVar4 = (Enum__Class *)mscorlib.dll::System::String::String_Concat_3(StringLiteral_Enter_,str1,(MethodInfo *)0x0);
   if (pIVar1 == (ILogger *)0x0) {
     EStack_2.monitor = (MonitorData *)&UNK_?;
     func_?();
@@ -56,11 +56,12 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter(ESStateBase *this,Edito
   }
   pIVar6 = pIVar1->klass;
   uVar7 = 0;
-  uVar8 = (pIVar6->_1).interface_offsets_count;
+  uVar8._0_1_ = (pIVar6->_1).rank;
+  uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
   if (uVar8 != 0) {
     do {
       if (pIVar6->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__ILogger) {
-        pIVar9 = &pIVar6->vtable + pIVar6->interfaceOffsets[uVar7].offset;
+        ppMVar9 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar7].offset].Log.method;
         goto code_?;
       }
       uVar7 = uVar7 + 1;
@@ -68,11 +69,11 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter(ESStateBase *this,Edito
   }
   EStack_2.monitor = (MonitorData *)0x0;
   EStack_2.klass = (Enum__Class *)TypeInfo__ILogger;
-  pIVar9 = (ILogger__VTable *)func_?(pIVar1);
+  ppMVar9 = (MethodInfo **)func_?(pIVar1);
 code_?:
-  EStack_2.monitor = (MonitorData *)(pIVar9->Log).method;
-  EStack_2.klass = pEStack_4;
-  (*(pIVar9->Log).methodPtr)(pIVar1);
+  EStack_2.monitor = (MonitorData *)ppMVar9[1];
+  EStack_2.klass = pEVar4;
+  (*(code *)*ppMVar9)(pIVar1);
   return;
 }
 
@@ -87,14 +88,14 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Enter_1(ESStateBase *this,FSM
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__EditorStateMachine->_1).naturalAligment) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Enter_1.methodPtr)(this,e,(this->klass->vtable).Enter_1.method);
+  (*(code *)(this->klass->vtable).Enter_1.method)(this,e,(this->klass->vtable).Execute_1.methodPtr);
   return;
 }
 
@@ -109,14 +110,14 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Execute_1(ESStateBase *this,F
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__EditorStateMachine->_1).naturalAligment) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Execute_1.methodPtr)(this,e,(this->klass->vtable).Execute_1.method);
+  (*(code *)(this->klass->vtable).Execute_1.method)(this,e,(this->klass->vtable).Exit_1.methodPtr);
   return;
 }
 
@@ -131,14 +132,14 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_Exit_1(ESStateBase *this,FSME
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).typeHierarchyDepth < (TypeInfo__EditorStateMachine->_1).typeHierarchyDepth) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__EditorStateMachine->_1).naturalAligment) || ((e->klass->_1).typeHierarchy[(TypeInfo__EditorStateMachine->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__EditorStateMachine)) {
       func_?(e,TypeInfo__EditorStateMachine);
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
   }
-  (*(this->klass->vtable).Exit_1.methodPtr)(this,e,(this->klass->vtable).Exit_1.method);
+  (*(code *)(this->klass->vtable).Exit_1.method)(this,e,this->klass[1]._0.image);
   return;
 }
 
@@ -175,27 +176,27 @@ bool Assembly-CSharp.dll::ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnab
           }
           pGVar6 = (pMVar3->fields).gameObject;
           if (pGVar6 != (GameObject *)0x0) {
-            pIVar8 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar6,UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______);
-            pMVar9 = (MonitorData *)0x0;
-            if (pIVar8 != (IEnumerable_1_System_Object_ *)0x0) {
-              pIVar10 = pIVar8 + 2;
+            pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(pGVar6,UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______);
+            uVar9 = 0;
+            if (pOVar8 != (Object__Array *)0x0) {
+              ppOVar10 = pOVar8->vector;
               do {
-                if ((int)pIVar8[1].monitor <= (int)pMVar9) {
+                if ((int)pOVar8->max_length <= (int)uVar9) {
                   return 0;
                 }
-                if (pIVar8[1].monitor <= pMVar9) goto code_?;
-                if ((pIVar10->klass == (IEnumerable_1_System_Object___Class *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar10->klass,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) break;
+                if (pOVar8->max_length <= uVar9) goto code_?;
+                if (((Component *)*ppOVar10 == (Component *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppOVar10,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) break;
                 iVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer(pGVar6,(MethodInfo *)0x0);
                 if (iVar7 == iVar5) {
-                  if (pIVar8[1].monitor <= pMVar9) goto code_?;
-                  if ((pIVar10->klass == (IEnumerable_1_System_Object___Class *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar10->klass,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) break;
+                  if (pOVar8->max_length <= uVar9) goto code_?;
+                  if (((Component *)*ppOVar10 == (Component *)0x0) || (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)*ppOVar10,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0)) break;
                   bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar6,(MethodInfo *)0x0);
                   if (bVar11 != 0) {
                     return 1;
                   }
                 }
-                pMVar9 = pMVar9 + 1;
-                pIVar10 = (IEnumerable_1_System_Object_ *)&pIVar10->monitor;
+                uVar9 = uVar9 + 1;
+                ppOVar10 = ppOVar10 + 1;
               } while( true );
             }
           }
@@ -273,7 +274,7 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase_TintObjectsOnMouseOver_1(ESSt
     if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
     pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar5,hit._36_4_,(MethodInfo *)0x0);
     if (pMVar6 != (MVWorldObject *)0x0) {
-      (*(code *)pMVar6->klass[1].vtable.TraverseRecursiveTail.method)(pMVar6,pMVar6->klass[1].vtable.ShallowCopy.methodPtr);
+      (*pMVar6->klass[1].vtable.DeepCopy.methodPtr)(pMVar6,pMVar6->klass[1].vtable.DeepCopy.method);
       ESStateBase_DeTintCurrent(this,(MethodInfo *)0x0);
       return;
     }
@@ -333,7 +334,7 @@ code_?:
         func_?(&(this->fields).tintedWo,pWVar1);
         pWVar1 = (this->fields).tintedWo;
         if ((pWVar1 != (WorldObjectClientRef *)0x0) && (pOVar2 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)pWVar1,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__), pOVar2 != (Object *)0x0)) {
-          func_?(0x46,pOVar2,0,0x3f4ccccd,0,0x3f800000);
+          func_?(0x45,pOVar2,0,0x3f4ccccd,0,0x3f800000);
           return;
         }
       }
@@ -356,7 +357,7 @@ void Assembly-CSharp.dll::ESStateBase::ESStateBase__ctor(ESStateBase *this,Metho
   (this->fields).tintedWo = pWVar1;
   method_00 = (MethodInfo *)&(this->fields).tintedWo;
   func_?(method_00,pWVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (this_00 != (LoggerManager *)0x0) {

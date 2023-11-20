@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaser(ModelCursor *this
     pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if (((pGVar3 != (GameEventManager *)0x0) && (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode, pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar5 = (pGVar4->fields).LaserCommands, pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration(pGVar5,0.2,(MethodInfo *)0x0);
-      uVar6._0_4_ = 3.7527314e-29;
+      uVar6._0_4_ = 3.8913117e-29;
       uVar6._4_4_ = 0.0;
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if (((pGVar3 != (GameEventManager *)0x0) && (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode, pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar5 = (pGVar4->fields).LaserCommands, pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaserMovingEdge(ModelCu
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x66cc);
+    func_?(0xbf4);
     cRam_? = '\x01';
   }
   if (movingEdgeCube != (CubePickingInfo *)0x0) {
@@ -114,7 +114,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_HandleLaserMovingEdge(ModelCu
         color_00.r = 0.5;
         color_00.g = 0.5;
         color_00.a = 1.0;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine_1(VVar21,end_00,color_00,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1(VVar21,end_00,color_00,(MethodInfo *)0x0);
 code_?:
         pGVar22 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
         if (((pGVar22 != (GameEventManager *)0x0) && (pGVar23 = (pGVar22->fields).AvatarCommandsBuildMode, pGVar23 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_00 = (pGVar23->fields).LaserCommands, this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
@@ -190,7 +190,7 @@ code_?:
           color.r = 0.5;
           color.g = 0.5;
           color.a = 1.0;
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine_1(VVar21,end,color,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1(VVar21,end,color,(MethodInfo *)0x0);
           fStack_29 = (float)uVar34;
           fStack_30 = (float)uVar35;
           goto code_?;
@@ -267,7 +267,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_Remove(ModelCursor *this,Meth
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
         }
         pOStack_2 = (Object_1__Class *)0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_5,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__,method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_5,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__,method_00);
         pOStack_2 = (Object_1__Class *)0xffffffff;
         iVar10 = *(int *)(unaff_EBP + 8);
         if (iVar10 != 0) {
@@ -332,22 +332,21 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_ShowUnlockMaterialNotificatio
     func_?(&StringLiteral_Unlock_this_material_in_order_to);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-  if (this != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-    uStack_1 = CONCAT13(1,(undefined3)uStack_1);
-    key = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_1 + 3);
-    value = TM::TM__(StringLiteral_Unlock_this_material_in_order_to,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(this,key,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+  key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+  value = TM::TM__(StringLiteral_Unlock_this_material_in_order_to,(MethodInfo *)0x0);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,key,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
     if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    NotificationController::NotificationController_PushNotification_2(NotificationType__Enum_PlayerTip,this,NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+    NotificationController::NotificationController_PushNotification_2(NotificationType__Enum_PlayerTip,(Dictionary_2_System_Object_System_Object_ *)this,NotificationLifetime__Enum_High,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -361,7 +360,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor__ctor(ModelCursor *this,Vecto
     func_?(&TypeInfo__CellCursor);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
@@ -370,12 +369,10 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor__ctor(ModelCursor *this,Vecto
   if (pPVar1 != (PrefabPool *)0x0) {
     material = (pPVar1->fields).cellCursorErrorMaterial;
     this_00 = (CellCursor *)func_?(TypeInfo__CellCursor);
-    if (this_00 != (CellCursor *)0x0) {
-      CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-      (this->fields).errorCursor = this_00;
-      func_?(&(this->fields).errorCursor,this_00);
-      return;
-    }
+    CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
+    (this->fields).errorCursor = this_00;
+    func_?(&(this->fields).errorCursor,this_00);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -415,7 +412,7 @@ void Assembly-CSharp.dll::ModelCursor::ModelCursor_set_CursorVisible(ModelCursor
         while( true ) {
           bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_3,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__);
           if (bVar6 == 0) {
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_3,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__,unaff_EDI);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_3,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__,unaff_EDI);
             *unaff_FS_OFFSET = uVar2;
             return;
           }

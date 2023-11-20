@@ -23,19 +23,6 @@ public class ThemeMenuController : MonoBehaviour, ThemeMenuButton.IClickHandler
 	private ThemePreviewSettingsMenu previewSettingsPrefab;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass3_0
-	{
-		// Fields
-		public ThemeSelection menu;
-
-		// Constructors
-		public __c__DisplayClass3_0();
-
-		// Methods
-		internal void _OpenThemesMenu_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -52,6 +39,19 @@ public class ThemeMenuController : MonoBehaviour, ThemeMenuButton.IClickHandler
 		// Methods
 		internal void _OpenThemesMenu_b__3_1();
 		internal void _OpenSelection_b__4_1();
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass3_0
+	{
+		// Fields
+		public ThemeSelection menu;
+
+		// Constructors
+		public __c__DisplayClass3_0();
+
+		// Methods
+		internal void _OpenThemesMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

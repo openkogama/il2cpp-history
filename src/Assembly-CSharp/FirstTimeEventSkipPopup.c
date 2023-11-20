@@ -23,12 +23,6 @@ void Assembly-CSharp.dll::FirstTimeEventSkipPopup::FirstTimeEventSkipPopup_Cance
     }
     object = TypeInfo__FirstTimeEventSkipPopup____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__FirstTimeEventSkipPopup____c___Cancel_b__4_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__FirstTimeEventSkipPopup____c->static_fields->__9__4_0 = callbackFunction;
     func_?(&TypeInfo__FirstTimeEventSkipPopup____c->static_fields->__9__4_0,callbackFunction);
@@ -71,7 +65,7 @@ void Assembly-CSharp.dll::FirstTimeEventSkipPopup::FirstTimeEventSkipPopup_Ok(Fi
   FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent((this->fields).eventToSkip,(MethodInfo *)0x0);
   obj = (this->fields).targetElement;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__UnityEngine__Object);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -85,12 +79,6 @@ void Assembly-CSharp.dll::FirstTimeEventSkipPopup::FirstTimeEventSkipPopup_Ok(Fi
     }
     object = TypeInfo__FirstTimeEventSkipPopup____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__FirstTimeEventSkipPopup____c___Ok_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__FirstTimeEventSkipPopup____c->static_fields->__9__3_0 = callbackFunction;
     func_?();

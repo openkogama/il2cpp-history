@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_Awake(GameLoader *this,MethodIn
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -89,7 +89,7 @@ void Assembly-CSharp.dll::GameLoader::GameLoader_Cleanup(GameLoader *this,Method
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_AsyncWWWManager_quitCallback_is_,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }

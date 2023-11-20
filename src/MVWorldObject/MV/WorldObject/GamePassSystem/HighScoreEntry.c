@@ -87,7 +87,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreEntry::HighSco
   (this->fields).username = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).username;
   func_?(method_00,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -104,7 +104,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::HighScoreEntry::HighSco
   (this->fields).username = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).username;
   func_?(method_00,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).profileID = profileID;
   (this->fields).username = username;
   func_?(&(this->fields).username,username);

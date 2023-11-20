@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::CreySettings::CreySettings__ctor(CreySettings *this,int32_t frequency,String *url,bool shouldRedirect,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._TouristPromotionCreyFrequencyPercent_k__BackingField = frequency;
   (this->fields)._TouristPromotionCreyURL_k__BackingField = url;
   func_?(&(this->fields)._TouristPromotionCreyURL_k__BackingField,url);

@@ -19,21 +19,6 @@ public class AdUIOverlay : MonoBehaviour, IAdUIManager
 	private bool popupShowing;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public bool stackReady;
-		public AdUIOverlay __4__this;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal void _CreatePopup_b__0(IUIStack x, BaseEventData y);
-		internal void _CreatePopup_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -48,6 +33,21 @@ public class AdUIOverlay : MonoBehaviour, IAdUIManager
 
 		// Methods
 		internal void _Pop_b__9_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public bool stackReady;
+		public AdUIOverlay __4__this;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _CreatePopup_b__0(IUIStack x, BaseEventData y);
+		internal void _CreatePopup_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

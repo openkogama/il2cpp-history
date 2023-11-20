@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Image 29: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -32,11 +32,11 @@ namespace GoogleMobileAds.Api
 		private bool? _SameAppKeyEnabled_k__BackingField;
 	
 		// Properties
-		public MaxAdContentRating MaxAdContentRating { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public TagForChildDirectedTreatment? TagForChildDirectedTreatment { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public TagForUnderAgeOfConsent? TagForUnderAgeOfConsent { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public List<string> TestDeviceIds { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public bool? SameAppKeyEnabled { [CompilerGenerated] get; [CompilerGenerated] private set; }
+		private MaxAdContentRating MaxAdContentRating { [CompilerGenerated] set; }
+		private TagForChildDirectedTreatment? TagForChildDirectedTreatment { [CompilerGenerated] set; }
+		private TagForUnderAgeOfConsent? TagForUnderAgeOfConsent { [CompilerGenerated] set; }
+		private List<string> TestDeviceIds { [CompilerGenerated] set; }
+		private bool? SameAppKeyEnabled { [CompilerGenerated] set; }
 	
 		// Nested types
 		public class Builder
@@ -69,18 +69,13 @@ namespace GoogleMobileAds.Api
 			public Builder();
 	
 			// Methods
-			public Builder SetMaxAdContentRating(MaxAdContentRating maxAdContentRating);
 			public Builder SetTagForChildDirectedTreatment(TagForChildDirectedTreatment? tagForChildDirectedTreatment);
 			public Builder SetTagForUnderAgeOfConsent(TagForUnderAgeOfConsent? tagForUnderAgeOfConsent);
 			public Builder SetTestDeviceIds(List<string> testDeviceIds);
-			public Builder SetSameAppKeyEnabled(bool enabled);
 			public RequestConfiguration build();
 		}
 	
 		// Constructors
 		private RequestConfiguration(Builder builder);
-	
-		// Methods
-		public Builder ToBuilder();
 	}
 }

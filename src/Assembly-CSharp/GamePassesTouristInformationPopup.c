@@ -23,12 +23,6 @@ void Assembly-CSharp.dll::GamePassesTouristInformationPopup::GamePassesTouristIn
     }
     object = TypeInfo__GamePassesTouristInformationPopup____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__GamePassesTouristInformationPopup____c___Exit_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__GamePassesTouristInformationPopup____c->static_fields->__9__1_0 = callbackFunction;
     func_?(&TypeInfo__GamePassesTouristInformationPopup____c->static_fields->__9__1_0,callbackFunction);
@@ -71,8 +65,8 @@ void Assembly-CSharp.dll::GamePassesTouristInformationPopup::GamePassesTouristIn
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_Signup_not_permitted_for_site_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Signup_not_permitted_for_site_,(MethodInfo *)0x0);
       return;
     }
     BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignup(0,0,(MethodInfo *)0x0);

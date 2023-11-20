@@ -18,6 +18,9 @@ bool MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
   if (iVar3 != iVar4) {
     return 0;
   }
+  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
   iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Year(&(this->fields).lastDailyWelcomeRewardClaim,(MethodInfo *)0x0);
   iVar4 = mscorlib.dll::System::DateTime::DateTime_get_Year((DateTime *)&puStack_2,(MethodInfo *)0x0);
   return iVar3 == iVar4;
@@ -83,7 +86,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
   uVar1 = *(undefined4 *)((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
   *(int *)&(this->fields).lastDailyWelcomeRewardClaim._dateData = (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
   *(undefined4 *)((int)&(this->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).gamePassTierSeen = (undefined1)gamePassTierSeen;
   (this->fields).welcomeRewardClaimed = welcomeRewardClaimed;
   *(undefined4 *)&(this->fields).lastDailyWelcomeRewardClaim._dateData = in_stack_2;

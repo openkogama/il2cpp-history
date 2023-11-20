@@ -50,7 +50,6 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::Lea
       }
       object = TypeInfo__LeavePlayModeButton____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_ILeaveEditPlayModeHandler_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ILeaveEditPlayModeHandler>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_ILeaveEditPlayModeHandler_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LeavePlayModeButton____c___ExecuteLeaveEditDelayed_b__2_0_ILeaveEditPlayModeHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       TypeInfo__LeavePlayModeButton____c->static_fields->__9__2_0 = callbackFunction;
       func_?(&TypeInfo__LeavePlayModeButton____c->static_fields->__9__2_0,callbackFunction);
@@ -61,7 +60,6 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::Lea
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<ILeaveEditPlayModeHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<ILeaveEditPlayModeHandler>_);
     return 0;
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   bVar5 = (*pcVar4)();
@@ -76,7 +74,6 @@ void Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::Lea
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__LeavePlayModeButton___ExecuteLeaveEditDelayed_d__2__System_Collections_IEnumerator_Reset__);
   func_?(this_00);

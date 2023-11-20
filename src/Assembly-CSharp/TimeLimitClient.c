@@ -44,8 +44,8 @@ void Assembly-CSharp.dll::TimeLimitClient::TimeLimitClient_GetDebriefing(TimeLim
         }
       }
     }
-    (*(this->klass->vtable).get_HighScores_1.methodPtr)();
-    (*(this->klass->vtable).get_IsTeamMode_1.methodPtr)();
+    (*(code *)(this->klass->vtable).get_HighScores.method)();
+    (*(code *)(this->klass->vtable).get_IsTeamMode.method)();
     if (winningConditionDebriefingView != (IDebriefing *)0x0) {
       func_?();
       return;

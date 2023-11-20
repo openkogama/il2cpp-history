@@ -16,33 +16,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter(String *key,String *ukey,f
     func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,(Object *)ukey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__c;
+    pSVar2 = StringLiteral__c;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -65,33 +69,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1(String *key,String *ukey
     func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,(Object *)ukey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__c;
+    pSVar2 = StringLiteral__c;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -114,33 +122,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter(String *ezkey,String *st
     func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,(Object *)ezkey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,(Object *)stat,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__ez;
+    pSVar2 = StringLiteral__ez;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -162,33 +174,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter_1(String *ezkey,String *
     func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,(Object *)ezkey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,(Object *)stat,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&count,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_count,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__ez;
+    pSVar2 = StringLiteral__ez;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -210,33 +226,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue(String *ezkey,String *stat
     func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,(Object *)ezkey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,(Object *)stat,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__ez;
+    pSVar2 = StringLiteral__ez;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -259,33 +279,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue_1(String *ezkey,String *st
     func_?(&StringLiteral_stat);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ezkey,(Object *)ezkey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_stat,(Object *)stat,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__ez;
+    pSVar2 = StringLiteral__ez;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -308,33 +332,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value(String *key,String *ukey,int
     func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,(Object *)ukey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__v;
+    pSVar2 = StringLiteral__v;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -356,33 +384,37 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value_1(String *key,String *ukey,f
     func_?(&StringLiteral_key);
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_String_System_String_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
-  if (this != (Dictionary_2_System_String_System_String_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__);
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_key,(Object *)key,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_ukey,(Object *)ukey,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
     pSVar1 = mscorlib.dll::System::Single::Single_ToString((Single *)&value,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_value,(Object *)pSVar1,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_);
-    in_stack_2 = TypeInfo__StatHat__Post__FormPoster;
-    in_stack_3 = &UNK_?;
+    method_00 = TypeInfo__StatHat__Post__FormPoster;
     this_00 = (Post_FormPoster *)func_?();
-    pSVar4 = StringLiteral__v;
+    pSVar2 = StringLiteral__v;
     pSVar1 = StringLiteral_https___api_stathat_com;
-    if (this_00 != (Post_FormPoster *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this_00->fields).BaseUrl = pSVar1;
-      func_?(&(this_00->fields).BaseUrl,pSVar1);
-      (this_00->fields).Parameters = this;
-      func_?(&this_00->fields,this);
-      (this_00->fields).RelUrl = pSVar4;
-      func_?(&(this_00->fields).RelUrl,pSVar4);
-      Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
-      return;
-    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this_00->fields).BaseUrl = pSVar1;
+    ppSStack3 = &(this_00->fields).BaseUrl;
+    pSStack4 = pSVar1;
+    func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
+    pPStack5 = &this_00->fields;
+    pDStack6 = this;
+    func_?();
+    ppSStack7 = &(this_00->fields).RelUrl;
+    (this_00->fields).RelUrl = pSVar2;
+    pSStack8 = pSVar2;
+    func_?();
+    method = (MethodInfo *)&UNK_?;
+    Post+FormPoster::Post_FormPoster_PostForm(this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

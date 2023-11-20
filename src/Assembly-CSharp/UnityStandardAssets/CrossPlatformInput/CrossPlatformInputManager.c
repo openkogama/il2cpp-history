@@ -17,9 +17,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
       cRam_? = '\x01';
     }
-    this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualAxes;
-    if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
+    this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualAxes;
+    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
       return bVar2;
     }
   }
@@ -48,9 +48,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
       cRam_? = '\x01';
     }
-    this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualButtons;
-    if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
+    this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualButtons;
+    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
       return bVar2;
     }
   }
@@ -109,7 +109,7 @@ float Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatfor
   }
   pVVar1 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar1 != (VirtualInput *)0x0) {
-    fVar2 = (float10)(*(pVVar1->klass->vtable).__unknown.methodPtr)(pVVar1,name,_raw,(pVVar1->klass->vtable).__unknown.method);
+    fVar2 = (float10)(*(code *)(pVVar1->klass->vtable).__unknown.method)(pVVar1,name,_raw,(pVVar1->klass->vtable).__unknown_1.methodPtr);
     return (float)fVar2;
   }
   func_?();
@@ -135,9 +135,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_1.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_2.methodPtr;
     pSStack_3 = name;
-    bVar4 = (*(pVStack_2->klass->vtable).__unknown_1.methodPtr)();
+    bVar4 = (*(code *)(pVStack_2->klass->vtable).__unknown_1.method)();
     return bVar4;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -165,9 +165,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_2.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_3.methodPtr;
     pSStack_3 = name;
-    bVar4 = (*(pVStack_2->klass->vtable).__unknown_2.methodPtr)();
+    bVar4 = (*(code *)(pVStack_2->klass->vtable).__unknown_2.method)();
     return bVar4;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -195,9 +195,9 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_3.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_4.methodPtr;
     pSStack_3 = name;
-    bVar4 = (*(pVStack_2->klass->vtable).__unknown_3.methodPtr)();
+    bVar4 = (*(code *)(pVStack_2->klass->vtable).__unknown_3.method)();
     return bVar4;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -230,8 +230,8 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
       cRam_? = '\x01';
     }
-    if ((axis != (CrossPlatformInputManager_VirtualAxis *)0x0) && (this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualAxes, this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)(axis->fields)._name_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
+    if ((axis != (CrossPlatformInputManager_VirtualAxis *)0x0) && (this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualAxes, this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)(axis->fields)._name_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
       if (bVar2 != 0) {
         pDVar3 = (pVVar1->fields).m_VirtualAxes;
         if (pDVar3 == (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualAxis_ *)0x0) goto code_?;
@@ -280,14 +280,14 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&StringLiteral__registered_);
       cRam_? = '\x01';
     }
-    if ((button != (CrossPlatformInputManager_VirtualButton *)0x0) && (this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualButtons, this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0)) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)(button->fields)._name_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
+    if ((button != (CrossPlatformInputManager_VirtualButton *)0x0) && (this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualButtons, this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)(button->fields)._name_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
       if (bVar2 != 0) {
         message = mscorlib.dll::System::String::String_Concat_4(StringLiteral_There_is_already_a_virtual_butto,(button->fields)._name_k__BackingField,StringLiteral__registered_,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)message,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)message,(MethodInfo *)0x0);
         return;
       }
       this_00 = (pVVar1->fields).m_VirtualButtons;
@@ -326,10 +326,10 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVVar2->klass->vtable).__unknown_9.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVVar2->klass->vtable).__unknown_10.methodPtr;
     puStack_3 = (undefined *)value;
     pSStack_4 = name;
-    (*(pVVar2->klass->vtable).__unknown_9.methodPtr)(pVVar2);
+    (*(code *)(pVVar2->klass->vtable).__unknown_9.method)(pVVar2);
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -357,9 +357,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_7.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_8.methodPtr;
     pSStack_3 = name;
-    (*(pVStack_2->klass->vtable).__unknown_7.methodPtr)();
+    (*(code *)(pVStack_2->klass->vtable).__unknown_7.method)();
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -387,9 +387,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_6.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_7.methodPtr;
     pSStack_3 = name;
-    (*(pVStack_2->klass->vtable).__unknown_6.methodPtr)();
+    (*(code *)(pVStack_2->klass->vtable).__unknown_6.method)();
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -417,9 +417,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_8.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_9.methodPtr;
     pSStack_3 = name;
-    (*(pVStack_2->klass->vtable).__unknown_8.methodPtr)();
+    (*(code *)(pVStack_2->klass->vtable).__unknown_8.method)();
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -447,9 +447,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_4.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_5.methodPtr;
     pSStack_3 = name;
-    (*(pVStack_2->klass->vtable).__unknown_4.methodPtr)();
+    (*(code *)(pVStack_2->klass->vtable).__unknown_4.method)();
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -477,9 +477,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   }
   pVStack_2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVStack_2 != (VirtualInput *)0x0) {
-    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_5.method;
+    pCStack_1 = (CrossPlatformInputManager__Class *)(pVStack_2->klass->vtable).__unknown_6.methodPtr;
     pSStack_3 = name;
-    (*(pVStack_2->klass->vtable).__unknown_5.methodPtr)();
+    (*(code *)(pVStack_2->klass->vtable).__unknown_5.method)();
     return;
   }
   pCStack_1 = (CrossPlatformInputManager__Class *)&stack0xfffffffc;
@@ -618,7 +618,6 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
   if (name == (String *)0x0) {
     uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
     this_01 = (ArgumentNullException *)func_?(uVar1);
-    func_?(this_01);
     method_00 = (MethodInfo *)0x0;
     paramName = (String *)func_?(&StringLiteral_name);
     mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1(this_01,paramName,method_00);
@@ -636,9 +635,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
         func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__Remove_System__String_);
         cRam_? = '\x01';
       }
-      this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar2->fields).m_VirtualAxes;
-      if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
+      this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar2->fields).m_VirtualAxes;
+      if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
         if (bVar3 != 0) {
           this_00 = (pVVar2->fields).m_VirtualAxes;
           if (this_00 == (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualAxis_ *)0x0) goto code_?;
@@ -675,9 +674,9 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_);
       cRam_? = '\x01';
     }
-    this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualButtons;
-    if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
+    this = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualButtons;
+    if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_);
       if (bVar2 != 0) {
         this_00 = (pVVar1->fields).m_VirtualButtons;
         if (this_00 == (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_ *)0x0) goto code_?;
@@ -713,23 +712,23 @@ CrossPlatformInputManager_VirtualAxis * Assembly-CSharp.dll::UnityStandardAssets
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__get_Item_System__String_);
       cRam_? = '\x01';
     }
-    this = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pVVar1->fields).m_VirtualAxes;
-    if (this != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
-      if (bVar2 == 0) {
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualAxes;
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar2,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__ContainsKey_System__String_);
+      if (bVar3 == 0) {
         return (CrossPlatformInputManager_VirtualAxis *)0x0;
       }
-      this_00 = (pVVar1->fields).m_VirtualAxes;
-      if (this_00 != (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualAxis_ *)0x0) {
-        pCVar3 = (CrossPlatformInputManager_VirtualAxis *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__get_Item_System__String_);
-        return pCVar3;
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).m_VirtualAxes;
+      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)name,MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualAxis>__get_Item_System__String_);
+        return (CrossPlatformInputManager_VirtualAxis *)TVar4.m_Index;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pCVar3 = (CrossPlatformInputManager_VirtualAxis *)(*pcVar4)();
-  return pCVar3;
+  pcVar5 = (code *)swi(3);
+  pCVar6 = (CrossPlatformInputManager_VirtualAxis *)(*pcVar5)();
+  return pCVar6;
 }
 
 
@@ -745,33 +744,28 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPlatform
     cRam_? = '\x01';
   }
   pVVar1 = (VirtualInput *)func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__TouchInput);
-  if (pVVar1 != (VirtualInput *)0x0) {
-    VirtualInput::VirtualInput__ctor(pVVar1,(MethodInfo *)0x0);
-    TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_TouchInput = pVVar1;
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_TouchInput,pVVar1);
-    pVVar1 = (VirtualInput *)func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput);
-    if (pVVar1 != (VirtualInput *)0x0) {
-      VirtualInput::VirtualInput__ctor(pVVar1,(MethodInfo *)0x0);
-      TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_HardwareInput = pVVar1;
-      func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_HardwareInput,pVVar1);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pCVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields;
-      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-        pCVar2->activeInput = pCVar2->s_HardwareInput;
-        func_?();
-        return;
-      }
-      pCVar2->activeInput = pCVar2->s_TouchInput;
-      func_?();
-      return;
-    }
+  VirtualInput::VirtualInput__ctor(pVVar1,(MethodInfo *)0x0);
+  TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_TouchInput = pVVar1;
+  func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_TouchInput,pVVar1);
+  pVVar1 = (VirtualInput *)func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput);
+  VirtualInput::VirtualInput__ctor(pVVar1,(MethodInfo *)0x0);
+  TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_HardwareInput = pVVar1;
+  func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->s_HardwareInput,pVVar1);
+  if (cRam_? == '\0') {
+    ppMStack2 = &TypeInfo__MVGameControllerBase;
+    func_?();
+    cRam_? = '\x01';
   }
+  pCVar3 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields;
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    ppMStack2 = (MVGameControllerBase__Class **)pCVar3->s_HardwareInput;
+  }
+  else {
+    ppMStack2 = (MVGameControllerBase__Class **)pCVar3->s_TouchInput;
+  }
+  pCVar3->activeInput = (VirtualInput *)ppMStack2;
+  pCStack4 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields;
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -790,7 +784,7 @@ Vector3 * Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::CrossPla
   }
   pVVar1 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar1 != (VirtualInput *)0x0) {
-    puVar2 = (undefined8 *)(*(pVVar1->klass->vtable).__unknown_10.methodPtr)(auStack_3,pVVar1,(pVVar1->klass->vtable).__unknown_10.method);
+    puVar2 = (undefined8 *)(*(code *)(pVVar1->klass->vtable).__unknown_10.method)(auStack_3,pVVar1,pVVar1->klass[1]._0.image);
     uVar4 = *puVar2;
     fVar5 = *(float *)(puVar2 + 1);
     __return_storage_ptr__->x = (float)(int)uVar4;

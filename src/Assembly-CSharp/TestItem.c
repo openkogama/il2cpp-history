@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::TestItem::TestItem_Initialize(TestItem *this,String *t
   }
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,text,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,text,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pIVar2 = (this->fields).inventoryItemMetaData;
     if (pIVar2 != (InventoryItemMetaData *)0x0) {
       (pIVar2->fields).slotIndex = slotIndex;
@@ -87,8 +87,8 @@ void Assembly-CSharp.dll::TestItem::TestItem_set_Texture(TestItem *this,Texture2
     if (bVar2 == 0) {
       (pRVar1->fields).m_Texture = (Texture *)value;
       func_?();
-      (*(pRVar1->klass->vtable).SetVerticesDirty.methodPtr)(pRVar1);
-      (*(pRVar1->klass->vtable).SetMaterialDirty.methodPtr)(pRVar1,(pRVar1->klass->vtable).SetMaterialDirty.method);
+      (*(code *)(pRVar1->klass->vtable).SetVerticesDirty.method)(pRVar1);
+      (*(code *)(pRVar1->klass->vtable).SetMaterialDirty.method)(pRVar1,(pRVar1->klass->vtable).get_rectTransform.methodPtr);
     }
     return;
   }

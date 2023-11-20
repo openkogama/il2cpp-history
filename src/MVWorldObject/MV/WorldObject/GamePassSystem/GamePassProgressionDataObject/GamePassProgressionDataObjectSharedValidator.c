@@ -39,17 +39,11 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
     cRam_? = '\x01';
   }
   this_00 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator);
-  if (this_00 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
-    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(this_00,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).XpTiersRewardsValidator = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(this_00,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).XpTiersRewardsValidator = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -64,19 +58,13 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
     cRam_? = '\x01';
   }
   this_00 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator);
-  if (this_00 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
-    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(this_00,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).XpTiersRewardsValidator = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields).XpTiersRewardsValidator = xpTiersRewardsValidator;
-    func_?(&this->fields,xpTiersRewardsValidator);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(this_00,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).XpTiersRewardsValidator = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).XpTiersRewardsValidator = xpTiersRewardsValidator;
+  func_?(&this->fields,xpTiersRewardsValidator);
   return;
 }
 
@@ -91,23 +79,15 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
     cRam_? = '\x01';
   }
   pGVar1 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator);
-  if (pGVar1 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
-    GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(pGVar1,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).XpTiersRewardsValidator = pGVar1;
-    func_?(method_00,pGVar1);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    pGVar1 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator);
-    if (pGVar1 != (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)0x0) {
-      GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor_2(pGVar1,xpRangeValidators,xpRewardRemovalAllowed,(MethodInfo *)0x0);
-      (this->fields).XpTiersRewardsValidator = pGVar1;
-      func_?(&this->fields,pGVar1);
-      return;
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor(pGVar1,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).XpTiersRewardsValidator = pGVar1;
+  func_?(method_00,pGVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pGVar1 = (GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassProgressionDataObject__GamePassProgressionDataObjectSharedValidator__XPTiersRewardsValidator);
+  GamePassProgressionDataObjectSharedValidator+XPTiersRewardsValidator::GamePassProgressionDataObjectSharedValidator_XPTiersRewardsValidator__ctor_1(pGVar1,xpRangeValidators,xpRewardRemovalAllowed,(MethodInfo *)0x0);
+  (this->fields).XpTiersRewardsValidator = pGVar1;
+  func_?(&this->fields,pGVar1);
   return;
 }
 

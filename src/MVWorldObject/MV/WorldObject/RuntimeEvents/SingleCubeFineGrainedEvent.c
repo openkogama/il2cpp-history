@@ -30,7 +30,7 @@ String * MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGraine
 void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor(SingleCubeFineGrainedEvent *this,IntVector position,uint8_t material,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
   (this->fields)._.position.z = position.z;
@@ -45,7 +45,7 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
 void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_1(SingleCubeFineGrainedEvent *this,IntVector position,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.position.x = position.x;
   (this->fields)._.position.y = position.y;
   (this->fields)._._RuntimeEventType_k__BackingField = 2;
@@ -54,48 +54,12 @@ void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEve
 }
 
 
-/* SingleCubeFineGrainedEvent(RuntimeEventType, Byte[]) */
-
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_2(SingleCubeFineGrainedEvent *this,RuntimeEventType__Enum runtimeEventType,Byte__Array *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    cRam_? = '\x01';
-  }
-  this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-  if (this_00 != (BytePacker *)0x0) {
-    BytePacker::BytePacker__ctor_1(this_00,data,(MethodInfo *)0x0);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
-    if ((undefined1)runtimeEventType == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {
-      uVar1 = BytePacker::BytePacker_ReadByte(this_00,(MethodInfo *)0x0);
-      (this->fields).material = uVar1;
-    }
-    uVar2 = BytePacker::BytePacker_ReadInt16(this_00,(MethodInfo *)0x0);
-    x = (uint)uVar2;
-    BytePacker::BytePacker_ReadInt16(this_00,(MethodInfo *)0x0);
-    uVar2 = BytePacker::BytePacker_ReadInt16(this_00,(MethodInfo *)0x0);
-    iVar3 = 0;
-    IntVector::IntVector__ctor_1((IntVector *)&stack0xfffffff4,x,0,(uint)uVar2,(MethodInfo *)0x0);
-    (this->fields)._.position.x = (short)x;
-    (this->fields)._.position.y = (short)(x >> 0x10);
-    (this->fields)._.position.z = iVar3;
-    return;
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
-}
-
-
 /* SingleCubeFineGrainedEvent(RuntimeEventType, BytePacker) */
 
-void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_3(SingleCubeFineGrainedEvent *this,RuntimeEventType__Enum runtimeEventType,BytePacker *bp,MethodInfo *method)
+void MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent__ctor_2(SingleCubeFineGrainedEvent *this,RuntimeEventType__Enum runtimeEventType,BytePacker *bp,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._._RuntimeEventType_k__BackingField = (undefined1)runtimeEventType;
   if ((undefined1)runtimeEventType == RuntimeEventType__Enum_FineGrainedSingleCubeAdd) {
     if (bp == (BytePacker *)0x0) {
@@ -132,15 +96,15 @@ Byte__Array * MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineG
     cRam_? = '\x01';
   }
   this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+  BytePacker::BytePacker__ctor(this_00,(MethodInfo *)0x0);
   if (this_00 != (BytePacker *)0x0) {
-    BytePacker::BytePacker__ctor(this_00,(MethodInfo *)0x0);
     BytePacker::BytePacker_Write(this_00,(this->fields)._._RuntimeEventType_k__BackingField,(MethodInfo *)0x0);
     if ((this->fields)._._RuntimeEventType_k__BackingField == 1) {
       BytePacker::BytePacker_Write(this_00,(this->fields).material,(MethodInfo *)0x0);
     }
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.x,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.y,(MethodInfo *)0x0);
-    BytePacker::BytePacker_Write_5(this_00,(this->fields)._.position.z,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.x,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.y,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write_4(this_00,(this->fields)._.position.z,(MethodInfo *)0x0);
     pBVar1 = BytePacker::BytePacker_ToArray(this_00,(MethodInfo *)0x0);
     return pBVar1;
   }
@@ -148,14 +112,5 @@ Byte__Array * MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineG
   pcVar2 = (code *)swi(3);
   pBVar1 = (Byte__Array *)(*pcVar2)();
   return pBVar1;
-}
-
-
-/* Byte get_Material() */
-
-uint8_t MVWorldObject.dll::MV::WorldObject::RuntimeEvents::SingleCubeFineGrainedEvent::SingleCubeFineGrainedEvent_get_Material(SingleCubeFineGrainedEvent *this,MethodInfo *method)
-
-{
-  return (this->fields).material;
 }
 

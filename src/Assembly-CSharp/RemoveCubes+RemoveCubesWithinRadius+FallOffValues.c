@@ -154,7 +154,7 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::Rem
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
     uVar1 = uVar1 + 1;
     iVar2 = iVar2 + 8;
   }

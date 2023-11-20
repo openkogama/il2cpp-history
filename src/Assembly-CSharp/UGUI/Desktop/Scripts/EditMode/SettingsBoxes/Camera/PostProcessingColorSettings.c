@@ -26,14 +26,14 @@ code_?:
       if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1(data,StringLiteral_ppColorsPExp,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
-      this->postExposure = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1(data,StringLiteral_ppColorsTemp,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
-      this->temperature = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1(data,StringLiteral_ppColorsSatur,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
-      this->saturation = iVar4;
-      iVar4 = Extensions::Extensions_GetValueOrDefault_1(data,StringLiteral_ppColorContr,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
-      this->contrast = iVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2(data,StringLiteral_ppColorsPExp,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
+      this->postExposure = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2(data,StringLiteral_ppColorsTemp,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
+      this->temperature = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2(data,StringLiteral_ppColorsSatur,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
+      this->saturation = IVar4;
+      IVar4 = Extensions::Extensions_GetValueOrDefault_2(data,StringLiteral_ppColorContr,0,int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_);
+      this->contrast = IVar4;
       return;
     }
     if (pOVar1 != (Object *)0x0) {

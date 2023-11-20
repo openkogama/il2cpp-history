@@ -8,10 +8,9 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
   func_?(uVar1);
   method_00 = (MethodInfo *)0x0;
   message = (Object *)func_?(&StringLiteral_AdSDKManager_is_used_by_the_WebA);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,method_00);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,method_00);
   uVar1 = func_?(&TypeInfo__System__NotImplementedException);
   this_00 = (NotImplementedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager__InitializeAdConfigSettings_AdConfigSettings_);
   func_?();
@@ -30,10 +29,9 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
   func_?(uVar1);
   method_00 = (MethodInfo *)0x0;
   message = (Object *)func_?(&StringLiteral_AdSDKManager_is_used_by_the_WebA);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,method_00);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,method_00);
   uVar1 = func_?(&TypeInfo__System__NotImplementedException);
   this_00 = (NotImplementedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager__InitializeCallbackManager_Assets__Scripts__AdIntegration__IAdUIManager_);
   func_?();
@@ -62,14 +60,14 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_adSDK_initialized,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_adSDK_initialized,(MethodInfo *)0x0);
       (this->fields).wasInitializedSuccessfully = 1;
       return;
     }
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_AdSDKManager_failed_to_init_adSD,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_AdSDKManager_failed_to_init_adSD,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -101,12 +99,12 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
     func_?();
   }
   EStack_1.monitor = (MonitorData *)&UNK_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   if ((this->fields).wasInitializedSuccessfully == 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_wasInitializedSuccessfully_is_fa,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_wasInitializedSuccessfully_is_fa,(MethodInfo *)0x0);
     if (interstitialCallback != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
       (*(interstitialCallback->fields)._._.invoke_impl)();
       return;
@@ -116,7 +114,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_adSDK_RequestInterstitial_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_adSDK_RequestInterstitial_,(MethodInfo *)0x0);
     if ((this->fields).adSDK != (IAdSDK *)0x0) {
       func_?();
       return;
@@ -151,12 +149,12 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
     func_?();
   }
   EStack_1.monitor = (MonitorData *)&UNK_?;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   if ((this->fields).wasInitializedSuccessfully == 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_wasInitializedSuccessfully_is_fa,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_wasInitializedSuccessfully_is_fa,(MethodInfo *)0x0);
     if (rewardedAdCallback != (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
       (*(rewardedAdCallback->fields)._._.invoke_impl)();
       return;
@@ -166,7 +164,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager::AdS
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_adSDK_ShowRewardedAd_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_adSDK_ShowRewardedAd_,(MethodInfo *)0x0);
     if ((this->fields).adSDK != (IAdSDK *)0x0) {
       func_?();
       return;
@@ -220,6 +218,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager:
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
+    func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
@@ -230,6 +229,9 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager:
     func_?(TypeInfo__System__TimeSpan);
   }
   iVar1 = (TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;
+  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__TimeSpan);
+  }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__TimeSpan);
     cRam_? = '\x01';
@@ -241,7 +243,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::AdSDKManager:
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  iVar1 = mscorlib.dll::System::Math::Math_Min_2(iVar1,val2,(MethodInfo *)0x0);
+  iVar1 = mscorlib.dll::System::Math::Math_Min_5(iVar1,val2,(MethodInfo *)0x0);
   return (TimeSpan)iVar1;
 }
 

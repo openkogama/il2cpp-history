@@ -12,13 +12,13 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
   (this->fields)._.onChange = onChange;
   func_?(&(this->fields)._.onChange,onChange);
   if ((attrib != (BoolAttribute *)0x0) && (pTVar1 = (this->fields)._.label, pTVar1 != (Text *)0x0)) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,(attrib->fields)._.name,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields)._.toggle;
     if (this_00 != (SettingsToggle *)0x0) {
       SettingsToggle::SettingsToggle_Initialize(this_00,(attrib->fields)._._._._Key_k__BackingField,(attrib->fields)._._.value,(MethodInfo *)0x0);
       pTVar1 = (this->fields)._.label;
       if (pTVar1 != (Text *)0x0) {
-        pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+        pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
         (this->fields).labelText = pSVar2;
         func_?(&(this->fields).labelText,pSVar2);
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,1,(MethodInfo *)0x0);
@@ -57,9 +57,9 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Update(Se
     arg1 = mscorlib.dll::System::DateTime::DateTime_ToString_1((DateTime *)&stack0xfffffff0,(String *)(DVar1._dateData >> 0x20),(MethodInfo *)0x0);
     pSStack3 = mscorlib.dll::System::String::String_Format_1(StringLiteral__0___1_,(Object *)arg0,(Object *)arg1,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      pMStack4 = (pTVar2->klass->vtable).set_text.method;
+      pIStack4 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
       pTStack5 = pTVar2;
-      (*(pTVar2->klass->vtable).set_text.methodPtr)();
+      (*(code *)(pTVar2->klass->vtable).set_text.method)();
       return;
     }
   }

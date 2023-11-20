@@ -29,6 +29,33 @@ public class SentrySdk : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
+	private sealed class _ContinueSendingEvent_d__23<T> : IEnumerator<UnityWebRequestAsyncOperation>
+		where T : SentryEvent
+	{
+		// Fields
+		private int __1__state;
+		private UnityWebRequestAsyncOperation __2__current;
+		public SentrySdk __4__this;
+		public T @event;
+		private UnityWebRequest _www_5__2;
+
+		// Properties
+		UnityWebRequestAsyncOperation IEnumerator<UnityEngine.Networking.UnityWebRequestAsyncOperation>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _ContinueSendingEvent_d__23(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
+
+	[CompilerGenerated]
 	private sealed class _GetStackTraces_d__20 : IEnumerable<StackTraceSpec>, IEnumerator<StackTraceSpec>
 	{
 		// Fields
@@ -58,33 +85,6 @@ public class SentrySdk : MonoBehaviour
 		IEnumerator<StackTraceSpec> IEnumerable<StackTraceSpec>.GetEnumerator();
 		[DebuggerHidden]
 		IEnumerator IEnumerable.GetEnumerator();
-	}
-
-	[CompilerGenerated]
-	private sealed class _ContinueSendingEvent_d__23<T> : IEnumerator<UnityWebRequestAsyncOperation>
-		where T : SentryEvent
-	{
-		// Fields
-		private int __1__state;
-		private UnityWebRequestAsyncOperation __2__current;
-		public SentrySdk __4__this;
-		public T @event;
-		private UnityWebRequest _www_5__2;
-
-		// Properties
-		UnityWebRequestAsyncOperation IEnumerator<UnityEngine.Networking.UnityWebRequestAsyncOperation>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _ContinueSendingEvent_d__23(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
 	}
 
 	// Constructors

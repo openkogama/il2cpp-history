@@ -12,7 +12,7 @@ void Assembly-CSharp.dll::EnableDisableTest::EnableDisableTest_OnDisable(EnableD
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_OnDisable,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_OnDisable,(MethodInfo *)0x0);
   return;
 }
 
@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::EnableDisableTest::EnableDisableTest_OnEnable(EnableDi
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_OnEnable,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_OnEnable,(MethodInfo *)0x0);
   return;
 }
 

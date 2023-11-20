@@ -79,10 +79,10 @@ Object__Array * Assembly-CSharp.dll::ValueInsert::ValueInsert_GetValueParams(Val
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(this->fields).values;
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    pUVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
-    return (Object__Array *)pUVar1;
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)(this->fields).values;
+  if (this_00 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
+    pMVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_00,MethodInfo__System__Collections__Generic__List<System::Object>__ToArray__);
+    return (Object__Array *)pMVar1;
   }
   uVar2 = func_?(&puStack_3);
   func_?(uVar2);
@@ -103,17 +103,11 @@ void Assembly-CSharp.dll::ValueInsert::ValueInsert__ctor(ValueInsert *this,Metho
     cRam_? = '\x01';
   }
   this_00 = (List_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__List<System::Object>);
-  if (this_00 != (List_1_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).values = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<System::Object>__List__);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).values = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

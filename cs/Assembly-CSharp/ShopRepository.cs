@@ -20,19 +20,6 @@ public class ShopRepository : ARepository
 	public IDictionary<int, MVItem> ShopInventory { get; }
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public int[] itemCategories;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal bool _GetItemsByItemCategories_b__0(KeyValuePair<int, MVItem> p);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -49,6 +36,19 @@ public class ShopRepository : ARepository
 		// Methods
 		internal int _GetItemsByItemCategories_b__8_1(KeyValuePair<int, MVItem> pair);
 		internal MVItem _GetItemsByItemCategories_b__8_2(KeyValuePair<int, MVItem> pair);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public int[] itemCategories;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal bool _GetItemsByItemCategories_b__0(KeyValuePair<int, MVItem> p);
 	}
 
 	// Constructors

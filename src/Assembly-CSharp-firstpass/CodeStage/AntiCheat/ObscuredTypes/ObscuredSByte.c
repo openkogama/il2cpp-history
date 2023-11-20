@@ -13,10 +13,10 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
   }
   if (iVar1 != TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey) {
-    bVar2 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     }
+    bVar2 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
     bVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
@@ -92,6 +92,9 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       pOVar1 = obj;
     }
     if (pOVar1 != (Object *)0x0) {
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+      }
       if ((obj->klass->_0).element_class == (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_0).element_class) {
         pOVar2 = (ObscuredSByte *)func_?(obj);
         bVar3 = ObscuredSByte_Equals_1(this,*pOVar2,(MethodInfo *)0x0);
@@ -160,6 +163,13 @@ int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte,unaff_EBP);
+    cRam_? = '\x01';
+  }
   if (this->inited == 0) {
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
@@ -199,7 +209,7 @@ int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
       iVar1 = (*pcVar6)();
       return iVar1;
     }
-    (*(pOVar5->klass->vtable).OnCheatingDetected.methodPtr)(pOVar5,(pOVar5->klass->vtable).OnCheatingDetected.method);
+    (*(code *)(pOVar5->klass->vtable).OnCheatingDetected.method)(pOVar5,(pOVar5->klass->vtable).StartDetectionAutomatically.methodPtr);
   }
   return bVar2;
 }
@@ -210,6 +220,13 @@ int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
 int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_GetEncrypted(ObscuredSByte *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   ObscuredSByte_ApplyNewCryptoKey(this,(MethodInfo *)0x0);
   return this->hiddenValue;
 }
@@ -220,6 +237,13 @@ int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
 int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_GetHashCode(ObscuredSByte *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   uStack_2 = CONCAT13(iVar1,(undefined3)uStack_2);
   iVar3 = mscorlib.dll::System::SByte::SByte_GetHashCode((SByte *)((int)&uStack_2 + 3),(MethodInfo *)0x0);
@@ -275,7 +299,7 @@ int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
       iVar1 = (*pcVar6)();
       return iVar1;
     }
-    (*(pOVar5->klass->vtable).OnCheatingDetected.methodPtr)(pOVar5,(pOVar5->klass->vtable).OnCheatingDetected.method);
+    (*(code *)(pOVar5->klass->vtable).OnCheatingDetected.method)(pOVar5,(pOVar5->klass->vtable).StartDetectionAutomatically.methodPtr);
   }
   return bVar2;
 }
@@ -289,6 +313,9 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
   }
   bVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   do {
@@ -313,10 +340,17 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_SetEncrypted(ObscuredSByte *this,int8_t encrypted,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
   this->inited = 1;
   this->hiddenValue = encrypted;
   bVar1 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
   if (bVar1 != 0) {
+    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    }
     iVar2 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
     this->fakeValue = iVar2;
   }
@@ -348,6 +382,13 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_ToString(ObscuredSByte *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   uStack_2 = CONCAT13(iVar1,(undefined3)uStack_2);
   pSVar3 = mscorlib.dll::System::SByte::SByte_ToString((SByte *)((int)&uStack_2 + 3),(MethodInfo *)0x0);
@@ -360,6 +401,13 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
 String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_ToString_1(ObscuredSByte *this,String *format,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   uStack_2 = CONCAT13(iVar1,(undefined3)uStack_2);
   pSVar3 = mscorlib.dll::System::SByte::SByte_ToString_2((SByte *)((int)&uStack_2 + 3),format,(MethodInfo *)0x0);
@@ -372,6 +420,13 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
 String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_ToString_2(ObscuredSByte *this,IFormatProvider *provider,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   uStack_2 = CONCAT13(iVar1,(undefined3)uStack_2);
   pSVar3 = mscorlib.dll::System::SByte::SByte_ToString_1((SByte *)((int)&uStack_2 + 3),provider,(MethodInfo *)0x0);
@@ -384,6 +439,13 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
 String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_ToString_3(ObscuredSByte *this,String *format,IFormatProvider *provider,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(this,(MethodInfo *)0x0);
   uStack_2 = CONCAT13(iVar1,(undefined3)uStack_2);
   pSVar3 = mscorlib.dll::System::SByte::SByte_ToString_3((SByte *)((int)&uStack_2 + 3),format,provider,(MethodInfo *)0x0);
@@ -439,10 +501,10 @@ ObscuredSByte Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
-  iVar1 = ObscuredSByte_InternalDecrypt(&input,(MethodInfo *)0x0);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
   }
+  iVar1 = ObscuredSByte_InternalDecrypt(&input,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
@@ -503,6 +565,13 @@ ObscuredSByte Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes
 int8_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredSByte::ObscuredSByte_op_Implicit_1(ObscuredSByte value,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+  }
   iVar1 = ObscuredSByte_InternalDecrypt(&value,(MethodInfo *)0x0);
   return iVar1;
 }
@@ -517,10 +586,10 @@ ObscuredSByte Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
-  iVar1 = ObscuredSByte_InternalDecrypt(&input,(MethodInfo *)0x0);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
   }
+  iVar1 = ObscuredSByte_InternalDecrypt(&input,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';

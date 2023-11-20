@@ -34,12 +34,12 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
   DStack_7._index = 0;
   DStack_7._current.key = 0;
   if (projectMembers != (Dictionary_2_System_Int32_System_Boolean_ *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__GetEnumerator(&DStack_9,(Dictionary_2_System_Object_System_Object_ *)projectMembers,MethodInfo__System__Collections__Generic__Dictionary<int,_bool>__GetEnumerator__);
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator(&DStack_9,(Dictionary_2_System_UInt32_System_Object_ *)projectMembers,MethodInfo__System__Collections__Generic__Dictionary<int,_bool>__GetEnumerator__);
     uStack_10 = 0;
     DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar8->_dictionary;
     DStack_7._version = pDVar8->_version;
     DStack_7._index = pDVar8->_index;
-    DStack_7._current.key = (int32_t)(pDVar8->_current).key;
+    DStack_7._current.key = (pDVar8->_current).key;
     DStack_7._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
     pDStack_11 = &DStack_7;
@@ -50,36 +50,35 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
       if (bVar12 == 0) break;
       uStack_14 = DStack_7._current.value;
       uStack_15 = DStack_7._current._5_3_;
-      this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).projectMemberEarningsReports;
+      pDVar16 = (this->fields).projectMemberEarningsReports;
       DStack_7._16_8_ = uVar13;
-      if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) goto code_?;
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this_00,(Object *)DStack_7._current.key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_);
+      if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar16,DStack_7._current.key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_);
       if (bVar12 == 0) {
-        pDStack_16 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).projectMemberEarningsReports;
-        pPVar17 = (ProjectMemberEarningsReport *)func_?();
-        if (pPVar17 == (ProjectMemberEarningsReport *)0x0) goto code_?;
-        ProjectMemberEarningsReport::ProjectMemberEarningsReport__ctor(pPVar17,(MethodInfo *)0x0);
-        if (pDStack_16 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDStack_16,(Object *)key,(Object *)pPVar17,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Add_int__MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectMemberEarningsReport_);
+        pDVar16 = (this->fields).projectMemberEarningsReports;
+        pPStack_17 = (ProjectMemberEarningsReport *)func_?();
+        ProjectMemberEarningsReport::ProjectMemberEarningsReport__ctor(pPStack_17,(MethodInfo *)0x0);
+        if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)pDVar16,key,(Object *)pPStack_17,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Add_int__MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectMemberEarningsReport_);
       }
       goldAmount = goldPerSubscriberMember;
       if (uStack_14 == 0) {
         goldAmount = goldPerRegularMember;
       }
-      this_01 = (this->fields).projectMemberEarningsReports;
-      if (this_01 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
-      pPVar17 = (ProjectMemberEarningsReport *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_);
-      if (pPVar17 == (ProjectMemberEarningsReport *)0x0) goto code_?;
+      pDVar16 = (this->fields).projectMemberEarningsReports;
+      if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+      this_01 = (ProjectMemberEarningsReport *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar16,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_);
+      if (this_01 == (ProjectMemberEarningsReport *)0x0) goto code_?;
       projectMembers = (Dictionary_2_System_Int32_System_Boolean_ *)&UNK_?;
-      ProjectMemberEarningsReport::ProjectMemberEarningsReport_AddGameBoosterGoldRevenue(pPVar17,goldAmount,gameBooster,(MethodInfo *)0x0);
+      ProjectMemberEarningsReport::ProjectMemberEarningsReport_AddGameBoosterGoldRevenue(this_01,goldAmount,gameBooster,(MethodInfo *)0x0);
       iStack_6 = iStack_6 + goldAmount;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_bool>__Dispose__,(MethodInfo *)projectMembers);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_bool>__Dispose__,(MethodInfo *)projectMembers);
     uStack_1 = 0xffffffff;
-    this_02 = (this->fields).earningsReport;
-    if (this_02 != (EarningsReport *)0x0) {
-      EarningsReport::EarningsReport_AddGameBoosterGoldRevenue(this_02,iStack_6,gameBooster,(MethodInfo *)0x0);
+    this_00 = (this->fields).earningsReport;
+    if (this_00 != (EarningsReport *)0x0) {
+      EarningsReport::EarningsReport_AddGameBoosterGoldRevenue(this_00,iStack_6,gameBooster,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
@@ -127,12 +126,12 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
   DStack_7._index = 0;
   DStack_7._current.key = 0;
   if (projectMembers != (Dictionary_2_System_Int32_System_Boolean_ *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__GetEnumerator(&DStack_9,(Dictionary_2_System_Object_System_Object_ *)projectMembers,MethodInfo__System__Collections__Generic__Dictionary<int,_bool>__GetEnumerator__);
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator(&DStack_9,(Dictionary_2_System_UInt32_System_Object_ *)projectMembers,MethodInfo__System__Collections__Generic__Dictionary<int,_bool>__GetEnumerator__);
     uStack_10 = 0;
     DStack_7._dictionary = (Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar8->_dictionary;
     DStack_7._version = pDVar8->_version;
     DStack_7._index = pDVar8->_index;
-    DStack_7._current.key = (int32_t)(pDVar8->_current).key;
+    DStack_7._current.key = (pDVar8->_current).key;
     DStack_7._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
     pDStack_11 = &DStack_7;
@@ -143,36 +142,35 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
       if (bVar12 == 0) break;
       uStack_14 = DStack_7._current.value;
       uStack_15 = DStack_7._current._5_3_;
-      this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(this->fields).projectMemberEarningsReports;
+      pDVar16 = (this->fields).projectMemberEarningsReports;
       DStack_7._16_8_ = uVar13;
-      if (this_00 == (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) goto code_?;
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this_00,(Object *)DStack_7._current.key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_);
+      if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)pDVar16,DStack_7._current.key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_);
       if (bVar12 == 0) {
-        pDStack_16 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).projectMemberEarningsReports;
-        pPVar17 = (ProjectMemberEarningsReport *)func_?();
-        if (pPVar17 == (ProjectMemberEarningsReport *)0x0) goto code_?;
-        ProjectMemberEarningsReport::ProjectMemberEarningsReport__ctor(pPVar17,(MethodInfo *)0x0);
-        if (pDStack_16 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDStack_16,(Object *)key,(Object *)pPVar17,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Add_int__MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectMemberEarningsReport_);
+        pDVar16 = (this->fields).projectMemberEarningsReports;
+        pPStack_17 = (ProjectMemberEarningsReport *)func_?();
+        ProjectMemberEarningsReport::ProjectMemberEarningsReport__ctor(pPStack_17,(MethodInfo *)0x0);
+        if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)pDVar16,key,(Object *)pPStack_17,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Add_int__MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectMemberEarningsReport_);
       }
       goldAmount = goldPerSubscriberMember;
       if (uStack_14 == 0) {
         goldAmount = goldPerRegularMember;
       }
-      this_01 = (this->fields).projectMemberEarningsReports;
-      if (this_01 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
-      pPVar17 = (ProjectMemberEarningsReport *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_);
-      if (pPVar17 == (ProjectMemberEarningsReport *)0x0) goto code_?;
+      pDVar16 = (this->fields).projectMemberEarningsReports;
+      if (pDVar16 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) goto code_?;
+      this_01 = (ProjectMemberEarningsReport *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar16,key,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_);
+      if (this_01 == (ProjectMemberEarningsReport *)0x0) goto code_?;
       projectMembers = (Dictionary_2_System_Int32_System_Boolean_ *)&UNK_?;
-      ProjectMemberEarningsReport::ProjectMemberEarningsReport_AddTierGoldRevenue(pPVar17,goldAmount,gamePassTier,(MethodInfo *)0x0);
+      ProjectMemberEarningsReport::ProjectMemberEarningsReport_AddTierGoldRevenue(this_01,goldAmount,gamePassTier,(MethodInfo *)0x0);
       iStack_6 = iStack_6 + goldAmount;
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_bool>__Dispose__,(MethodInfo *)projectMembers);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_bool>__Dispose__,(MethodInfo *)projectMembers);
     uStack_1 = 0xffffffff;
-    this_02 = (this->fields).earningsReport;
-    if (this_02 != (EarningsReport *)0x0) {
-      EarningsReport::EarningsReport_AddTierGoldRevenue(this_02,iStack_6,gamePassTier,(MethodInfo *)0x0);
+    this_00 = (this->fields).earningsReport;
+    if (this_00 != (EarningsReport *)0x0) {
+      EarningsReport::EarningsReport_AddTierGoldRevenue(this_00,iStack_6,gamePassTier,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
@@ -209,7 +207,7 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::P
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._version = 0;
   DStack_6._index = 0;
   DStack_6._current.key = 0;
@@ -217,30 +215,30 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::P
   DStack_6._getEnumeratorRetType = 0;
   pEVar7 = (this->fields).earningsReport;
   if (pEVar7 != (EarningsReport *)0x0) {
-    pSVar8 = (String *)(*(pEVar7->klass->vtable).ToString.methodPtr)(pEVar7,(pEVar7->klass->vtable).ToString.method);
-    this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).projectMemberEarningsReports;
-    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&stack0xffffffa4,this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__GetEnumerator__);
+    pSVar8 = (String *)(*(code *)(pEVar7->klass->vtable).ToString.method)(pEVar7,pEVar7->klass[1]._0.image);
+    this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).projectMemberEarningsReports;
+    if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+      pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffa4,this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__GetEnumerator__);
       uStack_10 = 0;
-      DStack_6._dictionary = (Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9->_dictionary;
+      DStack_6._dictionary = pDVar9->_dictionary;
       DStack_6._version = pDVar9->_version;
       DStack_6._index = pDVar9->_index;
-      DStack_6._current.key = (int32_t)(pDVar9->_current).key;
+      DStack_6._current.key = (pDVar9->_current).key;
       DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
       uStack_1 = 1;
       pDStack_11 = &DStack_6;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Object__MoveNext(&DStack_6,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__MoveNext__);
+        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_6,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__MoveNext__);
         if (bVar12 == 0) break;
-        pOStack_13 = (Object *)DStack_6._current.key;
-        pOStack_14 = (Object *)DStack_6._current.key;
+        uStack_13 = DStack_6._current.key;
+        uStack_14 = DStack_6._current.key;
         pOStack_15 = DStack_6._current.value;
         arg0 = (Object *)func_?();
         str1 = mscorlib.dll::System::String::String_Format_1(StringLiteral__0____1__,arg0,pOStack_15,(MethodInfo *)0x0);
         pSVar8 = mscorlib.dll::System::String::String_Concat_3(pSVar8,str1,(MethodInfo *)0x0);
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dispose__,in_stack_16);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dispose__,in_stack_16);
       *unaff_FS_OFFSET = uStack_3;
       return pSVar8;
     }
@@ -265,23 +263,15 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
     cRam_? = '\x01';
   }
   this_00 = (EarningsReport *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassEarnings__EarningsReport);
-  if (this_00 != (EarningsReport *)0x0) {
-    EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields).earningsReport = this_00;
-    func_?(&this->fields,this_00);
-    this_01 = (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>);
-    if (this_01 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dictionary__);
-      method_00 = (MethodInfo *)&(this->fields).projectMemberEarningsReports;
-      (this->fields).projectMemberEarningsReports = this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).earningsReport = this_00;
+  func_?(&this->fields,this_00);
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dictionary__);
+  method_00 = (MethodInfo *)&(this->fields).projectMemberEarningsReports;
+  (this->fields).projectMemberEarningsReports = (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -298,27 +288,19 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
     cRam_? = '\x01';
   }
   this_00 = (EarningsReport *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassEarnings__EarningsReport);
-  if (this_00 != (EarningsReport *)0x0) {
-    EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
-    (this->fields).earningsReport = this_00;
-    func_?(&this->fields,this_00);
-    this_01 = (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>);
-    if (this_01 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dictionary__);
-      method_00 = (MethodInfo *)&(this->fields).projectMemberEarningsReports;
-      (this->fields).projectMemberEarningsReports = this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields).earningsReport = earningsReport;
-      func_?(&this->fields,earningsReport);
-      (this->fields).projectMemberEarningsReports = projectMemberEarningsReports;
-      func_?(&(this->fields).projectMemberEarningsReports,projectMemberEarningsReports);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).earningsReport = this_00;
+  func_?(&this->fields,this_00);
+  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__Dictionary__);
+  method_00 = (MethodInfo *)&(this->fields).projectMemberEarningsReports;
+  (this->fields).projectMemberEarningsReports = (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_ *)this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).earningsReport = earningsReport;
+  func_?(&this->fields,earningsReport);
+  (this->fields).projectMemberEarningsReports = projectMemberEarningsReports;
+  func_?(&(this->fields).projectMemberEarningsReports,projectMemberEarningsReports);
   return;
 }
 

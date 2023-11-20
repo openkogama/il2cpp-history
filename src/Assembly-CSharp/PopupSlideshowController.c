@@ -30,11 +30,11 @@ void Assembly-CSharp.dll::PopupSlideshowController::PopupSlideshowController_Pag
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,index != (pLVar4->fields)._size + -1,(MethodInfo *)0x0);
         }
         pGVar5 = (this->fields).pageLeft;
-        if ((pGVar5 != (GameObject *)0x0) && (pGVar5 = (GameObject *)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4((Void *)pGVar5,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
+        if ((pGVar5 != (GameObject *)0x0) && (pGVar5 = (GameObject *)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar5,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,0 < index,(MethodInfo *)0x0);
           pGVar5 = (this->fields).pageRight;
           if (pGVar5 != (GameObject *)0x0) {
-            pGVar5 = (GameObject *)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4((Void *)pGVar5,(MethodInfo *)0x0);
+            pGVar5 = (GameObject *)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar5,(MethodInfo *)0x0);
             pLVar4 = (this->fields).pages;
             if ((pLVar4 != (List_1_UnityEngine_GameObject_ *)0x0) && (pGVar5 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,index < (pLVar4->fields)._size + -1,(MethodInfo *)0x0);

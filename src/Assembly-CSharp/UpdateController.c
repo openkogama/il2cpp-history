@@ -11,10 +11,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddFixedUpdateObjec
   }
   pIStack_1 = obj;
   UStack_2 = 0;
-  iStack_3 = 0;
+  pVStack_3 = (VisualTreeAsset *)0x0;
   func_?(&pIStack_1,obj);
   UStack_2 = priority;
-  iStack_3 = conditionInp;
+  pVStack_3 = (VisualTreeAsset *)conditionInp;
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
@@ -22,23 +22,26 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddFixedUpdateObjec
   pLVar5 = TypeInfo__UpdateController->static_fields->fixedUpdateBuckets;
   if (pLVar5 != (List_1_PriorityDataFixedUpdate___Array *)0x0) {
     if (pLVar5->max_length <= priority) goto code_?;
-    pLVar6 = pLVar5->vector[priority];
-    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
-      piVar7 = &(pLVar6->fields)._version;
-      *piVar7 = *piVar7 + 1;
-      pPVar8 = (pLVar6->fields)._items;
-      if (pPVar8 != (PriorityDataFixedUpdate__Array *)0x0) {
-        uVar9 = (pLVar6->fields)._size;
-        if (pPVar8->max_length <= uVar9) {
-          (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)(pLVar6,CONCAT44(UStack_2,pIStack_1),iStack_3,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
+    this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLVar5->vector[priority];
+    if (this != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+      piVar6 = &(this->fields)._version;
+      *piVar6 = *piVar6 + 1;
+      pVVar7 = (this->fields)._items;
+      if (pVVar7 != (VisualTreeAsset_UsingEntry__Array *)0x0) {
+        uVar8 = (this->fields)._size;
+        if (pVVar7->max_length <= uVar8) {
+          item.path = (String *)UStack_2;
+          item.alias = (String *)pIStack_1;
+          item.asset = pVStack_3;
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__AddWithResize(this,item,pMVar4->klass->rgctx_data[0xe].method);
           return;
         }
-        (pLVar6->fields)._size = uVar9 + 1;
-        if (uVar9 < pPVar8->max_length) {
-          pPVar8->vector[uVar9].obj = pIStack_1;
-          pPVar8->vector[uVar9].priority = UStack_2;
-          pPVar8->vector[uVar9].condition = iStack_3;
-          func_?(pPVar8->vector + uVar9,0);
+        (this->fields)._size = uVar8 + 1;
+        if (uVar8 < pVVar7->max_length) {
+          pVVar7->vector[uVar8].alias = (String *)pIStack_1;
+          pVVar7->vector[uVar8].path = (String *)UStack_2;
+          pVVar7->vector[uVar8].asset = pVStack_3;
+          func_?(pVVar7->vector + uVar8,0);
           return;
         }
         goto code_?;
@@ -48,8 +51,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddFixedUpdateObjec
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -66,10 +69,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddLateUpdateObject
   }
   pIStack_1 = obj;
   UStack_2 = 0;
-  iStack_3 = 0;
+  pVStack_3 = (VisualTreeAsset *)0x0;
   func_?(&pIStack_1,obj);
   UStack_2 = priority;
-  iStack_3 = conditionInp;
+  pVStack_3 = (VisualTreeAsset *)conditionInp;
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
@@ -77,23 +80,26 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddLateUpdateObject
   pLVar5 = TypeInfo__UpdateController->static_fields->lateUpdateBuckets;
   if (pLVar5 != (List_1_PriorityDataLateUpdate___Array *)0x0) {
     if (pLVar5->max_length <= priority) goto code_?;
-    pLVar6 = pLVar5->vector[priority];
-    if (pLVar6 != (List_1_PriorityDataLateUpdate_ *)0x0) {
-      piVar7 = &(pLVar6->fields)._version;
-      *piVar7 = *piVar7 + 1;
-      pPVar8 = (pLVar6->fields)._items;
-      if (pPVar8 != (PriorityDataLateUpdate__Array *)0x0) {
-        uVar9 = (pLVar6->fields)._size;
-        if (pPVar8->max_length <= uVar9) {
-          (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)(pLVar6,CONCAT44(UStack_2,pIStack_1),iStack_3,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
+    this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLVar5->vector[priority];
+    if (this != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+      piVar6 = &(this->fields)._version;
+      *piVar6 = *piVar6 + 1;
+      pVVar7 = (this->fields)._items;
+      if (pVVar7 != (VisualTreeAsset_UsingEntry__Array *)0x0) {
+        uVar8 = (this->fields)._size;
+        if (pVVar7->max_length <= uVar8) {
+          item.path = (String *)UStack_2;
+          item.alias = (String *)pIStack_1;
+          item.asset = pVStack_3;
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__AddWithResize(this,item,pMVar4->klass->rgctx_data[0xe].method);
           return;
         }
-        (pLVar6->fields)._size = uVar9 + 1;
-        if (uVar9 < pPVar8->max_length) {
-          pPVar8->vector[uVar9].obj = pIStack_1;
-          pPVar8->vector[uVar9].priority = UStack_2;
-          pPVar8->vector[uVar9].condition = iStack_3;
-          func_?(pPVar8->vector + uVar9,0);
+        (this->fields)._size = uVar8 + 1;
+        if (uVar8 < pVVar7->max_length) {
+          pVVar7->vector[uVar8].alias = (String *)pIStack_1;
+          pVVar7->vector[uVar8].path = (String *)UStack_2;
+          pVVar7->vector[uVar8].asset = pVStack_3;
+          func_?(pVVar7->vector + uVar8,0);
           return;
         }
         goto code_?;
@@ -103,8 +109,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddLateUpdateObject
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -121,10 +127,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddUpdateObject(IUp
   }
   pIStack_1 = obj;
   UStack_2 = 0;
-  iStack_3 = 0;
+  pVStack_3 = (VisualTreeAsset *)0x0;
   func_?(&pIStack_1,obj);
   UStack_2 = priority;
-  iStack_3 = conditionInp;
+  pVStack_3 = (VisualTreeAsset *)conditionInp;
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
@@ -132,23 +138,26 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddUpdateObject(IUp
   pLVar5 = TypeInfo__UpdateController->static_fields->updateBuckets;
   if (pLVar5 != (List_1_PriorityDataUpdate___Array *)0x0) {
     if (pLVar5->max_length <= priority) goto code_?;
-    pLVar6 = pLVar5->vector[priority];
-    if (pLVar6 != (List_1_PriorityDataUpdate_ *)0x0) {
-      piVar7 = &(pLVar6->fields)._version;
-      *piVar7 = *piVar7 + 1;
-      pPVar8 = (pLVar6->fields)._items;
-      if (pPVar8 != (PriorityDataUpdate__Array *)0x0) {
-        uVar9 = (pLVar6->fields)._size;
-        if (pPVar8->max_length <= uVar9) {
-          (*(pMVar4->klass->rgctx_data[0xb].method)->virtualMethodPointer)(pLVar6,CONCAT44(UStack_2,pIStack_1),iStack_3,pMVar4->klass->rgctx_data[0xb].rgctxDataDummy);
+    this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLVar5->vector[priority];
+    if (this != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+      piVar6 = &(this->fields)._version;
+      *piVar6 = *piVar6 + 1;
+      pVVar7 = (this->fields)._items;
+      if (pVVar7 != (VisualTreeAsset_UsingEntry__Array *)0x0) {
+        uVar8 = (this->fields)._size;
+        if (pVVar7->max_length <= uVar8) {
+          item.path = (String *)UStack_2;
+          item.alias = (String *)pIStack_1;
+          item.asset = pVStack_3;
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__AddWithResize(this,item,pMVar4->klass->rgctx_data[0xe].method);
           return;
         }
-        (pLVar6->fields)._size = uVar9 + 1;
-        if (uVar9 < pPVar8->max_length) {
-          pPVar8->vector[uVar9].obj = pIStack_1;
-          pPVar8->vector[uVar9].priority = UStack_2;
-          pPVar8->vector[uVar9].condition = iStack_3;
-          func_?(&pPVar8->vector[uVar9].obj,0);
+        (this->fields)._size = uVar8 + 1;
+        if (uVar8 < pVVar7->max_length) {
+          pVVar7->vector[uVar8].alias = (String *)pIStack_1;
+          pVVar7->vector[uVar8].path = (String *)UStack_2;
+          pVVar7->vector[uVar8].asset = pVStack_3;
+          func_?(pVVar7->vector + uVar8,0);
           return;
         }
         goto code_?;
@@ -158,8 +167,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_AddUpdateObject(IUp
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -342,8 +351,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_FixedUpdateList(int
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pUVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item(&UStack_10,(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__get_Item_int_);
-      if (0 < (int)(state & (uint)pUVar9->m_WaitHandle)) {
+      pVVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_10,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__get_Item_int_);
+      if (0 < (int)(state & (uint)pVVar9->asset)) {
         uStack_1 = 0;
         piVar11 = (int *)func_?();
         if (*piVar11 == 0) break;
@@ -473,8 +482,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_LateUpdateList(int3
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pUVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item(&UStack_10,(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__get_Item_int_);
-      if (0 < (int)(state & (uint)pUVar9->m_WaitHandle)) {
+      pVVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_10,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__get_Item_int_);
+      if (0 < (int)(state & (uint)pVVar9->asset)) {
         uStack_1 = 0;
         piVar11 = (int *)func_?();
         if (*piVar11 == 0) break;
@@ -508,9 +517,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveFixedUpdateOb
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UpdateController____c__DisplayClass7_0);
+  method_00 = TypeInfo__UpdateController____c__DisplayClass7_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)obj;
     func_?(value + 1,obj);
     iVar1 = 0x10;
@@ -530,17 +540,16 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveFixedUpdateOb
       pLVar3 = TypeInfo__UpdateController->static_fields->fixedUpdateBuckets;
       if (pLVar3 == (List_1_PriorityDataFixedUpdate___Array *)0x0) goto code_?;
       if (pLVar3->max_length <= uVar2) break;
-      this = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ **)((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Predicate<PriorityDataFixedUpdate>);
-        if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-        mscorlib.dll::System::Predicate`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass7_0___RemoveFixedUpdateObject_b__0_PriorityDataFixedUpdate_,(MethodInfo *)0x0);
+      this = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)((int)pLVar3->vector + iVar1 + -0x10);
+      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
+      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?(TypeInfo__System__Predicate<PriorityDataFixedUpdate>);
+        mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass7_0___RemoveFixedUpdateObject_b__0_PriorityDataFixedUpdate_,(MethodInfo *)0x0);
         value[1].monitor = (MonitorData *)this_00;
         func_?(&value[1].monitor,this_00);
       }
-      if (this == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__RemoveAll_System__Predicate<PriorityDataFixedUpdate>_);
+      if (this == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__RemoveAll_System__Predicate<PriorityDataFixedUpdate>_);
       uVar2 = uVar2 + 1;
       iVar1 = iVar1 + 4;
     }
@@ -567,9 +576,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveLateUpdateObj
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UpdateController____c__DisplayClass8_0);
+  method_00 = TypeInfo__UpdateController____c__DisplayClass8_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)obj;
     func_?(value + 1,obj);
     iVar1 = 0x10;
@@ -589,17 +599,16 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveLateUpdateObj
       pLVar3 = TypeInfo__UpdateController->static_fields->lateUpdateBuckets;
       if (pLVar3 == (List_1_PriorityDataLateUpdate___Array *)0x0) goto code_?;
       if (pLVar3->max_length <= uVar2) break;
-      this = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ **)((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Predicate<PriorityDataLateUpdate>);
-        if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-        mscorlib.dll::System::Predicate`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass8_0___RemoveLateUpdateObject_b__0_PriorityDataLateUpdate_,(MethodInfo *)0x0);
+      this = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)((int)pLVar3->vector + iVar1 + -0x10);
+      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
+      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?(TypeInfo__System__Predicate<PriorityDataLateUpdate>);
+        mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass8_0___RemoveLateUpdateObject_b__0_PriorityDataLateUpdate_,(MethodInfo *)0x0);
         value[1].monitor = (MonitorData *)this_00;
         func_?(&value[1].monitor,this_00);
       }
-      if (this == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__RemoveAll_System__Predicate<PriorityDataLateUpdate>_);
+      if (this == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__RemoveAll_System__Predicate<PriorityDataLateUpdate>_);
       uVar2 = uVar2 + 1;
       iVar1 = iVar1 + 4;
     }
@@ -626,9 +635,10 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveUpdateObject(
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)obj;
     func_?(value + 1,obj);
     iVar1 = 0x10;
@@ -648,17 +658,16 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_RemoveUpdateObject(
       pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
       if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
       if (pLVar3->max_length <= uVar2) break;
-      this = *(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ **)((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
-        if (this_00 == (Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-        mscorlib.dll::System::Predicate`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::Predicate_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_,(MethodInfo *)0x0);
+      this = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)((int)pLVar3->vector + iVar1 + -0x10);
+      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
+      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor(this_00,value,MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_,(MethodInfo *)0x0);
         value[1].monitor = (MonitorData *)this_00;
         func_?(&value[1].monitor,this_00);
       }
-      if (this == (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_);
+      if (this == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll(this,this_00,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_);
       uVar2 = uVar2 + 1;
       iVar1 = iVar1 + 4;
     }
@@ -743,9 +752,9 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_UpdateList(int32_t 
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pUVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__get_Item(&UStack_10,(List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__get_Item_int_);
-      uStack_11._0_4_ = pUVar9->m_DelagateCallback;
-      uStack_11._4_4_ = pUVar9->m_DelagateState;
+      pVVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_10,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)priorityDatas,iStack_7,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__get_Item_int_);
+      uStack_11._0_4_ = pVVar9->alias;
+      uStack_11._4_4_ = pVVar9->path;
       if ((undefined4)uStack_11 != 0) {
         apMStack_12[0] = MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__get_Item_int_;
         iVar13 = func_?();
@@ -791,7 +800,8 @@ void Assembly-CSharp.dll::UpdateController::UpdateController__cctor(MethodInfo *
   }
   pLVar1 = (List_1_PriorityDataUpdate___Array *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>,5);
   pLVar2 = (List_1_PriorityDataUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>);
-  if (pLVar2 == (List_1_PriorityDataUpdate_ *)0x0) {
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
+  if (pLVar1 == (List_1_PriorityDataUpdate___Array *)0x0) {
 code_?:
     func_?();
 code_?:
@@ -838,42 +848,56 @@ code_?:
     func_?(uVar3);
   }
   else {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
-    if (pLVar1 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-    iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    if (pLVar2 != (List_1_PriorityDataUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar1->max_length == 0) goto code_?;
     pLVar1->vector[0] = pLVar2;
     func_?(pLVar1->vector,pLVar2);
     pLVar2 = (List_1_PriorityDataUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>);
-    if (pLVar2 == (List_1_PriorityDataUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
-    iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
+    if (pLVar2 != (List_1_PriorityDataUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar1->max_length < 2) goto code_?;
     pLVar1->vector[1] = pLVar2;
     func_?(pLVar1->vector + 1,pLVar2);
     pLVar2 = (List_1_PriorityDataUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>);
-    if (pLVar2 == (List_1_PriorityDataUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
-    iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
+    if (pLVar2 != (List_1_PriorityDataUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar1->max_length < 3) goto code_?;
     pLVar1->vector[2] = pLVar2;
     func_?(pLVar1->vector + 2,pLVar2);
     pLVar2 = (List_1_PriorityDataUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>);
-    if (pLVar2 == (List_1_PriorityDataUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
-    iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
+    if (pLVar2 != (List_1_PriorityDataUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar1->max_length < 4) goto code_?;
     pLVar1->vector[3] = pLVar2;
     func_?(pLVar1->vector + 3,pLVar2);
     pLVar2 = (List_1_PriorityDataUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataUpdate>);
-    if (pLVar2 == (List_1_PriorityDataUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
-    iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__List__);
+    if (pLVar2 != (List_1_PriorityDataUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar2,(pLVar1->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar1->max_length < 5) goto code_?;
     pLVar1->vector[4] = pLVar2;
     func_?(pLVar1->vector + 4,pLVar2);
@@ -881,43 +905,58 @@ code_?:
     func_?(TypeInfo__UpdateController->static_fields,pLVar1);
     pLVar5 = (List_1_PriorityDataFixedUpdate___Array *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>,5);
     pLVar6 = (List_1_PriorityDataFixedUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>);
-    if (pLVar6 == (List_1_PriorityDataFixedUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
     if (pLVar5 == (List_1_PriorityDataFixedUpdate___Array *)0x0) goto code_?;
-    iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar5->max_length == 0) goto code_?;
     pLVar5->vector[0] = pLVar6;
     func_?(pLVar5->vector,pLVar6);
     pLVar6 = (List_1_PriorityDataFixedUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>);
-    if (pLVar6 == (List_1_PriorityDataFixedUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
-    iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
+    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar5->max_length < 2) goto code_?;
     pLVar5->vector[1] = pLVar6;
     func_?(pLVar5->vector + 1,pLVar6);
     pLVar6 = (List_1_PriorityDataFixedUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>);
-    if (pLVar6 == (List_1_PriorityDataFixedUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
-    iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
+    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar5->max_length < 3) goto code_?;
     pLVar5->vector[2] = pLVar6;
     func_?(pLVar5->vector + 2,pLVar6);
     pLVar6 = (List_1_PriorityDataFixedUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>);
-    if (pLVar6 == (List_1_PriorityDataFixedUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
-    iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
+    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar5->max_length < 4) goto code_?;
     pLVar5->vector[3] = pLVar6;
     func_?(pLVar5->vector + 3,pLVar6);
     pLVar6 = (List_1_PriorityDataFixedUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>);
-    if (pLVar6 == (List_1_PriorityDataFixedUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
-    iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,MethodInfo__System__Collections__Generic__List<PriorityDataFixedUpdate>__List__);
+    if (pLVar6 != (List_1_PriorityDataFixedUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar6,(pLVar5->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar5->max_length < 5) goto code_?;
     pLVar5->vector[4] = pLVar6;
     func_?(pLVar5->vector + 4,pLVar6);
@@ -925,43 +964,54 @@ code_?:
     func_?(&TypeInfo__UpdateController->static_fields->fixedUpdateBuckets,pLVar5);
     pLVar7 = (List_1_PriorityDataLateUpdate___Array *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>,5);
     pLVar8 = (List_1_PriorityDataLateUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>);
-    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
     if (pLVar7 == (List_1_PriorityDataLateUpdate___Array *)0x0) goto code_?;
-    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    if (pLVar8 != (List_1_PriorityDataLateUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar7->max_length == 0) goto code_?;
     pLVar7->vector[0] = pLVar8;
     func_?(pLVar7->vector,pLVar8);
     pLVar8 = (List_1_PriorityDataLateUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>);
-    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
-    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
+    if (pLVar8 != (List_1_PriorityDataLateUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar7->max_length < 2) goto code_?;
     pLVar7->vector[1] = pLVar8;
     func_?(pLVar7->vector + 1,pLVar8);
     pLVar8 = (List_1_PriorityDataLateUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>);
-    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
-    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
+    if (pLVar8 != (List_1_PriorityDataLateUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar7->max_length < 3) goto code_?;
     pLVar7->vector[2] = pLVar8;
     func_?(pLVar7->vector + 2,pLVar8);
     pLVar8 = (List_1_PriorityDataLateUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>);
-    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
-    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
-    if (iVar4 == 0) goto code_?;
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
+    if (pLVar8 != (List_1_PriorityDataLateUpdate_ *)0x0) {
+      iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
+      if (iVar4 != 0) goto code_?;
+      goto code_?;
+    }
+code_?:
     if (pLVar7->max_length < 4) goto code_?;
     pLVar7->vector[3] = pLVar8;
     func_?(pLVar7->vector + 3,pLVar8);
     pLVar8 = (List_1_PriorityDataLateUpdate_ *)func_?(TypeInfo__System__Collections__Generic__List<PriorityDataLateUpdate>);
-    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
-    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
-    if (iVar4 != 0) {
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__List__);
+    if (pLVar8 == (List_1_PriorityDataLateUpdate_ *)0x0) {
+code_?:
       if (4 < pLVar7->max_length) {
         pLVar7->vector[4] = pLVar8;
         func_?(pLVar7->vector + 4,pLVar8);
@@ -971,6 +1021,8 @@ code_?:
       }
       goto code_?;
     }
+    iVar4 = func_?(pLVar8,(pLVar7->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
   }
   uVar3 = func_?(0);
   func_?(uVar3);

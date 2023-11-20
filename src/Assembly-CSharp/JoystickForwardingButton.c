@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnD
   if ((ABS(0.0 - fVar1) < fVar6) || ((this->fields).isDragging != 0)) {
     pJVar7 = (this->fields).joystickBase;
     if (pJVar7 != (JoystickBase *)0x0) {
-      (*(pJVar7->klass->vtable).__unknown.methodPtr)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown.method);
+      (*(code *)(pJVar7->klass->vtable).__unknown.method)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown_1.methodPtr);
       return;
     }
   }
@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnD
       pJVar7 = (this->fields).joystickBase;
       (this->fields).isDragging = 1;
       if (pJVar7 == (JoystickBase *)0x0) goto code_?;
-      (*(pJVar7->klass->vtable).__unknown_1.methodPtr)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown_1.method);
+      (*(code *)(pJVar7->klass->vtable).__unknown_1.method)(pJVar7,eventData,(pJVar7->klass->vtable).__unknown_2.methodPtr);
     }
     return;
   }
@@ -75,7 +75,7 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnP
   if (ABS(0.0 - fVar1) < fVar5) {
     pJVar6 = (this->fields).joystickBase;
     if (pJVar6 != (JoystickBase *)0x0) {
-      (*(pJVar6->klass->vtable).__unknown_1.methodPtr)(pJVar6,eventData,(pJVar6->klass->vtable).__unknown_1.method);
+      (*(code *)(pJVar6->klass->vtable).__unknown_1.method)(pJVar6,eventData,(pJVar6->klass->vtable).__unknown_2.methodPtr);
       return;
     }
   }
@@ -99,7 +99,7 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnP
 {
   pJVar1 = (this->fields).joystickBase;
   if (pJVar1 != (JoystickBase *)0x0) {
-    (*(pJVar1->klass->vtable).__unknown_2.methodPtr)(pJVar1,eventData,(pJVar1->klass->vtable).__unknown_2.method);
+    (*(code *)(pJVar1->klass->vtable).__unknown_2.method)(pJVar1,eventData,pJVar1->klass[1]._0.image);
     (this->fields).isDragging = 0;
     return;
   }

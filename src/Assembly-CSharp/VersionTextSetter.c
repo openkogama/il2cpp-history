@@ -17,9 +17,9 @@ void Assembly-CSharp.dll::VersionTextSetter::VersionTextSetter_SetText(VersionTe
       str2 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionStringNoBuild(pKVar2,(MethodInfo *)0x0);
       pSStack3 = mscorlib.dll::System::String::String_Concat_4(str0,StringLiteral_u000Av__,str2,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        pMStack4 = (pTVar1->klass->vtable).set_text.method;
+        pIStack4 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
         pTStack5 = pTVar1;
-        (*(pTVar1->klass->vtable).set_text.methodPtr)();
+        (*(code *)(pTVar1->klass->vtable).set_text.method)();
         return;
       }
     }

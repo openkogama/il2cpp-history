@@ -14,17 +14,17 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Destroy(GrowthModifier 
   if ((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)) {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(pMVar2->klass->vtable).set_Scale.methodPtr)(pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method);
+    (*(code *)(pMVar2->klass->vtable).set_Scale.method)(pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).get_WorldPosition.methodPtr);
     pAVar1 = (this->fields)._._.owner;
     if (pAVar1 != (Avatar *)0x0) {
       pMVar2 = (pAVar1->fields).mvAvatar;
       if (pMVar2 != (MVAvatar *)0x0) {
-        if (((TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth <= (pMVar2->klass->_1).typeHierarchyDepth) && ((MVAvatarLocal__Class *)(pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).typeHierarchyDepth - 1] == TypeInfo__MVAvatarLocal)) {
+        if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) && ((MVAvatarLocal__Class *)(pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)) {
           this_00 = (Component *)pMVar2[1].fields._._._.groupId;
           if (this_00 != (Component *)0x0) {
             pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1(this_00,AvatarMotor_MethodInfo__UnityEngine__Component__GetComponent<AvatarMotor>__);
-            if ((pOVar4 != (Object *)0x0) && (pOVar4[0xe].klass != (Object__Class *)0x0)) {
-              SizeState::SizeState_ScaleChanged((SizeState *)pOVar4[0xe].klass,(MethodInfo *)0x0);
+            if ((pOVar4 != (Object *)0x0) && ((SizeState *)pOVar4[0xe].monitor != (SizeState *)0x0)) {
+              SizeState::SizeState_ScaleChanged((SizeState *)pOVar4[0xe].monitor,(MethodInfo *)0x0);
               goto code_?;
             }
           }
@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_OnDisable(GrowthModifie
       fVar5 = (this->fields)._.sizeModifier;
       pMVar6 = (pAVar1->fields).mvAvatar;
       if (pMVar6 != (MVAvatar *)0x0) {
-        (*(pMVar6->klass->vtable).set_Scale.methodPtr)(pMVar6,(float)uVar3 * fVar5,(float)uVar4 * fVar5,(this->fields)._.defaultScale.z * fVar5,(pMVar6->klass->vtable).set_Scale.method);
+        (*(code *)(pMVar6->klass->vtable).set_Scale.method)(pMVar6,(float)uVar3 * fVar5,(float)uVar4 * fVar5,(this->fields)._.defaultScale.z * fVar5,(pMVar6->klass->vtable).get_WorldPosition.methodPtr);
         return;
       }
     }
@@ -82,7 +82,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_OnDisable(GrowthModifie
   else if ((pAVar1 != (Avatar *)0x0) && (pMVar6 = (pAVar1->fields).mvAvatar, pMVar6 != (MVAvatar *)0x0)) {
     uVar7 = (this->fields)._.defaultScale.x;
     uVar8 = (this->fields)._.defaultScale.y;
-    (*(pMVar6->klass->vtable).set_Scale.methodPtr)(pMVar6,uVar7,uVar8,(this->fields)._.defaultScale.z,(pMVar6->klass->vtable).set_Scale.method);
+    (*(code *)(pMVar6->klass->vtable).set_Scale.method)(pMVar6,uVar7,uVar8,(this->fields)._.defaultScale.z,(pMVar6->klass->vtable).get_WorldPosition.methodPtr);
     GrowthModifier_Destroy(this,(MethodInfo *)0x0);
     return;
   }
@@ -107,7 +107,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Scale(GrowthModifier *t
   if ((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)) {
     uVar3._0_4_ = (this->fields)._.defaultScale.x;
     uVar3._4_4_ = (this->fields)._.defaultScale.y;
-    (*(pMVar2->klass->vtable).set_Scale.methodPtr)(pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).set_Scale.method);
+    (*(code *)(pMVar2->klass->vtable).set_Scale.method)(pMVar2,uVar3,(this->fields)._.defaultScale.z,(pMVar2->klass->vtable).get_WorldPosition.methodPtr);
     pAVar1 = (this->fields)._._.owner;
     if (pAVar1 != (Avatar *)0x0) {
       pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar1,(MethodInfo *)0x0);
@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Scale(GrowthModifier *t
             fVar8 = (this->fields)._.sizeModifier;
             pMVar2 = (pAVar1->fields).mvAvatar;
             if (pMVar2 != (MVAvatar *)0x0) {
-              (*(pMVar2->klass->vtable).set_Scale.methodPtr)(pMVar2,CONCAT44((float)uVar7 * fVar8,(float)uVar6 * fVar8),(this->fields)._.defaultScale.z * fVar8,(pMVar2->klass->vtable).set_Scale.method);
+              (*(code *)(pMVar2->klass->vtable).set_Scale.method)(pMVar2,CONCAT44((float)uVar7 * fVar8,(float)uVar6 * fVar8),(this->fields)._.defaultScale.z * fVar8,(pMVar2->klass->vtable).get_WorldPosition.methodPtr);
               return;
             }
           }
@@ -139,12 +139,28 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Scale(GrowthModifier *t
               }
               fVar8 = (this->fields)._.timeToSize;
               body = (SizeModifier_ActionDelegate *)func_?(TypeInfo__SizeModifier__ActionDelegate);
-              if (body != (SizeModifier_ActionDelegate *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor((UnityAction_1_System_Single_ *)body,(Object *)this,MethodInfo__GrowthModifier___Scale_b__2_0_float_,(MethodInfo *)0x0);
-                routine = SizeModifier::SizeModifier_DoForSeconds((SizeModifier *)this,fVar8,body,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-                return;
+              pMVar10 = MethodInfo__GrowthModifier___Scale_b__2_0_float_;
+              (body->fields)._._.method_ptr = MethodInfo__GrowthModifier___Scale_b__2_0_float_->virtualMethodPointer;
+              ppOVar11 = &(body->fields)._._.m_target;
+              (body->fields)._._.method = pMVar10;
+              (body->fields)._._.m_target = (Object *)this;
+              pGVar12 = this;
+              func_?();
+              uVar13 = pMVar10->parameters_count;
+              (body->fields)._._.method_code = body;
+              cVar14 = func_?(pMVar10,ppOVar11,pGVar12);
+              if ((cVar14 == '\0') || (uVar13 != 1)) {
+                (body->fields)._._.method_code = (body->fields)._._.m_target;
+                puVar15 = (body->fields)._._.method_ptr;
               }
+              else {
+                puVar15 = &UNK_?;
+              }
+              (body->fields)._._.invoke_impl = puVar15;
+              (body->fields)._._.extra_arg = &UNK_?;
+              routine = SizeModifier::SizeModifier_DoForSeconds((SizeModifier *)this,fVar8,body,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -153,8 +169,8 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_Scale(GrowthModifier *t
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -176,7 +192,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_UnScale(GrowthModifier 
     fVar4 = (this->fields)._.sizeModifier;
     pMVar5 = (pAVar1->fields).mvAvatar;
     if (pMVar5 != (MVAvatar *)0x0) {
-      (*(pMVar5->klass->vtable).set_Scale.methodPtr)(pMVar5,CONCAT44((float)uVar3 * fVar4,(float)uVar2 * fVar4),(this->fields)._.defaultScale.z * fVar4,(pMVar5->klass->vtable).set_Scale.method);
+      (*(code *)(pMVar5->klass->vtable).set_Scale.method)(pMVar5,CONCAT44((float)uVar3 * fVar4,(float)uVar2 * fVar4),(this->fields)._.defaultScale.z * fVar4,(pMVar5->klass->vtable).get_WorldPosition.methodPtr);
       pAVar1 = (this->fields)._._.owner;
       if (pAVar1 != (Avatar *)0x0) {
         pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pAVar1,(MethodInfo *)0x0);
@@ -198,12 +214,28 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_UnScale(GrowthModifier 
               }
               fVar4 = (this->fields)._.timeToSize;
               body = (SizeModifier_ActionDelegate *)func_?(TypeInfo__SizeModifier__ActionDelegate);
-              if (body != (SizeModifier_ActionDelegate *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::UnityAction_1_System_Single___ctor((UnityAction_1_System_Single_ *)body,(Object *)this,MethodInfo__GrowthModifier___UnScale_b__3_0_float_,(MethodInfo *)0x0);
-                routine = SizeModifier::SizeModifier_DoForSeconds((SizeModifier *)this,fVar4,body,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
-                return;
+              pMVar9 = MethodInfo__GrowthModifier___UnScale_b__3_0_float_;
+              (body->fields)._._.method_ptr = MethodInfo__GrowthModifier___UnScale_b__3_0_float_->virtualMethodPointer;
+              ppOVar10 = &(body->fields)._._.m_target;
+              (body->fields)._._.method = pMVar9;
+              (body->fields)._._.m_target = (Object *)this;
+              pGVar11 = this;
+              func_?();
+              uVar12 = pMVar9->parameters_count;
+              (body->fields)._._.method_code = body;
+              cVar13 = func_?(pMVar9,ppOVar10,pGVar11);
+              if ((cVar13 == '\0') || (uVar12 != 1)) {
+                (body->fields)._._.method_code = (body->fields)._._.m_target;
+                puVar14 = (body->fields)._._.method_ptr;
               }
+              else {
+                puVar14 = &UNK_?;
+              }
+              (body->fields)._._.invoke_impl = puVar14;
+              (body->fields)._._.extra_arg = &UNK_?;
+              routine = SizeModifier::SizeModifier_DoForSeconds((SizeModifier *)this,fVar4,body,(MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -212,8 +244,8 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier_UnScale(GrowthModifier 
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -247,7 +279,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier__Scale_b__2_0(GrowthMod
     fVar12 = 1.0 - (float)dVar11;
     uStack_13 = CONCAT44((float)uVar10 * 0.25 * fVar12 + (float)uVar3 * fVar8,(float)uVar9 * 0.25 * fVar12 + (float)uVar2 * fVar8);
     if (pMVar4 != (MVAvatar *)0x0) {
-      (*(pMVar4->klass->vtable).set_Scale.methodPtr)(pMVar4,uStack_13,fVar6 * 0.25 * fVar12 + fVar5 * fVar8,(pMVar4->klass->vtable).set_Scale.method);
+      (*(code *)(pMVar4->klass->vtable).set_Scale.method)(pMVar4,uStack_13,fVar6 * 0.25 * fVar12 + fVar5 * fVar8,(pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       if (t != (this->fields)._.timeToSize) {
         return;
       }
@@ -258,7 +290,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier__Scale_b__2_0(GrowthMod
         fVar6 = (this->fields)._.sizeModifier;
         pMVar4 = (pAVar1->fields).mvAvatar;
         if (pMVar4 != (MVAvatar *)0x0) {
-          (*(pMVar4->klass->vtable).set_Scale.methodPtr)(pMVar4,CONCAT44((float)uVar15 * fVar6,(float)uVar14 * fVar6),(this->fields)._.defaultScale.z * fVar6,(pMVar4->klass->vtable).set_Scale.method);
+          (*(code *)(pMVar4->klass->vtable).set_Scale.method)(pMVar4,CONCAT44((float)uVar15 * fVar6,(float)uVar14 * fVar6),(this->fields)._.defaultScale.z * fVar6,(pMVar4->klass->vtable).get_WorldPosition.methodPtr);
           return;
         }
       }
@@ -301,7 +333,7 @@ void Assembly-CSharp.dll::GrowthModifier::GrowthModifier__UnScale_b__3_0(GrowthM
     fVar7 = 1.0 - (float)dVar12;
     uStack_13 = CONCAT44((float)uVar11 * 0.25 * fVar7 + (float)uVar3 * fVar6,(float)uVar10 * 0.25 * fVar7 + (float)uVar2 * fVar6);
     if (pMVar4 != (MVAvatar *)0x0) {
-      (*(pMVar4->klass->vtable).set_Scale.methodPtr)(pMVar4,uStack_13,fVar9 * 0.25 * fVar7 + fVar5 * fVar6,(pMVar4->klass->vtable).set_Scale.method);
+      (*(code *)(pMVar4->klass->vtable).set_Scale.method)(pMVar4,uStack_13,fVar9 * 0.25 * fVar7 + fVar5 * fVar6,(pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       pAVar1 = (this->fields)._._.owner;
       if ((pAVar1 != (Avatar *)0x0) && (pMVar4 = (pAVar1->fields).mvAvatar, pMVar4 != (MVAvatar *)0x0)) {
         MVAvatar::MVAvatar_set_SetTransparency(pMVar4,1.0,(MethodInfo *)0x0);

@@ -1,4 +1,17 @@
 
+/* Void KillSelf() */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_KillSelf(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
+
+{
+  if ((this->fields).OnKillSelf != (Action *)0x0) {
+    pAVar1 = (this->fields).OnKillSelf;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void MoveBodyToSafeSpot(Int32) */
 
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_MoveBodyToSafeSpot(GameEventManager_AvatarCommandsPlayModeManager *this,int32_t index,MethodInfo *method)
@@ -38,6 +51,19 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 }
 
 
+/* Void SetIntermediateDebriefing(WinningConditionType) */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing(GameEventManager_AvatarCommandsPlayModeManager *this,WinningConditionType__Enum winningConditionType,MethodInfo *method)
+
+{
+  if ((this->fields).OnWinningConditionIntermediateDebriefing != (Action_1_WinningConditionType_ *)0x0) {
+    pAVar1 = (this->fields).OnWinningConditionIntermediateDebriefing;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,winningConditionType,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void SetToDeadMode() */
 
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SetToDeadMode(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
@@ -45,19 +71,6 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 {
   if ((this->fields).OnSetToDeadMode != (Action *)0x0) {
     pAVar1 = (this->fields).OnSetToDeadMode;
-    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
-  }
-  return;
-}
-
-
-/* Void SpawnAsGhost() */
-
-void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
-
-{
-  if ((this->fields).OnSpawnAsGhost != (Action *)0x0) {
-    pAVar1 = (this->fields).OnSpawnAsGhost;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;

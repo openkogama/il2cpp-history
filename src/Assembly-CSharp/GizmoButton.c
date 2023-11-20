@@ -15,7 +15,6 @@ void Assembly-CSharp.dll::GizmoButton::GizmoButton_OnPointerDown(GizmoButton *th
     if ((eventData->fields)._button_k__BackingField == 0) {
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IGizmoHandler>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__GizmoButton___OnPointerDown_b__1_0_IGizmoHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -24,7 +23,6 @@ void Assembly-CSharp.dll::GizmoButton::GizmoButton_OnPointerDown(GizmoButton *th
     }
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();

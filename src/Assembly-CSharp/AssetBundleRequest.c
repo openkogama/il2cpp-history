@@ -55,7 +55,7 @@ void Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest__ctor(AssetBund
   }
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields)._._.retryTime._dateData = DVar1._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._._.requestPriority = requestPriority;
   (this->fields)._._.path = path;
   func_?(&(this->fields)._._.path,path);

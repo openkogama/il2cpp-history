@@ -50,6 +50,28 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	private bool IsRoundEnded { get; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _PopThenLockCursor_b__30_0(IUIStack x, BaseEventData y);
+		internal void _CreateTeamMenu_b__37_0(IUIStack x, BaseEventData y);
+		internal void _CreateSpawnRoleSelectionMenu_b__38_0(IUIStack x, BaseEventData y);
+		internal void _CreateBriefing_b__39_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass26_0
 	{
@@ -78,28 +100,6 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
 		// Methods
 		internal void _RequestAdWithCallback_b__0(InterstitialAdResult result);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _PopThenLockCursor_b__30_0(IUIStack x, BaseEventData y);
-		internal void _CreateTeamMenu_b__37_0(IUIStack x, BaseEventData y);
-		internal void _CreateSpawnRoleSelectionMenu_b__38_0(IUIStack x, BaseEventData y);
-		internal void _CreateBriefing_b__39_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

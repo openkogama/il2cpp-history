@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig+JSONDomainObject::EmbeddedPlayerC
   (this->fields).domain = ::StringLiteral__;
   method_00 = (MethodInfo *)&this->fields;
   func_?(method_00,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

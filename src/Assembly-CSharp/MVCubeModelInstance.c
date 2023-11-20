@@ -11,48 +11,45 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_AddPreviewBox
     func_?(&StringLiteral_PreviewBox);
     cRam_? = '\x01';
   }
-  KStack_1.key._options = 0;
-  KStack_1.key._cultureKey = (String *)0x0;
-  KStack_1.key._pattern = (String *)0x0;
-  KStack_1.value = (Object *)0x0;
-  uStack_2 = 0;
-  pGVar3 = (this->fields)._._.gameObject;
-  if (pGVar3 != (GameObject *)0x0) {
-    this_00 = (PreviewBox *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar3,PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__);
+  pGVar1 = (this->fields)._._.gameObject;
+  if (pGVar1 != (GameObject *)0x0) {
+    this_00 = (PreviewBox *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1(pGVar1,PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar3 = MVWorldObjectClient::MVWorldObjectClient_CreateBox((MVWorldObjectClient *)this,StringLiteral_PreviewBox,1.005,(MethodInfo *)0x0);
-      if (pGVar3 == (GameObject *)0x0) goto code_?;
-      this_00 = (PreviewBox *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar3,PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__);
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pGVar1 = MVWorldObjectClient::MVWorldObjectClient_CreateBox((MVWorldObjectClient *)this,StringLiteral_PreviewBox,1.005,(MethodInfo *)0x0);
+      if (pGVar1 == (GameObject *)0x0) goto code_?;
+      this_00 = (PreviewBox *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__);
     }
-    pBVar5 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_6,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-    KStack_1.key._options = (int32_t)(pBVar5->m_Center).x;
-    KStack_1.key._cultureKey = (String *)(pBVar5->m_Center).y;
-    KStack_1.key._pattern = (String *)(pBVar5->m_Center).z;
-    KStack_1.value = (Object *)(pBVar5->m_Extents).x;
-    uStack_2._0_4_ = (pBVar5->m_Extents).y;
-    uStack_2._4_4_ = (pBVar5->m_Extents).z;
+    pBVar3 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_4,(MVCubeModelBase *)this,(MethodInfo *)0x0);
+    fStack_5 = (pBVar3->m_Center).x;
+    fStack_6 = (pBVar3->m_Center).y;
+    fStack_7 = (pBVar3->m_Center).z;
+    fStack_8 = (pBVar3->m_Extents).x;
+    uStack_9._0_4_ = (pBVar3->m_Extents).y;
+    uStack_9._4_4_ = (pBVar3->m_Extents).z;
     if (this_00 != (PreviewBox *)0x0) {
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-      pRVar7 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key((Regex_CachedCodeEntryKey *)&BStack_6.m_Extents,&KStack_1,(MethodInfo *)0x0);
       if (this_01 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(this_01,(Vector3)*pRVar7,(MethodInfo *)0x0);
+        value.y = fStack_6;
+        value.x = fStack_5;
+        value.z = fStack_7;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(this_01,value,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar8 != (PrefabPool *)0x0) {
-          material = (pPVar8->fields).previewBoxMaterial;
-          bounds.m_Center.y = (float)KStack_1.key._cultureKey;
-          bounds.m_Center.x = (float)KStack_1.key._options;
-          bounds.m_Center.z = (float)KStack_1.key._pattern;
-          bounds.m_Extents.x = (float)KStack_1.value;
-          bounds.m_Extents.y = (float)(int)uStack_2;
-          bounds.m_Extents.z = (float)((ulonglong)uStack_2 >> 0x20);
+        pPVar10 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar10 != (PrefabPool *)0x0) {
+          material = (pPVar10->fields).previewBoxMaterial;
+          bounds.m_Center.y = fStack_6;
+          bounds.m_Center.x = fStack_5;
+          bounds.m_Center.z = fStack_7;
+          bounds.m_Extents.x = fStack_8;
+          bounds.m_Extents.y = (float)(int)uStack_9;
+          bounds.m_Extents.z = (float)((ulonglong)uStack_9 >> 0x20);
           corners = MVCubeModelInstance_GetCorners(this,bounds,(MethodInfo *)0x0);
           PreviewBox::PreviewBox_Show(this_00,material,corners,(MethodInfo *)0x0);
           return;
@@ -62,8 +59,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_AddPreviewBox
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -82,7 +79,7 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_AddSelectionB
   }
   pGVar1 = (this->fields)._._.gameObject;
   if (pGVar1 != (GameObject *)0x0) {
-    this_00 = (SelectionBox *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__);
+    this_00 = (SelectionBox *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1(pGVar1,SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
@@ -92,31 +89,31 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_AddSelectionB
       if (pGVar1 == (GameObject *)0x0) goto code_?;
       this_00 = (SelectionBox *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,SelectionBox_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionBox>__);
     }
-    pBVar3 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_4,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-    fVar5 = (pBVar3->m_Center).x;
-    pSVar6 = (String *)(pBVar3->m_Center).y;
-    pSVar7 = (String *)(pBVar3->m_Center).z;
-    pOVar8 = (Object *)(pBVar3->m_Extents).x;
-    uVar9._0_4_ = (pBVar3->m_Extents).y;
-    uVar9._4_4_ = (pBVar3->m_Extents).z;
+    pBVar3 = MVCubeModelBase::MVCubeModelBase_GetBounds((Bounds *)&stack0xffffffcc,(MVCubeModelBase *)this,(MethodInfo *)0x0);
+    value = pBVar3->m_Center;
+    uVar4 = (pBVar3->m_Extents).z;
+    uVar5 = (pBVar3->m_Center).x;
+    uVar6 = (pBVar3->m_Center).y;
+    uVar7 = (pBVar3->m_Center).z;
+    bounds.m_Center.z = (float)uVar7;
+    bounds.m_Center.y = (float)uVar6;
+    bounds.m_Center.x = (float)uVar5;
+    uVar8 = (pBVar3->m_Extents).x;
+    uVar9 = (pBVar3->m_Extents).y;
+    bounds.m_Extents.y = (float)uVar9;
+    bounds.m_Extents.x = (float)uVar8;
     if (this_00 != (SelectionBox *)0x0) {
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-      pRVar10 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key((Regex_CachedCodeEntryKey *)&BStack_4.m_Extents,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&stack0xffffffcc,(MethodInfo *)0x0);
       if (this_01 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(this_01,(Vector3)*pRVar10,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(this_01,value,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar11 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar11 != (PrefabPool *)0x0) {
-          material = (pPVar11->fields).selectBoxMaterial;
-          bounds.m_Center.y = (float)pSVar6;
-          bounds.m_Center.x = fVar5;
-          bounds.m_Center.z = (float)pSVar7;
-          bounds.m_Extents.x = (float)pOVar8;
-          bounds.m_Extents.y = (float)(int)uVar9;
-          bounds.m_Extents.z = (float)((ulonglong)uVar9 >> 0x20);
+        pPVar10 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar10 != (PrefabPool *)0x0) {
+          material = (pPVar10->fields).selectBoxMaterial;
+          bounds.m_Extents.z = (float)uVar4;
           corners = MVCubeModelInstance_GetCorners(this,bounds,(MethodInfo *)0x0);
           SelectionBox::SelectionBox_FadeIn(this_00,0.2,material,corners,(MethodInfo *)0x0);
           return;
@@ -126,8 +123,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_AddSelectionB
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -171,7 +168,7 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Compare(MVCub
       return;
     }
     pMVar1 = TypeInfo__MVCubeModelInstance;
-    if (((wo->klass->_1).typeHierarchyDepth < (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth) || ((MVCubeModelInstance__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] != TypeInfo__MVCubeModelInstance)) goto code_?;
+    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment) || ((MVCubeModelInstance__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] != TypeInfo__MVCubeModelInstance)) goto code_?;
     this_00 = (this->fields)._.prototypeCubeModel;
     if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
       RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CompareGeometryDetailed(this_00,(RuntimePrototypeCubeModel *)wo[1].klass,visibleCubesOnly,matchingCubeCount,investigatedCubeCount,(MethodInfo *)0x0);
@@ -205,16 +202,16 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
     *insertedByProfileId = (pRVar1->fields)._AuthorProfileID_k__BackingField;
     if (koGaMaPackageClient != (KoGaMaPackageClient *)0x0) {
       this_00 = (koGaMaPackageClient->fields).prototypes;
-      if ((wo != (MVWorldObjectClient *)0x0) && (this_01 = (wo->fields)._.data, this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_protoTypeID,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+      if ((wo != (MVWorldObjectClient *)0x0) && (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(wo->fields)._.data, this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_01,(Object *)StringLiteral_protoTypeID,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         method_00 = MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_;
         if (this_00 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
           unaff_ESI = TypeInfo__System__Int32;
-          if (pOVar2 != (Object *)0x0) {
-            if ((pOVar2->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+          if (TVar2.m_Index != 0) {
+            if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
             unaff_ESI = (Int32__Class *)&UNK_?;
-            pIVar3 = (Int32Enum__Enum *)func_?(pOVar2);
-            rpcm = (RuntimePrototypeCubeModel *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar3,method_00);
+            piVar3 = (int32_t *)func_?(TVar2.m_Index);
+            rpcm = (RuntimePrototypeCubeModel *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,*piVar3,method_00);
             pRVar1 = (this->fields)._.prototypeCubeModel;
             if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
               bVar4 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CompareGeometry(pRVar1,rpcm,(MethodInfo *)0x0);
@@ -226,9 +223,9 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_CompareWithKo
     }
   }
   func_?();
-  pOVar2 = extraout_EDX;
+  TVar2.m_Index = extraout_EDX;
 code_?:
-  func_?(pOVar2,unaff_ESI);
+  func_?(TVar2.m_Index,unaff_ESI);
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
   return bVar4;
@@ -244,7 +241,7 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_DeSelect(MVCu
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (*(this->klass->vtable).RemoveSelectionBox.methodPtr)(this,(this->klass->vtable).RemoveSelectionBox.method);
+  (*(code *)(this->klass->vtable).RemoveSelectionBox.method)(this,(this->klass->vtable).RemovePreviewBox.methodPtr);
   pTVar1 = (this->fields).transformGizmo;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
@@ -270,64 +267,82 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_DeSelect(MVCu
 void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Destroy(MVCubeModelInstance *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__EventHandler<EditStateEventArgs>);
+    func_?(&MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_);
+    cRam_? = '\x01';
+  }
   pRVar1 = (this->fields)._.prototypeCubeModel;
-  if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
+  if (pRVar1 == (RuntimePrototypeCubeModel *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveReferenceFromAllChunks(pRVar1,(MethodInfo *)0x0);
     pRVar1 = (this->fields)._.prototypeCubeModel;
-    if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
-      RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveInstance(pRVar1,(this->fields)._._._.id,(MethodInfo *)0x0);
-      if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
-        CullingSubscriberBase::CullingSubscriberBase_Destroy((this->fields).cullingSubscriberBase,(MethodInfo *)0x0);
-        (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
-        func_?(&(this->fields).cullingSubscriberBase);
+    if (pRVar1 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
+    RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveInstance(pRVar1,(this->fields)._._._.id,(MethodInfo *)0x0);
+    if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+      CullingSubscriberBase::CullingSubscriberBase_Destroy((this->fields).cullingSubscriberBase,(MethodInfo *)0x0);
+      (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+      func_?(&(this->fields).cullingSubscriberBase,0);
+    }
+    unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+    pUVar2 = unaff_EDI;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(unaff_EDI,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__EventHandler<EditStateEventArgs>);
+      cRam_? = '\x01';
+    }
+    source_00 = (this->fields)._.BeingEditedChanged;
+    do {
+      unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source_00,(Delegate *)unaff_EDI,(MethodInfo *)0x0);
+      in_stack_3 = TypeInfo__System__EventHandler<EditStateEventArgs>;
+      if (unaff_EDI == (UnityAction_2_System_Object_System_Object_ *)0x0) {
+        iVar4 = 0;
       }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+      else {
+        iVar4 = func_?(unaff_EDI,TypeInfo__System__EventHandler<EditStateEventArgs>,TypeInfo__System__EventHandler<EditStateEventArgs>);
+        if (iVar4 == 0) goto code_?;
       }
-      MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-      pRVar1 = (this->fields)._.prototypeCubeModel;
-      if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
-        this_00 = (Action_1_Object_ *)func_?();
-        unaff_EBX = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0;
-        if (this_00 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,(this->klass->vtable).DirtyChunksRegeneratedHandler.method,(MethodInfo *)0x0);
-          this = (MVCubeModelInstance *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)this_00,(Delegate *)this_00,(MethodInfo *)0x0);
-          unaff_EBX = TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
-          if (this == (MVCubeModelInstance *)0x0) {
-            (pRVar1->fields).DirtyChunksRegenerated = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
-            pMStack2 = (MVCubeModelInstance *)&(pRVar1->fields).DirtyChunksRegenerated;
-            pAStack3 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)this;
-            func_?();
-            return;
-          }
-          pAStack3 = TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
-          pMStack2 = this;
-          pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)func_?();
-          if (pAVar4 != (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
-            (pRVar1->fields).DirtyChunksRegenerated = pAVar4;
-            unaff_EBX = TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
-            pAStack3 = TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
-            pMStack2 = this;
-            pAStack3 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)func_?();
-            if (pAStack3 != (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0) {
-              pMStack2 = (MVCubeModelInstance *)&(pRVar1->fields).DirtyChunksRegenerated;
-              func_?();
-              return;
-            }
-          }
-          goto code_?;
-        }
-      }
+      unaff_EDI = pUVar2;
+      pEVar5 = (EventHandler_1_EditStateEventArgs_ *)func_?(&(this->fields)._.BeingEditedChanged,iVar4,source_00);
+      bVar6 = pEVar5 != source_00;
+      source_00 = pEVar5;
+      pUVar2 = unaff_EDI;
+    } while (bVar6);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>);
+      cRam_? = '\x01';
+    }
+    MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
+    pRVar1 = (this->fields)._.prototypeCubeModel;
+    if (pRVar1 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
+    source = (pRVar1->fields).DirtyChunksRegenerated;
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (unaff_EDI == (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      (pRVar1->fields).DirtyChunksRegenerated = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
+      func_?();
+      return;
+    }
+    pvVar7 = (void *)func_?();
+    if (pvVar7 == (void *)0x0) goto code_?;
+    unaff_EDI[1].fields._._.method_ptr = pvVar7;
+    iVar4 = func_?();
+    if (iVar4 != 0) {
+      func_?();
+      return;
     }
   }
   func_?();
 code_?:
-  pMStack2 = this;
-  pAStack3 = unaff_EBX;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+code_?:
+  func_?(unaff_EDI,in_stack_3);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -344,68 +359,61 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_DrawTransform
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields)._._.gameObject;
-  uStack_2 = 0;
-  KStack_3.key._options = 0;
-  KStack_3.key._cultureKey = (String *)0x0;
-  KStack_3.key._pattern = (String *)0x0;
-  KStack_3.value = (Object *)0x0;
   if (pGVar1 == (GameObject *)0x0) goto code_?;
-  pTVar4 = (TransformGizmo *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)pGVar1,IngameController__MVEditor__TransformGizmo_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<IngameController::MVEditor::TransformGizmo>__);
-  (this->fields).transformGizmo = pTVar4;
-  func_?(&(this->fields).transformGizmo,pTVar4);
-  pTVar4 = (this->fields).transformGizmo;
+  pTVar2 = (TransformGizmo *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1(pGVar1,IngameController__MVEditor__TransformGizmo_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<IngameController::MVEditor::TransformGizmo>__);
+  (this->fields).transformGizmo = pTVar2;
+  func_?(&(this->fields).transformGizmo,pTVar2);
+  pTVar2 = (this->fields).transformGizmo;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar5 == 0) {
-    pTVar4 = (this->fields).transformGizmo;
-    if (pTVar4 == (TransformGizmo *)0x0) goto code_?;
-    IngameController::MVEditor::TransformGizmo::TransformGizmo_Activate(pTVar4,(MethodInfo *)0x0);
-    pBVar6 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_7,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-    KStack_3.key._options = (int32_t)(pBVar6->m_Center).x;
-    KStack_3.key._cultureKey = (String *)(pBVar6->m_Center).y;
-    KStack_3.key._pattern = (String *)(pBVar6->m_Center).z;
-    KStack_3.value = (Object *)(pBVar6->m_Extents).x;
-    uStack_2._0_4_ = (pBVar6->m_Extents).y;
-    uStack_2._4_4_ = (pBVar6->m_Extents).z;
-    pTVar4 = (this->fields).transformGizmo;
-    if (pTVar4 == (TransformGizmo *)0x0) goto code_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar4,(MethodInfo *)0x0);
-    this_00 = &KStack_3;
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    pTVar2 = (this->fields).transformGizmo;
+    if (pTVar2 == (TransformGizmo *)0x0) goto code_?;
+    IngameController::MVEditor::TransformGizmo::TransformGizmo_Activate(pTVar2,(MethodInfo *)0x0);
+    pBVar4 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_5,(MVCubeModelBase *)this,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar9 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar9 == (PrefabPool *)0x0) goto code_?;
-    pTVar4 = (pPVar9->fields).transformGizmo;
+    pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar6 == (PrefabPool *)0x0) goto code_?;
+    pTVar2 = (pPVar6->fields).transformGizmo;
     pGVar1 = (this->fields)._._.gameObject;
     if (pGVar1 == (GameObject *)0x0) goto code_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+    pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pTVar4 = (TransformGizmo *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5((Object *)pTVar4,pTVar8,IngameController__MVEditor__TransformGizmo_MethodInfo__UnityEngine__Object__Instantiate<IngameController::MVEditor::TransformGizmo>_IngameController__MVEditor__TransformGizmo__UnityEngine__Transform_);
-    (this->fields).transformGizmo = pTVar4;
-    func_?(&(this->fields).transformGizmo,pTVar4);
-    MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_7,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-    pTVar4 = (this->fields).transformGizmo;
-    if (pTVar4 == (TransformGizmo *)0x0) goto code_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar4,(MethodInfo *)0x0);
-    this_00 = (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&stack0xffffffb4;
+    pTVar2 = (TransformGizmo *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5((Object *)pTVar2,pTVar7,IngameController__MVEditor__TransformGizmo_MethodInfo__UnityEngine__Object__Instantiate<IngameController::MVEditor::TransformGizmo>_IngameController__MVEditor__TransformGizmo__UnityEngine__Transform_);
+    (this->fields).transformGizmo = pTVar2;
+    func_?(&(this->fields).transformGizmo,pTVar2);
+    pBVar4 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_5,(MVCubeModelBase *)this,(MethodInfo *)0x0);
   }
-  pRVar10 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key((Regex_CachedCodeEntryKey *)&BStack_7.m_Extents,this_00,(MethodInfo *)0x0);
-  if (pTVar8 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar8,(Vector3)*pRVar10,(MethodInfo *)0x0);
-    return;
+  fStack_8 = (pBVar4->m_Center).x;
+  fStack_9 = (pBVar4->m_Center).y;
+  fStack_10 = (pBVar4->m_Center).z;
+  fStack_11 = (pBVar4->m_Extents).x;
+  uStack_12._0_4_ = (pBVar4->m_Extents).y;
+  uStack_12._4_4_ = (pBVar4->m_Extents).z;
+  pTVar2 = (this->fields).transformGizmo;
+  if (pTVar2 != (TransformGizmo *)0x0) {
+    pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0);
+    if (pTVar7 != (Transform *)0x0) {
+      value.y = fStack_9;
+      value.x = fStack_8;
+      value.z = fStack_10;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar7,value,(MethodInfo *)0x0);
+      return;
+    }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -421,14 +429,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_EnableCulling
     cRam_? = '\x01';
   }
   this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
-  if (this_00 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
-    MVCubeModelInstance_SetupCulling(this,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
+  MVCubeModelInstance_SetupCulling(this,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -447,19 +449,44 @@ ChunkInstances_ChunkInstanceVariables * Assembly-CSharp.dll::MVCubeModelInstance
     this_00 = (pCVar1->fields).chunkInstances;
     if (this_00 != (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0) {
       pCVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__get_Item(&CStack_3,this_00,chunkPos,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Item_MV__WorldObject__IntVector_);
-      pBVar4 = pCVar2->collider;
-      pMVar5 = pCVar2->renderer;
-      pMVar6 = pCVar2->filter;
+      iVar4 = (pCVar2->guid)._b;
+      iVar5 = (pCVar2->guid)._c;
+      uVar6 = (pCVar2->guid)._d;
+      uVar7 = (pCVar2->guid)._e;
+      uVar8 = (pCVar2->guid)._f;
+      uVar9 = (pCVar2->guid)._g;
+      uVar10 = (pCVar2->guid)._h;
+      uVar11 = (pCVar2->guid)._i;
+      uVar12 = (pCVar2->guid)._j;
+      uVar13 = (pCVar2->guid)._k;
+      bVar14 = pCVar2->transparent;
+      uVar15 = *(undefined3 *)&pCVar2->field_0x21;
+      (__return_storage_ptr__->guid)._a = (pCVar2->guid)._a;
+      (__return_storage_ptr__->guid)._b = iVar4;
+      (__return_storage_ptr__->guid)._c = iVar5;
+      (__return_storage_ptr__->guid)._d = uVar6;
+      (__return_storage_ptr__->guid)._e = uVar7;
+      (__return_storage_ptr__->guid)._f = uVar8;
+      (__return_storage_ptr__->guid)._g = uVar9;
+      (__return_storage_ptr__->guid)._h = uVar10;
+      (__return_storage_ptr__->guid)._i = uVar11;
+      (__return_storage_ptr__->guid)._j = uVar12;
+      (__return_storage_ptr__->guid)._k = uVar13;
+      pBVar16 = pCVar2->collider;
+      pMVar17 = pCVar2->renderer;
+      pMVar18 = pCVar2->filter;
       __return_storage_ptr__->gameObject = pCVar2->gameObject;
-      __return_storage_ptr__->collider = pBVar4;
-      __return_storage_ptr__->renderer = pMVar5;
-      __return_storage_ptr__->filter = pMVar6;
+      __return_storage_ptr__->collider = pBVar16;
+      __return_storage_ptr__->renderer = pMVar17;
+      __return_storage_ptr__->filter = pMVar18;
+      __return_storage_ptr__->transparent = bVar14;
+      *(undefined3 *)&__return_storage_ptr__->field_0x21 = uVar15;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  pCVar2 = (ChunkInstances_ChunkInstanceVariables *)(*pcVar7)();
+  pcVar19 = (code *)swi(3);
+  pCVar2 = (ChunkInstances_ChunkInstanceVariables *)(*pcVar19)();
   return pCVar2;
 }
 
@@ -497,94 +524,64 @@ code_?:
   pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar6 = (pVVar5->oneVector).x;
   uVar7 = (pVVar5->oneVector).y;
-  fVar8 = (float)uVar6 * 0.5;
-  fVar9 = (float)uVar7 * 0.5;
-  fVar10 = (pVVar5->oneVector).z * 0.5;
-  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_min((Vector3 *)&puStack_12,&bounds,(MethodInfo *)0x0);
-  uVar13 = pVVar11->y;
-  fVar14 = (float)uVar13 + fVar9;
-  fVar15 = pVVar11->z + fVar10;
-  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max((Vector3 *)&puStack_12,&bounds,(MethodInfo *)0x0);
-  uVar16 = pVVar11->x;
-  uVar17 = pVVar11->y;
-  fVar18 = pVVar11->z;
-  fVar19 = (float)uVar16 + fVar8;
-  fVar20 = (float)uVar17 + fVar9;
+  fVar8 = (pVVar5->oneVector).z * 0.5;
+  fVar9 = (bounds.m_Center.z - bounds.m_Extents.z) + fVar8;
+  fVar10 = (bounds.m_Center.x - bounds.m_Extents.x) + (float)uVar6 * 0.5;
+  fVar11 = bounds.m_Extents.z + bounds.m_Center.z + fVar8;
+  fVar12 = bounds.m_Extents.y + bounds.m_Center.y + (float)uVar7 * 0.5;
   this_00 = (this->fields)._._.gameObject;
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      fVar21 = 0.0;
-      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&puStack_12,this_01,(MethodInfo *)0x0);
-      fVar4 = fVar4 / pVVar11->y;
-      vector.y = fVar14 / fVar4;
-      vector.x = fVar21 / fVar4;
-      vector.z = fVar15 / fVar4;
-      pVVar11 = MathFunctions::MathFunctions_TruncateVector((Vector3 *)&puStack_12,vector,5,(MethodInfo *)0x0);
-      uVar22 = (uint)pVVar11->x;
-      fVar14 = pVVar11->z;
-      vector_00.y = fVar20 / fVar4;
-      vector_00.x = fVar19 / fVar4;
-      vector_00.z = (fVar18 + fVar10) / fVar4;
-      pVVar11 = MathFunctions::MathFunctions_TruncateVector((Vector3 *)&puStack_12,vector_00,5,(MethodInfo *)0x0);
-      uVar23._0_4_ = pVVar11->x;
-      uVar23._4_4_ = pVVar11->y;
-      fVar15 = pVVar11->z;
-      vector_01.y = 0.0;
-      vector_01.x = (float)uVar22;
-      vector_01.z = fVar14;
-      pVVar11 = MathFunctions::MathFunctions_FloorVector((Vector3 *)&puStack_12,vector_01,(MethodInfo *)0x0);
-      fVar18 = pVVar11->x;
-      fVar21 = 0.0;
-      pVVar11 = (Vector3 *)&puStack_12;
-      puVar24 = &UNK_?;
-      vector_02.z = fVar15;
-      vector_02.x = (float)(int)uVar23;
-      vector_02.y = (float)(int)((ulonglong)uVar23 >> 0x20);
-      pVVar25 = MathFunctions::MathFunctions_CeilVector(pVVar11,vector_02,(MethodInfo *)0x0);
-      fVar14 = pVVar25->x;
-      fVar15 = pVVar25->y;
-      fVar19 = pVVar25->z;
-      fVar10 = (float)puVar24 * fVar4 - fVar9;
-      fVar21 = (float)pVVar11 * fVar4 - fVar21;
-      fVar20 = 0.0;
-      pRVar26 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key((Regex_CachedCodeEntryKey *)&puStack_12,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&bounds,(MethodInfo *)0x0);
-      uVar27 = pRVar26->_options;
-      uVar28 = pRVar26->_cultureKey;
-      puStack_12 = (undefined *)((fVar18 * fVar4 - fVar8) - (float)uVar27);
-      pSVar29 = (String *)(fVar10 - (float)uVar28);
-      pSVar30 = (String *)(fVar21 - (float)pRVar26->_pattern);
-      fVar9 = fVar15 * fVar4 - fVar9;
-      fVar20 = fVar19 * fVar4 - fVar20;
-      pRVar26 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key((Regex_CachedCodeEntryKey *)&stack0xffffffa0,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&bounds,(MethodInfo *)0x0);
-      uVar31 = pRVar26->_options;
-      uVar32 = pRVar26->_cultureKey;
-      pSVar33 = (String *)((fVar14 * fVar4 - fVar8) - (float)uVar31);
-      pSVar34 = (String *)(fVar9 - (float)uVar32);
-      fVar20 = fVar20 - (float)pRVar26->_pattern;
-      bounds.m_Center.x = fVar20;
+      pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale((Vector3 *)&puStack_14,this_01,(MethodInfo *)0x0);
+      fVar4 = fVar4 / pVVar13->y;
+      fVar15 = 7.00649e-45;
+      vector.y = ((bounds.m_Center.y - bounds.m_Extents.y) + (float)uVar7 * 0.5) / fVar4;
+      vector.x = fVar10 / fVar4;
+      vector.z = fVar9 / fVar4;
+      pVVar13 = MathFunctions::MathFunctions_TruncateVector((Vector3 *)&puStack_14,vector,5,(MethodInfo *)0x0);
+      fVar10 = pVVar13->z;
+      uVar16 = pVVar13->x;
+      uVar17 = pVVar13->y;
+      vector_00.y = fVar12 / fVar4;
+      vector_00.x = fVar15 / fVar4;
+      vector_00.z = fVar11 / fVar4;
+      pVVar13 = MathFunctions::MathFunctions_TruncateVector((Vector3 *)&puStack_14,vector_00,5,(MethodInfo *)0x0);
+      uVar18 = pVVar13->x;
+      uVar19 = pVVar13->y;
+      fVar11 = pVVar13->z;
+      vector_01.y = (float)uVar17;
+      vector_01.x = (float)uVar16;
+      vector_01.z = fVar10;
+      MathFunctions::MathFunctions_FloorVector((Vector3 *)&puStack_14,vector_01,(MethodInfo *)0x0);
+      puVar20 = &UNK_?;
+      vector_02.y = (float)uVar19;
+      vector_02.x = (float)uVar18;
+      vector_02.z = fVar11;
+      pVVar13 = MathFunctions::MathFunctions_CeilVector((Vector3 *)&puStack_14,vector_02,(MethodInfo *)0x0);
+      uVar21 = pVVar13->x;
+      uVar22 = pVVar13->y;
+      fVar11 = ((float)uVar21 * fVar4 - (float)puVar20) - bounds.m_Center.x;
+      fVar12 = ((float)uVar22 * fVar4 - fVar10) - bounds.m_Center.y;
+      fVar4 = (pVVar13->z * fVar4 - fVar8) - bounds.m_Center.z;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        bounds.m_Center.y = (float)TypeInfo__SharedCubeFunctions;
-        bounds.m_Center.x = (float)&UNK_?;
         func_?();
-        bounds.m_Center.x = fVar20;
       }
-      bounds.m_Center.y = 0.0;
-      min.y = (float)pSVar29;
-      min.x = (float)puStack_12;
-      min.z = (float)pSVar30;
-      max.y = (float)pSVar34;
-      max.x = (float)pSVar33;
-      max.z = bounds.m_Center.x;
-      pVVar35 = SharedCubeFunctions::SharedCubeFunctions_GetCorners_2(min,max,(MethodInfo *)0x0);
-      return pVVar35;
+      min.y = fVar12;
+      min.x = fVar11;
+      min.z = fVar4;
+      max.y = fVar12;
+      max.x = fVar11;
+      max.z = fVar4;
+      pVVar23 = SharedCubeFunctions::SharedCubeFunctions_GetCorners_2(min,max,(MethodInfo *)0x0);
+      return pVVar23;
     }
   }
 code_?:
   func_?();
-  pcVar36 = (code *)swi(3);
-  pVVar35 = (Vector3__Array *)(*pcVar36)();
-  return pVVar35;
+  pcVar24 = (code *)swi(3);
+  pVVar23 = (Vector3__Array *)(*pcVar24)();
+  return pVVar23;
 }
 
 
@@ -594,28 +591,33 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Initialize(MV
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__EventHandler<EditStateEventArgs>);
+    func_?(&MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_);
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
     func_?(&UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______);
     cRam_? = '\x01';
   }
   MVWorldObjectClient::MVWorldObjectClient_Initialize((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-  source = (this->fields)._._.gameObject;
-  if (source != (GameObject *)0x0) {
-    pIVar1 = Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______);
-    pMVar2 = (MonitorData *)0x0;
-    if (pIVar1 != (IEnumerable_1_System_Object_ *)0x0) {
-      pIVar3 = pIVar1 + 2;
-      for (; (int)pMVar2 < (int)pIVar1[1].monitor; pMVar2 = pMVar2 + 1) {
-        if (pIVar1[1].monitor <= pMVar2) goto code_?;
-        if (pIVar3->klass == (IEnumerable_1_System_Object___Class *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled((Renderer *)pIVar3->klass,0,(MethodInfo *)0x0);
-        pIVar3 = (IEnumerable_1_System_Object_ *)&pIVar3->monitor;
+  this_00 = (this->fields)._._.gameObject;
+  if (this_00 != (GameObject *)0x0) {
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(this_00,UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______);
+    uVar2 = 0;
+    if (pOVar1 != (Object__Array *)0x0) {
+      ppOVar3 = pOVar1->vector;
+      for (; (int)uVar2 < (int)pOVar1->max_length; uVar2 = uVar2 + 1) {
+        if (pOVar1->max_length <= uVar2) goto code_?;
+        if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled((Renderer *)*ppOVar3,0,(MethodInfo *)0x0);
+        ppOVar3 = ppOVar3 + 1;
       }
       iVar4 = (this->fields)._._._.groupId;
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_00 != (MVNetworkGame *)0x0) {
-        this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(this_00,(MethodInfo *)0x0);
-        if (this_01 != (MVWorldObjectClientManager *)0x0) {
-          pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup(this_01,(MethodInfo *)0x0);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_01 != (MVNetworkGame *)0x0) {
+        this_02 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(this_01,(MethodInfo *)0x0);
+        if (this_02 != (MVWorldObjectClientManager *)0x0) {
+          pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_get_RootGroup(this_02,(MethodInfo *)0x0);
           if (pMVar5 != (MVGroup *)0x0) {
             if (iVar4 == (pMVar5->fields)._._.id) {
               if (cRam_? == '\0') {
@@ -623,10 +625,12 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Initialize(MV
                 func_?();
                 cRam_? = '\x01';
               }
-              this_02 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
-              if (this_02 == (UnityAction_1_UnityEngine_Vector2_ *)0x0) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_02,(Object *)this,MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
-              MVCubeModelInstance_SetupCulling(this,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_02,(MethodInfo *)0x0);
+              this_03 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_03,(Object *)this,MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
+              MVCubeModelInstance_SetupCulling(this,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_03,(MethodInfo *)0x0);
+              this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_04,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
+              MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged((MVCubeModelBase *)this,(EventHandler_1_EditStateEventArgs_ *)this_04,(MethodInfo *)0x0);
             }
             return;
           }
@@ -669,6 +673,33 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_IsLodVisible(
 }
 
 
+/* Void MVCubeModelBase_BeingEditedChanged(Object, EditStateEventArgs) */
+
+void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_MVCubeModelBase_BeingEditedChanged(Object *sender,EditStateEventArgs *e,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVCubeModelBase);
+    cRam_? = '\x01';
+  }
+  if (sender == (Object *)0x0) {
+    func_?();
+    pMVar1 = extraout_EDX;
+  }
+  else {
+    pMVar1 = TypeInfo__MVCubeModelBase;
+    if (((TypeInfo__MVCubeModelBase->_1).naturalAligment <= (sender->klass->_1).naturalAligment) && ((MVCubeModelBase__Class *)(sender->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] == TypeInfo__MVCubeModelBase)) {
+      MVCubeModelBase::MVCubeModelBase_ObjectLinkTransparency((MVCubeModelBase *)sender,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  func_?(sender,pMVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void OnChanged(HashSet`1[MV.WorldObject.IntVector]) */
 
 void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_OnChanged(MVCubeModelInstance *this,HashSet_1_MV_WorldObject_IntVector_ *chunks,MethodInfo *method)
@@ -688,7 +719,7 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_OnContextMenu
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   x = (this->fields).transformGizmo;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
@@ -720,26 +751,25 @@ bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_OnEnterObject
     func_?(&StringLiteral_OnEnter_called_with_no_seletect_);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
   this_00 = e;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)e,(MethodInfo *)0x0);
-  if (this_00 != (EditorStateMachine *)0x0) {
-    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(this_00,(MethodInfo *)0x0);
+  if (e != (EditorStateMachine *)0x0) {
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if (pMVar1 == (MVWorldObjectClient *)0x0) {
-      EditorStateMachine::EditorStateMachine_SelectWO(this_00,iRam_?,0,1,(MethodInfo *)0x0);
+      EditorStateMachine::EditorStateMachine_SelectWO(this_00,(this->fields)._._._.id,0,1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        method = (MethodInfo *)&UNK_?;
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)StringLiteral_OnEnter_called_with_no_seletect_,(MethodInfo *)0x0);
+      method = (MethodInfo *)StringLiteral_OnEnter_called_with_no_seletect_;
+      e = (EditorStateMachine *)&UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_OnEnter_called_with_no_seletect_,(MethodInfo *)0x0);
     }
     ppEStack2 = &e;
     e = (EditorStateMachine *)0x0;
     pEStack3 = TypeInfo__EditorEvent;
-    value = (Object *)func_?();
-    method = (MethodInfo *)&UNK_?;
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+    method = (MethodInfo *)func_?();
+    e = this_00;
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,(Object *)method,(MethodInfo *)0x0);
     return 1;
   }
   func_?();
@@ -813,6 +843,87 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_OnStateChange
 }
 
 
+/* Void Rebuild() */
+
+void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Rebuild(MVCubeModelInstance *this,MethodInfo *method)
+
+{
+  pRVar1 = (this->fields)._.prototypeCubeModel;
+  if (pRVar1 != (RuntimePrototypeCubeModel *)0x0) {
+    uStack_2 = 0xffffffff;
+    puStack_3 = &DAT_?;
+    uStack_4 = *unaff_FS_OFFSET;
+    *unaff_FS_OFFSET = &uStack_4;
+    puStack_5 = &stack0xffffff80;
+    puVar6 = &stack0xffffff80;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_CubeModelChunk>__get_Value__);
+      cRam_? = '\x01';
+      puVar6 = puStack_5;
+    }
+    puStack_5 = puVar6;
+    DStack_7._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)0x0;
+    DStack_7._version = 0;
+    DStack_7._index = 0;
+    DStack_7._current.key.x = 0;
+    DStack_7._current.key.y = 0;
+    DStack_7._getEnumeratorRetType = 0;
+    DStack_7._current.key.z = 0;
+    DStack_7._current._6_2_ = 0;
+    DStack_7._current.value = (Object *)0x0;
+    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(pRVar1->fields).chunks;
+    if (this_00 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
+      pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)&stack0xffffff8c,this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__GetEnumerator__);
+      uStack_9 = 0;
+      DStack_7._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8->_dictionary;
+      DStack_7._version = pDVar8->_version;
+      DStack_7._index = pDVar8->_index;
+      DStack_7._current.key._0_4_ = (pDVar8->_current).key.sheetInstanceID;
+      DStack_7._current._4_8_ = *(undefined8 *)&(pDVar8->_current).key.index;
+      DStack_7._getEnumeratorRetType = pDVar8->_getEnumeratorRetType;
+      uStack_2 = 1;
+      pDStack_10 = &DStack_7;
+      while( true ) {
+        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::WorldObject::IntVector,System::Object]::Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext(&DStack_7,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__MoveNext__);
+        if (bVar11 == 0) {
+          uStack_2 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__Dispose__,in_stack_12);
+          *unaff_FS_OFFSET = uStack_4;
+          return;
+        }
+        this_01 = DStack_7._current.value;
+        fStack_13 = (pRVar1->fields)._Scale_k__BackingField;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uStack_15._0_4_ = (pVVar14->oneVector).x;
+        uStack_15._4_4_ = (pVVar14->oneVector).y;
+        fStack_16 = (pVVar14->oneVector).z;
+        fStack_17 = fStack_16 * fStack_13;
+        fStack_18 = (float)uStack_15._4_4_ * fStack_13;
+        fStack_19 = (float)(undefined4)uStack_15 * fStack_13;
+        if ((CubeModelChunk *)this_01 == (CubeModelChunk *)0x0) break;
+        scale.y = fStack_18;
+        scale.x = fStack_19;
+        scale.z = fStack_17;
+        CubeModelChunk::CubeModelChunk_RebuildChunk((CubeModelChunk *)this_01,scale,(MethodInfo *)0x0);
+      }
+    }
+  }
+  uVar20 = func_?(&stack0xffffff70);
+  func_?(uVar20);
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
+  return;
+}
+
+
 /* Void SetCullDistanceBand(Int32) */
 
 void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetCullDistanceBand(MVCubeModelInstance *this,int32_t distanceBandIndex,MethodInfo *method)
@@ -837,28 +948,29 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetCullDistan
 void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetCullSphereToMeshBounds(MVCubeModelInstance *this,MethodInfo *method)
 
 {
-  pDStack_1 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0;
-  pBVar2 = MVCubeModelBase::MVCubeModelBase_GetWorldBounds((Bounds *)&stack0xffffffcc,(MVCubeModelBase *)this,(MethodInfo *)0x0);
+  pBVar1 = MVCubeModelBase::MVCubeModelBase_GetWorldBounds(&BStack_2,(MVCubeModelBase *)this,(MethodInfo *)0x0);
   this_00 = (this->fields).cullingSubscriberBase;
-  pDStack_1 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)(pBVar2->m_Center).x;
-  pRVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current(&RStack_4,(Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&pDStack_1,(MethodInfo *)0x0);
-  RStack_5._options = pRVar3->_options;
-  RStack_5._cultureKey = pRVar3->_cultureKey;
-  RStack_5._pattern = pRVar3->_pattern;
-  fVar6 = (float10)func_?(&RStack_5,0);
-  pRVar3 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_5,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&pDStack_1,(MethodInfo *)0x0);
+  fVar3 = (pBVar1->m_Center).x;
+  fVar4 = (pBVar1->m_Center).y;
+  fVar5 = (pBVar1->m_Center).z;
+  uVar6 = (pBVar1->m_Extents).z;
+  uStack_7._0_4_ = (pBVar1->m_Extents).x;
+  uStack_7._4_4_ = (pBVar1->m_Extents).y;
+  uStack_8 = uVar6;
+  fVar9 = (float10)func_?(&uStack_7);
   if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Setup(this_00,(float)fVar6,(Vector3)*pRVar3,(MethodInfo *)0x0);
-    puVar7 = (undefined8 *)(*(this->klass->vtable).get_WorldPosition_1.methodPtr)();
-    RStack_4._0_8_ = *puVar7;
-    RStack_4._pattern = *(String **)(puVar7 + 1);
-    pRVar3 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_8,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&pDStack_1,(MethodInfo *)0x0);
-    uVar9 = pRVar3->_options;
-    uVar10 = pRVar3->_cultureKey;
-    pSVar11 = pRVar3->_pattern;
-    (this->fields).positionOffset.x = (float)RStack_4._options - (float)uVar9;
-    (this->fields).positionOffset.y = (float)RStack_4._cultureKey - (float)uVar10;
-    (this->fields).positionOffset.z = (float)RStack_4._pattern - (float)pSVar11;
+    position.y = fVar4;
+    position.x = fVar3;
+    position.z = fVar5;
+    CullingSubscriberBase::CullingSubscriberBase_Setup(this_00,(float)fVar9,position,(MethodInfo *)0x0);
+    pIVar10 = (this->klass->vtable).set_WorldPosition.methodPtr;
+    puVar11 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)();
+    fVar3 = *(float *)(puVar11 + 1);
+    uStack_7._0_4_ = (float)*puVar11;
+    uStack_7._4_4_ = (float)((ulonglong)*puVar11 >> 0x20);
+    (this->fields).positionOffset.x = (float)uStack_7 - (float)pIVar10;
+    (this->fields).positionOffset.y = uStack_7._4_4_ - fVar4;
+    (this->fields).positionOffset.z = fVar3 - fVar5;
     return;
   }
   func_?();
@@ -904,11 +1016,11 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetLod(MVCube
       }
       if (piVar5 == (int *)0x0) break;
       uVar8 = 0;
-      uVar9 = *(ushort *)(*piVar5 + 0xb2);
+      uVar9 = *(ushort *)(*piVar5 + 0xb6);
       if (uVar9 != 0) {
         do {
           if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) == TypeInfo__System__Collections__IEnumerator) {
-            puVar10 = (undefined4 *)(*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) * 8 + 0xc4 + *piVar5);
+            puVar10 = (undefined4 *)(*piVar5 + (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x19) * 8);
             goto code_?;
           }
           uVar8 = uVar8 + 1;
@@ -921,7 +1033,7 @@ code_?:
       if (piVar11 == (int *)0x0) break;
       if (*(Il2CppClass **)(*piVar11 + 0x20) != (TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>->_0).element_class) goto code_?;
       iVar7 = func_?(piVar11);
-      pRStack_13 = (Renderer *)*(undefined8 *)(iVar7 + 0x10);
+      pRStack_13 = (Renderer *)*(undefined8 *)(iVar7 + 0x20);
       if (pRStack_13 == (Renderer *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled(pRStack_13,enabled,(MethodInfo *)0x0);
     }
@@ -951,70 +1063,88 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling(
     cRam_? = '\x01';
   }
   this_00 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase__ctor_1(this_00,onStateChanged,(MethodInfo *)0x0);
-    (this->fields).cullingSubscriberBase = this_00;
-    func_?(&(this->fields).cullingSubscriberBase,this_00);
-    MVCubeModelInstance_SetCullSphereToMeshBounds(this,(MethodInfo *)0x0);
-    pUVar1 = (this->fields)._._.PositionChanged;
-    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
-    if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVCubeModelInstance__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (this->fields)._._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      }
-      else {
-        pUVar1 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar1 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
-        (this->fields)._._.PositionChanged = pUVar1;
-        iVar4 = func_?();
-        if (iVar4 == 0) goto code_?;
-      }
-      func_?();
-      pUVar5 = (this->fields)._._.RotationChanged;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      if (pUVar2 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVCubeModelInstance__OnRotationChanged_MVWorldObjectClient__RotationChangedEventArgs_,(MethodInfo *)0x0);
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar5,(Delegate *)pUVar2,(MethodInfo *)0x0);
-        if (pDVar3 == (Delegate *)0x0) {
-          (this->fields)._._.RotationChanged = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0;
-        }
-        else {
-          pUVar5 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)func_?();
-          if (pUVar5 == (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) goto code_?;
-          (this->fields)._._.RotationChanged = pUVar5;
-          iVar4 = func_?();
-          if (iVar4 == 0) goto code_?;
-        }
-        func_?();
-        pAVar6 = (this->fields)._.ChunksChanged;
-        this_01 = (Action_1_Object_ *)func_?();
-        if (this_01 != (Action_1_Object_ *)0x0) {
-          mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_01,(Object *)this,MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_,(MethodInfo *)0x0);
-          pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
-          if (pDVar3 == (Delegate *)0x0) {
-            (this->fields)._.ChunksChanged = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
-code_?:
-            func_?();
-            return;
-          }
-          pAVar6 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)func_?();
-          if (pAVar6 != (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
-            (this->fields)._.ChunksChanged = pAVar6;
-            iVar4 = func_?();
-            if (iVar4 != 0) goto code_?;
-          }
-          goto code_?;
-        }
-      }
-    }
+  CullingSubscriberBase::CullingSubscriberBase__ctor_1(this_00,onStateChanged,(MethodInfo *)0x0);
+  (this->fields).cullingSubscriberBase = this_00;
+  func_?(&(this->fields).cullingSubscriberBase,this_00);
+  MVCubeModelInstance_SetCullSphereToMeshBounds(this,(MethodInfo *)0x0);
+  pUVar1 = (this->fields)._._.PositionChanged;
+  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVCubeModelInstance__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
+  pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+  if (pDVar3 == (Delegate *)0x0) {
+    (this->fields)._._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
   }
+  else {
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pDStack6 = pDVar3;
+    pUVar1 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar1 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) goto code_?;
+    (this->fields)._._.PositionChanged = pUVar1;
+    pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pDStack6 = pDVar3;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) goto code_?;
+  }
+  pDStack6 = (Delegate *)&(this->fields)._._.PositionChanged;
   func_?();
+  pUStack7 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+  pUVar8 = (this->fields)._._.RotationChanged;
+  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVCubeModelInstance__OnRotationChanged_MVWorldObjectClient__RotationChangedEventArgs_,(MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar8,(Delegate *)pUVar2,(MethodInfo *)0x0);
+  pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+  if (pDVar3 == (Delegate *)0x0) {
+    (this->fields)._._.RotationChanged = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
+  }
+  else {
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+    pDStack6 = pDVar3;
+    pUVar8 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)func_?();
+    if (pUVar8 == (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) goto code_?;
+    (this->fields)._._.RotationChanged = pUVar8;
+    pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+    pDStack6 = pDVar3;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) goto code_?;
+  }
+  pDStack6 = (Delegate *)&(this->fields)._._.RotationChanged;
+  func_?();
+  pUStack7 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+  pAVar9 = (this->fields)._.ChunksChanged;
+  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_,(MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar9,(Delegate *)this_01,(MethodInfo *)0x0);
+  pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+  if (pDVar3 == (Delegate *)0x0) {
+    (this->fields)._.ChunksChanged = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
 code_?:
+    pDStack6 = (Delegate *)&(this->fields)._.ChunksChanged;
+    func_?();
+    return;
+  }
+  pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+  pDStack6 = pDVar3;
+  pAVar9 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)func_?();
+  if (pAVar9 != (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
+    (this->fields)._.ChunksChanged = pAVar9;
+    pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+    pDStack6 = pDVar3;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) goto code_?;
+  }
+code_?:
+  pDStack6 = pDVar3;
+  pUStack5 = pUVar4;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1025,6 +1155,10 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance__ctor(MVCubeM
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVCubeModelBase);
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
@@ -1034,6 +1168,9 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance__ctor(MVCubeM
   (this->fields).positionOffset.x = (pVVar1->zeroVector).x;
   (this->fields).positionOffset.y = fVar2;
   (this->fields).positionOffset.z = fVar3;
+  if ((TypeInfo__MVCubeModelBase->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MVCubeModelBase);
+  }
   MVCubeModelBase::MVCubeModelBase__ctor((MVCubeModelBase *)this,data,worldObjects,prototypes,(MethodInfo *)0x0);
   piVar4 = &(this->fields)._._.interactionFlags;
   *(uint *)piVar4 = (uint)*piVar4 | 0x803383;
@@ -1049,27 +1186,40 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance__ctor(MVCubeM
         *puVar5 = *puVar5 | 0x80;
         *(int *)&(this->fields)._._.interactionFlags = (int)iVar7;
       }
-      pRVar8 = (this->fields)._.prototypeCubeModel;
-      if (pRVar8 != (RuntimePrototypeCubeModel *)0x0) {
-        if (((pMVar6->fields)._._ProfileID_k__BackingField == (pRVar8->fields)._AuthorProfileID_k__BackingField) && (((this->fields)._._.interactionFlags & 0x4000) != 0)) {
-          uVar9 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+      iVar8 = (pMVar6->fields)._._ProfileID_k__BackingField;
+      if ((TypeInfo__MVCubeModelBase->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pRVar9 = (this->fields)._.prototypeCubeModel;
+      if (pRVar9 != (RuntimePrototypeCubeModel *)0x0) {
+        if ((iVar8 == (pRVar9->fields)._AuthorProfileID_k__BackingField) && (((this->fields)._._.interactionFlags & 0x4000) != 0)) {
+          uVar10 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
           piVar4 = &(this->fields)._._.interactionFlags;
           *(uint *)piVar4 = (uint)*piVar4 | 0x4000;
-          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar9;
+          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar10;
           return;
         }
-        uVar9 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+        uVar10 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
         piVar4 = &(this->fields)._._.interactionFlags;
         *(uint *)piVar4 = (uint)*piVar4 & 0xffffbfff;
-        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar9;
+        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar10;
         return;
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
+}
+
+
+/* Boolean get_IsVisibleSet() */
+
+bool Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_get_IsVisibleSet(MVCubeModelInstance *this,MethodInfo *method)
+
+{
+  return (this->fields).isVisible;
 }
 
 

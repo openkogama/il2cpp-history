@@ -29,32 +29,6 @@ public class GamePassesProgressBarFreeTryHandler : MonoBehaviour
 	private bool isWaitingForFreeTryTier;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass7_0
-	{
-		// Fields
-		public GamePassesShop gamePassesShop;
-
-		// Constructors
-		public __c__DisplayClass7_0();
-
-		// Methods
-		internal void _OnFreeTryTier_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public TierUnlockedPopupController tierUnlockedPopupController;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal void _ShowTierUnlock_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -79,6 +53,32 @@ public class GamePassesProgressBarFreeTryHandler : MonoBehaviour
 		internal void _PreviewTier_b__11_0(IModalPopupCreator x, BaseEventData y);
 		internal void _PreviewTier_b__11_1(IModalPopupCreator x, BaseEventData y);
 		internal void _OnPlayerPlanetDataUpdated_b__12_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass7_0
+	{
+		// Fields
+		public GamePassesShop gamePassesShop;
+
+		// Constructors
+		public __c__DisplayClass7_0();
+
+		// Methods
+		internal void _OnFreeTryTier_b__0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public TierUnlockedPopupController tierUnlockedPopupController;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _ShowTierUnlock_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

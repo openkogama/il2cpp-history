@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Alert::AdvancedGhostBehaviour_A
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_Entering_alert_without_valid_att,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Entering_alert_without_valid_att,(MethodInfo *)0x0);
     }
     else {
       if (pMStack_1 == (MVWorldObjectClient *)0x0) goto code_?;
@@ -37,8 +37,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Alert::AdvancedGhostBehaviour_A
           if (pAVar4 != (AdvancedGhostVisualizaton *)0x0) {
             this_03 = (pAVar4->fields).ghostEye;
             if (pMStack_1 != (MVWorldObjectClient *)0x0) {
-              apMStack_7[0] = (pMStack_1->klass->vtable).GetTargetPosition.method;
-              pVVar8 = (Vector3 *)(*(pMStack_1->klass->vtable).GetTargetPosition.methodPtr)(apMStack_7,pMStack_1);
+              apIStack_7[0] = (pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr;
+              pVVar8 = (Vector3 *)(*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)(apIStack_7,pMStack_1);
               if (this_03 != (GhostEye *)0x0) {
                 GhostEye::GhostEye_UpdateLookAtTarget(this_03,*pVVar8,(MethodInfo *)0x0);
                 return;
@@ -93,10 +93,10 @@ code_?:
         (ghostBehaviour->fields).nextPosition.z = fVar6;
         if ((pAVar7 != (AdvancedGhostVisualizaton *)0x0) && (this_02 = (pAVar7->fields).ghostEye, pMStack_1 != (MVWorldObjectClient *)0x0)) {
           VStack_8.z = (float)&VStack_9;
-          VStack_9.y = (float)(pMStack_1->klass->vtable).GetTargetPosition.method;
+          VStack_9.y = (float)(pMStack_1->klass->vtable).DrawTransformGizmo.methodPtr;
           VStack_9.x = (float)pMStack_1;
           VStack_8.y = (float)&UNK_?;
-          pVVar10 = (Vector3 *)(*(pMStack_1->klass->vtable).GetTargetPosition.methodPtr)();
+          pVVar10 = (Vector3 *)(*(code *)(pMStack_1->klass->vtable).GetTargetPosition.method)();
           if (((this_02 != (GhostEye *)0x0) && ((GhostEye::GhostEye_UpdateLookAtTarget(this_02,*pVVar10,(MethodInfo *)0x0), pMStack_1 != (MVWorldObjectClient *)0x0 && (this_03 = (pMStack_1->fields).gameObject, this_03 != (GameObject *)0x0)))) && (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_03,(MethodInfo *)0x0), pTVar11 != (Transform *)0x0)) {
             pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_9,pTVar11,(MethodInfo *)0x0);
             uStack_12._0_4_ = pVVar10->x;

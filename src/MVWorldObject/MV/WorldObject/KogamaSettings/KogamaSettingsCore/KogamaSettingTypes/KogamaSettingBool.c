@@ -18,7 +18,7 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
 void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBool::KogamaSettingBool__ctor(KogamaSettingBool *this,bool value,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

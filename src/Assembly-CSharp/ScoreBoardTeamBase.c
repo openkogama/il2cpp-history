@@ -127,16 +127,16 @@ code_?:
   }
   pCVar9 = Styles::Styles_GetColor((Color *)&puStack_10,ColorStyle__Enum_OffWhiteTransparent,(MethodInfo *)0x0);
   if (piVar8 == (int *)0x0) goto code_?;
-  (**(code **)(*piVar8 + 0x174))(piVar8,pCVar9->r,pCVar9->g,pCVar9->b,pCVar9->a,*(undefined4 *)(*piVar8 + 0x178));
+  (**(code **)(*piVar8 + 0x178))(piVar8,pCVar9->r,pCVar9->g,pCVar9->b,pCVar9->a,*(undefined4 *)(*piVar8 + 0x17c));
   pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._.scoreBoardPlayerData;
   if (((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,index_00,MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) || (piVar8 = *(int **)((int)RVar6 + 0x10), piVar8 == (int *)0x0)) goto code_?;
-  (**(code **)(*piVar8 + 0x314))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x318));
+  (**(code **)(*piVar8 + 0x318))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x31c));
   pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._.scoreBoardPlayerData;
   if (((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,index_00,MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) || (piVar8 = *(int **)((int)RVar6 + 0xc), piVar8 == (int *)0x0)) goto code_?;
-  (**(code **)(*piVar8 + 0x314))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x318));
+  (**(code **)(*piVar8 + 0x318))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x31c));
   pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._.scoreBoardPlayerData;
   if (((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,index_00,MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) || (piVar8 = *(int **)((int)RVar6 + 8), piVar8 == (int *)0x0)) goto code_?;
-  (**(code **)(*piVar8 + 0x314))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x318));
+  (**(code **)(*piVar8 + 0x318))(piVar8,::StringLiteral__,*(undefined4 *)(*piVar8 + 0x31c));
   pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._.scoreBoardPlayerData;
   if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar5,index_00,MethodInfo__System__Collections__Generic__List<ScoreBoardBase::ScoreData>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) goto code_?;
   *(undefined4 *)((int)RVar6 + 0x18) = 0xffffffff;
@@ -166,22 +166,22 @@ void Assembly-CSharp.dll::ScoreBoardTeamBase::ScoreBoardTeamBase_Initialize(Scor
   ScoreBoardTeamBase_AddTeamsToScoreBoard(this,(MethodInfo *)0x0);
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar2 != (MVNetworkGame *)0x0) && (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    this_01 = (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
-    if (this_01 != (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-      pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&stack0xffffffd8,this_01,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__);
+    this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
+    if (this_01 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
+      pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)&stack0xffffffd8,this_01,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__);
       pOStack_1 = (Object__Class *)pDVar3->_dictionary;
       this_02 = (MVPlayer *)pDVar3->_currentValue;
       while( true ) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object_ *)&pOStack_1,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__);
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&pOStack_1,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__);
         if (bVar4 == 0) {
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&pOStack_1,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__,method_00);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&pOStack_1,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__,method_00);
           *unaff_FS_OFFSET = (int32_t)method_00;
           return;
         }
         if (this_02 == (MVPlayer *)0x0) break;
         method_00 = (MethodInfo *)(this_02->fields)._ActorNr_k__BackingField;
         MVPlayer::MVPlayer_GetGameStat(this_02,statType,(MethodInfo *)0x0);
-        (*(this->klass->vtable).OnStatsChange.methodPtr)();
+        (*(code *)(this->klass->vtable).OnStatsChange.method)();
       }
     }
   }
@@ -323,51 +323,47 @@ void Assembly-CSharp.dll::ScoreBoardTeamBase::ScoreBoardTeamBase_UnSubscribeToCa
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 == (MVNetworkGame *)0x0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    unaff_EBX = (Action_1_IWinningCondition___Class *)(pMVar2->fields).OnWinningConditionFulfilled;
-    this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    unaff_EDI = (Delegate *)0x0;
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__ScoreBoardBase__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
-      unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-      if (unaff_EDI == (Delegate *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
-code_?:
-        pDStack4 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+  if (bVar1 != 0) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 == (MVNetworkGame *)0x0) {
         func_?();
-        return;
+        goto code_?;
       }
-      pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack4 = unaff_EDI;
-      pAVar5 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar5 != (Action_1_IWinningCondition_ *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = pAVar5;
-        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-        pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-        pDStack4 = unaff_EDI;
-        pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-        if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+      pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__ScoreBoardBase__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      if (unaff_ESI == (Delegate *)0x0) {
+        (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+        pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
       }
-      goto code_?;
+      else {
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+        if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
+code_?:
+          pDStack5 = unaff_ESI;
+          pAStack4 = unaff_EDI;
+          func_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
+        unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+        if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+      }
+      pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+      func_?();
     }
   }
-  func_?();
-code_?:
-  pDStack4 = unaff_EDI;
-  pAStack3 = unaff_EBX;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 

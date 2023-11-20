@@ -12,7 +12,7 @@ ESWaitForPlayModeAvatar_EnterPlayFromEditSpawnState__Enum Assembly-CSharp.dll::E
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if (pMVar1 != (MVLocalPlayer *)0x0) {
     pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-    if (((pMVar1->klass->_1).typeHierarchyDepth < (TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth) || ((pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) || ((pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
     id = pMVar1[1].monitor;
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar3 != (MVNetworkGame *)0x0) && (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar3,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClientManager *)0x0)) {
@@ -26,7 +26,7 @@ ESWaitForPlayModeAvatar_EnterPlayFromEditSpawnState__Enum Assembly-CSharp.dll::E
           pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar3 != (MVNetworkGame *)0x0) && (pMVar5 = (pMVar3->fields).teamManager, pMVar5 != (MVTeamManager *)0x0)) {
             bVar8 = MVTeamManager::MVTeamManager_HasTeam(pMVar5,(this->fields).selectedTeam,(MethodInfo *)0x0);
-            bStack_9 = 0xbc;
+            bStack_9 = 0x6a;
             pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if ((pMVar3 != (MVNetworkGame *)0x0) && (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar3,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClientManager *)0x0)) {
               pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar4,id,(MethodInfo *)0x0);
@@ -41,7 +41,7 @@ code_?:
               pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar3 != (MVNetworkGame *)0x0) && (pMVar5 = (pMVar3->fields).teamManager, pMVar5 != (MVTeamManager *)0x0)) {
                 bVar8 = MVTeamManager::MVTeamManager_TeamHasSpawnRoles(pMVar5,(this->fields).selectedTeam,(MethodInfo *)0x0);
-                bStack_9 = 0xbc;
+                bStack_9 = 0x6a;
                 if (bVar8 == 0) {
                   if (bVar11 == 0) {
                     bVar11 = -(char)((int)id >> 0x1f);
@@ -87,10 +87,10 @@ bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_CanSp
     if (pMVar3 == (MVWorldObject *)0x0) {
       return 0;
     }
-    if ((pMVar3->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth) {
+    if ((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) {
       return 0;
     }
-    if ((MVAvatarSpawnRoleCreator__Class *)(pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarSpawnRoleCreator) {
+    if ((MVAvatarSpawnRoleCreator__Class *)(pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] != TypeInfo__MVAvatarSpawnRoleCreator) {
       return 0;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -99,7 +99,7 @@ bool Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_CanSp
       if (this_00 == (MVAvatarSpawnRoleCreator *)0x0) {
         return 0;
       }
-      if (((this_00->klass->_1).typeHierarchyDepth < (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth) || ((MVAvatarSpawnRoleCreator__Class *)(this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
+      if (((this_00->klass->_1).naturalAligment < (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) || ((MVAvatarSpawnRoleCreator__Class *)(this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -137,10 +137,11 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Enter
   (this->fields).defaultPlayModeSpawnRoleReady = 0;
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    this_00 = (pMVar1->fields)._.spawnRolesManager;
-    unaff_EDI = (MVLocalPlayer *)func_?(TypeInfo__System__Action<int>);
-    if ((unaff_EDI != (MVLocalPlayer *)0x0) && (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor((UnityAction_1_System_Int32Enum_ *)unaff_EDI,(Object *)this,MethodInfo__ESWaitForPlayModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_,(MethodInfo *)0x0), this_00 != (SpawnRolesManager *)0x0)) {
-      SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated(this_00,(Action_1_Int32_ *)unaff_EDI,(MethodInfo *)0x0);
+    unaff_EDI = (MVLocalPlayer *)(pMVar1->fields)._.spawnRolesManager;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_00,(Object *)this,MethodInfo__ESWaitForPlayModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_,(MethodInfo *)0x0);
+    if (unaff_EDI != (MVLocalPlayer *)0x0) {
+      SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated((SpawnRolesManager *)unaff_EDI,(Action_1_Int32_ *)this_00,(MethodInfo *)0x0);
       EVar2 = ESWaitForPlayModeAvatar_CalculateEnterPlayFromEditState(this,(MethodInfo *)0x0);
       if (EVar2 == ESWaitForPlayModeAvatar_EnterPlayFromEditSpawnState__Enum_DefaultSpawnAsSpawnRole) {
         if (cRam_? == '\0') {
@@ -168,7 +169,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Enter
         unaff_EDI = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (unaff_EDI != (MVLocalPlayer *)0x0) {
           pMVar4 = TypeInfo__MVLocalPlayerBuilder;
-          if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= (unaff_EDI->klass->_1).typeHierarchyDepth) && ((unaff_EDI->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+          if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (unaff_EDI->klass->_1).naturalAligment) && ((unaff_EDI->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
             spawnRoleId = unaff_EDI[1].monitor;
             ESWaitForPlayModeAvatar_SpawnAsSelectedSpawnRole(this,spawnRoleId,(MethodInfo *)0x0);
             return;
@@ -274,7 +275,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Handl
     unaff_ESI = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (unaff_ESI != (MVLocalPlayer *)0x0) {
       pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-      if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= (unaff_ESI->klass->_1).typeHierarchyDepth) && ((unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+      if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (unaff_ESI->klass->_1).naturalAligment) && ((unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
         spawnRoleId = unaff_ESI[1].monitor;
         ESWaitForPlayModeAvatar_SpawnAsSelectedSpawnRole(this,spawnRoleId,(MethodInfo *)0x0);
         return;
@@ -307,7 +308,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Handl
     func_?();
     this_00 = extraout_EDX;
   }
-  else if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+  else if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
     MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaultPlayModeSpawnRole(this_00,(MethodInfo *)0x0);
     return;
   }
@@ -334,7 +335,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Hanld
   }
   else {
     pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-    if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= (pMVar1->klass->_1).typeHierarchyDepth) && ((pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) && ((pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
       spawnRoleId = pMVar1[1].monitor;
       ESWaitForPlayModeAvatar_SpawnAsSelectedSpawnRole(this,spawnRoleId,(MethodInfo *)0x0);
       return;
@@ -419,7 +420,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Spawn
     func_?();
     this_00 = extraout_EDX;
   }
-  else if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= (this_00->klass->_1).typeHierarchyDepth) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+  else if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) && ((this_00->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
     MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToDefaultPlayModeSpawnRole(this_00,(MethodInfo *)0x0);
     return;
   }
@@ -460,7 +461,7 @@ code_?:
       if (unaff_ESI != (MVWorldObject__Class *)0x0) {
         pIVar5 = (unaff_ESI->_0).image;
         pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-        if ((*(byte *)&pIVar5[4].nameNoExt < (TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth) || (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth * 4) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+        if ((*(byte *)&pIVar5[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) || (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
         uVar6 = (unaff_ESI->_1).thread_static_fields_size;
         uVar7 = (unaff_ESI->_1).flags;
         pMVar8 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
@@ -470,7 +471,7 @@ code_?:
           if (unaff_ESI != (MVWorldObject__Class *)0x0) {
             pIVar5 = (unaff_ESI->_0).image;
             pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-            if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= *(byte *)&pIVar5[4].nameNoExt) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth * 4) == TypeInfo__MVLocalPlayerBuilder)) {
+            if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= *(byte *)&pIVar5[4].assembly) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4) == TypeInfo__MVLocalPlayerBuilder)) {
               (unaff_ESI->_1).thread_static_fields_size = uVar6;
               (unaff_ESI->_1).thread_static_fields_offset = iVar9;
               (unaff_ESI->_1).flags = uVar7;
@@ -483,7 +484,7 @@ code_?:
       goto code_?;
     }
     unaff_ESI = pMVar4->klass;
-    if (((unaff_ESI->_1).typeHierarchyDepth < (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth) || ((MVAvatarSpawnRoleCreator__Class *)(unaff_ESI->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth - 1] != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
+    if (((unaff_ESI->_1).naturalAligment < (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) || ((MVAvatarSpawnRoleCreator__Class *)(unaff_ESI->_1).typeHierarchy[(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pMVar3 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar1,(MethodInfo *)0x0);
@@ -492,7 +493,7 @@ code_?:
     unaff_ESI = (MVWorldObject__Class *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar3,spawnRoleId,(MethodInfo *)0x0);
     if (unaff_ESI == (MVWorldObject__Class *)0x0) goto code_?;
     pIVar5 = (unaff_ESI->_0).image;
-    if ((*(byte *)&pIVar5[4].nameNoExt < (TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth) || (*(MVAvatarSpawnRoleCreator__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).typeHierarchyDepth * 4) != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
+    if ((*(byte *)&pIVar5[4].assembly < (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) || (*(MVAvatarSpawnRoleCreator__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment * 4) != TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -511,14 +512,14 @@ code_?:
     if (unaff_ESI == (MVWorldObject__Class *)0x0) goto code_?;
     pIVar5 = (unaff_ESI->_0).image;
     pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-    if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= *(byte *)&pIVar5[4].nameNoExt) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth * 4) == TypeInfo__MVLocalPlayerBuilder)) {
+    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= *(byte *)&pIVar5[4].assembly) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4) == TypeInfo__MVLocalPlayerBuilder)) {
       uVar13 = (unaff_ESI->_1).thread_static_fields_size;
       uVar7 = (unaff_ESI->_1).flags;
       unaff_ESI = (MVWorldObject__Class *)MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
       if (unaff_ESI == (MVWorldObject__Class *)0x0) goto code_?;
       pIVar5 = (unaff_ESI->_0).image;
       pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-      if (((TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth <= *(byte *)&pIVar5[4].nameNoExt) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).typeHierarchyDepth * 4) == TypeInfo__MVLocalPlayerBuilder)) {
+      if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= *(byte *)&pIVar5[4].assembly) && (*(MVLocalPlayerBuilder__Class **)((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4) == TypeInfo__MVLocalPlayerBuilder)) {
         (unaff_ESI->_1).thread_static_fields_size = uVar13;
         (unaff_ESI->_1).thread_static_fields_offset = spawnRoleId;
         (unaff_ESI->_1).flags = uVar7;
@@ -550,13 +551,11 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar_Spawn
   if (pMVar1 != (MVLocalPlayer *)0x0) {
     this_00 = (pMVar1->fields)._.spawnRolesManager;
     this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
-    if (this_01 != (UnityAction_1_System_Int32Enum_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)this,MethodInfo__ESWaitForPlayModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_,(MethodInfo *)0x0);
-      if (this_00 != (SpawnRolesManager *)0x0) {
-        SpawnRolesManager::SpawnRolesManager_remove_OnSpawnRoleActivated(this_00,(Action_1_Int32_ *)this_01,(MethodInfo *)0x0);
-        (this->fields).defaultPlayModeSpawnRoleReady = 1;
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)this,MethodInfo__ESWaitForPlayModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_,(MethodInfo *)0x0);
+    if (this_00 != (SpawnRolesManager *)0x0) {
+      SpawnRolesManager::SpawnRolesManager_remove_OnSpawnRoleActivated(this_00,(Action_1_Int32_ *)this_01,(MethodInfo *)0x0);
+      (this->fields).defaultPlayModeSpawnRoleReady = 1;
+      return;
     }
   }
   func_?();
@@ -576,7 +575,7 @@ void Assembly-CSharp.dll::ESWaitForPlayModeAvatar::ESWaitForPlayModeAvatar__ctor
   (this->fields)._.tintedWo = pWVar1;
   method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
   func_?(method_00,pWVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (this_00 != (LoggerManager *)0x0) {

@@ -15,5 +15,6 @@ internal sealed class Locale
 {
 	// Methods
 	public static string GetText(string msg);
+	public static string GetText(string fmt, params object[] args);
 }
 

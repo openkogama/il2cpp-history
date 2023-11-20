@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Common;
 
-// Image 15: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 38: GoogleMobileAds.dll - Assembly: GoogleMobileAds, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -22,7 +22,6 @@ namespace GoogleMobileAds.Api
 		internal InitializationStatus(IInitializationStatusClient client);
 	
 		// Methods
-		public AdapterStatus getAdapterStatusForClassName(string className);
 		public Dictionary<string, AdapterStatus> getAdapterStatusMap();
 	}
 }

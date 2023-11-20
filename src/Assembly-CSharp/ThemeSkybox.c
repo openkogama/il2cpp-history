@@ -421,21 +421,30 @@ float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_CloudsHeight(ThemeSkybox
 }
 
 
-/* Single get_CloudsRotationSpeed() */
-
-float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_CloudsRotationSpeed(ThemeSkybox *this,MethodInfo *method)
-
-{
-  return (this->fields)._cloudsRotationSpeed;
-}
-
-
 /* Single get_Exposure() */
 
 float Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_Exposure(ThemeSkybox *this,MethodInfo *method)
 
 {
   return (this->fields)._exposure;
+}
+
+
+/* LensFlare get_MoonFlare() */
+
+LensFlare * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_MoonFlare(ThemeSkybox *this,MethodInfo *method)
+
+{
+  puStack_1 = &stack0xfffffffc;
+  pFVar2 = (this->fields)._moon;
+  if (pFVar2 != (FlareLight *)0x0) {
+    return (pFVar2->fields).lensFlare;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  pLVar6 = (LensFlare *)(*pcVar5)();
+  return pLVar6;
 }
 
 
@@ -607,6 +616,22 @@ Color * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_SunTint(Color *__retur
   fVar2 = (this->fields)._sunTint.b;
   fVar3 = (this->fields)._sunTint.a;
   __return_storage_ptr__->r = (this->fields)._sunTint.r;
+  __return_storage_ptr__->g = fVar1;
+  __return_storage_ptr__->b = fVar2;
+  __return_storage_ptr__->a = fVar3;
+  return __return_storage_ptr__;
+}
+
+
+/* Color get_TopColor() */
+
+Color * Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_get_TopColor(Color *__return_storage_ptr__,ThemeSkybox *this,MethodInfo *method)
+
+{
+  fVar1 = (this->fields)._topColor.g;
+  fVar2 = (this->fields)._topColor.b;
+  fVar3 = (this->fields)._topColor.a;
+  __return_storage_ptr__->r = (this->fields)._topColor.r;
   __return_storage_ptr__->g = fVar1;
   __return_storage_ptr__->b = fVar2;
   __return_storage_ptr__->a = fVar3;

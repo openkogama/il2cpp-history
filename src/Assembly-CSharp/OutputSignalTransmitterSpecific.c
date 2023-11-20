@@ -39,11 +39,11 @@ code_?:
           goto code_?;
         }
         uVar9 = 0;
-        uVar10 = *(ushort *)(*piVar8 + 0xb2);
+        uVar10 = *(ushort *)(*piVar8 + 0xb6);
         if (uVar10 != 0) {
           do {
             if (*(ILogicWorldObject__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) == TypeInfo__ILogicWorldObject) {
-              puVar11 = (undefined4 *)(*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) * 8 + 0xbc + *piVar8);
+              puVar11 = (undefined4 *)(*piVar8 + (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar9 = uVar9 + 1;
@@ -55,11 +55,11 @@ code_?:
         piVar8 = (int *)(*(code *)*puVar11)();
         if (piVar8 == (int *)0x0) break;
         uVar9 = 0;
-        uVar10 = *(ushort *)(*piVar8 + 0xb2);
+        uVar10 = *(ushort *)(*piVar8 + 0xb6);
         if (uVar10 != 0) {
           do {
             if (*(IInputSignalReceiver__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) == TypeInfo__IInputSignalReceiver) {
-              puVar11 = (undefined4 *)(*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) * 8 + 0xbc + *piVar8);
+              puVar11 = (undefined4 *)(*piVar8 + (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar9 = uVar9 + 1;

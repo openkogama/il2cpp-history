@@ -51,14 +51,12 @@ code_?:
               if (this_01 != (Material *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureOffset(this_01,StringLiteral__MainTex,(this->fields)._offset_5__3,(MethodInfo *)0x0);
                 fVar3 = (pAVar2->fields).FramesPerSecond;
-                this_02 = (SubscribableVariableBase_1_System_Single_ *)func_?(TypeInfo__UnityEngine__WaitForSeconds);
-                if (this_02 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
-                  SubscribableVariableBase`1[System::Single]::SubscribableVariableBase_1_System_Single___ctor(this_02,1.0 / fVar3,(MethodInfo *)0x0);
-                  (this->fields).__2__current = (Object *)this_02;
-                  func_?(&(this->fields).__2__current,this_02);
-                  (this->fields).__1__state = 1;
-                  return 1;
-                }
+                this_02 = (SubscribableVariable_1_System_Single_ *)func_?(TypeInfo__UnityEngine__WaitForSeconds);
+                SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(this_02,1.0 / fVar3,(MethodInfo *)0x0);
+                (this->fields).__2__current = (Object *)this_02;
+                func_?();
+                (this->fields).__1__state = 1;
+                return 1;
               }
             }
             goto code_?;
@@ -91,7 +89,6 @@ void Assembly-CSharp.dll::AnimatedSpriteSheetTexture+<UpdateTiling>d__20::Animat
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__AnimatedSpriteSheetTexture___UpdateTiling_d__20__System_Collections_IEnumerator_Reset__);
   func_?(this_00);

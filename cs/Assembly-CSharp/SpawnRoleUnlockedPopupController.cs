@@ -50,19 +50,6 @@ public class SpawnRoleUnlockedPopupController : MonoBehaviour
 	private bool awaitingSpawn;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass22_0
-	{
-		// Fields
-		public TierUnlockedPopupController tierUnlockedPopupController;
-
-		// Constructors
-		public __c__DisplayClass22_0();
-
-		// Methods
-		internal void _SeeTierReward_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -77,6 +64,19 @@ public class SpawnRoleUnlockedPopupController : MonoBehaviour
 
 		// Methods
 		internal void _Close_b__28_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass22_0
+	{
+		// Fields
+		public TierUnlockedPopupController tierUnlockedPopupController;
+
+		// Constructors
+		public __c__DisplayClass22_0();
+
+		// Methods
+		internal void _SeeTierReward_b__0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

@@ -36,20 +36,6 @@ public class PlayerInventoryController : MonoBehaviour, IPlayerInventory
 	private InventoryItemPreviewer draggedPreview;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass20_0
-	{
-		// Fields
-		public PlayerInventoryController __4__this;
-		public UIPushOption options;
-
-		// Constructors
-		public __c__DisplayClass20_0();
-
-		// Methods
-		internal void _Activate_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -64,6 +50,20 @@ public class PlayerInventoryController : MonoBehaviour, IPlayerInventory
 
 		// Methods
 		internal void _Activate_b__20_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass20_0
+	{
+		// Fields
+		public PlayerInventoryController __4__this;
+		public UIPushOption options;
+
+		// Constructors
+		public __c__DisplayClass20_0();
+
+		// Methods
+		internal void _Activate_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

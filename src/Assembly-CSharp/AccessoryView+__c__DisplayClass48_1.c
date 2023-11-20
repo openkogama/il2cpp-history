@@ -15,12 +15,10 @@ void Assembly-CSharp.dll::AccessoryView+<>c__DisplayClass48_1::AccessoryView_c_D
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
     object = (this->fields).__4__this;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    if (this_01 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)object,MethodInfo__AccessoryView__BackToShop__,(MethodInfo *)0x0);
-      if (x != (IUIStack *)0x0) {
-        func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,1,this_01,8);
-        return;
-      }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)object,MethodInfo__AccessoryView__BackToShop__,(MethodInfo *)0x0);
+    if (x != (IUIStack *)0x0) {
+      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,1,this_01,8);
+      return;
     }
   }
   func_?();

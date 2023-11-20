@@ -53,8 +53,15 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_CeilVector(Vector3 *
 void Assembly-CSharp.dll::MathFunctions::MathFunctions_ClampIntVector(IntVector *target,IntVector min,IntVector max,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    cRam_? = '\x01';
+  }
   key = 0;
   do {
+    if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__WorldObject__IntVector);
+    }
     iVar1 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item(target,key,(MethodInfo *)0x0);
     iVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item(&min,key,(MethodInfo *)0x0);
     iVar3 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item(&max,key,(MethodInfo *)0x0);
@@ -258,43 +265,50 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_DotProduct(Vector3 *a,Ve
 Bounds * Assembly-CSharp.dll::MathFunctions::MathFunctions_FastAABBTransform(Bounds *__return_storage_ptr__,Matrix4x4 m,Bounds b,MethodInfo *method)
 
 {
-  func_?(&MStack_1,0,0x40);
-  iStack_2 = 0;
+  MStack_1.m00 = m.m00;
+  MStack_1.m10 = m.m10;
+  MStack_1.m20 = m.m20;
+  MStack_1.m30 = m.m30;
+  MStack_1.m01 = m.m01;
+  MStack_1.m11 = m.m11;
+  MStack_1.m21 = m.m21;
+  MStack_1.m31 = m.m31;
+  MStack_1.m02 = m.m02;
+  MStack_1.m12 = m.m12;
+  MStack_1.m22 = m.m22;
+  MStack_1.m32 = m.m32;
+  MStack_1.m03 = m.m03;
+  MStack_1.m13 = m.m13;
+  MStack_1.m23 = m.m23;
+  MStack_1.m33 = m.m33;
+  func_?(&MStack_2,0,0x40);
+  iStack_3 = 0;
   do {
-    iVar3 = 3;
-    index = iStack_2;
+    iVar4 = 3;
+    index = iStack_3;
     do {
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1((Matrix4x4 *)&stack0xffffff58,index,(MethodInfo *)0x0);
-      uStack_5 = CONCAT44(fVar4,(undefined4)uStack_5);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(&MStack_1,index,ABS(fVar4),(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1(&MStack_1,index,(MethodInfo *)0x0);
+      uStack_6 = CONCAT44(fVar5,(undefined4)uStack_6);
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(&MStack_2,index,ABS(fVar5),(MethodInfo *)0x0);
       index = index + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    iStack_2 = iStack_2 + 4;
-  } while (iStack_2 < 0xc);
-  pRVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_7,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&b,(MethodInfo *)MStack_1.m01);
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint((Vector3 *)&RStack_7,&m,(Vector3)*pRVar6,(MethodInfo *)0x0);
-  uStack_5._0_4_ = pVVar8->x;
-  uStack_5._4_4_ = pVVar8->y;
-  fVar4 = pVVar8->z;
-  pRVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Current(&RStack_7,(Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)&b,(MethodInfo *)0x0);
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector(&VStack_9,(Matrix4x4 *)&stack0xffffff18,(Vector3)*pRVar6,(MethodInfo *)0x0);
-  RStack_7._options = (int32_t)pVVar8->x;
-  RStack_7._cultureKey = (String *)pVVar8->y;
-  RStack_7._pattern = (String *)(pVVar8->z * 2.0);
-  (__return_storage_ptr__->m_Center).x = 0.0;
-  (__return_storage_ptr__->m_Center).y = 0.0;
-  (__return_storage_ptr__->m_Center).z = 0.0;
-  (__return_storage_ptr__->m_Extents).x = 0.0;
-  (__return_storage_ptr__->m_Extents).y = 0.0;
-  (__return_storage_ptr__->m_Extents).z = 0.0;
-  center.z = fVar4;
-  center.x = (float)(undefined4)uStack_5;
-  center.y = (float)uStack_5._4_4_;
-  size.y = (float)RStack_7._cultureKey * 2.0;
-  size.x = (float)RStack_7._options * 2.0;
-  size.z = (float)RStack_7._pattern;
-  UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds__ctor(__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    iStack_3 = iStack_3 + 4;
+  } while (iStack_3 < 0xc);
+  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint(&VStack_8,&m,b.m_Center,(MethodInfo *)0x0);
+  uStack_6._0_4_ = pVVar7->x;
+  uStack_6._4_4_ = pVVar7->y;
+  fVar5 = pVVar7->z;
+  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector(&VStack_8,(Matrix4x4 *)&stack0xffffff24,b.m_Extents,(MethodInfo *)0x0);
+  uVar9 = pVVar7->x;
+  uVar10 = pVVar7->y;
+  fVar11 = pVVar7->z;
+  (__return_storage_ptr__->m_Center).x = (float)(undefined4)uStack_6;
+  (__return_storage_ptr__->m_Center).y = (float)uStack_6._4_4_;
+  (__return_storage_ptr__->m_Center).z = fVar5;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar9 * 2.0 * 0.5;
+  (__return_storage_ptr__->m_Extents).y = (float)uVar10 * 2.0 * 0.5;
+  (__return_storage_ptr__->m_Extents).z = fVar11 * 2.0 * 0.5;
   return __return_storage_ptr__;
 }
 
@@ -312,24 +326,26 @@ List_1_UnityEngine_Vector2_ * Assembly-CSharp.dll::MathFunctions::MathFunctions_
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  if (this != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_1(this,(IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)points,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector2>_);
-    iStack_1 = 0;
-    if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
-      for (; iStack_1 < (points->fields)._size / 2; iStack_1 = iStack_1 + 1) {
-        value = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item((List_1_UnityEngine_Vector2_ *)this,iStack_1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-        value_00 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item((List_1_UnityEngine_Vector2_ *)this,((this->fields)._size - iStack_1) + -1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__set_Item((List_1_UnityEngine_Vector2_ *)this,iStack_1,value_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_);
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__set_Item((List_1_UnityEngine_Vector2_ *)this,((this->fields)._size - iStack_1) + -1,value,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_);
+  pLVar1 = (List_1_UnityEngine_Vector2_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2___ctor_1(pLVar1,(IEnumerable_1_UnityEngine_Vector2_ *)points,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector2>_);
+  iStack_2 = 0;
+  if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
+    while( true ) {
+      if ((points->fields)._size / 2 <= iStack_2) {
+        return pLVar1;
       }
-      return (List_1_UnityEngine_Vector2_ *)this;
+      if (pLVar1 == (List_1_UnityEngine_Vector2_ *)0x0) break;
+      value = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(pLVar1,iStack_2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+      value_00 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(pLVar1,((pLVar1->fields)._size - iStack_2) + -1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__set_Item(pLVar1,iStack_2,value_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_);
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__set_Item(pLVar1,((pLVar1->fields)._size - iStack_2) + -1,value,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_);
+      iStack_2 = iStack_2 + 1;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (List_1_UnityEngine_Vector2_ *)(*pcVar2)();
-  return pLVar3;
+  pcVar3 = (code *)swi(3);
+  pLVar1 = (List_1_UnityEngine_Vector2_ *)(*pcVar3)();
+  return pLVar1;
 }
 
 
@@ -370,7 +386,6 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetMaxVector(Vector3
     if (((index != 0) && (fVar1 = max0.y, fVar2 = max1.y, index != 1)) && (fVar1 = max0.z, fVar2 = max1.z, index != 2)) {
       uVar3 = func_?(&TypeInfo__System__IndexOutOfRangeException);
       this = (IndexOutOfRangeException *)func_?(uVar3);
-      func_?(this);
       method_00 = (MethodInfo *)0x0;
       message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this,message,method_00);
@@ -407,7 +422,6 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetMinVector(Vector3
     if (((index != 0) && (fVar1 = min0.y, fVar2 = min1.y, index != 1)) && (fVar1 = min0.z, fVar2 = min1.z, index != 2)) {
       uVar3 = func_?(&TypeInfo__System__IndexOutOfRangeException);
       this = (IndexOutOfRangeException *)func_?(uVar3);
-      func_?(this);
       method_00 = (MethodInfo *)0x0;
       message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this,message,method_00);
@@ -434,16 +448,16 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetMinVector(Vector3
 Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetNormal(Vector3 *__return_storage_ptr__,Vector3 pa,Vector3 pb,Vector3 pc,MethodInfo *method)
 
 {
-  fStack_1 = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
-  fStack_2 = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
-  uStack_3 = CONCAT44((pc.x - pa.x) * (pb.z - pa.z) - (pb.x - pa.x) * (pc.z - pa.z),fStack_1);
-  fStack_4 = fStack_2;
-  puVar5 = (undefined8 *)func_?(auStack_6,&uStack_3,0);
-  uVar7 = *puVar5;
-  fVar8 = *(float *)(puVar5 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar7;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar7 >> 0x20);
-  __return_storage_ptr__->z = fVar8;
+  VStack_1.z = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
+  value.y = (pc.x - pa.x) * (pb.z - pa.z) - (pb.x - pa.x) * (pc.z - pa.z);
+  value.x = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
+  value.z = VStack_1.z;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_1,value,(MethodInfo *)0x0);
+  fVar3 = pVVar2->y;
+  fVar4 = pVVar2->z;
+  __return_storage_ptr__->x = pVVar2->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar4;
   return __return_storage_ptr__;
 }
 
@@ -603,22 +617,8 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsCoincidentalLineSegment
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsFloatValid(float floatToValidate,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
   if (ABS(floatToValidate) == INFINITY) {
     return 0;
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
   }
   return (uint)ABS(floatToValidate) < 0x7f800001;
 }
@@ -705,37 +705,41 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsPointInShape(IList_1_Un
   iStack_6 = iVar4 + -1;
   do {
     iVar4 = iVar5;
-    uVar7 = 0;
-    uVar8 = (shapePoints->klass->_1).interface_offsets_count;
-    if (uVar8 != 0) {
+    pIVar7 = shapePoints->klass;
+    uVar8 = 0;
+    uVar9._0_1_ = (pIVar7->_1).rank;
+    uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+    if (uVar9 != 0) {
       do {
-        if (shapePoints->klass->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__System__Collections__Generic__ICollection<UnityEngine::Vector2>) {
-          pVVar9 = &(shapePoints->klass->vtable).get_Item + shapePoints->klass->interfaceOffsets[uVar7].offset;
+        if (pIVar7->interfaceOffsets[uVar8].interfaceType == (Il2CppClass *)TypeInfo__System__Collections__Generic__ICollection<UnityEngine::Vector2>) {
+          ppMVar10 = &(&(shapePoints->klass->vtable).get_Item)[shapePoints->klass->interfaceOffsets[uVar8].offset].method;
           goto code_?;
         }
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < uVar8);
+        uVar8 = uVar8 + 1;
+      } while (uVar8 < uVar9);
     }
-    pVVar9 = (VirtualInvokeData *)func_?(shapePoints,TypeInfo__System__Collections__Generic__ICollection<UnityEngine::Vector2>,0);
+    ppMVar10 = (MethodInfo **)func_?(shapePoints,TypeInfo__System__Collections__Generic__ICollection<UnityEngine::Vector2>,0);
 code_?:
-    iVar5 = (*pVVar9->methodPtr)(shapePoints,pVVar9->method);
+    iVar5 = (*(code *)*ppMVar10)(shapePoints,ppMVar10[1]);
     if (iVar5 <= iVar4) {
       return bStack_1;
     }
-    uVar7 = 0;
-    uVar8 = (shapePoints->klass->_1).interface_offsets_count;
+    pIVar7 = shapePoints->klass;
+    uVar9 = 0;
+    uVar8._0_1_ = (pIVar7->_1).rank;
+    uVar8._1_1_ = (pIVar7->_1).minimumAlignment;
     if (uVar8 != 0) {
       do {
-        if (shapePoints->klass->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>) {
-          pVVar9 = &(shapePoints->klass->vtable).get_Item + shapePoints->klass->interfaceOffsets[uVar7].offset;
+        if (pIVar7->interfaceOffsets[uVar9].interfaceType == (Il2CppClass *)TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>) {
+          ppMVar10 = &(&(shapePoints->klass->vtable).get_Item)[shapePoints->klass->interfaceOffsets[uVar9].offset].method;
           goto code_?;
         }
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < uVar8);
+        uVar9 = uVar9 + 1;
+      } while (uVar9 < uVar8);
     }
-    pVVar9 = (VirtualInvokeData *)func_?(shapePoints,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,0);
+    ppMVar10 = (MethodInfo **)func_?(shapePoints,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,0);
 code_?:
-    (*pVVar9->methodPtr)(shapePoints,iVar4,pVVar9->method);
+    (*(code *)*ppMVar10)(shapePoints,iVar4,ppMVar10[1]);
     if (point.y < extraout_EDX) {
 code_?:
       func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iStack_6);
@@ -748,13 +752,13 @@ code_?:
       func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iStack_6);
       if (extraout_EDX_00 <= point.y) goto code_?;
 code_?:
-      fVar10 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iStack_6);
-      fVar11 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
+      fVar11 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iStack_6);
+      fVar12 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
       func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
       func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iStack_6);
       func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
-      fVar12 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
-      if (point.x < ((point.y - extraout_EDX_03) * (fVar10 - fVar11)) / (extraout_EDX_04 - extraout_EDX_05) + fVar12) {
+      fVar13 = (float)func_?(0,TypeInfo__System__Collections__Generic__IList<UnityEngine::Vector2>,shapePoints,iVar4);
+      if (point.x < ((point.y - extraout_EDX_03) * (fVar11 - fVar12)) / (extraout_EDX_04 - extraout_EDX_05) + fVar13) {
         bStack_1 = bStack_1 == false;
       }
     }
@@ -769,51 +773,11 @@ code_?:
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsQuaternionFloatsValid(Quaternion quaternion,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
   if ((uint)ABS(quaternion.x) < 0x7f800001) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
     if ((uint)ABS(quaternion.y) < 0x7f800001) {
-      cVar1 = func_?(quaternion.z,0);
-      if (cVar1 == '\0') {
-        cVar1 = func_?(quaternion.w,0);
-        if (cVar1 == '\0') {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__BitConverter);
-            cRam_? = '\x01';
-          }
-          if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__BitConverter);
-          }
-          if (ABS(quaternion.x) != INFINITY) {
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__System__BitConverter);
-              cRam_? = '\x01';
-            }
-            if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__System__BitConverter);
-            }
-            if (ABS(quaternion.y) != INFINITY) {
-              cVar1 = func_?(quaternion.z,0);
-              if (cVar1 == '\0') {
-                cVar1 = func_?(quaternion.w,0);
-                if (cVar1 == '\0') {
-                  return 1;
-                }
-              }
-            }
-          }
+      if ((uint)ABS(quaternion.z) < 0x7f800001) {
+        if (((((uint)ABS(quaternion.w) < 0x7f800001) && (ABS(quaternion.x) != INFINITY)) && (ABS(quaternion.y) != INFINITY)) && ((ABS(quaternion.z) != INFINITY && (ABS(quaternion.w) != INFINITY)))) {
+          return 1;
         }
       }
     }
@@ -827,46 +791,10 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsQuaternionFloatsValid(Q
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_IsVectorFloatsValid(Vector3 vector,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
   if ((uint)ABS(vector.x) < 0x7f800001) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
     if ((uint)ABS(vector.y) < 0x7f800001) {
-      cVar1 = func_?(vector.z,0);
-      if (cVar1 == '\0') {
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__System__BitConverter);
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__BitConverter);
-        }
-        if (ABS(vector.x) != INFINITY) {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__BitConverter);
-            cRam_? = '\x01';
-          }
-          if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__BitConverter);
-          }
-          if (ABS(vector.y) != INFINITY) {
-            cVar1 = func_?(vector.z,0);
-            if (cVar1 == '\0') {
-              return 1;
-            }
-          }
-        }
+      if (((((uint)ABS(vector.z) < 0x7f800001) && (ABS(vector.x) != INFINITY)) && (ABS(vector.y) != INFINITY)) && (ABS(vector.z) != INFINITY)) {
+        return 1;
       }
     }
   }
@@ -933,32 +861,30 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacetCollision(Vector
     func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';
   }
-  uStack_1 = CONCAT44((pb.z - pa.z) * (pc.x - pa.x) - (pc.z - pa.z) * (pb.x - pa.x),(pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y));
-  fStack_2 = (pc.y - pa.y) * (pb.x - pa.x) - (pc.x - pa.x) * (pb.y - pa.y);
-  fStack_3 = fStack_2;
-  puVar4 = (undefined8 *)func_?(auStack_5,&uStack_1,0);
-  uVar6 = *puVar4;
-  fStack_3 = *(float *)(puVar4 + 1);
-  n->x = (float)(int)uVar6;
-  n->y = (float)(int)((ulonglong)uVar6 >> 0x20);
-  n->z = fStack_3;
-  uStack_1._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
-  uStack_1._0_4_ = (float)uVar6;
-  if ((float)uStack_1 * lineDir.x + uStack_1._4_4_ * lineDir.y + fStack_3 * lineDir.z <= 0.0) {
-    fVar7 = (p2.y - p1.y) * n->y + (p2.x - p1.x) * n->x + (p2.z - p1.z) * n->z;
-    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= ABS(fVar7)) {
-      fVar7 = -(((-n->x * pa.x - pa.y * n->y) - pa.z * n->z) + p1.x * n->x + p1.y * n->y + p1.z * n->z) / fVar7;
-      fVar8 = (p2.x - p1.x) * fVar7 + p1.x;
-      fVar9 = (p2.y - p1.y) * fVar7 + p1.y;
-      fVar10 = (p2.z - p1.z) * fVar7 + p1.z;
-      p->x = fVar8;
-      p->y = fVar9;
-      p->z = fVar10;
-      if ((0.0 <= fVar7) && (fVar7 <= 1.0)) {
-        lineDir.x = pa.x - fVar8;
-        lineDir.y = pa.y - fVar9;
-        lineDir.z = pa.z - fVar10;
-        uStack_1 = uVar6;
+  value.y = (pb.z - pa.z) * (pc.x - pa.x) - (pc.z - pa.z) * (pb.x - pa.x);
+  value.x = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
+  value.z = (pc.y - pa.y) * (pb.x - pa.x) - (pc.x - pa.x) * (pb.y - pa.y);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffe4,value,(MethodInfo *)0x0);
+  uVar2 = pVVar1->x;
+  uVar3 = pVVar1->y;
+  fVar4 = pVVar1->z;
+  n->x = (float)uVar2;
+  n->y = (float)uVar3;
+  n->z = fVar4;
+  if ((float)uVar2 * lineDir.x + (float)uVar3 * lineDir.y + fVar4 * lineDir.z <= 0.0) {
+    fVar4 = (p2.y - p1.y) * n->y + (p2.x - p1.x) * n->x + (p2.z - p1.z) * n->z;
+    if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= ABS(fVar4)) {
+      fVar4 = -(((-n->x * pa.x - pa.y * n->y) - pa.z * n->z) + p1.x * n->x + p1.y * n->y + p1.z * n->z) / fVar4;
+      fVar5 = (p2.x - p1.x) * fVar4 + p1.x;
+      fVar6 = (p2.y - p1.y) * fVar4 + p1.y;
+      fVar7 = (p2.z - p1.z) * fVar4 + p1.z;
+      p->x = fVar5;
+      p->y = fVar6;
+      p->z = fVar7;
+      if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
+        lineDir.x = pa.x - fVar5;
+        lineDir.y = pa.y - fVar6;
+        lineDir.z = pa.z - fVar7;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&lineDir,(MethodInfo *)0x0);
         pa.x = pb.x - p->x;
         pa.y = pb.y - p->y;
@@ -968,16 +894,13 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacetCollision(Vector
         pb.y = pc.y - p->y;
         pb.z = pc.z - p->z;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&pb,(MethodInfo *)0x0);
-        dVar11 = (double)(pb.y * pa.y + pb.x * pa.x + pb.z * pa.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar8 = (double)(pb.y * pa.y + pb.x * pa.x + pb.z * pa.z);
         func_?();
-        dVar12 = (double)(pa.y * lineDir.y + pa.x * lineDir.x + pa.z * lineDir.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar9 = (double)(pa.y * lineDir.y + pa.x * lineDir.x + pa.z * lineDir.z);
         func_?();
-        dVar13 = (double)(pb.y * lineDir.y + pb.x * lineDir.x + pb.z * lineDir.z);
-        uStack_1 = CONCAT44(&UNK_?,(float)uStack_1);
+        dVar10 = (double)(pb.y * lineDir.y + pb.x * lineDir.x + pb.z * lineDir.z);
         func_?();
-        if (ABS(((float)dVar11 + (float)dVar12 + (float)dVar13) * 57.29578 - 360.0) <= 0.1) {
+        if (ABS(((float)dVar8 + (float)dVar9 + (float)dVar10) * 57.29578 - 360.0) <= 0.1) {
           return 1;
         }
       }
@@ -1042,12 +965,20 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_Pitch(Vector3 dir,Vector
 }
 
 
-/* Single Pow2(Single) */
+/* Single PitchFromLocalDirection(Vector3) */
 
-float Assembly-CSharp.dll::MathFunctions::MathFunctions_Pow2(float val,MethodInfo *method)
+float Assembly-CSharp.dll::MathFunctions::MathFunctions_PitchFromLocalDirection(Vector3 localDirection,MethodInfo *method)
 
 {
-  return val * val;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
+  }
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2._0_4_ = (pVVar1->upVector).x;
+  uVar2._4_4_ = (pVVar1->upVector).y;
+  fVar3 = (float10)func_?(uVar2,(pVVar1->upVector).z,localDirection._0_8_,localDirection.z,0);
+  return (float)(fVar3 - (float10)90.0);
 }
 
 
@@ -1073,28 +1004,8 @@ Quaternion * Assembly-CSharp.dll::MathFunctions::MathFunctions_QuaternionFromAng
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_QuaternionIsFinite(Quaternion quaternion,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
-  if (ABS(quaternion.x) != INFINITY) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
-    if (ABS(quaternion.y) != INFINITY) {
-      cVar1 = func_?(quaternion.z,0);
-      if (cVar1 == '\0') {
-        cVar1 = func_?(quaternion.w,0);
-        return cVar1 == '\0';
-      }
-    }
+  if (((ABS(quaternion.x) != INFINITY) && (ABS(quaternion.y) != INFINITY)) && (ABS(quaternion.z) != INFINITY)) {
+    return ABS(quaternion.w) != INFINITY;
   }
   return 0;
 }
@@ -1105,28 +1016,8 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_QuaternionIsFinite(Quater
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_QuaternionIsNan(Quaternion quaternion,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
-  if ((uint)ABS(quaternion.x) < 0x7f800001) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
-    if ((uint)ABS(quaternion.y) < 0x7f800001) {
-      cVar1 = func_?(quaternion.z,0);
-      if (cVar1 == '\0') {
-        cVar1 = func_?(quaternion.w,0);
-        return cVar1 != '\0';
-      }
-    }
+  if ((((uint)ABS(quaternion.x) < 0x7f800001) && ((uint)ABS(quaternion.y) < 0x7f800001)) && ((uint)ABS(quaternion.z) < 0x7f800001)) {
+    return 0x7f800000 < (uint)ABS(quaternion.w);
   }
   return 1;
 }
@@ -1151,7 +1042,7 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_RoundVector(Vector3 
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)vector.x,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)vector.x,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -1159,7 +1050,7 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_RoundVector(Vector3 
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  mscorlib.dll::System::Math::Math_Round_4((double)vector.y,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5((double)vector.y,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -1168,7 +1059,7 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_RoundVector(Vector3 
     func_?();
   }
   vector.y = SUB84((double)vector.z,0);
-  dVar1 = mscorlib.dll::System::Math::Math_Round_4((double)vector.z,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  dVar1 = mscorlib.dll::System::Math::Math_Round_5((double)vector.z,decimals,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   uRam_? = CONCAT44(vector.y,&UNK_?);
   fRam00000008 = (float)dVar1;
   return (Vector3 *)0x0;
@@ -1207,21 +1098,13 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedAngle_1(Vector3 v1
 double Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedDistanceTo(Plane *plane,Vector3 *planeOrigin,Vector3 *point,MethodInfo *method)
 
 {
-  pRVar1 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_2,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)plane,(MethodInfo *)0x0);
-  uStack_3._0_4_ = (float)pRVar1->_options;
-  uStack_3._4_4_ = (float)pRVar1->_cultureKey;
-  pSStack_4 = pRVar1->_pattern;
-  RStack_2._options = (int32_t)point->x;
-  RStack_2._cultureKey = (String *)point->y;
-  RStack_2._pattern = (String *)point->z;
-  pRVar1 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_5,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)plane,(MethodInfo *)0x0);
-  fStack_6 = (float)pRVar1->_options;
-  fVar7 = planeOrigin->x;
-  pRVar1 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_5,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)plane,(MethodInfo *)0x0);
-  pSVar8 = pRVar1->_cultureKey;
-  fVar9 = planeOrigin->y;
-  pRVar1 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key(&RStack_5,(KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)plane,(MethodInfo *)0x0);
-  return (double)(-(fVar9 * (float)pSVar8 + fVar7 * fStack_6 + (float)pRVar1->_pattern * planeOrigin->z) + (float)RStack_2._cultureKey * uStack_3._4_4_ + (float)RStack_2._options * (float)uStack_3 + (float)RStack_2._pattern * (float)pSStack_4);
+  uVar1 = (plane->m_Normal).x;
+  uVar2 = (plane->m_Normal).y;
+  uVar3 = point->x;
+  uVar4 = point->y;
+  uVar5 = (plane->m_Normal).x;
+  uVar6 = (plane->m_Normal).y;
+  return (double)(-((float)uVar6 * planeOrigin->y + (float)uVar5 * planeOrigin->x + (plane->m_Normal).z * planeOrigin->z) + (float)uVar4 * (float)uVar2 + (float)uVar3 * (float)uVar1 + point->z * (plane->m_Normal).z);
 }
 
 
@@ -1243,30 +1126,39 @@ double Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedDistanceTo_1(Vect
 float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedYawFromLocalDirection(Vector3 localDirection,MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)func_?();
-  uVar2 = *puVar1;
-  fVar3 = *(float *)(puVar1 + 1);
-  localDirection.y = (float)uVar2;
-  localDirection.z = (float)((ulonglong)uVar2 >> 0x20);
+  value.y = 0.0;
+  value.x = localDirection.x;
+  value.z = localDirection.z;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_2,value,(MethodInfo *)0x0);
+  VStack_2.x = pVVar1->x;
+  VStack_2.y = pVVar1->y;
+  fVar3 = pVVar1->z;
+  uStack_4 = VStack_2._0_8_;
+  fStack_5 = fVar3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    uStack_4 = CONCAT44(VStack_2.y,&TypeInfo__UnityEngine__Vector3);
+    VStack_2.z = (float)&UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar5._0_4_ = (pVVar4->forwardVector).x;
-  uVar5._4_4_ = (pVVar4->forwardVector).y;
-  fVar6 = (float10)func_?(uVar5,(pVVar4->forwardVector).z,uVar2,fVar3,0);
+  uStack_4 = uStack_4 & 0xffffffff00000000;
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar7 = (pVVar6->forwardVector).x;
+  uVar8 = (pVVar6->forwardVector).y;
+  VStack_2.z = fVar3;
+  fVar9 = (float10)func_?(uVar7,uVar8,(pVVar6->forwardVector).z);
+  localDirection.z = (float)fVar9;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    uStack_4 = CONCAT44(uStack_4._4_4_,&TypeInfo__UnityEngine__Vector3);
+    VStack_2.z = (float)&UNK_?;
+    func_?();
     cRam_? = '\x01';
   }
-  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar7 = (pVVar4->rightVector).x;
-  uVar8 = (pVVar4->rightVector).y;
-  fVar9 = localDirection.z * (float)uVar8;
-  localDirection.z = (float)fVar6;
-  if (fVar9 + localDirection.y * (float)uVar7 + fVar3 * (pVVar4->rightVector).z < 0.0) {
-    localDirection.z = -(float)fVar6;
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar10 = (pVVar6->rightVector).x;
+  uVar11 = (pVVar6->rightVector).y;
+  if (uStack_4._4_4_ * (float)uVar11 + (float)uStack_4 * (float)uVar10 + fStack_5 * (pVVar6->rightVector).z < 0.0) {
+    localDirection.z = -localDirection.z;
   }
   return localDirection.z;
 }
@@ -1372,25 +1264,8 @@ void Assembly-CSharp.dll::MathFunctions::MathFunctions_Vector3ToVector2(Vector3 
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_VectorIsFinite(Vector3 vector,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
-  if (ABS(vector.x) != INFINITY) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
-    if (ABS(vector.y) != INFINITY) {
-      cVar1 = func_?(vector.z,0);
-      return cVar1 == '\0';
-    }
+  if ((ABS(vector.x) != INFINITY) && (ABS(vector.y) != INFINITY)) {
+    return ABS(vector.z) != INFINITY;
   }
   return 0;
 }
@@ -1401,25 +1276,8 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_VectorIsFinite(Vector3 ve
 bool Assembly-CSharp.dll::MathFunctions::MathFunctions_VectorIsNan(Vector3 vector,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__BitConverter);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__BitConverter);
-  }
-  if ((uint)ABS(vector.x) < 0x7f800001) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__BitConverter);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__BitConverter->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__BitConverter);
-    }
-    if ((uint)ABS(vector.y) < 0x7f800001) {
-      cVar1 = func_?(vector.z,0);
-      return cVar1 != '\0';
-    }
+  if (((uint)ABS(vector.x) < 0x7f800001) && ((uint)ABS(vector.y) < 0x7f800001)) {
+    return 0x7f800000 < (uint)ABS(vector.z);
   }
   return 1;
 }

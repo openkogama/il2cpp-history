@@ -27,19 +27,6 @@ public class DesktopCubeModelingController : MonoBehaviour
 	private UploadGameScreenshotHandler screenshotHandler;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
-	{
-		// Fields
-		public string errorText;
-
-		// Constructors
-		public __c__DisplayClass8_0();
-
-		// Methods
-		internal void _PublishCallback_b__3(IModalPopupCreator x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -60,6 +47,19 @@ public class DesktopCubeModelingController : MonoBehaviour
 		internal void _PublishCallback_b__8_2(IUIStack x, BaseEventData y);
 		internal void _OnPublishPlanetFinished_b__9_0(IUIStack x, BaseEventData y);
 		internal void _TakeScreenshot_b__10_0(IModalPopupCreator x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass8_0
+	{
+		// Fields
+		public string errorText;
+
+		// Constructors
+		public __c__DisplayClass8_0();
+
+		// Methods
+		internal void _PublishCallback_b__3(IModalPopupCreator x, BaseEventData y);
 	}
 
 	// Constructors

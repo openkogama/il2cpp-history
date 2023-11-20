@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject.AntiCheat
 {
@@ -20,13 +20,10 @@ namespace MV.WorldObject.AntiCheat
 		public uint crc;
 	
 		// Constructors
-		public FileData();
-		public FileData(string name, uint crc);
 		public FileData(byte[] name, uint crc);
 	
 		// Methods
 		public string NameAsString();
-		public void SetName(string a);
 		public override bool Equals(object obj);
 		public override int GetHashCode();
 		public override string ToString();

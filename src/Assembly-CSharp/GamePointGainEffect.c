@@ -202,7 +202,7 @@ void Assembly-CSharp.dll::GamePointGainEffect::GamePointGainEffect__ctor(GamePoi
   (this->fields).offsetDirection.x = (pVVar1->zeroVector).x;
   (this->fields).offsetDirection.y = fVar2;
   (this->fields).offsetDirection.z = fVar3;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

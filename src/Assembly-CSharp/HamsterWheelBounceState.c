@@ -171,10 +171,10 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
     VStack_4._0_8_ = *(undefined8 *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x24);
     VStack_4.z = *(float *)(mvControllerColliderHit.hit.interactionFlags._4_4_ + 0x2c);
     if (pMVar1 != (MVInteractableBase *)0x0) {
-      pIStack_5 = (pMVar1->klass->vtable).__unknown_6.methodPtr;
-      fVar6 = (float10)(*pIStack_5)(pMVar1,0xd,fStack_3 + 0.6,(pMVar1->klass->vtable).__unknown_6.method);
-      pIStack_5 = (Il2CppMethodPointer)(float)fVar6;
-      if (0.0 < (float)pIStack_5) {
+      pMStack_5 = (pMVar1->klass->vtable).__unknown_6.method;
+      fVar6 = (float10)(*(code *)pMStack_5)(pMVar1,0xd,fStack_3 + 0.6,(pMVar1->klass->vtable).__unknown_7.methodPtr);
+      pMStack_5 = (MethodInfo *)(float)fVar6;
+      if (0.0 < (float)pMStack_5) {
         VStack_4.z = mvControllerColliderHit.impactVelocity.y;
         VStack_4.x = mvControllerColliderHit.slopeNormal.z;
         VStack_4.y = mvControllerColliderHit.impactVelocity.x;
@@ -182,7 +182,7 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
         fStack_7 = mvControllerColliderHit.elipsoidNormal.z * -VStack_4.x + mvControllerColliderHit.slopeNormal.x * -VStack_4.y + mvControllerColliderHit.slopeNormal.y * -VStack_4.z;
         if (0.0 < fStack_7) {
           fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
-          fStack_7 = (float)(fVar6 * (float10)fStack_7 * (float10)(float)pIStack_5);
+          fStack_7 = (float)(fVar6 * (float10)fStack_7 * (float10)(float)pMStack_5);
           if (4.5 < fStack_7) {
             puVar8 = (undefined4 *)&stack0x00000008;
             puVar9 = (undefined4 *)&stack0xffffff50;
@@ -196,9 +196,9 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
             if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MVPhysics);
             }
-            fStack_7 = (float)pIStack_5 * 10.0;
+            fStack_7 = (float)pMStack_5 * 10.0;
             fVar12 = MVPhysics::MVPhysics_CalculateJumpForceFromVerticalVelocity((float)fVar6,(MethodInfo *)0x0);
-            fVar12 = fVar12 * (float)pIStack_5;
+            fVar12 = fVar12 * (float)pMStack_5;
             if (fVar12 < 0.0) {
               fVar12 = 0.0;
             }
@@ -256,7 +256,7 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState__ctor
   (this->fields).bounceVelocity.x = (pVVar1->zeroVector).x;
   (this->fields).bounceVelocity.y = fVar2;
   (this->fields).bounceVelocity.z = fVar3;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).interactable = interactable;
   func_?(&this->fields,interactable);
   return;

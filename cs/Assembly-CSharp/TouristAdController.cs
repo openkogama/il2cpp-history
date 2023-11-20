@@ -37,6 +37,22 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 	public bool IsPromotionAvailable { get; }
 
 	// Nested types
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _InterstitialAdResult_b__20_0(IUIStack x, BaseEventData _);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass16_0
 	{
@@ -63,22 +79,6 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 
 		// Methods
 		internal void _ShowPromotion_b__1(IUIStack x, BaseEventData _);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _InterstitialAdResult_b__20_0(IUIStack x, BaseEventData _);
 	}
 
 	// Constructors

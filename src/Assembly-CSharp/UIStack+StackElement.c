@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::UIStack+StackElement::UIStack_StackElement__ctor(UIStack_StackElement *this,GameObject *gameObject,UIPushOption__Enum pushOption,UnityAction *onPop,UIGroupFlags__Enum group,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (gameObject != (GameObject *)0x0) {
     pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)gameObject,(MethodInfo *)0x0);
     (this->fields).name = pSVar1;

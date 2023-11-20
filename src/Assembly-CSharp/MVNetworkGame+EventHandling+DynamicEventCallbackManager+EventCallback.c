@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_No_subscribers_to_event_data,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_No_subscribers_to_event_data,(MethodInfo *)0x0);
     return;
   }
   pAVar1 = (this->fields).OnEventData;

@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -40,7 +40,6 @@ namespace MV.WorldObject
 		// Methods
 		public static void GetCorners(CubeBase cube, ref Vector3[] corners);
 		public static byte GetMaterial(CubeBase cube, Face face);
-		public static CubeBase Clone(CubeBase original);
 		public override bool Equals(object obj);
 		public bool Equals(CubeBase cube);
 		public static bool operator ==(CubeBase a, CubeBase b);

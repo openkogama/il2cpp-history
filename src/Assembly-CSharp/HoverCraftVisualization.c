@@ -30,7 +30,7 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Activ
       bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__MoveNext__);
       if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__Dispose__,(MethodInfo *)unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__Dispose__,(MethodInfo *)unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
@@ -411,8 +411,8 @@ Gradient * Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization
         pfVar12 = pfVar12 + 2;
       }
       pGVar15 = (Gradient *)func_?(TypeInfo__UnityEngine__Gradient);
+      UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(pGVar15,(MethodInfo *)0x0);
       if (pGVar15 != (Gradient *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(pGVar15,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys(pGVar15,pGStack_1,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys(pGVar15,(GradientAlphaKey__Array *)pTStack_5,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_mode(pGVar15,GradientMode__Enum_Blend,(MethodInfo *)0x0);
@@ -502,104 +502,102 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Init(
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).hoverCraftHullRoot;
-  if (pTVar1 != (Transform *)0x0) {
+  if (pTVar1 == (Transform *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar1,(MethodInfo *)0x0);
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition(&VStack_3,pTVar1,(MethodInfo *)0x0);
-      fVar4 = pVVar2->y;
-      fVar5 = pVVar2->z;
-      (this->fields).localHoverCraftHullRootBasePosition.x = pVVar2->x;
-      (this->fields).localHoverCraftHullRootBasePosition.y = fVar4;
-      (this->fields).localHoverCraftHullRootBasePosition.z = fVar5;
-      (this->fields)._.isInSpawner = inSpawner;
-      (this->fields).vehicleSeatManager = vsm;
-      func_?(&(this->fields).vehicleSeatManager,vsm);
-      if (hoverCraftHull != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,hoverCraftHull,(MethodInfo *)0x0);
-        VStack_3.y = pVVar2->x;
-        VStack_3.z = pVVar2->y;
-        fVar5 = pVVar2->z;
-        pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation((Quaternion *)&stack0xffffffe0,hoverCraftHull,(MethodInfo *)0x0);
-        fVar4 = pQVar6->x;
-        fVar7 = pQVar6->y;
-        fVar8 = pQVar6->z;
-        fVar9 = pQVar6->w;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(hoverCraftHull,(this->fields).hoverCraftHullRoot,(MethodInfo *)0x0);
-        value.z = fVar5;
-        value.x = VStack_3.y;
-        value.y = VStack_3.z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(hoverCraftHull,value,(MethodInfo *)0x0);
-        value_00.y = fVar7;
-        value_00.x = fVar4;
-        value_00.z = fVar8;
-        value_00.w = fVar9;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(hoverCraftHull,value_00,(MethodInfo *)0x0);
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-        if (pTVar1 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-          fVar4 = pVVar2->y;
-          fVar5 = pVVar2->z;
-          (this->fields).prevWorldPosition.x = pVVar2->x;
-          (this->fields).prevWorldPosition.y = fVar4;
-          (this->fields).prevWorldPosition.z = fVar5;
-          (this->fields).prevWorldPosition.y = 0.0;
-          pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-          fVar5 = pQVar6->y;
-          fVar4 = pQVar6->z;
-          fVar7 = pQVar6->w;
-          (this->fields).prevWorldRot.x = pQVar6->x;
-          (this->fields).prevWorldRot.y = fVar5;
-          (this->fields).prevWorldRot.z = fVar4;
-          (this->fields).prevWorldRot.w = fVar7;
-          (this->fields).maxHealth = maxHealthVal;
-          if (health != (MVRuntimeDataVariableClampedFloat *)0x0) {
-            fVar10 = (float10)(*(health->klass->vtable).get_Value.methodPtr)(health,(health->klass->vtable).get_Value.method);
-            (this->fields).prevHealth = (float)fVar10;
-            pMVar11 = (health->fields)._._.OnChange;
-            this_00 = (UnityAction_1_System_Object_ *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
-            if (this_00 != (UnityAction_1_System_Object_ *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_00,(Object *)this,MethodInfo__HoverCraftVisualization___Init_b__44_0_System__Object_,(MethodInfo *)0x0);
-              pMVar11 = (MVRuntimeDataVariable_OnChangeDelegate *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pMVar11,(Delegate *)this_00,(MethodInfo *)0x0);
-              if (pMVar11 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-                (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-              }
-              else {
-                pMVar12 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-                if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                  pMVar12 = pMVar11;
-                }
-                if (pMVar12 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-                (health->fields)._._.OnChange = pMVar12;
-                pMVar12 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-                if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-                  pMVar12 = pMVar11;
-                }
-                if (pMVar12 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-              }
-              func_?();
-              pVVar13 = (this->fields).vehicleBlinker;
-              source = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)hoverCraftHull,(MethodInfo *)0x0);
-              if (source != (GameObject *)0x0) {
-                pMVar14 = (MeshFilter__Array *)Newtonsoft::Json::Linq::LinqExtensions::LinqExtensions_Values_2((IEnumerable_1_Newtonsoft_Json_Linq_JToken_ *)source,UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______);
-                if (pVVar13 != (VehicleBlinker *)0x0) {
-                  (pVVar13->fields)._.meshFilters = pMVar14;
-                  func_?(&(pVVar13->fields)._.meshFilters,pMVar14);
-                  pVVar13 = (this->fields).vehicleBlinker;
-                  if (pVVar13 != (VehicleBlinker *)0x0) {
-                    (pVVar13->fields)._.visible = 1;
-                    HoverCraftVisualization_UpdateSettings(this,hoverCraftVisualizationSettings,(MethodInfo *)0x0);
-                    if ((this->fields)._.isInSpawner != 0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
-                    }
-                    return;
-                  }
-                }
-              }
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition(&VStack_3,pTVar1,(MethodInfo *)0x0);
+    fVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
+    (this->fields).localHoverCraftHullRootBasePosition.x = pVVar2->x;
+    (this->fields).localHoverCraftHullRootBasePosition.y = fVar4;
+    (this->fields).localHoverCraftHullRootBasePosition.z = fVar5;
+    (this->fields)._.isInSpawner = inSpawner;
+    (this->fields).vehicleSeatManager = vsm;
+    func_?(&(this->fields).vehicleSeatManager,vsm);
+    if (hoverCraftHull == (Transform *)0x0) goto code_?;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,hoverCraftHull,(MethodInfo *)0x0);
+    VStack_3.y = pVVar2->x;
+    VStack_3.z = pVVar2->y;
+    fVar5 = pVVar2->z;
+    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation((Quaternion *)&stack0xffffffe0,hoverCraftHull,(MethodInfo *)0x0);
+    fVar4 = pQVar6->x;
+    fVar7 = pQVar6->y;
+    fVar8 = pQVar6->z;
+    fVar9 = pQVar6->w;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(hoverCraftHull,(this->fields).hoverCraftHullRoot,(MethodInfo *)0x0);
+    value.z = fVar5;
+    value.x = VStack_3.y;
+    value.y = VStack_3.z;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(hoverCraftHull,value,(MethodInfo *)0x0);
+    value_00.y = fVar7;
+    value_00.x = fVar4;
+    value_00.z = fVar8;
+    value_00.w = fVar9;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(hoverCraftHull,value_00,(MethodInfo *)0x0);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+    fVar4 = pVVar2->y;
+    fVar5 = pVVar2->z;
+    (this->fields).prevWorldPosition.x = pVVar2->x;
+    (this->fields).prevWorldPosition.y = fVar4;
+    (this->fields).prevWorldPosition.z = fVar5;
+    (this->fields).prevWorldPosition.y = 0.0;
+    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
+    fVar5 = pQVar6->y;
+    fVar4 = pQVar6->z;
+    fVar7 = pQVar6->w;
+    (this->fields).prevWorldRot.x = pQVar6->x;
+    (this->fields).prevWorldRot.y = fVar5;
+    (this->fields).prevWorldRot.z = fVar4;
+    (this->fields).prevWorldRot.w = fVar7;
+    (this->fields).maxHealth = maxHealthVal;
+    if (health == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
+    fVar10 = (float10)(*(code *)(health->klass->vtable).get_Value.method)(health,(health->klass->vtable).set_Value.methodPtr);
+    (this->fields).prevHealth = (float)fVar10;
+    pMVar11 = (health->fields)._._.OnChange;
+    this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(this_00,(Object *)this,MethodInfo__HoverCraftVisualization___Init_b__44_0_System__Object_,(MethodInfo *)0x0);
+    pMVar11 = (MVRuntimeDataVariable_OnChangeDelegate *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pMVar11,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pMVar11 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+      (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+code_?:
+      func_?();
+      pVVar12 = (this->fields).vehicleBlinker;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)hoverCraftHull,(MethodInfo *)0x0);
+      if (this_01 != (GameObject *)0x0) {
+        pMVar13 = (MeshFilter__Array *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(this_01,UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______);
+        if (pVVar12 != (VehicleBlinker *)0x0) {
+          (pVVar12->fields)._.meshFilters = pMVar13;
+          func_?(&(pVVar12->fields)._.meshFilters,pMVar13);
+          pVVar12 = (this->fields).vehicleBlinker;
+          if (pVVar12 != (VehicleBlinker *)0x0) {
+            (pVVar12->fields)._.visible = 1;
+            HoverCraftVisualization_UpdateSettings(this,hoverCraftVisualizationSettings,(MethodInfo *)0x0);
+            if ((this->fields)._.isInSpawner != 0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this,0,(MethodInfo *)0x0);
             }
+            return;
           }
         }
       }
+      goto code_?;
     }
+    pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar14 = pMVar11;
+    }
+    if (pMVar14 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (health->fields)._._.OnChange = pMVar14;
+    pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar14 = pMVar11;
+    }
+    if (pMVar14 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
@@ -663,7 +661,7 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_OnDis
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__Dispose__,unaff_ESI);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__Dispose__,unaff_ESI);
     uStack_1 = 0xffffffff;
     pPVar10 = (this->fields).fire;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -778,7 +776,7 @@ code_?:
     (this->fields).prevHealth = (float)&stack0xfffffff0;
     if (pPVar2 != (ParticleSystem *)0x0) {
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,9.9317604e-30,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,1.03827455e-29,(MethodInfo *)0x0);
       return;
     }
   }
@@ -1046,58 +1044,52 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ctor
   }
   (this->fields).useThrusters = 1;
   this_00 = (List_1_WorldObjectTypes_HoverCraft_Shared_HoverCraftThruster_ *)func_?(TypeInfo__System__Collections__Generic__List<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>);
-  if (this_00 != (List_1_WorldObjectTypes_HoverCraft_Shared_HoverCraftThruster_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__List__);
-    (this->fields).hoverCraftThrusters = this_00;
-    func_?(&(this->fields).hoverCraftThrusters,this_00);
-    (this->fields).thrustersSize = 0.872;
-    (this->fields).HoverPeriod = 0.8;
-    (this->fields).HoverAmplitude = 0.2;
-    (this->fields).rotateRollFactor = 7.0;
-    (this->fields).rollSpeed = 9.5;
-    (this->fields).rollMax = 30.0;
-    (this->fields).pitchMax = 30.0;
-    (this->fields).pitchSpeedTime = 10.0;
-    (this->fields).pitchFactor = 20.0;
-    (this->fields).damageParticleFactor = 10.0;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar2 = (pVVar1->zeroVector).y;
-    fVar3 = (pVVar1->zeroVector).z;
-    (this->fields).hoverOffset.x = (pVVar1->zeroVector).x;
-    (this->fields).hoverOffset.y = fVar2;
-    (this->fields).hoverOffset.z = fVar3;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
-      cRam_? = '\x01';
-    }
-    pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar3 = (pQVar4->identityQuaternion).y;
-    fVar2 = (pQVar4->identityQuaternion).z;
-    fVar5 = (pQVar4->identityQuaternion).w;
-    (this->fields).prevWorldRot.x = (pQVar4->identityQuaternion).x;
-    (this->fields).prevWorldRot.y = fVar3;
-    (this->fields).prevWorldRot.z = fVar2;
-    (this->fields).prevWorldRot.w = fVar5;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar2 = (pVVar1->zeroVector).y;
-    fVar3 = (pVVar1->zeroVector).z;
-    (this->fields).smoothVelocity.x = (pVVar1->zeroVector).x;
-    (this->fields).smoothVelocity.y = fVar2;
-    (this->fields).smoothVelocity.z = fVar3;
-    VehicleVisualizationBase::VehicleVisualizationBase__ctor((VehicleVisualizationBase *)this,(MethodInfo *)0x0);
-    return;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__List__);
+  (this->fields).hoverCraftThrusters = this_00;
+  func_?(&(this->fields).hoverCraftThrusters,this_00);
+  (this->fields).thrustersSize = 0.872;
+  (this->fields).HoverPeriod = 0.8;
+  (this->fields).HoverAmplitude = 0.2;
+  (this->fields).rotateRollFactor = 7.0;
+  (this->fields).rollSpeed = 9.5;
+  (this->fields).rollMax = 30.0;
+  (this->fields).pitchMax = 30.0;
+  (this->fields).pitchSpeedTime = 10.0;
+  (this->fields).pitchFactor = 20.0;
+  (this->fields).damageParticleFactor = 10.0;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).hoverOffset.x = (pVVar1->zeroVector).x;
+  (this->fields).hoverOffset.y = fVar2;
+  (this->fields).hoverOffset.z = fVar3;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Quaternion);
+    cRam_? = '\x01';
+  }
+  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar4->identityQuaternion).y;
+  fVar2 = (pQVar4->identityQuaternion).z;
+  fVar5 = (pQVar4->identityQuaternion).w;
+  (this->fields).prevWorldRot.x = (pQVar4->identityQuaternion).x;
+  (this->fields).prevWorldRot.y = fVar3;
+  (this->fields).prevWorldRot.z = fVar2;
+  (this->fields).prevWorldRot.w = fVar5;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Vector3);
+    cRam_? = '\x01';
+  }
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields).smoothVelocity.x = (pVVar1->zeroVector).x;
+  (this->fields).smoothVelocity.y = fVar2;
+  (this->fields).smoothVelocity.z = fVar3;
+  VehicleVisualizationBase::VehicleVisualizationBase__ctor((VehicleVisualizationBase *)this,(MethodInfo *)0x0);
   return;
 }
 

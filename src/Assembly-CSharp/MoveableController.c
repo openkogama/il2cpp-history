@@ -13,20 +13,17 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_AddMovable(Move
     cRam_? = '\x01';
   }
   if (movable != (MVMovable *)0x0) {
-    this_00 = (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)(this->fields).Velocities;
-    if (this_00 != (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)0x0) {
-      value.BanReason = (String *)(movable->fields).velocity.x;
-      value.BanDuration = (String *)(movable->fields).velocity.y;
-      value.BanDurationFormat = (String *)(movable->fields).velocity.z;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,AdminToolController+DefaultBan]::Dictionary_2_System_Object_AdminToolController_DefaultBan__Add(this_00,(Object *)(movable->fields)._._._.goId,value,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__Add_int__UnityEngine__Vector3_);
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).MoveControllers;
-      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar1,(Object *)(movable->fields)._._._.goId,(Object *)movable,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Add_int__MVMovable_);
+    this_00 = (this->fields).Velocities;
+    if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__Add(this_00,(movable->fields)._._._.goId,(movable->fields).velocity,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__Add_int__UnityEngine__Vector3_);
+      pDVar1 = (this->fields).MoveControllers;
+      if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(movable->fields)._._._.goId,(Object *)movable,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Add_int__MVMovable_);
         if (isInventoryPreviewMovable == 0) {
           if ((movable->fields)._CubeModel_k__BackingField != (MVCubeModelInstance *)0x0) {
             pMVar2 = (movable->fields)._CubeModel_k__BackingField;
-            if ((pMVar2 != (MVCubeModelInstance *)0x0) && (pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).CubeModelMovableMap, pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar1,(Object *)(pMVar2->fields)._._._.id,(Object *)movable,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Add_int__MVMovable_);
+            if ((pMVar2 != (MVCubeModelInstance *)0x0) && (pDVar1 = (this->fields).CubeModelMovableMap, pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0)) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(pMVar2->fields)._._._.id,(Object *)movable,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Add_int__MVMovable_);
               return;
             }
             goto code_?;
@@ -36,7 +33,7 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_AddMovable(Move
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)pSVar3,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar3,(MethodInfo *)0x0);
         }
         return;
       }
@@ -61,7 +58,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
   }
   pDVar1 = (this->fields).MoveControllers;
   if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
     if (pOVar2 != (Object *)0x0) {
       if (pOVar2[0x22].klass == (Object__Class *)0x0) {
         if (cRam_? == '\0') {
@@ -80,7 +77,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
       }
       pDVar1 = (this->fields).MoveControllers;
       if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
         if ((pOVar2 != (Object *)0x0) && (pOVar2[0x12].klass != (Object__Class *)0x0)) {
           pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffcc,(Transform *)pOVar2[0x12].klass,(MethodInfo *)0x0);
           fVar4 = pQVar7->x;
@@ -89,7 +86,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
           pDVar1 = (this->fields).MoveControllers;
           if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
             puVar8 = &UNK_?;
-            pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+            pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
             if (pOVar2 != (Object *)0x0) {
               pOVar9 = pOVar2[0x28].klass;
               fStack_10 = (float)((ulonglong)*(undefined8 *)&pOVar2[0x26].monitor >> 0x20);
@@ -103,12 +100,12 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
               UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffffd0,rotation,point,(MethodInfo *)0x0);
               pDVar1 = (this->fields).MoveControllers;
               if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-                pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+                pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
                 if (pOVar2 != (Object *)0x0) {
                   fVar11 = (float10)func_?();
                   UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
                   pVVar12 = (Vector3 *)func_?();
-                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.3311233e-29,*pVVar12,(MethodInfo *)0x0);
+                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.5064552e-29,*pVVar12,(MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
                   fVar6 = pQVar7->z;
@@ -119,7 +116,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
                     fVar15 = fVar5;
                     fVar16 = fVar6;
                     fVar17 = fVar13;
-                    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+                    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
                     if (pOVar2 != (Object *)0x0) {
                       if (pOVar2[0x29].monitor == (MonitorData *)0x0) {
                         __return_storage_ptr__->x = fVar14;
@@ -130,7 +127,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
                       }
                       pDVar1 = (this->fields).MoveControllers;
                       if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-                        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+                        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
                         if ((pOVar2 != (Object *)0x0) && (pOVar2[0x29].monitor != (MonitorData *)0x0)) {
                           pQVar7 = MoveableController_GetRotationQuat((Quaternion *)&stack0xffffffec,this,*(int32_t *)(pOVar2[0x29].monitor + 0x80),(MethodInfo *)0x0);
                           fVar15 = pQVar7->x;
@@ -174,9 +171,9 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel(Vec
     cRam_? = '\x01';
   }
   pOStack_1 = (Object *)0x0;
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)(this->fields).MoveControllers;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(this_00,(Object *)movableGameObjectID,&pOStack_1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__TryGetValue_int__MVMovable__);
+  this_00 = (this->fields).MoveControllers;
+  if (this_00 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryGetValue((Dictionary_2_System_Int32_System_Object_ *)this_00,movableGameObjectID,&pOStack_1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__TryGetValue_int__MVMovable__);
     if (pOStack_1 == (Object *)0x0) {
       if (cRam_? == '\0') {
         auStack_2._0_4_ = &TypeInfo__UnityEngine__Vector3;
@@ -194,8 +191,8 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel(Vec
     pOVar6 = pOStack_1[0x22].klass;
     if (pOVar6 != (Object__Class *)0x0) {
       pIVar7 = (pOVar6->_0).image;
-      auStack_2._0_4_ = pIVar7[9].nameNoExt;
-      puVar8 = (undefined8 *)(*(code *)pIVar7[9].name)(&VStack_9,pOVar6);
+      auStack_2._0_4_ = pIVar7[9].name;
+      puVar8 = (undefined8 *)(**(code **)&pIVar7[8].dynamic)(&VStack_9,pOVar6);
       uVar10 = *puVar8;
       fStack_11 = *(float *)(puVar8 + 1);
       uStack_12._0_4_ = (float)uVar10;
@@ -215,7 +212,7 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel(Vec
       fStack_11 = pVVar15->z;
       this_01 = (this->fields).Velocities;
       if (this_01 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
-        pVVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__get_Item((Vector3 *)(auStack_2 + 4),(Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)this_01,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__get_Item_int_);
+        pVVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__get_Item((Vector3 *)(auStack_2 + 4),this_01,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__get_Item_int_);
         VStack_9.x = pVVar15->x;
         VStack_9.y = pVVar15->y;
         VStack_9.z = pVVar15->z;
@@ -236,7 +233,7 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel(Vec
             movableGameObjectID_00 = *(int32_t *)(iVar17 + 8);
             if (pOVar6 != (Object__Class *)0x0) {
               pIVar7 = (pOVar6->_0).image;
-              pVVar15 = (Vector3 *)(*(code *)pIVar7[9].name)(auStack_2 + 4,pOVar6,pIVar7[9].nameNoExt);
+              pVVar15 = (Vector3 *)(**(code **)&pIVar7[8].dynamic)(auStack_2 + 4,pOVar6,pIVar7[9].name);
               pVVar15 = MoveableController_GetVel((Vector3 *)(auStack_2 + 4),this,movableGameObjectID_00,*pVVar15,(MethodInfo *)0x0);
               uVar18 = pVVar15->x;
               uVar19 = pVVar15->y;
@@ -313,30 +310,30 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_ResetMoveables(
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
   DStack_6._index = 0;
   DStack_6._version = 0;
   DStack_6._currentValue = (Object *)0x0;
-  this_00 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)(this->fields).MoveControllers;
-  if (this_00 != (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).MoveControllers;
+  if (this_00 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
     method_00 = (MethodInfo *)&UNK_?;
-    this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Values(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Values__);
-    if (this_02 != (Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) {
-      pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)auStack_8,this_02,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVMovable>__GetEnumerator__);
-      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+    this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Values__);
+    if (this_02 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
+      pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)auStack_8,this_02,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVMovable>__GetEnumerator__);
+      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
       DStack_6._index = pDVar7->_index;
       DStack_6._version = pDVar7->_version;
       DStack_6._currentValue = pDVar7->_currentValue;
       auStack_8._8_8_ = ZEXT48(&DStack_6) << 0x20;
       uStack_1 = 1;
       while( true ) {
-        bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext(&DStack_6,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVMovable>__MoveNext__);
+        bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_6,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVMovable>__MoveNext__);
         if (bVar9 == 0) break;
         if (DStack_6._currentValue == (Object *)0x0) goto code_?;
-        (*(code *)(DStack_6._currentValue)->klass[1]._1.cctor_started)(DStack_6._currentValue,(DStack_6._currentValue)->klass[1]._1.cctor_finished_or_no_cctor);
+        (*(code *)(DStack_6._currentValue)->klass[1]._1.cctor_finished_or_no_cctor)(DStack_6._currentValue,(DStack_6._currentValue)->klass[1]._1.cctor_thread);
       }
       uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVMovable>__Dispose__,method_00);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&DStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVMovable>__Dispose__,method_00);
       uStack_1 = 0xffffffff;
       pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar10 != (MVNetworkGame *)0x0) && (this_01 = (pMVar10->fields)._Peer_k__BackingField, this_01 != (PhotonPeer *)0x0)) {
@@ -401,7 +398,7 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveable(
   }
   this_00 = (this->fields).MoveControllers;
   if (this_00 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-    pMVar1 = (MVMovable *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+    pMVar1 = (MVMovable *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
     if (pMVar1 != (MVMovable *)0x0) {
       if ((pMVar1->fields).parentMover == (MVMovable *)0x0) {
         MVMovable::MVMovable_Move(pMVar1,directionFactor,breakid,(MethodInfo *)0x0);
@@ -457,16 +454,16 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
     }
     object = TypeInfo__MoveableController____c->static_fields->__9;
     this_01 = (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_MVMovable_Boolean_ *)func_?();
-    if (this_01 == (Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_MVMovable_Boolean_ *)0x0) goto code_?;
-    mscorlib.dll::System::Predicate`1[TabMenuButtonAccessory+AccessoryTabDef]::Predicate_1_TabMenuButtonAccessory_AccessoryTabDef___ctor((Predicate_1_TabMenuButtonAccessory_AccessoryTabDef_ *)this_01,(Object *)object,MethodInfo__MoveableController____c___UpdateMoveables_b__11_0_System__Collections__Generic__KeyValuePair<int,_MVMovable>_,(MethodInfo *)0x0);
+    mscorlib.dll::System::Predicate`1[System::Xml::Schema::XmlSchemaObjectTable+XmlSchemaObjectEntry]::Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry___ctor((Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this_01,(Object *)object,MethodInfo__MoveableController____c___UpdateMoveables_b__11_0_System__Collections__Generic__KeyValuePair<int,_MVMovable>_,(MethodInfo *)0x0);
     TypeInfo__MoveableController____c->static_fields->__9__11_0 = this_01;
-    func_?();
+    func_?(&TypeInfo__MoveableController____c->static_fields->__9__11_0,this_01);
   }
-  pIVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where((IEnumerable_1_KeyValuePair_2_System_Int32_System_Object_ *)source,(Func_2_System_Collections_Generic_KeyValuePair_2_System_Int32_System_Object_Boolean_ *)this_01,System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>__System__Func<System::Collections::Generic::KeyValuePair<int,_MVMovable>,_bool>_);
-  if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Int32_System_Object_ *)0x0) {
+  pIVar6 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_1((IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)source,(Func_2_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_Boolean_ *)this_01,System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>__System__Func<System::Collections::Generic::KeyValuePair<int,_MVMovable>,_bool>_);
+  if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
     piVar7 = (int *)func_?();
     uStack_1 = 1;
-    while (piVar7 != (int *)0x0) {
+    while( true ) {
+      if (piVar7 == (int *)0x0) break;
       cVar8 = func_?();
       if (cVar8 == '\0') {
         uStack_1 = 0xffffffff;
@@ -478,11 +475,11 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
       }
       if (piVar7 == (int *)0x0) break;
       uVar9 = 0;
-      uVar10 = *(ushort *)(*piVar7 + 0xb2);
+      uVar10 = *(ushort *)(*piVar7 + 0xb6);
       if (uVar10 != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)(*(int *)(*piVar7 + 0x58) + (uint)uVar9 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>) {
-            puVar11 = (undefined4 *)(*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar9 * 8) * 8 + 0xbc + *piVar7);
+            puVar11 = (undefined4 *)(*piVar7 + (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar9 = uVar9 + 1;
@@ -502,7 +499,6 @@ code_?:
       }
     }
   }
-code_?:
   func_?();
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
@@ -521,7 +517,7 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateSingleMov
   }
   this_00 = (this->fields).MoveControllers;
   if (this_00 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-    pMVar1 = (MVMovable *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
+    pMVar1 = (MVMovable *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,movableGameObjectID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__get_Item_int_);
     if (pMVar1 != (MVMovable *)0x0) {
       if ((pMVar1->fields).parentMover == (MVMovable *)0x0) {
         MVMovable::MVMovable_Move(pMVar1,directionFactor,movableGameObjectID,(MethodInfo *)0x0);
@@ -554,42 +550,34 @@ void Assembly-CSharp.dll::MoveableController::MoveableController__ctor(MoveableC
     func_?(&TypeInfo__UpdateController);
     cRam_? = '\x01';
   }
-  this_01 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>);
-  if (this_01 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__Dictionary__);
-    (this->fields).Velocities = this_01;
-    func_?(&this->fields,this_01);
-    pDVar1 = (Dictionary_2_System_Int32_MVMovable_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVMovable>);
-    if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-      Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Dictionary__);
-      (this->fields).MoveControllers = pDVar1;
-      func_?(&(this->fields).MoveControllers,pDVar1);
-      pDVar1 = (Dictionary_2_System_Int32_MVMovable_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVMovable>);
-      if (pDVar1 != (Dictionary_2_System_Int32_MVMovable_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Dictionary__);
-        (this->fields).CubeModelMovableMap = pDVar1;
-        func_?(&(this->fields).CubeModelMovableMap,pDVar1);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,in_stack_2);
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar3 != (MVNetworkGame *)0x0) && (this_00 = (pMVar3->fields)._Peer_k__BackingField, this_00 != (PhotonPeer *)0x0)) {
-          iVar4 = Photon3Unity3D.dll::ExitGames::Client::Photon::PhotonPeer::PhotonPeer_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
-          if (iVar4 < 0) {
-            iVar4 = iVar4 + -2;
-          }
-          fVar5 = (float10)func_?((double)((float)((double)iVar4 + *(double *)(&UNK_? + (iVar4 >> 0x1f) * -8)) / 1000.0));
-          (this->fields).time = (float)fVar5;
-          if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UpdateController);
-          }
-          UpdateController::UpdateController_AddFixedUpdateObject((IUpdatecontrollerSubscriberFixedUpdate *)this,UpdatePriority__Enum_PRE_UPDATEBUCKET_20,1,(MethodInfo *)0x0);
-          return;
-        }
-      }
+  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__Dictionary__);
+  (this->fields).Velocities = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)pDVar1;
+  func_?(&this->fields,pDVar1);
+  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVMovable>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Dictionary__);
+  (this->fields).MoveControllers = (Dictionary_2_System_Int32_MVMovable_ *)pDVar1;
+  func_?(&(this->fields).MoveControllers,pDVar1);
+  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVMovable>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_MVMovable>__Dictionary__);
+  method_00 = (MethodInfo *)&(this->fields).CubeModelMovableMap;
+  (this->fields).CubeModelMovableMap = (Dictionary_2_System_Int32_MVMovable_ *)pDVar1;
+  func_?(method_00,pDVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) && (this_00 = (pMVar2->fields)._Peer_k__BackingField, this_00 != (PhotonPeer *)0x0)) {
+    Photon3Unity3D.dll::ExitGames::Client::Photon::PhotonPeer::PhotonPeer_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
+    fVar3 = (float10)func_?();
+    (this->fields).time = (float)fVar3;
+    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UpdateController::UpdateController_AddFixedUpdateObject((IUpdatecontrollerSubscriberFixedUpdate *)this,UpdatePriority__Enum_PRE_UPDATEBUCKET_20,1,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

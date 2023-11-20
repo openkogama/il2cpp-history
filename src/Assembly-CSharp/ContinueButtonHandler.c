@@ -15,12 +15,12 @@ void Assembly-CSharp.dll::ContinueButtonHandler::ContinueButtonHandler_OnPointer
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_cursor_lock_pointer_down,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_cursor_lock_pointer_down,(MethodInfo *)0x0);
       if ((this->fields).OnClick != (Action *)0x0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Locking_cursor,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Locking_cursor,(MethodInfo *)0x0);
         pAVar1 = (this->fields).OnClick;
         if (pAVar1 == (Action *)0x0) goto code_?;
         (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);

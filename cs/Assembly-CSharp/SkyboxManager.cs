@@ -44,6 +44,26 @@ public class SkyboxManager : MonoBehaviour
 	// Nested types
 	public delegate void SkyboxColorChangedDelegate(Color newColor);
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<MVSkybox, bool> __9__30_0;
+		public static Func<MVSkybox, float> __9__30_1;
+		public static Func<MVSkybox, float> __9__30_2;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _ComputeSkyboxSettings_b__30_0(MVSkybox s);
+		internal float _ComputeSkyboxSettings_b__30_1(MVSkybox s);
+		internal float _ComputeSkyboxSettings_b__30_2(MVSkybox s);
+	}
+
 	[CompilerGenerated]
 	private sealed class _DoAnimate_d__23 : IEnumerator<object>
 	{
@@ -67,26 +87,6 @@ public class SkyboxManager : MonoBehaviour
 		private bool MoveNext();
 		[DebuggerHidden]
 		void IEnumerator.Reset();
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static Func<MVSkybox, bool> __9__30_0;
-		public static Func<MVSkybox, float> __9__30_1;
-		public static Func<MVSkybox, float> __9__30_2;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal bool _ComputeSkyboxSettings_b__30_0(MVSkybox s);
-		internal float _ComputeSkyboxSettings_b__30_1(MVSkybox s);
-		internal float _ComputeSkyboxSettings_b__30_2(MVSkybox s);
 	}
 
 	// Constructors

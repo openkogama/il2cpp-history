@@ -55,7 +55,7 @@ code_?:
   }
   averageFPS = (float)&UNK_?;
   method = message;
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
   if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -65,7 +65,7 @@ code_?:
   if ((pMVar4 != (MVNetworkGame *)0x0) && (this_00 = (pMVar4->fields)._Peer_k__BackingField, this_00 != (PhotonPeer *)0x0)) {
     value = Photon3Unity3D.dll::ExitGames::Client::Photon::PhotonPeer::PhotonPeer_get_RoundTripTime(this_00,(MethodInfo *)0x0);
     StatHatWrapper::StatHatWrapper_Value(StringLiteral_RoundTripTime,value,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_FPS,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_FPS,(MethodInfo *)0x0);
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_IncrementStatRequest(this_01,IncrementStatRequestType__Enum_FPS,(int)(float)pSVar3,(MethodInfo *)0x0);
@@ -84,7 +84,7 @@ code_?:
 void Assembly-CSharp.dll::FpsCounter+FPSMetricCollector::FpsCounter_FPSMetricCollector__ctor(FpsCounter_FPSMetricCollector *this,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).metricsCollected = 0;
   (this->fields).startTime = fVar1;

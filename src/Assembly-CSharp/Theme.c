@@ -43,12 +43,12 @@ void Assembly-CSharp.dll::Theme::Theme_Activate(Theme *this,MethodInfo *method)
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)LStack_6._current + 0xdc))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe0));
+      (**(code **)(*(int *)LStack_6._current + 0xe0))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe4));
     }
   }
 code_?:
@@ -125,12 +125,12 @@ void Assembly-CSharp.dll::Theme::Theme_Deactivate(Theme *this,MethodInfo *method
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)LStack_6._current + 0xe4))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe8));
+      (**(code **)(*(int *)LStack_6._current + 0xe8))(LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xec));
     }
   }
 code_?:
@@ -151,17 +151,15 @@ void Assembly-CSharp.dll::Theme::Theme_Initialize(Theme *this,int32_t woid,Metho
     cRam_? = '\x01';
   }
   this_01 = (SettingsSerialized *)func_?(TypeInfo__ThemeSettings__SettingsSerialized);
-  if (this_01 != (SettingsSerialized *)0x0) {
-    ThemeSettings::SettingsSerialized::SettingsSerialized__ctor(this_01,woid,(MethodInfo *)0x0);
-    (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
-    func_?(&(this->fields)._Settings_k__BackingField,this_01);
-    (*(this->klass->vtable).__unknown_4.methodPtr)(this,(this->klass->vtable).__unknown_4.method);
-    this_00 = (this->fields)._Settings_k__BackingField;
-    if (this_00 != (SettingsWrapper *)0x0) {
-      ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
-      (*(this->klass->vtable).__unknown_3.methodPtr)(this,(this->klass->vtable).__unknown_3.method);
-      return;
-    }
+  ThemeSettings::SettingsSerialized::SettingsSerialized__ctor(this_01,woid,(MethodInfo *)0x0);
+  (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
+  func_?(&(this->fields)._Settings_k__BackingField,this_01);
+  (*(code *)(this->klass->vtable).__unknown_4.method)(this,(this->klass->vtable).get_Controllers.methodPtr);
+  this_00 = (this->fields)._Settings_k__BackingField;
+  if (this_00 != (SettingsWrapper *)0x0) {
+    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
+    (*(code *)(this->klass->vtable).__unknown_3.method)(this,(this->klass->vtable).__unknown_4.methodPtr);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -180,17 +178,15 @@ void Assembly-CSharp.dll::Theme::Theme_InitializeForPreview(Theme *this,MethodIn
     cRam_? = '\x01';
   }
   this_01 = (SettingsPreview *)func_?(TypeInfo__ThemeSettings__SettingsPreview);
-  if (this_01 != (SettingsPreview *)0x0) {
-    ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_01,(MethodInfo *)0x0);
-    (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
-    func_?(&(this->fields)._Settings_k__BackingField,this_01);
-    (*(this->klass->vtable).__unknown_4.methodPtr)(this,(this->klass->vtable).__unknown_4.method);
-    this_00 = (this->fields)._Settings_k__BackingField;
-    if (this_00 != (SettingsWrapper *)0x0) {
-      ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
-      (*(this->klass->vtable).__unknown_3.methodPtr)(this,(this->klass->vtable).__unknown_3.method);
-      return;
-    }
+  ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_01,(MethodInfo *)0x0);
+  (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
+  func_?(&(this->fields)._Settings_k__BackingField,this_01);
+  (*(code *)(this->klass->vtable).__unknown_4.method)(this,(this->klass->vtable).get_Controllers.methodPtr);
+  this_00 = (this->fields)._Settings_k__BackingField;
+  if (this_00 != (SettingsWrapper *)0x0) {
+    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
+    (*(code *)(this->klass->vtable).__unknown_3.method)(this,(this->klass->vtable).__unknown_4.methodPtr);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -204,11 +200,11 @@ void Assembly-CSharp.dll::Theme::Theme_InitializeForPreview(Theme *this,MethodIn
 void Assembly-CSharp.dll::Theme::Theme_Initialize_1(Theme *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).__unknown_4.methodPtr)(this,(this->klass->vtable).__unknown_4.method);
+  (*(code *)(this->klass->vtable).__unknown_4.method)(this,(this->klass->vtable).get_Controllers.methodPtr);
   this_00 = (this->fields)._Settings_k__BackingField;
   if (this_00 != (SettingsWrapper *)0x0) {
     ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
-    (*(this->klass->vtable).__unknown_3.methodPtr)(this,(this->klass->vtable).__unknown_3.method);
+    (*(code *)(this->klass->vtable).__unknown_3.method)(this,(this->klass->vtable).__unknown_4.methodPtr);
     return;
   }
   func_?();
@@ -247,14 +243,8 @@ List_1_UnityEngine_RectTransform_ * Assembly-CSharp.dll::Theme::Theme_get_Contro
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::RectTransform>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::RectTransform>);
-  if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest___ctor_2(this_00,0,MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__List_int_);
-    return (List_1_UnityEngine_RectTransform_ *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pLVar2 = (List_1_UnityEngine_RectTransform_ *)(*pcVar1)();
-  return pLVar2;
+  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::RectTransform>);
+  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(this_00,0,MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__List_int_);
+  return (List_1_UnityEngine_RectTransform_ *)this_00;
 }
 

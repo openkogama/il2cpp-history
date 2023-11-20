@@ -9,7 +9,7 @@ using CodeStage.AntiCheat.Common;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-// Image 8: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 15: Assembly-CSharp-firstpass.dll - Assembly: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace CodeStage.AntiCheat.ObscuredTypes
 {

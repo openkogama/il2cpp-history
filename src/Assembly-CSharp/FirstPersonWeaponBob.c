@@ -107,7 +107,7 @@ void Assembly-CSharp.dll::FirstPersonWeaponBob::FirstPersonWeaponBob__ctor(First
   (this->fields).rotationAxis.y = 1.0;
   (this->fields).bobFrequency = 1.0;
   (this->fields).rotationAxis.z = 0.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&(this->fields).bobAxis,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&(this->fields).rotationAxis,(MethodInfo *)0x0);
   return;

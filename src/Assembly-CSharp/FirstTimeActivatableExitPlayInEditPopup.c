@@ -8,7 +8,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPopup::FirstTimeActi
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsEventAllowedInMode((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

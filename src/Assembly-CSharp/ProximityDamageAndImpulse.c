@@ -11,7 +11,7 @@ InteractionData * Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamag
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
-  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7(__return_storage_ptr__,InteractionPackageType__Enum_ProximityDamageAndImpulse,damage,impulse,playerKilledByType,(MethodInfo *)0x0);
+  MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5(__return_storage_ptr__,InteractionPackageType__Enum_ProximityDamageAndImpulse,damage,impulse,playerKilledByType,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -21,7 +21,14 @@ InteractionData * Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamag
 void Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_ParseAndHandlePackage(ProximityDamageAndImpulse *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
 
 {
-  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,(uint)interactionStruct._16_4_ >> 8,interactionStruct.impulse,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  InteractionPackage::InteractionPackage_HandlePackage_1((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,CONCAT13(method._0_1_,interactionStruct._17_3_),interactionStruct.impulse,(MethodInfo *)0x0);
   return;
 }
 

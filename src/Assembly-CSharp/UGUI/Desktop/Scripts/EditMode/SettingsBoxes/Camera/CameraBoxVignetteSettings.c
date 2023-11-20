@@ -106,7 +106,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
         fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
         pIVar5 = (this->fields).colorImage;
         if (pIVar5 != (Image *)0x0) {
-          (*(pIVar5->klass->vtable).set_color.methodPtr)(pIVar5,fVar2,fVar3,fVar4,0x3f800000,(pIVar5->klass->vtable).set_color.method);
+          (*(code *)(pIVar5->klass->vtable).set_color.method)(pIVar5,fVar2,fVar3,fVar4,0x3f800000,(pIVar5->klass->vtable).get_raycastTarget.methodPtr);
           this_00 = (this->fields).colorPicker;
           if (this_00 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_00,0,(MethodInfo *)0x0);
@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
   }
   pIVar1 = (this->fields).colorImage;
   if (pIVar1 != (Image *)0x0) {
-    pfVar2 = (float *)(*(pIVar1->klass->vtable).get_color.methodPtr)(&fStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    pfVar2 = (float *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&fStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
     fStack_4 = *pfVar2;
     fStack_5 = pfVar2[1];
     fStack_6 = pfVar2[2];
@@ -156,7 +156,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
             fStack_9 = fStack_5;
             fStack_10 = fStack_6;
             uStack_11 = 0x3f800000;
-            (*(pIVar1->klass->vtable).set_color.methodPtr)(pIVar1,fStack_4,fStack_5,fStack_6,0x3f800000,(pIVar1->klass->vtable).set_color.method);
+            (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,fStack_4,fStack_5,fStack_6,0x3f800000,(pIVar1->klass->vtable).get_raycastTarget.methodPtr);
             this_00 = (this->fields).colorPicker;
             if (this_00 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_00,1,(MethodInfo *)0x0);
@@ -385,7 +385,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
                                                               puVar19 = (undefined4 *)func_?(value);
                                                               pIVar23 = (pCVar1->fields).colorImage;
                                                               if (pIVar23 != (Image *)0x0) {
-                                                                (*(pIVar23->klass->vtable).set_color.methodPtr)(pIVar23,pSStack_4,uVar21,*puVar19,0x3f800000,(pIVar23->klass->vtable).set_color.method);
+                                                                (*(code *)(pIVar23->klass->vtable).set_color.method)(pIVar23,pSStack_4,uVar21,*puVar19,0x3f800000,(pIVar23->klass->vtable).get_raycastTarget.methodPtr);
                                                                 return;
                                                               }
                                                             }
@@ -419,7 +419,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     }
   }
   func_?();
-  pSVar9 = (Single__Class *)extraout_ECX;
+  pSVar9 = extraout_ECX;
 code_?:
   func_?(value,pSVar9);
   pcVar24 = (code *)swi(3);
@@ -466,9 +466,9 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::C
           pIVar3 = (this->fields).colorPickerPreview;
           if (pIVar3 != (Image *)0x0) {
             pIVar4 = pIVar3->klass;
-            pMStack5 = (pIVar4->vtable).set_color.method;
+            pIStack5 = (pIVar4->vtable).get_raycastTarget.methodPtr;
             uStack6 = 0x3f800000;
-            (*(pIVar4->vtable).set_color.methodPtr)();
+            (*(code *)(pIVar4->vtable).set_color.method)();
             return value;
           }
         }

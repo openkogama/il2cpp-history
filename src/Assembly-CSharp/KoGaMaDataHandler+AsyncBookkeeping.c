@@ -33,7 +33,7 @@ void Assembly-CSharp.dll::KoGaMaDataHandler+AsyncBookkeeping::KoGaMaDataHandler_
   (this->fields).rootId = -1;
   (this->fields).waitOneFrameBeforeDoneCallback = 1;
   (this->fields).workTime = 1.0;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).bp = bp;
   func_?(&(this->fields).bp,bp);
   (this->fields).callBack = callBack;

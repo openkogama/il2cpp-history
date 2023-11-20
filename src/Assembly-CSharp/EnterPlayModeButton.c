@@ -27,12 +27,6 @@ void Assembly-CSharp.dll::EnterPlayModeButton::EnterPlayModeButton_Execute(Enter
     }
     object = TypeInfo__EnterPlayModeButton____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IEditModeController_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IEditModeController_ *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__EnterPlayModeButton____c___Execute_b__1_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__EnterPlayModeButton____c->static_fields->__9__1_0 = callbackFunction;
     func_?(&TypeInfo__EnterPlayModeButton____c->static_fields->__9__1_0,callbackFunction);

@@ -33,30 +33,6 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class _StopBlinking_d__14 : IEnumerator<object>
-		{
-			// Fields
-			private int __1__state;
-			private object __2__current;
-			public VehicleEnergyMeter __4__this;
-	
-			// Properties
-			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-			object IEnumerator.Current { [DebuggerHidden] get; }
-	
-			// Constructors
-			[DebuggerHidden]
-			public _StopBlinking_d__14(int __1__state);
-	
-			// Methods
-			[DebuggerHidden]
-			void IDisposable.Dispose();
-			private bool MoveNext();
-			[DebuggerHidden]
-			void IEnumerator.Reset();
-		}
-	
-		[CompilerGenerated]
 		private sealed class _BlinkingBar_d__17 : IEnumerator<object>
 		{
 			// Fields
@@ -71,6 +47,30 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 			// Constructors
 			[DebuggerHidden]
 			public _BlinkingBar_d__17(int __1__state);
+	
+			// Methods
+			[DebuggerHidden]
+			void IDisposable.Dispose();
+			private bool MoveNext();
+			[DebuggerHidden]
+			void IEnumerator.Reset();
+		}
+	
+		[CompilerGenerated]
+		private sealed class _StopBlinking_d__14 : IEnumerator<object>
+		{
+			// Fields
+			private int __1__state;
+			private object __2__current;
+			public VehicleEnergyMeter __4__this;
+	
+			// Properties
+			object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+			object IEnumerator.Current { [DebuggerHidden] get; }
+	
+			// Constructors
+			[DebuggerHidden]
+			public _StopBlinking_d__14(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]

@@ -53,13 +53,13 @@ bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::MVNetworkReporter
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
-    left._source = (CancellationTokenSource *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
+    left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
     handle = TypeRef__MVNetworkReporter__SendTransformData;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type,uVar1);
     }
-    right._source = (CancellationTokenSource *)mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Threading::CancellationToken::CancellationToken_op_Inequality(left,right,(MethodInfo *)0x0);
+    right = (XNamespace *)mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    bVar2 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality(left,right,(MethodInfo *)0x0);
     if (bVar2 == 0) {
       if ((obj->klass->_0).element_class == (TypeInfo__MVNetworkReporter__SendTransformData->_0).element_class) {
         pMVar3 = (MVNetworkReporter_SendTransformData *)func_?();
@@ -86,7 +86,7 @@ int32_t Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::MVNetworkRepor
   iVar3 = mscorlib.dll::System::Single::Single_GetHashCode((Single *)&(this->position).z,(MethodInfo *)0x0);
   uVar1 = iVar3 >> 2 ^ iVar2 * 4 ^ uVar1;
   if (this->rotation != (Byte__Array *)0x0) {
-    uVar4 = (*(code *)this->rotation->klass[1]._0.byval_arg.data)();
+    uVar4 = (**(code **)&this->rotation->klass[1]._0.byval_arg.attrs)();
     return uVar1 * 0x18d ^ uVar4;
   }
   return uVar1 * 0x18d;

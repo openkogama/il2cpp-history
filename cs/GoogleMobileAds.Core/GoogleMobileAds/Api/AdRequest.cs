@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
  */
 
@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Api.Mediation;
 
-// Image 29: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+// Image 53: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace GoogleMobileAds.Api
 {
@@ -19,7 +19,6 @@ namespace GoogleMobileAds.Api
 		[CompilerGenerated]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		private static string _Version_k__BackingField;
-		public const string TestDeviceSimulator = "SIMULATOR";
 		[CompilerGenerated]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		private HashSet<string> _Keywords_k__BackingField;
@@ -31,10 +30,10 @@ namespace GoogleMobileAds.Api
 		private List<MediationExtras> _MediationExtras_k__BackingField;
 	
 		// Properties
-		public static string Version { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public HashSet<string> Keywords { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public Dictionary<string, string> Extras { [CompilerGenerated] get; [CompilerGenerated] private set; }
-		public List<MediationExtras> MediationExtras { [CompilerGenerated] get; [CompilerGenerated] private set; }
+		private static string Version { [CompilerGenerated] set; }
+		private HashSet<string> Keywords { [CompilerGenerated] set; }
+		private Dictionary<string, string> Extras { [CompilerGenerated] set; }
+		private List<MediationExtras> MediationExtras { [CompilerGenerated] set; }
 	
 		// Nested types
 		public class Builder
@@ -59,17 +58,11 @@ namespace GoogleMobileAds.Api
 			public Builder();
 	
 			// Methods
-			public Builder AddKeyword(string keyword);
 			public AdRequest Build();
-			public Builder AddMediationExtras(MediationExtras extras);
-			public Builder AddExtra(string key, string value);
 		}
 	
 		// Constructors
 		static AdRequest();
 		private AdRequest(Builder builder);
-	
-		// Methods
-		internal static string BuildVersionString(string nativePluginVersion = null);
 	}
 }

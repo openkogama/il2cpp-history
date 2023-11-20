@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_Enter(Andro
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Camera_enter_____,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Camera_enter_____,(MethodInfo *)0x0);
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar1,(MethodInfo *)0x0);
@@ -24,44 +24,42 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_Enter(Andro
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(pTVar1,(Transform *)0x0,(MethodInfo *)0x0);
-      this_00 = (HashSet_1_UnityEngine_Vector3_ *)func_?();
-      if (this_00 != (HashSet_1_UnityEngine_Vector3_ *)0x0) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[UnityEngine::Vector3]::HashSet_1_UnityEngine_Vector3___ctor(this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-        pMVar2 = (this->fields).avatarLocal;
-        if (pMVar2 != (MVAvatarLocal *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::HashSet_1_System_Object__Add((HashSet_1_System_Object_ *)this_00,(Object *)(pMVar2->fields)._._._._.id,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-          (this->fields).ignoreAvatarId = (HashSet_1_System_Int32_ *)this_00;
-          func_?();
-          pTVar3 = (this->fields).targetRotation;
-          if (pTVar3 != (TargetRotation *)0x0) {
-            (pTVar3->fields).eulerAngles.x = (this->fields).initialYRotation;
-            (pTVar3->fields).eulerAngles.y = 0.0;
-            (pTVar3->fields).eulerAngles.z = 0.0;
-            pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-            if (pTVar1 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
-              pTVar3 = (this->fields).targetRotation;
-              if (pTVar3 != (TargetRotation *)0x0) {
-                uVar4 = (pTVar3->fields).eulerAngles.x;
-                uVar5 = (pTVar3->fields).eulerAngles.y;
-                euler.y = (float)uVar5 * 0.017453292;
-                euler.x = (float)uVar4 * 0.017453292;
-                euler.z = (pTVar3->fields).eulerAngles.z * 0.017453292;
-                pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
-                fVar7 = pQVar6->x;
-                fVar8 = pQVar6->y;
-                fVar9 = pQVar6->z;
-                fVar10 = pQVar6->w;
-                (this->fields).rotationX = (this->fields).initialYRotation;
-                pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                if (pTVar1 != (Transform *)0x0) {
-                  value.y = fVar8;
-                  value.x = fVar7;
-                  value.z = fVar9;
-                  value.w = fVar10;
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar1,value,(MethodInfo *)0x0);
-                  return;
-                }
+      this_00 = (HashSet_1_System_Int32_ *)func_?();
+      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32___ctor(this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+      pMVar2 = (this->fields).avatarLocal;
+      if ((pMVar2 != (MVAvatarLocal *)0x0) && (this_00 != (HashSet_1_System_Int32_ *)0x0)) {
+        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add(this_00,(pMVar2->fields)._._._._.id,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+        (this->fields).ignoreAvatarId = this_00;
+        func_?();
+        pTVar3 = (this->fields).targetRotation;
+        if (pTVar3 != (TargetRotation *)0x0) {
+          (pTVar3->fields).eulerAngles.x = (this->fields).initialYRotation;
+          (pTVar3->fields).eulerAngles.y = 0.0;
+          (pTVar3->fields).eulerAngles.z = 0.0;
+          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+          if (pTVar1 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
+            pTVar3 = (this->fields).targetRotation;
+            if (pTVar3 != (TargetRotation *)0x0) {
+              uVar4 = (pTVar3->fields).eulerAngles.x;
+              uVar5 = (pTVar3->fields).eulerAngles.y;
+              euler.y = (float)uVar5 * 0.017453292;
+              euler.x = (float)uVar4 * 0.017453292;
+              euler.z = (pTVar3->fields).eulerAngles.z * 0.017453292;
+              pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
+              fVar7 = pQVar6->x;
+              fVar8 = pQVar6->y;
+              fVar9 = pQVar6->z;
+              fVar10 = pQVar6->w;
+              (this->fields).rotationX = (this->fields).initialYRotation;
+              pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
+              if (pTVar1 != (Transform *)0x0) {
+                value.y = fVar8;
+                value.x = fVar7;
+                value.z = fVar9;
+                value.w = fVar10;
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar1,value,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -282,22 +280,22 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
           fVar15 = pVVar9->y;
           this_03 = (Component *)pVVar9->z;
           fVar3 = (this->fields)._.cameraRadius;
-          pMVar16 = (MethodInfo *)(this->fields).distanceToLookAt;
-          fVar17 = pVVar9->x;
-          fVar18 = pVVar9->y;
-          pCVar19 = this_03;
-          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_03,pMVar16);
+          method_00 = (MethodInfo *)(this->fields).distanceToLookAt;
+          fVar16 = pVVar9->x;
+          fVar17 = pVVar9->y;
+          pCVar18 = this_03;
+          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_03,method_00);
           if (pTVar1 != (Transform *)0x0) {
             pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
             if (this_00 != (CameraCollision *)0x0) {
               fVar4 = 1.00893e-43;
               uVar8 = ZEXT48(&stack0xffffff48);
               func_?();
-              targetPosition.y = fVar18;
-              targetPosition.x = fVar17;
+              targetPosition.y = fVar17;
+              targetPosition.x = fVar16;
               targetPosition.z = (float)this_03;
-              bVar20 = CameraCollision::CameraCollision_Collide_1(this_00,(VoxelHit *)&stack0xffffff48,(Vector3 *)&stack0xffffffc4,fVar3,(float)pMVar16,targetPosition,*pVVar9,(this->fields).ignoreAvatarId,(MethodInfo *)0x0);
-              if (bVar20 != 0) {
+              bVar19 = CameraCollision::CameraCollision_Collide_1(this_00,(VoxelHit *)&stack0xffffff48,(Vector3 *)&stack0xffffffc4,fVar3,(float)method_00,targetPosition,*pVVar9,(this->fields).ignoreAvatarId,(MethodInfo *)0x0);
+              if (bVar19 != 0) {
                 pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
                 if (pTVar1 == (Transform *)0x0) goto code_?;
                 value.z = fVar4;
@@ -313,7 +311,7 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
                 if (this_01 != (CameraLerpToDesiredDistance *)0x0) {
                   targetPosition_00.y = fVar15;
                   targetPosition_00.x = fVar6;
-                  targetPosition_00.z = (float)pCVar19;
+                  targetPosition_00.z = (float)pCVar18;
                   pVVar9 = CameraLerpToDesiredDistance::CameraLerpToDesiredDistance_Update((Vector3 *)&stack0xffffffb0,this_01,targetPosition_00,*pVVar9,(MethodInfo *)0x0);
                   if (pTVar1 != (Transform *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar1,*pVVar9,(MethodInfo *)0x0);
@@ -321,28 +319,28 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
                     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
                     if (pTVar1 != (Transform *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-                      pMVar21 = (this->fields).avatarLocal;
-                      if (pMVar21 != (MVAvatarLocal *)0x0) {
-                        pMVar16 = (pMVar21->klass->vtable).get_VelocityRelative.method;
+                      pMVar20 = (this->fields).avatarLocal;
+                      if (pMVar20 != (MVAvatarLocal *)0x0) {
+                        pIVar21 = (pMVar20->klass->vtable).get_VelocityAbsolute.methodPtr;
                         puVar22 = &stack0xffffffb0;
-                        (*(pMVar21->klass->vtable).get_VelocityRelative.methodPtr)();
+                        (*(code *)(pMVar20->klass->vtable).get_VelocityRelative.method)();
                         fVar23 = (float10)func_?();
                         if (this_02 != (CameraShake *)0x0) {
                           pVVar9 = CameraShake::CameraShake_Shake_1((Vector3 *)&stack0xffffffb0,this_02,(float)fVar23,(MethodInfo *)0x0);
                           uVar24 = pVVar9->x;
                           uVar25 = pVVar9->y;
                           if (targetTransform != (ProtectedTransform *)0x0) {
-                            value_01.y = (float)pMVar21 + (float)uVar25;
+                            value_01.y = (float)pMVar20 + (float)uVar25;
                             value_01.x = (float)puVar22 + (float)uVar24;
-                            value_01.z = (float)pMVar16 + pVVar9->z;
+                            value_01.z = (float)pIVar21 + pVVar9->z;
                             ProtectedTransform::ProtectedTransform_set_position(targetTransform,value_01,(MethodInfo *)0x0);
                             pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
                             if (pTVar1 != (Transform *)0x0) {
                               pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
                               fVar6 = pQVar2->x;
-                              fVar17 = pQVar2->y;
+                              fVar16 = pQVar2->y;
                               fVar15 = pQVar2->z;
-                              fVar18 = pQVar2->w;
+                              fVar17 = pQVar2->w;
                               euler.y = 0.0;
                               euler.z = 0.0;
                               euler.x = (this->fields).localPitch * 0.017453292;
@@ -350,10 +348,10 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
                               fVar3 = pQVar2->y;
                               fVar4 = pQVar2->z;
                               fVar5 = pQVar2->w;
-                              value_02.y = (fVar5 * fVar17 + fVar3 * fVar18 + pQVar2->x * fVar15) - fVar4 * fVar6;
-                              value_02.x = (fVar5 * fVar6 + pQVar2->x * fVar18 + fVar4 * fVar17) - fVar3 * fVar15;
-                              value_02.z = (fVar5 * fVar15 + fVar4 * fVar18 + fVar3 * fVar6) - pQVar2->x * fVar17;
-                              value_02.w = ((fVar5 * fVar18 - pQVar2->x * fVar6) - fVar3 * fVar17) - fVar4 * fVar15;
+                              value_02.y = (fVar5 * fVar16 + fVar3 * fVar17 + pQVar2->x * fVar15) - fVar4 * fVar6;
+                              value_02.x = (fVar5 * fVar6 + pQVar2->x * fVar17 + fVar4 * fVar16) - fVar3 * fVar15;
+                              value_02.z = (fVar5 * fVar15 + fVar4 * fVar17 + fVar3 * fVar6) - pQVar2->x * fVar16;
+                              value_02.w = ((fVar5 * fVar17 - pQVar2->x * fVar6) - fVar3 * fVar16) - fVar4 * fVar15;
                               ProtectedTransform::ProtectedTransform_set_rotation(targetTransform,value_02,(MethodInfo *)0x0);
                               return;
                             }
@@ -464,36 +462,30 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera__ctor(Andro
     func_?(&TypeInfo__CameraLerpToDesiredDistance);
     cRam_? = '\x01';
   }
-  value = (CameraLerpToDesiredDistance *)func_?(TypeInfo__CameraLerpToDesiredDistance);
-  if (value != (CameraLerpToDesiredDistance *)0x0) {
-    (value->fields).newDistance = INFINITY;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).cameraLerpToDesiredDistance = value;
-    func_?(&(this->fields).cameraLerpToDesiredDistance,value);
-    value_00 = (Object *)func_?(TypeInfo__CameraCollision);
-    if (value_00 != (Object *)0x0) {
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value_00,ExceptionArgument__Enum_obj,unaff_EDI);
-      (this->fields).cameraCollision = (CameraCollision *)value_00;
-      func_?(&(this->fields).cameraCollision,value_00);
-      (this->fields).initialYRotation = 20.0;
-      (this->fields).localPitch = -20.0;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
-        cRam_? = '\x01';
-      }
-      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      fVar2 = (pVVar1->downVector).y;
-      fVar3 = (pVVar1->downVector).z;
-      (this->fields).lookAtOffset.x = (pVVar1->downVector).x;
-      (this->fields).lookAtOffset.y = fVar2;
-      (this->fields).lookAtOffset.z = fVar3;
-      TimeAttackFlagCountdownCamera::TimeAttackFlagCountdownCamera__ctor((TimeAttackFlagCountdownCamera *)this,(MethodInfo *)0x0);
-      return;
-    }
+  method_01 = TypeInfo__CameraLerpToDesiredDistance;
+  value = (CameraLerpToDesiredDistance *)func_?();
+  (value->fields).newDistance = INFINITY;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  (this->fields).cameraLerpToDesiredDistance = value;
+  func_?(&(this->fields).cameraLerpToDesiredDistance,value);
+  method_00 = TypeInfo__CameraCollision;
+  value_00 = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).cameraCollision = (CameraCollision *)value_00;
+  func_?(&(this->fields).cameraCollision,value_00);
+  (this->fields).initialYRotation = 20.0;
+  (this->fields).localPitch = -20.0;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->downVector).y;
+  fVar3 = (pVVar1->downVector).z;
+  (this->fields).lookAtOffset.x = (pVVar1->downVector).x;
+  (this->fields).lookAtOffset.y = fVar2;
+  (this->fields).lookAtOffset.z = fVar3;
+  TimeAttackFlagCountdownCamera::TimeAttackFlagCountdownCamera__ctor((TimeAttackFlagCountdownCamera *)this,(MethodInfo *)0x0);
   return;
 }
 

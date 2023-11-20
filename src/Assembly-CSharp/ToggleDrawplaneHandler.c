@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::ToggleDrawplaneHandler::ToggleDrawplaneHandler_Execute
     (*(toggleCallback->fields)._._.invoke_impl)((toggleCallback->fields)._._.method_code,bVar1,(toggleCallback->fields)._._.method);
     pGVar2 = (this->fields).drawPlaneControls;
     if (pGVar2 != (GameObject *)0x0) {
-      pGVar2 = (GameObject *)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4((Void *)pGVar2,(MethodInfo *)0x0);
+      pGVar2 = (GameObject *)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0);
       bVar1 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,bVar1,(MethodInfo *)0x0);
@@ -36,7 +36,7 @@ void Assembly-CSharp.dll::ToggleDrawplaneHandler::ToggleDrawplaneHandler_OnEnabl
     ToggleStatHandlerBase::ToggleStatHandlerBase_set_ToggleState(this_00,bVar1,(MethodInfo *)0x0);
     pGVar2 = (this->fields).drawPlaneControls;
     if (pGVar2 != (GameObject *)0x0) {
-      pGVar2 = (GameObject *)mscorlib.dll::System::Runtime::CompilerServices::Unsafe::Unsafe_AsRef_4((Void *)pGVar2,(MethodInfo *)0x0);
+      pGVar2 = (GameObject *)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0);
       bVar1 = DrawPlane::DrawPlane_get_IsDrawPlaneActive((MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,bVar1,(MethodInfo *)0x0);

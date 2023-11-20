@@ -25,7 +25,6 @@ void Assembly-CSharp.dll::CELeaveCubeTutorial::CELeaveCubeTutorial_Enter(CELeave
       }
       object = TypeInfo__CELeaveCubeTutorial____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IAvatarSetBodyGroup_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarSetBodyGroup_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__CELeaveCubeTutorial____c___Enter_b__0_0_UnityEngine__EventSystems__IAvatarSetBodyGroup__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       TypeInfo__CELeaveCubeTutorial____c->static_fields->__9__0_0 = callbackFunction;
       func_?(&TypeInfo__CELeaveCubeTutorial____c->static_fields->__9__0_0,callbackFunction);
@@ -36,7 +35,6 @@ void Assembly-CSharp.dll::CELeaveCubeTutorial::CELeaveCubeTutorial_Enter(CELeave
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarSetBodyGroup>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarSetBodyGroup>_);
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();

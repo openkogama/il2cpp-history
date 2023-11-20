@@ -34,19 +34,6 @@ public class MaterialViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	private GameObject mouseHoverDescriptionFrame;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass11_0
-	{
-		// Fields
-		public MaterialPurchasePopup materialPurchasePopup;
-
-		// Constructors
-		public __c__DisplayClass11_0();
-
-		// Methods
-		internal void _OnClick_b__3(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -65,6 +52,19 @@ public class MaterialViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExi
 		internal void _OnClick_b__11_2(IUIStack handler, BaseEventData data);
 		internal void _OnClick_b__11_0(IModalPopupCreator x, BaseEventData y);
 		internal void _OnInfoClick_b__13_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass11_0
+	{
+		// Fields
+		public MaterialPurchasePopup materialPurchasePopup;
+
+		// Constructors
+		public __c__DisplayClass11_0();
+
+		// Methods
+		internal void _OnClick_b__3(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

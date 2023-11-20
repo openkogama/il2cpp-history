@@ -23,12 +23,6 @@ void Assembly-CSharp.dll::ClientShopButton::ClientShopButton_OnClick(ClientShopB
     }
     object = TypeInfo__ClientShopButton____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IOpenClientShop>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IOpenClientShop_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ClientShopButton____c___OnClick_b__0_0_UnityEngine__EventSystems__IOpenClientShop__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__ClientShopButton____c->static_fields->__9__0_0 = callbackFunction;
     func_?(&TypeInfo__ClientShopButton____c->static_fields->__9__0_0,callbackFunction);

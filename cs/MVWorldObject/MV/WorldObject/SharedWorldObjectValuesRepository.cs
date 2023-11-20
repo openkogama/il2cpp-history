@@ -9,16 +9,13 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
 	public static class SharedWorldObjectValuesRepository
 	{
 		// Fields
-		public const string OriginalIdKey = "OriginalId";
-		public const string RespawnIntervalKey = "RespawnInterval";
-		public const string RespawnCountKey = "RespawnCount";
 		private static Dictionary<WorldObjectType, Dictionary<object, object>> values;
 	
 		// Constructors

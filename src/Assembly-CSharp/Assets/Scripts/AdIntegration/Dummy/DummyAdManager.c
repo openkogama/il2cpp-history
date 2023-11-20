@@ -57,7 +57,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
   pIVar1 = (this->fields).adUIHandler;
   if (pIVar1 != (IAdUIManager *)0x0) {
     cVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1);
@@ -78,7 +78,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_DummyAdManager___RequestIntersti,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_DummyAdManager___RequestIntersti,(MethodInfo *)0x0);
       if (interstitialCallback != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
         (*(interstitialCallback->fields)._._.invoke_impl)((interstitialCallback->fields)._._.method_code,0,(interstitialCallback->fields)._._.method);
         return;
@@ -112,7 +112,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)message,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0);
   pIVar1 = (this->fields).adUIHandler;
   if (pIVar1 != (IAdUIManager *)0x0) {
     cVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar1);
@@ -133,7 +133,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_DummyAdManager___RequestRewarded,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_DummyAdManager___RequestRewarded,(MethodInfo *)0x0);
       if (rewardedAdCallback != (Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *)0x0) {
         (*(rewardedAdCallback->fields)._._.invoke_impl)((rewardedAdCallback->fields)._._.method_code,0,(rewardedAdCallback->fields)._._.method);
         return;
@@ -222,11 +222,14 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar10,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar10,(MethodInfo *)0x0);
       if ((((pDVar1->fields).rewarded != 0) && ((pDVar1->fields).timeoutAsEnabled != 0)) && (this = (DummyAdManager *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), (float)(pDVar1->fields).timeoutSuccessDelay <= (float)this - (pDVar1->fields).startTime)) {
         Web::WebAdManager::WebAdManager_AdLog_1(StringLiteral_DummyAdManager___UpdateControlle,(MethodInfo *)0x0);
       }
-      pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString_1((Boolean *)&(pDVar1->fields).rewarded,(IFormatProvider *)0x0,in_stack_11);
+      if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Boolean);
+      }
+      pSVar10 = mscorlib.dll::System::Boolean::Boolean_ToString((Boolean *)&(pDVar1->fields).rewarded,(MethodInfo *)0x0);
       pSVar10 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_DummyAdManager___UpdateControlle,pSVar10,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Debug);
@@ -235,11 +238,11 @@ code_?:
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar10,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar10,(MethodInfo *)0x0);
       if ((pDVar1->fields).rewarded == 0) {
-        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-        if (pMVar12 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(pMVar12,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
+        pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+        if (pMVar11 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(pMVar11,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
           pIVar2 = (pDVar1->fields).adUIHandler;
           if (pIVar2 != (IAdUIManager *)0x0) {
             func_?(3,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
@@ -248,9 +251,9 @@ code_?:
         }
       }
       else {
-        pMVar12 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-        if (pMVar12 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(pMVar12,AdType__Enum_RewardedAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
+        pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+        if (pMVar11 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(pMVar11,AdType__Enum_RewardedAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
           pIVar2 = (pDVar1->fields).adUIHandler;
           if (pIVar2 != (IAdUIManager *)0x0) {
             func_?(4,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar2,3);
@@ -265,8 +268,8 @@ code_?:
   func_?(uVar3);
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

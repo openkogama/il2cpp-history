@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Image 5: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
+// Image 12: Photon3Unity3D.dll - Assembly: Photon3Unity3D, Version=4.1.2.19, Culture=neutral, PublicKeyToken=null
 
 namespace ExitGames.Client.Photon
 {
@@ -24,9 +24,8 @@ namespace ExitGames.Client.Photon
 		private object customData;
 	
 		// Properties
-		public object this[byte key] { get => default; internal set {} }
-		public int Sender { get; internal set; }
-		public object CustomData { get; internal set; }
+		public object this[byte key] { get => default; }
+		public int Sender { get; }
 	
 		// Constructors
 		public EventData();
@@ -34,6 +33,5 @@ namespace ExitGames.Client.Photon
 		// Methods
 		internal void Reset();
 		public override string ToString();
-		public string ToStringFull();
 	}
 }

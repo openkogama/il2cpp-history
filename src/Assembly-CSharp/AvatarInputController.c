@@ -223,7 +223,7 @@ void Assembly-CSharp.dll::AvatarInputController::AvatarInputController__ctor(Ava
   (this->fields).rotation.y = fVar3;
   (this->fields).rotation.z = fVar2;
   (this->fields).rotation.w = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
   TypeInfo__AvatarInputController->static_fields->mainCamera = pCVar6;
   func_?(TypeInfo__AvatarInputController->static_fields,pCVar6);

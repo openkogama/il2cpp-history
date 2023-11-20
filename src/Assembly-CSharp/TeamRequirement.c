@@ -83,17 +83,17 @@ void Assembly-CSharp.dll::TeamRequirement::TeamRequirement_OnDataUpdate(TeamRequ
     func_?(&StringLiteral_team);
     cRam_? = '\x01';
   }
-  pDVar1 = data;
+  this_00 = data;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)data,(Object *)StringLiteral_team,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-    if (bVar2 == 0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,(Object *)StringLiteral_team,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+    if (bVar1 == 0) {
                     /* WARNING: Read-only address (ram,0xADDR) is written */
       return;
     }
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar1,(Object *)StringLiteral_team,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      data = pDVar1;
-      if ((pDVar1->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,(Object *)StringLiteral_team,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar2.m_Index != 0) {
+      data = (Dictionary_2_System_Object_System_Object_ *)TVar2;
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
         ownerID = unaff_EDI;
         piVar3 = (int *)func_?();
         _UNK_? = *piVar3;
@@ -103,8 +103,8 @@ code_?:
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)0x6e7505f8,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
+          bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)0x6e7505f8,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar1 == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               ownerID = (int32_t)TypeInfo__UnityEngine__Debug;
               data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
@@ -112,26 +112,23 @@ code_?:
             }
             ownerID = 0;
             data = (Dictionary_2_System_Object_System_Object_ *)StringLiteral_Unable_to_tint_null_;
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogError((Object *)StringLiteral_Unable_to_tint_null_,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Unable_to_tint_null_,(MethodInfo *)0x0);
             return;
           }
-          ownerID = *(int32_t *)(iRam_? + 0xe8);
-          data = (Dictionary_2_System_Object_System_Object_ *)0x797835ff;
-          (**(code **)(iRam_? + 0xe4))();
+          ownerID = *(int32_t *)(iRam_? + 0xec);
+          data = (Dictionary_2_System_Object_System_Object_ *)0x3e1835ff;
+          (**(code **)(iRam_? + 0xe8))();
           return;
         }
-        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-        if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          ownerID = (int32_t)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__;
-          data = pDVar1;
-          Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)pDVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-          ownerID = (int32_t)&data;
-          data = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Int32;
-          value = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar1,(Object *)StringLiteral_team,value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
-          this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-          if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1(this_00,ownerID,pDVar1,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+        data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        value = (Object *)func_?(TypeInfo__System__Int32,&data);
+        if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)StringLiteral_team,value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+          this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+          if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1(this_02,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -156,7 +153,7 @@ void Assembly-CSharp.dll::TeamRequirement::TeamRequirement__ctor(TeamRequirement
 
 {
   (this->fields).team = 5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).tintObject = tintObject;
   func_?(&(this->fields).tintObject,tintObject);
   (this->fields).hasUseButtonWhenFree = hasUseButtonWhenFree;

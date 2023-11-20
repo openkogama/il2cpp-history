@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    cVar3 = (*(pVVar2->klass->vtable).__unknown_1.methodPtr)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_1.method);
+    cVar3 = (*(code *)(pVVar2->klass->vtable).__unknown_1.method)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_2.methodPtr);
     if (cVar3 != '\0') {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(pVVar2->klass->vtable).__unknown_7.methodPtr)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.method);
+    (*(code *)(pVVar2->klass->vtable).__unknown_7.method)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.methodPtr);
     return;
   }
   func_?();
@@ -96,7 +96,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(pVVar2->klass->vtable).__unknown_8.methodPtr)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.method);
+    (*(code *)(pVVar2->klass->vtable).__unknown_8.method)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_9.methodPtr);
     return;
   }
   func_?();
@@ -128,7 +128,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(pVVar2->klass->vtable).__unknown_6.methodPtr)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_6.method);
+    (*(code *)(pVVar2->klass->vtable).__unknown_6.method)(pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.methodPtr);
     return;
   }
   func_?();

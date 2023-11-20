@@ -80,7 +80,7 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::AdvancedGhostVisua
 void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::AdvancedGhostVisualizaton_Die__ctor(AdvancedGhostVisualizaton_Die *this,float duration,AdvancedGhostVisualizaton *ghostVisualizaton,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.duration = duration;
   (this->fields)._.timeLeft = duration;
   return;

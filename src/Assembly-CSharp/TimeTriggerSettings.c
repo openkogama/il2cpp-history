@@ -18,8 +18,8 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize(Ti
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_02 != (MVWorldObjectClientManager *)0x0) {
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_02,woID,(MethodInfo *)0x0);
-      if ((pMVar1 != (MVWorldObject *)0x0) && (this_01 = (pMVar1->fields).data, this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+      if ((pMVar1 != (MVWorldObject *)0x0) && (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data, this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_01,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -27,10 +27,10 @@ void Assembly-CSharp.dll::TimeTriggerSettings::TimeTriggerSettings_Initialize(Ti
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        value = mscorlib.dll::System::Convert::Convert_ToSingle(pOVar2,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_time,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+        value = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar2.m_Index,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_01,(Object *)StringLiteral_time,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         pCVar3 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle(pOVar2,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
+        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar2.m_Index,(IFormatProvider *)pCVar3,(MethodInfo *)0x0);
         pSVar4 = (this->fields).durationSlider;
         if (pSVar4 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize(pSVar4,StringLiteral_duration,value,0.1,1000.0,(MethodInfo *)0x0);

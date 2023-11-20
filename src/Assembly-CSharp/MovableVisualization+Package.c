@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::MovableVisualization+Package::MovableVisualization_Package__ctor(MovableVisualization_Package *this,Vector3 position,Quaternion rotation,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0);
   (this->fields).position.x = position.x;
   (this->fields).position.y = position.y;

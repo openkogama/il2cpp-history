@@ -79,7 +79,7 @@ code_?:
 void MVWorldObject.dll::MV::WorldObject::ThemesData::ThemeData::ThemeData__ctor_1(ThemeData *this,int32_t id,String *themeIdentifier,int32_t priceGold,int32_t levelRequirement,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).id = id;
   (this->fields).themeIdentifier = themeIdentifier;
   func_?(&(this->fields).themeIdentifier,themeIdentifier);

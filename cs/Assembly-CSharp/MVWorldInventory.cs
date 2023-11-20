@@ -12,10 +12,10 @@ using System.Runtime.CompilerServices;
 public class MVWorldInventory
 {
 	// Fields
-	private Dictionary<int, RuntimePrototypeCubeModel> runtimePrototypes;
-	private Dictionary<int, PendingPrototypeData> pendingRuntimePrototypes;
-	private List<RuntimePrototypeCubeModel> dirtyRPCM;
-	private const int numberOfLowPriorityMeshGenerations = 1;
+	private readonly Dictionary<int, RuntimePrototypeCubeModel> runtimePrototypes;
+	private readonly Dictionary<int, PendingPrototypeData> pendingRuntimePrototypes;
+	private readonly List<RuntimePrototypeCubeModel> dirtyRPCM;
+	private const int NumberOfLowPriorityMeshGenerations = 1;
 	public OnWorldInventoryChangeDelegate OnWorldInventoryChange;
 
 	// Properties

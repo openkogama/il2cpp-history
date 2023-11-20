@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::ESSelection+PickResult`1[System::Object]::ESSelection_PickResult_1_System_Object___ctor(ESSelection_PickResult_1_System_Object_ *this,Vector3 mousePosition,VoxelHit hit,Object *data,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).mousePosition.x = mousePosition.x;
   (this->fields).mousePosition.y = mousePosition.y;
   (this->fields).mousePosition.z = mousePosition.z;

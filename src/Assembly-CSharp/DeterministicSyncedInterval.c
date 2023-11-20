@@ -63,7 +63,7 @@ bool Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterv
 void Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterval__ctor(DeterministicSyncedInterval *this,int32_t id,int32_t range,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   bVar1 = cRam_? == '\0';
   (this->fields).range = range;
   if (bVar1) {

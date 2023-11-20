@@ -21,20 +21,6 @@ public class SetupCubeModelTutorialUI : MonoBehaviour, IHandleCubeEditTutorial
 	private MaterialsController materialsController;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass4_0
-	{
-		// Fields
-		public DesktopCubeModelingControllerCubeTutorial cubeModelTutorialController;
-		public UnityAction closeAction;
-
-		// Constructors
-		public __c__DisplayClass4_0();
-
-		// Methods
-		internal void _PushCubeEditCubeTutorialTools_b__1(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -49,6 +35,20 @@ public class SetupCubeModelTutorialUI : MonoBehaviour, IHandleCubeEditTutorial
 
 		// Methods
 		internal void _PushCubeEditCubeTutorialTools_b__4_0(IUIStack x, BaseEventData y);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass4_0
+	{
+		// Fields
+		public DesktopCubeModelingControllerCubeTutorial cubeModelTutorialController;
+		public UnityAction closeAction;
+
+		// Constructors
+		public __c__DisplayClass4_0();
+
+		// Methods
+		internal void _PushCubeEditCubeTutorialTools_b__1(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

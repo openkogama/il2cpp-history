@@ -11,10 +11,10 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_ClearStateStack(FSMEntity *this,M
     cRam_? = '\x01';
   }
   this_01 = this;
-  this_00 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
-  if (this_00 != (Stack_1_System_Int32Enum_ *)0x0) {
+  this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
+  if (this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
     if (0 < (this_00->fields)._size) {
-      this = (FSMEntity *)mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Pop(this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+      this = (FSMEntity *)mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Pop(this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
       (this_01->fields).clearStack = 1;
       value = (Object *)func_?(TypeInfo__EditorEvent,&this);
       FSMEntity_set_Event(this_01,value,(MethodInfo *)0x0);
@@ -41,15 +41,15 @@ bool Assembly-CSharp.dll::FSMEntity::FSMEntity_PopState(FSMEntity *this,MethodIn
   }
   this_01 = this;
   if ((this->fields).lockState == 0) {
-    this_00 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
-    if (this_00 == (Stack_1_System_Int32Enum_ *)0x0) {
+    this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
+    if (this_00 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
       func_?();
       pcVar1 = (code *)swi(3);
       bVar2 = (*pcVar1)();
       return bVar2;
     }
     if (0 < (this_00->fields)._size) {
-      this = (FSMEntity *)mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Pop(this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+      this = (FSMEntity *)mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Pop(this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
       (this_01->fields).clearStack = 0;
       value = (Object *)func_?(TypeInfo__EditorEvent,&this);
       FSMEntity_set_Event(this_01,value,(MethodInfo *)0x0);
@@ -76,9 +76,9 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_PushState(FSMEntity *this,EditorE
   }
   method_00 = MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_;
   if ((this_01->fields).lockState == 0) {
-    this_00 = (Stack_1_System_Int32Enum_ *)(this_01->fields).stateStack;
+    this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_01->fields).stateStack;
     pOVar1 = (this_01->fields).curEvent;
-    if ((this_00 == (Stack_1_System_Int32Enum_ *)0x0) || (pOVar1 == (Object *)0x0)) {
+    if ((this_00 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) || (pOVar1 == (Object *)0x0)) {
       func_?();
       pOVar1 = extraout_ECX;
       pEVar2 = extraout_EDX;
@@ -86,8 +86,8 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_PushState(FSMEntity *this,EditorE
     else {
       pEVar2 = TypeInfo__EditorEvent;
       if ((pOVar1->klass->_0).element_class == (TypeInfo__EditorEvent->_0).element_class) {
-        pIVar3 = (Int32Enum__Enum *)func_?(pOVar1);
-        mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Push(this_00,*pIVar3,method_00);
+        piVar3 = (int32_t *)func_?(pOVar1);
+        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Push(this_00,(TextureId)*piVar3,method_00);
         this = (FSMEntity *)nextState;
         (this_01->fields).clearStack = 0;
         pOVar1 = (Object *)func_?(TypeInfo__EditorEvent,&this);
@@ -119,21 +119,21 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_PushState_1(FSMEntity *this,Edito
   if ((this->fields).lockState != 0) {
     return;
   }
-  this_00 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
+  this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
   if (overridePushState == EditorEvent__Enum_UndefinedState) {
     pOVar1 = (this->fields).curEvent;
-    if ((this_00 != (Stack_1_System_Int32Enum_ *)0x0) && (pOVar1 != (Object *)0x0)) {
+    if ((this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) && (pOVar1 != (Object *)0x0)) {
       pEVar2 = TypeInfo__EditorEvent;
       if ((pOVar1->klass->_0).element_class == (TypeInfo__EditorEvent->_0).element_class) {
-        pIVar3 = (Int32Enum__Enum *)func_?(pOVar1);
-        mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Push(this_00,*pIVar3,method_00);
+        piVar3 = (int32_t *)func_?(pOVar1);
+        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Push(this_00,(TextureId)*piVar3,method_00);
         goto code_?;
       }
       goto code_?;
     }
   }
-  else if (this_00 != (Stack_1_System_Int32Enum_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Push(this_00,overridePushState,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_);
+  else if (this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Push(this_00,(TextureId)overridePushState,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_);
 code_?:
     this = (FSMEntity *)nextState;
     (this_01->fields).clearStack = 0;
@@ -180,25 +180,17 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity__ctor(FSMEntity *this,MethodInfo 
     func_?(&TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-    (this->fields).data = this_00;
-    func_?(&(this->fields).data,this_00);
-    (this->fields).clearStack = 1;
-    this_01 = (Stack_1_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
-    if (this_01 != (Stack_1_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::Stack_1_System_Object___ctor(this_01,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
-      method_00 = (MethodInfo *)&(this->fields).stateStack;
-      (this->fields).stateStack = (Stack_1_EditorEvent_ *)this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      return;
-    }
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+  (this->fields).data = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(&(this->fields).data,this_00);
+  (this->fields).clearStack = 1;
+  this_01 = (Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_ *)func_?(TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Dynamic::BindingRestrictions+TestBuilder+AndNode]::Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode___ctor(this_01,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
+  method_00 = (MethodInfo *)&(this->fields).stateStack;
+  (this->fields).stateStack = (Stack_1_EditorEvent_ *)this_01;
+  func_?(method_00,this_01);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -222,13 +214,13 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event(FSMEntity *this,Object 
       str1 = (String *)0x0;
     }
     else {
-      str1 = (String *)(*(value->klass->vtable).ToString.methodPtr)(value,(value->klass->vtable).ToString.method);
+      str1 = (String *)(*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
     }
     pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
     return;
   }
   (this->fields).nextEvent = value;
@@ -250,7 +242,7 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event(FSMEntity *this,Object 
         if ((this->fields).currentState != (IState *)0x0) {
           func_?(2,TypeInfo__IState,(this->fields).currentState,this);
         }
-        pSVar1 = (String *)(*(value->klass->vtable).ToString.methodPtr)(value,(value->klass->vtable).ToString.method);
+        pSVar1 = (String *)(*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
         (this->fields).stateName = pSVar1;
         func_?(&(this->fields).stateName,pSVar1);
         (this->fields).currentState = pIVar2;
@@ -265,17 +257,17 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event(FSMEntity *this,Object 
         pIVar2 = (this->fields).currentState;
         if (pIVar2 == (IState *)0x0) goto code_?;
         func_?(0,TypeInfo__IState,pIVar2,this);
-        this_01 = (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)(this->fields).data;
-        if (this_01 == (Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Text::RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::Dictionary_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__Clear(this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__);
+        this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).data;
+        if (this_01 == (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear(this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__);
       }
       if ((this->fields).clearStack == 0) {
         (this->fields).clearStack = 1;
         return;
       }
-      this_02 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
-      if (this_02 != (Stack_1_System_Int32Enum_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::Stack_1_System_Int32Enum__Clear(this_02,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
+      this_02 = (Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext_ *)(this->fields).stateStack;
+      if (this_02 != (Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::StyleSheets::BaseStyleMatcher+MatchContext]::Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext__Clear(this_02,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
         return;
       }
     }

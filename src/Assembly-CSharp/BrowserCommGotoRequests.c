@@ -18,16 +18,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoD
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -56,16 +47,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoE
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -94,16 +76,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoI
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -132,16 +105,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoL
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -166,16 +130,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoM
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -205,27 +160,14 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoP
     str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&profileId,(MethodInfo *)0x0);
     pSVar2 = mscorlib.dll::System::String::String_Concat_4(pSVar2,str1,::StringLiteral__,(MethodInfo *)0x0);
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      _modalPopup = (BrowserComm__Class **)TypeInfo__BrowserComm;
+      _modalPopup = TypeInfo__BrowserComm;
       _newTab = (String *)&UNK_?;
       func_?();
     }
-    if (cRam_? == '\0') {
-      _modalPopup = &TypeInfo__BrowserComm;
-      _newTab = (String *)&UNK_?;
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      _modalPopup = (BrowserComm__Class **)TypeInfo__BrowserComm;
-      _newTab = (String *)&UNK_?;
-      func_?();
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      _modalPopup = (BrowserComm__Class **)0x0;
-      profileId = (int32_t)&UNK_?;
-      _newTab = pSVar2;
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(pSVar2,(MethodInfo *)0x0);
-    }
+    _modalPopup = (BrowserComm__Class *)0x0;
+    profileId = (int32_t)&UNK_?;
+    _newTab = pSVar2;
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(pSVar2,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -254,16 +196,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoP
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -302,16 +235,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoS
     if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm);
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__BrowserComm);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BrowserComm);
-    }
-    if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(url,(MethodInfo *)0x0);
-    }
+    BrowserComm::BrowserComm_ExecuteBrowserRequest(url,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -333,16 +257,7 @@ void Assembly-CSharp.dll::BrowserCommGotoRequests::BrowserCommGotoRequests_GotoU
   if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__BrowserComm);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__BrowserComm);
-  }
-  if (TypeInfo__BrowserComm->static_fields->enableBrowserRequest != 0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Application::Application_OpenURL(URL,(MethodInfo *)0x0);
-  }
+  BrowserComm::BrowserComm_ExecuteBrowserRequest(URL,(MethodInfo *)0x0);
   return;
 }
 

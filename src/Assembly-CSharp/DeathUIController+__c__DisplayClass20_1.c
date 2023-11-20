@@ -24,7 +24,6 @@ void Assembly-CSharp.dll::DeathUIController+<>c__DisplayClass20_1::DeathUIContro
       }
       object = TypeInfo__DeathUIController____c->static_fields->__9;
       this_01 = (UnityAction *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 == (UnityAction *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor((NavMesh_OnNavMeshPreUpdate *)this_01,(Object *)object,MethodInfo__DeathUIController____c___ShowReviveMenu_b__20_2__,(MethodInfo *)0x0);
       TypeInfo__DeathUIController____c->static_fields->__9__20_2 = this_01;
       func_?(&TypeInfo__DeathUIController____c->static_fields->__9__20_2,this_01);
@@ -34,7 +33,6 @@ void Assembly-CSharp.dll::DeathUIController+<>c__DisplayClass20_1::DeathUIContro
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

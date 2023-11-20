@@ -32,19 +32,6 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	public Action OnPlayButtonPressed;
 
 	// Nested types
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
-	{
-		// Fields
-		public ContinueButtonLockCursor continueBtn;
-
-		// Constructors
-		public __c__DisplayClass14_0();
-
-		// Methods
-		internal void _OnPromotionShown_b__0(IUIStack x, BaseEventData y);
-	}
-
 	[Serializable]
 	[CompilerGenerated]
 	private sealed class __c
@@ -61,6 +48,19 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 		// Methods
 		internal void _OnContinuePressed_b__15_0(IUIStack x, BaseEventData y);
 		internal void _OnCountDownEnd_b__21_0(IUIStack handler, BaseEventData data);
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass14_0
+	{
+		// Fields
+		public ContinueButtonLockCursor continueBtn;
+
+		// Constructors
+		public __c__DisplayClass14_0();
+
+		// Methods
+		internal void _OnPromotionShown_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]

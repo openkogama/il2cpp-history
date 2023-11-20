@@ -12,21 +12,20 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_ChangeUrl(SoundViewItem *
     func_?(&TypeInfo__SoundViewItem____c__DisplayClass17_0);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__SoundViewItem____c__DisplayClass17_0);
+  method_00 = TypeInfo__SoundViewItem____c__DisplayClass17_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
     value[1].klass = (Object__Class *)url;
     func_?(value + 1,url);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>);
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__SoundViewItem____c__DisplayClass17_0___ChangeUrl_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_);
-      return;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__SoundViewItem____c__DisplayClass17_0___ChangeUrl_b__0_UnityEngine__EventSystems__IHandleSettingChanged__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleSettingChanged>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleSettingChanged>_);
+    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -66,7 +65,7 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_Initialize(SoundViewItem 
         pTVar3 = (this->fields).title;
         TM::TM__(StringLiteral_Loading___,(MethodInfo *)0x0);
         if (pTVar3 != (Text *)0x0) {
-          (*(pTVar3->klass->vtable).set_text.methodPtr)();
+          (*(code *)(pTVar3->klass->vtable).set_text.method)();
           this_00 = (this->fields).toolTip;
           pSVar4 = TM::TM__(StringLiteral_Loading___,(MethodInfo *)0x0);
           if (this_00 != (ToolTip *)0x0) {
@@ -89,19 +88,15 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_Initialize(SoundViewItem 
               if (pSVar5 != (SoundTabInfo *)0x0) {
                 pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,(pSVar5->fields).url,(MethodInfo *)0x0);
                 pSVar4 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar4,(MethodInfo *)0x0);
-                this_01 = (Action_1_Object_ *)func_?();
-                if (this_01 != (Action_1_Object_ *)0x0) {
-                  mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_01,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
-                  this_02 = (AssetBundleRequest *)func_?();
-                  if (this_02 != (AssetBundleRequest *)0x0) {
-                    AssetBundleRequest::AssetBundleRequest__ctor(this_02,pSVar4,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-                    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_02,(MethodInfo *)0x0);
-                    return;
-                  }
+                this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+                DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+                this_02 = (AssetBundleRequest *)func_?();
+                AssetBundleRequest::AssetBundleRequest__ctor(this_02,pSVar4,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+                if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
                 }
+                AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_02,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -155,18 +150,12 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_OnDestroy(SoundViewItem *
     func_?(&MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -209,9 +198,9 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_OnDownloadFinished(SoundV
               ToolTip::ToolTip_SetText(pTVar5,(pSVar4->fields).name,(MethodInfo *)0x0);
               pSVar4 = (this->fields).tabInfo;
               if ((pSVar4 != (SoundTabInfo *)0x0) && (pTStack6 = (this->fields).title, pTStack6 != (Text *)0x0)) {
-                pMStack7 = (pTStack6->klass->vtable).set_text.method;
+                pIStack7 = (pTStack6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
                 pSStack8 = (pSVar4->fields).name;
-                (*(pTStack6->klass->vtable).set_text.methodPtr)();
+                (*(code *)(pTStack6->klass->vtable).set_text.method)();
                 (this->fields).doneLoading = 1;
                 return;
               }
@@ -227,11 +216,11 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_OnDownloadFinished(SoundV
       func_?();
     }
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)pSVar1,(MethodInfo *)0x0);
   pTVar9 = (this->fields).title;
   TM::TM__(StringLiteral_Download_failed,(MethodInfo *)0x0);
   if (pTVar9 != (Text *)0x0) {
-    (*(pTVar9->klass->vtable).set_text.methodPtr)();
+    (*(code *)(pTVar9->klass->vtable).set_text.method)();
     pTVar5 = (this->fields).toolTip;
     pSVar1 = TM::TM__(StringLiteral_Sound_failed_to_download_,(MethodInfo *)0x0);
     if (pTVar5 != (ToolTip *)0x0) {
@@ -280,18 +269,12 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_UnsubscribePendingDownloa
     func_?(&MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_);
     cRam_? = '\x01';
   }
-  this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  if (this_00 != (Action_1_Object_ *)0x0) {
-    mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
-    return;
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__SoundViewItem__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   return;
 }
 

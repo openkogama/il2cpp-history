@@ -57,7 +57,7 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::AdvancedG
     color.r = (float)auVar14._0_4_;
     color.g = (float)auVar14._4_4_;
     color.b = (float)auVar14._8_4_;
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine(start,end,color,0.5,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine(start,end,color,0.5,(MethodInfo *)0x0);
     position_02.y = fVar13;
     position_02.x = fVar9;
     position_02.z = fVar7;
@@ -96,7 +96,7 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::AdvancedG
     color_00.r = (float)auVar14._0_4_;
     color_00.g = (float)auVar14._4_4_;
     color_00.b = (float)auVar14._8_4_;
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_DrawLine(start_00,end_00,color_00,0.5,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine(start_00,end_00,color_00,0.5,(MethodInfo *)0x0);
     position.y = fVar1 + fVar2 * fVar13;
     position.x = (float)pTVar15 + fVar9 * fVar13;
     position.z = fVar8 + fVar7 * fVar13;
@@ -324,7 +324,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostB
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log(message,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
     iVar4 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
     dVar1 = (double)CONCAT44(serverTimeNormalizedToPeriod._0_4_,in_stack_2);
     (this->fields).prevServertime = iVar4;
@@ -450,34 +450,14 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostB
     cRam_? = '\x01';
   }
   (this->fields).minLookDeltaOffset = 0.1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).ghostBehaviour = ghostBehaviour;
   func_?(&(this->fields).ghostBehaviour,ghostBehaviour);
   this_00 = (Func_5_Int32_Single_Single_Object_UnityEngine_Vector3_ *)func_?(TypeInfo__System__Func<int,_float,_float,_UnityEngine::Transform,_UnityEngine::Vector3>);
-  if (this_00 != (Func_5_Int32_Single_Single_Object_UnityEngine_Vector3_ *)0x0) {
-    mscorlib.dll::System::Func`5[Int32,Single,Single,Object,UnityEngine::Vector3]::Func_5_Int32_Single_Single_Object_UnityEngine_Vector3___ctor(this_00,(Object *)this,MethodInfo__AdvancedGhostBehaviour__NetworkedValues__EaseInEaseOutBackAndForward_int__float__float__UnityEngine__Transform_,(MethodInfo *)0x0);
-    (this->fields).patrolPattern = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)this_00;
-    func_?(&(this->fields).patrolPattern,this_00);
-    AdvancedGhostBehaviour_NetworkedValues_Update(this,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Func`5[Int32,Single,Single,Object,UnityEngine::Vector3]::Func_5_Int32_Single_Single_Object_UnityEngine_Vector3___ctor(this_00,(Object *)this,MethodInfo__AdvancedGhostBehaviour__NetworkedValues__EaseInEaseOutBackAndForward_int__float__float__UnityEngine__Transform_,(MethodInfo *)0x0);
+  (this->fields).patrolPattern = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)this_00;
+  func_?(&(this->fields).patrolPattern,this_00);
+  AdvancedGhostBehaviour_NetworkedValues_Update(this,(MethodInfo *)0x0);
   return;
-}
-
-
-/* Vector3 get_SyncPosition() */
-
-Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_get_SyncPosition(Vector3 *__return_storage_ptr__,AdvancedGhostBehaviour_NetworkedValues *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields).nextPosition.y;
-  fVar2 = (this->fields).nextPosition.z;
-  __return_storage_ptr__->x = (this->fields).nextPosition.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
 }
 

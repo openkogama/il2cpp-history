@@ -8,7 +8,7 @@ void Assembly-CSharp.dll::MVRuntimeDataVariableClampedFloat::MVRuntimeDataVariab
     func_?(&MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_);
     cRam_? = '\x01';
   }
-  MVRuntimeDataVariable`1[System::Single]::MVRuntimeDataVariable_1_System_Single___ctor((MVRuntimeDataVariable_1_System_Single_ *)this,variableId,sendInterval,initialRuntimeData,writeThrough,MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_);
+  MVRuntimeDataVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,variableId,sendInterval,initialRuntimeData,writeThrough,MethodInfo__MVRuntimeDataVariable<float>__MVRuntimeDataVariable_System__String__float__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_);
   (this->fields).min = min;
   (this->fields).max = max;
   return;

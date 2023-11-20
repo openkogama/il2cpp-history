@@ -13,18 +13,18 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__set_Item_System__String__int_);
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pEVar1->fields).gameBoosterEarningsGold;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this_00,(Object *)gameBooster,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_);
-      if (bVar2 == 0) {
-        pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(pEVar1->fields).gameBoosterEarningsGold;
-        if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar3,(Object *)gameBooster,(Object *)0x0,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_);
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pEVar1->fields).gameBoosterEarningsGold;
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar2,(Object *)gameBooster,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_);
+      if (bVar3 == 0) {
+        this_00 = (pEVar1->fields).gameBoosterEarningsGold;
+        if (this_00 == (Dictionary_2_System_String_System_Int32_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32]::Dictionary_2_System_Object_System_Int32__Add((Dictionary_2_System_Object_System_Int32_ *)this_00,(Object *)gameBooster,0,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_);
       }
-      pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(pEVar1->fields).gameBoosterEarningsGold;
-      if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(pDVar3,(Object *)gameBooster,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(pDVar3,(Object *)gameBooster,(Object *)((int)&pOVar4->klass + goldAmount),MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__set_Item_System__String__int_);
+      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pEVar1->fields).gameBoosterEarningsGold;
+      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)gameBooster,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32]::Dictionary_2_System_Object_System_Int32__set_Item((Dictionary_2_System_Object_System_Int32_ *)pDVar2,(Object *)gameBooster,TVar4.m_Index + goldAmount,MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__set_Item_System__String__int_);
         return;
       }
     }
@@ -52,27 +52,27 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
       func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)(pEVar1->fields).gamePassTierEarningsGold;
-    if (this_00 != (Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__ContainsKey(this_00,(Object *)gamePassTier,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__ContainsKey_MV__Common__GamePassTier_);
+    this_00 = (Dictionary_2_System_ByteEnum_System_Single_ *)(pEVar1->fields).gamePassTierEarningsGold;
+    if (this_00 != (Dictionary_2_System_ByteEnum_System_Single_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey(this_00,gamePassTier,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__ContainsKey_MV__Common__GamePassTier_);
       if (bVar2 == 0) {
-        pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(pEVar1->fields).gamePassTierEarningsGold;
-        if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar3,(Object *)gamePassTier,(Object *)0x0,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_);
+        this_01 = (pEVar1->fields).gamePassTierEarningsGold;
+        if (this_01 == (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::Dictionary_2_System_ByteEnum_System_Int32__Add((Dictionary_2_System_ByteEnum_System_Int32_ *)this_01,gamePassTier,0,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_);
       }
-      pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(pEVar1->fields).gamePassTierEarningsGold;
-      if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,gamePassTier,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__get_Item_MV__Common__GamePassTier_);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(pDVar3,(Object *)gamePassTier,(Object *)((int)&pOVar4->klass + goldAmount),MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
+      this_02 = (Dictionary_2_System_ByteEnum_System_Object_ *)(pEVar1->fields).gamePassTierEarningsGold;
+      if (this_02 != (Dictionary_2_System_ByteEnum_System_Object_ *)0x0) {
+        pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item(this_02,gamePassTier,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__get_Item_MV__Common__GamePassTier_);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Int32]::Dictionary_2_System_ByteEnum_System_Int32__set_Item((Dictionary_2_System_ByteEnum_System_Int32_ *)this_02,gamePassTier,(int)&pOVar3->klass + goldAmount,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__set_Item_MV__Common__GamePassTier__int_);
         return;
       }
     }
   }
 code_?:
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -101,17 +101,11 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
     cRam_? = '\x01';
   }
   this_00 = (EarningsReport *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassEarnings__EarningsReport);
-  if (this_00 != (EarningsReport *)0x0) {
-    EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).earningsReport = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).earningsReport = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -126,19 +120,13 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::Proje
     cRam_? = '\x01';
   }
   this_00 = (EarningsReport *)func_?(TypeInfo__MV__WorldObject__GamePassSystem__GamePassEarnings__EarningsReport);
-  if (this_00 != (EarningsReport *)0x0) {
-    EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
-    (this->fields).earningsReport = this_00;
-    func_?(method_00,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields).earningsReport = earningsReport;
-    func_?(&this->fields,earningsReport);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  EarningsReport::EarningsReport__ctor(this_00,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&this->fields;
+  (this->fields).earningsReport = this_00;
+  func_?(method_00,this_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).earningsReport = earningsReport;
+  func_?(&this->fields,earningsReport);
   return;
 }
 

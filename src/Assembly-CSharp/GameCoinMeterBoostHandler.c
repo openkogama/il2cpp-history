@@ -22,11 +22,11 @@ void Assembly-CSharp.dll::GameCoinMeterBoostHandler::GameCoinMeterBoostHandler_S
         }
       }
       else {
-        piVar5 = *(int **)(unaff_EDI + 0x10);
+        piVar5 = *(int **)(unaff_EDI + 0x14);
         if (piVar5 != (int *)0x0) {
-          (**(code **)(*piVar5 + 0x1b4))();
-          (**(code **)(*piVar5 + 0x1bc))();
-          piVar5 = *(int **)(unaff_EDI + 0x14);
+          (**(code **)(*piVar5 + 0x1b8))();
+          (**(code **)(*piVar5 + 0x1c0))();
+          piVar5 = *(int **)(unaff_EDI + 0x18);
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar1 != (MVNetworkGame *)0x0) {
             pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::GameCoinMeterBoostHandler::GameCoinMeterBoostHandler_S
                 str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
                 mscorlib.dll::System::String::String_Concat_3(StringLiteral_x,str1,(MethodInfo *)0x0);
                 if (piVar5 != (int *)0x0) {
-                  (**(code **)(*piVar5 + 0x314))();
+                  (**(code **)(*piVar5 + 0x318))();
                   return;
                 }
               }

@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor(ESLeave
   (this->fields)._.tintedWo = pWVar1;
   method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
   func_?(method_00,pWVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
   type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
   if (this_00 != (LoggerManager *)0x0) {

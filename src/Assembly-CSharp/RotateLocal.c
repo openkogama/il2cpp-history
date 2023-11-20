@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::RotateLocal::RotateLocal__ctor(RotateLocal *this,Metho
   (this->fields).aroundVector.y = 1.0;
   (this->fields).rotationSpeed = 360.0;
   (this->fields).aroundVector.z = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform__ctor((Transform *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

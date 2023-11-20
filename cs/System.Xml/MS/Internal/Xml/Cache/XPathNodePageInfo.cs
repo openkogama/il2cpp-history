@@ -1,0 +1,28 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// Image 3: System.Xml.dll - Assembly: System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+
+namespace MS.Internal.Xml.Cache
+{
+	internal sealed class XPathNodePageInfo
+	{
+		// Fields
+		private int _pageNum;
+		private int _nodeCount;
+		private XPathNode[] _pageNext;
+	
+		// Properties
+		public int PageNumber { get; }
+		public int NodeCount { get; }
+		public XPathNode[] NextPage { get; }
+	}
+}

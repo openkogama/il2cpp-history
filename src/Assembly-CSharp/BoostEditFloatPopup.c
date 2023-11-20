@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_BoostInputFie
     mscorlib.dll::System::Single::Single_TryParse((pIVar2->fields).m_Text,&fStack_1,(MethodInfo *)0x0);
     pSVar3 = (this->fields).boostSlider;
     if (pSVar3 != (Slider *)0x0) {
-      (*(pSVar3->klass->vtable).set_value.methodPtr)(pSVar3);
+      (*(code *)(pSVar3->klass->vtable).set_value.method)(pSVar3);
       BoostEditIntPopup::BoostEditIntPopup_UpdateBoostTextInputFieldWithBoostSliderValue((BoostEditIntPopup *)this,(MethodInfo *)0x0);
       BoostEditFloatPopup_UpdateSettingData(this,(MethodInfo *)0x0);
       return;
@@ -33,13 +33,13 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_BoostSliderVa
     func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
-  if (*(char *)(in_stack_1 + 0x24) == '\0') {
+  if (*(char *)(in_stack_1 + 0x28) == '\0') {
     return;
   }
-  piVar2 = *(int **)(in_stack_1 + 0x3c);
-  iVar3 = *(int *)(in_stack_1 + 0x2c);
+  piVar2 = *(int **)(in_stack_1 + 0x40);
+  iVar3 = *(int *)(in_stack_1 + 0x30);
   if (piVar2 != (int *)0x0) {
-    (**(code **)(*piVar2 + 0x22c))(piVar2,*(undefined4 *)(*piVar2 + 0x230));
+    (**(code **)(*piVar2 + 0x230))(piVar2,*(undefined4 *)(*piVar2 + 0x234));
     uVar4 = func_?(TypeInfo__System__Single,&stack0x00000000);
     if (iVar3 != 0) {
       (**(code **)(iVar3 + 0xc))(*(undefined4 *)(iVar3 + 0x20),uVar4,*(undefined4 *)(iVar3 + 0x14));
@@ -66,13 +66,13 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_Initialize(Bo
   if (boost != (Boost *)0x0) {
     pTVar1 = (this->fields).boostSliderDescription;
     if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,(boost->fields)._ValueDescription_k__BackingField,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,(boost->fields)._ValueDescription_k__BackingField,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if (boostSetting != (GameBoosterSettingWithGoldSetting *)0x0) {
         this_00 = (KogamaSettingNumericBase_1_System_Single_ *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::GameBoosterSettingWithGoldSetting_get_Setting(boostSetting,(MethodInfo *)0x0);
         unaff_EDI = this_00;
         if (this_00 != (KogamaSettingNumericBase_1_System_Single_ *)0x0) {
           pKVar2 = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>;
-          if (((this_00->klass->_1).typeHierarchyDepth < (TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>->_1).typeHierarchyDepth) || ((this_00->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>)) goto code_?;
+          if (((this_00->klass->_1).naturalAligment < (TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>->_1).naturalAligment) || ((this_00->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>)) goto code_?;
           pKVar3 = (this_00->fields).KogamaSettingNumeric;
           if ((pKVar3 != (KogamaSettingNumeric_1_System_Single_ *)0x0) && ((pRVar4 = (pKVar3->fields).RangeValidator, pRVar4 != (RangeValidator_1_System_Single_ *)0x0 && (pSVar5 = (this->fields).boostSlider, pSVar5 != (Slider *)0x0)))) {
             UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue(pSVar5,(pRVar4->fields).max,(MethodInfo *)0x0);
@@ -83,7 +83,7 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_Initialize(Bo
               fVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::KogamaSettingNumericBase_1_System_Single__get_NumericValue(this_00,MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__);
               unaff_EDI = (KogamaSettingNumericBase_1_System_Single_ *)0x0;
               if (pSVar5 != (Slider *)0x0) {
-                (*(pSVar5->klass->vtable).set_value.methodPtr)(pSVar5,fVar6,(pSVar5->klass->vtable).set_value.method);
+                (*(code *)(pSVar5->klass->vtable).set_value.method)(pSVar5,fVar6,(pSVar5->klass->vtable).SetValueWithoutNotify.methodPtr);
                 fVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::KogamaSettingNumericBase_1_System_Single__get_NumericValue(this_00,MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__);
                 (this->fields).originalSettingValue = fVar6;
                 BoostEditPopup::BoostEditPopup_Initialize((BoostEditPopup *)this,boost,boostSetting,settingChangedCallback,priceChangedCallback,submitDataCallback,(MethodInfo *)0x0);
@@ -112,7 +112,7 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_OnCancelBoost
 {
   pSVar1 = (this->fields).boostSlider;
   if (pSVar1 != (Slider *)0x0) {
-    (*(pSVar1->klass->vtable).set_value.methodPtr)(pSVar1,(this->fields).originalSettingValue,(pSVar1->klass->vtable).set_value.method);
+    (*(code *)(pSVar1->klass->vtable).set_value.method)(pSVar1,(this->fields).originalSettingValue,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
     BoostEditFloatPopup_UpdateSettingData(this,(MethodInfo *)0x0);
     BoostEditPopup::BoostEditPopup_OnCancelBoostEdit((BoostEditPopup *)this,(MethodInfo *)0x0);
     return;
@@ -140,7 +140,7 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_UpdateSetting
   pSVar2 = (this->fields).boostSlider;
   pUVar3 = (this->fields)._.settingChangedCallback;
   if (pSVar2 != (Slider *)0x0) {
-    fVar4 = (float10)(*(pSVar2->klass->vtable).get_value.methodPtr)(pSVar2,(pSVar2->klass->vtable).get_value.method);
+    fVar4 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)(pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
     fStack_1 = (float)fVar4;
     uVar5 = func_?(TypeInfo__System__Single,&fStack_1);
     if (pUVar3 != (UnityAction_1_System_Object_ *)0x0) {

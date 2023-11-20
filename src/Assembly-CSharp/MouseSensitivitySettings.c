@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Inp
       UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text(pIVar2,value,(MethodInfo *)0x0);
       pSVar3 = (this->fields).slider;
       if (pSVar3 != (Slider *)0x0) {
-        (*(pSVar3->klass->vtable).set_value.methodPtr)();
+        (*(code *)(pSVar3->klass->vtable).set_value.method)();
         if (SVar1.m_value == 50.0) {
           fVar4 = 1.0;
         }
@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Sli
   this_01 = this;
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(pSVar1->klass->vtable).get_value.methodPtr)(pSVar1,(pSVar1->klass->vtable).get_value.method);
+    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)(pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
     this = (MouseSensitivitySettings *)(float)fVar2;
     this = (MouseSensitivitySettings *)MouseSensitivitySettings_RoundValue(this_01,(float)this,(MethodInfo *)0x0);
     this_00 = (this_01->fields).inputField;
@@ -209,8 +209,8 @@ void Assembly-CSharp.dll::MouseSensitivitySettings::MouseSensitivitySettings_Sta
     UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text(this_00,value,(MethodInfo *)0x0);
     pSStack3 = (this->fields).slider;
     if (pSStack3 != (Slider *)0x0) {
-      pMStack4 = (pSStack3->klass->vtable).set_value.method;
-      (*(pSStack3->klass->vtable).set_value.methodPtr)();
+      pIStack4 = (pSStack3->klass->vtable).SetValueWithoutNotify.methodPtr;
+      (*(code *)(pSStack3->klass->vtable).set_value.method)();
       return;
     }
   }

@@ -52,38 +52,35 @@ void Assembly-CSharp.dll::PickController::PickController_Initialize(PickControll
     func_?(&StringLiteral_Select_wo_);
     cRam_? = '\x01';
   }
-  value = (Object *)func_?(TypeInfo__PickController____c__DisplayClass7_0);
+  method_00 = TypeInfo__PickController____c__DisplayClass7_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  (this->fields).shouldSetText = setText;
+  (this->fields).pickCallback = onPickCallback;
+  func_?(&(this->fields).pickCallback,onPickCallback);
+  original = (this->fields).pickHelperPrefab;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,PickHelper_MethodInfo__UnityEngine__Object__Instantiate<PickHelper>_PickHelper_);
   if (value != (Object *)0x0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23(value,ExceptionArgument__Enum_obj,unaff_EDI);
-    (this->fields).pickCallback = onPickCallback;
-    (this->fields).shouldSetText = setText;
-    func_?(&(this->fields).pickCallback,onPickCallback);
-    original = (this->fields).pickHelperPrefab;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,PickHelper_MethodInfo__UnityEngine__Object__Instantiate<PickHelper>_PickHelper_);
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
     pOVar1 = value[1].klass;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_MVWorldObjectClient>);
-    if (this_00 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__PickController__SelectionChanged_MVWorldObjectClient__MVWorldObjectClient_,(MethodInfo *)0x0);
-      if ((pOVar1 != (Object__Class *)0x0) && (pIVar2 = (pOVar1->_0).byval_arg.data.array, pIVar2 != (Il2CppArrayType *)0x0)) {
-        (**(code **)&pIVar2->etype[0x62].attrs)(pIVar2,StringLiteral_Select_wo_,pIVar2->etype[99].data.dummy);
-        (pOVar1->_0).namespaze = (char *)this_00;
-        func_?(&(pOVar1->_0).namespaze,this_00);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-        callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-        if (callbackFunction != (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__PickController____c__DisplayClass7_0___Initialize_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-          return;
-        }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__PickController__SelectionChanged_MVWorldObjectClient__MVWorldObjectClient_,(MethodInfo *)0x0);
+    if ((pOVar1 != (Object__Class *)0x0) && (piVar2 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar2 != (int *)0x0)) {
+      (**(code **)(*piVar2 + 0x318))(piVar2,StringLiteral_Select_wo_,*(undefined4 *)(*piVar2 + 0x31c));
+      (pOVar1->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_00;
+      func_?(&(pOVar1->_0).byval_arg,this_00);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__PickController____c__DisplayClass7_0___Initialize_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
+      return;
     }
   }
   func_?();
@@ -111,7 +108,7 @@ void Assembly-CSharp.dll::PickController::PickController_Refresh(PickController 
   pTVar2 = (this->fields).woIDText;
   IStack_3.m_value = 0;
   if (pTVar2 == (Text *)0x0) goto code_?;
-  pSVar4 = (String *)(*(pTVar2->klass->vtable).get_text.methodPtr)(pTVar2,(pTVar2->klass->vtable).get_text.method);
+  pSVar4 = (String *)(*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
   bVar5 = mscorlib.dll::System::Int32::Int32_TryParse(pSVar4,&IStack_3.m_value,(MethodInfo *)0x0);
   pSVar4 = StringLiteral_Failed_to_parse_woid;
   if (bVar5 != 0) {
@@ -126,10 +123,10 @@ void Assembly-CSharp.dll::PickController::PickController_Refresh(PickController 
       if ((pMVar7->fields).groupId == -1) {
         pTVar2 = (this->fields).woIDText;
         if (pTVar2 != (Text *)0x0) {
-          (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,::StringLiteral__,(pTVar2->klass->vtable).set_text.method);
+          (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,::StringLiteral__,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           pTVar2 = (this->fields).woType;
           if (pTVar2 != (Text *)0x0) {
-            (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,StringLiteral_Can_t_choose_WO_Root_Group,(pTVar2->klass->vtable).set_text.method);
+            (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,StringLiteral_Can_t_choose_WO_Root_Group,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             return;
           }
         }
@@ -137,7 +134,7 @@ void Assembly-CSharp.dll::PickController::PickController_Refresh(PickController 
       }
       pTVar8 = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar7,(MethodInfo *)0x0);
       if (pTVar8 == (Type *)0x0) goto code_?;
-      pSVar4 = (String *)(*(pTVar8->klass->vtable).ToString.methodPtr)(pTVar8,(pTVar8->klass->vtable).ToString.method);
+      pSVar4 = (String *)(*(code *)(pTVar8->klass->vtable).ToString.method)(pTVar8,(pTVar8->klass->vtable).GetCustomAttributes.methodPtr);
       pTVar9 = (Transform *)pMVar7[1].fields.ownerActorNr;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Object);
@@ -171,10 +168,10 @@ void Assembly-CSharp.dll::PickController::PickController_Refresh(PickController 
   }
   pTVar2 = (this->fields).woType;
   if (pTVar2 != (Text *)0x0) {
-    (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar4,(pTVar2->klass->vtable).set_text.method);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar4,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pTVar2 = (this->fields).parentType;
     if (pTVar2 != (Text *)0x0) {
-      (*(pTVar2->klass->vtable).set_text.methodPtr)(pTVar2,pSVar1,(pTVar2->klass->vtable).set_text.method);
+      (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar1,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }
@@ -205,30 +202,41 @@ void Assembly-CSharp.dll::PickController::PickController_SelectionChanged(PickCo
   if ((this->fields).shouldSetText != 0) {
     pTVar1 = (this->fields).woIDText;
     pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&(this->fields).pickedWoId,(MethodInfo *)0x0);
-    if (pTVar1 == (Text *)0x0) goto code_?;
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
-    pTVar1 = (this->fields).parentType;
-    if (pTVar1 == (Text *)0x0) goto code_?;
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,StringLiteral_WO_Root_Group,(pTVar1->klass->vtable).set_text.method);
-    if (parent != (MVWorldObjectClient *)0x0) {
+    if (pTVar1 != (Text *)0x0) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar1 = (this->fields).parentType;
-      pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)parent,(MethodInfo *)0x0);
-      if (pTVar3 == (Type *)0x0) goto code_?;
-      uVar4 = (*(pTVar3->klass->vtable).ToString.methodPtr)(pTVar3,(pTVar3->klass->vtable).ToString.method);
-      if (pTVar1 == (Text *)0x0) goto code_?;
-      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,uVar4,(pTVar1->klass->vtable).set_text.method);
+      if (pTVar1 != (Text *)0x0) {
+        (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,StringLiteral_WO_Root_Group,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        if (parent != (MVWorldObjectClient *)0x0) {
+          pTVar1 = (this->fields).parentType;
+          pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)parent,(MethodInfo *)0x0);
+          if (pTVar3 == (Type *)0x0) goto code_?;
+          uVar4 = (*(code *)(pTVar3->klass->vtable).ToString.method)(pTVar3,(pTVar3->klass->vtable).GetCustomAttributes.methodPtr);
+          if (pTVar1 == (Text *)0x0) goto code_?;
+          (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,uVar4,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        }
+        pTVar1 = (this->fields).woType;
+        pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)wo,(MethodInfo *)0x0);
+        if (pTVar3 != (Type *)0x0) {
+          uVar4 = (*(code *)(pTVar3->klass->vtable).ToString.method)(pTVar3,(pTVar3->klass->vtable).GetCustomAttributes.methodPtr);
+          if (pTVar1 != (Text *)0x0) {
+            (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,uVar4,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            PickController_Refresh(this,(MethodInfo *)0x0);
+            goto code_?;
+          }
+        }
+      }
     }
-    pTVar1 = (this->fields).woType;
-    pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)wo,(MethodInfo *)0x0);
-    if (pTVar3 == (Type *)0x0) goto code_?;
-    uVar4 = (*(pTVar3->klass->vtable).ToString.methodPtr)(pTVar3,(pTVar3->klass->vtable).ToString.method);
-    if (pTVar1 == (Text *)0x0) goto code_?;
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,uVar4,(pTVar1->klass->vtable).set_text.method);
-    PickController_Refresh(this,(MethodInfo *)0x0);
+code_?:
+    func_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
   }
+code_?:
   if ((this->fields).pickCallback != (UnityAction_1_System_Int32_ *)0x0) {
-    pUVar5 = (this->fields).pickCallback;
-    (*(pUVar5->fields)._._.invoke_impl)((pUVar5->fields)._._.method_code,(this->fields).pickedWoId,(pUVar5->fields)._._.method);
+    pUVar6 = (this->fields).pickCallback;
+    (*(pUVar6->fields)._._.invoke_impl)((pUVar6->fields)._._.method_code,(this->fields).pickedWoId,(pUVar6->fields)._._.method);
   }
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__PickController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -241,13 +249,6 @@ void Assembly-CSharp.dll::PickController::PickController_SelectionChanged(PickCo
     }
     object = TypeInfo__PickController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-code_?:
-      func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__PickController____c___SelectionChanged_b__8_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__PickController____c->static_fields->__9__8_0 = callbackFunction;
     func_?(&TypeInfo__PickController____c->static_fields->__9__8_0,callbackFunction);

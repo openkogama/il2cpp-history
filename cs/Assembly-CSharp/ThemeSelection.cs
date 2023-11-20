@@ -45,6 +45,24 @@ public class ThemeSelection : MonoBehaviour
 		public static Action<ThemeData[]> OnThemeDataReceived;
 	}
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__25_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _OnThemeRemovalWarningResolved_b__24_0(IUIStack x, BaseEventData y);
+		internal void _GoBackToSettings_b__25_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass21_0
 	{
@@ -73,24 +91,6 @@ public class ThemeSelection : MonoBehaviour
 
 		// Methods
 		internal void _ShowThemeRemovalWarning_b__0(IModalPopupCreator x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__25_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _OnThemeRemovalWarningResolved_b__24_0(IUIStack x, BaseEventData y);
-		internal void _GoBackToSettings_b__25_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

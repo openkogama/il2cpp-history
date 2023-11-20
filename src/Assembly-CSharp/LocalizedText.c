@@ -11,15 +11,13 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Awake(LocalizedText *this
   }
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+    pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
     pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    if (this_00 != (NavMesh_OnNavMeshPreUpdate *)0x0) {
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__LocalizedText__LanguageLoadedCallback__,(MethodInfo *)0x0);
-      TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-      return;
-    }
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__LocalizedText__LanguageLoadedCallback__,(MethodInfo *)0x0);
+    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -35,9 +33,9 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_LanguageLoadedCallback(Lo
 {
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+    pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
     pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
   func_?();
@@ -64,19 +62,19 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Reset(LocalizedText *this
   func_?(&(this->fields).text,pTVar1);
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+    pSVar2 = (String *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
     bVar3 = mscorlib.dll::System::String::String_op_Equality(pSVar2,::StringLiteral__,(MethodInfo *)0x0);
     pTVar1 = (this->fields).text;
     if (bVar3 == 0) {
       if (pTVar1 != (Text *)0x0) {
-        arg0 = (Object *)(*(pTVar1->klass->vtable).get_text.methodPtr)(pTVar1,(pTVar1->klass->vtable).get_text.method);
+        arg0 = (Object *)(*(code *)(pTVar1->klass->vtable).get_text.method)(pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
         pSVar2 = mscorlib.dll::System::String::String_Format(StringLiteral_____0___,arg0,(MethodInfo *)0x0);
-        (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
+        (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
         return;
       }
     }
     else if (pTVar1 != (Text *)0x0) {
-      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,StringLiteral____Text__,(pTVar1->klass->vtable).set_text.method);
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,StringLiteral____Text__,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }

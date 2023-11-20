@@ -175,7 +175,7 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::SpeedOMet
   }
   pMVar1 = (this->fields).rigidBody;
   if (pMVar1 == (MVRigidBody *)0x0) goto code_?;
-  puVar2 = (undefined8 *)(*(pMVar1->klass->vtable).__unknown_1.methodPtr)(auStack_3,pMVar1,(pMVar1->klass->vtable).__unknown_1.method);
+  puVar2 = (undefined8 *)(*(code *)(pMVar1->klass->vtable).__unknown_1.method)(auStack_3,pMVar1,(pMVar1->klass->vtable).__unknown_2.methodPtr);
   uVar4 = *puVar2;
   IStack_5.m_value = *(int32_t *)(puVar2 + 1);
   if (cRam_? == '\0') {
@@ -291,7 +291,7 @@ code_?:
     pSVar20 = pSVar19;
   }
   if (pTVar18 != (Text *)0x0) {
-    (*(pTVar18->klass->vtable).set_text.methodPtr)(pTVar18,pSVar20,(pTVar18->klass->vtable).set_text.method);
+    (*(code *)(pTVar18->klass->vtable).set_text.method)(pTVar18,pSVar20,(pTVar18->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
 code_?:

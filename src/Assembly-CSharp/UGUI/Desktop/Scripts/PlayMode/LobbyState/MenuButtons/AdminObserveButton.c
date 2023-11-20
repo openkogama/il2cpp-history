@@ -28,10 +28,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
         }
         object = TypeInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c___DoAction_b__0_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
         TypeInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c->static_fields->__9__0_0 = callbackFunction;
-        func_?(&TypeInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__AdminObserveButton____c->static_fields->__9__0_0,callbackFunction);
+        func_?();
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -40,7 +39,6 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
     }
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();

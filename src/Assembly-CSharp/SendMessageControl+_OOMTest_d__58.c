@@ -19,10 +19,10 @@ bool Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__58::SendMessageControl_
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_Quitting_k__BackingField == 0) {
       if (pSVar2 != (SendMessageControl *)0x0) {
-        collection = (IEnumerable_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)func_?(TypeInfo__System__Byte,(pSVar2->fields).bytesPerFrame);
-        this_00 = (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)(pSVar2->fields).oomBytes;
-        if (this_00 != (List_1_UnityEngine_UnitySynchronizationContext_WorkRequest_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UnitySynchronizationContext+WorkRequest]::List_1_UnityEngine_UnitySynchronizationContext_WorkRequest__AddRange(this_00,collection,MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_);
+        collection = (IEnumerable_1_System_Byte_ *)func_?(TypeInfo__System__Byte,(pSVar2->fields).bytesPerFrame);
+        this_00 = (pSVar2->fields).oomBytes;
+        if (this_00 != (List_1_System_Byte_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Byte]::List_1_System_Byte__AddRange(this_00,collection,MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_);
           (this->fields).__2__current = (Object *)0x0;
           func_?(&(this->fields).__2__current,0);
           (this->fields).__1__state = 1;
@@ -46,7 +46,6 @@ void Assembly-CSharp.dll::SendMessageControl+<OOMTest>d__58::SendMessageControl_
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__SendMessageControl___OOMTest_d__58__System_Collections_IEnumerator_Reset__);
   func_?(this_00);

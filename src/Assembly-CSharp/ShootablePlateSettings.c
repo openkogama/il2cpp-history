@@ -17,8 +17,8 @@ void Assembly-CSharp.dll::ShootablePlateSettings::ShootablePlateSettings_Initial
     this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_04 != (MVWorldObjectClientManager *)0x0) {
       pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_04,woID,(MethodInfo *)0x0);
-      if ((pMVar1 != (MVWorldObject *)0x0) && (this_01 = (pMVar1->fields).data, this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_01,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+      if ((pMVar1 != (MVWorldObject *)0x0) && (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data, this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+        value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_01,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
         if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::ShootablePlateSettings::ShootablePlateSettings_Initial
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle(value,(IFormatProvider *)provider,(MethodInfo *)0x0);
+        value_00 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)value.m_Index,(IFormatProvider *)provider,(MethodInfo *)0x0);
         this_02 = (this->fields).slider;
         if (this_02 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize(this_02,StringLiteral_duration,value_00,0.5,30.0,(MethodInfo *)0x0);

@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::PerformanceTest::PerformanceTest_FixedUpdate(Performan
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)pSVar5,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar5,(MethodInfo *)0x0);
     }
     return;
   }
@@ -50,7 +50,7 @@ void Assembly-CSharp.dll::PerformanceTest::PerformanceTest_Init(PerformanceTest 
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Performancetest_Init,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Performancetest_Init,(MethodInfo *)0x0);
   return;
 }
 
@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::PerformanceTest::PerformanceTest_Start(PerformanceTest
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Performance_Test_Starting,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Performance_Test_Starting,(MethodInfo *)0x0);
     return;
   }
   uVar4 = func_?(&ppSStack_1);
@@ -117,7 +117,7 @@ PerformanceTest * Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Inst
       TypeInfo__PerformanceTest->static_fields->_instance = (PerformanceTest *)0x0;
     }
     else {
-      if (((pPVar1->klass->_1).typeHierarchyDepth < (TypeInfo__PerformanceTest->_1).typeHierarchyDepth) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
         bVar5 = false;
       }
       else {
@@ -138,25 +138,25 @@ PerformanceTest * Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Inst
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     this = (GameObject *)func_?();
-    if (this == (GameObject *)0x0) {
-      func_?();
-      pcVar7 = (code *)swi(3);
-      pPVar1 = (PerformanceTest *)(*pcVar7)();
-      return pPVar1;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(this,StringLiteral_PerformanceTest,(MethodInfo *)0x0);
     pIVar3 = TypeRef__PerformanceTest;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
+    if (this == (GameObject *)0x0) {
+      func_?();
+      pcVar7 = (code *)swi(3);
+      pPVar1 = (PerformanceTest *)(*pcVar7)();
+      return pPVar1;
+    }
     pPVar1 = (PerformanceTest *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent(this,pTVar4,(MethodInfo *)0x0);
     if (pPVar1 == (PerformanceTest *)0x0) {
       TypeInfo__PerformanceTest->static_fields->_instance = (PerformanceTest *)0x0;
       pPStack8 = (PerformanceTest *)0x0;
     }
     else {
-      if (((pPVar1->klass->_1).typeHierarchyDepth < (TypeInfo__PerformanceTest->_1).typeHierarchyDepth) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
         bVar5 = false;
       }
       else {
@@ -167,7 +167,7 @@ PerformanceTest * Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Inst
         pPVar6 = pPVar1;
       }
       TypeInfo__PerformanceTest->static_fields->_instance = pPVar6;
-      if (((pPVar1->klass->_1).typeHierarchyDepth < (TypeInfo__PerformanceTest->_1).typeHierarchyDepth) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) || ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__PerformanceTest)) {
         bVar5 = false;
       }
       else {

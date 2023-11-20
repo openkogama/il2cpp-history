@@ -13,12 +13,10 @@ void Assembly-CSharp.dll::GameMeterKillLimit::GameMeterKillLimit_Initialize(Game
   if (pMVar1 != (MVNetworkGame *)0x0) {
     this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    if (this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__GameMeterKillLimit__OnVictoryConditionMet_System__Object__System__EventArgs_,(MethodInfo *)0x0);
-      if (this_00 != (WinningConditionManager *)0x0) {
-        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_add_OnWinningConditionReset(this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
-        return;
-      }
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__GameMeterKillLimit__OnVictoryConditionMet_System__Object__System__EventArgs_,(MethodInfo *)0x0);
+    if (this_00 != (WinningConditionManager *)0x0) {
+      MVWorldObject.dll::WinningConditionManager::WinningConditionManager_add_OnWinningConditionReset(this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
@@ -44,7 +42,8 @@ void Assembly-CSharp.dll::GameMeterKillLimit::GameMeterKillLimit_OnDestroy(GameM
     if (pMVar2 != (MVNetworkGame *)0x0) {
       this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField;
       this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      if ((this_01 != (UnityAction_2_System_Object_System_Object_ *)0x0) && (UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,unaff_ESI,MethodInfo__GameMeterKillLimit__OnVictoryConditionMet_System__Object__System__EventArgs_,(MethodInfo *)0x0), this_00 != (WinningConditionManager *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,unaff_ESI,MethodInfo__GameMeterKillLimit__OnVictoryConditionMet_System__Object__System__EventArgs_,(MethodInfo *)0x0);
+      if (this_00 != (WinningConditionManager *)0x0) {
         MVWorldObject.dll::WinningConditionManager::WinningConditionManager_remove_OnWinningConditionReset(this_00,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
         return;
       }
@@ -128,7 +127,7 @@ void Assembly-CSharp.dll::GameMeterKillLimit::GameMeterKillLimit_UpdateValue(Gam
       }
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._._.gameMeterVisualEffects;
       if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      (**(code **)(*(int *)RVar3 + 0xdc))();
+      (**(code **)(*(int *)RVar3 + 0xe0))();
       index = index + 1;
       pLVar2 = (this->fields)._._.gameMeterVisualEffects;
     }

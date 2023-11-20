@@ -12,24 +12,17 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_Initialize(MVTimeTrigger 
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-  this_00 = (Action_2_Int32Enum_Object_ *)func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-  if (this_00 != (Action_2_Int32Enum_Object_ *)0x0) {
-    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor(this_00,(Object *)this,MethodInfo__MVTimeTrigger__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
-    pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-    func_?();
-    woId = (this->fields)._._._.id;
-    this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?(TypeInfo__OutputSignalTransmitter);
-    if (this_01 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
-      WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,woId,(MethodInfo *)0x0);
-      (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
-      func_?();
-      return;
-    }
-  }
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__MVTimeTrigger__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
+  pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
+  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
+  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  woId = (this->fields)._._._.id;
+  pOStack2 = TypeInfo__OutputSignalTransmitter;
+  this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?();
+  WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,woId,(MethodInfo *)0x0);
+  (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -134,11 +127,11 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_ActiveDurationTime
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
         pfVar2 = (float *)func_?();
         return (int)(*pfVar2 * 1000.0);
       }
@@ -167,7 +160,7 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_CurrentTime(MVTime
     func_?(&StringLiteral_cT);
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(this->klass->vtable).get_RunTimeData.methodPtr)(this,(this->klass->vtable).get_RunTimeData.method);
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(code *)(this->klass->vtable).get_RunTimeData.method)(this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Extensions);
   }
@@ -201,11 +194,11 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_DelayTime(MVTimeTr
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item(this_00,(Object *)StringLiteral_time,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (pOVar1 != (Object *)0x0) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_time,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar1.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
         pfVar2 = (float *)func_?();
         return (int)(*pfVar2 * 1000.0);
       }
@@ -223,15 +216,6 @@ int32_t Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_DelayTime(MVTimeTr
 }
 
 
-/* MVWorldObjectDocumentationType get_DocumentationType() */
-
-MVWorldObjectDocumentationType__Enum Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_get_DocumentationType(MVTimeTrigger *this,MethodInfo *method)
-
-{
-  return MVWorldObjectDocumentationType__Enum_TimeTrigger;
-}
-
-
 /* Void set_CurrentTime(Int32) */
 
 void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime(MVTimeTrigger *this,int32_t value,MethodInfo *method)
@@ -244,7 +228,7 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime(MVTimeTri
     func_?(&StringLiteral_cT);
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(this->klass->vtable).get_RunTimeData.methodPtr)(this,(this->klass->vtable).get_RunTimeData.method);
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)(*(code *)(this->klass->vtable).get_RunTimeData.method)(this,(this->klass->vtable).set_RunTimeData.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
@@ -262,7 +246,7 @@ void Assembly-CSharp.dll::MVTimeTrigger::MVTimeTrigger_set_CurrentTime(MVTimeTri
   value_00.fakeValue = iVar4;
   value_00.inited = pOVar1->inited;
   value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_3(hashtable,StringLiteral_cT,value_00,void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_);
+  Extensions::Extensions_SetObscuredType_2(hashtable,StringLiteral_cT,value_00,void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_);
   return;
 }
 

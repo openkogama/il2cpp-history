@@ -170,7 +170,6 @@ Quaternion * Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_Update(Quater
   if (iVar1 != 1) {
     uVar22 = func_?(&TypeInfo__System__Exception);
     this_00 = (Exception *)func_?(uVar22);
-    func_?(this_00);
     method_00 = (MethodInfo *)0x0;
     message = (String *)func_?(&StringLiteral_Unknown_state);
     mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);

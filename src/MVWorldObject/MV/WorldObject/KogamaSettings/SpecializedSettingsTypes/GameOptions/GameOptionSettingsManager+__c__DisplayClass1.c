@@ -9,7 +9,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
     func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Add_MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase_);
     cRam_? = '\x01';
   }
-  if (((settingNode != (KogamaSettingWrapperBase *)0x0) && ((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).typeHierarchyDepth <= (settingNode->klass->_1).typeHierarchyDepth)) && ((settingNode->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase)) {
+  if (((settingNode != (KogamaSettingWrapperBase *)0x0) && ((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment)) && ((settingNode->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase)) {
     this_00 = (this->fields).inv;
     if (this_00 == (List_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_ *)0x0) {
       func_?();
@@ -17,7 +17,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
     }
     else {
       pKVar1 = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase;
-      if (((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).typeHierarchyDepth <= (settingNode->klass->_1).typeHierarchyDepth) && ((settingNode->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase)) {
+      if (((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment) && ((settingNode->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase)) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)settingNode,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>__Add_MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase_);
         return;
       }

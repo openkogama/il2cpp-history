@@ -42,7 +42,7 @@ public class MVGameControllerDesktop : MVGameControllerBase
 	protected override void Start();
 	protected override void OnDestroy();
 	public static void RegisterPlayModeController(DesktopPlayModeController playModeController);
-	public static new void UnregisterPlayModeController();
+	public static void UnregisterDesktopPlayModeController();
 	public static void RegisterAvaterEditModeController(DesktopAvatarEditModeController avatarEditModeController);
 	public static void RegisterEditModeController(DesktopEditModeController editModeController);
 	public static void UnregisterEditModeController();

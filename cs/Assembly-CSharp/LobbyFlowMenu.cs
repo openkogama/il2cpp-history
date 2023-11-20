@@ -41,6 +41,24 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 		None = 4
 	}
 
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal void _GoToMenu_b__23_0(IUIStack x, BaseEventData y);
+		internal void _StartPlaying_b__24_0(IUIStack x, BaseEventData y);
+	}
+
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass23_0
 	{
@@ -78,24 +96,6 @@ public abstract class LobbyFlowMenu : MonoBehaviour
 
 		// Methods
 		internal void _GoToMenu_b__3(IUIStack x, BaseEventData y);
-	}
-
-	[Serializable]
-	[CompilerGenerated]
-	private sealed class __c
-	{
-		// Fields
-		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__24_0;
-
-		// Constructors
-		static __c();
-		public __c();
-
-		// Methods
-		internal void _GoToMenu_b__23_0(IUIStack x, BaseEventData y);
-		internal void _StartPlaying_b__24_0(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

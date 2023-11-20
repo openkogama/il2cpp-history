@@ -16,14 +16,14 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::MVLocalObjectCont
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
-      woID = (this->fields).woID;
       pTVar2 = (pMVar1->fields).transformNetworkManager;
       this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (this_00 != (MVWorldObjectClientManager *)0x0) {
         owner = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(this->fields).woID,(MethodInfo *)0x0);
         this_01 = (MVNetworkReporter *)func_?();
-        if ((this_01 != (MVNetworkReporter *)0x0) && (MVNetworkReporter::MVNetworkReporter__ctor(this_01,owner,(MethodInfo *)0x0), pTVar2 != (TransformNetworkManager *)0x0)) {
-          TransformNetworkManager::TransformNetworkManager_AddReporter(pTVar2,woID,this_01,(MethodInfo *)0x0);
+        MVNetworkReporter::MVNetworkReporter__ctor(this_01,owner,(MethodInfo *)0x0);
+        if (pTVar2 != (TransformNetworkManager *)0x0) {
+          TransformNetworkManager::TransformNetworkManager_AddReporter(pTVar2,(int32_t)this_00,this_01,(MethodInfo *)0x0);
           return;
         }
       }
@@ -66,12 +66,12 @@ void Assembly-CSharp.dll::MVLocalObjectController+AttachState::MVLocalObjectCont
     func_?(&TypeInfo__MVNetworkReporter);
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) && (pTVar2 = (pMVar1->fields).transformNetworkManager, pTVar2 != (TransformNetworkManager *)0x0)) {
     pMVar3 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject(pTVar2,worldObjectID,(MethodInfo *)0x0);
     if (pMVar3 != (MVNetworkObject *)0x0) {
-      if (((TypeInfo__MVNetworkReporter->_1).typeHierarchyDepth <= (pMVar3->klass->_1).typeHierarchyDepth) && ((pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVNetworkReporter->_1).typeHierarchyDepth - 1] == (Il2CppClass *)TypeInfo__MVNetworkReporter)) {
+      if (((TypeInfo__MVNetworkReporter->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) && ((pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVNetworkReporter->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVNetworkReporter)) {
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar1 == (MVNetworkGame *)0x0) || (pTVar2 = (pMVar1->fields).transformNetworkManager, pTVar2 == (TransformNetworkManager *)0x0)) goto code_?;
         TransformNetworkManager::TransformNetworkManager_RemoveNetworkObject(pTVar2,worldObjectID,(MethodInfo *)0x0);

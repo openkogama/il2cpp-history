@@ -88,7 +88,6 @@ void Assembly-CSharp.dll::AudioOnOffComponent+<Fader>d__13::AudioOnOffComponent_
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
-  func_?(this_00);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
   func_?(&MethodInfo__AudioOnOffComponent___Fader_d__13__System_Collections_IEnumerator_Reset__);
   func_?(this_00);

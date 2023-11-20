@@ -12,7 +12,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial+ResettingBookkeeping::CEEditCubeTut
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_InitializeResetting,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_InitializeResetting,(MethodInfo *)0x0);
   (this->fields).doReset = 1;
   (this->fields).isResetting = 0;
   if ((this->fields).resettingDelay < resettingDelay) {

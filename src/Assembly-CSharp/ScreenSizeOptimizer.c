@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_Awake(ScreenS
       if (bVar6 != 0) {
         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary((this->fields).renderTarget,(MethodInfo *)0x0);
       }
-      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1((int32_t)width,(int32_t)height,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
+      pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4((int32_t)width,(int32_t)height,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
       (this->fields).renderTarget = pRVar5;
       func_?();
       pRVar5 = (this->fields).renderTarget;
@@ -85,7 +85,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_HalfResolutio
       if (bVar3 != 0) {
         UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary((this->fields).renderTarget,(MethodInfo *)0x0);
       }
-      pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1(width,height,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
+      pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4(width,height,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
       (this->fields).renderTarget = pRVar4;
       func_?();
       pRVar4 = (this->fields).renderTarget;
@@ -183,7 +183,7 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_SetResolution
   if (bVar2 != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary((this->fields).renderTarget,(MethodInfo *)0x0);
   }
-  pRVar1 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_1(newWidth,newHeight,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
+  pRVar1 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4(newWidth,newHeight,0x18,RenderTextureFormat__Enum_ARGB32,RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
   (this->fields).renderTarget = pRVar1;
   func_?();
   pRVar1 = (this->fields).renderTarget;

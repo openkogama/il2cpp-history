@@ -44,33 +44,32 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_HandleTimeNotif
   }
   iVar1 = timeLeft;
   pGVar2 = this;
-  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-  if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    item = (RegexCharClass_SingleRange)((int)((float)timeLeft / 1000.0) + 1);
-    bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar3,item,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  pLVar3 = (this->fields).timeNotifications;
+  if (pLVar3 != (List_1_System_Int32_ *)0x0) {
+    item = (int)((float)timeLeft / 1000.0) + 1;
+    bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(pLVar3,item,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     if (bVar4 == 0) {
       return;
     }
-    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pGVar2->fields).timeNotifications;
-    if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove(pLVar3,item,MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
-      this_00 = (Dictionary_2_System_Object_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
-      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-        this = (GameMeterRoundTime *)CONCAT13(0x11,this._0_3_);
-        pOVar5 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_01 != (MVNetworkGame *)0x0) {
-          iStack_6 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_01,(MethodInfo *)0x0);
-          pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(this_00,pOVar5,pOVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+    pLVar3 = (pGVar2->fields).timeNotifications;
+    if (pLVar3 != (List_1_System_Int32_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Remove(pLVar3,item,MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+      this = (GameMeterRoundTime *)CONCAT13(0x11,this._0_3_);
+      pOVar5 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_01 != (MVNetworkGame *)0x0) {
+        iStack_6 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_01,(MethodInfo *)0x0);
+        pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
+        if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar5,pOVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
           timeLeft = CONCAT13(4,(undefined3)timeLeft);
           pOVar5 = (Object *)func_?(TypeInfo__System__Byte,(int)&timeLeft + 3);
           iStack_8 = iVar1;
           pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(this_00,pOVar5,pOVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
-          method = (MethodInfo *)&UNK_?;
-          WinningConditionNotificationManager::WinningConditionNotificationManager_SendNotification(NotificationType__Enum_HurryUp,this_00,(MethodInfo *)0x0);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar5,pOVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+          WinningConditionNotificationManager::WinningConditionNotificationManager_SendNotification(NotificationType__Enum_HurryUp,(Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -113,37 +112,43 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_Initialize(Game
     func_?(&TypeInfo__System__Collections__Generic__List<int>);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Int32_ *)func_?(TypeInfo__System__Collections__Generic__List<int>);
-  if (this_00 != (List_1_System_Int32_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[System::Object]::LowLevelList_1_System_Object___ctor((LowLevelList_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__List<int>__List__);
-    (this->fields).timeNotifications = this_00;
-    func_?(&(this->fields).timeNotifications,this_00);
-    GameMeterRoundTime_ResetTimeNotifications(this,(MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-      this_01 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-      if (this_01 != (Action_1_Object_ *)0x0) {
-        mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_01,(Object *)this,MethodInfo__GameMeterRoundTime__ResetOnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
-        pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-        if (pDVar3 == (Delegate *)0x0) {
-          (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+  this_00 = (Delegate *)func_?(TypeInfo__System__Collections__Generic__List<int>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<int>__List__);
+  (this->fields).timeNotifications = (List_1_System_Int32_ *)this_00;
+  func_?(&(this->fields).timeNotifications,this_00);
+  GameMeterRoundTime_ResetTimeNotifications(this,(MethodInfo *)0x0);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 == (MVNetworkGame *)0x0) {
+    func_?();
+  }
+  else {
+    pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__GameMeterRoundTime__ResetOnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+    this_00 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+    if (this_00 == (Delegate *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
 code_?:
-          func_?();
-          return;
-        }
-        pAVar2 = (Action_1_IWinningCondition_ *)func_?();
-        if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
-          (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
-          iVar4 = func_?();
-          if (iVar4 != 0) goto code_?;
-        }
-        goto code_?;
-      }
+      pDStack4 = (Delegate *)&(pMVar1->fields).OnWinningConditionFulfilled;
+      func_?();
+      return;
+    }
+    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack4 = this_00;
+    pAVar2 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      pAStack3 = TypeInfo__System__Action<IWinningCondition>;
+      pDStack4 = this_00;
+      pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
   }
-  func_?();
-code_?:
+  pDStack4 = this_00;
+  pAStack3 = unaff_EDI;
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -162,51 +167,47 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_OnDestroy(GameM
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 == (MVNetworkGame *)0x0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    unaff_EBX = (Action_1_IWinningCondition___Class *)(pMVar2->fields).OnWinningConditionFulfilled;
-    this_00 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    unaff_EDI = (Delegate *)0x0;
-    if (this_00 != (Action_1_Object_ *)0x0) {
-      mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(this_00,(Object *)this,MethodInfo__GameMeterRoundTime__ResetOnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
-      unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)unaff_EBX,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-      if (unaff_EDI == (Delegate *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-        pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
-code_?:
-        pDStack4 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+  if (bVar1 != 0) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar2 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 == (MVNetworkGame *)0x0) {
         func_?();
-        return;
+        goto code_?;
       }
-      pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack4 = unaff_EDI;
-      pAVar5 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar5 != (Action_1_IWinningCondition_ *)0x0) {
-        (pMVar2->fields).OnWinningConditionFulfilled = pAVar5;
-        unaff_EBX = TypeInfo__System__Action<IWinningCondition>;
-        pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-        pDStack4 = unaff_EDI;
-        pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-        if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+      pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__GameMeterRoundTime__ResetOnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      if (unaff_ESI == (Delegate *)0x0) {
+        (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+        pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
       }
-      goto code_?;
+      else {
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+        if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
+code_?:
+          pDStack5 = unaff_ESI;
+          pAStack4 = unaff_EDI;
+          func_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
+        unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+        pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+        pDStack5 = unaff_ESI;
+        pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+        if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+      }
+      pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
+      func_?();
     }
   }
-  func_?();
-code_?:
-  pDStack4 = unaff_EDI;
-  pAStack3 = unaff_EBX;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 
@@ -234,29 +235,29 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_ResetTimeNotifi
   if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) {
     return;
   }
-  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications,(RegexCharClass_SingleRange)0xa,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains((this->fields).timeNotifications,10,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
   if (bVar1 == 0) {
     pLVar2 = (this->fields).timeNotifications;
     if (pLVar2 == (List_1_System_Int32_ *)0x0) goto code_?;
     func_?(pLVar2,10);
   }
-  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-  if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar3,(RegexCharClass_SingleRange)0x1e,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+  pLVar2 = (this->fields).timeNotifications;
+  if (pLVar2 != (List_1_System_Int32_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(pLVar2,0x1e,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     if (bVar1 == 0) {
       if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
       func_?();
     }
-    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-    if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar3,(RegexCharClass_SingleRange)0x3c,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    pLVar2 = (this->fields).timeNotifications;
+    if (pLVar2 != (List_1_System_Int32_ *)0x0) {
+      bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(pLVar2,0x3c,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
       if (bVar1 == 0) {
         if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
         func_?();
       }
-      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-      if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar3,(RegexCharClass_SingleRange)0x12c,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+      pLVar2 = (this->fields).timeNotifications;
+      if (pLVar2 != (List_1_System_Int32_ *)0x0) {
+        bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(pLVar2,300,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
         if (bVar1 == 0) {
           if ((this->fields).timeNotifications == (List_1_System_Int32_ *)0x0) goto code_?;
           func_?();
@@ -267,8 +268,8 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_ResetTimeNotifi
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -296,7 +297,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
         pTVar3 = (this->fields).roundTime;
         if (pTVar3 != (Text *)0x0) {
-          (*(pTVar3->klass->vtable).set_text.methodPtr)(pTVar3,::StringLiteral__,(pTVar3->klass->vtable).set_text.method);
+          (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,::StringLiteral__,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }
@@ -327,7 +328,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
               arg1 = (Object *)func_?();
               pSVar11 = mscorlib.dll::System::String::String_Format_1(StringLiteral__0_00___1_00_,arg0,arg1,(MethodInfo *)0x0);
               if (pTVar3 == (Text *)0x0) goto code_?;
-              (*(pTVar3->klass->vtable).set_text.methodPtr)(pTVar3,pSVar11,(pTVar3->klass->vtable).set_text.method);
+              (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,pSVar11,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             }
             return;
           }
@@ -399,7 +400,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_Update(GameMete
             pOVar9 = (Object *)func_?();
             mscorlib.dll::System::String::String_Format_1(StringLiteral__0_00___1_00_,pOVar7,pOVar9,(MethodInfo *)0x0);
             if (piVar8 == (int *)0x0) goto code_?;
-            (**(code **)(*piVar8 + 0x314))();
+            (**(code **)(*piVar8 + 0x318))();
           }
           else if (0 < (int)puVar6) {
             pIVar10 = TypeInfo__System__Int32;
@@ -408,7 +409,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_Update(GameMete
             mscorlib.dll::System::String::String_Format_1(StringLiteral__0_00___1_00_,pOVar7,pOVar9,(MethodInfo *)0x0);
             if (pIVar10 == (Int32__Class *)0x0) goto code_?;
             puVar6 = &UNK_?;
-            (**(code **)&(pIVar10->_0).image[0x11].dynamic)();
+            (*(code *)(pIVar10->_0).image[0x12].name)();
           }
           if (cRam_? == '\0') {
             func_?();
@@ -420,29 +421,29 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_Update(GameMete
             func_?(&MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
             cRam_? = '\x01';
           }
-          pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-          if (pLVar11 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            item = (RegexCharClass_SingleRange)((int)((float)(int)puVar6 / 1000.0) + 1);
-            bVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Contains(pLVar11,item,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+          pLVar11 = (this->fields).timeNotifications;
+          if (pLVar11 != (List_1_System_Int32_ *)0x0) {
+            item = (int)((float)(int)puVar6 / 1000.0) + 1;
+            bVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(pLVar11,item,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
             if (bVar12 == 0) {
               return;
             }
-            pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).timeNotifications;
-            if (pLVar11 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__Remove(pLVar11,item,MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
-              this_01 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-              if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::ParameterOverride`1[System::Object]::ParameterOverride_1_System_Object___ctor((ParameterOverride_1_System_Object_ *)this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-                pOVar7 = (Object *)func_?();
-                pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if (pMVar2 != (MVNetworkGame *)0x0) {
-                  MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar2,(MethodInfo *)0x0);
-                  pOVar9 = (Object *)func_?();
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(this_01,pOVar7,pOVar9,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+            pLVar11 = (this->fields).timeNotifications;
+            if (pLVar11 != (List_1_System_Int32_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Remove(pLVar11,item,MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
+              this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
+              pOVar7 = (Object *)func_?();
+              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if (pMVar2 != (MVNetworkGame *)0x0) {
+                MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar2,(MethodInfo *)0x0);
+                pOVar9 = (Object *)func_?();
+                if (this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar9,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
                   pOVar7 = (Object *)func_?();
-                  pOVar9 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(this_01,pOVar7,pOVar9,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
-                  WinningConditionNotificationManager::WinningConditionNotificationManager_SendNotification(NotificationType__Enum_HurryUp,this_01,(MethodInfo *)0x0);
+                  pOVar9 = (Object *)func_?();
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar9,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+                  WinningConditionNotificationManager::WinningConditionNotificationManager_SendNotification(NotificationType__Enum_HurryUp,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
                   return;
                 }
               }

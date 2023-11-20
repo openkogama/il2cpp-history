@@ -26,7 +26,7 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
 void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVehicleEnergy_DeSelect(MVVehicleEnergy *this,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).RemoveSelectionBox.methodPtr)(this,(this->klass->vtable).RemoveSelectionBox.method);
+  (*(code *)(this->klass->vtable).RemoveSelectionBox.method)(this,(this->klass->vtable).RemovePreviewBox.methodPtr);
   return;
 }
 
@@ -56,34 +56,34 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
   (this->fields)._VehicleEnergyConfig_k__BackingField.energyAmount = iVar5;
   func_?(&(this->fields)._VehicleEnergyConfig_k__BackingField,0);
   cubeModelBase = (MVCubeModelInstance *)MVBlueprintBase::MVBlueprintBase_GetChild((MVBlueprintBase *)this,StringLiteral_VehicleEnergyCubeModel,(MethodInfo *)0x0);
-  if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-    if (((cubeModelBase->klass->_1).typeHierarchyDepth < (TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth) || ((MVCubeModelInstance__Class *)(cubeModelBase->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] != TypeInfo__MVCubeModelInstance)) goto code_?;
-    (*(cubeModelBase->klass->vtable).set_Visible.methodPtr)();
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1((IntVector *)&stack0xffffffec,-5,-2,0,(MethodInfo *)0x0);
-    uVar6 = 0;
-    iVar7 = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1((IntVector *)&stack0xfffffff4,2,6,3,(MethodInfo *)0x0);
-    iVar8 = 0xca3;
-    iVar9 = 0x1044;
-    this_00 = (EditableCubeModelWrapper *)func_?();
-    if (this_00 != (EditableCubeModelWrapper *)0x0) {
-      min.y = iVar9;
-      min.x = iVar8;
-      min.z = uVar6;
-      max.y = 0;
-      max.x = uVar6;
-      max.z = iVar7;
-      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1(this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
-      (this->fields).editableCubeModelWrapper = this_00;
-      func_?();
-      return;
-    }
+  if (cubeModelBase == (MVCubeModelInstance *)0x0) {
+    func_?();
   }
+  else if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (cubeModelBase->klass->_1).naturalAligment) && ((MVCubeModelInstance__Class *)(cubeModelBase->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] == TypeInfo__MVCubeModelInstance)) {
+    pMStack_6 = (MVCubeModelInstance *)0x1;
+    pMStack_7 = cubeModelBase;
+    (*(code *)(cubeModelBase->klass->vtable).set_Visible.method)();
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1((IntVector *)&stack0xffffffec,-5,-2,0,(MethodInfo *)0x0);
+    pMStack_7 = (MVCubeModelInstance *)0x0;
+    pMStack_6 = (MVCubeModelInstance *)((uint)pMStack_6 & 0xffff0000);
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1((IntVector *)&pMStack_7,2,6,3,(MethodInfo *)0x0);
+    puVar8 = &UNK_?;
+    pEVar9 = TypeInfo__EditableCubeModelWrapper;
+    this_00 = (EditableCubeModelWrapper *)func_?();
+    min.z = (int16_t)pEVar9;
+    min._0_4_ = puVar8;
+    max.z = (int16_t)pMStack_6;
+    max._0_4_ = pMStack_7;
+    EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1(this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
+    (this->fields).editableCubeModelWrapper = this_00;
+    uStack10 = 0x104a;
+    func_?();
+    return;
+  }
+  pMStack_6 = cubeModelBase;
   func_?();
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -117,7 +117,7 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_00,0,(MethodInfo *)0x0);
     pEVar3 = (this->fields).editableCubeModelWrapper;
     if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-      bVar4 = (*(pEVar3->klass->vtable).OnEnterObject.methodPtr)(pEVar3);
+      bVar4 = (*(code *)(pEVar3->klass->vtable).OnEnterObject.method)(pEVar3);
       return bVar4;
     }
   }
@@ -138,7 +138,7 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_00,1,(MethodInfo *)0x0);
     pEVar3 = (this->fields).editableCubeModelWrapper;
     if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-      bVar4 = (*(pEVar3->klass->vtable).OnExitObject.methodPtr)(pEVar3);
+      bVar4 = (*(code *)(pEVar3->klass->vtable).OnExitObject.method)(pEVar3);
       return bVar4;
     }
   }
@@ -271,7 +271,7 @@ code_?:
 void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVehicleEnergy_Select(MVVehicleEnergy *this,Color color,MethodInfo *method)
 
 {
-  (*(this->klass->vtable).AddSelectionBox.methodPtr)(this,(this->klass->vtable).AddSelectionBox.method);
+  (*(code *)(this->klass->vtable).AddSelectionBox.method)(this,(this->klass->vtable).RemoveSelectionBox.methodPtr);
   return;
 }
 
@@ -360,11 +360,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
       }
       if (piVar7 == (int *)0x0) break;
       uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar7 + 0xb2);
+      uVar11 = *(ushort *)(*piVar7 + 0xb6);
       if (uVar11 != 0) {
         do {
           if (*(IEnumerator__Class **)(*(int *)(*piVar7 + 0x58) + (uint)uVar10 * 8) == TypeInfo__System__Collections__IEnumerator) {
-            puVar12 = (undefined4 *)(*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar10 * 8) * 8 + 0xc4 + *piVar7);
+            puVar12 = (undefined4 *)(*piVar7 + (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar10 * 8) + 0x19) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
@@ -377,8 +377,8 @@ code_?:
       if (piVar13 == (int *)0x0) break;
       if (*(Il2CppClass **)(*piVar13 + 0x20) != (TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>->_0).element_class) goto code_?;
       iVar9 = func_?(piVar13);
-      if (*(Collider **)(iVar9 + 0xc) == (Collider *)0x0) break;
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(*(Collider **)(iVar9 + 0xc),val,(MethodInfo *)0x0);
+      if (*(Collider **)(iVar9 + 0x1c) == (Collider *)0x0) break;
+      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled(*(Collider **)(iVar9 + 0x1c),val,(MethodInfo *)0x0);
     }
   }
   uVar14 = func_?();
@@ -432,9 +432,9 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
       (this->fields).vehicleEnergyObject = (MVVehicleEnergyObject *)0x0;
     }
     else {
-      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth < (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).typeHierarchyDepth) || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy[(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject)) goto code_?;
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment < (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment) || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy[(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject)) goto code_?;
       (this->fields).vehicleEnergyObject = pMVar3;
-      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchyDepth < (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).typeHierarchyDepth) || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy[(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).typeHierarchyDepth - 1] != (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject)) goto code_?;
+      if (((((ObjectPrefab__Class *)pMVar3->klass)->_1).naturalAligment < (TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment) || ((((ObjectPrefab__Class *)pMVar3->klass)->_1).typeHierarchy[(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergyObject)) goto code_?;
     }
     func_?();
     pMVar3 = (this->fields).vehicleEnergyObject;
@@ -495,15 +495,6 @@ MVVehicleEnergy_VehicleEnergyConfiguration * Assembly-CSharp.dll::WorldObjectTyp
   __return_storage_ptr__->spawnTime = iVar2;
   __return_storage_ptr__->energyAmount = iVar3;
   return __return_storage_ptr__;
-}
-
-
-/* GameObject get_VehicleEnergyVisualsGameObject() */
-
-GameObject * Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVehicleEnergy_get_VehicleEnergyVisualsGameObject(MVVehicleEnergy *this,MethodInfo *method)
-
-{
-  return (this->fields)._VehicleEnergyVisualsGameObject_k__BackingField;
 }
 
 

@@ -41,12 +41,10 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
             func_?(&MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_);
             cRam_? = '\x01';
           }
-          pAVar3 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-          if (pAVar3 != (Action_1_Object_ *)0x0) {
-            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(pAVar3,(Object *)pGVar1,MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-            GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pAVar3,(MethodInfo *)0x0);
-            return;
-          }
+          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(pDVar3,(Object *)pGVar1,MethodInfo__GreyOutObjectScript__HideExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+          GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,(MethodInfo *)0x0);
+          return;
         }
       }
       else if (value == EnableState__Enum_DisableAndGreyOut) {
@@ -57,13 +55,11 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
             func_?(&MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_);
             cRam_? = '\x01';
           }
-          pAVar3 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-          if (pAVar3 != (Action_1_Object_ *)0x0) {
-            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(pAVar3,(Object *)pGVar1,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-            GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pAVar3,(MethodInfo *)0x0);
-            (pGVar1->fields).isGreyedIn = 0;
-            return;
-          }
+          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(pDVar3,(Object *)pGVar1,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+          GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,(MethodInfo *)0x0);
+          (pGVar1->fields).isGreyedIn = 0;
+          return;
         }
       }
       else {
@@ -77,13 +73,11 @@ void Assembly-CSharp.dll::WorldObjectEnableController::WorldObjectEnableControll
             func_?(&MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_);
             cRam_? = '\x01';
           }
-          pAVar3 = (Action_1_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-          if (pAVar3 != (Action_1_Object_ *)0x0) {
-            mscorlib.dll::System::Action`1[Object]::Action_1_Object___ctor(pAVar3,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
-            GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pAVar3,(MethodInfo *)0x0);
-            (pGVar1->fields).isGreyedIn = 1;
-            return;
-          }
+          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(pDVar3,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+          GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(pGVar1,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)pDVar3,(MethodInfo *)0x0);
+          (pGVar1->fields).isGreyedIn = 1;
+          return;
         }
       }
       func_?();

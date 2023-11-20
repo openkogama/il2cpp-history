@@ -93,7 +93,7 @@ code_?:
 void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierState::PlayerTierState__ctor(PlayerTierState *this,TierLockState__Enum tierLockState,int32_t remainingGamePointRequired,int32_t gamePointRequirementBase,int32_t remainingGoldPriceRequired,int32_t goldPriceRequirementBase,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_23((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).tierLockState = tierLockState;
   (this->fields).remainingGamePointRequired = remainingGamePointRequired;
   (this->fields).remainingGoldPriceRequired = remainingGoldPriceRequired;

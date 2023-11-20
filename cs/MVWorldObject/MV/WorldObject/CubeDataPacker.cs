@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Image 6: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 13: MVWorldObject.dll - Assembly: MVWorldObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 namespace MV.WorldObject
 {
@@ -35,15 +35,7 @@ namespace MV.WorldObject
 		public static void WriteCompressedCube(BytePacker bp, short x, short y, short z, byte[] byteCorners, byte[] materials);
 		private static void GetCompressionFlags(ref byte compressionFlags, byte[] byteCorners, byte[] materials);
 		public static void WriteCompressedCubeData(BytePacker bp, byte[] byteCorners, byte[] materials);
-		public static int GetDataLength(BytePacker bp);
 		public static void ReadCompressedCube(byte cubeFlags, BytePacker bp, ref byte[] byteCorners, ref byte[] materials);
-		public static void AddCube(IntVector pos, byte[] cubeData, ref Dictionary<IntVector, byte[]> cubeDict);
-		public static void RemoveCube(IntVector pos, ref Dictionary<IntVector, byte[]> cubeDict);
-		private static void CombineRows(IntVector pos, ref Dictionary<IntVector, byte[]> cubeDict);
-		public static byte[] GetCubeByteData(IntVector pos, ref Dictionary<IntVector, byte[]> cubeDict);
-		private static bool GetCubeOriginal(IntVector pos, bool left, ref Dictionary<IntVector, byte[]> cubeDict, out IntVector targetCube);
-		private static void SetCubesInRow(ref byte cubeFlags, int cubesInRow);
 		public static int GetCubesInRow(byte cubeFlags);
-		private static bool AreCubesEqual(byte[] cube0, byte[] cube1);
 	}
 }

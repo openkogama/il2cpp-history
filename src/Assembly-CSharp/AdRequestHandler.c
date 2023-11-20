@@ -14,18 +14,12 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_GetGoldAdAvailable(
   }
   TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback = OnAdAvailable;
   func_?(&TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback,OnAdAvailable);
-  this = (UnityAction_2_System_Boolean_System_Object_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
-  if (this != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::UnityAction_2_System_Boolean_System_Object___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__GoldAdAvailable_bool__System__String_,(MethodInfo *)0x0);
-    if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_requestGoldVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
-    return;
+  this = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__GoldAdAvailable_bool__System__String_,(MethodInfo *)0x0);
+  if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_requestGoldVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -45,18 +39,12 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_GetHealthAdAvailabl
   }
   TypeInfo__AdRequestHandler->static_fields->OnHealthAdAvailableCallback = OnAdAvailable;
   func_?(TypeInfo__AdRequestHandler->static_fields,OnAdAvailable);
-  this = (UnityAction_2_System_Boolean_System_Object_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
-  if (this != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::UnityAction_2_System_Boolean_System_Object___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__HealthAdAvailable_bool__System__String_,(MethodInfo *)0x0);
-    if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_requestVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
-    return;
+  this = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__HealthAdAvailable_bool__System__String_,(MethodInfo *)0x0);
+  if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_requestVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -78,13 +66,13 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_GoldAdAvailable(boo
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Ad_not_available,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Ad_not_available,(MethodInfo *)0x0);
   }
   else {
     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6(availableJsonString,AdRequestHandler__Available_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::Available>_System__String_);
+    pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2(availableJsonString,AdRequestHandler__Available_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::Available>_System__String_);
     if (TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback != (Action_1_Boolean_ *)0x0) {
       if (pOVar1 != (Object *)0x0) {
         (*(TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback->fields)._._.invoke_impl)();
@@ -120,13 +108,13 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_HealthAdAvailable(b
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Ad_not_available,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Ad_not_available,(MethodInfo *)0x0);
     return;
   }
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6(availableJsonString,AdRequestHandler__Available_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::Available>_System__String_);
+  pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2(availableJsonString,AdRequestHandler__Available_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::Available>_System__String_);
   pAVar2 = TypeInfo__AdRequestHandler->static_fields->OnHealthAdAvailableCallback;
   if ((pOVar1 != (Object *)0x0) && (pAVar2 != (Action_1_Boolean_ *)0x0)) {
     (*(pAVar2->fields)._._.invoke_impl)();
@@ -157,18 +145,12 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowGoldVideoAd(Act
   }
   TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback = OnAdShown;
   func_?(&TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback,OnAdShown);
-  this = (UnityAction_2_System_Boolean_System_Object_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
-  if (this != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::UnityAction_2_System_Boolean_System_Object___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__ShowGoldVideoAdCallback_bool__System__String_,(MethodInfo *)0x0);
-    if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_showGoldVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
-    return;
+  this = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__ShowGoldVideoAdCallback_bool__System__String_,(MethodInfo *)0x0);
+  if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_showGoldVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -191,13 +173,13 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowGoldVideoAdCall
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Ad_not_shown,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Ad_not_shown,(MethodInfo *)0x0);
   }
   else {
     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6(showVideoJsonString,AdRequestHandler__ShouldReward_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::ShouldReward>_System__String_);
+    pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2(showVideoJsonString,AdRequestHandler__ShouldReward_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::ShouldReward>_System__String_);
     if (pOVar1 == (Object *)0x0) {
       uVar2 = func_?(&stack0xfffffff8);
       func_?(uVar2);
@@ -209,7 +191,7 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowGoldVideoAdCall
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_User_did_not_finish_watching_ad,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_User_did_not_finish_watching_ad,(MethodInfo *)0x0);
       return;
     }
     if (TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback != (Action_1_Boolean_ *)0x0) {
@@ -238,18 +220,12 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowHealthVideoAd(A
   }
   TypeInfo__AdRequestHandler->static_fields->OnHealthAdShownCallback = OnAdShown;
   func_?(&TypeInfo__AdRequestHandler->static_fields->OnHealthAdShownCallback,OnAdShown);
-  this = (UnityAction_2_System_Boolean_System_Object_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
-  if (this != (UnityAction_2_System_Boolean_System_Object_ *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::UnityAction_2_System_Boolean_System_Object___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__ShowHealthVideoAdCallback_bool__System__String_,(MethodInfo *)0x0);
-    if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_showVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
-    return;
+  this = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<bool,_System::String>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this,(Object *)0x0,MethodInfo__AdRequestHandler__ShowHealthVideoAdCallback_bool__System__String_,(MethodInfo *)0x0);
+  if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_ExternalCall_1(StringLiteral_showVideoAd,(Action_2_Boolean_String_ *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -272,19 +248,19 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowHealthVideoAdCa
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_Ad_not_shown,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Ad_not_shown,(MethodInfo *)0x0);
     return;
   }
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pOVar1 = Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_6(showVideoJsonString,AdRequestHandler__ShouldReward_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::ShouldReward>_System__String_);
+  pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2(showVideoJsonString,AdRequestHandler__ShouldReward_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::ShouldReward>_System__String_);
   if (pOVar1 != (Object *)0x0) {
     if (*(char *)&pOVar1[1].klass == '\0') {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_1_Log((Object *)StringLiteral_User_did_not_finish_watching_ad,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_User_did_not_finish_watching_ad,(MethodInfo *)0x0);
       return;
     }
     pAVar2 = TypeInfo__AdRequestHandler->static_fields->OnHealthAdShownCallback;

@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ContextMenuButton::ContextMenuButton_Initialize(Contex
 {
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,buttonText,(pTVar1->klass->vtable).set_text.method);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,buttonText,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pBVar2 = (this->fields).button;
     if ((pBVar2 != (Button *)0x0) && (this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick, this_00 != (UnityEvent *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener(this_00,onClickCallback,(MethodInfo *)0x0);
@@ -44,12 +44,6 @@ void Assembly-CSharp.dll::ContextMenuButton::ContextMenuButton_OnPointerDown(Con
     }
     object = TypeInfo__ContextMenuButton____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IHandlePointerDownOnContextMenuButton_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IHandlePointerDownOnContextMenuButton>);
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IHandlePointerDownOnContextMenuButton_ *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
-    }
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuButton____c___OnPointerDown_b__4_0_IHandlePointerDownOnContextMenuButton__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     TypeInfo__ContextMenuButton____c->static_fields->__9__4_0 = callbackFunction;
     func_?(&TypeInfo__ContextMenuButton____c->static_fields->__9__4_0,callbackFunction);

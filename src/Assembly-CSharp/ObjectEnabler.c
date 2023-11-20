@@ -217,7 +217,7 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_UpdateControllerUpdate(Ob
           pMVar9 = (this->fields).woObjectEnabler;
           if ((((pMVar9 == (MVObjectEnabler *)0x0) || (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pMVar9->fields)._._._.objectLinkRefs, this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) || (RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,(int32_t)index,MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__get_Item_int_), RVar11 == (RegexCharClass_SingleRange)0x0)) || (this_01 == (MVWorldObjectClientManager *)0x0)) break;
           pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_01,*(int32_t *)((int)RVar11 + 0x10),(MethodInfo *)0x0);
-          if (((pMVar12 != (MVWorldObject *)0x0) && ((TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth <= (pMVar12->klass->_1).typeHierarchyDepth)) && ((MVCubeModelInstance__Class *)(pMVar12->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).typeHierarchyDepth - 1] == TypeInfo__MVCubeModelInstance)) {
+          if (((pMVar12 != (MVWorldObject *)0x0) && ((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar12->klass->_1).naturalAligment)) && ((MVCubeModelInstance__Class *)(pMVar12->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] == TypeInfo__MVCubeModelInstance)) {
             iVar13 = func_?();
             if (iVar13 == 0) break;
             iVar13 = func_?();

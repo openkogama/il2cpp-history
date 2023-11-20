@@ -16,7 +16,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::ReviveUIHan
     this_01 = (NavMesh_OnNavMeshPreUpdate *)(this->fields).__9__1;
     if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
       this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-      if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) goto code_?;
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)this,MethodInfo__ReviveUIHandlerBase____c__DisplayClass23_0___OnWatchAdClicked_b__1__,(MethodInfo *)0x0);
       (this->fields).__9__1 = (UnityAction *)this_01;
       func_?(&(this->fields).__9__1,this_01);
@@ -26,7 +25,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::ReviveUIHan
       return;
     }
   }
-code_?:
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
@@ -60,7 +58,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::ReviveUIHan
       }
       object = TypeInfo__ReviveUIHandlerBase____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ReviveUIHandlerBase____c___OnWatchAdClicked_b__23_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       TypeInfo__ReviveUIHandlerBase____c->static_fields->__9__23_2 = callbackFunction;
       func_?(&TypeInfo__ReviveUIHandlerBase____c->static_fields->__9__23_2,callbackFunction);
@@ -71,7 +68,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c__DisplayClass23_0::ReviveUIHan
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();

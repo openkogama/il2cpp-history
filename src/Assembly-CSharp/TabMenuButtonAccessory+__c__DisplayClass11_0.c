@@ -17,7 +17,6 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory+<>c__DisplayClass11_0::TabMenuB
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)(this->fields).__9__1;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ITabSelected>);
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__TabMenuButtonAccessory____c__DisplayClass11_0___Initialize_b__1_UnityEngine__EventSystems__ITabSelected__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       (this->fields).__9__1 = (ExecuteEvents_EventFunction_1_ITabSelected_ *)callbackFunction;
       func_?(&(this->fields).__9__1,callbackFunction);
@@ -28,7 +27,6 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory+<>c__DisplayClass11_0::TabMenuB
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ITabSelected>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ITabSelected>_);
     return;
   }
-code_?:
   func_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
