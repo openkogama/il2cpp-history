@@ -374,7 +374,7 @@ code_?:
             pVVar7 = (Vector3 *)&stack0xffffff8c;
             uVar38 = (undefined2)uVar37;
             uVar39 = (undefined2)((uint)uVar37 >> 0x10);
-            uVar16 = 0xb6ba;
+            uVar16 = 0xb63a;
             uVar34 = 0x1034;
             fVar29 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                (pVVar7,index,(MethodInfo *)0x0);
@@ -583,7 +583,7 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
     func_?(0xbf4);
     in_stack_4 = 0x119b;
     func_?(0xdbf0);
-    func_?(0x38c);
+    func_?(0x400);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {

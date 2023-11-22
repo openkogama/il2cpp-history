@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleClosing
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9243657e-29) {
+      if (_UNK_? < 3.924332e-29) {
         XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -168,7 +168,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleStartSt
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.92445e-29) {
+      if (_UNK_? < 3.9244163e-29) {
         XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
       }
       return;
@@ -199,19 +199,21 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState
 code_?:
       iVar3 = func_?();
       piVar4 = &(this->fields)._.Type;
-      *(char *)piVar4 = (char)*piVar4 + '\x01';
-      piVar4 = &(this->fields)._.Type;
       *piVar4 = *piVar4 + 1;
-      cRam_? = cRam_? +
-                     ((byte)(undefined4 *)(iVar3 + -0x15ffffff) |
-                     (byte)*(undefined4 *)(iVar3 + -0x15ffffff));
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      *(char *)(iVar3 + 0x4f1046fe) = *(char *)(iVar3 + 0x4f1046fe) + unaff_BH + (this < unaff_EDI);
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar2,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
+    if (bVar7 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -234,14 +236,14 @@ code_?:
     break;
   case 2:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar7 = (this->fields).fadeOutCurve;
-    pCVar8 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar7 == (AnimationCurve *)0x0) ||
+    pAVar8 = (this->fields).fadeOutCurve;
+    unaff_EDI = (XPBoostNotification *)(this->fields).backgroundCanvasGroup;
+    if ((pAVar8 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar7,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar8 == (CanvasGroup *)0x0)) goto code_?;
+                           (pAVar8,_UNK_? - fVar1,(MethodInfo *)0x0),
+       unaff_EDI == (XPBoostNotification *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar8,fVar1,(MethodInfo *)0x0);
+              ((CanvasGroup *)unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
     bVar9 = fVar1 == _UNK_?;
     bVar10 = fVar1 < _UNK_?;
@@ -260,14 +262,14 @@ code_?:
     break;
   case 4:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar7 = (this->fields).fadeOutCurve;
-    pCVar8 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar7 == (AnimationCurve *)0x0) ||
+    pAVar8 = (this->fields).fadeOutCurve;
+    unaff_EDI = (XPBoostNotification *)(this->fields).backgroundCanvasGroup;
+    if ((pAVar8 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar7,fVar1,(MethodInfo *)0x0), pCVar8 == (CanvasGroup *)0x0))
-    goto code_?;
+                           (pAVar8,fVar1,(MethodInfo *)0x0),
+       unaff_EDI == (XPBoostNotification *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar8,fVar1,(MethodInfo *)0x0);
+              ((CanvasGroup *)unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
     if (_UNK_? < fVar1) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
@@ -857,19 +859,21 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update
 code_?:
       iVar3 = func_?();
       piVar4 = &(this->fields)._.Type;
-      *(char *)piVar4 = (char)*piVar4 + '\x01';
-      piVar4 = &(this->fields)._.Type;
       *piVar4 = *piVar4 + 1;
-      cRam_? = cRam_? +
-                     ((byte)(undefined4 *)(iVar3 + -0x15ffffff) |
-                     (byte)*(undefined4 *)(iVar3 + -0x15ffffff));
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      *(char *)(iVar3 + 0x4f1046fe) = *(char *)(iVar3 + 0x4f1046fe) + unaff_BH + (this < unaff_EDI);
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      piVar5 = (int *)((int)&(this->fields)._.Type + 1);
+      *piVar5 = *piVar5 + 1;
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar2,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
+    if (bVar7 != 0) {
       pGVar2 = (this->fields).content;
       if (pGVar2 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -892,14 +896,14 @@ code_?:
     break;
   case 2:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar7 = (this->fields).fadeOutCurve;
-    pCVar8 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar7 == (AnimationCurve *)0x0) ||
+    pAVar8 = (this->fields).fadeOutCurve;
+    unaff_EDI = (XPBoostNotification *)(this->fields).backgroundCanvasGroup;
+    if ((pAVar8 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar7,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar8 == (CanvasGroup *)0x0)) goto code_?;
+                           (pAVar8,_UNK_? - fVar1,(MethodInfo *)0x0),
+       unaff_EDI == (XPBoostNotification *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar8,fVar1,(MethodInfo *)0x0);
+              ((CanvasGroup *)unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
     bVar9 = fVar1 == _UNK_?;
     bVar10 = fVar1 < _UNK_?;
@@ -918,14 +922,14 @@ code_?:
     break;
   case 4:
     XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar7 = (this->fields).fadeOutCurve;
-    pCVar8 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar7 == (AnimationCurve *)0x0) ||
+    pAVar8 = (this->fields).fadeOutCurve;
+    unaff_EDI = (XPBoostNotification *)(this->fields).backgroundCanvasGroup;
+    if ((pAVar8 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar7,fVar1,(MethodInfo *)0x0), pCVar8 == (CanvasGroup *)0x0))
-    goto code_?;
+                           (pAVar8,fVar1,(MethodInfo *)0x0),
+       unaff_EDI == (XPBoostNotification *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar8,fVar1,(MethodInfo *)0x0);
+              ((CanvasGroup *)unaff_EDI,fVar1,(MethodInfo *)0x0);
     XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
     if (_UNK_? < fVar1) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);

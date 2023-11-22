@@ -84,8 +84,11 @@ code_?:
   }
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar8 = in(extraout_DX);
+  *(undefined1 *)&pHVar2->klass = uVar8;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

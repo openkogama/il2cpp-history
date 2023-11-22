@@ -258,6 +258,33 @@ code_?:
 }
 
 
+/* Boolean IsPendingPlayer(Int32) */
+
+bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_IsPendingPlayer
+               (MVPlayerContainer *this,int32_t actorId,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields).pendingPlayers;
+  if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
+            Dictionary_2_System_Int32_System_Single__ContainsKey
+                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,actorId,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                      );
+    return bVar1;
+  }
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
+  return bVar1;
+}
+
+
 /* Boolean MoveNext() */
 
 bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_MoveNext

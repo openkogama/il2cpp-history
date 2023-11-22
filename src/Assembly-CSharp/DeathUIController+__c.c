@@ -6,19 +6,19 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNot
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
     func_?();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    ppIStack_1 = (IUIStack__Class **)0x6;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -33,19 +33,19 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotC
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
     func_?();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    ppIStack_1 = (IUIStack__Class **)0x6;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

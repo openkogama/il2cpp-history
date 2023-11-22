@@ -34,19 +34,19 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase+<>c::ReviveUIHandlerBase_c__OnWatc
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
     func_?();
     cRam_? = '\x01';
   }
   if (z != (IUIStack *)0x0) {
-    pIStack_1 = z;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    ppIStack_1 = (IUIStack__Class **)0x6;
+    pIStack_2 = z;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

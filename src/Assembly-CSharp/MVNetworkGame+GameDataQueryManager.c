@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
               ((BytePacker *)pOVar5,value_00,(MethodInfo *)0x0);
     pOVar5 = pOVar4[1].klass;
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
-    queryDataLeft = 8;
+    queryDataLeft = 0x98;
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
               ((BytePacker *)value[1].klass,0,(MethodInfo *)0x0);
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
@@ -216,11 +216,12 @@ code_?:
   }
 code_?:
   func_?();
+  *extraout_ECX = 0xd105238;
   in((short)extraout_EDX);
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkGame_GameDataQueryManager::GameDataQuery>__get_Item_int_
-                    ,extraout_EDX,extraout_EDX,extraout_EDX);
+                    ,extraout_EDX);
     cRam_? = '\x01';
   }
   this_01 = (this->fields).gameDataQueries;

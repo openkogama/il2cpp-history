@@ -225,22 +225,21 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
           TVar5 = TVar4;
         }
         if (TVar5.m_Index != 0) {
-          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
-          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar8 = (int8_t *)func_?();
+          piVar6 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar8,
+                    ((Nullable_1_SByte_ *)&this,*piVar6,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar9 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
+    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar7 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar7->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -267,25 +266,13 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  bVar7 = 0;
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  Var12 = func_?();
-  this = (MVSpawnPoint *)CONCAT22(this._2_2_,in_CS);
-  Var12 = to_bcd(Var12);
-  *extraout_EDX_00 = Var12;
-  bVar10 = CARRY1(bRam_?,(byte)extraout_EDX_00);
-  bVar11 = bRam_? + (byte)extraout_EDX_00;
-  bRam_? = bVar11 + bVar7;
-  Var12 = to_bcd(extraout_ST1);
-  *extraout_EDX_00 = Var12;
-  *unaff_EBX = *unaff_EBX + extraout_AH + (bVar10 || CARRY1(bVar11,bVar7));
-  Var12 = to_bcd(in_ST2);
-  *extraout_EDX_00 = Var12;
-  in((short)extraout_EDX_00);
+  func_?();
+  in(extraout_DX);
   switch(this) {
   case (MVSpawnPoint *)0x27:
     return;

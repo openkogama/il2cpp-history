@@ -159,27 +159,27 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
 
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
+  argName = unaff_ESI;
+  method_00 = unaff_EBX;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
   if (addCube != 0) {
     pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (((pGVar3 != (GameEventManager *)0x0) &&
+    if (((pGVar3 == (GameEventManager *)0x0) ||
         (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode,
-        pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+        pGVar4 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
        (pGVar5 = (pGVar4->fields).LaserCommands,
-       pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-      GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-      GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-                (pGVar5,(this->fields).addCubeLaserOnTime,(MethodInfo *)0x0);
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).addCubeTime = fVar6;
-      goto code_?;
-    }
+       pGVar5 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
     goto code_?;
+    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+    GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
+              (pGVar5,(this->fields).addCubeLaserOnTime,(MethodInfo *)0x0);
+    unaff_EDI = (Object *)0x0;
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    (this->fields).addCubeTime = fVar6;
   }
-code_?:
   pCVar7 = (this->fields).sprayCursor;
   unaff_ESI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
@@ -195,72 +195,70 @@ code_?:
   uVar9 = (selectedCube->fields).iLocalPos.x;
   switch((selectedCube->fields).pickedFace) {
   case 0:
-    y = 1;
+    unaff_EDI = (Object *)0x1;
     break;
   case 1:
-    y = -1;
+    unaff_EDI = (Object *)0xffffffff;
     break;
   case 2:
     x = 0;
-    y = 0;
-    z = -1;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    unaff_EDI = (Object *)0x0;
+    argName = (CubePickingInfo *)0xffffffff;
+    uStack_10 = (undefined *)((uint)uStack_10._2_2_ << 0x10);
     goto code_?;
   case 3:
     x = 0;
-    y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
-    z = 1;
+    unaff_EDI = (Object *)0x0;
+    uStack_10 = (undefined *)((uint)uStack_10._2_2_ << 0x10);
+    argName = (CubePickingInfo *)0x1;
     goto code_?;
   case 4:
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    uStack_10 = (undefined *)((uint)uStack_10._2_2_ << 0x10);
     x = -1;
-    y = 0;
+    unaff_EDI = (Object *)0x0;
     goto code_?;
   case 5:
-    y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+    unaff_EDI = (Object *)0x0;
+    uStack_10 = (undefined *)((uint)uStack_10._2_2_ << 0x10);
     x = 1;
     goto code_?;
   default:
-    y = 0;
+    unaff_EDI = (Object *)0x0;
   }
   x = 0;
-  uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
+  uStack_10 = (undefined *)((uint)uStack_10._2_2_ << 0x10);
 code_?:
-  z = 0;
+  argName = (CubePickingInfo *)0x0;
 code_?:
-  uStack_10._0_2_ = 0;
-  uStack_10._2_2_ = 0;
+  pIStack_11 = (Il2CppMethodPointer)0x0;
+  method_00 = (MethodInfo *)0x0;
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&uStack_10,x,y,z,(MethodInfo *)0x0);
+            ((IntVector *)&pIStack_11,x,(int32_t)unaff_EDI,(int32_t)argName,(MethodInfo *)0x0);
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    pIStack_11 = TypeInfo__MV__WorldObject__IntVector;
-    uStack_10._4_4_ = &UNK_?;
+    pIStack_12 = TypeInfo__MV__WorldObject__IntVector;
     func_?();
   }
-  IVar12.z = uVar9;
-  IVar12._0_4_ = auStack_13;
-  i2.y = in_stack_14;
+  IVar13.z = uVar9;
+  IVar13._0_4_ = auStack_14;
+  i2.y = in_stack_15;
   i2.x = in_stack_8;
-  i2.z = (int16_t)(undefined4)uStack_10;
-  IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  unaff_EBX = IVar12._0_4_;
-  uStack_10._0_2_ = unaff_EBX->x;
-  uStack_10._2_2_ = unaff_EBX->y;
-  in_stack_8 = unaff_EBX->z;
+  i2.z = (int16_t)pIStack_11;
+  IVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                     (IVar13,i2,(MethodInfo *)CONCAT22(uVar1,(int16_t)uStack_10));
+  unaff_EBX = IVar13._0_4_;
+  pIStack_11 = unaff_EBX->methodPointer;
+  in_stack_8 = *(int16_t *)&unaff_EBX->virtualMethodPointer;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
-    pIStack_11 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
+    pIStack_12 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*unaff_EBX,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor
+                            (pCVar7,*(IntVector *)unaff_EBX,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
       position.z = in_stack_8;
-      position.x = (int16_t)uStack_10;
-      position.y = uStack_10._2_2_;
+      position._0_4_ = pIStack_11;
       CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                (this_00,position,(GameObject *)pIStack_11,(MethodInfo *)0x0);
+                (this_00,position,(GameObject *)pIStack_12,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar3 != (GameEventManager *)0x0) &&
@@ -277,65 +275,65 @@ code_?:
     }
   }
 code_?:
-  bVar15 = 0;
-  uVar16 = func_?();
-  iVar17 = CONCAT22((short)((uint)unaff_EBX >> 0x10),
-                    CONCAT11(*(undefined1 *)((int)&unaff_ESI[1].fields.pickedFace + 1),
-                             (char)unaff_EBX));
-  pbVar18 = (byte *)(extraout_ECX + -0x69efba82);
-  bVar19 = (byte)((uint6)uVar16 >> 0x20);
-  bVar20 = *pbVar18;
-  bVar21 = *pbVar18 + bVar19;
-  bVar22 = CARRY1(*pbVar18,bVar19) || CARRY1(bVar21,bVar15);
-  *pbVar18 = bVar21 + bVar15;
-  if (*pbVar18 == 0 || (SCARRY1(bVar20,bVar19) != SCARRY1(bVar21,bVar15)) != (char)*pbVar18 < '\0') {
-    piVar23 = (int *)(iVar17 + 0x3d8008c4);
-    *piVar23 = *piVar23 + 1;
-    ppPVar24 = (PrefabPool__Class **)0x11a3ac;
-    uVar25 = uRam_?;
-    if (*piVar23 != 0) goto code_?;
+  uVar1 = func_?();
+  pbVar16 = (byte *)((int)&unaff_ESI[1].fields.pickedFace + 1);
+  bVar17 = (byte)((uint)unaff_EBX >> 8);
+  bVar18 = bVar17 < *pbVar16;
+  iVar19 = CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(bVar17 - *pbVar16,(char)unaff_EBX));
+  bVar20 = (byte)((ushort)extraout_DX >> 8);
+  bVar17 = *extraout_ECX;
+  bVar21 = *extraout_ECX + bVar20;
+  bVar22 = CARRY1(*extraout_ECX,bVar20) || CARRY1(bVar21,bVar18);
+  *extraout_ECX = bVar21 + bVar18;
+  if (*extraout_ECX == 0 ||
+      (SCARRY1(bVar17,bVar20) != SCARRY1(bVar21,bVar18)) != (char)*extraout_ECX < '\0') {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+              (unaff_EDI,(ExceptionArgument__Enum)argName,method_00);
+    bVar18 = cRam_? == '\0';
   }
   else {
-    pbVar18 = (byte *)((int)&unaff_ESI[-0x151fec3].fields.point.x + 2);
-    bVar19 = (byte)((uint6)uVar16 >> 8);
-    bVar20 = *pbVar18;
-    bVar21 = *pbVar18 + bVar19;
-    bVar26 = CARRY1(*pbVar18,bVar19) || CARRY1(bVar21,bVar22);
-    *pbVar18 = bVar21 + bVar22;
-    uVar25 = (int)uVar16;
-    if (*pbVar18 != 0 && (SCARRY1(bVar20,bVar19) != SCARRY1(bVar21,bVar22)) == (char)*pbVar18 < '\0') {
-      cVar27 = (char)((uint6)uVar16 >> 0x28);
-      cVar28 = cVar27 + (char)uVar16;
-      cVar29 = cVar28 + bVar26;
-      if (cVar29 == '\0' || (SCARRY1(cVar27,(char)uVar16) != SCARRY1(cVar28,bVar26)) != cVar29 < '\0'
-         ) {
-        pcVar30 = (code *)swi(3);
-        (*pcVar30)();
-        return;
-      }
-      pcVar30 = (code *)swi(3);
-      (*pcVar30)();
+    cVar23 = *(char *)&unaff_ESI->klass;
+    bVar17 = *(char *)&unaff_ESI->klass + bVar20;
+    bVar18 = CARRY1(*(byte *)&unaff_ESI->klass,bVar20) || CARRY1(bVar17,bVar22);
+    *(byte *)&unaff_ESI->klass = bVar17 + bVar22;
+    if (*(char *)&unaff_ESI->klass != '\0' &&
+        (SCARRY1(cVar23,bVar20) != SCARRY1(bVar17,bVar22)) == *(char *)&unaff_ESI->klass < '\0') {
+      pbVar16 = (byte *)((int)&unaff_ESI[2].fields.pickedFace + 2);
+      bVar17 = *pbVar16 + (byte)uVar1;
+      bVar22 = CARRY1(*pbVar16,(byte)uVar1) || CARRY1(bVar17,bVar18);
+      *pbVar16 = bVar17 + bVar18;
+      pbVar16 = (byte *)((int)&unaff_ESI[2].fields.pickedFace + 2);
+      bVar17 = *pbVar16;
+      bVar21 = *pbVar16 + (byte)extraout_DX;
+      *pbVar16 = bVar21 + bVar22;
+      pcVar24 = (char *)((int)&unaff_ESI[2].fields.pickedFace + 2);
+      *pcVar24 = *pcVar24 + (char)((ushort)uVar1 >> 8) +
+                (CARRY1(bVar17,(byte)extraout_DX) || CARRY1(bVar21,bVar22));
+      pcVar25 = (code *)swi(3);
+      (*pcVar25)();
       return;
     }
+    piVar26 = (int *)(iVar19 + 0x3d8008c4);
+    *piVar26 = *piVar26 + 1;
+    bVar18 = *piVar26 == 0;
   }
-  uRam_? = uVar25;
-  ppPVar24 = &TypeInfo__PrefabPool;
-  func_?(&TypeInfo__PrefabPool);
-  uRam_? = 1;
-code_?:
-  pPVar31 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar31 == (PrefabPool *)0x0) {
-    func_?(ppPVar24);
-    pcVar30 = (code *)swi(3);
-    (*pcVar30)();
+  if (bVar18) {
+    func_?(&TypeInfo__PrefabPool);
+    cRam_? = '\x01';
+  }
+  pPVar27 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar27 == (PrefabPool *)0x0) {
+    func_?();
+    pcVar25 = (code *)swi(3);
+    (*pcVar25)();
     return;
   }
-  material = (pPVar31->fields).cellCursorMaterial;
+  material = (pPVar27->fields).cellCursorMaterial;
   pCVar7 = (CellCursor *)func_?(TypeInfo__CellCursor);
   CellCursor::CellCursor__ctor
             (pCVar7,1,0.03,material,1.0,(Vector3__Array *)selectedCube,(MethodInfo *)0x0);
-  *(CellCursor **)(iVar17 + 8) = pCVar7;
-  func_?(iVar17 + 8,pCVar7);
+  *(CellCursor **)(iVar19 + 8) = pCVar7;
+  func_?(iVar19 + 8,pCVar7);
   return;
 }
 

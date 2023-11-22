@@ -2438,13 +2438,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
             if ((pPVar4 != (PlayerPlanetData *)0x0) &&
                (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
                pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)CONCAT31(0x104157,(pPVar4->fields).gamePassTier);
+              this = (GamePassesShop *)CONCAT31(0x104156,(pPVar4->fields).gamePassTier);
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator
                        ::PlayerTierStateCalculator_GetTierPricingState
                                  (pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
                              *)0x0) {
-                this = (GamePassesShop *)CONCAT31(0x104157,(pGVar1->fields).gamePassTierDisplayed);
+                this = (GamePassesShop *)CONCAT31(0x104156,(pGVar1->fields).gamePassTierDisplayed);
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           ByteEnum,System::Object]::
                           Dictionary_2_System_ByteEnum_System_Object__get_Item

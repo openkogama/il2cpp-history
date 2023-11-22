@@ -168,86 +168,85 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVe
     this_00 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
                         (pTVar2,(MethodInfo *)0x0);
     if ((this_00 != (TextGenerator *)0x0) &&
-       (pIVar6 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::
-                 TextGenerator_get_lines(this_00,(MethodInfo *)0x0), pIStack_7 = pIVar6,
-       pIVar6 != (IList_1_UnityEngine_UILineInfo_ *)0x0)) {
-      iVar8 = func_?();
-      pIVar9 = pIStack_7;
-      while (iVar8 = iVar8 + -1, pIStack_7 = pIVar9, 0 < iVar8) {
-        pIStack_10 = pIVar6->klass;
-        uVar11 = 0;
-        ppSStack_12 = (String **)0x0;
-        uVar13._0_1_ = (pIStack_10->_1).rank;
-        uVar13._1_1_ = (pIStack_10->_1).minimumAlignment;
-        uStack_14 = (uint)uVar13;
-        if (uVar13 != 0) {
+       (unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)
+                    UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::
+                    TextGenerator_get_lines(this_00,(MethodInfo *)0x0), pIStack_6 = unaff_ESI,
+       unaff_ESI != (IList_1_UnityEngine_UILineInfo___Class *)0x0)) {
+      pIStack_6 = unaff_ESI;
+      iVar7 = func_?();
+      while (iVar7 = iVar7 + -1, 0 < iVar7) {
+        pIStack_8 = (IList_1_UnityEngine_UILineInfo___Class *)(unaff_ESI->_0).image;
+        uVar9 = 0;
+        ppSStack_10 = (String **)0x0;
+        uVar11._0_1_ = (pIStack_8->_1).rank;
+        uVar11._1_1_ = (pIStack_8->_1).minimumAlignment;
+        pIStack_12 = (IList_1_UnityEngine_UILineInfo___Class *)(uint)uVar11;
+        if (uVar11 != 0) {
           do {
-            if (pIStack_10->interfaceOffsets[uVar11].interfaceType ==
+            unaff_ESI = pIStack_6;
+            if (pIStack_8->interfaceOffsets[uVar9].interfaceType ==
                 (Il2CppClass *)
                 TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
-              ppMVar15 = &(&(pIVar9->klass->vtable).get_Item)
-                         [pIVar9->klass->interfaceOffsets[uVar11].offset].method;
+              pIVar13 = (IList_1_UnityEngine_UILineInfo___Class *)(pIStack_6->_0).image;
+              ppMVar14 = &(&(pIVar13->vtable).get_Item)[pIVar13->interfaceOffsets[uVar9].offset].
+                         method;
+              goto code_?;
+            }
+            uVar9 = uVar9 + 1;
+          } while (uVar9 < uVar11);
+        }
+        ppMVar14 = (MethodInfo **)func_?();
+code_?:
+        piVar15 = (int32_t *)(*(code *)*ppMVar14)();
+        iStack_16 = *piVar15;
+        iStack_17 = piVar15[1];
+        iStack_18 = piVar15[2];
+        iStack_19 = piVar15[3];
+        if (pSStack_5 == (String *)0x0) goto code_?;
+        pSStack_20 = mscorlib.dll::System::String::String_Insert
+                               (pSStack_5,iStack_16,StringLiteral_u000A,(MethodInfo *)0x0);
+        uVar11 = 0;
+        pIStack_8 = (IList_1_UnityEngine_UILineInfo___Class *)(unaff_ESI->_0).image;
+        ppSStack_10 = (String **)0x0;
+        uVar9._0_1_ = (pIStack_8->_1).rank;
+        uVar9._1_1_ = (pIStack_8->_1).minimumAlignment;
+        pIStack_12 = (IList_1_UnityEngine_UILineInfo___Class *)(uint)uVar9;
+        if (uVar9 != 0) {
+          do {
+            unaff_ESI = pIStack_6;
+            if (pIStack_8->interfaceOffsets[uVar11].interfaceType ==
+                (Il2CppClass *)
+                TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
+              pIVar13 = (IList_1_UnityEngine_UILineInfo___Class *)(pIStack_6->_0).image;
+              ppMVar14 = &(&(pIVar13->vtable).get_Item)[pIVar13->interfaceOffsets[uVar11].offset].
+                         method;
               goto code_?;
             }
             uVar11 = uVar11 + 1;
-            pIVar6 = pIVar9;
-          } while (uVar11 < uVar13);
+          } while (uVar11 < uVar9);
         }
-        ppMVar15 = (MethodInfo **)func_?();
-        pIVar9 = pIVar6;
+        ppMVar14 = (MethodInfo **)func_?();
 code_?:
-        piVar16 = (int32_t *)(*(code *)*ppMVar15)();
-        iStack_17 = *piVar16;
-        iStack_18 = piVar16[1];
-        iStack_19 = piVar16[2];
-        iStack_20 = piVar16[3];
-        if (pSStack_5 == (String *)0x0) goto code_?;
-        pSStack_21 = mscorlib.dll::System::String::String_Insert
-                               (pSStack_5,iStack_17,StringLiteral_u000A,(MethodInfo *)0x0);
-        uVar13 = 0;
-        pIStack_10 = pIVar9->klass;
-        ppSStack_12 = (String **)0x0;
-        uVar11._0_1_ = (pIStack_10->_1).rank;
-        uVar11._1_1_ = (pIStack_10->_1).minimumAlignment;
-        uStack_14 = (uint)uVar11;
-        if (uVar11 != 0) {
-          do {
-            if (pIStack_10->interfaceOffsets[uVar13].interfaceType ==
-                (Il2CppClass *)
-                TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
-              ppMVar15 = &(&(pIStack_7->klass->vtable).get_Item)
-                         [pIStack_7->klass->interfaceOffsets[uVar13].offset].method;
-              pIVar6 = pIStack_7;
-              goto code_?;
-            }
-            uVar13 = uVar13 + 1;
-            pIVar9 = pIStack_7;
-          } while (uVar13 < uVar11);
-        }
-        ppMVar15 = (MethodInfo **)func_?();
-        pIVar6 = pIVar9;
-code_?:
-        piVar22 = (int *)(*(code *)*ppMVar15)();
-        iStack_17 = *piVar22;
-        iStack_18 = piVar22[1];
-        iStack_19 = piVar22[2];
-        iStack_20 = piVar22[3];
-        if (pSStack_21 == (String *)0x0) goto code_?;
+        piVar21 = (int *)(*(code *)*ppMVar14)();
+        iStack_16 = *piVar21;
+        iStack_17 = piVar21[1];
+        iStack_18 = piVar21[2];
+        iStack_19 = piVar21[3];
+        if (pSStack_20 == (String *)0x0) goto code_?;
         pSVar4 = mscorlib.dll::System::String::String_Remove
-                           (pSStack_21,iStack_17 + -1,1,(MethodInfo *)0x0);
+                           (pSStack_20,iStack_16 + -1,1,(MethodInfo *)0x0);
         pSStack_5 = pSVar4;
-        pIVar9 = pIStack_7;
       }
       if (pSVar4 != (String *)0x0) {
-        pSStack_23 = mscorlib.dll::System::String::String_Split
+        pSStack_22 = mscorlib.dll::System::String::String_Split
                                (pSVar4,10,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pTVar2 = pTStack_3;
-        bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+        bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                           ((Object_1 *)pTStack_3,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar24 != 0) {
+        if (bVar23 != 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -255,11 +254,11 @@ code_?:
                     ((Object *)StringLiteral_LetterSpacing__Missing_Text_comp,(MethodInfo *)0x0);
           return;
         }
-        ppSStack_12 = (String **)(this->fields).m_spacing;
-        iVar25 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize
+        ppSStack_10 = (String **)(this->fields).m_spacing;
+        iVar24 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize
                            (pTVar2,(MethodInfo *)0x0);
-        iVar8 = 0;
-        fStack_26 = ((float)iVar25 * (float)ppSStack_12) / _UNK_?;
+        pcVar25 = (char *)0x0;
+        fStack_26 = ((float)iVar24 * (float)ppSStack_10) / _UNK_?;
         fStack_27 = 0.0;
         if ((this->fields).useRichText == 0) {
           bStack_28 = 0;
@@ -268,12 +267,12 @@ code_?:
           bStack_28 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_supportRichText
                                (pTVar2,(MethodInfo *)0x0);
         }
-        iVar29 = 0;
+        unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
         pSStack_5 = (String *)0x0;
-        iStack_30 = 0;
-        TVar31 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_alignment
+        pIStack_29 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
+        TVar30 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_alignment
                            (pTStack_3,(MethodInfo *)0x0);
-        switch(TVar31) {
+        switch(TVar30) {
         case TextAnchor__Enum_UpperLeft:
         case TextAnchor__Enum_MiddleLeft:
         case TextAnchor__Enum_LowerLeft:
@@ -289,96 +288,100 @@ code_?:
         case TextAnchor__Enum_LowerRight:
           fStack_27 = _UNK_?;
         }
-        pIStack_10 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
-        if (pSStack_23 != (String__Array *)0x0) {
-          ppSStack_12 = pSStack_23->vector;
+        pIStack_8 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
+        if (pSStack_22 != (String__Array *)0x0) {
+          ppSStack_10 = pSStack_22->vector;
           while( true ) {
-            if ((int)pSStack_23->max_length <= (int)pIStack_10) {
+            if ((int)pSStack_22->max_length <= (int)pIStack_8) {
               return;
             }
-            cVar1 = '\0';
-            if ((IList_1_UnityEngine_UILineInfo___Class *)pSStack_23->max_length <= pIStack_10)
+            bVar31 = 0;
+            if ((IList_1_UnityEngine_UILineInfo___Class *)pSStack_22->max_length <= pIStack_8)
             break;
-            pSStack_32 = *ppSStack_12;
+            pSStack_32 = *ppSStack_10;
             if (pSStack_32 == (String *)0x0) goto code_?;
-            pIStack_7 = (IList_1_UnityEngine_UILineInfo_ *)(pSStack_32->fields)._stringLength;
+            pIStack_6 = (IList_1_UnityEngine_UILineInfo___Class *)(pSStack_32->fields)._stringLength
+            ;
             pSVar4 = pSStack_5;
             if (bStack_28 != 0) {
               pSVar4 = (String *)
                        LetterSpacing_GetRegexMatchedTagCollection
-                                 (this,pSStack_32,(int32_t *)&pIStack_7,(MethodInfo *)0x0);
-              iVar29 = 0;
-              iStack_30 = 0;
+                                 (this,pSStack_32,(int32_t *)&pIStack_6,(MethodInfo *)0x0);
+              unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
+              pIStack_29 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
               pSStack_5 = pSVar4;
               if (pSVar4 == (String *)0x0) goto code_?;
               cVar1 = func_?();
               if (cVar1 != '\0') {
                 iStack_33 = func_?();
                 if (iStack_33 == 0) {
-                  iStack_30 = 0;
+                  pIStack_29 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
                 }
                 else {
-                  iVar29 = func_?();
-                  cVar1 = '\0';
-                  iStack_30 = iVar29;
-                  if (iVar29 == 0) goto code_?;
+                  unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)func_?();
+                  bVar31 = 0;
+                  pIStack_29 = unaff_ESI;
+                  if (unaff_ESI == (IList_1_UnityEngine_UILineInfo___Class *)0x0)
+                  goto code_?;
                 }
               }
             }
-            pIVar6 = (IList_1_UnityEngine_UILineInfo_ *)0x0;
+            pIVar13 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
             pTStack_3 = (Text *)0x0;
-            fStack_34 = (float)(int)((int)&pIStack_7[-1].monitor + 3) * fStack_26 * fStack_27;
-            while (pIStack_7 = pIVar6, (int)pIVar6 < (pSStack_32->fields)._stringLength) {
-              if (((bStack_28 == 0) || (iVar29 == 0)) ||
-                 (*(IList_1_UnityEngine_UILineInfo_ **)(iVar29 + 8) != pIVar6)) {
-                iStack_35 = iVar8 * 6 + 1;
-                iStack_33 = iVar8 * 6;
-                iStack_36 = iVar8 * 6 + 2;
-                iStack_37 = iVar8 * 6 + 3;
-                pSStack_21 = (String *)(iVar8 * 6 + 4);
-                uStack_14 = iVar8 * 6 + 5;
+            fStack_34 = (float)(int)((int)&pIStack_6[-1].vtable.RemoveAt.method + 3) * fStack_26 *
+                        fStack_27;
+            while (pIStack_6 = pIVar13, (int)pIVar13 < (pSStack_32->fields)._stringLength) {
+              if (((bStack_28 == 0) || (unaff_ESI == (IList_1_UnityEngine_UILineInfo___Class *)0x0))
+                 || ((IList_1_UnityEngine_UILineInfo___Class *)(unaff_ESI->_0).name != pIVar13)) {
+                iStack_35 = (int)pcVar25 * 6 + 1;
+                iStack_33 = (int)pcVar25 * 6;
+                iStack_36 = (int)pcVar25 * 6 + 2;
+                iStack_37 = (int)pcVar25 * 6 + 3;
+                pSStack_20 = (String *)((int)pcVar25 * 6 + 4);
+                unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)((int)pcVar25 * 6 + 5);
+                pIStack_12 = unaff_ESI;
                 if (verts == (List_1_UnityEngine_UIVertex_ *)0x0) goto code_?;
-                if ((verts->fields)._size + -1 < (int)uStack_14) {
+                if ((verts->fields)._size + -1 < (int)unaff_ESI) {
                   return;
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_40;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_41;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_42;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_43;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_44;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                 }
                 puVar38 = (undefined4 *)func_?();
                 puVar39 = &uStack_45;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined4 *)puVar39 = *puVar38;
                   puVar38 = puVar38 + 1;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
@@ -422,7 +425,7 @@ code_?:
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
                 uStack_46 = uVar47;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -472,7 +475,7 @@ code_?:
                 pMVar62 = 
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -523,7 +526,7 @@ code_?:
                 pMVar62 = 
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -574,7 +577,7 @@ code_?:
                 pMVar62 = 
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -625,7 +628,7 @@ code_?:
                 pMVar62 = 
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -671,13 +674,13 @@ code_?:
                 value_03.uv3.z = (float)in_stack_77._104_4_;
                 mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
                 List_1_UnityEngine_UIVertex__set_Item
-                          (verts,(int32_t)pSStack_21,value_03,in_stack_78);
+                          (verts,(int32_t)pSStack_20,value_03,in_stack_78);
                 puVar39 = &uStack_45;
                 puVar38 = (undefined4 *)&stack0xfffffb64;
                 pMVar62 = 
                 MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
                 ;
-                for (iVar29 = 0x1b; iVar29 != 0; iVar29 = iVar29 + -1) {
+                for (iVar7 = 0x1b; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *puVar38 = *(undefined4 *)puVar39;
                   puVar39 = (undefined8 *)((int)puVar39 + 4);
                   puVar38 = puVar38 + 1;
@@ -722,41 +725,46 @@ code_?:
                 value_04.uv3.y = (float)in_stack_79._100_4_;
                 value_04.uv3.z = (float)in_stack_79._104_4_;
                 mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,uStack_14,value_04,in_stack_80);
-                iVar8 = iVar8 + 1;
-                iVar29 = iStack_30;
+                List_1_UnityEngine_UIVertex__set_Item
+                          (verts,(int32_t)pIStack_12,value_04,in_stack_80);
+                pcVar25 = pcVar25 + 1;
+                unaff_ESI = pIStack_29;
                 pSVar4 = pSStack_5;
 code_?:
-                pIVar6 = (IList_1_UnityEngine_UILineInfo_ *)((int)&pIStack_7->klass + 1);
+                pIVar13 = (IList_1_UnityEngine_UILineInfo___Class *)
+                          ((int)&(pIStack_6->_0).image + 1);
                 pTStack_3 = (Text *)((int)&pTStack_3->klass + 1);
               }
               else {
-                iVar8 = iVar8 + *(int *)(iVar29 + 0xc);
-                pIStack_7 = (IList_1_UnityEngine_UILineInfo_ *)
-                            ((int)pIVar6 + *(int *)(iVar29 + 0xc) + -1);
+                pcVar25 = pcVar25 + (int)(unaff_ESI->_0).namespaze;
+                pIStack_6 = (IList_1_UnityEngine_UILineInfo___Class *)
+                            ((undefined1 *)((int)&pIVar13[-1].vtable.RemoveAt.method + 3) +
+                            (int)(unaff_ESI->_0).namespaze);
                 pTStack_3 = (Text *)((int)&pTStack_3[-1].fields.m_TempVerts + 3);
-                iVar29 = 0;
-                iStack_30 = 0;
+                unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
+                pIStack_29 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
                 if (pSVar4 == (String *)0x0) goto code_?;
                 cVar1 = func_?();
                 if (cVar1 == '\0') goto code_?;
                 iStack_33 = func_?();
                 if (iStack_33 != 0) {
-                  iVar29 = func_?();
-                  cVar1 = '\0';
-                  iStack_30 = iVar29;
-                  if (iVar29 != 0) goto code_?;
+                  unaff_ESI = (IList_1_UnityEngine_UILineInfo___Class *)func_?();
+                  bVar31 = 0;
+                  pIStack_29 = unaff_ESI;
+                  if (unaff_ESI != (IList_1_UnityEngine_UILineInfo___Class *)0x0)
+                  goto code_?;
                   goto code_?;
                 }
-                pIVar6 = (IList_1_UnityEngine_UILineInfo_ *)((int)&pIStack_7->klass + 1);
-                iStack_30 = 0;
+                pIVar13 = (IList_1_UnityEngine_UILineInfo___Class *)
+                          ((int)&(pIStack_6->_0).image + 1);
+                pIStack_29 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
                 pTStack_3 = (Text *)((int)&pTStack_3->klass + 1);
               }
             }
-            iVar8 = iVar8 + 1;
-            pIStack_10 = (IList_1_UnityEngine_UILineInfo___Class *)
-                         ((int)&(pIStack_10->_0).image + 1);
-            ppSStack_12 = ppSStack_12 + 1;
+            pcVar25 = pcVar25 + 1;
+            pIStack_8 = (IList_1_UnityEngine_UILineInfo___Class *)
+                         ((int)&(pIStack_8->_0).image + 1);
+            ppSStack_10 = ppSStack_10 + 1;
           }
           goto code_?;
         }
@@ -764,22 +772,34 @@ code_?:
     }
   }
 code_?:
-  cVar1 = '\0';
+  bVar31 = 0;
   func_?();
 code_?:
   func_?();
 code_?:
   uVar47 = func_?();
-  piVar22 = (int *)((ulonglong)uVar47 >> 0x20);
-  pcVar81 = (char *)uVar47;
-  pcRam_? = pcVar81;
-  *(char *)((int)piVar22 + 0x104df2) =
-       *(char *)((int)piVar22 + 0x104df2) + (char)((ulonglong)uVar47 >> 0x28) + cVar1;
-  *piVar22 = (int)(pcVar81 + *piVar22);
-  *extraout_ECX = *extraout_ECX + (char)uVar47;
-  *piVar22 = *piVar22 + CONCAT31((int3)((ulonglong)uVar47 >> 8),(char)uVar47 + *pcVar81);
-  pcVar82 = (code *)swi(3);
-  (*pcVar82)();
+  pcVar25 = (char *)uVar47;
+  uVar11 = (ushort)((ulonglong)uVar47 >> 0x20);
+  sVar81 = ((ushort)unaff_ESI & 3) - (uVar11 & 3);
+  sVar81 = uVar11 + (ushort)(0 < sVar81) * sVar81;
+  piVar21 = (int *)CONCAT22((short)((ulonglong)uVar47 >> 0x30),sVar81);
+  pbVar82 = (byte *)(pcVar25 + -0xe);
+  bVar83 = (byte)((uint)extraout_ECX >> 8);
+  bVar84 = *pbVar82 + bVar83;
+  bVar85 = CARRY1(*pbVar82,bVar83) || CARRY1(bVar84,bVar31);
+  *pbVar82 = bVar84 + bVar31;
+  pbVar82 = (byte *)((int)piVar21 + -0xe);
+  bVar31 = *pbVar82;
+  bVar83 = (byte)((ushort)sVar81 >> 8);
+  bVar84 = *pbVar82 + bVar83;
+  *pbVar82 = bVar84 + bVar85;
+  cVar1 = (char)uVar47;
+  *pcVar25 = *pcVar25 + cVar1 + (CARRY1(bVar31,bVar83) || CARRY1(bVar84,bVar85));
+  *piVar21 = (int)(pcVar25 + *piVar21);
+  *extraout_ECX = *extraout_ECX + cVar1;
+  *piVar21 = *piVar21 + CONCAT31((int3)((ulonglong)uVar47 >> 8),cVar1 + *pcVar25);
+  pcVar86 = (code *)swi(3);
+  (*pcVar86)();
   return;
 }
 

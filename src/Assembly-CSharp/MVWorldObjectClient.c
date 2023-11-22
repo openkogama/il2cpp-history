@@ -1577,22 +1577,26 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    cVar2 = '\0';
-    uVar3 = func_?();
-    uVar4 = (undefined4)((ulonglong)uVar3 >> 0x20);
-    pcVar5 = (char *)(CONCAT31((int3)((ulonglong)uVar3 >> 8),-cVar2) + -0x5aefad07);
-    *pcVar5 = *pcVar5 + (char)((ulonglong)uVar3 >> 8) + '\x01';
+     (pMVar2 = (MVWorldObjectClient *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     pMVar2 == (MVWorldObjectClient *)0x0)) {
+    bVar3 = 0;
+    uVar4 = func_?();
+    bVar5 = (byte)((uint)extraout_EDX >> 8);
+    *(char *)&this->klass =
+         *(char *)&this->klass + (char)((ushort)uVar4 >> 8) +
+         (CARRY1(extraout_CH,bVar5) ||
+         CARRY1(extraout_CH + bVar5,CARRY1((byte)uVar4,bVar5) || CARRY1((byte)uVar4 + bVar5,bVar3)))
+    ;
     pcVar6 = (code *)swi(3);
-    pMVar7 = (MVWorldObjectClient *)(*pcVar6)(uVar4,uVar4);
-    return pMVar7;
+    pMVar2 = (MVWorldObjectClient *)(*pcVar6)(extraout_EDX,extraout_EDX,extraout_EDX);
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_8;
+  unaff_EBP = in_stack_7;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 

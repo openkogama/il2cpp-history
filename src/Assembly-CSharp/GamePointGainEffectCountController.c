@@ -157,12 +157,14 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
+  bVar12 = 0;
   func_?();
-  pcVar12 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),(byte)extraout_EDX + unaff_BL) +
-                   -0x33efbe0d);
-  *pcVar12 = *pcVar12 + (char)((uint)(extraout_ECX + 2) >> 8) + CARRY1((byte)extraout_EDX,unaff_BL);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  bVar13 = (byte)((uint)this >> 8);
+  pcVar14 = (char *)((int)&this[-0xa63261].fields.originalXPosition + 3);
+  *pcVar14 = *pcVar14 + extraout_CL + '\x02' +
+            (CARRY1(in_stack_15,bVar13) || CARRY1(in_stack_15 + bVar13,bVar12));
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

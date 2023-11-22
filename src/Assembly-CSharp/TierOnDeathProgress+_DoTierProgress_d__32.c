@@ -309,14 +309,28 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    cVar26 = '\0';
+    bVar26 = 0;
+    iVar7 = func_?();
+    iVar18 = CONCAT22((short)((uint)pTVar3 >> 0x10),CONCAT11(0x43,(char)pTVar3));
+    pbVar27 = (byte *)(iVar18 + -0x49);
+    bVar28 = *pbVar27;
+    bVar29 = (byte)((uint)iVar7 >> 8);
+    bVar30 = *pbVar27 + bVar29;
+    *pbVar27 = bVar30 + bVar26;
+    *(char *)(iVar7 + 0x561043bd) =
+         *(char *)(iVar7 + 0x561043bd) + (char)((uint)(iVar18 + 1) >> 8) +
+         (CARRY1(bVar28,bVar29) || CARRY1(bVar30,bVar26));
+    uVar31 = func_?(&TypeInfo__System__NotSupportedException);
+    this_03 = (NotSupportedException *)func_?(uVar31);
+    mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
+              (this_03,(MethodInfo *)0x0);
+    uVar31 = func_?(&
+                             MethodInfo__TierOnDeathProgress___DoTierProgress_d__32__System_Collections_IEnumerator_Reset__
+                            );
     func_?();
-    pcVar27 = (char *)(CONCAT22((short)((uint)pTVar3 >> 0x10),CONCAT11(0x43,(char)pTVar3)) +
-                     0x81043b7);
-    *pcVar27 = *pcVar27 + extraout_DH + cVar26;
-    do {
-                    /* WARNING: Do nothing block with infinite loop */
-    } while( true );
+    pcVar32 = (code *)swi(3);
+    bVar21 = (*pcVar32)(uVar31);
+    return bVar21;
   }
 code_?:
   (pTVar3->fields)._IsShowingTierProgress_k__BackingField = 0;

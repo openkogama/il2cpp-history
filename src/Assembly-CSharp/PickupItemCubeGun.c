@@ -482,7 +482,7 @@ code_?:
               if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              iVar17 = -0x173f;
+              iVar17 = -0x15af;
               uStack_18 = 0x1054;
               pTVar14 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                                   ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);

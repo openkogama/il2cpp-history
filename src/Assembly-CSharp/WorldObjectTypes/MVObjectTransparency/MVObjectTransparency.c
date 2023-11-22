@@ -425,18 +425,27 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVCubeModelInstance);
+    func_?(&TypeInfo__MVMovable);
     cRam_? = '\x01';
   }
-  if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
-       ((MVCubeModelInstance__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-        TypeInfo__MVCubeModelInstance)) {
-      return wo != (MVWorldObjectClient *)0x0;
-    }
+  if (((wo == (MVWorldObjectClient *)0x0) ||
+      ((wo->klass->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment)) ||
+     ((MVCubeModelInstance__Class *)
+      (wo->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
+      TypeInfo__MVCubeModelInstance)) {
     return 0;
   }
-  return 0;
+  pMVar1 = (wo->fields).group;
+  if (pMVar1 == (MVGroup *)0x0) {
+    return 1;
+  }
+  if (((TypeInfo__MVMovable->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
+     ((MVMovable__Class *)
+      (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1] ==
+      TypeInfo__MVMovable)) {
+    return pMVar1 == (MVGroup *)0x0;
+  }
+  return 1;
 }
 
 

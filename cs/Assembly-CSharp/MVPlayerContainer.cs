@@ -72,5 +72,6 @@ public class MVPlayerContainer : IEnumerator, IEnumerable<KeyValuePair<int, MVPl
 	public bool MoveNext();
 	public void Reset();
 	public void SendPlayerListEvents();
+	public bool IsPendingPlayer(int actorId);
 }
 

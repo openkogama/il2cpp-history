@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
          (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) &&
         (this_01 = (pMVar3->fields).teamNames,
         this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) &&
-       (this = (TeamRequirementPanel *)team, team != (Object *)0x0)) {
+       (team != (Object *)0x0)) {
       if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class)
       {
         pIVar4 = (Int32Enum__Enum *)func_?(team);
@@ -49,12 +49,7 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   func_?();
-  puVar6 = (uint *)((int)&this[1].fields._.checkmark + 1);
-  puVar7 = (undefined1 *)*puVar6;
-  *puVar6 = *puVar6 - (int)&stack0x00000000;
-  *extraout_ECX = *extraout_ECX + (char)((uint)extraout_ECX >> 8) + (puVar7 < &stack0x00000000);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

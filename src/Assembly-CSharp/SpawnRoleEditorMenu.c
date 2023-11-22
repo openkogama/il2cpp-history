@@ -307,6 +307,8 @@ code_?:
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void ChangeTeamImageColor(MVTeam) */
 
 void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamImageColor
@@ -323,6 +325,7 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
+    method_00 = (MethodInfo *)0x0;
     colorStyle = ColorStyle__Enum_TeamBlue;
     break;
   case MVTeam__Enum_Red:
@@ -330,6 +333,7 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
+    method_00 = (MethodInfo *)0x0;
     colorStyle = ColorStyle__Enum_TeamRed;
     break;
   case MVTeam__Enum_Green:
@@ -337,6 +341,7 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
+    method_00 = (MethodInfo *)0x0;
     colorStyle = ColorStyle__Enum_TeamGreen;
     break;
   case MVTeam__Enum_Yellow:
@@ -344,6 +349,7 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
+    method_00 = (MethodInfo *)0x0;
     colorStyle = ColorStyle__Enum_TeamYellow;
     break;
   default:
@@ -351,20 +357,32 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
+    method_00 = (MethodInfo *)0x0;
+    goto code_?;
+  }
+  while( true ) {
+    pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,method_00);
+    if (pIVar1 != (Image *)0x0) {
+      CStack_3.r = pCVar2->a;
+      CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
+      return;
+    }
+    CStack_3.g = (float)&UNK_?;
+    uVar4 = func_?();
+    out(0xdb,(int)uVar4);
+    in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
+    uVar5 = CONCAT31((int3)((ulonglong)uVar4 >> 8),(byte)uVar4 + in_AF * -6) & 0xffffff0f;
+    *(char *)(unaff_EDI + -0x24) = *(char *)(unaff_EDI + -0x24) + (char)unaff_EBX + in_AF;
+    if ((int)((ulonglong)uVar4 >> 0x20) <=
+        *(int *)CONCAT22((short)(uVar5 >> 0x10),
+                         CONCAT11((char)((ulonglong)uVar4 >> 8) - in_AF,(char)uVar5))) break;
+    *(int *)(unaff_EBX + 0x6a04c4) = *(int *)(unaff_EBX + 0x6a04c4) + 1;
+code_?:
     colorStyle = ColorStyle__Enum_OffGray;
   }
-  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
-  cVar4 = '\0';
-  if (pIVar1 == (Image *)0x0) {
-    CStack_3.g = (float)&UNK_?;
-    func_?();
-    *(char *)(unaff_EDI + -0x24) = *(char *)(unaff_EDI + -0x24) + extraout_CH + cVar4;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
-  }
-  CStack_3.r = pCVar2->a;
-  CStack_3.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
-  (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar2->r,pCVar2->g,pCVar2->b);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

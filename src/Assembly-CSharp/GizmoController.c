@@ -41,10 +41,10 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle
         cRam_? = '\x01';
       }
       pSVar2 = (Single__Class *)
-                mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__GetValueOrDefault_1
-                          ((Nullable_1_UInt32_ *)&(pGVar3->fields).rotationMode,1,
-                           MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_
-                          );
+               mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32__GetValueOrDefault_1
+                         ((Nullable_1_UInt32_ *)&(pGVar3->fields).rotationMode,1,
+                          MethodInfo__System__Nullable<RotationMode>__GetValueOrDefault_RotationMode_
+                         );
     }
     pGVar5 = (this->fields).gizmoMenuNgInstance;
     if (pGVar5 != (GizmoMenuNg *)0x0) {
@@ -226,12 +226,9 @@ joined_?:
   default:
     return;
   }
-  pcVar10 = (char *)func_?();
-  swi(4);
-  pcVar11 = (code *)swi(4);
-  if (SBORROW1(*pcVar10,extraout_DL)) {
-    (*pcVar11)();
-  }
+  func_?();
+  pcVar10 = (code *)swi(1);
+  (*pcVar10)();
   return;
 }
 

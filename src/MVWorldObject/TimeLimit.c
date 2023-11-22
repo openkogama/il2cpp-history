@@ -143,25 +143,10 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
-  bVar4 = 0;
-  uVar5 = 0x10dc;
-  func_?();
-  bVar6 = extraout_CH < (byte)(&stack0xfffffffc)[(int)unaff_EBX * 8] ||
-          (byte)(extraout_CH - (&stack0xfffffffc)[(int)unaff_EBX * 8]) < bVar4;
-  pbVar7 = (byte *)(extraout_EDX + 0x2c);
-  bVar8 = (byte)unaff_EBX;
-  bVar9 = CARRY1(*pbVar7,bVar8) || CARRY1(*pbVar7 + bVar8,bVar6);
-  *pbVar7 = *pbVar7 + bVar8 + bVar6;
-  func_?(CONCAT22(uVar5,in_CS));
-  pbVar7 = (byte *)(extraout_EDX_00 + 0x2d);
-  bVar4 = *pbVar7;
-  bVar10 = *pbVar7;
-  *pbVar7 = bVar10 + bVar8 + bVar9;
-  *(char *)(extraout_EDX_00 + 0x2d) =
-       *(char *)(extraout_EDX_00 + 0x2d) + bVar8 +
-       (CARRY1(bVar4,bVar8) || CARRY1(bVar10 + bVar8,bVar9));
-  pcVar11 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar11)();
+  bVar4 = func_?();
+  *extraout_EDX = *extraout_EDX + (char)((uint)unaff_EBX >> 8) + (bVar4 < 0xdc);
+  pcVar5 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar5)();
   return pHVar3;
 }
 
@@ -290,25 +275,10 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
-  bVar4 = 0;
-  uVar5 = 0x10dc;
-  func_?();
-  bVar6 = extraout_CH < (byte)(&stack0xfffffffc)[(int)unaff_EBX * 8] ||
-          (byte)(extraout_CH - (&stack0xfffffffc)[(int)unaff_EBX * 8]) < bVar4;
-  pbVar7 = (byte *)(extraout_EDX + 0x2c);
-  bVar8 = (byte)unaff_EBX;
-  bVar9 = CARRY1(*pbVar7,bVar8) || CARRY1(*pbVar7 + bVar8,bVar6);
-  *pbVar7 = *pbVar7 + bVar8 + bVar6;
-  func_?(CONCAT22(uVar5,in_CS));
-  pbVar7 = (byte *)(extraout_EDX_00 + 0x2d);
-  bVar4 = *pbVar7;
-  bVar10 = *pbVar7;
-  *pbVar7 = bVar10 + bVar8 + bVar9;
-  *(char *)(extraout_EDX_00 + 0x2d) =
-       *(char *)(extraout_EDX_00 + 0x2d) + bVar8 +
-       (CARRY1(bVar4,bVar8) || CARRY1(bVar10 + bVar8,bVar9));
-  pcVar11 = (code *)swi(3);
-  pHVar3 = (HighScores *)(*pcVar11)();
+  bVar4 = func_?();
+  *extraout_EDX = *extraout_EDX + (char)((uint)unaff_EBX >> 8) + (bVar4 < 0xdc);
+  pcVar5 = (code *)swi(3);
+  pHVar3 = (HighScores *)(*pcVar5)();
   return pHVar3;
 }
 

@@ -113,7 +113,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                    );
-    func_?(0x4630);
+    func_?(0x46a8);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }

@@ -1391,7 +1391,6 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_ReceiveMe
                Dictionary_2_System_Object_System_Object_ *message,MethodInfo *method)
 
 {
-  bVar1 = (byte)((uint)unaff_EBX >> 8);
   switch(msgType) {
   case MVGameMsgType__Enum_AdminMsg:
     if (cRam_? == '\0') {
@@ -1404,40 +1403,40 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_ReceiveMe
       cRam_? = '\x01';
     }
     msgType = CONCAT13(5,(undefined3)msgType);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    bVar3 = 0;
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
+    bVar2 = 0;
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
-                          pOVar2,
+                          pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      this_01.m_Index = 0;
-      if (TVar4.m_Index != 0) {
-        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-          this_01 = TVar4;
+      this_02.m_Index = 0;
+      if (TVar3.m_Index != 0) {
+        if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+          this_02 = TVar3;
         }
-        if ((String *)this_01.m_Index == (String *)0x0) {
+        if ((String *)this_02.m_Index == (String *)0x0) {
 code_?:
           unaff_EDI = (MVPlayer *)0x0;
-          bVar3 = 0;
-          func_?(TVar4.m_Index,TypeInfo__System__String);
+          bVar2 = 0;
+          func_?(TVar3.m_Index,TypeInfo__System__String);
           break;
         }
       }
-      pSVar5 = (this->fields).adminMessageFormat;
-      fVar6 = (this->fields).systemMessageColor.r;
-      fVar7 = (this->fields).systemMessageColor.g;
-      fVar8 = (this->fields).systemMessageColor.b;
-      fVar9 = (this->fields).systemMessageColor.a;
+      pSVar4 = (this->fields).adminMessageFormat;
+      fVar5 = (this->fields).systemMessageColor.r;
+      fVar6 = (this->fields).systemMessageColor.g;
+      fVar7 = (this->fields).systemMessageColor.b;
+      fVar8 = (this->fields).systemMessageColor.a;
 code_?:
-      c.g = fVar7;
-      c.r = fVar6;
-      c.b = fVar8;
-      c.a = fVar9;
-      CVar10 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
+      c.g = fVar6;
+      c.r = fVar5;
+      c.b = fVar7;
+      c.a = fVar8;
+      CVar9 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
                          (c,(MethodInfo *)0x0);
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         msgType = (MVGameMsgType__Enum)TypeInfo__Styles;
@@ -1445,12 +1444,12 @@ code_?:
       }
       msgType = MVGameMsgType__Enum_AvatarKilled;
       arg0 = Styles::Styles_ColorToHex
-                       ((Color32)((ulonglong)CVar10 & 0xffffffff),(MethodInfo *)message);
+                       ((Color32)((ulonglong)CVar9 & 0xffffffff),(MethodInfo *)message);
       message = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      msgType = this_01.m_Index;
+      msgType = this_02.m_Index;
       msgType = (MVGameMsgType__Enum)
                 mscorlib.dll::System::String::String_Format_1
-                          (pSVar5,(Object *)arg0,(Object *)this_01.m_Index,(MethodInfo *)0x0);
+                          (pSVar4,(Object *)arg0,(Object *)this_02.m_Index,(MethodInfo *)0x0);
       message = (Dictionary_2_System_Object_System_Object_ *)0x0;
       AndroidChatController_AddLine(this,(String *)msgType,(MethodInfo *)0x0);
 code_?:
@@ -1472,48 +1471,46 @@ code_?:
       cRam_? = '\x01';
     }
     msgType = msgType & 0xffffff;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    unaff_ESI = (AndroidChatController *)message;
-    bVar3 = 0;
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
+    data = message;
+    bVar2 = 0;
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
-                          pOVar2,
+                          pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar11 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
-      bVar3 = 0;
-      if (TVar4.m_Index != 0) {
-        pIVar12 = (TypeInfo__System__Int32->_0).element_class;
-        bVar3 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar12;
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar12) goto code_?;
-        piVar13 = (int32_t *)func_?(TVar4.m_Index);
-        unaff_EDI = (MVPlayer *)*piVar13;
-        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        bVar3 = 0;
-        if (pMVar14 != (MVNetworkGame *)0x0) {
-          this_00 = (pMVar14->fields).playerContainer;
-          bVar3 = 0;
+      uVar10 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+      bVar2 = 0;
+      if (TVar3.m_Index != 0) {
+        pIVar11 = (TypeInfo__System__Int32->_0).element_class;
+        bVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar11;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar11) goto code_?;
+        piVar12 = (int32_t *)func_?(TVar3.m_Index);
+        unaff_EDI = (MVPlayer *)*piVar12;
+        pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar2 = 0;
+        if (pMVar13 != (MVNetworkGame *)0x0) {
+          this_00 = (pMVar13->fields).playerContainer;
+          bVar2 = 0;
           if (this_00 != (MVPlayerContainer *)0x0) {
             unaff_EDI = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
                                   (this_00,(int32_t)unaff_EDI,(MethodInfo *)0x0);
-            pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            bVar3 = 0;
-            if (pMVar14 != (MVNetworkGame *)0x0) {
-              pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar14,(MethodInfo *)0x0);
-              bVar3 = 0;
+            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            bVar2 = 0;
+            if (pMVar13 != (MVNetworkGame *)0x0) {
+              pMVar14 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar13,(MethodInfo *)0x0);
+              bVar2 = 0;
               if (unaff_EDI != (MVPlayer *)0x0) {
-                bVar16 = MVPlayer::MVPlayer_IsOnSameTeam
-                                  (unaff_EDI,(MVPlayer *)pMVar15,(MethodInfo *)0x0);
-                if (bVar16 == 0) {
+                bVar15 = MVPlayer::MVPlayer_IsOnSameTeam
+                                  (unaff_EDI,(MVPlayer *)pMVar14,(MethodInfo *)0x0);
+                if (bVar15 == 0) {
                   return;
                 }
-                pSVar5 = AndroidChatController_FormatTeamChatMessage
-                                    (this,(Dictionary_2_System_Object_System_Object_ *)unaff_ESI,
-                                     (MethodInfo *)0x0);
-                AndroidChatController_AddLine(this,pSVar5,(MethodInfo *)0x0);
+                pSVar4 = AndroidChatController_FormatTeamChatMessage(this,data,(MethodInfo *)0x0);
+                AndroidChatController_AddLine(this,pSVar4,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -1533,46 +1530,45 @@ code_?:
       cRam_? = '\x01';
     }
     msgType = msgType & 0xffffff;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
     unaff_EDI = (MVPlayer *)message;
-    bVar3 = 0;
+    bVar2 = 0;
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
-                          pOVar2,
+                          pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      uVar11 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
-      bVar3 = 0;
-      if (TVar4.m_Index != 0) {
-        pIVar12 = (TypeInfo__System__Int32->_0).element_class;
-        bVar3 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar12;
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar12) goto code_?;
-        piVar17 = (int *)func_?(TVar4.m_Index);
-        unaff_EBX = *piVar17;
-        pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        bVar3 = 0;
-        if (pMVar14 != (MVNetworkGame *)0x0) {
-          pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar14,(MethodInfo *)0x0);
-          bVar3 = 0;
-          if (pMVar15 != (MVLocalPlayer *)0x0) {
-            if ((pMVar15->fields)._._ActorNr_k__BackingField == unaff_EBX) {
-              pSVar5 = AndroidChatController_FormatSayChatMessage
+      uVar10 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+      bVar2 = 0;
+      if (TVar3.m_Index != 0) {
+        pIVar11 = (TypeInfo__System__Int32->_0).element_class;
+        bVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar11;
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar11) goto code_?;
+        piVar16 = (int *)func_?(TVar3.m_Index);
+        iVar17 = *piVar16;
+        pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        bVar2 = 0;
+        if (pMVar13 != (MVNetworkGame *)0x0) {
+          pMVar14 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar13,(MethodInfo *)0x0);
+          bVar2 = 0;
+          if (pMVar14 != (MVLocalPlayer *)0x0) {
+            if ((pMVar14->fields)._._ActorNr_k__BackingField == iVar17) {
+              pSVar4 = AndroidChatController_FormatSayChatMessage
                                   (this,(Dictionary_2_System_Object_System_Object_ *)unaff_EDI,
                                    (MethodInfo *)0x0);
-              AndroidChatController_AddLine(this,pSVar5,(MethodInfo *)0x0);
-              unaff_ESI = this;
+              AndroidChatController_AddLine(this,pSVar4,(MethodInfo *)0x0);
             }
-            pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            bVar3 = 0;
-            if (pMVar14 != (MVNetworkGame *)0x0) {
-              pMVar15 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar14,(MethodInfo *)0x0);
-              bVar3 = 0;
-              if (pMVar15 != (MVLocalPlayer *)0x0) {
-                bVar16 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)pMVar15,(MethodInfo *)0x0);
-                if (bVar16 == 0) {
+            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            bVar2 = 0;
+            if (pMVar13 != (MVNetworkGame *)0x0) {
+              pMVar14 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar13,(MethodInfo *)0x0);
+              bVar2 = 0;
+              if (pMVar14 != (MVLocalPlayer *)0x0) {
+                bVar15 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)pMVar14,(MethodInfo *)0x0);
+                if (bVar15 == 0) {
                   return;
                 }
                 if (TypeInfo__SayChatBubbleVisibilityManager->static_fields->
@@ -1584,7 +1580,7 @@ code_?:
                 pAVar18 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
                          OnSayChatMessageRecieved;
                 (*(pAVar18->fields)._._.invoke_impl)
-                          ((pAVar18->fields)._._.method_code,unaff_EBX,unaff_EDI,
+                          ((pAVar18->fields)._._.method_code,iVar17,unaff_EDI,
                            (pAVar18->fields)._._.method);
                 return;
               }
@@ -1605,164 +1601,104 @@ code_?:
       cRam_? = '\x01';
     }
     msgType = CONCAT13(5,(undefined3)msgType);
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    bVar3 = 0;
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
+    bVar2 = 0;
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
                UIElements::TextureId]::
                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)message,
-                          pOVar2,
+                          pOVar1,
                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                          );
-      bVar3 = 0;
-      if (TVar4.m_Index != 0) {
-        this_01.m_Index = (int32_t)(String *)0x0;
-        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-          this_01 = TVar4;
+      bVar2 = 0;
+      if (TVar3.m_Index != 0) {
+        this_02.m_Index = (int32_t)(String *)0x0;
+        if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+          this_02 = TVar3;
         }
-        if ((String *)this_01.m_Index == (String *)0x0) goto code_?;
-        if (0x600 < (((String *)this_01.m_Index)->fields)._stringLength) {
+        if ((String *)this_02.m_Index == (String *)0x0) goto code_?;
+        if (0x600 < (((String *)this_02.m_Index)->fields)._stringLength) {
           mscorlib.dll::System::String::String_Substring_1
-                    ((String *)this_01.m_Index,0,0x600,(MethodInfo *)0x0);
+                    ((String *)this_02.m_Index,0,0x600,(MethodInfo *)0x0);
         }
-        pSVar5 = (this->fields).warningMessageFormat;
-        fVar6 = (this->fields).warningMessageColor.r;
-        fVar7 = (this->fields).warningMessageColor.g;
-        fVar8 = (this->fields).warningMessageColor.b;
-        fVar9 = (this->fields).warningMessageColor.a;
+        pSVar4 = (this->fields).warningMessageFormat;
+        fVar5 = (this->fields).warningMessageColor.r;
+        fVar6 = (this->fields).warningMessageColor.g;
+        fVar7 = (this->fields).warningMessageColor.b;
+        fVar8 = (this->fields).warningMessageColor.a;
         goto code_?;
       }
     }
   }
-  bVar1 = (byte)((uint)unaff_EBX >> 8);
-  uVar11 = func_?();
+  uVar10 = func_?();
 code_?:
-  uVar19 = func_?(uVar11);
-  iVar20 = (int)uVar19;
-  pbVar21 = (byte *)(iVar20 + 0x2a);
-  bVar22 = (byte)((uint6)uVar19 >> 0x28);
-  bVar23 = CARRY1(*pbVar21,bVar22) || CARRY1(*pbVar21 + bVar22,bVar3);
-  *pbVar21 = *pbVar21 + bVar22 + bVar3;
-  pbVar21 = (byte *)(iVar20 + 0x2a);
-  bVar24 = CARRY1(*pbVar21,bVar22) || CARRY1(*pbVar21 + bVar22,bVar23);
-  *pbVar21 = *pbVar21 + bVar22 + bVar23;
-  pbVar21 = (byte *)(iVar20 + 0x2a);
-  bVar23 = CARRY1(*pbVar21,bVar22) || CARRY1(*pbVar21 + bVar22,bVar24);
-  *pbVar21 = *pbVar21 + bVar22 + bVar24;
-  bVar3 = *extraout_ECX;
-  bVar25 = (byte)((uint6)uVar19 >> 8);
-  bVar26 = *extraout_ECX + bVar25;
-  *extraout_ECX = bVar26 + bVar23;
-  bVar27 = (byte)uVar19;
-  in_AF = 9 < (bVar27 & 0xf) | in_AF;
-  uVar28 = (undefined3)((uint6)uVar19 >> 8);
-  bVar23 = 0x99 < bVar27 || (CARRY1(bVar3,bVar25) || CARRY1(bVar26,bVar23));
-  bVar27 = bVar27 + in_AF * '\x06' + bVar23 * '`';
-  pbVar21 = (byte *)CONCAT31(uVar28,bVar27);
-  bVar3 = *pbVar21;
-  bVar26 = *pbVar21;
-  *pbVar21 = bVar26 + bVar1 + bVar23;
-  bVar23 = 0x99 < bVar27 || (CARRY1(bVar3,bVar1) || CARRY1(bVar26 + bVar1,bVar23));
-  bVar3 = bVar27 + (9 < (bVar27 & 0xf) | in_AF) * '\x06' + bVar23 * '`';
-  iVar20 = CONCAT31(uVar28,bVar3);
-  pbVar21 = extraout_ECX + 0x28;
-  bVar24 = CARRY1(*pbVar21,bVar3) || CARRY1(*pbVar21 + bVar3,bVar23);
-  *pbVar21 = *pbVar21 + bVar3 + bVar23;
-  pbVar21 = (byte *)(iVar20 + 0x2a);
-  bVar3 = *pbVar21;
-  bVar26 = *pbVar21;
-  *pbVar21 = bVar26 + bVar22 + bVar24;
-  pcVar29 = (char *)(iVar20 + 0x29);
-  *pcVar29 = *pcVar29 + bVar1 + (CARRY1(bVar3,bVar22) || CARRY1(bVar26 + bVar22,bVar24));
-  in((short)((uint6)uVar19 >> 0x20));
-  pAVar30 = unaff_ESI;
+  uVar10 = func_?(uVar10);
+  pbVar19 = (byte *)((ulonglong)uVar10 >> 0x20);
+  iVar17 = ((int)uVar10 + -0x104726) - (uint)bVar2;
+  uVar20 = (undefined3)((uint)iVar17 >> 8);
+  bVar21 = (char)iVar17 - (char)(unaff_EDI->fields).level;
+  pcVar22 = (char *)CONCAT31(uVar20,bVar21);
+  bVar2 = *pbVar19;
+  bVar23 = (byte)((uint)extraout_ECX >> 8);
+  *pbVar19 = *pbVar19 + bVar23;
+  *pcVar22 = *pcVar22 + bVar21 + CARRY1(bVar2,bVar23);
+  pbVar19 = (byte *)((int)&(unaff_EDI->fields).level + 1);
+  bVar24 = bVar21 < *pbVar19;
+  bVar21 = bVar21 - *pbVar19;
+  bVar2 = bVar21 + 0x26;
+  bVar25 = 0xd9 < bVar21 || CARRY1(bVar2,bVar24);
+  bVar2 = bVar2 + bVar24;
+  bVar26 = (byte)((ulonglong)uVar10 >> 0x20);
+  bVar21 = bVar26 + 0x26;
+  pbVar19 = (byte *)CONCAT31((int3)((uint)extraout_ECX >> 8),bVar21 + bVar25);
+  bVar24 = 0x99 < bVar2 || (0xd9 < bVar26 || CARRY1(bVar21,bVar25));
+  cVar27 = bVar2 + (9 < (bVar2 & 0xf) | in_AF) * '\x06' + bVar24 * '`';
+  pcVar22 = (char *)CONCAT31(uVar20,cVar27);
+  *pcVar22 = *pcVar22 + cVar27 + bVar24;
+  *pbVar19 = *pbVar19 | bVar23;
+  in((short)((ulonglong)uVar10 >> 0x20));
   if (cRam_? == '\0') {
-    unaff_ESI[-1].fields.sayColor.a =
-         (float)&MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__;
-    pfVar31 = &unaff_ESI[-1].fields.sayColor.b;
-    unaff_ESI[-1].fields.sayColor.b = (float)&UNK_?;
-    func_?();
-    *(MethodInfo ***)((int)pfVar31 + -4) =
-         &
-         MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
-    ;
-    puVar32 = (undefined1 *)((int)pfVar31 + -8);
-    *(undefined **)((int)pfVar31 + -8) = &UNK_?;
-    func_?();
-    pAVar30 = (AndroidChatController *)(puVar32 + 8);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
+                   );
     cRam_? = '\x01';
   }
-  pAVar30[-1].fields.sayColor.a = (float)unaff_ESI;
-  pAVar30[-1].fields.sayColor.b = (float)((int)&(unaff_EDI->fields).checkpointWOID + 1);
-  pQVar33 = (this->fields).lines;
-  pAVar34 = (AndroidChatController *)&pAVar30[-1].fields.sayColor.b;
-  if (pQVar33 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
-    pAVar30[-1].fields.sayColor.g =
-         (float)MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__;
-    pAVar30[-1].fields.sayColor.r = (float)pQVar33;
-    pAVar30[-1].fields.warningMessageColor.a = (float)&UNK_?;
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+  pQVar28 = (this->fields).lines;
+  if (pQVar28 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
+    this_01 = (Component *)
+              mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
               Queue_1_System_Object__Dequeue
-                        ((Queue_1_System_Object_ *)pAVar30[-1].fields.sayColor.r,
-                         (MethodInfo *)pAVar30[-1].fields.sayColor.g);
-    pQVar33 = (this->fields).lines;
-    pAVar34 = pAVar30;
-    if (pQVar33 != (Queue_1_UnityEngine_UI_Text_ *)0x0) {
-      pAVar30[-1].fields.sayColor.a =
-           (float)
-           MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
-      ;
-      pAVar30[-1].fields.sayColor.b = (float)pOVar2;
-      pAVar30[-1].fields.sayColor.g = (float)pQVar33;
-      pAVar30[-1].fields.sayColor.r = (float)&UNK_?;
-      mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-      Queue_1_System_Object__Enqueue
-                ((Queue_1_System_Object_ *)pAVar30[-1].fields.sayColor.g,
-                 (Object *)pAVar30[-1].fields.sayColor.b,(MethodInfo *)pAVar30[-1].fields.sayColor.a
-                );
-      pAVar34 = (AndroidChatController *)&(pAVar30->fields)._.m_CancellationTokenSource;
-      if (pOVar2 != (Object *)0x0) {
-        (pAVar30->fields)._._._._.m_CachedPtr = (void *)0x0;
-        pAVar30->monitor = (MonitorData *)pOVar2;
-        pAVar30->klass = (AndroidChatController__Class *)&UNK_?;
-        pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pAVar30->monitor,(pAVar30->fields)._._._._.m_CachedPtr);
-        pAVar34 = (AndroidChatController *)&(pAVar30->fields).chatMessageFromFriend;
-        if (pTVar35 != (Transform *)0x0) {
-          (pAVar30->fields).adminMessageFormat = (String *)0x0;
-          (pAVar30->fields)._.m_CancellationTokenSource = (CancellationTokenSource *)0x0;
-          (pAVar30->fields)._._._._.m_CachedPtr = (this->fields).contentPanel;
-          pAVar30->monitor = (MonitorData *)pTVar35;
-          pAVar30->klass = (AndroidChatController__Class *)&UNK_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    ((Transform *)pAVar30->monitor,(pAVar30->fields)._._._._.m_CachedPtr,
-                     *(bool *)&(pAVar30->fields)._.m_CancellationTokenSource,
-                     (MethodInfo *)(pAVar30->fields).adminMessageFormat);
-          (pAVar30->fields).adminMessageFormat = (String *)0x0;
-          (pAVar30->fields)._.m_CancellationTokenSource = (CancellationTokenSource *)pOVar2;
-          (pAVar30->fields)._._._._.m_CachedPtr = &UNK_?;
-          pTVar35 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)(pAVar30->fields)._.m_CancellationTokenSource,
-                               (MethodInfo *)(pAVar30->fields).adminMessageFormat);
-          pAVar34 = (AndroidChatController *)&(pAVar30->fields).rectTransform;
-          if (pTVar35 != (Transform *)0x0) {
-            (pAVar30->fields).chatConsoleModes = (ChatConsoleModes *)0x0;
-            *(Transform **)&(pAVar30->fields).promptRegisterForChat = pTVar35;
-            (pAVar30->fields).lines = (Queue_1_UnityEngine_UI_Text_ *)&UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                      (*(Transform **)&(pAVar30->fields).promptRegisterForChat,
-                       (MethodInfo *)(pAVar30->fields).chatConsoleModes);
-            return;
-          }
-        }
+                        ((Queue_1_System_Object_ *)pQVar28,
+                         MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__
+                        );
+    pQVar28 = (this->fields).lines;
+    if (((pQVar28 != (Queue_1_UnityEngine_UI_Text_ *)0x0) &&
+        (mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+         Queue_1_System_Object__Enqueue
+                   ((Queue_1_System_Object_ *)pQVar28,(Object *)this_01,
+                    MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
+                   ), this_01 != (Component *)0x0)) &&
+       (pTVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            (this_01,(MethodInfo *)0x0), pTVar29 != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (pTVar29,(Transform *)(this->fields).contentPanel,0,(MethodInfo *)0x0);
+      pTVar29 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          (this_01,(MethodInfo *)0x0);
+      if (pTVar29 != (Transform *)0x0) {
+        method = (MethodInfo *)&UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                  (pTVar29,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  *(undefined **)((int)pAVar34 + -4) = &UNK_?;
   func_?();
-  pcVar36 = (code *)swi(3);
-  (*pcVar36)();
+  pcVar30 = (code *)swi(3);
+  (*pcVar30)();
   return;
 }
 
