@@ -184,12 +184,9 @@ joined_?:
   default:
     return;
   }
-  pcVar10 = (char *)func_?();
-  swi(4);
-  pcVar11 = (code *)swi(4);
-  if (SBORROW1(*pcVar10,extraout_DL)) {
-    (*pcVar11)();
-  }
+  func_?();
+  pcVar10 = (code *)swi(1);
+  (*pcVar10)();
   return;
 }
 

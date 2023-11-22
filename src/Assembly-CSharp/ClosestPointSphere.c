@@ -27,7 +27,7 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
         if (pTVar1 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
           puVar11 = (undefined8 *)func_?();
-          fVar12 = (float)pCVar6 * 4.2515183e-29;
+          fVar12 = (float)pCVar6 * 4.251629e-29;
           fStack_13 = (float)*puVar11;
           fStack_14 = (float)((ulonglong)*puVar11 >> 0x20);
                     /* WARNING: Read-only address (ram,0xADDR) is written */

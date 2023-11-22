@@ -105,7 +105,7 @@ code_?:
     if (iVar6 == 0) goto code_?;
   }
   func_?();
-  GameTierProgressBar::GameTierProgressBar_Initialize((GameTierProgressBar *)0x5fe85000,(MethodInfo *)0x0);
+  GameTierProgressBar::GameTierProgressBar_Initialize((GameTierProgressBar *)0x7fe85000,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<int>,unaff_EBP);
     func_?(&TypeInfo__System__Action);

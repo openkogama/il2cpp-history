@@ -476,7 +476,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if ((pOVar8->klass->_0).element_class != (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
         puVar16 = (undefined1 *)func_?();
         value = TypeInfo__MVPlayer;
-        BStack_17 = CONCAT31(0x105182,*puVar16);
+        BStack_17 = CONCAT31(0x105183,*puVar16);
         this_02 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1(this_02,actorNumber,profileID,(int32_t)pMVar5,pSStack_11,BStack_17,userProfileData,bVar6,observer,(PlayerPlanetDataRemote *)playerPlanetDataRemote,(MethodInfo *)0x0);
         if (this_02 == (MVPlayer *)0x0) goto code_?;
@@ -5686,7 +5686,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame__ctor(MVNetworkGame *this
           pPVar1 = (this->fields)._Peer_k__BackingField;
           if (pPVar1 != (PhotonPeer *)0x0) {
             bVar2 = cRam_? == '\0';
-            (pPVar1->fields).DebugOut = 0xf6;
+            (pPVar1->fields).DebugOut = 0xf8;
             if (bVar2) {
               func_?();
               func_?();

@@ -1413,7 +1413,7 @@ code_?:
                         if ((Vector3__Array *)MStack_11._37_4_ == (Vector3__Array *)0x0) {
                           pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
                           if ((pFVar58 != (FaceCursor *)0x0) && (pGVar27 = (pFVar58->fields).gameObject, pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_), pGVar27 != (GameObject *)0x0)) {
-                            IStack_22.z = -0x3ad;
+                            IStack_22.z = -0x40d;
                             uStack_35 = 0x1044;
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar27,0,(MethodInfo *)0x0);
                             pIVar26 = (pMVar20->fields).indentArea;
@@ -1690,7 +1690,7 @@ code_?:
                         else {
                           pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
                           if ((pFVar58 != (FaceCursor *)0x0) && (pGVar27 = (pFVar58->fields).gameObject, pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_), pGVar27 != (GameObject *)0x0)) {
-                            IStack_22.z = -0x361;
+                            IStack_22.z = -0x3c1;
                             uStack_35 = 0x1044;
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar27,1,(MethodInfo *)0x0);
                             pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
@@ -1713,12 +1713,12 @@ joined_?:
                           if (cRam_? == '\0') {
                             func_?();
                             func_?();
-                            IStack_22.z = -0x30b;
+                            IStack_22.z = -0x36b;
                             uStack_35 = 0x1044;
                             func_?();
                             IStack_22.z = -0x1c8c;
                             uStack_35 = 0x119b;
-                            IStack_22.x = -0x301;
+                            IStack_22.x = -0x361;
                             IStack_22.y = 0x1044;
                             func_?();
                             IStack_22.x = -0x204c;
@@ -1993,7 +1993,7 @@ joined_?:
                                                                     pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
                                                                     fVar24 = (float)MStack_11._9_4_;
                                                                     if ((pFVar58 != (FaceCursor *)0x0) && (pGVar27 = (pFVar58->fields).gameObject, pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_), pGVar27 != (GameObject *)0x0)) {
-                                                                      IStack_22.z = 0x390;
+                                                                      IStack_22.z = 0x330;
                                                                       uStack_35 = 0x1045;
                                                                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar27,1,(MethodInfo *)0x0);
                                                                       pVVar23 = (Vector3__Array *)CONCAT22(MStack_11._7_2_,MStack_11.virtualMethodPointer._1_2_);
@@ -2044,9 +2044,9 @@ code_?:
   pVVar66 = (Vector3__Array *)MStack_11._5_4_;
 code_?:
   MStack_11._5_4_ = pVVar66;
-  uVar89 = func_?();
-  pcVar105 = (char *)(uVar89 & 0xf5931044);
-  *pcVar105 = *pcVar105 + (char)((uint)pcVar105 >> 8) + !CARRY1(extraout_CH,(byte)&stack0xfffffffc);
+  func_?();
+  cVar105 = uStack_6._1_1_ + (char)((uint)&stack0xfffffffc >> 8);
+  uStack_6._0_2_ = CONCAT11(cVar105 + !CARRY1(unaff_BL,extraout_DH),(undefined1)uStack_6);
   pcVar106 = (code *)swi(3);
   (*pcVar106)();
   return;

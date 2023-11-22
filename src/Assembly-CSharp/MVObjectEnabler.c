@@ -228,8 +228,8 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects(MVObjectE
   puStack_2 = &DAT_?;
   uVar3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffffb4;
-  puVar6 = &stack0xffffffb4;
+  puStack_5 = &stack0xffffffb8;
+  puVar6 = &stack0xffffffb8;
   uStack_4 = uVar3;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__Dispose__);
@@ -237,7 +237,7 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects(MVObjectE
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__get_Current__);
     func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__GetEnumerator__);
     func_?(&TypeInfo__MVCubeModelBase);
-    in_stack_7 = (MethodInfo *)&UNK_?;
+    in_stack_7 = (MVWorldObject *)&UNK_?;
     uVar3 = func_?(&TypeInfo__MVMovable);
     cRam_? = '\x01';
     puVar6 = puStack_5;
@@ -258,15 +258,15 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects(MVObjectE
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._._._.objectLinkRefs;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_12,this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::ObjectLink>__GetEnumerator__);
+      LStack_12._current = (RegexCharClass_SingleRange)&stack0xffffffc4;
       RStack_13 = pLVar11->_current;
       LStack_12._version = 0;
       uStack_1 = 1;
-      LStack_12._current = (RegexCharClass_SingleRange)&stack0xffffffc0;
       while( true ) {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__MoveNext__);
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__MoveNext__);
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__Dispose__,(MethodInfo *)this_01);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::ObjectLink>__Dispose__,(MethodInfo *)this_01);
           *unaff_FS_OFFSET = uStack_4;
           return;
         }
@@ -278,33 +278,36 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects(MVObjectE
         pMVar15 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar14,(((Il2CppType *)((int)RStack_13 + 0x10))->data).__klassIndex,(MethodInfo *)0x0);
         pMVar14 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((pMVar15 == (MVWorldObject *)0x0) || (pMVar14 == (MVWorldObjectClientManager *)0x0)) break;
-        pMStack_16 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar14,(pMVar15->fields).groupId,(MethodInfo *)0x0);
-        if (((pMStack_16 == (MVWorldObject *)0x0) || ((pMStack_16->klass->_1).naturalAligment < (TypeInfo__MVMovable->_1).naturalAligment)) || ((MVMovable__Class *)(pMStack_16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1] != TypeInfo__MVMovable)) {
-          iVar17 = func_?();
-          if (iVar17 != 0) goto code_?;
-          RStack_13 = _visible;
-          func_?();
+        pMVar16 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar14,(pMVar15->fields).groupId,(MethodInfo *)0x0);
+        if (((pMVar16 == (MVWorldObject *)0x0) || ((pMVar16->klass->_1).naturalAligment < (TypeInfo__MVMovable->_1).naturalAligment)) || ((MVMovable__Class *)(pMVar16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1] != TypeInfo__MVMovable)) {
+          RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
+          pMVar17 = (MVCubeModelBase *)func_?();
+          if (pMVar17 == (MVCubeModelBase *)0x0) {
+            in_stack_7 = _visible;
+            func_?(0x4f);
+            in_stack_18 = pMVar15;
+          }
+          else {
+            in_stack_7 = (MVWorldObject *)0x0;
+            in_stack_18 = _visible;
+            MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged(pMVar17,visible,(MethodInfo *)0x0);
+          }
         }
         else {
-          iVar17 = func_?();
-          if ((iVar17 == 0) || (iVar17 = func_?(), iVar17 == 0)) goto code_?;
           func_?();
-code_?:
           RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
-          iVar17 = func_?();
-          if (iVar17 == 0) break;
+          iVar19 = func_?();
+          if (iVar19 == 0) break;
           this_01 = (MVNetworkGame *)&UNK_?;
-          this_02 = (MVCubeModelBase *)func_?();
-          MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged(this_02,in_stack_18,in_stack_7);
+          pMVar17 = (MVCubeModelBase *)func_?();
+          MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged(pMVar17,(bool)in_stack_18,(MethodInfo *)in_stack_7);
         }
       }
     }
   }
   func_?();
-code_?:
-  func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

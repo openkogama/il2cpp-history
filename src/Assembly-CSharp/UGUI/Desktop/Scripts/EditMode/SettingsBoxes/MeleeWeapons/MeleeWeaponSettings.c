@@ -178,7 +178,7 @@ code_?:
     if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar24,(Object *)StringLiteral_RecoilStrength,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,4.0047014e-29,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,4.004682e-29,(MethodInfo *)0x0);
     pSVar23 = (this->fields).RecoilStrengthInputSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData;
     if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar24,(Object *)StringLiteral_RecoilStrength,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0)) goto code_?;
@@ -202,7 +202,7 @@ code_?:
     if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar24,(Object *)StringLiteral_AttackCooldown,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_AttackCooldown,*pfVar20,4.0046872e-29,(float)pDVar2,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_Initialize(pSVar17,StringLiteral_AttackCooldown,*pfVar20,4.004668e-29,(float)pDVar2,(MethodInfo *)0x0);
     pSVar23 = (this->fields).attackCooldownInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData;
     if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)StringLiteral_AttackCooldown,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0)) goto code_?;

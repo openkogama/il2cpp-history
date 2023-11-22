@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::PickupItemThrowingStar::PickupItemThrowingStar_OnFire(
             lineOfFire.m_Direction.y = (float)uVar5;
             lineOfFire.m_Origin.z = (float)pMVar7;
             lineOfFire.m_Origin.x = 0.0;
-            lineOfFire.m_Origin.y = 4.2428766e-29;
+            lineOfFire.m_Origin.y = 4.2429826e-29;
             lineOfFire.m_Direction.x = (float)pIVar10;
             BulletThrowingStar::BulletThrowingStar_Fire(this_00,fVar8,fVar9,lineOfFire,ignoreWoIDs,(this->fields).bulletRangeFall,(this->fields).bulletFallRate,(MethodInfo *)0x0);
             iVar11 = (this->fields).currentAmmo.currentCryptoKey;

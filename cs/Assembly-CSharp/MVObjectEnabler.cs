@@ -16,7 +16,7 @@ public class MVObjectEnabler : MVLogicObject, ILogicWorldObject
 	private bool isInitialized;
 	[CompilerGenerated]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
-	private ObjectEnabler goObjectEnabler;
+	private readonly ObjectEnabler goObjectEnabler;
 	private bool showingOutline;
 
 	// Properties

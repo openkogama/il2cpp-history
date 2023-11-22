@@ -609,51 +609,50 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
   }
   uVar3 = 0;
   pVVar4 = *faceCorners;
+  cVar5 = '\0';
   if (pVVar4 == (Vector3__Array *)0x0) {
     func_?();
   }
   else {
-    pVVar5 = pVVar4->vector;
+    pVVar6 = pVVar4->vector;
     while( true ) {
       if ((int)pVVar4->max_length <= (int)uVar3) {
         return 0;
       }
-      if (pVVar4->max_length <= uVar3) break;
-      VStack_6.z = pVVar5->z;
-      VStack_6.x = pVVar5->x;
-      VStack_6.y = pVVar5->y;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_6,iStack_1,(MethodInfo *)0x0);
+      cVar5 = uVar3 < pVVar4->max_length;
+      if (!(bool)cVar5) break;
+      VStack_7.z = pVVar6->z;
+      VStack_7.x = pVVar6->x;
+      VStack_7.y = pVVar6->y;
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_7,iStack_1,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        VStack_6.x = (float)&TypeInfo__UnityEngine__Mathf;
+        VStack_7.x = (float)&TypeInfo__UnityEngine__Mathf;
         func_?();
         cRam_? = '\x01';
       }
-      fVar8 = ABS(fVar7);
-      if (ABS(fVar7) <= ABS(fStack_2)) {
-        fVar8 = ABS(fStack_2);
+      fVar9 = ABS(fVar8);
+      if (ABS(fVar8) <= ABS(fStack_2)) {
+        fVar9 = ABS(fStack_2);
       }
-      fVar9 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
-      fVar10 = fVar8 * 1e-06;
-      if (fVar8 * 1e-06 <= fVar9) {
-        fVar10 = fVar9;
+      fVar10 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * 8.0;
+      fVar11 = fVar9 * 1e-06;
+      if (fVar9 * 1e-06 <= fVar10) {
+        fVar11 = fVar10;
       }
-      if (fVar10 <= ABS(fStack_2 - fVar7)) {
+      if (fVar11 <= ABS(fStack_2 - fVar8)) {
         return 1;
       }
       uVar3 = uVar3 + 1;
-      pVVar5 = pVVar5 + 1;
+      pVVar6 = pVVar6 + 1;
     }
   }
-  uVar11 = func_?();
-  pbVar12 = (byte *)((ulonglong)uVar11 >> 0x20);
-  out(0x89,(int)uVar11);
-  bVar13 = (byte)uVar11 ^ 0x10;
-  bVar14 = *pbVar12;
-  *pbVar12 = *pbVar12 + bVar13;
-  cRam_? = cRam_? + unaff_BL + CARRY1(bVar14,bVar13);
-  pcVar15 = (code *)swi(3);
-  bVar16 = (*pcVar15)();
-  return bVar16;
+  func_?();
+  uRam_? = uVar3;
+  *(char *)(extraout_EDX + -0x77) = *(char *)(extraout_EDX + -0x77) + (char)((uint)extraout_EDX >> 8) + cVar5;
+  pcVar12 = (code *)swi(3);
+  uRam_? = uVar3;
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

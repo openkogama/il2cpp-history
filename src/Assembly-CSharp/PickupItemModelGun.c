@@ -291,7 +291,7 @@ code_?:
               if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              uVar24 = 0x1056bda700000000;
+              uVar24 = 0x1056bf1700000000;
               pAVar21 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar20,(MethodInfo *)0x0);
               if (pAVar21 == (Array *)0x0) break;
               piVar23 = (int *)&UNK_?;
@@ -850,7 +850,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = -14000;
+          iVar7 = -0x3540;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,(MethodInfo *)0x0);
           this_00 = (PickupItemModelGun *)pVVar8->x;
           pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,*pVVar8,(MethodInfo *)0x0);
