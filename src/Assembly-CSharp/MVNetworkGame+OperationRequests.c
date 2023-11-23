@@ -1428,8 +1428,9 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     ppMVar2 = ppMVar1;
   }
   bVar3 = PlayerPrefsManager::PlayerPrefsManager_get_IsReturningAsSignedUp((MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    ppMVar2 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 8);
+  ppMVar1 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 8);
+  if (bVar3 == 0) {
+    ppMVar1 = ppMVar2;
   }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
@@ -1437,9 +1438,9 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
   }
   pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar4 != (GameSessionData *)0x0) {
-    ppMVar1 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 1);
+    ppMVar2 = (MVGameControllerBase__Class **)((uint)ppMVar1 | 1);
     if ((pGVar4->fields).embedded != 0) {
-      ppMVar1 = ppMVar2;
+      ppMVar2 = ppMVar1;
     }
     this_00 = (Dictionary_2_System_Byte_System_Object_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__);
@@ -1503,7 +1504,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                   if (this_01 != (KoGaMaSettingsContainer *)0x0) {
                     pSVar11 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionString(this_01,(MethodInfo *)0x0);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__Add(this_00,0xd9,(Object *)pSVar11,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_);
-                    ppMStack_8 = ppMVar1;
+                    ppMStack_8 = ppMVar2;
                     pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&ppMStack_8);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__Add(this_00,0xcf,pOVar6,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_);
                     this_02 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>);
@@ -4975,19 +4976,23 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
     if (pSVar1->max_length - 1 < pSVar1->max_length) {
       if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) {
+        pMVar2 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)pSVar1->vector[pSVar1->max_length - 1],value,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
-        uVar2 = pSVar1->max_length - 2;
-        if (-1 < (int)uVar2) {
-          keyPath = (String *)(pSVar1->vector + (pSVar1->max_length - 2));
+        pcVar3 = (char *)(pSVar1->max_length - 2);
+        if (-1 < (int)pcVar3) {
+          ppSVar4 = pSVar1->vector + (pSVar1->max_length - 2);
+          keyPath = (String *)this_00;
           do {
             this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__);
-            if (pSVar1->max_length <= uVar2) goto code_?;
+            if (pMVar2->name <= pcVar3) goto code_?;
             if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0) goto code_?;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)keyPath->klass,(Object *)MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
-            keyPath = (String *)&keyPath[-1].fields._firstChar;
-            uVar2 = uVar2 - 1;
-          } while (-1 < (int)uVar2);
+            pMVar2 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)*ppSVar4,(Object *)keyPath,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
+            ppSVar4 = ppSVar4 + -1;
+            pcVar3 = pcVar3 + -1;
+            keyPath = (String *)this_00;
+          } while (-1 < (int)pcVar3);
         }
         this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__);
@@ -4998,12 +5003,12 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
           if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
           }
-          pSVar3 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-          uVar4._0_1_ = (pSVar3->SendReliable).Encrypt;
-          uVar4._1_1_ = (pSVar3->SendReliable).Channel;
-          uVar4._2_2_ = *(undefined2 *)&(pSVar3->SendReliable).field_0x6;
-          if (in_stack_5 != (int *)0x0) {
-            (**(code **)(*in_stack_5 + 0x110))(in_stack_5,4,this_01,(pSVar3->SendReliable).DeliveryMode,uVar4,*(undefined4 *)(*in_stack_5 + 0x114));
+          pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+          uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
+          uVar6._1_1_ = (pSVar5->SendReliable).Channel;
+          uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
+          if (in_stack_7 != (int *)0x0) {
+            (**(code **)(*in_stack_7 + 0x110))(in_stack_7,4,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6,*(undefined4 *)(*in_stack_7 + 0x114));
             return;
           }
         }
@@ -5015,8 +5020,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

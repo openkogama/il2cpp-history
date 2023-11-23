@@ -526,7 +526,7 @@ void Assembly-CSharp.dll::GameSetupMenu::GameSetupMenu_UpdateTierButtonVisibilit
         if (bVar3 == bVar1) {
           pGVar2 = (this->fields).inActiveGameTierButton;
           if (pGVar2 == (GameObject *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,bVar1 == 0,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,bVar1 ^ 1,(MethodInfo *)0x0);
         }
         return;
       }

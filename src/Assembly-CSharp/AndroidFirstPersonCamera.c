@@ -107,7 +107,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
       input.y = fVar4;
       input.x = fVar3;
       input.z = 0.0;
-      pVVar5 = InputMovementPrecisionModifier::InputMovementPrecisionModifier_GetPrecisionInput((Vector3 *)&stack0xffffffd8,this_00,input,(MethodInfo *)0x0);
+      pVVar5 = InputMovementPrecisionModifier::InputMovementPrecisionModifier_GetPrecisionInput((Vector3 *)&stack0xffffffe4,this_00,input,(MethodInfo *)0x0);
       uVar6 = pVVar5->x;
       uVar7 = pVVar5->y;
       inputVector.y = (float)uVar7;
@@ -115,7 +115,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
       this_01 = (this->fields).axisBias;
       if (this_01 != (AxisBias *)0x0) {
         inputVector.z = 0.0;
-        pVVar5 = AxisBias::AxisBias_GetBiasedVector((Vector3 *)&stack0xffffffd8,this_01,inputVector,(MethodInfo *)0x0);
+        pVVar5 = AxisBias::AxisBias_GetBiasedVector((Vector3 *)&stack0xffffffe4,this_01,inputVector,(MethodInfo *)0x0);
         uVar8 = pVVar5->x;
         uVar9 = pVVar5->y;
         (this->fields)._.targetRotation.x = (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;

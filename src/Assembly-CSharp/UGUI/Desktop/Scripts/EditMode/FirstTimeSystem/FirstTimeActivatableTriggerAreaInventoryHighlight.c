@@ -282,7 +282,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
           if (0 < iVar5) {
             bVar7 = bVar6 & bVar4 & bVar1;
           }
-          return bVar7 & bVar3 == 0;
+          return bVar7 & (bVar3 ^ 1);
         }
       }
     }

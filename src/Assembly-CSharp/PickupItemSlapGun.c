@@ -259,8 +259,8 @@ void Assembly-CSharp.dll::PickupItemSlapGun::PickupItemSlapGun_OnFire(PickupItem
                       pVVar50 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(pVVar6,value,(MethodInfo *)0x0);
                       uVar51 = pVVar50->x;
                       uVar52 = pVVar50->y;
-                      fVar25 = (pPVar1->fields).slapStrength;
                       fVar53 = pVVar50->z;
+                      fVar25 = (pPVar1->fields).slapStrength;
                       if (unaff_ESI == (MVWorldObjectClient *)0x0) goto code_?;
                       unaff_EBX = (IBulletImpactVisualizer__Class *)MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase(unaff_ESI,(MethodInfo *)0x0);
                       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {

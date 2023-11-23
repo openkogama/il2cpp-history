@@ -306,7 +306,7 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_O
     func_?(&StringLiteral_Found_wo_for_cloning);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
+  puStack_1 = (undefined *)0x0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__BytePacker);
     func_?(&TypeInfo__KoGaMaPackageClient);
@@ -339,17 +339,18 @@ code_?:
           pEVar3 = (this->fields).esm;
           if (pEVar3 == (EditorStateMachine *)0x0) goto code_?;
         }
-        iStack_1 = -1;
+        puStack_1 = (undefined *)0xffffffff;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar4 != (MVWorldObjectClientManager *)0x0) {
-          bVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetUnmodifiedWorldObject(pMVar4,this_01,&iStack_1,(MethodInfo *)0x0);
+          bVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetUnmodifiedWorldObject(pMVar4,this_01,(int32_t *)&puStack_1,(MethodInfo *)0x0);
           if (bVar2 == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Creating_new_wo,(MethodInfo *)0x0);
             pEVar3 = (this->fields).esm;
-            value = (Object *)func_?(TypeInfo__EditorEvent,&stack0xfffffff4);
+            uStack_5 = 0x13;
+            value = (Object *)func_?(TypeInfo__EditorEvent,&uStack_5);
             if (pEVar3 != (EditorStateMachine *)0x0) {
               FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar3,value,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
@@ -366,13 +367,13 @@ code_?:
                   func_?(&TypeInfo__UnityEngine__Vector3);
                   cRam_? = '\x01';
                 }
-                pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-                uVar6 = (pVVar5->upVector).x;
-                uVar7 = (pVVar5->upVector).y;
+                pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+                uVar7 = (pVVar6->upVector).x;
+                uVar8 = (pVVar6->upVector).y;
                 if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
-                  position.y = (float)uVar7 * 10.0;
-                  position.x = (float)uVar6 * 10.0;
-                  position.z = (pVVar5->upVector).z * 10.0;
+                  position.y = (float)uVar8 * 10.0;
+                  position.x = (float)uVar7 * 10.0;
+                  position.z = (pVVar6->upVector).z * 10.0;
                   MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AddItemToWorld(this_03,itemId,groupId,position,rotation,0,1,0,(MethodInfo *)0x0);
                   KoGaMaPackageClient::KoGaMaPackageClient_Destroy(this_01,(MethodInfo *)0x0);
                   return;
@@ -387,7 +388,7 @@ code_?:
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)StringLiteral_Found_wo_for_cloning,(MethodInfo *)0x0);
             pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
             if (pMVar4 != (MVWorldObjectClientManager *)0x0) {
-              original = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar4,iStack_1,(MethodInfo *)0x0);
+              original = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar4,(int32_t)puStack_1,(MethodInfo *)0x0);
               EditorWorldObjectCreation_Clone(this,original,0,0,1,(MethodInfo *)0x0);
               goto code_?;
             }
@@ -398,8 +399,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

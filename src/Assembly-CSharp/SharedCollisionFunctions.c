@@ -227,47 +227,45 @@ void Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_Get
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
   fVar4 = (pVVar1->oneVector).z;
+  uVar5 = CONCAT44((localSpaceBounds.m_Center.y - localSpaceBounds.m_Extents.y) + (float)uVar3 * 0.51,(localSpaceBounds.m_Center.x - localSpaceBounds.m_Extents.x) + (float)uVar2 * 0.51);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar5 = (pVVar1->oneVector).x;
-  uVar6 = (pVVar1->oneVector).y;
-  fVar7 = (pVVar1->oneVector).z;
-  fVar8 = (float)uVar5 * 0.49 + localSpaceBounds.m_Extents.x + localSpaceBounds.m_Center.x;
+  uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).y;
+  fVar7 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).z;
   vector.z = (localSpaceBounds.m_Center.z - localSpaceBounds.m_Extents.z) + fVar4 * 0.51;
-  vector.x = (float)uVar2 * 0.51 + (localSpaceBounds.m_Center.x - localSpaceBounds.m_Extents.x);
-  vector.y = (float)uVar3 * 0.51 + (localSpaceBounds.m_Center.y - localSpaceBounds.m_Extents.y);
-  pVVar9 = MathFunctions::MathFunctions_FloorVector((Vector3 *)&stack0xffffffb8,vector,(MethodInfo *)0x0);
-  uVar10 = pVVar9->x;
-  uVar11 = pVVar9->y;
-  fVar4 = pVVar9->z;
-  vector_00.y = (float)uVar6 * 0.49 + localSpaceBounds.m_Extents.y + localSpaceBounds.m_Center.y;
-  vector_00.x = fVar8;
-  vector_00.z = fVar7 * 0.49 + localSpaceBounds.m_Extents.z + localSpaceBounds.m_Center.z;
-  pVVar9 = MathFunctions::MathFunctions_FloorVector((Vector3 *)&stack0xffffffb8,vector_00,(MethodInfo *)0x0);
+  vector.x = (float)(int)uVar5;
+  vector.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+  pVVar8 = MathFunctions::MathFunctions_FloorVector((Vector3 *)&stack0xffffffb0,vector,(MethodInfo *)0x0);
+  uVar9._0_4_ = pVVar8->x;
+  uVar9._4_4_ = pVVar8->y;
+  fVar4 = pVVar8->z;
+  auVar10._4_4_ = localSpaceBounds.m_Extents.z + localSpaceBounds.m_Center.z + fVar7 * 0.49;
+  auVar10._0_4_ = localSpaceBounds.m_Extents.y + localSpaceBounds.m_Center.y + (float)uVar6 * 0.49;
+  auVar10._8_4_ = 0;
+  pVVar8 = MathFunctions::MathFunctions_FloorVector((Vector3 *)&stack0xffffffb0,(Vector3)(auVar10 << 0x20),(MethodInfo *)0x0);
   key = 0;
-  uVar12 = pVVar9->x;
-  uVar13 = pVVar9->y;
-  fVar7 = pVVar9->z;
+  uVar11 = pVVar8->x;
+  uVar12 = pVVar8->y;
+  fVar7 = pVVar8->z;
   do {
     if (key == 0) {
-      fVar8 = (float)uVar10;
+      fVar13 = (float)uVar9;
     }
     else if (key == 1) {
-      fVar8 = (float)uVar11;
+      fVar13 = (float)(uVar9 >> 0x20);
     }
     else {
-      fVar8 = fVar4;
+      fVar13 = fVar4;
       if (key != 2) goto code_?;
     }
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__IntVector);
+      func_?();
     }
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item(min,key,(int16_t)(int)fVar8,(MethodInfo *)0x0);
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item(min,key,(int16_t)(int)fVar13,(MethodInfo *)0x0);
     if (key == 0) {
-      fVar8 = (float)uVar12;
+      fVar13 = (float)uVar11;
     }
     else {
       if (key != 1) {
@@ -276,20 +274,21 @@ void Assembly-CSharp.dll::SharedCollisionFunctions::SharedCollisionFunctions_Get
           return;
         }
 code_?:
-        uVar14 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-        this = (IndexOutOfRangeException *)func_?(uVar14);
-        method_00 = (MethodInfo *)0x0;
-        message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
-        mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this,message,method_00);
-        func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
         func_?();
-        pcVar15 = (code *)swi(3);
-        (*pcVar15)();
+        this = (IndexOutOfRangeException *)func_?();
+        method_00 = (MethodInfo *)0x0;
+        message = (String *)func_?();
+        mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1(this,message,method_00);
+        func_?();
+        func_?();
+        pcVar14 = (code *)swi(3);
+        (*pcVar14)();
         return;
       }
-      fVar8 = (float)uVar13;
+      fVar13 = (float)uVar12;
     }
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item(max,key,(int16_t)(int)fVar8,(MethodInfo *)0x0);
+    uVar9 = (ulonglong)(uint)(int)fVar13 & 0xffffffff0000ffff;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item(max,key,(int16_t)uVar9,(MethodInfo *)0x0);
     key = key + 1;
   } while( true );
 }

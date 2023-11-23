@@ -122,43 +122,41 @@ Vector3 * Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreato
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * 2.2;
-  fVar5 = (float)uVar3 * 2.2;
-  fVar6 = (pVVar1->oneVector).z * 2.2;
+  fVar4 = (pVVar1->oneVector).z * 2.2;
   this_00 = (this->fields)._._._.gameObject;
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar5 = TypeInfo__SharedCubeFunctions;
+      pSVar6 = (SharedCubeFunctions__Class *)((float)uVar2 * 2.2);
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar6 = pSVar5;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
-      scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
-      __return_storage_ptr__->y = fVar5;
+      rotation.y = (float)pSVar6;
+      rotation.x = gridSize;
+      rotation.z = (float)uVar3 * 2.2;
+      rotation.w = fVar4;
+      scale.y = (float)uVar3 * 2.2;
+      scale.x = (float)pSVar6;
+      scale.z = fVar4;
+      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
+      fVar8 = pVVar7->y;
+      fVar4 = pVVar7->z;
+      __return_storage_ptr__->x = pVVar7->x;
+      __return_storage_ptr__->y = fVar8;
       __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar7 = (Vector3 *)(*pcVar9)();
+  return pVVar7;
 }
 
 
@@ -695,56 +693,54 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Try
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
-    pMVar4 = extraout_EDX;
+    originalBody = extraout_EDX;
   }
   else {
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_bodyId,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar6 = (int32_t *)func_?();
-    unaff_EDI = (MVGroup__Class *)*piVar6;
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_bodyId,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar5 = (int32_t *)func_?();
+    unaff_EDI = (MVGroup__Class *)*piVar5;
     this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    originalBody = (MVGroup__Class *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_01,(int32_t)unaff_EDI,(MethodInfo *)0x0);
-    unaff_EDI = originalBody;
-    if (originalBody == (MVGroup__Class *)0x0) {
+    originalBody = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_01,(int32_t)unaff_EDI,(MethodInfo *)0x0);
+    unaff_EDI = (MVGroup__Class *)TypeInfo__MVWorldObjectClient;
+    if (originalBody == (MVWorldObjectClient *)0x0) {
 code_?:
       this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)MVGroup::MVGroup_get_Children((MVGroup *)this,(MethodInfo *)0x0);
       if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffffd8,this_02,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__);
-        RVar8 = pLVar7->_current;
+        pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffffd8,this_02,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__);
+        RVar7 = pLVar6->_current;
         uStack_1 = 1;
         do {
-          bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__);
-          if (bVar9 == 0) goto code_?;
-        } while ((((RVar8 == (RegexCharClass_SingleRange)0x0) || (*(byte *)(*(int *)RVar8 + 0xb8) < (TypeInfo__MVBody->_1).naturalAligment)) || (*(MVBody__Class **)(*(int *)(*(int *)RVar8 + 100) + -4 + (uint)(TypeInfo__MVBody->_1).naturalAligment * 4) != TypeInfo__MVBody)) || (RVar8 == (RegexCharClass_SingleRange)0x0));
+          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__);
+          if (bVar8 == 0) goto code_?;
+        } while ((((RVar7 == (RegexCharClass_SingleRange)0x0) || (*(byte *)(*(int *)RVar7 + 0xb8) < (TypeInfo__MVBody->_1).naturalAligment)) || (*(MVBody__Class **)(*(int *)(*(int *)RVar7 + 100) + -4 + (uint)(TypeInfo__MVBody->_1).naturalAligment * 4) != TypeInfo__MVBody)) || (RVar7 == (RegexCharClass_SingleRange)0x0));
         MVAvatarSpawnRoleCreator_ShowBody(this,(MVWorldObjectClient *)this,(MethodInfo *)0x0);
 code_?:
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__,in_stack_10);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55((Object *)&stack0xffffffc8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__,in_stack_9);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       goto code_?;
     }
-    pIVar11 = (originalBody->_0).image;
-    pMVar4 = TypeInfo__MVWorldObjectClient;
-    if (((TypeInfo__MVWorldObjectClient->_1).naturalAligment <= *(byte *)&pIVar11[4].assembly) && (*(MVWorldObjectClient__Class **)((pIVar11[2].typeCount - 4) + (uint)(TypeInfo__MVWorldObjectClient->_1).naturalAligment * 4) == TypeInfo__MVWorldObjectClient)) {
+    if (((TypeInfo__MVWorldObjectClient->_1).naturalAligment <= (originalBody->klass->_1).naturalAligment) && ((MVWorldObjectClient__Class *)(originalBody->klass->_1).typeHierarchy[(TypeInfo__MVWorldObjectClient->_1).naturalAligment - 1] == TypeInfo__MVWorldObjectClient)) {
       unaff_EDI = TypeInfo__MVGroup;
-      if (((TypeInfo__MVGroup->_1).naturalAligment <= *(byte *)&(originalBody->_0).image[4].assembly) && (*(MVGroup__Class **)(((originalBody->_0).image[2].typeCount - 4) + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4) == TypeInfo__MVGroup)) {
-        MVAvatarSpawnRoleCreator_ShowBody(this,(MVWorldObjectClient *)originalBody,(MethodInfo *)0x0);
+      if (((TypeInfo__MVGroup->_1).naturalAligment <= (originalBody->klass->_1).naturalAligment) && ((MVGroup__Class *)(originalBody->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] == TypeInfo__MVGroup)) {
+        MVAvatarSpawnRoleCreator_ShowBody(this,originalBody,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       goto code_?;
     }
   }
-  uVar12 = func_?(unaff_EDI,pMVar4);
-  func_?(uVar12);
+  uVar10 = func_?(originalBody,unaff_EDI);
+  func_?(uVar10);
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -942,22 +938,21 @@ MVPreviewAvatar * Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRo
   this_00 = (this->fields)._._.children;
   if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
     func_?();
-    pMVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = (MVPreviewAvatar *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields)._AvatarRuntimePrototypeRoot_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_);
     if (unaff_ESI == (MVPreviewAvatar *)0x0) {
       return (MVPreviewAvatar *)0x0;
     }
-    pMVar1 = TypeInfo__MVPreviewAvatar;
+    unaff_EDI = TypeInfo__MVPreviewAvatar;
     if (((TypeInfo__MVPreviewAvatar->_1).naturalAligment <= (unaff_ESI->klass->_1).naturalAligment) && ((MVPreviewAvatar__Class *)(unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__MVPreviewAvatar->_1).naturalAligment - 1] == TypeInfo__MVPreviewAvatar)) {
       return unaff_ESI;
     }
   }
-  func_?(unaff_ESI,pMVar1);
-  pcVar2 = (code *)swi(3);
-  pMVar3 = (MVPreviewAvatar *)(*pcVar2)();
-  return pMVar3;
+  func_?(unaff_ESI,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pMVar2 = (MVPreviewAvatar *)(*pcVar1)();
+  return pMVar2;
 }
 
 

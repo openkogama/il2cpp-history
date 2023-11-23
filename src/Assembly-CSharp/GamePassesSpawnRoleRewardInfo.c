@@ -204,7 +204,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
       if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0xa2,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0xe2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -403,43 +403,43 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
       }
       pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
       if (pIVar2 == (IEditModeUI *)0x0) goto code_?;
-      cVar3 = func_?(1,TypeInfo__IEditModeUI,pIVar2);
-      bVar4 = cVar3 == '\0';
+      bStack_3 = func_?(1,TypeInfo__IEditModeUI,pIVar2);
+      bStack_3 = bStack_3 ^ 1;
     }
     else {
-      bVar4 = false;
+      bStack_3 = 0;
     }
-    pGVar5 = (this->fields).lockedUI;
+    pGVar4 = (this->fields).lockedUI;
     if (playerHasUnlockedTier == 0) {
       if (isTierUnlockable == 0) {
-        bVar6 = 1;
+        bVar5 = 1;
       }
       else {
-        MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        bVar8 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-        bVar6 = bVar8 & MVar7 != MVGameMode__Enum_Edit ^ 1;
+        MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        bVar7 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+        bVar5 = -(MVar6 != MVGameMode__Enum_Edit) & bVar7 ^ 1;
       }
     }
     else {
-      bVar6 = 0;
+      bVar5 = 0;
     }
-    if (pGVar5 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar4 | bVar6,(MethodInfo *)0x0);
-      pGVar5 = (this->fields).freeTryUI;
-      if (((isTierUnlockable & (playerHasUnlockedTier ^ 1)) == 0) || (bVar4 != false)) {
-        bVar8 = 0;
+    if (pGVar4 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,bVar5 | bStack_3,(MethodInfo *)0x0);
+      pGVar4 = (this->fields).freeTryUI;
+      if (((isTierUnlockable & (playerHasUnlockedTier ^ 1)) == 0) || (bStack_3 != 0)) {
+        bVar5 = 0;
       }
       else {
-        MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        this = (GamePassesSpawnRoleRewardInfo *)0x0;
-        bVar8 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-        bVar8 = -(MVar7 != MVGameMode__Enum_Edit) & bVar8;
+        MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        bVar7 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+        bVar5 = -(MVar6 != MVGameMode__Enum_Edit) & bVar7;
+        bStack_3 = 0x10;
       }
-      if (pGVar5 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar8,(MethodInfo *)0x0);
-        pGVar5 = (this->fields).unlockedUI;
-        if (pGVar5 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,(bVar4 ^ 1U) & playerHasUnlockedTier,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,bVar5,(MethodInfo *)0x0);
+        pGVar4 = (this->fields).unlockedUI;
+        if (pGVar4 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,(bStack_3 ^ 1) & playerHasUnlockedTier,(MethodInfo *)0x0);
           return;
         }
       }
@@ -447,8 +447,8 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1316,7 +1316,7 @@ code_?:
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)&UNK_?,MethodInfo__GamePassesSpawnRoleRewardInfo____c__DisplayClass53_0___OnPlayerPlanetDataUpdated_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar6,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-      SpawnRoleUnlockedPopupController::SpawnRoleUnlockedPopupController_Initialize((SpawnRoleUnlockedPopupController *)0xf41c0d8b,(uint)(this->fields).tierRequirment,0,1,(this->fields).woid,(MethodInfo *)0x0);
+      SpawnRoleUnlockedPopupController::SpawnRoleUnlockedPopupController_Initialize((SpawnRoleUnlockedPopupController *)0x8c840d8b,(uint)(this->fields).tierRequirment,0,1,(this->fields).woid,(MethodInfo *)0x0);
       pSVar11 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&(this->fields).woid,(MethodInfo *)0x0);
       pSVar11 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_PLAY_WOID_,pSVar11,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {

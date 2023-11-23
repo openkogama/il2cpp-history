@@ -347,8 +347,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar6->vtable[0].methodPtr & 0x100) == 0) {
         pIVar6 = (Il2CppClass *)func_?(pIVar6);
       }
-      cVar8 = func_?(&b,uVar7,pIVar6->rgctx_data[0x10].rgctxDataDummy);
-      return cVar8 == '\0';
+      bVar8 = func_?(&b,uVar7,pIVar6->rgctx_data[0x10].rgctxDataDummy);
+      return bVar8 ^ 1;
     }
   }
   func_?();
@@ -382,8 +382,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar6->vtable[0].methodPtr & 0x100) == 0) {
         pIVar6 = (Il2CppClass *)func_?(pIVar6);
       }
-      cVar8 = func_?(&b,uVar7,pIVar6->rgctx_data[0x10].rgctxDataDummy);
-      return cVar8 == '\0';
+      bVar8 = func_?(&b,uVar7,pIVar6->rgctx_data[0x10].rgctxDataDummy);
+      return bVar8 ^ 1;
     }
   }
   func_?();
@@ -432,8 +432,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      cVar13 = func_?(&fStack_3,uVar12,pIVar1->rgctx_data[0x10].rgctxDataDummy);
-      return cVar13 == '\0';
+      bVar13 = func_?(&fStack_3,uVar12,pIVar1->rgctx_data[0x10].rgctxDataDummy);
+      return bVar13 ^ 1;
     }
   }
   func_?();

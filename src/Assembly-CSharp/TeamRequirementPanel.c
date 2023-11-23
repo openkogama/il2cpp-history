@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
     pTVar1 = (this->fields)._.textField;
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     method_00 = MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_;
-    if ((((pMVar2 != (MVNetworkGame *)0x0) && (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) && (this_01 = (pMVar3->fields).teamNames, this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) && (team != (Object *)0x0)) {
+    if ((((pMVar2 != (MVNetworkGame *)0x0) && (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) && (this_01 = (pMVar3->fields).teamNames, this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) && (this = (TeamRequirementPanel *)team, team != (Object *)0x0)) {
       if ((team->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
         pIVar4 = (Int32Enum__Enum *)func_?(team);
         pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,*pIVar4,method_00);
@@ -31,7 +31,10 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  out(*(undefined1 *)&this->klass,extraout_DX);
+  out(*(undefined1 *)((int)&this->klass + 1),extraout_DX);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
 }
 

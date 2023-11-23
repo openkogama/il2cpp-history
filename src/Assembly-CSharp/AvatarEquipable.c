@@ -200,7 +200,6 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_GetIsEquipped(AvatarE
   if (this_00 == (MVRuntimeDataVariable *)0x0) {
 code_?:
     func_?();
-    type = (AvatarItemType__Enum)unaff_ESI;
   }
   else {
     unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
@@ -213,7 +212,6 @@ code_?:
       return 0;
     }
     TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(unaff_ESI,(Object *)StringLiteral_type,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)type;
     if (TVar4.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) == (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
       piVar5 = (int *)func_?();
@@ -222,7 +220,6 @@ code_?:
   }
   func_?();
   pDVar1 = extraout_EDX;
-  unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)type;
 code_?:
   func_?(unaff_ESI,pDVar1);
   pcVar6 = (code *)swi(3);
@@ -283,9 +280,9 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_Init(AvatarEquipable 
   func_?(&(this->fields).currentItem,currentItem);
   if (skillsDataManager != (WorldObjectSkillDataManager *)0x0) {
     bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill(skillsDataManager,StringLiteral_UnableToCollectModifierPickups,(MethodInfo *)0x0);
-    (this->fields).isAbleToCollectPickups = bVar1 == 0;
+    (this->fields).isAbleToCollectPickups = bVar1 ^ 1;
     bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill(skillsDataManager,StringLiteral_UnableToEquipWeapons,(MethodInfo *)0x0);
-    (this->fields).isAbleToEquipWeapons = bVar1 == 0;
+    (this->fields).isAbleToEquipWeapons = bVar1 ^ 1;
     return;
   }
   func_?();

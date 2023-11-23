@@ -91,8 +91,8 @@ Vector3 * Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_ExtrapolateP
         uVar9 = (pNVar1->fields).position.x;
         uVar10 = (pNVar1->fields).position.y;
         fVar11 = (pNVar1->fields).position.z;
-        __return_storage_ptr__->x = (float)uVar9 + fVar8 * ((float)uVar2 - (float)uVar5);
-        __return_storage_ptr__->y = (float)uVar10 + fVar8 * ((float)uVar3 - (float)uVar6);
+        __return_storage_ptr__->x = (float)uVar9 + ((float)uVar2 - (float)uVar5) * fVar8;
+        __return_storage_ptr__->y = (float)uVar10 + ((float)uVar3 - (float)uVar6) * fVar8;
         __return_storage_ptr__->z = fVar11 + (fVar4 - fVar7) * fVar8;
         return __return_storage_ptr__;
       }
@@ -398,22 +398,19 @@ code_?:
           uStack_16._4_4_ = (pNVar12->fields).position.y;
           fStack_17 = (pNVar12->fields).position.z;
           if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
-          uStack_18._0_4_ = (pNVar3->fields).position.x;
-          uStack_18._4_4_ = (pNVar3->fields).position.y;
-          fStack_19 = (pNVar3->fields).position.z;
-          fVar7 = (float)(undefined4)uStack_16 - (float)(undefined4)uStack_18;
-          fVar8 = (float)uStack_16._4_4_ - (float)uStack_18._4_4_;
-          fVar9 = fStack_17 - fStack_19;
+          QStack_18.y = (pNVar3->fields).position.x;
+          QStack_18.z = (pNVar3->fields).position.y;
+          QStack_18.w = (pNVar3->fields).position.z;
           fVar6 = (float)this - 1.0;
           pNVar3 = (pMVar1->fields).nextPackage;
           if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
-          uStack_18._0_4_ = (pNVar3->fields).position.x;
-          uStack_18._4_4_ = (pNVar3->fields).position.y;
-          fStack_19 = (pNVar3->fields).position.z;
-          uStack_16 = CONCAT44((float)uStack_18._4_4_ + fVar8 * fVar6,(float)(undefined4)uStack_18 + fVar7 * fVar6);
-          fStack_17 = fStack_19 + fVar9 * fVar6;
+          uVar19 = (pNVar3->fields).position.x;
+          uVar20 = (pNVar3->fields).position.y;
+          QStack_18.w = (pNVar3->fields).position.z + fVar6 * (fStack_17 - QStack_18.w);
+          QStack_18.z = (float)uVar20 + fVar6 * ((float)uStack_16._4_4_ - QStack_18.z);
+          QStack_18.y = (float)uVar19 + fVar6 * ((float)(undefined4)uStack_16 - QStack_18.y);
           if (pMVar4 == (MVWorldObjectClient *)0x0) goto code_?;
-          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,uStack_16,fStack_17,(pMVar4->klass->vtable).get_Rotation.methodPtr);
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,QStack_18._4_8_,QStack_18.w,(pMVar4->klass->vtable).get_Rotation.methodPtr);
           pMVar4 = (pMVar1->fields)._.worldObject;
           pNVar3 = (pMVar1->fields).nextPackage;
           if ((pNVar3 == (NetworkTransformPackage *)0x0) || (pMVar4 == (MVWorldObjectClient *)0x0)) goto code_?;
@@ -425,9 +422,9 @@ code_?:
         }
         pNVar3 = (pMVar1->fields).nextPackage;
         if ((pNVar3 != (NetworkTransformPackage *)0x0) && (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
-          uVar20._0_4_ = (pNVar3->fields).position.x;
-          uVar20._4_4_ = (pNVar3->fields).position.y;
-          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,uVar20,(pNVar3->fields).position.z,(pMVar4->klass->vtable).get_Rotation.methodPtr);
+          uVar21._0_4_ = (pNVar3->fields).position.x;
+          uVar21._4_4_ = (pNVar3->fields).position.y;
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,uVar21,(pNVar3->fields).position.z,(pMVar4->klass->vtable).get_Rotation.methodPtr);
           pNVar3 = (pMVar1->fields).nextPackage;
           if ((pNVar3 != (NetworkTransformPackage *)0x0) && (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
             (*(code *)(pMVar4->klass->vtable).set_Rotation.method)(pMVar4,(pNVar3->fields).rotation.x,(pNVar3->fields).rotation.y,(pNVar3->fields).rotation.z,(pNVar3->fields).rotation.w,(pMVar4->klass->vtable).get_Scale.methodPtr);
@@ -450,9 +447,8 @@ code_?:
       fStack_17 = (pNVar3->fields).position.z;
       pNVar3 = (pMVar1->fields).nextPackage;
       if (pNVar3 != (NetworkTransformPackage *)0x0) {
-        uStack_18._0_4_ = (pNVar3->fields).position.x;
-        uStack_18._4_4_ = (pNVar3->fields).position.y;
-        fStack_19 = (pNVar3->fields).position.z;
+        uVar22 = (pNVar3->fields).position.x;
+        uVar23 = (pNVar3->fields).position.y;
         if ((float)this < 0.0) {
           pMVar15 = (MVNetworkListener *)0x0;
         }
@@ -462,15 +458,15 @@ code_?:
             pMVar15 = this;
           }
         }
-        QStack_21.y = ((float)(undefined4)uStack_18 - (float)(undefined4)uStack_16) * (float)pMVar15 + (float)(undefined4)uStack_16;
-        QStack_21.z = ((float)uStack_18._4_4_ - (float)uStack_16._4_4_) * (float)pMVar15 + (float)uStack_16._4_4_;
-        QStack_21.w = (fStack_19 - fStack_17) * (float)pMVar15 + fStack_17;
+        QStack_18.w = ((pNVar3->fields).position.z - fStack_17) * (float)pMVar15 + fStack_17;
+        QStack_18.z = ((float)uVar23 - (float)uStack_16._4_4_) * (float)pMVar15 + (float)uStack_16._4_4_;
+        QStack_18.y = ((float)uVar22 - (float)(undefined4)uStack_16) * (float)pMVar15 + (float)(undefined4)uStack_16;
         if (pMVar4 != (MVWorldObjectClient *)0x0) {
-          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,CONCAT44(QStack_21.z,QStack_21.y),QStack_21.w,(pMVar4->klass->vtable).get_Rotation.methodPtr);
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)(pMVar4,QStack_18._4_8_,QStack_18.w,(pMVar4->klass->vtable).get_Rotation.methodPtr);
           pNVar3 = (pMVar1->fields).currentPackage;
           pMVar4 = (pMVar1->fields)._.worldObject;
-          if (((pNVar3 != (NetworkTransformPackage *)0x0) && (pNVar12 = (pMVar1->fields).nextPackage, pNVar12 != (NetworkTransformPackage *)0x0)) && (pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp(&QStack_21,(pNVar3->fields).rotation,(pNVar12->fields).rotation,(float)this,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClient *)0x0)) {
-            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)(pMVar4,pQVar22->x,pQVar22->y,pQVar22->z,pQVar22->w,(pMVar4->klass->vtable).get_Scale.methodPtr);
+          if (((pNVar3 != (NetworkTransformPackage *)0x0) && (pNVar12 = (pMVar1->fields).nextPackage, pNVar12 != (NetworkTransformPackage *)0x0)) && (pQVar24 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp(&QStack_18,(pNVar3->fields).rotation,(pNVar12->fields).rotation,(float)this,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClient *)0x0)) {
+            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)(pMVar4,pQVar24->x,pQVar24->y,pQVar24->z,pQVar24->w,(pMVar4->klass->vtable).get_Scale.methodPtr);
             return;
           }
         }
@@ -479,8 +475,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

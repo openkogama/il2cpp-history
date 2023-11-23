@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::MVNetworkGame
             }
             iVar4 = func_?(0);
             if (iVar4 != 0) {
-              bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty(*(String **)(iVar4 + 0x38),(MethodInfo *)0x0);
+              bVar5 = mscorlib.dll::System::String::String_IsNullOrEmpty(*(String **)(iVar4 + 0x3c),(MethodInfo *)0x0);
               if (bVar5 != 0) {
                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
@@ -85,7 +85,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::MVNetworkGame
               UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor(this_04,(MethodInfo *)0x0);
               iVar4 = func_?();
               if ((iVar4 != 0) && (this_04 != (WWWForm *)0x0)) {
-                UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField(this_04,StringLiteral_token,*(String **)(iVar4 + 0x20),(MethodInfo *)0x0);
+                UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField(this_04,StringLiteral_token,*(String **)(iVar4 + 0x24),(MethodInfo *)0x0);
                 iVar4 = func_?(0);
                 if (iVar4 != 0) {
                   UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2(this_04,StringLiteral_profile_id,*(int32_t *)(iVar4 + 0xc),(MethodInfo *)0x0);
@@ -94,7 +94,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationResponseHandling::MVNetworkGame
                     UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2(this_04,StringLiteral_planet_id,*(int32_t *)(iVar4 + 0x10),(MethodInfo *)0x0);
                     iVar4 = func_?(0);
                     if (iVar4 != 0) {
-                      pSVar2 = *(String **)(iVar4 + 0x38);
+                      pSVar2 = *(String **)(iVar4 + 0x3c);
                       this_05 = (PostRequest *)func_?(TypeInfo__PostRequest);
                       PostRequest::PostRequest__ctor(this_05,pSVar2,this_04,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0,WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
                       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -251,8 +251,7 @@ code_?:
       purchaseResponseData = (Dictionary_2_System_Object_System_Object_ *)0x0;
       if (returnValues == (Dictionary_2_System_Byte_System_Object_ *)0x0) break;
       bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__ContainsKey(returnValues,0x5f,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__ContainsKey_unsigned_char_);
-      if (bVar5 == 0) {
-code_?:
+      if (((bVar5 == 0) || (purchaseResponseData = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item(returnValues,0x5f,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_), purchaseResponseData == (Dictionary_2_System_Object_System_Object_ *)0x0)) || ((unaff_EDI = returnValues, (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (purchaseResponseData->klass->_1).naturalAligment && ((Dictionary_2_System_Object_System_Object___Class *)(purchaseResponseData->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
         pMVar1 = (this->fields).networkGame;
         if (pMVar1 == (MVNetworkGame *)0x0) break;
         MVNetworkGame::MVNetworkGame_OnPurchaseProductResponse(pMVar1,(int)returnCode,purchaseResponseData,(MethodInfo *)0x0);
@@ -266,28 +265,19 @@ code_?:
         if ((pMVar1 == (MVNetworkGame *)0x0) || (pOVar6 == (Object *)0x0)) break;
         pIVar7 = TypeInfo__System__Int32;
         unaff_EDI = returnValues;
-        if ((pOVar6->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-          puVar18 = (undefined4 *)func_?();
-          (pMVar1->fields).ReceivedAccessoryData = (Action_1_String_ *)*puVar18;
-          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar17 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0), pMVar17 == (MVLocalPlayer *)0x0)) break;
-          if ((pMVar17->fields)._.OnGoldAmountChange == (Action *)0x0) {
-            return;
-          }
-          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar17 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0), pMVar17 == (MVLocalPlayer *)0x0)) break;
-          pAVar19 = (pMVar17->fields)._.OnGoldAmountChange;
-          goto code_?;
+        if ((pOVar6->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        puVar18 = (undefined4 *)func_?();
+        (pMVar1->fields).ReceivedAccessoryData = (Action_1_String_ *)*puVar18;
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar17 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0), pMVar17 == (MVLocalPlayer *)0x0)) break;
+        if ((pMVar17->fields)._.OnGoldAmountChange == (Action *)0x0) {
+          return;
         }
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar17 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0), pMVar17 == (MVLocalPlayer *)0x0)) break;
+        pAVar19 = (pMVar17->fields)._.OnGoldAmountChange;
         goto code_?;
       }
-      purchaseResponseData = (Dictionary_2_System_Object_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item(returnValues,0x5f,MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_);
-      if (purchaseResponseData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-        purchaseResponseData = (Dictionary_2_System_Object_System_Object_ *)0x0;
-        goto code_?;
-      }
-      unaff_EDI = returnValues;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (purchaseResponseData->klass->_1).naturalAligment) && ((Dictionary_2_System_Object_System_Object___Class *)(purchaseResponseData->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
       goto code_?;
     case MVOperationCodes__Enum_AddItemToWorld:
       pMVar1 = (this->fields).networkGame;
@@ -335,7 +325,13 @@ code_?:
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar1 == (MVNetworkGame *)0x0) break;
       pAVar19 = (pMVar1->fields).OnActiveAvatarSet;
-      goto code_?;
+code_?:
+      if (pAVar19 != (Action *)0x0) {
+code_?:
+        (*(pAVar19->fields)._._.invoke_impl)((pAVar19->fields)._._.method_code,(pAVar19->fields)._._.method);
+        return;
+      }
+      break;
     case MVOperationCodes__Enum_AddItemToMarketPlace:
       if (returnCode != 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -505,12 +501,6 @@ code_?:
         if ((iVar4 == 0) || (iVar4 = func_?(4,TypeInfo__IEditModeUI,iVar4), iVar4 == 0)) goto code_?;
         pAVar19 = *(Action **)(iVar4 + 0x10);
       }
-code_?:
-      if (pAVar19 != (Action *)0x0) {
-code_?:
-        (*(pAVar19->fields)._._.invoke_impl)((pAVar19->fields)._._.method_code,(pAVar19->fields)._._.method);
-        return;
-      }
       goto code_?;
     }
     if (MVOperationCodes__Enum_SetFirstTimeEvent < (byte)(undefined1)opCode) {
@@ -632,7 +622,8 @@ code_?:
   }
 code_?:
   func_?();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

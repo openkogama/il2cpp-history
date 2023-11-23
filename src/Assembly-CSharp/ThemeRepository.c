@@ -261,7 +261,7 @@ ThemeWorldObject * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_Cur
     }
   }
   func_?();
-  pTStack4 = unaff_ESI;
+  pTStack4 = unaff_EDI;
 code_?:
   func_?();
   pcVar5 = (code *)swi(3);

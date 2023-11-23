@@ -99,8 +99,8 @@ void Assembly-CSharp.dll::PlayerElementHold::PlayerElementHold_Initialize(Player
         pIVar4 = (this->fields).redDot;
         if ((pIVar4 == (Image *)0x0) || (player = (MVPlayer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar4,(MethodInfo *)0x0), player == (MVPlayer *)0x0)) goto code_?;
         scoreValue = 0;
-        typeToDisplay = (GameStatCounterType__Enum)(bVar6 == 0);
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)player,bVar6 == 0,(MethodInfo *)0x0);
+        typeToDisplay = (GameStatCounterType__Enum)(bVar6 ^ 1);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)player,bVar6 ^ 1,(MethodInfo *)0x0);
       }
       if (bVar3 == false) {
 code_?:

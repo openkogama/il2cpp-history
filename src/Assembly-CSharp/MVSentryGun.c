@@ -21,9 +21,9 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ApplyDamage(MVSentryGun *this
   auStack_3._8_4_ = (float)auStack_4._8_4_ - (float)uVar7;
   auStack_4._16_4_ = auStack_3._16_4_;
   puVar2 = (undefined8 *)func_?(&IStack_6.impulse.y,auStack_3 + 8,0);
-  auStack_4._16_4_ = (this->fields).pushBackStrength;
   auStack_3._8_8_ = *puVar2;
   auStack_3._16_4_ = *(undefined4 *)(puVar2 + 1);
+  auStack_4._16_4_ = (this->fields).pushBackStrength;
   auStack_4._8_4_ = (float)auStack_3._8_4_ * (float)auStack_4._16_4_;
   auStack_4._12_4_ = (float)auStack_3._12_4_ * (float)auStack_4._16_4_;
   auStack_4._16_4_ = (float)auStack_3._16_4_ * (float)auStack_4._16_4_;
@@ -396,7 +396,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
               return;
             }
             if (*(SphereVolumeIndicator **)(iVar7 + 0x54) != (SphereVolumeIndicator *)0x0) {
-              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),-1.883509e-07,(MethodInfo *)0x0);
+              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),-1873.9219,(MethodInfo *)0x0);
               return;
             }
           }

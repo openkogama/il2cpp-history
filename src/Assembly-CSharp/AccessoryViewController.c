@@ -357,10 +357,10 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_ShowB
                 fVar13 = pQVar11->z;
                 fVar14 = pQVar11->w;
                 if (this_03 != (Transform *)0x0) {
-                  value.y = (fVar12 * fVar10 + fVar14 * fVar8 + pQVar11->x * fVar9) - fVar13 * fVar7;
-                  value.x = (pQVar11->x * fVar10 + fVar14 * fVar7 + fVar13 * fVar8) - fVar12 * fVar9;
-                  value.z = (fVar13 * fVar10 + fVar14 * fVar9 + fVar12 * fVar7) - pQVar11->x * fVar8;
-                  value.w = ((fVar14 * fVar10 - pQVar11->x * fVar7) - fVar12 * fVar8) - fVar13 * fVar9;
+                  value.y = (fVar8 * fVar14 + fVar12 * fVar10 + fVar9 * pQVar11->x) - fVar13 * fVar7;
+                  value.x = (fVar14 * fVar7 + pQVar11->x * fVar10 + fVar13 * fVar8) - fVar12 * fVar9;
+                  value.z = (fVar9 * fVar14 + fVar13 * fVar10 + fVar12 * fVar7) - fVar8 * pQVar11->x;
+                  value.w = ((fVar14 * fVar10 - fVar7 * pQVar11->x) - fVar12 * fVar8) - fVar9 * fVar13;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_03,value,(MethodInfo *)0x0);
                   pAVar15 = (pAVar5->fields).toPreviewer;
                   if ((pAVar15 != (AvatarPreviewer *)0x0) && (this_01 = (pAVar15->fields).previewCam, this_01 != (Camera *)0x0)) {

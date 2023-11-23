@@ -202,8 +202,8 @@ code_?:
       lVar2 = lVar4;
       if (((*(int *)(iVar12 + 0xc) == 0) || (uVar13 = *(undefined4 *)(iVar12 + 0x10), *(uint *)(iVar12 + 0xc) < 2)) || (uVar14 = *(undefined4 *)(iVar12 + 0x14), *(uint *)(iVar12 + 0xc) < 3)) goto code_?;
       uVar15 = *(undefined4 *)(iVar12 + 0x18);
-      if ((WaterPlaneManager *)unaff_EBX.m_Index == (WaterPlaneManager *)0x0) goto code_?;
       fVar16 = 0.8;
+      if ((WaterPlaneManager *)unaff_EBX.m_Index == (WaterPlaneManager *)0x0) goto code_?;
       if (cRam_? == '\0') {
         fVar16 = 0.8;
         func_?(&StringLiteral__RefrColor);

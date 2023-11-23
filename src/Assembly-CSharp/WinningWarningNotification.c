@@ -51,8 +51,8 @@ void Assembly-CSharp.dll::WinningWarningNotification::WinningWarningNotification
         if (bVar7 == 0) {
           return;
         }
-        Notification::Notification_Initialize((Notification *)this,(Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
         pTVar8 = (this->fields).scoreText;
+        (this->fields)._.timeSinceStart = 0.0;
         pBVar9 = TypeInfo__System__Byte;
         pOVar1 = (Object *)func_?();
         TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);

@@ -167,7 +167,7 @@ void Assembly-CSharp.dll::MutantModifier::MutantModifier_Update(MutantModifier *
           position.z = (float)pAStack_10;
           position.x = (float)(undefined4)uStack_9;
           position.y = (float)uStack_9._4_4_;
-          fStack_6 = (float)UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1(position,fStack_6 * 2.0,pCVar11,layerMask,(MethodInfo *)0x0);
+          fStack_6 = (float)UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1(position,fStack_6 + fStack_6,pCVar11,layerMask,(MethodInfo *)0x0);
           unaff_EDI = (MVAvatarLocal *)0x0;
           if ((int)fStack_6 < 1) {
             return;

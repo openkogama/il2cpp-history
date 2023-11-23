@@ -564,10 +564,10 @@ void Assembly-CSharp.dll::TierLockedDetailsPopup::TierLockedDetailsPopup_UpdateT
           key = key - 1;
         } while (0 < (int)key);
       }
-      if ((float)(int)playerGamePoints < 0.0) {
-        playerGamePoints = (Object__Class *)0x0;
-      }
       IStack_1.m_value = (int32_t)playerGamePoints;
+      if ((float)(int)playerGamePoints < 0.0) {
+        IStack_1.m_value = 0;
+      }
       if (this_02 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0) {
         pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,CONCAT31((int3)((uint)playerGamePassTier >> 8),(this->fields).tierToPurchase),MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_);
         if (pOVar6 != (Object *)0x0) {

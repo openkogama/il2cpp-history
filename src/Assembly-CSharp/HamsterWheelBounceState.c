@@ -57,32 +57,33 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_
   fVar6 = (float)fVar5;
   fVar7 = normal.x * fVar6;
   fVar8 = normal.y * fVar6;
-  inVector.z = normal.z * fVar6;
+  fVar6 = normal.z * fVar6;
+  uVar9 = 0;
+  uVar10 = 0;
+  uVar11 = 0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf);
+    func_?(&TypeInfo__UnityEngine__Mathf,fVar7,0,0,0);
     cRam_? = '\x01';
   }
-  fVar6 = fVar8 * fVar8 + fVar7 * fVar7 + inVector.z * inVector.z;
-  if (fVar6 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+  fVar12 = fVar7 * fVar7 + fVar8 * fVar8 + fVar6 * fVar6;
+  if (fVar12 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?(&TypeInfo__UnityEngine__Vector3,fVar7,uVar9,uVar10,uVar11);
       cRam_? = '\x01';
     }
-    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar10._0_4_ = (pVVar9->zeroVector).x;
-    uVar10._4_4_ = (pVVar9->zeroVector).y;
-    fVar11 = (pVVar9->zeroVector).z;
+    pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_14._0_4_ = (pVVar13->zeroVector).x;
+    uStack_14._4_4_ = (pVVar13->zeroVector).y;
+    fVar6 = (pVVar13->zeroVector).z;
   }
   else {
-    fVar12 = fVar8 * fVar2 + fVar7 * fVar1 + inVector.z * fVar3;
-    fVar11 = (inVector.z * fVar12) / fVar6;
-    uVar10 = CONCAT44((fVar8 * fVar12) / fVar6,(fVar12 * fVar7) / fVar6);
+    fVar15 = fVar1 * fVar7 + fVar2 * fVar8 + fVar3 * fVar6;
+    fVar6 = (fVar6 * fVar15) / fVar12;
+    uStack_14 = CONCAT44((fVar8 * fVar15) / fVar12,(fVar7 * fVar15) / fVar12);
   }
-  inVector.x = (float)uVar10;
-  inVector.y = (float)((ulonglong)uVar10 >> 0x20);
-  __return_storage_ptr__->x = inVector.x + (inVector.x - fVar1);
-  __return_storage_ptr__->y = inVector.y + (inVector.y - fVar2);
-  __return_storage_ptr__->z = fVar11 + (fVar11 - fVar3);
+  __return_storage_ptr__->x = (float)uStack_14 + ((float)uStack_14 - fVar1);
+  __return_storage_ptr__->y = uStack_14._4_4_ + (uStack_14._4_4_ - fVar2);
+  __return_storage_ptr__->z = fVar6 + (fVar6 - fVar3);
   return __return_storage_ptr__;
 }
 

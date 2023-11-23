@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube(C
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SharedCubeFunctions);
     }
-    pVVar4 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld((Vector3 *)&stack0xffffffe4,cubeGameObject,iVector,(MethodInfo *)0x0);
+    pVVar4 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld((Vector3 *)&stack0xfffffff0,cubeGameObject,iVector,(MethodInfo *)0x0);
     if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,*pVVar4,(MethodInfo *)0x0);
       pGVar2 = (this->fields).gameObject;

@@ -102,7 +102,7 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateControllerU
 {
   diff = WaitForTicks::WaitForTicks_Diff((this->fields).takenTime,(MethodInfo *)0x0);
   bVar1 = MVWorldObject.dll::MV::WorldObject::WorldObjects::Spawner::CanSpawnChecker::CanSpawnChecker_Check(diff,(this->fields).respawnInterval,(this->fields).takenCounter,(this->fields).respawnCount,(MethodInfo *)0x0);
-  (this->fields)._SpawnState_k__BackingField = 2 - (uint)(bVar1 != 0);
+  (this->fields)._SpawnState_k__BackingField = (bVar1 ^ 1) + 1;
   if ((this->fields).prevSpawnState != (this->fields)._SpawnState_k__BackingField) {
     if ((this->fields)._SpawnState_k__BackingField == 2) {
       piVar2 = &(this->fields).takenCounter;

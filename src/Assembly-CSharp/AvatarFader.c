@@ -137,31 +137,30 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
         if (bVar4 != 0) {
           pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
           if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-          pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffb8,(Material *)RVar3,(this->fields).tintProperty,(MethodInfo *)0x0);
+          pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector((Vector4 *)&stack0xffffffd8,(Material *)RVar3,(this->fields).tintProperty,(MethodInfo *)0x0);
           fVar7 = pVVar6->x;
           fVar8 = pVVar6->y;
-          fVar9 = pVVar6->z;
           pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-          value_00.y = fVar8;
-          value_00.x = fVar7;
-          value_00.z = fVar9;
-          value_00.w = fadeFactor;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector((Material *)RVar3,(this->fields).tintProperty,value_00,(MethodInfo *)0x0);
+          if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (fVar9 = pVVar6->z, fVar10 = fadeFactor, RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), fadeFactor = fVar9, RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+          value.y = fVar8;
+          value.x = fVar7;
+          value.z = fadeFactor;
+          value.w = fVar10;
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector((Material *)RVar3,(this->fields).tintProperty,value,(MethodInfo *)0x0);
         }
       }
       else {
         if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        pCVar10 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffa8,(Material *)RVar3,(MethodInfo *)0x0);
-        fVar7 = pCVar10->g;
-        fVar8 = pCVar10->b;
+        pCVar11 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffc8,(Material *)RVar3,(MethodInfo *)0x0);
+        fVar7 = pCVar11->g;
+        fVar8 = pCVar11->b;
         pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).avatarMaterials;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (pMVar11 = MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_, RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-        value.g = fVar7;
-        value.r = (float)pMVar11;
-        value.b = fVar8;
-        value.a = fadeFactor;
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color((Material *)RVar3,value,(MethodInfo *)0x0);
+        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_, fVar9 = fadeFactor, RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar2,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+        value_00.g = fVar7;
+        value_00.r = (float)pMVar12;
+        value_00.b = fVar8;
+        value_00.a = fVar9;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color((Material *)RVar3,value_00,(MethodInfo *)0x0);
       }
     }
     else {
@@ -174,8 +173,8 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_SetTransparency(AvatarFader *
     pLVar1 = (this->fields).avatarMaterials;
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

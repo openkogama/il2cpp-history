@@ -177,11 +177,11 @@ code_?:
         VStack_7.z = (this->fields).intersectRay.m_Direction.z;
         iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_7.z,(MethodInfo *)0x0);
         (this->fields).stepZ = iVar14;
-        sVar22 = (this->fields).voxelPos.y;
+        sVar22 = (this->fields).voxelPos.x;
         iVar6 = (this->fields).stepX;
-        iVar23 = (this->fields).stepY;
-        sVar24 = (this->fields).voxelPos.x;
-        sVar25 = (this->fields).voxelPos.z;
+        sVar23 = (this->fields).voxelPos.z;
+        iVar24 = (this->fields).stepY;
+        sVar25 = (this->fields).voxelPos.y;
         (this->fields).tMax.x = INFINITY;
         (this->fields).tMax.y = INFINITY;
         (this->fields).tMax.z = INFINITY;
@@ -189,16 +189,16 @@ code_?:
         if ((float)uVar26 != 0.0) {
           uVar27 = (this->fields).intersectRay.m_Origin.x;
           uVar28 = (this->fields).intersectRay.m_Direction.x;
-          (this->fields).tMax.x = ((float)(int)((int)sVar24 + (uint)(0 < iVar6)) - ((float)uVar27 + 0.5)) / (float)uVar28;
+          (this->fields).tMax.x = ((float)(int)((int)sVar22 + (uint)(0 < iVar6)) - ((float)uVar27 + 0.5)) / (float)uVar28;
         }
         uVar29 = (this->fields).intersectRay.m_Direction.y;
         if ((float)uVar29 != 0.0) {
           uVar30 = (this->fields).intersectRay.m_Origin.y;
           uVar31 = (this->fields).intersectRay.m_Direction.y;
-          (this->fields).tMax.y = ((float)(int)((uint)(0 < iVar23) + (int)sVar22) - ((float)uVar30 + 0.5)) / (float)uVar31;
+          (this->fields).tMax.y = ((float)(int)((uint)(0 < iVar24) + (int)sVar25) - ((float)uVar30 + 0.5)) / (float)uVar31;
         }
         if ((this->fields).intersectRay.m_Direction.z != 0.0) {
-          (this->fields).tMax.z = ((float)(int)((uint)(0 < iVar14) + (int)sVar25) - ((this->fields).intersectRay.m_Origin.z + 0.5)) / (this->fields).intersectRay.m_Direction.z;
+          (this->fields).tMax.z = ((float)(int)((uint)(0 < iVar14) + (int)sVar23) - ((this->fields).intersectRay.m_Origin.z + 0.5)) / (this->fields).intersectRay.m_Direction.z;
         }
         fVar32 = (this->fields).tMax.y;
         fVar10 = (this->fields).tMax.z;

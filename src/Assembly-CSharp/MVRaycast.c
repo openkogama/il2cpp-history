@@ -18,187 +18,188 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay(Ray ray,VoxelHit *vH
   IStack_1.z = 0;
   if (chunk != (GameObject *)0x0) {
     this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(chunk,(MethodInfo *)0x0);
+    pTStack_2 = this;
     if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     if (this != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformDirection(&VStack_3,this,ray.m_Direction,(MethodInfo *)0x0);
-      pMVar4 = TypeInfo__MVRaycast->static_fields;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_3,*pVVar2,(MethodInfo *)0x0);
-      fVar5 = pVVar2->y;
-      fVar6 = pVVar2->z;
-      (pMVar4->intersectRay).m_Direction.x = pVVar2->x;
-      (pMVar4->intersectRay).m_Direction.y = fVar5;
-      (pMVar4->intersectRay).m_Direction.z = fVar6;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint(&VStack_3,this,ray.m_Origin,(MethodInfo *)0x0);
-      fVar6 = pVVar2->z;
-      fVar5 = pVVar2->y;
-      pMVar4 = TypeInfo__MVRaycast->static_fields;
-      (pMVar4->intersectRay).m_Origin.x = pVVar2->x;
-      (pMVar4->intersectRay).m_Origin.y = fVar5;
-      (pMVar4->intersectRay).m_Origin.z = fVar6;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformDirection(&VStack_4,this,ray.m_Direction,(MethodInfo *)0x0);
+      pMVar5 = TypeInfo__MVRaycast->static_fields;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_4,*pVVar3,(MethodInfo *)0x0);
+      fVar6 = pVVar3->y;
+      fVar7 = pVVar3->z;
+      (pMVar5->intersectRay).m_Direction.x = pVVar3->x;
+      (pMVar5->intersectRay).m_Direction.y = fVar6;
+      (pMVar5->intersectRay).m_Direction.z = fVar7;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint(&VStack_4,pTStack_2,ray.m_Origin,(MethodInfo *)0x0);
+      fVar7 = pVVar3->z;
+      fVar6 = pVVar3->y;
+      pMVar5 = TypeInfo__MVRaycast->static_fields;
+      (pMVar5->intersectRay).m_Origin.x = pVVar3->x;
+      (pMVar5->intersectRay).m_Origin.y = fVar6;
+      (pMVar5->intersectRay).m_Origin.z = fVar7;
       if (distance != INFINITY) {
         if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        uVar7 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
-        uVar8 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-        uStack_11 = CONCAT44(((float)uVar8 * distance) / scale.y,((float)uVar7 * distance) / scale.x);
-        VStack_3.z = (fStack_10 * distance) / scale.z;
-        pMStack_12 = (MethodInfo *)VStack_3.z;
-        fVar13 = (float10)func_?();
-        distance = (float)fVar13;
-        fStack_14 = distance;
+        uVar8 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
+        uVar9 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+        uStack_12 = CONCAT44(((float)uVar9 * distance) / scale.y,((float)uVar8 * distance) / scale.x);
+        VStack_4.z = (fStack_11 * distance) / scale.z;
+        pMStack_13 = (MethodInfo *)VStack_4.z;
+        fVar14 = (float10)func_?();
+        distance = (float)fVar14;
+        fStack_15 = distance;
       }
-      uStack_9 = CONCAT44(ray.m_Origin.y - hitPoint.y,ray.m_Origin.x - hitPoint.x);
-      fStack_10 = ray.m_Origin.z - hitPoint.z;
-      fVar6 = ray.m_Origin.z;
-      fVar5 = ray.m_Origin.y;
-      fVar13 = (float10)func_?();
-      fStack_14 = (float)fVar13;
+      uStack_10 = CONCAT44(ray.m_Origin.y - hitPoint.y,ray.m_Origin.x - hitPoint.x);
+      fStack_11 = ray.m_Origin.z - hitPoint.z;
+      fVar7 = ray.m_Origin.z;
+      fVar6 = ray.m_Origin.y;
+      fVar14 = (float10)func_?();
+      fStack_15 = (float)fVar14;
       if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      uVar15 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
-      uVar16 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
-      pMVar4 = TypeInfo__MVRaycast->static_fields;
-      uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-      uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-      fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-      uStack_11 = CONCAT44(((float)uVar16 * fStack_14) / scale.y,((float)uVar15 * fStack_14) / scale.x);
-      VStack_3.z = (fStack_10 * fStack_14) / scale.z;
-      pMStack_12 = (MethodInfo *)VStack_3.z;
-      fVar13 = (float10)func_?();
-      fVar17 = (float)fVar13;
+      uVar16 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
+      uVar17 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
+      pMVar5 = TypeInfo__MVRaycast->static_fields;
+      uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+      uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+      fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+      uStack_12 = CONCAT44(((float)uVar17 * fStack_15) / scale.y,((float)uVar16 * fStack_15) / scale.x);
+      VStack_4.z = (fStack_11 * fStack_15) / scale.z;
+      pMStack_13 = (MethodInfo *)VStack_4.z;
+      fVar14 = (float10)func_?();
+      fStack_15 = (float)fVar14;
       uVar18 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Origin.x;
       uVar19 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
-      fVar20 = (float)uVar19 * fVar17 + (float)uVar18;
+      pMVar20 = (MethodInfo *)((float)uVar19 * fStack_15 + (float)uVar18);
       uVar21 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Origin.y;
       uVar22 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
-      fVar23 = (float)uVar22 * fVar17 + (float)uVar21;
-      pMVar4 = TypeInfo__MVRaycast->static_fields;
-      uStack_11._0_4_ = (pMVar4->intersectRay).m_Origin.x;
-      uStack_11._4_4_ = (pMVar4->intersectRay).m_Origin.y;
-      pMStack_12 = (MethodInfo *)(pMVar4->intersectRay).m_Origin.z;
-      pMVar4 = TypeInfo__MVRaycast->static_fields;
-      uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-      uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-      fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-      VStack_3.z = fStack_10 * fVar17 + (float)pMStack_12;
-      VVar24.y = fVar20;
-      VVar24.x = (float)((int)&uStack_11 + 4);
+      fVar23 = (float)uVar22 * fStack_15 + (float)uVar21;
+      pMVar5 = TypeInfo__MVRaycast->static_fields;
+      uStack_12._0_4_ = (pMVar5->intersectRay).m_Origin.x;
+      uStack_12._4_4_ = (pMVar5->intersectRay).m_Origin.y;
+      pMStack_13 = (MethodInfo *)(pMVar5->intersectRay).m_Origin.z;
+      pMVar5 = TypeInfo__MVRaycast->static_fields;
+      uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+      uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+      fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+      VStack_4.z = fStack_11 * fStack_15 + (float)pMStack_13;
+      VVar24.y = (float)pMVar20;
+      VVar24.x = (float)((int)&uStack_12 + 4);
       VVar24.z = fVar23;
-      fStack_25 = fVar23;
-      pMStack_26 = (MethodInfo *)VStack_3.z;
-      fStack_14 = fVar20;
-      IVar27 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctions_LocalPosToLocalIntVector(VVar24,(MethodInfo *)VStack_3.z);
-      IStack_1._0_4_ = *IVar27._0_4_;
-      IStack_1.z = *(int16_t *)(IVar27._0_4_ + 1);
-      IStack_28.x = 0;
-      IStack_28.y = 0;
-      IStack_28.z = 0;
+      pMStack_25 = pMVar20;
+      fStack_26 = fVar23;
+      uStack_27 = (MethodInfo *)VStack_4.z;
+      IVar28 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctions_LocalPosToLocalIntVector(VVar24,(MethodInfo *)VStack_4.z);
+      IStack_1._0_4_ = *IVar28._0_4_;
+      IStack_1.z = *(int16_t *)(IVar28._0_4_ + 1);
       IStack_29.x = 0;
       IStack_29.y = 0;
       IStack_29.z = 0;
+      IStack_30.x = 0;
+      IStack_30.y = 0;
+      IStack_30.z = 0;
       this_00 = (BoxCollider *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(chunk,UnityEngine__BoxCollider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::BoxCollider>__);
       if (this_00 != (BoxCollider *)0x0) {
-        pVVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center(&VStack_30,this_00,(MethodInfo *)0x0);
-        VVar24 = *pVVar2;
-        pVVar2 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size(&VStack_30,this_00,(MethodInfo *)0x0);
-        uStack_11._0_4_ = pVVar2->x;
-        uStack_11._4_4_ = pVVar2->y;
-        pMStack_12 = (MethodInfo *)pVVar2->z;
-        fVar17 = (float)pMStack_12 * 0.5;
-        fVar31 = (float)(undefined4)uStack_11 * 0.5;
-        fVar32 = (float)uStack_11._4_4_ * 0.5;
-        VStack_30.z = fVar17;
+        pVVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center(&VStack_31,this_00,(MethodInfo *)0x0);
+        VVar24 = *pVVar3;
+        pVVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size(&VStack_31,this_00,(MethodInfo *)0x0);
+        uStack_12._0_4_ = pVVar3->x;
+        uStack_12._4_4_ = pVVar3->y;
+        pMStack_13 = (MethodInfo *)pVVar3->z;
+        fVar32 = (float)(undefined4)uStack_12 * 0.5;
+        fVar33 = (float)uStack_12._4_4_ * 0.5;
+        fVar34 = (float)pMStack_13 * 0.5;
         if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__SharedCollisionFunctions);
         }
-        localSpaceBounds.m_Extents.x = fVar31;
+        localSpaceBounds.m_Extents.x = fVar32;
         localSpaceBounds.m_Center = VVar24;
-        localSpaceBounds.m_Extents.y = fVar32;
-        localSpaceBounds.m_Extents.z = fVar17;
-        SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds(&IStack_28,&IStack_29,localSpaceBounds,(MethodInfo *)0x0);
-        IVar27.z = IStack_28.z;
-        IVar27.x = IStack_28.x;
-        IVar27.y = IStack_28.y;
-        max.z = IStack_29.z;
-        max.x = IStack_29.x;
-        max.y = IStack_29.y;
-        MathFunctions::MathFunctions_ClampIntVector(&IStack_1,IVar27,max,(MethodInfo *)0x0);
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
+        localSpaceBounds.m_Extents.y = fVar33;
+        localSpaceBounds.m_Extents.z = fVar34;
+        SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds(&IStack_29,&IStack_30,localSpaceBounds,(MethodInfo *)0x0);
+        IVar28.z = IStack_29.z;
+        IVar28.x = IStack_29.x;
+        IVar28.y = IStack_29.y;
+        max.z = IStack_30.z;
+        max.x = IStack_30.x;
+        max.y = IStack_30.y;
+        MathFunctions::MathFunctions_ClampIntVector(&IStack_1,IVar28,max,(MethodInfo *)0x0);
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Math);
         }
-        iVar33 = mscorlib.dll::System::Math::Math_Sign_2((float)uStack_9,(MethodInfo *)0x0);
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-        iStack_34 = mscorlib.dll::System::Math::Math_Sign_2((float)uStack_9._4_4_,(MethodInfo *)0x0);
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-        pMVar35 = (MethodInfo *)mscorlib.dll::System::Math::Math_Sign_2(fStack_10,(MethodInfo *)0x0);
-        fStack_36 = (float)(int)((uint)(0 < iVar33) + (int)IStack_1.x);
-        fStack_37 = (float)(int)((uint)(0 < iStack_34) + (int)IStack_1.y);
-        fStack_38 = (float)(int)((int)IStack_1.z + (uint)(0 < (int)pMVar35));
-        pMStack_12 = pMVar35;
+        iVar35 = mscorlib.dll::System::Math::Math_Sign_2((float)uStack_10,(MethodInfo *)0x0);
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+        pMVar36 = (MethodInfo *)mscorlib.dll::System::Math::Math_Sign_2((float)uStack_10._4_4_,(MethodInfo *)0x0);
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+        pMStack_13 = pMVar36;
+        iStack_37 = mscorlib.dll::System::Math::Math_Sign_2(fStack_11,(MethodInfo *)0x0);
+        fStack_15 = (float)(uint)(0 < iVar35);
+        fStack_38 = (float)(int)((uint)(0 < (int)pMVar36) + (int)IStack_1.y);
+        fStack_39 = (float)((int)fStack_15 + (int)IStack_1.x);
+        fStack_40 = (float)(int)((uint)(0 < iStack_37) + (int)IStack_1.z);
         if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        uVar39 = (pMVar4->intersectRay).m_Direction.y;
-        VStack_30.x = (pMVar4->intersectRay).m_Direction.x;
-        VStack_30.y = (pMVar4->intersectRay).m_Direction.y;
-        VStack_30.z = (pMVar4->intersectRay).m_Direction.z;
-        fStack_36 = ((fStack_36 - fStack_14) - 0.5) / (float)uStack_9;
-        fStack_37 = ((fStack_37 - fStack_25) - 0.5) / (float)uVar39;
-        fStack_14 = ((fStack_38 - (float)pMStack_26) - 0.5) / VStack_30.z;
-        if ((0x7f800000 < (uint)ABS(fStack_36)) || (fStack_36 == -INFINITY)) {
-          fStack_36 = INFINITY;
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        uVar41 = (pMVar5->intersectRay).m_Direction.y;
+        VStack_31.x = (pMVar5->intersectRay).m_Direction.x;
+        VStack_31.y = (pMVar5->intersectRay).m_Direction.y;
+        VStack_31.z = (pMVar5->intersectRay).m_Direction.z;
+        fStack_39 = ((fStack_39 - (float)pMStack_25) - 0.5) / (float)uStack_10;
+        fStack_38 = ((fStack_38 - fStack_26) - 0.5) / (float)uVar41;
+        fStack_15 = ((fStack_40 - (float)uStack_27) - 0.5) / VStack_31.z;
+        if ((0x7f800000 < (uint)ABS(fStack_39)) || (fStack_39 == -INFINITY)) {
+          fStack_39 = INFINITY;
         }
-        if ((0x7f800000 < (uint)ABS(fStack_37)) || (fStack_37 == -INFINITY)) {
-          fStack_37 = INFINITY;
-        }
-        if ((0x7f800000 < (uint)ABS(fStack_14)) || (fStack_38 = fStack_14, fStack_14 == -INFINITY)) {
+        if ((0x7f800000 < (uint)ABS(fStack_38)) || (fStack_38 == -INFINITY)) {
           fStack_38 = INFINITY;
         }
+        if ((0x7f800000 < (uint)ABS(fStack_15)) || (fStack_40 = fStack_15, fStack_15 == -INFINITY)) {
+          fStack_40 = INFINITY;
+        }
         if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pMVar4 = TypeInfo__MVRaycast->static_fields;
-        VStack_30.x = (pMVar4->intersectRay).m_Direction.x;
-        VStack_30.y = (pMVar4->intersectRay).m_Direction.y;
-        uVar40 = (pMVar4->intersectRay).m_Direction.y;
-        uStack_9._0_4_ = (pMVar4->intersectRay).m_Direction.x;
-        uStack_9._4_4_ = (pMVar4->intersectRay).m_Direction.y;
-        fStack_10 = (pMVar4->intersectRay).m_Direction.z;
-        pMStack_26 = (MethodInfo *)((float)iVar33 / VStack_30.x);
-        fStack_14 = (float)iStack_34 / (float)uVar40;
-        uStack_41 = (float)(int)pMVar35 / fStack_10;
-        if (0x7f800000 < (uint)ABS((float)pMStack_26)) {
-          pMStack_26 = (MethodInfo *)0x7f800000;
+        pMVar5 = TypeInfo__MVRaycast->static_fields;
+        VStack_31.x = (pMVar5->intersectRay).m_Direction.x;
+        VStack_31.y = (pMVar5->intersectRay).m_Direction.y;
+        uVar42 = (pMVar5->intersectRay).m_Direction.y;
+        uStack_10._0_4_ = (pMVar5->intersectRay).m_Direction.x;
+        uStack_10._4_4_ = (pMVar5->intersectRay).m_Direction.y;
+        fStack_11 = (pMVar5->intersectRay).m_Direction.z;
+        fStack_26 = (float)iVar35 / VStack_31.x;
+        fStack_15 = (float)(int)pMVar36 / (float)uVar42;
+        uStack_27 = (MethodInfo *)((float)iStack_37 / fStack_11);
+        if (0x7f800000 < (uint)ABS(fStack_26)) {
+          fStack_26 = INFINITY;
         }
-        if (0x7f800000 < (uint)ABS(fStack_14)) {
-          fStack_14 = INFINITY;
+        if (0x7f800000 < (uint)ABS(fStack_15)) {
+          fStack_15 = INFINITY;
         }
-        fStack_25 = uStack_41;
-        if (0x7f800000 < (uint)ABS(uStack_41)) {
-          fStack_25 = INFINITY;
+        pMStack_25 = uStack_27;
+        if (0x7f800000 < (uint)ABS((float)uStack_27)) {
+          pMStack_25 = (MethodInfo *)0x7f800000;
         }
         while( true ) {
           if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
@@ -207,62 +208,62 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_GetCellOnRay(Ray ray,VoxelHit *vH
           voxelPos_00.z = IStack_1.z;
           voxelPos_00.x = IStack_1.x;
           voxelPos_00.y = IStack_1.y;
-          bVar42 = MVRaycast_IsWithinDistance(distance,(TypeInfo__MVRaycast->static_fields->intersectRay).m_Origin,voxelPos_00,(MethodInfo *)0x0);
-          if (bVar42 == 0) {
+          bVar43 = MVRaycast_IsWithinDistance(distance,(TypeInfo__MVRaycast->static_fields->intersectRay).m_Origin,voxelPos_00,(MethodInfo *)0x0);
+          if (bVar43 == 0) {
             return 0;
           }
-          uStack_41 = (float)CONCAT22(IStack_1.z,(undefined2)uStack_41);
+          uStack_27 = (MethodInfo *)CONCAT22(IStack_1.z,(undefined2)uStack_27);
           if (cmb == (ICubeModelCollider *)0x0) break;
-          pIVar43 = cmb->klass;
-          uVar44 = 0;
-          uVar45._0_1_ = (pIVar43->_1).rank;
-          uVar45._1_1_ = (pIVar43->_1).minimumAlignment;
-          if (uVar45 != 0) {
+          pIVar44 = cmb->klass;
+          uVar45 = 0;
+          uVar46._0_1_ = (pIVar44->_1).rank;
+          uVar46._1_1_ = (pIVar44->_1).minimumAlignment;
+          if (uVar46 != 0) {
             do {
-              if (pIVar43->interfaceOffsets[uVar44].interfaceType == (Il2CppClass *)TypeInfo__ICubeModelCollider) {
-                ppMVar46 = &(&(cmb->klass->vtable).GetCube)[cmb->klass->interfaceOffsets[uVar44].offset].method;
+              if (pIVar44->interfaceOffsets[uVar45].interfaceType == (Il2CppClass *)TypeInfo__ICubeModelCollider) {
+                ppMVar47 = &(&(cmb->klass->vtable).GetCube)[cmb->klass->interfaceOffsets[uVar45].offset].method;
                 goto code_?;
               }
-              uVar44 = uVar44 + 1;
-            } while (uVar44 < uVar45);
+              uVar45 = uVar45 + 1;
+            } while (uVar45 < uVar46);
           }
-          ppMVar46 = (MethodInfo **)func_?();
+          ppMVar47 = (MethodInfo **)func_?();
 code_?:
-          cube = (Cube *)(*(code *)*ppMVar46)();
+          cube = (Cube *)(*(code *)*ppMVar47)();
           if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar42 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality((CubeBase *)cube,(CubeBase *)0x0,(MethodInfo *)0x0);
-          uVar47 = IStack_1._0_4_;
-          if (bVar42 != 0) {
-            uStack_41 = (float)CONCAT22(IStack_1.z,(undefined2)uStack_41);
+          bVar43 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality((CubeBase *)cube,(CubeBase *)0x0,(MethodInfo *)0x0);
+          uVar48 = IStack_1._0_4_;
+          if (bVar43 != 0) {
+            uStack_27 = (MethodInfo *)CONCAT22(IStack_1.z,(undefined2)uStack_27);
             if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            uVar48 = IStack_1._0_4_;
-            voxelPos.z = uStack_41._2_2_;
-            IStack_1.x = (int16_t)uVar47;
-            IStack_1.y = SUB42(uVar47,2);
+            uVar49 = IStack_1._0_4_;
+            voxelPos.z = uStack_27._2_2_;
+            IStack_1.x = (int16_t)uVar48;
+            IStack_1.y = SUB42(uVar48,2);
             voxelPos.x = IStack_1.x;
             voxelPos.y = IStack_1.y;
             localBoundsHitPoint.y = fVar23;
-            localBoundsHitPoint.x = fVar20;
-            localBoundsHitPoint.z = VStack_3.z;
-            IStack_1._0_4_ = uVar48;
-            bVar42 = MVRaycast_GetHitPoint(ray,cube,vHit,voxelPos,localBoundsHitPoint,scale,distance,(MethodInfo *)0x0);
-            if (bVar42 != 0) {
-              uStack_9._0_4_ = (vHit->point).x;
-              uStack_9._4_4_ = (vHit->point).y;
-              fStack_10 = (vHit->point).z;
-              if (0.0 < ray.m_Direction.y * ((float)uStack_9._4_4_ - fVar5) + ray.m_Direction.x * ((float)uStack_9 - ray.m_Origin.x) + ray.m_Direction.z * (fStack_10 - fVar6)) {
+            localBoundsHitPoint.x = (float)pMVar20;
+            localBoundsHitPoint.z = VStack_4.z;
+            IStack_1._0_4_ = uVar49;
+            bVar43 = MVRaycast_GetHitPoint(ray,cube,vHit,voxelPos,localBoundsHitPoint,scale,distance,(MethodInfo *)0x0);
+            if (bVar43 != 0) {
+              uStack_10._0_4_ = (vHit->point).x;
+              uStack_10._4_4_ = (vHit->point).y;
+              fStack_11 = (vHit->point).z;
+              if (0.0 < ray.m_Direction.y * ((float)uStack_10._4_4_ - fVar6) + ray.m_Direction.x * ((float)uStack_10 - ray.m_Origin.x) + ray.m_Direction.z * (fStack_11 - fVar7)) {
                 direction.z._2_2_ = (short)((uint)(vHit->normal).z >> 0x10);
                 direction._0_10_ = *(unkbyte10 *)&vHit->normal;
-                pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformDirection(&VStack_3,this,direction,(MethodInfo *)0x0);
-                fVar5 = pVVar2->y;
-                fVar6 = pVVar2->z;
-                (vHit->normal).x = pVVar2->x;
-                (vHit->normal).y = fVar5;
-                (vHit->normal).z = fVar6;
+                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformDirection(&VStack_4,pTStack_2,direction,(MethodInfo *)0x0);
+                fVar6 = pVVar3->y;
+                fVar7 = pVVar3->z;
+                (vHit->normal).x = pVVar3->x;
+                (vHit->normal).y = fVar6;
+                (vHit->normal).z = fVar7;
                 (vHit->cubePos).x = IStack_1.x;
                 (vHit->cubePos).y = IStack_1.y;
                 (vHit->cubePos).z = IStack_1.z;
@@ -272,47 +273,47 @@ code_?:
               }
             }
           }
-          if ((fStack_37 <= fStack_36) || (fStack_38 <= fStack_36)) {
-            if (fStack_37 < fStack_38) {
-              IStack_1.y = IStack_1.y + (short)iStack_34;
-              if (IStack_1.y < IStack_28.y) {
+          if ((fStack_38 <= fStack_39) || (fStack_40 <= fStack_39)) {
+            if (fStack_38 < fStack_40) {
+              IStack_1.y = IStack_1.y + (short)pMStack_13;
+              if (IStack_1.y < IStack_29.y) {
                 return 0;
               }
-              if (IStack_29.y < IStack_1.y) {
+              if (IStack_30.y < IStack_1.y) {
                 return 0;
               }
-              fStack_37 = fStack_37 + fStack_14;
+              fStack_38 = fStack_15 + fStack_38;
             }
             else {
-              IStack_1.z = IStack_1.z + (short)pMStack_12;
-              if (IStack_1.z < IStack_28.z) {
+              IStack_1.z = IStack_1.z + (short)iStack_37;
+              if (IStack_1.z < IStack_29.z) {
                 return 0;
               }
-              if (IStack_29.z < IStack_1.z) {
+              if (IStack_30.z < IStack_1.z) {
                 return 0;
               }
-              fStack_38 = fStack_38 + fStack_25;
+              fStack_40 = fStack_40 + (float)pMStack_25;
             }
           }
           else {
-            sStack_49 = (short)iVar33;
-            IStack_1.x = IStack_1.x + sStack_49;
-            if (IStack_1.x < IStack_28.x) {
+            sStack_50 = (short)iVar35;
+            IStack_1.x = IStack_1.x + sStack_50;
+            if (IStack_1.x < IStack_29.x) {
               return 0;
             }
-            if (IStack_29.x < IStack_1.x) {
+            if (IStack_30.x < IStack_1.x) {
               return 0;
             }
-            fStack_36 = fStack_36 + (float)pMStack_26;
+            fStack_39 = fStack_39 + fStack_26;
           }
         }
       }
     }
   }
   func_?();
-  pcVar50 = (code *)swi(3);
-  bVar42 = (*pcVar50)();
-  return bVar42;
+  pcVar51 = (code *)swi(3);
+  bVar43 = (*pcVar51)();
+  return bVar43;
 }
 
 
@@ -599,38 +600,38 @@ code_?:
           func_?();
         }
         pMVar31 = TypeInfo__MVRaycast->static_fields;
-        uVar76 = (pMVar31->intersectRay).m_Origin.x;
-        uVar77 = (pMVar31->intersectRay).m_Origin.y;
+        uStack_49._0_4_ = (pMVar31->intersectRay).m_Origin.x;
+        uStack_49._4_4_ = (pMVar31->intersectRay).m_Origin.y;
+        fStack_54 = (pMVar31->intersectRay).m_Origin.z;
+        pMVar31 = TypeInfo__MVRaycast->static_fields;
+        uVar76 = (pMVar31->intersectRay).m_Direction.x;
+        uVar77 = (pMVar31->intersectRay).m_Direction.y;
         pMVar78 = TypeInfo__MVRaycast->static_fields;
-        uVar79 = (pMVar78->intersectRay).m_Direction.x;
-        uVar80 = (pMVar78->intersectRay).m_Direction.y;
-        pMVar81 = TypeInfo__MVRaycast->static_fields;
-        uStack_53._0_4_ = (pMVar81->cubeBounds).m_Center.x;
-        uStack_53._4_4_ = (pMVar81->cubeBounds).m_Center.y;
-        fStack_52 = (pMVar81->cubeBounds).m_Center.z;
-        fStack_54 = (fStack_6 * (pMVar78->intersectRay).m_Direction.z + (pMVar31->intersectRay).m_Origin.z) - fStack_52;
-        uStack_49 = CONCAT44((fStack_6 * (float)uVar80 + (float)uVar77) - (float)uStack_53._4_4_,(fStack_6 * (float)uVar79 + (float)uVar76) - (float)(undefined4)uStack_53);
+        uVar79 = (pMVar78->cubeBounds).m_Center.x;
+        uVar80 = (pMVar78->cubeBounds).m_Center.y;
+        fStack_52 = (fStack_6 * (pMVar31->intersectRay).m_Direction.z + fStack_54) - (pMVar78->cubeBounds).m_Center.z;
+        uStack_53 = CONCAT44((fStack_6 * (float)uVar77 + (float)uStack_49._4_4_) - (float)uVar80,(fStack_6 * (float)uVar76 + (float)(undefined4)uStack_49) - (float)uVar79);
         if (fStack_6 <= scaledDistance) {
           if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          localDir.z = fStack_54;
-          localDir.x = (float)(undefined4)uStack_49;
-          localDir.y = (float)uStack_49._4_4_;
+          localDir.z = fStack_52;
+          localDir.x = (float)(undefined4)uStack_53;
+          localDir.y = (float)uStack_53._4_4_;
           FVar29 = Cube::Cube_GetFaceIdentityFromLocalDir(localDir,(MethodInfo *)0x0);
           if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          FVar82 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceToFaceFlag(FVar29,(MethodInfo *)0x0);
-          if (((cube->fields).hiddenSides & (byte)FVar82) == 0) {
+          FVar81 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceToFaceFlag(FVar29,(MethodInfo *)0x0);
+          if (((cube->fields).hiddenSides & (byte)FVar81) == 0) {
             if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            uVar83 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
-            uVar84 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
+            uVar82 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.x;
+            uVar83 = (TypeInfo__MVRaycast->static_fields->intersectRay).m_Direction.y;
             pMVar31 = TypeInfo__MVRaycast->static_fields;
-            fStack_60 = (float)uVar83 * fStack_6 * scale.x;
-            fStack_40 = (float)uVar84 * fStack_6 * scale.y;
+            fStack_60 = (float)uVar82 * fStack_6 * scale.x;
+            fStack_40 = (float)uVar83 * fStack_6 * scale.y;
             VStack_17.x = (pMVar31->intersectRay).m_Direction.x;
             VStack_17.y = (pMVar31->intersectRay).m_Direction.y;
             fStack_23 = (pMVar31->intersectRay).m_Direction.z * fStack_6 * scale.z;
@@ -725,7 +726,7 @@ void Assembly-CSharp.dll::MVRaycast::MVRaycast_HandleObjectsInsideBoxCollider(Ra
           uStack_13._0_4_ = (pPVar7->fields).point.x;
           uStack_13._4_4_ = (pPVar7->fields).point.y;
           fStack_14 = (pPVar7->fields).point.z;
-          if ((ray.m_Origin.y - (float)uStack_13._4_4_) * (ray.m_Origin.y - (float)uStack_13._4_4_) + (ray.m_Origin.x - (float)(undefined4)uStack_13) * (ray.m_Origin.x - (float)(undefined4)uStack_13) + (ray.m_Origin.z - fStack_14) * (ray.m_Origin.z - fStack_14) < fVar11 * fVar11 + fVar10 * fVar10 + fVar12 * fVar12) {
+          if ((ray.m_Origin.x - (float)(undefined4)uStack_13) * (ray.m_Origin.x - (float)(undefined4)uStack_13) + (ray.m_Origin.y - (float)uStack_13._4_4_) * (ray.m_Origin.y - (float)uStack_13._4_4_) + (ray.m_Origin.z - fStack_14) * (ray.m_Origin.z - fStack_14) < fVar10 * fVar10 + fVar11 * fVar11 + fVar12 * fVar12) {
             pPVar7 = PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_get_Item(collisionData,index,(MethodInfo *)0x0);
             woId = (unaff_EBX->fields)._.id;
             if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -739,15 +740,15 @@ void Assembly-CSharp.dll::MVRaycast::MVRaycast_HandleObjectsInsideBoxCollider(Ra
       uStack_15._0_4_ = (voxelHit->point).x;
       uStack_15._4_4_ = (voxelHit->point).y;
       fStack_16 = (voxelHit->point).z;
-      fVar11 = ray.m_Origin.x - (float)(undefined4)uStack_15;
-      fVar12 = ray.m_Origin.y - (float)uStack_15._4_4_;
-      fVar10 = ray.m_Origin.z - fStack_16;
+      fVar10 = ray.m_Origin.x - (float)(undefined4)uStack_15;
+      fVar11 = ray.m_Origin.y - (float)uStack_15._4_4_;
+      fVar12 = ray.m_Origin.z - fStack_16;
       pPVar7 = PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_get_Item(collisionData,index,(MethodInfo *)0x0);
       if (pPVar7 == (PhysicsCollisionData *)0x0) break;
       uStack_17._0_4_ = (pPVar7->fields).point.x;
       uStack_17._4_4_ = (pPVar7->fields).point.y;
       fStack_18 = (pPVar7->fields).point.z;
-      if (fVar11 * fVar11 + fVar12 * fVar12 + fVar10 * fVar10 < (ray.m_Origin.y - (float)uStack_17._4_4_) * (ray.m_Origin.y - (float)uStack_17._4_4_) + (ray.m_Origin.x - (float)(undefined4)uStack_17) * (ray.m_Origin.x - (float)(undefined4)uStack_17) + (ray.m_Origin.z - fStack_18) * (ray.m_Origin.z - fStack_18)) {
+      if (fVar10 * fVar10 + fVar11 * fVar11 + fVar12 * fVar12 < (ray.m_Origin.x - (float)(undefined4)uStack_17) * (ray.m_Origin.x - (float)(undefined4)uStack_17) + (ray.m_Origin.y - (float)uStack_17._4_4_) * (ray.m_Origin.y - (float)uStack_17._4_4_) + (ray.m_Origin.z - fStack_18) * (ray.m_Origin.z - fStack_18)) {
         return;
       }
       pPVar7 = PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_get_Item(collisionData,indexOfFirstHit,(MethodInfo *)0x0);
@@ -778,7 +779,7 @@ void Assembly-CSharp.dll::MVRaycast::MVRaycast_HandleObjectsInsideBoxCollider(Ra
       fStack_22 = (pPVar7->fields).point.z;
       puVar23 = (undefined8 *)func_?(auStack_24,8,unaff_EBX);
       uStack_25 = *puVar23;
-      fVar12 = *(float *)(puVar23 + 1);
+      fVar11 = *(float *)(puVar23 + 1);
       if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVRaycast);
       }
@@ -788,7 +789,7 @@ void Assembly-CSharp.dll::MVRaycast::MVRaycast_HandleObjectsInsideBoxCollider(Ra
       hitPoint.z = fStack_22;
       hitPoint.x = (float)(undefined4)uStack_21;
       hitPoint.y = (float)uStack_21._4_4_;
-      scale.z = fVar12;
+      scale.z = fVar11;
       scale.x = (float)(undefined4)uStack_25;
       scale.y = (float)uStack_25._4_4_;
       bVar5 = MVRaycast_GetCellOnRay(ray,&VStack_2,(GameObject *)pIStack_20,pIVar27,hitPoint,distance,scale,(MethodInfo *)0x0);
@@ -796,7 +797,7 @@ void Assembly-CSharp.dll::MVRaycast::MVRaycast_HandleObjectsInsideBoxCollider(Ra
         uStack_28._0_4_ = (voxelHit->point).x;
         uStack_28._4_4_ = (voxelHit->point).y;
         fStack_29 = (voxelHit->point).z;
-        if ((ray.m_Origin.y - VStack_2.point.y) * (ray.m_Origin.y - VStack_2.point.y) + (ray.m_Origin.x - VStack_2.point.x) * (ray.m_Origin.x - VStack_2.point.x) + (ray.m_Origin.z - VStack_2.point.z) * (ray.m_Origin.z - VStack_2.point.z) < (ray.m_Origin.y - (float)uStack_28._4_4_) * (ray.m_Origin.y - (float)uStack_28._4_4_) + (ray.m_Origin.x - (float)(undefined4)uStack_28) * (ray.m_Origin.x - (float)(undefined4)uStack_28) + (ray.m_Origin.z - fStack_29) * (ray.m_Origin.z - fStack_29)) {
+        if ((ray.m_Origin.x - VStack_2.point.x) * (ray.m_Origin.x - VStack_2.point.x) + (ray.m_Origin.y - VStack_2.point.y) * (ray.m_Origin.y - VStack_2.point.y) + (ray.m_Origin.z - VStack_2.point.z) * (ray.m_Origin.z - VStack_2.point.z) < (ray.m_Origin.x - (float)(undefined4)uStack_28) * (ray.m_Origin.x - (float)(undefined4)uStack_28) + (ray.m_Origin.y - (float)uStack_28._4_4_) * (ray.m_Origin.y - (float)uStack_28._4_4_) + (ray.m_Origin.z - fStack_29) * (ray.m_Origin.z - fStack_29)) {
           pPVar7 = PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWrapper_get_Item(collisionData,index,(MethodInfo *)0x0);
           if ((TypeInfo__MVRaycast->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__MVRaycast);
@@ -951,7 +952,7 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_IsWithinDistance(float distance,V
     uStack_2._0_4_ = (pVVar1->oneVector).x;
     uStack_2._4_4_ = (pVVar1->oneVector).y;
     fStack_3 = (pVVar1->oneVector).z;
-    fStack_4 = (float)uStack_2._4_4_ * 0.5 * (float)uStack_2._4_4_ * 0.5 + (float)(undefined4)uStack_2 * 0.5 * (float)(undefined4)uStack_2 * 0.5 + fStack_3 * 0.5 * fStack_3 * 0.5;
+    fStack_4 = (float)(undefined4)uStack_2 * 0.5 * (float)(undefined4)uStack_2 * 0.5 + (float)uStack_2._4_4_ * 0.5 * (float)uStack_2._4_4_ * 0.5 + fStack_3 * 0.5 * fStack_3 * 0.5;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -960,12 +961,12 @@ bool Assembly-CSharp.dll::MVRaycast::MVRaycast_IsWithinDistance(float distance,V
     uStack_2._0_4_ = (pVVar1->oneVector).x;
     uStack_2._4_4_ = (pVVar1->oneVector).y;
     fStack_3 = (pVVar1->oneVector).z;
-    fStack_5 = (float)uStack_2._4_4_ * 0.5 * (float)uStack_2._4_4_ * 0.5 + (float)(undefined4)uStack_2 * 0.5 * (float)(undefined4)uStack_2 * 0.5 + fStack_3 * 0.5 * fStack_3 * 0.5;
+    fStack_5 = (float)(undefined4)uStack_2 * 0.5 * (float)(undefined4)uStack_2 * 0.5 + (float)uStack_2._4_4_ * 0.5 * (float)uStack_2._4_4_ * 0.5 + fStack_3 * 0.5 * fStack_3 * 0.5;
     pVVar6 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::CubeMathFunctions_LocalIntVectorToLocalPos(&VStack_7,voxelPos,(MethodInfo *)0x0);
     uVar8 = pVVar6->x;
     uVar9 = pVVar6->y;
     fVar10 = pVVar6->z - localOrigin.z;
-    return ((float)uVar9 - localOrigin.y) * ((float)uVar9 - localOrigin.y) + ((float)uVar8 - localOrigin.x) * ((float)uVar8 - localOrigin.x) + fVar10 * fVar10 <= distance * distance + fStack_4 + fStack_5 * distance;
+    return ((float)uVar8 - localOrigin.x) * ((float)uVar8 - localOrigin.x) + ((float)uVar9 - localOrigin.y) * ((float)uVar9 - localOrigin.y) + fVar10 * fVar10 <= distance * distance + fStack_4 + fStack_5 * distance;
   }
   return 1;
 }

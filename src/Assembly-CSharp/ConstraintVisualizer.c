@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
           this_04 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh(this_00,(MethodInfo *)0x0);
           if (this_04 != (Mesh *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(this_04,vertices,(MethodInfo *)0x0);
-            item_00 = 2;
+            item = 2;
             if (this_02 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {
               while( true ) {
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
@@ -50,10 +50,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00;
+                  (&pMVar5->vector[0].index)[uVar6] = item;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 piVar4 = &(this_02->fields)._version;
@@ -64,10 +64,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00 + 1;
+                  (&pMVar5->vector[0].index)[uVar6] = item + 1;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00 + 1,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item + 1,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 piVar4 = &(this_02->fields)._version;
@@ -78,10 +78,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -2;
+                  (&pMVar5->vector[0].index)[uVar6] = item + -2;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00 + -2,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item + -2,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 piVar4 = &(this_02->fields)._version;
@@ -92,10 +92,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -2;
+                  (&pMVar5->vector[0].index)[uVar6] = item + -2;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00 + -2,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item + -2,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 piVar4 = &(this_02->fields)._version;
@@ -106,10 +106,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00 + -1;
+                  (&pMVar5->vector[0].index)[uVar6] = item + -1;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00 + -1,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item + -1,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 piVar4 = &(this_02->fields)._version;
@@ -120,10 +120,10 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 if (uVar6 < pMVar5->max_length) {
                   (this_02->fields)._size = uVar6 + 1;
                   if (pMVar5->max_length <= uVar6) goto code_?;
-                  (&pMVar5->vector[0].index)[uVar6] = item_00;
+                  (&pMVar5->vector[0].index)[uVar6] = item;
                 }
                 else {
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item_00,pMVar3->klass->rgctx_data[0xe].method);
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__AddWithResize((List_1_System_Int32_ *)this_02,item,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
                 if (this_03 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) break;
@@ -154,10 +154,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                   (&pMVar5->vector[0].name)[uVar6 * 2] = (String *)0x0;
                 }
                 else {
-                  pMVar3 = pMVar3->klass->rgctx_data[0xe].method;
-                  item.y = 0.0;
-                  item.x = (float)pMVar3;
-                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_03,item,pMVar3);
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_03,(Vector2)0x3f800000,pMVar3->klass->rgctx_data[0xe].method);
                 }
                 pMVar3 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
                 piVar4 = &(this_03->fields)._version;
@@ -189,8 +186,8 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_BuildMesh(C
                 else {
                   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_03,(Vector2)0x3f80000000000000,pMVar3->klass->rgctx_data[0xe].method);
                 }
-                item_00 = item_00 + 4;
-                if (0x19 < item_00) {
+                item = item + 4;
+                if (0x19 < item) {
                   pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_03,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__);
                   UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv(this_04,(Vector2__Array *)pMVar5,(MethodInfo *)0x0);
                   pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_02,MethodInfo__System__Collections__Generic__List<int>__ToArray__);
@@ -361,9 +358,9 @@ code_?:
       pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
       uVar25 = (pVVar22->oneVector).x;
       uVar26 = (pVVar22->oneVector).y;
+      pIStack_21 = (IModelingConstraint__Class *)((float)pMStack_18 + (pVVar22->oneVector).z * 0.5);
       IStack_20.monitor = (MonitorData *)(uStack_17._4_4_ + (float)uVar26 * 0.5);
       IStack_20.klass = (IModelingConstraint__Class *)((float)uStack_17 + (float)uVar25 * 0.5);
-      pIStack_21 = (IModelingConstraint__Class *)((float)pMStack_18 + (pVVar22->oneVector).z * 0.5);
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SharedCubeFunctions);
       }

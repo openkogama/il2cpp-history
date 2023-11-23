@@ -99,8 +99,8 @@ void Assembly-CSharp.dll::PickupItemHand::PickupItemHand_DoRemoveCubes(PickupIte
         uVar20 = pVVar4->x;
         uVar21 = pVVar4->y;
         fStack_1 = pVVar4->z;
-        VStack_5.z = fStack_1 * 2.0 + fStack_15;
-        VStack_5.y = (float)uVar21 * 2.0 + fStack_14;
+        VStack_5.z = fStack_15 + fStack_1 * 2.0;
+        VStack_5.y = fStack_14 + (float)uVar21 * 2.0;
         VStack_5.x = fStack_13 + (float)uVar20 * 2.0;
         fStack_2 = (float)uVar20;
         fStack_3 = (float)uVar21;

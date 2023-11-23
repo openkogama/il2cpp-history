@@ -169,7 +169,7 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledPosition(SizeStat
         position_00.x = position.x + (float)uVar2 * scale;
         position_00.y = position.y + (float)uVar3 * scale;
         bVar8 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool(radius,position_00,rotation,layerMask,ignoreWoIds,(MethodInfo *)0x0);
-        return bVar8 == 0;
+        return bVar8 ^ 1;
       }
     }
   }
@@ -215,8 +215,8 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition(
           VStack_5.x = (pMVar1->fields).radiusBase.x * scale;
           VStack_5.y = (pMVar1->fields).radiusBase.y * scale;
           VStack_5.z = (pMVar1->fields).radiusBase.z * scale;
-          uStack_6 = CONCAT44((float)uStack_6._4_4_ * scale + fStack_9,(float)(undefined4)uStack_6 * scale + fVar8);
-          fStack_7 = fVar2 + fStack_3;
+          fStack_7 = fStack_3 + fVar2;
+          uStack_6 = CONCAT44(fStack_9 + (float)uStack_6._4_4_ * scale,fVar8 + (float)(undefined4)uStack_6 * scale);
           fStack_3 = fVar2;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Quaternion);
@@ -253,7 +253,7 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition(
             rotation.z = (float)pMVar12;
             rotation.w = fVar13;
             bVar14 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool(radius,position,rotation,layerMask,ignoreWoIds,(MethodInfo *)0x0);
-            return bVar14 == 0;
+            return bVar14 ^ 1;
           }
         }
       }
@@ -281,43 +281,41 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision(SizeSta
       unique0x0000a404 = pVVar3->y;
       pMVar1 = (this->fields).controllerLocal;
       if (pMVar1 != (MvCharacterController *)0x0) {
-        uVar5 = (pMVar1->fields).center.x;
-        uVar6 = (pMVar1->fields).center.y;
-        fVar7 = (float)uVar5 + (float)puStack_4;
-        fVar8 = (float)uVar6 + unique0x0000a404;
+        uVar5 = (pMVar1->fields).center.y;
+        fVar6 = ((float)uVar5 + unique0x0000a404) - hitData.positionTouchingHit.x;
         pMVar1 = (this->fields).controllerLocal;
         if (pMVar1 != (MvCharacterController *)0x0) {
           stack0xffffffd4 = (float)pMVar1;
-          fVar9 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::TypedUxmlAttributeDescription`1[System::Single]::TypedUxmlAttributeDescription_1_System_Single__get_defaultValue((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar1,(MethodInfo *)0x0);
+          fVar7 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::TypedUxmlAttributeDescription`1[System::Single]::TypedUxmlAttributeDescription_1_System_Single__get_defaultValue((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar1,(MethodInfo *)0x0);
           pMVar1 = (this->fields).controllerLocal;
           if (pMVar1 != (MvCharacterController *)0x0) {
             puStack_4 = (undefined *)(pMVar1->fields).centerBase.x;
             unique0x0000a404 = (pMVar1->fields).centerBase.y;
             if (pMVar1 != (MvCharacterController *)0x0) {
-              uVar10 = (pMVar1->fields).center.x;
-              uVar11 = (pMVar1->fields).center.y;
-              fVar12 = (float)puStack_4 - (float)uVar10;
-              fVar13 = unique0x0000a404 - (float)uVar11;
-              fVar9 = fVar9 / (pMVar1->fields).radiusBase.x;
+              uVar8 = (pMVar1->fields).center.y;
+              fVar9 = unique0x0000a404 - (float)uVar8;
+              fVar10 = (pMVar1->fields).radiusBase.x;
               if (pMVar1 != (MvCharacterController *)0x0) {
                 pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
                 if (pTVar2 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
+                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
+                  uVar11 = pVVar3->y;
                   pMVar1 = (this->fields).controllerLocal;
                   if (pMVar1 != (MvCharacterController *)0x0) {
                     puStack_4 = (undefined *)(pMVar1->fields).center.x;
                     unique0x0000a404 = (pMVar1->fields).center.y;
-                    fVar14 = 0.0;
-                    fVar15 = hitData.slopeNormal.x;
-                    fVar16 = hitData.slopeNormal.y;
+                    fVar12 = unique0x0000a404 + (float)uVar11;
+                    fVar13 = 0.0;
+                    fVar14 = hitData.slopeNormal.x;
+                    fVar15 = hitData.slopeNormal.y;
                     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffdc,hitData._32_12_,(MethodInfo *)0x0);
-                    uVar17 = pVVar3->x;
-                    uVar18 = pVVar3->y;
+                    uVar16 = pVVar3->x;
+                    uVar17 = pVVar3->y;
                     puStack_4 = (undefined *)pVVar3->x;
                     unique0x0000a404 = pVVar3->y;
-                    fVar8 = unique0x0000a404 * ((fVar8 - hitData.positionTouchingHit.x) * fVar9 + fVar13) + (float)puStack_4 * ((fVar7 - in_stack_19) * fVar9 + fVar12) + pVVar3->z * fVar14 + -((float)uVar18 * fVar16 + (float)uVar17 * fVar15 + pVVar3->z * hitData.elipsoidNormal.z);
-                    fVar7 = hitData.slopeNormal.x * fVar8;
-                    fVar8 = hitData.slopeNormal.y * fVar8;
+                    fVar7 = unique0x0000a404 * (fVar9 + fVar6 * (fVar7 / fVar10)) + (float)puStack_4 * fVar14 + pVVar3->z * hitData.elipsoidNormal.z + -((float)uVar17 * (fVar12 - hitData.positionTouchingHit.x) + (float)uVar16 * fVar15 + pVVar3->z * fVar13);
+                    fVar6 = hitData.slopeNormal.x * fVar7;
+                    fVar7 = hitData.slopeNormal.y * fVar7;
                     pMVar1 = (this->fields).controllerLocal;
                     if (pMVar1 != (MvCharacterController *)0x0) {
                       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar1,(MethodInfo *)0x0);
@@ -326,12 +324,14 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision(SizeSta
                         this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
                         if (this_01 != (Transform *)0x0) {
                           pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,this_01,(MethodInfo *)0x0);
-                          puStack_4 = (undefined *)pVVar3->x;
-                          unique0x0000a404 = pVVar3->y;
+                          uVar18 = pVVar3->x;
+                          uVar19 = pVVar3->y;
+                          stack0xffffffd4 = (float)uVar19 + fVar6;
+                          puStack_4 = (undefined *)((float)uVar18 + (float)pMVar1);
                           if (pTVar2 != (Transform *)0x0) {
-                            value.y = unique0x0000a404 + fVar7;
-                            value.x = (float)puStack_4 + (float)pMVar1;
-                            value.z = pVVar3->z + fVar8;
+                            value.y = (float)uVar19 + fVar6;
+                            value.x = (float)uVar18 + (float)pMVar1;
+                            value.z = pVVar3->z + fVar7;
                             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar2,value,(MethodInfo *)0x0);
                             return;
                           }

@@ -26,33 +26,33 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_Activat
       }
       pNVar3 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffc8,(Transform *)transform,(MethodInfo *)0x0);
       if (pNVar3->hasValue == 0) {
-        QStack_4.x = 0.0;
-        QStack_4.y = 0.0;
-        QStack_4.z = 0.0;
-        QStack_4.w = 0.0;
-        uStack_5 = 0;
+        uStack_4 = 0;
+        QStack_5.x = 0.0;
+        QStack_5.y = 0.0;
+        QStack_5.z = 0.0;
+        QStack_5.w = 0.0;
       }
       else {
         pBVar6 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::Nullable_1_UnityEngine_Bounds__get_Value((Bounds *)&stack0xffffffcc,(Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffac,MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-        QStack_4.x = (pBVar6->m_Center).x;
-        QStack_4.y = (pBVar6->m_Center).y;
-        QStack_4.z = (pBVar6->m_Center).z;
-        QStack_4.w = (pBVar6->m_Extents).x;
-        uStack_5._0_4_ = (pBVar6->m_Extents).y;
-        uStack_5._4_4_ = (pBVar6->m_Extents).z;
+        QStack_5.x = (pBVar6->m_Center).x;
+        QStack_5.y = (pBVar6->m_Center).y;
+        QStack_5.z = (pBVar6->m_Center).z;
+        QStack_5.w = (pBVar6->m_Extents).x;
+        uStack_4._0_4_ = (pBVar6->m_Extents).y;
+        uStack_4._4_4_ = (pBVar6->m_Extents).z;
       }
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-        bounds.m_Center.y = QStack_4.y;
-        bounds.m_Center.x = QStack_4.x;
-        bounds.m_Center.z = QStack_4.z;
-        bounds.m_Extents.x = QStack_4.w;
-        bounds.m_Extents.y = (float)(int)uStack_5;
-        bounds.m_Extents.z = (float)((ulonglong)uStack_5 >> 0x20);
+        bounds.m_Center.y = QStack_5.y;
+        bounds.m_Center.x = QStack_5.x;
+        bounds.m_Center.z = QStack_5.z;
+        bounds.m_Extents.x = QStack_5.w;
+        bounds.m_Extents.y = (float)(int)uStack_4;
+        bounds.m_Extents.z = (float)((ulonglong)uStack_4 >> 0x20);
         MVWorldObjectClientManager::MVWorldObjectClientManager_UpdateWorldBounds(pMVar1,bounds,(MethodInfo *)0x0);
         pMVar7 = (this->fields)._.mvAvatar;
         fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        uStack_5 = CONCAT44(fVar8,(undefined4)uStack_5);
+        uStack_4 = CONCAT44(fVar8,(undefined4)uStack_4);
         if (pMVar7 != (MVAvatarLocal *)0x0) {
           (pMVar7->fields)._.healParticleSpawnTime = fVar8;
           pMVar7 = (this->fields)._.mvAvatar;
@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_Activat
                   pMVar7 = (this->fields)._.mvAvatar;
                   pIVar10 = (this->fields).avatarInputController;
                   if ((pMVar7 != (MVAvatarLocal *)0x0) && (pTVar11 = (pMVar7->fields)._._._.transform, pTVar11 != (Transform *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation(&QStack_4,pTVar11,(MethodInfo *)0x0);
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation(&QStack_5,pTVar11,(MethodInfo *)0x0);
                     if (pIVar10 != (IAvatarInputController *)0x0) {
                       func_?(3,TypeInfo__IMotorAPI,pIVar10);
                       pMVar7 = (this->fields)._.mvAvatar;
@@ -132,7 +132,7 @@ code_?:
                                                 pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar19,(MethodInfo *)0x0);
                                                 pMVar7 = (this->fields)._.mvAvatar;
                                                 if ((pMVar7 != (MVAvatarLocal *)0x0) && (this_04 = (pMVar7->fields)._._._.transform, this_04 != (Transform *)0x0)) {
-                                                  pQVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation(&QStack_4,this_04,(MethodInfo *)0x0);
+                                                  pQVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation(&QStack_5,this_04,(MethodInfo *)0x0);
                                                   if (pTVar11 != (Transform *)0x0) {
                                                     fVar8 = pQVar20->y;
                                                     fVar21 = pQVar20->z;

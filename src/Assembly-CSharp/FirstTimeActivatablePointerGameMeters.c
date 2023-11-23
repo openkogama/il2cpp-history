@@ -201,7 +201,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerGameMeters::FirstTimeActiva
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
       uVar3 = pVVar2->x;
       uVar4 = pVVar2->y;
-      fVar5 = (this->fields).pointerBodyDirectionOffset.x + (float)uVar3;
+      fVar5 = (float)uVar3 + (this->fields).pointerBodyDirectionOffset.x;
       fVar6 = (float)uVar4 + (this->fields).pointerBodyDirectionOffset.y;
       lifeTime = (this->fields).bubbleLifetimeWhenVisible;
       content = (this->fields).bubbleContent;

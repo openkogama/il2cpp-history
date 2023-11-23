@@ -423,7 +423,7 @@ code_?:
       pIVar5 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)unaff_ESI,(MethodInfo *)0x0);
       (this->fields)._InputSignalReceiver_k__BackingField = pIVar5;
       func_?(&(this->fields)._InputSignalReceiver_k__BackingField);
-      pMVar6 = MVDoor_ReadWorldObjectData((MVDoor_DoorConfiguration *)&stack0xffffffc0,this,(MethodInfo *)0x0);
+      pMVar6 = MVDoor_ReadWorldObjectData((MVDoor_DoorConfiguration *)&stack0xffffffb0,this,(MethodInfo *)0x0);
       bVar7 = pMVar6->beginOpen;
       bVar8 = pMVar6->playersCanOpen;
       bVar9 = pMVar6->reverseOpenDirection;
@@ -488,7 +488,7 @@ code_?:
               if ((pMVar3 != (MVDoorObject *)0x0) && (unaff_ESI = (UnityAction_2_System_Int32_System_Int32_ *)(pMVar3->fields).useCollider, unaff_ESI != (UnityAction_2_System_Int32_System_Int32_ *)0x0)) {
                 pBVar20 = TypeInfo__UnityEngine__BoxCollider;
                 if (((unaff_ESI->klass->_1).naturalAligment < (TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment) || ((unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__UnityEngine__BoxCollider->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__UnityEngine__BoxCollider)) goto code_?;
-                UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_center((BoxCollider *)unaff_ESI,(Vector3)ZEXT412(0x3f800000),(MethodInfo *)0x0);
+                UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_center((BoxCollider *)unaff_ESI,(Vector3)ZEXT812(0x3f800000),(MethodInfo *)0x0);
                 pMVar3 = (this->fields).doorObject;
                 unaff_ESI = (UnityAction_2_System_Int32_System_Int32_ *)0x0;
                 if ((pMVar3 != (MVDoorObject *)0x0) && (unaff_ESI = (UnityAction_2_System_Int32_System_Int32_ *)(pMVar3->fields).useCollider, unaff_ESI != (UnityAction_2_System_Int32_System_Int32_ *)0x0)) {
@@ -1381,9 +1381,7 @@ code_?:
     pOVar8 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffb);
     if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
     unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-    if (unaff_EDI.m_Index == 0) {
-      unaff_EDI.m_Index = 0;
-code_?:
+    if ((unaff_EDI.m_Index == 0) || ((pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>, (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= *(byte *)(*(int *)unaff_EDI.m_Index + 0xb8) && (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 + (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment * 4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
       if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData__Keys);
       }
@@ -1409,8 +1407,6 @@ code_?:
       }
       goto code_?;
     }
-    pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= *(byte *)(*(int *)unaff_EDI.m_Index + 0xb8)) && (*(Dictionary_2_System_Object_System_Object___Class **)(*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 + (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment * 4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) goto code_?;
   }
   func_?(unaff_EDI.m_Index,pDVar3);
   pMVar6 = extraout_EDX_00;

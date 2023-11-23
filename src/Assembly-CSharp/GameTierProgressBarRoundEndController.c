@@ -105,7 +105,7 @@ code_?:
     if (iVar6 == 0) goto code_?;
   }
   func_?();
-  GameTierProgressBar::GameTierProgressBar_Initialize((GameTierProgressBar *)0x7fe85000,(MethodInfo *)0x0);
+  GameTierProgressBar::GameTierProgressBar_Initialize((GameTierProgressBar *)0xafe85000,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<int>,unaff_EBP);
     func_?(&TypeInfo__System__Action);
@@ -128,7 +128,7 @@ code_?:
 code_?:
     pAVar7 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action,this_01,uVar3);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)0x8bffff5a,MethodInfo__GameTierProgressBarGainEffectController__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)0x8bffff47,MethodInfo__GameTierProgressBarGainEffectController__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0);
     pAVar7 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar7,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pAVar7 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
@@ -152,7 +152,7 @@ code_?:
     func_?();
     pAVar9 = TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown;
     pUVar10 = (UnityAction_1_System_Int32Enum_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar10,(Object *)0x8bffff5a,MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownGainEffect_int_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar10,(Object *)0x8bffff47,MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownGainEffect_int_,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       TypeInfo__GamePointGainEffectManager->static_fields->OnGamePointGainEffectShown = (Action_1_Int32_ *)0x0;
@@ -160,7 +160,7 @@ code_?:
       func_?();
       pAVar9 = TypeInfo__GamePointGainEffectManager->static_fields->OnTierProgressBarGamePointGainEffectShown;
       pUVar10 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar10,(Object *)0x8bffff5a,MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownTierProgressBarGainEffect_int_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar10,(Object *)0x8bffff47,MethodInfo__GameTierProgressBarGainEffectController__OnHaveShownTierProgressBarGainEffect_int_,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
       if (pDVar4 == (Delegate *)0x0) {
         TypeInfo__GamePointGainEffectManager->static_fields->OnTierProgressBarGamePointGainEffectShown = (Action_1_Int32_ *)0x0;
@@ -168,7 +168,7 @@ code_?:
         func_?();
         iVar6 = 5;
         do {
-          GameTierProgressBarGainEffectController::GameTierProgressBarGainEffectController_CreateGamePointGainEffect((GameTierProgressBarGainEffectController *)0x8bffff5a,(MethodInfo *)0x0);
+          GameTierProgressBarGainEffectController::GameTierProgressBarGainEffectController_CreateGamePointGainEffect((GameTierProgressBarGainEffectController *)0x8bffff47,(MethodInfo *)0x0);
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
         return;

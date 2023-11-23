@@ -206,43 +206,41 @@ Vector3 * Assembly-CSharp.dll::MVCollectible::MVCollectible_GetClosestGridPoint(
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * 2.0;
-  fVar5 = (float)uVar3 * 2.0;
-  fVar6 = (pVVar1->oneVector).z * 2.0;
+  fVar4 = (pVVar1->oneVector).z * 2.0;
   this_00 = (this->fields)._._._.gameObject;
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar5 = TypeInfo__SharedCubeFunctions;
+      pSVar6 = (SharedCubeFunctions__Class *)((float)uVar2 * 2.0);
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar6 = pSVar5;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
-      scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
-      __return_storage_ptr__->y = fVar5;
+      rotation.y = (float)pSVar6;
+      rotation.x = gridSize;
+      rotation.z = (float)uVar3 * 2.0;
+      rotation.w = fVar4;
+      scale.y = (float)uVar3 * 2.0;
+      scale.x = (float)pSVar6;
+      scale.z = fVar4;
+      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
+      fVar8 = pVVar7->y;
+      fVar4 = pVVar7->z;
+      __return_storage_ptr__->x = pVVar7->x;
+      __return_storage_ptr__->y = fVar8;
       __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar7 = (Vector3 *)(*pcVar9)();
+  return pVVar7;
 }
 
 
@@ -312,16 +310,16 @@ code_?:
         a = *(Delegate **)&(pAStack_6->_1).naturalAligment;
         this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
         DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_03,(Object *)this,MethodInfo__MVCollectible__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
-        unaff_EDI = (Action_1_IWinningCondition___Class *)mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_03,(MethodInfo *)0x0);
+        unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_03,(MethodInfo *)0x0);
         unaff_ESI = TypeInfo__System__Action<IWinningCondition>;
-        if (unaff_EDI == (Action_1_IWinningCondition___Class *)0x0) {
+        if (unaff_EDI == (Delegate *)0x0) {
           (pAStack_6->_1).naturalAligment = 0;
           (pAStack_6->_1).packingSize = 0;
           *(undefined2 *)&(pAStack_6->_1).field_0x56 = 0;
           iVar7 = 0;
           pAVar8 = pAStack_6;
 code_?:
-          pAStack_9 = (Action_1_IWinningCondition___Class *)&(pAVar8->_1).naturalAligment;
+          pDStack_9 = (Delegate *)&(pAVar8->_1).naturalAligment;
           EStack_10.monitor = (MonitorData *)&UNK_?;
           pAStack_6 = (Action_1_IWinningCondition___Class *)iVar7;
           func_?();
@@ -329,7 +327,7 @@ code_?:
         }
         pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
         EStack_10.monitor = (MonitorData *)&UNK_?;
-        pAStack_9 = unaff_EDI;
+        pDStack_9 = unaff_EDI;
         iVar7 = func_?();
         pAVar8 = pAStack_6;
         if (iVar7 != 0) {
@@ -339,19 +337,19 @@ code_?:
           *(short *)&(pAStack_6->_1).field_0x56 = (short)((uint)iVar7 >> 0x10);
           pAStack_6 = TypeInfo__System__Action<IWinningCondition>;
           EStack_10.monitor = (MonitorData *)&UNK_?;
-          pAStack_9 = unaff_EDI;
+          pDStack_9 = unaff_EDI;
           iVar7 = func_?();
           if (iVar7 != 0) goto code_?;
           goto code_?;
         }
         pAStack_6 = unaff_ESI;
         EStack_10.monitor = (MonitorData *)&UNK_?;
-        pAStack_9 = unaff_EDI;
+        pDStack_9 = unaff_EDI;
         func_?();
 code_?:
         EStack_10.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
         EStack_10.monitor = (MonitorData *)0xffffffff;
-        pAStack_9 = (Action_1_IWinningCondition___Class *)0x0;
+        pDStack_9 = (Delegate *)0x0;
         mscorlib.dll::System::Enum::Enum_ToString(&EStack_10,(MethodInfo *)0x0);
       }
       goto code_?;
@@ -360,15 +358,14 @@ code_?:
     if (pMVar4 == (MVRuntimeDataVariable *)0x0) goto code_?;
     unaff_ESI = (Action_1_IWinningCondition___Class *)MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar4,(MethodInfo *)0x0);
     if (unaff_ESI == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
-    unaff_EDI = (Action_1_IWinningCondition___Class *)(unaff_ESI->_0).image;
+    unaff_EDI = (Delegate *)(unaff_ESI->_0).image;
     pDVar2 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (unaff_EDI->_1).naturalAligment) && ((Dictionary_2_System_Object_System_Object___Class *)(unaff_EDI->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= *(byte *)&unaff_EDI[3].monitor) && (*(Dictionary_2_System_Object_System_Object___Class **)((int)unaff_EDI[1].fields.interp_invoke_impl + (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment * 4 + -4) == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       EStack_10.klass = (Enum__Class *)TypeInfo__MV__WorldObject__MVTeam;
       EStack_10.monitor = (MonitorData *)0xffffffff;
-      pAStack_9 = (Action_1_IWinningCondition___Class *)0x0;
+      pDStack_9 = (Delegate *)0x0;
       pSVar11 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_10,(MethodInfo *)0x0);
       bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,(Object *)pSVar11,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-      unaff_EDI = unaff_ESI;
       if (bVar12 != 0) {
         pEVar13 = (Enum__Class *)(this->fields).takenByTeamList;
         if (pEVar13 == (Enum__Class *)0x0) goto code_?;
@@ -405,7 +402,7 @@ code_?:
   func_?(unaff_ESI,pDVar2);
 code_?:
   EStack_10.monitor = (MonitorData *)&UNK_?;
-  pAStack_9 = unaff_EDI;
+  pDStack_9 = unaff_EDI;
   pAStack_6 = (Action_1_IWinningCondition___Class *)this;
   func_?();
   pcVar16 = (code *)swi(3);

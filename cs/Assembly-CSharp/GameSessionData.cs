@@ -27,6 +27,7 @@ public class GameSessionData
 	public MVGameMode gameMode;
 	public string language;
 	public bool embedded;
+	public string embeddedSite;
 	public string token;
 	public string sessionToken;
 	public string newPlanetName;

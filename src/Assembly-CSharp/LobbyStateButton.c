@@ -731,8 +731,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Start(LobbyStateBut
     func_?(&StringLiteral_Lobby_state_button_interstitial_);
     cRam_? = '\x01';
   }
-  puStack_1 = (undefined *)0x0;
-  bVar2 = WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition((WinningConditionType__Enum *)&puStack_1,(MethodInfo *)0x0);
+  WStack_1 = WinningConditionType__Enum_Collectible;
+  bVar2 = WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition(&WStack_1,(MethodInfo *)0x0);
   pIVar3 = (this->fields).countdownFill;
   if (bVar2 == 0) {
     if (pIVar3 == (Image *)0x0) goto code_?;
@@ -746,20 +746,21 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Start(LobbyStateBut
   bVar2 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
   if (bVar2 != 0) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) {
-      this_00 = (this->fields).embeddedPlayerConfig;
-      if (this_00 != (EmbeddedPlayerConfig *)0x0) {
-        pEVar4 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
-        if (pEVar4->showPlayButtonAd == 0) {
+      pEVar4 = (this->fields).embeddedPlayerConfig;
+      if (pEVar4 != (EmbeddedPlayerConfig *)0x0) {
+        pEVar5 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&pLStack_6,pEVar4,(MethodInfo *)0x0);
+        if (pEVar5->showPlayButtonAd == 0) {
           return;
         }
-        pIVar5 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        if (pIVar5 != (IAdManager *)0x0) {
-          cVar6 = func_?();
-          if (cVar6 == '\0') {
+        pIVar7 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        if (pIVar7 != (IAdManager *)0x0) {
+          puStack_8 = (undefined *)0x5;
+          cVar9 = func_?();
+          if (cVar9 == '\0') {
             return;
           }
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -769,20 +770,28 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Start(LobbyStateBut
           pIVar3 = (this->fields).countdownFill;
           if (pIVar3 != (Image *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar3,0,(MethodInfo *)0x0);
-            pIVar3 = (this->fields).playButtonImage;
+            pEVar4 = (this->fields).embeddedPlayerConfig;
             (this->fields).shouldUpdateFillImage = 0;
-            (this->fields).showingAdSprite = 1;
-            if (pIVar3 != (Image *)0x0) {
-              UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar3,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
-              return;
+            if (pEVar4 != (EmbeddedPlayerConfig *)0x0) {
+              pEVar5 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&pLStack_6,pEVar4,(MethodInfo *)0x0);
+              uVar10 = pEVar5->noPlayButtonVideoIcon;
+              if (uVar10 != '\0') {
+                return;
+              }
+              pIVar3 = (this->fields).playButtonImage;
+              (this->fields).showingAdSprite = 1;
+              if (pIVar3 != (Image *)0x0) {
+                UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar3,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
       }
 code_?:
       func_?();
-      pcVar7 = (code *)swi(3);
-      (*pcVar7)();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
   }
@@ -890,24 +899,30 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Update(LobbyStateBu
         if (pIVar4 == (IAdManager *)0x0) goto code_?;
         cVar5 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4);
         if ((cVar5 != '\0') && ((this->fields).showingAdSprite == 0)) {
-          pIVar6 = (this->fields).playButtonImage;
-          if (pIVar6 == (Image *)0x0) goto code_?;
-          UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar6,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
-          (this->fields).showingAdSprite = 1;
+          this_00 = (this->fields).embeddedPlayerConfig;
+          if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+          pEVar7 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+          uVar8 = pEVar7->noPlayButtonVideoIcon;
+          if (uVar8 == '\0') {
+            pIVar6 = (this->fields).playButtonImage;
+            if (pIVar6 == (Image *)0x0) goto code_?;
+            UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar6,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
+            (this->fields).showingAdSprite = 1;
+          }
         }
       }
-      bVar7 = iVar3 != 2;
-      if ((bVar7) || ((this->fields).shouldUpdateFillImage == 0)) {
+      bVar9 = iVar3 != 2;
+      if ((bVar9) || ((this->fields).shouldUpdateFillImage == 0)) {
         pIVar6 = (this->fields).countdownFill;
-        if ((pIVar6 != (Image *)0x0) && (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)) {
-          bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar8,(MethodInfo *)0x0);
-          if (bVar9 != 0) {
+        if ((pIVar6 != (Image *)0x0) && (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0)) {
+          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar10,(MethodInfo *)0x0);
+          if (bVar11 != 0) {
             LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
             pIVar6 = (this->fields).countdownFill;
-            if ((pIVar6 == (Image *)0x0) || (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar8 == (GameObject *)0x0)) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar8,0,(MethodInfo *)0x0);
+            if ((pIVar6 == (Image *)0x0) || (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar10 == (GameObject *)0x0)) goto code_?;
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar10,0,(MethodInfo *)0x0);
           }
-          if (!bVar7) {
+          if (!bVar9) {
             return;
           }
           LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
@@ -920,14 +935,14 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Update(LobbyStateBu
         if (((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) && (value = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage(pMVar2,(MethodInfo *)0x0), pIVar6 != (Image *)0x0)) {
           UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar6,value,(MethodInfo *)0x0);
           pIVar6 = (this->fields).countdownFill;
-          if ((pIVar6 != (Image *)0x0) && (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)) {
-            bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar8,(MethodInfo *)0x0);
-            if (bVar9 != 0) {
+          if ((pIVar6 != (Image *)0x0) && (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0)) {
+            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar10,(MethodInfo *)0x0);
+            if (bVar11 != 0) {
               return;
             }
             pIVar6 = (this->fields).countdownFill;
-            if ((pIVar6 != (Image *)0x0) && (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar8,1,(MethodInfo *)0x0);
+            if ((pIVar6 != (Image *)0x0) && (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0), pGVar10 != (GameObject *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar10,1,(MethodInfo *)0x0);
               return;
             }
           }
@@ -937,8 +952,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Update(LobbyStateBu
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

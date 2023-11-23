@@ -106,16 +106,17 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_ResetTimeStamp(SizeModifier
   if (pAVar2 != (Avatar *)0x0) {
     uVar3 = (this->fields).defaultScale.x;
     uVar4 = (this->fields).defaultScale.y;
-    fVar1 = (this->fields).sizeModifier;
     pMVar5 = (pAVar2->fields).mvAvatar;
+    fVar1 = (this->fields).sizeModifier;
+    uStack_6 = CONCAT44((float)uVar4 * fVar1,(float)uVar3 * fVar1);
     if (pMVar5 != (MVAvatar *)0x0) {
-      (*(code *)(pMVar5->klass->vtable).set_Scale.method)(pMVar5,CONCAT44((float)uVar4 * fVar1,(float)uVar3 * fVar1),(this->fields).defaultScale.z * fVar1,(pMVar5->klass->vtable).get_WorldPosition.methodPtr);
+      (*(code *)(pMVar5->klass->vtable).set_Scale.method)(pMVar5,uStack_6,(this->fields).defaultScale.z * fVar1,(pMVar5->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -147,9 +148,9 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_Unstablize(SizeModifier *th
     dVar12 = (double)((fVar1 - (this->fields).sizeUnstableAfterSeconds) * fVar4);
     func_?();
     fVar1 = 1.0 - (float)dVar12;
-    uStack_13 = CONCAT44((float)uVar11 * 0.03 * fVar1 + (float)uVar7 * fVar3,(float)uVar10 * 0.03 * fVar1 + (float)uVar6 * fVar3);
+    uStack_13 = CONCAT44((float)uVar7 * fVar3 + (float)uVar11 * 0.03 * fVar1,(float)uVar6 * fVar3 + (float)uVar10 * 0.03 * fVar1);
     if (pMVar9 != (MVAvatar *)0x0) {
-      (*(code *)(pMVar9->klass->vtable).set_Scale.method)(pMVar9,uStack_13,fVar8 * 0.03 * fVar1 + fVar8 * fVar3,(pMVar9->klass->vtable).get_WorldPosition.methodPtr);
+      (*(code *)(pMVar9->klass->vtable).set_Scale.method)(pMVar9,uStack_13,fVar8 * fVar3 + fVar8 * 0.03 * fVar1,(pMVar9->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }
   }

@@ -282,7 +282,7 @@ void Assembly-CSharp.dll::LevelBadge::LevelBadge_StreamingAssetCallback(LevelBad
               if (bVar6 == bVar2) {
                 pPVar4 = (this->fields).xpBar;
                 if ((pPVar4 == (ProgressBarAndroid *)0x0) || (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar4,(MethodInfo *)0x0), pGVar5 == (GameObject *)0x0)) goto code_?;
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar2 == 0,(MethodInfo *)0x0);
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar2 ^ 1,(MethodInfo *)0x0);
               }
               pPVar4 = (this->fields).subscriberXPBar;
               if ((pPVar4 != (ProgressBarAndroid *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pPVar4,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {

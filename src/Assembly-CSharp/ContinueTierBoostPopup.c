@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_ChangeB
       if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0x12,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0x72,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -287,7 +287,7 @@ void Assembly-CSharp.dll::ContinueTierBoostPopup::ContinueTierBoostPopup_Initial
         pGVar6 = (this_01->fields).defaultUI;
         if (pGVar6 != (GameObject *)0x0) {
           bVar7 = bVar5;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,bVar5 == 0,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,bVar5 ^ 1,(MethodInfo *)0x0);
           pGVar6 = (this_01->fields).tempClassUI;
           if (pGVar6 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,bVar7,(MethodInfo *)0x0);

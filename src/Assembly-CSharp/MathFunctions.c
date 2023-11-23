@@ -192,14 +192,14 @@ void Assembly-CSharp.dll::MathFunctions::MathFunctions_DistancePointLine_2(Vecto
   fStack_4 = (float)fVar3;
   fVar5 = ((lineEnd.y - lineStart.y) * (point.y - lineStart.y) + (lineEnd.x - lineStart.x) * (point.x - lineStart.x) + (lineEnd.z - lineStart.z) * (point.z - lineStart.z)) / (fStack_4 * fStack_4);
   *u = fVar5;
-  fVar6 = lineStart.z + (lineEnd.z - lineStart.z) * fVar5;
-  fVar7 = lineStart.x + (lineEnd.x - lineStart.x) * fVar5;
-  fVar5 = lineStart.y + (lineEnd.y - lineStart.y) * fVar5;
-  fStack_1 = point.z - fVar6;
+  fVar6 = lineStart.y + fVar5 * (lineEnd.y - lineStart.y);
+  fVar7 = lineStart.x + fVar5 * (lineEnd.x - lineStart.x);
+  fVar5 = lineStart.z + fVar5 * (lineEnd.z - lineStart.z);
+  fStack_1 = point.z - fVar5;
   intersection->x = fVar7;
-  intersection->y = fVar5;
-  intersection->z = fVar6;
-  uStack_2 = CONCAT44(point.y - fVar5,point.x - fVar7);
+  intersection->y = fVar6;
+  intersection->z = fVar5;
+  uStack_2 = CONCAT44(point.y - fVar6,point.x - fVar7);
   fVar3 = (float10)func_?(&uStack_2,0);
   *distance = (float)fVar3;
   return;
@@ -448,16 +448,17 @@ Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetMinVector(Vector3
 Vector3 * Assembly-CSharp.dll::MathFunctions::MathFunctions_GetNormal(Vector3 *__return_storage_ptr__,Vector3 pa,Vector3 pb,Vector3 pc,MethodInfo *method)
 
 {
-  VStack_1.z = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
-  value.y = (pc.x - pa.x) * (pb.z - pa.z) - (pb.x - pa.x) * (pc.z - pa.z);
+  fStack_1 = (pc.x - pa.x) * (pb.z - pa.z);
+  value.y = fStack_1 - (pb.x - pa.x) * (pc.z - pa.z);
   value.x = (pc.z - pa.z) * (pb.y - pa.y) - (pb.z - pa.z) * (pc.y - pa.y);
-  value.z = VStack_1.z;
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_1,value,(MethodInfo *)0x0);
-  fVar3 = pVVar2->y;
-  fVar4 = pVVar2->z;
-  __return_storage_ptr__->x = pVVar2->x;
-  __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = fVar4;
+  VStack_2.z = (pb.x - pa.x) * (pc.y - pa.y) - (pc.x - pa.x) * (pb.y - pa.y);
+  value.z = VStack_2.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_2,value,(MethodInfo *)0x0);
+  fVar4 = pVVar3->y;
+  fVar5 = pVVar3->z;
+  __return_storage_ptr__->x = pVVar3->x;
+  __return_storage_ptr__->y = fVar4;
+  __return_storage_ptr__->z = fVar5;
   return __return_storage_ptr__;
 }
 
@@ -509,12 +510,12 @@ Quaternion * Assembly-CSharp.dll::MathFunctions::MathFunctions_InertiaY(Quaterni
   fVar1 = 0.0;
   auVar2._4_8_ = 0;
   auVar2._0_4_ = eulerFrom.y * 0.017453292;
-  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,(Vector3)(auVar2 << 0x20),(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffb0,(Vector3)(auVar2 << 0x20),(MethodInfo *)0x0);
   fVar3 = eulerTo.y * 0.017453292;
-  pQVar4 = (Quaternion *)&stack0xffffffd0;
+  pQVar4 = (Quaternion *)&stack0xffffffc0;
   euler.y = fVar3;
   euler.x = fVar1;
-  euler.z = 0.0;
+  euler.z = fVar1;
   pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad(pQVar4,euler,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)pQVar5->x;
   fVar6 = pQVar5->y;
@@ -530,7 +531,7 @@ Quaternion * Assembly-CSharp.dll::MathFunctions::MathFunctions_InertiaY(Quaterni
   b.x = (float)method_00;
   b.z = fVar7;
   b.w = fVar8;
-  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffc0,a,b,fVar10 * speed,(MethodInfo *)0x0);
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffb0,a,b,fVar10 * speed,(MethodInfo *)0x0);
   fVar6 = pQVar4->y;
   fVar7 = pQVar4->z;
   fVar8 = pQVar4->w;

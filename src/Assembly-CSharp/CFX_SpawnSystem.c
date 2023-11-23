@@ -323,7 +323,7 @@ void Assembly-CSharp.dll::CFX_SpawnSystem::CFX_SpawnSystem_addObjectToPool(CFX_S
             *(undefined1 *)&(*pp_Var5)[4].klass = 0;
             pp_Var5 = pp_Var5 + 1;
           }
-          this_02 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0x2040c641,(int32_t)key_00,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<UnityEngine::GameObject>_>__get_Item_int_);
+          this_02 = (List_1_System_Object_ *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)0x6774c085,(int32_t)key_00,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<UnityEngine::GameObject>_>__get_Item_int_);
           if (this_02 == (List_1_System_Object_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_02,(Object *)sourceObject,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_);
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags((Object_1 *)sourceObject,HideFlags__Enum_HideInHierarchy,(MethodInfo *)0x0);

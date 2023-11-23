@@ -238,16 +238,18 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSlidin
     cRam_? = '\x01';
   }
   fVar1 = targetPosition.x - newPos.x;
+  fVar2 = targetPosition.y - newPos.y;
+  uStack_3 = 0;
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  end.y = newPos.y + (targetPosition.y - newPos.y);
+  end.y = newPos.y + fVar2;
   end.x = newPos.x + fVar1;
-  fStack_2 = newPos.y;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
+  fStack_4 = newPos.x;
+  fStack_5 = newPos.y;
+  fStack_6 = 0.0;
+  fStack_7 = 0.0;
   end.z = newPos.z + (targetPosition.z - newPos.z);
-  fStack_5 = newPos.x;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(newPos,end,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
@@ -256,48 +258,48 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSlidin
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  pMVar6 = TypeInfo__System__Math;
-  dVar7 = (double)((slideVector.x * slideVector.x + slideVector.y * slideVector.y + slideVector.z * slideVector.z) * (fStack_8 * fStack_8 + fStack_9 * fStack_9 + fVar1 * fVar1));
-  if (dVar7 < 0.0) {
+  pMVar8 = TypeInfo__System__Math;
+  dVar9 = (double)((slideVector.x * slideVector.x + slideVector.y * slideVector.y + slideVector.z * slideVector.z) * (fStack_10 * fStack_10 + fVar1 * fVar1 + fVar2 * fVar2));
+  if (dVar9 < 0.0) {
     func_?();
   }
   else {
-    dVar7 = SQRT(dVar7);
+    dVar9 = SQRT(dVar9);
   }
-  if ((float)dVar7 < 1e-15) {
+  if ((float)dVar9 < 1e-15) {
     fVar1 = 0.0;
   }
   else {
-    fVar10 = -1.0;
-    fStack_8 = (slideVector.x * fStack_8 + slideVector.y * fStack_9 + slideVector.z * fVar1) / (float)dVar7;
-    if ((fStack_8 < -1.0) || (fVar10 = 1.0, 1.0 < fStack_8)) {
-      fStack_8 = fVar10;
+    fVar11 = -1.0;
+    fStack_10 = (slideVector.y * fStack_10 + slideVector.x * fVar1 + slideVector.z * fVar2) / (float)dVar9;
+    if ((fStack_10 < -1.0) || (fVar11 = 1.0, 1.0 < fStack_10)) {
+      fStack_10 = fVar11;
     }
-    if ((pMVar6->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(pMVar6);
+    if ((pMVar8->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pMVar8);
     }
-    auVar11._0_8_ = (double)fStack_8;
-    auVar11._8_8_ = 0;
+    auVar12._0_8_ = (double)fStack_10;
+    auVar12._8_8_ = 0;
     func_?();
-    fVar1 = (float)auVar11._0_8_ * 57.29578;
+    fVar1 = (float)auVar12._0_8_ * 57.29578;
   }
-  dVar12 = (double)(fVar1 * 0.017453292);
+  dVar13 = (double)(fVar1 * 0.017453292);
   func_?();
-  fVar13 = (float10)func_?(&fStack_5,0);
-  dVar7 = (double)(fVar13 / (float10)(baseDistance / (float)dVar12));
+  fVar14 = (float10)func_?(&uStack_3,0);
+  dVar9 = (double)(fVar14 / (float10)(baseDistance / (float)dVar13));
   func_?();
-  dVar7 = (double)((180.0 - ((float)dVar7 * 57.29578 + fVar1)) * 0.017453292);
+  dVar9 = (double)((180.0 - ((float)dVar9 * 57.29578 + fVar1)) * 0.017453292);
   func_?();
-  fVar1 = (float)dVar7 * (baseDistance / (float)dVar12);
-  fStack_3 = newPos.z + slideVector.z * fVar1;
+  fVar1 = (float)dVar9 * (baseDistance / (float)dVar13);
+  fStack_5 = newPos.z + slideVector.z * fVar1;
   start.y = (float)unaff_retaddr;
   start.x = (float)unaff_EBP;
   start.z = newPos.z;
   end_00.y = newPos.y + slideVector.y * fVar1;
-  end_00.x = fStack_4 + slideVector.x * fVar1;
-  end_00.z = fStack_3;
+  end_00.x = fStack_7 + slideVector.x * fVar1;
+  end_00.z = fStack_5;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(start,end_00,(MethodInfo *)0x0);
-  return fStack_3;
+  return fStack_6;
 }
 
 

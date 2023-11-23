@@ -114,21 +114,19 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::InHouseAd
   pGVar1 = (GeneralPromotionAd *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar1,AdIntegration__InHouse__GeneralPromotionAd_MethodInfo__UnityEngine__Object__Instantiate<AdIntegration::InHouse::GeneralPromotionAd>_AdIntegration__InHouse__GeneralPromotionAd_);
   (this->fields).generalPromotionAd = pGVar1;
   func_?(&(this->fields).generalPromotionAd,pGVar1);
-  iStack_2 = 0;
-  uStack_3 = 0;
-  bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    pPStack_5 = (this->fields).registeredLooksData;
+  _uStack_c = 0;
+  bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pPStack_3 = (this->fields).registeredLooksData;
   }
   else {
-    pPStack_5 = (this->fields).touristLooksData;
+    pPStack_3 = (this->fields).touristLooksData;
   }
-  func_?(&pPStack_5,pPStack_5);
+  func_?(&pPStack_3,pPStack_3);
   pGVar1 = (this->fields).generalPromotionAd;
-  iStack_2 = timeout;
-  uStack_3 = uStack_3 & 0xffffff00;
+  uStack_4 = (uint5)(uint)timeout;
   if (pGVar1 != (GeneralPromotionAd *)0x0) {
-    GeneralPromotionAd::GeneralPromotionAd_Initialize(pGVar1,pPStack_5,GeneralPromotionType__Enum_BlockedWithTimer,0,(MethodInfo *)0x0);
+    GeneralPromotionAd::GeneralPromotionAd_Initialize(pGVar1,pPStack_3,GeneralPromotionType__Enum_BlockedWithTimer,0,(MethodInfo *)0x0);
     (pGVar1->fields).secondsToWait = (float)timeout;
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
@@ -140,8 +138,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::InHouseAd
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -776,7 +776,7 @@ code_?:
     (this->fields).prevHealth = (float)&stack0xfffffff0;
     if (pPVar2 != (ParticleSystem *)0x0) {
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,1.03827455e-29,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startSizeMultiplier_Injected((ParticleSystem_MainModule *)&stack0xffffffec,1.038575e-29,(MethodInfo *)0x0);
       return;
     }
   }
@@ -972,12 +972,19 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
   }
   uStack_1 = 0;
   iVar2 = func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorColorKey,4);
+  uVar3 = 0x3f800000;
+  uVar4 = 0x3f800000;
+  uVar5 = 0x3f800000;
+  uVar6 = 0x3e1fa0a2;
   if (iVar2 != 0) {
     if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
     *(undefined4 *)(iVar2 + 0x10) = 0x3f800000;
     *(undefined4 *)(iVar2 + 0x14) = 0x3f800000;
     *(undefined4 *)(iVar2 + 0x18) = 0x3f800000;
     *(undefined4 *)(iVar2 + 0x1c) = 0x3e1fa0a2;
+    uVar3 = 0x3dc8b439;
+    uVar5 = 0x3f760419;
+    uVar6 = 0x3e43c4c5;
     if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
     *(undefined4 *)(iVar2 + 0x20) = 0x3dc8b439;
     *(undefined4 *)(iVar2 + 0x24) = 0x3f800000;
@@ -995,25 +1002,25 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
     *(undefined4 *)(iVar2 + 0x4c) = 0x3f800000;
     uStack_1 = CONCAT44(uStack_1._4_4_,iVar2);
     func_?(&uStack_1,iVar2);
-    pTVar3 = (ThrustersColorAlphaKey__Array *)func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorAlphaKey,4);
-    if (pTVar3 != (ThrustersColorAlphaKey__Array *)0x0) {
-      if (pTVar3->max_length != 0) {
-        pTVar3->vector[0].alpha = 0.0;
-        pTVar3->vector[0].time = 0.0;
-        if (1 < pTVar3->max_length) {
-          pTVar3->vector[1].alpha = 1.0;
-          pTVar3->vector[1].time = 0.09999237;
-          if (2 < pTVar3->max_length) {
-            pTVar3->vector[2].alpha = 1.0;
-            pTVar3->vector[2].time = 0.4764782;
-            if (3 < pTVar3->max_length) {
-              pTVar3->vector[3].alpha = 0.0;
-              pTVar3->vector[3].time = 1.0;
-              uStack_1._4_4_ = pTVar3;
-              func_?((int)&uStack_1 + 4,pTVar3);
-              pHVar4 = TypeInfo__HoverCraftVisualization->static_fields;
-              (pHVar4->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
-              (pHVar4->DefaultThrustersColor).alphas = uStack_1._4_4_;
+    pTVar7 = (ThrustersColorAlphaKey__Array *)func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorAlphaKey,4);
+    if (pTVar7 != (ThrustersColorAlphaKey__Array *)0x0) {
+      if (pTVar7->max_length != 0) {
+        pTVar7->vector[0].alpha = 0.0;
+        pTVar7->vector[0].time = 0.0;
+        if (1 < pTVar7->max_length) {
+          pTVar7->vector[1].alpha = 1.0;
+          pTVar7->vector[1].time = 0.09999237;
+          if (2 < pTVar7->max_length) {
+            pTVar7->vector[2].alpha = 1.0;
+            pTVar7->vector[2].time = 0.4764782;
+            if (3 < pTVar7->max_length) {
+              pTVar7->vector[3].alpha = 0.0;
+              pTVar7->vector[3].time = 1.0;
+              uStack_1._4_4_ = pTVar7;
+              func_?((int)&uStack_1 + 4,pTVar7);
+              pHVar8 = TypeInfo__HoverCraftVisualization->static_fields;
+              (pHVar8->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
+              (pHVar8->DefaultThrustersColor).alphas = uStack_1._4_4_;
               func_?(TypeInfo__HoverCraftVisualization->static_fields,0);
               return;
             }
@@ -1023,11 +1030,11 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
       goto code_?;
     }
   }
-  func_?();
+  func_?(uVar3,uVar4,uVar5,uVar6);
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

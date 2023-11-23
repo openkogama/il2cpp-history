@@ -515,9 +515,9 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_HandlePreviewing(Accessor
   if ((pAVar1 != (AccessoryDataClient *)0x0) && (avatarBody != (MVBody *)0x0)) {
     bVar2 = MVBody::MVBody_IsAccessoryEquipped(avatarBody,(pAVar1->fields)._.sAID,(MethodInfo *)0x0);
     pAVar3 = (this->fields).sizeSlider;
-    (this->fields).isPreviewing = bVar2 == 0;
+    (this->fields).isPreviewing = bVar2 ^ 1;
     if (pAVar3 != (AccessorySizeSlider *)0x0) {
-      (pAVar3->fields).isInPreview = bVar2 == 0;
+      (pAVar3->fields).isInPreview = bVar2 ^ 1;
       pAVar4 = (this->fields).offsetSlider;
       if (pAVar4 != (AccessoryOffsetSlider *)0x0) {
         (pAVar4->fields).isInPreview = (this->fields).isPreviewing;
@@ -790,9 +790,9 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize(AccessoryView 
           if ((pAVar6 == (AccessoryDataClient *)0x0) || (this_05 == (MVBody *)0x0)) goto code_?;
           bVar2 = MVBody::MVBody_IsAccessoryEquipped(this_05,(pAVar6->fields)._.sAID,(MethodInfo *)0x0);
           pAVar7 = (this->fields).sizeSlider;
-          (this->fields).isPreviewing = bVar2 == 0;
+          (this->fields).isPreviewing = bVar2 ^ 1;
           if (pAVar7 == (AccessorySizeSlider *)0x0) goto code_?;
-          (pAVar7->fields).isInPreview = bVar2 == 0;
+          (pAVar7->fields).isInPreview = bVar2 ^ 1;
           pAVar8 = (this->fields).offsetSlider;
           if (pAVar8 == (AccessoryOffsetSlider *)0x0) goto code_?;
           (pAVar8->fields).isInPreview = (this->fields).isPreviewing;

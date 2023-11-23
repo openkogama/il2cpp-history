@@ -13,7 +13,7 @@ using MV.Common;
 public class NotificationAreaSingleInstanceQueue : NotificationArea
 {
 	// Fields
-	private Queue<NotificationQueueData> enqueuedNotifications;
+	private readonly Queue<NotificationQueueData> enqueuedNotifications;
 	private bool shouldSkipDequeueCallback;
 	private const float decayTime = 10f;
 

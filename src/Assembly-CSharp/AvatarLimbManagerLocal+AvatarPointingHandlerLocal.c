@@ -26,10 +26,10 @@ code_?:
   fVar7 = pQVar5->y;
   fVar8 = pQVar5->z;
   fVar9 = pQVar5->w;
-  __return_storage_ptr__->x = (newYawRotation.w * fVar6 + fVar9 * newYawRotation.x + fVar8 * newYawRotation.y) - newYawRotation.z * fVar7;
-  __return_storage_ptr__->y = (newYawRotation.w * fVar7 + fVar9 * newYawRotation.y + newYawRotation.z * fVar6) - fVar8 * newYawRotation.x;
-  __return_storage_ptr__->z = (newYawRotation.w * fVar8 + fVar9 * newYawRotation.z + fVar7 * newYawRotation.x) - newYawRotation.y * fVar6;
-  __return_storage_ptr__->w = ((fVar9 * newYawRotation.w - fVar6 * newYawRotation.x) - fVar7 * newYawRotation.y) - fVar8 * newYawRotation.z;
+  __return_storage_ptr__->x = (newYawRotation.w * fVar6 + newYawRotation.x * fVar9 + newYawRotation.y * fVar8) - newYawRotation.z * fVar7;
+  __return_storage_ptr__->y = (fVar7 * newYawRotation.w + newYawRotation.y * fVar9 + newYawRotation.z * fVar6) - fVar8 * newYawRotation.x;
+  __return_storage_ptr__->z = (fVar8 * newYawRotation.w + newYawRotation.z * fVar9 + fVar7 * newYawRotation.x) - newYawRotation.y * fVar6;
+  __return_storage_ptr__->w = ((newYawRotation.w * fVar9 - fVar6 * newYawRotation.x) - fVar7 * newYawRotation.y) - newYawRotation.z * fVar8;
   return __return_storage_ptr__;
 }
 

@@ -195,22 +195,21 @@ KogamaSettingNumericBase_1_System_Int32_ * MVWorldObject.dll::MV::WorldObject::K
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._.children;
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
-    pKVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_gsk,MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_);
     if (unaff_ESI.m_Index == 0) {
       return (KogamaSettingNumericBase_1_System_Int32_ *)0x0;
     }
-    pKVar1 = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>;
+    unaff_EDI = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>;
     if (((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>->_1).naturalAligment <= *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8)) && (*(KogamaSettingNumericBase_1_System_Int32___Class **)(*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 + (uint)(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>->_1).naturalAligment * 4) == TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>)) {
       return (KogamaSettingNumericBase_1_System_Int32_ *)unaff_ESI.m_Index;
     }
   }
-  func_?(unaff_ESI.m_Index,pKVar1);
-  pcVar2 = (code *)swi(3);
-  pKVar3 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar2)();
-  return pKVar3;
+  func_?(unaff_ESI.m_Index,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pKVar2 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar1)();
+  return pKVar2;
 }
 
 
@@ -228,21 +227,20 @@ KogamaSettingValueWrapperBase * MVWorldObject.dll::MV::WorldObject::KogamaSettin
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._.children;
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
-    pKVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(this_00,(Object *)StringLiteral_sk,MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_);
     if (unaff_ESI.m_Index == 0) {
       return (KogamaSettingValueWrapperBase *)0x0;
     }
-    pKVar1 = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase;
+    unaff_EDI = TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase;
     if (((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment <= *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8)) && (*(KogamaSettingValueWrapperBase__Class **)(*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 + (uint)(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase->_1).naturalAligment * 4) == TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase)) {
       return (KogamaSettingValueWrapperBase *)unaff_ESI.m_Index;
     }
   }
-  func_?(unaff_ESI.m_Index,pKVar1);
-  pcVar2 = (code *)swi(3);
-  pKVar3 = (KogamaSettingValueWrapperBase *)(*pcVar2)();
-  return pKVar3;
+  func_?(unaff_ESI.m_Index,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pKVar2 = (KogamaSettingValueWrapperBase *)(*pcVar1)();
+  return pKVar2;
 }
 

@@ -210,8 +210,8 @@ Vector3 * Assembly-CSharp.dll::MVRigidBody::MVRigidBody_GetImpulse(Vector3 *__re
       while( true ) {
         bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[AnimatedTextureOffset+TextureOffsetAnimationData]::List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData__MoveNext((List_1_T_Enumerator_AnimatedTextureOffset_TextureOffsetAnimationData_ *)auStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__);
         if (bVar15 == 0) break;
-        LStack_12._current.asset = (VisualTreeAsset *)((float)pVStack_10 + (float)auStack_6._20_4_);
-        uStack_9 = CONCAT44(uStack_9._4_4_ + (float)auStack_6._16_4_,(float)uStack_9 + (float)auStack_6._12_4_);
+        LStack_12._current.asset = (VisualTreeAsset *)((float)auStack_6._20_4_ + (float)pVStack_10);
+        uStack_9 = CONCAT44((float)auStack_6._16_4_ + uStack_9._4_4_,(float)auStack_6._12_4_ + (float)uStack_9);
         pVStack_10 = LStack_12._current.asset;
       }
       uStack_1 = 0xffffffff;

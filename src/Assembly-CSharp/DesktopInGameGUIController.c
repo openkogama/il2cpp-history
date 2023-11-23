@@ -58,7 +58,7 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
         if (pEVar4 == (EmbeddedPlayerConfig *)0x0) goto code_?;
         bVar3 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsSite(pEVar4,EmbeddedSite__Enum_GameDistribution,(MethodInfo *)0x0);
         if (pGVar5 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar3 == 0,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,bVar3 ^ 1,(MethodInfo *)0x0);
         pEVar4 = (this->fields).embeddedPlayerConfig;
         if (pEVar4 == (EmbeddedPlayerConfig *)0x0) goto code_?;
         pEVar6 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&pLStack_7,pEVar4,(MethodInfo *)0x0);

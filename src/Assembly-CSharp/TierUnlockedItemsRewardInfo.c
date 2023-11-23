@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::TierUnlockedItemsRewardInfo::TierUnlockedItemsRewardIn
       if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0x92,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0x82,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {

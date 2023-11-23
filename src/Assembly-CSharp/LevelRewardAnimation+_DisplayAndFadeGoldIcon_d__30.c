@@ -6,8 +6,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_REWARD_);
     cRam_? = '\x01';
   }
   pLVar2 = (this->fields).__4__this;
@@ -170,11 +170,13 @@ code_?:
     }
   }
 code_?:
-  cVar16 = func_?();
-  (&stack0x3d865b00)[(int)pLVar1] = (&stack0x3d865b00)[(int)pLVar1] + cVar16;
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  cVar16 = '\0';
+  pcVar17 = (char *)func_?();
+  pLRam3d8a9710 = pLVar1;
+  *pcVar17 = *pcVar17 + (char)pcVar17 + cVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

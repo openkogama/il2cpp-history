@@ -41,7 +41,7 @@ void Assembly-CSharp.dll::AccessoryAttacher::AccessoryAttacher_AttachAccessory(A
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     pMVar5 = (this->fields).avatarBody;
     if ((pMVar5 != (MVBody *)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
-      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetAvatarAccessorySlot(this_01,(pMVar5->fields)._._._._.id,streamingAssetsId,offset,3.775904e-29,(MethodInfo *)0x0);
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetAvatarAccessorySlot(this_01,(pMVar5->fields)._._._._.id,streamingAssetsId,offset,3.7750565e-29,(MethodInfo *)0x0);
       return;
     }
   }

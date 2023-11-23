@@ -100,29 +100,32 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_TeamTint(Te
 void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Tint(TeleporterTintObject *this,Color c,MethodInfo *method)
 
 {
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
   this_00 = (this->fields).materialCylinderToTint;
   if (this_00 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color(this_00,c,(MethodInfo *)0x0);
     this_01 = (this->fields).particleCircleToTint;
-    fStack_1 = c.r * 0.5;
+    fVar2 = c.r * 0.5;
+    fVar3 = c.g * 0.5;
     if (this_01 != (ParticleSystem *)0x0) {
-      PStack_2.m_ParticleSystem = (ParticleSystem *)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_01,(MethodInfo *)0x0);
-      color.g = c.g * 0.5;
-      color.r = fStack_1;
+      PStack_1.m_ParticleSystem = (ParticleSystem *)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(this_01,(MethodInfo *)0x0);
+      color.g = fVar3;
+      color.r = fVar2;
       color.b = c.b * 0.5;
       color.a = 1.0;
-      pPVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::ParticleSystem_MinMaxGradient_op_Implicit((ParticleSystem_MinMaxGradient *)&stack0xffffff80,color,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startColor(&PStack_2,*pPVar3,(MethodInfo *)0x0);
+      pPVar4 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::ParticleSystem_MinMaxGradient_op_Implicit((ParticleSystem_MinMaxGradient *)&stack0xffffffbc,color,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::ParticleSystem_MainModule_set_startColor(&PStack_1,*pPVar4,(MethodInfo *)0x0);
       this_02 = (this->fields).lightToTint;
       if (this_02 != (Light *)0x0) {
+        fStack5 = c.a;
         UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color(this_02,c,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

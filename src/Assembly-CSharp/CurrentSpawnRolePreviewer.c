@@ -390,7 +390,7 @@ code_?:
                                                             if (pMVar15->max_length <= uVar10) goto code_?;
                                                             pMVar16 = *(Material **)((int)pMVar15->vector + iVar14 + -0x10);
                                                             if (pMVar16 == (Material *)0x0) goto code_?;
-                                                            pCVar17 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffd0,pMVar16,(MethodInfo *)0x0);
+                                                            pCVar17 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color((Color *)&stack0xffffffc0,pMVar16,(MethodInfo *)0x0);
                                                             fVar18 = pCVar17->r;
                                                             fVar19 = pCVar17->g;
                                                             fVar20 = pCVar17->b;
@@ -435,7 +435,8 @@ code_?:
                                                           if (pMVar5 != (MVBody *)0x0) {
                                                             layersToRender = (pMVar5->fields)._._._.previewLayerMask;
                                                             pTVar7 = (this->fields).avatarResetToTransform;
-                                                            uVar27 = 0xbf00000000000000;
+                                                            uVar27 = 0;
+                                                            uVar28 = 0xbf000000;
                                                             fVar18 = 100.0;
                                                             fVar19 = 100.0;
                                                             fVar20 = 100.0;
@@ -445,21 +446,21 @@ code_?:
                                                               if (pAVar6 != (AvatarPreviewer *)0x0) {
                                                                 previewPosition.y = fVar19;
                                                                 previewPosition.x = fVar18;
+                                                                cameraOffset.y = (float)uVar28;
+                                                                cameraOffset.x = (float)uVar27;
                                                                 cameraOffset.z = -1.0;
-                                                                cameraOffset.x = (float)(int)uVar27;
-                                                                cameraOffset.y = (float)(int)((ulonglong)uVar27 >> 0x20);
                                                                 previewPosition.z = fVar20;
                                                                 AvatarPreviewer::AvatarPreviewer_Initialize(pAVar6,previewDimensionsX,previewDimensionsY,CameraClearFlags__Enum_Color,layersToRender,cameraOffset,pTVar7,previewPosition,StringLiteral_CurrentSpawnRole_preview,(MVWorldObjectClient *)pMVar5,(this->fields).bodyClone,(Vector3)ZEXT812(0x41700000),(MethodInfo *)0x0);
                                                                 pAVar6 = (this->fields).previewer;
                                                                 if ((pAVar6 != (AvatarPreviewer *)0x0) && (this_00 = (pAVar6->fields).previewCam, this_00 != (Camera *)0x0)) {
                                                                   pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
                                                                   if (pTVar7 != (Transform *)0x0) {
-                                                                    pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,pTVar7,(MethodInfo *)0x0);
-                                                                    uVar29 = pVVar28->x;
-                                                                    uVar30 = pVVar28->y;
-                                                                    value.y = (float)uVar30 + 1.22;
-                                                                    value.x = (float)uVar29 + 0.0;
-                                                                    value.z = pVVar28->z + 0.0;
+                                                                    pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,pTVar7,(MethodInfo *)0x0);
+                                                                    uVar30 = pVVar29->x;
+                                                                    uVar31 = pVVar29->y;
+                                                                    value.y = (float)uVar31 + 1.22;
+                                                                    value.x = (float)uVar30 + 0.0;
+                                                                    value.z = pVVar29->z + 0.0;
                                                                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar7,value,(MethodInfo *)0x0);
                                                                     pGVar3 = (this->fields).bodyClone;
                                                                     if (pGVar3 != (GameObject *)0x0) {
@@ -486,13 +487,13 @@ code_?:
                                                                               if ((pAVar6 != (AvatarPreviewer *)0x0) && (pGVar3 = (pAVar6->fields)._PreviewGameObject_k__BackingField, pGVar3 != (GameObject *)0x0)) {
                                                                                 this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
                                                                                 if (this_03 != (Transform *)0x0) {
-                                                                                  pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,this_03,(MethodInfo *)0x0);
-                                                                                  uVar31 = pVVar28->x;
-                                                                                  uVar32 = pVVar28->y;
+                                                                                  pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,this_03,(MethodInfo *)0x0);
+                                                                                  uVar32 = pVVar29->x;
+                                                                                  uVar33 = pVVar29->y;
                                                                                   if (pTVar7 != (Transform *)0x0) {
-                                                                                    value_01.y = (float)uVar32 - 0.1;
-                                                                                    value_01.x = (float)uVar31 + 0.0;
-                                                                                    value_01.z = pVVar28->z + 0.0;
+                                                                                    value_01.y = (float)uVar33 - 0.1;
+                                                                                    value_01.x = (float)uVar32 + 0.0;
+                                                                                    value_01.z = pVVar29->z + 0.0;
                                                                                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar7,value_01,(MethodInfo *)0x0);
                                                                                     return;
                                                                                   }
@@ -559,8 +560,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar33 = (code *)swi(3);
-  (*pcVar33)();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 

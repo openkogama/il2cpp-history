@@ -217,7 +217,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32]::Subscribabl
       pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
     bVar3 = mscorlib.dll::System::Int32::Int32_Equals((Int32 *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -244,7 +244,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32]::Subscribabl
       pIVar2 = (Il2CppClass *)func_?(pIVar2);
     }
     bVar3 = mscorlib.dll::System::Int32::Int32_Equals((Int32 *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -276,7 +276,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32]::Subscribabl
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
       bVar3 = mscorlib.dll::System::Int32::Int32_Equals((Int32 *)&a->fields,obj,pIVar1->rgctx_data[9].method);
-      return bVar3 == 0;
+      return bVar3 ^ 1;
     }
   }
   func_?();

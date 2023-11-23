@@ -183,46 +183,52 @@ CapsuleCollider * Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_CreateTrig
     func_?(&StringLiteral_Player);
     cRam_? = '\x01';
   }
-  this_01 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(this_01,StringLiteral_triggerCollider,(MethodInfo *)0x0);
-  if (this_01 != (GameObject *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_01,(MethodInfo *)0x0);
-    this_00 = (this->fields)._._._.gameObject;
-    if ((this_00 != (GameObject *)0x0) && (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(pTVar1,value,(MethodInfo *)0x0);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_01,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
+  this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(this_00,StringLiteral_triggerCollider,(MethodInfo *)0x0);
+  if (this_00 != (GameObject *)0x0) {
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 != (GameObject *)0x0) {
+      value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_01,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(pTVar1,value,(MethodInfo *)0x0);
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
         if (pTVar1 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar1,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
-          value_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Player,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(this_01,value_00,(MethodInfo *)0x0);
-          pCVar2 = (CapsuleCollider *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_01,UnityEngine__CapsuleCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::CapsuleCollider>__);
-          if (pCVar2 != (CapsuleCollider *)0x0) {
-            UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_center(pCVar2,(Vector3)ZEXT812(0x3f80000000000000),(MethodInfo *)0x0);
-            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger((Collider *)pCVar2,1,(MethodInfo *)0x0);
-            this_02 = (CapsuleCollider *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1((GameObject *)0xb8,UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__);
-            if (this_02 != (CapsuleCollider *)0x0) {
-              if (((this_02->klass->_1).naturalAligment < (TypeInfo__UnityEngine__CapsuleCollider->_1).naturalAligment) || ((this_02->klass->_1).typeHierarchy[(TypeInfo__UnityEngine__CapsuleCollider->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__UnityEngine__CapsuleCollider)) goto code_?;
-              fVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_get_height(this_02,(MethodInfo *)0x0);
-              UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_height(pCVar2,fVar3,(MethodInfo *)0x0);
-              fVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_get_radius(this_02,(MethodInfo *)0x0);
-              UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_radius(pCVar2,fVar3,(MethodInfo *)0x0);
-              this_03 = (TriggerBoxEvents *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_01,TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__AddComponent<TriggerBoxEvents>__);
-              this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_04,(Object *)&UNK_?,MethodInfo__MVAvatarRemote__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
-              if (this_03 != (TriggerBoxEvents *)0x0) {
-                TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(this_03,(EventHandler_1_TriggerEventArgs_ *)this_04,(MethodInfo *)0x0);
-                return pCVar2;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
+          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          if (pTVar1 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar1,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
+            value_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Player,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(this_00,value_00,(MethodInfo *)0x0);
+            pCVar3 = (CapsuleCollider *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_00,UnityEngine__CapsuleCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::CapsuleCollider>__);
+            if (pCVar3 != (CapsuleCollider *)0x0) {
+              UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_center(pCVar3,(Vector3)ZEXT812(0x3f80000000000000),(MethodInfo *)0x0);
+              UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger((Collider *)pCVar3,1,(MethodInfo *)0x0);
+              pGVar2 = (this->fields)._._._.gameObject;
+              if (pGVar2 != (GameObject *)0x0) {
+                this_01 = (CapsuleCollider *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar2,UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__);
+                if (this_01 != (CapsuleCollider *)0x0) {
+                  if (((this_01->klass->_1).naturalAligment < (TypeInfo__UnityEngine__CapsuleCollider->_1).naturalAligment) || ((this_01->klass->_1).typeHierarchy[(TypeInfo__UnityEngine__CapsuleCollider->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__UnityEngine__CapsuleCollider)) goto code_?;
+                  fVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_get_height(this_01,(MethodInfo *)0x0);
+                  UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_height(pCVar3,fVar4,(MethodInfo *)0x0);
+                  fVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_get_radius(this_01,(MethodInfo *)0x0);
+                  UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_radius(pCVar3,fVar4,(MethodInfo *)0x0);
+                  this_02 = (TriggerBoxEvents *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_00,TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__AddComponent<TriggerBoxEvents>__);
+                  this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)&UNK_?,MethodInfo__MVAvatarRemote__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                  if (this_02 != (TriggerBoxEvents *)0x0) {
+                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(this_02,(EventHandler_1_TriggerEventArgs_ *)this_03,(MethodInfo *)0x0);
+                    return pCVar3;
+                  }
+                }
               }
             }
           }
@@ -233,9 +239,9 @@ CapsuleCollider * Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_CreateTrig
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pCVar2 = (CapsuleCollider *)(*pcVar4)();
-  return pCVar2;
+  pcVar5 = (code *)swi(3);
+  pCVar3 = (CapsuleCollider *)(*pcVar5)();
+  return pCVar3;
 }
 
 
@@ -400,21 +406,22 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_HideBody(MVAvatarRemote
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.body;
+  pAVar1 = unaff_EDI;
   if (this_00 != (MVBody *)0x0) {
     MVBody::MVBody_set_Visible(this_00,0,(MethodInfo *)0x0);
-    pAVar1 = (this->fields)._.avatar;
-    if ((pAVar1 != (Avatar *)0x0) && (pAVar2 = (pAVar1->fields).avatarUIHandler, pAVar2 != (AvatarUIHandler *)0x0)) {
-      pAVar3 = (AvatarUIHandlerRemote__Class *)0x0;
-      (*(code *)(pAVar2->klass->vtable).SetShouldShowUI.method)(pAVar2,0,(pAVar2->klass->vtable).OnDestroy.methodPtr);
-      pAVar1 = (this->fields)._.avatar;
-      if (pAVar1 != (Avatar *)0x0) {
-        this_02 = (AvatarUIHandlerRemote *)(pAVar1->fields).avatarUIHandler;
-        unaff_EDI = TypeInfo__AvatarUIHandlerRemote;
+    pAVar2 = (this->fields)._.avatar;
+    if ((pAVar2 != (Avatar *)0x0) && (pAVar3 = (pAVar2->fields).avatarUIHandler, pAVar3 != (AvatarUIHandler *)0x0)) {
+      (*(code *)(pAVar3->klass->vtable).SetShouldShowUI.method)(pAVar3,0);
+      pAVar2 = (this->fields)._.avatar;
+      if (pAVar2 != (Avatar *)0x0) {
+        this_02 = (AvatarUIHandlerRemote *)(pAVar2->fields).avatarUIHandler;
+        pAVar1 = TypeInfo__AvatarUIHandlerRemote;
         if (this_02 != (AvatarUIHandlerRemote *)0x0) {
+          pAVar1 = TypeInfo__AvatarUIHandlerRemote;
           if (((this_02->klass->_1).naturalAligment < (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment) || ((this_02->klass->_1).typeHierarchy[(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) goto code_?;
-          unaff_EDI = pAVar3;
           AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_NameTagLabelVisible(this_02,0,(MethodInfo *)0x0);
           this_01 = (this->fields).triggerCollider;
+          pAVar1 = unaff_EDI;
           if (this_01 != (CapsuleCollider *)0x0) {
             UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled((Collider *)this_01,0,(MethodInfo *)0x0);
             return;
@@ -426,7 +433,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_HideBody(MVAvatarRemote
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,unaff_EDI);
+  func_?(this_02,pAVar1);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -787,16 +794,16 @@ code_?:
 code_?:
     func_?();
     pMVar3 = value[1].monitor;
-    iVar9 = (**(code **)(iRam_? + 0xe0))(0x6fe85752,*(undefined4 *)(iRam_? + 0xe4));
+    iVar9 = (**(code **)(iRam_? + 0xe0))(0x8fe85752,*(undefined4 *)(iRam_? + 0xe4));
     unaff_EDI = (MVBody *)0x0;
     if (pMVar3 == (MonitorData *)0x0) goto code_?;
     *(float *)(pMVar3 + 0x18) = (float)iVar9;
-    unaff_EDI = pMRam6fe85772;
+    unaff_EDI = pMRam8fe85772;
     pVVar6 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(pVVar6,value,MethodInfo__MVAvatarRemote____c__DisplayClass18_0___InitializeHealth_b__1_System__Object_,(MethodInfo *)0x0);
     pMVar10 = (MVBody *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)unaff_EDI,(Delegate *)pVVar6,(MethodInfo *)0x0);
     if (pMVar10 == (MVBody *)0x0) {
-      pMRam6fe85772 = (MVBody *)0x0;
+      pMRam8fe85772 = (MVBody *)0x0;
       func_?();
       return;
     }
@@ -809,7 +816,7 @@ code_?:
       if (pMVar10->klass == (MVBody__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
         pMVar12 = pMVar10;
       }
-      pMRam6fe85772 = pMVar11;
+      pMRam8fe85772 = pMVar11;
       if (pMVar12 != (MVBody *)0x0) {
         func_?();
         return;

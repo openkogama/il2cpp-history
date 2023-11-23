@@ -169,7 +169,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
   (this->fields).siteData.hideGoldShop = site.hideGoldShop;
   (this->fields).siteData.allowInHouseAds = site.allowInHouseAds;
   (this->fields).siteData.removeFullscreenButton = site.removeFullscreenButton;
-  *(undefined2 *)&(this->fields).siteData.field_0x12 = site._18_2_;
+  (this->fields).siteData.hideSignUp = site.hideSignUp;
+  (this->fields).siteData.noPlayButtonVideoIcon = site.noPlayButtonVideoIcon;
   func_?(&(this->fields).siteData,0);
   (this->fields).embeddedSiteSDKAvailable = 1;
   return;
@@ -193,7 +194,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     bVar9 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop;
     bVar10 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds;
     bVar11 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
-    uVar12 = *(undefined2 *)&(config->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12;
+    bVar12 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp;
+    bVar13 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon;
     (this->fields).siteData.sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
     (this->fields).siteData.siteEnum = iVar1;
     (this->fields).siteData.showTouristPromotion = bVar2;
@@ -206,7 +208,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     (this->fields).siteData.hideGoldShop = bVar9;
     (this->fields).siteData.allowInHouseAds = bVar10;
     (this->fields).siteData.removeFullscreenButton = bVar11;
-    *(undefined2 *)&(this->fields).siteData.field_0x12 = uVar12;
+    (this->fields).siteData.hideSignUp = bVar12;
+    (this->fields).siteData.noPlayButtonVideoIcon = bVar13;
     func_?(&(this->fields).siteData,0);
     (this->fields).timeoutAdAfterDelayAsUnlocked = (config->fields)._AdTimeoutAsSuccess_k__BackingField;
     (this->fields).timeoutSuccessDelay = (config->fields)._AdTimeoutAsSuccessDelay_k__BackingField;
@@ -214,8 +217,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     return;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -504,7 +507,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     }
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction(this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,AdContext__Enum_None,(MethodInfo *)0x0);
     WebAdManager_SetFinishedWatchingAd((WebAdManager *)&UNK_?,StringLiteral_Interstitial,(MethodInfo *)0x0);
-    pUStack4 = (UnityAction_1_System_Int32Enum_ *)0xffc84a7b;
+    pUStack4 = (UnityAction_1_System_Int32Enum_ *)0xffc851eb;
     puStack5 = (undefined *)0x3;
     pIStack6 = TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager;
     pIStack7 = (IAdManager__Class *)0x3;
@@ -513,10 +516,10 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
   }
   this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)&UNK_?,MethodInfo__Assets__Scripts__AdIntegration__Web__WebAdManager__OnInHouseInterstitialAdShownCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_,(MethodInfo *)0x0);
-  puStack5 = (undefined *)0xa3f0358b;
+  puStack5 = (undefined *)0x3c58358b;
   pIStack7 = TypeInfo__Assets__Scripts__AdIntegration__IAdManager;
   puStack8 = (undefined *)0x7;
-  pIStack6 = (IAdUIManager__Class *)0xa3c5e605;
+  pIStack6 = (IAdUIManager__Class *)0xa3d68605;
   pUStack4 = this_01;
   func_?();
   return;
@@ -1353,7 +1356,8 @@ EmbeddedSiteConfigData * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::We
   bVar9 = (this->fields).siteData.hideGoldShop;
   bVar10 = (this->fields).siteData.allowInHouseAds;
   bVar11 = (this->fields).siteData.removeFullscreenButton;
-  uVar12 = *(undefined2 *)&(this->fields).siteData.field_0x12;
+  bVar12 = (this->fields).siteData.hideSignUp;
+  bVar13 = (this->fields).siteData.noPlayButtonVideoIcon;
   __return_storage_ptr__->sites = (this->fields).siteData.sites;
   __return_storage_ptr__->siteEnum = iVar1;
   __return_storage_ptr__->showTouristPromotion = bVar2;
@@ -1366,7 +1370,8 @@ EmbeddedSiteConfigData * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::We
   __return_storage_ptr__->hideGoldShop = bVar9;
   __return_storage_ptr__->allowInHouseAds = bVar10;
   __return_storage_ptr__->removeFullscreenButton = bVar11;
-  *(undefined2 *)&__return_storage_ptr__->field_0x12 = uVar12;
+  __return_storage_ptr__->hideSignUp = bVar12;
+  __return_storage_ptr__->noPlayButtonVideoIcon = bVar13;
   return __return_storage_ptr__;
 }
 
@@ -1415,8 +1420,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
   if (pIStack_1 != (IAdUIManager *)0x0) {
     pIStack_2 = TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager;
     uStack_3 = 0;
-    cVar4 = func_?();
-    return cVar4 == '\0';
+    bVar4 = func_?();
+    return bVar4 ^ 1;
   }
   pIStack_1 = (IAdUIManager *)&stack0xfffffffc;
   uVar5 = func_?(&uStack_3);

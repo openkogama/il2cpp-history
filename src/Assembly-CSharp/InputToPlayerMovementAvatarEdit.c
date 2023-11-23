@@ -8,13 +8,12 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::InputToPlayerMovement
     func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  uVar1 = 0;
   (this->fields).movementMapState = 0;
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  bVar2 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  bVar1 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
+  if (bVar1 == 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
@@ -25,23 +24,21 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::InputToPlayerMovement
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
-    bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar1 = 2;
-    }
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0);
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__MVInputWrapper);
     }
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVInputWrapper);
       cRam_? = '\x01';
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__MVInputWrapper);
     }
     bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveBackwards,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar1 = uVar1 | 8;
+    uVar3 = (uint)bVar1 * 2 | 8;
+    if (bVar2 == 0) {
+      uVar3 = (uint)bVar1 * 2;
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -53,9 +50,10 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::InputToPlayerMovement
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar1 = uVar1 | 1;
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+    uVar4 = uVar3 | 1;
+    if (bVar1 == 0) {
+      uVar4 = uVar3;
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -67,9 +65,10 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::InputToPlayerMovement
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar1 = uVar1 | 4;
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+    uVar3 = uVar4 | 4;
+    if (bVar1 == 0) {
+      uVar3 = uVar4;
     }
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -81,11 +80,12 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::InputToPlayerMovement
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar1 = uVar1 | 0x10;
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1(KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+    uVar4 = uVar3 | 0x10;
+    if (bVar1 == 0) {
+      uVar4 = uVar3;
     }
-    (this->fields).frameUpdateMovementMapState = (this->fields).frameUpdateMovementMapState | uVar1;
+    (this->fields).frameUpdateMovementMapState = uVar4 | (this->fields).frameUpdateMovementMapState;
   }
   return;
 }

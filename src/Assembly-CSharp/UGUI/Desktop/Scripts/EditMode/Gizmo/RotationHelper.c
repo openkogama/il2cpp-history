@@ -136,7 +136,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     selectionSet = (HashSet_1_System_Int32_ *)MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVNetworkSelector *)0x0) {
       bVar1 = MVNetworkSelector::MVNetworkSelector_RequestOwnership(this_01,selectionSet,(MethodInfo *)0x0);
-      return bVar1 == 0;
+      return bVar1 ^ 1;
     }
   }
   func_?();

@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::AvatarLimbManager_
 {
   pLVar1 = (this->fields).headController;
   if (pLVar1 != (LimbController *)0x0) {
-    if (0.999999 < (pLVar1->fields).interpolateTowardsYawRotation.y * yawRotation.y + (pLVar1->fields).interpolateTowardsYawRotation.x * yawRotation.x + (pLVar1->fields).interpolateTowardsYawRotation.z * yawRotation.z + (pLVar1->fields).interpolateTowardsYawRotation.w * yawRotation.w) {
+    if (0.999999 < yawRotation.y * (pLVar1->fields).interpolateTowardsYawRotation.y + yawRotation.x * (pLVar1->fields).interpolateTowardsYawRotation.x + yawRotation.z * (pLVar1->fields).interpolateTowardsYawRotation.z + yawRotation.w * (pLVar1->fields).interpolateTowardsYawRotation.w) {
       return;
     }
     if (pLVar1 != (LimbController *)0x0) {

@@ -150,43 +150,44 @@ Vector3 * Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_GetClosestGridPoint(Ve
   if (this_00 != (GameObject *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar2 = (pVVar1->oneVector).x;
-      uVar3 = (pVVar1->oneVector).y;
-      pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * 2.0);
-      fVar5 = (pVVar1->oneVector).z * 2.0;
+      pSVar1 = TypeInfo__SharedCubeFunctions;
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar3 = (pVVar2->oneVector).x;
+      uVar4 = (pVVar2->oneVector).y;
+      fVar5 = (pVVar2->oneVector).z * 2.0;
+      pSVar6 = (SharedCubeFunctions__Class *)((float)uVar3 * 2.0);
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        pSVar4 = TypeInfo__SharedCubeFunctions;
         func_?();
+        pSVar6 = pSVar1;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar4;
+      rotation.y = (float)pSVar6;
       rotation.x = gridSize;
-      rotation.z = (float)uVar3 * 2.0;
+      rotation.z = (float)uVar4 * 2.0;
       rotation.w = fVar5;
-      scale.y = (float)uVar3 * 2.0;
-      scale.x = (float)pSVar4;
+      scale.y = (float)uVar4 * 2.0;
+      scale.x = (float)pSVar6;
       scale.z = fVar5;
-      pVVar6 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar7 = pVVar6->y;
-      fVar5 = pVVar6->z;
-      __return_storage_ptr__->x = pVVar6->x;
-      __return_storage_ptr__->y = fVar7;
+      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint(&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
+      fVar8 = pVVar7->y;
+      fVar5 = pVVar7->z;
+      __return_storage_ptr__->x = pVVar7->x;
+      __return_storage_ptr__->y = fVar8;
       __return_storage_ptr__->z = fVar5;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar8)();
-  return pVVar6;
+  pcVar9 = (code *)swi(3);
+  pVVar7 = (Vector3 *)(*pcVar9)();
+  return pVVar7;
 }
 
 
