@@ -322,13 +322,12 @@ IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
                     (int32_t i,IntVector iV,MethodInfo *method)
 
 {
-  sVar1 = iV.x;
-  *(short *)i = sVar1 * iV.z;
-  *(short *)(i + 2) = in_stack_2 * sVar1;
-  IVar3.z = sVar1 * (short)method;
-  *(short *)(i + 4) = IVar3.z;
-  IVar3._0_4_ = i;
-  return IVar3;
+  *(int16_t *)i = iV.x * iV.z;
+  *(short *)(i + 2) = in_stack_1 * iV.x;
+  IVar2.z = iV.x * (short)method;
+  *(short *)(i + 4) = IVar2.z;
+  IVar2._0_4_ = i;
+  return IVar2;
 }
 
 
@@ -338,14 +337,13 @@ IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_1
                     (IntVector iV,int32_t i,MethodInfo *method)
 
 {
-  sVar1 = (short)method;
-  *(short *)iV._0_4_ = sVar1 * iV.z;
-  *(short *)(iV._0_4_ + 2) = in_stack_2 * sVar1;
-  IVar3.z = sVar1 * (short)i;
-  *(short *)(iV._0_4_ + 4) = IVar3.z;
-  IVar3.x = iV.x;
-  IVar3.y = iV.y;
-  return IVar3;
+  *(short *)iV._0_4_ = (short)method * iV.z;
+  *(short *)(iV._0_4_ + 2) = in_stack_1 * (short)method;
+  IVar2.z = (short)method * (short)i;
+  *(short *)(iV._0_4_ + 4) = IVar2.z;
+  IVar2.x = iV.x;
+  IVar2.y = iV.y;
+  return IVar2;
 }
 
 

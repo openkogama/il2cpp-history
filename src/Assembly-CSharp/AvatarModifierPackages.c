@@ -1171,8 +1171,8 @@ float Assembly-CSharp.dll::AvatarModifierPackages::AvatarModifierPackages_Handle
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffef4;
-  puVar5 = &stack0xfffffef4;
+  puStack_4 = &stack0xfffffef8;
+  puVar5 = &stack0xfffffef8;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Comparison<AvatarModifierPackage::AvatarModifier>);
     func_?(&
@@ -1227,58 +1227,57 @@ float Assembly-CSharp.dll::AvatarModifierPackages::AvatarModifierPackages_Handle
             );
   this_00 = (this->fields).packages;
   pLStack_9 = pLVar7;
-  pLStack_10 = pLVar7;
   if (this_00 != (List_1_AvatarModifierPackage_ *)0x0) {
-    pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[AvatarModifierPackage]::
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[AvatarModifierPackage]::
              List_1_AvatarModifierPackage__GetEnumerator
-                       ((List_1_T_Enumerator_AvatarModifierPackage_ *)&stack0xffffff00,this_00,
+                       ((List_1_T_Enumerator_AvatarModifierPackage_ *)&stack0xffffff04,this_00,
                         MethodInfo__System__Collections__Generic__List<AvatarModifierPackage>__GetEnumerator__
                        );
-    VStack_12.path = (String *)0x0;
-    LStack_6._list = pLVar11->_list;
-    LStack_6._index = pLVar11->_index;
-    LStack_6._version = pLVar11->_version;
-    LStack_6._current.id = (pLVar11->_current).id;
-    LStack_6._current.duration.currentCryptoKey = (pLVar11->_current).duration.currentCryptoKey;
-    LStack_6._current.duration.hiddenValue = (pLVar11->_current).duration.hiddenValue;
-    LStack_6._current.duration.hiddenValueOld = (pLVar11->_current).duration.hiddenValueOld;
-    LStack_6._current.duration.fakeValue = (pLVar11->_current).duration.fakeValue;
-    LStack_6._current.duration.inited = (pLVar11->_current).duration.inited;
-    LStack_6._current.duration._17_3_ = *(undefined3 *)&(pLVar11->_current).duration.field_0x11;
-    LStack_6._current.avatarModifiers = (pLVar11->_current).avatarModifiers;
-    LStack_6._current.actionsToTakeVsTypes = (pLVar11->_current).actionsToTakeVsTypes;
-    LStack_6._current.timeStamp.currentCryptoKey = (pLVar11->_current).timeStamp.currentCryptoKey;
-    LStack_6._current.timeStamp.hiddenValue = (pLVar11->_current).timeStamp.hiddenValue;
-    LStack_6._current.timeStamp.hiddenValueOld = (pLVar11->_current).timeStamp.hiddenValueOld;
-    LStack_6._current.timeStamp.fakeValue = (pLVar11->_current).timeStamp.fakeValue;
-    LStack_6._current.timeStamp.inited = (pLVar11->_current).timeStamp.inited;
-    LStack_6._current.timeStamp._17_3_ = *(undefined3 *)&(pLVar11->_current).timeStamp.field_0x11;
-    LStack_6._current.persistant = (pLVar11->_current).persistant;
-    LStack_6._current._53_3_ = *(undefined3 *)&(pLVar11->_current).field_0x35;
-    LStack_6._current.lastTimeStamp = (pLVar11->_current).lastTimeStamp;
-    LStack_6._current.avatarModifierPackageType = (pLVar11->_current).avatarModifierPackageType;
+    VStack_11.path = (String *)0x0;
+    LStack_6._list = pLVar10->_list;
+    LStack_6._index = pLVar10->_index;
+    LStack_6._version = pLVar10->_version;
+    LStack_6._current.id = (pLVar10->_current).id;
+    LStack_6._current.duration.currentCryptoKey = (pLVar10->_current).duration.currentCryptoKey;
+    LStack_6._current.duration.hiddenValue = (pLVar10->_current).duration.hiddenValue;
+    LStack_6._current.duration.hiddenValueOld = (pLVar10->_current).duration.hiddenValueOld;
+    LStack_6._current.duration.fakeValue = (pLVar10->_current).duration.fakeValue;
+    LStack_6._current.duration.inited = (pLVar10->_current).duration.inited;
+    LStack_6._current.duration._17_3_ = *(undefined3 *)&(pLVar10->_current).duration.field_0x11;
+    LStack_6._current.avatarModifiers = (pLVar10->_current).avatarModifiers;
+    LStack_6._current.actionsToTakeVsTypes = (pLVar10->_current).actionsToTakeVsTypes;
+    LStack_6._current.timeStamp.currentCryptoKey = (pLVar10->_current).timeStamp.currentCryptoKey;
+    LStack_6._current.timeStamp.hiddenValue = (pLVar10->_current).timeStamp.hiddenValue;
+    LStack_6._current.timeStamp.hiddenValueOld = (pLVar10->_current).timeStamp.hiddenValueOld;
+    LStack_6._current.timeStamp.fakeValue = (pLVar10->_current).timeStamp.fakeValue;
+    LStack_6._current.timeStamp.inited = (pLVar10->_current).timeStamp.inited;
+    LStack_6._current.timeStamp._17_3_ = *(undefined3 *)&(pLVar10->_current).timeStamp.field_0x11;
+    LStack_6._current.persistant = (pLVar10->_current).persistant;
+    LStack_6._current._53_3_ = *(undefined3 *)&(pLVar10->_current).field_0x35;
+    LStack_6._current.lastTimeStamp = (pLVar10->_current).lastTimeStamp;
+    LStack_6._current.avatarModifierPackageType = (pLVar10->_current).avatarModifierPackageType;
     LStack_6._current.avatarModifierPackageAdditionPolicy =
-         (pLVar11->_current).avatarModifierPackageAdditionPolicy;
+         (pLVar10->_current).avatarModifierPackageAdditionPolicy;
     uStack_1 = 1;
-    VStack_12.asset = (VisualTreeAsset *)&LStack_6;
+    VStack_11.asset = (VisualTreeAsset *)&LStack_6;
     while( true ) {
-      bVar13 = mscorlib.dll::System::Collections::Generic::
+      bVar12 = mscorlib.dll::System::Collections::Generic::
               List`1[T]+Enumerator[AvatarModifierPackage]::
               List_1_T_Enumerator_AvatarModifierPackage__MoveNext
                         (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AvatarModifierPackage>__MoveNext__
                         );
-      pAVar14 = LStack_6._current.avatarModifiers;
-      if (bVar13 == 0) break;
-      iVar15 = 0;
+      pAVar13 = LStack_6._current.avatarModifiers;
+      if (bVar12 == 0) break;
+      iVar14 = 0;
       if (LStack_6._current.avatarModifiers == (AvatarModifierPackage_AvatarModifier__Array *)0x0)
       goto code_?;
-      for (; iVar15 < (int)pAVar14->max_length; iVar15 = iVar15 + 1) {
+      for (; iVar14 < (int)pAVar13->max_length; iVar14 = iVar14 + 1) {
         func_?();
-        if (uStack_16._4_4_ == modifierEffect) {
-          if (pLStack_8 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+        if (uStack_15._4_4_ == modifierEffect) {
+          if (pLStack_9 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
           goto code_?;
-          in_stack_17 = pMStack_18;
+          in_stack_16 = pMStack_17;
           func_?();
         }
       }
@@ -1288,8 +1287,7 @@ float Assembly-CSharp.dll::AvatarModifierPackages::AvatarModifierPackages_Handle
               ((Object *)&LStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<AvatarModifierPackage>__Dispose__
-               ,in_stack_17);
-    pLVar7 = pLStack_8;
+               ,in_stack_16);
     uStack_1 = 0xffffffff;
     if ((TypeInfo__AvatarModifierPackages____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -1310,64 +1308,65 @@ float Assembly-CSharp.dll::AvatarModifierPackages::AvatarModifierPackages_Handle
       TypeInfo__AvatarModifierPackages____c->static_fields->__9__27_0 = this_01;
       func_?();
     }
-    if (pLVar7 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+    pLVar7 = pLStack_9;
+    if (pLStack_9 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[AvatarModifierPackage+AvatarModifier]::
       List_1_AvatarModifierPackage_AvatarModifier__Sort_1
-                ((List_1_AvatarModifierPackage_AvatarModifier_ *)pLVar7,this_01,
+                ((List_1_AvatarModifierPackage_AvatarModifier_ *)pLStack_9,this_01,
                  MethodInfo__System__Collections__Generic__List<AvatarModifierPackage::AvatarModifier>__Sort_System__Comparison<AvatarModifierPackage::AvatarModifier>_
                 );
-      iVar15 = 0;
+      iVar14 = 0;
       this = (AvatarModifierPackages *)baseValue;
       while( true ) {
         while( true ) {
-          if ((pLStack_9->fields)._size <= iVar15) {
+          if ((pLStack_8->fields)._size <= iVar14) {
             *unaff_FS_OFFSET = uStack_3;
             return (float)this;
           }
-          pVVar19 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+          pVVar18 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                    VisualTreeAsset+UsingEntry]::
                    List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_12,pLVar7,iVar15,
+                             (&VStack_11,pLVar7,iVar14,
                               MethodInfo__System__Collections__Generic__List<AvatarModifierPackage::AvatarModifier>__get_Item_int_
                              );
-          uStack_16._0_4_ = pVVar19->alias;
-          uStack_16._4_4_ = (AvatarModifierEffect__Enum)pVVar19->path;
-          if ((undefined4)uStack_16 == 0) break;
-          if ((undefined4)uStack_16 == 1) {
-            iVar20 = func_?();
-            if (*(int *)(iVar20 + 8) == 0) goto code_?;
-            pLStack_10 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
-                          (*(int *)(iVar20 + 8) + 0xc);
-            fVar21 = (float10)(*(code *)pLStack_10)();
-            iVar15 = iVar15 + 1;
-            this = (AvatarModifierPackages *)(float)(fVar21 + (float10)(float)this);
+          uStack_15._0_4_ = pVVar18->alias;
+          uStack_15._4_4_ = (AvatarModifierEffect__Enum)pVVar18->path;
+          if ((undefined4)uStack_15 == 0) break;
+          if ((undefined4)uStack_15 == 1) {
+            iVar19 = func_?();
+            if (*(int *)(iVar19 + 8) == 0) goto code_?;
+            pLStack_9 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
+                          (*(int *)(iVar19 + 8) + 0xc);
+            fVar20 = (float10)(*(code *)pLStack_9)();
+            iVar14 = iVar14 + 1;
+            this = (AvatarModifierPackages *)(float)(fVar20 + (float10)(float)this);
           }
           else {
-            if ((undefined4)uStack_16 != 2) goto code_?;
-            iVar20 = func_?();
-            if (*(int *)(iVar20 + 8) == 0) goto code_?;
-            fVar21 = (float10)(**(code **)(*(int *)(iVar20 + 8) + 0xc))();
-            iVar15 = iVar15 + 1;
-            this = (AvatarModifierPackages *)(float)fVar21;
+            if ((undefined4)uStack_15 != 2) goto code_?;
+            iVar19 = func_?();
+            if (*(int *)(iVar19 + 8) == 0) goto code_?;
+            fVar20 = (float10)(**(code **)(*(int *)(iVar19 + 8) + 0xc))();
+            iVar14 = iVar14 + 1;
+            this = (AvatarModifierPackages *)(float)fVar20;
           }
         }
-        iVar20 = func_?();
-        if (*(int *)(iVar20 + 8) == 0) break;
-        pLStack_10 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
-                      (*(int *)(iVar20 + 8) + 0xc);
-        fVar21 = (float10)(*(code *)pLStack_10)();
-        this = (AvatarModifierPackages *)(float)(fVar21 * (float10)(float)this);
+        iVar19 = func_?();
+        if (*(int *)(iVar19 + 8) == 0) break;
+        pLStack_9 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
+                      (*(int *)(iVar19 + 8) + 0xc);
+        fVar20 = (float10)(*(code *)pLStack_9)();
+        this = (AvatarModifierPackages *)(float)(fVar20 * (float10)(float)this);
 code_?:
-        iVar15 = iVar15 + 1;
+        iVar14 = iVar14 + 1;
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar22 = (code *)swi(3);
-  fVar21 = (float10)(*pcVar22)();
-  return (float)fVar21;
+  pcVar21 = (code *)swi(3);
+  fVar20 = (float10)(*pcVar21)();
+  return (float)fVar20;
 }
 
 

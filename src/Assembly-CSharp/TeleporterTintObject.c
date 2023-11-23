@@ -110,31 +110,33 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Tint
                (TeleporterTintObject *this,Color c,MethodInfo *method)
 
 {
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
   this_00 = (this->fields).materialCylinderToTint;
   if (this_00 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
               (this_00,c,(MethodInfo *)0x0);
     this_01 = (this->fields).particleCircleToTint;
-    fStack_1 = c.r * _UNK_?;
-    fVar2 = c.g * _UNK_?;
-    fVar3 = c.b * _UNK_?;
+    fVar2 = c.r * _UNK_?;
+    fVar3 = c.g * _UNK_?;
+    fVar4 = c.b * _UNK_?;
     if (this_01 != (ParticleSystem *)0x0) {
-      PStack_4.m_ParticleSystem =
+      PStack_1.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
            ParticleSystem_get_collision(this_01,(MethodInfo *)0x0);
-      color.g = fVar2;
-      color.r = fStack_1;
-      color.b = fVar3;
+      color.g = fVar3;
+      color.r = fVar2;
+      color.b = fVar4;
       color.a = 1.0;
       pPVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                ParticleSystem_MinMaxGradient_op_Implicit
-                         ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,color,(MethodInfo *)0x0)
+                         ((ParticleSystem_MinMaxGradient *)&stack0xffffffbc,color,(MethodInfo *)0x0)
       ;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-      ParticleSystem_MainModule_set_startColor(&PStack_4,*pPVar5,(MethodInfo *)0x0);
+      ParticleSystem_MainModule_set_startColor(&PStack_1,*pPVar5,(MethodInfo *)0x0);
       this_02 = (this->fields).lightToTint;
       if (this_02 != (Light *)0x0) {
+        fStack6 = c.a;
         UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color(this_02,c,(MethodInfo *)0x0)
         ;
         return;
@@ -142,8 +144,8 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Tint
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

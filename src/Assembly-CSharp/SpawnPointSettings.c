@@ -32,8 +32,8 @@ void Assembly-CSharp.dll::SpawnPointSettings::SpawnPointSettings_Initialize
         func_?(pMVar1,TypeInfo__MVSpawnPoint);
       }
       else {
-        pSVar2 = (this->fields).settingsBase;
         woID = (pMVar1->fields).id;
+        pSVar2 = (this->fields).settingsBase;
         documentationType =
              (*(code *)pMVar1->klass[1]._1.thread_static_fields_size)
                        (pMVar1,pMVar1->klass[1]._1.thread_static_fields_offset);

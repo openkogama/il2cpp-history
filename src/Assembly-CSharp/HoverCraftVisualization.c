@@ -948,7 +948,7 @@ code_?:
       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.460915e-29,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.4619166e-29,
                  (MethodInfo *)0x0);
       return;
     }
@@ -1165,59 +1165,60 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
   uVar3 = _UNK_?;
   uVar4 = _UNK_?;
   uVar5 = _UNK_?;
+  uVar6 = _UNK_?;
   if (iVar2 != 0) {
     if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
     *(undefined4 *)(iVar2 + 0x10) = _UNK_?;
     *(undefined4 *)(iVar2 + 0x14) = uVar5;
     *(undefined4 *)(iVar2 + 0x18) = uVar4;
     *(undefined4 *)(iVar2 + 0x1c) = uVar3;
-    uVar3 = _UNK_?;
-    uVar4 = _UNK_?;
-    uVar5 = _UNK_?;
+    uVar6 = 0x3dc8b439;
+    uVar4 = 0x3f760419;
+    uVar3 = 0x3e43c4c5;
     if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
-    *(undefined4 *)(iVar2 + 0x20) = _UNK_?;
+    *(undefined4 *)(iVar2 + 0x20) = 0x3dc8b439;
     *(undefined4 *)(iVar2 + 0x24) = uVar5;
-    *(undefined4 *)(iVar2 + 0x28) = uVar4;
-    *(undefined4 *)(iVar2 + 0x2c) = uVar3;
-    uVar3 = _UNK_?;
-    uVar4 = _UNK_?;
-    uVar5 = _UNK_?;
+    *(undefined4 *)(iVar2 + 0x28) = 0x3f760419;
+    *(undefined4 *)(iVar2 + 0x2c) = 0x3e43c4c5;
+    uVar7 = _UNK_?;
+    uVar8 = _UNK_?;
+    uVar9 = _UNK_?;
     if (*(uint *)(iVar2 + 0xc) < 3) goto code_?;
     *(undefined4 *)(iVar2 + 0x30) = _UNK_?;
-    *(undefined4 *)(iVar2 + 0x34) = uVar5;
-    *(undefined4 *)(iVar2 + 0x38) = uVar4;
-    *(undefined4 *)(iVar2 + 0x3c) = uVar3;
-    uVar3 = _UNK_?;
-    uVar4 = _UNK_?;
-    uVar5 = _UNK_?;
+    *(undefined4 *)(iVar2 + 0x34) = uVar9;
+    *(undefined4 *)(iVar2 + 0x38) = uVar8;
+    *(undefined4 *)(iVar2 + 0x3c) = uVar7;
+    uVar7 = _UNK_?;
+    uVar8 = _UNK_?;
+    uVar9 = _UNK_?;
     if (*(uint *)(iVar2 + 0xc) < 4) goto code_?;
     *(undefined4 *)(iVar2 + 0x40) = _UNK_?;
-    *(undefined4 *)(iVar2 + 0x44) = uVar5;
-    *(undefined4 *)(iVar2 + 0x48) = uVar4;
-    *(undefined4 *)(iVar2 + 0x4c) = uVar3;
+    *(undefined4 *)(iVar2 + 0x44) = uVar9;
+    *(undefined4 *)(iVar2 + 0x48) = uVar8;
+    *(undefined4 *)(iVar2 + 0x4c) = uVar7;
     uStack_1 = CONCAT44(uStack_1._4_4_,iVar2);
     func_?(&uStack_1,iVar2);
-    pTVar6 = (ThrustersColorAlphaKey__Array *)
+    pTVar10 = (ThrustersColorAlphaKey__Array *)
              func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorAlphaKey,
                              4);
-    if (pTVar6 != (ThrustersColorAlphaKey__Array *)0x0) {
-      if (pTVar6->max_length != 0) {
-        pTVar6->vector[0].alpha = 0.0;
-        pTVar6->vector[0].time = 0.0;
-        if (1 < pTVar6->max_length) {
-          pTVar6->vector[1].alpha = 1.0;
-          pTVar6->vector[1].time = 0.09999237;
-          if (2 < pTVar6->max_length) {
-            pTVar6->vector[2].alpha = 1.0;
-            pTVar6->vector[2].time = 0.4764782;
-            if (3 < pTVar6->max_length) {
-              pTVar6->vector[3].alpha = 0.0;
-              pTVar6->vector[3].time = 1.0;
-              uStack_1._4_4_ = pTVar6;
-              func_?((int)&uStack_1 + 4,pTVar6);
-              pHVar7 = TypeInfo__HoverCraftVisualization->static_fields;
-              (pHVar7->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
-              (pHVar7->DefaultThrustersColor).alphas = uStack_1._4_4_;
+    if (pTVar10 != (ThrustersColorAlphaKey__Array *)0x0) {
+      if (pTVar10->max_length != 0) {
+        pTVar10->vector[0].alpha = 0.0;
+        pTVar10->vector[0].time = 0.0;
+        if (1 < pTVar10->max_length) {
+          pTVar10->vector[1].alpha = 1.0;
+          pTVar10->vector[1].time = 0.09999237;
+          if (2 < pTVar10->max_length) {
+            pTVar10->vector[2].alpha = 1.0;
+            pTVar10->vector[2].time = 0.4764782;
+            if (3 < pTVar10->max_length) {
+              pTVar10->vector[3].alpha = 0.0;
+              pTVar10->vector[3].time = 1.0;
+              uStack_1._4_4_ = pTVar10;
+              func_?((int)&uStack_1 + 4,pTVar10);
+              pHVar11 = TypeInfo__HoverCraftVisualization->static_fields;
+              (pHVar11->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
+              (pHVar11->DefaultThrustersColor).alphas = uStack_1._4_4_;
               func_?(TypeInfo__HoverCraftVisualization->static_fields,0);
               return;
             }
@@ -1227,11 +1228,11 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
       goto code_?;
     }
   }
-  func_?();
+  func_?(uVar6,uVar5,uVar4,uVar3);
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

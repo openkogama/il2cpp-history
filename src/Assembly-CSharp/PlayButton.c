@@ -267,12 +267,13 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
     this_01 = (this->fields).embeddedPlayerConfig;
     if (this_01 != (EmbeddedPlayerConfig *)0x0) {
       pEVar3 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                         ((EmbeddedSiteConfigData *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
+                         ((EmbeddedSiteConfigData *)&stack0xffffffd0,this_01,(MethodInfo *)0x0);
       uVar4 = pEVar3->showTouristPromotion;
+      uVar5 = pEVar3->noPlayButtonVideoIcon;
       if (value != (Object *)0x0) {
         *(undefined1 *)&value[1].klass = 0;
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
+        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
              (ExecuteEvents_EventFunction_1_System_Object_ *)
              func_?(
@@ -288,54 +289,54 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
           func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar5,(BaseEventData *)0x0,callbackFunction,
+                  (pGVar6,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
                   );
-        pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+        pSVar7 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                             ((MethodInfo *)0x0);
-        if ((pSVar6 != (SpawnRoleDataMediator *)0x0) &&
-           (this_02 = (WebCompletionSource_1_System_Object_ *)(pSVar6->fields).spawnRoleMode,
+        if ((pSVar7 != (SpawnRoleDataMediator *)0x0) &&
+           (this_02 = (WebCompletionSource_1_System_Object_ *)(pSVar7->fields).spawnRoleMode,
            this_02 != (WebCompletionSource_1_System_Object_ *)0x0)) {
-          pTVar7 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+          pTVar8 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
                     WebCompletionSource_1_System_Object__get_Task
                               (this_02,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                               );
-          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar8 != (MVNetworkGame *)0x0) &&
-             (pMVar9 = (pMVar8->fields)._NetworkGameStateListener_k__BackingField,
-             pMVar9 != (MVNetworkGameStateListener *)0x0)) {
-            iVar10 = (pMVar9->fields).currentGameState;
-            if (uVar4 == '\0') {
-              pIVar11 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-              if (pIVar11 == (IAdManager *)0x0) goto code_?;
-              bVar12 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar11
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar9 != (MVNetworkGame *)0x0) &&
+             (pMVar10 = (pMVar9->fields)._NetworkGameStateListener_k__BackingField,
+             pMVar10 != (MVNetworkGameStateListener *)0x0)) {
+            iVar11 = (pMVar10->fields).currentGameState;
+            if ((uVar5 == '\0') && (uVar4 == '\0')) {
+              pIVar12 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+              if (pIVar12 == (IAdManager *)0x0) goto code_?;
+              bVar13 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar12
                                      );
             }
             else {
-              bVar12 = 0;
+              bVar13 = 0;
             }
-            if (((*(byte *)&value[1].klass & bVar12) == 0) ||
-               ((pTVar7 != (Task *)0x2 && (pTVar7 != (Task *)0x4)))) {
+            if (((*(byte *)&value[1].klass & bVar13) == 0) ||
+               ((pTVar8 != (Task *)0x2 && (pTVar8 != (Task *)0x4)))) {
               value_00 = false;
             }
             else {
-              value_00 = iVar10 != 2;
+              value_00 = iVar11 != 2;
             }
-            pIVar13 = (this->fields).playIcon;
-            if ((pIVar13 != (Image *)0x0) &&
-               (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pIVar13,(MethodInfo *)0x0),
-               pGVar5 != (GameObject *)0x0)) {
+            pIVar14 = (this->fields).playIcon;
+            if ((pIVar14 != (Image *)0x0) &&
+               (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)pIVar14,(MethodInfo *)0x0),
+               pGVar6 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar5,value_00 ^ 1,(MethodInfo *)0x0);
-              pIVar13 = (this->fields).adIcon;
-              if ((pIVar13 != (Image *)0x0) &&
-                 (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pIVar13,(MethodInfo *)0x0),
-                 pGVar5 != (GameObject *)0x0)) {
+                        (pGVar6,value_00 ^ 1,(MethodInfo *)0x0);
+              pIVar14 = (this->fields).adIcon;
+              if ((pIVar14 != (Image *)0x0) &&
+                 (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)pIVar14,(MethodInfo *)0x0),
+                 pGVar6 != (GameObject *)0x0)) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar5,value_00,(MethodInfo *)0x0);
+                          (pGVar6,value_00,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -346,8 +347,8 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

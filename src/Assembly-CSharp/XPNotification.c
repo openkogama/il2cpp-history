@@ -20,34 +20,37 @@ void Assembly-CSharp.dll::XPNotification::XPNotification_Initialize
     func_?(&StringLiteral__XP_);
     cRam_? = '\x01';
   }
+  pXVar1 = this;
+  this = (XPNotification *)CONCAT13(4,this._0_3_);
+  (pXVar1->fields)._.timeSinceStart = 0.0;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_02 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(4,data._0_3_);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
-                       pOVar1,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar2.m_Index != 0) {
-      pSVar3 = (String *)(**(code **)(*(int *)TVar2.m_Index + 0xd8))();
-      xp = mscorlib.dll::System::Int32::Int32_Parse(pSVar3,(MethodInfo *)0x0);
-      uStack_4 = 0x13;
-      pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&uStack_4);
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    if (TVar3.m_Index != 0) {
+      pSVar4 = (String *)
+               (**(code **)(*(int *)TVar3.m_Index + 0xd8))
+                         (TVar3.m_Index,*(undefined4 *)(*(int *)TVar3.m_Index + 0xdc));
+      xp = (Dictionary_2_System_Object_System_Object_ *)
+           mscorlib.dll::System::Int32::Int32_Parse(pSVar4,(MethodInfo *)0x0);
+      data = xp;
+      pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
-                         pOVar1,
+                         pOVar2,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar2.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+      if (TVar3.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
             (TypeInfo__System__Int32->_0).element_class) {
-          piVar5 = (int32_t *)func_?();
+          piVar5 = (int32_t *)func_?(TVar3.m_Index);
           iVar6 = *piVar5;
           this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (this_03 != (MVNetworkGame *)0x0) {
@@ -63,52 +66,55 @@ void Assembly-CSharp.dll::XPNotification::XPNotification_Initialize
                                   );
               if (this_04 != (XpBooster *)0x0) {
                 iVar6 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::
-                        XpBooster::XpBooster_GetBoostedXp(this_04,xp,iVar6,(MethodInfo *)0x0);
-                pTVar8 = (this->fields).AmountLabel;
-                if (iVar6 - xp < 1) {
-                  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                         XpBooster::XpBooster_GetBoostedXp
+                                   (this_04,(int32_t)xp,iVar6,(MethodInfo *)0x0);
+                pTVar8 = (pXVar1->fields).AmountLabel;
+                if (iVar6 - (int)xp < 1) {
+                  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
                                      ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-                  pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                                     (pSVar3,StringLiteral__XP_,(MethodInfo *)0x0);
+                  pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                                     (pSVar4,StringLiteral__XP_,(MethodInfo *)0x0);
                   if (pTVar8 == (Text *)0x0) goto code_?;
                   (*(code *)(pTVar8->klass->vtable).set_text.method)
-                            (pTVar8,pSVar3,
+                            (pTVar8,pSVar4,
                              (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                  pGVar9 = (this->fields).boostedNotification;
+                  pGVar9 = (pXVar1->fields).boostedNotification;
                   if (pGVar9 == (GameObject *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (pGVar9,0,(MethodInfo *)0x0);
-                  pGVar9 = (this->fields).defaultNotification;
+                  pGVar9 = (pXVar1->fields).defaultNotification;
                   if (pGVar9 == (GameObject *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (pGVar9,1,(MethodInfo *)0x0);
-                  pGVar9 = (GameObject *)&UNK_?;
-                  iVar10 = (*(code *)(this->klass->vtable).get_Lifetime.method)();
-                  (this->fields)._.timeSinceStart = (float)iVar10 - _UNK_?;
+                  iVar10 = (*(code *)(pXVar1->klass->vtable).get_Lifetime.method)
+                                     (pXVar1,(pXVar1->klass->vtable).Initialize.methodPtr);
+                  (pXVar1->fields)._.timeSinceStart = (float)iVar10 - _UNK_?;
                 }
                 else {
-                  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
                                      ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
                   str2 = mscorlib.dll::System::Int32::Int32_ToString
                                    ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
-                  mscorlib.dll::System::String::String_Concat_5
-                            (pSVar3,StringLiteral__XP___,str2,StringLiteral__from_boost_,
-                             (MethodInfo *)0x0);
+                  pSVar4 = mscorlib.dll::System::String::String_Concat_5
+                                     (pSVar4,StringLiteral__XP___,str2,StringLiteral__from_boost_,
+                                      (MethodInfo *)0x0);
                   if (pTVar8 == (Text *)0x0) goto code_?;
-                  (*(code *)(pTVar8->klass->vtable).set_text.method)(pTVar8);
-                  pGVar9 = (this->fields).boostedNotification;
+                  (*(code *)(pTVar8->klass->vtable).set_text.method)
+                            (pTVar8,pSVar4,
+                             (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                  pGVar9 = (pXVar1->fields).boostedNotification;
                   if (pGVar9 == (GameObject *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (pGVar9,1,(MethodInfo *)0x0);
-                  pGVar9 = (this->fields).defaultNotification;
+                  pGVar9 = (pXVar1->fields).defaultNotification;
                   if (pGVar9 == (GameObject *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             (pGVar9,0,(MethodInfo *)0x0);
                 }
-                this_01 = (this->fields).boostedBehaviour;
+                this_01 = (pXVar1->fields).boostedBehaviour;
                 if (this_01 != (XPNotificationBoostedBehaviour *)0x0) {
                   XPNotificationBoostedBehaviour::XPNotificationBoostedBehaviour_Initialize
-                            (this_01,0,(int32_t)pGVar9,(MethodInfo *)0x0);
+                            (this_01,(int32_t)data,(int32_t)data,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -116,7 +122,7 @@ void Assembly-CSharp.dll::XPNotification::XPNotification_Initialize
           }
         }
         else {
-          func_?();
+          func_?(TVar3.m_Index,TypeInfo__System__Int32);
         }
       }
     }

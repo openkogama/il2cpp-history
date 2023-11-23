@@ -418,11 +418,19 @@ code_?:
                 (this,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
+      pOVar40 = ((Object *)this_00)->klass;
       pDStack_38 = this;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= (((Object *)this_00)->klass->_1).naturalAligment) &&
+      if (((((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment <= (pOVar40->_1).naturalAligment) &&
+           ((Dictionary_2_System_Object_System_Object___Class *)
+            (pOVar40->_1).typeHierarchy
+            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment - 1] ==
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
+          ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (pOVar40->_1).naturalAligment)) &&
          ((Dictionary_2_System_Object_System_Object___Class *)
-          (((Object *)this_00)->klass->_1).typeHierarchy
+          (pOVar40->_1).typeHierarchy
           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
            naturalAligment - 1] ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
@@ -971,8 +979,15 @@ code_?:
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       pDStack_9 = this;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= (((Object *)message)->klass->_1).naturalAligment) &&
+      if (((((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment <= (((Object *)message)->klass->_1).naturalAligment) &&
+           ((Dictionary_2_System_Object_System_Object___Class *)
+            (((Object *)message)->klass->_1).typeHierarchy
+            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment - 1] ==
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
+          ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (((Object *)message)->klass->_1).naturalAligment)) &&
          ((Dictionary_2_System_Object_System_Object___Class *)
           (((Object *)message)->klass->_1).typeHierarchy
           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).

@@ -213,23 +213,19 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                             (&VStack_3,this_02,(MethodInfo *)0x0);
         uVar4 = pVVar2->x;
         uVar5 = pVVar2->y;
-        uStack_6._4_4_ = pVVar2->z;
-        uStack_6 = (double)CONCAT44(uStack_6._4_4_,uVar5);
-        VStack_3.x = (float)(uVar4 ^ 
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                             );
-        VStack_3.y = (float)(uVar5 ^ 
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                             );
-        VStack_3.z = (float)((uint)uStack_6._4_4_ ^
-                             __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                             );
-        fStack_7 = (float)uVar4;
+        fStack_6 = (float)(uVar4 ^ 
+                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field)
+        ;
+        uStack_7._0_4_ =
+             (float)(uVar5 ^ 
+                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+        uStack_7._4_4_ =
+             (float)((uint)pVVar2->z ^
+                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
         if (pTVar1 != (Transform *)0x0) {
-          value.y = VStack_3.y;
-          value.x = VStack_3.x;
-          value.z = VStack_3.z;
-          uStack_6._0_4_ = (float)uVar5;
+          value.y = (float)uStack_7;
+          value.x = fStack_6;
+          value.z = uStack_7._4_4_;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
                     (pTVar1,value,(MethodInfo *)0x0);
           fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
@@ -238,9 +234,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
             fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                ((MethodInfo *)0x0);
             fVar8 = fVar8 * _UNK_?;
-            uStack_6 = (double)fVar8;
+            uStack_7 = (double)fVar8;
             fVar9 = (float10)func_?();
-            uStack_6 = (double)fVar9;
+            uStack_7 = (double)fVar9;
             fVar8 = fVar8 - (float)fVar9;
             if ((fVar8 < 0.0) || ((fVar8 <= _UNK_? && (fVar8 < _UNK_?)))) {
               this_01 = (this->fields).sentryRenderer;
@@ -258,9 +254,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                   VStack_3.y = pMVar10->m20;
                   VStack_3.z = pMVar10->m30;
                   fStack_11 = pMVar10->m01;
-                  fStack_7 = pMVar10->m11;
-                  uStack_6._0_4_ = pMVar10->m21;
-                  uStack_6._4_4_ = pMVar10->m31;
+                  fStack_6 = pMVar10->m11;
+                  uStack_7._0_4_ = pMVar10->m21;
+                  uStack_7._4_4_ = pMVar10->m31;
                   fVar12 = pMVar10->m02;
                   fVar13 = pMVar10->m12;
                   fVar14 = pMVar10->m22;
@@ -279,9 +275,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                   matrix.m20 = VStack_3.y;
                   matrix.m30 = VStack_3.z;
                   matrix.m01 = fStack_11;
-                  matrix.m11 = fStack_7;
-                  matrix.m21 = (float)uStack_6;
-                  matrix.m31 = uStack_6._4_4_;
+                  matrix.m11 = fStack_6;
+                  matrix.m21 = (float)uStack_7;
+                  matrix.m31 = uStack_7._4_4_;
                   matrix.m02 = fVar12;
                   matrix.m12 = fVar13;
                   matrix.m22 = fVar14;

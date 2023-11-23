@@ -25,20 +25,22 @@ Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRem
     if (pBVar2->max_length == 0) {
       func_?();
     }
-    else if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-      puStack_3 = (getPhysicalProperites->fields)._._.method;
+    else {
       cubeBase = (CubeBase *)CONCAT31(cubeBase._1_3_,pBVar2->vector[0]);
-      pCStack_4 = cubeBase;
-      iVar5 = (*(getPhysicalProperites->fields)._._.invoke_impl)
-                        (&pCStack_4,(getPhysicalProperites->fields)._._.method_code);
-      fVar6 = *(float *)(iVar5 + 0x10);
-      if (fVar6 == _UNK_?) {
-        return CubeDamageState__Enum_NoDamage;
+      if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
+        puStack_3 = (getPhysicalProperites->fields)._._.method;
+        pCStack_4 = cubeBase;
+        iVar5 = (*(getPhysicalProperites->fields)._._.invoke_impl)
+                          (&pCStack_4,(getPhysicalProperites->fields)._._.method_code);
+        fVar6 = *(float *)(iVar5 + 0x10);
+        if (fVar6 == _UNK_?) {
+          return CubeDamageState__Enum_NoDamage;
+        }
+        if (fVar6 <= damage) {
+          return CubeDamageState__Enum_Destroyed;
+        }
+        return (uint)(damage < fVar6);
       }
-      if (fVar6 <= damage) {
-        return CubeDamageState__Enum_Destroyed;
-      }
-      return (uint)(damage < fVar6);
     }
   }
   func_?();
@@ -198,7 +200,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   func_?();
   uStack6 = 0x1035;
   RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-            ((IntVector)0x31035a9e6,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+            ((IntVector)0x31035b3e6,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
   return 1;
 }
 

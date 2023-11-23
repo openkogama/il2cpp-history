@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0xc290);
+    func_?(0x5af8);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_MV::WorldObject::CubeBase>__ContainsKey_MV__WorldObject__IntVector_
                    );
@@ -374,32 +374,32 @@ void Assembly-CSharp.dll::MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerra
     fStack_2 = (pNVar4->value).m_Center.x;
     puStack_3 = (undefined *)(pNVar4->value).m_Center.y;
     if (pNVar4->hasValue == 0) {
-      fStack_5 = 0.0;
+      uVar5 = 0;
       fStack_6 = 0.0;
       fStack_7 = 0.0;
       fStack_8 = 0.0;
-      uStack_9 = 0;
+      fStack_9 = 0.0;
     }
     else {
       pBVar10 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
                Nullable_1_UnityEngine_Bounds__get_Value
                          ((Bounds *)&stack0xffffffcc,(Nullable_1_UnityEngine_Bounds_ *)&uStack_1,
                           MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fStack_5 = (pBVar10->m_Center).x;
-      fStack_6 = (pBVar10->m_Center).y;
-      fStack_7 = (pBVar10->m_Center).z;
-      fStack_8 = (pBVar10->m_Extents).x;
-      uStack_9._0_4_ = (pBVar10->m_Extents).y;
-      uStack_9._4_4_ = (pBVar10->m_Extents).z;
+      fStack_6 = (pBVar10->m_Center).x;
+      fStack_7 = (pBVar10->m_Center).y;
+      fStack_8 = (pBVar10->m_Center).z;
+      fStack_9 = (pBVar10->m_Extents).x;
+      uVar5._0_4_ = (pBVar10->m_Extents).y;
+      uVar5._4_4_ = (pBVar10->m_Extents).z;
     }
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_02 != (MVWorldObjectClientManager *)0x0) {
-      bounds.m_Center.y = fStack_6;
-      bounds.m_Center.x = fStack_5;
-      bounds.m_Center.z = fStack_7;
-      bounds.m_Extents.x = fStack_8;
-      bounds.m_Extents.y = (float)uStack_9;
-      bounds.m_Extents.z = (float)((ulonglong)uStack_9 >> 0x20);
+      bounds.m_Center.y = fStack_7;
+      bounds.m_Center.x = fStack_6;
+      bounds.m_Center.z = fStack_8;
+      bounds.m_Extents.x = fStack_9;
+      bounds.m_Extents.y = (float)uVar5;
+      bounds.m_Extents.z = (float)((ulonglong)uVar5 >> 0x20);
       MVWorldObjectClientManager::MVWorldObjectClientManager_UpdateWorldBounds
                 (this_02,bounds,(MethodInfo *)0x0);
       return;

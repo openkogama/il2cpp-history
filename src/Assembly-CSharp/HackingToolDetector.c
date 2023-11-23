@@ -358,8 +358,8 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
   switch((a->fields).kind) {
   case 0:
     index = 0;
-    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
-    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    values = (String__Array *)func_?(TypeInfo__System__String,5);
+    if (values == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Running_process__);
     pAVar2 = (a->fields).app;
     if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
@@ -367,8 +367,8 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
     break;
   case 1:
     index = 0;
-    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
-    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    values = (String__Array *)func_?(TypeInfo__System__String,7);
+    if (values == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Running_process__);
     pAVar2 = (a->fields).app;
     if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
@@ -376,8 +376,8 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
     goto code_?;
   case 2:
     index = 1;
-    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
-    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    values = (String__Array *)func_?(TypeInfo__System__String,5);
+    if (values == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Registry_key__);
     pAVar3 = (a->fields).foundKey;
     if (pAVar3 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
@@ -385,8 +385,8 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
     break;
   case 3:
     index = 1;
-    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
-    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    values = (String__Array *)func_?(TypeInfo__System__String,7);
+    if (values == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Registry_key__);
     pAVar3 = (a->fields).foundKey;
     if (pAVar3 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
@@ -421,13 +421,12 @@ code_?:
     pSVar1 = StringLiteral___detected_;
 code_?:
     func_?(uVar4,pSVar1);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_6(unaff_EBX,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
 code_?:
     if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__HackingToolDetector);
     }
     pBVar5 = (this->fields).alreadyReported;
-    unaff_EBX = (String__Array *)this;
     if (pBVar5 != (BitArray *)0x0) {
       bVar6 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
                         (pBVar5,index,(MethodInfo *)0x0);
@@ -470,35 +469,10 @@ code_?:
     }
   }
 code_?:
-  bVar9 = 0;
-  uVar10 = func_?();
-  pbVar11 = (byte *)((ulonglong)uVar10 >> 0x20);
-  bVar12 = (byte)((ulonglong)uVar10 >> 8);
-  bVar13 = bVar12 + *pbVar11;
-  bVar14 = CARRY1(bVar12,*pbVar11) || CARRY1(bVar13,bVar9);
-  bVar13 = bVar13 + bVar9;
-  bVar15 = (byte)((ulonglong)uVar10 >> 0x20);
-  bVar12 = (byte)unaff_EBX + bVar15;
-  bVar16 = CARRY1((byte)unaff_EBX,bVar15) || CARRY1(bVar12,bVar14);
-  bVar9 = bVar13 + *pbVar11;
-  pbVar11[CONCAT31((int3)((uint)unaff_EBX >> 8),bVar12 + bVar14)] =
-       pbVar11[CONCAT31((int3)((uint)unaff_EBX >> 8),bVar12 + bVar14)] + bVar15 +
-       (CARRY1(bVar13,*pbVar11) || CARRY1(bVar9,bVar16));
-  if (-1 < (char)(bVar15 & *(byte *)CONCAT22((short)((ulonglong)uVar10 >> 0x10),
-                                            CONCAT11(bVar9 + bVar16,(char)uVar10)))) {
-    func_?();
-    func_?(&StringLiteral_Cheating_Hacking_is_not_allowed_);
-    uRam_? = 1;
-    pSVar1 = TM::TM__(StringLiteral_Cheating_Hacking_is_not_allowed_,(MethodInfo *)0x0);
-    TypeInfo__HackingToolDetector->static_fields->CheatWarning = pSVar1;
-    func_?(TypeInfo__HackingToolDetector->static_fields,pSVar1);
-    TypeInfo__HackingToolDetector->static_fields->instance = (HackingToolDetector *)0x0;
-    func_?(&TypeInfo__HackingToolDetector->static_fields->instance,0);
-    return;
-  }
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
-  return;
+  func_?();
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

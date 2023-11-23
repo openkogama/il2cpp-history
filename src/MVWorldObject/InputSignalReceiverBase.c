@@ -163,7 +163,7 @@ code_?:
       (*(code *)(this->klass->vtable).__unknown_1.method)(this,pIVar2);
       if ((this->fields).OnSignal != (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0) {
         pAVar3 = (this->fields).OnSignal;
-        (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code,pIVar2);
+        (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
       }
       if ((this->fields).firstFrame != 0) {
         (this->fields).firstFrame = 0;

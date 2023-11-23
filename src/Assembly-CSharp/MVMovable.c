@@ -497,15 +497,15 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_Move
     }
     if ((this_02->fields).pausedMovement == 0) {
       pMVar19 = (this_02->fields)._CubeModel_k__BackingField;
-      fVar11 = ((VStack_29.z * fStack_21 - fStack_38 * fStack_39) - VStack_29.x * (float)uStack_20)
+      fVar11 = ((fStack_21 * VStack_29.z - fStack_38 * fStack_39) - (float)uStack_20 * VStack_29.x)
                - VStack_29.y * uStack_20._4_4_;
-      fVar40 = (VStack_29.x * fStack_39 + VStack_29.z * uStack_20._4_4_ + fStack_21 * VStack_29.y) -
-               (float)uStack_20 * fStack_38;
-      fVar15 = uStack_20._4_4_ * VStack_29.x;
-      VStack_29.x = (uStack_20._4_4_ * fStack_38 +
+      fVar40 = (fStack_39 * VStack_29.x + VStack_29.z * uStack_20._4_4_ + fStack_21 * VStack_29.y) -
+               fStack_38 * (float)uStack_20;
+      fVar15 = VStack_29.x * uStack_20._4_4_;
+      VStack_29.x = (fStack_38 * uStack_20._4_4_ +
                     VStack_29.z * (float)uStack_20 + fStack_21 * VStack_29.x) -
-                    VStack_29.y * fStack_39;
-      fStack_38 = (VStack_29.y * (float)uStack_20 + VStack_29.z * fStack_39 + fStack_21 * fStack_38)
+                    fStack_39 * VStack_29.y;
+      fStack_38 = ((float)uStack_20 * VStack_29.y + VStack_29.z * fStack_39 + fStack_21 * fStack_38)
                   - fVar15;
       VStack_29.y = fVar40;
       VStack_29.z = fVar11;
@@ -1063,7 +1063,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar26 = 0x410316da7;
+          uVar26 = 0x410317887;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_21 = (MVMovable *)

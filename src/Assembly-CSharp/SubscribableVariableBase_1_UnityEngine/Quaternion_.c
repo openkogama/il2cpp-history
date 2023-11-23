@@ -333,8 +333,8 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    cVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
-    return cVar7 == '\0';
+    bVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return bVar7 ^ 1;
   }
   func_?();
   pcVar8 = (code *)swi(3);
@@ -365,8 +365,8 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
     if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
       pIVar5 = (Il2CppClass *)func_?(pIVar5);
     }
-    cVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
-    return cVar7 == '\0';
+    bVar7 = func_?(&b,uVar6,pIVar5->rgctx_data[9].rgctxDataDummy);
+    return bVar7 ^ 1;
   }
   func_?();
   pcVar8 = (code *)swi(3);
@@ -404,8 +404,8 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Quaternion]::
       if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
-      cVar8 = func_?(&a->fields,uVar7,pIVar1->rgctx_data[9].rgctxDataDummy);
-      return cVar8 == '\0';
+      bVar8 = func_?(&a->fields,uVar7,pIVar1->rgctx_data[9].rgctxDataDummy);
+      return bVar8 ^ 1;
     }
   }
   func_?();

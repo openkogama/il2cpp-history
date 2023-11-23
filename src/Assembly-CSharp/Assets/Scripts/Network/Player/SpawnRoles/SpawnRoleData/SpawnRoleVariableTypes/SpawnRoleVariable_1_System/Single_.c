@@ -365,7 +365,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 == 0;
+      return bVar4 ^ 1;
     }
   }
   func_?();
@@ -402,7 +402,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 == 0;
+      return bVar4 ^ 1;
     }
   }
   func_?();
@@ -451,7 +451,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&a,obj,pIVar1->rgctx_data[0x10].method);
-      return bVar4 == 0;
+      return bVar4 ^ 1;
     }
   }
   func_?();

@@ -635,7 +635,7 @@ code_?:
                             ((Vector3 *)&stack0xffffffe0,pTVar6,(MethodInfo *)0x0);
         uVar12._0_4_ = pVVar7->x;
         uVar12._4_4_ = pVVar7->y;
-        puVar13 = &UNK_?;
+        fVar10 = pVVar7->z;
         pCVar11 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
                             ((MethodInfo *)0x0);
         if (pCVar11 == (Camera *)0x0) goto code_?;
@@ -644,11 +644,11 @@ code_?:
         if (pTVar6 == (Transform *)0x0) goto code_?;
         pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                             ((Vector3 *)&stack0xffffffc0,pTVar6,(MethodInfo *)0x0);
-        uVar14 = pVVar7->x;
-        uVar15 = pVVar7->y;
-        fVar8 = (float)uVar12 + (float)uVar14;
-        fVar9 = (float)uVar15 + (float)((ulonglong)uVar12 >> 0x20);
-        fVar10 = pVVar7->z + (float)puVar13;
+        uVar13 = pVVar7->x;
+        uVar14 = pVVar7->y;
+        fVar8 = (float)uVar12 + (float)uVar13;
+        fVar9 = (float)uVar14 + (float)((ulonglong)uVar12 >> 0x20);
+        fVar10 = pVVar7->z + fVar10;
       }
       this_00 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
       if (this_00 == (AudioManager *)0x0) goto code_?;
@@ -665,17 +665,17 @@ code_?:
     fVar10 = (float)(this->fields).currentAmmo.currentCryptoKey;
     fVar8 = (float)(this->fields).currentAmmo.hiddenValue;
     fVar9 = (float)(this->fields).currentAmmo.fakeValue;
-    puVar13 = *(undefined **)&(this->fields).currentAmmo.inited;
+    puVar15 = *(undefined **)&(this->fields).currentAmmo.inited;
     (this->fields).isCharging = 0;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
         == 0) {
-      puVar13 = &UNK_?;
+      puVar15 = &UNK_?;
       func_?();
     }
     OVar16.hiddenValue = (int32_t)fVar8;
     OVar16.currentCryptoKey = (int32_t)fVar10;
     OVar16.fakeValue = (int32_t)fVar9;
-    OVar16._12_4_ = puVar13;
+    OVar16._12_4_ = puVar15;
     iVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
              ObscuredInt_op_Implicit_1(OVar16,(MethodInfo *)0x0);
     pOVar18 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::

@@ -259,6 +259,7 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
                (LobbyStateController *this,MethodInfo *method)
 
 {
+  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&
                     GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
@@ -300,27 +301,30 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
             (pGVar6,value,(MethodInfo *)0x0);
   if (uVar5 == '\0') {
     if (bVar1 == 0) {
-      bVar1 = 1;
+      this._0_1_ = 1;
     }
     else {
-      bVar1 = -(uVar4 != 0) & bVar1;
+      this._0_1_ = 0;
+      if (uVar4 != 0) {
+        this._0_1_ = bVar1;
+      }
     }
   }
   else {
-    bVar1 = 0;
+    this._0_1_ = 0;
   }
-  pGVar6 = (this->fields).accessoryShop;
+  pGVar6 = (this_01->fields).accessoryShop;
   if (pGVar6 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,bVar1,(MethodInfo *)0x0);
+            (pGVar6,(bool)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-    pGVar7 = (this->fields).gamePassesUIPrefab;
+    pGVar7 = (this_01->fields).gamePassesUIPrefab;
     parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
+                       ((Component *)this_01,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
@@ -329,12 +333,12 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
                        ((Object *)pGVar7,parent,0,
                         GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                        );
-    (this->fields).gamePassesUI = pGVar7;
-    func_?(&(this->fields).gamePassesUI,pGVar7);
-    pGVar7 = (this->fields).gamePassesUI;
+    (this_01->fields).gamePassesUI = pGVar7;
+    func_?(&(this_01->fields).gamePassesUI,pGVar7);
+    pGVar7 = (this_01->fields).gamePassesUI;
     if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
     GamePassesUI::GamePassesUI_Initialize(pGVar7,(MethodInfo *)0x0);
-    pGVar7 = (this->fields).gamePassesUI;
+    pGVar7 = (this_01->fields).gamePassesUI;
     if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
     GamePassesUI::GamePassesUI_TryShowWelcomeReward(pGVar7,(MethodInfo *)0x0);
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
@@ -347,7 +351,7 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
       if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0)
       goto code_?;
     }
-    pGVar7 = (this->fields).gamePassesUI;
+    pGVar7 = (this_01->fields).gamePassesUI;
     if ((pGVar7 == (GamePassesUI *)0x0) ||
        (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pGVar7,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
@@ -371,7 +375,7 @@ code_?:
       if (pGVar8 != (GoldRewardManager *)0x0) {
         GoldRewardManager::GoldRewardManager_StartGoldRewardCountdownWhenReady
                   (pGVar8,(MethodInfo *)0x0);
-        pGVar6 = (this->fields).goldIconOnPlayButton;
+        pGVar6 = (this_01->fields).goldIconOnPlayButton;
         if (pGVar6 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar6,1,(MethodInfo *)0x0);

@@ -562,7 +562,7 @@ Vector3 * Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_GetClosestGrid
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * _UNK_?;
+  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._._.gameObject;
@@ -570,38 +570,37 @@ Vector3 * Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_GetClosestGrid
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar7 = TypeInfo__SharedCubeFunctions;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
+      rotation.y = (float)pSVar4;
+      rotation.x = gridSize;
+      rotation.z = fVar5;
+      rotation.w = fVar6;
+      scale.y = fVar5;
+      scale.x = (float)pSVar4;
       scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
+      fVar5 = pVVar8->y;
+      fVar6 = pVVar8->z;
+      __return_storage_ptr__->x = pVVar8->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar4;
+      __return_storage_ptr__->z = fVar6;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar9)();
+  return pVVar8;
 }
 
 
@@ -616,7 +615,7 @@ Bounds * Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_GetLocalBounds
   if ((pMVar1 != (MVGamePointChestObject *)0x0) &&
      (pTVar2 = (pMVar1->fields).triggerBoxEvents, pTVar2 != (TriggerBoxEvents *)0x0)) {
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pTVar2,(MethodInfo *)0x0);
+                       ((Component *)pTVar2,(MethodInfo *)0x0);
     if (pTVar3 != (Transform *)0x0) {
       pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                           ((Vector3 *)&puStack_5,pTVar3,(MethodInfo *)0x0);
@@ -626,21 +625,21 @@ Bounds * Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_GetLocalBounds
       if ((pMVar1 != (MVGamePointChestObject *)0x0) &&
          (pTVar2 = (pMVar1->fields).triggerBoxEvents, pTVar2 != (TriggerBoxEvents *)0x0)) {
         pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pTVar2,(MethodInfo *)0x0);
+                           ((Component *)pTVar2,(MethodInfo *)0x0);
         if (pTVar3 != (Transform *)0x0) {
           uVar8 = 0;
           pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
                               ((Vector3 *)&puStack_5,pTVar3,(MethodInfo *)0x0);
-          fVar9 = _UNK_?;
           (__return_storage_ptr__->m_Center).x = (float)uVar8;
+          fVar9 = _UNK_?;
           (__return_storage_ptr__->m_Center).y = (float)uVar6;
           uVar10 = pVVar4->x;
           uVar11 = pVVar4->y;
-          fVar12 = pVVar4->z;
+          fVar12 = pVVar4->z * _UNK_?;
           (__return_storage_ptr__->m_Center).z = fVar7;
           (__return_storage_ptr__->m_Extents).x = (float)uVar10 * fVar9;
           (__return_storage_ptr__->m_Extents).y = (float)uVar11 * fVar9;
-          (__return_storage_ptr__->m_Extents).z = fVar12 * fVar9;
+          (__return_storage_ptr__->m_Extents).z = fVar12;
           return __return_storage_ptr__;
         }
       }
@@ -671,9 +670,9 @@ bool Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_HandleDifferentChes
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
   if (this_00 != (Transform *)0x0) {
-    value.y = (float)uVar3 * percentage;
-    value.x = (float)uVar2 * percentage;
     value.z = (pVVar1->oneVector).z * percentage;
+    value.x = (float)uVar2 * percentage;
+    value.y = (float)uVar3 * percentage;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
               (this_00,value,(MethodInfo *)0x0);
     return 1;
@@ -827,11 +826,12 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_InitializeInventory
                              (*(Renderer **)(in_stack_2 + 0x1c),(MethodInfo *)0x0);
           if (pMVar3 != (Material *)0x0) {
             pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                               ((Vector4 *)&stack0xffffffe4,pMVar3,StringLiteral__MainColor,
+                               ((Vector4 *)&stack0xfffffff4,pMVar3,StringLiteral__MainColor,
                                 (MethodInfo *)0x0);
             fVar5 = pVVar4->x;
             fVar6 = pVVar4->y;
             fVar7 = pVVar4->z;
+            fVar8 = 1.0;
             if (*(Renderer **)(in_stack_2 + 0x1c) != (Renderer *)0x0) {
               pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                                  (*(Renderer **)(in_stack_2 + 0x1c),(MethodInfo *)0x0);
@@ -839,7 +839,7 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_InitializeInventory
                 value.y = fVar6;
                 value.x = fVar5;
                 value.z = fVar7;
-                value.w = 1.0;
+                value.w = fVar8;
                 UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                           (pMVar3,StringLiteral__MainColor,value,(MethodInfo *)0x0);
                 if (*(GreyOutObjectScript **)(in_stack_2 + 0x20) !=
@@ -865,13 +865,13 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_InitializeInventory
       }
     }
     func_?();
-    pcVar8 = (code *)swi(3);
-    (*pcVar8)();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1240,9 +1240,9 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_UpdateChestSize
   uVar3 = (pVVar2->oneVector).x;
   uVar4 = (pVVar2->oneVector).y;
   if (this_00 != (Transform *)0x0) {
-    value.y = (float)uVar4 * fStack_1;
-    value.x = (float)uVar3 * fStack_1;
     value.z = (pVVar2->oneVector).z * fStack_1;
+    value.x = (float)uVar3 * fStack_1;
+    value.y = (float)uVar4 * fStack_1;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
               (this_00,value,(MethodInfo *)0x0);
     return;

@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Preview);
+    func_?(&::StringLiteral_Preview);
     func_?(&StringLiteral_Preview__0__RenderCam);
     cRam_? = '\x01';
   }
@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       value_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                           (StringLiteral_Preview,(MethodInfo *)0x0);
+                           (::StringLiteral_Preview,(MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                   (pGVar2,value_00,(MethodInfo *)0x0);
@@ -182,7 +182,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_3
-              (transfrom,StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
+              (transfrom,::StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);
@@ -200,7 +200,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Preview);
+    func_?(&::StringLiteral_Preview);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._PreviewGameObject_k__BackingField;
@@ -211,7 +211,7 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnP
          (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
                   UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (StringLiteral_Preview,(MethodInfo *)0x0);
+                      (::StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
     return;
   }

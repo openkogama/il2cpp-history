@@ -263,11 +263,7 @@ bool Assembly-CSharp.dll::FirstTimeActivatableExitPlayInEditPointer::
   }
   bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                     (this_00,(MethodInfo *)0x0);
-  bVar4 = 0;
-  if (bVar1 == 0) {
-    bVar4 = bVar3;
-  }
-  if (bVar4 == 0) {
+  if (((bVar1 ^ 1) & bVar3) == 0) {
     return 0;
   }
   return (this->fields).canShow;

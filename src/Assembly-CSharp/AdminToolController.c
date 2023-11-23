@@ -823,16 +823,16 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                 *)this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
               );
-    pSVar1 = StringLiteral_Days;
-    pSVar2 = StringLiteral__7;
+    pSVar1 = StringLiteral__7;
+    pSVar2 = StringLiteral_Days;
     func_?();
     puVar3 = &stack0xfffffff4;
     func_?();
     func_?();
     if (this_00 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-      value_00.BanDuration = pSVar2;
+      value_00.BanDuration = pSVar1;
       value_00.BanReason = (String *)puVar3;
-      value_00.BanDurationFormat = pSVar1;
+      value_00.BanDurationFormat = pSVar2;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -840,15 +840,15 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Cheating,value_00,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral_Hours;
-      pSVar2 = StringLiteral__24;
+      pSVar1 = StringLiteral__24;
+      pSVar2 = StringLiteral_Hours;
       pSVar4 = StringLiteral_You_are_banned_for_inappropriate;
       func_?(&stack0xffffffe4,StringLiteral_You_are_banned_for_inappropriate);
-      func_?(&stack0xffffffe8,pSVar2);
-      func_?(&stack0xffffffec,pSVar1);
-      value_01.BanDuration = pSVar2;
+      func_?(&stack0xffffffe8,pSVar1);
+      func_?(&stack0xffffffec,pSVar2);
+      value_01.BanDuration = pSVar1;
       value_01.BanReason = pSVar4;
-      value_01.BanDurationFormat = pSVar1;
+      value_01.BanDurationFormat = pSVar2;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -856,15 +856,15 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Abusive_chat,value_01,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral_Weeks;
-      pSVar2 = StringLiteral__2;
+      pSVar1 = StringLiteral__2;
+      pSVar2 = StringLiteral_Weeks;
       puVar3 = &stack0xffffffd8;
       func_?();
       func_?();
       func_?(&stack0xffffffe0);
-      value_02.BanDuration = pSVar2;
+      value_02.BanDuration = pSVar1;
       value_02.BanReason = (String *)puVar3;
-      value_02.BanDurationFormat = pSVar1;
+      value_02.BanDurationFormat = pSVar2;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
       Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
@@ -872,14 +872,14 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
                  (Object *)StringLiteral_Sexual_behavior,value_02,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
                 );
-      pSVar1 = StringLiteral_Weeks;
-      pSVar2 = StringLiteral__2;
+      pSVar1 = StringLiteral__2;
+      pSVar2 = StringLiteral_Weeks;
       pSVar4 = StringLiteral_You_are_banned_for_pretending_to;
       func_?();
       func_?();
-      pSStack5 = pSVar1;
+      pSStack5 = pSVar2;
       func_?();
-      value.BanDuration = pSVar2;
+      value.BanDuration = pSVar1;
       value.BanReason = pSVar4;
       value.BanDurationFormat = pSStack5;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::

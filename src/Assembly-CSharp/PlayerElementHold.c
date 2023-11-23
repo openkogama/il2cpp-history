@@ -144,9 +144,9 @@ void Assembly-CSharp.dll::PlayerElementHold::PlayerElementHold_Initialize
                                ((Component *)pIVar4,(MethodInfo *)0x0), player == (MVPlayer *)0x0))
         goto code_?;
         scoreValue = 0;
-        typeToDisplay = (GameStatCounterType__Enum)(bVar6 == 0);
+        typeToDisplay = (GameStatCounterType__Enum)(bVar6 ^ 1);
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  ((GameObject *)player,bVar6 == 0,(MethodInfo *)0x0);
+                  ((GameObject *)player,bVar6 ^ 1,(MethodInfo *)0x0);
       }
       if (bVar3 == false) {
 code_?:

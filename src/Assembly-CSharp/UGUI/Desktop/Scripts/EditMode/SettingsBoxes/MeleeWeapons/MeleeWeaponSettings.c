@@ -45,55 +45,38 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
     (this->fields).data = pDVar1;
     func_?(&(this->fields).data,pDVar1);
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).data;
-    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (pDVar2,(Object *)StringLiteral_itemData,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (TVar3.m_Index == 0) {
-        (this->fields).itemData = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      }
-      else if ((((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
-                  (
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment) ||
-                (*(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4) !=
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-                ) || ((this->fields).itemData =
-                           (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index,
-                     *(byte *)(*(int *)TVar3.m_Index + 0xb8) <
-                     (
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     ->_1).naturalAligment)) ||
-              (*(Dictionary_2_System_Object_System_Object___Class **)
-                (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
-                (uint)(
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                      ->_1).naturalAligment * 4) !=
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_itemData,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (TVar3.m_Index == 0) {
+      (this->fields).itemData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    }
+    else {
+      if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment) ||
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
+      (this->fields).itemData = (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index;
+      if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment) ||
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
+           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment * 4) !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
       goto code_?;
     }
-code_?:
-    func_?();
-  }
-  else {
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if ((this_02 == (MVWorldObjectClientManager *)0x0) ||
-       (pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_02,woID,(MethodInfo *)0x0), pMVar4 == (MVWorldObject *)0x0))
-    goto code_?;
-    (this->fields).data = (pMVar4->fields).data;
-    func_?(&(this->fields).data);
-    pDVar1 = MeleeWeaponSettings_ReadWorldObjectItemData
-                        (this,(this->fields).data,(MethodInfo *)0x0);
-    (this->fields).itemData = pDVar1;
 code_?:
     func_?();
     this_00 = (this->fields).settingsBase;
@@ -105,11 +88,11 @@ code_?:
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
     }
-    VVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+    VVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
              MeleeWeaponData_MinMaxValue(StringLiteral_Damage,(MethodInfo *)0x0);
-    VVar6 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+    VVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
              MeleeWeaponData_MinMaxValue(StringLiteral_ImpulseStrength,(MethodInfo *)0x0);
-    VVar7 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+    VVar6 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
              MeleeWeaponData_MinMaxValue(StringLiteral_RecoilStrength,(MethodInfo *)0x0);
     Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::MeleeWeaponData_MinMaxValue
               (StringLiteral_AttackAnimationTime,(MethodInfo *)0x0);
@@ -117,65 +100,82 @@ code_?:
               (StringLiteral_AttackCooldown,(MethodInfo *)0x0);
     Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::MeleeWeaponData_MinMaxValue
               (StringLiteral_Range,(MethodInfo *)0x0);
-    pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+    pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
              static_fields->fireSoundEffects;
-    if (pSVar8 == (String__Array *)0x0) goto code_?;
+    if (pSVar7 == (String__Array *)0x0) goto code_?;
     this_03 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                *)func_?();
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
     MultiColumnCollectionHeader+ViewState+ColumnState]::
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this_03,pSVar8->max_length,
+              (this_03,pSVar7->max_length,
                MethodInfo__System__Collections__Generic__List<int>__List_int_);
-    iVar9 = 0;
+    iVar8 = 0;
     while( true ) {
       while( true ) {
         if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
             cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-        pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+        pMVar9 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+        pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
                  static_fields->fireSoundEffects;
-        if (pSVar8 == (String__Array *)0x0) goto code_?;
-        if ((int)pSVar8->max_length <= iVar9) {
+        if (pSVar7 == (String__Array *)0x0) goto code_?;
+        if ((int)pSVar7->max_length <= iVar8) {
           if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+          pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
                    static_fields->hitSoundEffects;
-          if (pSVar8 == (String__Array *)0x0) goto code_?;
+          if (pSVar7 == (String__Array *)0x0) goto code_?;
           this_04 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                      *)func_?();
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
           MultiColumnCollectionHeader+ViewState+ColumnState]::
           List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-                    (this_04,pSVar8->max_length,
+                    (this_04,pSVar7->max_length,
                      MethodInfo__System__Collections__Generic__List<int>__List_int_);
-          iVar9 = 0;
+          iVar8 = 0;
           goto code_?;
         }
         if (this_03 ==
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) goto code_?;
-        piVar11 = &(this_03->fields)._version;
-        *piVar11 = *piVar11 + 1;
-        pMVar12 = (this_03->fields)._items;
-        if (pMVar12 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar10 = &(this_03->fields)._version;
+        *piVar10 = *piVar10 + 1;
+        pMVar11 = (this_03->fields)._items;
+        if (pMVar11 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar13 = (this_03->fields)._size;
-        if (uVar13 < pMVar12->max_length) break;
+        uVar12 = (this_03->fields)._size;
+        if (uVar12 < pMVar11->max_length) break;
         mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
         List_1_System_Int32__AddWithResize
-                  ((List_1_System_Int32_ *)this_03,iVar9,pMVar10->klass->rgctx_data[0xe].method);
-        iVar9 = iVar9 + 1;
+                  ((List_1_System_Int32_ *)this_03,iVar8,pMVar9->klass->rgctx_data[0xe].method);
+        iVar8 = iVar8 + 1;
       }
-      (this_03->fields)._size = uVar13 + 1;
-      if (pMVar12->max_length <= uVar13) break;
-      (&pMVar12->vector[0].index)[uVar13] = iVar9;
-      iVar9 = iVar9 + 1;
+      (this_03->fields)._size = uVar12 + 1;
+      if (pMVar11->max_length <= uVar12) break;
+      (&pMVar11->vector[0].index)[uVar12] = iVar8;
+      iVar8 = iVar8 + 1;
     }
+  }
+  else {
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_02 != (MVWorldObjectClientManager *)0x0) {
+      pMVar13 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (this_02,woID,(MethodInfo *)0x0);
+      if (pMVar13 != (MVWorldObject *)0x0) {
+        (this->fields).data = (pMVar13->fields).data;
+        func_?(&(this->fields).data);
+        pDVar1 = MeleeWeaponSettings_ReadWorldObjectItemData
+                            (this,(this->fields).data,(MethodInfo *)0x0);
+        (this->fields).itemData = pDVar1;
+        goto code_?;
+      }
+    }
+code_?:
+    func_?();
   }
 code_?:
   func_?();
@@ -197,21 +197,23 @@ code_?:
       cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-  pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields
+  pMVar9 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+  pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->static_fields
            ->hitSoundEffects;
-  if (pSVar8 == (String__Array *)0x0) goto code_?;
-  if ((int)pSVar8->max_length <= iVar9) {
+  if (pSVar7 == (String__Array *)0x0) goto code_?;
+  if ((int)pSVar7->max_length <= iVar8) {
     this_01 = (this->fields).nameInputField;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if ((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-       (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar2,(Object *)StringLiteral_Name,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), this_01 == (SettingsInputField *)0x0)) goto code_?;
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_Name,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (this_01 == (SettingsInputField *)0x0) goto code_?;
     TVar14.m_Index = 0;
     if (TVar3.m_Index != 0) {
       if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
@@ -225,38 +227,41 @@ code_?:
     pSVar17 = (this->fields).weaponDamageSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (minValue = StringLiteral_Damage,
-        pMVar10 = 
-        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-        , TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                   Object,UnityEngine::UIElements::TextureId]::
-                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                             (pDVar2,(Object *)StringLiteral_Damage,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             ), pSVar17 == (SettingsSlider *)0x0)) || (TVar3.m_Index == 0))
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    minValue = StringLiteral_Damage;
+    pMVar9 = 
+    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+    ;
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_Damage,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar3.m_Index == 0)) goto code_?;
     TVar14 = TVar3;
     if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
-    fStack_18 = VVar6.Item2;
-    fStack_19 = VVar7.Item1;
+    fStack_18 = VVar5.Item2;
+    fStack_19 = VVar6.Item1;
     pfVar20 = (float *)func_?();
-    fStack_21 = VVar5.Item2;
-    fStack_22 = VVar5.Item1;
+    fStack_21 = VVar4.Item2;
+    fStack_22 = VVar4.Item1;
     SettingsSlider::SettingsSlider_Initialize
               (pSVar17,StringLiteral_Damage,*pfVar20,fStack_22,fStack_21,(MethodInfo *)0x0);
     pSVar23 = (this->fields).weaponDamageInputSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_Damage,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_Damage,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -265,14 +270,15 @@ code_?:
     pSVar17 = (this->fields).ImpulseStrengthSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_ImpulseStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_ImpulseStrength,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -282,14 +288,15 @@ code_?:
     pSVar23 = (this->fields).ImpulseStrengthInputSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_ImpulseStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_ImpulseStrength,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -298,31 +305,33 @@ code_?:
     pSVar17 = (this->fields).RecoilStrengthSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_RecoilStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_RecoilStrength,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,4.004682e-29,(MethodInfo *)0x0
+              (pSVar17,StringLiteral_RecoilStrength,*pfVar20,fStack_19,4.005597e-29,(MethodInfo *)0x0
               );
     pSVar23 = (this->fields).RecoilStrengthInputSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_RecoilStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_RecoilStrength,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -331,31 +340,33 @@ code_?:
     pSVar17 = (this->fields).attackAnimationSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_AttackAnimationTime,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_AttackAnimationTime,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar17,StringLiteral_AttackAnimationTime,*pfVar20,(float)minValue,(float)pMVar10,
+              (pSVar17,StringLiteral_AttackAnimationTime,*pfVar20,(float)minValue,(float)pMVar9,
                (MethodInfo *)0x0);
     pSVar23 = (this->fields).attackAnimationInputSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_AttackAnimationTime,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_AttackAnimationTime,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -364,31 +375,33 @@ code_?:
     pSVar17 = (this->fields).attackCooldownSlider;
     pDVar24 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar24,(Object *)StringLiteral_AttackCooldown,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar24 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar24,(Object *)StringLiteral_AttackCooldown,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar17,StringLiteral_AttackCooldown,*pfVar20,4.004668e-29,(float)pDVar2,
+              (pSVar17,StringLiteral_AttackCooldown,*pfVar20,4.0055828e-29,(float)pDVar2,
                (MethodInfo *)0x0);
     pSVar23 = (this->fields).attackCooldownInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar2,(Object *)StringLiteral_AttackCooldown,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_AttackCooldown,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -397,14 +410,15 @@ code_?:
     pSVar17 = (this->fields).rangeSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar2,(Object *)StringLiteral_Range,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar17 == (SettingsSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_Range,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar17 == (SettingsSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -414,14 +428,15 @@ code_?:
     pSVar23 = (this->fields).rangeInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
-    if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-        (TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar2,(Object *)StringLiteral_Range,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            ), pSVar23 == (SettingsInputFieldSlider *)0x0)) || (TVar14.m_Index == 0))
+    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (pDVar2,(Object *)StringLiteral_Range,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if ((pSVar23 == (SettingsInputFieldSlider *)0x0) || (TVar14.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar20 = (float *)func_?();
@@ -442,14 +457,14 @@ code_?:
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+    pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
              static_fields->fireSoundEffects;
     if ((pSVar25 == (SettingsDropdown *)0x0) || (TVar3.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar11 = (int32_t *)func_?();
+    piVar10 = (int32_t *)func_?();
     SettingsDropdown::SettingsDropdown_Initialize
-              (pSVar25,StringLiteral_FireSoundEffect,*piVar11,pSVar8,(List_1_System_Int32_ *)this_03,
+              (pSVar25,StringLiteral_FireSoundEffect,*piVar10,pSVar7,(List_1_System_Int32_ *)this_03,
                (MethodInfo *)0x0);
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
@@ -462,14 +477,14 @@ code_?:
                        (pDVar2,(Object *)StringLiteral_HitSoundEffect,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    pSVar8 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+    pSVar7 = TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
              static_fields->hitSoundEffects;
     if ((pSVar25 == (SettingsDropdown *)0x0) || (TVar3.m_Index == 0)) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar11 = (int32_t *)func_?();
+    piVar10 = (int32_t *)func_?();
     SettingsDropdown::SettingsDropdown_Initialize
-              (pSVar25,StringLiteral_HitSoundEffect,*piVar11,pSVar8,(List_1_System_Int32_ *)this_04,
+              (pSVar25,StringLiteral_HitSoundEffect,*piVar10,pSVar7,(List_1_System_Int32_ *)this_04,
                (MethodInfo *)0x0);
     pIVar26 = (this->fields).trailColorImage;
     pDVar1 = (this->fields).itemData;
@@ -497,25 +512,23 @@ code_?:
   if (this_04 ==
       (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)
       0x0) goto code_?;
-  piVar11 = &(this_04->fields)._version;
-  *piVar11 = *piVar11 + 1;
-  pMVar12 = (this_04->fields)._items;
-  if (pMVar12 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+  piVar10 = &(this_04->fields)._version;
+  *piVar10 = *piVar10 + 1;
+  pMVar11 = (this_04->fields)._items;
+  if (pMVar11 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
   goto code_?;
-  uVar13 = (this_04->fields)._size;
-  if (uVar13 < pMVar12->max_length) {
-    (this_04->fields)._size = uVar13 + 1;
-    if (uVar13 < pMVar12->max_length) {
-      (&pMVar12->vector[0].index)[uVar13] = iVar9;
-      iVar9 = iVar9 + 1;
-      goto code_?;
-    }
+  uVar12 = (this_04->fields)._size;
+  if (pMVar11->max_length <= uVar12) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+    List_1_System_Int32__AddWithResize
+              ((List_1_System_Int32_ *)this_04,iVar8,pMVar9->klass->rgctx_data[0xe].method);
+    iVar8 = iVar8 + 1;
     goto code_?;
   }
-  mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-  List_1_System_Int32__AddWithResize
-            ((List_1_System_Int32_ *)this_04,iVar9,pMVar10->klass->rgctx_data[0xe].method);
-  iVar9 = iVar9 + 1;
+  (this_04->fields)._size = uVar12 + 1;
+  if (pMVar11->max_length <= uVar12) goto code_?;
+  (&pMVar11->vector[0].index)[uVar12] = iVar8;
+  iVar8 = iVar8 + 1;
   goto code_?;
 }
 
@@ -559,18 +572,21 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
         if (pSVar3 != (SettingsSlider *)0x0) {
           fVar7 = SettingsSlider::SettingsSlider_get_Value(pSVar3,(MethodInfo *)0x0);
           if (pIVar2 != (Image *)0x0) {
-            pIVar8 = (pIVar2->klass->vtable).get_raycastTarget.methodPtr;
-            (*(code *)(pIVar2->klass->vtable).set_color.method)(pIVar2,pEVar4,fVar5);
+            puVar8 = &UNK_?;
+            pEVar9 = pEVar4;
+            (*(code *)(pIVar2->klass->vtable).set_color.method)
+                      (pIVar2,pEVar4,fVar5,fVar6,fVar7,
+                       (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
             hashtable = (this->fields).itemData;
             colorKey = (this->fields).editingColorKey;
             if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
               pEVar4 = TypeInfo__Extensions;
               func_?();
             }
-            color.g = (float)pIVar8;
+            color.g = (float)puVar8;
             color.r = (float)pEVar4;
-            color.b = fVar7;
-            color.a = fVar6;
+            color.b = (float)pIVar2;
+            color.a = (float)pEVar9;
             Extensions::Extensions_SetColor(hashtable,colorKey,color,(MethodInfo *)0x0);
             this_00 = (this->fields).settingsBase;
             if (this_00 != (SettingsBase *)0x0) {
@@ -606,8 +622,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -841,254 +857,273 @@ MeleeWeaponSettings::MeleeWeaponSettings_ReadWorldObjectItemData
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
             Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
             MeleeWeaponData_DefaultItemData((MethodInfo *)0x0);
-  if (woData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)woData,
-                       (Object *)StringLiteral_itemData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar1 == 0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (woData,(Object *)StringLiteral_itemData,(Object *)(this->fields).itemData,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      return (this->fields).itemData;
-    }
-    hashtable = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)woData,
-                           (Object *)StringLiteral_itemData,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (hashtable.m_Index == 0) {
-      hashtable.m_Index = 0;
-    }
-    else if ((*(byte *)(*(int *)hashtable.m_Index + 0xb8) <
-              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment) ||
-            (*(Dictionary_2_System_Object_System_Object___Class **)
-              (*(int *)(*(int *)hashtable.m_Index + 100) + -4 +
-              (uint)(
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                    ->_1).naturalAligment * 4) !=
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  if (woData == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)woData,
+                     (Object *)StringLiteral_itemData,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                    );
+  if (bVar1 == 0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              (woData,(Object *)StringLiteral_itemData,(Object *)(this->fields).itemData,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    return (this->fields).itemData;
+  }
+  hashtable = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)StringLiteral_Name,
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)woData,
+                         (Object *)StringLiteral_itemData,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      defaultValue.m_Index = 0;
-      if (TVar2.m_Index == 0) {
+  if ((hashtable.m_Index != 0) &&
+     ((*(byte *)(*(int *)hashtable.m_Index + 0xb8) <
+       (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+       naturalAligment ||
+      (*(Dictionary_2_System_Object_System_Object___Class **)
+        (*(int *)(*(int *)hashtable.m_Index + 100) + -4 +
+        (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment * 4) !=
+       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
+  goto code_?;
+  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+  goto code_?;
+  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    (this_00,(Object *)StringLiteral_Name,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    );
+  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  defaultValue.m_Index = 0;
+  if (TVar2.m_Index == 0) {
 code_?:
-        pOVar3 = Extensions::Extensions_GetValueOrDefault_3
-                           ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                            StringLiteral_Name,(Object *)defaultValue.m_Index,
-                            System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
-                           );
+    pOVar3 = Extensions::Extensions_GetValueOrDefault_3
+                       ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                        StringLiteral_Name,(Object *)defaultValue.m_Index,
+                        System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
+                       );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__set_Item
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Name,
+               pOVar3,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+              );
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_Damage,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    pMVar4 = 
+    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+    ;
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__System__Single->_0).element_class) {
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_Damage,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)StringLiteral_Name
-                   ,pOVar3,
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_Damage,pOVar3,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                   );
         TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_00,(Object *)StringLiteral_Damage,
+                          (this_00,(Object *)StringLiteral_ImpulseStrength,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
         pMVar4 = 
         float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
         ;
         if (TVar2.m_Index == 0) goto code_?;
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-            (TypeInfo__System__Single->_0).element_class) {
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_Damage,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_ImpulseStrength,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_ImpulseStrength,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_RecoilStrength,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_RecoilStrength,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_RecoilStrength,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_AttackAnimationTime,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_AttackAnimationTime,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_AttackAnimationTime,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_AttackCooldown,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_AttackCooldown,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_AttackCooldown,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_Range,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar5 = (float *)func_?();
+        Extensions::Extensions_GetValueOrDefault_4
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_Range,*pfVar5,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_Range,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_FireSoundEffect,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        pIVar6 = (Int32Enum__Enum *)func_?();
+        Extensions::Extensions_GetValueOrDefault_2
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_FireSoundEffect,*pIVar6,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_FireSoundEffect,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_HitSoundEffect,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+        ;
+        if (TVar2.m_Index == 0) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        pIVar6 = (Int32Enum__Enum *)func_?();
+        Extensions::Extensions_GetValueOrDefault_2
+                  ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                   StringLiteral_HitSoundEffect,*pIVar6,pMVar4);
+        pOVar3 = (Object *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                   (Object *)StringLiteral_HitSoundEffect,pOVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_00,(Object *)StringLiteral_TrailColor,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        pMVar4 = 
+        System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
+        ;
+        if (TVar2.m_Index == 0) {
+          pOVar3 = (Object *)0x0;
+code_?:
+          pOVar3 = Extensions::Extensions_GetValueOrDefault_3
+                             ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
+                              StringLiteral_TrailColor,pOVar3,pMVar4);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
                     ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_Damage,pOVar3,
+                     (Object *)StringLiteral_TrailColor,pOVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );
           TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_ImpulseStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_ImpulseStrength,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_ImpulseStrength,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_RecoilStrength,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_RecoilStrength,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_RecoilStrength,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_AttackAnimationTime,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_AttackAnimationTime,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_AttackAnimationTime,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_AttackCooldown,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_AttackCooldown,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_AttackCooldown,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_Range,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar5 = (float *)func_?();
-          Extensions::Extensions_GetValueOrDefault_4
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_Range,*pfVar5,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_Range,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_FireSoundEffect,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          pIVar6 = (Int32Enum__Enum *)func_?();
-          Extensions::Extensions_GetValueOrDefault_2
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_FireSoundEffect,*pIVar6,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_FireSoundEffect,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_HitSoundEffect,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          pMVar4 = 
-          int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-          ;
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          pIVar6 = (Int32Enum__Enum *)func_?();
-          Extensions::Extensions_GetValueOrDefault_2
-                    ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                     StringLiteral_HitSoundEffect,*pIVar6,pMVar4);
-          pOVar3 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                     (Object *)StringLiteral_HitSoundEffect,pOVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (this_00,(Object *)StringLiteral_TrailColor,
+                            (this_00,(Object *)StringLiteral_HitEffectColor,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
           pMVar4 = 
@@ -1099,56 +1134,36 @@ code_?:
 code_?:
             pOVar3 = Extensions::Extensions_GetValueOrDefault_3
                                ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                                StringLiteral_TrailColor,pOVar3,pMVar4);
+                                StringLiteral_HitEffectColor,pOVar3,pMVar4);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__set_Item
                       ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                       (Object *)StringLiteral_TrailColor,pOVar3,
+                       (Object *)StringLiteral_HitEffectColor,pOVar3,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                       );
-            TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (this_00,(Object *)StringLiteral_HitEffectColor,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-            pMVar4 = 
-            System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
-            ;
-            if (TVar2.m_Index == 0) {
-              pOVar3 = (Object *)0x0;
-code_?:
-              pOVar3 = Extensions::Extensions_GetValueOrDefault_3
-                                 ((Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                                  StringLiteral_HitEffectColor,pOVar3,pMVar4);
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__set_Item
-                        ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                         (Object *)StringLiteral_HitEffectColor,pOVar3,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                        );
-              return (Dictionary_2_System_Object_System_Object_ *)this_00;
-            }
-            pOVar3 = (Object *)func_?();
-            if (pOVar3 != (Object *)0x0) goto code_?;
+            return (Dictionary_2_System_Object_System_Object_ *)this_00;
           }
-          else {
-            pOVar3 = (Object *)func_?();
-            if (pOVar3 != (Object *)0x0) goto code_?;
-          }
-          func_?();
+          pOVar3 = (Object *)func_?();
+          if (pOVar3 != (Object *)0x0) goto code_?;
         }
-code_?:
+        else {
+          pOVar3 = (Object *)func_?();
+          if (pOVar3 != (Object *)0x0) goto code_?;
+        }
         func_?();
       }
-      else {
-        if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-          defaultValue = TVar2;
-        }
-        if ((Object *)defaultValue.m_Index != (Object *)0x0) goto code_?;
-      }
+code_?:
       func_?();
+      goto code_?;
     }
+  }
+  else {
+    if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+      defaultValue = TVar2;
+    }
+    if ((Object *)defaultValue.m_Index != (Object *)0x0) goto code_?;
+code_?:
+    func_?();
   }
 code_?:
   func_?();
@@ -1173,16 +1188,17 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
     fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).colorG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
       pSVar1 = (this->fields).colorB;
       if (pSVar1 != (SettingsSlider *)0x0) {
-        fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        pSVar1 = (this->fields).colorA;
-        if (pSVar1 != (SettingsSlider *)0x0) {
-          fVar6 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        pSVar1 = (SettingsSlider *)
+                 SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        if ((this->fields).colorA != (SettingsSlider *)0x0) {
+          puVar4 = &UNK_?;
+          fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
           if (pIVar2 != (Image *)0x0) {
             (*(code *)(pIVar2->klass->vtable).set_color.method)
-                      (pIVar2,fVar3,fVar4,fVar5,fVar6,
+                      (pIVar2,fVar3,puVar4,pSVar1,fVar5,
                        (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
             return;
           }
@@ -1191,8 +1207,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

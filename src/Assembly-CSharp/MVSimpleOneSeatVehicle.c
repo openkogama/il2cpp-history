@@ -15,29 +15,28 @@ Assembly-CSharp.dll::MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_GetCurrentIt
   this_00 = (this->fields).CurrentItem;
   if (this_00 == (MVRuntimeDataVariable *)0x0) {
     func_?();
-    pDVar1 = extraout_EDX;
   }
   else {
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-             MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
-    if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    unaff_ESI = (Dictionary_2_System_Object_System_Object_ *)
+                MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
+    if (unaff_ESI == (Dictionary_2_System_Object_System_Object_ *)0x0) {
       return (Dictionary_2_System_Object_System_Object_ *)0x0;
     }
-    unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    unaff_EDI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
     if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= (pDVar1->klass->_1).naturalAligment) &&
+         naturalAligment <= (unaff_ESI->klass->_1).naturalAligment) &&
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar1->klass->_1).typeHierarchy
+        (unaff_ESI->klass->_1).typeHierarchy
         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment - 1] ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      return pDVar1;
+      return unaff_ESI;
     }
   }
-  func_?(pDVar1,unaff_ESI);
-  pcVar2 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-  return pDVar1;
+  func_?(unaff_ESI,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar1)();
+  return pDVar2;
 }
 
 

@@ -78,13 +78,13 @@ code_?:
           RStack_3.m_Direction.x = pVVar2->x;
           RStack_3.m_Direction.y = pVVar2->y;
           RStack_3.m_Direction.z = pVVar2->z;
-          fStack_18 = (RStack_3.m_Direction.y * fStack_18 + RStack_3.m_Direction.x * fStack_17 +
+          fStack_17 = (RStack_3.m_Direction.x * fStack_17 + RStack_3.m_Direction.y * fStack_18 +
                      RStack_3.m_Direction.z * fStack_9) - _UNK_?;
           fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
                                 (this_00,(MethodInfo *)0x0);
           fStack_9 = fStack_9 + _UNK_?;
-          if (fStack_18 <= fStack_9) {
-            fStack_18 = fStack_9;
+          if (fStack_17 <= fStack_9) {
+            fStack_17 = fStack_9;
           }
           if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -96,12 +96,12 @@ code_?:
           RStack_3.m_Direction.z = pVVar2->z;
           pVVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
                               ((Vector3 *)&RStack_6,(MethodInfo *)0x0);
-          RStack_3.m_Direction.z = fStack_18;
+          RStack_3.m_Direction.z = fStack_17;
           uVar20 = pVVar2->x;
           uVar21 = pVVar2->y;
           position.y = (float)uVar21;
           position.x = RStack_3.m_Direction.x;
-          position.z = fStack_18;
+          position.z = fStack_17;
           fStack_19 = (float)uVar20;
           fStack_8 = (float)uVar21;
           pRVar11 = (Regex_CachedCodeEntryKey *)

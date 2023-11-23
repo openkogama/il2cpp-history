@@ -825,7 +825,7 @@ code_?:
                        ((Component *)pGVar4,(MethodInfo *)0x0);
     if (pGVar5 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar5,bVar2 == 0,(MethodInfo *)0x0);
+                (pGVar5,bVar2 ^ 1,(MethodInfo *)0x0);
       bVar2 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
                         (this_00,InteractionFlags__Enum_NotTranslatbleY,(MethodInfo *)0x0);
       pGVar4 = (this->fields).yTranslate;
@@ -834,7 +834,7 @@ code_?:
                            ((Component *)pGVar4,(MethodInfo *)0x0);
         if (pGVar5 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar5,bVar2 == 0,(MethodInfo *)0x0);
+                    (pGVar5,bVar2 ^ 1,(MethodInfo *)0x0);
           return;
         }
       }

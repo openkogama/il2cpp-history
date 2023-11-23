@@ -69,104 +69,99 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionElement::
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_00 != (MVWorldObjectClientManager *)0x0) &&
+  if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
      (this_01 = (MVAvatarSpawnRoleCreator *)
                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                           (this_00,spawnRoleId,(MethodInfo *)0x0),
-     this_01 != (MVAvatarSpawnRoleCreator *)0x0)) {
-    if (((this_01->klass->_1).naturalAligment <
-         (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
-       ((MVAvatarSpawnRoleCreator__Class *)
-        (this_01->klass->_1).typeHierarchy
-        [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarSpawnRoleCreator)) {
-      func_?();
+     this_01 == (MVAvatarSpawnRoleCreator *)0x0)) goto code_?;
+  if (((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
+       (this_01->klass->_1).naturalAligment) &&
+     ((MVAvatarSpawnRoleCreator__Class *)
+      (this_01->klass->_1).typeHierarchy
+      [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] ==
+      TypeInfo__MVAvatarSpawnRoleCreator)) {
+    this_02 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_AttributeSettingsManagerAvatar
+                        (this_01,(MethodInfo *)0x0);
+    if (this_02 == (AttributeSettingsManager *)0x0) goto code_?;
+    pKVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+             AttributeSettings::AttributeSettingsManager::AttributeSettingsManager_get_Settings
+                       (this_02,(MethodInfo *)0x0);
+    if (pKVar4 == (KogamaSettingWrapperBase *)0x0) {
+      *unaff_FS_OFFSET = uStack_3;
+      return 0;
     }
-    else {
-      this_02 = MVAvatarSpawnRoleCreator::
-                MVAvatarSpawnRoleCreator_get_AttributeSettingsManagerAvatar
-                          (this_01,(MethodInfo *)0x0);
-      if (this_02 != (AttributeSettingsManager *)0x0) {
-        pKVar4 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                 AttributeSettings::AttributeSettingsManager::AttributeSettingsManager_get_Settings
-                           (this_02,(MethodInfo *)0x0);
-        if (pKVar4 == (KogamaSettingWrapperBase *)0x0) {
-          *unaff_FS_OFFSET = uStack_3;
-          return 0;
-        }
-        if (((pKVar4->klass->_1).naturalAligment <
-             (
-             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-             ->_1).naturalAligment) ||
-           ((pKVar4->klass->_1).typeHierarchy
-            [(
-             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-             ->_1).naturalAligment - 1] !=
-            (Il2CppClass *)
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-           )) goto code_?;
-        spawnRoleId = 0;
-        if (pKVar4[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
-          pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                   Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                              &stack0xffffffa0,
-                              (Dictionary_2_System_UInt32_System_Object_ *)pKVar4[1].klass,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
-                             );
-          uVar6 = *(undefined8 *)&(pDVar5->_current).value;
-          uStack_1 = 1;
-          while( true ) {
-            bVar7 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-                    Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                              ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                               &stack0xffffffb8,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
-                              );
-            if (bVar7 == 0) {
-              uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                        ((Object *)&stack0xffffffb8,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                         ,(MethodInfo *)uVar6);
-              *unaff_FS_OFFSET = uStack_3;
-              return spawnRoleId;
-            }
-            if ((MethodInfo *)uVar6 == (MethodInfo *)0x0) break;
-            iVar8 = func_?();
-            if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0))
-            goto code_?;
-            iVar8 = *piVar9;
-            uVar10 = 0;
-            if (*(ushort *)(iVar8 + 0xb6) != 0) {
-              do {
-                if (*(IAttributeSetting__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                   ) {
-                  puVar11 = (undefined4 *)
-                           (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18)
-                                    * 8);
-                  goto code_?;
-                }
-                uVar10 = uVar10 + 1;
-              } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
-            }
-            puVar11 = (undefined4 *)func_?();
-code_?:
-            iVar8 = (*(code *)*puVar11)();
-            spawnRoleId = spawnRoleId + iVar8;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment <= (pKVar4->klass->_1).naturalAligment) &&
+       ((pKVar4->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] ==
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+       )) {
+      spawnRoleId = 0;
+      if (pKVar4[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
+        pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                            &stack0xffffffa0,
+                            (Dictionary_2_System_UInt32_System_Object_ *)pKVar4[1].klass,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
+                           );
+        uVar6 = *(undefined8 *)&(pDVar5->_current).value;
+        uStack_1 = 1;
+        while( true ) {
+          bVar7 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                  Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                             &stack0xffffffb8,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
+                            );
+          if (bVar7 == 0) {
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                      ((Object *)&stack0xffffffb8,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
+                       ,(MethodInfo *)uVar6);
+            *unaff_FS_OFFSET = uStack_3;
+            return spawnRoleId;
           }
+          if ((MethodInfo *)uVar6 == (MethodInfo *)0x0) break;
+          iVar8 = func_?();
+          if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0))
+          goto code_?;
+          iVar8 = *piVar9;
+          uVar10 = 0;
+          if (*(ushort *)(iVar8 + 0xb6) != 0) {
+            do {
+              if (*(IAttributeSetting__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                 ) {
+                puVar11 = (undefined4 *)
+                         (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) *
+                                  8);
+                goto code_?;
+              }
+              uVar10 = uVar10 + 1;
+            } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
+          }
+          puVar11 = (undefined4 *)func_?();
+code_?:
+          iVar8 = (*(code *)*puVar11)();
+          spawnRoleId = spawnRoleId + iVar8;
         }
       }
+      goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  func_?();
 code_?:
+  func_?();
   func_?();
   pcVar12 = (code *)swi(3);
   iVar13 = (*pcVar12)();
@@ -214,7 +209,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_C
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xc2,(MethodInfo *)0x0);
+                  (pGVar1,0x72,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -386,7 +381,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::
             bVar4 = SpawnRoleSelectionElement_CanShowFreeTry(this,(MethodInfo *)0x0);
             if (pGVar3 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar3,bVar4 == 0,(MethodInfo *)0x0);
+                        (pGVar3,bVar4 ^ 1,(MethodInfo *)0x0);
               return;
             }
           }
@@ -815,20 +810,20 @@ code_?:
     if ((this->fields).haveShownFreeTryUnlock != 0) {
       return;
     }
-    method_00 = TypeInfo__SpawnRoleSelectionElement____c__DisplayClass44_0;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     pAVar5 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
+              (this_01,(Object *)this,
                MethodInfo__SpawnRoleSelectionElement__OnPlayerPlanetDataUpdated__,(MethodInfo *)0x0)
     ;
     pAVar5 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pAVar5 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
@@ -867,18 +862,18 @@ code_?:
                 (pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      original = (this->fields).spawnRoleUnlockPopupPrefab;
+      pSVar7 = (this->fields).spawnRoleUnlockPopupPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar7 = (Object__Class *)
+      pLVar8 = (List_1_System_Object_ *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
+                         ((Object *)pSVar7,
                           SpawnRoleUnlockedPopupController_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleUnlockedPopupController>_SpawnRoleUnlockedPopupController_
                          );
-      if (value != (Object *)0x0) {
-        value[1].klass = pOVar7;
-        func_?(value + 1);
+      if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+        (this_00->fields)._._defaultValue_k__BackingField = pLVar8;
+        func_?(&this_00->fields);
         pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -888,17 +883,18 @@ code_?:
                             );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                    MethodInfo__SpawnRoleSelectionElement____c__DisplayClass44_0___OnPlayerPlanetDataUpdated_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                   (pGVar1,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        if (value[1].klass != (Object__Class *)0x0) {
+        pSVar7 = (SpawnRoleUnlockedPopupController *)
+                 (this_00->fields)._._defaultValue_k__BackingField;
+        if (pSVar7 != (SpawnRoleUnlockedPopupController *)0x0) {
           SpawnRoleUnlockedPopupController::SpawnRoleUnlockedPopupController_Initialize
-                    ((SpawnRoleUnlockedPopupController *)value[1].klass,
-                     (uint)(this->fields).tierRequirement,0,1,(this->fields)._.woId,
+                    (pSVar7,(uint)(this->fields).tierRequirement,0,1,(this->fields)._.woId,
                      (MethodInfo *)0x0);
           (this->fields).haveShownFreeTryUnlock = 1;
           return;
@@ -906,23 +902,23 @@ code_?:
       }
       goto code_?;
     }
-    pAVar8 = (Action *)0x0;
+    pAVar9 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+      pAVar9 = pAVar5;
     }
-    if (pAVar8 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar8;
-    pAVar8 = (Action *)0x0;
+    if (pAVar9 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar9;
+    pAVar9 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+      pAVar9 = pAVar5;
     }
-    if (pAVar8 != (Action *)0x0) goto code_?;
+    if (pAVar9 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1548,22 +1544,23 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_O
     func_?(&TypeInfo__SpawnRoleSelectionElement____c__DisplayClass28_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__SpawnRoleSelectionElement____c__DisplayClass28_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  original = (this->fields).skillMenuPrefab;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__SpawnRoleSelectionElement____c__DisplayClass28_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  pSVar1 = (this->fields).skillMenuPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar1 = (Object__Class *)
+  pLVar2 = (List_1_System_Object_ *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)original,
+                     ((Object *)pSVar1,
                       SpawnRoleSelectionSkillMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionSkillMenu>_SpawnRoleSelectionSkillMenu_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00->fields,pLVar2);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -1573,7 +1570,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_O
                         );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                MethodInfo__SpawnRoleSelectionElement____c__DisplayClass28_0___OnShowSkillMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -1583,17 +1580,17 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_O
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if (value[1].klass != (Object__Class *)0x0) {
+    pSVar1 = (SpawnRoleSelectionSkillMenu *)(this_00->fields)._._defaultValue_k__BackingField;
+    if (pSVar1 != (SpawnRoleSelectionSkillMenu *)0x0) {
       SpawnRoleSelectionSkillMenu::SpawnRoleSelectionSkillMenu_Initialize
-                ((SpawnRoleSelectionSkillMenu *)value[1].klass,(this->fields)._.woId,
-                 (uint)(this->fields).tierRequirement,(this->fields)._.spawnRolePreviewObject,
-                 (MethodInfo *)0x0);
+                (pSVar1,(this->fields)._.woId,(uint)(this->fields).tierRequirement,
+                 (this->fields)._.spawnRolePreviewObject,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2143,7 +2140,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_U
             bVar4 = SpawnRoleSelectionElement_CanShowFreeTry(this,(MethodInfo *)0x0);
             if (pGVar3 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar3,bVar4 == 0,(MethodInfo *)0x0);
+                        (pGVar3,bVar4 ^ 1,(MethodInfo *)0x0);
               return;
             }
           }

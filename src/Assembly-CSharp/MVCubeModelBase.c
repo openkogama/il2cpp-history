@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xe9f0);
+    func_?(0x8258);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xe9f0);
+    func_?(0x8258);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1632,7 +1632,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x845c);
+    func_?(0x1cc4);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1743,36 +1743,32 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase__ctor
   MVWorldObjectClient::MVWorldObjectClient__ctor_2
             ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._.data;
-  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+  if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+     (TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (this_00,(Object *)StringLiteral_protoTypeID,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        ), TVar1.m_Index == 0)) goto code_?;
+  if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class
+     ) goto code_?;
+  puVar2 = (undefined4 *)func_?();
+  pRVar3 = (RuntimePrototypeCubeModel *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+           Dictionary_2_System_Int32_System_Object__get_Item
+                     ((Dictionary_2_System_Int32_System_Object_ *)*puVar2,(int32_t)*puVar2,
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
+                     );
+  (this->fields).prototypeCubeModel = pRVar3;
+  func_?();
+  pRVar3 = (this->fields).prototypeCubeModel;
+  if (pRVar3 == (RuntimePrototypeCubeModel *)0x0) {
 code_?:
     func_?();
 code_?:
     func_?();
   }
   else {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_protoTypeID,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-        (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar2 = (int32_t *)func_?();
-    if (prototypes == (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0)
-    goto code_?;
-    key = *piVar2;
-    pRVar3 = (RuntimePrototypeCubeModel *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-             ::Dictionary_2_System_Int32_System_Object__get_Item
-                       ((Dictionary_2_System_Int32_System_Object_ *)prototypes,key,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
-                       );
-    (this->fields).prototypeCubeModel = pRVar3;
-    func_?();
-    pRVar3 = (this->fields).prototypeCubeModel;
-    if (pRVar3 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
     RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CreateInstance
               (pRVar3,this,(MethodInfo *)0x0);
     pRVar3 = (this->fields).prototypeCubeModel;
@@ -1785,9 +1781,8 @@ code_?:
     DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_03,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
+                        ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
-      iRam_? = 0;
 code_?:
       func_?();
       pGVar5 = (this->fields)._.gameObject;
@@ -1799,35 +1794,33 @@ code_?:
           cRam_? = '\x01';
         }
         pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar7._0_4_ = (pVVar6->oneVector).x;
-        uVar7._4_4_ = (pVVar6->oneVector).y;
-        fVar8 = (pVVar6->oneVector).z;
-        pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+        fVar7 = (pVVar6->oneVector).x;
+        fVar8 = (pVVar6->oneVector).y;
+        fVar9 = (pVVar6->oneVector).z;
+        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                            ((Dictionary_2_System_Int32_System_Object_ *)prototypes,key,
+                            ((Dictionary_2_System_Int32_System_Object_ *)0x0,(int32_t)this_03,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                             );
-        if (pOVar9 != (Object *)0x0) {
-          pOVar10 = pOVar9[6].klass;
+        if (pOVar10 != (Object *)0x0) {
+          pOVar11 = pOVar10[6].klass;
           if (this_04 != (Transform *)0x0) {
-            value.y = (float)((ulonglong)uVar7 >> 0x20) * (float)pOVar10;
-            value.x = (float)uVar7 * (float)pOVar10;
-            value.z = fVar8 * (float)pOVar10;
+            value.y = fVar8 * (float)pOVar11;
+            value.x = fVar7 * (float)pOVar11;
+            value.z = fVar9 * (float)pOVar11;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                       (this_04,value,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Vector3);
+              func_?();
               cRam_? = '\x01';
             }
-            fVar8 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).x;
-            pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+            pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                ((Dictionary_2_System_Int32_System_Object_ *)prototypes,key,
+                                ((Dictionary_2_System_Int32_System_Object_ *)0x0,(int32_t)this_03,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                                 );
-            if (pOVar9 != (Object *)0x0) {
-              (*(code *)(this->klass->vtable).set_Scale.method)
-                        (this,fVar8 * (float)pOVar9[6].klass);
+            if (pOVar10 != (Object *)0x0) {
+              (*(code *)(this->klass->vtable).set_Scale.method)();
               this_05 = (Func_1_Object_ *)func_?();
               mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
                         (this_05,(Object *)this,MethodInfo__MVCubeModelBase____ctor_b__28_0__,
@@ -1839,9 +1832,9 @@ code_?:
                         ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
               pGVar5 = (this->fields)._.gameObject;
               if (pGVar5 != (GameObject *)0x0) {
-                pSVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                pSVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                                     ((Object_1 *)pGVar5,(MethodInfo *)0x0);
-                (this->fields)._.name = pSVar11;
+                (this->fields)._.name = pSVar12;
                 func_?();
                 return;
               }
@@ -1851,19 +1844,18 @@ code_?:
       }
       goto code_?;
     }
-    iVar12 = func_?();
-    if (iVar12 != 0) {
-      iRam_? = iVar12;
-      iVar12 = func_?();
-      if (iVar12 != 0) goto code_?;
+    iVar13 = func_?();
+    if (iVar13 != 0) {
+      iVar13 = func_?();
+      if (iVar13 != 0) goto code_?;
       goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -2074,48 +2066,49 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_get_MeshFilters
           }
           if (piVar8 == (int *)0x0) break;
           uVar11 = 0;
-          if (*(short *)(*piVar8 + 0xb6) != 0) {
+          uVar12 = *(ushort *)(*piVar8 + 0xb6);
+          if (uVar12 != 0) {
             do {
               if (*(IEnumerator__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar11 * 8) ==
                   TypeInfo__System__Collections__IEnumerator) {
-                puVar12 = (undefined4 *)
-                         (*piVar8 + 200 +
-                         *(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
+                puVar13 = (undefined4 *)
+                         (*piVar8 +
+                         (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x19) * 8);
                 goto code_?;
               }
               uVar11 = uVar11 + 1;
-            } while (uVar11 < *(ushort *)(*piVar8 + 0xb6));
+            } while (uVar11 < uVar12);
           }
-          puVar12 = (undefined4 *)
+          puVar13 = (undefined4 *)
                    func_?(piVar8,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-          piVar13 = (int *)(*(code *)*puVar12)(piVar8,puVar12[1]);
-          uVar14 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                            ,piVar13);
-          if (piVar13 == (int *)0x0) break;
-          if (*(Il2CppClass **)(*piVar13 + 0x20) !=
+          piVar14 = (int *)(*(code *)*puVar13)(piVar8,puVar13[1]);
+          uVar15 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                            ,piVar14);
+          if (piVar14 == (int *)0x0) break;
+          if (*(Il2CppClass **)(*piVar14 + 0x20) !=
               (
               TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
               ->_0).element_class) goto code_?;
-          iVar10 = func_?(piVar13);
+          iVar10 = func_?(piVar14);
           if (pMVar6 == (MeshFilter__Array *)0x0) break;
           if (pMVar6->max_length <= uStack_7) {
             func_?();
             break;
           }
-          pMStack_15 = (MeshFilter *)((ulonglong)*(undefined8 *)(iVar10 + 0x20) >> 0x20);
-          pMVar6->vector[uStack_7] = pMStack_15;
-          func_?(pMVar6->vector + uStack_7,pMStack_15);
+          pMStack_16 = (MeshFilter *)((ulonglong)*(undefined8 *)(iVar10 + 0x20) >> 0x20);
+          pMVar6->vector[uStack_7] = pMStack_16;
+          func_?(pMVar6->vector + uStack_7,pMStack_16);
           uStack_7 = uStack_7 + 1;
         }
       }
     }
   }
-  uVar14 = func_?();
+  uVar15 = func_?();
 code_?:
-  func_?(uVar14);
-  pcVar16 = (code *)swi(3);
-  pMVar6 = (MeshFilter__Array *)(*pcVar16)();
+  func_?(uVar15);
+  pcVar17 = (code *)swi(3);
+  pMVar6 = (MeshFilter__Array *)(*pcVar17)();
   return pMVar6;
 }
 

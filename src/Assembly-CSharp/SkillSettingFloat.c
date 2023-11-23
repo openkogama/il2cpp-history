@@ -246,86 +246,94 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_UpdateSkillData
   if (pSVar1 == (SpawnRoleSkillInfoButton *)0x0) {
 code_?:
     func_?();
+    pIVar2 = unaff_EBX;
+    newValue = (Object *)unaff_EDI;
   }
   else {
     (pSVar1->fields).skillValue = newValue;
     func_?(&(pSVar1->fields).skillValue,newValue);
-    pAVar2 = (this->fields).skillPercentageSetting;
+    pAVar3 = (this->fields).skillPercentageSetting;
     unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
-    if (pAVar2 == (AttributeSettingFloat *)0x0) goto code_?;
+    if (pAVar3 == (AttributeSettingFloat *)0x0) goto code_?;
     value = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
             KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                      ((KogamaSettingNumericBase_1_System_Single_ *)pAVar2,
+                      ((KogamaSettingNumericBase_1_System_Single_ *)pAVar3,
                        MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
                       );
-    method_00 = 
-    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
-    ;
     unaff_EBX = (IAttributeSetting__Class *)(this->fields).skillPercentageSetting;
-    if ((unaff_EBX == (IAttributeSetting__Class *)0x0) || (newValue == (Object *)0x0))
+    unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
+    if ((unaff_EBX == (IAttributeSetting__Class *)0x0) ||
+       (unaff_EDI = (KogamaSettingValueWrapperBase *)newValue, newValue == (Object *)0x0))
     goto code_?;
-    pSVar3 = TypeInfo__System__Single;
+    pSVar4 = TypeInfo__System__Single;
     if ((newValue->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
     goto code_?;
-    pfVar4 = (float *)func_?(newValue);
-    value_00 = (KogamaSettingValueWrapperBase *)*pfVar4;
+    method_00 = (IAttributeSetting__Class *)
+                MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
+    ;
+    pfVar5 = (float *)func_?(newValue);
     MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
     KogamaSettingNumericBase`1[System::Single]::
     KogamaSettingNumericBase_1_System_Single__set_NumericValue
-              ((KogamaSettingNumericBase_1_System_Single_ *)unaff_EBX,(float)value_00,method_00);
+              ((KogamaSettingNumericBase_1_System_Single_ *)unaff_EBX,*pfVar5,
+               (MethodInfo *)method_00);
+    pIVar2 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+    ;
+    newValue = (Object *)(this->fields)._.skillSetting;
     unaff_EBX = 
     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
     ;
-    unaff_EDI = (this->fields)._.skillSetting;
-    if (unaff_EDI == (KogamaSettingValueWrapperBase *)0x0) goto code_?;
-    iVar5 = func_?(unaff_EDI,
+    unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
+    if ((KogamaSettingValueWrapperBase *)newValue == (KogamaSettingValueWrapperBase *)0x0)
+    goto code_?;
+    iVar6 = func_?(newValue,
                             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                            );
-    pIVar6 = 
+    pIVar7 = 
     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
     ;
-    if ((iVar5 != 0) &&
-       (iVar5 = func_?(unaff_EDI,
-                                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                               ), unaff_EBX = pIVar6, iVar5 != 0)) {
-      unaff_EBX = (IAttributeSetting__Class *)&UNK_?;
-      unaff_EDI = value_00;
-      iVar5 = func_?(0,
+    if ((iVar6 != 0) &&
+       (unaff_EDI = unaff_ESI, unaff_EBX = method_00,
+       iVar6 = func_?(newValue,
+                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                              ), pIVar2 = pIVar7, iVar6 != 0)) {
+      iVar6 = func_?(0,
                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                              ,iVar5);
+                              ,iVar6);
       if (((this->fields)._.spawnRoleTier == 0) &&
-         (100 < ((this->fields)._.spawnRoleCost - (this->fields)._.currentSkillCost) + iVar5)) {
-        pAVar2 = (this->fields).skillPercentageSetting;
-        if (pAVar2 != (AttributeSettingFloat *)0x0) {
+         (100 < ((this->fields)._.spawnRoleCost - (this->fields)._.currentSkillCost) + iVar6)) {
+        pAVar3 = (this->fields).skillPercentageSetting;
+        if (pAVar3 != (AttributeSettingFloat *)0x0) {
           MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes
           ::KogamaSettingNumericBase`1[System::Single]::
           KogamaSettingNumericBase_1_System_Single__set_NumericValue
-                    ((KogamaSettingNumericBase_1_System_Single_ *)pAVar2,value,
+                    ((KogamaSettingNumericBase_1_System_Single_ *)pAVar3,value,
                      MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
                     );
-          pSVar7 = (this->fields).slider;
-          if (pSVar7 != (Slider *)0x0) {
-            (*(code *)(pSVar7->klass->vtable).set_value.method)
-                      (pSVar7,value,(pSVar7->klass->vtable).SetValueWithoutNotify.methodPtr);
+          pSVar8 = (this->fields).slider;
+          if (pSVar8 != (Slider *)0x0) {
+            (*(code *)(pSVar8->klass->vtable).set_value.method)
+                      (pSVar8,value,(pSVar8->klass->vtable).SetValueWithoutNotify.methodPtr);
             SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
                       ((SkillSettingInt *)this,(MethodInfo *)0x0);
-            pUVar8 = (this->fields)._.cantUpdateSkillCallback;
-            if (pUVar8 != (UnityAction *)0x0) {
-              (*(pUVar8->fields)._._.invoke_impl)
-                        ((pUVar8->fields)._._.method_code,(pUVar8->fields)._._.method);
+            pUVar9 = (this->fields)._.cantUpdateSkillCallback;
+            if (pUVar9 != (UnityAction *)0x0) {
+              (*(pUVar9->fields)._._.invoke_impl)
+                        ((pUVar9->fields)._._.method_code,(pUVar9->fields)._._.method);
               return;
             }
           }
         }
       }
       else {
-        pUVar9 = (this->fields)._.updateSkillCallback;
-        if (pUVar9 != (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
+        pUVar10 = (this->fields)._.updateSkillCallback;
+        if (pUVar10 != (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
                        *)0x0) {
-          (*(pUVar9->fields)._._.invoke_impl)
-                    ((pUVar9->fields)._._.method_code,(this->fields).skillPercentageSetting,
-                     (pUVar9->fields)._._.method);
+          (*(pUVar10->fields)._._.invoke_impl)
+                    ((pUVar10->fields)._._.method_code,(this->fields).skillPercentageSetting,
+                     (pUVar10->fields)._._.method);
           SkillSettingBase::SkillSettingBase_UpdateSkillCost
                     ((SkillSettingBase *)this,(MethodInfo *)0x0);
           return;
@@ -334,13 +342,12 @@ code_?:
       goto code_?;
     }
   }
-  func_?(unaff_EDI,unaff_EBX);
-  pSVar3 = extraout_ECX;
-  newValue = (Object *)unaff_EDI;
+  func_?(newValue,pIVar2);
+  pSVar4 = extraout_ECX;
 code_?:
-  func_?(newValue,pSVar3);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?(newValue,pSVar4);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

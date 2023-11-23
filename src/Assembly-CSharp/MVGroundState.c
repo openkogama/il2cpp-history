@@ -261,11 +261,11 @@ bool Assembly-CSharp.dll::MVGroundState::MVGroundState_Update
   direction = *pVVar1;
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                     ((MethodInfo *)0x0);
-  fVar5 = fVar4 * velocity.x;
+  fVar5 = velocity.x * fVar4;
   fVar6 = velocity.y * fVar4;
   fVar4 = velocity.z * fVar4;
   if (controller != (MvCharacterController *)0x0) {
-    colliderHit = (MVControllerColliderHit *)&stack0xffffff54;
+    colliderHit = (MVControllerColliderHit *)&stack0xffffff60;
     uVar7 = 0;
     distance = additionalGroundDepth + _UNK_?;
     puVar8 = &UNK_?;
@@ -276,7 +276,7 @@ bool Assembly-CSharp.dll::MVGroundState::MVGroundState_Update
     bVar10 = MvCharacterController::MvCharacterController_TestWithOutSliding
                       (controller,distance,direction,motion,colliderHit,(MethodInfo *)0x0);
     fVar11 = 0.0;
-    puVar12 = (undefined4 *)&stack0xffffff54;
+    puVar12 = (undefined4 *)&stack0xffffff60;
     puVar13 = &uStack_14;
     for (iVar15 = 0x24; iVar15 != 0; iVar15 = iVar15 + -1) {
       *puVar13 = *puVar12;

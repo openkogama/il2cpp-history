@@ -1162,29 +1162,28 @@ Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_GetCurrentItemState
   this_00 = (this->fields)._.CurrentItem;
   if (this_00 == (MVRuntimeDataVariable *)0x0) {
     func_?();
-    pDVar1 = extraout_EDX;
   }
   else {
-    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-             MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
-    if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    unaff_ESI = (Dictionary_2_System_Object_System_Object_ *)
+                MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
+    if (unaff_ESI == (Dictionary_2_System_Object_System_Object_ *)0x0) {
       return (Dictionary_2_System_Object_System_Object_ *)0x0;
     }
-    unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    unaff_EDI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
     if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= (pDVar1->klass->_1).naturalAligment) &&
+         naturalAligment <= (unaff_ESI->klass->_1).naturalAligment) &&
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar1->klass->_1).typeHierarchy
+        (unaff_ESI->klass->_1).typeHierarchy
         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment - 1] ==
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      return pDVar1;
+      return unaff_ESI;
     }
   }
-  func_?(pDVar1,unaff_ESI);
-  pcVar2 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-  return pDVar1;
+  func_?(unaff_ESI,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar1)();
+  return pDVar2;
 }
 
 
@@ -1654,10 +1653,10 @@ code_?:
       if (pWVar1 == (WorldObjectSkillDataManager *)0x0) goto code_?;
       bVar13 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                          (pWVar1,StringLiteral_UnableToCollectModifierPickups,(MethodInfo *)0x0);
-      (pAVar11->fields).isAbleToCollectPickups = bVar13 == 0;
+      (pAVar11->fields).isAbleToCollectPickups = bVar13 ^ 1;
       bVar13 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                          (pWVar1,StringLiteral_UnableToEquipWeapons,(MethodInfo *)0x0);
-      (pAVar11->fields).isAbleToEquipWeapons = bVar13 == 0;
+      (pAVar11->fields).isAbleToEquipWeapons = bVar13 ^ 1;
       pAVar4 = (this->fields).avatarMotor;
       if (pAVar4 == (AvatarMotor *)0x0) goto code_?;
       AvatarMotor::AvatarMotor_Init
@@ -2286,19 +2285,19 @@ bool Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_IsEquipped
     cRam_? = '\x01';
   }
   if ((pMRam0000001c == (MVRuntimeDataVariable *)0x0) ||
-     (unaff_retaddr =
-           (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-           MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMRam0000001c,(MethodInfo *)0x0),
-     unaff_retaddr == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+     (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                          (pMRam0000001c,(MethodInfo *)0x0),
+     this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
 code_?:
     func_?();
   }
   else {
-    if (((unaff_retaddr->klass->_1).naturalAligment <
+    if (((this_01->klass->_1).naturalAligment <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (unaff_retaddr->klass->_1).typeHierarchy
+        (this_01->klass->_1).typeHierarchy
         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment - 1] !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
@@ -2306,7 +2305,7 @@ code_?:
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (unaff_retaddr,(Object *)StringLiteral_type,
+                      (this_01,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     pMVar4 = 
@@ -2318,20 +2317,19 @@ code_?:
     TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (unaff_retaddr,(Object *)StringLiteral_type,
+                      (this_01,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    unaff_retaddr = in_stack_6;
     if (TVar5.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
         (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
-      piVar7 = (int *)func_?();
-      return (MethodInfo *)*piVar7 == pMVar4;
+      piVar6 = (int *)func_?();
+      return (MethodInfo *)*piVar6 == pMVar4;
     }
   }
   func_?();
 code_?:
-  func_?(unaff_retaddr);
+  func_?();
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;

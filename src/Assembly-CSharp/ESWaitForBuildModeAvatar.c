@@ -13,73 +13,79 @@ void Assembly-CSharp.dll::ESWaitForBuildModeAvatar::ESWaitForBuildModeAvatar_Ent
     func_?(&TypeInfo__MVLocalPlayerBuilder);
     cRam_? = '\x01';
   }
-  pMVar1 = (MVLocalPlayerBuilder__Class *)
-           MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (pMVar1 == (MVLocalPlayerBuilder__Class *)0x0) goto code_?;
-  pIVar2 = (pMVar1->_0).image;
-  pMVar3 = TypeInfo__MVLocalPlayerBuilder;
-  if ((*(byte *)&pIVar2[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
-     (*(MVLocalPlayerBuilder__Class **)
-       ((pIVar2[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4)
-      != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((pMVar4 == (MVLocalPlayer *)0x0) ||
-     (pSVar5 = (pMVar4->fields)._.spawnRolesManager, pSVar5 == (SpawnRolesManager *)0x0)) {
-code_?:
-    func_?();
-    this_01 = extraout_EDX;
-  }
-  else {
-    pTVar6 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-             WebCompletionSource_1_System_Object__get_Task
-                       ((WebCompletionSource_1_System_Object_ *)pSVar5,(MethodInfo *)0x0);
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-    iVar7 = (pMVar4->fields)._._Team_k__BackingField;
-    pMVar1 = (MVLocalPlayerBuilder__Class *)
-             MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar1 == (MVLocalPlayerBuilder__Class *)0x0) goto code_?;
-    pIVar2 = (pMVar1->_0).image;
-    pMVar3 = TypeInfo__MVLocalPlayerBuilder;
-    if ((*(byte *)&pIVar2[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
-       (*(MVLocalPlayerBuilder__Class **)
-         ((pIVar2[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
-         ) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    (pMVar1->_1).thread_static_fields_size = iVar7;
-    (pMVar1->_1).thread_static_fields_offset = (int32_t)&UNK_?;
-    (pMVar1->_1).flags = (uint32_t)pTVar6;
-    (this->fields).defaultBuildModeSpawnRoleReady = 0;
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-    pSVar5 = (pMVar4->fields)._.spawnRolesManager;
-    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<int>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__ESWaitForBuildModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_,
-               (MethodInfo *)0x0);
-    pMVar1 = (MVLocalPlayerBuilder__Class *)0x0;
-    if (pSVar5 == (SpawnRolesManager *)0x0) goto code_?;
-    SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
-              (pSVar5,(Action_1_Int32_ *)this_00,(MethodInfo *)0x0);
-    this_01 = (MVLocalPlayerBuilder *)
-              MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    pMVar1 = TypeInfo__MVLocalPlayerBuilder;
-    if (this_01 == (MVLocalPlayerBuilder *)0x0) goto code_?;
-    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <=
-         (this_01->klass->_1).naturalAligment) &&
-       ((this_01->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1]
-        == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
-      MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToBuildModeSpawnRole(this_01,(MethodInfo *)0x0);
-      return;
+  this_00 = (MVLocalPlayerBuilder *)
+            MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  pMVar1 = TypeInfo__MVLocalPlayerBuilder;
+  if (this_00 != (MVLocalPlayerBuilder *)0x0) {
+    if (((((MVLocalPlayer__Class *)this_00->klass)->_1).naturalAligment <
+         (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
+       ((((MVLocalPlayer__Class *)this_00->klass)->_1).typeHierarchy
+        [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+       (pSVar3 = (pMVar2->fields)._.spawnRolesManager, pSVar3 != (SpawnRolesManager *)0x0)) {
+      pTVar4 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+               WebCompletionSource_1_System_Object__get_Task
+                         ((WebCompletionSource_1_System_Object_ *)pSVar3,(MethodInfo *)0x0);
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if (pMVar2 != (MVLocalPlayer *)0x0) {
+        iVar5 = (pMVar2->fields)._._Team_k__BackingField;
+        this_00 = (MVLocalPlayerBuilder *)
+                  MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+        pMVar1 = TypeInfo__MVLocalPlayerBuilder;
+        if (this_00 != (MVLocalPlayerBuilder *)0x0) {
+          if (((((MVLocalPlayer__Class *)this_00->klass)->_1).naturalAligment <
+               (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
+             ((((MVLocalPlayer__Class *)this_00->klass)->_1).typeHierarchy
+              [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
+              (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+          (this_00->fields).enterPlayStateData.selectedTeam = iVar5;
+          (this_00->fields).enterPlayStateData.selectedSpawnRoleCreator = (int32_t)&UNK_?;
+          (this_00->fields).enterPlayStateData.previousSpawnRoleId = (int32_t)pTVar4;
+          (this->fields).defaultBuildModeSpawnRoleReady = 0;
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+          if (pMVar2 != (MVLocalPlayer *)0x0) {
+            pSVar3 = (pMVar2->fields)._.spawnRolesManager;
+            this_01 = (UnityAction_1_System_Int32Enum_ *)
+                      func_?(TypeInfo__System__Action<int>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+            UnityAction_1_System_Int32Enum___ctor
+                      (this_01,(Object *)this,
+                       MethodInfo__ESWaitForBuildModeAvatar__SpawnRolesManagerOnOnSpawnRoleActivated_int_
+                       ,(MethodInfo *)0x0);
+            pMVar1 = (MVLocalPlayerBuilder__Class *)0x0;
+            if (pSVar3 != (SpawnRolesManager *)0x0) {
+              SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
+                        (pSVar3,(Action_1_Int32_ *)this_01,(MethodInfo *)0x0);
+              this_00 = (MVLocalPlayerBuilder *)
+                        MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
+                                  ((MethodInfo *)0x0);
+              pMVar1 = TypeInfo__MVLocalPlayerBuilder;
+              if (this_00 != (MVLocalPlayerBuilder *)0x0) {
+                if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <=
+                     (this_00->klass->_1).naturalAligment) &&
+                   ((this_00->klass->_1).typeHierarchy
+                    [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] ==
+                    (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+                  MVLocalPlayerBuilder::MVLocalPlayerBuilder_SetToBuildModeSpawnRole
+                            (this_00,(MethodInfo *)0x0);
+                  return;
+                }
+                goto code_?;
+              }
+            }
+          }
+        }
+      }
     }
   }
-  func_?(this_01,pMVar1);
-  pMVar3 = extraout_EDX_00;
+  func_?();
+  this_00 = extraout_EDX;
 code_?:
-  func_?(pMVar1,pMVar3);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?(this_00,pMVar1);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

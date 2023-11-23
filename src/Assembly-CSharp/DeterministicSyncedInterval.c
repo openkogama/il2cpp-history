@@ -7,13 +7,14 @@ int32_t Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInt
 
 {
   iVar1 = curTime % range;
-  if (offset < iVar1) {
-    offset = (offset - iVar1) + range;
+  if (iVar1 <= offset) {
+    iVar2 = offset - iVar1;
+    if (offset <= iVar1) {
+      iVar2 = offset;
+    }
+    return iVar2;
   }
-  else if (iVar1 < offset) {
-    return offset - iVar1;
-  }
-  return offset;
+  return (offset - iVar1) + range;
 }
 
 

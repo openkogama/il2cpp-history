@@ -387,125 +387,128 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
   systemTypeInstance =
        mscorlib.dll::System::Type::Type_GetTypeFromHandle
                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  pTStack_2 = (TextAsset *)
-               UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
-                         (StringLiteral_fndid,systemTypeInstance,(MethodInfo *)0x0);
-  if (pTStack_2 == (TextAsset *)0x0) {
-    pTStack_2 = (TextAsset *)0x0;
-code_?:
+  this_00 = (TextAsset *)
+            UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
+                      (StringLiteral_fndid,systemTypeInstance,(MethodInfo *)0x0);
+  if ((this_00 == (TextAsset *)0x0) ||
+     (((TypeInfo__UnityEngine__TextAsset->_1).naturalAligment <=
+       (this_00->klass->_1).naturalAligment &&
+      ((this_00->klass->_1).typeHierarchy
+       [(TypeInfo__UnityEngine__TextAsset->_1).naturalAligment - 1] ==
+       (Il2CppClass *)TypeInfo__UnityEngine__TextAsset)))) {
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pTStack_2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
       (this->fields).signaturesAreNotGenuine = 1;
       return;
     }
-    iVar4 = func_?(TypeInfo__System__String,1);
-    pSVar5 = ::StringLiteral__;
-    if (iVar4 == 0) goto code_?;
-    if (*(int *)(iVar4 + 0xc) != 0) {
-      *(String **)(iVar4 + 0x10) = ::StringLiteral__;
-      func_?(iVar4 + 0x10,pSVar5);
-      if (pTStack_2 != (TextAsset *)0x0) {
+    iVar3 = func_?(TypeInfo__System__String,1);
+    pSVar4 = ::StringLiteral__;
+    if (iVar3 == 0) goto code_?;
+    if (*(int *)(iVar3 + 0xc) != 0) {
+      *(String **)(iVar3 + 0x10) = ::StringLiteral__;
+      func_?(iVar3 + 0x10,pSVar4);
+      if (this_00 != (TextAsset *)0x0) {
         buffer = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_get_bytes
-                           (pTStack_2,(MethodInfo *)0x0);
-        this_00 = (MemoryStream *)func_?(TypeInfo__System__IO__MemoryStream);
+                           (this_00,(MethodInfo *)0x0);
+        this_01 = (MemoryStream *)func_?(TypeInfo__System__IO__MemoryStream);
         mscorlib.dll::System::IO::MemoryStream::MemoryStream__ctor_2
-                  (this_00,buffer,(MethodInfo *)0x0);
-        this_01 = (BinaryReader *)func_?(TypeInfo__System__IO__BinaryReader);
+                  (this_01,buffer,(MethodInfo *)0x0);
+        this_02 = (BinaryReader *)func_?(TypeInfo__System__IO__BinaryReader);
         mscorlib.dll::System::IO::BinaryReader::BinaryReader__ctor
-                  (this_01,(Stream *)this_00,(MethodInfo *)0x0);
-        if (this_01 != (BinaryReader *)0x0) {
-          iVar4 = (*(code *)(this_01->klass->vtable).ReadInt32.method)
-                            (this_01,(this_01->klass->vtable).ReadUInt32.methodPtr);
-          pIVar6 = (InjectionDetector_AllowedAssembly__Array *)
+                  (this_02,(Stream *)this_01,(MethodInfo *)0x0);
+        if (this_02 != (BinaryReader *)0x0) {
+          iVar3 = (*(code *)(this_02->klass->vtable).ReadInt32.method)
+                            (this_02,(this_02->klass->vtable).ReadUInt32.methodPtr);
+          pIVar5 = (InjectionDetector_AllowedAssembly__Array *)
                    func_?(TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
-                                   ,iVar4);
-          (this->fields).allowedAssemblies = pIVar6;
-          func_?(&(this->fields).allowedAssemblies,pIVar6);
-          iStack_7 = 0;
-          if (0 < iVar4) {
+                                   ,iVar3);
+          (this->fields).allowedAssemblies = pIVar5;
+          func_?(&(this->fields).allowedAssemblies,pIVar5);
+          iStack_6 = 0;
+          if (0 < iVar3) {
             do {
-              pSVar8 = (String__Array *)(this_01->klass->vtable).ReadChars.methodPtr;
-              pSVar5 = (String *)(*(code *)(this_01->klass->vtable).ReadString.method)(this_01);
+              pSVar7 = (String__Array *)(this_02->klass->vtable).ReadChars.methodPtr;
+              pSVar4 = (String *)(*(code *)(this_02->klass->vtable).ReadString.method)(this_02);
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
               }
-              pSVar5 = ObscuredTypes::ObscuredString::ObscuredString_EncryptDecrypt_1
-                                 (pSVar5,StringLiteral_Elina,(MethodInfo *)0x0);
-              if ((pSVar5 == (String *)0x0) ||
-                 (pSVar8 = mscorlib.dll::System::String::String_Split_4
-                                     (pSVar5,pSVar8,StringSplitOptions__Enum_RemoveEmptyEntries,
-                                      (MethodInfo *)0x0), pSVar8 == (String__Array *)0x0))
+              pSVar4 = ObscuredTypes::ObscuredString::ObscuredString_EncryptDecrypt_1
+                                 (pSVar4,StringLiteral_Elina,(MethodInfo *)0x0);
+              if ((pSVar4 == (String *)0x0) ||
+                 (pSVar7 = mscorlib.dll::System::String::String_Split_4
+                                     (pSVar4,pSVar7,StringSplitOptions__Enum_RemoveEmptyEntries,
+                                      (MethodInfo *)0x0), pSVar7 == (String__Array *)0x0))
               goto code_?;
-              iVar9 = pSVar8->max_length;
-              if ((int)iVar9 < 2) {
+              iVar8 = pSVar7->max_length;
+              if ((int)iVar8 < 2) {
                 (this->fields).signaturesAreNotGenuine = 1;
-                func_?(6,this_01);
-                if (this_00 != (MemoryStream *)0x0) {
-                  func_?(0x12,this_00);
+                func_?(6,this_02);
+                if (this_01 != (MemoryStream *)0x0) {
+                  func_?(0x12,this_01);
                   return;
                 }
                 goto code_?;
               }
-              if (iVar9 == 0) goto code_?;
-              pIVar10 = TypeInfo__System__Int32;
-              item2 = (Object *)func_?(TypeInfo__System__Int32,iVar9 - 1);
-              ppSVar11 = pSVar8->vector;
-              pcVar12 = (char *)0x1;
-              pOVar13 = item2 + 2;
+              if (iVar8 == 0) goto code_?;
+              pIVar9 = TypeInfo__System__Int32;
+              item2 = (Object *)func_?(TypeInfo__System__Int32,iVar8 - 1);
+              ppSVar10 = pSVar7->vector;
+              pcVar11 = (char *)0x1;
+              pOVar12 = item2 + 2;
               do {
-                ppSVar11 = ppSVar11 + 1;
-                if ((pIVar10->_0).namespaze <= pcVar12) goto code_?;
-                iVar4 = 0;
-                pSVar5 = *ppSVar11;
-                puVar14 = &UNK_?;
-                pOVar15 = (Object__Class *)
-                         mscorlib.dll::System::Int32::Int32_Parse(pSVar5,(MethodInfo *)0x0);
+                ppSVar10 = ppSVar10 + 1;
+                if ((pIVar9->_0).namespaze <= pcVar11) goto code_?;
+                iVar3 = 0;
+                pSVar4 = *ppSVar10;
+                puVar13 = &UNK_?;
+                pOVar14 = (Object__Class *)
+                         mscorlib.dll::System::Int32::Int32_Parse(pSVar4,(MethodInfo *)0x0);
                 if (item2 == (Object *)0x0) goto code_?;
-                if (item2[1].monitor <= (MonitorData *)(pcVar12 + -1)) goto code_?;
-                pOVar13->klass = pOVar15;
-                pcVar12 = pcVar12 + 1;
-                pOVar13 = (Object *)&pOVar13->monitor;
-              } while ((int)pcVar12 < iVar4);
-              pIVar6 = (this->fields).allowedAssemblies;
-              this_02 = (Tuple_2_Object_Object_ *)
+                if (item2[1].monitor <= (MonitorData *)(pcVar11 + -1)) goto code_?;
+                pOVar12->klass = pOVar14;
+                pcVar11 = pcVar11 + 1;
+                pOVar12 = (Object *)&pOVar12->monitor;
+              } while ((int)pcVar11 < iVar3);
+              pIVar5 = (this->fields).allowedAssemblies;
+              this_03 = (Tuple_2_Object_Object_ *)
                         func_?(
                                        TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
                                        );
               mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
-                        (this_02,(Object *)pSVar5,item2,(MethodInfo *)0x0);
-              if (pIVar6 == (InjectionDetector_AllowedAssembly__Array *)0x0) goto code_?;
-              if ((this_02 != (Tuple_2_Object_Object_ *)0x0) &&
-                 (iVar4 = func_?(this_02,(pIVar6->klass->_0).element_class), iVar4 == 0))
+                        (this_03,(Object *)pSVar4,item2,(MethodInfo *)0x0);
+              if (pIVar5 == (InjectionDetector_AllowedAssembly__Array *)0x0) goto code_?;
+              if ((this_03 != (Tuple_2_Object_Object_ *)0x0) &&
+                 (iVar3 = func_?(this_03,(pIVar5->klass->_0).element_class), iVar3 == 0))
               goto code_?;
-              func_?(iStack_7,this_02);
-              iStack_7 = iStack_7 + 1;
-            } while (iStack_7 < (int)puVar14);
+              func_?(iStack_6,this_03);
+              iStack_6 = iStack_6 + 1;
+            } while (iStack_6 < (int)puVar13);
           }
-          (*(code *)(this_01->klass->vtable).Close.method)
-                    (this_01,(this_01->klass->vtable).Dispose_1.methodPtr);
-          if (this_00 != (MemoryStream *)0x0) {
-            (*(code *)(this_00->klass->vtable).Close.method)
-                      (this_00,(this_00->klass->vtable).Dispose_1.methodPtr);
+          (*(code *)(this_02->klass->vtable).Close.method)
+                    (this_02,(this_02->klass->vtable).Dispose_1.methodPtr);
+          if (this_01 != (MemoryStream *)0x0) {
+            (*(code *)(this_01->klass->vtable).Close.method)
+                      (this_01,(this_01->klass->vtable).Dispose_1.methodPtr);
             UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_UnloadAsset
-                      ((Object_1 *)pTStack_2,(MethodInfo *)0x0);
-            pSVar8 = (String__Array *)func_?(TypeInfo__System__String,0x100);
-            (this->fields).hexTable = pSVar8;
-            func_?(&(this->fields).hexTable,pSVar8);
+                      (unaff_EDI,(MethodInfo *)0x0);
+            pSVar7 = (String__Array *)func_?(TypeInfo__System__String,0x100);
+            (this->fields).hexTable = pSVar7;
+            func_?(&(this->fields).hexTable,pSVar7);
             IStack_1.m_value = 0;
             while( true ) {
-              IVar16.m_value = IStack_1.m_value;
-              pSVar8 = (this->fields).hexTable;
-              pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1
+              IVar15.m_value = IStack_1.m_value;
+              pSVar7 = (this->fields).hexTable;
+              pSVar4 = mscorlib.dll::System::Int32::Int32_ToString_1
                                  (&IStack_1,StringLiteral_x2,(MethodInfo *)0x0);
-              if (pSVar8 == (String__Array *)0x0) break;
-              if (pSVar8->max_length <= (uint)IVar16.m_value) goto code_?;
-              pSVar8->vector[IVar16.m_value] = pSVar5;
-              func_?(pSVar8->vector + IVar16.m_value,pSVar5);
+              if (pSVar7 == (String__Array *)0x0) break;
+              if (pSVar7->max_length <= (uint)IVar15.m_value) goto code_?;
+              pSVar7->vector[IVar15.m_value] = pSVar4;
+              func_?(pSVar7->vector + IVar15.m_value,pSVar4);
               IStack_1.m_value = IStack_1.m_value + 1;
               if (0xff < IStack_1.m_value) {
                 return;
@@ -518,22 +521,17 @@ code_?:
     }
   }
   else {
-    if (((TypeInfo__UnityEngine__TextAsset->_1).naturalAligment <=
-         (pTStack_2->klass->_1).naturalAligment) &&
-       ((pTStack_2->klass->_1).typeHierarchy
-        [(TypeInfo__UnityEngine__TextAsset->_1).naturalAligment - 1] ==
-        (Il2CppClass *)TypeInfo__UnityEngine__TextAsset)) goto code_?;
-    func_?(pTStack_2,TypeInfo__UnityEngine__TextAsset);
+    func_?(this_00,TypeInfo__UnityEngine__TextAsset);
 code_?:
-    uVar17 = func_?(0);
-    func_?(uVar17);
+    uVar16 = func_?(0);
+    func_?(uVar16);
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

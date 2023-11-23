@@ -108,7 +108,7 @@ code_?:
     func_?();
     pSVar7 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar7,(MethodInfo *)0x0);
     if ((this->fields).goldGainedTotal < (this->fields).goldDeltaExpected) {
@@ -116,23 +116,7 @@ code_?:
     }
     (this->fields).goldGainedTotal = 0;
     (this->fields).goldDeltaExpected = 0;
-    pMVar8 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
-    if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
-        rgctx_data == (Il2CppRGCTXData *)0x0) {
-      func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
-    }
-    pIVar9 = (pMVar8->field7_0x1c).rgctx_data[2].klass;
-    if (((uint)pIVar9->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar9 = (Il2CppClass *)func_?(pIVar9);
-    }
-    if (pIVar9->cctor_finished_or_no_cctor == 0) {
-      func_?(pIVar9);
-    }
-    pIVar9 = (pMVar8->field7_0x1c).rgctx_data[2].klass;
-    if (((uint)pIVar9->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar9 = (Il2CppClass *)func_?(pIVar9);
-    }
-    args = *(Object__Array **)pIVar9->static_fields;
+    args = (Object__Array *)func_?();
     if ((TypeInfo__BrowserComm__ToJavaScript->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm__ToJavaScript);
     }
@@ -147,19 +131,19 @@ code_?:
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar2 == (MVNetworkGame *)0x0) ||
        (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
-       pAVar10 = TypeInfo__System__Action, pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
+       pAVar8 = TypeInfo__System__Action, pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
     source = (pMVar3->fields)._.OnGoldAmountChange;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,MethodInfo__GoldPurchasedTracker__GoldUpdatedCallback__,
                (MethodInfo *)0x0);
-    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Remove
-                        ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar11 == (Delegate *)0x0) {
-      (pAVar10->_0).byval_arg.attrs = 0;
-      (pAVar10->_0).byval_arg.type = 0;
-      (pAVar10->_0).byval_arg.field_0x7 = 0;
+    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar9 == (Delegate *)0x0) {
+      (pAVar8->_0).byval_arg.attrs = 0;
+      (pAVar8->_0).byval_arg.type = 0;
+      (pAVar8->_0).byval_arg.field_0x7 = 0;
 code_?:
       func_?();
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_CancelInvoke_2
@@ -184,25 +168,25 @@ code_?:
       }
       goto code_?;
     }
-    pDVar12 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
-      pDVar12 = pDVar11;
+    pDVar10 = (Delegate *)0x0;
+    if ((Action__Class *)pDVar9->klass == TypeInfo__System__Action) {
+      pDVar10 = pDVar9;
     }
-    if (pDVar12 != (Delegate *)0x0) {
-      *(Delegate **)&(pAVar10->_0).byval_arg.attrs = pDVar12;
-      pDVar12 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
-        pDVar12 = pDVar11;
+    if (pDVar10 != (Delegate *)0x0) {
+      *(Delegate **)&(pAVar8->_0).byval_arg.attrs = pDVar10;
+      pDVar10 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar9->klass == TypeInfo__System__Action) {
+        pDVar10 = pDVar9;
       }
-      if (pDVar12 != (Delegate *)0x0) goto code_?;
+      if (pDVar10 != (Delegate *)0x0) goto code_?;
       goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

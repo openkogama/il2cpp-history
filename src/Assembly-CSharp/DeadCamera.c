@@ -54,48 +54,47 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_UpdateCamera
     uVar6 = pVVar3->y;
     VStack_4.x = (this->fields).avatarLocalLookAtOffset.x;
     VStack_4.y = (this->fields).avatarLocalLookAtOffset.y;
-    VStack_4.z = (this->fields).avatarLocalLookAtOffset.z;
     fStack_7 = (float)uVar5 + VStack_4.x;
-    pTStack_8 = (Transform *)(VStack_4.z + pVVar3->z);
+    pTStack_8 = (Transform *)((float)uVar6 + VStack_4.y);
+    VStack_4.z = (this->fields).avatarLocalLookAtOffset.z + pVVar3->z;
     puStack_9 = (undefined *)0x0;
-    uStack_10 = CONCAT44((float)uVar6 + VStack_4.y,(undefined4)uStack_10);
     (this->fields).lookAtPos.x = fStack_7;
-    (this->fields).lookAtPos.y = (float)uVar6 + VStack_4.y;
-    (this->fields).lookAtPos.z = (float)pTStack_8;
+    (this->fields).lookAtPos.y = (float)pTStack_8;
+    (this->fields).lookAtPos.z = VStack_4.z;
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_4,pTVar2,(MethodInfo *)0x0);
-      VStack_4.z = (float)pTStack_8 - pVVar3->z;
-      puVar11 = (undefined8 *)func_?();
-      uStack_10 = *puVar11;
-      fVar12 = *(float *)(puVar11 + 1);
+                         ((Vector3 *)&stack0xffffffb8,pTVar2,(MethodInfo *)0x0);
+      VStack_4.z = VStack_4.z - pVVar3->z;
+      puVar10 = (undefined8 *)func_?();
+      VStack_4._0_8_ = *puVar10;
+      fVar11 = *(float *)(puVar10 + 1);
       pTStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this,(MethodInfo *)0x0);
-      forward.z = fVar12;
-      forward.x = (float)(undefined4)uStack_10;
-      forward.y = (float)uStack_10._4_4_;
-      pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+      forward.z = fVar11;
+      forward.x = VStack_4.x;
+      forward.y = VStack_4.y;
+      pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                          ((Quaternion *)&fStack_7,forward,(MethodInfo *)0x0);
       if (pTStack_8 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                  (pTStack_8,*pQVar13,(MethodInfo *)0x0);
+                  (pTStack_8,*pQVar12,(MethodInfo *)0x0);
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             ((Vector3 *)&stack0xffffffc0,pTVar2,(MethodInfo *)0x0);
+                             ((Vector3 *)&stack0xffffffb8,pTVar2,(MethodInfo *)0x0);
           if (targetTransform != (ProtectedTransform *)0x0) {
             ProtectedTransform::ProtectedTransform_set_position
                       (targetTransform,*pVVar3,(MethodInfo *)0x0);
             pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this,(MethodInfo *)0x0);
             if (pTVar2 != (Transform *)0x0) {
-              pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+              pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                                  ((Quaternion *)&fStack_7,pTVar2,(MethodInfo *)0x0);
               ProtectedTransform::ProtectedTransform_set_rotation
-                        (targetTransform,*pQVar13,(MethodInfo *)0x0);
+                        (targetTransform,*pQVar12,(MethodInfo *)0x0);
               return;
             }
           }
@@ -104,8 +103,8 @@ void Assembly-CSharp.dll::DeadCamera::DeadCamera_UpdateCamera
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

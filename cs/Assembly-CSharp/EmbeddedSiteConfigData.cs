@@ -38,5 +38,9 @@ public struct EmbeddedSiteConfigData
 	public bool allowInHouseAds;
 	[SerializeField]
 	public bool removeFullscreenButton;
+	[SerializeField]
+	public bool hideSignUp;
+	[SerializeField]
+	public bool noPlayButtonVideoIcon;
 }
 

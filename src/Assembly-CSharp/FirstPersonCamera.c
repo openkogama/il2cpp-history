@@ -1100,13 +1100,13 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
                             ((Component *)this,(MethodInfo *)0x0);
         if (pTVar4 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                  ((Quaternion *)&stack0xffffffd0,pTVar4,(MethodInfo *)0x0);
+                  ((Quaternion *)&stack0xffffffdc,pTVar4,(MethodInfo *)0x0);
         iVar5 = func_?();
         auVar6._4_8_ = 0;
         auVar6._0_4_ = *(float *)(iVar5 + 4) * _UNK_?;
         pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                   Quaternion_Internal_FromEulerRad
-                            ((Quaternion *)&stack0xffffffd0,(Vector3)(auVar6 << 0x20),
+                            ((Quaternion *)&stack0xffffffdc,(Vector3)(auVar6 << 0x20),
                              (MethodInfo *)0x0);
         if (pTVar3 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
@@ -1123,7 +1123,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
           (pMVar8 = (pMVar1->fields)._.body, pMVar8 != (MVBody *)0x0)) &&
          (pTVar4 = (pMVar8->fields)._._._.transform, pTVar4 != (Transform *)0x0)) {
         pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffd4,pTVar4,(MethodInfo *)0x0);
+                            ((Vector3 *)&stack0xfffffff0,pTVar4,(MethodInfo *)0x0);
         uVar10 = pVVar9->x;
         uVar11 = pVVar9->y;
         uVar12 = (this->fields).cameraOffset.x;
@@ -1140,7 +1140,7 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCamera
             FirstPersonWeaponBob::FirstPersonWeaponBob_Update(this_00,(MethodInfo *)0x0);
             MVCameraBase::MVCameraBase_UpdateCamera
                       ((MVCameraBase *)this,(MVCameraController *)&UNK_?,
-                       (ProtectedTransform *)this,(MethodInfo *)0x0);
+                       (ProtectedTransform *)pTVar3,(MethodInfo *)0x0);
             return;
           }
         }
@@ -1168,23 +1168,24 @@ void Assembly-CSharp.dll::FirstPersonCamera::FirstPersonCamera_UpdateCameraPosit
       (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
      (this_00 = (pMVar2->fields)._._._.transform, this_00 != (Transform *)0x0)) {
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffd8,this_00,(MethodInfo *)0x0);
-    uVar4 = pVVar3->x;
-    uVar5 = pVVar3->y;
-    uVar6 = (this->fields).cameraOffset.x;
-    uVar7 = (this->fields).cameraOffset.y;
+                       (&VStack_4,this_00,(MethodInfo *)0x0);
+    uVar5 = pVVar3->x;
+    uVar6 = pVVar3->y;
+    VStack_4.x = (this->fields).cameraOffset.x;
+    VStack_4.y = (this->fields).cameraOffset.y;
+    VStack_4.z = (this->fields).cameraOffset.z;
     if (this_01 != (Transform *)0x0) {
-      value.y = (float)uVar5 + (float)uVar7;
-      value.x = (float)uVar6 + (float)uVar4;
-      value.z = (this->fields).cameraOffset.z + pVVar3->z;
+      value.y = (float)uVar6 + VStack_4.y;
+      value.x = VStack_4.x + (float)uVar5;
+      value.z = VStack_4.z + pVVar3->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this_01,value,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

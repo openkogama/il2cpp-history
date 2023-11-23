@@ -63,69 +63,76 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Callback
                   );
         (pIVar2->fields).m_NeedsUpdate = 0;
       }
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (pIVar2->fields).m_ExecutingCalls;
+      pOVar7 = (Object__Array *)(pIVar2->fields).m_ExecutingCalls;
       iVar4 = 0;
-      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        do {
+      if (pOVar7 != (Object__Array *)0x0) {
+        while( true ) {
           while( true ) {
-            if ((this_01->fields)._size <= iVar4) {
-              return;
+            while( true ) {
+              pSVar8 = this;
+              if ((int)pOVar7->max_length <= iVar4) {
+                return;
+              }
+              RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)pOVar7,iVar4,
+                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                                );
+              if (((RVar9 == (RegexCharClass_SingleRange)0x0) ||
+                  (*(byte *)(*(int *)RVar9 + 0xb8) <
+                   (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
+                 (unityEventBase = this,
+                 *(InvokableCall__Class **)
+                  (*(int *)(*(int *)RVar9 + 100) + -4 +
+                  (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
+                 TypeInfo__UnityEngine__Events__InvokableCall)) break;
+              this = (ShortcutHandler *)0x0;
+              UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                        ((InvokableCall *)RVar9,(MethodInfo *)0x0);
+              iVar4 = iVar4 + 1;
+              unityEventBase = pSVar8;
             }
-            RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_01,iVar4,
-                               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                              );
-            if ((((RVar7 == (RegexCharClass_SingleRange)0x0) ||
-                 (*(byte *)(*(int *)RVar7 + 0xb8) <
-                  (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
-                (unityEventBase = this,
-                *(InvokableCall__Class **)
-                 (*(int *)(*(int *)RVar7 + 100) + -4 +
-                 (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-                TypeInfo__UnityEngine__Events__InvokableCall)) ||
-               (RVar7 == (RegexCharClass_SingleRange)0x0)) break;
-code_?:
+            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pOVar7,
+                       iVar4,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                      );
+            this = (ShortcutHandler *)TypeInfo__UnityEngine__Events__InvokableCall;
+            this_01 = (InvokableCall *)func_?();
+            if (this_01 == (InvokableCall *)0x0) break;
             UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                      ((InvokableCall *)RVar7,(MethodInfo *)0x0);
+                      (this_01,(MethodInfo *)0x0);
             iVar4 = iVar4 + 1;
           }
-          mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-          RegexCharClass+SingleRange]::
-          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                    (this_01,iVar4,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                    );
-          this = (ShortcutHandler *)TypeInfo__UnityEngine__Events__InvokableCall;
-          RVar7 = (RegexCharClass_SingleRange)func_?();
-          if (RVar7 != (RegexCharClass_SingleRange)0x0) goto code_?;
-          RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,iVar4,
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             pOVar7,iVar4,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
                             );
           if ((Object__Array *)(unityEventBase->fields).keyState == (Object__Array *)0x0) {
-            RVar7.First = 0;
-            RVar7.Last = 0;
-            pOVar8 = (Object__Array *)func_?();
-            (unityEventBase->fields).keyState = (int32_t)pOVar8;
+            pOVar7 = (Object__Array *)func_?();
+            (unityEventBase->fields).keyState = (int32_t)pOVar7;
             func_?();
           }
-          if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
+          if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
+          pOVar7 = (Object__Array *)(unityEventBase->fields).keyState;
           func_?();
           iVar4 = iVar4 + 1;
-        } while( true );
+        }
       }
     }
   }
 code_?:
-  uVar9 = func_?(&stack0xffffffec);
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  uVar10 = func_?(&stack0xffffffec);
+  func_?(uVar10);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -108,7 +108,7 @@ code_?:
                 pOVar11 = key;
                 bVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                                   ((KeyCode__Enum)key,(MethodInfo *)0x0);
-                if (bVar6 != 0) goto code_?;
+                if (bVar6 == 1) goto code_?;
               }
               this = (DesktopDefaultKeyboardMapping *)0x1000000;
               pMVar4 = pMVar4 + 1;
@@ -257,7 +257,7 @@ code_?:
           pOVar1 = key;
           bVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                             ((KeyCode__Enum)key,(MethodInfo *)0x0);
-          if (bVar6 != 0) goto code_?;
+          if (bVar6 == 1) goto code_?;
         }
         pOVar1 = (Object__Class *)0x1000000;
         pMVar3 = pMVar3 + 1;

@@ -731,13 +731,14 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
     cRam_? = '\x01';
   }
   this_03 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<int>);
+  this_06 = this_03;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  this_06 = this_03;
   this_04 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<int>);
+  pMVar4 = this_04;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -748,7 +749,6 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
   if (this_00 !=
       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
        *)0x0) {
-    pMVar4 = this_04;
     this_05 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
@@ -763,7 +763,7 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
       StyleSheetCache+SheetHandleKey,System::Object]::
       Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                 ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)&stack0xffffffbc,
+                  *)&stack0xffffffc4,
                  (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                   *)this_05,
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_Friend>__GetEnumerator__
@@ -775,13 +775,13 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&stack0xffffffac,
+                            *)&stack0xffffffb4,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__MoveNext__
                           );
         if (bVar5 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&stack0xffffffac,
+                    ((Object *)&stack0xffffffb4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__Dispose__
                      ,in_stack_6);
@@ -807,7 +807,7 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
           func_?();
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                    ((Object *)&stack0xffffffac,
+                    ((Object *)&stack0xffffffb4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__Dispose__
                      ,(MethodInfo *)profileID);
@@ -825,6 +825,8 @@ code_?:
                                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
             if (this_06 == (MethodInfo *)0x0) break;
             pMVar4 = (MethodInfo *)&UNK_?;
+            this_04 = MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__Remove_int_
+            ;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Remove
                       ((Dictionary_2_System_Int32_System_Object_ *)this_06,(int32_t)RVar9,

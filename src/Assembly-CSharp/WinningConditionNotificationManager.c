@@ -339,7 +339,7 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
   if (bVar3 == 0) {
     return 0;
   }
-  unaff_ESI = (byte *)actorNumber;
+  unaff_ESI = actorNumber;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
   case GameStatCounterType__Enum_Collectible:
@@ -373,52 +373,34 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      iVar6 = func_?();
-      iVar6 = iVar6 + 1;
-      in_AF = 9 < ((byte)iVar6 & 0xf) | in_AF;
-      bVar7 = (byte)iVar6 + in_AF * '\x06';
-      bVar8 = (byte)((uint)unaff_EBX >> 8);
+      bVar6 = 0;
+      bVar7 = func_?();
+      uVar8 = *(undefined6 *)((int)notificationType + 0x27);
+      pbVar9 = (byte *)(unaff_EBX + 0x4f);
+      bVar10 = *pbVar9;
+      bVar11 = *pbVar9;
+      *pbVar9 = bVar11 + extraout_DH + bVar6;
       in_AF = 9 < (bVar7 & 0xf) | in_AF;
-      uVar9 = CONCAT31((int3)((uint)iVar6 >> 8),bVar7 + in_AF * -6) & 0xffffff0f;
-      bVar10 = (byte)uVar9;
-      bVar11 = 9 < bVar10 | in_AF;
-      bVar12 = 0x99 < bVar10 | in_AF;
-      bVar13 = bVar10 + bVar11 * '\x06' + bVar12 * '`';
-      bVar7 = in_stack_14 + bVar13 + bVar12;
-      bVar11 = 9 < (bVar13 & 0xf) | bVar11;
-      bVar15 = 0x99 < bVar13 ||
-              (CARRY1(in_stack_14,bVar13) || CARRY1(in_stack_14 + bVar13,bVar12));
-      bVar12 = *unaff_ESI;
-      bVar16 = *unaff_ESI;
-      *unaff_ESI = bVar16 + bVar8 + bVar15;
-      iVar6 = CONCAT31((int3)(CONCAT22((short)(uVar9 >> 0x10),
-                                        CONCAT11((char)((uint)iVar6 >> 8) - in_AF,bVar10)) >> 8),
-                        bVar13 + bVar11 * '\x06' + bVar15 * '`') + 1;
-      bVar10 = (byte)iVar6;
-      bVar11 = 9 < (bVar10 & 0xf) | bVar11;
-      bVar15 = 0x99 < bVar10 || (CARRY1(bVar12,bVar8) || CARRY1(bVar16 + bVar8,bVar15));
-      bVar16 = *unaff_ESI;
-      bVar12 = *unaff_ESI;
-      *unaff_ESI = bVar12 + bVar8 + bVar15;
-      iVar6 = CONCAT31((int3)((uint)iVar6 >> 8),bVar10 + bVar11 * '\x06' + bVar15 * '`') + 1;
-      bVar10 = (byte)iVar6;
-      bVar11 = 9 < (bVar10 & 0xf) | bVar11;
-      bVar15 = 0x99 < bVar10 || (CARRY1(bVar16,bVar8) || CARRY1(bVar12 + bVar8,bVar15));
-      bVar16 = bVar10 + bVar11 * '\x06' + bVar15 * '`';
-      bVar11 = 9 < (bVar16 & 0xf) | bVar11;
-      bVar15 = 0x99 < bVar16 || (CARRY1(bVar7,bVar16) || CARRY1(bVar7 + bVar16,bVar15));
-      bVar7 = *unaff_ESI;
-      bVar12 = *unaff_ESI;
-      *unaff_ESI = bVar12 + bVar8 + bVar15;
-      iVar6 = CONCAT31((int3)((uint)iVar6 >> 8),bVar16 + bVar11 * '\x06' + bVar15 * '`') + 1;
-      bVar16 = (byte)iVar6;
-      bVar15 = 0x99 < bVar16 || (CARRY1(bVar7,bVar8) || CARRY1(bVar12 + bVar8,bVar15));
-      pcVar17 = (char *)(CONCAT31((int3)((uint)iVar6 >> 8),
-                                 bVar16 + (9 < (bVar16 & 0xf) | bVar11) * '\x06' + bVar15 * '`') * 3 +
-                       0x27);
-      *pcVar17 = *pcVar17 + (char)((uint)iVar6 >> 8) + bVar15;
-      pcVar18 = (code *)swi(3);
-      bVar3 = (*pcVar18)();
+      bVar12 = 0x99 < bVar7 || (CARRY1(bVar10,extraout_DH) || CARRY1(bVar11 + extraout_DH,bVar6));
+      bVar11 = bVar7 + in_AF * '\x06' + bVar12 * '`';
+      bVar7 = (byte)((uint6)uVar8 >> 8);
+      bVar10 = bVar7 + bVar11;
+      bVar6 = bVar10 + bVar12;
+      in_AF = 9 < (bVar11 & 0xf) | in_AF;
+      bVar12 = 0x99 < bVar11 || (CARRY1(bVar7,bVar11) || CARRY1(bVar10,bVar12));
+      bVar7 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+      pbVar9 = (byte *)(unaff_ESI + -0x41efd8b1);
+      bVar10 = *pbVar9;
+      bVar13 = (byte)((uint)unaff_EBX >> 8);
+      bVar11 = *pbVar9;
+      *pbVar9 = bVar11 + bVar13 + bVar12;
+      bVar12 = 0x99 < bVar7 || (CARRY1(bVar10,bVar13) || CARRY1(bVar11 + bVar13,bVar12));
+      bVar10 = bVar7 + (9 < (bVar7 & 0xf) | in_AF) * '\x06' + bVar12 * '`';
+      *(char *)(unaff_ESI + -0x1befd8b1) =
+           *(char *)(unaff_ESI + -0x1befd8b1) + bVar13 +
+           (0x99 < bVar10 || (CARRY1(bVar6,bVar10) || CARRY1(bVar6 + bVar10,bVar12)));
+      pcVar14 = (code *)swi(3);
+      bVar3 = (*pcVar14)();
       return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
@@ -448,7 +430,6 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
 void Assembly-CSharp.dll::WinningConditionNotificationManager::
@@ -654,111 +635,137 @@ code_?:
     }
   }
 code_?:
-  bVar10 = 0;
-  uVar11 = func_?();
-  iVar12 = (int)((ulonglong)uVar11 >> 0x20);
-  bVar13 = (byte)uVar11;
+  uVar10 = func_?();
+  bVar11 = (byte)uVar10;
+  in_AF = 9 < (bVar11 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar11 || bVar11 < 0x51;
+  bVar11 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+  bVar13 = (byte)extraout_ECX;
+  uVar14 = (undefined3)((uint)extraout_ECX >> 8);
+  bVar15 = bVar13 * '\x02' + bVar12;
+  iVar16 = CONCAT31(uVar14,bVar15);
+  in_AF = 9 < (bVar11 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar11 || (CARRY1(bVar13,bVar13) || CARRY1(bVar13 * '\x02',bVar12));
+  bVar11 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = (byte *)(iVar16 + 0x27 + (int)extraout_EDX * 2);
+  bVar13 = (byte)((ushort)uVar10 >> 8);
+  bVar18 = CARRY1(*pbVar17,bVar13) || CARRY1(*pbVar17 + bVar13,bVar12);
+  *pbVar17 = *pbVar17 + bVar13 + bVar12;
+  bVar19 = bVar13 + bVar15 + bVar18;
+  in_AF = 9 < (bVar11 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar11 || (CARRY1(bVar13,bVar15) || CARRY1(bVar13 + bVar15,bVar18));
+  bVar13 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = bVar19 + bVar15;
+  bVar20 = bVar11 + bVar12;
   in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  bVar10 = 0x99 < bVar13 | bVar10;
-  bVar13 = bVar13 + in_AF * '\x06' + bVar10 * '`';
-  bVar14 = (byte)((ulonglong)uVar11 >> 8);
-  bVar15 = bVar14 * '\x02' + bVar10;
-  pbVar16 = (byte *)(extraout_ECX + 1);
+  bVar12 = 0x99 < bVar13 || (CARRY1(bVar19,bVar15) || CARRY1(bVar11,bVar12));
+  bVar19 = bVar13 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = (byte *)(iVar16 + -0x33efd8af);
+  bVar13 = *pbVar17;
+  bVar11 = *pbVar17;
+  *pbVar17 = bVar11 + bVar20 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar13,bVar20) || CARRY1(bVar11 + bVar20,bVar12));
+  bVar11 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar21 = bVar15 * '\x02' + bVar12;
+  pbVar22 = (byte *)CONCAT31(uVar14,bVar21);
+  in_AF = 9 < (bVar11 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar11 || (CARRY1(bVar15,bVar15) || CARRY1(bVar15 * '\x02',bVar12));
+  bVar19 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = *extraout_EDX;
+  bVar15 = (byte)iVar2;
+  bVar13 = *extraout_EDX;
+  *extraout_EDX = bVar13 + bVar15 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = score + 0x52;
+  bVar13 = *pbVar17;
+  bVar11 = *pbVar17;
+  *pbVar17 = bVar11 + bVar20 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar13,bVar20) || CARRY1(bVar11 + bVar20,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = *extraout_EDX;
+  bVar13 = *extraout_EDX;
+  *extraout_EDX = bVar13 + bVar15 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = extraout_EDX + 0x54;
+  bVar11 = *pbVar17;
+  bVar13 = *pbVar17;
+  *pbVar17 = bVar13 + bVar20 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = extraout_EDX + 0x54;
+  bVar11 = *pbVar17;
+  bVar13 = *pbVar17;
+  *pbVar17 = bVar13 + bVar20 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = *extraout_EDX;
+  bVar13 = *extraout_EDX;
+  *extraout_EDX = bVar13 + bVar15 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar15) || CARRY1(bVar13 + bVar15,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  pbVar17 = extraout_EDX + 0x54;
+  bVar11 = *pbVar17;
+  bVar13 = *pbVar17;
+  *pbVar17 = bVar13 + bVar20 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar20) || CARRY1(bVar13 + bVar20,bVar12));
+  bVar19 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = *pbVar22;
+  bVar23 = (byte)((uint)iVar2 >> 8);
+  bVar13 = *pbVar22;
+  *pbVar22 = bVar13 + bVar23 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar23) || CARRY1(bVar13 + bVar23,bVar12));
+  bVar13 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar19 = (byte)((uint)extraout_EDX >> 8);
+  bVar11 = bVar19 + bVar23;
+  uVar1 = SUB41(extraout_EDX,0);
+  bVar20 = bVar11 + bVar12;
   in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  uVar17 = (undefined3)(CONCAT22((short)((ulonglong)uVar11 >> 0x10),CONCAT11(bVar15,bVar13)) >> 8);
-  bVar18 = 0x99 < bVar13 || (CARRY1(bVar14,bVar14) || CARRY1(bVar14 * '\x02',bVar10));
-  bVar14 = bVar13 + in_AF * '\x06' + bVar18 * '`';
-  iVar19 = CONCAT31(uVar17,bVar14);
-  pbVar20 = (byte *)(iVar12 + 0x28 + iVar19 * 2);
-  bVar21 = (byte)pbVar16;
-  bVar22 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar18);
-  *pbVar20 = *pbVar20 + bVar21 + bVar18;
-  pbVar20 = (byte *)(iVar12 + 0x28 + iVar19 * 2);
-  bVar18 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar22);
-  *pbVar20 = *pbVar20 + bVar21 + bVar22;
-  bVar13 = *pbVar16;
-  bVar10 = *pbVar16;
-  *pbVar16 = bVar10 + bVar15 + bVar18;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar13,bVar15) || CARRY1(bVar10 + bVar15,bVar18));
-  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)(iVar12 + 0x29 + CONCAT31(uVar17,bVar14) * 2);
-  bVar22 = CARRY1(*pbVar20,bVar21) || CARRY1(*pbVar20 + bVar21,bVar18);
-  *pbVar20 = *pbVar20 + bVar21 + bVar18;
-  pbVar20 = (byte *)(extraout_ECX + 0x43);
-  bVar10 = *pbVar20;
-  bVar13 = *pbVar20;
-  *pbVar20 = bVar13 + bVar21 + bVar22;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar21) || CARRY1(bVar13 + bVar21,bVar22));
-  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)(iVar12 + -0x18efd8bc);
-  bVar10 = *pbVar20;
-  bVar23 = (byte)iVar2;
-  bVar13 = *pbVar20;
-  *pbVar20 = bVar13 + bVar23 + bVar18;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
-  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)(iVar12 + -0x1defd8bb);
-  bVar10 = *pbVar20;
-  bVar13 = *pbVar20;
-  *pbVar20 = bVar13 + bVar23 + bVar18;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
-  bVar13 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  bVar14 = (byte)(iVar12 + 3);
-  bVar10 = bVar14 + bVar15;
-  iVar19 = CONCAT31((int3)((uint)(iVar12 + 3) >> 8),bVar10 + bVar18);
-  in_AF = 9 < (bVar13 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar13 || (CARRY1(bVar14,bVar15) || CARRY1(bVar10,bVar18));
-  bVar14 = bVar13 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)(iVar19 + -0x1defd8be);
-  bVar10 = *pbVar20;
-  bVar13 = *pbVar20;
-  *pbVar20 = bVar13 + bVar23 + bVar18;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar23) || CARRY1(bVar13 + bVar23,bVar18));
-  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)(extraout_ECX + 0x7e102743);
-  bVar10 = *pbVar20;
-  bVar15 = (byte)((uint)iVar2 >> 8);
-  bVar13 = *pbVar20 + bVar15;
-  *pbVar20 = bVar13 + bVar18;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar15) || CARRY1(bVar13,bVar18));
-  bVar14 = bVar14 + in_AF * '\x06' + bVar18 * '`';
-  pbVar20 = (byte *)((int)&unaff_ESI[0x7e10274].klass + 3);
-  bVar10 = *pbVar20;
-  bVar13 = *pbVar20;
-  *pbVar20 = bVar13 + bVar21 + bVar18;
-  bVar18 = 0x99 < bVar14 || (CARRY1(bVar10,bVar21) || CARRY1(bVar13 + bVar21,bVar18));
-  pcVar24 = (char *)((int)&unaff_ESI[4].klass + 3);
-  *pcVar24 = *pcVar24 + (char)((uint)(iVar2 + 3) >> 8) +
-            (0x99 < (byte)(bVar14 + (9 < (bVar14 & 0xf) | in_AF) * '\x06' + bVar18 * '`') ||
-            (CARRY1(in_stack_25,bVar23 + 2) || CARRY1(in_stack_25 + bVar23 + 2,bVar18)))
-  ;
-  in((short)iVar19);
+  bVar12 = 0x99 < bVar13 || (CARRY1(bVar19,bVar23) || CARRY1(bVar11,bVar12));
+  bVar19 = bVar13 + in_AF * '\x06' + bVar12 * '`';
+  bVar11 = *(byte *)&unaff_ESI->klass;
+  bVar13 = *(char *)&unaff_ESI->klass + bVar21;
+  *(byte *)&unaff_ESI->klass = bVar13 + bVar12;
+  in_AF = 9 < (bVar19 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar19 || (CARRY1(bVar11,bVar21) || CARRY1(bVar13,bVar12));
+  bVar11 = bVar19 + in_AF * '\x06' + bVar12 * '`';
+  bVar19 = bVar20 + bVar23 + bVar12;
+  in_AF = 9 < (bVar11 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar11 || (CARRY1(bVar20,bVar23) || CARRY1(bVar20 + bVar23,bVar12));
+  bVar13 = bVar11 + in_AF * '\x06' + bVar12 * '`';
+  bVar18 = CARRY1(bRam_?,bVar15);
+  bVar11 = bRam_? + bVar15;
+  bRam_? = bVar11 + bVar12;
+  bVar12 = 0x99 < bVar13 || (bVar18 || CARRY1(bVar11,bVar12));
+  uVar10 = CONCAT11(bVar19 + bVar23 + bVar12,uVar1);
+  cRam_? = cRam_? + bVar15 +
+                 (0x99 < (byte)(bVar13 + (9 < (bVar13 & 0xf) | in_AF) * '\x06' + bVar12 * '`') ||
+                 (CARRY1(bVar19,bVar23) || CARRY1(bVar19 + bVar23,bVar12)));
+  in(uVar10);
   *(undefined4 *)(actorNumber + 0x10) = 2;
-  puVar26 = (undefined1 *)0x49102744;
   if (cRam_? == '\0') {
-    ppORam49102740 = &TypeInfo__UnityEngine__Object;
-    puVar27 = (undefined1 *)0x4910273c;
-    puRam_? = &UNK_?;
-    func_?();
-    puVar26 = puVar27 + 4;
+    func_?(&TypeInfo__UnityEngine__Object,iVar2,uVar10,iVar2,CONCAT11(bVar19,uVar1),
+                    iVar2,CONCAT11(bVar20,uVar1),extraout_EDX,extraout_EDX,extraout_EDX,
+                    extraout_EDX,pbVar22,iVar16,iVar16,iVar16);
     cRam_? = '\x01';
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    *(Object_1__Class **)(puVar26 + -4) = TypeInfo__UnityEngine__Object;
-    *(undefined **)(puVar26 + -8) = &UNK_?;
-    func_?();
+    func_?(TypeInfo__UnityEngine__Object);
   }
-  uRam_? = 0;
   return;
 code_?:
-  pMVar28 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar6,actorNumber,(MethodInfo *)0x0);
-  if (pMVar28 == (MVPlayer *)0x0) {
+  pMVar24 = MVPlayerContainer::MVPlayerContainer_get_Item(pMVar6,actorNumber,(MethodInfo *)0x0);
+  if (pMVar24 == (MVPlayer *)0x0) {
     return;
   }
   bVar7 = WinningConditionNotificationManager_IsFlagScoreBestInGame

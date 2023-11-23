@@ -82,18 +82,18 @@ Bounds * Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_ComputeLocalBound
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  fVar4 = _UNK_?;
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_5._0_4_ = (pVVar1->zeroVector).x;
-  uStack_5._4_4_ = (pVVar1->zeroVector).y;
-  fStack_6 = (pVVar1->zeroVector).z;
+  uStack_4._0_4_ = (pVVar1->zeroVector).x;
+  uStack_4._4_4_ = (pVVar1->zeroVector).y;
+  fStack_5 = (pVVar1->zeroVector).z;
   (__return_storage_ptr__->m_Center).x = (float)(undefined4)uStack_2;
+  fVar6 = _UNK_?;
   (__return_storage_ptr__->m_Center).y = uStack_2._4_4_;
-  fStack_6 = fStack_6 * fVar4;
+  fStack_5 = fStack_5 * _UNK_?;
   (__return_storage_ptr__->m_Center).z = fVar3;
-  (__return_storage_ptr__->m_Extents).x = (float)(undefined4)uStack_5 * fVar4;
-  (__return_storage_ptr__->m_Extents).y = (float)uStack_5._4_4_ * fVar4;
-  (__return_storage_ptr__->m_Extents).z = fStack_6;
+  (__return_storage_ptr__->m_Extents).x = (float)(undefined4)uStack_4 * fVar6;
+  (__return_storage_ptr__->m_Extents).y = (float)uStack_4._4_4_ * fVar6;
+  (__return_storage_ptr__->m_Extents).z = fStack_5;
   if (meshRenderers == (MeshRenderer__Array *)0x0) {
 code_?:
     func_?();
@@ -115,15 +115,15 @@ code_?:
     pBVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
                        (&BStack_9,(Renderer *)meshRenderers->vector[0],(MethodInfo *)0x0);
     fVar3 = (pBVar8->m_Center).y;
-    fVar4 = (pBVar8->m_Extents).x;
+    fVar6 = (pBVar8->m_Extents).x;
     fVar10 = (pBVar8->m_Extents).y;
     fVar11 = (pBVar8->m_Extents).z;
-    fStack_6 = (pBVar8->m_Center).z - origin.z;
+    fStack_5 = (pBVar8->m_Center).z - origin.z;
     ppMStack_12 = meshRenderers->vector;
     (__return_storage_ptr__->m_Center).x = (pBVar8->m_Center).x - origin.x;
     (__return_storage_ptr__->m_Center).y = fVar3 - origin.y;
-    (__return_storage_ptr__->m_Center).z = fStack_6;
-    (__return_storage_ptr__->m_Extents).x = fVar4;
+    (__return_storage_ptr__->m_Center).z = fStack_5;
+    (__return_storage_ptr__->m_Extents).x = fVar6;
     (__return_storage_ptr__->m_Extents).y = fVar10;
     (__return_storage_ptr__->m_Extents).z = fVar11;
     for (uStack_13 = 1; ppMStack_12 = ppMStack_12 + 1,
@@ -133,7 +133,7 @@ code_?:
       pBVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
                          (&BStack_9,(Renderer *)*ppMStack_12,(MethodInfo *)0x0);
       fVar3 = (pBVar8->m_Extents).y;
-      fVar4 = (pBVar8->m_Extents).z;
+      fVar6 = (pBVar8->m_Extents).z;
       fStack_14 = (pBVar8->m_Center).y;
       BStack_9.m_Center.y = (pBVar8->m_Center).z;
       fStack_15 = (pBVar8->m_Extents).x;
@@ -141,10 +141,10 @@ code_?:
       fStack_16 = fStack_14 - origin.y;
       BStack_9.m_Center.x = BStack_9.m_Center.y - origin.z;
       uStack_2 = CONCAT44(fVar10,(undefined4)uStack_2);
-      fStack_6 = BStack_9.m_Center.x - fVar4;
+      fStack_5 = BStack_9.m_Center.x - fVar6;
       point.y = fStack_16 - fVar3;
       point.x = fVar10 - fStack_15;
-      point.z = fStack_6;
+      point.z = fStack_5;
       BStack_9.m_Center.z = BStack_9.m_Center.y;
       BStack_9.m_Extents.x = BStack_9.m_Center.y;
       fStack_17 = fStack_14;
@@ -154,7 +154,7 @@ code_?:
       fStack_21 = fStack_15;
       UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
                 (__return_storage_ptr__,point,(MethodInfo *)0x0);
-      fStack_22 = fVar4 + BStack_9.m_Center.x;
+      fStack_22 = fVar6 + BStack_9.m_Center.x;
       point_00.y = fVar3 + fStack_16;
       point_00.x = fStack_15 + uStack_2._4_4_;
       point_00.z = fStack_22;
@@ -687,7 +687,7 @@ bool Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_IsTouchingAvatar
     fVar8 = (float)&fStack_9 - ((float)uVar6 + VStack_1.x);
     fVar10 = (float)pMStack_3 - ((float)uVar7 + VStack_1.y);
     fVar11 = (float)ppVStack_2 - ((pVVar5->upVector).z + VStack_1.z);
-    return fVar10 * fVar10 + fVar8 * fVar8 + fVar11 * fVar11 < _UNK_?;
+    return fVar8 * fVar8 + fVar10 * fVar10 + fVar11 * fVar11 < _UNK_?;
   }
   func_?();
   pcVar12 = (code *)swi(3);
@@ -731,7 +731,7 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_MoveGhost
   fVar4 = fVar4 - stack0xffffffcc;
   fVar10 = (this->fields).distance;
   bVar11 = fVar10 * fVar10 <
-           fVar4 * fVar4 + fVar3 * fVar3 +
+           fVar3 * fVar3 + fVar4 * fVar4 +
            (fVar2 - *(float *)(puVar1 + 1)) * (fVar2 - *(float *)(puVar1 + 1));
   if (bVar11) {
     pVVar12 = MVGhostInstance_GetTargetPos((Vector3 *)&stack0xffffff90,this,0,(MethodInfo *)0x0);
@@ -751,14 +751,14 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_MoveGhost
   else {
     fVar2 = (this->fields).speed;
   }
-  fVar3 = (float)puStack_6 * fVar2;
-  fVar4 = stack0xffffffcc * fVar2;
+  fVar4 = (float)puStack_6 * fVar2;
+  fVar3 = stack0xffffffcc * fVar2;
   fVar2 = *(float *)(puVar1 + 1) * fVar2;
   pVVar12 = (Vector3 *)&UNK_?;
   join_0x00001100_4_ =
        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 * join_0x00001100_4_;
-  _puStack_38 = CONCAT44(fVar4 * join_0x00001100_4_,fVar3 * join_0x00001100_4_);
+  _puStack_38 = CONCAT44(fVar3 * join_0x00001100_4_,fVar4 * join_0x00001100_4_);
   if (bVar11) {
     pVVar12 = (Vector3 *)&stack0xffffffa0;
     pVVar15 = MVGhostInstance_GetTacticalPos(pVVar12,this,(MethodInfo *)0x0);
@@ -768,10 +768,10 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_MoveGhost
     fVar7 = VStack_14.x - fVar7;
     fVar8 = VStack_14.y - fVar8;
     fVar9 = VStack_14.z - fVar9;
-    fVar3 = (this->fields).patrolSpeed;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+    fVar4 = (this->fields).patrolSpeed;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                       ((MethodInfo *)0x0);
-    if (fVar4 * fVar3 <= fVar8 * fVar8 + fVar7 * fVar7 + fVar9 * fVar9) goto code_?;
+    if (fVar3 * fVar4 <= fVar7 * fVar7 + fVar8 * fVar8 + fVar9 * fVar9) goto code_?;
 code_?:
     if (cRam_? == '\0') {
       func_?();
@@ -785,8 +785,8 @@ code_?:
   else {
 code_?:
     pVVar15 = MVGhostInstance_GetTacticalPos(&VStack_14,this,(MethodInfo *)0x0);
-    fVar3 = pVVar15->x;
-    fVar4 = pVVar15->y;
+    fVar4 = pVVar15->x;
+    fVar3 = pVVar15->y;
     fVar10 = pVVar15->z;
     puVar1 = (undefined8 *)(*(code *)(TargetAvatar->klass->vtable).get_WorldPosition_1.method)();
     fVar7 = *(float *)(puVar1 + 1);
@@ -800,8 +800,8 @@ code_?:
     VStack_14.x = (pVVar5->upVector).x;
     VStack_14.y = (pVVar5->upVector).y;
     VStack_14.z = (pVVar5->upVector).z;
-    fVar3 = fVar3 - (VStack_14.x + fVar8);
-    fVar4 = fVar4 - (VStack_14.y + fVar9);
+    fVar4 = fVar4 - (VStack_14.x + fVar8);
+    fVar3 = fVar3 - (VStack_14.y + fVar9);
     fVar10 = fVar10 - (VStack_14.z + fVar7);
     if (bVar11) {
       fVar7 = (this->fields).patrolSpeed;
@@ -820,28 +820,28 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  fVar7 = 0.0;
   pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
   fVar10 = (pVVar5->upVector).x;
   fVar9 = (pVVar5->upVector).y;
-  fVar3 = (pVVar5->upVector).z;
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+  fVar4 = (pVVar5->upVector).z;
+  puVar16 = &UNK_?;
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                     ((MethodInfo *)0x0);
   if (bVar11) {
-    fVar8 = (this->fields).patrolSpeed;
+    fVar7 = (this->fields).patrolSpeed;
   }
   else {
-    fVar8 = (this->fields).speed;
+    fVar7 = (this->fields).speed;
   }
-  dVar16 = (double)((fVar8 * fVar4) / (this->fields).oscillationPeriod);
+  dVar17 = (double)((fVar7 * fVar3) / (this->fields).oscillationPeriod);
   func_?();
-  fVar4 = (float)dVar16;
-  fVar17 = fVar3 * fVar4 - VStack_14.z;
-  fVar8 = fVar10 * fVar4 - VStack_14.x;
-  fVar18 = fVar9 * fVar4 - VStack_14.y;
-  (this->fields).oscilPos.x = fVar10 * fVar4;
-  (this->fields).oscilPos.y = fVar9 * fVar4;
-  (this->fields).oscilPos.z = fVar3 * fVar4;
+  fVar3 = (float)dVar17;
+  fVar18 = fVar4 * fVar3 - VStack_14.z;
+  fVar7 = fVar10 * fVar3 - VStack_14.x;
+  fVar8 = fVar9 * fVar3 - VStack_14.y;
+  (this->fields).oscilPos.x = fVar10 * fVar3;
+  (this->fields).oscilPos.y = fVar9 * fVar3;
+  (this->fields).oscilPos.z = fVar4 * fVar3;
   pTVar19 = (this->fields).moveTarget;
   if (pTVar19 != (Transform *)0x0) {
     pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
@@ -851,9 +851,9 @@ code_?:
     uVar21 = pVVar15->x;
     uVar22 = pVVar15->y;
     puStack_6 = (undefined *)uVar20;
-    value.y = (float)uVar22 + stack0xffffffcc + fVar18;
-    value.x = (float)uVar21 + (float)puStack_6 + fVar8;
-    value.z = pVVar15->z + fVar2 + fVar17;
+    value.y = (float)uVar22 + fVar8 + stack0xffffffcc;
+    value.x = (float)uVar21 + fVar7 + (float)puStack_6;
+    value.z = pVVar15->z + fVar18 + fVar2;
     _puStack_38 = uVar20;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar19,value,(MethodInfo *)0x0);
@@ -866,7 +866,8 @@ code_?:
     uVar20 = _puStack_38;
     stack0xffffffcc = (float)(_puStack_38 >> 0x20);
     if (_UNK_? <
-        stack0xffffffcc * stack0xffffffcc + (float)puStack_6 * (float)puStack_6 + fVar7 * fVar7) {
+        stack0xffffffcc * stack0xffffffcc + (float)puStack_6 * (float)puStack_6 +
+        (float)puVar16 * (float)puVar16) {
       pTVar19 = (this->fields).moveTarget;
       _puStack_38 = uVar20;
       if (pTVar19 == (Transform *)0x0) goto code_?;
@@ -875,9 +876,9 @@ code_?:
       uVar20 = _puStack_38;
       puStack_13 = (undefined *)pQVar23->x;
       fVar2 = pQVar23->y;
-      fVar3 = pQVar23->z;
+      fVar4 = pQVar23->z;
       puVar24 = &UNK_?;
-      forward.z = fVar7;
+      forward.z = (float)puVar16;
       stack0xffffffcc = (float)(_puStack_38 >> 0x20);
       forward.x = (float)puStack_6;
       forward.y = stack0xffffffcc;
@@ -885,18 +886,18 @@ code_?:
       pQVar23 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                           ((Quaternion *)&stack0xffffff90,forward,(MethodInfo *)0x0);
       if (bVar11) {
-        fVar4 = (this->fields).patrolSpeed;
+        fVar3 = (this->fields).patrolSpeed;
       }
       else {
-        fVar4 = (this->fields).speed;
+        fVar3 = (this->fields).speed;
       }
       a.y = fVar2;
       a.x = (float)puStack_13;
-      a.z = fVar3;
+      a.z = fVar4;
       a.w = (float)puVar24;
       pQVar23 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
                           ((Quaternion *)&puStack_13,a,*pQVar23,
-                           fVar4 * (this->fields).turnSlerpFactor,(MethodInfo *)0x0);
+                           fVar3 * (this->fields).turnSlerpFactor,(MethodInfo *)0x0);
       stack0xffffffcc = (float)pTVar19;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (pTVar19,*pQVar23,(MethodInfo *)0x0);
@@ -1597,22 +1598,24 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_UpdateControllerUpdat
                      );
       cRam_? = '\x01';
     }
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+    _puStack_14 = CONCAT44(&UNK_?,puStack_1);
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    _puStack_14 = CONCAT44(&UNK_?,puStack_1);
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                        ((MethodInfo *)0x0);
-    ppSVar3 = (SmoothPhysicsMovement_Package **)(fVar1 - fVar2);
+    ppSVar4 = (SmoothPhysicsMovement_Package **)(fVar2 - fVar3);
     if ((this_02->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
-      pQVar4 = (this_02->fields).packages;
-      if (pQVar4 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      if (0 < (pQVar4->fields)._size) {
-        pSVar5 = (SmoothPhysicsMovement_Package *)
-                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                  Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar4,
-                             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                            );
-        (this_02->fields).current = pSVar5;
-        ppSVar3 = &(this_02->fields).current;
+      pQVar5 = (this_02->fields).packages;
+      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
+      if (0 < (pQVar5->fields)._size) {
+        pSVar6 = (SmoothPhysicsMovement_Package *)
+                 mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__Dequeue
+                           ((Queue_1_System_Object_ *)pQVar5,
+                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                           );
+        (this_02->fields).current = pSVar6;
+        ppSVar4 = &(this_02->fields).current;
         func_?();
       }
       if ((this_02->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
@@ -1620,17 +1623,17 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_UpdateControllerUpdat
       }
     }
     if ((this_02->fields).next == (SmoothPhysicsMovement_Package *)0x0) {
-      pQVar4 = (this_02->fields).packages;
-      if (pQVar4 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      if (0 < (pQVar4->fields)._size) {
-        pSVar5 = (SmoothPhysicsMovement_Package *)
-                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                  Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar4,
-                             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                            );
-        (this_02->fields).next = pSVar5;
-        ppSVar3 = &(this_02->fields).next;
+      pQVar5 = (this_02->fields).packages;
+      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
+      if (0 < (pQVar5->fields)._size) {
+        pSVar6 = (SmoothPhysicsMovement_Package *)
+                 mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__Dequeue
+                           ((Queue_1_System_Object_ *)pQVar5,
+                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                           );
+        (this_02->fields).next = pSVar6;
+        ppSVar4 = &(this_02->fields).next;
         func_?();
       }
     }
@@ -1638,111 +1641,138 @@ void Assembly-CSharp.dll::MVGhostInstance::MVGhostInstance_UpdateControllerUpdat
        ((this_02->fields).next == (SmoothPhysicsMovement_Package *)0x0)) {
       return;
     }
-    pSVar5 = (this_02->fields).next;
-    ppSVar6 = &(this_02->fields).next;
+    pSVar6 = (this_02->fields).next;
+    ppSVar7 = &(this_02->fields).next;
     do {
-      if ((float)ppSVar3 < (pSVar5->fields).time) {
+      if ((float)ppSVar4 < (pSVar6->fields).time) {
 code_?:
-        pSVar5 = (this_02->fields).current;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        fVar1 = (pSVar5->fields).time;
-        fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+        pSVar6 = (this_02->fields).current;
+        if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
+        fVar2 = (pSVar6->fields).time;
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                            ((MethodInfo *)0x0);
-        fVar2 = ((float)ppSVar3 - fVar1) / fVar2;
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_02,(MethodInfo *)0x0);
-        pSVar5 = (this_02->fields).current;
-        if (pSVar5 == (SmoothPhysicsMovement_Package *)0x0) break;
-        uVar8 = (pSVar5->fields).position.x;
-        uVar9 = (pSVar5->fields).position.y;
+        fVar3 = ((float)ppSVar4 - fVar2) / fVar3;
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_02,(MethodInfo *)0x0);
+        pSVar6 = (this_02->fields).current;
+        if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
+        VStack_9.x = (pSVar6->fields).position.x;
+        VStack_9.y = (pSVar6->fields).position.y;
         pSVar10 = (this_02->fields).next;
-        fVar1 = (pSVar5->fields).position.z;
+        VStack_9.z = (pSVar6->fields).position.z;
         if (pSVar10 == (SmoothPhysicsMovement_Package *)0x0) break;
-        uVar11 = (pSVar10->fields).position.x;
-        uVar12 = (pSVar10->fields).position.y;
-        fVar13 = 0.0;
-        if ((0.0 <= fVar2) && (fVar13 = _UNK_?, fVar2 <= _UNK_?)) {
-          fVar13 = fVar2;
+        puStack_1 = (undefined1 *)(pSVar10->fields).position.x;
+        unique0x0000a404 = (pSVar10->fields).position.y;
+        fVar2 = 0.0;
+        if ((0.0 <= fVar3) && (fVar2 = _UNK_?, fVar3 <= _UNK_?)) {
+          fVar2 = fVar3;
         }
-        if (pTVar7 == (Transform *)0x0) break;
-        this = (MVGhostInstance *)(((pSVar10->fields).position.z - fVar1) * fVar13 + fVar1);
-        fVar14 = ((float)uVar12 - (float)uVar9) * fVar13 + (float)uVar9;
-        fVar15 = ((float)uVar11 - (float)uVar8) * fVar13 + (float)uVar8;
-        VVar16 = (Vector3)CONCAT84(VVar16._0_8_,fVar15);
+        VStack_9.x = ((float)puStack_1 - VStack_9.x) * fVar2 + VStack_9.x;
+        VStack_9.y = ((float)unique0x0000a404 - VStack_9.y) * fVar2 + VStack_9.y;
+        VStack_9.z = ((pSVar10->fields).position.z - VStack_9.z) * fVar2 + VStack_9.z;
+        if (pTVar8 == (Transform *)0x0) break;
+        this = (MVGhostInstance *)VStack_9.z;
+        fVar11 = VStack_9.y;
+        fVar12 = VStack_9.x;
+        VVar13 = (Vector3)CONCAT84(VVar13._0_8_,fVar12);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar7,VVar16,(MethodInfo *)0x0);
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_02,(MethodInfo *)0x0);
-        pSVar5 = (this_02->fields).current;
-        if ((pSVar5 == (SmoothPhysicsMovement_Package *)0x0) ||
+                  (pTVar8,VVar13,(MethodInfo *)0x0);
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_02,(MethodInfo *)0x0);
+        pSVar6 = (this_02->fields).current;
+        if ((pSVar6 == (SmoothPhysicsMovement_Package *)0x0) ||
            (pSVar10 = (this_02->fields).next, pSVar10 == (SmoothPhysicsMovement_Package *)0x0)) break;
-        fVar1 = (pSVar5->fields).rotation.y;
-        pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                            ((Quaternion *)&stack0xffffffd0,(pSVar5->fields).rotation,
+        fVar2 = (pSVar6->fields).rotation.y;
+        pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                            ((Quaternion *)&stack0xffffffdc,(pSVar6->fields).rotation,
                              (pSVar10->fields).rotation,(float)this_02,(MethodInfo *)0x0);
-        if (pTVar7 == (Transform *)0x0) break;
+        if (pTVar8 == (Transform *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  (pTVar7,*pQVar17,(MethodInfo *)0x0);
+                  (pTVar8,*pQVar14,(MethodInfo *)0x0);
         if ((this_02->fields).worldObjectOwner != (MVWorldObjectClient *)0x0) {
-          if (((this_02->fields).current == (SmoothPhysicsMovement_Package *)0x0) ||
-             ((this_02->fields).next == (SmoothPhysicsMovement_Package *)0x0)) break;
+          pSVar6 = (this_02->fields).current;
+          if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
+          puStack_1 = (undefined1 *)(pSVar6->fields).position.x;
+          unique0x0000a404 = (pSVar6->fields).position.y;
+          VStack_9.z = (pSVar6->fields).position.z;
+          pSVar6 = (this_02->fields).next;
+          if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
+          VStack_9.x = (pSVar6->fields).position.x;
+          VStack_9.y = (pSVar6->fields).position.y;
+          if (fVar2 < 0.0) {
+            fVar3 = 0.0;
+          }
+          else {
+            fVar3 = _UNK_?;
+            if (fVar2 <= _UNK_?) {
+              fVar3 = fVar2;
+            }
+          }
+          VStack_9.z = ((pSVar6->fields).position.z - VStack_9.z) * fVar3 + VStack_9.z;
           (*(code *)(((this_02->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.method)
                     ();
-          pSVar5 = (this_02->fields).current;
+          pSVar6 = (this_02->fields).current;
           this_00 = (this_02->fields).worldObjectOwner;
-          if ((pSVar5 == (SmoothPhysicsMovement_Package *)0x0) ||
-             ((pSVar10 = (this_02->fields).next, pSVar10 == (SmoothPhysicsMovement_Package *)0x0 ||
-              (pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                                   ((Quaternion *)&stack0xffffffd0,(pSVar5->fields).rotation,
-                                    (pSVar10->fields).rotation,fVar1,(MethodInfo *)0x0),
-              this_00 == (MVWorldObjectClient *)0x0)))) break;
-          MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_00,*pQVar17,(MethodInfo *)0x0);
+          if (((pSVar6 == (SmoothPhysicsMovement_Package *)0x0) ||
+              (pSVar10 = (this_02->fields).next, pSVar10 == (SmoothPhysicsMovement_Package *)0x0)) ||
+             (pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                                  ((Quaternion *)&stack0xffffffdc,(pSVar6->fields).rotation,
+                                   (pSVar10->fields).rotation,fVar2,(MethodInfo *)0x0),
+             this_00 == (MVWorldObjectClient *)0x0)) break;
+          MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_00,*pQVar14,(MethodInfo *)0x0);
         }
         if ((this_02->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
           return;
         }
         this_01 = (this_02->fields).cullingSubscriberBase;
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_02,(MethodInfo *)0x0);
-        if (pTVar7 != (Transform *)0x0) {
-          pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffd4,pTVar7,(MethodInfo *)0x0);
-          uVar19 = pVVar18->x;
-          uVar20 = pVVar18->y;
-          this = (MVGhostInstance *)pVVar18->z;
-          fVar14 = (float)uVar20;
-          fVar21 = (float)uVar19;
-          VVar16 = (Vector3)CONCAT84(VVar16._0_8_,fVar21);
+        _puStack_14 = CONCAT44(this_02,&UNK_?);
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_02,(MethodInfo *)0x0);
+        if (pTVar8 != (Transform *)0x0) {
+          _puStack_14 = CONCAT44(&UNK_?,puStack_1);
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_9,pTVar8,(MethodInfo *)0x0);
+          uVar16 = pVVar15->x;
+          uVar17 = pVVar15->y;
+          this = (MVGhostInstance *)pVVar15->z;
+          fVar11 = (float)uVar17;
+          fVar18 = (float)uVar16;
+          VVar13 = (Vector3)CONCAT84(VVar13._0_8_,fVar18);
           CullingSubscriberBase::CullingSubscriberBase_set_Position
-                    (this_01,VVar16,(MethodInfo *)0x0);
+                    (this_01,VVar13,(MethodInfo *)0x0);
           return;
         }
         break;
       }
-      pQVar4 = (this_02->fields).packages;
-      if (pQVar4 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-      if ((pQVar4->fields)._size < 1) goto code_?;
-      (this_02->fields).current = *ppSVar6;
+      pQVar5 = (this_02->fields).packages;
+      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
+      if ((pQVar5->fields)._size < 1) goto code_?;
+      (this_02->fields).current = *ppSVar7;
       func_?();
-      pQVar4 = (this_02->fields).packages;
-      if (pQVar4 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-      pSVar5 = (SmoothPhysicsMovement_Package *)
-                mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                Queue_1_System_Object__Dequeue
-                          ((Queue_1_System_Object_ *)pQVar4,
-                           MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                          );
-      *ppSVar6 = pSVar5;
-      ppSVar3 = ppSVar6;
+      pQVar5 = (this_02->fields).packages;
+      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
+      pSVar6 = (SmoothPhysicsMovement_Package *)
+               mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+               Queue_1_System_Object__Dequeue
+                         ((Queue_1_System_Object_ *)pQVar5,
+                          MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                         );
+      *ppSVar7 = pSVar6;
+      ppSVar4 = ppSVar7;
       func_?();
-      pSVar5 = *ppSVar6;
-    } while (pSVar5 != (SmoothPhysicsMovement_Package *)0x0);
+      pSVar6 = *ppSVar7;
+    } while (pSVar6 != (SmoothPhysicsMovement_Package *)0x0);
   }
 code_?:
+  stack0xfffffff0 = (undefined4)((ulonglong)_puStack_14 >> 0x20);
+  VStack_9.z = (float)&UNK_?;
+  puStack_1 = &stack0xfffffff0;
+  uVar19 = func_?();
+  _puStack_14 = CONCAT44(stack0xfffffff0,uVar19);
+  VStack_9.z = (float)&UNK_?;
   func_?();
-  func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

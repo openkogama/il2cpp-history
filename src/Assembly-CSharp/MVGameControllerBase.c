@@ -439,6 +439,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_CleanUp
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  pMVar2 = unaff_ESI;
   if ((pMVar1 != (MVGameControllerBase *)0x0) &&
      (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     MVNetworkGame::MVNetworkGame_Cleanup(this_00,(MethodInfo *)0x0);
@@ -450,17 +451,18 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_CleanUp
         (IPlayModeUI *)0x0) {
 code_?:
       this_01 = MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      pMVar2 = unaff_ESI;
       if (this_01 != (MainCameraManager *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (pGVar3,0,(MethodInfo *)0x0);
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pGVar2 != (GameObject *)0x0) {
+          if (pGVar3 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
+                      (pGVar3,0,(MethodInfo *)0x0);
             if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -477,19 +479,20 @@ code_?:
       }
       this_02 = (Component *)
                 TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-      unaff_ESI = TypeInfo__UnityEngine__MonoBehaviour;
+      pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
       if (this_02 != (Component *)0x0) {
+        pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
         if (((this_02->klass->_1).naturalAligment <
              (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
            ((this_02->klass->_1).typeHierarchy
             [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (this_02,(MethodInfo *)0x0);
-        unaff_ESI = pMStack_3;
-        if (pGVar2 != (GameObject *)0x0) {
+        pMVar2 = unaff_ESI;
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
+                    (pGVar3,0,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -498,7 +501,7 @@ code_?:
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,unaff_ESI);
+  func_?(this_02,pMVar2);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -2054,21 +2057,23 @@ code_?:
                 embeddedSiteConfigData.integratedSdk = uVar13;
                 uVar17 = pEVar6->allowInHouseAds;
                 uVar18 = pEVar6->removeFullscreenButton;
-                uVar19 = *(undefined2 *)&pEVar6->field_0x12;
-                embeddedSiteConfigData._18_2_ = uVar19;
+                uVar19 = pEVar6->hideSignUp;
+                uVar20 = pEVar6->noPlayButtonVideoIcon;
+                embeddedSiteConfigData.noPlayButtonVideoIcon = uVar20;
+                embeddedSiteConfigData.hideSignUp = uVar19;
                 embeddedSiteConfigData.removeFullscreenButton = uVar18;
                 embeddedSiteConfigData.allowInHouseAds = uVar17;
-                pMVar20 = (MVNetworkGame *)func_?();
-                uVar21 = (undefined2)((uint)iVar8 >> 0x10);
+                pMVar21 = (MVNetworkGame *)func_?();
+                uVar22 = (undefined2)((uint)iVar8 >> 0x10);
                 method_00 = (MethodInfo *)&UNK_?;
                 embeddedSiteConfigData.siteEnum._0_1_ = (bool)(short)iVar8;
                 embeddedSiteConfigData.siteEnum._1_1_ = SUB21((short)iVar8,1);
                 embeddedSiteConfigData.sites = pLVar7;
-                embeddedSiteConfigData.siteEnum._2_1_ = (bool)uVar21;
-                embeddedSiteConfigData.siteEnum._3_1_ = SUB21(uVar21,1);
+                embeddedSiteConfigData.siteEnum._2_1_ = (bool)uVar22;
+                embeddedSiteConfigData.siteEnum._3_1_ = SUB21(uVar22,1);
                 MVNetworkGame::MVNetworkGame__ctor
-                          (pMVar20,SUB42(this,0),embeddedSiteConfigData,(MethodInfo *)0x0);
-                (pMVar1->fields).game = pMVar20;
+                          (pMVar21,SUB42(this,0),embeddedSiteConfigData,(MethodInfo *)0x0);
+                (pMVar1->fields).game = pMVar21;
                 func_?();
                 value = (Object *)func_?();
                 if (cRam_? == '\0') {
@@ -2092,42 +2097,42 @@ code_?:
                 }
                 pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
                 if ((pMVar5 != (MVGameControllerBase *)0x0) &&
-                   (pMVar20 = (pMVar5->fields).game, pMVar20 != (MVNetworkGame *)0x0)) {
-                  this = (MVGameControllerBase *)(pMVar20->fields).playerContainer;
+                   (pMVar21 = (pMVar5->fields).game, pMVar21 != (MVNetworkGame *)0x0)) {
+                  this = (MVGameControllerBase *)(pMVar21->fields).playerContainer;
                   if (this != (MVGameControllerBase *)0x0) {
-                    pMVar22 = (this->fields).mainCameraManager;
+                    pMVar23 = (this->fields).mainCameraManager;
                     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
                     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
                     NavMesh_OnNavMeshPreUpdate__ctor
                               (this_00,value,
                                MethodInfo__FirstFrameUpdateActorReady__OnLocalPlayerReady__,
                                (MethodInfo *)0x0);
-                    pMVar22 = (MainCameraManager *)
+                    pMVar23 = (MainCameraManager *)
                               mscorlib.dll::System::Delegate::Delegate_Combine
-                                        ((Delegate *)pMVar22,(Delegate *)this_00,(MethodInfo *)0x0);
-                    if (pMVar22 == (MainCameraManager *)0x0) {
+                                        ((Delegate *)pMVar23,(Delegate *)this_00,(MethodInfo *)0x0);
+                    if (pMVar23 == (MainCameraManager *)0x0) {
                       (this->fields).mainCameraManager = (MainCameraManager *)0x0;
                     }
                     else {
-                      pMVar23 = (MainCameraManager *)0x0;
-                      if ((Action__Class *)pMVar22->klass == TypeInfo__System__Action) {
-                        pMVar23 = pMVar22;
+                      pMVar24 = (MainCameraManager *)0x0;
+                      if ((Action__Class *)pMVar23->klass == TypeInfo__System__Action) {
+                        pMVar24 = pMVar23;
                       }
-                      if (pMVar23 == (MainCameraManager *)0x0) {
+                      if (pMVar24 == (MainCameraManager *)0x0) {
                         func_?();
                         goto code_?;
                       }
-                      (this->fields).mainCameraManager = pMVar23;
-                      pMVar23 = (MainCameraManager *)0x0;
-                      if ((Action__Class *)pMVar22->klass == TypeInfo__System__Action) {
-                        pMVar23 = pMVar22;
+                      (this->fields).mainCameraManager = pMVar24;
+                      pMVar24 = (MainCameraManager *)0x0;
+                      if ((Action__Class *)pMVar23->klass == TypeInfo__System__Action) {
+                        pMVar24 = pMVar23;
                       }
-                      if (pMVar23 == (MainCameraManager *)0x0) goto code_?;
+                      if (pMVar24 == (MainCameraManager *)0x0) goto code_?;
                     }
-                    pMVar24 = &this->fields;
+                    pMVar25 = &this->fields;
                     func_?();
                     (pMVar1->fields).firstFrameUpdateActorReady =
-                         (FirstFrameUpdateActorReady *)&pMVar24->mainCameraManager;
+                         (FirstFrameUpdateActorReady *)&pMVar25->mainCameraManager;
                     func_?();
                     if (cRam_? == '\0') {
                       func_?();
@@ -2135,9 +2140,9 @@ code_?:
                     }
                     pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
                     if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-                       (pMVar20 = (pMVar1->fields).game, pMVar20 != (MVNetworkGame *)0x0)) {
-                      bVar25 = MVNetworkGame::MVNetworkGame_Join(pMVar20,(MethodInfo *)0x0);
-                      if (bVar25 == 0) {
+                       (pMVar21 = (pMVar1->fields).game, pMVar21 != (MVNetworkGame *)0x0)) {
+                      bVar26 = MVNetworkGame::MVNetworkGame_Join(pMVar21,(MethodInfo *)0x0);
+                      if (bVar26 == 0) {
                         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
@@ -2168,33 +2173,33 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-          if ((pGVar26 != (GameSessionData *)0x0) &&
-             (pSVar27 = (pGVar26->fields).serverIP, pSVar27 != (String *)0x0)) {
+          pGVar27 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if ((pGVar27 != (GameSessionData *)0x0) &&
+             (pSVar28 = (pGVar27->fields).serverIP, pSVar28 != (String *)0x0)) {
             iVar8 = mscorlib.dll::System::String::String_LastIndexOf
-                               (pSVar27,0x3a,(MethodInfo *)0x0);
+                               (pSVar28,0x3a,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            pGVar26 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
+            pGVar27 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField
             ;
-            if ((pGVar26 != (GameSessionData *)0x0) &&
-               (pSVar27 = (pGVar26->fields).serverIP, pSVar27 != (String *)0x0)) {
-              pSVar27 = mscorlib.dll::System::String::String_Remove_1
-                                  (pSVar27,iVar8,(MethodInfo *)0x0);
+            if ((pGVar27 != (GameSessionData *)0x0) &&
+               (pSVar28 = (pGVar27->fields).serverIP, pSVar28 != (String *)0x0)) {
+              pSVar28 = mscorlib.dll::System::String::String_Remove_1
+                                  (pSVar28,iVar8,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pGVar26 = TypeInfo__MVGameControllerBase->static_fields->
+              pGVar27 = TypeInfo__MVGameControllerBase->static_fields->
                        _GameSessionData_k__BackingField;
               this = (MVGameControllerBase *)0x2710;
               str2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-              pSVar27 = mscorlib.dll::System::String::String_Concat_4
-                                  (pSVar27,::StringLiteral__,str2,(MethodInfo *)0x0);
-              if (pGVar26 != (GameSessionData *)0x0) {
-                (pGVar26->fields).serverIP = pSVar27;
+              pSVar28 = mscorlib.dll::System::String::String_Concat_4
+                                  (pSVar28,::StringLiteral__,str2,(MethodInfo *)0x0);
+              if (pGVar27 != (GameSessionData *)0x0) {
+                (pGVar27->fields).serverIP = pSVar28;
                 func_?();
                 goto code_?;
               }
@@ -2208,8 +2213,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar28 = (code *)swi(3);
-  (*pcVar28)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 

@@ -37,9 +37,9 @@ Vector3 * Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis_UpdateSmoothVelo
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff40;
+  puStack_5 = &stack0xffffff30;
   puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff40;
+  puVar7 = &stack0xffffff30;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__Dispose__

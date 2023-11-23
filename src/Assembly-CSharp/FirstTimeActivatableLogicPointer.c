@@ -384,28 +384,27 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
     pOVar2 = pOVar1->klass;
     uVar3._0_2_ = pOVar2[1]._1.interfaces_count;
     uVar3._2_2_ = pOVar2[1]._1.interface_offsets_count;
-    puVar4 = (undefined8 *)
-             (**(code **)&pOVar2[1]._1.nested_type_count)(&stack0xffffffd8,pOVar1,uVar3);
-    fVar5 = *(float *)(puVar4 + 1);
-    uVar6 = (this->fields).bubbleWorldSpaceOffset.x;
-    uVar7 = (this->fields).bubbleWorldSpaceOffset.y;
-    fStack_8 = (float)*puVar4;
-    fStack_8 = (float)uVar6 + fStack_8;
-    fVar9 = (this->fields).bubbleWorldSpaceOffset.z;
-    fStack_10 = (float)((ulonglong)*puVar4 >> 0x20);
-    fStack_10 = (float)uVar7 + fStack_10;
+    puVar4 = (undefined8 *)(**(code **)&pOVar2[1]._1.nested_type_count)(&uStack_5,pOVar1,uVar3);
+    uStack_5._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
+    uStack_5._4_4_ = (this->fields).bubbleWorldSpaceOffset.y;
+    fStack_6 = (this->fields).bubbleWorldSpaceOffset.z;
+    fVar7 = fStack_6 + *(float *)(puVar4 + 1);
+    uVar8 = CONCAT44((float)uStack_5._4_4_ + (float)((ulonglong)*puVar4 >> 0x20),
+                      (float)(undefined4)uStack_5 + (float)*puVar4);
     lifeTime = (this->fields).bubbleLifetimeWhileShown;
     content = (this->fields).bubbleContent;
-    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this,(MethodInfo *)0x0);
+    pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    pVVar10 = &(this->fields).offset;
+    uStack_5 = CONCAT44(pVVar10->x,(undefined4)uStack_5);
+    fStack_6 = (this->fields).offset.y;
     if (x != (TextBubbleController *)0x0) {
-      worldPosition.y = fStack_10;
-      worldPosition.x = fStack_8;
-      worldPosition.z = fVar9 + fVar5;
-      iVar12 = TextBubbleController::TextBubbleController_ShowBubble3D_1
-                         (x,worldPosition,lifeTime,content,pTVar11,(this->fields).offset,
-                          (MethodInfo *)0x0);
-      (this->fields).bubbleId = iVar12;
+      worldPosition.z = fVar7;
+      worldPosition.x = (float)(int)uVar8;
+      worldPosition.y = (float)(int)((ulonglong)uVar8 >> 0x20);
+      iVar11 = TextBubbleController::TextBubbleController_ShowBubble3D_1
+                        (x,worldPosition,lifeTime,content,pTVar9,*pVVar10,(MethodInfo *)0x0);
+      (this->fields).bubbleId = iVar11;
       if (((this->fields).skipAllowed == 0) || ((this->fields).hasButtonBeenAdded != 0)) {
         return;
       }
@@ -430,28 +429,31 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
         if (this_01 != (Component__Class *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                     ((UnityEvent *)this_01,(UnityAction *)this_03,(MethodInfo *)0x0);
-          iVar12 = (this->fields).bubbleId;
-          pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (this_02,(MethodInfo *)0x0);
-          pTVar11 = (Transform *)0x0;
-          if (pTVar13 == (Transform *)0x0) {
+          iVar11 = (this->fields).bubbleId;
+          pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             (this_02,(MethodInfo *)0x0);
+          pTVar9 = (Transform *)0x0;
+          if (pTVar12 == (Transform *)0x0) {
 code_?:
             TextBubbleController::TextBubbleController_AddElement
-                      (x,iVar12,(RectTransform *)pTVar11,(MethodInfo *)0x0);
+                      (x,iVar11,(RectTransform *)pTVar9,(MethodInfo *)0x0);
             return;
           }
-          if (pTVar13->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-            pTVar11 = pTVar13;
+          if (pTVar12->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+            pTVar9 = pTVar12;
           }
-          if (pTVar11 != (Transform *)0x0) goto code_?;
+          pRVar13 = TypeInfo__UnityEngine__RectTransform;
+          if (pTVar9 != (Transform *)0x0) goto code_?;
           goto code_?;
         }
       }
     }
   }
   func_?();
+  pTVar12 = extraout_ECX;
+  pRVar13 = extraout_EDX;
 code_?:
-  func_?();
+  func_?(pTVar12,pRVar13);
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
   return;
@@ -484,32 +486,26 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
       uVar3._0_2_ = pOVar2[1]._1.interfaces_count;
       uVar3._2_2_ = pOVar2[1]._1.interface_offsets_count;
       puVar4 = (undefined8 *)(**(code **)&pOVar2[1]._1.nested_type_count)(&fStack_5,pOVar1,uVar3);
-      uVar6 = *puVar4;
-      fStack_7 = *(float *)(puVar4 + 1);
-      uVar8 = (this->fields).bubbleWorldSpaceOffset.x;
-      uVar9 = (this->fields).bubbleWorldSpaceOffset.y;
-      uStack_10._0_4_ = (float)uVar6;
-      fStack_5 = (float)uVar8 + (float)uStack_10;
-      uStack_10._4_4_ = (float)((ulonglong)uVar6 >> 0x20);
-      fStack_11 = uStack_10._4_4_ + (float)uVar9;
-      fStack_12 = (this->fields).bubbleWorldSpaceOffset.z + fStack_7;
-      pVVar13 = &(this->fields).offset;
-      _fStack_10 = CONCAT44(pVVar13->x,uVar8);
-      fStack_14 = (this->fields).offset.y;
-      uStack_10 = uVar6;
+      uVar6 = (this->fields).bubbleWorldSpaceOffset.x;
+      uVar7 = (this->fields).bubbleWorldSpaceOffset.y;
+      uStack_8._4_4_ = (float)((ulonglong)*puVar4 >> 0x20);
+      uStack_8._0_4_ = (float)*puVar4;
+      pVVar9 = &(this->fields).offset;
+      _fStack_10 = CONCAT44(pVVar9->x,uVar6);
+      fStack_10 = (this->fields).offset.y;
       if (x != (TextBubbleController *)0x0) {
-        worldPosition.y = fStack_11;
-        worldPosition.x = fStack_5;
-        worldPosition.z = fStack_12;
+        worldPosition.z = (this->fields).bubbleWorldSpaceOffset.z + *(float *)(puVar4 + 1);
+        worldPosition.x = (float)uVar6 + (float)uStack_8;
+        worldPosition.y = uStack_8._4_4_ + (float)uVar7;
         TextBubbleController::TextBubbleController_UpdatePosition3D
-                  (x,bubbleId,worldPosition,*pVVar13,(MethodInfo *)0x0);
+                  (x,bubbleId,worldPosition,*pVVar9,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

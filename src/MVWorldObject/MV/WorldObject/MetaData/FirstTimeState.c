@@ -94,35 +94,33 @@ String * MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTime
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this_00,(MethodInfo *)0x0);
   index = 0;
   pBVar1 = (this->fields).bitArray;
-  do {
-    if (pBVar1 == (BitArray *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      pSVar3 = (String *)(*pcVar2)();
+  if (pBVar1 != (BitArray *)0x0) {
+    while (index < (pBVar1->fields).m_length) {
+      pBVar1 = (this->fields).bitArray;
+      if ((pBVar1 == (BitArray *)0x0) ||
+         (bVar2 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
+                            (pBVar1,index,(MethodInfo *)0x0), this_00 == (StringBuilder *)0x0))
+      goto code_?;
+      mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
+                (this_00,bVar2 + 0x30,(MethodInfo *)0x0);
+      pBVar1 = (this->fields).bitArray;
+      index = index + 1;
+      if (pBVar1 == (BitArray *)0x0) goto code_?;
+    }
+    if (this_00 != (StringBuilder *)0x0) {
+      pSVar3 = (String *)
+               (*(code *)(this_00->klass->vtable).ToString.method)
+                         (this_00,(this_00->klass->vtable).
+                                  System_Runtime_Serialization_ISerializable_GetObjectData.methodPtr
+                         );
       return pSVar3;
     }
-    if ((pBVar1->fields).m_length <= index) {
-      if (this_00 != (StringBuilder *)0x0) {
-        pSVar3 = (String *)
-                 (*(code *)(this_00->klass->vtable).ToString.method)
-                           (this_00,(this_00->klass->vtable).
-                                    System_Runtime_Serialization_ISerializable_GetObjectData.
-                                    methodPtr);
-        return pSVar3;
-      }
-      goto code_?;
-    }
-    pBVar1 = (this->fields).bitArray;
-    if (pBVar1 == (BitArray *)0x0) goto code_?;
-    bVar4 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                      (pBVar1,index,(MethodInfo *)0x0);
-    if (this_00 == (StringBuilder *)0x0) goto code_?;
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_5
-              (this_00,(bVar4 != 0) + 0x30,(MethodInfo *)0x0);
-    pBVar1 = (this->fields).bitArray;
-    index = index + 1;
-  } while( true );
+  }
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar4)();
+  return pSVar3;
 }
 
 

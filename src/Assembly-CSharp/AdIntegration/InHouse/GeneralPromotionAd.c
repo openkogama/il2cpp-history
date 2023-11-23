@@ -737,7 +737,8 @@ code_?:
     bVar10 = pEVar1->hideGoldShop;
     bVar11 = pEVar1->allowInHouseAds;
     bVar12 = pEVar1->removeFullscreenButton;
-    uVar13 = *(undefined2 *)&pEVar1->field_0x12;
+    bVar13 = pEVar1->hideSignUp;
+    bVar14 = pEVar1->noPlayButtonVideoIcon;
     (this->fields).embeddedSiteConfigData.sites = pEVar1->sites;
     (this->fields).embeddedSiteConfigData.siteEnum = iVar2;
     (this->fields).embeddedSiteConfigData.showTouristPromotion = bVar3;
@@ -750,18 +751,19 @@ code_?:
     (this->fields).embeddedSiteConfigData.hideGoldShop = bVar10;
     (this->fields).embeddedSiteConfigData.allowInHouseAds = bVar11;
     (this->fields).embeddedSiteConfigData.removeFullscreenButton = bVar12;
-    *(undefined2 *)&(this->fields).embeddedSiteConfigData.field_0x12 = uVar13;
+    (this->fields).embeddedSiteConfigData.hideSignUp = bVar13;
+    (this->fields).embeddedSiteConfigData.noPlayButtonVideoIcon = bVar14;
     func_?();
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar14 == (GameSessionData *)0x0) goto code_?;
+    pGVar15 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar15 == (GameSessionData *)0x0) goto code_?;
     bVar3 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
              VerticalVirtualizationController`1[System::Object]::
              VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
-                       ((VerticalVirtualizationController_1_System_Object_ *)pGVar14,
+                       ((VerticalVirtualizationController_1_System_Object_ *)pGVar15,
                         (MethodInfo *)0x0);
     if (bVar3 == 0) {
       bVar3 = 0;
@@ -773,9 +775,9 @@ code_?:
       }
     }
     (this->fields).redirectAllowed = bVar3 != 0;
-    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar15 == (MVNetworkGame *)0x0) goto code_?;
-    a = (pMVar15->fields).OnWinningConditionFulfilled;
+    pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar16 == (MVNetworkGame *)0x0) goto code_?;
+    a = (pMVar16->fields).OnWinningConditionFulfilled;
     this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?();
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -784,37 +786,37 @@ code_?:
               (this_01,(Object *)0x0,
                MethodInfo__AdIntegration__InHouse__GeneralPromotionAd__OnWinningConditionFulfilled_IWinningCondition_
                ,(MethodInfo *)0x0);
-    pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar17 = mscorlib.dll::System::Delegate::Delegate_Combine
                         ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar16 == (Delegate *)0x0) {
-      (pMVar15->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+    if (pDVar17 == (Delegate *)0x0) {
+      (pMVar16->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
 code_?:
       func_?();
-      pGVar17 = (this->fields).redirectButton;
+      pGVar18 = (this->fields).redirectButton;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if ((pGVar14 != (GameSessionData *)0x0) && (pGVar17 != (GameObject *)0x0)) {
+      pGVar15 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if ((pGVar15 != (GameSessionData *)0x0) && (pGVar18 != (GameObject *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar17,(pGVar14->fields).embedded,(MethodInfo *)0x0);
-        pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar15 != (MVNetworkGame *)0x0) {
-          pSVar18 = (pMVar15->fields)._KogamaMainpageURL_k__BackingField;
+                  (pGVar18,(pGVar15->fields).embedded,(MethodInfo *)0x0);
+        pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar16 != (MVNetworkGame *)0x0) {
+          pSVar19 = (pMVar16->fields)._KogamaMainpageURL_k__BackingField;
           this_02 = (Uri *)func_?();
-          System.dll::System::Uri::Uri__ctor(this_02,pSVar18,(MethodInfo *)0x0);
-          pTVar19 = (this->fields).redirectButtonURLText;
+          System.dll::System::Uri::Uri__ctor(this_02,pSVar19,(MethodInfo *)0x0);
+          pTVar20 = (this->fields).redirectButtonURLText;
           if (this_02 != (Uri *)0x0) {
-            pSVar18 = System.dll::System::Uri::Uri_get_Host(this_02,(MethodInfo *)0x0);
-            if (pSVar18 != (String *)0x0) {
-              pSVar18 = mscorlib.dll::System::String::String_Replace_1
-                                  (pSVar18,StringLiteral_www_,::StringLiteral__,(MethodInfo *)0x0);
-              if (pSVar18 != (String *)0x0) {
-                mscorlib.dll::System::String::String_ToUpper(pSVar18,(MethodInfo *)0x0);
-                if (pTVar19 != (Text *)0x0) {
-                  (*(code *)(pTVar19->klass->vtable).set_text.method)(pTVar19);
-                  pGVar17 = (this->fields).actionButton;
+            pSVar19 = System.dll::System::Uri::Uri_get_Host(this_02,(MethodInfo *)0x0);
+            if (pSVar19 != (String *)0x0) {
+              pSVar19 = mscorlib.dll::System::String::String_Replace_1
+                                  (pSVar19,StringLiteral_www_,::StringLiteral__,(MethodInfo *)0x0);
+              if (pSVar19 != (String *)0x0) {
+                mscorlib.dll::System::String::String_ToUpper(pSVar19,(MethodInfo *)0x0);
+                if (pTVar20 != (Text *)0x0) {
+                  (*(code *)(pTVar20->klass->vtable).set_text.method)(pTVar20);
+                  pGVar18 = (this->fields).actionButton;
                   if (((this->fields).embeddedSiteConfigData.allowsRedirectToWebpage == 0) &&
                      ((this->fields).embeddedSiteConfigData.allowsOpenInNewTab == 0)) {
                     bVar3 = (this->fields).embeddedSiteConfigData.allowsModals;
@@ -822,12 +824,12 @@ code_?:
                   else {
                     bVar3 = 1;
                   }
-                  if (pGVar17 != (GameObject *)0x0) {
+                  if (pGVar18 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar17,bVar3 != 0,(MethodInfo *)0x0);
-                    fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                              (pGVar18,bVar3 != 0,(MethodInfo *)0x0);
+                    fVar21 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                        ((MethodInfo *)0x0);
-                    (this->fields).startTime = fVar20;
+                    (this->fields).startTime = fVar21;
                     return;
                   }
                 }
@@ -838,17 +840,17 @@ code_?:
       }
       goto code_?;
     }
-    iVar21 = func_?();
-    if (iVar21 == 0) goto code_?;
-    _UNK_? = iVar21;
-    iVar21 = func_?();
-    if (iVar21 != 0) goto code_?;
+    iVar22 = func_?();
+    if (iVar22 == 0) goto code_?;
+    _UNK_? = iVar22;
+    iVar22 = func_?();
+    if (iVar22 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

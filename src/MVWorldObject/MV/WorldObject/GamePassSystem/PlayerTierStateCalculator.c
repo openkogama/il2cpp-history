@@ -594,7 +594,7 @@ code_?:
         func_?();
         pcVar3 = (code *)swi(3);
         pDVar4 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
-                   *)(*pcVar3)();
+                  *)(*pcVar3)();
         return pDVar4;
       }
       this_01 = (PlayerTierState *)(uint)(byte)(uVar2 - GamePassTier__Enum_Tier1);
@@ -708,8 +708,8 @@ code_?:
         pPVar14 = (PlayerTierState *)func_?();
         this_00 = pDVar5;
         PlayerTierState::PlayerTierState__ctor
-                  (pPVar14,TierLockState__Enum_Locked,(int32_t)pMVar10,(int32_t)pMVar11,(int32_t)pOVar12
-                   ,(int32_t)pOVar13,(MethodInfo *)0x0);
+                  (pPVar14,TierLockState__Enum_Locked,(int32_t)pMVar10,(int32_t)pMVar11,
+                   (int32_t)pOVar12,(int32_t)pOVar13,(MethodInfo *)0x0);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
         Dictionary_2_System_ByteEnum_System_Object__Add
                   ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,

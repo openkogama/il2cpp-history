@@ -73,18 +73,16 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
           if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).health,
              this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-            ppMVar4 = (MethodInfo **)
-                      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                      SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
-                      SpawnRoleVariable_1_System_Single__get_Value
-                                (this_00,
-                                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                                );
+            fVar4 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                    SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
+                    SpawnRoleVariable_1_System_Single__get_Value
+                              (this_00,
+                               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                              );
             if (cRam_? == '\0') {
-              ppMVar4 = &
-                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
-              ;
-              func_?();
+              func_?(&
+                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
+                             );
               func_?(&
                               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                              );
@@ -92,18 +90,18 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
             }
             pPVar5 = (this->fields).progressBar;
             if (pPVar5 != (ProgressBar *)0x0) {
-              value = (float)ppMVar4 / (float)(this->fields).maxValue;
-              if (value < 0.0) {
-                value = 0.0;
+              fVar4 = fVar4 / (float)(this->fields).maxValue;
+              if (fVar4 < 0.0) {
+                fVar4 = 0.0;
               }
-              else if (_UNK_? < value) {
-                value = _UNK_?;
+              else if (_UNK_? < fVar4) {
+                fVar4 = _UNK_?;
               }
-              (pPVar5->fields).progress = value;
+              (pPVar5->fields).progress = fVar4;
               this_01 = (pPVar5->fields).progressBar;
               if (this_01 != (Scrollbar *)0x0) {
                 UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-                          (this_01,value,(MethodInfo *)0x0);
+                          (this_01,fVar4,(MethodInfo *)0x0);
                 index = 0;
                 pLVar6 = (this->fields)._.gameMeterVisualEffects;
                 while (pLVar6 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
@@ -120,7 +118,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
                                         (this_02,index,
                                          MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                                         ), RVar7 == (RegexCharClass_SingleRange)0x0)) break;
-                  (**(code **)(*(int *)RVar7 + 0xe0))();
+                  (**(code **)(*(int *)RVar7 + 0xe0))(RVar7,*(undefined4 *)(*(int *)RVar7 + 0xe4));
                   index = index + 1;
                   pLVar6 = (this->fields)._.gameMeterVisualEffects;
                 }

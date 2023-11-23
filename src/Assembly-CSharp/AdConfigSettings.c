@@ -31,8 +31,10 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings__ctor
        embeddedSiteConfigData.allowInHouseAds;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton =
        embeddedSiteConfigData.removeFullscreenButton;
-  *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12 =
-       embeddedSiteConfigData._18_2_;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp =
+       embeddedSiteConfigData.hideSignUp;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon =
+       embeddedSiteConfigData.noPlayButtonVideoIcon;
   func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
   (this->fields)._AdTimeoutAsSuccess_k__BackingField = adAutoSuccessAfterDelayEnabled;
   (this->fields)._AdTimeoutAsSuccessDelay_k__BackingField = delayBeforeAdIsAutoSuccess;
@@ -60,7 +62,8 @@ Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_get_EmbeddedSiteConfigDa
   bVar9 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop;
   bVar10 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds;
   bVar11 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
-  uVar12 = *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12;
+  bVar12 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp;
+  bVar13 = (this->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon;
   __return_storage_ptr__->sites = (this->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
   __return_storage_ptr__->siteEnum = iVar1;
   __return_storage_ptr__->showTouristPromotion = bVar2;
@@ -73,7 +76,8 @@ Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_get_EmbeddedSiteConfigDa
   __return_storage_ptr__->hideGoldShop = bVar9;
   __return_storage_ptr__->allowInHouseAds = bVar10;
   __return_storage_ptr__->removeFullscreenButton = bVar11;
-  *(undefined2 *)&__return_storage_ptr__->field_0x12 = uVar12;
+  __return_storage_ptr__->hideSignUp = bVar12;
+  __return_storage_ptr__->noPlayButtonVideoIcon = bVar13;
   return __return_storage_ptr__;
 }
 
@@ -101,7 +105,9 @@ void Assembly-CSharp.dll::AdConfigSettings::AdConfigSettings_set_EmbeddedSiteCon
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds = value.allowInHouseAds;
   (this->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton =
        value.removeFullscreenButton;
-  *(undefined2 *)&(this->fields)._EmbeddedSiteConfigData_k__BackingField.field_0x12 = value._18_2_;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp = value.hideSignUp;
+  (this->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon =
+       value.noPlayButtonVideoIcon;
   func_?(&(this->fields)._EmbeddedSiteConfigData_k__BackingField,0);
   return;
 }

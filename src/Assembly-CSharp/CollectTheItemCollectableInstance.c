@@ -1411,7 +1411,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                (CollectTheItemCollectableInstance *this,MethodInfo *method)
 
 {
-  method_00 = (MethodInfo *)&DAT_?;
+  method_00 = (MethodInfo *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<bool>);
@@ -1442,17 +1442,17 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
   CollectTheItemCollectableInstance_SetupCulling(this,(MethodInfo *)0x0);
   collection = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
                          ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-  this_01 = (HashSet_1_System_UInt32_ *)
+  this_00 = (HashSet_1_System_UInt32_ *)
             func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor_1
-            ((HashSet_1_System_Int32_ *)this_01,(IEnumerable_1_System_Int32_ *)collection,
+            ((HashSet_1_System_Int32_ *)this_00,(IEnumerable_1_System_Int32_ *)collection,
              MethodInfo__System__Collections__Generic__HashSet<int>__HashSet_System__Collections__Generic__IEnumerable<int>_
             );
-  if (this_01 != (HashSet_1_System_UInt32_ *)0x0) {
+  if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
     pHVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
              HashSet_1_System_UInt32__GetEnumerator
-                       ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffdc,this_01,
+                       ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffd8,this_00,
                         MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     OStack_1.klass = (Object__Class *)pHVar2->_set;
     OStack_1.monitor = (MonitorData *)pHVar2->_index;
@@ -1495,30 +1495,29 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
                method_00);
     pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    puVar8 = &UNK_?;
-    this_03 = (CollectTheItemCollectableInstance *)
-              CollectTheItemCollectableInstance_get_OriginalInstanceID(this,(MethodInfo *)0x0);
-    if (this_02 != (MVWorldObjectClientManager *)0x0) {
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    pCVar8 = this;
+    iVar7 = CollectTheItemCollectableInstance_get_OriginalInstanceID(this,(MethodInfo *)0x0);
+    if (this_01 != (MVWorldObjectClientManager *)0x0) {
       pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_02,(int32_t)this_03,(MethodInfo *)0x0);
+                         (this_01,iVar7,(MethodInfo *)0x0);
       if ((pMVar6 != (MVWorldObject *)0x0) && (pMVar5 != (MVWorldObjectClientManager *)0x0)) {
-        this_04 = (CollectTheItemCollectable *)
+        this_02 = (CollectTheItemCollectable *)
                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                             (pMVar5,(pMVar6->fields).groupId,(MethodInfo *)0x0);
-        if (this_04 == (CollectTheItemCollectable *)0x0) goto code_?;
-        if (((((this_04->klass->_1).naturalAligment <
+        if (this_02 == (CollectTheItemCollectable *)0x0) goto code_?;
+        if (((((this_02->klass->_1).naturalAligment <
                (TypeInfo__CollectTheItemCollectable->_1).naturalAligment) ||
              ((CollectTheItemCollectable__Class *)
-              (this_04->klass->_1).typeHierarchy
+              (this_02->klass->_1).typeHierarchy
               [(TypeInfo__CollectTheItemCollectable->_1).naturalAligment - 1] !=
               TypeInfo__CollectTheItemCollectable)) ||
-            ((this_04->fields).controller == (CollectTheItem *)0x0)) ||
-           ((((this_04->fields).controller)->fields).dropOff == (CollectTheItemDropOff *)0x0))
+            ((this_02->fields).controller == (CollectTheItem *)0x0)) ||
+           ((((this_02->fields).controller)->fields).dropOff == (CollectTheItemDropOff *)0x0))
         goto code_?;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         iVar7 = CollectTheItemCollectable::CollectTheItemCollectable_get_DropOffId
-                          (this_04,(MethodInfo *)0x0);
+                          (this_02,(MethodInfo *)0x0);
         if (pMVar5 == (MVWorldObjectClientManager *)0x0) goto code_?;
         pMVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                            (pMVar5,iVar7,(MethodInfo *)0x0);
@@ -1529,21 +1528,21 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
             (pMVar6->klass->_1).typeHierarchy
             [(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] !=
             TypeInfo__CollectTheItemDropOff)) goto code_?;
-        this_00 = (this_03->fields).collectTheItemObject;
+        this_04 = (this->fields).collectTheItemObject;
         pMVar9 = pMVar6;
-        bVar3 = CollectTheItemCollectableInstance_get_IsOriginalInstance(this_03,(MethodInfo *)0x0);
-        if (this_00 != (CollectTheItemObject *)0x0) {
+        bVar3 = CollectTheItemCollectableInstance_get_IsOriginalInstance(this,(MethodInfo *)0x0);
+        if (this_04 != (CollectTheItemObject *)0x0) {
           CollectTheItemObject::CollectTheItemObject_set_EnableFading
-                    (this_00,bVar3 == 0,(MethodInfo *)0x0);
+                    (this_04,bVar3 ^ 1,(MethodInfo *)0x0);
           pDVar10 = (Delegate *)pMVar6[3].monitor;
-          this_05 = (UnityAction_1_System_Int32Enum_ *)func_?();
+          this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
           UnityAction_1_System_Int32Enum___ctor
-                    (this_05,(Object *)this_03,
+                    (this_03,(Object *)&UNK_?,
                      MethodInfo__CollectTheItemCollectableInstance__OnCollected_bool_,
                      (MethodInfo *)0x0);
           pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                             (pDVar10,(Delegate *)this_05,(MethodInfo *)0x0);
+                             (pDVar10,(Delegate *)this_03,(MethodInfo *)0x0);
           if (pDVar10 == (Delegate *)0x0) {
             pMVar9[3].monitor = (MonitorData *)0x0;
           }
@@ -1559,7 +1558,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
           }
           func_?();
 code_?:
-          *unaff_FS_OFFSET = puVar8;
+          *unaff_FS_OFFSET = pCVar8;
           return;
         }
       }
@@ -1813,7 +1812,7 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
   }
   bVar1 = Extensions::Extensions_ContainsObscuredKey
                     (hashtable,StringLiteral_OriginalId,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 

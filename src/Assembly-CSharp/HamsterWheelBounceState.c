@@ -67,32 +67,33 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::
   fVar5 = (float)fVar4;
   fVar6 = normal.x * fVar5;
   fVar7 = normal.y * fVar5;
-  inVector.z = normal.z * fVar5;
+  fVar5 = normal.z * fVar5;
+  uVar8 = 0;
+  uVar9 = 0;
+  uVar10 = 0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf);
+    func_?(&TypeInfo__UnityEngine__Mathf,fVar6,0,0,0);
     cRam_? = '\x01';
   }
-  fVar5 = fVar7 * fVar7 + fVar6 * fVar6 + inVector.z * inVector.z;
-  if (fVar5 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
+  fVar11 = fVar6 * fVar6 + fVar7 * fVar7 + fVar5 * fVar5;
+  if (fVar11 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?(&TypeInfo__UnityEngine__Vector3,fVar6,uVar8,uVar9,uVar10);
       cRam_? = '\x01';
     }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar9._0_4_ = (pVVar8->zeroVector).x;
-    uVar9._4_4_ = (pVVar8->zeroVector).y;
-    fVar10 = (pVVar8->zeroVector).z;
+    pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_13._0_4_ = (pVVar12->zeroVector).x;
+    uStack_13._4_4_ = (pVVar12->zeroVector).y;
+    fVar5 = (pVVar12->zeroVector).z;
   }
   else {
-    fVar11 = fVar7 * fVar2 + fVar6 * fVar1 + inVector.z * fVar3;
-    fVar10 = (inVector.z * fVar11) / fVar5;
-    uVar9 = CONCAT44((fVar7 * fVar11) / fVar5,(fVar11 * fVar6) / fVar5);
+    fVar14 = fVar1 * fVar6 + fVar2 * fVar7 + fVar3 * fVar5;
+    fVar5 = (fVar5 * fVar14) / fVar11;
+    uStack_13 = CONCAT44((fVar7 * fVar14) / fVar11,(fVar6 * fVar14) / fVar11);
   }
-  inVector.x = (float)uVar9;
-  inVector.y = (float)((ulonglong)uVar9 >> 0x20);
-  __return_storage_ptr__->x = inVector.x + (inVector.x - fVar1);
-  __return_storage_ptr__->y = inVector.y + (inVector.y - fVar2);
-  __return_storage_ptr__->z = fVar10 + (fVar10 - fVar3);
+  __return_storage_ptr__->x = (float)uStack_13 + ((float)uStack_13 - fVar1);
+  __return_storage_ptr__->y = uStack_13._4_4_ + (uStack_13._4_4_ - fVar2);
+  __return_storage_ptr__->z = fVar5 + (fVar5 - fVar3);
   return __return_storage_ptr__;
 }
 

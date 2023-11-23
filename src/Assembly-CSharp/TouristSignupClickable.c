@@ -90,25 +90,31 @@ void Assembly-CSharp.dll::TouristSignupClickable::TouristSignupClickable_Start
     pEVar1 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                        (&EStack_2,this_00,(MethodInfo *)0x0);
     this_01 = (this->fields).signupBtn;
-    if ((pEVar1->allowsModals == 0) && (pEVar1->allowsOpenInNewTab == 0)) {
-      uVar3._0_1_ = pEVar1->showTouristPromotion;
-      uVar3._1_1_ = pEVar1->allowsOpenInNewTab;
-      uVar3._2_1_ = pEVar1->allowsRedirectToWebpage;
-      uVar3._3_1_ = pEVar1->allowsModals;
-      uVar3 = uVar3 >> 0x10 & 0xff;
+    uVar3 = pEVar1->hideSignUp;
+    if (uVar3 == '\0') {
+      if ((pEVar1->allowsModals == 0) && (pEVar1->allowsOpenInNewTab == 0)) {
+        uVar4._0_1_ = pEVar1->showTouristPromotion;
+        uVar4._1_1_ = pEVar1->allowsOpenInNewTab;
+        uVar4._2_1_ = pEVar1->allowsRedirectToWebpage;
+        uVar4._3_1_ = pEVar1->allowsModals;
+        uVar4 = uVar4 >> 0x10 & 0xff;
+      }
+      else {
+        uVar4 = 1;
+      }
     }
     else {
-      uVar3 = 1;
+      uVar4 = 0;
     }
     if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,uVar3 != 0,(MethodInfo *)0x0);
+                (this_01,uVar4 != 0,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

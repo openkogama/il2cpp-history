@@ -99,7 +99,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                (BoostEditMenuItem *this,Boost *boost,MethodInfo *method)
 
 {
-  pBVar1 = this;
+  pBVar1 = boost;
+  pBVar2 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
@@ -130,17 +131,17 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
   }
   (this->fields).boost = boost;
   func_?(&(this->fields).boost,boost);
-  pTVar2 = (this->fields).boostDescription;
+  pTVar3 = (this->fields).boostDescription;
   if (boost != (Boost *)0x0) {
-    pSVar3 = (boost->fields).description;
+    pSVar4 = (boost->fields).description;
     arg0 = Boost::Boost_get_Value(boost,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,arg0,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar4 = (this->fields).activeToggleButton;
-      if (pTVar4 != (ToggleButtonAnimation *)0x0) {
-        ToggleButtonAnimation::ToggleButtonAnimation_Initialize(pTVar4,(MethodInfo *)0x0);
+    pSVar4 = mscorlib.dll::System::String::String_Format(pSVar4,arg0,(MethodInfo *)0x0);
+    if (pTVar3 != (Text *)0x0) {
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
+                (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      pTVar5 = (this->fields).activeToggleButton;
+      if (pTVar5 != (ToggleButtonAnimation *)0x0) {
+        ToggleButtonAnimation::ToggleButtonAnimation_Initialize(pTVar5,(MethodInfo *)0x0);
         this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (((this_01 != (MVWorldObjectClientManager *)0x0) &&
             (this_02 = (MVGameOptionDataObject *)
@@ -149,165 +150,170 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                                  (this_01,
                                   MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
                                  ), this_02 != (MVGameOptionDataObject *)0x0)) &&
-           (pGVar5 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
+           (pGVar6 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
                                (this_02,(MethodInfo *)0x0),
-           pGVar5 != (GameBoosterSettingsManager *)0x0)) {
-          this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                    GameBoosterSettings::GameBoosterSettingsManager::
-                    GameBoosterSettingsManager_get_ActiveSettingsList(pGVar5,(MethodInfo *)0x0);
-          pGVar5 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
+           pGVar6 != (GameBoosterSettingsManager *)0x0)) {
+          boost = (Boost *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::
+                           SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingsManager
+                           ::GameBoosterSettingsManager_get_ActiveSettingsList
+                                     (pGVar6,(MethodInfo *)0x0);
+          pGVar6 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
                              (this_02,(MethodInfo *)0x0);
-          if (pGVar5 != (GameBoosterSettingsManager *)0x0) {
+          if (pGVar6 != (GameBoosterSettingsManager *)0x0) {
             this = (BoostEditMenuItem *)
                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
                    GameBoosterSettings::GameBoosterSettingsManager::
                    GameBoosterSettingsManager_get_InactiveGameBoosterSettingsList
-                             (pGVar5,(MethodInfo *)0x0);
-            iVar6 = 0;
-            if (this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            {
-              for (; iVar6 < (this_03->fields)._size; iVar6 = iVar6 + 1) {
-                RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                             (pGVar6,(MethodInfo *)0x0);
+            iVar7 = 0;
+            if (boost != (Boost *)0x0) {
+              for (; iVar7 < (int)(boost->fields)._BoostKey_k__BackingField; iVar7 = iVar7 + 1) {
+                RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  (this_03,iVar6,
+                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    *)boost,iVar7,
                                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                   );
-                if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                bVar8 = mscorlib.dll::System::String::String_op_Equality
-                                  (*(String **)((int)RVar7 + 8),
-                                   (boost->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
-                if (bVar8 != 0) {
-                  pTVar4 = (pBVar1->fields).activeToggleButton;
-                  (pBVar1->fields).isActive = 1;
-                  if (pTVar4 == (ToggleButtonAnimation *)0x0) goto code_?;
+                if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                bVar9 = mscorlib.dll::System::String::String_op_Equality
+                                  (*(String **)((int)RVar8 + 8),
+                                   (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                if (bVar9 != 0) {
+                  pTVar5 = (pBVar2->fields).activeToggleButton;
+                  (pBVar2->fields).isActive = 1;
+                  if (pTVar5 == (ToggleButtonAnimation *)0x0) goto code_?;
                   ToggleButtonAnimation::ToggleButtonAnimation_SetToggleOnWithoutInterpolation
-                            (pTVar4,(MethodInfo *)0x0);
-                  RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                            (pTVar5,(MethodInfo *)0x0);
+                  RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                           RegularExpressions::RegexCharClass+SingleRange]::
                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (this_03,iVar6,
+                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                      *)pTVar5,iVar7,
                                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                     );
-                  (pBVar1->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar7;
-                  boost = (Boost *)&(pBVar1->fields).boosterSetting;
+                  (pBVar2->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar8;
+                  boost = (Boost *)&(pBVar2->fields).boosterSetting;
                   this = (BoostEditMenuItem *)&UNK_?;
                   func_?();
                 }
               }
-              iVar6 = 0;
+              iVar7 = 0;
               if (this != (BoostEditMenuItem *)0x0) {
-                for (; iVar6 < (int)(this->fields)._.m_CancellationTokenSource; iVar6 = iVar6 + 1
+                for (; iVar7 < (int)(this->fields)._.m_CancellationTokenSource; iVar7 = iVar7 + 1
                     ) {
-                  RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                           RegularExpressions::RegexCharClass+SingleRange]::
                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                     ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)this,iVar6,
+                                      *)this,iVar7,
                                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                     );
-                  if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  bVar8 = mscorlib.dll::System::String::String_op_Equality
-                                    (*(String **)((int)RVar7 + 8),
-                                     (boost->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
-                  if (bVar8 != 0) {
-                    pTVar4 = (pBVar1->fields).activeToggleButton;
-                    (pBVar1->fields).isActive = 0;
-                    if (pTVar4 == (ToggleButtonAnimation *)0x0) goto code_?;
+                  if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                  bVar9 = mscorlib.dll::System::String::String_op_Equality
+                                    (*(String **)((int)RVar8 + 8),
+                                     (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                  if (bVar9 != 0) {
+                    pTVar5 = (pBVar2->fields).activeToggleButton;
+                    (pBVar2->fields).isActive = 0;
+                    if (pTVar5 == (ToggleButtonAnimation *)0x0) goto code_?;
                     ToggleButtonAnimation::ToggleButtonAnimation_SetToggleOffWithoutInterpolation
-                              (pTVar4,(MethodInfo *)0x0);
-                    RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                              (pTVar5,(MethodInfo *)0x0);
+                    RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                       ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                        *)&UNK_?,iVar6,
+                                        *)&UNK_?,iVar7,
                                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                       );
-                    (pBVar1->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar7;
+                    (pBVar2->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar8;
                     this = (BoostEditMenuItem *)&UNK_?;
                     func_?();
                   }
                 }
-                pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                         (pBVar1->fields).boosterList;
-                iVar6 = 0;
-                if (pLVar9 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
-                              )0x0) {
-                  while (iVar6 < (pLVar9->fields)._size) {
-                    pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                             (pBVar1->fields).boosterList;
-                    if (pLVar9 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                   *)0x0) goto code_?;
-                    XVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema
+                pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                          (pBVar2->fields).boosterList;
+                iVar7 = 0;
+                if (pLVar10 !=
+                    (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+                  while (iVar7 < (pLVar10->fields)._size) {
+                    pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
+                              )(pBVar2->fields).boosterList;
+                    if (pLVar10 ==
+                        (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+                    goto code_?;
+                    XVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema
                              ::XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                       (pLVar9,iVar6,
+                                       (pLVar10,iVar7,
                                         MethodInfo__System__Collections__Generic__List<BoostEditMenuItem::BoosterDef>__get_Item_int_
                                        );
-                    pLVar9 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                             (pBVar1->fields).boosterList;
-                    if (XVar10.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-                      if (pLVar9 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                     *)0x0) {
-                        XVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::
+                    pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
+                              )(pBVar2->fields).boosterList;
+                    if (XVar11.qname == (XmlQualifiedName *)(pBVar1->fields)._Type_k__BackingField)
+                    {
+                      if (pLVar10 !=
+                          (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0
+                         ) {
+                        XVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::
                                  Schema::XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                                  List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                           (pLVar9,iVar6,
+                                           (pLVar10,iVar7,
                                             MethodInfo__System__Collections__Generic__List<BoostEditMenuItem::BoosterDef>__get_Item_int_
                                            );
                         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        this_04 = (GameObject *)
+                        this_03 = (GameObject *)
                                   UnityEngine.CoreModule.dll::UnityEngine::Object::
                                   Object_1_Instantiate_4
-                                            ((Object *)XVar10.xso,
+                                            ((Object *)XVar11.xso,
                                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                             );
-                        if ((this_04 != (GameObject *)0x0) &&
-                           (this_05 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_get_transform(this_04,(MethodInfo *)0x0),
-                           this_05 != (Transform *)0x0)) {
+                        if ((this_03 != (GameObject *)0x0) &&
+                           (this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                      GameObject_get_transform(this_03,(MethodInfo *)0x0),
+                           this_04 != (Transform *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                                    (this_05,(Transform *)(pBVar1->fields).boostTypeImageParent,0,
+                                    (this_04,(Transform *)(pBVar2->fields).boostTypeImageParent,0,
                                      (MethodInfo *)0x0);
                           break;
                         }
                       }
                       goto code_?;
                     }
-                    iVar6 = iVar6 + 1;
-                    if (pLVar9 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                   *)0x0) goto code_?;
+                    iVar7 = iVar7 + 1;
+                    if (pLVar10 ==
+                        (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+                    goto code_?;
                   }
-                  this_00 = (pBVar1->fields).boosterSetting;
+                  this_00 = (pBVar2->fields).boosterSetting;
                   if ((this_00 != (GameBoosterSettingWithGoldSetting *)0x0) &&
-                     (this_06 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::
+                     (this_05 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::
                                 SpecializedSettingsTypes::GameBoosterSettings::
                                 GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
                                 GameBoosterSettingWithGoldSetting_get_GoldPrice
                                           (this_00,(MethodInfo *)0x0),
-                     this_06 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) {
-                    pSVar3 = (String *)
+                     this_05 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) {
+                    pSVar4 = (String *)
                              MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore
                              ::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
                              KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                       (this_06,
+                                       (this_05,
                                         MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
                                        );
-                    pTVar2 = (pBVar1->fields).goldPriceText;
-                    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString_1
-                                       ((Int32 *)&stack0xfffffff8,pSVar3,(MethodInfo *)0x0);
-                    if ((pSVar3 != (String *)0x0) &&
-                       (pSStack11 =
+                    pTVar3 = (pBVar2->fields).goldPriceText;
+                    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString_1
+                                       ((Int32 *)&stack0xfffffff8,pSVar4,(MethodInfo *)0x0);
+                    if ((pSVar4 != (String *)0x0) &&
+                       (pSStack12 =
                              mscorlib.dll::System::String::String_Replace_1
-                                       (pSVar3,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0
-                                       ), pTVar2 != (Text *)0x0)) {
-                      pIStack12 =
-                           (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-                      pTStack13 = pTVar2;
-                      (*(code *)(pTVar2->klass->vtable).set_text.method)();
+                                       (pSVar4,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0
+                                       ), pTVar3 != (Text *)0x0)) {
+                      pIStack13 =
+                           (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+                      pTStack14 = pTVar3;
+                      (*(code *)(pTVar3->klass->vtable).set_text.method)();
                       return;
                     }
                   }
@@ -321,8 +327,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

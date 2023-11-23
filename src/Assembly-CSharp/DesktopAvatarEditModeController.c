@@ -588,11 +588,12 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
     if ((TypeInfo__DesktopAvatarEditModeController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__DesktopAvatarEditModeController____c);
     }
-    object = TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9;
+    unaff_ESI = (MVWorldObjectClient *)
+                TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9;
     this_02 = (Func_2_MVWorldObjectClient_Boolean_ *)
               func_?(TypeInfo__System__Func<MVWorldObjectClient,_bool>);
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-              ((Func_2_Object_Boolean_ *)this_02,(Object *)object,
+              ((Func_2_Object_Boolean_ *)this_02,(Object *)unaff_ESI,
                MethodInfo__DesktopAvatarEditModeController____c___InitializeLocalAvatar_b__23_0_MVWorldObjectClient_
                ,(MethodInfo *)0x0);
     TypeInfo__DesktopAvatarEditModeController____c->static_fields->__9__23_0 = this_02;
@@ -600,38 +601,34 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
                     this_02);
   }
   if (this_01 != (MVWorldObjectClientManager *)0x0) {
-    this_03 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientWhere
-                        (this_01,this_02,(MethodInfo *)0x0);
-    if (this_03 == (MVWorldObjectClient *)0x0) {
-      this_03 = (MVWorldObjectClient *)0x0;
-    }
-    else if (((this_03->klass->_1).naturalAligment <
-              (TypeInfo__MVSpawnPointBlue->_1).naturalAligment) ||
-            ((MVSpawnPointBlue__Class *)
-             (this_03->klass->_1).typeHierarchy
-             [(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] != TypeInfo__MVSpawnPointBlue))
+    unaff_ESI = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientWhere
+                          (this_01,this_02,(MethodInfo *)0x0);
+    if ((unaff_ESI != (MVWorldObjectClient *)0x0) &&
+       (((unaff_ESI->klass->_1).naturalAligment < (TypeInfo__MVSpawnPointBlue->_1).naturalAligment
+        || ((MVSpawnPointBlue__Class *)
+            (unaff_ESI->klass->_1).typeHierarchy
+            [(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] != TypeInfo__MVSpawnPointBlue))))
     goto code_?;
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if ((pGVar1 != (GameEventManager *)0x0) &&
-       (this_00 = (pGVar1->fields).AvatarCommandsBuildMode, this_03 != (MVWorldObjectClient *)0x0))
-    {
+       (this_00 = (pGVar1->fields).AvatarCommandsBuildMode, unaff_ESI != (MVWorldObjectClient *)0x0)
+       ) {
       puVar2 = (undefined8 *)
-               (*(code *)(this_03->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffd4);
-      uStack_3 = *puVar2;
-      fStack_4 = *(float *)(puVar2 + 1);
+               (*(code *)(unaff_ESI->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffe0);
+      QStack_3._4_8_ = *puVar2;
+      QStack_3.w = *(float *)(puVar2 + 1);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-      QStack_6.y = (pVVar5->upVector).x;
-      QStack_6.z = (pVVar5->upVector).y;
-      QStack_6.w = (pVVar5->upVector).z;
-      fVar7 = (float)uStack_3 - QStack_6.y;
-      fVar8 = uStack_3._4_4_ - QStack_6.z;
-      fVar9 = fStack_4 - QStack_6.w;
+      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar5 = (pVVar4->upVector).x;
+      uVar6 = (pVVar4->upVector).y;
+      fVar7 = QStack_3.y - (float)uVar5;
+      fVar8 = QStack_3.z - (float)uVar6;
+      fVar9 = QStack_3.w - (pVVar4->upVector).z;
       pQVar10 = MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
-                         (&QStack_6,this_03,(MethodInfo *)0x0);
+                         (&QStack_3,unaff_ESI,(MethodInfo *)0x0);
       if (this_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
         position.y = fVar8;
         position.x = fVar7;
@@ -644,9 +641,8 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::
     }
   }
   func_?();
-  this_03 = extraout_EDX;
 code_?:
-  func_?(this_03);
+  func_?(unaff_ESI);
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
   return;

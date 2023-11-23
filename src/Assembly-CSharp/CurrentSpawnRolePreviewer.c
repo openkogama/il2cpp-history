@@ -588,7 +588,7 @@ code_?:
                                                     pCVar18 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Material::
                                                               Material_get_color((Color *)&
-                                                  stack0xffffffd0,pMVar17,(MethodInfo *)0x0);
+                                                  stack0xffffffc0,pMVar17,(MethodInfo *)0x0);
                                                   fVar19 = pCVar18->r;
                                                   fVar20 = pCVar18->g;
                                                   fVar21 = pCVar18->b;
@@ -662,7 +662,8 @@ code_?:
                                                            (pMVar6->fields)._._._.previewLayerMask;
                                                       pTVar8 = (this->fields).
                                                                 avatarResetToTransform;
-                                                      uVar28 = 0xbf00000000000000;
+                                                      uVar28 = 0;
+                                                      uVar29 = 0xbf000000;
                                                       fVar19 = 100.0;
                                                       fVar20 = 100.0;
                                                       fVar21 = 100.0;
@@ -677,11 +678,9 @@ code_?:
                                                         if (pAVar7 != (AvatarPreviewer *)0x0) {
                                                           previewPosition.y = fVar20;
                                                           previewPosition.x = fVar19;
+                                                          cameraOffset.y = (float)uVar29;
+                                                          cameraOffset.x = (float)uVar28;
                                                           cameraOffset.z = -1.0;
-                                                          cameraOffset.x = (float)(int)uVar28;
-                                                          cameraOffset.y =
-                                                               (float)(int)((ulonglong)uVar28 >>
-                                                                           0x20);
                                                           previewPosition.z = fVar21;
                                                           AvatarPreviewer::
                                                           AvatarPreviewer_Initialize
@@ -705,17 +704,17 @@ code_?:
                                                                         ((Component *)this_00,
                                                                          (MethodInfo *)0x0);
                                                     if (pTVar8 != (Transform *)0x0) {
-                                                      pVVar29 = UnityEngine.CoreModule.dll::
+                                                      pVVar30 = UnityEngine.CoreModule.dll::
                                                                 UnityEngine::Transform::
                                                                 Transform_get_position
                                                                           ((Vector3 *)
                                                                            &stack0xffffffc0,pTVar8,
                                                                            (MethodInfo *)0x0);
-                                                      uVar30 = pVVar29->x;
-                                                      uVar31 = pVVar29->y;
-                                                      value.y = (float)uVar31 + _UNK_?;
-                                                      value.x = (float)uVar30 + 0.0;
-                                                      value.z = pVVar29->z + 0.0;
+                                                      uVar31 = pVVar30->x;
+                                                      uVar32 = pVVar30->y;
+                                                      value.y = (float)uVar32 + _UNK_?;
+                                                      value.x = (float)uVar31 + 0.0;
+                                                      value.z = pVVar30->z + 0.0;
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       Transform::Transform_set_position
                                                                 (pTVar8,value,(MethodInfo *)0x0);
@@ -790,18 +789,18 @@ code_?:
                                                               GameObject_get_transform
                                                                         (pGVar4,(MethodInfo *)0x0);
                                                     if (this_03 != (Transform *)0x0) {
-                                                      pVVar29 = UnityEngine.CoreModule.dll::
+                                                      pVVar30 = UnityEngine.CoreModule.dll::
                                                                 UnityEngine::Transform::
                                                                 Transform_get_position
                                                                           ((Vector3 *)
                                                                            &stack0xffffffc0,this_03,
                                                                            (MethodInfo *)0x0);
-                                                      uVar32 = pVVar29->x;
-                                                      uVar33 = pVVar29->y;
+                                                      uVar33 = pVVar30->x;
+                                                      uVar34 = pVVar30->y;
                                                       if (pTVar8 != (Transform *)0x0) {
-                                                        value_01.y = (float)uVar33 - _UNK_?;
-                                                        value_01.x = (float)uVar32 + 0.0;
-                                                        value_01.z = pVVar29->z + 0.0;
+                                                        value_01.y = (float)uVar34 - _UNK_?;
+                                                        value_01.x = (float)uVar33 + 0.0;
+                                                        value_01.z = pVVar30->z + 0.0;
                                                         UnityEngine.CoreModule.dll::UnityEngine::
                                                         Transform::Transform_set_position
                                                                   (pTVar8,value_01,
@@ -876,8 +875,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar34 = (code *)swi(3);
-  (*pcVar34)();
+  pcVar35 = (code *)swi(3);
+  (*pcVar35)();
   return;
 }
 

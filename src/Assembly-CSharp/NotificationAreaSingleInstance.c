@@ -41,20 +41,13 @@ void Assembly-CSharp.dll::NotificationAreaSingleInstance::
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                     (pTVar3,(Transform *)(this->fields)._.contentHolderTransform,0,(MethodInfo *)0x0
                     );
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__MVGameControllerBase);
-            cRam_? = '\x01';
-          }
-          if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-            (*(code *)(this_00->klass->vtable).Initialize.method)
-                      (this_00,data,(this_00->klass->vtable).Update.methodPtr);
-            return;
-          }
           pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this_00,(MethodInfo *)0x0);
           if (pTVar3 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
                       (pTVar3,(MethodInfo *)0x0);
+            (*(code *)(this_00->klass->vtable).Initialize.method)
+                      (this_00,data,(this_00->klass->vtable).Update.methodPtr);
             return;
           }
         }

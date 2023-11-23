@@ -8,8 +8,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__System__Int32);
+    func_?(&StringLiteral_REWARD_);
     cRam_? = '\x01';
   }
   pLVar2 = (this->fields).__4__this;
@@ -91,8 +91,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
         pTVar11 = (pLVar2->fields).header;
         if ((pTVar11 != (Text *)0x0) &&
            (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pTVar11,(MethodInfo *)0x0),
-           pGVar12 != (GameObject *)0x0)) {
+                               ((Component *)pTVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0
+           )) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar12,1,(MethodInfo *)0x0);
           pTVar11 = (pLVar2->fields).header;
@@ -102,14 +102,14 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
             pTVar11 = (pLVar2->fields).goldText;
             if ((pTVar11 != (Text *)0x0) &&
                (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
+                         Component_get_gameObject((Component *)pTVar11,(MethodInfo *)0x0),
                pGVar12 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar12,1,(MethodInfo *)0x0);
               pCVar13 = (pLVar2->fields).claimButton;
               if ((pCVar13 != (CanvasGroup *)0x0) &&
                  (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
+                           Component_get_gameObject((Component *)pCVar13,(MethodInfo *)0x0),
                  pGVar12 != (GameObject *)0x0)) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar12,1,(MethodInfo *)0x0);
@@ -251,11 +251,13 @@ code_?:
     }
   }
 code_?:
-  cVar16 = func_?();
-  (&stack0x3d865b00)[(int)pLVar1] = (&stack0x3d865b00)[(int)pLVar1] + cVar16;
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  cVar16 = '\0';
+  pcVar17 = (char *)func_?();
+  pLRam3d8a9710 = pLVar1;
+  *pcVar17 = *pcVar17 + (char)pcVar17 + cVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

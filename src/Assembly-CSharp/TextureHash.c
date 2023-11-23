@@ -9,8 +9,6 @@ uint8_t Assembly-CSharp.dll::TextureHash::TextureHash_ColorFloatToByte
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Byte[] ColorToByteArray(Color) */
 
 Byte__Array *
@@ -18,10 +16,10 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorToByteArray(Color color,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__System__Byte);
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?();
+  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,4);
   IStack_2.m_value = 0;
   while( true ) {
     switch(IStack_2.m_value) {
@@ -38,33 +36,20 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorToByteArray(Color color,Metho
       fVar3 = color.a;
       break;
     default:
-      str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-      str2 = (String *)func_?();
-      str0 = (String *)func_?();
-      unaff_ESI = mscorlib.dll::System::String::String_Concat_4(str0,str1,str2,(MethodInfo *)0x0);
-      func_?();
-      unaff_EDI = (IndexOutOfRangeException *)func_?();
+      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+      str2 = (String *)func_?(&::StringLiteral___);
+      str0 = (String *)func_?(&StringLiteral_Invalid_Color_index_);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar4,str2,(MethodInfo *)0x0);
+      uVar5 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+      this = (IndexOutOfRangeException *)func_?(uVar5);
       mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-                (unaff_EDI,unaff_ESI,(MethodInfo *)0x0);
-      func_?();
-      bVar4 = (undefined1 *)0xffffffc7 < &stack0xffffffdc;
-      cVar5 = SCARRY4((int)&stack0xffffffdc,0x38);
-      cVar6 = (int)&method < 0;
-      uVar7 = &stack0x00000000 == (undefined1 *)0xffffffec;
+                (this,pSVar4,(MethodInfo *)0x0);
+      func_?(&MethodInfo__UnityEngine__Color__get_Item_int_);
       func_?();
       goto code_?;
     }
-    bVar4 = 0;
-    cVar5 = '\0';
-    cVar6 = (int)pBVar1 < 0;
-    uVar7 = 1;
     if (pBVar1 == (Byte__Array *)0x0) break;
-    uVar8 = pBVar1->max_length;
-    bVar4 = (uint)IStack_2.m_value < uVar8;
-    cVar5 = SBORROW4(IStack_2.m_value,uVar8);
-    cVar6 = (int)(IStack_2.m_value - uVar8) < 0;
-    uVar7 = IStack_2.m_value == uVar8;
-    if (!(bool)bVar4) {
+    if (pBVar1->max_length <= (uint)IStack_2.m_value) {
 code_?:
       func_?();
       break;
@@ -76,23 +61,14 @@ code_?:
     }
   }
   func_?();
-  if (!(bool)uVar7 && cVar5 == cVar6) {
-    *(int *)(unaff_EBX + 0x53d9e8f8) = *(int *)(unaff_EBX + 0x53d9e8f8) + extraout_ECX + (uint)bVar4
-    ;
-    do {
-                    /* WARNING: Do nothing block with infinite loop */
-    } while( true );
-  }
-  LOCK();
-  UNLOCK();
-  unaff_EDI->klass = (IndexOutOfRangeException__Class *)unaff_ESI->klass;
-  pcVar9 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  pBVar1 = (Byte__Array *)(*pcVar6)();
   return pBVar1;
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Byte[] ColorsToByteArray(Color[], Int32) */
 
 Byte__Array *
@@ -111,213 +87,147 @@ Assembly-CSharp.dll::TextureHash::TextureHash_ColorsToByteArray
 code_?:
     func_?();
 code_?:
-    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_5,(MethodInfo *)0x0);
-    str2 = (String *)func_?();
-    str0 = (String *)func_?();
+    unaff_EDI = (IndexOutOfRangeException *)
+                mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
+    pBVar1 = (Byte__Array *)func_?();
+    goto code_?;
+  }
+  while( true ) {
+    if ((int)colors->max_length <= (int)uVar2) {
+      return pBVar1;
+    }
+    uVar5 = uVar2 == colors->max_length;
+    if (colors->max_length <= uVar2) break;
+    fVar6 = pCVar3->vector[0].r;
+    fVar7 = pCVar3->vector[0].g;
+    fStack_8 = pCVar3->vector[0].b;
+    fVar9 = pCVar3->vector[0].a;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    unaff_EDI = (IndexOutOfRangeException *)func_?();
+    pIVar10 = (IndexOutOfRangeException *)0x0;
+    do {
+      IStack_4.m_value = (int32_t)pIVar10;
+      switch(IStack_4.m_value) {
+      case 0:
+        fVar11 = fVar6;
+        break;
+      case 1:
+        fVar11 = fVar7;
+        break;
+      case 2:
+        fVar11 = fStack_8;
+        break;
+      case 3:
+        fVar11 = fVar9;
+        break;
+      default:
+        goto code_?;
+      }
+      if (unaff_EDI == (IndexOutOfRangeException *)0x0) goto code_?;
+      pIVar10 = (IndexOutOfRangeException *)(unaff_EDI->fields)._._._message;
+      uVar5 = (IndexOutOfRangeException *)IStack_4.m_value == pIVar10;
+      if (pIVar10 <= (uint)IStack_4.m_value) goto code_?;
+      *(char *)((int)&(((IndexOutOfRangeException *)IStack_4.m_value)->fields)._._._className +
+               (int)&(unaff_EDI->fields)._._._className) = (char)(int)(fVar11 * _UNK_?);
+      pIVar10 = (IndexOutOfRangeException *)
+                ((int)&((IndexOutOfRangeException *)IStack_4.m_value)->klass + 1);
+    } while ((int)pIVar10 < 4);
+    pSVar12 = (String *)0x0;
+    do {
+      pSVar13 = (unaff_EDI->fields)._._._message;
+      uVar5 = pSVar12 == pSVar13;
+      if (pSVar13 <= pSVar12) goto code_?;
+      if (pBVar1 == (Byte__Array *)0x0) goto code_?;
+      uVar5 = &pSVar12->klass + uVar2 == (String__Class **)pBVar1->max_length;
+      if ((undefined1 *)pBVar1->max_length <= &pSVar12->klass + uVar2) goto code_?;
+      *(uint8_t *)((int)&pSVar12->klass + (int)(pBVar1->vector + uVar2 * 4)) =
+           *(uint8_t *)((int)&(unaff_EDI->fields)._._._data + (int)pSVar12);
+      pSVar12 = (String *)((int)&pSVar12->klass + 1);
+    } while ((int)pSVar12 < 4);
+    uVar2 = uVar2 + 1;
+    pCVar3 = (Color__Array *)pCVar3->vector;
+  }
+code_?:
+  while( true ) {
+    uVar14 = func_?();
+    if (!(bool)uVar5) {
+      func_?();
+      do {
+                    /* WARNING: Do nothing block with infinite loop */
+      } while( true );
+    }
+    bVar15 = (byte)((ulonglong)uVar14 >> 0x20) & *(byte *)uVar14;
+    if (-1 < (char)bVar15) break;
+code_?:
+    pSVar12 = (String *)func_?();
     pBVar1 = (Byte__Array *)
-             mscorlib.dll::System::String::String_Concat_4(str0,pSVar4,str2,(MethodInfo *)0x0);
+             mscorlib.dll::System::String::String_Concat_4
+                       (pSVar12,(String *)unaff_EDI,(String *)pBVar1,(MethodInfo *)0x0);
     func_?();
     unaff_EDI = (IndexOutOfRangeException *)func_?();
-    puStackY_44 = &UNK_?;
     mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
               (unaff_EDI,(String *)pBVar1,(MethodInfo *)0x0);
     func_?();
-    IStack_5.m_value = (int32_t)unaff_EDI;
+    uVar5 = &stack0x00000000 == (undefined1 *)0x0;
+    IStack_4.m_value = (int32_t)unaff_EDI;
     func_?();
   }
-  else {
-    while( true ) {
-      if ((int)colors->max_length <= (int)uVar2) {
-        return pBVar1;
-      }
-      if (colors->max_length <= uVar2) break;
-      fVar6 = pCVar3->vector[0].r;
-      fVar7 = pCVar3->vector[0].g;
-      fVar8 = pCVar3->vector[0].b;
-      fVar9 = pCVar3->vector[0].a;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      unaff_EDI = (IndexOutOfRangeException *)func_?();
-      pIVar10 = (IndexOutOfRangeException *)0x0;
-      do {
-        IStack_5.m_value = (int32_t)pIVar10;
-        switch(IStack_5.m_value) {
-        case 0:
-          fVar11 = fVar6;
-          break;
-        case 1:
-          fVar11 = fVar7;
-          break;
-        case 2:
-          fVar11 = fVar8;
-          break;
-        case 3:
-          fVar11 = fVar9;
-          break;
-        default:
-          goto code_?;
-        }
-        if (unaff_EDI == (IndexOutOfRangeException *)0x0) goto code_?;
-        if ((IndexOutOfRangeException *)(unaff_EDI->fields)._._._message <= (uint)IStack_5.m_value)
-        goto code_?;
-        *(char *)((int)&(((IndexOutOfRangeException *)IStack_5.m_value)->fields)._._._className +
-                 (int)&(unaff_EDI->fields)._._._className) = (char)(int)(fVar11 * _UNK_?);
-        pIVar10 = (IndexOutOfRangeException *)
-                  ((int)&((IndexOutOfRangeException *)IStack_5.m_value)->klass + 1);
-      } while ((int)pIVar10 < 4);
-      pSVar4 = (String *)0x0;
-      do {
-        if ((unaff_EDI->fields)._._._message <= pSVar4) goto code_?;
-        if (pBVar1 == (Byte__Array *)0x0) goto code_?;
-        if ((undefined1 *)pBVar1->max_length <= &pSVar4->klass + uVar2) goto code_?;
-        *(uint8_t *)((int)&pSVar4->klass + (int)(pBVar1->vector + uVar2 * 4)) =
-             *(uint8_t *)((int)&(unaff_EDI->fields)._._._data + (int)pSVar4);
-        pSVar4 = (String *)((int)&pSVar4->klass + 1);
-      } while ((int)pSVar4 < 4);
-      uVar2 = uVar2 + 1;
-      pCVar3 = (Color__Array *)pCVar3->vector;
-    }
-  }
-code_?:
-  func_?();
-  pSVar4 = unaff_EDI[-0x13c4e00].fields._._._remoteStackTraceString;
-  *(undefined1 **)(&stack0xffffffd8 + (int)pSVar4) = &stack0xfffffffc;
-  *(undefined4 *)(&stack0xffffffd4 + (int)pSVar4) = 0xffffffff;
-  *(undefined **)(&stack0xffffffd0 + (int)pSVar4) = &DAT_?;
-  *(undefined4 *)(&stack0xffffffcc + (int)pSVar4) = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xffffffcc + (int)pSVar4;
-  *(uint *)(&stack0x00000000 + (int)&pSVar4[-5].klass) = uVar2;
-  *(undefined1 **)((int)&pSVar4->monitor + (int)aiStackY_58) =
-       (undefined1 *)((int)&pBVar1->klass + 2);
-  puVar12 = (undefined1 *)((int)aiStackY_58 + (int)pSVar4);
-  *(undefined1 **)((int)aiStackY_58 + (int)pSVar4) = (undefined1 *)((int)&unaff_EDI->klass + 2);
-  *(int *)(&stack0xffffffc8 + (int)pSVar4) = (int)aiStackY_58 + (int)pSVar4;
+  in((short)CONCAT31((int3)((ulonglong)uVar14 >> 0x28),bVar15 & *(byte *)uVar14));
+  *unaff_FS_OFFSET = (float)&stack0xffffffc8;
   if (cRam_? == '\0') {
-    *(Convert__Class ***)((int)&pSVar4->monitor + (int)auStackY_60) = &TypeInfo__System__Convert;
-    puVar13 = (undefined1 *)((int)auStackY_60 + (int)pSVar4);
-    *(undefined **)((int)auStackY_60 + (int)pSVar4) = &UNK_?;
-    func_?();
-    *(IDisposable__Class ***)(puVar13 + -4) = &TypeInfo__System__IDisposable;
-    puVar14 = puVar13 + -8;
-    *(undefined **)(puVar13 + -8) = &UNK_?;
-    func_?();
-    *(SHA1CryptoServiceProvider__Class ***)(puVar14 + -4) =
-         &TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider;
-    puVar15 = puVar14 + -8;
-    *(undefined **)(puVar14 + -8) = &UNK_?;
-    func_?();
-    *(Texture2D__Class ***)(puVar15 + -4) = &TypeInfo__UnityEngine__Texture2D;
-    puVar16 = puVar15 + -8;
-    *(undefined **)(puVar15 + -8) = &UNK_?;
-    func_?();
-    puVar12 = puVar16 + 0x10;
+    func_?(&TypeInfo__System__Convert);
+    func_?(&TypeInfo__System__IDisposable);
+    func_?(&TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider);
+    func_?(&TypeInfo__UnityEngine__Texture2D);
     cRam_? = '\x01';
   }
-  piVar17 = *(int **)(&stack0xffffffe0 + (int)pSVar4);
-  *(undefined4 *)(&stack0xffffffc0 + (int)pSVar4) = 0;
-  if (piVar17 != (int *)0x0) {
-    piVar18 = (int *)0x0;
-    if ((Texture2D__Class *)*piVar17 == TypeInfo__UnityEngine__Texture2D) {
-      piVar18 = piVar17;
+  if (colors != (Color__Array *)0x0) {
+    pCVar3 = (Color__Array *)0x0;
+    if ((Texture2D__Class *)colors->klass == TypeInfo__UnityEngine__Texture2D) {
+      pCVar3 = colors;
     }
-    if (piVar18 == (int *)0x0) {
-      *(Texture2D__Class **)(puVar12 + -4) = TypeInfo__UnityEngine__Texture2D;
-      *(int **)(puVar12 + -8) = piVar17;
-      puVar19 = (undefined4 *)(puVar12 + -0xc);
-      puVar12 = puVar12 + -0xc;
-      *puVar19 = &UNK_?;
-      func_?();
+    if (pCVar3 == (Color__Array *)0x0) {
+      func_?(colors,TypeInfo__UnityEngine__Texture2D);
     }
     else {
-      *(undefined4 *)(puVar12 + -4) = 0;
-      *(undefined4 *)(puVar12 + -8) = 10;
-      pTVar20 = (Texture2D__Class *)*piVar17;
-      *(undefined4 *)(puVar12 + -0xc) = 10;
-      *(undefined4 *)(puVar12 + -0x10) = 0;
-      piVar18 = (int *)0x0;
-      if (pTVar20 == TypeInfo__UnityEngine__Texture2D) {
-        piVar18 = piVar17;
+      pCVar3 = (Color__Array *)0x0;
+      if ((Texture2D__Class *)colors->klass == TypeInfo__UnityEngine__Texture2D) {
+        pCVar3 = colors;
       }
-      *(undefined4 *)(puVar12 + -0x14) = 0;
-      *(int **)(puVar12 + -0x18) = piVar18;
-      *(undefined **)(puVar12 + -0x1c) = &UNK_?;
       pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels_1
-                          (*(Texture2D **)(puVar12 + -0x18),*(int32_t *)(puVar12 + -0x14),
-                           *(int32_t *)(puVar12 + -0x10),*(int32_t *)(puVar12 + -0xc),
-                           *(int32_t *)(puVar12 + -8),*(MethodInfo **)(puVar12 + -4));
-      *(undefined4 *)(puVar12 + -4) = 0;
-      *(undefined4 *)(puVar12 + -8) = 10;
-      *(Color__Array **)(puVar12 + -0xc) = pCVar3;
-      *(undefined **)(puVar12 + -0x10) = &UNK_?;
-      pBVar1 = TextureHash_ColorsToByteArray
-                         (*(Color__Array **)(puVar12 + -0xc),*(int32_t *)(puVar12 + -8),
-                          *(MethodInfo **)(puVar12 + -4));
-      *(SHA1CryptoServiceProvider__Class **)(puVar12 + -4) =
-           TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider;
-      puVar21 = puVar12 + -8;
-      *(undefined **)(puVar12 + -8) = &UNK_?;
-      iVar22 = func_?();
-      *(undefined4 *)(puVar21 + -4) = 0;
-      *(int *)(puVar21 + -8) = iVar22;
-      *(undefined **)(puVar21 + -0xc) = &UNK_?;
+                         ((Texture2D *)pCVar3,0,0,10,10,(MethodInfo *)0x0);
+      pBVar1 = TextureHash_ColorsToByteArray(pCVar3,10,(MethodInfo *)0x0);
+      this = (SHA1CryptoServiceProvider *)
+             func_?(TypeInfo__System__Security__Cryptography__SHA1CryptoServiceProvider);
       mscorlib.dll::System::Security::Cryptography::SHA1CryptoServiceProvider::
-      SHA1CryptoServiceProvider__ctor
-                (*(SHA1CryptoServiceProvider **)(puVar21 + -8),*(MethodInfo **)(puVar21 + -4));
-      *(int *)(&stack0xffffffc4 + (int)pSVar4) = iVar22;
-      puVar12 = puVar21 + 0x30;
-      *(undefined4 *)((int)&(pSVar4->fields)._stringLength + (int)(aiStackY_58 + 1)) = 0;
-      *(undefined1 **)((int)&pSVar4[1].klass + (int)aiStackY_58) = &stack0xffffffc4 + (int)pSVar4;
-      *(undefined4 *)(&stack0xffffffd4 + (int)pSVar4) = 0;
-      (&stack0xffffffd4)[(int)pSVar4] = 1;
-      if (iVar22 != 0) {
-        *(undefined4 *)(puVar21 + 0x2c) = 0;
-        *(Byte__Array **)(puVar21 + 0x28) = pBVar1;
-        *(int *)(puVar21 + 0x24) = iVar22;
-        *(undefined **)(puVar21 + 0x20) = &UNK_?;
+      SHA1CryptoServiceProvider__ctor(this,(MethodInfo *)0x0);
+      IStack_4.m_value = 1;
+      if (this != (SHA1CryptoServiceProvider *)0x0) {
         pBVar1 = mscorlib.dll::System::Security::Cryptography::HashAlgorithm::
-                 HashAlgorithm_ComputeHash
-                           (*(HashAlgorithm **)(puVar21 + 0x24),*(Byte__Array **)(puVar21 + 0x28),
-                            *(MethodInfo **)(puVar21 + 0x2c));
-        puVar23 = (undefined4 *)(puVar21 + 0x3c);
+                 HashAlgorithm_ComputeHash((HashAlgorithm *)this,pBVar1,(MethodInfo *)0x0);
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          *(Convert__Class **)(puVar21 + 0x38) = TypeInfo__System__Convert;
-          puVar24 = puVar21 + 0x34;
-          *(undefined **)(puVar21 + 0x34) = &UNK_?;
           func_?();
-          puVar23 = (undefined4 *)(puVar24 + 4);
         }
-        puVar23[-1] = 0;
-        puVar23[-2] = pBVar1;
-        puVar23[-3] = &UNK_?;
         pBVar1 = (Byte__Array *)
-                 mscorlib.dll::System::Convert::Convert_ToBase64String
-                           ((Byte__Array *)puVar23[-2],(MethodInfo *)puVar23[-1]);
-        *(undefined4 *)(&stack0xffffffd4 + (int)pSVar4) = 0xffffffff;
-        *(Byte__Array **)(&stack0xffffffc0 + (int)pSVar4) = pBVar1;
-        if (*(int *)(&stack0xffffffc4 + (int)pSVar4) == 0) {
-          *unaff_FS_OFFSET = *(undefined4 *)(&stack0xffffffcc + (int)pSVar4);
+                 mscorlib.dll::System::Convert::Convert_ToBase64String(pBVar1,(MethodInfo *)0x0);
+        IStack_4.m_value = -1;
+        if (this == (SHA1CryptoServiceProvider *)0x0) {
+          *unaff_FS_OFFSET = fStack_8;
           return pBVar1;
         }
-        puVar23[1] = *(int *)(&stack0xffffffc4 + (int)pSVar4);
-        *puVar23 = TypeInfo__System__IDisposable;
-        puVar23[-1] = 0;
-        puVar23[-2] = &UNK_?;
         func_?();
-        *unaff_FS_OFFSET = *(undefined4 *)(&stack0xffffffcc + (int)pSVar4);
+        *unaff_FS_OFFSET = fStack_8;
         return pBVar1;
       }
     }
   }
-  puVar25 = puVar12 + -4;
-  *(undefined **)(puVar12 + -4) = &UNK_?;
-  uVar26 = func_?();
-  *(undefined4 *)(puVar25 + -4) = uVar26;
-  *(undefined **)(puVar25 + -8) = &UNK_?;
-  func_?();
-  pcVar27 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar27)();
+  uVar16 = func_?();
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  pBVar1 = (Byte__Array *)(*pcVar17)();
   return pBVar1;
 }
 

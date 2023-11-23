@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryC
       if (cVar1 != '\0') {
         cVar1 = func_?(method_1);
         puVar3 = &UNK_?;
-        if (cVar1 != '\0') {
+        if (cVar1 == '\0') {
           puVar3 = &UNK_?;
         }
         (this->fields)._._.invoke_impl = puVar3;

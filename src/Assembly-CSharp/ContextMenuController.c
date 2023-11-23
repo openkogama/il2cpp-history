@@ -78,16 +78,24 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddMenuBu
           bVar2 = MVWorldObjectClient::MVWorldObjectClient_HasEliteRequiredFlag
                             (pMVar1,flag,(MethodInfo *)buttonText);
           if (bVar2 == 0) {
-            bVar7 = false;
+            bVar7 = 0;
             ppOVar8 = (Object_1__Class **)buttonText;
           }
           else {
             bVar2 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-            bVar7 = bVar2 == 0;
+            bVar7 = bVar2 ^ 1;
             ppOVar8 = (Object_1__Class **)buttonText;
           }
           this_00 = (this->fields).currentContextMenu;
-          if ((bool)(bVar5 & bVar7)) {
+          if ((bVar5 & bVar7) == 0) {
+            pSVar9 = TM::TM__((String *)onClickCallback,(MethodInfo *)0x0);
+            if (this_00 != (ContextMenu *)0x0) {
+              ContextMenu::ContextMenu_AddButton
+                        (this_00,pSVar9,(UnityAction *)canHaveButtonCheck,(MethodInfo *)0x0);
+              return;
+            }
+          }
+          else {
             pSVar9 = TM::TM__((String *)onClickCallback,(MethodInfo *)0x0);
             if (this_00 != (ContextMenu *)0x0) {
               if (cRam_? == '\0') {
@@ -123,14 +131,6 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddMenuBu
                   return;
                 }
               }
-            }
-          }
-          else {
-            pSVar9 = TM::TM__((String *)onClickCallback,(MethodInfo *)0x0);
-            if (this_00 != (ContextMenu *)0x0) {
-              ContextMenu::ContextMenu_AddButton
-                        (this_00,pSVar9,(UnityAction *)canHaveButtonCheck,(MethodInfo *)0x0);
-              return;
             }
           }
         }
@@ -870,6 +870,8 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterPlay
   if (pMVar1 == (MVWorldObjectClientManager *)0x0) {
 code_?:
     func_?();
+code_?:
+    func_?();
   }
   else {
     this_00 = (MVAvatarSpawnRoleCreator *)
@@ -880,106 +882,112 @@ code_?:
     pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (pMVar1,(this->fields).woID,(MethodInfo *)0x0);
     if (((pMVar2 == (MVWorldObject *)0x0) ||
-        ((pMVar2->klass->_1).naturalAligment <
-         (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment)) ||
-       ((MVAvatarSpawnRoleCreator__Class *)
-        (pMVar2->klass->_1).typeHierarchy
-        [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar3 == (MVLocalPlayer *)0x0) goto code_?;
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar3->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    uVar4 = pMVar3[1].klass;
-    iVar5 = pMVar3[1].fields._.checkpointWOID;
-    uVar6 = CONCAT44((this->fields).woID,uVar4);
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar3 == (MVLocalPlayer *)0x0) goto code_?;
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar3->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    pMVar3[1].klass = (MVLocalPlayer__Class *)(int)uVar6;
-    pMVar3[1].monitor = (MonitorData *)(int)((ulonglong)uVar6 >> 0x20);
-    pMVar3[1].fields._.checkpointWOID = iVar5;
-    if (this_00 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
-    if (((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
-         (this_00->klass->_1).naturalAligment) &&
-       ((MVAvatarSpawnRoleCreator__Class *)
-        (this_00->klass->_1).typeHierarchy
-        [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] ==
-        TypeInfo__MVAvatarSpawnRoleCreator)) {
-      this = (ContextMenuController *)0x0;
-      GVar7 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
-                         (this_00,(MethodInfo *)0x0);
-      GStack_8 = CONCAT31((int3)((uint)iVar5 >> 8),(byte)GVar7);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pPVar9 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if (pPVar9 != (PlayerPlanetData *)0x0) {
-        if ((pPVar9->fields).gamePassTier < (byte)GVar7) {
-          this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-          if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-          this = (ContextMenuController *)&UNK_?;
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTier
-                    (this_01,GStack_8,(MethodInfo *)0x0);
+        (unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)pMVar2->klass,
+        (unaff_ESI->_1).naturalAligment < (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment))
+       || ((MVAvatarSpawnRoleCreator__Class *)
+           (unaff_ESI->_1).typeHierarchy
+           [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
+           TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
+    unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)
+                MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if (unaff_ESI == (MVAvatarSpawnRoleCreator__Class *)0x0) goto code_?;
+    pIVar3 = (unaff_ESI->_0).image;
+    if ((*(byte *)&pIVar3[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
+       (*(MVLocalPlayerBuilder__Class **)
+         ((pIVar3[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
+         ) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    uVar4 = (unaff_ESI->_1).flags;
+    uVar5 = (unaff_ESI->_1).thread_static_fields_size;
+    uVar6 = CONCAT44((this->fields).woID,uVar5);
+    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)TypeInfo__MVLocalPlayerBuilder;
+    if (pMVar7 == (MVLocalPlayer *)0x0) goto code_?;
+    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <=
+         (pMVar7->klass->_1).naturalAligment) &&
+       ((pMVar7->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1]
+        == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+      pMVar7[1].klass = (MVLocalPlayer__Class *)(int)uVar6;
+      pMVar7[1].monitor = (MonitorData *)(int)((ulonglong)uVar6 >> 0x20);
+      pMVar7[1].fields._.checkpointWOID = uVar4;
+      if (this_00 == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
+      unaff_ESI = this_00->klass;
+      if (((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
+           (unaff_ESI->_1).naturalAligment) &&
+         ((MVAvatarSpawnRoleCreator__Class *)
+          (unaff_ESI->_1).typeHierarchy
+          [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] ==
+          TypeInfo__MVAvatarSpawnRoleCreator)) {
+        this = (ContextMenuController *)0x0;
+        GVar8 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
+                           (this_00,(MethodInfo *)0x0);
+        GStack_9 = CONCAT31((int3)(uVar4 >> 8),(byte)GVar8);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
         }
-code_?:
-        pGVar10 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0)
-        ;
-        if (((pGVar10 != (GameEventManager *)0x0) &&
-            (pGVar11 = (pGVar10->fields).GameState,
-            pGVar11 != (GameEventManager_GameStateManager *)0x0)) &&
-           (pAVar12 = (pGVar11->fields).OnDisableLobbyState, pAVar12 != (Action *)0x0)) {
-          (*(pAVar12->fields)._._.invoke_impl)();
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        pPVar10 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+        if (pPVar10 != (PlayerPlanetData *)0x0) {
+          if ((pPVar10->fields).gamePassTier < (byte)GVar8) {
+            this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                ((MethodInfo *)0x0);
+            if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+            this = (ContextMenuController *)&UNK_?;
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetTier
+                      (this_01,GStack_9,(MethodInfo *)0x0);
           }
-          callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__36_0;
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IEditModeController_ *)0x0) {
+code_?:
+          pGVar11 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                              ((MethodInfo *)0x0);
+          if (((pGVar11 != (GameEventManager *)0x0) &&
+              (pGVar12 = (pGVar11->fields).GameState,
+              pGVar12 != (GameEventManager_GameStateManager *)0x0)) &&
+             (pAVar13 = (pGVar12->fields).OnDisableLobbyState, pAVar13 != (Action *)0x0)) {
+            (*(pAVar13->fields)._._.invoke_impl)();
+            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            object = TypeInfo__ContextMenuController____c->static_fields->__9;
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_IEditModeController_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)object,
-                       MethodInfo__ContextMenuController____c___EnterPlay_b__36_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            TypeInfo__ContextMenuController____c->static_fields->__9__36_0 = callbackFunction;
-            func_?();
+            callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__36_0;
+            if (callbackFunction == (ExecuteEvents_EventFunction_1_IEditModeController_ *)0x0) {
+              if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              object = TypeInfo__ContextMenuController____c->static_fields->__9;
+              callbackFunction =
+                   (ExecuteEvents_EventFunction_1_IEditModeController_ *)func_?();
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+              Object]::UnityAction_2_System_Object_System_Object___ctor
+                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                         (Object *)object,
+                         MethodInfo__ContextMenuController____c___EnterPlay_b__36_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              TypeInfo__ContextMenuController____c->static_fields->__9__36_0 = callbackFunction;
+              func_?();
+            }
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (root,(BaseEventData *)0x0,
+                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IEditModeController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>_
+                      );
+            return;
           }
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IEditModeController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>_
-                    );
-          return;
         }
+        goto code_?;
       }
       goto code_?;
     }
   }
   func_?();
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?(unaff_ESI);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

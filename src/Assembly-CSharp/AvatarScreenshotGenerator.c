@@ -18,7 +18,7 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator_G
                     UnityEngine__ParticleSystem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::ParticleSystem>______
                    );
     func_?(&TypeInfo__UnityEngine__GameObject);
-    func_?(&StringLiteral_Preview);
+    func_?(&::StringLiteral_Preview);
     func_?(&StringLiteral_AvatarScreenShotGenerator);
     cRam_? = '\x01';
   }
@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator_G
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (bodyCloneGO,(MethodInfo *)0x0);
         layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                          (StringLiteral_Preview,(MethodInfo *)0x0);
+                          (::StringLiteral_Preview,(MethodInfo *)0x0);
         LayerUtil::LayerUtil_SetLayerRecursively(pTVar1,layer,(MethodInfo *)0x0);
         if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
           func_?();

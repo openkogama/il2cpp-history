@@ -114,24 +114,24 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_OnSettingChan
 {
   pSVar1 = (this->fields).sliderR;
   if (pSVar1 != (SettingsSlider *)0x0) {
-    fVar2 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).sliderG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-      pSVar1 = (this->fields).sliderB;
-      if (pSVar1 != (SettingsSlider *)0x0) {
-        fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        pRVar5 = (this->fields).previewImage;
-        if (pRVar5 != (RawImage *)0x0) {
-          uVar6 = 0x3f800000;
-          (*(code *)(pRVar5->klass->vtable).set_color.method)
-                    (pRVar5,fVar2,fVar3,fVar4,0x3f800000,
-                     (pRVar5->klass->vtable).get_raycastTarget.methodPtr);
-          pAVar7 = (this->fields).onChange;
-          if (pAVar7 != (Action_1_UnityEngine_Color_ *)0x0) {
-            (*(pAVar7->fields)._._.invoke_impl)
-                      ((pAVar7->fields)._._.method_code,fVar2,fVar3,fVar4,uVar6,
-                       (pAVar7->fields)._._.method);
+      pSVar1 = (SettingsSlider *)SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      if ((this->fields).sliderB != (SettingsSlider *)0x0) {
+        puVar2 = &UNK_?;
+        fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        pRVar4 = (this->fields).previewImage;
+        if (pRVar4 != (RawImage *)0x0) {
+          uVar5 = 0x3f800000;
+          (*(code *)(pRVar4->klass->vtable).set_color.method)
+                    (pRVar4,puVar2,pSVar1,fVar3,0x3f800000,
+                     (pRVar4->klass->vtable).get_raycastTarget.methodPtr);
+          pAVar6 = (this->fields).onChange;
+          if (pAVar6 != (Action_1_UnityEngine_Color_ *)0x0) {
+            (*(pAVar6->fields)._._.invoke_impl)
+                      ((pAVar6->fields)._._.method_code,puVar2,pSVar1,fVar3,uVar5,
+                       (pAVar6->fields)._._.method);
             return;
           }
         }
@@ -139,8 +139,8 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_OnSettingChan
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

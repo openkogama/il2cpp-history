@@ -94,27 +94,21 @@ void Assembly-CSharp.dll::NotificationAreaQueue::NotificationAreaQueue_CreateNot
       if (pTVar2 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                   (pTVar2,(Transform *)(this->fields)._.contentHolderTransform,0,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-          (*(code *)(this_01->klass->vtable).Initialize.method)();
-          return;
-        }
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this_01,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
                     (pTVar2,(MethodInfo *)0x0);
+          pNStack3 = this_01;
+          (*(code *)(this_01->klass->vtable).Initialize.method)();
           return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -416,8 +410,8 @@ void Assembly-CSharp.dll::NotificationAreaQueue::NotificationAreaQueue__ctor
             );
   (this->fields).enqueuedNotifications = this_00;
   func_?(&(this->fields).enqueuedNotifications,this_00);
-  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

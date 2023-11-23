@@ -271,10 +271,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar24 * fVar3 + fVar22 * 3.226741e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.226741e-29 + fVar4 * fVar22) - fVar23 * fVar3;
-        value_00.z = (fVar24 * fVar4 + fVar23 * 3.226741e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.226741e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar4 * fVar23
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.227858e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.227858e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.227858e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.227858e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4
         ;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);
@@ -322,10 +322,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation
     }
     pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar6 != (IPlayModeUI *)0x0) {
-      cVar7 = func_?(3,TypeInfo__IPlayModeUI,pIVar6);
-      (pVVar1->fields)._.autoRotate = cVar7 == '\0';
+      bVar7 = func_?(3,TypeInfo__IPlayModeUI,pIVar6);
+      (pVVar1->fields)._.autoRotate = bVar7 ^ 1;
       fVar8 = fStack_5;
-      if ((cVar7 == '\0') && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {
+      if (((bVar7 ^ 1) != 0) && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {
         fStack_9 = (pVVar1->fields).rotationAroundY;
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);

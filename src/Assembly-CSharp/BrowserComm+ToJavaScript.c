@@ -191,8 +191,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  puStack_4 = (undefined *)TypeInfo__BrowserComm__ToJavaScript->static_fields->callbackIdCounter;
-  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&puStack_4);
+  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
   if (this_00 ==
       (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
      ) goto code_?;
@@ -233,16 +232,16 @@ code_?:
     }
   }
   else {
-    iVar5 = func_?(pSVar2,(args->klass->_0).element_class);
-    if (iVar5 != 0) goto code_?;
-    uVar6 = func_?(0);
-    func_?(uVar6);
+    iVar4 = func_?(pSVar2,(args->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
+    uVar5 = func_?(0);
+    func_?(uVar5);
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

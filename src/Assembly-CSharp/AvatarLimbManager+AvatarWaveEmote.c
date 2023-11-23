@@ -31,10 +31,10 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarWaveEmote::
     fVar7 = pQVar2->z;
     fVar8 = pQVar2->w;
     if (armController == (LimbController *)0x0) goto code_?;
-    if ((armController->fields).interpolateTowardsPitchRotation.y * pQVar2->y +
-        (armController->fields).interpolateTowardsPitchRotation.x * pQVar2->x +
-        (armController->fields).interpolateTowardsPitchRotation.z * fVar7 +
-        (armController->fields).interpolateTowardsPitchRotation.w * fVar8 <= _UNK_?) {
+    if (pQVar2->y * (armController->fields).interpolateTowardsPitchRotation.y +
+        pQVar2->x * (armController->fields).interpolateTowardsPitchRotation.x +
+        fVar7 * (armController->fields).interpolateTowardsPitchRotation.z +
+        fVar8 * (armController->fields).interpolateTowardsPitchRotation.w <= _UNK_?) {
       fVar9 = 0.0;
       pLVar10 = armController;
       LimbController::LimbController_ResetInterpolation(armController,(MethodInfo *)0x0);
@@ -75,10 +75,10 @@ code_?:
       (*pcVar15)();
       return;
     }
-    if ((armController->fields).interpolateTowardsPitchRotation.y * pQVar2->y +
-        (armController->fields).interpolateTowardsPitchRotation.x * pQVar2->x +
-        (armController->fields).interpolateTowardsPitchRotation.z * pQVar2->z +
-        (armController->fields).interpolateTowardsPitchRotation.w * pQVar2->w <= _UNK_?) {
+    if (pQVar2->x * (armController->fields).interpolateTowardsPitchRotation.x +
+        pQVar2->y * (armController->fields).interpolateTowardsPitchRotation.y +
+        pQVar2->z * (armController->fields).interpolateTowardsPitchRotation.z +
+        pQVar2->w * (armController->fields).interpolateTowardsPitchRotation.w <= _UNK_?) {
       LimbController::LimbController_ResetInterpolation(armController,(MethodInfo *)0x0);
       yawRotation.w = 0.0;
       LimbController::LimbController_SetNewRotation
@@ -178,10 +178,10 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarWaveEmote::
                      ((Quaternion *)&stack0xffffffec,(Vector3)ZEXT812(0),(MethodInfo *)0x0);
   fVar2 = pQVar1->x;
   if (armController != (LimbController *)0x0) {
-    if ((armController->fields).interpolateTowardsPitchRotation.y * pQVar1->y +
-        (armController->fields).interpolateTowardsPitchRotation.x * fVar2 +
-        (armController->fields).interpolateTowardsPitchRotation.z * pQVar1->z +
-        (armController->fields).interpolateTowardsPitchRotation.w * pQVar1->w <= _UNK_?) {
+    if (pQVar1->y * (armController->fields).interpolateTowardsPitchRotation.y +
+        fVar2 * (armController->fields).interpolateTowardsPitchRotation.x +
+        pQVar1->z * (armController->fields).interpolateTowardsPitchRotation.z +
+        pQVar1->w * (armController->fields).interpolateTowardsPitchRotation.w <= _UNK_?) {
       fVar3 = 0.0;
       puVar4 = &UNK_?;
       pLVar5 = armController;
@@ -221,10 +221,10 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarWaveEmote::
                      ((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
   fVar2 = pQVar1->x;
   if (armController != (LimbController *)0x0) {
-    if ((armController->fields).interpolateTowardsPitchRotation.y * pQVar1->y +
-        (armController->fields).interpolateTowardsPitchRotation.x * fVar2 +
-        (armController->fields).interpolateTowardsPitchRotation.z * pQVar1->z +
-        (armController->fields).interpolateTowardsPitchRotation.w * pQVar1->w <= _UNK_?) {
+    if (pQVar1->y * (armController->fields).interpolateTowardsPitchRotation.y +
+        fVar2 * (armController->fields).interpolateTowardsPitchRotation.x +
+        pQVar1->z * (armController->fields).interpolateTowardsPitchRotation.z +
+        pQVar1->w * (armController->fields).interpolateTowardsPitchRotation.w <= _UNK_?) {
       fVar3 = 0.0;
       puVar4 = &UNK_?;
       pLVar5 = armController;

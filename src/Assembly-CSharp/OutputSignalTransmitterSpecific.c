@@ -44,15 +44,9 @@ void Assembly-CSharp.dll::OutputSignalTransmitterSpecific::OutputSignalTransmitt
                            (pMVar1,*(int32_t *)((int)RVar6 + 0x10),(MethodInfo *)0x0);
         if (pMVar2 == (MVWorldObject *)0x0) break;
         iVar7 = func_?();
-        if (iVar7 == 0) {
-code_?:
+        if ((iVar7 == 0) || (piVar8 = (int *)func_?(), piVar8 == (int *)0x0)) {
           func_?();
           break;
-        }
-        piVar8 = (int *)func_?();
-        if (piVar8 == (int *)0x0) {
-          func_?();
-          goto code_?;
         }
         uVar9 = 0;
         uVar10 = *(ushort *)(*piVar8 + 0xb6);

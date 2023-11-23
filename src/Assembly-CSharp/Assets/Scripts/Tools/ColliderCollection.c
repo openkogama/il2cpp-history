@@ -12,10 +12,10 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::ColliderCo
                    );
     cRam_? = '\x01';
   }
+  pCVar1 = TypeInfo__UnityEngine__Collider;
   method_00 = 
   MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__CopyTo_UnityEngine__Collider_____int_
   ;
-  pCVar1 = TypeInfo__UnityEngine__Collider;
   this_00 = (this->fields).colliders;
   if (this_00 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
     if (array == (Array *)0x0) {

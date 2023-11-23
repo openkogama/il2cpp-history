@@ -14,16 +14,16 @@ Assembly-CSharp.dll::ESWalkMode::ESWalkMode_CalculateEnterPlayFromEditState
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  pMVar2 = TypeInfo__MVLocalPlayerBuilder;
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    pMVar2 = TypeInfo__MVLocalPlayerBuilder;
     if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
        || ((pMVar1->klass->_1).typeHierarchy
            [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
            (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
     team = pMVar1[1].klass;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    pMVar2 = TypeInfo__MVLocalPlayerBuilder;
     if (pMVar1 != (MVLocalPlayer *)0x0) {
-      pMVar2 = TypeInfo__MVLocalPlayerBuilder;
       if (((pMVar1->klass->_1).naturalAligment <
            (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
          ((pMVar1->klass->_1).typeHierarchy
@@ -42,13 +42,13 @@ Assembly-CSharp.dll::ESWalkMode::ESWalkMode_CalculateEnterPlayFromEditState
           pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar3 != (MVNetworkGame *)0x0) &&
              (pMVar7 = (pMVar3->fields).teamManager, pMVar7 != (MVTeamManager *)0x0)) {
-            pMVar1 = (MVLocalPlayer *)
-                     MVTeamManager::MVTeamManager_TeamCount(pMVar7,(MethodInfo *)0x0);
+            pMVar2 = (MVLocalPlayerBuilder__Class *)
+                      MVTeamManager::MVTeamManager_TeamCount(pMVar7,(MethodInfo *)0x0);
             pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if ((pMVar3 != (MVNetworkGame *)0x0) &&
                (pMVar7 = (pMVar3->fields).teamManager, pMVar7 != (MVTeamManager *)0x0)) {
               bVar8 = MVTeamManager::MVTeamManager_HasTeam(pMVar7,team,(MethodInfo *)0x0);
-              cVar9 = bVar8 == 0 && 1 < (int)pMVar1;
+              cVar9 = bVar8 == 0 && 1 < (int)pMVar2;
               pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar3 != (MVNetworkGame *)0x0) &&
                  (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
@@ -78,21 +78,21 @@ code_?:
                   }
                   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
                                      ((MethodInfo *)0x0);
+                  pMVar2 = TypeInfo__MVLocalPlayerBuilder;
                   if (pMVar1 != (MVLocalPlayer *)0x0) {
-                    pMVar2 = TypeInfo__MVLocalPlayerBuilder;
                     if (((pMVar1->klass->_1).naturalAligment <
                          (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
                        ((pMVar1->klass->_1).typeHierarchy
                         [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
                         (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-                    pMVar1 = (MVLocalPlayer *)pMVar1[1].fields._.checkpointWOID;
-                    pMVar14 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
-                                        ((MethodInfo *)0x0);
-                    if (pMVar14 != (MVLocalPlayer *)0x0) {
-                      pMVar14 = (MVLocalPlayer *)
+                    pMVar2 = (MVLocalPlayerBuilder__Class *)pMVar1[1].fields._.checkpointWOID;
+                    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
+                                       ((MethodInfo *)0x0);
+                    if (pMVar1 != (MVLocalPlayer *)0x0) {
+                      pMVar14 = (MVLocalPlayerBuilder__Class *)
                                 MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId
-                                          (pMVar14,(MethodInfo *)0x0);
-                      if (pMVar1 != pMVar14) {
+                                          (pMVar1,(MethodInfo *)0x0);
+                      if (pMVar2 != pMVar14) {
                         return ESWalkMode_EnterPlayFromEditState__Enum_SelectTeamOrSpawnRole;
                       }
                       goto code_?;
@@ -107,7 +107,7 @@ code_?:
     }
   }
   func_?();
-  pMVar2 = extraout_EDX;
+  pMVar1 = extraout_EDX;
 code_?:
   func_?(pMVar1,pMVar2);
   pcVar15 = (code *)swi(3);
@@ -481,37 +481,41 @@ void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_OnNewSpawnRoleSelected
     func_?(&TypeInfo__MVLocalPlayerBuilder);
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (pMVar1 != (MVLocalPlayer *)0x0) {
-    pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    uVar3 = pMVar1[1].klass;
-    iVar4 = pMVar1[1].fields._.checkpointWOID;
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar1 != (MVLocalPlayer *)0x0) {
-      pMVar2 = TypeInfo__MVLocalPlayerBuilder;
-      if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <=
-           (pMVar1->klass->_1).naturalAligment) &&
-         ((pMVar1->klass->_1).typeHierarchy
-          [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] ==
-          (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
-        pMVar1[1].klass = (MVLocalPlayer__Class *)uVar3;
-        pMVar1[1].monitor = (MonitorData *)newSpawnRoleId;
-        pMVar1[1].fields._.checkpointWOID = iVar4;
-        return;
-      }
-      goto code_?;
+  pMVar1 = (MVLocalPlayerBuilder__Class *)
+           MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if (pMVar1 == (MVLocalPlayerBuilder__Class *)0x0) {
+code_?:
+    func_?();
+    pMVar2 = extraout_EDX;
+  }
+  else {
+    pIVar3 = (pMVar1->_0).image;
+    pMVar4 = TypeInfo__MVLocalPlayerBuilder;
+    if ((*(byte *)&pIVar3[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
+       (*(MVLocalPlayerBuilder__Class **)
+         ((pIVar3[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
+         ) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    uVar5 = (pMVar1->_1).thread_static_fields_size;
+    uVar6 = (pMVar1->_1).flags;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    pMVar1 = TypeInfo__MVLocalPlayerBuilder;
+    if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
+    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment
+        ) && ((pMVar2->klass->_1).typeHierarchy
+              [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] ==
+              (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+      pMVar2[1].klass = (MVLocalPlayer__Class *)uVar5;
+      pMVar2[1].monitor = (MonitorData *)newSpawnRoleId;
+      pMVar2[1].fields._.checkpointWOID = uVar6;
+      return;
     }
   }
-  func_?();
-  pMVar2 = extraout_EDX;
+  func_?(pMVar2,pMVar1);
+  pMVar4 = extraout_EDX_00;
 code_?:
-  func_?(pMVar1,pMVar2);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pMVar1,pMVar4);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -545,7 +549,6 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_ShouldSelectTeamOrSpawnRole
 
 {
   if (isSpawnRoleValid != 0) {
-code_?:
     return isTeamValid ^ 1;
   }
   if (cRam_? == '\0') {
@@ -565,17 +568,18 @@ code_?:
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
       if (pMVar1 != (MVLocalPlayer *)0x0) {
         iVar3 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
+        bVar4 = isTeamValid ^ 1;
         if (iVar2 != iVar3) {
-          return 1;
+          bVar4 = 1;
         }
-        goto code_?;
+        return bVar4;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 
 
@@ -600,22 +604,22 @@ bool Assembly-CSharp.dll::ESWalkMode::ESWalkMode_WasPlayingAsDefaultAvatar
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  pMVar2 = TypeInfo__MVLocalPlayerBuilder;
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    pMVar2 = TypeInfo__MVLocalPlayerBuilder;
     if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
        || ((pMVar1->klass->_1).typeHierarchy
            [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
            (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    pMVar1 = (MVLocalPlayer *)pMVar1[1].fields._.checkpointWOID;
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar3 != (MVLocalPlayer *)0x0) {
-      pMVar3 = (MVLocalPlayer *)
-               MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar3,(MethodInfo *)0x0);
-      return pMVar1 == pMVar3;
+    pMVar2 = (MVLocalPlayerBuilder__Class *)pMVar1[1].fields._.checkpointWOID;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if (pMVar1 != (MVLocalPlayer *)0x0) {
+      pMVar3 = (MVLocalPlayerBuilder__Class *)
+               MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
+      return pMVar2 == pMVar3;
     }
   }
   func_?();
-  pMVar2 = extraout_EDX;
+  pMVar1 = extraout_EDX;
 code_?:
   func_?(pMVar1,pMVar2);
   pcVar4 = (code *)swi(3);

@@ -75,9 +75,9 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyForceTo
                       fVar9 = pVVar3->z;
                       puVar13 = (undefined8 *)
                                 (*(code *)(this_00->klass->vtable).__unknown_1.method)();
-                      if ((float)*puVar13 * ((float)uVar11 - fVar5) +
-                          (float)((ulonglong)*puVar13 >> 0x20) * ((float)uVar12 - fStack_10) +
-                          *(float *)(puVar13 + 1) * (fVar9 - fVar6) <= 0.0) {
+                      if (((float)uVar12 - fStack_10) * (float)((ulonglong)*puVar13 >> 0x20) +
+                          ((float)uVar11 - fVar5) * (float)*puVar13 +
+                          (fVar9 - fVar6) * *(float *)(puVar13 + 1) <= 0.0) {
                         fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::
                                  Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
                         puVar13 = (undefined8 *)func_?();

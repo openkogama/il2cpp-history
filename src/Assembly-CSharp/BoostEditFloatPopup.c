@@ -85,34 +85,33 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_Initialize
                 (pTVar1,(boost->fields)._ValueDescription_k__BackingField,
                  (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if (boostSetting != (GameBoosterSettingWithGoldSetting *)0x0) {
-        this_00 = (KogamaSettingNumericBase_1_System_Single_ *)
-                  MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                  GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
-                  GameBoosterSettingWithGoldSetting_get_Setting(boostSetting,(MethodInfo *)0x0);
-        unaff_EDI = this_00;
-        if (this_00 != (KogamaSettingNumericBase_1_System_Single_ *)0x0) {
+        unaff_ESI = (KogamaSettingNumericBase_1_System_Single_ *)
+                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                    GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting
+                    ::GameBoosterSettingWithGoldSetting_get_Setting(boostSetting,(MethodInfo *)0x0);
+        if (unaff_ESI != (KogamaSettingNumericBase_1_System_Single_ *)0x0) {
           pKVar2 = 
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
           ;
-          if (((this_00->klass->_1).naturalAligment <
+          if (((unaff_ESI->klass->_1).naturalAligment <
                (
                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
                ->_1).naturalAligment) ||
-             ((this_00->klass->_1).typeHierarchy
+             ((unaff_ESI->klass->_1).typeHierarchy
               [(
                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
                ->_1).naturalAligment - 1] !=
               (Il2CppClass *)
               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
              )) goto code_?;
-          pKVar3 = (this_00->fields).KogamaSettingNumeric;
+          pKVar3 = (unaff_ESI->fields).KogamaSettingNumeric;
           if ((pKVar3 != (KogamaSettingNumeric_1_System_Single_ *)0x0) &&
              ((pRVar4 = (pKVar3->fields).RangeValidator,
               pRVar4 != (RangeValidator_1_System_Single_ *)0x0 &&
               (pSVar5 = (this->fields).boostSlider, pSVar5 != (Slider *)0x0)))) {
             UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
                       (pSVar5,(pRVar4->fields).max,(MethodInfo *)0x0);
-            pKVar3 = (this_00->fields).KogamaSettingNumeric;
+            pKVar3 = (unaff_ESI->fields).KogamaSettingNumeric;
             if ((pKVar3 != (KogamaSettingNumeric_1_System_Single_ *)0x0) &&
                ((pRVar4 = (pKVar3->fields).RangeValidator,
                 pRVar4 != (RangeValidator_1_System_Single_ *)0x0 &&
@@ -123,17 +122,16 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_Initialize
               fVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
                       KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                                (this_00,
+                                (unaff_ESI,
                                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
                                 );
-              unaff_EDI = (KogamaSettingNumericBase_1_System_Single_ *)0x0;
               if (pSVar5 != (Slider *)0x0) {
                 (*(code *)(pSVar5->klass->vtable).set_value.method)
                           (pSVar5,fVar6,(pSVar5->klass->vtable).SetValueWithoutNotify.methodPtr);
                 fVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
                         KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
                         KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                                  (this_00,
+                                  (unaff_ESI,
                                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
                                   );
                 (this->fields).originalSettingValue = fVar6;
@@ -151,7 +149,7 @@ void Assembly-CSharp.dll::BoostEditFloatPopup::BoostEditFloatPopup_Initialize
   func_?();
   pKVar2 = extraout_EDX;
 code_?:
-  func_?(unaff_EDI,pKVar2);
+  func_?(unaff_ESI,pKVar2);
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

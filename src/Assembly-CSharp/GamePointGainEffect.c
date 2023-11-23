@@ -64,8 +64,8 @@ void Assembly-CSharp.dll::GamePointGainEffect::GamePointGainEffect_Update
     fVar7 = (this->fields).offsetSpeed;
     fVar8 = (this->fields).offsetDirection.z;
     fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    value.y = fVar3 + fVar9 * (float)uVar6 * fVar7;
-    value.x = fVar2 + fVar9 * (float)uVar5 * fVar7;
+    value.y = fVar3 + (float)uVar6 * fVar7 * fVar9;
+    value.x = fVar2 + (float)uVar5 * fVar7 * fVar9;
     value.z = fVar4 + fVar8 * fVar7 * fVar9;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (this_00,value,(MethodInfo *)0x0);
@@ -118,29 +118,27 @@ void Assembly-CSharp.dll::GamePointGainEffect::GamePointGainEffect_UpdateTargetS
                (GamePointGainEffect *this,MethodInfo *method)
 
 {
-  this_00 = this;
   pTVar1 = (this->fields).targetTransform;
   if (pTVar1 != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)auStack_3,pTVar1,(MethodInfo *)0x0);
+                       (&VStack_3,pTVar1,(MethodInfo *)0x0);
     fVar4 = pVVar2->z;
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this_00,(MethodInfo *)0x0);
+                       ((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&uStack_5,pTVar1,(MethodInfo *)0x0);
-      uStack_5._0_4_ = pVVar2->x;
-      uStack_5._4_4_ = pVVar2->y;
-      fVar6 = pVVar2->z;
-      fVar7 = fStack_8 - (float)uStack_5;
-      fVar9 = fStack_10 - uStack_5._4_4_;
-      fVar11 = (float)auStack_3._0_4_ - fVar6;
-      this = (GamePointGainEffect *)0x0;
-      method = (MethodInfo *)0x0;
-      in_stack_12 = 0.0;
-      register0x00001200 = CONCAT44(fVar9,fVar7);
-      auStack_3._0_4_ = fVar11;
-      fStack_13 = fVar11;
+                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
+      auStack_5._0_4_ = pVVar2->x;
+      auStack_5._4_4_ = pVVar2->y;
+      fStack_6 = pVVar2->z;
+      fStack_7 = fStack_7 - (float)auStack_5._0_4_;
+      fStack_8 = fStack_8 - (float)auStack_5._4_4_;
+      VStack_3.z = fStack_9 - fStack_6;
+      in_stack_10 = 0;
+      uStack_11 = CONCAT44(fStack_8,fStack_7);
+      VStack_3.x = (float)auStack_5._0_4_;
+      VStack_3.y = (float)auStack_5._4_4_;
+      fStack_12 = VStack_3.z;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__Math);
         cRam_? = '\x01';
@@ -148,56 +146,60 @@ void Assembly-CSharp.dll::GamePointGainEffect::GamePointGainEffect_UpdateTargetS
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Math);
       }
-      dVar14 = (double)(fVar9 * fVar9 + fVar7 * fVar7 + fVar11 * fVar11);
-      if (dVar14 < 0.0) {
+      dVar13 = (double)(fStack_8 * fStack_8 + fStack_7 * fStack_7 + VStack_3.z * VStack_3.z);
+      if (dVar13 < 0.0) {
         func_?();
       }
       else {
-        dVar14 = SQRT(dVar14);
+        dVar13 = SQRT(dVar13);
       }
-      if (_UNK_? < (float)dVar14) {
-        auStack_3._0_4_ = fVar11 / (float)dVar14;
-        method = (MethodInfo *)auStack_3._0_4_;
+      fVar14 = (float)dVar13;
+      if (_UNK_? < fVar14) {
+        fVar15 = VStack_3.z / fVar14;
+        fVar14 = fStack_8 / fVar14;
+        VStack_3.z = fVar15;
       }
       else {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Vector3);
           cRam_? = '\x01';
         }
-        auStack_3._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+        fVar14 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+        fVar15 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
       }
-      fVar9 = (float)auStack_3._0_4_ * (this_00->fields).targetSpeed;
-      fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-      auStack_3._4_4_ = fVar4 * fVar15;
-      auStack_3._0_4_ = fVar9 * fVar15;
-      in_stack_12 = fVar7 + (float)auStack_3._4_4_;
-      value_00.y = fVar6 + (float)auStack_3._0_4_;
-      value_00.x = uStack_5._4_4_ + fVar11 * fVar15;
-      value_00.z = in_stack_12;
+      fVar16 = (this->fields).targetSpeed;
+      fVar14 = fVar14 * fVar16;
+      fVar15 = fVar15 * fVar16;
+      VStack_3.z = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                              ((MethodInfo *)0x0);
+      fStack_17 = fVar4 * VStack_3.z;
+      VStack_3.y = fVar14 * VStack_3.z;
+      VStack_3.z = fVar15 * VStack_3.z;
+      fStack_18 = fStack_18 + fStack_17;
+      value_00.y = fStack_6 + VStack_3.z;
+      value_00.x = (float)auStack_5._4_4_ + VStack_3.y;
+      value_00.z = fStack_18;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (pTVar1,value_00,(MethodInfo *)0x0);
-      auStack_3._0_4_ = (this_00->fields).targetSpeedAccelerationPerSec;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                (pTStack_19,value_00,(MethodInfo *)0x0);
+      fVar16 = (this->fields).targetSpeedAccelerationPerSec;
+      fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                          ((MethodInfo *)0x0);
-      (this_00->fields).targetSpeed = fVar6 * (float)auStack_3._4_4_ + (float)auStack_3._0_4_;
-      fVar16 = (float10)func_?(&this,0);
-      auStack_3._0_4_ = (undefined4)fVar16;
-      fVar16 = (float10)func_?(&uStack_5,0);
-      if ((float)fVar16 <= fVar4) {
+      (this->fields).targetSpeed = fVar20 * VStack_3.x + fVar16;
+      func_?(&stack0x0000000c,0);
+      fVar21 = (float10)func_?(&fStack_18,0);
+      if ((float)fVar21 <= fStack_8) {
         return;
       }
-      pUVar17 = (this_00->fields).onReachCallbackCallback;
-      if (pUVar17 != (UnityAction_1_System_Int32_ *)0x0) {
-        (*(pUVar17->fields)._._.invoke_impl)
-                  ((pUVar17->fields)._._.method_code,(this_00->fields).id,(pUVar17->fields)._._.method
-                  );
+      pUVar22 = (this->fields).onReachCallbackCallback;
+      if (pUVar22 != (UnityAction_1_System_Int32_ *)0x0) {
+        (*(pUVar22->fields)._._.invoke_impl)
+                  ((pUVar22->fields)._._.method_code,(this->fields).id,(pUVar22->fields)._._.method);
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_00,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
-          value.y = fVar9;
-          value.x = fVar15;
-          value.z = fVar11;
+          value.y = fVar15;
+          value.x = fVar14;
+          value.z = fVar4;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                     (pTVar1,value,(MethodInfo *)0x0);
           return;
@@ -206,8 +208,8 @@ void Assembly-CSharp.dll::GamePointGainEffect::GamePointGainEffect_UpdateTargetS
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

@@ -86,7 +86,6 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
                (GamePassesShop *this,GamePassTier__Enum gamePassTierToDisplay,MethodInfo *method)
 
 {
-  this_00 = this;
   tierRequirment =
        (Object_1__Class **)
        CONCAT31((int3)((uint)in_stack_1 >> 8),(this->fields).gamePassTierDisplayed);
@@ -99,36 +98,36 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
                    );
     cRam_? = '\x01';
   }
-  this = (GamePassesShop *)CONCAT31(this._1_3_,(this->fields).gamePassTierDisplayed);
-  this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            GamePassesShop_GetSortedSpawnRoles(this_00,(GamePassTier__Enum)this,(MethodInfo *)0x0);
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            GamePassesShop_GetSortedSpawnRoles
+                      (this,(uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
   index = 0;
-  if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    for (; index < (this_01->fields)._size; index = index + 1) {
-      this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    for (; index < (this_00->fields)._size; index = index + 1) {
+      this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_01,index,
+                          (this_00,index,
                            MethodInfo__System__Collections__Generic__List<MVAvatarSpawnRoleCreator>__get_Item_int_
                           );
-      this_01 = unaff_EBX;
+      this_00 = unaff_EBX;
       if (cRam_? == '\0') {
         func_?(&
                         GamePassesSpawnRoleRewardInfo_MethodInfo__UnityEngine__Object__Instantiate<GamePassesSpawnRoleRewardInfo>_GamePassesSpawnRoleRewardInfo__UnityEngine__Transform__bool_
                        );
         tierRequirment = &TypeInfo__UnityEngine__Object;
-        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?
         ;
         func_?();
         cRam_? = '\x01';
       }
-      pRVar2 = (this_00->fields).tierListContainer;
-      pGVar3 = (this_00->fields).spawnRoleRewardInfoPrefab;
+      pRVar2 = (this->fields).tierListContainer;
+      pGVar3 = (this->fields).spawnRoleRewardInfoPrefab;
       if (pRVar2 == (RectTransform *)0x0) goto code_?;
       pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)pRVar2,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&UNK_?
         ;
         tierRequirment = (Object_1__Class **)TypeInfo__UnityEngine__Object;
         func_?();
@@ -138,15 +137,15 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
                          ((Object *)pGVar3,pTVar4,0,
                           GamePassesSpawnRoleRewardInfo_MethodInfo__UnityEngine__Object__Instantiate<GamePassesSpawnRoleRewardInfo>_GamePassesSpawnRoleRewardInfo__UnityEngine__Transform__bool_
                          );
-      if ((this_02 == (RegexCharClass_SingleRange)0x0) ||
+      if ((this_01 == (RegexCharClass_SingleRange)0x0) ||
          (spawnRolePreviewObject =
                MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_GetSpawnRolePreviewObject
-                         ((MVAvatarSpawnRoleCreator *)this_02,(MethodInfo *)0x0),
+                         ((MVAvatarSpawnRoleCreator *)this_01,(MethodInfo *)0x0),
          pGVar3 == (GamePassesSpawnRoleRewardInfo *)0x0)) goto code_?;
       GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewardInfo_Initialize
-                (pGVar3,index,spawnRolePreviewObject,(MVAvatarSpawnRoleCreator *)this_02,
+                (pGVar3,index,spawnRolePreviewObject,(MVAvatarSpawnRoleCreator *)this_01,
                  (GamePassTier__Enum)tierRequirment,(MethodInfo *)0x0);
-      pGVar5 = (this_00->fields).contentCuller;
+      pGVar5 = (this->fields).contentCuller;
       if (pGVar5 == (GamePassesShopContentCuller *)0x0) goto code_?;
       if (cRam_? == '\0') {
         func_?(&
@@ -160,7 +159,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
                 (pLVar6,(Object *)pGVar3,
                  MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__Add_IGamePassShopContent_
                 );
-      unaff_EBX = this_01;
+      unaff_EBX = this_00;
     }
     if (cRam_? == '\0') {
       func_?(&
@@ -169,8 +168,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
-    pRVar2 = (this_00->fields).tierListContainer;
-    pGVar7 = (this_00->fields).xpRewardInfoPrefab;
+    pRVar2 = (this->fields).tierListContainer;
+    pGVar7 = (this->fields).xpRewardInfoPrefab;
     if (pRVar2 != (RectTransform *)0x0) {
       pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)pRVar2,(MethodInfo *)0x0);
@@ -185,7 +184,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_AddTierContent
       if (pGVar7 != (GamePassesXpRewardInfo *)0x0) {
         GamePassesXpRewardInfo::GamePassesXpRewardInfo_Initialize
                   (pGVar7,gamePassTierToDisplay,(MethodInfo *)0x0);
-        pGVar5 = (this_00->fields).contentCuller;
+        pGVar5 = (this->fields).contentCuller;
         if (pGVar5 != (GamePassesShopContentCuller *)0x0) {
           if (cRam_? == '\0') {
             func_?(&
@@ -448,8 +447,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CreateSpawnRoleContent
   }
   pLStack_1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               GamePassesShop_GetSortedSpawnRoles
-                        (this,CONCAT31((int3)((uint)in_stack_2 >> 8),
-                                       (this->fields).gamePassTierDisplayed),(MethodInfo *)0x0);
+                        (this,(uint)(this->fields).gamePassTierDisplayed,(MethodInfo *)0x0);
   index = 0;
   if (pLStack_1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     while( true ) {
@@ -495,15 +493,15 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CreateSpawnRoleContent
       GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewardInfo_Initialize
                 (this_03,index,spawnRolePreviewObject,(MVAvatarSpawnRoleCreator *)this_02,
                  gamePassTierToDisplay,(MethodInfo *)0x0);
-      pGVar3 = (this->fields).contentCuller;
-      if (pGVar3 == (GamePassesShopContentCuller *)0x0) break;
+      pGVar2 = (this->fields).contentCuller;
+      if (pGVar2 == (GamePassesShopContentCuller *)0x0) break;
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__Add_IGamePassShopContent_
                        );
         cRam_? = '\x01';
       }
-      this_01 = (List_1_System_Object_ *)(pGVar3->fields).gamePassShopContentList;
+      this_01 = (List_1_System_Object_ *)(pGVar2->fields).gamePassShopContentList;
       if (this_01 == (List_1_System_Object_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
                 (this_01,(Object *)this_03,
@@ -513,8 +511,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CreateSpawnRoleContent
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2438,13 +2436,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
             if ((pPVar4 != (PlayerPlanetData *)0x0) &&
                (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
                pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)CONCAT31(0x104156,(pPVar4->fields).gamePassTier);
+              this = (GamePassesShop *)CONCAT31(0x10415b,(pPVar4->fields).gamePassTier);
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator
                        ::PlayerTierStateCalculator_GetTierPricingState
                                  (pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
                              *)0x0) {
-                this = (GamePassesShop *)CONCAT31(0x104156,(pGVar1->fields).gamePassTierDisplayed);
+                this = (GamePassesShop *)CONCAT31(0x10415b,(pGVar1->fields).gamePassTierDisplayed);
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           ByteEnum,System::Object]::
                           Dictionary_2_System_ByteEnum_System_Object__get_Item
@@ -2484,7 +2482,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                          (pPVar5 = TypeInfo__GamePassesManager->static_fields->
                                    playerTierStateCalculator,
                          pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-                        GStack_10 = CONCAT31(0x104156,(pPVar4->fields).gamePassTier);
+                        GStack_10 = CONCAT31(0x10415b,(pPVar4->fields).gamePassTier);
                         pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::
                                  PlayerTierStateCalculator::
                                  PlayerTierStateCalculator_GetTierPricingState
@@ -3210,7 +3208,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     pOVar1 = value[1].klass;
-    this = (GamePassesShop *)CONCAT31(0x104163,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x104167,(this->fields).gamePassTierDisplayed);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -4178,52 +4176,50 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateFreeTryUI
           }
           pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
           if (pPVar1 != (PlayerPlanetData *)0x0) {
-            bVar5 = (pPVar1->fields).gamePassTier;
             this_00 = (this->fields).lockedTierIcon;
+            bVar5 = (pPVar1->fields).gamePassTier;
             if (this_00 != (Image *)0x0) {
               pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_00,(MethodInfo *)0x0);
               if (bVar2 < (this->fields).gamePassTierDisplayed) {
-                bVar6 = bVar5 < (this->fields).gamePassTierDisplayed;
+                value = bVar5 < (this->fields).gamePassTierDisplayed;
               }
               else {
-                bVar6 = false;
+                value = false;
               }
               if (pGVar4 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,bVar6,(MethodInfo *)0x0);
-                MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-                bVar6 = MVar7 != MVGameMode__Enum_Edit;
-                tier = &UNK_?;
-                pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar8 != (MVNetworkGame *)0x0) &&
-                   (this_01 = (pMVar8->fields)._GameTierShopRepository_k__BackingField,
+                          (pGVar4,value,(MethodInfo *)0x0);
+                MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+                pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar7 != (MVNetworkGame *)0x0) &&
+                   (this_01 = (pMVar7->fields)._GameTierShopRepository_k__BackingField,
                    this_01 != (GameTierShopRepository *)0x0)) {
-                  uVar9 = (uint)tier >> 8;
-                  tier = (undefined *)CONCAT31((int3)uVar9,(this->fields).gamePassTierDisplayed);
-                  pDVar10 = GameTierShopRepository::GameTierShopRepository_GetTierItemData
-                                      (this_01,(GamePassTier__Enum)tier,(MethodInfo *)0x0);
-                  if ((2 < bVar5) || ((this->fields).gamePassTierDisplayed != (uint8_t)(bVar5 + 1)))
-                  {
-                    bVar6 = false;
-                  }
-                  if ((bool)(bVar6 & pDVar10 !=
-                                      (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                                       *)0x0)) {
-                    bVar11 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled
+                  pDVar8 = GameTierShopRepository::GameTierShopRepository_GetTierItemData
+                                      (this_01,(uint)(this->fields).gamePassTierDisplayed,
+                                       (MethodInfo *)0x0);
+                  if ((bVar5 < 3) &&
+                     (((this->fields).gamePassTierDisplayed == (uint8_t)(bVar5 + 1) &&
+                      (MVar6 != MVGameMode__Enum_Edit &&
+                       pDVar8 !=
+                       (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+                       0x0)))) {
+                    bVar9 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled
                                       ((MethodInfo *)0x0);
-                    bVar12 = 1;
-                    if (bVar11 == 0) {
-                      bVar12 = (this->fields).isSubscribed;
+                    if (bVar9 == 0) {
+                      bVar9 = (this->fields).isSubscribed;
+                    }
+                    else {
+                      bVar9 = 1;
                     }
                   }
                   else {
-                    bVar12 = 0;
+                    bVar9 = 0;
                   }
                   pGVar4 = (this->fields).freeTryUI;
                   if (pGVar4 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar4,bVar12 != 0,(MethodInfo *)0x0);
+                              (pGVar4,bVar9 != 0,(MethodInfo *)0x0);
                     return;
                   }
                 }
@@ -4235,8 +4231,8 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_UpdateFreeTryUI
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

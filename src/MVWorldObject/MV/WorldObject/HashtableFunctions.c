@@ -111,8 +111,8 @@ code_?:
   pDVar9 = (Dictionary_2_System_Object_System_Object_ *)
            mscorlib.dll::System::Type::Type_GetTypeFromHandle
                      ((RuntimeTypeHandle)in_stack_4,(MethodInfo *)0x0);
-  pIVar14 = TypeRef__System__Int32;
   pIVar6 = (Int32__Array__Class *)TypeInfo__System__Single;
+  pIVar14 = TypeRef__System__Int32;
   unaff_ESI = pBStack_5;
   if (from != pDVar9) {
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -121,8 +121,8 @@ code_?:
     pDVar9 = (Dictionary_2_System_Object_System_Object_ *)
              mscorlib.dll::System::Type::Type_GetTypeFromHandle
                        ((RuntimeTypeHandle)pIVar14,(MethodInfo *)0x0);
-    pIVar14 = TypeRef__System__Byte;
     pIVar6 = TypeInfo__System__Int32;
+    pIVar14 = TypeRef__System__Byte;
     if (from == pDVar9) {
       from = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Int32;
       if (pBStack_5 == (Byte__Array__Class *)0x0) goto code_?;

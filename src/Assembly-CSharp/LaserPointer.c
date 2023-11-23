@@ -23,6 +23,8 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ActivateLaserForDuration
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void ApplyMaterialForState() */
 
 void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
@@ -30,83 +32,85 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+  pLVar2 = this;
   if (pMVar1 == (MaterialLoader *)0x0) goto code_?;
-  pMVar2 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
-  (this->fields).currentCubeMaterial = pMVar2;
-  func_?(&(this->fields).currentCubeMaterial,pMVar2);
-  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar3 == (MVNetworkGame *)0x0) ||
-     (this_00 = (pMVar3->fields)._MaterialRepository_k__BackingField,
+  pMVar3 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+  (this->fields).currentCubeMaterial = pMVar3;
+  func_?(&(this->fields).currentCubeMaterial,pMVar3);
+  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  unaff_ESI = pLVar2;
+  if ((pMVar4 == (MVNetworkGame *)0x0) ||
+     (this_00 = (pMVar4->fields)._MaterialRepository_k__BackingField,
      this_00 == (MVMaterialRepository *)0x0)) goto code_?;
-  pMVar4 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                     (this_00,(this->fields).currentCubeMaterialId,(MethodInfo *)0x0);
-  switch((this->fields).state) {
+  unaff_EDI = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                        (this_00,(pLVar2->fields).currentCubeMaterialId,(MethodInfo *)0x0);
+  switch((pLVar2->fields).state) {
   case 0:
-    pRVar5 = (this->fields).cubeRenderer;
+    pRVar5 = (pLVar2->fields).cubeRenderer;
     if (((pRVar5 != (Renderer *)0x0) &&
         (UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                   (pRVar5,(this->fields).currentCubeMaterial,(MethodInfo *)0x0),
-        pMVar4 != (MVMaterial *)0x0)) &&
-       (pMVar6 = (this->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
+                   (pRVar5,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
+        unaff_EDI != (MVMaterial *)0x0)) &&
+       (pMVar6 = (pLVar2->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
-                (pMVar6,(pMVar4->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+                (pMVar6,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
       return;
     }
     break;
   case 1:
-    pRVar5 = (this->fields).cubeRenderer;
+    pRVar5 = (pLVar2->fields).cubeRenderer;
     if (pRVar5 == (Renderer *)0x0) break;
-    pMVar2 = (this->fields).insertingMaterial;
+    pMVar3 = (pLVar2->fields).insertingMaterial;
     goto code_?;
   case 2:
   case 5:
   case 6:
-    pRVar5 = (this->fields).cubeRenderer;
+    pRVar5 = (pLVar2->fields).cubeRenderer;
     if (((pRVar5 != (Renderer *)0x0) &&
         (UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                   (pRVar5,(this->fields).currentCubeMaterial,(MethodInfo *)0x0),
-        pMVar4 != (MVMaterial *)0x0)) &&
-       (pMVar6 = (this->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
+                   (pRVar5,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
+        unaff_EDI != (MVMaterial *)0x0)) &&
+       (pMVar6 = (pLVar2->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
-                (pMVar6,(pMVar4->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
-      fVar7 = (this->fields).beamEditColor.g;
-      fVar8 = (this->fields).beamEditColor.b;
-      fVar9 = (this->fields).beamEditColor.a;
-      (this->fields).beamColor.r = (this->fields).beamEditColor.r;
-      (this->fields).beamColor.g = fVar7;
-      (this->fields).beamColor.b = fVar8;
-      (this->fields).beamColor.a = fVar9;
+                (pMVar6,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+      fVar7 = (pLVar2->fields).beamEditColor.g;
+      fVar8 = (pLVar2->fields).beamEditColor.b;
+      fVar9 = (pLVar2->fields).beamEditColor.a;
+      (pLVar2->fields).beamColor.r = (pLVar2->fields).beamEditColor.r;
+      (pLVar2->fields).beamColor.g = fVar7;
+      (pLVar2->fields).beamColor.b = fVar8;
+      (pLVar2->fields).beamColor.a = fVar9;
       return;
     }
     break;
   case 3:
-    pRVar5 = (this->fields).cubeRenderer;
+    pRVar5 = (pLVar2->fields).cubeRenderer;
     if (pRVar5 == (Renderer *)0x0) break;
-    pMVar2 = (this->fields).transformingMaterial;
+    pMVar3 = (pLVar2->fields).transformingMaterial;
 code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-              (pRVar5,pMVar2,(MethodInfo *)0x0);
-    fVar7 = (this->fields).beamObjectColor.g;
-    fVar8 = (this->fields).beamObjectColor.b;
-    fVar9 = (this->fields).beamObjectColor.a;
-    (this->fields).beamColor.r = (this->fields).beamObjectColor.r;
-    (this->fields).beamColor.g = fVar7;
-    (this->fields).beamColor.b = fVar8;
-    (this->fields).beamColor.a = fVar9;
+              (pRVar5,pMVar3,(MethodInfo *)0x0);
+    fVar7 = (pLVar2->fields).beamObjectColor.g;
+    fVar8 = (pLVar2->fields).beamObjectColor.b;
+    fVar9 = (pLVar2->fields).beamObjectColor.a;
+    (pLVar2->fields).beamColor.r = (pLVar2->fields).beamObjectColor.r;
+    (pLVar2->fields).beamColor.g = fVar7;
+    (pLVar2->fields).beamColor.b = fVar8;
+    (pLVar2->fields).beamColor.a = fVar9;
 code_?:
     return;
   case 4:
-    pRVar5 = (this->fields).cubeRenderer;
+    pRVar5 = (pLVar2->fields).cubeRenderer;
     if (pRVar5 != (Renderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                (pRVar5,(this->fields).deleteMaterial,(MethodInfo *)0x0);
-      fVar7 = (this->fields).beamDeleteColor.g;
-      fVar8 = (this->fields).beamDeleteColor.b;
-      fVar9 = (this->fields).beamDeleteColor.a;
-      (this->fields).beamColor.r = (this->fields).beamDeleteColor.r;
-      (this->fields).beamColor.g = fVar7;
-      (this->fields).beamColor.b = fVar8;
-      (this->fields).beamColor.a = fVar9;
+                (pRVar5,(pLVar2->fields).deleteMaterial,(MethodInfo *)0x0);
+      fVar7 = (pLVar2->fields).beamDeleteColor.g;
+      fVar8 = (pLVar2->fields).beamDeleteColor.b;
+      fVar9 = (pLVar2->fields).beamDeleteColor.a;
+      (pLVar2->fields).beamColor.r = (pLVar2->fields).beamDeleteColor.r;
+      (pLVar2->fields).beamColor.g = fVar7;
+      (pLVar2->fields).beamColor.b = fVar8;
+      (pLVar2->fields).beamColor.a = fVar9;
       return;
     }
     break;
@@ -114,7 +118,61 @@ code_?:
     goto code_?;
   }
 code_?:
-  func_?();
+  bVar10 = false;
+  uVar11 = func_?();
+  pcVar12 = (char *)((ulonglong)uVar11 >> 0x20);
+  bVar13 = (byte)uVar11;
+  if (!bVar10) {
+    pcVar12 = (char *)((int)uVar11 + 0x16e8119b);
+    *pcVar12 = *pcVar12 + bVar13;
+    return;
+  }
+  *(char *)(extraout_ECX + 0x1a10543b) = *(char *)(extraout_ECX + 0x1a10543b) + unaff_BH + bVar10;
+  *pcVar12 = *pcVar12 + unaff_BL + (char)((ulonglong)uVar11 >> 8) + (bVar13 < 0x54) + (bVar13 < 0x54);
+  in((short)((ulonglong)uVar11 >> 0x20));
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Byte,&stack0xfffffff4);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    func_?(&StringLiteral_st);
+    cRam_? = '\x01';
+  }
+  pLVar2 = this;
+  (this->fields).state = (int32_t)method;
+  LaserPointer_ApplyMaterialForState(this,(MethodInfo *)0x0);
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               ,unaff_EDI,unaff_ESI);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  this = (LaserPointer *)CONCAT13((char)(pLVar2->fields).state,this._0_3_);
+  value = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  if (this_01 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
+    func_?();
+    pcVar14 = (code *)swi(3);
+    (*pcVar14)();
+    return;
+  }
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__Add
+            ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)StringLiteral_st,value,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+            );
+  LaserPointer_SyncState
+            (pLVar2,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
   return;
 }
 
@@ -455,9 +513,9 @@ code_?:
     uVar12 = (pVVar11->upVector).x;
     uVar13 = (pVVar11->upVector).y;
     if (pTVar1 == (Transform *)0x0) goto code_?;
-    value.y = fVar10 * _UNK_? + (float)ppVVar4 + (float)uVar13;
-    value.x = fVar9 * _UNK_? + (float)puVar3 + (float)uVar12;
-    value.z = fVar8 * _UNK_? + fVar5 + (pVVar11->upVector).z;
+    value.y = (float)ppVVar4 + (float)uVar13 + fVar10 * _UNK_?;
+    value.x = (float)puVar3 + (float)uVar12 + fVar9 * _UNK_?;
+    value.z = fVar5 + (pVVar11->upVector).z + fVar8 * _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar1,value,(MethodInfo *)0x0);
   }
@@ -498,32 +556,32 @@ code_?:
   uVar15 = pVVar2->y;
   uVar16 = (this_00->fields).relativeTargetPosition.x;
   uVar17 = (this_00->fields).relativeTargetPosition.y;
-  fVar5 = (float)uVar16 + (float)uVar14;
-  fVar8 = (float)uVar17 + (float)uVar15;
-  pTVar18 = (this_00->fields).cube;
-  if (pTVar18 == (Transform *)0x0) goto code_?;
-  puVar3 = &UNK_?;
-  pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                      (pTVar18,(MethodInfo *)0x0);
-  if (pTVar18 == (Transform *)0x0) goto code_?;
+  fVar5 = (this_00->fields).relativeTargetPosition.z + pVVar2->z;
+  uVar18._4_4_ = (float)uVar17 + (float)uVar15;
+  uVar18._0_4_ = (float)uVar16 + (float)uVar14;
+  pTVar19 = (this_00->fields).cube;
+  if ((pTVar19 == (Transform *)0x0) ||
+     (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                          (pTVar19,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
+  goto code_?;
   this = (LaserPointer *)0x0;
   pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                      ((Vector3 *)&stack0xffffffd0,pTVar18,(MethodInfo *)0x0);
-  uVar19 = pVVar2->x;
-  uVar20 = pVVar2->y;
-  in_stack_21 = pVVar2->z;
-  worldPosition.y = fVar8;
-  worldPosition.x = fVar5;
-  worldPosition.z = (float)puVar3;
-  this = (LaserPointer *)uVar19;
-  method = (MethodInfo *)uVar20;
+                      ((Vector3 *)&stack0xffffffe0,pTVar19,(MethodInfo *)0x0);
+  uVar20 = pVVar2->x;
+  uVar21 = pVVar2->y;
+  in_stack_22 = pVVar2->z;
+  worldPosition.z = fVar5;
+  worldPosition.x = (float)uVar18;
+  worldPosition.y = SUB84(uVar18,4);
+  this = (LaserPointer *)uVar20;
+  method = (MethodInfo *)uVar21;
   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_1
             (pTVar1,worldPosition,*pVVar2,(MethodInfo *)0x0);
-  pLVar22 = (this_00->fields).lineRenderer;
-  if (pLVar22 == (LineRenderer *)0x0) goto code_?;
-  bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                     ((Renderer *)pLVar22,(MethodInfo *)0x0);
-  if (bVar23 == 0) {
+  pLVar23 = (this_00->fields).lineRenderer;
+  if (pLVar23 == (LineRenderer *)0x0) goto code_?;
+  bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
+                     ((Renderer *)pLVar23,(MethodInfo *)0x0);
+  if (bVar24 == 0) {
 code_?:
     if ((this_00->fields).isActive == 0) goto code_?;
     this = _UNK_?;
@@ -533,29 +591,29 @@ code_?:
   }
   else {
     pTVar1 = (this_00->fields).cube;
-    pLVar22 = (this_00->fields).lineRenderer;
+    pLVar23 = (this_00->fields).lineRenderer;
     if ((pTVar1 == (Transform *)0x0) ||
        (pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                             ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0),
-       pLVar22 == (LineRenderer *)0x0)) goto code_?;
+       pLVar23 == (LineRenderer *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-              (pLVar22,0,*pVVar2,(MethodInfo *)0x0);
+              (pLVar23,0,*pVVar2,(MethodInfo *)0x0);
     if ((this_00->fields).isActive != 0) {
       pTVar1 = (this_00->fields).cube;
-      pLVar22 = (this_00->fields).lineRenderer;
+      pLVar23 = (this_00->fields).lineRenderer;
       if (pTVar1 == (Transform *)0x0) goto code_?;
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                           ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0);
-      uVar24 = pVVar2->x;
-      uVar25 = pVVar2->y;
-      uVar26 = (this_00->fields).relativeCurrentTargetPosition.x;
-      uVar27 = (this_00->fields).relativeCurrentTargetPosition.y;
-      if (pLVar22 == (LineRenderer *)0x0) goto code_?;
-      position.y = (float)uVar27 + (float)uVar25;
-      position.x = (float)uVar26 + (float)uVar24;
+      uVar25 = pVVar2->x;
+      uVar26 = pVVar2->y;
+      uVar27 = (this_00->fields).relativeCurrentTargetPosition.x;
+      uVar28 = (this_00->fields).relativeCurrentTargetPosition.y;
+      if (pLVar23 == (LineRenderer *)0x0) goto code_?;
+      position.y = (float)uVar28 + (float)uVar26;
+      position.x = (float)uVar27 + (float)uVar25;
       position.z = (this_00->fields).relativeCurrentTargetPosition.z + pVVar2->z;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (pLVar22,1,position,(MethodInfo *)0x0);
+                (pLVar23,1,position,(MethodInfo *)0x0);
       goto code_?;
     }
 code_?:
@@ -564,35 +622,35 @@ code_?:
   fVar5 = (this_00->fields).currentLaserAlpha;
   if (fVar5 < (float)this) {
     fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pLVar28 = (LaserPointer *)(fVar8 * _UNK_? + fVar5);
-    pLVar29 = this;
-    if ((float)pLVar28 <= (float)this) {
-      pLVar29 = pLVar28;
+    pLVar29 = (LaserPointer *)(fVar8 * _UNK_? + fVar5);
+    pLVar30 = this;
+    if ((float)pLVar29 <= (float)this) {
+      pLVar30 = pLVar29;
     }
 code_?:
-    (this_00->fields).currentLaserAlpha = (float)pLVar29;
+    (this_00->fields).currentLaserAlpha = (float)pLVar30;
   }
   else if ((float)this < fVar5) {
     fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pLVar28 = (LaserPointer *)(fVar5 - fVar8 * _UNK_?);
-    pLVar29 = this;
-    if ((float)this <= (float)pLVar28) {
-      pLVar29 = pLVar28;
+    pLVar29 = (LaserPointer *)(fVar5 - fVar8 * _UNK_?);
+    pLVar30 = this;
+    if ((float)this <= (float)pLVar29) {
+      pLVar30 = pLVar29;
     }
     goto code_?;
   }
   fVar5 = (this_00->fields).currentLaserAlpha;
   (this_00->fields).beamColor.a = fVar5;
-  pLVar22 = (this_00->fields).lineRenderer;
-  if (pLVar22 != (LineRenderer *)0x0) {
+  pLVar23 = (this_00->fields).lineRenderer;
+  if (pLVar23 != (LineRenderer *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-              ((Renderer *)pLVar22,
+              ((Renderer *)pLVar23,
                TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= fVar5 &&
                fVar5 != TypeInfo__UnityEngine__Mathf->static_fields->Epsilon,(MethodInfo *)0x0);
-    pLVar22 = (this_00->fields).lineRenderer;
-    if ((pLVar22 != (LineRenderer *)0x0) &&
+    pLVar23 = (this_00->fields).lineRenderer;
+    if ((pLVar23 != (LineRenderer *)0x0) &&
        (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                            ((Renderer *)pLVar22,(MethodInfo *)0x0), this_02 != (Material *)0x0)) {
+                            ((Renderer *)pLVar23,(MethodInfo *)0x0), this_02 != (Material *)0x0)) {
       this = (LaserPointer *)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                 (this_02,StringLiteral__TintColor,(Vector4)(this_00->fields).beamColor,
@@ -600,33 +658,33 @@ code_?:
       if ((this_00->fields).isLocal == 0) {
 code_?:
         fVar9 = (this_00->fields).relativeCurrentTargetPosition.x;
-        fVar30 = (this_00->fields).relativeCurrentTargetPosition.y;
+        fVar31 = (this_00->fields).relativeCurrentTargetPosition.y;
         fVar5 = (this_00->fields).relativeCurrentTargetPosition.z;
-        uVar31._0_4_ = (this_00->fields).relativeTargetPosition.x;
-        uVar31._4_4_ = (this_00->fields).relativeTargetPosition.y;
+        uVar32._0_4_ = (this_00->fields).relativeTargetPosition.x;
+        uVar32._4_4_ = (this_00->fields).relativeTargetPosition.y;
         fVar8 = (this_00->fields).relativeTargetPosition.z;
         fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                            ((MethodInfo *)0x0);
-        pLVar28 = (LaserPointer *)(fVar10 * _UNK_?);
-        if ((float)pLVar28 < 0.0) {
-          pLVar28 = (LaserPointer *)0x0;
+        pLVar29 = (LaserPointer *)(fVar10 * _UNK_?);
+        if ((float)pLVar29 < 0.0) {
+          pLVar29 = (LaserPointer *)0x0;
         }
-        else if ((float)_UNK_? < (float)pLVar28) {
-          pLVar28 = _UNK_?;
+        else if ((float)_UNK_? < (float)pLVar29) {
+          pLVar29 = _UNK_?;
         }
         (this_00->fields).relativeCurrentTargetPosition.x =
-             ((float)uVar31 - fVar9) * (float)pLVar28 + fVar9;
+             ((float)uVar32 - fVar9) * (float)pLVar29 + fVar9;
         (this_00->fields).relativeCurrentTargetPosition.y =
-             (SUB84(uVar31,4) - fVar30) * (float)pLVar28 + fVar30;
+             (SUB84(uVar32,4) - fVar31) * (float)pLVar29 + fVar31;
         (this_00->fields).relativeCurrentTargetPosition.z =
-             (fVar8 - fVar5) * (float)pLVar28 + fVar5;
+             (fVar8 - fVar5) * (float)pLVar29 + fVar5;
         return;
       }
-      pLVar22 = (this_00->fields).lineRenderer;
-      if (pLVar22 != (LineRenderer *)0x0) {
-        bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                           ((Renderer *)pLVar22,(MethodInfo *)0x0);
-        if (bVar23 != 0) goto code_?;
+      pLVar23 = (this_00->fields).lineRenderer;
+      if (pLVar23 != (LineRenderer *)0x0) {
+        bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
+                           ((Renderer *)pLVar23,(MethodInfo *)0x0);
+        if (bVar24 != 0) goto code_?;
         pTVar1 = (this_00->fields).cube;
         if ((pTVar1 != (Transform *)0x0) &&
            (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
@@ -638,72 +696,72 @@ code_?:
           fVar9 = pVVar2->z;
           pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                               ((Vector3 *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
-          uVar32 = pVVar2->x;
-          uVar33 = pVVar2->y;
-          this = (LaserPointer *)(fVar5 + (float)uVar32 * _UNK_?);
-          fVar8 = fVar8 + (float)uVar33 * _UNK_?;
+          uVar33 = pVVar2->x;
+          uVar34 = pVVar2->y;
+          this = (LaserPointer *)(fVar5 + (float)uVar33 * _UNK_?);
+          fVar8 = fVar8 + (float)uVar34 * _UNK_?;
           fVar9 = fVar9 + pVVar2->z * _UNK_?;
           pTVar1 = (this_00->fields).cube;
           if (pTVar1 != (Transform *)0x0) {
             pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                 ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-            uVar34 = pVVar2->x;
-            uVar35 = pVVar2->y;
-            fVar5 = (float)this - (float)uVar34;
-            fVar8 = fVar8 - (float)uVar35;
+            uVar35 = pVVar2->x;
+            uVar36 = pVVar2->y;
             fVar9 = fVar9 - pVVar2->z;
+            uVar37._4_4_ = fVar8 - (float)uVar36;
+            uVar37._0_4_ = (float)this - (float)uVar35;
             pTVar1 = (this_00->fields).cube;
             if ((pTVar1 != (Transform *)0x0) &&
                (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                                     (pTVar1,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
               pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                  ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0);
+                                  ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
               fVar10 = pVVar2->x;
-              fVar36 = pVVar2->y;
-              fVar30 = pVVar2->z;
-              forward.y = fVar8;
-              forward.x = fVar5;
+              fVar38 = pVVar2->y;
+              fVar5 = pVVar2->z;
               forward.z = fVar9;
-              pQVar37 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+              forward.x = (float)uVar37;
+              forward.y = SUB84(uVar37,4);
+              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
                                   ((Quaternion *)&stack0xffffffcc,forward,*pVVar2,(MethodInfo *)0x0
                                   );
-              fVar5 = pQVar37->x;
-              fVar8 = pQVar37->y;
-              fVar9 = pQVar37->z;
-              fVar38 = pQVar37->w;
+              fVar8 = pQVar39->x;
+              fVar9 = pQVar39->y;
+              fVar31 = pQVar39->z;
+              fVar40 = pQVar39->w;
               pTVar1 = (this_00->fields).cube;
               if (pTVar1 != (Transform *)0x0) {
                 pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                                     ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0);
-                upwards.y = fVar36;
+                upwards.y = fVar38;
                 upwards.x = fVar10;
-                upwards.z = fVar30;
-                pQVar37 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                upwards.z = fVar5;
+                pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                           Quaternion_LookRotation
                                     ((Quaternion *)&stack0xffffffcc,*pVVar2,upwards,
                                      (MethodInfo *)0x0);
-                fVar10 = pQVar37->x;
-                fVar36 = pQVar37->y;
-                fVar30 = pQVar37->z;
-                fVar39 = pQVar37->w;
+                fVar5 = pQVar39->x;
+                fVar10 = pQVar39->y;
+                fVar38 = pQVar39->z;
+                fVar41 = pQVar39->w;
                 this = (LaserPointer *)
                        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                  ((MethodInfo *)0x0);
-                a.y = fVar36;
-                a.x = fVar10;
-                a.z = fVar30;
-                a.w = fVar39;
-                b.y = fVar8;
-                b.x = fVar5;
-                b.z = fVar9;
-                b.w = fVar38;
-                pQVar37 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                a.y = fVar10;
+                a.x = fVar5;
+                a.z = fVar38;
+                a.w = fVar41;
+                b.y = fVar9;
+                b.x = fVar8;
+                b.z = fVar31;
+                b.w = fVar40;
+                pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
                                     ((Quaternion *)&stack0xffffffcc,a,b,(float)this * _UNK_?,
                                      (MethodInfo *)0x0);
-                fVar5 = pQVar37->x;
-                fVar8 = pQVar37->y;
-                fVar9 = pQVar37->z;
-                fVar10 = pQVar37->w;
+                fVar5 = pQVar39->x;
+                fVar8 = pQVar39->y;
+                fVar9 = pQVar39->z;
+                fVar10 = pQVar39->w;
                 if (cRam_? == '\0') {
                   func_?();
                   cRam_? = '\x01';
@@ -717,26 +775,26 @@ code_?:
                                     ((Vector3 *)&stack0xffffffe0,rotation,
                                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                                      (MethodInfo *)0x0);
-                uVar40._0_4_ = pVVar2->x;
-                uVar40._4_4_ = pVVar2->y;
+                uVar42._0_4_ = pVVar2->x;
+                uVar42._4_4_ = pVVar2->y;
                 fVar8 = pVVar2->z;
-                fVar41 = (float10)func_?();
-                fVar5 = (float)fVar41;
+                fVar43 = (float10)func_?();
+                fVar5 = (float)fVar43;
                 fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                    ((MethodInfo *)0x0);
                 this = (LaserPointer *)(fVar9 * _UNK_?);
                 if ((float)this < 0.0) {
-                  pLVar28 = (LaserPointer *)0x0;
+                  pLVar29 = (LaserPointer *)0x0;
                 }
                 else {
-                  pLVar28 = this;
+                  pLVar29 = this;
                   if ((float)_UNK_? < (float)this) {
-                    pLVar28 = _UNK_?;
+                    pLVar29 = _UNK_?;
                   }
                 }
-                fVar5 = (_UNK_? - fVar5) * (float)pLVar28 + fVar5;
-                (this_00->fields).relativeTargetPosition.x = (float)uVar40 * fVar5;
-                (this_00->fields).relativeTargetPosition.y = SUB84(uVar40,4) * fVar5;
+                fVar5 = (_UNK_? - fVar5) * (float)pLVar29 + fVar5;
+                (this_00->fields).relativeTargetPosition.x = (float)uVar42 * fVar5;
+                (this_00->fields).relativeTargetPosition.y = SUB84(uVar42,4) * fVar5;
                 (this_00->fields).relativeTargetPosition.z = fVar8 * fVar5;
                 goto code_?;
               }
@@ -748,8 +806,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar42 = (code *)swi(3);
-  (*pcVar42)();
+  pcVar44 = (code *)swi(3);
+  (*pcVar44)();
   return;
 }
 

@@ -11,8 +11,8 @@ void Assembly-CSharp.dll::WaitCountdownNotification::WaitCountdownNotification_I
     func_?(&MethodInfo__WaitCountdownNotification__DestroyNotification__);
     cRam_? = '\x01';
   }
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   pNVar1 = (this->fields).countDownFader;
+  (this->fields)._.timeSinceStart = 0.0;
   if (pNVar1 == (NotificationFade *)0x0) {
 code_?:
     func_?();
@@ -22,7 +22,7 @@ code_?:
     pNVar1 = (this->fields).countDownFader;
     if (pNVar1 == (NotificationFade *)0x0) goto code_?;
     pAVar2 = (pNVar1->fields).OnFinished;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,MethodInfo__WaitCountdownNotification__DestroyNotification__,

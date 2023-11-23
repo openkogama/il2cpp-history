@@ -33,7 +33,7 @@ void Assembly-CSharp.dll::ARepository+<>c__DisplayClass11_0::
   if (returnData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
     func_?();
-    pDVar2 = extraout_EDX;
+    TVar2.m_Index = extraout_EDX;
   }
   else {
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
@@ -50,53 +50,53 @@ code_?:
     pOVar1 = (Object *)
              func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
                              (byte *)((int)&dataType + 3));
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
                        pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    uVar5 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
-    if (TVar4.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+    uVar4 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
+    if (TVar2.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    func_?(TVar4.m_Index);
+    func_?(TVar2.m_Index);
     if ((this->fields).onWorldObjectExtracted == (ARepository_OnWorldObjectTypeExtracted *)0x0) {
       return;
     }
-    pAVar6 = (this->fields).onWorldObjectExtracted;
+    pAVar5 = (this->fields).onWorldObjectExtracted;
     dataType = CONCAT13(7,(undefined3)dataType);
     pOVar1 = (Object *)
              func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
                              (byte *)((int)&dataType + 3));
-    returnData = (Dictionary_2_System_Object_System_Object_ *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                            returnData,pOVar1,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-    if ((returnData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-       ((pDVar2 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
+                       pOVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if ((TVar2.m_Index == 0) ||
+       ((returnData = (Dictionary_2_System_Object_System_Object_ *)
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
         , (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment <= *(byte *)(*(int *)returnData + 0xb8) &&
+          naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8) &&
         (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)returnData + 100) + -4 +
+          (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                 ->_1).naturalAligment * 4) ==
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-      (*(pAVar6->fields)._._.invoke_impl)
-                ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method,returnData);
+      (*(pAVar5->fields)._._.invoke_impl)
+                ((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method,TVar2.m_Index);
       return;
     }
   }
-  uVar5 = func_?(returnData,pDVar2);
+  uVar4 = func_?(TVar2.m_Index,returnData);
 code_?:
-  func_?(uVar5);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

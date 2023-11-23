@@ -1,4 +1,6 @@
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void CreateLimbController(BodyData+PartIndex, MVWorldObjectClient, MVBody, AvatarLimbManager) */
 
 void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
@@ -53,7 +55,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     pIVar4 = (Il2CppRGCTXData *)pQVar2->x;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
     pIVar5 = (Il2CppRGCTXData *)&UNK_?;
-    p_Var4 = (_union_154 *)
+    p_Var3 = (_union_154 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)__return_storage_ptr__.methodMetadataHandle,
                         (MVWorldObject *)pQVar2->w,(MethodInfo *)in_stack_6);
@@ -61,7 +63,7 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     unaff_EBP.rgctx_data = (Il2CppRGCTXData *)0x0;
     maxPitch.genericMethod = (Il2CppGenericMethod *)0x42340000;
     in_stack_7 = (Il2CppType *)0x42b20000;
-    break;
+    goto code_?;
   case BodyData_PartIndex__Enum_Torso:
     this_01 = (LimbController *)func_?(TypeInfo__LimbController);
     LimbController::LimbController__ctor(this_01,(MethodInfo *)0x0);
@@ -94,114 +96,119 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
     pIVar4 = (Il2CppRGCTXData *)pQVar2->x;
     pIVar5 = (Il2CppRGCTXData *)pQVar2->y;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
-    p_Var4 = (_union_154 *)
+    p_Var3 = (_union_154 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,in_stack_9);
     if (this_01 == (LimbController *)0x0) goto code_?;
     in_stack_7 = (Il2CppType *)0x42b40000;
+code_?:
+    _Var6 = (_union_154)p_Var3->rgctx_data;
+    pIVar10 = p_Var3[1].rgctx_data;
+    pIVar11 = p_Var3[2].rgctx_data;
+    _Var11 = (_union_154)p_Var3[3].rgctx_data;
+    _Var7 = _Var6;
     break;
   case BodyData_PartIndex__Enum_RArm:
     this_01 = (LimbController *)func_?(TypeInfo__LimbController);
     LimbController::LimbController__ctor(this_01,(MethodInfo *)0x0);
-    pLVar10 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    partIndex = func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pLVar10,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    pLVar11 = (List_1_System_Object_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar11,
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)partIndex,
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (pLVar11 == (List_1_System_Object_ *)0x0) goto code_?;
+    in_stack_1.genericMethod =
+         (Il2CppGenericMethod *)
+         func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+               in_stack_1.genericMethod,
+               MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    if ((List_1_System_String_ *)in_stack_1.genericMethod == (List_1_System_String_ *)0x0)
+    goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              (pLVar11,(Object *)StringLiteral_Dead,
-               MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+              ((List_1_System_Object_ *)in_stack_1.genericMethod,(Object *)StringLiteral_Dead
+               ,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_)
+    ;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              (pLVar11,(Object *)StringLiteral_Jump,
-               MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
+              ((List_1_System_Object_ *)in_stack_1.genericMethod,(Object *)StringLiteral_Jump
+               ,MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_)
+    ;
     pQVar2 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_12);
     pIVar4 = (Il2CppRGCTXData *)pQVar2->x;
     pIVar5 = (Il2CppRGCTXData *)pQVar2->y;
     __return_storage_ptr__ = (_union_154)pQVar2->z;
     func_?();
-    p_Var4 = (_union_154 *)
+    p_Var3 = (_union_154 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffe0,(MVWorldObject *)0x0,
                         (MethodInfo *)&stack0xffffffd0);
     maxPitch.genericMethod = (Il2CppGenericMethod *)0x438d0000;
-    _Var7 = (_union_154)p_Var4->rgctx_data;
-    pIVar13 = p_Var4[1].rgctx_data;
-    pIVar14 = p_Var4[2].rgctx_data;
-    _Var11 = (_union_154)p_Var4[3].methodMetadataHandle;
+    _Var6 = (_union_154)p_Var3->rgctx_data;
+    pIVar10 = p_Var3[1].rgctx_data;
+    pIVar11 = p_Var3[2].rgctx_data;
+    _Var11 = (_union_154)p_Var3[3].rgctx_data;
     func_?();
-    _Var6 = _Var7;
-    partIndex = (BodyData_PartIndex__Enum)_Var11;
-    goto joined_?;
+    if (this_01 == (LimbController *)0x0) goto code_?;
+    in_stack_7 = (Il2CppType *)0x42b40000;
+    _Var7 = _Var6;
+    break;
   case BodyData_PartIndex__Enum_LArm:
     this_01 = (LimbController *)func_?(TypeInfo__LimbController);
     LimbController::LimbController__ctor(this_01,(MethodInfo *)0x0);
-    pLVar10 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+    this_02 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pLVar10,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    pLVar11 = (List_1_System_Object_ *)
-             func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+              (this_02,MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    this_03 = (List_1_System_Object_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar11,
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    if (pLVar11 == (List_1_System_Object_ *)0x0) goto code_?;
+    if (this_03 == (List_1_System_Object_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              (pLVar11,(Object *)StringLiteral_Dead,
+              (this_03,(Object *)StringLiteral_Dead,
                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              (pLVar11,(Object *)StringLiteral_Jump,
+              (this_03,(Object *)StringLiteral_Jump,
                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
     pQVar2 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_12);
     _Var6 = (_union_154)pQVar2->w;
     func_?();
-    p_Var4 = (_union_154 *)
+    p_Var3 = (_union_154 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,
                         (MethodInfo *)&stack0xffffffe0);
     maxPitch.genericMethod = (Il2CppGenericMethod *)0x42986666;
-    _Var7 = (_union_154)p_Var4->rgctx_data;
-    pIVar4 = p_Var4[1].rgctx_data;
-    pIVar5 = p_Var4[2].rgctx_data;
-    __return_storage_ptr__ = (_union_154)p_Var4[3].rgctx_data;
+    _Var7 = (_union_154)p_Var3->rgctx_data;
+    pIVar4 = p_Var3[1].rgctx_data;
+    pIVar5 = p_Var3[2].rgctx_data;
+    __return_storage_ptr__ = (_union_154)p_Var3[3].rgctx_data;
     func_?();
-    pIVar13 = pIVar4;
-    pIVar14 = pIVar5;
+    pIVar10 = pIVar4;
+    pIVar11 = pIVar5;
     _Var11 = __return_storage_ptr__;
     partIndex = (BodyData_PartIndex__Enum)_Var6;
-joined_?:
     if (this_01 == (LimbController *)0x0) goto code_?;
-    goto code_?;
+    break;
   default:
     goto code_?;
   }
-  _Var6 = (_union_154)p_Var4->rgctx_data;
-  pIVar13 = p_Var4[1].rgctx_data;
-  pIVar14 = p_Var4[2].rgctx_data;
-  _Var11 = (_union_154)p_Var4[3].rgctx_data;
-  _Var7 = _Var6;
-code_?:
   modelRotationOffset.y = (float)pIVar5;
   modelRotationOffset.x = (float)pIVar4;
   modelRotationOffset.z = (float)__return_storage_ptr__.rgctx_data;
   modelRotationOffset.w = (float)_Var6.rgctx_data;
-  originalRotation.y = (float)pIVar13;
+  originalRotation.y = (float)pIVar10;
   originalRotation.x = (float)_Var7.rgctx_data;
-  originalRotation.z = (float)pIVar14;
+  originalRotation.z = (float)pIVar11;
   originalRotation.w = (float)_Var11.rgctx_data;
   LimbController::LimbController_Initialize
             (this_01,limbManager,avatarWO,body,key,modelRotationOffset,originalRotation,
@@ -209,19 +216,25 @@ code_?:
              (List_1_System_String_ *)in_stack_1.genericMethod,(float)in_stack_7,
              (float)maxPitch,(MethodInfo *)unaff_EBP.methodMetadataHandle);
   this_00 = (this->fields).limbControllers;
-  if (this_00 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,(Object *)this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
-              );
+  if (this_00 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) {
 code_?:
+    bVar13 = true;
+    func_?();
+    if (!bVar13) {
+      this_01->klass =
+           (LimbController__Class *)((int)&this_01->klass[-1].vtable.ToString.method + 3);
+    }
+    pcVar14 = (code *)swi(3);
+    (*pcVar14)();
     return;
   }
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__Add
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,(Object *)this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__Add_BodyData__PartIndex__LimbController_
+            );
 code_?:
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  return;
 }
 
 

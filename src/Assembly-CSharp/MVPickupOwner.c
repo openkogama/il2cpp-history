@@ -212,7 +212,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
       fVar4 = (float)(fVar11 * (float10)fVar4);
       *(ulonglong *)uVar7 =
            CONCAT44((float)&stack0xffffffe0 + (float)&stack0xffffffe0 * fVar4,
-                    fVar4 * 3.3109372e-29 + 3.3109372e-29);
+                    fVar4 * 3.3121216e-29 + 3.3121216e-29);
       *(float *)(uVar7 + 8) = fVar4 * 0.0 + 0.0;
       return (Vector3 *)uVar7;
     }
@@ -429,42 +429,40 @@ code_?:
   }
   else {
     pMVar1 = (currentItemRuntimeVariable->fields).OnChange;
-    unaff_ESI = (MVRuntimeDataVariable_OnChangeDelegate *)
+    unaff_ESI = (Dictionary_2_System_Object_System_Object___Class *)
                 func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
               ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)unaff_ESI,(Object *)this,
                MethodInfo__MVPickupOwner___Init_b__39_0_System__Object_,(MethodInfo *)0x0);
-    pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+    pDVar2 = (Dictionary_2_System_Object_System_Object___Class *)
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pMVar1,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
-    pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+    pDVar3 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+    if (pDVar2 == (Dictionary_2_System_Object_System_Object___Class *)0x0) {
       (currentItemRuntimeVariable->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       this_00 = &(currentItemRuntimeVariable->fields).OnChange;
       func_?();
-      unaff_ESI = (MVRuntimeDataVariable_OnChangeDelegate *)
-                  MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
-                            (currentItemRuntimeVariable,(MethodInfo *)0x0);
-      if ((unaff_ESI != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) &&
-         ((pDVar3 = 
-           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-          (unaff_ESI->klass->_1).naturalAligment <
-          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment ||
+      newState = (Dictionary_2_System_Object_System_Object_ *)
+                 MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
+                           (currentItemRuntimeVariable,(MethodInfo *)0x0);
+      unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+      ;
+      if ((newState != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+         (((newState->klass->_1).naturalAligment <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment ||
           ((Dictionary_2_System_Object_System_Object___Class *)
-           (unaff_ESI->klass->_1).typeHierarchy
+           (newState->klass->_1).typeHierarchy
            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
             .naturalAligment - 1] !=
            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
       goto code_?;
-      MVPickupOwner_UpdateCurrentItem
-                ((MVPickupOwner *)this_00,(Dictionary_2_System_Object_System_Object_ *)unaff_ESI,
-                 (MethodInfo *)0x0);
+      MVPickupOwner_UpdateCurrentItem((MVPickupOwner *)this_00,newState,(MethodInfo *)0x0);
       if (isFiringRuntimeVariable == (MVRuntimeDataVariable *)0x0) goto code_?;
-      pMVar2 = (isFiringRuntimeVariable->fields).OnChange;
+      pMVar1 = (isFiringRuntimeVariable->fields).OnChange;
       this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
                 func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
       UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
@@ -472,49 +470,53 @@ code_?:
       VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                 (this_01,(Object *)this_00,MethodInfo__MVPickupOwner___Init_b__39_1_System__Object_,
                  (MethodInfo *)0x0);
-      pMVar2 = (MVRuntimeDataVariable_OnChangeDelegate *)
+      pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)
                mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pMVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pMVar2 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+                         ((Delegate *)pMVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+      if (pMVar1 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
         (isFiringRuntimeVariable->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
         func_?();
         return;
       }
       pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        pMVar4 = pMVar2;
+      if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pMVar4 = pMVar1;
       }
-      unaff_ESI = pMVar1;
+      unaff_ESI = pDVar3;
       if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
         (isFiringRuntimeVariable->fields).OnChange = pMVar4;
-        pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-          pMVar1 = pMVar2;
+        pMVar4 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+        if (pMVar1->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pMVar4 = pMVar1;
         }
-        if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+        if (pMVar4 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
           func_?();
           return;
         }
       }
     }
     else {
-      if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        pMVar1 = pMVar2;
+      if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)(pDVar2->_0).image ==
+          TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+        pDVar3 = pDVar2;
       }
-      if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
-        (currentItemRuntimeVariable->fields).OnChange = pMVar1;
-        pMVar1 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-        if (pMVar2->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-          pMVar1 = pMVar2;
+      if (pDVar3 != (Dictionary_2_System_Object_System_Object___Class *)0x0) {
+        (currentItemRuntimeVariable->fields).OnChange =
+             (MVRuntimeDataVariable_OnChangeDelegate *)pDVar3;
+        pDVar3 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+        if ((MVRuntimeDataVariable_OnChangeDelegate__Class *)(pDVar2->_0).image ==
+            TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+          pDVar3 = pDVar2;
         }
-        if (pMVar1 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+        if (pDVar3 != (Dictionary_2_System_Object_System_Object___Class *)0x0)
+        goto code_?;
       }
     }
   }
   func_?();
-  pDVar3 = extraout_EDX;
+  newState = extraout_EDX;
 code_?:
-  func_?(unaff_ESI,pDVar3);
+  func_?(newState,unaff_ESI);
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -1044,7 +1046,7 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_IgnoreWOIDs
             else {
               cVar5 = func_?();
               puVar6 = &UNK_?;
-              if (cVar5 != '\0') {
+              if (cVar5 == '\0') {
                 puVar6 = &UNK_?;
               }
             }

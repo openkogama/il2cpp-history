@@ -11,60 +11,63 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CalculatePosAroundPivot
   auVar3._4_8_ = 0;
   auVar3._0_4_ = spacingAngle * _UNK_?;
   pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+                      ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
   point.y = fVar2;
   point.x = fVar1;
   point.z = pivot.z - (pivot.z + distanceFromPivot);
-  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-            ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
-  pGVar6 = (this->fields).displayObject;
-  if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-    fVar2 = 0.0;
-    puVar7 = &UNK_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pGVar6,(MethodInfo *)0x0);
-    if (pTVar8 != (Transform *)0x0) {
-      value_00.y = (float)pGVar6;
-      value_00.x = (float)puVar7;
-      value_00.z = fVar2;
+  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
+  uVar7 = pVVar6->x;
+  uVar8 = pVVar6->y;
+  fVar2 = pVVar6->z;
+  fVar9 = pivot.x + (float)uVar7;
+  fVar1 = pivot.y + (float)uVar8;
+  pGVar10 = (this->fields).displayObject;
+  if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pGVar10,(MethodInfo *)0x0);
+    if (pTVar11 != (Transform *)0x0) {
+      value_00.y = fVar1;
+      value_00.x = fVar9;
+      value_00.z = pivot.z + fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar8,value_00,(MethodInfo *)0x0);
-      pGVar6 = (this->fields).displayObject;
-      if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pGVar6,(MethodInfo *)0x0);
+                (pTVar11,value_00,(MethodInfo *)0x0);
+      pGVar10 = (this->fields).displayObject;
+      if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pGVar10,(MethodInfo *)0x0);
         this_00 = (this->fields).displayObjectRoot;
         if (this_00 != (GameObject *)0x0) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                               (this_00,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
-            uVar10 = pVVar9->x;
-            uVar11 = pVVar9->y;
-            if (pTVar8 != (Transform *)0x0) {
-              worldPosition.y = pivot.y + (float)uVar11;
-              worldPosition.x = pivot.x + (float)uVar10;
-              worldPosition.z = pivot.z + pVVar9->z;
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&puStack_5,this_01,(MethodInfo *)0x0);
+            uVar12 = pVVar6->x;
+            uVar13 = pVVar6->y;
+            if (pTVar11 != (Transform *)0x0) {
+              worldPosition.y = pivot.y + (float)uVar13;
+              worldPosition.x = pivot.x + (float)uVar12;
+              worldPosition.z = pivot.z + pVVar6->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                        (pTVar8,worldPosition,(MethodInfo *)0x0);
-              pGVar6 = (this->fields).displayObject;
-              if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pGVar6,(MethodInfo *)0x0);
-                if (pTVar8 != (Transform *)0x0) {
-                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_position((Vector3 *)&puStack_5,pTVar8,(MethodInfo *)0x0)
-                  ;
-                  uVar12 = pVVar9->x;
-                  uVar13 = pVVar9->y;
-                  uVar14 = (this->fields).displayObjectOffset.x;
-                  uVar15 = (this->fields).displayObjectOffset.y;
-                  value.y = (float)uVar15 + (float)uVar13;
-                  value.x = (float)uVar14 + (float)uVar12;
-                  value.z = (this->fields).displayObjectOffset.z + pVVar9->z;
+                        (pTVar11,worldPosition,(MethodInfo *)0x0);
+              pGVar10 = (this->fields).displayObject;
+              if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)pGVar10,(MethodInfo *)0x0);
+                if (pTVar11 != (Transform *)0x0) {
+                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_position
+                                      ((Vector3 *)&stack0xffffffd8,pTVar11,(MethodInfo *)0x0);
+                  uVar14 = pVVar6->x;
+                  uVar15 = pVVar6->y;
+                  uVar16 = (this->fields).displayObjectOffset.x;
+                  uVar17 = (this->fields).displayObjectOffset.y;
+                  value.y = (float)uVar17 + (float)uVar15;
+                  value.x = (float)uVar16 + (float)uVar14;
+                  value.z = (this->fields).displayObjectOffset.z + pVVar6->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar8,value,(MethodInfo *)0x0);
+                            (pTVar11,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -75,8 +78,8 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CalculatePosAroundPivot
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

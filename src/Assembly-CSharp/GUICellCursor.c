@@ -32,89 +32,88 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_Awake(GUICellCursor *this
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
                     ((Renderer *)pMVar1,(this->fields).material,(MethodInfo *)0x0);
           pMVar1 = (this->fields).meshRenderer;
-          if (pMVar1 != (MeshRenderer *)0x0) {
-            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                ((Renderer *)pMVar1,(MethodInfo *)0x0);
-            if (this_01 != (Material *)0x0) {
-              pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                                 ((Vector4 *)&stack0xffffffdc,this_01,StringLiteral__Color,
-                                  (MethodInfo *)0x0);
-              fVar3 = pVVar2->w;
-              (this->fields).baseAlpha = fVar3;
-              (this->fields).currentAlpha = fVar3;
-              if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
-                                 ((MethodInfo *)0x0);
-              if (pVVar4 != (Vector3__Array *)0x0) {
-                pVVar4 = (Vector3__Array *)func_?();
-                uVar5 = 0;
-                iVar6 = 0;
-                while( true ) {
-                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                           CubeBase_get_IdentityCorners((MethodInfo *)0x0);
-                  if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
-                  if ((int)pVVar7->max_length <= (int)uVar5) {
-                    if ((this->fields).lineMesh != 0) {
-                      pMVar8 = (this->fields).meshFilter;
-                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                      fVar3 = (this->fields).lineWidth;
-                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?();
-                      }
-                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
-                                (pMVar9,pVVar4,fVar3,(MethodInfo *)0x0);
-                    }
-                    if ((this->fields).cubeMesh != 0) {
-                      pMVar8 = (this->fields).meshFilter;
-                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?();
-                      }
-                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
-                                (pMVar9,pVVar4,0,(MethodInfo *)0x0);
-                    }
-                    if ((this->fields).invertedCubeMesh != 0) {
-                      pMVar8 = (this->fields).meshFilter;
-                      if (pMVar8 == (MeshFilter *)0x0) goto code_?;
-                      pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                               MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
-                      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?();
-                      }
-                      SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
-                                (pMVar9,pVVar4,1,(MethodInfo *)0x0);
-                    }
-                    return;
-                  }
-                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                           CubeBase_get_IdentityCorners((MethodInfo *)0x0);
-                  if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
-                  if (pVVar7->max_length <= uVar5) break;
-                  fVar3 = (this->fields).scale;
-                  uVar10 = *(undefined8 *)((int)&pVVar7->vector[0].x + iVar6);
-                  fVar11 = *(float *)((int)&pVVar7->vector[0].z + iVar6);
-                  if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-                  if (pVVar4->max_length <= uVar5) break;
-                  uVar5 = uVar5 + 1;
-                  *(ulonglong *)((int)&pVVar4->vector[0].x + iVar6) =
-                       CONCAT44((float)((ulonglong)uVar10 >> 0x20) * fVar3,(float)uVar10 * fVar3);
-                  *(float *)((int)&pVVar4->vector[0].z + iVar6) = fVar11 * fVar3;
-                  iVar6 = iVar6 + 0xc;
+          if ((pMVar1 != (MeshRenderer *)0x0) &&
+             (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                  ((Renderer *)pMVar1,(MethodInfo *)0x0), this_01 != (Material *)0x0
+             )) {
+            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                               ((Vector4 *)&stack0xffffffd8,this_01,StringLiteral__Color,
+                                (MethodInfo *)0x0);
+            fVar3 = pVVar2->w;
+            (this->fields).baseAlpha = fVar3;
+            (this->fields).currentAlpha = fVar3;
+            if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                               ((MethodInfo *)0x0);
+            if (pVVar4 != (Vector3__Array *)0x0) {
+              pVVar4 = (Vector3__Array *)func_?();
+              uVar5 = 0;
+              iVar6 = 0;
+              while( true ) {
+                if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
                 }
-                goto code_?;
+                pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                                   ((MethodInfo *)0x0);
+                if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
+                if ((int)pVVar7->max_length <= (int)uVar5) {
+                  if ((this->fields).lineMesh != 0) {
+                    pMVar8 = (this->fields).meshFilter;
+                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                    fVar3 = (this->fields).lineWidth;
+                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?();
+                    }
+                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines
+                              (pMVar9,pVVar4,fVar3,(MethodInfo *)0x0);
+                  }
+                  if ((this->fields).cubeMesh != 0) {
+                    pMVar8 = (this->fields).meshFilter;
+                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?();
+                    }
+                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
+                              (pMVar9,pVVar4,0,(MethodInfo *)0x0);
+                  }
+                  if ((this->fields).invertedCubeMesh != 0) {
+                    pMVar8 = (this->fields).meshFilter;
+                    if (pMVar8 == (MeshFilter *)0x0) goto code_?;
+                    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
+                             MeshFilter_get_mesh(pMVar8,(MethodInfo *)0x0);
+                    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?();
+                    }
+                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMesh
+                              (pMVar9,pVVar4,1,(MethodInfo *)0x0);
+                  }
+                  return;
+                }
+                if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pVVar7 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                                   ((MethodInfo *)0x0);
+                if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
+                if (pVVar7->max_length <= uVar5) break;
+                uVar10 = *(undefined8 *)((int)&pVVar7->vector[0].x + iVar6);
+                fVar3 = (this->fields).scale;
+                fVar11 = *(float *)((int)&pVVar7->vector[0].z + iVar6);
+                if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
+                if (pVVar4->max_length <= uVar5) break;
+                uVar5 = uVar5 + 1;
+                *(ulonglong *)((int)&pVVar4->vector[0].x + iVar6) =
+                     CONCAT44((float)((ulonglong)uVar10 >> 0x20) * fVar3,(float)uVar10 * fVar3);
+                *(float *)((int)&pVVar4->vector[0].z + iVar6) = fVar11 * fVar3;
+                iVar6 = iVar6 + 0xc;
               }
+              goto code_?;
             }
           }
         }

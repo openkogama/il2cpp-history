@@ -427,14 +427,15 @@ code_?:
                        (StringLiteral_BlueprintData_,pSVar6,(MethodInfo *)0x0);
     pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields).vehicleEnergyBpData;
-    if ((pDVar7 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-       (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (pDVar7,(Object *)StringLiteral_VehicleEnergyName,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          ), unaff_EDI == (MVWorldObjectSpawnerVehicleEnergy__Class *)0x0))
+    if (pDVar7 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar7,(Object *)StringLiteral_VehicleEnergyName,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (unaff_EDI == (MVWorldObjectSpawnerVehicleEnergy__Class *)0x0) goto code_?;
     value.m_Index = 0;
     if (TVar3.m_Index == 0) {
 code_?:

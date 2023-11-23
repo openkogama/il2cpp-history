@@ -383,8 +383,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
         pIVar4 = (Il2CppClass *)func_?(pIVar4);
       }
-      cVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
-      return cVar6 == '\0';
+      bVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
+      return bVar6 ^ 1;
     }
   }
   func_?();
@@ -420,8 +420,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
         pIVar4 = (Il2CppClass *)func_?(pIVar4);
       }
-      cVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
-      return cVar6 == '\0';
+      bVar6 = func_?(&b,uVar5,pIVar4->rgctx_data[0x10].rgctxDataDummy);
+      return bVar6 ^ 1;
     }
   }
   func_?();
@@ -445,39 +445,36 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  if (a != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) {
-    pSVar2 = (a->fields).subscribableVariable;
-    if (pSVar2 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0) {
-      pMVar3 = pIVar1->rgctx_data[0x11].method;
-      if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
-        func_?(pMVar3->klass);
+  pMVar2 = pIVar1->rgctx_data[0x11].method;
+  if ((a != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
+     (pSVar3 = (a->fields).subscribableVariable,
+     pSVar3 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
+    if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
+      func_?(pMVar2->klass);
+    }
+    uStack_4._0_4_ = (pSVar3->fields)._.value.x;
+    uStack_4._4_4_ = (pSVar3->fields)._.value.y;
+    fStack_5 = (pSVar3->fields)._.value.z;
+    if ((b != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
+       (pSVar3 = (b->fields).subscribableVariable,
+       pSVar3 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
+      if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(pMVar2->klass);
       }
-      uStack_4._0_4_ = (pSVar2->fields)._.value.x;
-      uStack_4._4_4_ = (pSVar2->fields)._.value.y;
-      fStack_5 = (pSVar2->fields)._.value.z;
-      if ((b != (SpawnRoleVariable_1_UnityEngine_Vector3_ *)0x0) &&
-         (pSVar2 = (b->fields).subscribableVariable,
-         pSVar2 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
-        if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
-          func_?(pMVar3->klass);
-        }
-        uStack_6._0_4_ = (pSVar2->fields)._.value.x;
-        uStack_6._4_4_ = (pSVar2->fields)._.value.y;
-        fStack_7 = (pSVar2->fields)._.value.z;
-        pIVar1 = pMVar3->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?(pIVar1);
-        }
-        uVar8 = func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&uStack_6);
-        pIVar1 = pMVar3->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          uStack_4 = CONCAT44(uStack_4._4_4_,pIVar1);
-          pIVar1 = (Il2CppClass *)func_?();
-        }
-        uStack_4 = CONCAT44(uStack_4._4_4_,pIVar1->rgctx_data[0x10].rgctxDataDummy);
-        cVar9 = func_?(&uStack_4,uVar8);
-        return cVar9 == '\0';
+      uStack_6._0_4_ = (pSVar3->fields)._.value.x;
+      uStack_6._4_4_ = (pSVar3->fields)._.value.y;
+      fStack_7 = (pSVar3->fields)._.value.z;
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
+      uVar8 = func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&uStack_6);
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      bVar9 = func_?(&uStack_4,uVar8,pIVar1->rgctx_data[0x10].rgctxDataDummy);
+      return bVar9 ^ 1;
     }
   }
   func_?();

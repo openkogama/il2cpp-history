@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_LerpToPos
     else if ((float)_UNK_? < i) {
       i = (float)_UNK_?;
     }
-    fVar1 = (to.x - from.x) * i;
+    fStack_1 = (to.x - from.x) * i;
     fStack_2 = (to.y - from.y) * i + from.y;
   }
   else {
@@ -52,11 +52,12 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_LerpToPos
     VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
     fStack_2 = VVar4.y;
-    fVar1 = (to.x - from.x) * (float)this;
+    fStack_1 = (to.x - from.x) * (float)this;
   }
+  fStack_1 = fStack_1 + from.x;
   if (this_00 != (RectTransform *)0x0) {
     VVar4.y = fStack_2;
-    VVar4.x = fVar1 + from.x;
+    VVar4.x = fStack_1;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
               (this_00,VVar4,(MethodInfo *)0x0);
     return;

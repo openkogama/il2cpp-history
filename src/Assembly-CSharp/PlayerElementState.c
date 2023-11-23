@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize
                                                (*(Component **)(in_stack_1 + 0x1c),
                                                 (MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar2,bVar10 == 0,(MethodInfo *)0x0);
+                                    (pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
                           if ((*(Component **)(in_stack_1 + 0x18) != (Component *)0x0) &&
                              (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                        Component_get_gameObject
@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize
                                                   (MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
                           {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar2,bVar10 == 0,(MethodInfo *)0x0);
+                            GameObject_SetActive(pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
                             return;
                           }
                         }
@@ -477,7 +477,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
                                      Component_get_gameObject((Component *)pBVar1,(MethodInfo *)0x0)
                            , pGVar2 != (GameObject *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar2,bVar10 == 0,(MethodInfo *)0x0);
+                                    (pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
                           pBVar1 = (this->fields).acceptFriendRequest;
                           if ((pBVar1 != (Button *)0x0) &&
                              (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -485,7 +485,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
                                                  ((Component *)pBVar1,(MethodInfo *)0x0),
                              pGVar2 != (GameObject *)0x0)) {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar2,bVar10 == 0,(MethodInfo *)0x0);
+                            GameObject_SetActive(pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
                             return;
                           }
                         }

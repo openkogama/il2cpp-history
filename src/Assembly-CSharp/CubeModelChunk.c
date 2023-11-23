@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AddToChunk
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_
                    );
-    func_?(0xc128);
+    func_?(0x5990);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;
@@ -100,14 +100,14 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AdvancedFaceVisibilityT
     faceFlagOpposite = (FaceFlags__Enum)&UNK_?;
     func_?();
   }
-  faceFlagCube._0_1_ = 0xc4;
+  faceFlagCube._0_1_ = FaceFlags__Enum_Right|FaceFlags__Enum_Left|FaceFlags__Enum_Front;
   unaff_EDI = (Vector3__Array *)
               MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
                         (faceFlagOpposite,(MethodInfo *)0x0);
   if (*neighborCube == (Cube *)0x0) goto code_?;
   cube = (Cube **)&UNK_?;
   pVVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
-                     ((CubeBase *)*neighborCube,(MethodInfo *)0x0);
+                      ((CubeBase *)*neighborCube,(MethodInfo *)0x0);
   unaff_EBX = pVVar2;
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -281,15 +281,18 @@ code_?:
       func_?();
       pVVar2 = unaff_EDI;
 code_?:
-      func_?();
-      uRam_? = uRam_?;
-      bVar13 = (byte)unaff_EBX;
-      *(char *)(extraout_EDX + -0x7defa85c) =
-           *(char *)(extraout_EDX + -0x7defa85c) + (char)uRam_? +
-           (CARRY1(bVar13,bVar13) || CARRY1(bVar13 * '\x02',bVar6));
-      pcVar14 = (code *)swi(3);
+      uVar13 = func_?();
+      pbVar14 = (byte *)(CONCAT31((int3)((ulonglong)uVar13 >> 0x28),0xaa) + 0x4b1057aa);
+      bVar15 = *pbVar14;
+      bVar16 = (byte)((ulonglong)uVar13 >> 0x28);
+      bVar17 = *pbVar14 + bVar16;
+      *pbVar14 = bVar17 + bVar6;
+      pVVar2->klass = (Vector3__Array__Class *)uVar13;
+      pcVar18 = (char *)((int)&unaff_EBX[-1].vector[0x18].z + 3);
+      *pcVar18 = *pcVar18 + extraout_CL + (CARRY1(bVar15,bVar16) || CARRY1(bVar17,bVar6));
+      pcVar19 = (code *)swi(3);
       pVStack7 = pVVar2;
-      (*pcVar14)();
+      (*pcVar19)();
       return;
     }
   }
@@ -326,7 +329,7 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AllFaceCornersIsTouchin
   case Face__Enum_Right:
     iStack_1 = 0;
   }
-  pfVar3 = (float *)0x0;
+  uVar3 = 0;
   pVVar4 = *faceIndices;
   if (pVVar4 == (Vector3__Array *)0x0) {
     func_?();
@@ -334,10 +337,10 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AllFaceCornersIsTouchin
   else {
     unaff_EDI = pVVar4->vector;
     while( true ) {
-      if ((int)pVVar4->max_length <= (int)pfVar3) {
+      if ((int)pVVar4->max_length <= (int)uVar3) {
         return 1;
       }
-      if ((float *)pVVar4->max_length <= pfVar3) break;
+      if (pVVar4->max_length <= uVar3) break;
       VStack_5.z = unaff_EDI->z;
       VStack_5.x = unaff_EDI->x;
       VStack_5.y = unaff_EDI->y;
@@ -346,15 +349,17 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_AllFaceCornersIsTouchin
       if (fVar6 != fStack_2) {
         return 0;
       }
-      pfVar3 = (float *)((int)pfVar3 + 1);
+      uVar3 = uVar3 + 1;
       unaff_EDI = unaff_EDI + 1;
     }
   }
-  func_?();
-  *(char *)pfVar3 = *(char *)pfVar3 + (char)((uint)pVVar4 >> 8) + (in_stack_7 < extraout_AH);
-  unaff_EDI->x = *pfVar3;
+  bVar7 = func_?();
+  *(char *)((int)(unaff_EDI + -0x6d3f8b2) + 7) =
+       *(char *)((int)(unaff_EDI + -0x6d3f8b2) + 7) + (char)pVVar4 +
+       (bVar7 < *(byte *)&unaff_EDI->x);
   pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)(&unaff_EDI->y,unaff_EDI);
+  bVar9 = (*pcVar8)((undefined1 *)((int)&unaff_EDI->x + 3),(undefined1 *)((int)&unaff_EDI->x + 2),
+                    (undefined1 *)((int)&unaff_EDI->x + 1));
   return bVar9;
 }
 
@@ -367,9 +372,9 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_ChunkInstancesChanged
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstances);
-    func_?(0xde68);
+    func_?(0x76d0);
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0x5160);
+    func_?(0xe9c8);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Remove_System__Guid_
                    );
@@ -708,7 +713,7 @@ Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CloneGeometry
   puVar5 = &stack0xffffff7c;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CubeModelChunk);
-    func_?(0xbf84);
+    func_?(0x57ec);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__
                    );
@@ -836,7 +841,7 @@ bool Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_CompareGeometry
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__GetEnumerator__
                    );
-    func_?(0xc074);
+    func_?(0x58dc);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__get_Count__
                    );
@@ -1423,7 +1428,7 @@ code_?:
       bVar4 = 0;
       if (pVVar3->max_length == 0) goto code_?;
       fVar2 = (float)((uint)faceVertices->vector[0].x ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       pVVar3->vector[0].y = faceVertices->vector[0].z;
       pVVar3->vector[0].x = fVar2;
       pVVar3 = TypeInfo__CubeModelChunk->static_fields->uvs;
@@ -1522,7 +1527,7 @@ code_?:
       bVar4 = 0;
       if (pVVar3->max_length == 0) goto code_?;
       fVar2 = (float)((uint)faceVertices->vector[0].x ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       pVVar3->vector[0].y = faceVertices->vector[0].y;
       pVVar3->vector[0].x = fVar2;
       pVVar3 = TypeInfo__CubeModelChunk->static_fields->uvs;
@@ -1569,7 +1574,7 @@ code_?:
       bVar4 = 0;
       if (pVVar3->max_length == 0) goto code_?;
       fVar2 = (float)((uint)faceVertices->vector[0].z ^
-                     __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
+                      __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
       pVVar3->vector[0].y = faceVertices->vector[0].y;
       pVVar3->vector[0].x = fVar2;
       pVVar3 = TypeInfo__CubeModelChunk->static_fields->uvs;
@@ -1728,11 +1733,18 @@ code_?:
   func_?();
 code_?:
   func_?();
-  cRam_? = cRam_? + '\x10' +
-                 (CARRY1(unaff_BL,extraout_DH) || CARRY1(unaff_BL + extraout_DH,bVar4));
-  pcVar8 = (code *)swi(3);
-  uRam_? = unaff_EDI;
-  pVVar3 = (Vector2__Array *)(*pcVar8)();
+  pbVar8 = (byte *)(unaff_EBX + -0x3e);
+  bVar9 = CARRY1(*pbVar8,extraout_AH) || CARRY1(*pbVar8 + extraout_AH,bVar4);
+  *pbVar8 = *pbVar8 + extraout_AH + bVar4;
+  pbVar8 = (byte *)(extraout_ECX + -0x6aefa83d);
+  bVar4 = *pbVar8;
+  bVar10 = *pbVar8;
+  *pbVar8 = bVar10 + extraout_AH + bVar9;
+  *(char *)(unaff_EBX + -0x33efa83a) =
+       *(char *)(unaff_EBX + -0x33efa83a) + (char)((uint)unaff_EBX >> 8) +
+       (CARRY1(bVar4,extraout_AH) || CARRY1(bVar10 + extraout_AH,bVar9));
+  pcVar11 = (code *)swi(3);
+  pVVar3 = (Vector2__Array *)(*pcVar11)();
   return pVVar3;
 }
 
@@ -2386,7 +2398,7 @@ code_?:
                   index = (CubeModelChunk__Class *)(iStack_11 * 4 + 3);
                   faceData = (CubeModelChunk__Class *)&UNK_?;
                   MeshDataPool::MeshDataPool_AddIndex((int32_t)index,(MethodInfo *)0x0);
-                  iVar16 = -0x31b6;
+                  iVar16 = -0x2846;
                   uVar17 = 0x1057;
                   MeshDataPool::MeshDataPool_AddIndex(iStack_11 * 4 + 2,(MethodInfo *)0x0);
                   MeshDataPool::MeshDataPool_AddIndex(iStack_11 * 4 + 2,(MethodInfo *)0x0);
@@ -2425,7 +2437,7 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_RemoveFromChunk
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_Cell>__ContainsKey_MV__WorldObject__IntVector_
                    );
-    func_?(0xc038);
+    func_?(0x58a0);
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).cells;
@@ -3269,25 +3281,25 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef
                                 Component_get_gameObject(this_04,(MethodInfo *)0x0);
                       pGVar3 = (cubeInstance->fields)._.gameObject;
                       if (pGVar3 != (GameObject *)0x0) {
-                        uVar6._0_4_ = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_get_layer(pGVar3,(MethodInfo *)0x0);
+                        value_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                   GameObject_get_layer(pGVar3,(MethodInfo *)0x0);
                         if (this_05 != (GameObject *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                                    (this_05,(int32_t)uVar6,(MethodInfo *)0x0);
-                          uVar7 = 0;
-                          pGVar8 = mscorlib.dll::System::Guid::Guid_NewGuid
+                                    (this_05,value_01,(MethodInfo *)0x0);
+                          uVar6 = 0;
+                          pGVar7 = mscorlib.dll::System::Guid::Guid_NewGuid
                                              ((Guid *)&stack0xffffffdc,(MethodInfo *)0x0);
-                          uVar6._0_4_ = pGVar8->_a;
-                          uVar6._4_2_ = pGVar8->_b;
-                          uStack_9 = pGVar8->_c;
-                          uVar10._0_1_ = pGVar8->_d;
-                          uVar10._1_1_ = pGVar8->_e;
-                          uVar10._2_1_ = pGVar8->_f;
-                          uVar10._3_1_ = pGVar8->_g;
-                          uVar11._0_1_ = pGVar8->_h;
-                          uVar11._1_1_ = pGVar8->_i;
-                          uVar11._2_1_ = pGVar8->_j;
-                          uVar11._3_1_ = pGVar8->_k;
+                          uVar8._0_4_ = pGVar7->_a;
+                          uVar8._4_2_ = pGVar7->_b;
+                          uStack_9 = pGVar7->_c;
+                          uVar10._0_1_ = pGVar7->_d;
+                          uVar10._1_1_ = pGVar7->_e;
+                          uVar10._2_1_ = pGVar7->_f;
+                          uVar10._3_1_ = pGVar7->_g;
+                          uVar11._0_1_ = pGVar7->_h;
+                          uVar11._1_1_ = pGVar7->_i;
+                          uVar11._2_1_ = pGVar7->_j;
+                          uVar11._3_1_ = pGVar7->_k;
                           func_?(&stack0xffffffc8,this_05);
                           pCVar12 = this_04[2].klass;
                           func_?(&stack0xffffffcc,pCVar12);
@@ -3295,37 +3307,33 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef
                           func_?(&stack0xffffffd4,pMVar13);
                           pvVar14 = this_04[1].fields._.m_CachedPtr;
                           func_?(&stack0xffffffd0,pvVar14);
-                          uVar15 = uVar6;
-                          iVar16 = (int32_t)uVar6;
-                          uVar6._4_4_ = (undefined4)((ulonglong)uVar6 >> 0x20);
-                          uVar17 = uVar6._4_4_;
+                          uVar15 = uVar8;
                           this_02 = (this->fields).instances;
                           if (this_02 !=
                               (Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables_ *)0x0
                              ) {
-                            key._d = (uint8_t)uVar10;
-                            key._e = SUB41(uVar10,1);
-                            key._f = SUB41(uVar10,2);
-                            key._g = SUB41(uVar10,3);
-                            uVar6._0_4_ = (int32_t)uVar15;
-                            uVar6._4_2_ = (undefined2)((ulonglong)uVar15 >> 0x20);
+                            key._d = (char)uVar10;
+                            key._e = (char)((uint)uVar10 >> 8);
+                            key._f = (char)((uint)uVar10 >> 0x10);
+                            key._g = (char)((uint)uVar10 >> 0x18);
+                            uVar8._4_2_ = (undefined2)((ulonglong)uVar8 >> 0x20);
                             uStack_9 = (undefined2)((ulonglong)uVar15 >> 0x30);
-                            key._a = (int32_t)uVar6;
-                            key._b = uVar6._4_2_;
+                            key._a = (undefined4)uVar8;
+                            key._b = uVar8._4_2_;
                             key._c = uStack_9;
                             key._h = (char)uVar11;
                             key._i = (char)((uint)uVar11 >> 8);
                             key._j = (char)((uint)uVar11 >> 0x10);
                             key._k = (char)((uint)uVar11 >> 0x18);
-                            value_00.guid._d = (uint8_t)uVar10;
-                            value_00.guid._e = SUB41(uVar10,1);
-                            value_00.guid._f = SUB41(uVar10,2);
-                            value_00.guid._g = SUB41(uVar10,3);
-                            uVar6._0_4_ = (int32_t)uVar15;
-                            uVar6._4_2_ = (undefined2)((ulonglong)uVar15 >> 0x20);
+                            value_00.guid._d = (char)uVar10;
+                            value_00.guid._e = (char)((uint)uVar10 >> 8);
+                            value_00.guid._f = (char)((uint)uVar10 >> 0x10);
+                            value_00.guid._g = (char)((uint)uVar10 >> 0x18);
+                            uVar8._0_4_ = (undefined4)uVar15;
+                            uVar8._4_2_ = (undefined2)((ulonglong)uVar15 >> 0x20);
                             uStack_9 = (undefined2)((ulonglong)uVar15 >> 0x30);
-                            value_00.guid._a = (int32_t)uVar6;
-                            value_00.guid._b = uVar6._4_2_;
+                            value_00.guid._a = (undefined4)uVar8;
+                            value_00.guid._b = uVar8._4_2_;
                             value_00.guid._c = uStack_9;
                             value_00.guid._h = (char)uVar11;
                             value_00.guid._i = (char)((uint)uVar11 >> 8);
@@ -3335,29 +3343,32 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef
                             value_00.collider = (BoxCollider *)pCVar12;
                             value_00.renderer = pvVar14;
                             value_00.filter = (MeshFilter *)pMVar13;
-                            value_00._32_4_ = uVar7;
+                            value_00._32_4_ = uVar6;
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Guid,ChunkInstances+ChunkInstanceVariables]::
                             Dictionary_2_System_Guid_ChunkInstances_ChunkInstanceVariables__Add
                                       (this_02,key,value_00,
                                        MethodInfo__System__Collections__Generic__Dictionary<System::Guid,_ChunkInstances::ChunkInstanceVariables>__Add_System__Guid__ChunkInstances__ChunkInstanceVariables_
                                       );
-                            civ.guid._b = (int16_t)uVar17;
-                            civ.guid._c = SUB42(uVar17,2);
-                            civ.guid._a = iVar16;
-                            civ.guid._d = (uint8_t)uVar10;
-                            civ.guid._e = SUB41(uVar10,1);
-                            civ.guid._f = SUB41(uVar10,2);
-                            civ.guid._g = SUB41(uVar10,3);
+                            civ.guid._d = (char)uVar10;
+                            civ.guid._e = (char)((uint)uVar10 >> 8);
+                            civ.guid._f = (char)((uint)uVar10 >> 0x10);
+                            civ.guid._g = (char)((uint)uVar10 >> 0x18);
+                            uVar8._0_4_ = (undefined4)uVar15;
+                            uVar8._4_2_ = (undefined2)((ulonglong)uVar15 >> 0x20);
+                            uStack_9 = (undefined2)((ulonglong)uVar15 >> 0x30);
+                            civ.guid._a = (undefined4)uVar8;
+                            civ.guid._b = uVar8._4_2_;
+                            civ.guid._c = uStack_9;
                             civ.guid._h = (char)uVar11;
                             civ.guid._i = (char)((uint)uVar11 >> 8);
                             civ.guid._j = (char)((uint)uVar11 >> 0x10);
                             civ.guid._k = (char)((uint)uVar11 >> 0x18);
                             civ.gameObject = this_05;
                             civ.collider = (BoxCollider *)pCVar12;
-                            civ.renderer = pvVar14;
+                            civ.renderer = (MeshRenderer *)0x0;
                             civ.filter = (MeshFilter *)pMVar13;
-                            civ._32_4_ = uVar7;
+                            civ._32_4_ = uVar6;
                             MVCubeModelBase::MVCubeModelBase_AddToChunkInstances
                                       (cubeInstance,chunkPos,civ,(MethodInfo *)0x0);
                             return;
@@ -3375,8 +3386,8 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_SetInstanceDataRef
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -3732,19 +3743,19 @@ void Assembly-CSharp.dll::CubeModelChunk::CubeModelChunk_UpdateInstances
         uVar38 = CStack_10.guid._8_4_;
         uVar39 = CStack_10.guid._4_4_;
         iVar32 = CStack_10.guid._a;
+        pDStack_20 = (Dictionary_2_TKey_TValue_Enumerator_System_Guid_ChunkInstances_ChunkInstanceVariables_
+                      *)(pCVar1->fields).meshBounds.m_Extents.z;
         VStack_34.path = (String *)auStack_11;
         VStack_34.typeFullName = pSStack_12;
         VStack_34.asset = (Object_1 *)pMStack_13;
         VStack_34.m_CachedType = pTStack_14;
-        pDStack_20 = (Dictionary_2_TKey_TValue_Enumerator_System_Guid_ChunkInstances_ChunkInstanceVariables_
-                      *)(pCVar1->fields).meshBounds.m_Extents.z;
-        uStack_19._0_4_ = (pCVar1->fields).meshBounds.m_Extents.x;
-        uStack_19._4_4_ = (pCVar1->fields).meshBounds.m_Extents.y;
-        fStack_40 = (float)(undefined4)uStack_19 * _UNK_?;
         pSStack_22 = (String *)CStack_10.gameObject;
         pSStack_23 = (String *)CStack_10.collider;
         pMStack_24 = CStack_10.renderer;
         pTStack_25 = (Type *)CStack_10.filter;
+        uStack_19._0_4_ = (pCVar1->fields).meshBounds.m_Extents.x;
+        uStack_19._4_4_ = (pCVar1->fields).meshBounds.m_Extents.y;
+        fStack_40 = (float)(undefined4)uStack_19 * _UNK_?;
         fStack_41 = (float)uStack_19._4_4_ * _UNK_?;
         fStack_42 = (float)pDStack_20 * _UNK_?;
         if (((String *)CStack_10.collider == (String *)0x0) ||
@@ -3912,7 +3923,7 @@ code_?:
       TypeInfo__CubeModelChunk->static_fields->uvs = pVVar5;
       func_?(&TypeInfo__CubeModelChunk->static_fields->uvs,pVVar5);
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__UnityEngine__Vector2);
         cRam_? = '\x01';
       }
       fVar6 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).y * _UNK_?;

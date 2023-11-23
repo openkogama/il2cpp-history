@@ -64,64 +64,62 @@ void Assembly-CSharp.dll::Fader::Fader_Fade(Fader *this,float fadeFactor,MethodI
   }
   pRVar2 = (this->fields)._renderer;
   if (fadeFactor < _UNK_?) {
-    if ((pRVar2 != (Renderer *)0x0) &&
-       (pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                           (pRVar2,(MethodInfo *)0x0), pMVar3 != (Material *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
-                (pMVar3,(this->fields).fadeShader,(MethodInfo *)0x0);
-      pRVar2 = (this->fields)._renderer;
-      if (pRVar2 != (Renderer *)0x0) {
-        pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                           (pRVar2,(MethodInfo *)0x0);
-        if (pMVar3 != (Material *)0x0) {
-          pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                             ((Color *)&puStack_5,pMVar3,(MethodInfo *)0x0);
-          puStack_5 = (undefined *)pCVar4->r;
-          fVar6 = pCVar4->g;
-          fVar7 = pCVar4->b;
-          pRVar2 = (this->fields)._renderer;
-          if ((pRVar2 != (Renderer *)0x0) &&
-             (fVar8 = fadeFactor,
-             pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                (pRVar2,(MethodInfo *)0x0), pMVar3 != (Material *)0x0))
-          goto code_?;
-        }
-      }
-    }
+    if (pRVar2 == (Renderer *)0x0) goto code_?;
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                       (pRVar2,(MethodInfo *)0x0);
+    if (pMVar3 == (Material *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
+              (pMVar3,(this->fields).fadeShader,(MethodInfo *)0x0);
+    pRVar2 = (this->fields)._renderer;
+    if (pRVar2 == (Renderer *)0x0) goto code_?;
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                       (pRVar2,(MethodInfo *)0x0);
+    if (pMVar3 == (Material *)0x0) goto code_?;
+    pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                       ((Color *)&puStack_5,pMVar3,(MethodInfo *)0x0);
+    puStack_5 = (undefined *)pCVar4->r;
+    fVar6 = pCVar4->g;
+    fVar7 = pCVar4->b;
+    pMVar8 = (MethodInfo *)fadeFactor;
   }
-  else if ((pRVar2 != (Renderer *)0x0) &&
-          (pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                              (pRVar2,(MethodInfo *)0x0), pMVar3 != (Material *)0x0)) {
+  else {
+    if (pRVar2 == (Renderer *)0x0) goto code_?;
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                       (pRVar2,(MethodInfo *)0x0);
+    if (pMVar3 == (Material *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
               (pMVar3,(this->fields).normalShader,(MethodInfo *)0x0);
     pRVar2 = (this->fields)._renderer;
-    if (pRVar2 != (Renderer *)0x0) {
-      pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                         (pRVar2,(MethodInfo *)0x0);
-      if (pMVar3 != (Material *)0x0) {
-        pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                           ((Color *)&puStack_5,pMVar3,(MethodInfo *)0x0);
-        puStack_5 = (undefined *)pCVar4->r;
-        fVar6 = pCVar4->g;
-        fVar7 = pCVar4->b;
-        pRVar2 = (this->fields)._renderer;
-        if ((pRVar2 != (Renderer *)0x0) &&
-           (pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                               (pRVar2,(MethodInfo *)0x0), pMVar3 != (Material *)0x0)) {
-          fVar8 = 1.0;
-code_?:
-          value.g = fVar6;
-          value.r = (float)puStack_5;
-          value.b = fVar7;
-          value.a = fVar8;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (pMVar3,value,(MethodInfo *)0x0);
-          (this->fields).faded = fadeFactor < _UNK_?;
-          return;
-        }
-      }
+    if (pRVar2 == (Renderer *)0x0) goto code_?;
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                       (pRVar2,(MethodInfo *)0x0);
+    if (pMVar3 == (Material *)0x0) goto code_?;
+    pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                       ((Color *)&puStack_5,pMVar3,(MethodInfo *)0x0);
+    puStack_5 = (undefined *)pCVar4->r;
+    fVar6 = pCVar4->g;
+    fVar7 = pCVar4->b;
+    pMVar8 = (MethodInfo *)0x3f800000;
+  }
+  pRVar2 = (this->fields)._renderer;
+  if (pRVar2 != (Renderer *)0x0) {
+    fadeFactor = 0.0;
+    pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                       (pRVar2,(MethodInfo *)0x0);
+    if (pMVar3 != (Material *)0x0) {
+      value.g = fVar6;
+      value.r = (float)puStack_5;
+      value.b = fVar7;
+      value.a = (float)pMVar8;
+      fadeFactor = fVar7;
+      method = pMVar8;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                (pMVar3,value,(MethodInfo *)0x0);
+      (this->fields).faded = fadeFactor < _UNK_?;
+      return;
     }
   }
+code_?:
   func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();

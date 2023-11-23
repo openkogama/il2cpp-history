@@ -321,8 +321,8 @@ void Assembly-CSharp.dll::PickupItemSlapGun::PickupItemSlapGun_OnFire
                                           (pVVar6,value,(MethodInfo *)0x0);
                       uVar51 = pVVar50->x;
                       uVar52 = pVVar50->y;
-                      fVar25 = (pPVar1->fields).slapStrength;
                       fVar53 = pVVar50->z;
+                      fVar25 = (pPVar1->fields).slapStrength;
                       if (unaff_ESI == (MVWorldObjectClient *)0x0) goto code_?;
                       unaff_EBX = (IBulletImpactVisualizer__Class *)
                                   MVWorldObjectClient::

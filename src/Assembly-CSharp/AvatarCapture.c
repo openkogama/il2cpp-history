@@ -1150,10 +1150,10 @@ Vector3 * Assembly-CSharp.dll::AvatarCapture::AvatarCapture_RotatePointAroundPiv
   fVar1 = point.x - pivot.x;
   fStack_2 = point.y - pivot.y;
   VStack_3.z = point.z - pivot.z;
-  QStack_4.w = angles.z * _UNK_?;
+  QStack_4.z = angles.z * _UNK_?;
   euler.y = angles.y * _UNK_?;
   euler.x = angles.x * _UNK_?;
-  euler.z = QStack_4.w;
+  euler.z = angles.z * _UNK_?;
   pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                      (&QStack_4,euler,(MethodInfo *)0x0);
   fVar6 = pQVar5->w;

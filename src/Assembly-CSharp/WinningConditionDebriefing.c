@@ -492,9 +492,10 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
         func_?();
         cRam_? = '\x01';
       }
-      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-          (IEditModeUI *)0x0) goto code_?;
-      winningCondition = (IWinningCondition *)0x1;
+      winningCondition =
+           (IWinningCondition *)
+           TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if (winningCondition == (IWinningCondition *)0x0) goto code_?;
       cVar3 = func_?();
       if (cVar3 == '\0') {
         return;
@@ -512,7 +513,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
                               (this_00,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                               ), this_01 == (Task *)0x0)) goto code_?;
-      winningCondition = (IWinningCondition *)&UNK_?;
+      winningCondition = (IWinningCondition *)0x0;
       ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_01,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
@@ -970,47 +971,36 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
               pAVar1 = (this->fields).captureCamera;
               if ((pAVar1 != (AvatarCapture *)0x0) &&
                  (this_02 = (pAVar1->fields).renderCam, this_02 != (Camera *)0x0)) {
-                value = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_targetTexture
+                image = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_targetTexture
                                   (this_02,(MethodInfo *)0x0);
                 if (pDVar5 != (DebriefingWinnerGUI *)0x0) {
-                  this_03 = (pDVar5->fields).backgroundImage;
-                  if (this_03 != (ImageAnimator *)0x0) {
-                    start.g = fVar9;
-                    start.r = fVar8;
-                    start.b = fVar10;
-                    start.a = fVar11;
-                    end.g = fVar9 * _UNK_?;
-                    end.r = fVar8 * _UNK_?;
-                    end.b = fVar10 * _UNK_?;
-                    end.a = 1.0;
-                    ImageAnimator::ImageAnimator_SetColor(this_03,start,end,(MethodInfo *)0x0);
-                    this_04 = (pDVar5->fields).winnerImage;
-                    if (this_04 != (RawImage *)0x0) {
-                      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                                (this_04,(Texture *)value,(MethodInfo *)0x0);
-                      pDVar5 = (this->fields).debriefing;
-                      if (pDVar5 != (DebriefingWinnerGUI *)0x0) {
-                        DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScoreImage
-                                  (pDVar5,WinningConditionType__Enum_None,(MethodInfo *)0x0);
-                        if (cRam_? == '\0') {
-                          func_?();
-                          cRam_? = '\x01';
-                        }
-                        method_00 = 
-                        TypeInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_d__16;
-                        value_00 = (Object *)func_?();
-                        mscorlib.dll::System::ThrowHelper::
-                        ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                                  (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                        value_00[1].klass = (Object__Class *)0x0;
-                        value_00[2].klass = (Object__Class *)this;
-                        func_?();
-                        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                        MonoBehaviour_StartCoroutine_Auto
-                                  ((MonoBehaviour *)this,(IEnumerator *)value_00,(MethodInfo *)0x0);
-                        return;
-                      }
+                  startColor.g = fVar9;
+                  startColor.r = fVar8;
+                  startColor.b = fVar10;
+                  startColor.a = fVar11;
+                  DebriefingWinnerGUI::DebriefingWinnerGUI_SetWinnerImage
+                            (pDVar5,startColor,image,(MethodInfo *)0x0);
+                  pDVar5 = (this->fields).debriefing;
+                  if (pDVar5 != (DebriefingWinnerGUI *)0x0) {
+                    DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScoreImage
+                              (pDVar5,WinningConditionType__Enum_None,(MethodInfo *)0x0);
+                    if (cRam_? == '\0') {
+                      func_?();
+                      cRam_? = '\x01';
                     }
+                    method_00 = TypeInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_d__16
+                    ;
+                    value = (Object *)func_?();
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                    value[1].klass = (Object__Class *)0x0;
+                    value[2].klass = (Object__Class *)this;
+                    func_?();
+                    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                    MonoBehaviour_StartCoroutine_Auto
+                              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -1338,8 +1328,8 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb0;
-  puVar5 = &stack0xffffffb0;
+  puStack_4 = &stack0xffffffb4;
+  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -1379,9 +1369,9 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pDVar7 = DStack_8._dictionary;
-  fVar9 = (float)DStack_8._index;
-  fVar10 = (float)DStack_8._version;
+  pTVar7 = (Text *)DStack_8._dictionary;
+  pRVar9 = (RawImage *)DStack_8._index;
+  pIVar10 = (ImageAnimator *)DStack_8._version;
   if (scoreTeamEntries != (List_1_ScoreTeamEntry_ *)0x0) {
     if ((scoreTeamEntries->fields)._size == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -1394,267 +1384,264 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
       return;
     }
     WinningConditionDebriefing_Clear(this,(MethodInfo *)0x0);
-    pMStack_11 = (MVPlayer *)(this->fields).teamWinPrefab;
+    DStack_8._currentValue = (Object *)(this->fields).teamWinPrefab;
     this_00 = (this->fields).group;
-    pDVar7 = DStack_8._dictionary;
-    fVar9 = (float)DStack_8._index;
-    fVar10 = (float)DStack_8._version;
+    pTVar7 = (Text *)DStack_8._dictionary;
+    pRVar9 = (RawImage *)DStack_8._index;
+    pIVar10 = (ImageAnimator *)DStack_8._version;
     if (this_00 != (CanvasGroup *)0x0) {
-      pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this_00,(MethodInfo *)0x0);
-      pDVar7 = DStack_8._dictionary;
-      fVar9 = (float)DStack_8._index;
-      fVar10 = (float)DStack_8._version;
-      if (pGVar12 != (GameObject *)0x0) {
+      pTVar7 = (Text *)DStack_8._dictionary;
+      pRVar9 = (RawImage *)DStack_8._index;
+      pIVar10 = (ImageAnimator *)DStack_8._version;
+      if (pGVar11 != (GameObject *)0x0) {
         parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar12,(MethodInfo *)0x0);
+                           (pGVar11,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pDVar13 = (DebriefingWinnerGUI *)
+        pDVar12 = (DebriefingWinnerGUI *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                           ((Object *)pMStack_11,parent,0,
+                           (DStack_8._currentValue,parent,0,
                             DebriefingWinnerGUI_MethodInfo__UnityEngine__Object__Instantiate<DebriefingWinnerGUI>_DebriefingWinnerGUI__UnityEngine__Transform__bool_
                            );
-        (this->fields).debriefing = pDVar13;
+        (this->fields).debriefing = pDVar12;
         func_?();
-        this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   WinningConditionDebriefing_GetWinningTeamsFromScoreTeamEntries
                             (this,scoreTeamEntries,counterType,(MethodInfo *)0x0);
-        pDVar7 = DStack_8._dictionary;
-        fVar9 = (float)DStack_8._index;
-        fVar10 = (float)DStack_8._version;
-        if (this_05 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          if ((this_05->fields)._size == 1) {
-            pDStack_14 = (this->fields).debriefing;
-            pMStack_11 = (MVPlayer *)TM::TM__(StringLiteral_Winner__,(MethodInfo *)0x0);
-            pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            pDVar7 = DStack_8._dictionary;
-            fVar9 = (float)DStack_8._index;
-            fVar10 = (float)DStack_8._version;
-            if ((pMVar15 == (MVNetworkGame *)0x0) ||
-               (pMVar16 = (pMVar15->fields).teamManager, pMVar16 == (MVTeamManager *)0x0))
+        pTVar7 = (Text *)DStack_8._dictionary;
+        pRVar9 = (RawImage *)DStack_8._index;
+        pIVar10 = (ImageAnimator *)DStack_8._version;
+        if (this_06 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          if ((this_06->fields)._size == 1) {
+            pDStack_13 = (this->fields).debriefing;
+            DStack_8._currentValue = (Object *)TM::TM__(StringLiteral_Winner__,(MethodInfo *)0x0);
+            pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            pTVar7 = (Text *)DStack_8._dictionary;
+            pRVar9 = (RawImage *)DStack_8._index;
+            pIVar10 = (ImageAnimator *)DStack_8._version;
+            if ((pMVar14 == (MVNetworkGame *)0x0) ||
+               (pMVar15 = (pMVar14->fields).teamManager, pMVar15 == (MVTeamManager *)0x0))
             goto code_?;
-            pDStack_17 = (pMVar16->fields).teamNames;
-            RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_05,0,
-                               MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
-                              );
-            pDVar7 = DStack_8._dictionary;
-            fVar9 = (float)DStack_8._index;
-            fVar10 = (float)DStack_8._version;
-            if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            if (pDStack_17 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
+            pDVar16 = (pMVar15->fields).teamNames;
+            RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     RegularExpressions::RegexCharClass+SingleRange]::
+                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                               (this_06,0,
+                                MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
+                               );
+            pTVar7 = (Text *)DStack_8._dictionary;
+            pRVar9 = (RawImage *)DStack_8._index;
+            pIVar10 = (ImageAnimator *)DStack_8._version;
+            if (RVar17 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            if (pDVar16 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
             goto code_?;
-            pSVar19 = (String *)
+            pSVar18 = (String *)
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Int32Enum,System::Object]::
                       Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDStack_17,
-                                 *(Int32Enum__Enum *)((int)RVar18 + 8),
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar16,
+                                 *(Int32Enum__Enum *)((int)RVar17 + 8),
                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
                                 );
-            pDStack_17 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)
-                         mscorlib.dll::System::String::String_Concat_3
-                                   ((String *)pMStack_11,pSVar19,(MethodInfo *)0x0);
-            pDVar7 = DStack_8._dictionary;
-            fVar9 = (float)DStack_8._index;
-            fVar10 = (float)DStack_8._version;
-            if (pDStack_14 == (DebriefingWinnerGUI *)0x0) goto code_?;
-            pTVar20 = (pDStack_14->fields).winnerName;
+            pTStack_19 = (Text *)mscorlib.dll::System::String::String_Concat_3
+                                           ((String *)DStack_8._currentValue,pSVar18,
+                                            (MethodInfo *)0x0);
+            pTVar7 = (Text *)DStack_8._dictionary;
+            pRVar9 = (RawImage *)DStack_8._index;
+            pIVar10 = (ImageAnimator *)DStack_8._version;
+            if (pDStack_13 == (DebriefingWinnerGUI *)0x0) goto code_?;
+            pTVar20 = (pDStack_13->fields).winnerName;
           }
           else {
-            pDVar13 = (DebriefingWinnerGUI *)StringLiteral_It_s_a_tie;
-            if ((this_05->fields)._size < 3) {
-              pDStack_14 = (DebriefingWinnerGUI *)
+            pDVar12 = (DebriefingWinnerGUI *)StringLiteral_It_s_a_tie;
+            if ((this_06->fields)._size < 3) {
+              pDStack_13 = (DebriefingWinnerGUI *)
                            mscorlib.dll::System::String::String_Concat_3
                                      (StringLiteral_It_s_a_tie,StringLiteral__between_,
                                       (MethodInfo *)0x0);
-              for (pMStack_11 = (MVPlayer *)0x0; pDVar13 = pDStack_14,
-                  (int)pMStack_11 < (this_05->fields)._size;
-                  pMStack_11 = (MVPlayer *)((int)&pMStack_11->klass + 1)) {
-                pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                pDVar7 = DStack_8._dictionary;
-                fVar9 = (float)DStack_8._index;
-                fVar10 = (float)DStack_8._version;
-                if ((pMVar15 == (MVNetworkGame *)0x0) ||
-                   (pMVar16 = (pMVar15->fields).teamManager, pMVar16 == (MVTeamManager *)0x0))
+              for (DStack_8._currentValue = (Object *)0x0; pDVar12 = pDStack_13,
+                  (int)DStack_8._currentValue < (this_06->fields)._size;
+                  DStack_8._currentValue = (Object *)((int)&(DStack_8._currentValue)->klass + 1))
+              {
+                pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                pTVar7 = (Text *)DStack_8._dictionary;
+                pRVar9 = (RawImage *)DStack_8._index;
+                pIVar10 = (ImageAnimator *)DStack_8._version;
+                if ((pMVar14 == (MVNetworkGame *)0x0) ||
+                   (pMVar15 = (pMVar14->fields).teamManager, pMVar15 == (MVTeamManager *)0x0))
                 goto code_?;
-                pDStack_17 = (pMVar16->fields).teamNames;
-                RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  (this_05,0,
-                                   MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
-                                  );
-                pDVar7 = DStack_8._dictionary;
-                fVar9 = (float)DStack_8._index;
-                fVar10 = (float)DStack_8._version;
-                if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                if (pDStack_17 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
+                pDVar16 = (pMVar15->fields).teamNames;
+                RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                         RegularExpressions::RegexCharClass+SingleRange]::
+                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                   (this_06,0,
+                                    MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
+                                   );
+                pTVar7 = (Text *)DStack_8._dictionary;
+                pRVar9 = (RawImage *)DStack_8._index;
+                pIVar10 = (ImageAnimator *)DStack_8._version;
+                if (RVar17 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                if (pDVar16 == (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)
                 goto code_?;
-                pSVar19 = (String *)
+                pSVar18 = (String *)
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32Enum,System::Object]::
                           Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDStack_17,
-                                     *(Int32Enum__Enum *)((int)RVar18 + 8),
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar16,
+                                     *(Int32Enum__Enum *)((int)RVar17 + 8),
                                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
                                     );
-                pDStack_14 = (DebriefingWinnerGUI *)
+                pDStack_13 = (DebriefingWinnerGUI *)
                              mscorlib.dll::System::String::String_Concat_3
-                                       ((String *)pDStack_14,pSVar19,(MethodInfo *)0x0);
-                if ((int)pMStack_11 < (this_05->fields)._size + -1) {
-                  pDStack_14 = (DebriefingWinnerGUI *)
+                                       ((String *)pDStack_13,pSVar18,(MethodInfo *)0x0);
+                if ((int)DStack_8._currentValue < (this_06->fields)._size + -1) {
+                  pDStack_13 = (DebriefingWinnerGUI *)
                                mscorlib.dll::System::String::String_Concat_3
-                                         ((String *)pDStack_14,StringLiteral__and_,(MethodInfo *)0x0
+                                         ((String *)pDStack_13,StringLiteral__and_,(MethodInfo *)0x0
                                          );
                 }
               }
             }
-            pDStack_17 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)
-                         mscorlib.dll::System::String::String_Concat_3
-                                   ((String *)pDVar13,::StringLiteral__,(MethodInfo *)0x0);
-            pDVar13 = (this->fields).debriefing;
-            pDVar7 = DStack_8._dictionary;
-            fVar9 = (float)DStack_8._index;
-            fVar10 = (float)DStack_8._version;
-            if (pDVar13 == (DebriefingWinnerGUI *)0x0) goto code_?;
-            pTVar20 = (pDVar13->fields).winnerName;
+            pTStack_19 = (Text *)mscorlib.dll::System::String::String_Concat_3
+                                           ((String *)pDVar12,::StringLiteral__,(MethodInfo *)0x0);
+            pDVar12 = (this->fields).debriefing;
+            pTVar7 = (Text *)DStack_8._dictionary;
+            pRVar9 = (RawImage *)DStack_8._index;
+            pIVar10 = (ImageAnimator *)DStack_8._version;
+            if (pDVar12 == (DebriefingWinnerGUI *)0x0) goto code_?;
+            pTVar20 = (pDVar12->fields).winnerName;
           }
-          pDVar7 = DStack_8._dictionary;
-          fVar9 = (float)DStack_8._index;
-          fVar10 = (float)DStack_8._version;
+          pTVar7 = (Text *)DStack_8._dictionary;
+          pRVar9 = (RawImage *)DStack_8._index;
+          pIVar10 = (ImageAnimator *)DStack_8._version;
           if (pTVar20 != (Text *)0x0) {
             (*(code *)(pTVar20->klass->vtable).set_text.method)
-                      (pTVar20,pDStack_17,
+                      (pTVar20,pTStack_19,
                        (pTVar20->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-            pDVar13 = (this->fields).debriefing;
-            pDVar7 = DStack_8._dictionary;
-            fVar9 = (float)DStack_8._index;
-            fVar10 = (float)DStack_8._version;
-            if (pDVar13 != (DebriefingWinnerGUI *)0x0) {
+            pDVar12 = (this->fields).debriefing;
+            pTVar7 = (Text *)DStack_8._dictionary;
+            pRVar9 = (RawImage *)DStack_8._index;
+            pIVar10 = (ImageAnimator *)DStack_8._version;
+            if (pDVar12 != (DebriefingWinnerGUI *)0x0) {
               DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScoreImage
-                        (pDVar13,winType,(MethodInfo *)0x0);
-              RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (this_05,0,
-                                 MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
-                                );
-              pDVar7 = DStack_8._dictionary;
-              fVar9 = (float)DStack_8._index;
-              fVar10 = (float)DStack_8._version;
-              if (RVar18 != (RegexCharClass_SingleRange)0x0) {
-                pDStack_14 = *(DebriefingWinnerGUI **)((int)RVar18 + 0xc);
-                if (pDStack_14 == (DebriefingWinnerGUI *)0x0) {
-                  pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  pDVar7 = DStack_8._dictionary;
-                  fVar9 = (float)DStack_8._index;
-                  fVar10 = (float)DStack_8._version;
-                  if ((pMVar15 == (MVNetworkGame *)0x0) ||
-                     (this_01 = (pMVar15->fields).playerContainer,
+                        (pDVar12,winType,(MethodInfo *)0x0);
+              RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                       RegularExpressions::RegexCharClass+SingleRange]::
+                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                 (this_06,0,
+                                  MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
+                                 );
+              pTVar7 = (Text *)DStack_8._dictionary;
+              pRVar9 = (RawImage *)DStack_8._index;
+              pIVar10 = (ImageAnimator *)DStack_8._version;
+              if (RVar17 != (RegexCharClass_SingleRange)0x0) {
+                pDStack_13 = *(DebriefingWinnerGUI **)((int)RVar17 + 0xc);
+                if (pDStack_13 == (DebriefingWinnerGUI *)0x0) {
+                  pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  pTVar7 = (Text *)DStack_8._dictionary;
+                  pRVar9 = (RawImage *)DStack_8._index;
+                  pIVar10 = (ImageAnimator *)DStack_8._version;
+                  if ((pMVar14 == (MVNetworkGame *)0x0) ||
+                     (this_01 = (pMVar14->fields).playerContainer,
                      this_01 == (MVPlayerContainer *)0x0)) goto code_?;
-                  this_06 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                  this_07 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                              *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
                                          (this_01,(MethodInfo *)0x0);
-                  pDVar7 = DStack_8._dictionary;
-                  fVar9 = (float)DStack_8._index;
-                  fVar10 = (float)DStack_8._version;
-                  if (this_06 ==
+                  pTVar7 = (Text *)DStack_8._dictionary;
+                  pRVar9 = (RawImage *)DStack_8._index;
+                  pIVar10 = (ImageAnimator *)DStack_8._version;
+                  if (this_07 ==
                       (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                        *)0x0) goto code_?;
                   pDVar21 = mscorlib.dll::System::Collections::Generic::
                             Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::
                             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                             Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                                      (&DStack_8,this_06,
+                                      (&DStack_8,this_07,
                                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                                       );
-                  pMVar22 = (MVPlayer *)pDVar21->_currentValue;
+                  this_05 = (MVPlayer *)pDVar21->_currentValue;
                   DStack_8._version = 0;
                   uStack_1 = 1;
-                  DStack_8._currentValue = (Object *)&stack0xffffffbc;
+                  DStack_8._currentValue = (Object *)&stack0xffffffc0;
                   while( true ) {
-                    bVar23 = mscorlib.dll::System::Collections::Generic::
+                    bVar22 = mscorlib.dll::System::Collections::Generic::
                             Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System
                             ::UInt32,System::Object]::
                             Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                        *)&stack0xffffffbc,
+                                        *)&stack0xffffffc0,
                                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                                       );
-                    if (bVar23 == 0) break;
-                    pDVar7 = DStack_8._dictionary;
-                    fVar9 = (float)DStack_8._index;
-                    fVar10 = (float)DStack_8._version;
-                    pMStack_11 = pMVar22;
-                    if (pMVar22 == (MVPlayer *)0x0) goto code_?;
-                    pDStack_17 = (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)
-                                 (pMVar22->fields)._Team_k__BackingField;
-                    RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (this_05,0,
-                                       MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
-                                      );
-                    pDVar7 = DStack_8._dictionary;
-                    fVar9 = (float)DStack_8._index;
-                    fVar10 = (float)DStack_8._version;
-                    if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                    if (pDStack_17 ==
-                        *(Dictionary_2_MV_WorldObject_MVTeam_System_String_ **)((int)RVar18 + 8)) {
-                      if (pMStack_11 == (MVPlayer *)0x0) goto code_?;
-                      in_stack_6 = (MethodInfo **)pMStack_11;
-                      pDVar13 = (DebriefingWinnerGUI *)
-                               MVPlayer::MVPlayer_GetGameStat
-                                         (pMStack_11,counterType,(MethodInfo *)0x0);
-                      if ((int)pDStack_14 < (int)pDVar13) {
-                        pDStack_14 = pDVar13;
+                    if (bVar22 == 0) break;
+                    pTVar7 = (Text *)DStack_8._dictionary;
+                    pRVar9 = (RawImage *)DStack_8._index;
+                    pIVar10 = (ImageAnimator *)DStack_8._version;
+                    if (this_05 == (MVPlayer *)0x0) goto code_?;
+                    iVar23 = (this_05->fields)._Team_k__BackingField;
+                    RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                             RegularExpressions::RegexCharClass+SingleRange]::
+                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                       (this_06,0,
+                                        MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
+                                       );
+                    pTVar7 = (Text *)DStack_8._dictionary;
+                    pRVar9 = (RawImage *)DStack_8._index;
+                    pIVar10 = (ImageAnimator *)DStack_8._version;
+                    if (RVar17 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                    if (iVar23 == *(int *)((int)RVar17 + 8)) {
+                      if (this_05 == (MVPlayer *)0x0) goto code_?;
+                      in_stack_6 = (MethodInfo **)this_05;
+                      pDVar12 = (DebriefingWinnerGUI *)
+                               MVPlayer::MVPlayer_GetGameStat(this_05,counterType,(MethodInfo *)0x0)
+                      ;
+                      if ((int)pDStack_13 < (int)pDVar12) {
+                        pDStack_13 = pDVar12;
                       }
                     }
                   }
                   uStack_1 = 0xffffffff;
                   mscorlib.dll::System::ThrowHelper::
                   ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                            ((Object *)&stack0xffffffbc,
+                            ((Object *)&stack0xffffffc0,
                              (ExceptionArgument__Enum)
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                              ,(MethodInfo *)in_stack_6);
                   uStack_1 = 0xffffffff;
                 }
-                pSVar19 = WinningConditionDebriefing_FormatCount
-                                    (counterType,(int32_t)pDStack_14,(MethodInfo *)0x0);
-                pDVar13 = (this->fields).debriefing;
-                pDVar7 = DStack_8._dictionary;
-                fVar9 = (float)DStack_8._index;
-                fVar10 = (float)DStack_8._version;
-                if ((pDVar13 != (DebriefingWinnerGUI *)0x0) &&
-                   (pTVar20 = (pDVar13->fields).winValue, pTVar20 != (Text *)0x0)) {
+                pSVar18 = WinningConditionDebriefing_FormatCount
+                                    (counterType,(int32_t)pDStack_13,(MethodInfo *)0x0);
+                pDVar12 = (this->fields).debriefing;
+                pTVar7 = (Text *)DStack_8._dictionary;
+                pRVar9 = (RawImage *)DStack_8._index;
+                pIVar10 = (ImageAnimator *)DStack_8._version;
+                if ((pDVar12 != (DebriefingWinnerGUI *)0x0) &&
+                   (pTVar20 = (pDVar12->fields).winValue, pTVar20 != (Text *)0x0)) {
                   (*(code *)(pTVar20->klass->vtable).set_text.method)
-                            (pTVar20,pSVar19,
+                            (pTVar20,pSVar18,
                              (pTVar20->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
                   pAVar24 = (this->fields).captureCamera;
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__UnityEngine__Object);
                   }
-                  bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                  bVar22 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                                     ((Object_1 *)pAVar24,(Object_1 *)0x0,(MethodInfo *)0x0);
-                  if (bVar23 != 0) {
+                  if (bVar22 != 0) {
                     pAVar24 = (this->fields).captureCamera;
-                    pDVar7 = DStack_8._dictionary;
-                    fVar9 = (float)DStack_8._index;
-                    fVar10 = (float)DStack_8._version;
+                    pTVar7 = (Text *)DStack_8._dictionary;
+                    pRVar9 = (RawImage *)DStack_8._index;
+                    pIVar10 = (ImageAnimator *)DStack_8._version;
                     if (pAVar24 == (AvatarCapture *)0x0) goto code_?;
-                    pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                    pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                              Component_get_gameObject((Component *)pAVar24,(MethodInfo *)0x0);
                     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                              ((Object_1 *)pGVar12,(MethodInfo *)0x0);
+                              ((Object_1 *)pGVar11,(MethodInfo *)0x0);
                   }
                   pAVar24 = (this->fields).captureCameraPrefab;
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -1668,30 +1655,30 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
                   (this->fields).captureCamera = pAVar24;
                   func_?(&(this->fields).captureCamera,pAVar24);
                   pAVar24 = (this->fields).captureCamera;
-                  pDVar7 = DStack_8._dictionary;
-                  fVar9 = (float)DStack_8._index;
-                  fVar10 = (float)DStack_8._version;
+                  pTVar7 = (Text *)DStack_8._dictionary;
+                  pRVar9 = (RawImage *)DStack_8._index;
+                  pIVar10 = (ImageAnimator *)DStack_8._version;
                   if (pAVar24 != (AvatarCapture *)0x0) {
                     AvatarCapture::AvatarCapture_CapturePlayersInTeam
-                              (pAVar24,(List_1_ScoreTeamEntry_ *)this_05,counterType,
+                              (pAVar24,(List_1_ScoreTeamEntry_ *)this_06,counterType,
                                (MethodInfo *)0x0);
-                    if ((this_05->fields)._size == 1) {
-                      RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                              RegularExpressions::RegexCharClass+SingleRange]::
-                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        (this_05,0,
-                                         MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
-                                        );
-                      pDVar7 = DStack_8._dictionary;
-                      fVar9 = (float)DStack_8._index;
-                      fVar10 = (float)DStack_8._version;
-                      if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                      team = *(MVTeam__Enum *)((int)RVar18 + 8);
+                    if ((this_06->fields)._size == 1) {
+                      RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                               RegularExpressions::RegexCharClass+SingleRange]::
+                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                         (this_06,0,
+                                          MethodInfo__System__Collections__Generic__List<ScoreTeamEntry>__get_Item_int_
+                                         );
+                      pTVar7 = (Text *)DStack_8._dictionary;
+                      pRVar9 = (RawImage *)DStack_8._index;
+                      pIVar10 = (ImageAnimator *)DStack_8._version;
+                      if (RVar17 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                      team = *(MVTeam__Enum *)((int)RVar17 + 8);
                     }
                     else {
                       team = MVTeam__Enum_None;
                     }
-                    pDVar13 = (this->fields).debriefing;
+                    pDVar12 = (this->fields).debriefing;
                     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
                       func_?(TypeInfo__Styles);
                     }
@@ -1704,42 +1691,43 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
                     DStack_8._version = (int32_t)pCVar25->b;
                     DStack_8._currentValue = (Object *)pCVar25->a;
                     pAVar24 = (this->fields).captureCamera;
-                    pDVar7 = DStack_8._dictionary;
-                    fVar9 = (float)DStack_8._index;
-                    fVar10 = (float)DStack_8._version;
+                    pTVar7 = (Text *)DStack_8._dictionary;
+                    pRVar9 = (RawImage *)DStack_8._index;
+                    pIVar10 = (ImageAnimator *)DStack_8._version;
                     if ((pAVar24 != (AvatarCapture *)0x0) &&
                        (this_02 = (pAVar24->fields).renderCam, this_02 != (Camera *)0x0)) {
                       value = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                               Camera_get_targetTexture(this_02,(MethodInfo *)0x0);
                       pOVar26 = DStack_8._currentValue;
-                      pDVar7 = DStack_8._dictionary;
-                      fVar9 = (float)DStack_8._index;
-                      fVar10 = (float)DStack_8._version;
-                      if (pDVar13 != (DebriefingWinnerGUI *)0x0) {
-                        pDVar7 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                   *)((float)DStack_8._dictionary * _UNK_?);
-                        fVar9 = (float)DStack_8._index * _UNK_?;
-                        fVar10 = (float)DStack_8._version * _UNK_?;
-                        this_03 = (pDVar13->fields).backgroundImage;
+                      pTVar7 = (Text *)DStack_8._dictionary;
+                      pRVar9 = (RawImage *)DStack_8._index;
+                      pIVar10 = (ImageAnimator *)DStack_8._version;
+                      if (pDVar12 != (DebriefingWinnerGUI *)0x0) {
+                        pTVar7 = (Text *)((float)DStack_8._dictionary * _UNK_?);
+                        pRVar9 = (RawImage *)((float)DStack_8._index * _UNK_?);
+                        pIVar10 = (ImageAnimator *)((float)DStack_8._version * _UNK_?);
+                        this_03 = (pDVar12->fields).backgroundImage;
                         DStack_8._currentValue = (Object *)0x3f800000;
                         if (this_03 != (ImageAnimator *)0x0) {
                           start.g = (float)DStack_8._index;
                           start.r = (float)DStack_8._dictionary;
                           start.b = (float)DStack_8._version;
                           start.a = (float)pOVar26;
-                          end.g = fVar9;
-                          end.r = (float)pDVar7;
-                          end.b = fVar10;
+                          end.g = (float)pRVar9;
+                          end.r = (float)pTVar7;
+                          end.b = (float)pIVar10;
                           end.a = 1.0;
-                          DStack_8._dictionary = pDVar7;
-                          DStack_8._index = (int32_t)fVar9;
-                          DStack_8._version = (int32_t)fVar10;
+                          DStack_8._dictionary =
+                               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                                *)pTVar7;
+                          DStack_8._index = (int32_t)pRVar9;
+                          DStack_8._version = (int32_t)pIVar10;
                           ImageAnimator::ImageAnimator_SetColor(this_03,start,end,(MethodInfo *)0x0)
                           ;
-                          this_04 = (pDVar13->fields).winnerImage;
-                          pDVar7 = DStack_8._dictionary;
-                          fVar9 = (float)DStack_8._index;
-                          fVar10 = (float)DStack_8._version;
+                          this_04 = (pDVar12->fields).winnerImage;
+                          pTVar7 = (Text *)DStack_8._dictionary;
+                          pRVar9 = (RawImage *)DStack_8._index;
+                          pIVar10 = (ImageAnimator *)DStack_8._version;
                           if (this_04 != (RawImage *)0x0) {
                             UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                                       (this_04,(Texture *)value,(MethodInfo *)0x0);
@@ -1776,9 +1764,11 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
     }
   }
 code_?:
-  DStack_8._version = (int32_t)fVar10;
-  DStack_8._index = (int32_t)fVar9;
-  DStack_8._dictionary = pDVar7;
+  DStack_8._version = (int32_t)pIVar10;
+  DStack_8._index = (int32_t)pRVar9;
+  DStack_8._dictionary =
+       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        *)pTVar7;
   uVar27 = func_?();
   func_?(uVar27);
   pcVar28 = (code *)swi(3);

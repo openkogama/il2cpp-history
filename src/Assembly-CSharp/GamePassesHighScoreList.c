@@ -428,8 +428,7 @@ code_?:
         index = 0;
         if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
         goto code_?;
-        while( true ) {
-          if ((this_01->fields)._size <= index) break;
+        for (; index < (this_01->fields)._size; index = index + 1) {
           RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -460,7 +459,6 @@ code_?:
             iVar3 = iVar3 + 1;
             goto code_?;
           }
-          index = index + 1;
         }
         RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
@@ -1204,70 +1202,68 @@ Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SortHighSc
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
             );
   index = 0;
-  if (listToSort != (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
+  if (listToSort == (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
 code_?:
-    do {
-      if ((listToSort->fields)._size <= index) {
-        return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
-      }
-      index_00 = 0;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      break;
-      while( true ) {
-        if ((this_00->fields)._size <= index_00) break;
-        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           listToSort,index,
-                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                          );
-        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        iVar2 = *(int *)((int)RVar1 + 0x10);
-        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,index_00,
-                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                          );
-        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        if (*(int *)((int)RVar1 + 0x10) < iVar2) {
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             listToSort,index,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                            );
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Insert
-                    ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar1,
-                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
-                    );
-          index = index + 1;
-          goto code_?;
-        }
-        index_00 = index_00 + 1;
-      }
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    func_?();
+    pcVar1 = (code *)swi(3);
+    pLVar2 = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)(*pcVar1)();
+    return pLVar2;
+  }
+code_?:
+  do {
+    if ((listToSort->fields)._size <= index) {
+      return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
+    }
+    index_00 = 0;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    for (; index_00 < (this_00->fields)._size; index_00 = index_00 + 1) {
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          listToSort,index,
                          MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                         );
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)RVar1,
-                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
-                );
-      index = index + 1;
-    } while( true );
-  }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  pLVar4 = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)(*pcVar3)();
-  return pLVar4;
+      if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      iVar4 = *(int *)((int)RVar3 + 0x10);
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,index_00,
+                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                        );
+      if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      if (*(int *)((int)RVar3 + 0x10) < iVar4) {
+        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           listToSort,index,
+                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                          );
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Insert
+                  ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar3,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+                  );
+        index = index + 1;
+        goto code_?;
+      }
+    }
+    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       listToSort,index,
+                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                      );
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)RVar3,
+               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
+              );
+    index = index + 1;
+  } while( true );
 }
 
 
@@ -1457,7 +1453,7 @@ code_?:
       uVar13 = 1;
     }
     bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-    if ((uVar13 != 0 & bVar8) != 0) {
+    if ((bVar8 & -(uVar13 != 0)) != 0) {
       value = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                 (value,ExceptionArgument__Enum_obj,method_00);

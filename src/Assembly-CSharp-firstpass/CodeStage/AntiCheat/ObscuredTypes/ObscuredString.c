@@ -1118,6 +1118,6 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
   }
   bVar1 = ObscuredString_op_Equality(a,b,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 

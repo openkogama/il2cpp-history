@@ -27,9 +27,9 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ApplyDamage
   auStack_3._8_4_ = (float)auStack_4._8_4_ - (float)uVar7;
   auStack_4._16_4_ = auStack_3._16_4_;
   puVar2 = (undefined8 *)func_?(&IStack_6.impulse.y,auStack_3 + 8,0);
-  auStack_4._16_4_ = (this->fields).pushBackStrength;
   auStack_3._8_8_ = *puVar2;
   auStack_3._16_4_ = *(undefined4 *)(puVar2 + 1);
+  auStack_4._16_4_ = (this->fields).pushBackStrength;
   auStack_4._8_4_ = (float)auStack_3._8_4_ * (float)auStack_4._16_4_;
   auStack_4._12_4_ = (float)auStack_3._12_4_ * (float)auStack_4._16_4_;
   auStack_4._16_4_ = (float)auStack_3._16_4_ * (float)auStack_4._16_4_;

@@ -202,9 +202,9 @@ bool Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVSphereCast
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.y = (float)uVar3 * radius;
-  radius_00.x = (float)uVar2 * radius;
   radius_00.z = fVar4 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.y = (float)uVar3 * radius;
   bVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCast_1
                     (ray,radius_00,rotation,distance,voxelHit,ignoreWoIds,layerMask,
                      (MethodInfo *)0x0);
@@ -240,9 +240,9 @@ Assembly-CSharp.dll::CollisionDetection::CollisionDetection_MVSphereCastAll
   if ((TypeInfo__MVSweptElipsoidCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVSweptElipsoidCheck);
   }
-  radius_00.y = (float)uVar3 * radius;
-  radius_00.x = (float)uVar2 * radius;
   radius_00.z = fVar4 * radius;
+  radius_00.x = (float)uVar2 * radius;
+  radius_00.y = (float)uVar3 * radius;
   pLVar5 = MVSweptElipsoidCheck::MVSweptElipsoidCheck_MVElipsoidCastAll_1
                      (ray,radius_00,rotation,distance,ignoreWoIds,layerMask,(MethodInfo *)0x0);
   return pLVar5;

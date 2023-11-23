@@ -108,26 +108,31 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_Initialize
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
     original = (this->fields).avatarCamerasDesktop;
+    method_00 = 
+    AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
+    ;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
+      method_00 = 
+      AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
+      ;
     }
-    pIVar1 = (IAvatarCameraController *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        AvatarCamerasDesktop_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasDesktop>_AvatarCamerasDesktop_
-                       );
   }
   else {
-    original_00 = (this->fields).avatarCamerasMobile;
+    original = (AvatarCamerasDesktop *)(this->fields).avatarCamerasMobile;
+    method_00 = 
+    AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
+    ;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
+      method_00 = 
+      AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
+      ;
     }
-    pIVar1 = (IAvatarCameraController *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_00,
-                        AvatarCamerasTouch_MethodInfo__UnityEngine__Object__Instantiate<AvatarCamerasTouch>_AvatarCamerasTouch_
-                       );
   }
+  pIVar1 = (IAvatarCameraController *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,method_00);
   (this->fields).avatarCameraController = pIVar1;
   func_?(&(this->fields).avatarCameraController);
   pIVar1 = (this->fields).avatarCameraController;

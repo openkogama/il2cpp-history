@@ -408,17 +408,18 @@ code_?:
           }
           goto code_?;
         }
-        pMVar9 = (MethodInfo_1 *)func_?();
-        if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
-        pDVar5[1].fields.original_method_info = pMVar9;
-        iVar10 = func_?();
-        if (iVar10 != 0) goto code_?;
+        pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+        if (pUVar3 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+        goto code_?;
+        (pMVar2->fields).PositionChanged = pUVar3;
+        iVar9 = func_?();
+        if (iVar9 != 0) goto code_?;
       }
       func_?();
 code_?:
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
       return;
     }
     if ((this->fields)._HasUseRequirements_k__BackingField != 0) {
@@ -466,17 +467,17 @@ code_?:
       func_?();
       goto code_?;
     }
-    pMVar9 = (MethodInfo_1 *)func_?();
-    if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
-    pDVar5[1].fields.original_method_info = pMVar9;
-    iVar10 = func_?();
-    if (iVar10 != 0) goto code_?;
+    pMVar11 = (MethodInfo_1 *)func_?();
+    if (pMVar11 == (MethodInfo_1 *)0x0) goto code_?;
+    pDVar5[1].fields.original_method_info = pMVar11;
+    iVar9 = func_?();
+    if (iVar9 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1016,9 +1017,9 @@ void Assembly-CSharp.dll::UseInteractorVisualization::UseInteractorVisualization
     uVar4 = (this->fields).pivot.y;
     this_00 = (this->fields).cullingSubscriberBase;
     if (this_00 != (CullingSubscriberBase *)0x0) {
-      value.y = (float)uVar4 + (float)uVar2;
-      value.x = (float)uVar3 + (float)uVar1;
       value.z = (positionChangedEventArgs->fields).NewPos.z + (this->fields).pivot.z;
+      value.x = (float)uVar3 + (float)uVar1;
+      value.y = (float)uVar4 + (float)uVar2;
       CullingSubscriberBase::CullingSubscriberBase_set_Position(this_00,value,(MethodInfo *)0x0);
       return;
     }
@@ -1303,49 +1304,49 @@ code_?:
     func_?();
     pMVar2 = (this->fields).wo;
     if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
-    a = (pMVar2->fields).PositionChanged;
+    pUVar3 = (pMVar2->fields).PositionChanged;
     this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__UseInteractorVisualization__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
       (pMVar2->fields).PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
 code_?:
       func_?();
       pMVar2 = (this->fields).wo;
       if (pMVar2 != (MVWorldObjectClient *)0x0) {
-        puVar4 = (undefined8 *)(*(code *)(pMVar2->klass->vtable).get_WorldPosition_1.method)();
+        puVar5 = (undefined8 *)(*(code *)(pMVar2->klass->vtable).get_WorldPosition_1.method)();
         pCVar1 = (this->fields).cullingSubscriberBase;
-        uVar5 = (this->fields).pivot.x;
-        uVar6 = (this->fields).pivot.y;
-        fStack_7 = (float)*puVar4;
-        fStack_8 = (float)((ulonglong)*puVar4 >> 0x20);
+        uVar6 = (this->fields).pivot.x;
+        uVar7 = (this->fields).pivot.y;
+        fStack_8 = (float)((ulonglong)*puVar5 >> 0x20);
         if (pCVar1 != (CullingSubscriberBase *)0x0) {
-          value.y = (float)uVar6 + fStack_8;
-          value.x = (float)uVar5 + fStack_7;
-          value.z = *(float *)(puVar4 + 1) + (this->fields).pivot.z;
+          value.y = (float)uVar7 + fStack_8;
+          value.x = (float)uVar6 + (float)*puVar5;
+          value.z = *(float *)(puVar5 + 1) + (this->fields).pivot.z;
           CullingSubscriberBase::CullingSubscriberBase_set_Position(pCVar1,value,(MethodInfo *)0x0);
           return;
         }
       }
       goto code_?;
     }
-    pMVar9 = (MethodInfo_1 *)func_?();
-    if (pMVar9 == (MethodInfo_1 *)0x0) goto code_?;
-    pDVar3[1].fields.original_method_info = pMVar9;
-    iVar10 = func_?();
-    if (iVar10 != 0) goto code_?;
+    pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar3 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+    goto code_?;
+    (pMVar2->fields).PositionChanged = pUVar3;
+    iVar9 = func_?();
+    if (iVar9 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

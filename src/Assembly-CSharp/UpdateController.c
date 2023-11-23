@@ -423,36 +423,37 @@ void Assembly-CSharp.dll::UpdateController::UpdateController_FixedUpdateList
 int32_t Assembly-CSharp.dll::UpdateController::UpdateController_GetPresentState(MethodInfo *method)
 
 {
-  iVar1 = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_IsInitialized_k__BackingField != 0) {
-    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar2 == MVGameMode__Enum_Edit) {
-      iVar1 = 5;
-    }
-    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar2 == MVGameMode__Enum_Edit) {
+    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    uVar2 = -(uint)(MVar1 != MVGameMode__Enum_Edit) & 0xfffffffc;
+    iVar3 = uVar2 + 5;
+    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar1 == MVGameMode__Enum_Edit) {
       this = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (this == (MVNetworkGame *)0x0) {
         func_?();
-        pcVar3 = (code *)swi(3);
-        iVar1 = (*pcVar3)();
-        return iVar1;
+        pcVar4 = (code *)swi(3);
+        iVar5 = (*pcVar4)();
+        return iVar5;
       }
-      bVar4 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        iVar1 = iVar1 + 8;
+      iVar3 = uVar2 + 5;
+      bVar6 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this,(MethodInfo *)0x0);
+      if (bVar6 != 0) {
+        iVar3 = uVar2 + 0xd;
       }
     }
-    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar2 == MVGameMode__Enum_Play) {
-      iVar1 = iVar1 + 2;
+    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    iVar7 = iVar3 + 2;
+    if (MVar1 != MVGameMode__Enum_Play) {
+      iVar7 = iVar3;
     }
+    return iVar7;
   }
-  return iVar1;
+  return 1;
 }
 
 

@@ -511,17 +511,18 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                      ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
   if (pDVar2 == (Delegate *)0x0) {
-    *(undefined4 *)(unaff_EBX + 0xb4) = 0;
+    unaff_EBX[2].fields.topArea = (RectTransform *)0x0;
     iVar3 = 0;
 code_?:
     func_?();
     this_00 = (this->fields).openPopup;
+    unaff_EBX = this;
     if (this_00 != (ConfirmationPopup *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Pop(this_00,(MethodInfo *)0x0);
       switch(iVar3) {
       case 0:
         pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
+                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -564,7 +565,7 @@ code_?:
           if (this_01 != (ThemeMenuController *)0x0) {
             ThemeMenuController::ThemeMenuController_OpenSettings(this_01,theme,(MethodInfo *)0x0);
             pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this,(MethodInfo *)0x0);
+                                ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -590,7 +591,7 @@ code_?:
         goto code_?;
       case 1:
         pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
+                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
@@ -610,7 +611,7 @@ code_?:
       case 3:
       case 4:
         pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
+                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -640,7 +641,7 @@ code_?:
         return;
       case 6:
         pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
+                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -678,18 +679,22 @@ code_?:
     func_?();
   }
   else {
-    iVar3 = func_?();
-    if (iVar3 == 0) goto code_?;
-    *(int *)(unaff_EBX + 0xb4) = iVar3;
+    pTVar7 = unaff_EBX;
+    pRVar8 = (RectTransform *)func_?();
+    unaff_EBX = this;
+    if (pRVar8 == (RectTransform *)0x0) goto code_?;
+    pTVar7[2].fields.topArea = pRVar8;
     iVar3 = func_?();
     if (iVar3 != 0) goto code_?;
   }
   func_?();
 code_?:
-  bVar7 = func_?();
-  *(char *)(extraout_EDX + -0x33efca0c) = *(char *)(extraout_EDX + -0x33efca0c) + (bVar7 ^ 0x10);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  cVar9 = func_?();
+  pcVar10 = (char *)((int)&unaff_EBX[-0xf51bb2].fields._._.m_CancellationTokenSource + 1);
+  *pcVar10 = *pcVar10 + (char)((uint)unaff_EBX >> 8);
+  *(char *)(extraout_EDX + -2) = *(char *)(extraout_EDX + -2) + cVar9;
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

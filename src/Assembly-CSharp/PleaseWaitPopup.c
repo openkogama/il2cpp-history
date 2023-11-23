@@ -63,13 +63,13 @@ void Assembly-CSharp.dll::PleaseWaitPopup::PleaseWaitPopup_Update
               fStack_18 = (float)pPStack_13 * fStack_18;
               fVar21 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                  ((MethodInfo *)0x0);
-              fVar2 = fStack_19 * fVar21 * _UNK_?;
-              fVar3 = fStack_20 * fVar21 * _UNK_?;
+              fVar3 = fStack_19 * fVar21 * _UNK_?;
+              fVar2 = fStack_20 * fVar21 * _UNK_?;
               pPStack_13 = (PleaseWaitPopup *)(fStack_18 * fVar21 * _UNK_?);
-              uStack_12 = CONCAT44(fVar3,fVar2);
+              uStack_12 = CONCAT44(fVar2,fVar3);
               if (this_01 != (Transform *)0x0) {
-                eulers.y = fVar3;
-                eulers.x = fVar2;
+                eulers.y = fVar2;
+                eulers.x = fVar3;
                 eulers.z = (float)pPStack_13;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_1
                           (this_01,eulers,(MethodInfo *)0x0);

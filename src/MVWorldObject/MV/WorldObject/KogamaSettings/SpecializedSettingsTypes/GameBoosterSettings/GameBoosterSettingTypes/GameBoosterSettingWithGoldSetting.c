@@ -275,7 +275,6 @@ GameBoosterSettingWithGoldSetting_get_GoldPrice
             (this->fields)._.children;
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
-    pKVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
@@ -287,7 +286,7 @@ GameBoosterSettingWithGoldSetting_get_GoldPrice
     if (unaff_ESI.m_Index == 0) {
       return (KogamaSettingNumericBase_1_System_Int32_ *)0x0;
     }
-    pKVar1 = 
+    unaff_EDI = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
     ;
     if (((
@@ -303,10 +302,10 @@ GameBoosterSettingWithGoldSetting_get_GoldPrice
       return (KogamaSettingNumericBase_1_System_Int32_ *)unaff_ESI.m_Index;
     }
   }
-  func_?(unaff_ESI.m_Index,pKVar1);
-  pcVar2 = (code *)swi(3);
-  pKVar3 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar2)();
-  return pKVar3;
+  func_?(unaff_ESI.m_Index,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pKVar2 = (KogamaSettingNumericBase_1_System_Int32_ *)(*pcVar1)();
+  return pKVar2;
 }
 
 
@@ -333,7 +332,6 @@ GameBoosterSettingWithGoldSetting_get_Setting
             (this->fields)._.children;
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
-    pKVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
@@ -345,7 +343,7 @@ GameBoosterSettingWithGoldSetting_get_Setting
     if (unaff_ESI.m_Index == 0) {
       return (KogamaSettingValueWrapperBase *)0x0;
     }
-    pKVar1 = 
+    unaff_EDI = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
     ;
     if (((
@@ -361,9 +359,9 @@ GameBoosterSettingWithGoldSetting_get_Setting
       return (KogamaSettingValueWrapperBase *)unaff_ESI.m_Index;
     }
   }
-  func_?(unaff_ESI.m_Index,pKVar1);
-  pcVar2 = (code *)swi(3);
-  pKVar3 = (KogamaSettingValueWrapperBase *)(*pcVar2)();
-  return pKVar3;
+  func_?(unaff_ESI.m_Index,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pKVar2 = (KogamaSettingValueWrapperBase *)(*pcVar1)();
+  return pKVar2;
 }
 

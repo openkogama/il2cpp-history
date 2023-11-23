@@ -25,13 +25,9 @@ bool Assembly-CSharp.dll::GoldRewardCountdownMeter::
     bVar2 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
     MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-    if ((bVar2 == 0) || ((pGVar1->fields).isGoldRewardGame == 0)) {
-      bVar5 = false;
-    }
-    else {
-      bVar5 = (pGVar1->fields).isGoldRewardDone == 0;
-    }
-    if ((!(bool)(bVar5 & MVar3 == MVGameMode__Enum_Play)) || (bVar4 != 0)) {
+    if ((((bVar2 == 0) || ((pGVar1->fields).isGoldRewardGame == 0)) ||
+        (MVar3 != MVGameMode__Enum_Play || (pGVar1->fields).isGoldRewardDone != 0)) || (bVar4 != 0))
+    {
       return 0;
     }
     pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
@@ -46,8 +42,8 @@ bool Assembly-CSharp.dll::GoldRewardCountdownMeter::
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar2 = (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
   return bVar2;
 }
 
@@ -120,39 +116,35 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::
     MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
     method_00 = (MethodInfo *)0x0;
     bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-    if ((bVar2 == 0) || ((pGVar1->fields).isGoldRewardGame == 0)) {
-      bVar5 = false;
-    }
-    else {
-      bVar5 = (pGVar1->fields).isGoldRewardDone == 0;
-    }
-    if (((bool)(bVar5 & MVar3 == MVGameMode__Enum_Play)) && (bVar4 == 0)) {
+    if ((((bVar2 != 0) && ((pGVar1->fields).isGoldRewardGame != 0)) &&
+        (MVar3 == MVGameMode__Enum_Play && (pGVar1->fields).isGoldRewardDone == 0)) && (bVar4 == 0))
+    {
       pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
       if (pGVar1 == (GoldRewardManager *)0x0) goto code_?;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      fVar7 = _UNK_? - (fVar6 - (pGVar1->fields).startTime);
-      fVar6 = 0.0;
-      if (0.0 <= fVar7) {
-        fVar6 = fVar7;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      fVar6 = _UNK_? - (fVar5 - (pGVar1->fields).startTime);
+      fVar5 = 0.0;
+      if (0.0 <= fVar6) {
+        fVar5 = fVar6;
       }
-      if (fVar6 <= 0.0) {
+      if (fVar5 <= 0.0) {
         value = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
                   (value,ExceptionArgument__Enum_obj,method_00);
-        original = unaff_EDI[3].klass;
+        pGVar7 = (this->fields).claimGoldRewardPopupPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         pOVar8 = (Object__Class *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)original,
+                           ((Object *)pGVar7,
                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                            );
         if (value == (Object *)0x0) goto code_?;
         value[1].klass = pOVar8;
-        func_?(value + 1);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         (unaff_EDI,(MethodInfo *)0x0);
+        func_?(value + 1,pOVar8);
+        pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
              (ExecuteEvents_EventFunction_1_System_Object_ *)
              func_?(
@@ -168,7 +160,7 @@ void Assembly-CSharp.dll::GoldRewardCountdownMeter::
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,callbackFunction,
+                  (pGVar7,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
       }

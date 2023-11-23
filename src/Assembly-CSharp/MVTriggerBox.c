@@ -215,45 +215,46 @@ Vector3 * Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_GetClosestGridPoint
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
+                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar2 = (pVVar1->oneVector).x;
-      uVar3 = (pVVar1->oneVector).y;
-      pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
-      fVar5 = (float)uVar3 * _UNK_?;
-      fVar6 = (pVVar1->oneVector).z * _UNK_?;
+      pSVar1 = TypeInfo__SharedCubeFunctions;
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar3 = (pVVar2->oneVector).x;
+      uVar4 = (pVVar2->oneVector).y;
+      fVar5 = (float)uVar4 * _UNK_?;
+      fVar6 = (pVVar2->oneVector).z * _UNK_?;
+      pSVar7 = (SharedCubeFunctions__Class *)((float)uVar3 * _UNK_?);
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        pSVar4 = TypeInfo__SharedCubeFunctions;
         func_?();
+        pSVar7 = pSVar1;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar4;
+      rotation.y = (float)pSVar7;
       rotation.x = gridSize;
       rotation.z = fVar5;
       rotation.w = fVar6;
       scale.y = fVar5;
-      scale.x = (float)pSVar4;
+      scale.x = (float)pSVar7;
       scale.z = fVar6;
-      pVVar7 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar6 = pVVar7->y;
-      fVar5 = pVVar7->z;
-      __return_storage_ptr__->x = pVVar7->x;
-      __return_storage_ptr__->y = fVar6;
-      __return_storage_ptr__->z = fVar5;
+      fVar5 = pVVar8->y;
+      fVar6 = pVVar8->z;
+      __return_storage_ptr__->x = pVVar8->x;
+      __return_storage_ptr__->y = fVar5;
+      __return_storage_ptr__->z = fVar6;
       return __return_storage_ptr__;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pVVar7 = (Vector3 *)(*pcVar8)();
-  return pVVar7;
+  pcVar9 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar9)();
+  return pVVar8;
 }
 
 

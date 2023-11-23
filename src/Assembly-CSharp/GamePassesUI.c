@@ -483,25 +483,15 @@ void Assembly-CSharp.dll::GamePassesUI::GamePassesUI_ReplayGainEffect
     }
     this_01 = (this->fields).gainEffectController;
     if (this_01 != (GameTierProgressBarGainEffectController *)0x0) {
-      iVar3 = ((this_01->fields).gamePointsToInstantiate - previousGamePointAmount) +
-              newGamePointAmount;
-      if (10 < iVar3) {
-        iVar3 = 10;
-      }
-      (this_01->fields).gamePointsToInstantiate = iVar3;
-      (this_01->fields).currentGamePoints = newGamePointAmount;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pfVar4 = &(this_01->fields).createGamePointTime;
-      if (*pfVar4 <= fVar1 && fVar1 != *pfVar4) {
-        GameTierProgressBarGainEffectController::
-        GameTierProgressBarGainEffectController_StartGamePointGainEffect(this_01,(MethodInfo *)0x0);
-      }
+      GameTierProgressBarGainEffectController::
+      GameTierProgressBarGainEffectController_ReplayGainEffect
+                (this_01,previousGamePointAmount,newGamePointAmount,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

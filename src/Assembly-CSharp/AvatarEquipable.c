@@ -302,7 +302,6 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_GetIsEquipped
   if (this_00 == (MVRuntimeDataVariable *)0x0) {
 code_?:
     func_?();
-    type = (AvatarItemType__Enum)unaff_ESI;
   }
   else {
     unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
@@ -337,7 +336,6 @@ code_?:
                       (unaff_ESI,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)type;
     if (TVar4.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
         (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
@@ -347,7 +345,6 @@ code_?:
   }
   func_?();
   pDVar1 = extraout_EDX;
-  unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)type;
 code_?:
   func_?(unaff_ESI,pDVar1);
   pcVar6 = (code *)swi(3);
@@ -430,10 +427,10 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_Init
     bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillsDataManager,StringLiteral_UnableToCollectModifierPickups,
                        (MethodInfo *)0x0);
-    (this->fields).isAbleToCollectPickups = bVar1 == 0;
+    (this->fields).isAbleToCollectPickups = bVar1 ^ 1;
     bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillsDataManager,StringLiteral_UnableToEquipWeapons,(MethodInfo *)0x0);
-    (this->fields).isAbleToEquipWeapons = bVar1 == 0;
+    (this->fields).isAbleToEquipWeapons = bVar1 ^ 1;
     return;
   }
   func_?();

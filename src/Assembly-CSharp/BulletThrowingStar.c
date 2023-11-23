@@ -732,20 +732,20 @@ code_?:
               this_00 = *ppMStack_2;
               if (this_00 == (Material *)0x0) goto code_?;
               pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                                  ((Color *)&stack0xffffff50,this_00,(MethodInfo *)0x0);
+                                  ((Color *)&stack0xffffff40,this_00,(MethodInfo *)0x0);
               fVar25 = pCVar24->r;
               pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                                  ((Color *)&stack0xffffff68,this_00,(MethodInfo *)0x0);
-              VStack_26.y = pCVar24->g;
-              VStack_26.x = fVar25;
+                                  (&CStack_26,this_00,(MethodInfo *)0x0);
+              VStack_27.y = pCVar24->g;
+              VStack_27.x = fVar25;
               pCVar24 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                                  (&CStack_27,this_00,(MethodInfo *)0x0);
-              VStack_26.z = pCVar24->b;
-              pMStack_28 = (MeshRenderer__Array *)(_UNK_? - fVar20 / fVar13);
-              value_00.g = VStack_26.y;
-              value_00.r = VStack_26.x;
+                                  ((Color *)&stack0xffffff58,this_00,(MethodInfo *)0x0);
+              VStack_27.z = pCVar24->b;
+              fStack_28 = _UNK_? - fVar20 / fVar13;
+              value_00.g = VStack_27.y;
+              value_00.r = VStack_27.x;
               value_00.b = pCVar24->b;
-              value_00.a = (float)pMStack_28;
+              value_00.a = fStack_28;
               UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
                         (this_00,value_00,(MethodInfo *)0x0);
               ppMStack_2 = ppMStack_2 + 1;
@@ -778,7 +778,7 @@ code_?:
   else {
     uStack_29._0_4_ = (this->fields).airRotation.x;
     uStack_29._4_4_ = (this->fields).airRotation.y;
-    pMStack_30 = (MeshRenderer__Array *)(this->fields).airRotation.z;
+    fStack_30 = (this->fields).airRotation.z;
     pTVar31 = (this->fields).tfrm;
     pMStack_21 = (MeshRenderer__Array *)
                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
@@ -786,12 +786,12 @@ code_?:
     fVar13 = (this->fields).speed;
     fVar25 = (float)uStack_29 * (float)pMStack_21 * fVar13;
     fVar20 = uStack_29._4_4_ * (float)pMStack_21 * fVar13;
-    pMStack_30 = (MeshRenderer__Array *)((float)pMStack_30 * (float)pMStack_21 * fVar13);
+    fStack_30 = fStack_30 * (float)pMStack_21 * fVar13;
     uStack_29 = CONCAT44(fVar20,fVar25);
     if (pTVar31 != (Transform *)0x0) {
       eulers.y = fVar20;
       eulers.x = fVar25;
-      eulers.z = (float)pMStack_30;
+      eulers.z = fStack_30;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_1
                 (pTVar31,eulers,(MethodInfo *)0x0);
       fVar13 = (this->fields).totalDistTravelled;
@@ -801,24 +801,23 @@ code_?:
       }
       uStack_29._0_4_ = (this->fields).direction.x;
       uStack_29._4_4_ = (this->fields).direction.y;
-      pMStack_30 = (MeshRenderer__Array *)(this->fields).direction.z;
+      fStack_30 = (this->fields).direction.z;
       fVar13 = (this->fields).speed;
       fVar20 = (float)uStack_29 * fVar13;
       ppMStack_2 = (Material **)(uStack_29._4_4_ * fVar13);
-      VStack_22.z = (float)pMStack_30 * fVar13;
+      VStack_22.z = fStack_30 * fVar13;
       pMStack_21 = (MeshRenderer__Array *)
                    UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                              ((MethodInfo *)0x0);
       ppMStack_2 = (Material **)((float)ppMStack_2 * (float)pMStack_21);
       pMStack_33 = (MeshRenderer__Array *)(VStack_22.z * (float)pMStack_21);
-      ppMStack_34 = ppMStack_2;
-      fStack_35 = fVar20 * (float)pMStack_21;
-      pMStack_28 = pMStack_33;
+      VStack_27.z = (float)pMStack_33;
+      uStack_34 = CONCAT44(ppMStack_2,fVar20 * (float)pMStack_21);
       if ((this->fields).isFalling != 0) {
         ppMStack_16 = (MeshRenderer **)(this->fields).downwardForce;
         pMStack_21 = (MeshRenderer__Array *)(this->fields).fallRate;
-        pMVar36 = (Material__Array *)(this->fields).speed;
-        VStack_22.z = (float)pMVar36;
+        pMVar35 = (Material__Array *)(this->fields).speed;
+        VStack_22.z = (float)pMVar35;
         fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                            ((MethodInfo *)0x0);
         fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
@@ -826,59 +825,59 @@ code_?:
         pMStack_21 = (MeshRenderer__Array *)
                      (fVar20 * (float)((uint)pMStack_21 ^
                                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                                      ) * VStack_22.z * (float)pMVar36 * fVar13 + (float)ppMStack_16)
+                                      ) * VStack_22.z * (float)pMVar35 * fVar13 + (float)ppMStack_16)
         ;
+        ppMStack_2 = (Material **)((float)ppMStack_2 + (float)pMStack_21);
         (this->fields).downwardForce = (float)pMStack_21;
-        ppMStack_2 = (Material **)((float)pMStack_21 + (float)ppMStack_2);
-        ppMStack_34 = ppMStack_2;
+        uStack_34 = CONCAT44(ppMStack_2,(float)uStack_34);
       }
       pTVar31 = (this->fields).tfrm;
       if (pTVar31 != (Transform *)0x0) {
-        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                            (&VStack_26,pTVar31,(MethodInfo *)0x0);
-        uVar38 = pVVar37->x;
-        uVar39 = pVVar37->y;
-        CStack_27.r = fStack_35 + (float)uVar38;
-        ppMStack_2 = (Material **)((float)ppMStack_2 + (float)uVar39);
-        pMVar40 = (MeshRenderer__Array *)((float)pMStack_33 + pVVar37->z);
-        CStack_27.g = 0.0;
-        CStack_27.b = 0.0;
-        CStack_27.a = 0.0;
+        pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                            (&VStack_27,pTVar31,(MethodInfo *)0x0);
+        uVar37 = pVVar36->x;
+        uVar38 = pVVar36->y;
+        CStack_26.r = (float)uStack_34 + (float)uVar37;
+        ppMStack_2 = (Material **)((float)ppMStack_2 + (float)uVar38);
+        fVar13 = (float)pMStack_33 + pVVar36->z;
+        CStack_26.g = 0.0;
+        CStack_26.b = 0.0;
+        CStack_26.a = 0.0;
         pTVar31 = (this->fields).tfrm;
-        uStack_29 = CONCAT44(ppMStack_2,CStack_27.r);
-        pMStack_30 = pMVar40;
-        pMStack_21 = pMVar40;
+        uStack_29 = CONCAT44(ppMStack_2,CStack_26.r);
+        fStack_30 = fVar13;
         if (pTVar31 != (Transform *)0x0) {
-          pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                              (&VStack_26,pTVar31,(MethodInfo *)0x0);
-          VStack_22.x = pVVar37->x;
-          VStack_22.y = pVVar37->y;
-          VStack_22.z = pVVar37->z;
-          pMStack_28 = (MeshRenderer__Array *)((float)pMStack_21 - VStack_22.z);
-          VStack_26.z = (float)ppMStack_2 - VStack_22.y;
-          VStack_26.y = CStack_27.r - VStack_22.x;
-          CStack_27.a = (float)pMStack_28;
-          puVar41 = (undefined8 *)func_?();
-          uVar42 = *puVar41;
-          CStack_27.a = *(float *)(puVar41 + 1);
+          pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+                              (&VStack_27,pTVar31,(MethodInfo *)0x0);
+          VStack_22.x = pVVar36->x;
+          VStack_22.y = pVVar36->y;
+          VStack_22.z = pVVar36->z;
+          fStack_28 = fVar13 - VStack_22.z;
+          VStack_27.z = (float)ppMStack_2 - VStack_22.y;
+          VStack_27.y = CStack_26.r - VStack_22.x;
+          CStack_26.b = fStack_28;
+          puVar39 = (undefined8 *)func_?();
+          uVar40 = *puVar39;
+          CStack_26.a = *(float *)(puVar39 + 1);
           pTVar31 = (this->fields).tfrm;
-          CStack_27._4_8_ = uVar42;
-          pMStack_21 = (MeshRenderer__Array *)CStack_27.a;
+          CStack_26.g = (float)uVar40;
+          CStack_26.b = (float)((ulonglong)uVar40 >> 0x20);
+          pMStack_21 = (MeshRenderer__Array *)CStack_26.a;
           if (pTVar31 != (Transform *)0x0) {
-            pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+            pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                       Transform_get_localPosition(&VStack_22,pTVar31,(MethodInfo *)0x0);
-            uVar8 = pVVar37->x;
-            fVar13 = pVVar37->z;
-            fVar43 = (float10)func_?(&fStack_35);
+            uVar8 = pVVar36->x;
+            fVar20 = pVVar36->z;
+            fVar41 = (float10)func_?(&uStack_34);
             pMStack_33 = pMStack_21;
-            VStack_22.z = (float)fVar43;
-            puVar44 = &UNK_?;
-            _fStack_6c = uVar42;
-            puVar41 = (undefined8 *)func_?(fVar13,&fStack_35,0,0);
-            fVar20 = *(float *)(puVar41 + 1);
+            VStack_22.z = (float)fVar41;
+            puVar42 = &UNK_?;
+            uStack_34 = uVar40;
+            puVar39 = (undefined8 *)func_?(fVar20,&uStack_34,0,0);
+            fVar25 = *(float *)(puVar39 + 1);
             pMStack_21 = (MeshRenderer__Array *)(this->fields).ignoreWoIDs;
-            uVar12 = (undefined4)*puVar41;
-            uVar45 = (undefined4)((ulonglong)*puVar41 >> 0x20);
+            uVar12 = (undefined4)*puVar39;
+            uVar43 = (undefined4)((ulonglong)*puVar39 >> 0x20);
             if (cRam_? == '\0') {
               func_?(&StringLiteral_Logic);
               cRam_? = '\x01';
@@ -895,12 +894,12 @@ code_?:
                                 );
             p_Var23 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
                       UnsafeUtility::UnsafeUtility_AsRef_1((Void *)p_Var23,(MethodInfo *)0x0);
-            ray.m_Origin.y = (float)puVar44;
+            ray.m_Origin.y = (float)puVar42;
             ray.m_Origin.x = (float)uVar8;
-            ray.m_Origin.z = fVar13;
+            ray.m_Origin.z = fVar20;
             ray.m_Direction.x = (float)uVar12;
-            ray.m_Direction.y = (float)uVar45;
-            ray.m_Direction.z = fVar20;
+            ray.m_Direction.y = (float)uVar43;
+            ray.m_Direction.z = fVar25;
             bVar3 = CollisionDetection::CollisionDetection_MVHit_1
                                (ray,&(this->fields).voxelHit,VStack_22.z,
                                 (HashSet_1_System_Int32_ *)pMStack_21,(int32_t)p_Var23,
@@ -920,48 +919,49 @@ code_?:
               }
               uStack_29._0_4_ = (this->fields).voxelHit.point.x;
               uStack_29._4_4_ = (this->fields).voxelHit.point.y;
-              pMVar40 = (MeshRenderer__Array *)(this->fields).voxelHit.point.z;
+              fVar13 = (this->fields).voxelHit.point.z;
               (this->fields).inAir = 0;
               (this->fields).hasHit = 1;
-              pMStack_30 = pMVar40;
+              fStack_30 = fVar13;
             }
 code_?:
             pTVar31 = (this->fields).tfrm;
             if (pTVar31 != (Transform *)0x0) {
-              pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+              pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                         Transform_get_localPosition
-                                  ((Vector3 *)&stack0xffffff68,pTVar31,(MethodInfo *)0x0);
-              VStack_22.x = pVVar37->x;
-              VStack_22.y = pVVar37->y;
-              pMStack_21 = (MeshRenderer__Array *)pVVar37->z;
-              CStack_27.b = uStack_29._4_4_ + CStack_27.b * _UNK_?;
-              CStack_27.g = (float)uStack_29 + CStack_27.g * _UNK_?;
-              CStack_27.a = (float)pMStack_30 + CStack_27.a * _UNK_?;
+                                  ((Vector3 *)&stack0xffffff58,pTVar31,(MethodInfo *)0x0);
+              VStack_22.x = pVVar36->x;
+              VStack_22.y = pVVar36->y;
+              pMStack_21 = (MeshRenderer__Array *)pVVar36->z;
+              fVar20 = CStack_26.b * _UNK_?;
+              CStack_26.r = (float)uStack_29 + CStack_26.g * _UNK_?;
+              CStack_26.b = fStack_30 + CStack_26.a * _UNK_?;
+              CStack_26.g = uStack_29._4_4_ + fVar20;
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               start.z = (float)pMStack_21;
               start.x = VStack_22.x;
               start.y = VStack_22.y;
-              end.z = CStack_27.a;
-              end.x = CStack_27.g;
-              end.y = CStack_27.b;
+              end.y = CStack_26.g;
+              end.x = CStack_26.r;
+              end.z = CStack_26.b;
               color.g = _UNK_?;
               color.r = (float)_UNK_?;
               color.b = (float)_UNK_?;
               color.a = _UNK_?;
-              fVar13 = _UNK_?;
+              fVar20 = _UNK_?;
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1
                         (start,end,color,(MethodInfo *)0x0);
               pMStack_21 = (MeshRenderer__Array *)(this->fields).totalDistTravelled;
-              puVar44 = &UNK_?;
-              fVar43 = (float10)func_?();
+              puVar42 = &UNK_?;
+              fVar41 = (float10)func_?();
               pTVar31 = (this->fields).tfrm;
-              (this->fields).totalDistTravelled = (float)(fVar43 + (float10)(float)pMStack_21);
+              (this->fields).totalDistTravelled = (float)(fVar41 + (float10)(float)pMStack_21);
               if (pTVar31 != (Transform *)0x0) {
-                value.y = (float)puVar44;
-                value.x = fVar13;
-                value.z = (float)pMVar40;
+                value.y = (float)puVar42;
+                value.x = fVar20;
+                value.z = fVar13;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                           (pTVar31,value,(MethodInfo *)0x0);
                 if ((this->fields).rangeFall + (this->fields).rangeStraight <
@@ -972,11 +972,11 @@ code_?:
                 pTVar31 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_transform((Component *)this,(MethodInfo *)0x0);
                 if ((pTVar31 != (Transform *)0x0) &&
-                   (pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_position(&VStack_26,pTVar31,(MethodInfo *)0x0),
+                   (pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                              Transform_get_position(&VStack_27,pTVar31,(MethodInfo *)0x0),
                    pCVar18 != (CullingSubscriberBase *)0x0)) {
                   CullingSubscriberBase::CullingSubscriberBase_set_Position
-                            (pCVar18,*pVVar37,(MethodInfo *)0x0);
+                            (pCVar18,*pVVar36,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -990,8 +990,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar46 = (code *)swi(3);
-  (*pcVar46)();
+  pcVar44 = (code *)swi(3);
+  (*pcVar44)();
   return;
 }
 

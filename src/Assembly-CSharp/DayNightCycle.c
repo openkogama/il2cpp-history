@@ -261,7 +261,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
     pSVar2 = (this->fields)._CurrentSkyParam_k__BackingField;
     if (pSVar2 != (SkyParam *)0x0) {
       pMStack_3 = (Material *)(pSVar2->fields).TopColor.r;
-      fStack_4 = (pSVar2->fields).TopColor.g;
+      pMStack_4 = (Material *)(pSVar2->fields).TopColor.g;
       fStack_5 = (pSVar2->fields).TopColor.b;
       pMStack_6 = (Material *)(pSVar2->fields).TopColor.a;
       pTVar7 = (this->fields).skybox;
@@ -272,11 +272,11 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
         }
         pMVar8 = (pTVar7->fields).skyboxMaterial;
         (pTVar7->fields)._topColor.r = (float)pMStack_3;
-        (pTVar7->fields)._topColor.g = fStack_4;
+        (pTVar7->fields)._topColor.g = (float)pMStack_4;
         (pTVar7->fields)._topColor.b = fStack_5;
         (pTVar7->fields)._topColor.a = (float)pMStack_6;
         if (pMVar8 != (Material *)0x0) {
-          value.y = fStack_4;
+          value.y = (float)pMStack_4;
           value.x = (float)pMStack_3;
           value.z = fStack_5;
           value.w = (float)pMStack_6;
@@ -297,7 +297,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
               pSVar9 = (this->fields)._CurrentStarsParam_k__BackingField;
               if (pSVar9 != (StarsParam *)0x0) {
                 pMStack_3 = (Material *)(pSVar9->fields).TintColor.r;
-                fStack_4 = (pSVar9->fields).TintColor.g;
+                pMStack_4 = (Material *)(pSVar9->fields).TintColor.g;
                 fStack_5 = (pSVar9->fields).TintColor.b;
                 pMStack_6 = (Material *)(pSVar9->fields).TintColor.a;
                 pTVar7 = (this->fields).skybox;
@@ -308,11 +308,11 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                   }
                   pMVar8 = (pTVar7->fields).skyboxMaterial;
                   (pTVar7->fields)._starsTint.r = (float)pMStack_3;
-                  (pTVar7->fields)._starsTint.g = fStack_4;
+                  (pTVar7->fields)._starsTint.g = (float)pMStack_4;
                   (pTVar7->fields)._starsTint.b = fStack_5;
                   (pTVar7->fields)._starsTint.a = (float)pMStack_6;
                   if (pMVar8 != (Material *)0x0) {
-                    value_00.y = fStack_4;
+                    value_00.y = (float)pMStack_4;
                     value_00.x = (float)pMStack_3;
                     value_00.z = fStack_5;
                     value_00.w = (float)pMStack_6;
@@ -354,8 +354,8 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                                            TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                                            (MethodInfo *)0x0);
                       pMStack_17 = (Material *)pQVar15->x;
-                      fStack_18 = pQVar15->y;
-                      fStack_19 = pQVar15->z;
+                      pMStack_18 = (Material *)pQVar15->y;
+                      pMStack_19 = (Material *)pQVar15->z;
                       pMStack_20 = (Material *)pQVar15->w;
                       pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                                 Quaternion_AngleAxis
@@ -370,17 +370,18 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                       QStack_16.w = (float)pMStack_20;
                       pMStack_3 = (Material *)
                                    ((fVar13 * (float)pMStack_17 + pQVar15->x * (float)pMStack_20 +
-                                    fVar12 * fStack_18) - fVar11 * fStack_19);
-                      fStack_4 = (fStack_18 * fVar13 + fVar11 * (float)pMStack_20 +
-                                  fStack_19 * pQVar15->x) - fVar12 * (float)pMStack_17;
-                      fStack_5 = (fStack_19 * fVar13 + fVar12 * (float)pMStack_20 +
-                                  fVar11 * (float)pMStack_17) - fStack_18 * pQVar15->x;
+                                    fVar12 * (float)pMStack_18) - fVar11 * (float)pMStack_19);
+                      pMStack_4 = (Material *)
+                                   (((float)pMStack_18 * fVar13 + fVar11 * (float)pMStack_20 +
+                                    (float)pMStack_19 * pQVar15->x) - fVar12 * (float)pMStack_17);
+                      fStack_5 = ((float)pMStack_19 * fVar13 + fVar12 * (float)pMStack_20 +
+                                  fVar11 * (float)pMStack_17) - (float)pMStack_18 * pQVar15->x;
                       pMStack_20 = (Material *)
                                    (((fVar13 * (float)pMStack_20 - (float)pMStack_17 * pQVar15->x) -
-                                    fVar11 * fStack_18) - fStack_19 * fVar12);
+                                    fVar11 * (float)pMStack_18) - (float)pMStack_19 * fVar12);
                       pMStack_17 = pMStack_3;
-                      fStack_18 = fStack_4;
-                      fStack_19 = fStack_5;
+                      pMStack_18 = pMStack_4;
+                      pMStack_19 = (Material *)fStack_5;
                       pMStack_6 = pMStack_20;
                       pMStack_14 = pMStack_3;
                       pfVar10 = (float *)func_?();
@@ -389,7 +390,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                       QStack_16.z = 0.0;
                       QStack_16.w = 0.0;
                       iVar22 = func_?();
-                      pMStack_20 = (Material *)0x0;
+                      pMStack_19 = (Material *)0x0;
                       euler.y = *(float *)(iVar22 + 4) * _UNK_?;
                       euler.x = QStack_16.x * _UNK_?;
                       euler.z = 0.0;
@@ -566,7 +567,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                                                                  static_fields->upVector,
                                                                  (MethodInfo *)0x0);
                                             pMStack_3 = (Material *)pQVar15->x;
-                                            fStack_4 = pQVar15->y;
+                                            pMStack_4 = (Material *)pQVar15->y;
                                             fStack_5 = pQVar15->z;
                                             pMStack_6 = (Material *)pQVar15->w;
                                             pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::
@@ -577,29 +578,32 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                                                                  ,(MethodInfo *)0x0);
                                             fVar11 = pQVar15->y;
                                             fVar12 = pQVar15->z;
-                                            fStack_18 = pQVar15->w;
+                                            pMStack_18 = (Material *)pQVar15->w;
                                             QStack_16.x = (float)pMStack_6;
                                             QStack_16.y = (float)pMStack_6;
                                             QStack_16.z = (float)pMStack_6;
                                             QStack_16.w = (float)pMStack_6;
                                             pMStack_14 = (Material *)
-                                                         ((fStack_18 * (float)pMStack_3 +
+                                                         (((float)pMStack_18 * (float)pMStack_3 +
                                                            pQVar15->x * (float)pMStack_6 +
-                                                          fVar12 * fStack_4) - fVar11 * fStack_5);
+                                                          fVar12 * (float)pMStack_4) -
+                                                         fVar11 * fStack_5);
                                             fVar13 = fVar12 * (float)pMStack_3;
                                             fVar31 = fVar11 * (float)pMStack_3;
-                                            fVar32 = fStack_4 * pQVar15->x;
+                                            fVar32 = (float)pMStack_4 * pQVar15->x;
                                             pMStack_17 = (Material *)
-                                                         (((fStack_18 * (float)pMStack_6 -
+                                                         ((((float)pMStack_18 * (float)pMStack_6 -
                                                            (float)pMStack_3 * pQVar15->x) -
-                                                          fVar11 * fStack_4) - fStack_5 * fVar12);
-                                            fStack_19 = fStack_18;
-                                            pMStack_20 = (Material *)fStack_18;
+                                                          fVar11 * (float)pMStack_4) -
+                                                         fStack_5 * fVar12);
+                                            pMStack_19 = pMStack_18;
+                                            pMStack_20 = pMStack_18;
                                             pMStack_3 = pMStack_14;
-                                            fStack_4 = (fStack_4 * fStack_18 +
-                                                         fVar11 * (float)pMStack_6 +
-                                                        fStack_5 * pQVar15->x) - fVar13;
-                                            fStack_5 = (fStack_5 * fStack_18 +
+                                            pMStack_4 = (Material *)
+                                                         (((float)pMStack_4 * (float)pMStack_18 +
+                                                           fVar11 * (float)pMStack_6 +
+                                                          fStack_5 * pQVar15->x) - fVar13);
+                                            fStack_5 = (fStack_5 * (float)pMStack_18 +
                                                          fVar12 * (float)pMStack_6 + fVar31) -
                                                         fVar32;
                                             pMStack_6 = pMStack_17;
@@ -609,7 +613,7 @@ void Assembly-CSharp.dll::DayNightCycle::DayNightCycle_Update_1
                                             QStack_16.z = 0.0;
                                             QStack_16.w = 0.0;
                                             iVar22 = func_?();
-                                            pMStack_20 = (Material *)0x0;
+                                            pMStack_19 = (Material *)0x0;
                                             euler_00.y = *(float *)(iVar22 + 4) * _UNK_?;
                                             euler_00.x = QStack_16.x * _UNK_?;
                                             euler_00.z = 0.0;

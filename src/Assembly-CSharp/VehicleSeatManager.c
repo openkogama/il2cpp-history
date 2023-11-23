@@ -354,52 +354,49 @@ void Assembly-CSharp.dll::VehicleSeatManager::VehicleSeatManager_DetachFromSeat
                                 );
             pGVar1 = (vehicleUser->fields)._._.gameObject;
             if (pGVar1 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar1,(MethodInfo *)0x0);
+              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
               if (this_01 != (RegexCharClass_SingleRange)0x0) {
-                pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                           Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
-                if (pTVar2 != (Transform *)0x0) {
-                  pTVar4 = (Transform *)&stack0xffffffd4;
+                if (pTVar4 != (Transform *)0x0) {
                   pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                             Transform_get_localPosition
-                                      ((Vector3 *)pTVar4,pTVar2,(MethodInfo *)0x0);
+                                      ((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
                   uVar6 = pVVar5->x;
                   uVar7 = pVVar5->y;
                   uVar8 = (vehicleUser->fields).characterControllerCenterOffset.x;
                   uVar9 = (vehicleUser->fields).characterControllerCenterOffset.y;
-                  piVar10 = (int *)(pVVar5->z -
-                                   (vehicleUser->fields).characterControllerCenterOffset.z);
-                  if (pTVar4 != (Transform *)0x0) {
+                  if (pTVar2 != (Transform *)0x0) {
                     value.y = (float)uVar7 - (float)uVar9;
                     value.x = (float)uVar6 - (float)uVar8;
-                    value.z = (float)piVar10;
+                    value.z = pVVar5->z - (vehicleUser->fields).characterControllerCenterOffset.z;
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                              (pTVar4,value,(MethodInfo *)0x0);
+                              (pTVar2,value,(MethodInfo *)0x0);
                     pGVar1 = (vehicleUser->fields)._._.gameObject;
                     if (pGVar1 != (GameObject *)0x0) {
-                      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                 GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
-                      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                 Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
-                      if (pTVar4 != (Transform *)0x0) {
-                        pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                      if (this_02 != (Transform *)0x0) {
+                        pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                   Transform_get_localRotation
-                                            ((Quaternion *)&stack0xffffffd0,pTVar4,
+                                            ((Quaternion *)&stack0xffffffdc,this_02,
                                              (MethodInfo *)0x0);
-                        if (pTVar2 != (Transform *)0x0) {
+                        if (pTVar4 != (Transform *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_set_localRotation(pTVar2,*pQVar11,(MethodInfo *)0x0);
-                          this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM
+                          Transform_set_localRotation(pTVar4,*pQVar10,(MethodInfo *)0x0);
+                          this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM
                                               ((MethodInfo *)0x0);
-                          if (this_02 != (MVWorldObjectClientManager *)0x0) {
-                            pMVar12 = MVWorldObjectClientManager::
+                          if (this_03 != (MVWorldObjectClientManager *)0x0) {
+                            pMVar11 = MVWorldObjectClientManager::
                                       MVWorldObjectClientManager_get_RootGroup
-                                                (this_02,(MethodInfo *)0x0);
-                            if (pMVar12 != (MVGroup *)0x0) {
-                              pIStack13 = (pMVar12->klass->vtable).AddChild.methodPtr;
-                              iStack14 = (vehicleUser->fields)._._._.id;
-                              (*(code *)(pMVar12->klass->vtable).TransferChild.method)();
+                                                (this_03,(MethodInfo *)0x0);
+                            if (pMVar11 != (MVGroup *)0x0) {
+                              pIStack12 = (pMVar11->klass->vtable).AddChild.methodPtr;
+                              iStack13 = (vehicleUser->fields)._._._.id;
+                              (*(code *)(pMVar11->klass->vtable).TransferChild.method)();
                               MVAvatar::MVAvatar_set_SeatID(vehicleUser,-1,(MethodInfo *)0x0);
                               lhs = mscorlib.dll::System::Object::Object_GetType
                                               ((Object *)vehicleUser,(MethodInfo *)0x0);
@@ -409,42 +406,42 @@ void Assembly-CSharp.dll::VehicleSeatManager::VehicleSeatManager_DetachFromSeat
                               }
                               rhs = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                                               ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-                              bVar15 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::
+                              bVar14 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::
                                        Unsafe::UnsafeUtility::UnsafeUtility_EnumEquals
                                                  ((Int32Enum__Enum)lhs,(Int32Enum__Enum)rhs,
                                                   (MethodInfo *)0x0);
-                              if (bVar15 != 0) {
-                                (**(code **)(*piVar10 + 0xe0))();
+                              if (bVar14 != 0) {
+                                (*(code *)(pTVar2->klass->vtable).GetEnumerator.method)();
                                 if (cRam_? == '\0') {
                                   func_?();
                                   cRam_? = '\x01';
                                 }
                               }
-                              (**(code **)(*piVar10 + 0xf0))();
-                              piVar16 = &(this->fields).occupiedSeatCount;
-                              *piVar16 = *piVar16 + -1;
-                              if (*piVar16 < 0) {
-                                pSVar17 = mscorlib.dll::System::Int32::Int32_ToString
+                              (*(code *)pTVar2->klass[1]._0.namespaze)();
+                              piVar15 = &(this->fields).occupiedSeatCount;
+                              *piVar15 = *piVar15 + -1;
+                              if (*piVar15 < 0) {
+                                pSVar16 = mscorlib.dll::System::Int32::Int32_ToString
                                                     ((Int32 *)&(this->fields).occupiedSeatCount,
                                                      (MethodInfo *)0x0);
-                                pSVar17 = mscorlib.dll::System::String::String_Concat_3
+                                pSVar16 = mscorlib.dll::System::String::String_Concat_3
                                                     (StringLiteral_occupiedSeatCount_less_than_0_,
-                                                     pSVar17,(MethodInfo *)0x0);
+                                                     pSVar16,(MethodInfo *)0x0);
                                 if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor ==
                                     0) {
                                   func_?();
                                 }
                                 UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                                          ((Object *)pSVar17,(MethodInfo *)0x0);
+                                          ((Object *)pSVar16,(MethodInfo *)0x0);
                               }
                               VehicleSeatManager_UpdateTriggerBoxEventsCollider
                                         (this,(MethodInfo *)0x0);
                               if ((this->fields).OnSeatOccupiedChange !=
                                   (VehicleSeatManager_OnSeatOccupiedChangeDelegate *)0x0) {
-                                pVVar18 = (this->fields).OnSeatOccupiedChange;
-                                pvStack19 = (pVVar18->fields)._._.method;
-                                pvStack20 = (pVVar18->fields)._._.method_code;
-                                (*(pVVar18->fields)._._.invoke_impl)();
+                                pVVar17 = (this->fields).OnSeatOccupiedChange;
+                                pvStack18 = (pVVar17->fields)._._.method;
+                                pvStack19 = (pVVar17->fields)._._.method_code;
+                                (*(pVVar17->fields)._._.invoke_impl)();
                               }
                               return;
                             }
@@ -462,8 +459,8 @@ void Assembly-CSharp.dll::VehicleSeatManager::VehicleSeatManager_DetachFromSeat
     }
   }
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

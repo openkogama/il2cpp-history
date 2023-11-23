@@ -1359,99 +1359,99 @@ bool Assembly-CSharp.dll::MVLocalObjectController::MVLocalObjectController_Vehic
     func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy);
     cRam_? = '\x01';
   }
-  this_01 = (MVWorldObjectSpawnerVehicleEnergy *)
-            MVLocalObjectController_get_CurrentWorldObject(this,(MethodInfo *)0x0);
+  this_01 = (MVVehicleBase *)MVLocalObjectController_get_CurrentWorldObject(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<ILocalObject>__get_Count__);
     func_?(&TypeInfo__MVVehicleBase);
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).localControlledStack;
-  pMVar2 = this_01;
   if (pLVar1 == (List_1_ILocalObject_ *)0x0) {
 code_?:
     func_?();
-    pMVar3 = extraout_EDX;
+    pMVar2 = extraout_EDX;
   }
   else {
     if ((pLVar1->fields)._size == 0) {
       return 0;
     }
-    if (this_01 == (MVWorldObjectSpawnerVehicleEnergy *)0x0) {
-      pMVar2 = (MVWorldObjectSpawnerVehicleEnergy *)
+    pMVar3 = this_01;
+    if (this_01 == (MVVehicleBase *)0x0) {
+      pMVar3 = (MVVehicleBase *)
                MVLocalObjectController_get_CurrentWorldObject(this,(MethodInfo *)0x0);
     }
-    if (pMVar2 == (MVWorldObjectSpawnerVehicleEnergy *)0x0) {
-      pMVar4 = (MVWorldObjectSpawnerVehicleEnergy *)0x0;
+    if (pMVar3 == (MVVehicleBase *)0x0) {
+      pMVar4 = (MVVehicleBase *)0x0;
     }
     else {
-      if (((((MVVehicleBase__Class *)pMVar2->klass)->_1).naturalAligment <
-           (TypeInfo__MVVehicleBase->_1).naturalAligment) ||
+      if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVVehicleBase->_1).naturalAligment) ||
          ((MVVehicleBase__Class *)
-          (((MVVehicleBase__Class *)pMVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] != TypeInfo__MVVehicleBase)) {
+          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] !=
+          TypeInfo__MVVehicleBase)) {
         bVar5 = false;
       }
       else {
         bVar5 = true;
       }
-      pMVar4 = (MVWorldObjectSpawnerVehicleEnergy *)0x0;
+      pMVar4 = (MVVehicleBase *)0x0;
       if (bVar5) {
-        pMVar4 = pMVar2;
+        pMVar4 = pMVar3;
       }
     }
-    if (pMVar4 == (MVWorldObjectSpawnerVehicleEnergy *)0x0) {
+    if (pMVar4 == (MVVehicleBase *)0x0) {
       return 0;
     }
     this_00 = (MVWorldObjectClientManager *)(this->fields).worldObjectClientManagerNetwork;
     if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-       (pMVar4 = (MVWorldObjectSpawnerVehicleEnergy *)
-                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (this_00,worldObjectSpawnerVehicleEnergyID,(MethodInfo *)0x0),
-       pMVar2 = pMVar4, pMVar4 == (MVWorldObjectSpawnerVehicleEnergy *)0x0)) goto code_?;
-    pMVar6 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy;
-    if (((pMVar4->klass->_1).naturalAligment <
+       (this = (MVLocalObjectController *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,worldObjectSpawnerVehicleEnergyID,(MethodInfo *)0x0),
+       (MVVehicleBase__Class *)this == (MVVehicleBase__Class *)0x0)) goto code_?;
+    pIVar6 = (((MVVehicleBase__Class *)this)->_0).image;
+    pMVar7 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy;
+    if ((*(byte *)&pIVar6[4].assembly <
          (TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
          naturalAligment) ||
-       ((MVWorldObjectSpawnerVehicleEnergy__Class *)
-        (pMVar4->klass->_1).typeHierarchy
-        [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
-         naturalAligment - 1] !=
+       (*(MVWorldObjectSpawnerVehicleEnergy__Class **)
+         ((pIVar6[2].typeCount - 4) +
+         (uint)(TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy->_1).
+               naturalAligment * 4) !=
         TypeInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy))
     goto code_?;
-    pVVar7 = WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerVehicleEnergy::
+    pVVar8 = WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerVehicleEnergy::
              MVWorldObjectSpawnerVehicleEnergy_CreateVehicleEnergyRefill
-                       ((VehicleEnergyRefill *)&stack0xffffffe8,pMVar4,1,(MethodInfo *)0x0);
-    pMVar2 = (MVWorldObjectSpawnerVehicleEnergy *)pVVar7->amount;
-    vehicleEnergyRefill = *pVVar7;
+                       ((VehicleEnergyRefill *)&stack0xffffffe8,
+                        (MVWorldObjectSpawnerVehicleEnergy *)this,1,(MethodInfo *)0x0);
+    vehicleEnergyRefill = *pVVar8;
     takeTime = mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
     MVWorldObjectSpawner::MVWorldObjectSpawner_TakePrediction
-              ((MVWorldObjectSpawner *)pMVar4,takeTime,(MethodInfo *)0x0);
-    if (this_01 == (MVWorldObjectSpawnerVehicleEnergy *)0x0) goto code_?;
-    pMVar3 = TypeInfo__MVVehicleBase;
+              ((MVWorldObjectSpawner *)this,takeTime,(MethodInfo *)0x0);
+    if (this_01 == (MVVehicleBase *)0x0) goto code_?;
+    this = (MVLocalObjectController *)this_01->klass;
+    pMVar2 = TypeInfo__MVVehicleBase;
     if (((TypeInfo__MVVehicleBase->_1).naturalAligment <=
-         (((MVVehicleBase__Class *)this_01->klass)->_1).naturalAligment) &&
+         (((MVVehicleBase__Class *)this)->_1).naturalAligment) &&
        ((MVVehicleBase__Class *)
-        (((MVVehicleBase__Class *)this_01->klass)->_1).typeHierarchy
+        (((MVVehicleBase__Class *)this)->_1).typeHierarchy
         [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] == TypeInfo__MVVehicleBase)) {
-      MVVehicleBase::MVVehicleBase_RefillEnergy
-                ((MVVehicleBase *)this_01,vehicleEnergyRefill,(MethodInfo *)0x0);
+      MVVehicleBase::MVVehicleBase_RefillEnergy(this_01,vehicleEnergyRefill,(MethodInfo *)0x0);
       this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (this_02 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_VehicleEnergyUse
-                  (this_02,0xADDR,(this_01->fields)._._._._._.id,(MethodInfo *)0x0);
+                  (this_02,worldObjectSpawnerVehicleEnergyID,(this_01->fields)._._._._.id,
+                   (MethodInfo *)0x0);
         return 1;
       }
       goto code_?;
     }
   }
-  func_?(this_01,pMVar3);
-  pMVar6 = extraout_EDX_00;
+  func_?(this_01,pMVar2);
+  pMVar7 = extraout_EDX_00;
 code_?:
-  func_?(pMVar2,pMVar6);
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  func_?(this,pMVar7);
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

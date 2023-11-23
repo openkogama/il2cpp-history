@@ -275,15 +275,11 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                       (this_00,(MethodInfo *)0x0);
     bVar3 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                       ((this->fields).insideInventory,(MethodInfo *)0x0);
-    bVar4 = 0;
-    if (bVar1 == 0) {
-      bVar4 = bVar3 & bVar2;
-    }
-    return bVar4;
+    return bVar3 & (bVar1 ^ 1) & bVar2;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar1 = (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 

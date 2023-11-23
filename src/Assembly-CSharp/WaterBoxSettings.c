@@ -310,8 +310,8 @@ void Assembly-CSharp.dll::WaterBoxSettings::WaterBoxSettings_UpdateWaterColor
       goto code_?;
       if (pIVar2 != (Image *)0x0) {
         (*(code *)(pIVar2->klass->vtable).set_color.method)
-                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],
-                   (pIVar2->klass->vtable).get_raycastTarget.methodPtr,0x3f800000);
+                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],pSVar1->vector[2],0x3f800000,
+                   (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
         return;
       }
     }

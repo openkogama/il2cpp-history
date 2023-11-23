@@ -680,11 +680,10 @@ code_?:
        pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
     actorNr = (pMVar3->fields)._._ActorNr_k__BackingField;
   }
-  pMVar4 = this;
   MVWorldObjectClientManagerNetwork_SetOwnerInHierarchy(this,id,actorNr,(MethodInfo *)0x0);
-  uVar5 = (undefined1)((uint)pMVar4 >> 0x18);
   if ((this->fields)._.OnHierarchyLockedResponse !=
       (EventHandler_1_OnHierarchyLockedEventArgs_ *)0x0) {
+    pEVar4 = (this->fields)._.OnHierarchyLockedResponse;
     this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
     if (cRam_? == '\0') {
       func_?();
@@ -696,9 +695,10 @@ code_?:
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
     UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+    success = (bool)this_02;
     (this_02->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)id;
-    *(undefined1 *)&this_02[1].klass = uVar5;
-    (*_UNK_?)();
+    *(bool *)&this_02[1].klass = success;
+    (*(pEVar4->fields)._._.invoke_impl)();
   }
   return 1;
 }
@@ -1004,43 +1004,37 @@ void Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.worldObjects;
-  if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) goto code_?;
-  pIVar1 = (Int32__Array *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-           Dictionary_2_System_Int32_System_Object__get_Item
-                     ((Dictionary_2_System_Int32_System_Object_ *)this_00,groupId,
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                     );
-  if (pIVar1 == (Int32__Array *)0x0) {
-    pIVar1 = (Int32__Array *)0x0;
-code_?:
-    uVar2 = 0;
-    if (worldObjectsToGroup == (Int32__Array *)0x0) goto code_?;
-    piVar3 = worldObjectsToGroup->vector;
-    while( true ) {
-      if ((int)worldObjectsToGroup->max_length <= (int)uVar2) {
-        return;
+  if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+             ::Dictionary_2_System_Int32_System_Object__get_Item
+                       ((Dictionary_2_System_Int32_System_Object_ *)this_00,groupId,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                       );
+    if ((pOVar1 == (Object *)0x0) ||
+       ((pMVar2 = TypeInfo__MVGroup,
+        (TypeInfo__MVGroup->_1).naturalAligment <= (pOVar1->klass->_1).naturalAligment &&
+        ((MVGroup__Class *)
+         (pOVar1->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
+         TypeInfo__MVGroup)))) {
+      uVar3 = 0;
+      if (worldObjectsToGroup == (Int32__Array *)0x0) goto code_?;
+      piVar4 = worldObjectsToGroup->vector;
+      while( true ) {
+        if ((int)worldObjectsToGroup->max_length <= (int)uVar3) {
+          return;
+        }
+        if (worldObjectsToGroup->max_length <= uVar3) break;
+        if (pOVar1 == (Object *)0x0) goto code_?;
+        (*pOVar1->klass[3].vtable.Finalize.methodPtr)
+                  (pOVar1,*piVar4,pOVar1->klass[3].vtable.Finalize.method);
+        uVar3 = uVar3 + 1;
+        piVar4 = piVar4 + 1;
       }
-      if (worldObjectsToGroup->max_length <= uVar2) break;
-      if (pIVar1 == (Int32__Array *)0x0) goto code_?;
-      (*((Object__Class *)pIVar1->klass)[3].vtable.Finalize.methodPtr)
-                (pIVar1,*piVar3,((Object__Class *)pIVar1->klass)[3].vtable.Finalize.method);
-      uVar2 = uVar2 + 1;
-      piVar3 = piVar3 + 1;
+      func_?();
+      pMVar2 = extraout_EDX;
     }
-    func_?();
-    pMVar4 = extraout_EDX;
-    pIVar1 = worldObjectsToGroup;
+    func_?(pOVar1,pMVar2);
   }
-  else {
-    pMVar4 = TypeInfo__MVGroup;
-    if (((TypeInfo__MVGroup->_1).naturalAligment <=
-         (((Object__Class *)pIVar1->klass)->_1).naturalAligment) &&
-       ((MVGroup__Class *)
-        (((Object__Class *)pIVar1->klass)->_1).typeHierarchy
-        [(TypeInfo__MVGroup->_1).naturalAligment - 1] == TypeInfo__MVGroup)) goto code_?;
-  }
-  func_?(pIVar1,pMVar4);
 code_?:
   func_?();
   pcVar5 = (code *)swi(3);

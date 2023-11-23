@@ -149,14 +149,13 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_OnSettingChanged
   if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Convert);
   }
-  mscorlib.dll::System::Convert::Convert_ToSingle
-            (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
-  pMVar1 = (this->fields).platformGroup;
-  if ((pMVar1 != (MVMovingPlatformGroup *)0x0) &&
-     (pMVar2 = (pMVar1->fields).platform, pMVar2 != (MVMovingPlatform *)0x0)) {
-    uVar3 = (pMVar2->fields)._.velocity.x;
-    uVar4 = (pMVar2->fields)._.velocity.y;
-    fVar5 = (pMVar2->fields)._.velocity.z;
+  fVar1 = mscorlib.dll::System::Convert::Convert_ToSingle
+                    (value,(IFormatProvider *)provider,(MethodInfo *)0x0);
+  pMVar2 = (this->fields).platformGroup;
+  if ((pMVar2 != (MVMovingPlatformGroup *)0x0) &&
+     (pMVar3 = (pMVar2->fields).platform, pMVar3 != (MVMovingPlatform *)0x0)) {
+    uVar4 = (pMVar3->fields)._.velocity.x;
+    uVar5 = (pMVar3->fields)._.velocity.y;
     if (cRam_? == '\0') {
       uStack_6 = CONCAT44(fStack_7,&TypeInfo__System__Math);
       in_stack_8 = &UNK_?;
@@ -178,36 +177,36 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_OnSettingChanged
     }
     uStack_6._0_4_ = (float)dVar9;
     if (_UNK_? < (float)uStack_6) {
-      fVar5 = fVar5 / (float)uStack_6;
-      uStack_6 = CONCAT44((float)uVar4 / (float)uStack_6,(float)uVar3 / (float)uStack_6);
+      fVar11 = (float)uVar5 / (float)uStack_6;
+      uStack_6 = CONCAT44((float)uVar4 / (float)uStack_6,fVar1 / (float)uStack_6);
     }
     else {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uStack_6._0_4_ = (pVVar11->zeroVector).x;
-      fStack_7 = (pVVar11->zeroVector).y;
-      fVar5 = (pVVar11->zeroVector).z;
+      pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_6._0_4_ = (pVVar12->zeroVector).x;
+      fStack_7 = (pVVar12->zeroVector).y;
+      fVar11 = (pVVar12->zeroVector).z;
     }
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
     vec.y = fStack_7 * (float)in_stack_8;
     vec.x = (float)uStack_6 * (float)in_stack_8;
-    vec.z = fVar5 * (float)in_stack_8;
+    vec.z = fVar11 * (float)in_stack_8;
     value_00 = Extensions::Extensions_ToSerializeString(vec,(MethodInfo *)0x0);
     this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-                (this_00,(pMVar2->fields)._._._._._.id,key,(Object *)value_00,(MethodInfo *)0x0);
+                (this_00,(pMVar3->fields)._._._._._.id,key,(Object *)value_00,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

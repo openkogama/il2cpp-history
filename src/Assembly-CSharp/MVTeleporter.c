@@ -191,22 +191,21 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
     pOVar13[5].klass = pOVar14;
     pMVar17 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
     pLVar3 = *(List_1_System_Int32_ **)((int)fVar9 + 0xf8);
-    this_02 = (MVAvatarLocal *)(this_02->fields)._._._._.id;
+    item = (this_02->fields)._._._._.id;
     if (pLVar3 == (List_1_System_Int32_ *)0x0) goto code_?;
     piVar18 = &(pLVar3->fields)._version;
     *piVar18 = *piVar18 + 1;
     pIVar19 = (pLVar3->fields)._items;
     if (pIVar19 == (Int32__Array *)0x0) goto code_?;
-    uVar20 = (pLVar3->fields)._size;
-    if (pIVar19->max_length <= uVar20) {
+    this_02 = (MVAvatarLocal *)(pLVar3->fields)._size;
+    if ((MVAvatarLocal *)pIVar19->max_length <= this_02) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize
-                (pLVar3,(int32_t)this_02,pMVar17->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar3,item,pMVar17->klass->rgctx_data[0xe].method);
       return 1;
     }
-    (pLVar3->fields)._size = uVar20 + 1;
-    if (uVar20 < pIVar19->max_length) {
-      pIVar19->vector[uVar20] = (int32_t)this_02;
+    (pLVar3->fields)._size = (int32_t)((int)&this_02->klass + 1);
+    if (this_02 < (MVAvatarLocal *)pIVar19->max_length) {
+      pIVar19->vector[(int)this_02] = item;
       return 1;
     }
     func_?();
@@ -215,8 +214,8 @@ bool Assembly-CSharp.dll::MVTeleporter::MVTeleporter_DoTeleport
   func_?(this_02,pMVar1);
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  bVar2 = (*pcVar21)();
+  pcVar20 = (code *)swi(3);
+  bVar2 = (*pcVar20)();
   return bVar2;
 }
 

@@ -486,14 +486,14 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_ShowB
                 fVar14 = pQVar12->z;
                 fVar15 = pQVar12->w;
                 if (this_03 != (Transform *)0x0) {
-                  value.y = (fVar13 * fVar10 + fVar15 * fVar8 + pQVar12->x * fVar9) - fVar14 * fVar7
+                  value.y = (fVar8 * fVar15 + fVar13 * fVar10 + fVar9 * pQVar12->x) - fVar14 * fVar7
                   ;
-                  value.x = (pQVar12->x * fVar10 + fVar15 * fVar7 + fVar14 * fVar8) - fVar13 * fVar9
+                  value.x = (fVar15 * fVar7 + pQVar12->x * fVar10 + fVar14 * fVar8) - fVar13 * fVar9
                   ;
-                  value.z = (fVar14 * fVar10 + fVar15 * fVar9 + fVar13 * fVar7) - pQVar12->x * fVar8
+                  value.z = (fVar9 * fVar15 + fVar14 * fVar10 + fVar13 * fVar7) - fVar8 * pQVar12->x
                   ;
-                  value.w = ((fVar15 * fVar10 - pQVar12->x * fVar7) - fVar13 * fVar8) -
-                            fVar14 * fVar9;
+                  value.w = ((fVar15 * fVar10 - fVar7 * pQVar12->x) - fVar13 * fVar8) -
+                            fVar9 * fVar14;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                             (this_03,value,(MethodInfo *)0x0);
                   pAVar16 = (pAVar5->fields).toPreviewer;

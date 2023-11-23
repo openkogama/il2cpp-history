@@ -415,7 +415,7 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UnityEngine__RenderTexture);
     func_?(&TypeInfo__UnityEngine__Texture2D);
-    func_?(&StringLiteral_Preview);
+    func_?(&::StringLiteral_Preview);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).genTexture;
@@ -463,7 +463,7 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
                         (pCVar4,1.0,(MethodInfo *)0x0);
               pCVar4 = (this->fields).shotCamera;
               iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                                (StringLiteral_Preview,(MethodInfo *)0x0);
+                                (::StringLiteral_Preview,(MethodInfo *)0x0);
               if (pCVar4 != (Camera *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
                           (pCVar4,1 << ((byte)iVar5 & 0x1f),(MethodInfo *)0x0);
@@ -699,9 +699,9 @@ Vector3 * Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Translat
     uVar11 = pVVar1->x;
     uVar12 = pVVar1->y;
     fVar13 = pVVar1->z;
-    __return_storage_ptr__->x = pos.x + fVar5 + fStack_8 + (float)uVar11 * translation.y;
-    __return_storage_ptr__->y = pos.y + fStack_6 + fStack_9 + (float)uVar12 * translation.y;
-    __return_storage_ptr__->z = pos.z + fStack_7 + fStack_10 + fVar13 * translation.y;
+    __return_storage_ptr__->x = (float)uVar11 * translation.y + fStack_8 + pos.x + fVar5;
+    __return_storage_ptr__->y = fStack_9 + pos.y + fStack_6 + (float)uVar12 * translation.y;
+    __return_storage_ptr__->z = fStack_10 + pos.z + fStack_7 + fVar13 * translation.y;
     return __return_storage_ptr__;
   }
   func_?();

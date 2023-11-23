@@ -503,14 +503,14 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
                       (*(code *)(pMVar2->klass->vtable).get_Position.method)
                                 (auStack_25,pMVar2,(pMVar2->klass->vtable).set_Position.methodPtr)
             ;
-            fStack_26 = (float)*puVar24;
-            uStack_27 = (undefined4)((ulonglong)*puVar24 >> 0x20);
-            VStack_5.x = VStack_5.x - fStack_26;
-            VStack_5.z = VStack_5.z - *(float *)(puVar24 + 1);
+            fStack_26 = *(float *)(puVar24 + 1);
+            fStack_27 = (float)*puVar24;
+            uStack_28 = (undefined4)((ulonglong)*puVar24 >> 0x20);
+            VStack_5.x = VStack_5.x - fStack_27;
+            VStack_5.z = VStack_5.z - fStack_26;
             VStack_5.y = 0.0;
-            fVar28 = VStack_5.x * VStack_5.x + 0.0 + VStack_5.z * VStack_5.z;
-            fStack_29 = VStack_5.z;
-            if (fVar28 < _UNK_?) {
+            fVar29 = VStack_5.x * VStack_5.x + 0.0 + VStack_5.z * VStack_5.z;
+            if (fVar29 < _UNK_?) {
               direction_01.y = 0.0;
               direction_01.x = VStack_5.x;
               direction_01.z = VStack_5.z;
@@ -519,7 +519,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
                                   ((Vector3 *)&stack0xffffffac,this,direction_01,100.0,
                                    (MethodInfo *)0x0);
             }
-            else if (_UNK_? < fVar28) {
+            else if (_UNK_? < fVar29) {
               direction_00.y = 0.0;
               direction_00.x = VStack_5.x;
               direction_00.z = VStack_5.z;
@@ -538,10 +538,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
           }
           uVar31 = (pVVar20->zeroVector).x;
           uVar32 = (pVVar20->zeroVector).y;
-          fVar28 = (pVVar20->zeroVector).z;
+          fVar29 = (pVVar20->zeroVector).z;
           pIVar33 = (this->fields).avatarInputController;
-          uStack_27 = uVar31;
-          fStack_29 = (float)uVar32;
+          uStack_28 = uVar31;
+          fStack_26 = (float)uVar32;
           if (movementMap != (IInputToPlayerMovement *)0x0) {
             uVar34 = func_?(1,TypeInfo__IInputToPlayerMovement,movementMap);
             uStack_35 = CONCAT31(uStack_35._1_3_,uVar34);
@@ -563,7 +563,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
               pMVar2 = (pMVar1->fields)._.mvAvatar;
               if ((pMVar2 != (MVAvatarLocal *)0x0) && (pIVar33 != (IAvatarInputController *)0x0)) {
                 func_?(0,TypeInfo__IAvatarInputController,pIVar33,
-                                CONCAT44(fStack_29,uStack_27),fVar28,uStack_35,0,
+                                CONCAT44(fStack_26,uStack_28),fVar29,uStack_35,0,
                                 CONCAT44(VStack_5.z,VStack_5.y),fStack_38,this,
                                 (pMVar2->fields).
                                 _ForceRotateAvatarToFiringDirection_k__BackingField);
@@ -792,15 +792,15 @@ Vector3 * Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
       puVar9 = (undefined8 *)
                (*(code *)(pMVar6->klass->vtable).get_Position.method)(&stack0xffffffd8);
       VStack_5._0_8_ = *puVar9;
-      fVar2 = (float)uStack_7 - VStack_5.x;
-      VStack_5.z = fStack_8 - *(float *)(puVar9 + 1);
-      uStack_7 = (ulonglong)(uint)fVar2;
-      fVar3 = fVar2 * fVar2 + 0.0 + VStack_5.z * VStack_5.z;
-      fStack_8 = VStack_5.z;
-      if (fVar3 < _UNK_?) {
+      VStack_5.z = *(float *)(puVar9 + 1);
+      fVar3 = (float)uStack_7 - VStack_5.x;
+      fStack_8 = fStack_8 - VStack_5.z;
+      uStack_7 = (ulonglong)(uint)fVar3;
+      fVar2 = fVar3 * fVar3 + 0.0 + fStack_8 * fStack_8;
+      if (fVar2 < _UNK_?) {
         direction_01.y = 0.0;
-        direction_01.x = fVar2;
-        direction_01.z = VStack_5.z;
+        direction_01.x = fVar3;
+        direction_01.z = fStack_8;
         pVVar4 = MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
                            ((Vector3 *)&stack0xffffffd8,this,direction_01,100.0,(MethodInfo *)0x0);
         fVar2 = pVVar4->y;
@@ -810,10 +810,10 @@ Vector3 * Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
         __return_storage_ptr__->z = fVar3;
         return __return_storage_ptr__;
       }
-      if (fVar3 <= _UNK_?) {
+      if (fVar2 <= _UNK_?) {
         direction.y = 0.0;
-        direction.x = fVar2;
-        direction.z = VStack_5.z;
+        direction.x = fVar3;
+        direction.z = fStack_8;
         pVVar4 = MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
                            ((Vector3 *)&stack0xffffffd8,this,direction,80.0,(MethodInfo *)0x0);
         fVar2 = pVVar4->y;
@@ -824,8 +824,8 @@ Vector3 * Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
         return __return_storage_ptr__;
       }
       direction_00.y = 0.0;
-      direction_00.x = fVar2;
-      direction_00.z = VStack_5.z;
+      direction_00.x = fVar3;
+      direction_00.z = fStack_8;
       pVVar4 = MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
                          ((Vector3 *)&stack0xffffffd8,this,direction_00,20.0,(MethodInfo *)0x0);
       fVar2 = pVVar4->y;
@@ -1154,8 +1154,8 @@ Vector3 * Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
           QVar15.w = direction.y;
           pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp
                              (&QStack_3,
-                              (Quaternion)CONCAT412(fVar5,CONCAT48(fVar10,CONCAT44(fVar9,fVar1))),
-                              QVar15,direction.z,(MethodInfo *)0x0);
+                              (Quaternion)CONCAT412(fVar5,CONCAT48(fVar10,CONCAT44(fVar9,fVar1)))
+                              ,QVar15,direction.z,(MethodInfo *)0x0);
           fVar11 = pQVar4->x;
           fVar12 = pQVar4->y;
           fVar13 = pQVar4->z;

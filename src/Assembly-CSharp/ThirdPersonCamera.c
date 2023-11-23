@@ -309,10 +309,10 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar24 * fVar3 + fVar22 * 3.226741e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.226741e-29 + fVar4 * fVar22) - fVar23 * fVar3;
-        value_00.z = (fVar24 * fVar4 + fVar23 * 3.226741e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.226741e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar4 * fVar23
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.227858e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.227858e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.227858e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.227858e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4
         ;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);
@@ -424,9 +424,9 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
     }
     pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar7 != (IPlayModeUI *)0x0) {
-      cVar8 = func_?(3,TypeInfo__IPlayModeUI,pIVar7);
-      (this->fields)._.autoRotate = cVar8 == '\0';
-      if ((cVar8 == '\0') && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
+      bVar8 = func_?(3,TypeInfo__IPlayModeUI,pIVar7);
+      (this->fields)._.autoRotate = bVar8 ^ 1;
+      if (((bVar8 ^ 1) != 0) && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }

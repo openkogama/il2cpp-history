@@ -18,105 +18,111 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefingNotification::
     func_?(&MethodInfo__TimeAttackFlagDebriefingNotification__StartCountDown__);
     cRam_? = '\x01';
   }
+  object = this;
+  (this->fields)._.timeSinceStart = 0.0;
+  this = (TimeAttackFlagDebriefingNotification *)CONCAT13(4,this._0_3_);
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_01 = (Action__Class *)data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(4,data._0_3_);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_01 == (Action__Class *)0x0) {
+  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
-    in_stack_2 = (Delegate *)func_?();
+    method = (MethodInfo *)func_?();
 code_?:
-    in_stack_3 = &UNK_?;
-    in_stack_4 = this_01;
-    in_stack_2 = (Delegate *)func_?();
-    in_stack_4 = extraout_ECX;
+    data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+    in_stack_2 = this_01;
+    method = (MethodInfo *)func_?();
+    in_stack_2 = extraout_ECX;
   }
   else {
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       pOVar1,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+    uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar6 = (int32_t *)func_?();
-    pTVar7 = (this->fields).timeText;
-    pSVar8 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                       (*piVar6,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
-    if (pTVar7 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar7->klass->vtable).set_text.method)(pTVar7,pSVar8);
-    pTVar7 = (this->fields).descriptionText;
-    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    piVar5 = (int32_t *)func_?(TVar3.m_Index);
+    pTVar6 = (object->fields).timeText;
+    pSVar7 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                       (*piVar5,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
+    if (pTVar6 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)
+              (pTVar6,pSVar7,(pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pTVar6 = (object->fields).descriptionText;
+    uStack_8 = CONCAT13(1,(undefined3)uStack_8);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_8 + 3);
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
                        pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (pTVar7 == (Text *)0x0) goto code_?;
+    uVar4 = CONCAT44(TypeInfo__System__String,TVar3.m_Index);
+    if (pTVar6 == (Text *)0x0) goto code_?;
     TVar9.m_Index = 0;
-    if (TVar5.m_Index != 0) {
-      if (*(String__Class **)TVar5.m_Index == TypeInfo__System__String) {
-        TVar9 = TVar5;
+    if (TVar3.m_Index != 0) {
+      if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+        TVar9 = TVar3;
       }
       if (TVar9.m_Index == 0) goto code_?;
     }
-    (*(code *)(pTVar7->klass->vtable).set_text.method)(pTVar7,TVar9.m_Index);
-    pNVar10 = (this->fields).debriefingFader;
+    (*(code *)(pTVar6->klass->vtable).set_text.method)
+              (pTVar6,TVar9.m_Index,
+               (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pNVar10 = (object->fields).debriefingFader;
     if (pNVar10 == (NotificationFade *)0x0) goto code_?;
     NotificationFade::NotificationFade_Activate(pNVar10,(MethodInfo *)0x0);
-    pNVar10 = (this->fields).debriefingFader;
+    pNVar10 = (object->fields).debriefingFader;
     if (pNVar10 == (NotificationFade *)0x0) goto code_?;
     (pNVar10->fields).pauseAt = 3.0;
-    pNVar10 = (this->fields).debriefingFader;
-    if (pNVar10 == (NotificationFade *)0x0) goto code_?;
-    a = (pNVar10->fields).OnFinished;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    data = (Dictionary_2_System_Object_System_Object_ *)(object->fields).debriefingFader;
+    if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    a = (Action *)(data->fields)._syncRoot;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
+              (this_00,(Object *)object,
                MethodInfo__TimeAttackFlagDebriefingNotification__StartCountDown__,(MethodInfo *)0x0)
     ;
-    in_stack_2 =
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (in_stack_2 == (Delegate *)0x0) {
-      in_stack_4 = (Action__Class *)0x0;
-      (this_00->fields)._._.method_info = (MethodInfo_1 *)0x0;
-      in_stack_2 = (Delegate *)&(this_00->fields)._._.method_info;
-      in_stack_3 = &UNK_?;
+    method = (MethodInfo *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
+    if ((Delegate *)method == (Delegate *)0x0) {
+      in_stack_2 = (Action__Class *)0x0;
+      (data->fields)._syncRoot = (Object *)0x0;
+      method = (MethodInfo *)&(data->fields)._syncRoot;
+      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
       func_?();
       return;
     }
     pDVar11 = (Delegate *)0x0;
-    if ((Action__Class *)in_stack_2->klass == TypeInfo__System__Action) {
-      pDVar11 = in_stack_2;
+    if ((Action__Class *)((Delegate *)method)->klass == TypeInfo__System__Action) {
+      pDVar11 = (Delegate *)method;
     }
-    in_stack_4 = TypeInfo__System__Action;
+    in_stack_2 = TypeInfo__System__Action;
     if (pDVar11 != (Delegate *)0x0) {
-      (this_00->fields)._._.method_info = (MethodInfo_1 *)pDVar11;
-      in_stack_4 = (Action__Class *)(Delegate *)0x0;
-      if ((Action__Class *)in_stack_2->klass == TypeInfo__System__Action) {
-        in_stack_4 = (Action__Class *)in_stack_2;
+      (data->fields)._syncRoot = (Object *)pDVar11;
+      in_stack_2 = (Action__Class *)(Delegate *)0x0;
+      if ((Action__Class *)((Delegate *)method)->klass == TypeInfo__System__Action) {
+        in_stack_2 = (Action__Class *)method;
       }
       this_01 = TypeInfo__System__Action;
-      if (in_stack_4 != (Action__Class *)0x0) {
-        in_stack_2 = (Delegate *)&(this_00->fields)._._.method_info;
-        in_stack_3 = &UNK_?;
+      if (in_stack_2 != (Action__Class *)0x0) {
+        method = (MethodInfo *)&(data->fields)._syncRoot;
+        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
         func_?();
         return;
       }
       goto code_?;
     }
   }
-  in_stack_3 = &UNK_?;
-  TVar5.m_Index = func_?();
+  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+  uVar4 = func_?();
 code_?:
-  func_?(TVar5.m_Index);
+  func_?(uVar4);
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;

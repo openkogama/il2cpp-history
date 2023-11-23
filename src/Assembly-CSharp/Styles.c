@@ -798,24 +798,23 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromLevel(int32_t level,Me
   if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Enum);
   }
-  this = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
+  this = (MethodInfo *)mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
   key = 0;
-  if (this != (Array *)0x0) {
-    while( true ) {
-      iVar1 = mscorlib.dll::System::Array::Array_get_Length(this,(MethodInfo *)0x0);
-      if (iVar1 <= (int)key) break;
+  if (this != (MethodInfo *)0x0) {
+    for (; iVar1 = mscorlib.dll::System::Array::Array_get_Length((Array *)this,(MethodInfo *)0x0),
+        (int)key < iVar1; key = key + 1) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        level = (int32_t)TypeInfo__Styles;
         func_?();
       }
       pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-      if (pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) goto code_?;
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                         );
-      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
+         (this = 
+          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+         , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
+                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                              ), pOVar3 == (Object *)0x0)) goto code_?;
       if (level < (int)pOVar3[2].klass) {
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -832,7 +831,6 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromLevel(int32_t level,Me
         }
         goto code_?;
       }
-      key = key + 1;
     }
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -881,24 +879,23 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromPrice(int32_t price,Me
   if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Enum);
   }
-  this = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
+  this = (MethodInfo *)mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
   key = 0;
-  if (this != (Array *)0x0) {
-    while( true ) {
-      iVar1 = mscorlib.dll::System::Array::Array_get_Length(this,(MethodInfo *)0x0);
-      if (iVar1 <= (int)key) break;
+  if (this != (MethodInfo *)0x0) {
+    for (; iVar1 = mscorlib.dll::System::Array::Array_get_Length((Array *)this,(MethodInfo *)0x0),
+        (int)key < iVar1; key = key + 1) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        price = (int32_t)TypeInfo__Styles;
         func_?();
       }
       pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-      if (pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) goto code_?;
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                         );
-      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
+         (this = 
+          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+         , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
+                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                              ), pOVar3 == (Object *)0x0)) goto code_?;
       if (price < (int)pOVar3[1].monitor) {
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -915,7 +912,6 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromPrice(int32_t price,Me
         }
         goto code_?;
       }
-      key = key + 1;
     }
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -1166,25 +1162,21 @@ bool Assembly-CSharp.dll::Styles::Styles_HandleUnInitalized(MethodInfo *method)
     this = (Styles *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectOfType
                      (type,(MethodInfo *)0x0);
-    if (this == (Styles *)0x0) {
-      this = (Styles *)0x0;
-    }
-    else if (((this->klass->_1).naturalAligment < (TypeInfo__Styles->_1).naturalAligment) ||
-            ((this->klass->_1).typeHierarchy[(TypeInfo__Styles->_1).naturalAligment - 1] !=
-             (Il2CppClass *)TypeInfo__Styles)) {
+    if ((this != (Styles *)0x0) &&
+       (((this->klass->_1).naturalAligment < (TypeInfo__Styles->_1).naturalAligment ||
+        ((this->klass->_1).typeHierarchy[(TypeInfo__Styles->_1).naturalAligment - 1] !=
+         (Il2CppClass *)TypeInfo__Styles)))) {
       func_?(this,TypeInfo__Styles);
-      goto code_?;
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if (this == (Styles *)0x0) {
 code_?:
-        func_?();
-        pcVar2 = (code *)swi(3);
-        bVar1 = (*pcVar2)();
-        return bVar1;
-      }
+      func_?();
+      pcVar1 = (code *)swi(3);
+      bVar2 = (*pcVar1)();
+      return bVar2;
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if (this == (Styles *)0x0) goto code_?;
       Styles_Initialize(this,(MethodInfo *)0x0);
     }
   }

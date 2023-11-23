@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
   pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
   if (pSVar1 != (SentrySdk *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__Sentry__Breadcrumb);
       func_?(&TypeInfo__System__DateTime);
       func_?(&TypeInfo__UnityEngine__Debug);
       func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
@@ -30,14 +30,14 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
     }
     if ((pSVar1->fields)._initialized == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Cannot_AddBreadcrumb_if_we_are_n,(MethodInfo *)0x0);
       return;
     }
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__System__DateTime);
     }
     mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
     item1 = mscorlib.dll::System::DateTime::DateTime_ToString_1
@@ -49,10 +49,11 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
     mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
               (this,(Object *)item1,(Object *)message,(MethodInfo *)0x0);
     if (pBVar3 != (Breadcrumb__Array *)0x0) {
-      if ((this == (Tuple_2_Object_Object_ *)0x0) || (iVar5 = func_?(this), iVar5 != 0)) {
+      if ((this == (Tuple_2_Object_Object_ *)0x0) ||
+         (iVar5 = func_?(this,(pBVar3->klass->_0).element_class), iVar5 != 0)) {
         if (uVar4 < pBVar3->max_length) {
           pBVar3->vector[uVar4] = (Breadcrumb *)this;
-          func_?(pBVar3->vector + uVar4);
+          func_?(pBVar3->vector + uVar4,this);
           (pSVar1->fields)._lastBreadcrumbPos = ((pSVar1->fields)._lastBreadcrumbPos + 1) % 100;
           if (99 < (pSVar1->fields)._noBreadcrumbs) {
             return;
@@ -63,7 +64,7 @@ void Assembly-CSharp.dll::SentrySdk::SentrySdk_AddBreadcrumb(String *message,Met
         }
       }
       else {
-        uVar7 = func_?();
+        uVar7 = func_?(0);
         func_?(uVar7);
       }
       func_?();

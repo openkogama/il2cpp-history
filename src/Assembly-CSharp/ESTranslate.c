@@ -511,71 +511,69 @@ code_?:
       (this->fields).recalcLocalDirCamToObjects = 1;
     }
     pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                        ((MethodInfo *)0x0);
+                       ((MethodInfo *)0x0);
     if (pSVar6 != (SpawnRoleDataMediator *)0x0) {
-      pVVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
-                ::SpawnRoleVariable`1[UnityEngine::Vector3]::
-                SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                          (&VStack_3,
-                           (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar6->fields).position,
-                           MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                          );
+      pVVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+               SpawnRoleVariable`1[UnityEngine::Vector3]::
+               SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                         (&VStack_3,
+                          (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar6->fields).position,
+                          MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                         );
       uVar7 = pVVar2->x;
       uVar8 = pVVar2->y;
-      pMStack_9 = (MVWorldObjectClient *)pVVar2->z;
-      uVar10 = (this->fields).originPrevFrame.x;
-      uVar11 = (this->fields).originPrevFrame.y;
-      fStack_12 = (float)uVar7 - (float)uVar10;
-      fStack_13 = (this->fields).originPrevFrame.z;
-      fStack_14 = (float)uVar8 - (float)uVar11;
-      fStack_15 = (float)pMStack_9 - fStack_13;
-      fStack_16 = (float)uVar7;
-      fStack_17 = (float)uVar8;
-      fStack_18 = (float)uVar10;
-      fStack_19 = (float)uVar11;
+      fStack_9 = pVVar2->z;
+      uStack_10._0_4_ = (this->fields).originPrevFrame.x;
+      uStack_10._4_4_ = (this->fields).originPrevFrame.y;
+      fStack_11 = (float)uVar7 - (float)uStack_10;
+      fStack_12 = (this->fields).originPrevFrame.z;
+      fStack_13 = (float)uVar8 - uStack_10._4_4_;
+      fStack_14 = fStack_9 - fStack_12;
+      fStack_15 = (float)uVar7;
+      fStack_16 = (float)uVar8;
       pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                          ((MethodInfo *)0x0);
+                         ((MethodInfo *)0x0);
       if (pSVar6 != (SpawnRoleDataMediator *)0x0) {
-        pVVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                  SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
-                  SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                            (&VStack_3,
-                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar6->fields).position,
-                             MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                            );
+        pVVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
+                 ::SpawnRoleVariable`1[UnityEngine::Vector3]::
+                 SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                           (&VStack_3,
+                            (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar6->fields).position,
+                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                           );
         index = 0;
-        fVar20 = pVVar2->y;
-        fVar21 = pVVar2->z;
+        fVar17 = pVVar2->y;
+        fVar18 = pVVar2->z;
         (this->fields).originPrevFrame.x = pVVar2->x;
-        (this->fields).originPrevFrame.y = fVar20;
-        (this->fields).originPrevFrame.z = fVar21;
-        pLVar22 = (this->fields).translateDatas;
-        if (pLVar22 != (List_1_TranslateData_ *)0x0) {
+        (this->fields).originPrevFrame.y = fVar17;
+        (this->fields).originPrevFrame.z = fVar18;
+        pLVar19 = (this->fields).translateDatas;
+        if (pLVar19 != (List_1_TranslateData_ *)0x0) {
           do {
-            if ((pLVar22->fields)._size <= index) {
+            if ((pLVar19->fields)._size <= index) {
               ESTranslate_UpdateLaserPosition(this,(this->fields).targets,(MethodInfo *)0x0);
               (this->fields).enteredStateWithPointerSelectReleased = 0;
               return;
             }
             if ((this->fields).moveWithAvatar != 0) {
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-              uVar25 = *(undefined8 *)((int)RVar24 + 0xc);
-              fStack_26 = *(float *)((int)RVar24 + 0x14);
-              uStack_27._0_4_ = (float)uVar25;
-              uStack_27._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-              *(ulonglong *)((int)RVar24 + 0xc) =
-                   CONCAT44(uStack_27._4_4_ + fStack_14,(float)uStack_27 + fStack_12);
-              *(float *)((int)RVar24 + 0x14) = fStack_26 + fStack_15;
-              uStack_27 = uVar25;
+                                     ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+              uVar22 = *(undefined8 *)((int)RVar21 + 0xc);
+              fStack_12 = *(float *)((int)RVar21 + 0x14);
+              uStack_10._0_4_ = (float)uVar22;
+              uStack_10._4_4_ = (float)((ulonglong)uVar22 >> 0x20);
+              *(ulonglong *)((int)RVar21 + 0xc) =
+                   CONCAT44(uStack_10._4_4_ + fStack_13,(float)uStack_10 + fStack_11);
+              *(float *)((int)RVar21 + 0x14) = fStack_12 + fStack_14;
+              uStack_10 = uVar22;
             }
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MVInputWrapper);
@@ -583,323 +581,323 @@ code_?:
             bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                               (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
             if (bVar1 == 0) {
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-              uVar25 = *(undefined8 *)((int)RVar24 + 0xc);
-              fStack_28 = *(float *)((int)RVar24 + 0x14);
-              uStack_29._0_4_ = (float)uVar25;
-              uStack_29._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-              *(ulonglong *)((int)RVar24 + 0xc) =
-                   CONCAT44(uStack_4._4_4_ + uStack_29._4_4_,(float)uStack_4 + (float)uStack_29);
-              *(float *)((int)RVar24 + 0x14) = fStack_5 + fStack_28;
-              uStack_29 = uVar25;
+                                     ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+              uVar22 = *(undefined8 *)((int)RVar21 + 0xc);
+              fStack_23 = *(float *)((int)RVar21 + 0x14);
+              uStack_24._0_4_ = (float)uVar22;
+              uStack_24._4_4_ = (float)((ulonglong)uVar22 >> 0x20);
+              *(ulonglong *)((int)RVar21 + 0xc) =
+                   CONCAT44(uStack_4._4_4_ + uStack_24._4_4_,(float)uStack_4 + (float)uStack_24);
+              *(float *)((int)RVar21 + 0x14) = fStack_5 + fStack_23;
+              uStack_24 = uVar22;
             }
             else {
               ESTranslate_RotateWithCamera(this,e,index,(MethodInfo *)0x0);
             }
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if (pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if (pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
             break;
-            RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+            RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar23,index,
+                               (pLVar20,index,
                                 MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                                );
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+            if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+               || (RVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar23,index,
+                                      (pLVar20,index,
                                        MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                      ), RVar30 == (RegexCharClass_SingleRange)0x0)) break;
-            pMStack_9 = TranslateData::TranslateData_get_Wo
-                                   ((TranslateData *)RVar30,(MethodInfo *)0x0);
-            fStack_13 = (this->fields).gridSize;
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                      ), RVar25 == (RegexCharClass_SingleRange)0x0)) break;
+            pMStack_26 = TranslateData::TranslateData_get_Wo
+                                  ((TranslateData *)RVar25,(MethodInfo *)0x0);
+            fStack_27 = (this->fields).gridSize;
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || ((RVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+            if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+               || ((RVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                              RegularExpressions::RegexCharClass+SingleRange]::
                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                       (pLVar23,index,
+                                       (pLVar20,index,
                                         MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                       ), RVar30 == (RegexCharClass_SingleRange)0x0 ||
-                   (pMStack_9 == (MVWorldObjectClient *)0x0)))) break;
-            puVar31 = (undefined8 *)func_?();
-            uVar32 = *(undefined4 *)(puVar31 + 1);
-            if (RVar24 == (RegexCharClass_SingleRange)0x0) break;
-            *(undefined8 *)((int)RVar24 + 0x18) = *puVar31;
-            *(undefined4 *)((int)RVar24 + 0x20) = uVar32;
-            fStack_13 = (this->fields).gridSize;
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                       ), RVar25 == (RegexCharClass_SingleRange)0x0 ||
+                   (pMStack_26 == (MVWorldObjectClient *)0x0)))) break;
+            puVar28 = (undefined8 *)func_?();
+            uVar29 = *(undefined4 *)(puVar28 + 1);
+            if (RVar21 == (RegexCharClass_SingleRange)0x0) break;
+            *(undefined8 *)((int)RVar21 + 0x18) = *puVar28;
+            *(undefined4 *)((int)RVar21 + 0x20) = uVar29;
+            pMStack_26 = (MVWorldObjectClient *)(this->fields).gridSize;
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+            if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+               || (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar23,index,
+                                      (pLVar20,index,
                                        MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                      ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-            uStack_33 = *(undefined8 *)((int)RVar24 + 0x24);
-            fStack_34 = *(float *)((int)RVar24 + 0x2c);
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                      ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+            uStack_30 = *(undefined8 *)((int)RVar21 + 0x24);
+            fStack_31 = *(float *)((int)RVar21 + 0x2c);
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+            if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+               || (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar23,index,
+                                      (pLVar20,index,
                                        MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                      ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-            uVar25 = *(undefined8 *)((int)RVar24 + 0xc);
-            fStack_35 = *(float *)((int)RVar24 + 0x14);
-            uStack_36._0_4_ = (float)uVar25;
-            uStack_36._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-            fStack_37 = fStack_34 - fStack_35;
-            puVar31 = &uStack_38;
-            uVar32 = 0;
-            uStack_38 = CONCAT44(uStack_33._4_4_ - uStack_36._4_4_,
-                                 (float)uStack_33 - (float)uStack_36);
-            uStack_36 = uVar25;
-            fVar39 = (float10)func_?();
-            pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                      ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+            uVar22 = *(undefined8 *)((int)RVar21 + 0xc);
+            fStack_32 = *(float *)((int)RVar21 + 0x14);
+            uStack_33._0_4_ = (float)uVar22;
+            uStack_33._4_4_ = (float)((ulonglong)uVar22 >> 0x20);
+            fStack_34 = fStack_31 - fStack_32;
+            puVar28 = &uStack_35;
+            uVar29 = 0;
+            uStack_35 = CONCAT44(uStack_30._4_4_ - uStack_33._4_4_,
+                                 (float)uStack_30 - (float)uStack_33);
+            VStack_3.z = fStack_34;
+            uStack_33 = uVar22;
+            fVar36 = (float10)func_?();
+            pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            pMStack_9 = (MVWorldObjectClient *)(float)fVar39;
-            if (fStack_13 < (float)pMStack_9) {
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            fStack_27 = (float)fVar36;
+            if ((float)pMStack_26 < fStack_27) {
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-              pMVar40 = TranslateData::TranslateData_get_Wo
-                                  ((TranslateData *)RVar24,(MethodInfo *)0x0);
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                     ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+              pMVar37 = TranslateData::TranslateData_get_Wo
+                                  ((TranslateData *)RVar21,(MethodInfo *)0x0);
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 ((RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 ((RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar23,index,
+                                      (pLVar20,index,
                                        MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                      ), RVar24 == (RegexCharClass_SingleRange)0x0 ||
-                  (pMVar40 == (MVWorldObjectClient *)0x0)))) break;
-              func_?(0x1d,pMVar40,*(undefined8 *)((int)RVar24 + 0x18),
-                              *(undefined4 *)((int)RVar24 + 0x20));
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                      ), RVar21 == (RegexCharClass_SingleRange)0x0 ||
+                  (pMVar37 == (MVWorldObjectClient *)0x0)))) break;
+              func_?(0x1d,pMVar37,*(undefined8 *)((int)RVar21 + 0x18),
+                              *(undefined4 *)((int)RVar21 + 0x20));
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if (pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+              if (pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  ) break;
-              RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+              RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                        RegularExpressions::RegexCharClass+SingleRange]::
                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                 (pLVar23,index,
+                                 (pLVar20,index,
                                   MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                                  );
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar30 == (RegexCharClass_SingleRange)0x0)) break;
-              uVar32 = *(undefined4 *)((int)RVar30 + 0x20);
-              if (RVar24 == (RegexCharClass_SingleRange)0x0) break;
-              *(undefined8 *)((int)RVar24 + 0x24) = *(undefined8 *)((int)RVar30 + 0x18);
-              *(undefined4 *)((int)RVar24 + 0x2c) = uVar32;
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                     ), RVar25 == (RegexCharClass_SingleRange)0x0)) break;
+              uVar29 = *(undefined4 *)((int)RVar25 + 0x20);
+              if (RVar21 == (RegexCharClass_SingleRange)0x0) break;
+              *(undefined8 *)((int)RVar21 + 0x24) = *(undefined8 *)((int)RVar25 + 0x18);
+              *(undefined4 *)((int)RVar21 + 0x2c) = uVar29;
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if (pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+              if (pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  ) break;
-              RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+              RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                        RegularExpressions::RegexCharClass+SingleRange]::
                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                 (pLVar23,index,
+                                 (pLVar20,index,
                                   MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                                  );
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar30 == (RegexCharClass_SingleRange)0x0)) break;
-              uVar32 = *(undefined4 *)((int)RVar30 + 0x20);
-              if (RVar24 == (RegexCharClass_SingleRange)0x0) break;
-              *(undefined8 *)((int)RVar24 + 0xc) = *(undefined8 *)((int)RVar30 + 0x18);
-              *(undefined4 *)((int)RVar24 + 0x14) = uVar32;
+                                     ), RVar25 == (RegexCharClass_SingleRange)0x0)) break;
+              uVar29 = *(undefined4 *)((int)RVar25 + 0x20);
+              if (RVar21 == (RegexCharClass_SingleRange)0x0) break;
+              *(undefined8 *)((int)RVar21 + 0xc) = *(undefined8 *)((int)RVar25 + 0x18);
+              *(undefined4 *)((int)RVar21 + 0x14) = uVar29;
               if ((this->fields).playTranslateSounds != 0) {
-                pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this->fields).translateDatas;
-                if (((pLVar23 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                if (((pLVar20 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
                                 )0x0) &&
-                    (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                               RegularExpressions::RegexCharClass+SingleRange]::
                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        (pLVar23,index,
+                                        (pLVar20,index,
                                          MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                        ), RVar24 != (RegexCharClass_SingleRange)0x0)) &&
-                   (pMVar40 = TranslateData::TranslateData_get_Wo
-                                        ((TranslateData *)RVar24,(MethodInfo *)0x0),
-                   pMVar40 != (MVWorldObjectClient *)0x0)) {
-                  puVar31 = (undefined8 *)func_?(&stack0xfffffef8,0x19,pMVar40);
-                  uVar25 = *puVar31;
-                  fVar21 = *(float *)(puVar31 + 1);
-                  fStack_17 = (float)uVar25;
-                  pMStack_9 = (MVWorldObjectClient *)((ulonglong)uVar25 >> 0x20);
+                                        ), RVar21 != (RegexCharClass_SingleRange)0x0)) &&
+                   (pMVar37 = TranslateData::TranslateData_get_Wo
+                                        ((TranslateData *)RVar21,(MethodInfo *)0x0),
+                   pMVar37 != (MVWorldObjectClient *)0x0)) {
+                  puVar28 = (undefined8 *)func_?(&stack0xffffff00,0x19,pMVar37);
+                  uVar22 = *puVar28;
+                  fVar18 = *(float *)(puVar28 + 1);
+                  fStack_16 = (float)uVar22;
+                  fStack_9 = (float)((ulonglong)uVar22 >> 0x20);
                   if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__AudioEventHandler);
-                    uVar25 = CONCAT44(pMStack_9,fStack_17);
+                    uVar22 = CONCAT44(fStack_9,fStack_16);
                   }
                   bVar1 = 1;
-                  uVar32 = (undefined4)uVar25;
-                  uVar41 = (undefined4)((ulonglong)uVar25 >> 0x20);
-                  pMVar40 = (MVWorldObjectClient *)0x0;
+                  uVar29 = (undefined4)uVar22;
+                  uVar38 = (undefined4)((ulonglong)uVar22 >> 0x20);
+                  pMVar37 = (MVWorldObjectClient *)0x0;
                   goto code_?;
                 }
                 break;
               }
             }
             else {
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-              uStack_42 = *(undefined8 *)((int)RVar24 + 0xc);
-              fStack_43 = *(float *)((int)RVar24 + 0x14);
-              pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                     ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+              uStack_39 = *(undefined8 *)((int)RVar21 + 0xc);
+              fStack_40 = *(float *)((int)RVar21 + 0x14);
+              pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).translateDatas;
-              if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                              0x0) ||
-                 (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar23,index,
+                                     (pLVar20,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                     ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-              uVar25 = *(undefined8 *)((int)RVar24 + 0x24);
-              fStack_44 = *(float *)((int)RVar24 + 0x2c);
-              uStack_45._0_4_ = (float)uVar25;
-              fStack_46 = (float)uStack_42 - (float)uStack_45;
-              uStack_45._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-              fStack_47 = uStack_42._4_4_ - uStack_45._4_4_;
-              fStack_48 = fStack_43 - fStack_44;
-              uStack_49 = CONCAT44(fStack_47,fStack_46);
-              VStack_3.z = fStack_48;
-              uStack_45 = uVar25;
-              fStack_13 = fStack_48;
-              fVar39 = (float10)func_?(&uStack_49,0,puVar31,uVar32);
-              pMStack_9 = (MVWorldObjectClient *)(float)fVar39;
-              if ((this->fields).completelyStuckLimit * (this->fields).gridSize < (float)pMStack_9)
+                                     ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+              uVar22 = *(undefined8 *)((int)RVar21 + 0x24);
+              fStack_41 = *(float *)((int)RVar21 + 0x2c);
+              uStack_42._0_4_ = (float)uVar22;
+              fStack_27 = (float)uStack_39 - (float)uStack_42;
+              uStack_42._4_4_ = (float)((ulonglong)uVar22 >> 0x20);
+              fStack_43 = uStack_39._4_4_ - uStack_42._4_4_;
+              fVar18 = fStack_40 - fStack_41;
+              uStack_44 = CONCAT44(fStack_43,fStack_27);
+              fStack_45 = fVar18;
+              uStack_42 = uVar22;
+              fVar36 = (float10)func_?(&uStack_44,0,puVar28,uVar29);
+              pMStack_26 = (MVWorldObjectClient *)(float)fVar36;
+              if ((this->fields).completelyStuckLimit * (this->fields).gridSize < (float)pMStack_26)
               {
-                fVar21 = (this->fields).stickyModifier;
-                fStack_46 = fStack_46 * fVar21;
-                fStack_47 = fStack_47 * fVar21;
-                fStack_13 = fStack_13 * fVar21;
-                pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                fStack_9 = (this->fields).stickyModifier;
+                fStack_27 = fStack_9 * fStack_27;
+                fStack_43 = fStack_9 * fStack_43;
+                fStack_9 = fStack_9 * fVar18;
+                pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this->fields).translateDatas;
-                if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                                0x0) ||
-                   (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                              RegularExpressions::RegexCharClass+SingleRange]::
                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                       (pLVar23,index,
+                                       (pLVar20,index,
                                         MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                       ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-                pMVar40 = TranslateData::TranslateData_get_Wo
-                                    ((TranslateData *)RVar24,(MethodInfo *)0x0);
-                pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                                       ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+                pMVar37 = TranslateData::TranslateData_get_Wo
+                                    ((TranslateData *)RVar21,(MethodInfo *)0x0);
+                pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this->fields).translateDatas;
-                if ((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                if ((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                                0x0) ||
-                   (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                              RegularExpressions::RegexCharClass+SingleRange]::
                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                       (pLVar23,index,
+                                       (pLVar20,index,
                                         MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                       ), RVar24 == (RegexCharClass_SingleRange)0x0)) break;
-                uVar25 = *(undefined8 *)((int)RVar24 + 0x24);
-                fStack_50 = *(float *)((int)RVar24 + 0x2c);
-                uStack_51._0_4_ = (float)uVar25;
-                fStack_52 = (float)uStack_51 + fStack_46;
-                uStack_51._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-                fStack_53 = uStack_51._4_4_ + fStack_47;
-                fStack_54 = fStack_50 + fStack_13;
-                uStack_51 = uVar25;
-                if (pMVar40 == (MVWorldObjectClient *)0x0) break;
-                func_?(0x1a,pMVar40,CONCAT44(fStack_53,fStack_52),fStack_54);
+                                       ), RVar21 == (RegexCharClass_SingleRange)0x0)) break;
+                uVar22 = *(undefined8 *)((int)RVar21 + 0x24);
+                fStack_46 = *(float *)((int)RVar21 + 0x2c);
+                uStack_47._0_4_ = (float)uVar22;
+                uStack_47._4_4_ = (float)((ulonglong)uVar22 >> 0x20);
+                fStack_48 = (float)uStack_47 + fStack_27;
+                fStack_49 = uStack_47._4_4_ + fStack_43;
+                fStack_50 = fStack_46 + fStack_9;
+                uStack_47 = uVar22;
+                if (pMVar37 == (MVWorldObjectClient *)0x0) break;
+                func_?(0x1a,pMVar37,CONCAT44(fStack_49,fStack_48),fStack_50);
               }
               if ((this->fields).playTranslateSounds != 0) {
-                pLVar23 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                pLVar20 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this->fields).translateDatas;
-                if (((pLVar23 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                if (((pLVar20 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
                                 )0x0) ||
-                    (RVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    (RVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                               RegularExpressions::RegexCharClass+SingleRange]::
                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        (pLVar23,index,
+                                        (pLVar20,index,
                                          MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                                        ), RVar24 == (RegexCharClass_SingleRange)0x0)) ||
-                   (pMVar40 = TranslateData::TranslateData_get_Wo
-                                        ((TranslateData *)RVar24,(MethodInfo *)0x0),
-                   pMVar40 == (MVWorldObjectClient *)0x0)) break;
-                puVar31 = (undefined8 *)func_?();
-                uVar25 = *puVar31;
-                fVar21 = *(float *)(puVar31 + 1);
-                fStack_19 = (float)uVar25;
-                fStack_13 = (float)((ulonglong)uVar25 >> 0x20);
+                                        ), RVar21 == (RegexCharClass_SingleRange)0x0)) ||
+                   (pMVar37 = TranslateData::TranslateData_get_Wo
+                                        ((TranslateData *)RVar21,(MethodInfo *)0x0),
+                   pMVar37 == (MVWorldObjectClient *)0x0)) break;
+                puVar28 = (undefined8 *)func_?();
+                uVar22 = *puVar28;
+                fVar18 = *(float *)(puVar28 + 1);
+                fStack_16 = (float)uVar22;
+                fStack_9 = (float)((ulonglong)uVar22 >> 0x20);
                 if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__AudioEventHandler);
-                  uVar25 = CONCAT44(fStack_13,fStack_19);
+                  uVar22 = CONCAT44(fStack_9,fStack_16);
                 }
                 bVar1 = 0;
-                uVar32 = (undefined4)uVar25;
-                uVar41 = (undefined4)((ulonglong)uVar25 >> 0x20);
-                pMVar40 = pMStack_9;
+                uVar29 = (undefined4)uVar22;
+                uVar38 = (undefined4)((ulonglong)uVar22 >> 0x20);
+                pMVar37 = pMStack_26;
 code_?:
-                worldPos.y = (float)uVar41;
-                worldPos.x = (float)uVar32;
-                worldPos.z = fVar21;
+                worldPos.y = (float)uVar38;
+                worldPos.x = (float)uVar29;
+                worldPos.z = fVar18;
                 AudioEventHandler::AudioEventHandler_AddTranslateSoundData
-                          ((float)pMVar40,bVar1,worldPos,(MethodInfo *)0x0);
+                          ((float)pMVar37,bVar1,worldPos,(MethodInfo *)0x0);
               }
             }
-            pLVar22 = (this->fields).translateDatas;
+            pLVar19 = (this->fields).translateDatas;
             index = index + 1;
-            if (pLVar22 == (List_1_TranslateData_ *)0x0) break;
+            if (pLVar19 == (List_1_TranslateData_ *)0x0) break;
           } while( true );
         }
       }
     }
   }
   func_?();
-  pcVar55 = (code *)swi(3);
-  (*pcVar55)();
+  pcVar51 = (code *)swi(3);
+  (*pcVar51)();
   return;
 }
 
@@ -1315,7 +1313,7 @@ float Assembly-CSharp.dll::ESTranslate::ESTranslate_GetInitialAvatarMoveObjectDi
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          dVar25 = (double)(fStack_23 * fStack_23 + fStack_24 * fStack_24 + fStack_22 * fStack_22);
+          dVar25 = (double)(fStack_24 * fStack_24 + fStack_23 * fStack_23 + fStack_22 * fStack_22);
           if (dVar25 < 0.0) {
             func_?();
           }
@@ -1494,6 +1492,7 @@ void Assembly-CSharp.dll::ESTranslate::ESTranslate_RotateWithCamera
 {
   uVar1 = in_stack_2;
   fVar3 = in_stack_4;
+  uVar5 = in_stack_6;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<TranslateData>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_);
@@ -1503,136 +1502,136 @@ void Assembly-CSharp.dll::ESTranslate::ESTranslate_RotateWithCamera
     cRam_? = '\x01';
     uVar1 = in_stack_2;
     fVar3 = in_stack_4;
+    uVar5 = in_stack_6;
   }
   func_?(&stack0xffffff50,0,0x40);
   func_?(&stack0xffffff10,0,0x40);
   if ((this->fields).recalcLocalDirCamToObjects == 0) {
 code_?:
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).translateDatas;
-    if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar5,targetIndex,
+                         (pLVar7,targetIndex,
                           MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                          );
-      if (RVar6 != (RegexCharClass_SingleRange)0x0) {
+      if (RVar8 != (RegexCharClass_SingleRange)0x0) {
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        if ((*(WorldObjectClientRef_1_System_Object_ **)((int)RVar6 + 8) !=
+        if ((*(WorldObjectClientRef_1_System_Object_ **)((int)RVar8 + 8) !=
              (WorldObjectClientRef_1_System_Object_ *)0x0) &&
-           (pOVar7 = WorldObjectClientRef`1[System::Object]::
+           (pOVar9 = WorldObjectClientRef`1[System::Object]::
                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                (*(WorldObjectClientRef_1_System_Object_ **)((int)RVar6 + 8),
+                                (*(WorldObjectClientRef_1_System_Object_ **)((int)RVar8 + 8),
                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                ), pOVar7 != (Object *)0x0)) {
-          (**(code **)&pOVar7->klass[1]._1.nested_type_count)();
-          pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                                ), pOVar9 != (Object *)0x0)) {
+          (**(code **)&pOVar9->klass[1]._1.nested_type_count)();
+          pSVar10 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                               ((MethodInfo *)0x0);
-          if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
-            pVVar9 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+          if (pSVar10 != (SpawnRoleDataMediator *)0x0) {
+            pVVar11 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                       SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
                       SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                                ((Vector3 *)&stack0xffffffd4,
+                                ((Vector3 *)(auStack_12 + 8),
                                  (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-                                 (pSVar8->fields).position,
+                                 (pSVar10->fields).position,
                                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
                                 );
-            uVar10 = pVVar9->x;
+            uVar13 = pVVar11->x;
             func_?();
             if ((this->fields).fixedToYPlane == 0) {
+              uVar14 = uVar13;
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
+                uVar14 = uVar13;
               }
               fVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
               if (((e == (EditorStateMachine *)0x0) ||
-                  (pMVar11 = (e->fields).weCamera, pMVar11 == (MainCameraManager *)0x0)) ||
-                 (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_transform((Component *)pMVar11,(MethodInfo *)0x0),
-                 pTVar12 == (Transform *)0x0)) goto code_?;
-              pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                  ((Quaternion *)&puStack_14,pTVar12,(MethodInfo *)0x0);
-              uVar15._0_4_ = pQVar13->x;
-              fStack_16 = pQVar13->y;
-              fStack_17 = pQVar13->z;
-              fStack_18 = pQVar13->w;
+                  (pMVar15 = (e->fields).weCamera, pMVar15 == (MainCameraManager *)0x0)) ||
+                 (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform((Component *)pMVar15,(MethodInfo *)0x0),
+                 pTVar16 == (Transform *)0x0)) goto code_?;
+              pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                  ((Quaternion *)auStack_12,pTVar16,(MethodInfo *)0x0);
+              fStack_18 = pQVar17->y;
+              fStack_19 = pQVar17->z;
+              fStack_20 = pQVar17->w;
+              fStack_21 = pQVar17->x;
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uStack_20 = uVar10;
+              pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
             }
             else {
               if (((e == (EditorStateMachine *)0x0) ||
-                  (pMVar11 = (e->fields).weCamera, pMVar11 == (MainCameraManager *)0x0)) ||
-                 (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_transform((Component *)pMVar11,(MethodInfo *)0x0),
-                 pTVar12 == (Transform *)0x0)) goto code_?;
-              pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                  ((Quaternion *)&stack0xffffff54,pTVar12,(MethodInfo *)0x0);
-              fVar3 = pQVar13->x;
-              uVar15._0_4_ = pQVar13->y;
-              fVar21 = pQVar13->z;
-              fVar22 = pQVar13->w;
+                  (pMVar15 = (e->fields).weCamera, pMVar15 == (MainCameraManager *)0x0)) ||
+                 (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform((Component *)pMVar15,(MethodInfo *)0x0),
+                 pTVar16 == (Transform *)0x0)) goto code_?;
+              pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                  ((Quaternion *)&stack0xffffff54,pTVar16,(MethodInfo *)0x0);
+              fVar3 = pQVar17->x;
+              fVar23 = pQVar17->y;
+              fVar24 = pQVar17->z;
+              fVar25 = pQVar17->w;
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              rotation_00.y = (float)uVar15;
+              rotation_00.y = fVar23;
               rotation_00.x = fVar3;
-              rotation_00.z = fVar21;
-              rotation_00.w = fVar22;
-              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              rotation_00.z = fVar24;
+              rotation_00.w = fVar25;
+              pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_op_Multiply_1
                                   ((Vector3 *)&stack0xffffffa0,rotation_00,
                                    TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                                    (MethodInfo *)0x0);
-              fVar3 = MathFunctions::MathFunctions_Yaw(*pVVar9,(MethodInfo *)0x0);
+              fVar3 = MathFunctions::MathFunctions_Yaw(*pVVar11,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              puStack_23 = (undefined *)0x0;
+              puStack_26 = (undefined *)0x0;
               euler_00.y = fVar3 * _UNK_?;
-              euler_00.x = in_stack_24;
+              euler_00.x = in_stack_27;
               euler_00.z = 0.0;
-              pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
                                   ((Quaternion *)&stack0xffffffc4,euler_00,(MethodInfo *)0x0);
-              uVar15._0_4_ = pQVar13->x;
-              fStack_16 = pQVar13->y;
-              fStack_17 = pQVar13->z;
-              fStack_18 = pQVar13->w;
+              fStack_18 = pQVar17->y;
+              fStack_19 = pQVar17->z;
+              fStack_20 = pQVar17->w;
+              fStack_21 = pQVar17->x;
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uVar25 = (pVVar19->zeroVector).x;
-              uVar26 = (pVVar19->zeroVector).y;
-              fVar3 = (pVVar19->zeroVector).z;
+              pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+              uVar5 = (pVVar22->zeroVector).x;
+              uVar14 = (pVVar22->zeroVector).y;
+              fVar3 = (pVVar22->zeroVector).z;
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uStack_27 = uVar25;
-              uStack_20 = uVar26;
+              pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
             }
-            pos_00.y = (float)uStack_20;
-            pos_00.x = (float)uStack_27;
+            pos_00.y = (float)uVar14;
+            pos_00.x = (float)uVar5;
             pos_00.z = fVar3;
-            q_00.z = fStack_17;
-            q_00.x = (float)uVar15;
-            q_00.y = fStack_16;
-            q_00.w = fStack_18;
+            q_00.y = fStack_18;
+            q_00.x = fStack_21;
+            q_00.z = fStack_19;
+            q_00.w = fStack_20;
             pMVar28 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                                ((Matrix4x4 *)&stack0x00000098,pos_00,q_00,pVVar19->oneVector,
+                                ((Matrix4x4 *)&stack0x00000098,pos_00,q_00,pVVar22->oneVector,
                                  (MethodInfo *)0x0);
             in_stack_29 = pMVar28->m00;
             in_stack_30 = pMVar28->m10;
@@ -1650,50 +1649,55 @@ code_?:
             in_stack_42 = pMVar28->m13;
             in_stack_43 = pMVar28->m23;
             in_stack_44 = pMVar28->m33;
-            pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      (this->fields).translateDatas;
-            if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
             {
               index = targetIndex;
-              RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+              RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                        RegularExpressions::RegexCharClass+SingleRange]::
                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                 (pLVar5,targetIndex,
+                                 (pLVar7,targetIndex,
                                   MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                                  );
-              if (RVar6 != (RegexCharClass_SingleRange)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                          ((Vector3 *)&stack0x00000024,(Matrix4x4 *)&stack0x00000074,
-                           *(Vector3 *)((int)RVar6 + 0x30),(MethodInfo *)0x0);
-                pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              if (RVar8 != (RegexCharClass_SingleRange)0x0) {
+                pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::
+                          Matrix4x4_MultiplyVector
+                                    ((Vector3 *)&stack0x00000024,(Matrix4x4 *)&stack0x00000074,
+                                     *(Vector3 *)((int)RVar8 + 0x30),(MethodInfo *)0x0);
+                auStack_12._8_4_ = pVVar11->x;
+                fStack_21 = pVVar11->y;
+                fStack_18 = pVVar11->z;
+                pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this->fields).translateDatas;
-                if (pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               0x0) {
-                  RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                            RegularExpressions::RegexCharClass+SingleRange]::
                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar5,index,
+                                     (pLVar7,index,
                                       MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
                                      );
-                  pSVar8 = MVGameControllerBase::
+                  pSVar10 = MVGameControllerBase::
                             MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
-                  if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
-                    pVVar9 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                  if (pSVar10 != (SpawnRoleDataMediator *)0x0) {
+                    pVVar11 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                               SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
                               SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
                                         ((Vector3 *)&stack0x0000004c,
                                          (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-                                         (pSVar8->fields).position,
+                                         (pSVar10->fields).position,
                                          MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
                                         );
-                    targetIndex = (int32_t)pVVar9->x;
-                    method = (MethodInfo *)pVVar9->y;
-                    in_stack_45 = pVVar9->z;
-                    if (RVar6 != (RegexCharClass_SingleRange)0x0) {
-                      *(ulonglong *)((int)RVar6 + 0xc) =
-                           CONCAT44((float)method + fStack_46 * fStack_47,
-                                    (float)targetIndex + fStack_48 * fStack_47);
-                      *(float *)((int)RVar6 + 0x14) = in_stack_45 + unaff_EBP * fStack_47;
+                    targetIndex = (int32_t)pVVar11->x;
+                    method = (MethodInfo *)pVVar11->y;
+                    in_stack_45 = pVVar11->z;
+                    fStack_46 = (float)targetIndex + fStack_46 * fStack_47;
+                    fStack_48 = in_stack_45 + fStack_48 * fStack_47;
+                    fStack_49 = (float)method + fStack_49 * fStack_47;
+                    if (RVar8 != (RegexCharClass_SingleRange)0x0) {
+                      *(ulonglong *)((int)RVar8 + 0xc) = CONCAT44(fStack_49,fStack_46);
+                      *(float *)((int)RVar8 + 0x14) = fStack_48;
                       return;
                     }
                   }
@@ -1711,94 +1715,97 @@ code_?:
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      uVar15._0_4_ = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+      fVar23 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
       if (((e == (EditorStateMachine *)0x0) ||
-          (pMVar11 = (e->fields).weCamera, pMVar11 == (MainCameraManager *)0x0)) ||
-         (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pMVar11,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+          (pMVar15 = (e->fields).weCamera, pMVar15 == (MainCameraManager *)0x0)) ||
+         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pMVar15,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
       goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffff9c,pTVar12,(MethodInfo *)0x0);
+                ((Quaternion *)&stack0xffffff9c,pTVar16,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        in_stack_49 = &TypeInfo__UnityEngine__Vector3;
-        in_stack_50 = &UNK_?;
         func_?();
         cRam_? = '\x01';
       }
-      pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
+      pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
     }
     else {
       if (((e == (EditorStateMachine *)0x0) ||
-          (pMVar11 = (e->fields).weCamera, pMVar11 == (MainCameraManager *)0x0)) ||
-         (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pMVar11,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+          (pMVar15 = (e->fields).weCamera, pMVar15 == (MainCameraManager *)0x0)) ||
+         (pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pMVar15,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
       goto code_?;
-      pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                          ((Quaternion *)&stack0xfffffec8,pTVar12,(MethodInfo *)0x0);
-      fVar3 = pQVar13->x;
-      uVar15._0_4_ = pQVar13->y;
-      fVar21 = pQVar13->z;
-      fVar22 = pQVar13->w;
+      pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                          ((Quaternion *)&stack0xfffffec8,pTVar16,(MethodInfo *)0x0);
+      fVar3 = pQVar17->x;
+      fVar23 = pQVar17->y;
+      fVar24 = pQVar17->z;
+      fVar25 = pQVar17->w;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      rotation.y = (float)uVar15;
+      rotation.y = fVar23;
       rotation.x = fVar3;
-      rotation.z = fVar21;
-      rotation.w = fVar22;
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+      rotation.z = fVar24;
+      rotation.w = fVar25;
+      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                           ((Vector3 *)&stack0xfffffef4,rotation,
                            TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                            (MethodInfo *)0x0);
-      fVar3 = MathFunctions::MathFunctions_Yaw(*pVVar9,(MethodInfo *)0x0);
+      fVar3 = MathFunctions::MathFunctions_Yaw(*pVVar11,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__UnityEngine__Quaternion);
         cRam_? = '\x01';
       }
       euler.y = fVar3 * _UNK_?;
-      euler.x = (float)in_stack_51;
+      euler.x = (float)in_stack_50;
       euler.z = 0.0;
-      pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+      pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                 Quaternion_Internal_FromEulerRad
                           ((Quaternion *)&stack0xffffff08,euler,(MethodInfo *)0x0);
-      in_stack_52 = pQVar13->x;
-      in_stack_53 = pQVar13->y;
-      in_stack_54 = pQVar13->z;
-      in_stack_55 = pQVar13->w;
+      in_stack_51 = pQVar17->x;
+      fStack_52 = pQVar17->y;
+      in_stack_53 = pQVar17->z;
+      in_stack_54 = pQVar17->w;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar1 = (pVVar19->zeroVector).x;
-      fVar3 = (pVVar19->zeroVector).y;
-      uVar15._0_4_ = (pVVar19->zeroVector).z;
+      pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar1 = (pVVar22->zeroVector).x;
+      fVar3 = (pVVar22->zeroVector).y;
+      fVar23 = (pVVar22->zeroVector).z;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
+      pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
     }
     pos.y = fVar3;
     pos.x = (float)uVar1;
-    pos.z = (float)uVar15;
-    q.y = in_stack_53;
-    q.x = in_stack_52;
-    q.z = in_stack_54;
-    q.w = in_stack_55;
+    pos.z = fVar23;
+    q.y = fStack_52;
+    q.x = in_stack_51;
+    q.z = in_stack_53;
+    q.w = in_stack_54;
     pMVar28 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&targetIndex,pos,q,pVVar19->oneVector,(MethodInfo *)0x0);
-    puStack_23 = (undefined *)pMVar28->m02;
-    in_stack_24 = pMVar28->m22;
-    puStack_14 = (undefined *)pMVar28->m03;
+                        ((Matrix4x4 *)&targetIndex,pos,q,pVVar22->oneVector,(MethodInfo *)0x0);
+    puStack_26 = (undefined *)pMVar28->m02;
+    in_stack_27 = pMVar28->m22;
+    auStack_12._0_4_ = pMVar28->m03;
+    auStack_12._4_4_ = pMVar28->m13;
+    auStack_12._8_4_ = pMVar28->m23;
+    fStack_21 = pMVar28->m33;
     pMVar28 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_Inverse
                         ((Matrix4x4 *)&stack0x0000003c,*pMVar28,(MethodInfo *)0x0);
     index_00 = 0;
-    fStack_47 = pMVar28->m30;
-    fStack_48 = pMVar28->m01;
-    fStack_46 = pMVar28->m11;
-    unaff_EBP = pMVar28->m21;
+    fStack_20 = pMVar28->m00;
+    fStack_55 = pMVar28->m10;
+    fStack_47 = pMVar28->m20;
+    fStack_46 = pMVar28->m30;
+    fStack_49 = pMVar28->m01;
+    fStack_48 = pMVar28->m11;
     e = (EditorStateMachine *)pMVar28->m12;
     targetIndex = (int32_t)pMVar28->m22;
     method = (MethodInfo *)pMVar28->m32;
@@ -1813,58 +1820,56 @@ code_?:
           (this->fields).recalcLocalDirCamToObjects = 0;
           goto code_?;
         }
-        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).translateDatas;
-        if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        if (pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
         break;
         mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
         RegexCharClass+SingleRange]::
         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                  (pLVar5,index_00,
+                  (pLVar7,index_00,
                    MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_);
-        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).translateDatas;
-        if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar6 = (RegexCharClass_SingleRange)
-                     MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_,
-           RVar60 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar5,index_00,
-                               MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
-                              ), RVar60 == (RegexCharClass_SingleRange)0x0)) break;
+        if ((pLVar7 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (ppMStack_60 = (MethodInfo **)
+                          mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                          RegularExpressions::RegexCharClass+SingleRange]::
+                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                    (pLVar7,index_00,
+                                     MethodInfo__System__Collections__Generic__List<TranslateData>__get_Item_int_
+                                    ),
+           (RegexCharClass_SingleRange)ppMStack_60 == (RegexCharClass_SingleRange)0x0)) break;
         if (cRam_? == '\0') {
-          ppMStack_61 = &
+          func_?();
+          ppMStack_60 = &
                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
           ;
-          in_stack_49 = (Vector3__Class **)&UNK_?;
-          RVar60 = RVar6;
-          func_?();
           cRam_? = '\x01';
         }
-        if ((*(WorldObjectClientRef_1_System_Object_ **)((int)RVar60 + 8) ==
+        if ((*(WorldObjectClientRef_1_System_Object_ **)((int)ppMStack_60 + 8) ==
              (WorldObjectClientRef_1_System_Object_ *)0x0) ||
-           (pOVar7 = WorldObjectClientRef`1[System::Object]::
+           (pOVar9 = WorldObjectClientRef`1[System::Object]::
                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                (*(WorldObjectClientRef_1_System_Object_ **)((int)RVar60 + 8),
+                                (*(WorldObjectClientRef_1_System_Object_ **)((int)ppMStack_60 + 8),
                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                ), pOVar7 == (Object *)0x0)) break;
-        (**(code **)&pOVar7->klass[1]._1.nested_type_count)();
-        pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                                ), pOVar9 == (Object *)0x0)) break;
+        (**(code **)&pOVar9->klass[1]._1.nested_type_count)();
+        pSVar10 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                             ((MethodInfo *)0x0);
-        if (pSVar8 == (SpawnRoleDataMediator *)0x0) break;
-        pVVar9 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        if (pSVar10 == (SpawnRoleDataMediator *)0x0) break;
+        pVVar11 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                   SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
                   SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
                             ((Vector3 *)&stack0x00000050,
-                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar8->fields).position,
+                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar10->fields).position,
                              MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
                             );
-        uVar62 = pVVar9->x;
-        uVar63 = pVVar9->y;
-        uVar15._0_4_ = (float)in_stack_50 - (float)uVar62;
-        fVar21 = (float)in_stack_49 - (float)uVar63;
-        fVar3 = (float)ppMStack_61 - pVVar9->z;
+        uVar61 = pVVar11->x;
+        uVar62 = pVVar11->y;
+        fVar23 = fStack_63 - (float)uVar61;
+        fVar24 = fStack_64 - (float)uVar62;
+        fVar3 = fStack_65 - pVVar11->z;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -1872,39 +1877,39 @@ code_?:
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        dVar64 = (double)(fVar21 * fVar21 + (float)uVar15 * (float)uVar15 + fVar3 * fVar3);
-        if (dVar64 < 0.0) {
+        dVar66 = (double)(fVar23 * fVar23 + fVar24 * fVar24 + fVar3 * fVar3);
+        if (dVar66 < 0.0) {
           func_?();
         }
         else {
-          dVar64 = SQRT(dVar64);
+          dVar66 = SQRT(dVar66);
         }
-        fVar22 = (float)dVar64;
-        if (_UNK_? < fVar22) {
-          fVar3 = fVar3 / fVar22;
-          uVar65 = CONCAT44(fVar21 / fVar22,(float)uVar15 / fVar22);
+        fVar25 = (float)dVar66;
+        if (_UNK_? < fVar25) {
+          fVar3 = fVar3 / fVar25;
+          uVar67 = CONCAT44(fVar24 / fVar25,fVar23 / fVar25);
         }
         else {
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-          uVar65._0_4_ = (pVVar19->zeroVector).x;
-          uVar65._4_4_ = (pVVar19->zeroVector).y;
-          fVar3 = (pVVar19->zeroVector).z;
+          pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uVar67._0_4_ = (pVVar22->zeroVector).x;
+          uVar67._4_4_ = (pVVar22->zeroVector).y;
+          fVar3 = (pVVar22->zeroVector).z;
         }
         vector.z = fVar3;
-        vector.x = (float)(int)uVar65;
-        vector.y = (float)(int)((ulonglong)uVar65 >> 0x20);
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                            ((Vector3 *)&puStack_23,(Matrix4x4 *)&puStack_14,vector,
-                             (MethodInfo *)0x0);
-        fVar3 = pVVar9->z;
-        if ((float)uVar15 == 0.0) break;
-        *(undefined8 *)((int)(float)uVar15 + 0x30) = *(undefined8 *)pVVar9;
+        vector.x = (float)(int)uVar67;
+        vector.y = (float)(int)((ulonglong)uVar67 >> 0x20);
+        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                            ((Vector3 *)&puStack_26,(Matrix4x4 *)auStack_12,vector,(MethodInfo *)0x0
+                            );
+        fVar3 = pVVar11->z;
+        if (fVar23 == 0.0) break;
+        *(undefined8 *)((int)fVar23 + 0x30) = *(undefined8 *)pVVar11;
         index_00 = index_00 + 1;
-        *(float *)((int)(float)uVar15 + 0x38) = fVar3;
+        *(float *)((int)fVar23 + 0x38) = fVar3;
         pLVar59 = (this->fields).translateDatas;
         if (pLVar59 == (List_1_TranslateData_ *)0x0) break;
       }
@@ -1912,8 +1917,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar66 = (code *)swi(3);
-  (*pcVar66)();
+  pcVar68 = (code *)swi(3);
+  (*pcVar68)();
   return;
 }
 

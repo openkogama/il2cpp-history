@@ -827,7 +827,7 @@ code_?:
     (this->fields).arrow = pOVar4;
     func_?(&(this->fields).arrow,pOVar4);
     pUVar1 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-              (this->fields).woDropOff;
+             (this->fields).woDropOff;
     if (pUVar1 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0)
     goto code_?;
     a = (Delegate *)(pUVar1->_1).initializationExceptionGCHandle;
@@ -860,7 +860,7 @@ code_?:
       unaff_EDI = pUVar1;
       if (pTVar9 != (Transform *)0x0) {
         pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            (&VStack_11,pTVar9,(MethodInfo *)0x0);
+                           (&VStack_11,pTVar9,(MethodInfo *)0x0);
         uStack_7._0_4_ = pVVar10->x;
         uStack_7._4_4_ = pVVar10->y;
         fStack_12 = pVVar10->z;
@@ -868,12 +868,13 @@ code_?:
                            ((Component *)this,(MethodInfo *)0x0);
         if (pTVar9 != (Transform *)0x0) {
           pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                              (&VStack_8,pTVar9,(MethodInfo *)0x0);
-          uVar13 = pVVar10->x;
-          uVar14 = pVVar10->y;
-          VStack_11.y = uStack_7._4_4_ + (float)uVar14 * _UNK_?;
-          VStack_11.x = (float)uStack_7 + (float)uVar13 * _UNK_?;
-          VStack_11.z = fStack_12 + pVVar10->z * _UNK_?;
+                             (&VStack_8,pTVar9,(MethodInfo *)0x0);
+          VStack_11.x = pVVar10->x;
+          VStack_11.y = pVVar10->y;
+          VStack_11.z = pVVar10->z;
+          fStack_12 = fStack_12 + VStack_11.z * _UNK_?;
+          uStack_7 = CONCAT44(uStack_7._4_4_ + VStack_11.y * _UNK_?,
+                               (float)uStack_7 + VStack_11.x * _UNK_?);
           pMVar2 = (this->fields).woDropOff;
           unaff_EDI = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
           if (pMVar2 != (MVWorldObjectClient *)0x0) {
@@ -882,9 +883,9 @@ code_?:
             pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this,(MethodInfo *)0x0);
             if (unaff_ESI != (PickupItemCollectTheItem *)0x0) {
-              startPos.z = VStack_11.z;
-              startPos.x = VStack_11.x;
-              startPos.y = VStack_11.y;
+              startPos.z = fStack_12;
+              startPos.x = (float)uStack_7;
+              startPos.y = uStack_7._4_4_;
               ObjectiveArrow::ObjectiveArrow_Initialize
                         ((ObjectiveArrow *)unaff_ESI,startPos,(Transform *)unaff_EDI,pTVar9,
                          (MethodInfo *)0x0);
@@ -907,9 +908,9 @@ code_?:
     uStack_7 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                          ,unaff_ESI);
     VStack_8.z = (float)&UNK_?;
-    uVar15 = func_?();
-    if (uVar15 == 0) goto code_?;
-    (pUVar1->_1).initializationExceptionGCHandle = uVar15;
+    uVar13 = func_?();
+    if (uVar13 == 0) goto code_?;
+    (pUVar1->_1).initializationExceptionGCHandle = uVar13;
     unaff_EBX = 
     TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
     uStack_7 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
@@ -926,8 +927,8 @@ code_?:
   uStack_7 = CONCAT44(pUVar5,unaff_ESI);
   VStack_8.z = (float)&UNK_?;
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

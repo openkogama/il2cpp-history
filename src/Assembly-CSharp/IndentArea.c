@@ -52,8 +52,8 @@ bool Assembly-CSharp.dll::IndentArea::IndentArea_IsColliding(IndentArea *this,Me
             if (pVVar16 == (Vector3__Array *)0x0) break;
             if ((int)pVVar16->max_length <= (int)pTStack_13) {
               RStack_4.m_Direction.x = fVar6 + fVar9 * _UNK_?;
-              RStack_4.m_Direction.y = fVar7 + (float)uVar10 * _UNK_?;
               fVar9 = fVar8 + (float)uVar11 * _UNK_?;
+              RStack_4.m_Direction.y = fVar7 + (float)uVar10 * _UNK_?;
               RStack_4.m_Direction.z = fVar9;
               if (iVar12 != 0) {
                 if ((*(int *)(iVar12 + 0xc) != 0) && (3 < *(uint *)(iVar12 + 0xc))) {
@@ -101,9 +101,9 @@ bool Assembly-CSharp.dll::IndentArea::IndentArea_IsColliding(IndentArea *this,Me
             if (iVar12 == 0) break;
             fVar20 = pVVar3->z;
             if (*(Transform **)(iVar12 + 0xc) <= pTVar15) goto code_?;
-            *(undefined8 *)(iVar14 + 0x10 + iVar12) = *(undefined8 *)pVVar3;
+            *(undefined8 *)(iVar12 + 0x10 + iVar14) = *(undefined8 *)pVVar3;
             pTStack_13 = (Transform *)((int)&pTVar15->klass + 1);
-            *(float *)(iVar14 + 0x18 + iVar12) = fVar20;
+            *(float *)(iVar12 + 0x18 + iVar14) = fVar20;
             iVar14 = iVar14 + 0xc;
           }
         }
@@ -275,7 +275,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0xdda0);
+    func_?(0xe79c);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);

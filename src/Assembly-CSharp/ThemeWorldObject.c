@@ -60,19 +60,22 @@ void Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_CommitSettings
                 ->_1).naturalAligment * 4) !=
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
     goto code_?;
-    if ((this_02 !=
-         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         0x0) && (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            ((Dictionary_2_System_Object_System_Object_ *)this_02,
-                             (Object *)StringLiteral_settings,(Object *)value.m_Index,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                            ), this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
-      MVNetworkGame+OperationRequests::
-      MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
-                (this_01,(int32_t)worldObjectID,(Dictionary_2_System_Object_System_Object_ *)this_02
-                 ,(MethodInfo *)0x0);
-      return;
+    if (this_02 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_settings,(Object *)value.m_Index,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                );
+      if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+        MVNetworkGame+OperationRequests::
+        MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
+                  (this_01,(int32_t)worldObjectID,
+                   (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   func_?();
@@ -408,7 +411,6 @@ Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_get_SettingsData
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._.data;
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
-    pDVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
@@ -420,7 +422,7 @@ Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_get_SettingsData
     if (unaff_ESI.m_Index == 0) {
       return (Dictionary_2_System_Object_System_Object_ *)0x0;
     }
-    pDVar1 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    unaff_EDI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
     if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment <= *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8)) &&
        (*(Dictionary_2_System_Object_System_Object___Class **)
@@ -431,10 +433,10 @@ Assembly-CSharp.dll::ThemeWorldObject::ThemeWorldObject_get_SettingsData
       return (Dictionary_2_System_Object_System_Object_ *)unaff_ESI.m_Index;
     }
   }
-  func_?(unaff_ESI.m_Index,pDVar1);
-  pcVar2 = (code *)swi(3);
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-  return pDVar3;
+  func_?(unaff_ESI.m_Index,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar1)();
+  return pDVar2;
 }
 
 

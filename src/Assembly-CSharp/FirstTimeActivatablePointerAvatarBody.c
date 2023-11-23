@@ -340,34 +340,31 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
        RVar2 != (RegexCharClass_SingleRange)0x0)) {
       puVar3 = (undefined8 *)
                (**(code **)(*(int *)RVar2 + 0x188))
-                         (&fStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
-      uVar5 = *puVar3;
-      fStack_6 = *(float *)(puVar3 + 1);
-      uStack_7._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
-      uStack_7._4_4_ = (this->fields).bubbleWorldSpaceOffset.y;
-      uStack_8._0_4_ = (float)uVar5;
-      fStack_4 = (float)uStack_8 + (float)(undefined4)uStack_7;
-      fStack_9 = (this->fields).bubbleWorldSpaceOffset.z;
-      uStack_8._4_4_ = (float)((ulonglong)uVar5 >> 0x20);
-      fStack_10 = (float)uStack_7._4_4_ + uStack_8._4_4_;
-      fStack_11 = fStack_9 + fStack_6;
+                         (&uStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
+      uStack_4._0_4_ = (this->fields).bubbleWorldSpaceOffset.x;
+      uStack_4._4_4_ = (this->fields).bubbleWorldSpaceOffset.y;
+      fStack_5 = (float)*puVar3;
+      fStack_6 = (this->fields).bubbleWorldSpaceOffset.z;
+      fStack_5 = fStack_5 + (float)(undefined4)uStack_4;
+      fStack_7 = (float)((ulonglong)*puVar3 >> 0x20);
+      fStack_7 = (float)uStack_4._4_4_ + fStack_7;
+      fVar8 = fStack_6 + *(float *)(puVar3 + 1);
       lifeTime = (this->fields).bubbleLifetimeWhileShown;
       content = (this->fields).bubbleContent;
-      uStack_8 = uVar5;
       parentTransform =
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-      pVVar12 = &(this->fields).offset;
-      uStack_7 = CONCAT44(pVVar12->x,(undefined4)uStack_7);
-      fStack_9 = (this->fields).offset.y;
+      pVVar9 = &(this->fields).offset;
+      uStack_4 = CONCAT44(pVVar9->x,(undefined4)uStack_4);
+      fStack_6 = (this->fields).offset.y;
       if (x != (TextBubbleController *)0x0) {
-        worldPosition.y = fStack_10;
-        worldPosition.x = fStack_4;
-        worldPosition.z = fStack_11;
-        iVar13 = TextBubbleController::TextBubbleController_ShowBubble3D_1
-                          (x,worldPosition,lifeTime,content,parentTransform,*pVVar12,
+        worldPosition.y = fStack_7;
+        worldPosition.x = fStack_5;
+        worldPosition.z = fVar8;
+        iVar10 = TextBubbleController::TextBubbleController_ShowBubble3D_1
+                          (x,worldPosition,lifeTime,content,parentTransform,*pVVar9,
                            (MethodInfo *)0x0);
-        (this->fields).bubbleId = iVar13;
+        (this->fields).bubbleId = iVar10;
         if (((this->fields).skipAllowed == 0) || ((this->fields).hasButtonBeenAdded != 0)) {
           return;
         }
@@ -376,12 +373,12 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+        pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                            ((Object *)original,
                             UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
                            );
-        if (pOVar14 != (Object *)0x0) {
-          this_01 = (UnityEvent *)pOVar14[0x16].monitor;
+        if (pOVar11 != (Object *)0x0) {
+          this_01 = (UnityEvent *)pOVar11[0x16].monitor;
           this_02 = (NavMesh_OnNavMeshPreUpdate *)
                     func_?(TypeInfo__UnityEngine__Events__UnityAction);
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -398,8 +395,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -423,98 +420,96 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
               (pAVar1->fields).bodies;
     if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
        (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           (this_00,(pAVar1->fields).currentBodyIndex,
-                            MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,(pAVar1->fields).currentBodyIndex,
+                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
        RVar2 != (RegexCharClass_SingleRange)0x0)) {
       puVar3 = (undefined8 *)
-                (**(code **)(*(int *)RVar2 + 0x188))
-                          (&stack0xffffffc8,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
-      VStack_4._0_8_ = *puVar3;
-      VStack_4.z = *(float *)(puVar3 + 1);
+               (**(code **)(*(int *)RVar2 + 0x188))
+                         (&uStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
       uVar5 = (this->fields).bubbleWorldSpaceOffset.x;
       uVar6 = (this->fields).bubbleWorldSpaceOffset.y;
-      fStack_7 = VStack_4.x + (float)uVar5;
-      fStack_8 = VStack_4.y + (float)uVar6;
-      fVar9 = (this->fields).bubbleWorldSpaceOffset.z + VStack_4.z;
-      VStack_10.y = (this->fields).offset.x;
-      VStack_10.x = (float)uVar5;
-      VStack_10.z = (this->fields).offset.y;
-      fStack_11 = fVar9;
+      uStack_7._0_4_ = (float)*puVar3;
+      uStack_7._4_4_ = (float)((ulonglong)*puVar3 >> 0x20);
+      fVar8 = uStack_7._4_4_ + (float)uVar6;
+      fVar9 = (this->fields).bubbleWorldSpaceOffset.z + *(float *)(puVar3 + 1);
+      uStack_7 = CONCAT44((this->fields).offset.x,(float)uStack_7);
+      fStack_10 = (this->fields).offset.y;
+      uStack_11 = CONCAT44(fVar8,(float)uStack_7 + (float)uVar5);
+      fStack_12 = fVar9;
       if ((x != (TextBubbleController *)0x0) &&
-         (pCVar12 = (x->fields).mainCamera, pCVar12 != (Camera *)0x0)) {
-        position.y = fStack_8;
-        position.x = fStack_7;
+         (pCVar13 = (x->fields).mainCamera, pCVar13 != (Camera *)0x0)) {
+        position.y = fVar8;
+        position.x = (float)uStack_7 + (float)uVar5;
         position.z = fVar9;
-        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            (&VStack_4,pCVar12,position,(MethodInfo *)0x0);
-        if (pVVar13->z <= 0.0) {
+        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                            ((Vector3 *)&stack0xffffffc8,pCVar13,position,(MethodInfo *)0x0);
+        fStack_15 = pVVar14->z;
+        if (fStack_15 <= 0.0) {
           return;
         }
-        fVar14 = pVVar13->x;
-        fVar15 = pVVar13->y;
-        screenSpacePos.y = fVar15;
-        screenSpacePos.x = fVar14;
-        offset.y = VStack_10.z;
-        offset.x = VStack_10.y;
-        screenSpacePos.z = pVVar13->z;
-        pVVar13 = TextBubbleController::TextBubbleController_CalculateOffSet
-                            (&VStack_10,x,offset,screenSpacePos,(MethodInfo *)0x0);
-        VStack_4.x = pVVar13->x;
-        VStack_4.y = pVVar13->y;
-        VStack_4.z = pVVar13->z;
-        fStack_16 = VStack_4.x + fVar14;
-        VStack_10.z = VStack_4.y + fVar15;
-        pCVar12 = (x->fields).mainCamera;
-        if (pCVar12 != (Camera *)0x0) {
-          position_00.y = fStack_8;
-          position_00.x = fStack_7;
+        uStack_4._0_4_ = pVVar14->x;
+        uStack_4._4_4_ = pVVar14->y;
+        offset.y = fStack_10;
+        offset.x = uStack_7._4_4_;
+        screenSpacePos.z = fStack_15;
+        screenSpacePos.x = (float)uStack_4;
+        screenSpacePos.y = uStack_4._4_4_;
+        pVVar14 = TextBubbleController::TextBubbleController_CalculateOffSet
+                            ((Vector3 *)&stack0xffffffc8,x,offset,screenSpacePos,(MethodInfo *)0x0);
+        uStack_7._0_4_ = pVVar14->x;
+        uStack_7._4_4_ = pVVar14->y;
+        fStack_16 = (float)uStack_7 + (float)uStack_4;
+        fStack_10 = uStack_7._4_4_ + uStack_4._4_4_;
+        pCVar13 = (x->fields).mainCamera;
+        if (pCVar13 != (Camera *)0x0) {
           position_00.z = fVar9;
-          pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              (&VStack_4,pCVar12,position_00,(MethodInfo *)0x0);
-          uVar17 = pVVar13->x;
-          uVar18 = pVVar13->y;
-          pIVar19 = (Il2CppClass *)((float)uVar17 * _UNK_?);
-          pIVar20 = (Il2CppClass *)((float)uVar18 * _UNK_?);
+          position_00.x = (float)(undefined4)uStack_11;
+          position_00.y = (float)uStack_11._4_4_;
+          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                              ((Vector3 *)&stack0xffffffc8,pCVar13,position_00,(MethodInfo *)0x0);
+          uStack_4._0_4_ = pVVar14->x;
+          uStack_4._4_4_ = pVVar14->y;
+          pIVar17 = (Il2CppClass *)((float)uStack_4 * _UNK_?);
+          pIVar18 = (Il2CppClass *)(uStack_4._4_4_ * _UNK_?);
           if (cRam_? == '\0') {
             func_?(&
                             MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                            );
             cRam_? = '\x01';
           }
-          pDVar21 = (x->fields).textBubbles;
-          if (((pDVar21 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-              (pOVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          pDVar19 = (x->fields).textBubbles;
+          if (((pDVar19 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+              (pOVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar21,(int32_t)key,
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar19,(int32_t)key,
                                     MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                   ), pOVar22 != (Object *)0x0)) &&
-             (pOVar23 = pOVar22[2].klass, pOVar23 != (Object__Class *)0x0)) {
-            (pOVar23->_0).castClass = pIVar19;
-            (pOVar23->_0).parent = key;
-            (pOVar23->_0).declaringType = pIVar20;
-            pDVar21 = (x->fields).textBubbles;
-            if (((pDVar21 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-                (pOVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                   ), pOVar20 != (Object *)0x0)) &&
+             (pOVar21 = pOVar20[2].klass, pOVar21 != (Object__Class *)0x0)) {
+            (pOVar21->_0).castClass = pIVar17;
+            (pOVar21->_0).parent = key;
+            (pOVar21->_0).declaringType = pIVar18;
+            pDVar19 = (x->fields).textBubbles;
+            if (((pDVar19 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+                (pOVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                            Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                     ((Dictionary_2_System_Int32_System_Object_ *)pDVar21,
+                                     ((Dictionary_2_System_Int32_System_Object_ *)pDVar19,
                                       (int32_t)key,
                                       MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                     ), pOVar22 != (Object *)0x0)) &&
-               (pOVar23 = pOVar22[2].klass, pOVar23 != (Object__Class *)0x0)) {
-              this_01 = *(Transform **)&(pOVar23->_0).byval_arg.attrs;
-              VStack_4.y = VStack_10.z;
-              VStack_4.x = fStack_16;
-              VStack_4.z = 0.0;
+                                     ), pOVar20 != (Object *)0x0)) &&
+               (pOVar21 = pOVar20[2].klass, pOVar21 != (Object__Class *)0x0)) {
+              this_01 = *(Transform **)&(pOVar21->_0).byval_arg.attrs;
+              uStack_11 = CONCAT44(fStack_10,fStack_16);
+              fStack_12 = 0.0;
               if (this_01 != (Transform *)0x0) {
-                value.y = VStack_10.z;
+                value.y = fStack_10;
                 value.x = fStack_16;
                 value.z = 0.0;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                           (this_01,value,(MethodInfo *)0x0);
                 TextBubble::TextBubble_RecalcPositionWithScreenCollision
-                          ((TextBubble *)pOVar23,(MethodInfo *)0x0);
+                          ((TextBubble *)pOVar21,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -524,8 +519,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

@@ -241,9 +241,9 @@ int32_t Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::
         MathFunctions_PerlinSimplexNoise_fastfloor(float x,MethodInfo *method)
 
 {
-  iVar1 = (int32_t)x;
-  if (x <= _UNK_?) {
-    iVar1 = iVar1 + -1;
+  iVar1 = (int)x + -1;
+  if (_UNK_? < x) {
+    iVar1 = (int)x;
   }
   return iVar1;
 }

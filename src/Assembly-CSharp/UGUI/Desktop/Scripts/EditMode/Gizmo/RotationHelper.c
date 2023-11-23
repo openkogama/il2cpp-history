@@ -187,7 +187,7 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     if (this_01 != (MVNetworkSelector *)0x0) {
       bVar1 = MVNetworkSelector::MVNetworkSelector_RequestOwnership
                         (this_01,selectionSet,(MethodInfo *)0x0);
-      return bVar1 == 0;
+      return bVar1 ^ 1;
     }
   }
   func_?();

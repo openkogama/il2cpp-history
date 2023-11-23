@@ -108,11 +108,11 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
       (pPVar2->_1).typeHierarchy[(TypeInfo__PickupItemEditable->_1).naturalAligment - 1] !=
       TypeInfo__PickupItemEditable)) goto code_?;
   pMVar4 = (this->fields).blueprint;
-  unaff_EDI.m_Index = (int32_t)this;
+  unaff_EDI = (Dictionary_2_System_Object_System_Object___Class *)this;
   if (pMVar4 == (MVEditablePickupItemBaseBlueprint *)0x0) {
 code_?:
     func_?();
-    pDVar5 = extraout_EDX;
+    TVar5.m_Index = extraout_EDX;
   }
   else {
     if (*(int *)&pickupItem[2].fields.firedThisFrame != (pMVar4->fields).cubeModelPid) {
@@ -135,30 +135,28 @@ code_?:
              (this->fields)._._._._.data;
     if (pDVar6 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
-    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (pDVar6,(Object *)StringLiteral_itemData,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (unaff_EDI.m_Index == 0) {
-      unaff_EDI.m_Index = 0;
-code_?:
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar6,(Object *)StringLiteral_itemData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if ((TVar5.m_Index == 0) ||
+       ((unaff_EDI = 
+         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
+        (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+        naturalAligment <= *(byte *)(*(int *)TVar5.m_Index + 0xb8) &&
+        (*(Dictionary_2_System_Object_System_Object___Class **)
+          (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
+          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment * 4) ==
+         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
       bVar7 = (*(code *)pickupItem->klass[1]._0.klass)
-                        (pickupItem,unaff_EDI.m_Index,pickupItem->klass[1]._0.fields);
+                        (pickupItem,TVar5.m_Index,pickupItem->klass[1]._0.fields);
       return bVar7;
     }
-    pDVar5 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= *(byte *)(*(int *)unaff_EDI.m_Index + 0xb8)) &&
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)unaff_EDI.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
   }
-  func_?(unaff_EDI.m_Index,pDVar5);
+  func_?(TVar5.m_Index,unaff_EDI);
   pPVar3 = extraout_EDX_00;
 code_?:
   func_?(pickupItem,pPVar3);

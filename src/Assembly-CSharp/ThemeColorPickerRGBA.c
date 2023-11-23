@@ -73,15 +73,16 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_OnSettingCh
       fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
       pSVar1 = (this->fields)._.sliderB;
       if (pSVar1 != (SettingsSlider *)0x0) {
-        fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
         pSVar1 = (this->fields).sliderA;
         if (pSVar1 != (SettingsSlider *)0x0) {
+          puVar4 = &UNK_?;
           fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
           pRVar6 = (this->fields)._.previewImage;
           if (pRVar6 != (RawImage *)0x0) {
             puVar7 = &UNK_?;
             (*(code *)(pRVar6->klass->vtable).set_color.method)
-                      (pRVar6,fVar2,fVar3,fVar4,fVar5,
+                      (pRVar6,fVar2,fVar3,puVar4,fVar5,
                        (pRVar6->klass->vtable).get_raycastTarget.methodPtr);
             pAVar8 = (this->fields)._.onChange;
             if (pAVar8 != (Action_1_UnityEngine_Color_ *)0x0) {

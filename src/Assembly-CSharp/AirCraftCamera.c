@@ -292,24 +292,22 @@ void Assembly-CSharp.dll::AirCraftCamera::AirCraftCamera_UpdateCameraPosition
                        (&VStack_2,this_00,(MethodInfo *)0x0);
     uVar3 = pVVar1->x;
     uVar4 = pVVar1->y;
-    uVar5 = (this->fields).lookAtToCamDir.x;
-    uVar6 = (this->fields).lookAtToCamDir.y;
-    fVar7 = (this->fields).baseDistanceFromLookAt;
-    VStack_2.x = (float)uVar3 + (float)uVar5 * fVar7;
-    VStack_2.y = (float)uVar4 + (float)uVar6 * fVar7;
-    VStack_2.z = pVVar1->z + (this->fields).lookAtToCamDir.z * fVar7;
+    VStack_2.x = (this->fields).lookAtToCamDir.x;
+    VStack_2.y = (this->fields).lookAtToCamDir.y;
+    VStack_2.z = (this->fields).lookAtToCamDir.z;
+    fVar5 = (this->fields).baseDistanceFromLookAt;
     if (this_01 != (Transform *)0x0) {
-      value.y = VStack_2.y;
-      value.x = VStack_2.x;
-      value.z = VStack_2.z;
+      value.y = (float)uVar4 + VStack_2.y * fVar5;
+      value.x = (float)uVar3 + VStack_2.x * fVar5;
+      value.z = pVVar1->z + VStack_2.z * fVar5;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this_01,value,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

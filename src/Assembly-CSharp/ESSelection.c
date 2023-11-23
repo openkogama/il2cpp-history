@@ -1435,8 +1435,8 @@ bool Assembly-CSharp.dll::ESSelection::ESSelection_IsMouseUpValid
   uVar3 = pVVar1->x;
   uVar4 = pVVar1->y;
   fVar5 = mousePosition.z - pVVar1->z;
-  return (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) +
-         (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) + fVar5 * fVar5 <
+  return (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) +
+         (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) + fVar5 * fVar5 <
          _UNK_?;
 }
 

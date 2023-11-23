@@ -1077,208 +1077,167 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-     pMVar2 != (MVLocalPlayer *)0x0)) {
-    bVar3 = MVPlayer::MVPlayer_get_IsSubscriber((MVPlayer *)pMVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-      bVar4 = (pMVar1->fields)._Region_k__BackingField == 2;
-    }
-    else {
-      bVar4 = true;
-    }
-    if (unaff_EBX != (GizmoMenuNg *)0x0) {
-      (unaff_EBX->fields).isSubscriber = bVar4;
-      pAVar5 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0)
-      ;
-      this_01 = (UnityAction_1_System_Int32Enum_ *)
-                func_?((char)TypeInfo__System__Action<MVJoinState>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_01,(Object *)unaff_EBX,
-                 MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__OnJoinChanged_MVJoinState_
-                 ,(MethodInfo *)0x0);
-      unaff_ESI = (MVWorldObjectClientManager *)
-                  mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
-      unaff_EDI = TypeInfo__System__Action<MVJoinState>;
-      pAVar5 = (Action_1_MVJoinState_ *)0x0;
-      if ((unaff_ESI != (MVWorldObjectClientManager *)0x0) &&
-         (pAVar5 = (Action_1_MVJoinState_ *)
-                    func_?((char)unaff_ESI,(char)TypeInfo__System__Action<MVJoinState>),
-         pAVar5 == (Action_1_MVJoinState_ *)0x0)) goto code_?;
-      MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar5,(MethodInfo *)0x0);
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (this_02 != (MVWorldObjectClientManager *)0x0) {
-        pMVar6 = (MVWorldObjectClient *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_02,(unaff_EBX->fields).woID,(MethodInfo *)0x0);
-        (unaff_EBX->fields).worldObjectClient = pMVar6;
-        func_?(&(unaff_EBX->fields).worldObjectClient);
-        pMVar6 = (unaff_EBX->fields).worldObjectClient;
-        if ((pMVar6 != (MVWorldObjectClient *)0x0) &&
-           (pHVar7 = (HashSet_1_System_Int32Enum_ *)(unaff_EBX->fields).xyzLockedItems,
-           pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)) {
-          bVar3 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-                  HashSet_1_System_Int32Enum__Contains
-                            (pHVar7,(pMVar6->fields)._.type,
-                             MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::WorldObjectType>__Contains_MV__WorldObject__WorldObjectType_
-                            );
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      bVar3 = MVPlayer::MVPlayer_get_IsSubscriber((MVPlayer *)pMVar2,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+        bVar4 = (pMVar1->fields)._Region_k__BackingField == 2;
+      }
+      else {
+        bVar4 = true;
+      }
+      if (unaff_EBX != (GizmoMenuNg *)0x0) {
+        (unaff_EBX->fields).isSubscriber = bVar4;
+        pAVar5 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged
+                            ((MethodInfo *)0x0);
+        this_01 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?((char)TypeInfo__System__Action<MVJoinState>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_01,(Object *)unaff_EBX,
+                   MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__OnJoinChanged_MVJoinState_
+                   ,(MethodInfo *)0x0);
+        unaff_ESI = (MVWorldObjectClientManager *)
+                    mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+        unaff_EDI = TypeInfo__System__Action<MVJoinState>;
+        pAVar5 = (Action_1_MVJoinState_ *)0x0;
+        if (unaff_ESI != (MVWorldObjectClientManager *)0x0) {
+          pAVar5 = (Action_1_MVJoinState_ *)
+                    func_?((char)unaff_ESI,(char)TypeInfo__System__Action<MVJoinState>);
+          if (pAVar5 == (Action_1_MVJoinState_ *)0x0) goto code_?;
+        }
+        MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar5,(MethodInfo *)0x0)
+        ;
+        this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (this_02 != (MVWorldObjectClientManager *)0x0) {
+          pMVar6 = (MVWorldObjectClient *)
+                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (this_02,(unaff_EBX->fields).woID,(MethodInfo *)0x0);
+          (unaff_EBX->fields).worldObjectClient = pMVar6;
+          func_?(&(unaff_EBX->fields).worldObjectClient);
           pMVar6 = (unaff_EBX->fields).worldObjectClient;
-          (unaff_EBX->fields).objectLocked = bVar3;
-          if (pMVar6 != (MVWorldObjectClient *)0x0) {
-            (*(code *)(pMVar6->klass->vtable).DrawTransformGizmo.method)(pMVar6);
-            if ((unaff_EBX->fields).useRotationTexts == 0) {
+          if ((pMVar6 != (MVWorldObjectClient *)0x0) &&
+             (pHVar7 = (HashSet_1_System_Int32Enum_ *)(unaff_EBX->fields).xyzLockedItems,
+             pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)) {
+            bVar3 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                    HashSet_1_System_Int32Enum__Contains
+                              (pHVar7,(pMVar6->fields)._.type,
+                               MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::WorldObjectType>__Contains_MV__WorldObject__WorldObjectType_
+                              );
+            pMVar6 = (unaff_EBX->fields).worldObjectClient;
+            (unaff_EBX->fields).objectLocked = bVar3;
+            if (pMVar6 != (MVWorldObjectClient *)0x0) {
+              (*(code *)(pMVar6->klass->vtable).DrawTransformGizmo.method)(pMVar6);
+              if ((unaff_EBX->fields).useRotationTexts == 0) {
 code_?:
-              GizmoMenuNg_UpdateRotationText(unaff_EBX,(MethodInfo *)0x0);
-              unaff_ESI = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              unaff_EDI = (Action_1_MVJoinState___Class *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,(Object *)unaff_EBX
-                         ,
-                         MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
-                         ,(MethodInfo *)0x0);
-              if (unaff_ESI != (MVWorldObjectClientManager *)0x0) {
-                MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
-                          (unaff_ESI,0,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)unaff_EDI,
-                           (MethodInfo *)0x0);
-                pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
-                                    ((MethodInfo *)0x0);
-                if (pMVar2 != (MVLocalPlayer *)0x0) {
-                  this_00 = (pMVar2->fields)._.spawnRolesManager;
-                  unaff_EDI = (Action_1_MVJoinState___Class *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]
-                  ::UnityAction_1_System_Int32Enum___ctor
-                            ((UnityAction_1_System_Int32Enum_ *)unaff_EDI,(Object *)unaff_EBX,
-                             MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__OnSpawnRoleActivated_int_
+                GizmoMenuNg_UpdateRotationText(unaff_EBX,(MethodInfo *)0x0);
+                unaff_ESI = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+                unaff_EDI = (Action_1_MVJoinState___Class *)func_?();
+                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
+                ::Object]::UnityAction_2_System_Object_System_Object___ctor
+                          ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,
+                           (Object *)unaff_EBX,
+                           MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__PopWoDestroyed_System__Object__WorldObjectDestroyedEventArgs_
+                           ,(MethodInfo *)0x0);
+                if (unaff_ESI != (MVWorldObjectClientManager *)0x0) {
+                  MVWorldObjectClientManager::MVWorldObjectClientManager_SubscribeWODestroyedEvent
+                            (unaff_ESI,0,(Action_2_Object_WorldObjectDestroyedEventArgs_ *)unaff_EDI
                              ,(MethodInfo *)0x0);
-                  unaff_ESI = (MVWorldObjectClientManager *)0x0;
-                  if (this_00 != (SpawnRolesManager *)0x0) {
-                    unaff_ESI = in_stack_8;
-                    SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
-                              (this_00,(Action_1_Int32_ *)unaff_EDI,(MethodInfo *)0x0);
-                    unaff_EDI = in_stack_9;
-                    pMVar6 = (unaff_EBX->fields).worldObjectClient;
-                    if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                      bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                                        (pMVar6,InteractionFlags__Enum_CanRotateX,(MethodInfo *)0x0
-                                        );
+                  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
+                                      ((MethodInfo *)0x0);
+                  if (pMVar2 != (MVLocalPlayer *)0x0) {
+                    this_00 = (pMVar2->fields)._.spawnRolesManager;
+                    unaff_EDI = (Action_1_MVJoinState___Class *)func_?();
+                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                    Int32Enum]::UnityAction_1_System_Int32Enum___ctor
+                              ((UnityAction_1_System_Int32Enum_ *)unaff_EDI,(Object *)unaff_EBX,
+                               MethodInfo__UGUI__Desktop__Scripts__EditMode__Gizmo__GizmoMenuNg__OnSpawnRoleActivated_int_
+                               ,(MethodInfo *)0x0);
+                    unaff_ESI = (MVWorldObjectClientManager *)0x0;
+                    if (this_00 != (SpawnRolesManager *)0x0) {
+                      unaff_ESI = in_stack_8;
+                      SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleActivated
+                                (this_00,(Action_1_Int32_ *)unaff_EDI,(MethodInfo *)0x0);
+                      unaff_EDI = in_stack_9;
                       pMVar6 = (unaff_EBX->fields).worldObjectClient;
                       if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                        bVar10 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                                          (pMVar6,InteractionFlags__Enum_CanChangeScale,
-                                           (MethodInfo *)0x4);
+                        bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                                          (pMVar6,InteractionFlags__Enum_CanRotateX,
+                                           (MethodInfo *)0x0);
                         pMVar6 = (unaff_EBX->fields).worldObjectClient;
                         if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                          canRotate = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                                                (pMVar6,InteractionFlags__Enum_CanRotateY,
-                                                 (MethodInfo *)0x0);
+                          bVar10 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                                            (pMVar6,InteractionFlags__Enum_CanChangeScale,
+                                             (MethodInfo *)0x4);
                           pMVar6 = (unaff_EBX->fields).worldObjectClient;
                           if (pMVar6 != (MVWorldObjectClient *)0x0) {
                             bVar11 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                                              (pMVar6,InteractionFlags__Enum_CanChangeScale,
-                                               (MethodInfo *)0x10);
+                                              (pMVar6,InteractionFlags__Enum_CanRotateY,
+                                               (MethodInfo *)0x0);
                             pMVar6 = (unaff_EBX->fields).worldObjectClient;
                             if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                              canRotate_00 = MVWorldObjectClient::
-                                             MVWorldObjectClient_HasInteractionFlag
-                                                       (pMVar6,InteractionFlags__Enum_CanRotateZ,
-                                                        (MethodInfo *)0x0);
+                              bVar12 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
+                                                (pMVar6,InteractionFlags__Enum_CanChangeScale,
+                                                 (MethodInfo *)0x10);
                               pMVar6 = (unaff_EBX->fields).worldObjectClient;
                               if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                                bVar12 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                                                  (pMVar6,InteractionFlags__Enum_CanChangeScale,
-                                                   (MethodInfo *)0x8);
-                                pTVar13 = (unaff_EBX->fields).rotationMenu;
-                                if ((pTVar13 != (Transform *)0x0) &&
-                                   (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                canRotate = MVWorldObjectClient::
+                                            MVWorldObjectClient_HasInteractionFlag
+                                                      (pMVar6,InteractionFlags__Enum_CanRotateZ,
+                                                       (MethodInfo *)0x0);
+                                pMVar6 = (unaff_EBX->fields).worldObjectClient;
+                                if (pMVar6 != (MVWorldObjectClient *)0x0) {
+                                  bVar13 = MVWorldObjectClient::
+                                           MVWorldObjectClient_HasInteractionFlag
+                                                     (pMVar6,InteractionFlags__Enum_CanChangeScale,
+                                                      (MethodInfo *)0x8);
+                                  pTVar14 = (unaff_EBX->fields).rotationMenu;
+                                  if (pTVar14 != (Transform *)0x0) {
+                                    pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                               Component_get_gameObject
-                                                        ((Component *)pTVar13,(MethodInfo *)0x0),
-                                   pGVar14 != (GameObject *)0x0)) {
-                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_SetActive
-                                            (pGVar14,canRotate_00 | canRotate | bVar3,
-                                             (MethodInfo *)0x0);
-                                  pGVar15 = (unaff_EBX->fields).xRotationHolder;
-                                  if (pGVar15 != (GizmoRotationButtonHolderNg *)0x0) {
-                                    GizmoRotationButtonHolderNg::GizmoRotationButtonHolderNg_Setup
-                                              (pGVar15,bVar3,
-                                               (unaff_EBX->fields).objectLocked != 0 && bVar10 == 0,
-                                               (MethodInfo *)0x0);
-                                    pGVar15 = (unaff_EBX->fields).yRotationHolder;
-                                    if (pGVar15 != (GizmoRotationButtonHolderNg *)0x0) {
-                                      GizmoRotationButtonHolderNg::GizmoRotationButtonHolderNg_Setup
-                                                (pGVar15,canRotate,
-                                                 (unaff_EBX->fields).objectLocked & bVar11,
-                                                 (MethodInfo *)0x0);
-                                      pGVar15 = (unaff_EBX->fields).zRotationHolder;
-                                      if (pGVar15 != (GizmoRotationButtonHolderNg *)0x0) {
+                                                        ((Component *)pTVar14,(MethodInfo *)0x0);
+                                    if (pGVar15 != (GameObject *)0x0) {
+                                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                      GameObject_SetActive
+                                                (pGVar15,canRotate | bVar11 | bVar3,(MethodInfo *)0x0
+                                                );
+                                      memberRequired = 0;
+                                      if ((unaff_EBX->fields).objectLocked != 0) {
+                                        memberRequired = bVar10 ^ 1;
+                                      }
+                                      pGVar16 = (unaff_EBX->fields).xRotationHolder;
+                                      if (pGVar16 != (GizmoRotationButtonHolderNg *)0x0) {
                                         GizmoRotationButtonHolderNg::
                                         GizmoRotationButtonHolderNg_Setup
-                                                  (pGVar15,canRotate_00,
-                                                   (unaff_EBX->fields).objectLocked != 0 &&
-                                                   bVar12 == 0,(MethodInfo *)0x0);
-                                        if (bVar10 == 0) {
-                                          pHVar7 = (HashSet_1_System_Int32Enum_ *)
-                                                    (unaff_EBX->fields).subscriberActions;
-                                          if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
-                                            System.Core.dll::System::Collections::Generic::
-                                            HashSet`1[System::Int32Enum]::
-                                            HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                      (pHVar7,2,
-                                                                                                              
-                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
-                                                  );
-                                            pHVar7 = (HashSet_1_System_Int32Enum_ *)
-                                                      (unaff_EBX->fields).subscriberActions;
-                                            if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
-                                              System.Core.dll::System::Collections::Generic::
-                                              HashSet`1[System::Int32Enum]::
-                                              HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                        (pHVar7,0xb,
-                                                                                                                  
-                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
-                                                  );
-                                              pHVar7 = (HashSet_1_System_Int32Enum_ *)
-                                                        (unaff_EBX->fields).subscriberActions;
-                                              if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
-                                                System.Core.dll::System::Collections::Generic::
-                                                HashSet`1[System::Int32Enum]::
-                                                HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                          (pHVar7,8,
-                                                                                                                      
-                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
-                                                  );
-                                                bVar3 = (bool)pHVar7;
-                                                goto code_?;
-                                              }
-                                            }
+                                                  (pGVar16,bVar3,memberRequired,(MethodInfo *)0x0);
+                                        pGVar16 = (unaff_EBX->fields).yRotationHolder;
+                                        if (pGVar16 != (GizmoRotationButtonHolderNg *)0x0) {
+                                          GizmoRotationButtonHolderNg::
+                                          GizmoRotationButtonHolderNg_Setup
+                                                    (pGVar16,bVar11,
+                                                     (unaff_EBX->fields).objectLocked & bVar12,
+                                                     (MethodInfo *)0x0);
+                                          bVar11 = 0;
+                                          if ((unaff_EBX->fields).objectLocked != 0) {
+                                            bVar11 = bVar13 ^ 1;
                                           }
-                                        }
-                                        else {
-code_?:
-                                          if (bVar12 == 0) {
-                                            pHVar7 = (HashSet_1_System_Int32Enum_ *)
-                                                      (unaff_EBX->fields).subscriberActions;
-                                            if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
-                                              bVar11 = (bool)((uint)pHVar7 >> 8);
-                                              System.Core.dll::System::Collections::Generic::
-                                              HashSet`1[System::Int32Enum]::
-                                              HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                        (pHVar7,4,
-                                                                                                                  
-                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
-                                                  );
+                                          pGVar16 = (unaff_EBX->fields).zRotationHolder;
+                                          if (pGVar16 != (GizmoRotationButtonHolderNg *)0x0) {
+                                            GizmoRotationButtonHolderNg::
+                                            GizmoRotationButtonHolderNg_Setup
+                                                      (pGVar16,canRotate,bVar11,(MethodInfo *)0x0);
+                                            if (bVar10 == 0) {
                                               pHVar7 = (HashSet_1_System_Int32Enum_ *)
                                                         (unaff_EBX->fields).subscriberActions;
                                               if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
                                                 System.Core.dll::System::Collections::Generic::
                                                 HashSet`1[System::Int32Enum]::
                                                 HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                          (pHVar7,0xd,
+                                                          (pHVar7,2,
                                                                                                                       
                                                   MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
                                                   );
@@ -1288,107 +1247,174 @@ code_?:
                                                   System.Core.dll::System::Collections::Generic::
                                                   HashSet`1[System::Int32Enum]::
                                                   HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                            (pHVar7,10,
+                                                            (pHVar7,0xb,
                                                                                                                           
                                                   MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
                                                   );
+                                                  pHVar7 = (HashSet_1_System_Int32Enum_ *)
+                                                            (unaff_EBX->fields).subscriberActions;
+                                                  if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)
+                                                  {
+                                                    System.Core.dll::System::Collections::Generic::
+                                                    HashSet`1[System::Int32Enum]::
+                                                                                                        
+                                                  HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+                                                            (pHVar7,8,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
+                                                  );
+                                                  bVar3 = (bool)pHVar7;
                                                   goto code_?;
-                                                }
-                                              }
-                                            }
-                                          }
-                                          else {
-code_?:
-                                            if (bVar11 == 0) {
-code_?:
-                                              pMVar6 = (unaff_EBX->fields).worldObjectClient;
-                                              if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                                                bVar16 = (byte)((uint)pMVar6 >> 8);
-                                                bVar17 = 0xac;
-                                                bVar10 = MVWorldObjectClient::
-                                                        MVWorldObjectClient_HasInteractionFlag
-                                                                  (pMVar6,
-                                                  InteractionFlags__Enum_CanChangeScale,
-                                                  (MethodInfo *)0x20);
-                                                pTVar13 = (unaff_EBX->fields).resetRotationButton;
-                                                if (pTVar13 != (Transform *)0x0) {
-                                                  pGVar14 = UnityEngine.CoreModule.dll::UnityEngine
-                                                            ::Component::Component_get_gameObject
-                                                                      ((Component *)pTVar13,
-                                                                       (MethodInfo *)0x0);
-                                                  if (bVar10 == 0) {
-                                                    bVar17 = bVar3 | bVar16 | bVar17;
-                                                  }
-                                                  else {
-                                                    bVar17 = 0;
-                                                  }
-                                                  if (pGVar14 != (GameObject *)0x0) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::
-                                                    GameObject::GameObject_SetActive
-                                                              (pGVar14,bVar17,(MethodInfo *)0x0);
-                                                    pMVar6 = (unaff_EBX->fields).worldObjectClient;
-                                                    if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                                                      bVar3 = MVWorldObjectClient::
-                                                              MVWorldObjectClient_HasInteractionFlag
-                                                                        (pMVar6,
-                                                  InteractionFlags__Enum_NotTranslatbleXZ,
-                                                  (MethodInfo *)0x0);
-                                                  pGVar18 = (unaff_EBX->fields).xzTranslate;
-                                                  if ((pGVar18 != (GizmoButton *)0x0) &&
-                                                     (pGVar14 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Component::
-                                                                Component_get_gameObject
-                                                                          ((Component *)pGVar18,
-                                                                           (MethodInfo *)0x0),
-                                                     pGVar14 != (GameObject *)0x0)) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::
-                                                    GameObject::GameObject_SetActive
-                                                              (pGVar14,bVar3 == 0,(MethodInfo *)0x0)
-                                                    ;
-                                                    pMVar6 = (unaff_EBX->fields).worldObjectClient;
-                                                    if (pMVar6 != (MVWorldObjectClient *)0x0) {
-                                                      bVar3 = MVWorldObjectClient::
-                                                              MVWorldObjectClient_HasInteractionFlag
-                                                                        (pMVar6,
-                                                  InteractionFlags__Enum_NotTranslatbleY,
-                                                  (MethodInfo *)0x0);
-                                                  pGVar18 = (unaff_EBX->fields).yTranslate;
-                                                  if ((pGVar18 != (GizmoButton *)0x0) &&
-                                                     (pGVar14 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Component::
-                                                                Component_get_gameObject
-                                                                          ((Component *)pGVar18,
-                                                                           (MethodInfo *)0x0),
-                                                     pGVar14 != (GameObject *)0x0)) {
-                                                    UnityEngine.CoreModule.dll::UnityEngine::
-                                                    GameObject::GameObject_SetActive
-                                                              (pGVar14,bVar3 == 0,(MethodInfo *)0x0)
-                                                    ;
-                                                    return;
-                                                  }
-                                                  }
-                                                  }
-                                                  }
                                                   }
                                                 }
                                               }
                                             }
                                             else {
-                                              pHVar7 = (HashSet_1_System_Int32Enum_ *)
-                                                        (unaff_EBX->fields).subscriberActions;
-                                              if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
-                                                System.Core.dll::System::Collections::Generic::
-                                                HashSet`1[System::Int32Enum]::
-                                                HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
-                                                          (pHVar7,3,
-                                                                                                                      
-                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
-                                                  );
+code_?:
+                                              if (bVar13 == 0) {
                                                 pHVar7 = (HashSet_1_System_Int32Enum_ *)
                                                           (unaff_EBX->fields).subscriberActions;
                                                 if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0) {
+                                                  bVar12 = (bool)((uint)pHVar7 >> 8);
                                                   System.Core.dll::System::Collections::Generic::
                                                   HashSet`1[System::Int32Enum]::
+                                                  HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+                                                            (pHVar7,4,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
+                                                  );
+                                                  pHVar7 = (HashSet_1_System_Int32Enum_ *)
+                                                            (unaff_EBX->fields).subscriberActions;
+                                                  if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)
+                                                  {
+                                                    System.Core.dll::System::Collections::Generic::
+                                                    HashSet`1[System::Int32Enum]::
+                                                                                                        
+                                                  HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+                                                            (pHVar7,0xd,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
+                                                  );
+                                                  pHVar7 = (HashSet_1_System_Int32Enum_ *)
+                                                            (unaff_EBX->fields).subscriberActions;
+                                                  if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)
+                                                  {
+                                                    System.Core.dll::System::Collections::Generic::
+                                                    HashSet`1[System::Int32Enum]::
+                                                                                                        
+                                                  HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+                                                            (pHVar7,10,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
+                                                  );
+                                                  goto code_?;
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                              else {
+code_?:
+                                                if (bVar12 == 0) {
+code_?:
+                                                  pMVar6 = (unaff_EBX->fields).worldObjectClient;
+                                                  if (pMVar6 != (MVWorldObjectClient *)0x0) {
+                                                    bVar17 = (byte)((uint)pMVar6 >> 8);
+                                                    bVar18 = 0xb8;
+                                                    bVar10 = MVWorldObjectClient::
+                                                            MVWorldObjectClient_HasInteractionFlag
+                                                                      (pMVar6,
+                                                  InteractionFlags__Enum_CanChangeScale,
+                                                  (MethodInfo *)0x20);
+                                                  pTVar14 = (unaff_EBX->fields).resetRotationButton;
+                                                  if (pTVar14 != (Transform *)0x0) {
+                                                    pGVar15 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Component::
+                                                              Component_get_gameObject
+                                                                        ((Component *)pTVar14,
+                                                                         (MethodInfo *)0x0);
+                                                    if (bVar10 == 0) {
+                                                      bVar18 = bVar3 | bVar17 | bVar18;
+                                                    }
+                                                    else {
+                                                      bVar18 = 0;
+                                                    }
+                                                    if (pGVar15 != (GameObject *)0x0) {
+                                                      UnityEngine.CoreModule.dll::UnityEngine::
+                                                      GameObject::GameObject_SetActive
+                                                                (pGVar15,bVar18,(MethodInfo *)0x0);
+                                                      pMVar6 = (unaff_EBX->fields).
+                                                                worldObjectClient;
+                                                      if (pMVar6 != (MVWorldObjectClient *)0x0) {
+                                                        bVar3 = MVWorldObjectClient::
+                                                                                                                                
+                                                  MVWorldObjectClient_HasInteractionFlag
+                                                            (pMVar6,
+                                                  InteractionFlags__Enum_NotTranslatbleXZ,
+                                                  (MethodInfo *)0x0);
+                                                  pGVar19 = (unaff_EBX->fields).xzTranslate;
+                                                  if (pGVar19 != (GizmoButton *)0x0) {
+                                                    pGVar15 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Component::
+                                                              Component_get_gameObject
+                                                                        ((Component *)pGVar19,
+                                                                         (MethodInfo *)0x0);
+                                                    if (pGVar15 != (GameObject *)0x0) {
+                                                      UnityEngine.CoreModule.dll::UnityEngine::
+                                                      GameObject::GameObject_SetActive
+                                                                (pGVar15,bVar3 ^ 1,(MethodInfo *)0x0
+                                                                );
+                                                      pMVar6 = (unaff_EBX->fields).
+                                                                worldObjectClient;
+                                                      if (pMVar6 != (MVWorldObjectClient *)0x0) {
+                                                        bVar3 = MVWorldObjectClient::
+                                                                                                                                
+                                                  MVWorldObjectClient_HasInteractionFlag
+                                                            (pMVar6,
+                                                  InteractionFlags__Enum_NotTranslatbleY,
+                                                  (MethodInfo *)0x0);
+                                                  pGVar19 = (unaff_EBX->fields).yTranslate;
+                                                  if (pGVar19 != (GizmoButton *)0x0) {
+                                                    pGVar15 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Component::
+                                                              Component_get_gameObject
+                                                                        ((Component *)pGVar19,
+                                                                         (MethodInfo *)0x0);
+                                                    if (pGVar15 != (GameObject *)0x0) {
+                                                      UnityEngine.CoreModule.dll::UnityEngine::
+                                                      GameObject::GameObject_SetActive
+                                                                (pGVar15,bVar3 ^ 1,(MethodInfo *)0x0
+                                                                );
+                                                      return;
+                                                    }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                                else {
+                                                  pHVar7 = (HashSet_1_System_Int32Enum_ *)
+                                                            (unaff_EBX->fields).subscriberActions;
+                                                  if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)
+                                                  {
+                                                    System.Core.dll::System::Collections::Generic::
+                                                    HashSet`1[System::Int32Enum]::
+                                                                                                        
+                                                  HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+                                                            (pHVar7,3,
+                                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__HashSet<GizmoAction>__Add_GizmoAction_
+                                                  );
+                                                  pHVar7 = (HashSet_1_System_Int32Enum_ *)
+                                                            (unaff_EBX->fields).subscriberActions;
+                                                  if (pHVar7 != (HashSet_1_System_Int32Enum_ *)0x0)
+                                                  {
+                                                    System.Core.dll::System::Collections::Generic::
+                                                    HashSet`1[System::Int32Enum]::
+                                                                                                        
                                                   HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
                                                             (pHVar7,0xc,
                                                                                                                           
@@ -1408,6 +1434,8 @@ code_?:
                                                   );
                                                   goto code_?;
                                                   }
+                                                  }
+                                                  }
                                                 }
                                               }
                                             }
@@ -1426,30 +1454,33 @@ code_?:
                   }
                 }
               }
-            }
-            else {
-              pTVar19 = (unaff_EBX->fields).xRotationText;
-              if ((pTVar19 != (Text *)0x0) &&
-                 (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pTVar19,(MethodInfo *)0x0),
-                 pGVar14 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar14,1,(MethodInfo *)0x0);
-                pTVar19 = (unaff_EBX->fields).yRotationText;
-                if ((pTVar19 != (Text *)0x0) &&
-                   (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject((Component *)pTVar19,(MethodInfo *)0x0),
-                   pGVar14 != (GameObject *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar14,1,(MethodInfo *)0x0);
-                  pTVar19 = (unaff_EBX->fields).zRotationText;
-                  if ((pTVar19 != (Text *)0x0) &&
-                     (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_gameObject((Component *)pTVar19,(MethodInfo *)0x0),
-                     pGVar14 != (GameObject *)0x0)) {
+              else {
+                pTVar20 = (unaff_EBX->fields).xRotationText;
+                if (pTVar20 != (Text *)0x0) {
+                  pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)pTVar20,(MethodInfo *)0x0);
+                  if (pGVar15 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar14,1,(MethodInfo *)0x0);
-                    goto code_?;
+                              (pGVar15,1,(MethodInfo *)0x0);
+                    pTVar20 = (unaff_EBX->fields).yRotationText;
+                    if (pTVar20 != (Text *)0x0) {
+                      pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_gameObject((Component *)pTVar20,(MethodInfo *)0x0);
+                      if (pGVar15 != (GameObject *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                  (pGVar15,1,(MethodInfo *)0x0);
+                        pTVar20 = (unaff_EBX->fields).zRotationText;
+                        if (pTVar20 != (Text *)0x0) {
+                          pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                    Component_get_gameObject((Component *)pTVar20,(MethodInfo *)0x0);
+                          if (pGVar15 != (GameObject *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_SetActive(pGVar15,1,(MethodInfo *)0x0);
+                            goto code_?;
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -1463,8 +1494,8 @@ code_?:
   func_?();
 code_?:
   func_?((char)unaff_ESI,(char)unaff_EDI);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

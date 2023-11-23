@@ -208,7 +208,7 @@ code_?:
                               (pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0),
           pAVar7 == (AnimationState *)0x0)))) goto code_?;
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time
-                (pAVar7,((float)(iVar4 - iVar6) * _UNK_?) / 3.4059773e-29,(MethodInfo *)0x0);
+                (pAVar7,((float)(iVar4 - iVar6) * _UNK_?) / 3.40708e-29,(MethodInfo *)0x0);
     }
     pAStack8 = (this->fields).currentAnim;
     (this->fields).prevAnim = pAStack8;
@@ -737,42 +737,43 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_PlayFootstepAudio
                 MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
       pAVar1 = BoneAnimation_get_AudioSource(this,(MethodInfo *)0x0);
       pMVar3 = (this->fields).mvAvatar;
-      if ((((pMVar3 != (MVAvatar *)0x0) && (pMVar4 = (pMVar3->fields).body, pMVar4 != (MVBody *)0x0)
-           ) && (pTVar5 = (pMVar4->fields)._._._.transform, pTVar5 != (Transform *)0x0)) &&
-         (pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffd8,pTVar5,(MethodInfo *)0x0),
-         this_00 != (MVAvatarLocal *)0x0)) {
-        uVar7._0_4_ = pVVar6->x;
-        uVar7._4_4_ = pVVar6->y;
-        fVar2 = pVVar6->z;
+      if (((pMVar3 != (MVAvatar *)0x0) && (pMVar4 = (pMVar3->fields).body, pMVar4 != (MVBody *)0x0))
+         && (pTVar5 = (pMVar4->fields)._._._.transform, pTVar5 != (Transform *)0x0)) {
+        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&fStack_7,pTVar5,(MethodInfo *)0x0);
+        if (this_00 != (MVAvatarLocal *)0x0) {
+          uVar8._0_4_ = pVVar6->x;
+          uVar8._4_4_ = pVVar6->y;
+          fVar2 = pVVar6->z;
 code_?:
-        position.z = fVar2;
-        position.x = (float)(int)uVar7;
-        position.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        AudioManager::AudioManager_Play_2
-                  ((AudioManager *)this_00,StringLiteral_Footstep,pAVar1,position,(MethodInfo *)0x0
-                  );
-        return;
+          position.z = fVar2;
+          position.x = (float)uVar8;
+          position.y = SUB84(uVar8,4);
+          AudioManager::AudioManager_Play_2
+                    ((AudioManager *)this_00,StringLiteral_Footstep,pAVar1,position,
+                     (MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
   else {
     this_00 = (MVAvatarLocal *)(this->fields).mvAvatar;
     if (this_00 != (MVAvatarLocal *)0x0) {
-      pMVar8 = TypeInfo__MVAvatarLocal;
+      pMVar9 = TypeInfo__MVAvatarLocal;
       if (((this_00->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
          ((MVAvatarLocal__Class *)
           (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
           TypeInfo__MVAvatarLocal)) goto code_?;
-      pAVar9 = (this_00->fields).avatarMotor;
-      if (pAVar9 != (AvatarMotor *)0x0) {
-        cVar10 = (*(code *)(pAVar9->klass->vtable).get_Grounded.method)
-                           (pAVar9,(pAVar9->klass->vtable).get_Velocity.methodPtr);
-        if (cVar10 == '\0') {
+      pAVar10 = (this_00->fields).avatarMotor;
+      if (pAVar10 != (AvatarMotor *)0x0) {
+        cVar11 = (*(code *)(pAVar10->klass->vtable).get_Grounded.method)
+                          (pAVar10,(pAVar10->klass->vtable).get_Velocity.methodPtr);
+        if (cVar11 == '\0') {
           return;
         }
-        bVar11 = MVAvatarLocal::MVAvatarLocal_get_IsInVehicle(this_00,(MethodInfo *)0x0);
-        if (bVar11 != 0) {
+        bVar12 = MVAvatarLocal::MVAvatarLocal_get_IsInVehicle(this_00,(MethodInfo *)0x0);
+        if (bVar12 != 0) {
           return;
         }
         pAVar1 = BoneAnimation_get_AudioSource(this,(MethodInfo *)0x0);
@@ -785,30 +786,30 @@ code_?:
           this_00 = (MVAvatarLocal *)
                     MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
           pAVar1 = BoneAnimation_get_AudioSource(this,(MethodInfo *)0x0);
-          pCVar12 = (this->fields).mainCamera;
-          if ((pCVar12 != (Camera *)0x0) &&
+          pCVar13 = (this->fields).mainCamera;
+          if ((pCVar13 != (Camera *)0x0) &&
              (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pCVar12,(MethodInfo *)0x0),
+                                  ((Component *)pCVar13,(MethodInfo *)0x0),
              pTVar5 != (Transform *)0x0)) {
             pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&stack0xffffffd8,pTVar5,(MethodInfo *)0x0);
-            uVar13 = pVVar6->x;
-            uVar14 = pVVar6->y;
+                                ((Vector3 *)&stack0xfffffff0,pTVar5,(MethodInfo *)0x0);
+            fStack_7 = pVVar6->x;
+            puStack_14 = (undefined *)pVVar6->y;
             fVar2 = pVVar6->z;
-            pCVar12 = (this->fields).mainCamera;
-            if ((pCVar12 != (Camera *)0x0) &&
+            pCVar13 = (this->fields).mainCamera;
+            if ((pCVar13 != (Camera *)0x0) &&
                (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pCVar12,(MethodInfo *)0x0),
+                          Component_get_transform((Component *)pCVar13,(MethodInfo *)0x0),
                pTVar5 != (Transform *)0x0)) {
               pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                                   ((Vector3 *)&stack0xffffffd8,pTVar5,(MethodInfo *)0x0);
               uVar15 = pVVar6->x;
               uVar16 = pVVar6->y;
               fVar2 = pVVar6->z + fVar2;
-              if (this_00 != (MVAvatarLocal *)0x0) {
-                uVar7 = CONCAT44((float)uVar14 + (float)uVar16,(float)uVar15 + (float)uVar13);
-                goto code_?;
-              }
+              puStack_14 = (undefined *)((float)puStack_14 + (float)uVar16);
+              fStack_7 = (float)uVar15 + fStack_7;
+              uVar8 = _fStack_1c;
+              if (this_00 != (MVAvatarLocal *)0x0) goto code_?;
             }
           }
         }
@@ -816,9 +817,9 @@ code_?:
     }
   }
   func_?();
-  pMVar8 = extraout_EDX;
+  pMVar9 = extraout_EDX;
 code_?:
-  func_?(this_00,pMVar8);
+  func_?(this_00,pMVar9);
   pcVar17 = (code *)swi(3);
   (*pcVar17)();
   return;

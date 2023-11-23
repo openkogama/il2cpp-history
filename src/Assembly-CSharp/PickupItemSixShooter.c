@@ -104,7 +104,7 @@ code_?:
     pTVar1 = (this->fields)._._.muzzlePoint;
     if (pTVar1 == (Transform *)0x0) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
     pBVar3 = Bullet::Bullet_CreateBullet
                         (PoolEnums__Enum_SixShooterBullet,*pVVar2,(MethodInfo *)0x0);
     if (pBVar3 == (Bullet *)0x0) goto code_?;
@@ -259,7 +259,7 @@ code_?:
                         pMVar6 = (this->fields)._._.owner;
                         if (pMVar6 != (MVPickupOwner *)0x0) {
                           pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                                              ((Vector3 *)&stack0xffffffe4,pMVar6,(MethodInfo *)0x0
+                                              ((Vector3 *)&stack0xffffffd8,pMVar6,(MethodInfo *)0x0
                                               );
                           uVar24 = pVVar2->x;
                           uVar25 = pVVar2->y;

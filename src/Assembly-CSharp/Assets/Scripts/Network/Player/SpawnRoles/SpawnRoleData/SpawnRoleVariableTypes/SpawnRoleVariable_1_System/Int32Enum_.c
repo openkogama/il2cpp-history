@@ -336,7 +336,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       VStack_5.monitor = (MonitorData *)0xffffffff;
       VStack_5.klass = (ValueType__Class *)pIVar3;
       bVar6 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_5,obj,(MethodInfo *)0x0);
-      return bVar6 == 0;
+      return bVar6 ^ 1;
     }
   }
   func_?();
@@ -379,7 +379,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       VStack_5.monitor = (MonitorData *)0xffffffff;
       VStack_5.klass = (ValueType__Class *)pIVar3;
       bVar6 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_5,obj,(MethodInfo *)0x0);
-      return bVar6 == 0;
+      return bVar6 ^ 1;
     }
   }
   func_?();
@@ -403,40 +403,39 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  if (a != (SpawnRoleVariable_1_System_Int32Enum_ *)0x0) {
-    pSVar2 = (a->fields).subscribableVariable;
-    if (pSVar2 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-      pMVar3 = pIVar1->rgctx_data[0x11].method;
-      if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
-        func_?(pMVar3->klass);
+  pMVar2 = pIVar1->rgctx_data[0x11].method;
+  if ((a != (SpawnRoleVariable_1_System_Int32Enum_ *)0x0) &&
+     (pSVar3 = (a->fields).subscribableVariable,
+     pSVar3 != (SubscribableVariable_1_System_Int32Enum_ *)0x0)) {
+    if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
+      func_?(pMVar2->klass);
+    }
+    iVar4 = (pSVar3->fields)._.value;
+    if ((b != (SpawnRoleVariable_1_System_Int32Enum_ *)0x0) &&
+       (pSVar3 = (b->fields).subscribableVariable,
+       pSVar3 != (SubscribableVariable_1_System_Int32Enum_ *)0x0)) {
+      if (((uint)pMVar2->klass->vtable[0].methodPtr & 0x100) == 0) {
+        func_?(pMVar2->klass);
       }
-      iVar4 = (pSVar2->fields)._.value;
-      if ((b != (SpawnRoleVariable_1_System_Int32Enum_ *)0x0) &&
-         (pSVar2 = (b->fields).subscribableVariable,
-         pSVar2 != (SubscribableVariable_1_System_Int32Enum_ *)0x0)) {
-        if (((uint)pMVar3->klass->vtable[0].methodPtr & 0x100) == 0) {
-          func_?(pMVar3->klass);
-        }
-        method = (MethodInfo *)(pSVar2->fields)._.value;
-        pIVar1 = pMVar3->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?(pIVar1);
-        }
-        obj = (Object *)func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&method);
-        pIVar1 = pMVar3->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?(pIVar1);
-        }
-        pIVar1 = pIVar1->rgctx_data[9].klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?(pIVar1);
-        }
-        VStack_5.monitor = (MonitorData *)0xffffffff;
-        VStack_5.klass = (ValueType__Class *)pIVar1;
-        iStack_6 = iVar4;
-        bVar7 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_5,obj,(MethodInfo *)0x0);
-        return bVar7 == 0;
+      method = (MethodInfo *)(pSVar3->fields)._.value;
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }
+      obj = (Object *)func_?(pIVar1->rgctx_data[9].rgctxDataDummy,&method);
+      pIVar1 = pMVar2->klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      pIVar1 = pIVar1->rgctx_data[9].klass;
+      if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar1 = (Il2CppClass *)func_?(pIVar1);
+      }
+      VStack_5.monitor = (MonitorData *)0xffffffff;
+      VStack_5.klass = (ValueType__Class *)pIVar1;
+      iStack_6 = iVar4;
+      bVar7 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_5,obj,(MethodInfo *)0x0);
+      return bVar7 ^ 1;
     }
   }
   func_?();

@@ -208,11 +208,11 @@ bool Assembly-CSharp.dll::CERoamUUI::CERoamUUI_EnterObject
     }
     pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(pEVar1,(MethodInfo *)0x0);
     if (((pMVar2 != (MVWorldObjectClient *)0x0) &&
-        ((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)
-        ) && ((MVCubeModelInstance__Class *)
-              (pMVar2->klass->_1).typeHierarchy
-              [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-              TypeInfo__MVCubeModelInstance)) {
+        (unaff_ESI = pMVar2->klass,
+        (TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (unaff_ESI->_1).naturalAligment)) &&
+       ((MVCubeModelInstance__Class *)
+        (unaff_ESI->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
+        TypeInfo__MVCubeModelInstance)) {
       pMVar2 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(pEVar1,(MethodInfo *)0x0)
       ;
       if (pMVar2 == (MVWorldObjectClient *)0x0) goto code_?;
@@ -279,24 +279,27 @@ bool Assembly-CSharp.dll::CERoamUUI::CERoamUUI_EnterObject
         TypeInfo__MVGroup) {
       return 0;
     }
-    unaff_EBX = (MVGroup *)
+    unaff_ESI = (MVWorldObjectClient__Class *)
                 EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
                           (pEVar1,(MethodInfo *)0x0);
-    if (unaff_EBX == (MVGroup *)0x0) {
+    if (unaff_ESI == (MVWorldObjectClient__Class *)0x0) {
       EditorStateMachine::EditorStateMachine_EnterGroup(pEVar1,(MVGroup *)0x0,(MethodInfo *)0x0);
     }
     else {
-      pMVar5 = TypeInfo__MVGroup;
-      if (((unaff_EBX->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
-         ((MVGroup__Class *)
-          (unaff_EBX->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
+      pIVar5 = (unaff_ESI->_0).image;
+      pMVar6 = TypeInfo__MVGroup;
+      if ((*(byte *)&pIVar5[4].assembly < (TypeInfo__MVGroup->_1).naturalAligment) ||
+         (*(MVGroup__Class **)
+           ((pIVar5[2].typeCount - 4) + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4) !=
           TypeInfo__MVGroup)) goto code_?;
-      EditorStateMachine::EditorStateMachine_EnterGroup(pEVar1,unaff_EBX,(MethodInfo *)0x0);
-      t = (unaff_EBX->fields)._.transform;
+      EditorStateMachine::EditorStateMachine_EnterGroup
+                (pEVar1,(MVGroup *)unaff_ESI,(MethodInfo *)0x0);
+      unaff_ESI = (MVWorldObjectClient__Class *)(unaff_ESI->_1).static_fields_size;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__SharedCubeFunctions);
       }
-      SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(t,1,(MethodInfo *)0x0);
+      SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively
+                ((Transform *)unaff_ESI,1,(MethodInfo *)0x0);
       this_00 = (pEVar1->fields).weCamera;
       if (this_00 != (MainCameraManager *)0x0) {
         MainCameraManager::MainCameraManager_set_BlueModeEnabled(this_00,1,(MethodInfo *)0x0);
@@ -309,12 +312,12 @@ bool Assembly-CSharp.dll::CERoamUUI::CERoamUUI_EnterObject
   }
 code_?:
   func_?();
-  pMVar5 = extraout_EDX;
+  pMVar6 = extraout_EDX;
 code_?:
-  func_?(unaff_EBX,pMVar5);
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  func_?(unaff_ESI,pMVar6);
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 

@@ -409,28 +409,29 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_OnDataUpdate
       if (TVar5.m_Index == 0) {
         *(undefined4 *)(in_stack_3 + 0xe0) = 0;
       }
-      else if ((((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
-                  (
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment) ||
-                (*(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4) !=
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-                ) || (*(int32_t *)(in_stack_3 + 0xe0) = TVar5.m_Index,
-                     *(byte *)(*(int *)TVar5.m_Index + 0xb8) <
-                     (
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     ->_1).naturalAligment)) ||
-              (*(Dictionary_2_System_Object_System_Object___Class **)
-                (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
-                (uint)(
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                      ->_1).naturalAligment * 4) !=
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-      goto code_?;
+      else {
+        if ((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
+             (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment) ||
+           (*(Dictionary_2_System_Object_System_Object___Class **)
+             (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
+             (uint)(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment * 4) !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+        goto code_?;
+        *(int32_t *)(in_stack_3 + 0xe0) = TVar5.m_Index;
+        if ((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
+             (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment) ||
+           (*(Dictionary_2_System_Object_System_Object___Class **)
+             (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
+             (uint)(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment * 4) !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+        goto code_?;
+      }
       DStack_6._version = in_stack_3 + 0xe0;
       DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)&UNK_?;
       DStack_6._index = TVar5.m_Index;
@@ -448,28 +449,29 @@ void Assembly-CSharp.dll::MVVehicleBase::MVVehicleBase_OnDataUpdate
         if (TVar5.m_Index == 0) {
           *(undefined4 *)(in_stack_3 + 0xe4) = 0;
         }
-        else if (((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
-                   (
-                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   ->_1).naturalAligment) ||
-                 (*(Dictionary_2_System_Object_System_Object___Class **)
-                   (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
-                   (uint)(
-                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                         ->_1).naturalAligment * 4) !=
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 )) || ((*(int32_t *)(in_stack_3 + 0xe4) = TVar5.m_Index,
-                        *(byte *)(*(int *)TVar5.m_Index + 0xb8) <
-                        (
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment ||
-                        (*(Dictionary_2_System_Object_System_Object___Class **)
-                          (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
-                          (uint)(
-                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                ->_1).naturalAligment * 4) !=
-                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        )))) goto code_?;
+        else {
+          if ((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
+               (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment) ||
+             (*(Dictionary_2_System_Object_System_Object___Class **)
+               (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
+               (uint)(
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).naturalAligment * 4) !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+          goto code_?;
+          *(int32_t *)(in_stack_3 + 0xe4) = TVar5.m_Index;
+          if ((*(byte *)(*(int *)TVar5.m_Index + 0xb8) <
+               (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment) ||
+             (*(Dictionary_2_System_Object_System_Object___Class **)
+               (*(int *)(*(int *)TVar5.m_Index + 100) + -4 +
+               (uint)(
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     ->_1).naturalAligment * 4) !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+          goto code_?;
+        }
         method_00 = (MethodInfo *)&UNK_?;
         func_?();
         if (*(Dictionary_2_System_UInt32_System_Object_ **)(in_stack_3 + 0xe4) !=

@@ -360,139 +360,143 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
         TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) goto code_?;
   }
   func_?();
-  if (((this->fields).spawnerObject != (SpawnerObject *)0x0) &&
-     (this_00 = (this->fields)._.triggerBoxEvents, this_00 != (TriggerBoxEvents *)0x0)) {
-    TriggerBoxEvents::TriggerBoxEvents_get_Collider(this_00,(MethodInfo *)0x0);
-    this_02 = TypeInfo__System__Func<int,_bool>;
-    this_03 = (Predicate_1_UInt32_ *)func_?();
-    mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-              (this_03,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-    this_04 = (Func_3_Int32_Object_Boolean_ *)func_?();
-    mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-              (this_04,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
-    triggerCollider = (Collider *)&UNK_?;
-    pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-    UseInteractor::UseInteractor__ctor
-              (pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,
-               (Func_2_Int32_Boolean_ *)this_03,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,
-               3.5,1,(MethodInfo *)0x0);
-    (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
-    func_?();
-    pMVar4 = (this_02->vtable).GetObjectData_1.method;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)this_02,
-               MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
-               ,(MethodInfo *)0x0);
-    if (pMVar4 != (MethodInfo *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
-                ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
-                 (MethodInfo *)0x0);
+  if ((this->fields).spawnerObject != (SpawnerObject *)0x0) {
+    this_00 = (this->fields)._.triggerBoxEvents;
+    if (this_00 != (TriggerBoxEvents *)0x0) {
+      TriggerBoxEvents::TriggerBoxEvents_get_Collider(this_00,(MethodInfo *)0x0);
+      this_02 = TypeInfo__System__Func<int,_bool>;
+      this_03 = (Predicate_1_UInt32_ *)func_?();
+      mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                (this_03,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      this_04 = (Func_3_Int32_Object_Boolean_ *)func_?();
+      mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
+                (this_04,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
+      triggerCollider = (Collider *)&UNK_?;
+      pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      UseInteractor::UseInteractor__ctor
+                (pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,
+                 (Func_2_Int32_Boolean_ *)this_03,
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,(MethodInfo *)0x0);
+      (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
+      func_?();
       pMVar4 = (this_02->vtable).GetObjectData_1.method;
-      object = (Object *)(this_02->vtable).GetMethodImpl.methodPtr;
       pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,object,
-                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                (pUVar5,(Object *)this_02,
+                 MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pMVar4 != (MethodInfo *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
                   ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
                    (MethodInfo *)0x0);
-        MVWorldObjectSpawnerVehicleEnergy_InitializeCommon
-                  ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
-        pUVar3 = (UseInteractor *)(this_02->vtable).GetMethodImpl.methodPtr;
-        if (pUVar3 != (UseInteractor *)0x0) {
-          UseInteractor::UseInteractor_UpdateData
-                    (pUVar3,(Dictionary_2_System_Object_System_Object_ *)this_02->interfaceOffsets,
+        pMVar4 = (this_02->vtable).GetObjectData_1.method;
+        object = (Object *)(this_02->vtable).GetMethodImpl.methodPtr;
+        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar5,object,
+                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   ,(MethodInfo *)0x0);
+        if (pMVar4 != (MethodInfo *)0x0) {
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
+                    ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
                      (MethodInfo *)0x0);
-          pMVar4 = (this_02->vtable).Invoke.method;
-          if (((pMVar4 != (MethodInfo *)0x0) &&
-              (pIVar6 = pMVar4[5].methodPointer, pIVar6 != (Il2CppMethodPointer)0x0)) &&
-             (iVar7 = *(int *)(pIVar6 + 8), iVar7 != 0)) {
-            (this_02->vtable).CombineImpl.methodPtr = *(Il2CppMethodPointer *)(iVar7 + 0x88);
-            func_?();
+          MVWorldObjectSpawnerVehicleEnergy_InitializeCommon
+                    ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
+          pUVar3 = (UseInteractor *)(this_02->vtable).GetMethodImpl.methodPtr;
+          if (pUVar3 != (UseInteractor *)0x0) {
+            UseInteractor::UseInteractor_UpdateData
+                      (pUVar3,(Dictionary_2_System_Object_System_Object_ *)
+                               this_02->interfaceOffsets,(MethodInfo *)0x0);
             pMVar4 = (this_02->vtable).Invoke.method;
-            if (pMVar4 != (MethodInfo *)0x0) {
-              (this_02->vtable).CombineImpl.method = (MethodInfo *)pMVar4[5].virtualMethodPointer;
+            if (((pMVar4 != (MethodInfo *)0x0) &&
+                (pIVar6 = pMVar4[5].methodPointer, pIVar6 != (Il2CppMethodPointer)0x0)) &&
+               (iVar7 = *(int *)(pIVar6 + 8), iVar7 != 0)) {
+              (this_02->vtable).CombineImpl.methodPtr = *(Il2CppMethodPointer *)(iVar7 + 0x88);
               func_?();
               pMVar4 = (this_02->vtable).Invoke.method;
               if (pMVar4 != (MethodInfo *)0x0) {
-                uVar8._0_2_ = pMVar4[3].flags;
-                uVar8._2_2_ = pMVar4[3].iflags;
-                uVar9._0_2_ = pMVar4[3].slot;
-                uVar9._2_1_ = pMVar4[3].parameters_count;
-                uVar9._3_1_ = pMVar4[3].field_0x2f;
-                uVar10._0_1_ = (this_02->_1).naturalAligment;
-                uVar10._1_1_ = (this_02->_1).packingSize;
-                uVar10._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
-                uVar8 = uVar8 | uVar10;
-                pIVar6 = (this_02->vtable).Equals.methodPtr;
-                (this_02->_1).naturalAligment = (char)uVar8;
-                (this_02->_1).packingSize = (char)(uVar8 >> 8);
-                *(short *)&(this_02->_1).field_0x56 = (short)(uVar8 >> 0x10);
-                uVar11._0_1_ = (this_02->_1).naturalAligment;
-                uVar11._1_1_ = (this_02->_1).packingSize;
-                uVar11._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
-                uVar11 = uVar11 | 8;
-                (this_02->_1).naturalAligment = (char)uVar11;
-                (this_02->_1).packingSize = (char)(uVar11 >> 8);
-                *(short *)&(this_02->_1).field_0x56 = (short)(uVar11 >> 0x10);
-                (this_02->vtable).Equals.methodPtr = (Il2CppMethodPointer)(uVar9 | (uint)pIVar6);
-                this_01 = (GameObject *)(this_02->_1).element_size;
-                if (this_01 != (GameObject *)0x0) {
-                  pMVar4 = (MethodInfo *)
-                            UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_AddComponent_1
-                                      (this_01,
-                                       GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__
-                                      );
-                  (this_02->vtable).RemoveImpl.method = pMVar4;
-                  func_?();
-                  pMVar4 = (this_02->vtable).RemoveImpl.method;
-                  pMVar12 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
-                                      ((MethodInfo *)0x0);
-                  if ((pMVar12 != (MaterialLoader *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
-                    pMVar4->return_type = (Il2CppType *)(pMVar12->fields).pickupItemShader;
+                (this_02->vtable).CombineImpl.method = (MethodInfo *)pMVar4[5].virtualMethodPointer
+                ;
+                func_?();
+                pMVar4 = (this_02->vtable).Invoke.method;
+                if (pMVar4 != (MethodInfo *)0x0) {
+                  uVar8._0_2_ = pMVar4[3].flags;
+                  uVar8._2_2_ = pMVar4[3].iflags;
+                  uVar9._0_2_ = pMVar4[3].slot;
+                  uVar9._2_1_ = pMVar4[3].parameters_count;
+                  uVar9._3_1_ = pMVar4[3].field_0x2f;
+                  uVar10._0_1_ = (this_02->_1).naturalAligment;
+                  uVar10._1_1_ = (this_02->_1).packingSize;
+                  uVar10._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
+                  uVar8 = uVar8 | uVar10;
+                  pIVar6 = (this_02->vtable).Equals.methodPtr;
+                  (this_02->_1).naturalAligment = (char)uVar8;
+                  (this_02->_1).packingSize = (char)(uVar8 >> 8);
+                  *(short *)&(this_02->_1).field_0x56 = (short)(uVar8 >> 0x10);
+                  uVar11._0_1_ = (this_02->_1).naturalAligment;
+                  uVar11._1_1_ = (this_02->_1).packingSize;
+                  uVar11._2_2_ = *(undefined2 *)&(this_02->_1).field_0x56;
+                  uVar11 = uVar11 | 8;
+                  (this_02->_1).naturalAligment = (char)uVar11;
+                  (this_02->_1).packingSize = (char)(uVar11 >> 8);
+                  *(short *)&(this_02->_1).field_0x56 = (short)(uVar11 >> 0x10);
+                  (this_02->vtable).Equals.methodPtr = (Il2CppMethodPointer)(uVar9 | (uint)pIVar6);
+                  this_01 = (GameObject *)(this_02->_1).element_size;
+                  if (this_01 != (GameObject *)0x0) {
+                    pMVar4 = (MethodInfo *)
+                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                              GameObject_AddComponent_1
+                                        (this_01,
+                                         GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__
+                                        );
+                    (this_02->vtable).RemoveImpl.method = pMVar4;
                     func_?();
                     pMVar4 = (this_02->vtable).RemoveImpl.method;
-                    if (pMVar4 != (MethodInfo *)0x0) {
-                      x = (Object_1 *)pMVar4->return_type;
-                      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?();
-                      }
-                      bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                      if (bVar13 != 0) {
-                        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__UnityEngine__Debug);
-                        }
-                        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                                  ((Object *)StringLiteral_hiddenShader_not_found,(MethodInfo *)0x0)
-                        ;
-                      }
+                    pMVar12 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader
+                                        ((MethodInfo *)0x0);
+                    if ((pMVar12 != (MaterialLoader *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
+                      pMVar4->return_type = (Il2CppType *)(pMVar12->fields).pickupItemShader;
+                      func_?();
                       pMVar4 = (this_02->vtable).RemoveImpl.method;
-                      this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM
-                                          ((MethodInfo *)0x0);
-                      if (((this_05 != (MVWorldObjectClientManager *)0x0) &&
-                          (pMVar14 = MVWorldObjectClientManager::
-                                     MVWorldObjectClientManager_GetWorldObject
-                                               (this_05,(int32_t)(this_02->vtable).GetObjectData_1.
-                                                                 methodPtr,(MethodInfo *)0x0),
-                          pMVar14 != (MVWorldObject *)0x0)) && (pMVar4 != (MethodInfo *)0x0)) {
-                        pMVar4->klass = (Il2CppClass *)pMVar14[1].fields.inputLinkRefs;
-                        func_?();
+                      if (pMVar4 != (MethodInfo *)0x0) {
+                        x = (Object_1 *)pMVar4->return_type;
+                        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?();
+                        }
+                        bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                                Object_1_op_Equality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        if (bVar13 != 0) {
+                          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                            func_?(TypeInfo__UnityEngine__Debug);
+                          }
+                          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                                    ((Object *)StringLiteral_hiddenShader_not_found,
+                                     (MethodInfo *)0x0);
+                        }
                         pMVar4 = (this_02->vtable).RemoveImpl.method;
-                        if (pMVar4 != (MethodInfo *)0x0) {
-                          GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials
-                                    ((GreyOutObjectScript *)pMVar4,(MethodInfo *)0x0);
-                          *(undefined1 *)&(this_02->vtable).RemoveImpl.methodPtr = 1;
-                          MVWorldObjectSpawnerVehicleEnergy_SetupCulling
-                                    ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0)
-                          ;
-                          return;
+                        this_05 = MVGameControllerBase::MVGameControllerBase_get_WOCM
+                                            ((MethodInfo *)0x0);
+                        if (this_05 != (MVWorldObjectClientManager *)0x0) {
+                          pMVar14 = MVWorldObjectClientManager::
+                                    MVWorldObjectClientManager_GetWorldObject
+                                              (this_05,(int32_t)(this_02->vtable).GetObjectData_1.
+                                                                methodPtr,(MethodInfo *)0x0);
+                          if ((pMVar14 != (MVWorldObject *)0x0) && (pMVar4 != (MethodInfo *)0x0)) {
+                            pMVar4->klass = (Il2CppClass *)pMVar14[1].fields.inputLinkRefs;
+                            func_?();
+                            pMVar4 = (this_02->vtable).RemoveImpl.method;
+                            if (pMVar4 != (MethodInfo *)0x0) {
+                              GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials
+                                        ((GreyOutObjectScript *)pMVar4,(MethodInfo *)0x0);
+                              *(undefined1 *)&(this_02->vtable).RemoveImpl.methodPtr = 1;
+                              MVWorldObjectSpawnerVehicleEnergy_SetupCulling
+                                        ((MVWorldObjectSpawnerVehicleEnergy *)this_02,
+                                         (MethodInfo *)0x0);
+                              return;
+                            }
+                          }
                         }
                       }
                     }
@@ -528,23 +532,21 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
   }
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
                      ((MVBlueprintBase *)this,StringLiteral_spawnWorldObjectID,(MethodInfo *)0x0);
+  pMVar2 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy;
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
     func_?();
-    pMVar2 = extraout_EDX;
+    pMVar1 = extraout_EDX;
   }
-  else {
-    pMVar2 = TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy;
-    if (((TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment <=
-         (pMVar1->klass->_1).naturalAligment) &&
-       ((MVVehicleEnergy__Class *)
-        (pMVar1->klass->_1).typeHierarchy
-        [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] ==
-        TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
-      iVar3 = (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)
-                        (pMVar1,(pMVar1->klass->vtable).TraverseRecursiveTail.methodPtr);
-      (this->fields)._.documentationType = iVar3;
-      return;
-    }
+  else if (((TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment <=
+            (pMVar1->klass->_1).naturalAligment) &&
+          ((MVVehicleEnergy__Class *)
+           (pMVar1->klass->_1).typeHierarchy
+           [(TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy->_1).naturalAligment - 1] ==
+           TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy)) {
+    iVar3 = (*(code *)(pMVar1->klass->vtable).get_DocumentationType.method)
+                      (pMVar1,(pMVar1->klass->vtable).TraverseRecursiveTail.methodPtr);
+    (this->fields)._.documentationType = iVar3;
+    return;
   }
   func_?(pMVar1,pMVar2);
   pcVar4 = (code *)swi(3);

@@ -60,19 +60,19 @@ Bounds * Assembly-CSharp.dll::MVCountingCube::MVCountingCube_GetLocalBounds
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  fVar1 = _UNK_?;
-  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar2->zeroVector).y;
-  fVar4 = (pVVar2->zeroVector).z;
-  (__return_storage_ptr__->m_Center).x = (pVVar2->zeroVector).x;
-  (__return_storage_ptr__->m_Center).y = fVar3;
-  (__return_storage_ptr__->m_Center).z = fVar4;
-  uVar5 = (this->fields).ObjectSize.x;
-  uVar6 = (this->fields).ObjectSize.y;
-  fVar4 = (this->fields).ObjectSize.z;
-  (__return_storage_ptr__->m_Extents).x = (float)uVar5 * fVar1;
-  (__return_storage_ptr__->m_Extents).y = (float)uVar6 * fVar1;
-  (__return_storage_ptr__->m_Extents).z = fVar4 * fVar1;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (__return_storage_ptr__->m_Center).x = (pVVar1->zeroVector).x;
+  (__return_storage_ptr__->m_Center).y = fVar2;
+  (__return_storage_ptr__->m_Center).z = fVar3;
+  uVar4 = (this->fields).ObjectSize.x;
+  uVar5 = (this->fields).ObjectSize.y;
+  fVar3 = (this->fields).ObjectSize.z * _UNK_?;
+  fVar2 = (float)uVar5 * _UNK_?;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar4 * _UNK_?;
+  (__return_storage_ptr__->m_Extents).y = fVar2;
+  (__return_storage_ptr__->m_Extents).z = fVar3;
   return __return_storage_ptr__;
 }
 

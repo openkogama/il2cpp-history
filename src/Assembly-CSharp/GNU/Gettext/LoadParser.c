@@ -147,7 +147,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::LoadParser::LoadParser_OnEntry
         (this_01->fields).plural = msgidPlural;
         func_?(&(this_01->fields).plural,msgidPlural);
         bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(msgidPlural,(MethodInfo *)0x0);
-        (this_01->fields).hasPlural = bVar1 == 0;
+        (this_01->fields).hasPlural = bVar1 ^ 1;
       }
       CatalogEntry::CatalogEntry_SetTranslations(this_01,translations,(MethodInfo *)0x0);
       bVar1 = mscorlib.dll::System::String::String_op_Inequality

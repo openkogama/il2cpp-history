@@ -28,18 +28,23 @@ public class GUILoginHandler : MonoBehaviour
 	[SerializeField]
 	private Toggle disableCacheToggle;
 	[SerializeField]
+	private Toggle embeddedToggle;
+	[SerializeField]
 	private Toggle touchToggle;
 	[SerializeField]
 	private Dropdown planetDropdown;
 	[SerializeField]
 	private Dropdown profileDropdown;
 	[SerializeField]
+	private Dropdown embeddedSiteDropdown;
+	[SerializeField]
 	private Button buildButton;
 	[SerializeField]
 	private Button avatarEditButton;
-	private string _profileId;
-	private string _serverip;
-	private string _planetId;
+	private string profileId;
+	private string serverip;
+	private string planetId;
+	private string embeddedSite;
 	private readonly Dictionary<string, PlanetData> defaultPlanetData;
 	private readonly Dictionary<string, object> gameSessionData;
 	private string playerPrefKey;
@@ -72,6 +77,7 @@ public class GUILoginHandler : MonoBehaviour
 	private void SetupServerDropdown(int savedChoice);
 	public void OnProfileDropdownChanged();
 	public void OnPlanetDropdownChanged();
+	public void OnEmbeddedSiteDropdownChanged();
 	private void SetupPlanetID();
 	private void SetupProfileID();
 	private void Update();
@@ -89,8 +95,8 @@ public class GUILoginHandler : MonoBehaviour
 	private string GetPrefOrDefault(string prefName, string target);
 	private string UpdateIfChanged(string prefName, string current, string target);
 	[CompilerGenerated]
-	private void _SetupPlanetID_b__25_0(string value);
+	private void _SetupPlanetID_b__29_0(string value);
 	[CompilerGenerated]
-	private void _SetupProfileID_b__26_0(string value);
+	private void _SetupProfileID_b__30_0(string value);
 }
 

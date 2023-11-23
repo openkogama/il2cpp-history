@@ -459,17 +459,7 @@ code_?:
     }
   }
   func_?();
-  bVar17 = *(byte *)CStack_14.b;
-  bVar18 = (byte)((int)CStack_14.r + 1);
-  bVar19 = *(byte *)CStack_14.b + bVar18;
-  *(byte *)CStack_14.b = bVar19 + 1;
-  *(undefined2 *)((int)CStack_14.g + 0x43) = in_FS;
-  *(char *)((int)CStack_14.a + 0x62) =
-       *(char *)((int)CStack_14.a + 0x62) + (char)((uint)CStack_14.g >> 8) +
-       (CARRY1(bVar17,bVar18) || 0xfe < bVar19);
-  pcVar20 = (code *)swi(3);
-  CStack_14.a = (float)((int)CStack_14.r + 1);
-  (*pcVar20)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

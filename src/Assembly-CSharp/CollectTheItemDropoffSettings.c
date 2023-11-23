@@ -24,85 +24,90 @@ void Assembly-CSharp.dll::CollectTheItemDropoffSettings::CollectTheItemDropoffSe
     cRam_? = '\x01';
   }
   this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_02 == (MVWorldObjectClientManager *)0x0) ||
-     (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_02,woID,(MethodInfo *)0x0), pMVar1 == (MVWorldObject *)0x0))
-  goto code_?;
-  if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVBlueprintBase->_1).naturalAligment) ||
-     ((MVBlueprintBase__Class *)
-      (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVBlueprintBase->_1).naturalAligment - 1] !=
-      TypeInfo__MVBlueprintBase)) goto code_?;
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
-  if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)StringLiteral_BlueprintData,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar2.m_Index == 0)) goto code_?;
-  if ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) <
-       (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment) ||
-     (*(Dictionary_2_System_Object_System_Object___Class **)
-       (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-       (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).naturalAligment * 4) !=
-      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-  goto code_?;
-  dictionary = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (TVar2.m_Index,(Object *)StringLiteral_ChildrenMap,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-  this_03 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-  if (dictionary.m_Index == 0) {
-    dictionary.m_Index = 0;
-  }
-  else if ((*(byte *)(*(int *)dictionary.m_Index + 0xb8) <
-            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment) ||
-          (*(Dictionary_2_System_Object_System_Object___Class **)
-            (*(int *)(*(int *)dictionary.m_Index + 100) + -4 +
-            (uint)(
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment * 4) !=
-           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-  goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object___ctor_1
-            (this_03,(IDictionary_2_System_Object_System_Object_ *)dictionary.m_Index,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-            );
-  _UNK_? = this_03;
-  func_?();
-  if (_UNK_? == (SettingsBase *)0x0) {
+  if (this_02 == (MVWorldObjectClientManager *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
 code_?:
     func_?();
   }
   else {
-    SettingsBase::SettingsBase_Initialize
-              (_UNK_?,0xADDR,(GameObject *)&UNK_?,
-               MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
-    this_01 = _UNK_?;
+    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_02,woID,(MethodInfo *)0x0);
+    if (pMVar1 == (MVWorldObject *)0x0) goto code_?;
+    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVBlueprintBase->_1).naturalAligment) ||
+       ((MVBlueprintBase__Class *)
+        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVBlueprintBase->_1).naturalAligment - 1] !=
+        TypeInfo__MVBlueprintBase)) goto code_?;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
+    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (TVar2.m_Index,(Object *)StringLiteral_doOnce,
+                      (this_00,(Object *)StringLiteral_BlueprintData,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if ((this_01 == (SettingsToggle *)0x0) || (TVar2.m_Index == 0)) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-        (TypeInfo__System__Boolean->_0).element_class) {
-      pbVar3 = (bool *)func_?();
-      SettingsToggle::SettingsToggle_Initialize
-                (this_01,StringLiteral_doOnce,*pbVar3,(MethodInfo *)0x0);
-      return;
+    if (TVar2.m_Index == 0) goto code_?;
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) ==
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      dictionary = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                             (TVar2.m_Index,(Object *)StringLiteral_ChildrenMap,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+      this_03 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+      if ((dictionary.m_Index == 0) ||
+         (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= *(byte *)(*(int *)dictionary.m_Index + 0xb8) &&
+          (*(Dictionary_2_System_Object_System_Object___Class **)
+            (*(int *)(*(int *)dictionary.m_Index + 100) + -4 +
+            (uint)(
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment * 4) ==
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object___ctor_1
+                  (this_03,(IDictionary_2_System_Object_System_Object_ *)dictionary.m_Index,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                  );
+        _UNK_? = this_03;
+        func_?();
+        if (_UNK_? == (SettingsBase *)0x0) goto code_?;
+        SettingsBase::SettingsBase_Initialize
+                  (_UNK_?,0xADDR,(GameObject *)&UNK_?,
+                   MVWorldObjectDocumentationType__Enum_CollectTheItem,(MethodInfo *)0x0);
+        this_01 = _UNK_?;
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (TVar2.m_Index,(Object *)StringLiteral_doOnce,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if ((this_01 == (SettingsToggle *)0x0) || (TVar2.m_Index == 0)) goto code_?;
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+            (TypeInfo__System__Boolean->_0).element_class) {
+          pbVar3 = (bool *)func_?();
+          SettingsToggle::SettingsToggle_Initialize
+                    (this_01,StringLiteral_doOnce,*pbVar3,(MethodInfo *)0x0);
+          return;
+        }
+        goto code_?;
+      }
+      goto code_?;
     }
   }
   func_?();
+  pMVar1 = extraout_EDX;
 code_?:
-  func_?();
+  func_?(pMVar1);
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

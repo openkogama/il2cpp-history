@@ -199,9 +199,9 @@ code_?:
             uVar16 = (pVVar9->upVector).x;
             uVar17 = (pVVar9->upVector).y;
             if (pTVar8 != (Transform *)0x0) {
-              value.y = (float)uVar17 * yOffset + (float)slot;
-              value.x = (float)uVar16 * yOffset + (float)this;
-              value.z = (pVVar9->upVector).z * yOffset + fStack_15;
+              value.y = (float)slot + (float)uVar17 * yOffset;
+              value.x = (float)this + (float)uVar16 * yOffset;
+              value.z = fStack_15 + (pVVar9->upVector).z * yOffset;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                         (pTVar8,value,(MethodInfo *)0x0);
               pDVar2 = (pBVar1->fields).accessoryMap;
@@ -344,10 +344,12 @@ code_?:
                                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_
                                 );
             if (this_01 != (Component *)0x0) {
+              IStack_3.m_value = (int32_t)&UNK_?;
               this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   (this_01,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
-                IStack_3.m_value = (int32_t)&UNK_?;
+                size = (float)&TypeInfo__UnityEngine__Vector3;
+                this = (BodyAccessoriesController *)&UNK_?;
                 func_?();
                 cRam_? = '\x01';
               }
@@ -832,10 +834,9 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
   if ((TypeInfo__BodyAccessoriesController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BodyAccessoriesController);
   }
-  AVar1 = slot;
   this_00 = TypeInfo__BodyAccessoriesController->static_fields->slotBoneNameMap;
   if (this_00 != (Dictionary_2_MV_Common_AccessorySlotType_System_String_ *)0x0) {
-    pSVar2 = (String *)
+    pSVar1 = (String *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,slot,
@@ -843,25 +844,25 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
                        );
     this_01 = (this->fields).bodyData;
     if (this_01 != (BodyData *)0x0) {
-      this_02 = BodyData::BodyData_GetPartBone_1(this_01,pSVar2,(MethodInfo *)0x0);
+      this_02 = BodyData::BodyData_GetPartBone_1(this_01,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        VStack_3.z = (float)TypeInfo__UnityEngine__Object;
-        VStack_3.y = (float)&UNK_?;
+        VStack_2.y = (float)TypeInfo__UnityEngine__Object;
+        VStack_2.x = (float)&UNK_?;
         func_?();
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        slot = AVar1;
-        arg1 = (Object *)func_?(TypeInfo__MV__Common__AccessorySlotType,&slot);
-        pSVar2 = mscorlib.dll::System::String::String_Format_1
-                           (StringLiteral_Accessory__Failed_to_get_bone__0,(Object *)pSVar2,arg1,
+      if (bVar3 != 0) {
+        fStack_4 = (float)slot;
+        arg1 = (Object *)func_?(TypeInfo__MV__Common__AccessorySlotType,&fStack_4);
+        pSVar1 = mscorlib.dll::System::String::String_Format_1
+                           (StringLiteral_Accessory__Failed_to_get_bone__0,(Object *)pSVar1,arg1,
                             (MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)pSVar2,(MethodInfo *)0x0);
+                  ((Object *)pSVar1,(MethodInfo *)0x0);
       }
       if (this_02 != (Transform *)0x0) {
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
@@ -870,36 +871,38 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
         uStack_7._4_4_ = pVVar5->y;
         fStack_8 = pVVar5->z;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                           (&VStack_3,this_02,(MethodInfo *)0x0);
-        VStack_6.x = pVVar5->x;
-        VStack_6.y = pVVar5->y;
-        VStack_6.z = pVVar5->z;
-        slot = (AccessorySlotType__Enum)((float)uStack_7 + VStack_6.x * offset.x);
-        fStack_9 = uStack_7._4_4_ + VStack_6.y * offset.x;
-        fStack_10 = fStack_8 + VStack_6.z * offset.x;
+                           (&VStack_2,this_02,(MethodInfo *)0x0);
+        uVar9 = pVVar5->x;
+        uVar10 = pVVar5->y;
+        VStack_6.x = (float)uStack_7 + (float)uVar9 * offset.x;
+        VStack_6.y = 0.0;
+        VStack_6.z = 0.0;
+        uStack_11 = 0;
+        fStack_12 = uStack_7._4_4_ + (float)uVar10 * offset.x;
+        fStack_4 = fStack_8 + pVVar5->z * offset.x;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                           (&VStack_3,this_02,(MethodInfo *)0x0);
+                           (&VStack_2,this_02,(MethodInfo *)0x0);
         uStack_7._0_4_ = pVVar5->x;
         uStack_7._4_4_ = pVVar5->y;
         fStack_8 = pVVar5->z;
-        fStack_10 = fStack_8 * offset.y + fStack_10;
-        slot = (AccessorySlotType__Enum)((float)slot + (float)uStack_7 * offset.y);
-        fStack_9 = fStack_9 + uStack_7._4_4_ * offset.y;
+        VStack_6.x = VStack_6.x + (float)uStack_7 * offset.y;
+        fStack_12 = fStack_12 + uStack_7._4_4_ * offset.y;
+        fStack_4 = fStack_4 + fStack_8 * offset.y;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                           (&VStack_3,this_02,(MethodInfo *)0x0);
-        uVar11 = pVVar5->x;
-        uVar12 = pVVar5->y;
-        fVar13 = pVVar5->z;
-        __return_storage_ptr__->x = (float)uVar11 * offset.z + (float)slot;
-        __return_storage_ptr__->y = (float)uVar12 * offset.z + fStack_9;
-        __return_storage_ptr__->z = fVar13 * offset.z + fStack_10;
+                           (&VStack_2,this_02,(MethodInfo *)0x0);
+        uVar13 = pVVar5->x;
+        uVar14 = pVVar5->y;
+        fVar15 = pVVar5->z;
+        __return_storage_ptr__->x = VStack_6.x + (float)uVar13 * offset.z;
+        __return_storage_ptr__->y = fStack_12 + (float)uVar14 * offset.z;
+        __return_storage_ptr__->z = fStack_4 + fVar15 * offset.z;
         return __return_storage_ptr__;
       }
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  pVVar5 = (Vector3 *)(*pcVar14)();
+  pcVar16 = (code *)swi(3);
+  pVVar5 = (Vector3 *)(*pcVar16)();
   return pVVar5;
 }
 

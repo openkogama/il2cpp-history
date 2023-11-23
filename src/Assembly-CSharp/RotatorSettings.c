@@ -25,16 +25,17 @@ void Assembly-CSharp.dll::RotatorSettings::RotatorSettings_Initialize
   SettingsBase::SettingsBase_Initialize_1(this_00,woID,root,header,(MethodInfo *)0x0);
   if (woID == -1) goto code_?;
   this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_03 == (MVWorldObjectClientManager *)0x0) ||
-     (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_03,woID,(MethodInfo *)0x0), pMVar1 == (MVWorldObject *)0x0)) {
+  if (this_03 == (MVWorldObjectClientManager *)0x0) {
 code_?:
-    uVar2 = func_?();
+    uVar1 = func_?();
 code_?:
-    func_?(uVar2);
+    func_?(uVar1);
   }
   else {
-    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
+    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_03,woID,(MethodInfo *)0x0);
+    if (pMVar2 == (MVWorldObject *)0x0) goto code_?;
+    pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar2->fields).data;
     (this->fields).woID = woID;
     if (pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
@@ -58,7 +59,7 @@ code_?:
                         (pDVar3,(Object *)StringLiteral_AngularSpeed,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar2 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
+      uVar1 = CONCAT44(TypeInfo__System__Single,TVar4.m_Index);
       if (TVar4.m_Index == 0) goto code_?;
       if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
           (TypeInfo__System__Single->_0).element_class) {

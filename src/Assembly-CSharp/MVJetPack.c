@@ -134,9 +134,7 @@ Assembly-CSharp.dll::MVJetPack::MVJetPack_GetJetPackType
            (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                  ->_1).naturalAligment * 4) !=
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        func_?(TVar1.m_Index,
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                       );
+        func_?(TVar1.m_Index);
         TStack2.m_Index = (int32_t)extraout_EDX;
       }
       else {
@@ -370,9 +368,13 @@ code_?:
       pMVar7 = MVBlueprintBase::MVBlueprintBase_GetChild
                           ((MVBlueprintBase *)this,StringLiteral_JetPackCubeModel,(MethodInfo *)0x0)
       ;
-      if (pMVar7 == (MVWorldObjectClient *)0x0) {
-        pMVar7 = (MVWorldObjectClient *)0x0;
-code_?:
+      if ((pMVar7 == (MVWorldObjectClient *)0x0) ||
+         (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
+           (pMVar7->klass->_1).naturalAligment &&
+          ((MVCubeModelInstance__Class *)
+           (pMVar7->klass->_1).typeHierarchy
+           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
+           TypeInfo__MVCubeModelInstance)))) {
         pJVar8 = (this->fields).jetPackParameters;
         if ((pJVar8 == (JetPackParameters *)0x0) ||
            (pIVar9 = (pJVar8->fields).lowerCubeConstraint, pIVar9 == (Int32__Array *)0x0))
@@ -523,12 +525,6 @@ code_?:
         }
         goto code_?;
       }
-      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
-           (pMVar7->klass->_1).naturalAligment) &&
-         ((MVCubeModelInstance__Class *)
-          (pMVar7->klass->_1).typeHierarchy
-          [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] == TypeInfo__MVCubeModelInstance
-         )) goto code_?;
       goto code_?;
     }
     pMVar22 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
@@ -654,58 +650,58 @@ void Assembly-CSharp.dll::MVJetPack::MVJetPack_OnIsDeadChange
     pGVar3 = (this->fields)._._._._.gameObject;
     if ((pGVar3 != (GameObject *)0x0) &&
        (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+                            (pGVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
       pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffa0,pTVar4,(MethodInfo *)0x0);
-      VStack_6.x = pQVar5->x;
-      VStack_6.y = pQVar5->y;
-      VStack_6.z = pQVar5->z;
-      fStack_7 = pQVar5->w;
+                          ((Quaternion *)&stack0xffffffb0,pTVar4,(MethodInfo *)0x0);
+      fVar6 = pQVar5->x;
+      fVar7 = pQVar5->y;
+      fVar8 = pQVar5->z;
+      fVar9 = pQVar5->w;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      rotation.y = VStack_6.y;
-      rotation.x = VStack_6.x;
-      rotation.z = VStack_6.z;
-      rotation.w = fStack_7;
-      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                         (&VStack_6,rotation,
-                          TypeInfo__UnityEngine__Vector3->static_fields->backVector,
-                          (MethodInfo *)0x0);
-      uStack_9._0_4_ = pVVar8->x;
-      uStack_9._4_4_ = pVVar8->y;
-      fStack_10 = pVVar8->z;
+      rotation.y = fVar7;
+      rotation.x = fVar6;
+      rotation.z = fVar8;
+      rotation.w = fVar9;
+      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          (&VStack_11,rotation,
+                           TypeInfo__UnityEngine__Vector3->static_fields->backVector,
+                           (MethodInfo *)0x0);
+      uStack_12._0_4_ = pVVar10->x;
+      uStack_12._4_4_ = pVVar10->y;
+      fStack_13 = pVVar10->z;
       if ((this->fields)._.localObjects == (MVVehicleBase_LocalObjectsBase *)0x0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar11 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar11 != (PrefabPool *)0x0) {
-          pEStack_12 = (ExplosionEvent *)(pPVar11->fields).particleExplosion;
+        pPVar14 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar14 != (PrefabPool *)0x0) {
+          pEStack_15 = (ExplosionEvent *)(pPVar14->fields).particleExplosion;
           pGVar3 = (this->fields)._._._._.gameObject;
           if ((pGVar3 != (GameObject *)0x0) &&
-             (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (pGVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
-            pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               (&VStack_13,pTVar4,(MethodInfo *)0x0);
-            VStack_6.y = pVVar8->x;
-            VStack_6.z = pVVar8->y;
-            fStack_7 = pVVar8->z;
-            VStack_13.x = (float)uStack_9 + VStack_6.y;
-            VStack_13.y = uStack_9._4_4_ + VStack_6.z;
-            VStack_13.z = fStack_10 + fStack_7;
+             (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar3,(MethodInfo *)0x0),
+             pTVar4 != (Transform *)0x0)) {
+            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffb0,pTVar4,(MethodInfo *)0x0);
+            uVar16 = pVVar10->x;
+            uVar17 = pVVar10->y;
+            VStack_11.x = (float)uStack_12 + (float)uVar16;
+            VStack_11.y = uStack_12._4_4_ + (float)uVar17;
+            VStack_11.z = fStack_13 + pVVar10->z;
             if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
                 cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            position_00.y = VStack_13.y;
-            position_00.x = VStack_13.x;
-            position_00.z = VStack_13.z;
+            position_00.y = VStack_11.y;
+            position_00.x = VStack_11.x;
+            position_00.z = VStack_11.z;
             SharedWorldObjectGameplayFunctions+Explosion::
             SharedWorldObjectGameplayFunctions_Explosion_Explode
-                      ((ParticleSystem *)pEStack_12,position_00,10.0,5.0,1000.0,1,
+                      ((ParticleSystem *)pEStack_15,position_00,10.0,5.0,1000.0,1,
                        (ExplosionEvent *)0x0,ignoreIDs,(MethodInfo *)0x0);
             return;
           }
@@ -715,52 +711,50 @@ void Assembly-CSharp.dll::MVJetPack::MVJetPack_OnIsDeadChange
         pGVar3 = (this->fields)._._._._.gameObject;
         if ((pGVar3 != (GameObject *)0x0) &&
            (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
-          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_6,pTVar4,(MethodInfo *)0x0);
-          VStack_13.x = pVVar8->x;
-          VStack_13.y = pVVar8->y;
-          VStack_13.z = pVVar8->z;
-          fVar14 = (float)uStack_9 + VStack_13.x;
-          pPStack_15 = (ParticleSystem *)(uStack_9._4_4_ + VStack_13.y);
-          fStack_7 = fStack_10 + VStack_13.z;
-          pEStack_12 = (ExplosionEvent *)
+                                (pGVar3,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xffffffb0,pTVar4,(MethodInfo *)0x0);
+          VStack_11.x = pVVar10->x;
+          VStack_11.y = pVVar10->y;
+          fVar6 = (float)uStack_12 + VStack_11.x;
+          pPStack_18 = (ParticleSystem *)(uStack_12._4_4_ + VStack_11.y);
+          VStack_11.z = fStack_13 + pVVar10->z;
+          pEStack_15 = (ExplosionEvent *)
                        func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
-          worldPosition.y = (float)pPStack_15;
-          worldPosition.x = fVar14;
-          worldPosition.z = fStack_7;
+          worldPosition.y = (float)pPStack_18;
+          worldPosition.x = fVar6;
+          worldPosition.z = VStack_11.z;
           MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::ExplosionEvent__ctor_2
-                    (pEStack_12,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
+                    (pEStack_15,RuntimeEventType__Enum_Bazooka,worldPosition,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?(&TypeInfo__PrefabPool);
             cRam_? = '\x01';
           }
-          pPVar11 = TypeInfo__PrefabPool->static_fields->instance;
-          if (pPVar11 != (PrefabPool *)0x0) {
-            pPStack_15 = (pPVar11->fields).particleExplosion;
+          pPVar14 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar14 != (PrefabPool *)0x0) {
+            pPStack_18 = (pPVar14->fields).particleExplosion;
             pGVar3 = (this->fields)._._._._.gameObject;
             if ((pGVar3 != (GameObject *)0x0) &&
                (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar3,(MethodInfo *)0x0),
+                          GameObject_get_transform(pGVar3,(MethodInfo *)0x0),
                pTVar4 != (Transform *)0x0)) {
-              pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 (&VStack_6,pTVar4,(MethodInfo *)0x0);
-              VStack_13.x = pVVar8->x;
-              VStack_13.y = pVVar8->y;
-              VStack_13.z = pVVar8->z;
-              VStack_6.y = (float)uStack_9 + VStack_13.x;
-              VStack_6.z = uStack_9._4_4_ + VStack_13.y;
-              fStack_7 = fStack_10 + VStack_13.z;
+              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                  ((Vector3 *)&stack0xffffffb0,pTVar4,(MethodInfo *)0x0);
+              uVar19 = pVVar10->x;
+              uVar20 = pVVar10->y;
+              VStack_11.x = (float)uStack_12 + (float)uVar19;
+              VStack_11.y = uStack_12._4_4_ + (float)uVar20;
+              VStack_11.z = fStack_13 + pVVar10->z;
               if ((TypeInfo__SharedWorldObjectGameplayFunctions__Explosion->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              position.y = VStack_6.z;
-              position.x = VStack_6.y;
-              position.z = fStack_7;
+              position.y = VStack_11.y;
+              position.x = VStack_11.x;
+              position.z = VStack_11.z;
               SharedWorldObjectGameplayFunctions+Explosion::
               SharedWorldObjectGameplayFunctions_Explosion_Explode
-                        (pPStack_15,position,10.0,5.0,1000.0,0,pEStack_12,ignoreIDs,
+                        (pPStack_18,position,10.0,5.0,1000.0,0,pEStack_15,ignoreIDs,
                          (MethodInfo *)0x0);
               return;
             }
@@ -774,8 +768,8 @@ void Assembly-CSharp.dll::MVJetPack::MVJetPack_OnIsDeadChange
   pBVar1 = extraout_EDX;
 code_?:
   func_?(isDead,pBVar1);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

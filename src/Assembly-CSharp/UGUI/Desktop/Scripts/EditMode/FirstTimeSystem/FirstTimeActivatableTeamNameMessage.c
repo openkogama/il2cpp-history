@@ -169,13 +169,9 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                             ((this->fields).inventoryButton,(MethodInfo *)0x0);
           bVar8 = 0;
           if (1 < iVar6) {
-            bVar8 = bVar7;
+            bVar8 = bVar7 & 0x10 & bVar1;
           }
-          bVar7 = 0;
-          if (bVar3 == 0) {
-            bVar7 = bVar8 & 0x10 & bVar1;
-          }
-          return bVar7;
+          return bVar8 & (bVar3 ^ 1);
         }
       }
     }

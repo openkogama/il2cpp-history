@@ -29,18 +29,18 @@ Bounds * Assembly-CSharp.dll::MVLogicObject::MVLogicObject_ComputeLocalBounds
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  fVar4 = _UNK_?;
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_5._0_4_ = (pVVar1->zeroVector).x;
-  uStack_5._4_4_ = (pVVar1->zeroVector).y;
-  fStack_6 = (pVVar1->zeroVector).z;
+  uStack_4._0_4_ = (pVVar1->zeroVector).x;
+  uStack_4._4_4_ = (pVVar1->zeroVector).y;
+  fStack_5 = (pVVar1->zeroVector).z;
   (__return_storage_ptr__->m_Center).x = (float)(undefined4)uStack_2;
+  fVar6 = _UNK_?;
   (__return_storage_ptr__->m_Center).y = uStack_2._4_4_;
-  fStack_6 = fStack_6 * fVar4;
+  fStack_5 = fStack_5 * _UNK_?;
   (__return_storage_ptr__->m_Center).z = fVar3;
-  (__return_storage_ptr__->m_Extents).x = (float)(undefined4)uStack_5 * fVar4;
-  (__return_storage_ptr__->m_Extents).y = (float)uStack_5._4_4_ * fVar4;
-  (__return_storage_ptr__->m_Extents).z = fStack_6;
+  (__return_storage_ptr__->m_Extents).x = (float)(undefined4)uStack_4 * fVar6;
+  (__return_storage_ptr__->m_Extents).y = (float)uStack_4._4_4_ * fVar6;
+  (__return_storage_ptr__->m_Extents).z = fStack_5;
   if (meshRenderers == (Renderer__Array *)0x0) {
 code_?:
     func_?();
@@ -64,15 +64,15 @@ code_?:
     pBVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
                        (&BStack_9,meshRenderers->vector[0],(MethodInfo *)0x0);
     fVar3 = (pBVar8->m_Center).y;
-    fVar4 = (pBVar8->m_Extents).x;
+    fVar6 = (pBVar8->m_Extents).x;
     fVar10 = (pBVar8->m_Extents).y;
     fVar11 = (pBVar8->m_Extents).z;
-    fStack_6 = (pBVar8->m_Center).z - origin.z;
+    fStack_5 = (pBVar8->m_Center).z - origin.z;
     ppRStack_12 = meshRenderers->vector;
     (__return_storage_ptr__->m_Center).x = (pBVar8->m_Center).x - origin.x;
     (__return_storage_ptr__->m_Center).y = fVar3 - origin.y;
-    (__return_storage_ptr__->m_Center).z = fStack_6;
-    (__return_storage_ptr__->m_Extents).x = fVar4;
+    (__return_storage_ptr__->m_Center).z = fStack_5;
+    (__return_storage_ptr__->m_Extents).x = fVar6;
     (__return_storage_ptr__->m_Extents).y = fVar10;
     (__return_storage_ptr__->m_Extents).z = fVar11;
     for (uStack_13 = 1; ppRStack_12 = ppRStack_12 + 1,
@@ -82,7 +82,7 @@ code_?:
       pBVar8 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
                          (&BStack_9,*ppRStack_12,(MethodInfo *)0x0);
       fVar3 = (pBVar8->m_Extents).y;
-      fVar4 = (pBVar8->m_Extents).z;
+      fVar6 = (pBVar8->m_Extents).z;
       fStack_14 = (pBVar8->m_Center).y;
       BStack_9.m_Center.y = (pBVar8->m_Center).z;
       fStack_15 = (pBVar8->m_Extents).x;
@@ -90,10 +90,10 @@ code_?:
       fStack_16 = fStack_14 - origin.y;
       BStack_9.m_Center.x = BStack_9.m_Center.y - origin.z;
       uStack_2 = CONCAT44(fVar10,(undefined4)uStack_2);
-      fStack_6 = BStack_9.m_Center.x - fVar4;
+      fStack_5 = BStack_9.m_Center.x - fVar6;
       point.y = fStack_16 - fVar3;
       point.x = fVar10 - fStack_15;
-      point.z = fStack_6;
+      point.z = fStack_5;
       BStack_9.m_Center.z = BStack_9.m_Center.y;
       BStack_9.m_Extents.x = BStack_9.m_Center.y;
       fStack_17 = fStack_14;
@@ -103,7 +103,7 @@ code_?:
       fStack_21 = fStack_15;
       UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
                 (__return_storage_ptr__,point,(MethodInfo *)0x0);
-      fStack_22 = fVar4 + BStack_9.m_Center.x;
+      fStack_22 = fVar6 + BStack_9.m_Center.x;
       point_00.y = fVar3 + fStack_16;
       point_00.x = fStack_15 + uStack_2._4_4_;
       point_00.z = fStack_22;
@@ -544,17 +544,17 @@ void Assembly-CSharp.dll::MVLogicObject::MVLogicObject__ctor
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar4 = (pVVar1->oneVector).x;
   uVar5 = (pVVar1->oneVector).y;
-  fVar6 = (pVVar1->oneVector).z * _UNK_?;
-  fVar7 = (float)uVar4 * _UNK_?;
-  fVar8 = (float)uVar5 * _UNK_?;
+  fVar6 = (float)uVar4 * _UNK_?;
+  fVar7 = (float)uVar5 * _UNK_?;
+  fVar8 = (pVVar1->oneVector).z * _UNK_?;
   fStack_9 = (float)uVar2;
   puStack_10 = SUB84(uVar2,4);
   (this->fields).localBounds.m_Center.x = fStack_9;
   (this->fields).localBounds.m_Center.y = (float)puStack_10;
   (this->fields).localBounds.m_Center.z = fVar3;
-  (this->fields).localBounds.m_Extents.x = fVar7;
-  (this->fields).localBounds.m_Extents.y = fVar8;
-  (this->fields).localBounds.m_Extents.z = fVar6;
+  (this->fields).localBounds.m_Extents.x = fVar6;
+  (this->fields).localBounds.m_Extents.y = fVar7;
+  (this->fields).localBounds.m_Extents.z = fVar8;
   _fStack_28 = uVar2;
   if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVWorldObjectClient);

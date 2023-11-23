@@ -659,7 +659,7 @@ bool Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op_Inequality
     func_?(TypeInfo__ObscuredIntVector);
   }
   bVar2 = ObscuredIntVector_Equals_1(&OStack_1,b,(MethodInfo *)0x0);
-  return bVar2 == 0;
+  return bVar2 ^ 1;
 }
 
 

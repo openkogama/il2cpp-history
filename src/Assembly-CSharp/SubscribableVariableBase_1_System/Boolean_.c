@@ -289,7 +289,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
     }
     bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                       ((Boolean *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -326,7 +326,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
     }
     bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                       ((Boolean *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -370,7 +370,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
       }
       bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                         ((Boolean *)&a->fields,obj,pIVar1->rgctx_data[9].method);
-      return bVar3 == 0;
+      return bVar3 ^ 1;
     }
   }
   func_?();

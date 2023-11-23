@@ -1633,10 +1633,10 @@ void Assembly-CSharp.dll::TierUnlockDetailsPopup::TierUnlockDetailsPopup_UpdateT
           key = key - 1;
         } while (0 < (int)key);
       }
-      if ((float)(int)pOVar3 < 0.0) {
-        pOVar3 = (Object__Class *)0x0;
-      }
       IStack_1.m_value = (int32_t)pOVar3;
+      if ((float)(int)pOVar3 < 0.0) {
+        IStack_1.m_value = 0;
+      }
       if (this_02 !=
           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)0x0)
       {

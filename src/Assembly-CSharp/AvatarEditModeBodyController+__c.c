@@ -39,7 +39,7 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
        ((MVBody__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
         == TypeInfo__MVBody)) {
       bVar1 = MVBody::MVBody_get_IsPlayerBody((MVBody *)wo,(MethodInfo *)0x0);
-      return bVar1 == 0;
+      return bVar1 ^ 1;
     }
   }
   return 0;

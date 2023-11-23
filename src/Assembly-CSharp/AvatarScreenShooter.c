@@ -124,14 +124,15 @@ code_?:
         for (; (int)uVar4 < (int)pOVar3->max_length; uVar4 = uVar4 + 1) {
           if (pOVar3->max_length <= uVar4) goto code_?;
           if ((Component *)*ppOVar5 == (Component *)0x0) goto code_?;
-          this = (AvatarScreenShooter *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)*ppOVar5,(MethodInfo *)0x0);
+          pOVar3 = (Object__Array *)&UNK_?;
+          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)*ppOVar5,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
+            pGVar1 = (GameObject *)&UNK_?;
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)this,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar1,(MethodInfo *)0x0);
           ppOVar5 = ppOVar5 + 1;
         }
       }

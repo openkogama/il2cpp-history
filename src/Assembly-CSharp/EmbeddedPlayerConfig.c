@@ -30,7 +30,7 @@ code_?:
         return 1;
       }
       if ((pSVar1->max_length <= uVar2) ||
-         (uVar4 = (uVar2 - pSVar1->max_length) + applicationHost->max_length,
+         (uVar4 = (applicationHost->max_length - pSVar1->max_length) + uVar2,
          applicationHost->max_length <= uVar4)) break;
       if (*ppSVar3 == (String *)0x0) goto code_?;
       bVar5 = mscorlib.dll::System::String::String_Equals_1
@@ -107,7 +107,8 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_ForceEmbedS
       uVar9._3_1_ = (this->fields).kogamaDefaultData.hideGoldShop;
       uVar10._0_1_ = (this->fields).kogamaDefaultData.allowInHouseAds;
       uVar10._1_1_ = (this->fields).kogamaDefaultData.removeFullscreenButton;
-      uVar10._2_2_ = *(undefined2 *)&(this->fields).kogamaDefaultData.field_0x12;
+      uVar10._2_1_ = (this->fields).kogamaDefaultData.hideSignUp;
+      uVar10._3_1_ = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
 code_?:
       (this->fields).currentSite.sites = pLVar6;
       (this->fields).currentSite.siteEnum = iVar7;
@@ -121,7 +122,8 @@ code_?:
       (this->fields).currentSite.hideGoldShop = (char)((uint)uVar9 >> 0x18);
       (this->fields).currentSite.allowInHouseAds = (char)uVar10;
       (this->fields).currentSite.removeFullscreenButton = (char)((uint)uVar10 >> 8);
-      *(short *)&(this->fields).currentSite.field_0x12 = (short)((uint)uVar10 >> 0x10);
+      (this->fields).currentSite.hideSignUp = (char)((uint)uVar10 >> 0x10);
+      (this->fields).currentSite.noPlayButtonVideoIcon = (char)((uint)uVar10 >> 0x18);
       func_?();
 code_?:
       *unaff_FS_OFFSET = (int)pLStack_3;
@@ -206,7 +208,8 @@ Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteDa
     bVar9 = (this->fields).currentSite.hideGoldShop;
     bVar10 = (this->fields).currentSite.allowInHouseAds;
     bVar11 = (this->fields).currentSite.removeFullscreenButton;
-    uVar12 = *(undefined2 *)&(this->fields).currentSite.field_0x12;
+    bVar12 = (this->fields).currentSite.hideSignUp;
+    bVar13 = (this->fields).currentSite.noPlayButtonVideoIcon;
     __return_storage_ptr__->sites = (this->fields).currentSite.sites;
     __return_storage_ptr__->siteEnum = iVar1;
     __return_storage_ptr__->showTouristPromotion = bVar2;
@@ -219,7 +222,8 @@ Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteDa
     __return_storage_ptr__->hideGoldShop = bVar9;
     __return_storage_ptr__->allowInHouseAds = bVar10;
     __return_storage_ptr__->removeFullscreenButton = bVar11;
-    *(undefined2 *)&__return_storage_ptr__->field_0x12 = uVar12;
+    __return_storage_ptr__->hideSignUp = bVar12;
+    __return_storage_ptr__->noPlayButtonVideoIcon = bVar13;
     return __return_storage_ptr__;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -238,7 +242,8 @@ Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteDa
   bVar9 = (this->fields).kogamaDefaultData.hideGoldShop;
   bVar10 = (this->fields).kogamaDefaultData.allowInHouseAds;
   bVar11 = (this->fields).kogamaDefaultData.removeFullscreenButton;
-  uVar12 = *(undefined2 *)&(this->fields).kogamaDefaultData.field_0x12;
+  bVar12 = (this->fields).kogamaDefaultData.hideSignUp;
+  bVar13 = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
   __return_storage_ptr__->sites = (this->fields).kogamaDefaultData.sites;
   __return_storage_ptr__->siteEnum = iVar1;
   __return_storage_ptr__->showTouristPromotion = bVar2;
@@ -251,7 +256,8 @@ Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteDa
   __return_storage_ptr__->hideGoldShop = bVar9;
   __return_storage_ptr__->allowInHouseAds = bVar10;
   __return_storage_ptr__->removeFullscreenButton = bVar11;
-  *(undefined2 *)&__return_storage_ptr__->field_0x12 = uVar12;
+  __return_storage_ptr__->hideSignUp = bVar12;
+  __return_storage_ptr__->noPlayButtonVideoIcon = bVar13;
   return __return_storage_ptr__;
 }
 
@@ -263,6 +269,9 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&StringLiteral_No_embedded_site_set__starting_a);
+    func_?(&StringLiteral_Embedded_site_set_to_);
     func_?(&StringLiteral_kogama_com);
     cRam_? = '\x01';
   }
@@ -277,7 +286,8 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
   bVar9 = (this->fields).kogamaDefaultData.hideGoldShop;
   bVar10 = (this->fields).kogamaDefaultData.allowInHouseAds;
   bVar11 = (this->fields).kogamaDefaultData.removeFullscreenButton;
-  uVar12 = *(undefined2 *)&(this->fields).kogamaDefaultData.field_0x12;
+  bVar12 = (this->fields).kogamaDefaultData.hideSignUp;
+  bVar13 = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
   (this->fields).currentSite.sites = (this->fields).kogamaDefaultData.sites;
   (this->fields).currentSite.siteEnum = iVar1;
   (this->fields).currentSite.showTouristPromotion = bVar2;
@@ -290,10 +300,57 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_Initialize
   (this->fields).currentSite.hideGoldShop = bVar9;
   (this->fields).currentSite.allowInHouseAds = bVar10;
   (this->fields).currentSite.removeFullscreenButton = bVar11;
-  *(undefined2 *)&(this->fields).currentSite.field_0x12 = uVar12;
+  (this->fields).currentSite.hideSignUp = bVar12;
+  (this->fields).currentSite.noPlayButtonVideoIcon = bVar13;
   func_?(&(this->fields).currentSite,0);
-  EmbeddedPlayerConfig_InitializeWithURL(this,StringLiteral_kogama_com,(MethodInfo *)0x0);
-  (this->fields).initialized = 1;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MVGameControllerBase);
+    cRam_? = '\x01';
+  }
+  pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar14 != (GameSessionData *)0x0) {
+    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                       ((pGVar14->fields).embeddedSite,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)StringLiteral_No_embedded_site_set__starting_a,(MethodInfo *)0x0);
+      EmbeddedPlayerConfig_InitializeWithURL(this,StringLiteral_kogama_com,(MethodInfo *)0x0);
+      (this->fields).initialized = 1;
+      return;
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar14 != (GameSessionData *)0x0) {
+      message = mscorlib.dll::System::String::String_Concat_3
+                          (StringLiteral_Embedded_site_set_to_,(pGVar14->fields).embeddedSite,
+                           (MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)message,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pGVar14 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar14 != (GameSessionData *)0x0) {
+        EmbeddedPlayerConfig_InitializeWithURL(this,(pGVar14->fields).embeddedSite,(MethodInfo *)0x0)
+        ;
+        (this->fields).initialized = 1;
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -355,7 +412,8 @@ void Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_InitializeW
       uVar9._3_1_ = (this->fields).kogamaDefaultData.hideGoldShop;
       uVar10._0_1_ = (this->fields).kogamaDefaultData.allowInHouseAds;
       uVar10._1_1_ = (this->fields).kogamaDefaultData.removeFullscreenButton;
-      uVar10._2_2_ = *(undefined2 *)&(this->fields).kogamaDefaultData.field_0x12;
+      uVar10._2_1_ = (this->fields).kogamaDefaultData.hideSignUp;
+      uVar10._3_1_ = (this->fields).kogamaDefaultData.noPlayButtonVideoIcon;
 code_?:
       (this->fields).currentSite.sites = pLVar6;
       (this->fields).currentSite.siteEnum = iVar7;
@@ -369,7 +427,8 @@ code_?:
       (this->fields).currentSite.hideGoldShop = (char)((uint)uVar9 >> 0x18);
       (this->fields).currentSite.allowInHouseAds = (char)uVar10;
       (this->fields).currentSite.removeFullscreenButton = (char)((uint)uVar10 >> 8);
-      *(short *)&(this->fields).currentSite.field_0x12 = (short)((uint)uVar10 >> 0x10);
+      (this->fields).currentSite.hideSignUp = (char)((uint)uVar10 >> 0x10);
+      (this->fields).currentSite.noPlayButtonVideoIcon = (char)((uint)uVar10 >> 0x18);
       func_?();
 code_?:
       *unaff_FS_OFFSET = (int)pLStack_3;

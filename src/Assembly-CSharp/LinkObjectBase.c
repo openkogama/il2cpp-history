@@ -34,8 +34,8 @@ bool Assembly-CSharp.dll::LinkObjectBase::LinkObjectBase_UpdatePositions
   uVar10 = (this->fields).endPos.x;
   uVar11 = (this->fields).endPos.y;
   fVar3 = (this->fields).endPos.z - newEndPos.z;
-  fVar3 = ((float)uVar11 - newEndPos.y) * ((float)uVar11 - newEndPos.y) +
-          ((float)uVar10 - newEndPos.x) * ((float)uVar10 - newEndPos.x) + fVar3 * fVar3;
+  fVar3 = ((float)uVar10 - newEndPos.x) * ((float)uVar10 - newEndPos.x) +
+          ((float)uVar11 - newEndPos.y) * ((float)uVar11 - newEndPos.y) + fVar3 * fVar3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';

@@ -31,10 +31,10 @@ code_?:
       fVar7 = _UNK_?;
       if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
         iVar2 = (this->fields).currIndex;
-        fVar8 = (float)dVar3 * fVar5 * _UNK_?;
         (this->fields).currIndex = iVar2 + 1;
         if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
-        func_?(iVar2,CONCAT44((float)dVar4 * fVar5 * fVar7,fVar8),fVar5 * 0.0 * fVar7);
+        func_?(iVar2,CONCAT44((float)dVar4 * fVar5 * fVar7,(float)dVar3 * fVar5 * fVar7),
+                        fVar5 * 0.0 * fVar7);
       }
       index = index + 1;
       fStack_1 = _UNK_? / (float)(this->fields).segments + fStack_1;

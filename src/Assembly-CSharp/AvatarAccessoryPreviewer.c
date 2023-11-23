@@ -37,9 +37,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Cha
   (this->fields).currentAnimation = iVar2;
   if (pLVar1 != (List_1_System_String_ *)0x0) {
     if ((pLVar1->fields)._size <= iVar2) {
-      iVar2 = 1;
+      (this->fields).currentAnimation = 1;
     }
-    (this->fields).currentAnimation = iVar2;
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
                      );
@@ -687,10 +686,10 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Res
     fVar9 = pQVar7->z;
     fVar10 = pQVar7->w;
     if (this_02 != (Transform *)0x0) {
-      value.y = (fVar8 * fVar5 + fVar10 * fVar3 + pQVar7->x * fVar4) - fVar9 * fVar2;
-      value.x = (pQVar7->x * fVar5 + fVar10 * fVar2 + fVar9 * fVar3) - fVar8 * fVar4;
-      value.z = (fVar9 * fVar5 + fVar10 * fVar4 + fVar8 * fVar2) - pQVar7->x * fVar3;
-      value.w = ((fVar10 * fVar5 - pQVar7->x * fVar2) - fVar8 * fVar3) - fVar9 * fVar4;
+      value.y = (fVar3 * fVar10 + fVar8 * fVar5 + fVar4 * pQVar7->x) - fVar9 * fVar2;
+      value.x = (fVar10 * fVar2 + pQVar7->x * fVar5 + fVar9 * fVar3) - fVar8 * fVar4;
+      value.z = (fVar4 * fVar10 + fVar9 * fVar5 + fVar8 * fVar2) - fVar3 * pQVar7->x;
+      value.w = ((fVar10 * fVar5 - fVar2 * pQVar7->x) - fVar8 * fVar3) - fVar4 * fVar9;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (this_02,value,(MethodInfo *)0x0);
       pAVar11 = (this->fields).toPreviewer;
@@ -1086,7 +1085,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                 if (pMVar11 == (Material *)0x0)
                                                 goto code_?;
                                                 pOVar10 = (Object *)0x0;
-                                                pOVar8 = (Object__Array *)&stack0xffffffd0;
+                                                pOVar8 = (Object__Array *)&stack0xffffffc0;
                                                 pCVar14 = UnityEngine.CoreModule.dll::UnityEngine::
                                                           Material::Material_get_color
                                                                     ((Color *)pOVar8,pMVar11,
@@ -1094,6 +1093,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                 fVar15 = pCVar14->r;
                                                 fVar16 = pCVar14->g;
                                                 fVar17 = pCVar14->b;
+                                                fVar18 = 1.0;
                                                 if ((Object *)pOVar8->max_length <= pOVar10)
                                                 goto code_?;
                                                 if ((pMVar11->klass == (Material__Class *)0x0) ||
@@ -1114,7 +1114,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                 value_02.g = fVar16;
                                                 value_02.r = fVar15;
                                                 value_02.b = fVar17;
-                                                value_02.a = 1.0;
+                                                value_02.a = fVar18;
                                                 UnityEngine.CoreModule.dll::UnityEngine::Material::
                                                 Material_set_color(pMVar11,value_02,
                                                                    (MethodInfo *)0x0);
@@ -1126,24 +1126,24 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                           }
                                           pGVar2 = (this->fields).bodyClone;
                                           if (pGVar2 != (GameObject *)0x0) {
-                                            pAVar18 = (Animation *)
+                                            pAVar19 = (Animation *)
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::
                                                       GameObject_GetComponentInChildren_1
                                                                 (pGVar2,
                                                   UnityEngine__Animation_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Animation>__
                                                   );
-                                            (this->fields).goAnimation = pAVar18;
+                                            (this->fields).goAnimation = pAVar19;
                                             func_?();
                                             this_05 = (
                                                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                                   *)(this->fields).animations;
-                                            pAVar18 = (this->fields).goAnimation;
+                                            pAVar19 = (this->fields).goAnimation;
                                             if (this_05 !=
                                                 (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                                  *)0x0) {
                                               fVar15 = (float)(this->fields).currentAnimation;
-                                              puVar19 = &UNK_?;
+                                              puVar20 = &UNK_?;
                                               animation = mscorlib.dll::System::Collections::Generic
                                                           ::List`1[System::Text::RegularExpressions
                                                           ::RegexCharClass+SingleRange]::
@@ -1153,39 +1153,39 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                                                                                           
                                                   MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
                                                   );
-                                              if (pAVar18 != (Animation *)0x0) {
+                                              if (pAVar19 != (Animation *)0x0) {
                                                 UnityEngine.AnimationModule.dll::UnityEngine::
                                                 Animation::Animation_Play_2
-                                                          (pAVar18,(String *)animation,
+                                                          (pAVar19,(String *)animation,
                                                            (MethodInfo *)0x0);
-                                                pAVar18 = (this->fields).goAnimation;
-                                                if (pAVar18 != (Animation *)0x0) {
-                                                  pAVar20 = (ActivateOnAnimationBase__Array *)
+                                                pAVar19 = (this->fields).goAnimation;
+                                                if (pAVar19 != (Animation *)0x0) {
+                                                  pAVar21 = (ActivateOnAnimationBase__Array *)
                                                             UnityEngine.CoreModule.dll::UnityEngine
                                                             ::Component::
                                                             Component_GetComponentsInChildren
-                                                                      ((Component *)pAVar18,
+                                                                      ((Component *)pAVar19,
                                                                                                                                               
                                                   ActivateOnAnimationBase__MethodInfo__UnityEngine__Component__GetComponentsInChildren<ActivateOnAnimationBase>______
                                                   );
-                                                  (this->fields).OnAnimationActivators = pAVar20;
+                                                  (this->fields).OnAnimationActivators = pAVar21;
                                                   func_?();
-                                                  pAVar20 = (this->fields).OnAnimationActivators;
+                                                  pAVar21 = (this->fields).OnAnimationActivators;
                                                   uVar9 = 0;
-                                                  if (pAVar20 !=
+                                                  if (pAVar21 !=
                                                       (ActivateOnAnimationBase__Array *)0x0) {
                                                     pOVar10 = (Object *)0x10;
-                                                    while ((int)uVar9 < (int)pAVar20->max_length) {
-                                                      pAVar20 = (this->fields).OnAnimationActivators
+                                                    while ((int)uVar9 < (int)pAVar21->max_length) {
+                                                      pAVar21 = (this->fields).OnAnimationActivators
                                                       ;
-                                                      if (pAVar20 ==
+                                                      if (pAVar21 ==
                                                           (ActivateOnAnimationBase__Array *)0x0)
                                                       goto code_?;
-                                                      if (pAVar20->max_length <= uVar9)
+                                                      if (pAVar21->max_length <= uVar9)
                                                       goto code_?;
-                                                      pOVar21 = *(Object **)
-                                                                 ((int)&pOVar10[-2].klass +
-                                                                 (int)pAVar20->vector);
+                                                      pOVar22 = *(Object **)
+                                                                 ((int)pAVar21->vector +
+                                                                 (int)(pOVar10 + -2));
                                                       this_01 = (
                                                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                                   *)(this->fields).animations;
@@ -1201,13 +1201,13 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                             (this_01,(this->fields).currentAnimation
                                                              ,
                                                   MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                                                  ), pOVar21 == (Object *)0x0))
+                                                  ), pOVar22 == (Object *)0x0))
                                                   goto code_?;
-                                                  (*(code *)pOVar21->klass[1]._0.namespaze)();
+                                                  (*(code *)pOVar22->klass[1]._0.namespaze)();
                                                   uVar9 = uVar9 + 1;
-                                                  pAVar20 = (this->fields).OnAnimationActivators;
+                                                  pAVar21 = (this->fields).OnAnimationActivators;
                                                   pOVar10 = (Object *)&pOVar10->monitor;
-                                                  if (pAVar20 ==
+                                                  if (pAVar21 ==
                                                       (ActivateOnAnimationBase__Array *)0x0)
                                                   goto code_?;
                                                   }
@@ -1228,75 +1228,75 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                   pOVar10 = (Object *)
                                                             (this->fields).previewDimensionsX;
                                                   pAVar6 = (this->fields).toPreviewer;
-                                                  pOVar21 = (Object *)
+                                                  pOVar22 = (Object *)
                                                             (this->fields).previewDimensionsY;
-                                                  pMVar22 = MVGameControllerBase::
+                                                  pMVar23 = MVGameControllerBase::
                                                             MVGameControllerBase_get_LocalPlayer
                                                                       ((MethodInfo *)0x0);
-                                                  if ((pMVar22 != (MVLocalPlayer *)0x0) &&
-                                                     (pMVar23 = MVLocalPlayer::
+                                                  if ((pMVar23 != (MVLocalPlayer *)0x0) &&
+                                                     (pMVar24 = MVLocalPlayer::
                                                                 MVLocalPlayer_get_Body
-                                                                          (pMVar22,(MethodInfo *)0x0
+                                                                          (pMVar23,(MethodInfo *)0x0
                                                                           ),
-                                                     pMVar23 != (MVBody *)0x0)) {
+                                                     pMVar24 != (MVBody *)0x0)) {
                                                     layersToRender =
                                                          (Object *)
-                                                         (pMVar23->fields)._._._.previewLayerMask;
+                                                         (pMVar24->fields)._._._.previewLayerMask;
                                                     pTVar4 = (this->fields).avatarResetToTransform;
-                                                    uVar24 = 0xbf00000000000000;
+                                                    uVar25 = 0;
+                                                    uVar26 = 0xbf000000;
                                                     fVar16 = -1.0;
+                                                    pMVar27 = (MonitorData *)0x42c80000;
+                                                    pIVar28 = (Il2CppArrayBounds *)0x42c80000;
                                                     fVar17 = 100.0;
-                                                    fVar25 = 100.0;
-                                                    fVar26 = 100.0;
-                                                    pMVar22 = MVGameControllerBase::
+                                                    pMVar23 = MVGameControllerBase::
                                                               MVGameControllerBase_get_LocalPlayer
                                                                         ((MethodInfo *)0x0);
-                                                    if ((pMVar22 != (MVLocalPlayer *)0x0) &&
-                                                       (pMVar23 = MVLocalPlayer::
+                                                    if ((pMVar23 != (MVLocalPlayer *)0x0) &&
+                                                       (pMVar24 = MVLocalPlayer::
                                                                   MVLocalPlayer_get_Body
-                                                                            (pMVar22,(MethodInfo *)
+                                                                            (pMVar23,(MethodInfo *)
                                                                                      0x0),
                                                        pAVar6 != (AvatarPreviewer *)0x0)) {
-                                                      previewPosition.y = fVar25;
-                                                      previewPosition.x = fVar17;
+                                                      previewPosition.y = (float)pIVar28;
+                                                      previewPosition.x = (float)pMVar27;
+                                                      cameraOffset.y = (float)uVar26;
+                                                      cameraOffset.x = (float)uVar25;
                                                       cameraOffset.z = fVar16;
-                                                      cameraOffset.x = (float)(int)uVar24;
-                                                      cameraOffset.y =
-                                                           (float)(int)((ulonglong)uVar24 >> 0x20);
-                                                      previewPosition.z = fVar26;
+                                                      previewPosition.z = fVar17;
                                                       AvatarPreviewer::AvatarPreviewer_Initialize
                                                                 (pAVar6,(int32_t)pOVar10,
-                                                                 (int32_t)pOVar21,
+                                                                 (int32_t)pOVar22,
                                                                  CameraClearFlags__Enum_Color,
                                                                  (LayerFlags__Enum)layersToRender,
                                                                  cameraOffset,pTVar4,
                                                                  previewPosition,
                                                                                                                                   
                                                   StringLiteral_Avatar_accessory_preview,
-                                                  (MVWorldObjectClient *)pMVar23,
+                                                  (MVWorldObjectClient *)pMVar24,
                                                   (this->fields).bodyClone,
                                                   (Vector3)ZEXT812(0x41700000),(MethodInfo *)0x0);
                                                   pAVar6 = (this->fields).toPreviewer;
                                                   if (((pAVar6 != (AvatarPreviewer *)0x0) &&
-                                                      (pCVar27 = (pAVar6->fields).previewCam,
-                                                      pCVar27 != (Camera *)0x0)) &&
+                                                      (pCVar29 = (pAVar6->fields).previewCam,
+                                                      pCVar29 != (Camera *)0x0)) &&
                                                      (pTVar4 = UnityEngine.CoreModule.dll::
                                                                 UnityEngine::Component::
                                                                 Component_get_transform
-                                                                          ((Component *)pCVar27,
+                                                                          ((Component *)pCVar29,
                                                                            (MethodInfo *)0x0),
                                                      pTVar4 != (Transform *)0x0)) {
-                                                    pVVar28 = UnityEngine.CoreModule.dll::
+                                                    pVVar30 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
                                                               Transform_get_position
                                                                         ((Vector3 *)&stack0xffffffc0
                                                                          ,pTVar4,(MethodInfo *)0x0)
                                                     ;
-                                                    uVar29 = pVVar28->x;
-                                                    uVar30 = pVVar28->y;
-                                                    value.y = (float)uVar30 + _UNK_?;
-                                                    value.x = (float)uVar29 + 0.0;
-                                                    value.z = pVVar28->z + 0.0;
+                                                    uVar31 = pVVar30->x;
+                                                    uVar32 = pVVar30->y;
+                                                    value.y = (float)uVar32 + _UNK_?;
+                                                    value.x = (float)uVar31 + 0.0;
+                                                    value.z = pVVar30->z + 0.0;
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     Transform::Transform_set_position
                                                               (pTVar4,value,(MethodInfo *)0x0);
@@ -1308,7 +1308,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                                             (pGVar2,(MethodInfo *)
                                                                                      0x0),
                                                        pTVar4 != (Transform *)0x0)) {
-                                                      value_00.y = (float)puVar19;
+                                                      value_00.y = (float)puVar20;
                                                       value_00.x = (float)puVar5;
                                                       value_00.z = (float)this_05;
                                                       value_00.w = fVar15;
@@ -1318,12 +1318,12 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                       ;
                                                       pAVar6 = (this->fields).toPreviewer;
                                                       if ((pAVar6 != (AvatarPreviewer *)0x0) &&
-                                                         (pCVar27 = (pAVar6->fields).previewCam,
-                                                         pCVar27 != (Camera *)0x0)) {
+                                                         (pCVar29 = (pAVar6->fields).previewCam,
+                                                         pCVar29 != (Camera *)0x0)) {
                                                         fVar15 = UnityEngine.CoreModule.dll::
                                                                  UnityEngine::Camera::
                                                                  Camera_get_fieldOfView
-                                                                           (pCVar27,(MethodInfo *)0x0
+                                                                           (pCVar29,(MethodInfo *)0x0
                                                                            );
                                                         pGVar2 = (this->fields).bodyClone;
                                                         (this->fields).startFov = fVar15;
@@ -1378,18 +1378,18 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_Set
                                                              ::GameObject::GameObject_get_transform
                                                                        (pGVar2,(MethodInfo *)0x0),
                                                   this_04 != (Transform *)0x0)) {
-                                                    pVVar28 = UnityEngine.CoreModule.dll::
+                                                    pVVar30 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
                                                               Transform_get_position
                                                                         ((Vector3 *)&stack0xffffffc0
                                                                          ,this_04,(MethodInfo *)0x0)
                                                     ;
-                                                    uVar31 = pVVar28->x;
-                                                    uVar32 = pVVar28->y;
+                                                    uVar33 = pVVar30->x;
+                                                    uVar34 = pVVar30->y;
                                                     if (pTVar4 != (Transform *)0x0) {
-                                                      value_01.y = (float)uVar32 - _UNK_?;
-                                                      value_01.x = (float)uVar31 + 0.0;
-                                                      value_01.z = pVVar28->z + 0.0;
+                                                      value_01.y = (float)uVar34 - _UNK_?;
+                                                      value_01.x = (float)uVar33 + 0.0;
+                                                      value_01.z = pVVar30->z + 0.0;
                                                       UnityEngine.CoreModule.dll::UnityEngine::
                                                       Transform::Transform_set_position
                                                                 (pTVar4,value_01,(MethodInfo *)0x0)
@@ -1434,8 +1434,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar33 = (code *)swi(3);
-  (*pcVar33)();
+  pcVar35 = (code *)swi(3);
+  (*pcVar35)();
   return;
 }
 

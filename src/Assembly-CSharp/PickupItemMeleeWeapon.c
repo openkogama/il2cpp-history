@@ -17,17 +17,17 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
       this_00 = (this->fields)._.weaponHandle;
       if (this_00 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                  ((Vector3 *)&stack0xffffffe8,this_00,(MethodInfo *)0x0);
+                  ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
         pMVar2 = (this->fields)._._._.owner;
         if (pMVar2 != (MVPickupOwner *)0x0) {
           MVPickupOwner::MVPickupOwner_get_LookDirection
-                    ((Vector3 *)&stack0xffffffd0,pMVar2,(MethodInfo *)0x0);
+                    ((Vector3 *)&stack0xffffffc4,pMVar2,(MethodInfo *)0x0);
           pMVar2 = (this->fields)._._._.owner;
           if (pMVar2 != (MVPickupOwner *)0x0) {
             pVVar3 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                               ((Vector3 *)&stack0xffffffd0,pMVar2,(MethodInfo *)0x0);
+                               ((Vector3 *)&stack0xffffffc4,pMVar2,(MethodInfo *)0x0);
             pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                               ((Vector3 *)&stack0xffffffd0,*pVVar3,(MethodInfo *)0x0);
+                               ((Vector3 *)&stack0xffffffc4,*pVVar3,(MethodInfo *)0x0);
             pMVar2 = (this->fields)._._._.owner;
             fVar4 = pVVar3->z;
             if (pMVar2 != (MVPickupOwner *)0x0) {
@@ -38,7 +38,6 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
               distance = (float)pIVar6 + radius;
               uVar7 = 0;
               layerMask = (this->fields)._.hitLayerMask;
-              uVar8 = CONCAT44(distance,radius);
               ray.m_Origin.y = distance;
               ray.m_Origin.x = radius;
               ray.m_Origin.z = (float)ignoreWoIds;
@@ -51,9 +50,9 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
                 if (0 < (voxelHits->fields)._size) {
                   (*(code *)(this->klass->vtable).OnHit.method)();
                   if (isLocal != 0) {
+                    lineOfFire.m_Origin.y = distance;
+                    lineOfFire.m_Origin.x = radius;
                     lineOfFire.m_Origin.z = (float)ignoreWoIds;
-                    lineOfFire.m_Origin.x = (float)(int)uVar8;
-                    lineOfFire.m_Origin.y = (float)(int)((ulonglong)uVar8 >> 0x20);
                     lineOfFire.m_Direction.x = (float)layerMask;
                     lineOfFire.m_Direction.y = (float)uVar7;
                     lineOfFire.m_Direction.z = fVar4;
@@ -70,8 +69,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

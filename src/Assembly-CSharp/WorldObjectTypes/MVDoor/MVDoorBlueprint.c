@@ -172,21 +172,22 @@ code_?:
     }
   }
   else {
+    cubeModelBase = pMVar1->klass;
     if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
-         (pMVar1->klass->_1).naturalAligment) &&
+         (cubeModelBase->_1).naturalAligment) &&
        ((MVDoor__Class *)
-        (pMVar1->klass->_1).typeHierarchy
+        (cubeModelBase->_1).typeHierarchy
         [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
         TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) {
       (this->fields).doorLogic = pMVar1;
+      cubeModelBase = pMVar1->klass;
       if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
-           (pMVar1->klass->_1).naturalAligment) &&
+           (cubeModelBase->_1).naturalAligment) &&
          ((MVDoor__Class *)
-          (pMVar1->klass->_1).typeHierarchy
+          (cubeModelBase->_1).typeHierarchy
           [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
           TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) goto code_?;
     }
-    cubeModelBase = TypeInfo__WorldObjectTypes__MVDoor__MVDoor;
     func_?(pMVar1,TypeInfo__WorldObjectTypes__MVDoor__MVDoor);
     pMVar8 = extraout_EDX;
   }

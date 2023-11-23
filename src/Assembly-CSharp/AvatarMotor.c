@@ -69,11 +69,11 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
 {
   method_00 = this;
   AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
-  auStack_1._0_4_ = (this->fields).velocityPrevFrame.x;
-  auStack_1._4_4_ = (this->fields).velocityPrevFrame.y;
-  fStack_2 = (this->fields).velocityPrevFrame.z;
-  uStack_3 = auStack_1;
-  fStack_4 = fStack_2;
+  VStack_1.x = (this->fields).velocityPrevFrame.x;
+  VStack_1.y = (this->fields).velocityPrevFrame.y;
+  VStack_1.z = (this->fields).velocityPrevFrame.z;
+  VStack_2._0_8_ = VStack_1._0_8_;
+  VStack_2.z = VStack_1.z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -81,110 +81,112 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  dVar5 = (double)((float)auStack_1._4_4_ * (float)auStack_1._4_4_ +
-                    (float)auStack_1._0_4_ * (float)auStack_1._0_4_ + fStack_2 * fStack_2);
-  if (dVar5 < 0.0) {
+  dVar3 = (double)(VStack_1.y * VStack_1.y + VStack_1.x * VStack_1.x +
+                   VStack_1.z * VStack_1.z);
+  if (dVar3 < 0.0) {
     func_?();
   }
   else {
-    dVar5 = SQRT(dVar5);
+    dVar3 = SQRT(dVar3);
   }
-  fVar6 = (float)dVar5;
-  if (_UNK_? < fVar6) {
-    fStack_4 = fStack_4 / fVar6;
-    uStack_3 = CONCAT44(uStack_3._4_4_ / fVar6,(float)uStack_3 / fVar6);
-    fStack_2 = fStack_4;
+  fVar4 = (float)dVar3;
+  if (_UNK_? < fVar4) {
+    VStack_2.z = VStack_2.z / fVar4;
+    VStack_2.y = VStack_2.y / fVar4;
+    VStack_2.x = VStack_2.x / fVar4;
+    VStack_1.z = VStack_2.z;
   }
   else {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_3._0_4_ = (pVVar7->zeroVector).x;
-    uStack_3._4_4_ = (pVVar7->zeroVector).y;
-    fStack_4 = (pVVar7->zeroVector).z;
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_2.x = (pVVar5->zeroVector).x;
+    VStack_2.y = (pVVar5->zeroVector).y;
+    VStack_2.z = (pVVar5->zeroVector).z;
   }
   this_00 = (this->fields).slopeSpeedMultiplier;
   if (this_00 != (AnimationCurve *)0x0) {
-    dVar5 = (double)uStack_3._4_4_;
+    dVar3 = (double)VStack_2.y;
     func_?();
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                       (this_00,(float)dVar5 * _UNK_?,(MethodInfo *)method_00);
-    fVar6 = fVar6 * fStack_8;
-    (this->fields).speed = fVar6;
-    pMVar9 = (this->fields)._.groundState;
-    if (pMVar9 != (MVGroundState *)0x0) {
-      hVelocity.y = inputDirection.y * fVar6;
-      hVelocity.x = inputDirection.x * fVar6;
-      hVelocity.z = inputDirection.z * fVar6;
-      pVVar10 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
-                         ((Vector3 *)(auStack_1 + 4),hVelocity,(pMVar9->fields).groundNormal,
-                          (MethodInfo *)0x0);
-      auStack_1._0_4_ = pVVar10->x;
-      auStack_1._4_4_ = pVVar10->y;
-      fStack_2 = pVVar10->z;
-      fVar6 = (float)auStack_1._0_4_ - velocity.x;
-      fVar11 = (float)auStack_1._4_4_ - velocity.y;
-      fVar12 = fStack_2 - velocity.z;
-      pMVar9 = (this->fields)._.groundState;
-      pAVar13 = (this->fields).interactableLocal;
-      uStack_3 = auStack_1;
-      fStack_4 = fStack_2;
-      if ((pMVar9 != (MVGroundState *)0x0) &&
-         (pMVar14 = (pMVar9->fields).groundMaterial, fStack_4 = fStack_2,
-         pMVar14 != (MVMaterial *)0x0)) {
-        fStack_15 = (pMVar14->fields)._PhysicalProperties_k__BackingField.friction;
-        fStack_16 = (pMVar14->fields)._PhysicalProperties_k__BackingField.bouncyness;
-        fStack_17 = (pMVar14->fields)._PhysicalProperties_k__BackingField.softness;
-        fStack_18 = (pMVar14->fields)._PhysicalProperties_k__BackingField.staticFriction;
-        fStack_4 = fStack_2;
-        if (pAVar13 != (AvatarInteractable *)0x0) {
-          pMVar19 = (pAVar13->klass->vtable).HandleModifierEffect.method;
-          fStack_4 = fStack_2;
-          fVar20 = (float10)(*(code *)pMVar19)();
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                       (this_00,(float)dVar3 * _UNK_?,(MethodInfo *)method_00);
+    fVar4 = fVar4 * unaff_ESI;
+    (this->fields).speed = fVar4;
+    pMVar6 = (this->fields)._.groundState;
+    if (pMVar6 != (MVGroundState *)0x0) {
+      hVelocity.y = inputDirection.y * fVar4;
+      hVelocity.x = inputDirection.x * fVar4;
+      hVelocity.z = inputDirection.z * fVar4;
+      pVVar7 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
+                         (&VStack_1,hVelocity,(pMVar6->fields).groundNormal,(MethodInfo *)0x0);
+      VStack_1.x = pVVar7->x;
+      VStack_1.y = pVVar7->y;
+      VStack_1.z = pVVar7->z;
+      fVar8 = VStack_1.x - velocity.x;
+      fStack_9 = velocity.x;
+      fStack_10 = 0.0;
+      uStack_11 = 0;
+      fStack_12 = 0.0;
+      fVar4 = VStack_1.y - velocity.y;
+      fVar13 = VStack_1.z - velocity.z;
+      pMVar6 = (this->fields)._.groundState;
+      pAVar14 = (this->fields).interactableLocal;
+      VStack_2._0_8_ = VStack_1._0_8_;
+      VStack_2.z = VStack_1.z;
+      if ((pMVar6 != (MVGroundState *)0x0) &&
+         (pMVar15 = (pMVar6->fields).groundMaterial, VStack_2.z = VStack_1.z,
+         pMVar15 != (MVMaterial *)0x0)) {
+        fStack_16 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
+        fStack_17 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
+        fStack_18 = (pMVar15->fields)._PhysicalProperties_k__BackingField.softness;
+        fStack_19 = (pMVar15->fields)._PhysicalProperties_k__BackingField.staticFriction;
+        VStack_2.z = VStack_1.z;
+        if (pAVar14 != (AvatarInteractable *)0x0) {
+          pMVar20 = (pAVar14->klass->vtable).HandleModifierEffect.method;
+          VStack_2.z = VStack_1.z;
+          fVar21 = (float10)(*(code *)pMVar20)();
           UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
-          Easing_InQuad((float)fVar20,(MethodInfo *)0x0);
-          fVar21 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+          Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
+          fVar22 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                              ((MethodInfo *)0x0);
-          fVar21 = (fVar21 * (float)pMVar19) / _UNK_?;
-          fStack_15 = velocity.x + fVar6 * fVar21;
-          fStack_16 = velocity.y + fVar11 * fVar21;
-          fVar6 = velocity.z + fVar12 * fVar21;
-          pMVar9 = (this->fields)._.groundState;
-          pAVar13 = (this->fields).interactableLocal;
-          fStack_17 = 0.0;
-          fStack_18 = 0.0;
-          fStack_4 = fVar6;
-          if ((pMVar9 != (MVGroundState *)0x0) &&
-             (pMVar14 = (pMVar9->fields).groundMaterial, pMVar14 != (MVMaterial *)0x0)) {
-            uStack_3._0_4_ = (pMVar14->fields)._PhysicalProperties_k__BackingField.friction;
-            uStack_3._4_4_ = (pMVar14->fields)._PhysicalProperties_k__BackingField.bouncyness;
-            fStack_4 = (pMVar14->fields)._PhysicalProperties_k__BackingField.softness;
-            fStack_22 = (pMVar14->fields)._PhysicalProperties_k__BackingField.staticFriction;
-            if (pAVar13 != (AvatarInteractable *)0x0) {
-              fVar20 = (float10)(*(code *)(pAVar13->klass->vtable).HandleModifierEffect.method)();
-              fVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-                      Easing::Easing_InQuad((float)fVar20,(MethodInfo *)0x0);
-              if (fVar11 < _UNK_?) {
-                fVar20 = (float10)func_?();
-                if ((float)fVar20 != _UNK_?) {
-                  fStack_17 = fStack_2 * _UNK_?;
-                  fStack_18 = 0.0;
-                  uStack_23 = 0;
-                  fVar6 = (float)uStack_3 * _UNK_?;
-                  fVar11 = uStack_3._4_4_ * _UNK_?;
-                  fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+          fVar22 = (fVar22 * (float)pMVar20) / _UNK_?;
+          fStack_9 = fStack_9 + fVar8 * fVar22;
+          fStack_17 = velocity.y + fVar4 * fVar22;
+          fVar4 = velocity.z + fVar13 * fVar22;
+          pMVar6 = (this->fields)._.groundState;
+          pAVar14 = (this->fields).interactableLocal;
+          fStack_18 = fStack_10;
+          fStack_19 = 0.0;
+          VStack_2.z = fVar4;
+          fStack_16 = fStack_9;
+          if ((pMVar6 != (MVGroundState *)0x0) &&
+             (pMVar15 = (pMVar6->fields).groundMaterial, pMVar15 != (MVMaterial *)0x0)) {
+            fStack_23 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
+            fStack_24 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
+            if (pAVar14 != (AvatarInteractable *)0x0) {
+              fVar21 = (float10)(*(code *)(pAVar14->klass->vtable).HandleModifierEffect.method)();
+              fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+                      Easing::Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
+              if (fVar13 < _UNK_?) {
+                VStack_1.x = fVar13;
+                fVar21 = (float10)func_?();
+                VStack_1.x = (float)fVar21;
+                if ((float)fVar21 != _UNK_?) {
+                  fVar4 = VStack_1.z * _UNK_?;
+                  fVar13 = fStack_25 * _UNK_?;
+                  fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                                      ((MethodInfo *)0x0);
-                  __return_storage_ptr__->x = fStack_18 * fVar12 + fVar11;
-                  __return_storage_ptr__->y = (float)fVar20 * fVar12 + (float)auStack_1._4_4_;
-                  __return_storage_ptr__->z = fVar6 * fVar12 + fStack_2;
+                  __return_storage_ptr__->x = fStack_12 + VStack_1.x * fVar8;
+                  __return_storage_ptr__->y = VStack_1.z + fVar4 * fVar8;
+                  __return_storage_ptr__->z = fStack_10 + fVar13 * fVar8;
                   return __return_storage_ptr__;
                 }
               }
-              __return_storage_ptr__->x = fStack_17;
-              __return_storage_ptr__->y = fStack_18;
-              __return_storage_ptr__->z = fVar6;
+              __return_storage_ptr__->x = fStack_18;
+              __return_storage_ptr__->y = fStack_19;
+              __return_storage_ptr__->z = fVar4;
               return __return_storage_ptr__;
             }
           }
@@ -193,9 +195,9 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  pVVar10 = (Vector3 *)(*pcVar24)();
-  return pVVar10;
+  pcVar26 = (code *)swi(3);
+  pVVar7 = (Vector3 *)(*pcVar26)();
+  return pVVar7;
 }
 
 
@@ -565,7 +567,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xe5
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0x35
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,
@@ -1762,22 +1764,24 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_UpdateFunction
                      );
       cRam_? = '\x01';
     }
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+    _puStack_14 = CONCAT44(&UNK_?,puStack_2);
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    _puStack_14 = CONCAT44(&UNK_?,puStack_2);
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                        ((MethodInfo *)0x0);
-    ppSVar4 = (SmoothPhysicsMovement_Package **)(fVar2 - fVar3);
+    ppSVar5 = (SmoothPhysicsMovement_Package **)(fVar3 - fVar4);
     if ((this_00->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
-      pQVar5 = (this_00->fields).packages;
-      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      if (0 < (pQVar5->fields)._size) {
-        pSVar6 = (SmoothPhysicsMovement_Package *)
-                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                  Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar5,
-                             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                            );
-        (this_00->fields).current = pSVar6;
-        ppSVar4 = &(this_00->fields).current;
+      pQVar6 = (this_00->fields).packages;
+      if (pQVar6 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
+      if (0 < (pQVar6->fields)._size) {
+        pSVar7 = (SmoothPhysicsMovement_Package *)
+                 mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__Dequeue
+                           ((Queue_1_System_Object_ *)pQVar6,
+                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                           );
+        (this_00->fields).current = pSVar7;
+        ppSVar5 = &(this_00->fields).current;
         func_?();
       }
       if ((this_00->fields).current == (SmoothPhysicsMovement_Package *)0x0) {
@@ -1785,17 +1789,17 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_UpdateFunction
       }
     }
     if ((this_00->fields).next == (SmoothPhysicsMovement_Package *)0x0) {
-      pQVar5 = (this_00->fields).packages;
-      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
-      if (0 < (pQVar5->fields)._size) {
-        pSVar6 = (SmoothPhysicsMovement_Package *)
-                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                  Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar5,
-                             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                            );
-        (this_00->fields).next = pSVar6;
-        ppSVar4 = &(this_00->fields).next;
+      pQVar6 = (this_00->fields).packages;
+      if (pQVar6 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) goto code_?;
+      if (0 < (pQVar6->fields)._size) {
+        pSVar7 = (SmoothPhysicsMovement_Package *)
+                 mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                 Queue_1_System_Object__Dequeue
+                           ((Queue_1_System_Object_ *)pQVar6,
+                            MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                           );
+        (this_00->fields).next = pSVar7;
+        ppSVar5 = &(this_00->fields).next;
         func_?();
       }
     }
@@ -1803,111 +1807,138 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_UpdateFunction
        ((this_00->fields).next == (SmoothPhysicsMovement_Package *)0x0)) {
       return;
     }
-    pSVar6 = (this_00->fields).next;
-    ppSVar7 = &(this_00->fields).next;
+    pSVar7 = (this_00->fields).next;
+    ppSVar8 = &(this_00->fields).next;
     do {
-      if ((float)ppSVar4 < (pSVar6->fields).time) {
+      if ((float)ppSVar5 < (pSVar7->fields).time) {
 code_?:
-        pSVar6 = (this_00->fields).current;
-        if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
-        fVar2 = (pSVar6->fields).time;
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+        pSVar7 = (this_00->fields).current;
+        if (pSVar7 == (SmoothPhysicsMovement_Package *)0x0) break;
+        fVar3 = (pSVar7->fields).time;
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                            ((MethodInfo *)0x0);
-        fVar3 = ((float)ppSVar4 - fVar2) / fVar3;
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        fVar4 = ((float)ppSVar5 - fVar3) / fVar4;
+        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_00,(MethodInfo *)0x0);
-        pSVar6 = (this_00->fields).current;
-        if (pSVar6 == (SmoothPhysicsMovement_Package *)0x0) break;
-        uVar9 = (pSVar6->fields).position.x;
-        uVar10 = (pSVar6->fields).position.y;
+        pSVar7 = (this_00->fields).current;
+        if (pSVar7 == (SmoothPhysicsMovement_Package *)0x0) break;
+        VStack_10.x = (pSVar7->fields).position.x;
+        VStack_10.y = (pSVar7->fields).position.y;
         pSVar11 = (this_00->fields).next;
-        fVar2 = (pSVar6->fields).position.z;
+        VStack_10.z = (pSVar7->fields).position.z;
         if (pSVar11 == (SmoothPhysicsMovement_Package *)0x0) break;
-        uVar12 = (pSVar11->fields).position.x;
-        uVar13 = (pSVar11->fields).position.y;
-        fVar14 = 0.0;
-        if ((0.0 <= fVar3) && (fVar14 = _UNK_?, fVar3 <= _UNK_?)) {
-          fVar14 = fVar3;
+        puStack_2 = (undefined1 *)(pSVar11->fields).position.x;
+        unique0x0000a404 = (pSVar11->fields).position.y;
+        fVar3 = 0.0;
+        if ((0.0 <= fVar4) && (fVar3 = _UNK_?, fVar4 <= _UNK_?)) {
+          fVar3 = fVar4;
         }
-        if (pTVar8 == (Transform *)0x0) break;
-        this = (AvatarMotor *)(((pSVar11->fields).position.z - fVar2) * fVar14 + fVar2);
-        fVar15 = ((float)uVar13 - (float)uVar10) * fVar14 + (float)uVar10;
-        fVar16 = ((float)uVar12 - (float)uVar9) * fVar14 + (float)uVar9;
-        VVar17 = (Vector3)CONCAT84(VVar17._0_8_,fVar16);
+        VStack_10.x = ((float)puStack_2 - VStack_10.x) * fVar3 + VStack_10.x;
+        VStack_10.y = ((float)unique0x0000a404 - VStack_10.y) * fVar3 + VStack_10.y;
+        VStack_10.z = ((pSVar11->fields).position.z - VStack_10.z) * fVar3 + VStack_10.z;
+        if (pTVar9 == (Transform *)0x0) break;
+        this = (AvatarMotor *)VStack_10.z;
+        fVar12 = VStack_10.y;
+        fVar13 = VStack_10.x;
+        VVar14 = (Vector3)CONCAT84(VVar14._0_8_,fVar13);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar8,VVar17,(MethodInfo *)0x0);
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                  (pTVar9,VVar14,(MethodInfo *)0x0);
+        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_00,(MethodInfo *)0x0);
-        pSVar6 = (this_00->fields).current;
-        if ((pSVar6 == (SmoothPhysicsMovement_Package *)0x0) ||
+        pSVar7 = (this_00->fields).current;
+        if ((pSVar7 == (SmoothPhysicsMovement_Package *)0x0) ||
            (pSVar11 = (this_00->fields).next, pSVar11 == (SmoothPhysicsMovement_Package *)0x0)) break;
-        fVar2 = (pSVar6->fields).rotation.y;
-        pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                            ((Quaternion *)&stack0xffffffd0,(pSVar6->fields).rotation,
+        fVar3 = (pSVar7->fields).rotation.y;
+        pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                            ((Quaternion *)&stack0xffffffdc,(pSVar7->fields).rotation,
                              (pSVar11->fields).rotation,(float)this_00,(MethodInfo *)0x0);
-        if (pTVar8 == (Transform *)0x0) break;
+        if (pTVar9 == (Transform *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  (pTVar8,*pQVar18,(MethodInfo *)0x0);
+                  (pTVar9,*pQVar15,(MethodInfo *)0x0);
         if ((this_00->fields).worldObjectOwner != (MVWorldObjectClient *)0x0) {
-          if (((this_00->fields).current == (SmoothPhysicsMovement_Package *)0x0) ||
-             ((this_00->fields).next == (SmoothPhysicsMovement_Package *)0x0)) break;
+          pSVar7 = (this_00->fields).current;
+          if (pSVar7 == (SmoothPhysicsMovement_Package *)0x0) break;
+          puStack_2 = (undefined1 *)(pSVar7->fields).position.x;
+          unique0x0000a404 = (pSVar7->fields).position.y;
+          VStack_10.z = (pSVar7->fields).position.z;
+          pSVar7 = (this_00->fields).next;
+          if (pSVar7 == (SmoothPhysicsMovement_Package *)0x0) break;
+          VStack_10.x = (pSVar7->fields).position.x;
+          VStack_10.y = (pSVar7->fields).position.y;
+          if (fVar3 < 0.0) {
+            fVar4 = 0.0;
+          }
+          else {
+            fVar4 = _UNK_?;
+            if (fVar3 <= _UNK_?) {
+              fVar4 = fVar3;
+            }
+          }
+          VStack_10.z = ((pSVar7->fields).position.z - VStack_10.z) * fVar4 + VStack_10.z;
           (*(code *)(((this_00->fields).worldObjectOwner)->klass->vtable).set_WorldPosition.method)
                     ();
-          pSVar6 = (this_00->fields).current;
+          pSVar7 = (this_00->fields).current;
           this_01 = (this_00->fields).worldObjectOwner;
-          if ((pSVar6 == (SmoothPhysicsMovement_Package *)0x0) ||
-             ((pSVar11 = (this_00->fields).next, pSVar11 == (SmoothPhysicsMovement_Package *)0x0 ||
-              (pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                                   ((Quaternion *)&stack0xffffffd0,(pSVar6->fields).rotation,
-                                    (pSVar11->fields).rotation,fVar2,(MethodInfo *)0x0),
-              this_01 == (MVWorldObjectClient *)0x0)))) break;
-          MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_01,*pQVar18,(MethodInfo *)0x0);
+          if (((pSVar7 == (SmoothPhysicsMovement_Package *)0x0) ||
+              (pSVar11 = (this_00->fields).next, pSVar11 == (SmoothPhysicsMovement_Package *)0x0)) ||
+             (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                                  ((Quaternion *)&stack0xffffffdc,(pSVar7->fields).rotation,
+                                   (pSVar11->fields).rotation,fVar3,(MethodInfo *)0x0),
+             this_01 == (MVWorldObjectClient *)0x0)) break;
+          MVWorldObjectClient::MVWorldObjectClient_set_SyncRot(this_01,*pQVar15,(MethodInfo *)0x0);
         }
         if ((this_00->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
           return;
         }
         this_02 = (this_00->fields).cullingSubscriberBase;
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        _puStack_14 = CONCAT44(this_00,&UNK_?);
+        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_00,(MethodInfo *)0x0);
-        if (pTVar8 != (Transform *)0x0) {
-          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffd4,pTVar8,(MethodInfo *)0x0);
-          uVar20 = pVVar19->x;
-          uVar21 = pVVar19->y;
-          this = (AvatarMotor *)pVVar19->z;
-          fVar15 = (float)uVar21;
-          fVar22 = (float)uVar20;
-          VVar17 = (Vector3)CONCAT84(VVar17._0_8_,fVar22);
+        if (pTVar9 != (Transform *)0x0) {
+          _puStack_14 = CONCAT44(&UNK_?,puStack_2);
+          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_10,pTVar9,(MethodInfo *)0x0);
+          uVar17 = pVVar16->x;
+          uVar18 = pVVar16->y;
+          this = (AvatarMotor *)pVVar16->z;
+          fVar12 = (float)uVar18;
+          fVar19 = (float)uVar17;
+          VVar14 = (Vector3)CONCAT84(VVar14._0_8_,fVar19);
           CullingSubscriberBase::CullingSubscriberBase_set_Position
-                    (this_02,VVar17,(MethodInfo *)0x0);
+                    (this_02,VVar14,(MethodInfo *)0x0);
           return;
         }
         break;
       }
-      pQVar5 = (this_00->fields).packages;
-      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-      if ((pQVar5->fields)._size < 1) goto code_?;
-      (this_00->fields).current = *ppSVar7;
+      pQVar6 = (this_00->fields).packages;
+      if (pQVar6 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
+      if ((pQVar6->fields)._size < 1) goto code_?;
+      (this_00->fields).current = *ppSVar8;
       func_?();
-      pQVar5 = (this_00->fields).packages;
-      if (pQVar5 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
-      pSVar6 = (SmoothPhysicsMovement_Package *)
-                mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                Queue_1_System_Object__Dequeue
-                          ((Queue_1_System_Object_ *)pQVar5,
-                           MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
-                          );
-      *ppSVar7 = pSVar6;
-      ppSVar4 = ppSVar7;
+      pQVar6 = (this_00->fields).packages;
+      if (pQVar6 == (Queue_1_SmoothPhysicsMovement_Package_ *)0x0) break;
+      pSVar7 = (SmoothPhysicsMovement_Package *)
+               mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+               Queue_1_System_Object__Dequeue
+                         ((Queue_1_System_Object_ *)pQVar6,
+                          MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Dequeue__
+                         );
+      *ppSVar8 = pSVar7;
+      ppSVar5 = ppSVar8;
       func_?();
-      pSVar6 = *ppSVar7;
-    } while (pSVar6 != (SmoothPhysicsMovement_Package *)0x0);
+      pSVar7 = *ppSVar8;
+    } while (pSVar7 != (SmoothPhysicsMovement_Package *)0x0);
   }
 code_?:
+  stack0xfffffff0 = (undefined4)((ulonglong)_puStack_14 >> 0x20);
+  VStack_10.z = (float)&UNK_?;
+  puStack_2 = &stack0xfffffff0;
+  uVar20 = func_?();
+  _puStack_14 = CONCAT44(stack0xfffffff0,uVar20);
+  VStack_10.z = (float)&UNK_?;
   func_?();
-  func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

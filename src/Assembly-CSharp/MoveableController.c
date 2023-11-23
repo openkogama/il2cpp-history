@@ -158,7 +158,7 @@ Assembly-CSharp.dll::MoveableController::MoveableController_GetRotationQuat
                   pVVar12 = (Vector3 *)func_?();
                   pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                                      ((Quaternion *)&stack0xffffffcc,
-                                      (float)fVar11 * _UNK_? * 3.5064552e-29,*pVVar12,
+                                      (float)fVar11 * _UNK_? * 3.5072833e-29,*pVVar12,
                                       (MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
@@ -264,82 +264,83 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel
               );
     if (pOStack_1 == (Object *)0x0) {
       if (cRam_? == '\0') {
-        auStack_2._0_4_ = &TypeInfo__UnityEngine__Vector3;
-        func_?();
+        func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-      fVar4 = (pVVar3->zeroVector).y;
-      fVar5 = (pVVar3->zeroVector).z;
-      __return_storage_ptr__->x = (pVVar3->zeroVector).x;
-      __return_storage_ptr__->y = fVar4;
-      __return_storage_ptr__->z = fVar5;
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      fVar3 = (pVVar2->zeroVector).y;
+      fVar4 = (pVVar2->zeroVector).z;
+      __return_storage_ptr__->x = (pVVar2->zeroVector).x;
+      __return_storage_ptr__->y = fVar3;
+      __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
-    pOVar6 = pOStack_1[0x22].klass;
-    if (pOVar6 != (Object__Class *)0x0) {
-      pIVar7 = (pOVar6->_0).image;
-      auStack_2._0_4_ = pIVar7[9].name;
-      puVar8 = (undefined8 *)(**(code **)&pIVar7[8].dynamic)(&VStack_9,pOVar6);
-      uVar10 = *puVar8;
-      fStack_11 = *(float *)(puVar8 + 1);
-      uStack_12._0_4_ = (float)uVar10;
-      fVar5 = position.x - (float)uStack_12;
-      uStack_12._4_4_ = (float)((ulonglong)uVar10 >> 0x20);
-      fVar4 = position.y - uStack_12._4_4_;
-      VStack_9.z = position.z - fStack_11;
-      uStack_12 = uVar10;
-      fStack_13 = VStack_9.z;
-      pQVar14 = MoveableController_GetRotationQuat
-                          ((Quaternion *)auStack_2,this,movableGameObjectID,(MethodInfo *)0x0);
-      point.y = fVar4;
-      point.x = fVar5;
-      point.z = VStack_9.z;
-      pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                          (&VStack_9,*pQVar14,point,(MethodInfo *)0x0);
-      uStack_12._0_4_ = pVVar15->x;
-      uStack_12._4_4_ = pVVar15->y;
-      fStack_11 = pVVar15->z;
+    pOVar5 = pOStack_1[0x22].klass;
+    if (pOVar5 != (Object__Class *)0x0) {
+      pIVar6 = (pOVar5->_0).image;
+      puVar7 = (undefined8 *)(**(code **)&pIVar6[8].dynamic)(&VStack_8,pOVar5,pIVar6[9].name);
+      uVar9 = *puVar7;
+      fStack_10 = *(float *)(puVar7 + 1);
+      uStack_11._0_4_ = (float)uVar9;
+      fStack_12 = position.x - (float)uStack_11;
+      uStack_11._4_4_ = (float)((ulonglong)uVar9 >> 0x20);
+      fStack_13 = position.y - uStack_11._4_4_;
+      VStack_8.z = position.z - fStack_10;
+      uStack_11 = uVar9;
+      fStack_14 = VStack_8.z;
+      pQVar15 = MoveableController_GetRotationQuat
+                          (&QStack_16,this,movableGameObjectID,(MethodInfo *)0x0);
+      point.y = fStack_13;
+      point.x = fStack_12;
+      point.z = VStack_8.z;
+      pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                          (&VStack_8,*pQVar15,point,(MethodInfo *)0x0);
+      uStack_11._0_4_ = pVVar17->x;
+      uStack_11._4_4_ = pVVar17->y;
+      fStack_10 = pVVar17->z;
       this_01 = (this->fields).Velocities;
       if (this_01 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
-        pVVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+        pVVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
                   ::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__get_Item
-                            ((Vector3 *)(auStack_2 + 4),this_01,movableGameObjectID,
+                            ((Vector3 *)&QStack_16,this_01,movableGameObjectID,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_UnityEngine::Vector3>__get_Item_int_
                             );
-        VStack_9.x = pVVar15->x;
-        VStack_9.y = pVVar15->y;
-        VStack_9.z = pVVar15->z;
-        fVar16 = VStack_9.x + ((float)uStack_12 - fVar5);
-        fVar5 = VStack_9.y + (uStack_12._4_4_ - fVar4);
-        fStack_11 = VStack_9.z + (fStack_11 - fStack_13);
-        uStack_12 = CONCAT44(fVar5,fVar16);
-        fStack_13 = fStack_11;
+        uVar18 = pVVar17->x;
+        uVar19 = pVVar17->y;
+        fStack_10 = fStack_10 - fStack_14;
+        fStack_20 = (float)uVar18 + ((float)uStack_11 - fStack_12);
+        fStack_14 = (float)uVar19 + (uStack_11._4_4_ - fStack_13);
+        VStack_8.z = pVVar17->z + fStack_10;
+        uStack_11 = 0;
+        fStack_10 = 0.0;
+        VStack_8.y = fStack_14;
+        VStack_8.x = fStack_20;
+        fStack_13 = VStack_8.z;
         if (pOStack_1 != (Object *)0x0) {
           if (pOStack_1[0x29].monitor == (MonitorData *)0x0) {
-            __return_storage_ptr__->x = fVar16;
-            __return_storage_ptr__->y = fVar5;
-            __return_storage_ptr__->z = fStack_11;
+code_?:
+            __return_storage_ptr__->x = VStack_8.x;
+            __return_storage_ptr__->y = VStack_8.y;
+            __return_storage_ptr__->z = VStack_8.z;
             return __return_storage_ptr__;
           }
           if ((pOStack_1[0x29].monitor != (MonitorData *)0x0) &&
-             (iVar17 = *(int *)(pOStack_1[0x29].monitor + 0x110), iVar17 != 0)) {
-            pOVar6 = pOStack_1[0x22].klass;
-            movableGameObjectID_00 = *(int32_t *)(iVar17 + 8);
-            if (pOVar6 != (Object__Class *)0x0) {
-              pIVar7 = (pOVar6->_0).image;
-              pVVar15 = (Vector3 *)
-                        (**(code **)&pIVar7[8].dynamic)(auStack_2 + 4,pOVar6,pIVar7[9].name);
-              pVVar15 = MoveableController_GetVel
-                                  ((Vector3 *)(auStack_2 + 4),this,movableGameObjectID_00,*pVVar15,
+             (iVar21 = *(int *)(pOStack_1[0x29].monitor + 0x110), iVar21 != 0)) {
+            pOVar5 = pOStack_1[0x22].klass;
+            movableGameObjectID_00 = *(int32_t *)(iVar21 + 8);
+            if (pOVar5 != (Object__Class *)0x0) {
+              pIVar6 = (pOVar5->_0).image;
+              pVVar17 = (Vector3 *)(**(code **)&pIVar6[8].dynamic)(&QStack_16,pOVar5,pIVar6[9].name)
+              ;
+              pVVar17 = MoveableController_GetVel
+                                  ((Vector3 *)&QStack_16,this,movableGameObjectID_00,*pVVar17,
                                    (MethodInfo *)0x0);
-              uVar18 = pVVar15->x;
-              uVar19 = pVVar15->y;
-              fVar4 = pVVar15->z;
-              __return_storage_ptr__->x = (float)uVar18 + fVar16;
-              __return_storage_ptr__->y = (float)uVar19 + fVar5;
-              __return_storage_ptr__->z = fVar4 + fStack_13;
-              return __return_storage_ptr__;
+              uVar22 = pVVar17->x;
+              uVar23 = pVVar17->y;
+              VStack_8.z = fStack_13 + pVVar17->z;
+              VStack_8.x = fStack_20 + (float)uVar22;
+              VStack_8.y = fStack_14 + (float)uVar23;
+              goto code_?;
             }
           }
         }
@@ -347,9 +348,9 @@ Vector3 * Assembly-CSharp.dll::MoveableController::MoveableController_GetVel
     }
   }
   func_?();
-  pcVar20 = (code *)swi(3);
-  pVVar15 = (Vector3 *)(*pcVar20)();
-  return pVVar15;
+  pcVar24 = (code *)swi(3);
+  pVVar17 = (Vector3 *)(*pcVar24)();
+  return pVVar17;
 }
 
 

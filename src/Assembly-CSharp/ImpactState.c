@@ -106,12 +106,14 @@ float Assembly-CSharp.dll::ImpactState::ImpactState_UpdateImpactState
                 MVInteractableBase *interactableLocal,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffe78;
-  puVar5 = &stack0xfffffe78;
+  puStack_1 = &stack0xfffffffc;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xfffffe30;
+  puVar6 = &stack0xfffffffc;
+  puVar7 = &stack0xfffffe30;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -134,41 +136,51 @@ float Assembly-CSharp.dll::ImpactState::ImpactState_UpdateImpactState
                    );
     func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar6 = puStack_1;
+    puVar7 = puStack_5;
   }
-  puStack_4 = puVar5;
-  func_?(&LStack_6,0,0xa0);
-  pLStack_7 = (List_1_T_Enumerator_MVControllerColliderHit_ *)(curVelocity.z - prevVelocity.z);
-  pfStack_8 = (float *)(curVelocity.y - prevVelocity.y);
-  fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar10 = (float)pLStack_7 * fVar9;
-  fVar11 = (curVelocity.x - prevVelocity.x) * fVar9;
+  puStack_5 = puVar7;
+  puStack_1 = puVar6;
+  func_?(&LStack_8,0,0xa0);
+  fStack_9 = curVelocity.z - prevVelocity.z;
+  pMStack_10 = (MethodInfo *)(curVelocity.y - prevVelocity.y);
+  fStack_11 = curVelocity.x - prevVelocity.x;
+  fStack_12 = 0.0;
+  fStack_13 = 0.0;
+  fStack_14 = 0.0;
+  pfStack_15 = (float *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                  ((MethodInfo *)0x0);
+  pLVar16 = (List_1_T_Enumerator_MVControllerColliderHit_ *)(fStack_9 * (float)pfStack_15);
+  uStack_17 = CONCAT44((float)pMStack_10 * (float)pfStack_15,fStack_11 * (float)pfStack_15);
   (this->fields).impactDamage = 0.0;
+  pLStack_18 = pLVar16;
   if ((this->fields).suspendImpactDamageCounter < 1) {
-    if ((this->fields).collidedPrevFrame == 0) {
-      uVar12 = CONCAT44((float)pfStack_8 * fVar9,fVar11);
-    }
-    else {
-      uVar13 = (this->fields).prevVelocityChangeVector.x;
-      uVar14 = (this->fields).prevVelocityChangeVector.y;
-      pLStack_7 = (List_1_T_Enumerator_MVControllerColliderHit_ *)
-                   ((this->fields).prevVelocityChangeVector.z + fVar10);
-      fVar10 = (this->fields).maxAccBeforeDamageDealt;
-      uStack_15 = CONCAT44((float)uVar14 + (float)pfStack_8 * fVar9,(float)uVar13 + fVar11);
-      fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+    uVar19 = uStack_17;
+    if ((this->fields).collidedPrevFrame != 0) {
+      uVar20 = (this->fields).prevVelocityChangeVector.x;
+      uVar21 = (this->fields).prevVelocityChangeVector.y;
+      pLStack_22 = (List_1_T_Enumerator_MVControllerColliderHit_ *)
+                   ((float)pLVar16 + (this->fields).prevVelocityChangeVector.z);
+      fStack_9 = (this->fields).maxAccBeforeDamageDealt;
+      uStack_17 = CONCAT44((float)pMStack_10 * (float)pfStack_15 + (float)uVar21,
+                           fStack_11 * (float)pfStack_15 + (float)uVar20);
+      pLStack_18 = pLStack_22;
+      fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                          ((MethodInfo *)0x0);
-      fVar16 = (float10)func_?(&uStack_15);
+      pMStack_10 = (MethodInfo *)(fVar23 * fStack_9);
+      fVar24 = (float10)func_?(&uStack_17);
       this_00 = (this->fields).impactDestruction;
+      pfStack_15 = (float *)(float)fVar24;
       if (this_00 == (ImpactState_ImpactDestruction *)0x0) goto code_?;
       ImpactState+ImpactDestruction::ImpactState_ImpactDestruction_HandleImpactDestruction
-                (this_00,(float)fVar16,(this->fields).moveHits,(MethodInfo *)0x0);
-      pfStack_8 = (float *)((this->fields).averageSoftnessPrevFrame * (float)fVar16);
-      if (fVar11 * fVar10 < (float)pfStack_8) {
-        fVar10 = (this->fields).impactDamageMultiplier;
-        fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                (this_00,(float)pfStack_15,(this->fields).moveHits,(MethodInfo *)0x0);
+      fStack_9 = (this->fields).averageSoftnessPrevFrame * (float)pfStack_15;
+      if ((float)pMStack_10 < fStack_9) {
+        pMStack_10 = (MethodInfo *)(this->fields).impactDamageMultiplier;
+        fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                            ((MethodInfo *)0x0);
-        (this->fields).impactDamage = (fVar10 * (float)pfStack_8) / fVar11;
-        pSStack_17 = TypeInfo__System__Single;
+        pfStack_15 = (float *)(((float)pMStack_10 * fStack_9) / fVar23);
+        (this->fields).impactDamage = (float)pfStack_15;
         message = (Object *)func_?();
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -179,115 +191,114 @@ float Assembly-CSharp.dll::ImpactState::ImpactState_UpdateImpactState
         func_?();
         cRam_? = '\x01';
       }
-      pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar12._0_4_ = (pVVar18->zeroVector).x;
-      uVar12._4_4_ = (pVVar18->zeroVector).y;
-      fVar10 = (pVVar18->zeroVector).z;
+      pVVar25 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar19._0_4_ = (pVVar25->zeroVector).x;
+      uVar19._4_4_ = (pVVar25->zeroVector).y;
+      pLVar16 = (List_1_T_Enumerator_MVControllerColliderHit_ *)(pVVar25->zeroVector).z;
     }
-    (this->fields).prevVelocityChangeVector.x = (float)(int)uVar12;
-    (this->fields).prevVelocityChangeVector.y = (float)(int)((ulonglong)uVar12 >> 0x20);
-    (this->fields).prevVelocityChangeVector.z = fVar10;
-    fVar10 = _UNK_?;
+    (this->fields).prevVelocityChangeVector.x = (float)(int)uVar19;
+    (this->fields).prevVelocityChangeVector.y = (float)(int)(uVar19 >> 0x20);
+    (this->fields).prevVelocityChangeVector.z = (float)pLVar16;
+    fVar23 = _UNK_?;
     method_00 = (MethodInfo *)(this->fields).moveHits;
     if (method_00 != (MethodInfo *)0x0) {
-      pfStack_8 = &(this->fields).averageSoftnessPrevFrame;
+      pfStack_15 = &(this->fields).averageSoftnessPrevFrame;
       if ((int)method_00->name < 1) {
         (this->fields).collidedPrevFrame = 0;
       }
       else {
-        *pfStack_8 = 0.0;
+        *pfStack_15 = 0.0;
         (this->fields).collidedPrevFrame = 1;
         if (method_00 == (MethodInfo *)0x0) goto code_?;
-        pLVar19 = mscorlib.dll::System::Collections::Generic::List`1[MVControllerColliderHit]::
+        pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[MVControllerColliderHit]::
                   List_1_MVControllerColliderHit__GetEnumerator
-                            ((List_1_T_Enumerator_MVControllerColliderHit_ *)&pSStack_17,
-                             (List_1_MVControllerColliderHit_ *)method_00,
+                            (&LStack_26,(List_1_MVControllerColliderHit_ *)method_00,
                              MethodInfo__System__Collections__Generic__List<MVControllerColliderHit>__GetEnumerator__
                             );
-        uStack_15 = uStack_15 & 0xffffffff;
-        pLVar20 = &LStack_6;
-        for (iVar21 = 0x28; iVar21 != 0; iVar21 = iVar21 + -1) {
-          pLVar20->_list = pLVar19->_list;
-          pLVar19 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar19->_index;
-          pLVar20 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar20->_index;
+        uStack_17 = uStack_17 & 0xffffffff;
+        pLVar27 = &LStack_8;
+        for (iVar28 = 0x28; iVar28 != 0; iVar28 = iVar28 + -1) {
+          pLVar27->_list = pLVar16->_list;
+          pLVar16 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar16->_index;
+          pLVar27 = (List_1_T_Enumerator_MVControllerColliderHit_ *)&pLVar27->_index;
         }
-        uStack_1 = 1;
-        pLStack_7 = &LStack_6;
-        while( true ) {
-          bVar22 = mscorlib.dll::System::Collections::Generic::
-                  List`1[T]+Enumerator[MVControllerColliderHit]::
-                  List_1_T_Enumerator_MVControllerColliderHit__MoveNext
-                            (&LStack_6,
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__MoveNext__
-                            );
-          if (bVar22 == 0) break;
-          fVar10 = (this->fields).averageSoftnessPrevFrame;
-          if (LStack_6._current.material == (MVMaterial *)0x0) goto code_?;
-          fStack_23 = ((LStack_6._current.material)->fields)._PhysicalProperties_k__BackingField.
+        uStack_2 = 1;
+        pLStack_18 = &LStack_8;
+        while (bVar29 = mscorlib.dll::System::Collections::Generic::
+                        List`1[T]+Enumerator[MVControllerColliderHit]::
+                        List_1_T_Enumerator_MVControllerColliderHit__MoveNext
+                                  (&LStack_8,
+                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__MoveNext__
+                                  ), bVar29 != 0) {
+          fStack_9 = (this->fields).averageSoftnessPrevFrame;
+          if (LStack_8._current.material == (MVMaterial *)0x0) goto code_?;
+          fStack_11 = ((LStack_8._current.material)->fields)._PhysicalProperties_k__BackingField.
                       friction;
-          fStack_24 = ((LStack_6._current.material)->fields)._PhysicalProperties_k__BackingField.
+          fStack_12 = ((LStack_8._current.material)->fields)._PhysicalProperties_k__BackingField.
                       bouncyness;
-          fStack_25 = ((LStack_6._current.material)->fields)._PhysicalProperties_k__BackingField.
+          fStack_13 = ((LStack_8._current.material)->fields)._PhysicalProperties_k__BackingField.
                       softness;
-          fStack_26 = ((LStack_6._current.material)->fields)._PhysicalProperties_k__BackingField.
+          fStack_14 = ((LStack_8._current.material)->fields)._PhysicalProperties_k__BackingField.
                       staticFriction;
           if (interactableLocal == (MVInteractableBase *)0x0) goto code_?;
-          fVar16 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_6.method)
-                                      (interactableLocal,0xf,fStack_25,
+          pMStack_10 = (interactableLocal->klass->vtable).__unknown_6.method;
+          fVar24 = (float10)(*(code *)pMStack_10)
+                                      (interactableLocal,0xf,fStack_13,
                                        (interactableLocal->klass->vtable).__unknown_7.methodPtr);
-          (this->fields).averageSoftnessPrevFrame = (float)fVar16 + fVar10;
+          pMStack_10 = (MethodInfo *)(float)fVar24;
+          (this->fields).averageSoftnessPrevFrame = (float)pMStack_10 + fStack_9;
         }
-        uStack_1 = 0xffffffff;
+        uStack_2 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVControllerColliderHit>__Dispose__
                    ,method_00);
-        uStack_1 = 0xffffffff;
-        pLVar27 = (this->fields).moveHits;
-        if (pLVar27 == (List_1_MVControllerColliderHit_ *)0x0) goto code_?;
-        fVar10 = (this->fields).averageSoftnessPrevFrame / (float)(pLVar27->fields)._size;
+        uStack_2 = 0xffffffff;
+        pLVar30 = (this->fields).moveHits;
+        if (pLVar30 == (List_1_MVControllerColliderHit_ *)0x0) goto code_?;
+        fVar23 = (this->fields).averageSoftnessPrevFrame / (float)(pLVar30->fields)._size;
       }
-      (this->fields).averageSoftnessPrevFrame = fVar10;
-      pLVar27 = (this->fields).moveHits;
-      if (pLVar27 != (List_1_MVControllerColliderHit_ *)0x0) {
-        iVar21 = (pLVar27->fields)._size;
-        piVar28 = &(pLVar27->fields)._version;
-        *piVar28 = *piVar28 + 1;
-        (pLVar27->fields)._size = 0;
-        if (0 < iVar21) {
+      *pfStack_15 = fVar23;
+      pLVar30 = (this->fields).moveHits;
+      if (pLVar30 != (List_1_MVControllerColliderHit_ *)0x0) {
+        iVar28 = (pLVar30->fields)._size;
+        piVar31 = &(pLVar30->fields)._version;
+        *piVar31 = *piVar31 + 1;
+        (pLVar30->fields)._size = 0;
+        if (0 < iVar28) {
           mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar27->fields)._items,0,iVar21,(MethodInfo *)0x0);
+                    ((Array *)(pLVar30->fields)._items,0,iVar28,(MethodInfo *)0x0);
         }
-        fVar10 = (this->fields).impactDamage;
-        *unaff_FS_OFFSET = uStack_3;
-        return fVar10;
+        fVar23 = (this->fields).impactDamage;
+        *unaff_FS_OFFSET = uStack_4;
+        return fVar23;
       }
     }
   }
   else {
-    piVar28 = &(this->fields).suspendImpactDamageCounter;
-    *piVar28 = *piVar28 + -1;
-    pLVar27 = (this->fields).moveHits;
-    if (pLVar27 != (List_1_MVControllerColliderHit_ *)0x0) {
-      iVar21 = (pLVar27->fields)._size;
-      piVar28 = &(pLVar27->fields)._version;
-      *piVar28 = *piVar28 + 1;
-      (pLVar27->fields)._size = 0;
-      if (0 < iVar21) {
+    piVar31 = &(this->fields).suspendImpactDamageCounter;
+    *piVar31 = *piVar31 + -1;
+    pLVar30 = (this->fields).moveHits;
+    if (pLVar30 != (List_1_MVControllerColliderHit_ *)0x0) {
+      iVar28 = (pLVar30->fields)._size;
+      piVar31 = &(pLVar30->fields)._version;
+      *piVar31 = *piVar31 + 1;
+      (pLVar30->fields)._size = 0;
+      if (0 < iVar28) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar27->fields)._items,0,iVar21,(MethodInfo *)0x0);
+                  ((Array *)(pLVar30->fields)._items,0,iVar28,(MethodInfo *)0x0);
       }
-      *unaff_FS_OFFSET = uStack_3;
+      *unaff_FS_OFFSET = uStack_4;
       return 0.0;
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar29 = (code *)swi(3);
-  fVar16 = (float10)(*pcVar29)();
-  return (float)fVar16;
+  pcVar32 = (code *)swi(3);
+  fVar24 = (float10)(*pcVar32)();
+  return (float)fVar24;
 }
 
 

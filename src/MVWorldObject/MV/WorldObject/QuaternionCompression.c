@@ -225,10 +225,10 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
       func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
     }
     fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
-    QStack_1.w = fStack_3 * fVar4;
+    QStack_1.z = fStack_3 * fVar4;
     eulerAngles.y = fStack_2 * fVar4;
     eulerAngles.x = QStack_1.x * fVar4;
-    eulerAngles.z = QStack_1.w;
+    eulerAngles.z = QStack_1.z;
     pQVar5 = QuaternionCompression_FromEuler(&QStack_1,eulerAngles,(MethodInfo *)0x0);
     fVar4 = pQVar5->y;
     fVar6 = pQVar5->z;

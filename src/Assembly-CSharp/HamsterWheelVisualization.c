@@ -622,22 +622,22 @@ void Assembly-CSharp.dll::HamsterWheelVisualization::HamsterWheelVisualization_U
     }
   }
 code_?:
-  puVar6 = (undefined8 *)func_?(&stack0xffffffbc,&(pHVar1->fields).velocity,0);
-  uStack_7 = *puVar6;
-  fStack_8 = *(float *)(puVar6 + 1);
+  puVar6 = (undefined8 *)func_?(&uStack_7,&(pHVar1->fields).velocity,0);
+  uVar8 = *puVar6;
+  fVar5 = *(float *)(puVar6 + 1);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_10._0_4_ = (pVVar9->upVector).x;
-  uStack_10._4_4_ = (pVVar9->upVector).y;
-  fStack_11 = (pVVar9->upVector).z;
-  puStack_12 = (undefined *)
-               ((float)(undefined4)uStack_10 * fStack_8 - (float)uStack_7 * fStack_11);
+  fVar9 = (float)uVar8;
+  pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_7._0_4_ = (pVVar10->upVector).x;
+  uStack_7._4_4_ = (pVVar10->upVector).y;
+  fStack_11 = (pVVar10->upVector).z;
+  puStack_12 = (undefined *)((ulonglong)uVar8 >> 0x20);
   pDStack_13 = (Dictionary_2_System_Object_System_Object___Class *)
-               ((float)uStack_7 * (float)uStack_10._4_4_ -
-               (float)(undefined4)uStack_10 * uStack_7._4_4_);
+               (fVar9 * (float)uStack_7._4_4_ - (float)(undefined4)uStack_7 * (float)puStack_12);
+  puStack_12 = (undefined *)((float)(undefined4)uStack_7 * fVar5 - fVar9 * fStack_11);
   fVar14 = (float10)func_?(&(pHVar1->fields).velocity,0);
   fStack_15 = (float)fVar14;
   if ((pHVar1->fields).vehicleIsUnoccupied == 0) {
@@ -651,11 +651,11 @@ code_?:
                    (pVVar4->fields).seats,
         this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) ||
        (RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_01,0,
-                           MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
-                          ), RVar17 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           (this_01,0,
+                            MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
+                           ), RVar17 == (RegexCharClass_SingleRange)0x0)) goto code_?;
     pHVar18 = *(HamsterWheelVisualization **)((int)RVar17 + 0x14);
     pHStack_19 = pHVar18;
     this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

@@ -150,6 +150,6 @@ bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
 
 {
   bVar1 = MVNetworkReporter_SendTransformData_Equals(&std1,std2,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 

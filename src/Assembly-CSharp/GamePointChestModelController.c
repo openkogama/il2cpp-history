@@ -5,53 +5,52 @@ void Assembly-CSharp.dll::GamePointChestModelController::GamePointChestModelCont
                (GamePointChestModelController *this,MethodInfo *method)
 
 {
-  pGVar1 = this;
   if (cRam_? == '\0') {
     func_?(&StringLiteral__MainColor);
     cRam_? = '\x01';
   }
-  pGVar2 = (this->fields).openMesh;
-  if (pGVar2 != (GameObject *)0x0) {
+  pGVar1 = (this->fields).openMesh;
+  if (pGVar1 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,0,(MethodInfo *)0x0);
-    pGVar2 = (this->fields).closedMesh;
-    if (pGVar2 != (GameObject *)0x0) {
+              (pGVar1,0,(MethodInfo *)0x0);
+    pGVar1 = (this->fields).closedMesh;
+    if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,1,(MethodInfo *)0x0);
-      pRVar3 = (this->fields).openingRenderer;
+                (pGVar1,1,(MethodInfo *)0x0);
+      pRVar2 = (this->fields).openingRenderer;
       (this->fields).isOpening = 0;
-      if (pRVar3 != (Renderer *)0x0) {
-        pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                           (pRVar3,(MethodInfo *)0x0);
-        if (pMVar4 != (Material *)0x0) {
-          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                             ((Vector4 *)&stack0xffffffdc,pMVar4,StringLiteral__MainColor,
+      if (pRVar2 != (Renderer *)0x0) {
+        pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                           (pRVar2,(MethodInfo *)0x0);
+        if (pMVar3 != (Material *)0x0) {
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                             ((Vector4 *)&stack0xffffffec,pMVar3,StringLiteral__MainColor,
                               (MethodInfo *)0x0);
-          fVar6 = pVVar5->x;
-          fVar7 = pVVar5->y;
-          fVar8 = pVVar5->z;
-          pRVar3 = (this->fields).openingRenderer;
-          if (pRVar3 != (Renderer *)0x0) {
-            pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                               (pRVar3,(MethodInfo *)0x0);
-            if (pMVar4 != (Material *)0x0) {
-              this = (GamePointChestModelController *)fVar8;
-              fVar9 = fVar7;
-              method = (MethodInfo *)0x3f800000;
-              value.x = fVar6;
-              value = (Vector4)CONCAT124(auVar10,value.x);
+          fVar5 = pVVar4->x;
+          fVar6 = pVVar4->y;
+          fVar7 = pVVar4->z;
+          pRVar2 = (this->fields).openingRenderer;
+          fVar8 = 1.0;
+          if (pRVar2 != (Renderer *)0x0) {
+            pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                               (pRVar2,(MethodInfo *)0x0);
+            if (pMVar3 != (Material *)0x0) {
+              value.y = fVar6;
+              value.x = fVar5;
+              value.z = fVar7;
+              value.w = fVar8;
               UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                        (pMVar4,StringLiteral__MainColor,value,(MethodInfo *)0x0);
-              pGVar11 = (pGVar1->fields).greyOutScript;
-              if (pGVar11 != (GreyOutObjectScript *)0x0) {
-                GreyOutObjectScript::GreyOutObjectScript_GreyIn(pGVar11,(MethodInfo *)0x0);
-                pGVar11 = (pGVar1->fields).greyOutScript;
-                if (pGVar11 != (GreyOutObjectScript *)0x0) {
-                  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pGVar11,(MethodInfo *)0x0);
-                  if (pGVar2 != (GameObject *)0x0) {
+                        (pMVar3,StringLiteral__MainColor,value,(MethodInfo *)0x0);
+              pGVar9 = (this->fields).greyOutScript;
+              if (pGVar9 != (GreyOutObjectScript *)0x0) {
+                GreyOutObjectScript::GreyOutObjectScript_GreyIn(pGVar9,(MethodInfo *)0x0);
+                pGVar9 = (this->fields).greyOutScript;
+                if (pGVar9 != (GreyOutObjectScript *)0x0) {
+                  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pGVar9,(MethodInfo *)0x0);
+                  if (pGVar1 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar2,1,(MethodInfo *)0x0);
+                              (pGVar1,1,(MethodInfo *)0x0);
                     return;
                   }
                 }
@@ -63,8 +62,8 @@ void Assembly-CSharp.dll::GamePointChestModelController::GamePointChestModelCont
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -85,20 +84,22 @@ void Assembly-CSharp.dll::GamePointChestModelController::GamePointChestModelCont
                        (pRVar1,(MethodInfo *)0x0);
     if (pMVar2 != (Material *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                         ((Vector4 *)&stack0xffffffdc,pMVar2,StringLiteral__MainColor,
+                         ((Vector4 *)&stack0xffffffec,pMVar2,StringLiteral__MainColor,
                           (MethodInfo *)0x0);
       fVar4 = pVVar3->x;
       fVar5 = pVVar3->y;
       pRVar1 = (this->fields).openingRenderer;
       if (pRVar1 != (Renderer *)0x0) {
-        puVar6 = &UNK_?;
+        auVar6._4_4_ = pRVar1;
+        auVar6._0_4_ = &UNK_?;
+        auVar6._8_4_ = 0;
         pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                            (pRVar1,(MethodInfo *)0x0);
         if (pMVar2 != (Material *)0x0) {
           value.y = fVar5;
           value.x = fVar4;
-          value.z = (float)puVar6;
-          value.w = 0.0;
+          value.z = auVar6._0_4_;
+          value.w = auVar6._4_4_;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (pMVar2,StringLiteral__MainColor,value,(MethodInfo *)0x0);
           pGVar7 = (this->fields).openMesh;
@@ -209,56 +210,56 @@ void Assembly-CSharp.dll::GamePointChestModelController::GamePointChestModelCont
                (GamePointChestModelController *this,MethodInfo *method)
 
 {
+  pGVar1 = this;
   if (cRam_? == '\0') {
     func_?(&StringLiteral__MainColor);
     cRam_? = '\x01';
   }
-  if ((this->fields).isOpening != 0) {
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar1 = fVar1 - (this->fields).openingStartTime;
-    pfVar2 = &(this->fields).fadeStartTime;
-    if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
-      pRVar3 = (this->fields).openingRenderer;
-      fVar1 = _UNK_? -
-              (fVar1 - (this->fields).fadeStartTime) /
-              ((this->fields).fadeEndTime - (this->fields).fadeStartTime);
-      if ((pRVar3 != (Renderer *)0x0) &&
-         (pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar3,(MethodInfo *)0x0), pMVar4 != (Material *)0x0)) {
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                           ((Vector4 *)&stack0xffffffdc,pMVar4,StringLiteral__MainColor,
-                            (MethodInfo *)0x0);
-        fVar6 = pVVar5->x;
-        fVar7 = pVVar5->y;
-        fVar8 = pVVar5->z;
-        pRVar3 = (this->fields).openingRenderer;
-        if ((pRVar3 != (Renderer *)0x0) &&
-           (pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                               (pRVar3,(MethodInfo *)0x0), pMVar4 != (Material *)0x0)) {
-          value.y = fVar7;
-          value.x = fVar6;
-          value.z = fVar8;
-          value.w = fVar1;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                    (pMVar4,StringLiteral__MainColor,value,(MethodInfo *)0x0);
-          if (0.0 < fVar1) {
-            return;
-          }
-          this_00 = (this->fields).openMesh;
-          (this->fields).isOpening = 0;
-          if (this_00 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (this_00,0,(MethodInfo *)0x0);
-            return;
-          }
+  if (((this->fields).isOpening == 0) ||
+     (fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
+     fVar2 = fVar2 - (this->fields).openingStartTime, pfVar3 = &(this->fields).fadeStartTime,
+     fVar2 < *pfVar3 || fVar2 == *pfVar3)) {
+    return;
+  }
+  pRVar4 = (this->fields).openingRenderer;
+  if ((pRVar4 != (Renderer *)0x0) &&
+     (pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                         (pRVar4,(MethodInfo *)0x0), pMVar5 != (Material *)0x0)) {
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
+                       ((Vector4 *)&stack0xffffffec,pMVar5,StringLiteral__MainColor,
+                        (MethodInfo *)0x0);
+    fVar2 = pVVar6->x;
+    fVar7 = pVVar6->y;
+    fVar8 = pVVar6->z;
+    pRVar4 = (this->fields).openingRenderer;
+    if (pRVar4 != (Renderer *)0x0) {
+      this = (GamePointChestModelController *)&UNK_?;
+      pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                         (pRVar4,(MethodInfo *)0x0);
+      if (pMVar5 != (Material *)0x0) {
+        fVar9 = fVar7;
+        fVar10 = fVar2;
+        uVar11 = CONCAT44(fVar9,fVar10);
+        fVar12 = fVar8;
+        value = (Vector4)CONCAT88(uVar13,uVar11);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                  (pMVar5,StringLiteral__MainColor,value,(MethodInfo *)0x0);
+        if (0.0 < (float)this) {
+          return;
+        }
+        this_00 = (pGVar1->fields).openMesh;
+        (pGVar1->fields).isOpening = 0;
+        if (this_00 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (this_00,0,(MethodInfo *)0x0);
+          return;
         }
       }
-      func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
-      return;
     }
   }
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

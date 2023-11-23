@@ -965,24 +965,22 @@ int32_t Assembly-CSharp.dll::MVWorldObjectClientManager::
       pMVar3 = (MonitorData *)(pMVar2->fields)._._ActorNr_k__BackingField;
       while( true ) {
         if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                         );
+          func_?();
           cRam_? = '\x01';
         }
-        pOStack_4 = (Object *)0x0;
         this_00 = (this->fields).worldObjects;
         if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) break;
+        value = (Object *)&stack0xfffffff8;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__TryGetValue
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,woID,&pOStack_4,
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,woID,(Object **)value,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                   );
-        if (pOStack_4 == (Object *)0x0) break;
-        if (pOStack_4[4].monitor == pMVar3) {
-          pOVar1 = pOStack_4[1].klass;
+        if (value == (Object *)0x0) break;
+        if (value[4].monitor == pMVar3) {
+          pOVar1 = value[1].klass;
         }
-        woID = (int32_t)pOStack_4[1].monitor;
+        woID = (int32_t)value[1].monitor;
         if ((MonitorData *)woID == (MonitorData *)0xffffffff) {
           return (int32_t)pOVar1;
         }
@@ -990,9 +988,9 @@ int32_t Assembly-CSharp.dll::MVWorldObjectClientManager::
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -2180,7 +2178,6 @@ MVGroup * Assembly-CSharp.dll::MVWorldObjectClientManager::MVWorldObjectClientMa
   this_00 = (this->fields).worldObjects;
   if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
     func_?();
-    pMVar1 = extraout_EDX;
   }
   else {
     unaff_ESI = (MVGroup *)
@@ -2193,7 +2190,7 @@ MVGroup * Assembly-CSharp.dll::MVWorldObjectClientManager::MVWorldObjectClientMa
     if (unaff_ESI == (MVGroup *)0x0) {
       return (MVGroup *)0x0;
     }
-    pMVar1 = TypeInfo__MVGroup;
+    unaff_EDI = TypeInfo__MVGroup;
     if (((TypeInfo__MVGroup->_1).naturalAligment <= (unaff_ESI->klass->_1).naturalAligment) &&
        ((MVGroup__Class *)
         (unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
@@ -2201,10 +2198,10 @@ MVGroup * Assembly-CSharp.dll::MVWorldObjectClientManager::MVWorldObjectClientMa
       return unaff_ESI;
     }
   }
-  func_?(unaff_ESI,pMVar1);
-  pcVar2 = (code *)swi(3);
-  pMVar3 = (MVGroup *)(*pcVar2)();
-  return pMVar3;
+  func_?(unaff_ESI,unaff_EDI);
+  pcVar1 = (code *)swi(3);
+  pMVar2 = (MVGroup *)(*pcVar1)();
+  return pMVar2;
 }
 
 

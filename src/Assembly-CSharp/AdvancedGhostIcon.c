@@ -141,75 +141,78 @@ void Assembly-CSharp.dll::AdvancedGhostIcon::AdvancedGhostIcon_CloneCubeMeshes
                 (unaff_ESI,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
                  (MethodInfo *)0x0);
       pGVar6 = (this->fields).ghostBody;
-      if ((pGVar6 != (GhostBody *)0x0) &&
-         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pGVar6,(MethodInfo *)0x0), pTVar7 != (Transform *)0x0)) {
-        TStack_4.monitor =
-             (MonitorData *)
-             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                       (pTVar7,(MethodInfo *)0x0);
-        unaff_ESI = &TStack_4;
-        uStack_1 = 1;
-        while ((Transform *)TStack_4.monitor != (Transform *)0x0) {
-          cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,TStack_4.monitor);
-          pMVar9 = TStack_4.monitor;
-          if (cVar8 == '\0') {
-            uStack_1 = 0xffffffff;
-            TStack_4.klass =
-                 (Transform__Class *)
-                 func_?(TStack_4.monitor,TypeInfo__System__IDisposable);
-            if (TStack_4.klass != (Transform__Class *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,TStack_4.klass);
-            }
-            uStack_1 = 0xffffffff;
-            if ((body != (MVCubeModelBase *)0x0) &&
-               (pCVar10 = (body->fields).chunkInstances, pCVar10 != (ChunkInstances *)0x0)) {
-              TStack_4.monitor =
-                   (MonitorData *)
-                   func_?(0,TypeInfo__System__Collections__IEnumerable,pCVar10);
-              uStack_1 = 4;
-              goto code_?;
-            }
-            break;
-          }
-          unaff_ESI = (Transform *)0x0;
-          if ((Transform *)TStack_4.monitor == (Transform *)0x0) break;
-          pTVar11 = *(Transform__Class **)&(TStack_4.monitor)->field_0x0;
-          uVar12 = 0;
-          uVar13._0_1_ = (pTVar11->_1).rank;
-          uVar13._1_1_ = (pTVar11->_1).minimumAlignment;
-          if (uVar13 != 0) {
-            do {
-              if (pTVar11->interfaceOffsets[uVar12].interfaceType ==
-                  (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-                ppMVar14 = &(&((*(Transform__Class **)&(TStack_4.monitor)->field_0x0)->vtable).
-                             Finalize)
-                           [(*(Transform__Class **)&(TStack_4.monitor)->field_0x0)->
-                            interfaceOffsets[uVar12].offset].method;
+      if (pGVar6 != (GhostBody *)0x0) {
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pGVar6,(MethodInfo *)0x0);
+        if (pTVar7 != (Transform *)0x0) {
+          TStack_4.monitor =
+               (MonitorData *)
+               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                         (pTVar7,(MethodInfo *)0x0);
+          unaff_ESI = &TStack_4;
+          uStack_1 = 1;
+          while ((Transform *)TStack_4.monitor != (Transform *)0x0) {
+            cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,TStack_4.monitor);
+            pMVar9 = TStack_4.monitor;
+            if (cVar8 == '\0') {
+              uStack_1 = 0xffffffff;
+              TStack_4.klass =
+                   (Transform__Class *)
+                   func_?(TStack_4.monitor,TypeInfo__System__IDisposable);
+              if (TStack_4.klass != (Transform__Class *)0x0) {
+                func_?(0,TypeInfo__System__IDisposable,TStack_4.klass);
+              }
+              uStack_1 = 0xffffffff;
+              if ((body != (MVCubeModelBase *)0x0) &&
+                 (pCVar10 = (body->fields).chunkInstances, pCVar10 != (ChunkInstances *)0x0)) {
+                TStack_4.monitor =
+                     (MonitorData *)
+                     func_?(0,TypeInfo__System__Collections__IEnumerable,pCVar10);
+                uStack_1 = 4;
                 goto code_?;
               }
-              uVar12 = uVar12 + 1;
-            } while (uVar12 < uVar13);
-          }
-          ppMVar14 = (MethodInfo **)
-                    func_?(TStack_4.monitor,TypeInfo__System__Collections__IEnumerator,1);
+              break;
+            }
+            unaff_ESI = (Transform *)0x0;
+            if ((Transform *)TStack_4.monitor == (Transform *)0x0) break;
+            pTVar11 = *(Transform__Class **)&(TStack_4.monitor)->field_0x0;
+            uVar12 = 0;
+            uVar13._0_1_ = (pTVar11->_1).rank;
+            uVar13._1_1_ = (pTVar11->_1).minimumAlignment;
+            if (uVar13 != 0) {
+              do {
+                if (pTVar11->interfaceOffsets[uVar12].interfaceType ==
+                    (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+                  ppMVar14 = &(&((*(Transform__Class **)&(TStack_4.monitor)->field_0x0)->vtable).
+                               Finalize)
+                             [(*(Transform__Class **)&(TStack_4.monitor)->field_0x0)->
+                              interfaceOffsets[uVar12].offset].method;
+                  goto code_?;
+                }
+                uVar12 = uVar12 + 1;
+              } while (uVar12 < uVar13);
+            }
+            ppMVar14 = (MethodInfo **)
+                      func_?(TStack_4.monitor,TypeInfo__System__Collections__IEnumerator,1
+                                     );
 code_?:
-          unaff_ESI = (Transform *)(*(code *)*ppMVar14)(pMVar9,ppMVar14[1]);
-          if (unaff_ESI == (Transform *)0x0) break;
-          pTVar11 = TypeInfo__UnityEngine__Transform;
-          if (((unaff_ESI->klass->_1).naturalAligment <
-               (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-             ((unaff_ESI->klass->_1).typeHierarchy
-              [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
-          unaff_ESI = (Transform *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)unaff_ESI,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            unaff_ESI = (Transform *)(*(code *)*ppMVar14)(pMVar9,ppMVar14[1]);
+            if (unaff_ESI == (Transform *)0x0) break;
+            pTVar11 = TypeInfo__UnityEngine__Transform;
+            if (((unaff_ESI->klass->_1).naturalAligment <
+                 (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
+               ((unaff_ESI->klass->_1).typeHierarchy
+                [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
+                (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
+            unaff_ESI = (Transform *)
+                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)unaff_ESI,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                      ((Object_1 *)unaff_ESI,(MethodInfo *)0x0);
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)unaff_ESI,(MethodInfo *)0x0);
         }
       }
     }
@@ -261,14 +264,15 @@ code_?:
       unaff_ESI = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)pGVar6,(MethodInfo *)0x0);
       pTVar7 = (body->fields)._.transform;
-      if ((pTVar7 != (Transform *)0x0) &&
-         (pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                              ((Vector3 *)&stack0xffffffb4,pTVar7,(MethodInfo *)0x0),
-         unaff_ESI != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (unaff_ESI,*pVVar18,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+      if (pTVar7 != (Transform *)0x0) {
+        pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+                            ((Vector3 *)&stack0xffffffb4,pTVar7,(MethodInfo *)0x0);
+        if (unaff_ESI != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                    (unaff_ESI,*pVVar18,(MethodInfo *)0x0);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
+        }
       }
     }
     goto code_?;
@@ -316,10 +320,10 @@ code_?:
   pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                      ((GameObject *)unaff_ESI,(MethodInfo *)0x0);
   pGVar6 = (this->fields).ghostBody;
-  if ((pGVar6 == (GhostBody *)0x0) ||
-     (value_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
-  goto code_?;
+  if (pGVar6 == (GhostBody *)0x0) goto code_?;
+  value_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pGVar6,(MethodInfo *)0x0);
+  if (pTVar7 == (Transform *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
             (pTVar7,value_00,(MethodInfo *)0x0);
   pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -345,24 +349,26 @@ code_?:
             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
             UnsafeUtility_AsRef_1((Void *)unaff_ESI,(MethodInfo *)0x0);
   pGVar6 = (this->fields).ghostBody;
-  if (((pGVar6 == (GhostBody *)0x0) ||
-      (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pGVar6,(MethodInfo *)0x0), this_00 == (GameObject *)0x0))
-     || (value_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                              (this_00,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0))
-  goto code_?;
+  if (pGVar6 == (GhostBody *)0x0) goto code_?;
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pGVar6,(MethodInfo *)0x0);
+  if (this_00 == (GameObject *)0x0) goto code_?;
+  value_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                       (this_00,(MethodInfo *)0x0);
+  if (pGVar21 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
             (pGVar21,value_01,(MethodInfo *)0x0);
   unaff_ESI = (Transform *)
               UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
               UnsafeUtility_AsRef_1((Void *)unaff_ESI,(MethodInfo *)0x0);
   pGVar6 = (this->fields).ghostBody;
-  if (((pGVar6 == (GhostBody *)0x0) ||
-      (pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pGVar6,(MethodInfo *)0x0), pGVar21 == (GameObject *)0x0))
-     || (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                           (pGVar21,(MethodInfo *)0x0), unaff_ESI == (Transform *)0x0))
-  goto code_?;
+  if (pGVar6 == (GhostBody *)0x0) goto code_?;
+  pGVar21 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pGVar6,(MethodInfo *)0x0);
+  if (pGVar21 == (GameObject *)0x0) goto code_?;
+  value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                    (pGVar21,(MethodInfo *)0x0);
+  if (unaff_ESI == (Transform *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
             ((GameObject *)unaff_ESI,value,(MethodInfo *)0x0);
   goto code_?;

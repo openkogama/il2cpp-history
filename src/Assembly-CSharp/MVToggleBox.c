@@ -50,7 +50,7 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_InputStateUpdateCallback
 code_?:
     if (logicInputState == LogicInputState__Enum_FromColdToHot) {
       bVar1 = MVToggleBox_get_Toggled(this,(MethodInfo *)0x0);
-      MVToggleBox_set_Toggled(this,bVar1 == 0,(MethodInfo *)0x0);
+      MVToggleBox_set_Toggled(this,bVar1 ^ 1,(MethodInfo *)0x0);
     }
     pOVar2 = (this->fields).outputSignalTransmitter;
     bVar1 = MVToggleBox_get_Toggled(this,(MethodInfo *)0x0);

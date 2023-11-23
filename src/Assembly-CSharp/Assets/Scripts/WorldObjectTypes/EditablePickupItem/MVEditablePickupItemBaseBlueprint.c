@@ -69,10 +69,10 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (this_00,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
     pMVar1 = (this->fields).itemBase;
-    if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
-       (pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
-                           (pMVar1,(MethodInfo *)0x0),
-       pMVar2 == (MVEditablePickupItemBaseObject *)0x0)) goto code_?;
+    if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
+    pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
+                       (pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 == (MVEditablePickupItemBaseObject *)0x0) goto code_?;
     (this->fields).cubeModelBaseParent = (pMVar2->fields).cubeModelParent;
     func_?();
     pMVar3 = (MVCubeModelInstance *)
@@ -120,26 +120,29 @@ code_?:
       MVCubeModelInstance::MVCubeModelInstance_EnableCulling(pMVar3,(MethodInfo *)0x0);
       MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders(this,0,(MethodInfo *)0x0);
       pMVar1 = (this->fields).itemBase;
-      if (((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
-          (pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
-                              (pMVar1,(MethodInfo *)0x0),
-          pMVar2 == (MVEditablePickupItemBaseObject *)0x0)) ||
+      if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
+      pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
+                         (pMVar1,(MethodInfo *)0x0);
+      if ((pMVar2 == (MVEditablePickupItemBaseObject *)0x0) ||
          (this_01 = (pMVar2->fields)._.pickupItem, this_01 == (GreyOutObjectScript *)0x0))
       goto code_?;
       GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials
                 (this_01,(MethodInfo *)0x0);
       pMVar1 = (this->fields).itemBase;
-      if (((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
-          (this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                     (pMVar1->fields)._._._._.data,
-          this_02 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) ||
-         ((this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Object,UnityEngine::UIElements::TextureId]::
-                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                               (this_02,(Object *)StringLiteral_itemData,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               ), (this->fields).editableCubeModel == (MVCubeModelInstance *)0x0 ||
-          (value = (Object *)func_?(), this_04.m_Index == 0)))) goto code_?;
+      if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+         (this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                    (pMVar1->fields)._._._._.data,
+         this_02 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
+      goto code_?;
+      this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (this_02,(Object *)StringLiteral_itemData,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+      if ((this->fields).editableCubeModel == (MVCubeModelInstance *)0x0) goto code_?;
+      value = (Object *)func_?();
+      if (this_04.m_Index == 0) goto code_?;
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
            naturalAligment <= *(byte *)(*(int *)this_04.m_Index + 0xb8)) &&
          (*(Dictionary_2_System_Object_System_Object___Class **)
@@ -176,6 +179,7 @@ code_?:
         }
         goto code_?;
       }
+      goto code_?;
     }
   }
   else {
@@ -199,6 +203,8 @@ code_?:
           TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase)
          ) goto code_?;
     }
+    func_?();
+code_?:
     func_?();
   }
   func_?();

@@ -117,10 +117,10 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::
   pLVar1 = (this->fields).headController;
   if (pLVar1 != (LimbController *)0x0) {
     if (_UNK_? <
-        (pLVar1->fields).interpolateTowardsPitchRotation.y * pitchRotation.y +
-        (pLVar1->fields).interpolateTowardsPitchRotation.x * pitchRotation.x +
-        (pLVar1->fields).interpolateTowardsPitchRotation.z * pitchRotation.z +
-        (pLVar1->fields).interpolateTowardsPitchRotation.w * pitchRotation.w) {
+        pitchRotation.y * (pLVar1->fields).interpolateTowardsPitchRotation.y +
+        pitchRotation.x * (pLVar1->fields).interpolateTowardsPitchRotation.x +
+        pitchRotation.z * (pLVar1->fields).interpolateTowardsPitchRotation.z +
+        pitchRotation.w * (pLVar1->fields).interpolateTowardsPitchRotation.w) {
       return;
     }
     if (pLVar1 != (LimbController *)0x0) {

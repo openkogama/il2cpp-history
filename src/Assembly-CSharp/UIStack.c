@@ -1332,60 +1332,61 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateBlocking(UIStack *this,MethodIn
       if (*(char *)((int)RVar5 + 0xe) == '\0') {
         if (pIVar6 == (Image *)0x0) goto code_?;
         puVar7 = (undefined4 *)func_?();
-        pIVar6 = (this->fields).blockingObjectImage;
         uVar8 = *puVar7;
         uVar9 = puVar7[1];
         uVar10 = puVar7[2];
         fVar11 = (this->fields).origBlockerAlpha;
-        if (pIVar6 == (Image *)0x0) goto code_?;
       }
       else {
         if (pIVar6 == (Image *)0x0) goto code_?;
         puVar7 = (undefined4 *)func_?();
-        pIVar6 = (this->fields).blockingObjectImage;
         uVar8 = *puVar7;
         uVar9 = puVar7[1];
         uVar10 = puVar7[2];
-        if (pIVar6 == (Image *)0x0) goto code_?;
         fVar11 = 0.0;
       }
-      func_?(0x17,pIVar6,uVar8,uVar9,uVar10,fVar11);
-      pGVar2 = (this->fields).blockingObject;
-      if ((pGVar2 != (GameObject *)0x0) &&
-         (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar3,(MethodInfo *)0x0);
-        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).stackableUiElements;
-        if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-           (((RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (pLVar4,index,
-                                 MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                ), RVar5 != (RegexCharClass_SingleRange)0x0 &&
-             (*(GameObject **)((int)RVar5 + 8) != (GameObject *)0x0)) &&
-            (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0),
-            pTVar3 != (Transform *)0x0)))) {
-          index_00 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
-                               (pTVar3,(MethodInfo *)0x0);
-          pGVar2 = (this->fields).blockingObject;
-          if ((pGVar2 != (GameObject *)0x0) &&
-             (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
-                      (pTVar3,index_00,(MethodInfo *)0x0);
+      pIVar6 = (this->fields).blockingObjectImage;
+      if (pIVar6 != (Image *)0x0) {
+        func_?(0x17,pIVar6,uVar8,uVar9,uVar10,fVar11);
+        pGVar2 = (this->fields).blockingObject;
+        if ((pGVar2 != (GameObject *)0x0) &&
+           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                    (pTVar3,(MethodInfo *)0x0);
+          pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   (this->fields).stackableUiElements;
+          if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             && (((RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                           RegularExpressions::RegexCharClass+SingleRange]::
+                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                     (pLVar4,index,
+                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                                     ), RVar5 != (RegexCharClass_SingleRange)0x0 &&
+                  (*(GameObject **)((int)RVar5 + 8) != (GameObject *)0x0)) &&
+                 (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                           GameObject_get_transform
+                                     (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0),
+                 pTVar3 != (Transform *)0x0)))) {
+            index_00 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
+                                 (pTVar3,(MethodInfo *)0x0);
             pGVar2 = (this->fields).blockingObject;
             if ((pGVar2 != (GameObject *)0x0) &&
-               (pGVar2 = (GameObject *)
-                         UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                         UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
-               pGVar2 != (GameObject *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar2,1,(MethodInfo *)0x0);
-              return;
+               (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
+               pTVar3 != (Transform *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
+                        (pTVar3,index_00,(MethodInfo *)0x0);
+              pGVar2 = (this->fields).blockingObject;
+              if ((pGVar2 != (GameObject *)0x0) &&
+                 (pGVar2 = (GameObject *)
+                           UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                           UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+                 pGVar2 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar2,1,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }

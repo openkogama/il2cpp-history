@@ -315,67 +315,71 @@ IntVector Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_GetCubePos
   voxelHit_00.distance = (float)voxelHit.collider;
   voxelHit_00.collider = (Collider *)voxelHit.transform;
   voxelHit_00.transform = (Transform *)voxelHit._60_4_;
-  voxelHit_00._60_4_ = (SharedCubeFunctions__Class *)voxelHit.interactionFlags;
+  voxelHit_00._60_4_ = (MVWorldObjectClientManager *)voxelHit.interactionFlags;
   bVar2 = PickupItemCubeGun_GetCubePosFromFineGrainedTerrain
                     (voxelHit_00,0.2,(IntVector *)voxelHit.point.x,(MethodInfo *)0x0);
   iVar3 = extraout_DX;
   if (bVar2 == 0) {
-    voxelHit.collider = (Collider *)0x0;
-    voxelHit.distance = (float)&UNK_?;
+    voxelHit.interactionFlags._0_4_ = (MVWorldObjectClientManager *)0x0;
+    voxelHit._60_4_ = &UNK_?;
     this = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this != (MVWorldObjectClientManager *)0x0) {
-      voxelHit.transform =
-           (Transform *)
+      voxelHit.interactionFlags._4_4_ =
            MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
       ;
-      voxelHit.distance = (float)&UNK_?;
-      voxelHit.collider = (Collider *)this;
+      voxelHit._60_4_ = &UNK_?;
+      voxelHit.interactionFlags._0_4_ = this;
       pOVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                          (this,
                           MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
                          );
       if (pOVar4 != (Object *)0x0) {
         pOVar5 = pOVar4[0x11].klass;
-        fVar6 = voxelHit.point.y + voxelHit.normal.y * _UNK_?;
-        pCVar7 = (Collider *)(voxelHit.point.z + voxelHit.normal.z * _UNK_?);
-        pTVar8 = (Transform *)(voxelHit.normal.x + (float)voxelHit.cubePos._0_4_ * _UNK_?);
+        voxelHit.interactionFlags._0_4_ =
+             (MVWorldObjectClientManager *)(voxelHit.point.y + voxelHit.normal.y * _UNK_?);
+        method = (MethodInfo *)(voxelHit.normal.x + (float)voxelHit.cubePos._0_4_ * _UNK_?);
+        voxelHit.interactionFlags._4_4_ =
+             (MethodInfo *)(voxelHit.point.z + voxelHit.normal.z * _UNK_?);
         if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-          voxelHit.interactionFlags._0_4_ = TypeInfo__SharedCubeFunctions;
-          voxelHit._60_4_ = &UNK_?;
+          pSStack6 = TypeInfo__SharedCubeFunctions;
+          method = (MethodInfo *)&UNK_?;
           func_?();
         }
-        voxelHit.interactionFlags._0_4_ = (SharedCubeFunctions__Class *)0x0;
-        voxelHit._60_4_ = 0;
-        voxelHit.woId = (int)&voxelHit.interactionFlags + 4;
-        voxelHit._36_4_ = &UNK_?;
-        point.y = fVar6;
+        fVar7 = (float)voxelHit.interactionFlags._4_4_;
+        fVar8 = (float)(MVWorldObjectClientManager *)voxelHit.interactionFlags;
+        pSStack6 = (SharedCubeFunctions__Class *)0x0;
+        voxelHit._60_4_ = (MVWorldObjectClientManager *)voxelHit.interactionFlags;
+        voxelHit.interactionFlags._0_4_ =
+             (MVWorldObjectClientManager *)voxelHit.interactionFlags._4_4_;
+        voxelHit.interactionFlags._4_4_ = method;
+        pMVar9 = voxelHit.interactionFlags._4_4_;
+        voxelHit.collider = (Collider *)((int)&voxelHit.interactionFlags + 4);
+        voxelHit.distance = (float)&UNK_?;
+        point.y = fVar8;
         point.x = (float)pOVar5;
-        point.z = (float)pCVar7;
-        voxelHit.transform._0_1_ = (bool)pTVar8;
-        bVar2 = (bool)voxelHit.transform;
-        voxelHit.cube = (Cube *)pOVar5;
-        voxelHit.distance = fVar6;
-        voxelHit.collider = pCVar7;
-        voxelHit.transform = pTVar8;
-        IVar9 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal
-                           ((GameObject *)voxelHit.woId,point,bVar2,(MethodInfo *)0x0);
-        iVar3 = IVar9.z;
-        uVar10 = *(undefined2 *)(IVar9._0_4_ + 1);
-        *(undefined4 *)fVar1 = *IVar9._0_4_;
-        *(undefined2 *)((int)fVar1 + 4) = uVar10;
+        point.z = fVar7;
+        voxelHit.interactionFlags._4_1_ = (bool)method;
+        bVar2 = voxelHit.interactionFlags._4_1_;
+        voxelHit.transform = (Transform *)pOVar5;
+        voxelHit.interactionFlags._4_4_ = pMVar9;
+        IVar10 = SharedCubeFunctions::SharedCubeFunctions_WorldToLocal
+                           ((GameObject *)voxelHit.collider,point,bVar2,(MethodInfo *)0x0);
+        iVar3 = IVar10.z;
+        uVar11 = *(undefined2 *)(IVar10._0_4_ + 1);
+        *(undefined4 *)fVar1 = *IVar10._0_4_;
+        *(undefined2 *)((int)fVar1 + 4) = uVar11;
         goto code_?;
       }
     }
-    voxelHit.interactionFlags._0_4_ = (SharedCubeFunctions__Class *)&UNK_?;
     func_?();
-    pcVar11 = (code *)swi(3);
-    IVar9 = (IntVector)(*pcVar11)();
-    return IVar9;
+    pcVar12 = (code *)swi(3);
+    IVar10 = (IntVector)(*pcVar12)();
+    return IVar10;
   }
 code_?:
-  IVar9.z = iVar3;
-  IVar9._0_4_ = fVar1;
-  return IVar9;
+  IVar10.z = iVar3;
+  IVar10._0_4_ = fVar1;
+  return IVar10;
 }
 
 
@@ -385,8 +389,9 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_GetCubePosFromFin
                (VoxelHit voxelHit,float maxDistanceToEdge,IntVector *pos,MethodInfo *method)
 
 {
-  puVar1 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = (int)&stack0xfffffff0;
+  uVar1 = (undefined2)*unaff_FS_OFFSET;
+  uVar2 = (undefined2)((uint)*unaff_FS_OFFSET >> 0x10);
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__Cube);
@@ -403,169 +408,181 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_GetCubePosFromFin
   }
   this = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this != (MVWorldObjectClientManager *)0x0) {
-    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+    pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this,voxelHit.woId,(MethodInfo *)0x0);
-    if (((pMVar2 == (MVWorldObject *)0x0) ||
-        ((pMVar2->klass->_1).naturalAligment <
+    if (((pMVar3 == (MVWorldObject *)0x0) ||
+        ((pMVar3->klass->_1).naturalAligment <
          (TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment)) ||
        ((MVCubeModelFineGrainedTerrain__Class *)
-        (pMVar2->klass->_1).typeHierarchy
+        (pMVar3->klass->_1).typeHierarchy
         [(TypeInfo__MVCubeModelFineGrainedTerrain->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelFineGrainedTerrain)) {
 code_?:
-      *unaff_FS_OFFSET = (int)puVar1;
+      *unaff_FS_OFFSET = CONCAT22(uVar2,uVar1);
       return 0;
     }
-    pLVar3 = pMVar2[1].fields.inputLinkRefs;
+    pLVar4 = pMVar3[1].fields.inputLinkRefs;
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pMVar4 = (MethodInfo *)0x0;
-    IVar5 = voxelHit.cubePos;
-    EVar6 = Cube::Cube_GetEdge_1
-                      ((GameObject *)pLVar3,voxelHit.cube,voxelHit.face,voxelHit.point,IVar5,
+    pMVar5 = (MVWorldObject__Class *)0x0;
+    IVar6 = voxelHit.cubePos;
+    EVar7 = Cube::Cube_GetEdge_1
+                      ((GameObject *)pLVar4,voxelHit.cube,voxelHit.face,voxelHit.point,IVar6,
                        (MethodInfo *)0x0);
-    pVVar7 = Cube::Cube_GetEdgeVerticesWorld
-                       ((GameObject *)pMVar2[1].fields.inputLinkRefs,voxelHit.cube,voxelHit.face,
-                        EVar6,IVar5,(MethodInfo *)0x0);
-    fVar8 = 0.0;
-    if (pVVar7 != (Vector3__Array *)0x0) {
-      if ((pVVar7->max_length == 0) || (pVVar7->max_length < 2)) {
+    pVVar8 = Cube::Cube_GetEdgeVerticesWorld
+                        ((GameObject *)pMVar3[1].fields.inputLinkRefs,voxelHit.cube,voxelHit.face,
+                         EVar7,IVar6,(MethodInfo *)0x0);
+    uVar9 = 0;
+    if (pVVar8 != (Vector3__Array *)0x0) {
+      if ((pVVar8->max_length == 0) || (pVVar8->max_length < 2)) {
         func_?();
 code_?:
         func_?();
       }
       else {
-        fVar9 = voxelHit.point.y;
         uVar10 = voxelHit.point.z._0_2_;
         uVar11 = voxelHit.point.z._2_2_;
         bVar12 = MathFunctions::MathFunctions_DistancePointLine
-                          (voxelHit.point,pVVar7->vector[0],pVVar7->vector[1],
+                          (voxelHit.point,pVVar8->vector[0],pVVar8->vector[1],
                            (float *)&stack0xffffffdc,(MethodInfo *)0x0);
         pIVar13 = TypeRef__MV__WorldObject__Face;
-        if ((bVar12 == 0) || (maxDistanceToEdge <= fVar8)) goto code_?;
+        if ((bVar12 == 0) ||
+           (maxDistanceToEdge < (float)(uint)uVar9 || maxDistanceToEdge == (float)(uint)uVar9))
+        goto code_?;
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pTVar14 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                            ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);
+        enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                             ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);
         if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pAVar15 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar14,(MethodInfo *)0x0);
-        if (pAVar15 != (Array *)0x0) {
-          puVar1 = &UNK_?;
-          pIVar16 = mscorlib.dll::System::Array::Array_GetEnumerator(pAVar15,(MethodInfo *)0x0);
-          iVar17 = (int16_t)pIVar16;
-          uStack_18 = (undefined2)((uint)pIVar16 >> 0x10);
-          piVar19 = (int *)&stack0xffffffd8;
-          iVar20 = 0;
-          while (CONCAT22(uStack_18,iVar17) != 0) {
-            cVar21 = func_?();
-            if (cVar21 == '\0') {
-              iVar22 = func_?();
-              *piVar19 = iVar22;
-              if (iVar22 != 0) {
+        pAVar14 = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
+        if (pAVar14 != (Array *)0x0) {
+          pAVar15 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)
+                    mscorlib.dll::System::Array::Array_GetEnumerator(pAVar14,(MethodInfo *)0x0);
+          piVar16 = (int *)&stack0xffffffd8;
+          fVar17 = 0.0;
+          while (pAVar15 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0)
+          {
+            uVar1 = 0xf329;
+            uVar2 = 0x1054;
+            cVar18 = func_?();
+            if (cVar18 == '\0') {
+              iVar19 = func_?();
+              *piVar16 = iVar19;
+              if (iVar19 != 0) {
+                uVar1 = 0xf6e2;
+                uVar2 = 0x1054;
                 func_?();
               }
-              if (iVar20 != 0) goto code_?;
+              if (fVar17 != 0.0) goto code_?;
               goto code_?;
             }
-            if ((CONCAT22(uStack_18,iVar17) == 0) ||
-               (piVar23 = (int *)func_?(), piVar23 == (int *)0x0)) break;
-            if (*(Il2CppClass **)(*piVar23 + 0x20) !=
+            if ((pAVar15 == (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0)
+               || (piVar20 = (int *)func_?(), piVar20 == (int *)0x0)) break;
+            if (*(Il2CppClass **)(*piVar20 + 0x20) !=
                 (TypeInfo__MV__WorldObject__Face->_0).element_class) goto code_?;
-            piVar23 = (int *)func_?();
+            puVar21 = (uint *)func_?();
             pIVar13 = TypeRef__Edge;
-            method_00 = (MethodInfo *)*piVar23;
-            if (method_00 != (MethodInfo *)voxelHit.face) {
+            uVar22 = (ulonglong)*puVar21;
+            if (*puVar21 != voxelHit.face) {
               if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              iVar17 = -0x15af;
-              uStack_18 = 0x1054;
-              pTVar14 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                                  ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);
+              pAVar15 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)pIVar13;
+              enumType_00 = (MVWorldObject *)
+                            mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                                      ((RuntimeTypeHandle)pIVar13,(MethodInfo *)0x0);
               if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              pMVar24 = (MVWorldObject *)&UNK_?;
-              pAVar15 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar14,(MethodInfo *)0x0);
-              if (pAVar15 == (Array *)0x0) break;
-              puVar1 = &UNK_?;
-              pIVar16 = mscorlib.dll::System::Array::Array_GetEnumerator(pAVar15,(MethodInfo *)0x0);
+              pAVar14 = mscorlib.dll::System::Enum::Enum_GetValues
+                                  ((Type *)enumType_00,(MethodInfo *)0x0);
+              if (pAVar14 == (Array *)0x0) break;
+              pIVar23 = mscorlib.dll::System::Array::Array_GetEnumerator(pAVar14,(MethodInfo *)0x0);
               while( true ) {
-                if (pIVar16 == (IEnumerator *)0x0) goto code_?;
-                cVar21 = func_?();
-                if (cVar21 == '\0') break;
-                if (pIVar16 == (IEnumerator *)0x0) goto code_?;
-                uVar25 = 0;
-                piVar23 = (int *)func_?();
-                if (piVar23 == (int *)0x0) goto code_?;
-                if (*(Il2CppClass **)(*piVar23 + 0x20) != (TypeInfo__Edge->_0).element_class)
+                if (pIVar23 == (IEnumerator *)0x0) goto code_?;
+                cVar18 = func_?();
+                if (cVar18 == '\0') break;
+                if (pIVar23 == (IEnumerator *)0x0) goto code_?;
+                uVar24 = 0;
+                piVar20 = (int *)func_?();
+                if (piVar20 == (int *)0x0) goto code_?;
+                if (*(Il2CppClass **)(*piVar20 + 0x20) != (TypeInfo__Edge->_0).element_class)
                 goto code_?;
-                pEVar26 = (Edge__Enum *)func_?();
-                EVar6 = *pEVar26;
-                if (EVar6 != Edge__Enum_None) {
-                  pLVar3 = pMVar2[1].fields.inputLinkRefs;
-                  pMVar2 = pMVar24;
-                  face = method_00;
+                pEVar25 = (Edge__Enum *)func_?();
+                face = (Face__Enum)uVar22;
+                EVar7 = *pEVar25;
+                if (EVar7 != Edge__Enum_None) {
+                  pLVar4 = pMVar3[1].fields.inputLinkRefs;
+                  pMVar3 = enumType_00;
                   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                    uStack_18 = 0x1054;
                     func_?();
+                    pMVar3 = enumType_00;
                   }
-                  pIVar16 = (IEnumerator *)0x0;
-                  iVar17 = voxelHit.cubePos.z;
-                  method_00 = (MethodInfo *)voxelHit.cube;
-                  pVVar7 = Cube::Cube_GetEdgeVerticesWorld
-                                     ((GameObject *)pLVar3,voxelHit.cube,(Face__Enum)face,EVar6,
-                                      IVar5,(MethodInfo *)0x0);
-                  iVar22 = 0;
-                  iVar27 = 0;
-                  if (pVVar7 == (Vector3__Array *)0x0) goto code_?;
-                  for (; uVar28 = (undefined2)((uint)uVar25 >> 0x10),
-                      iVar27 < (int)pVVar7->max_length; iVar27 = iVar27 + 1) {
+                  pAVar15 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0;
+                  uVar22 = CONCAT44(face,voxelHit.cube);
+                  pVVar8 = Cube::Cube_GetEdgeVerticesWorld
+                                      ((GameObject *)pLVar4,voxelHit.cube,face,EVar7,IVar6,
+                                       (MethodInfo *)0x0);
+                  pDVar26 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+                  uVar22 = uVar22 & 0xffffffff;
+                  iVar19 = 0;
+                  if (pVVar8 == (Vector3__Array *)0x0) goto code_?;
+                  while( true ) {
+                    uVar1 = (undefined2)((uint)uVar24 >> 0x10);
+                    method_00 = (MethodInfo *)uVar22;
+                    if ((int)pVVar8->max_length <= iVar19) break;
                     func_?();
-                    uVar25 = 0;
+                    uVar24 = 0;
                     func_?();
-                    fVar29 = (float10)func_?();
-                    if ((float)fVar29 < _UNK_?) {
-                      iVar22 = iVar22 + 1;
+                    pDVar27 = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
+                    fVar28 = (float10)func_?();
+                    pMVar3 = (MVWorldObject *)&stack0xffffff78;
+                    pDVar29 = (Dictionary_2_System_Object_System_Object_ *)
+                              ((int)&pDVar26->klass + 1);
+                    if (_UNK_? <= (float)fVar28) {
+                      pDVar29 = pDVar27;
                     }
-                    puVar1 = (undefined *)0x1;
                     func_?();
-                    pIVar16 = (IEnumerator *)CONCAT22(uVar11,uVar10);
-                    iVar17 = SUB42(fVar9,0);
-                    uStack_18 = (undefined2)((uint)fVar9 >> 0x10);
-                    pMVar2 = (MVWorldObject *)0x0;
-                    method_00 = pMVar4;
-                    fVar29 = (float10)func_?();
-                    if ((float)fVar29 < _UNK_?) {
-                      iVar22 = iVar22 + 1;
+                    pAVar15 = (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)
+                              CONCAT22(uVar11,uVar10);
+                    pIVar23 = (IEnumerator *)0x0;
+                    pMVar30 = pMVar5;
+                    fVar28 = (float10)func_?();
+                    iVar19 = iVar19 + 1;
+                    pDVar26 = (Dictionary_2_System_Object_System_Object_ *)
+                              ((int)&pDVar29->klass + 1);
+                    if (_UNK_? <= (float)fVar28) {
+                      pDVar26 = pDVar29;
                     }
+                    uVar22 = CONCAT44(pDVar26,pMVar30);
                   }
-                  pMVar24 = pMVar2;
-                  if (iVar22 == 2) {
+                  enumType_00 = pMVar3;
+                  if (pDVar26 == (Dictionary_2_System_Object_System_Object_ *)0x2) {
                     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
-                    puVar30 = &stack0xffffffb8;
-                    IVar5.z = voxelHit.cubePos.x;
-                    IVar5._0_4_ = puVar30;
-                    IVar5 = Cube::Cube_GetCubePosAboveFace
-                                       (IVar5,CONCAT22(uVar28,voxelHit.cubePos.z),method_00);
-                    pIVar31 = IVar5._0_4_;
-                    iVar32 = pIVar31->y;
-                    iVar17 = pIVar31->z;
-                    IVar5 = *pIVar31;
-                    pos->x = pIVar31->x;
-                    pos->y = iVar32;
-                    pos->z = iVar17;
-                    iVar20 = func_?();
-                    if ((iVar20 != 0) &&
+                    iVar31 = voxelHit.cubePos.x;
+                    iVar32 = voxelHit.cubePos.y;
+                    IVar6.z = iVar31;
+                    IVar6._0_4_ = &stack0xffffffb4;
+                    IVar6 = Cube::Cube_GetCubePosAboveFace
+                                       (IVar6,CONCAT22(uVar1,voxelHit.cubePos.z),method_00);
+                    pIVar33 = IVar6._0_4_;
+                    iVar34 = pIVar33->y;
+                    iVar35 = pIVar33->z;
+                    IVar6 = *pIVar33;
+                    pos->x = pIVar33->x;
+                    pos->y = iVar34;
+                    pos->z = iVar35;
+                    iVar19 = func_?();
+                    if ((iVar19 != 0) &&
                        (this_00 = (MVCubeModelBase *)func_?(),
                        this_00 != (MVCubeModelBase *)0x0)) {
-                      a = MVCubeModelBase::MVCubeModelBase_GetCube(this_00,IVar5,(MethodInfo *)0x0)
+                      a = MVCubeModelBase::MVCubeModelBase_GetCube(this_00,IVar6,(MethodInfo *)0x0)
                       ;
                       if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0)
                       {
@@ -575,7 +592,7 @@ code_?:
                                         ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
                       func_?();
                       func_?();
-                      *unaff_FS_OFFSET = (int)puVar30;
+                      *unaff_FS_OFFSET = CONCAT22(iVar32,iVar31);
                       return bVar12 != 0;
                     }
                     goto code_?;
@@ -597,8 +614,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar33 = (code *)swi(3);
-  bVar12 = (*pcVar33)();
+  pcVar36 = (code *)swi(3);
+  bVar12 = (*pcVar36)();
   return bVar12;
 }
 
@@ -610,7 +627,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0xdbf0);
+    func_?(0x7458);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -1367,9 +1384,9 @@ code_?:
     if (bVar1 == 0) {
 code_?:
       (this->fields).material = 0x18;
-      pSVar2 = (String__Class *)(this->fields).cubeBullet;
+      pCVar2 = (this->fields).cubeBullet;
 joined_?:
-      if (pSVar2 != (String__Class *)0x0) {
+      if (pCVar2 != (CubeBullet *)0x0) {
         this_00 = *(MeshFilter **)(in_stack_3 + 0x10);
         *(undefined1 *)(in_stack_3 + 0x18) = in_stack_4;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -1397,45 +1414,45 @@ joined_?:
       }
       goto code_?;
     }
-    TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
-                       (Object *)StringLiteral_itemData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    pSVar10 = StringLiteral_material;
-    if (TVar9.m_Index == 0) goto code_?;
-    if ((*(byte *)(*(int *)TVar9.m_Index + 0xb8) <
+    this = (PickupItemCubeGun *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)newState,
+                      (Object *)StringLiteral_itemData,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+    if (this == (PickupItemCubeGun *)0x0) goto code_?;
+    if ((*(byte *)(*(int *)this + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||
        (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar9.m_Index + 100) + -4 +
+         (*(int *)(*(int *)this + 100) + -4 +
          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
                _1).naturalAligment * 4) !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    this = (PickupItemCubeGun *)StringLiteral_material;
     bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)TVar9.m_Index
-                       ,(Object *)StringLiteral_material,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this,
+                       (Object *)StringLiteral_material,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar1 == 0) goto code_?;
     TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (TVar9.m_Index,(Object *)StringLiteral_material,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this,
+                       (Object *)StringLiteral_material,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
     if (TVar9.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar9.m_Index + 0x20) ==
         (TypeInfo__System__Byte->_0).element_class) {
-      puVar11 = (undefined1 *)func_?();
-      *(undefined1 *)&pSVar10[0xf].fields._stringLength = *puVar11;
-      pSVar2 = pSVar10[0xf].klass;
+      puVar10 = (undefined1 *)func_?();
+      *(undefined1 *)((int)this + 0xf8) = *puVar10;
+      pCVar2 = *(CubeBullet **)((int)this + 0xf0);
       goto joined_?;
     }
   }

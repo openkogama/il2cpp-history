@@ -179,91 +179,92 @@ bool Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetValidTarge
     bVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_Contains
                       (pMVar1,woID,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
-      message = (MethodInfo *)
-                mscorlib.dll::System::String::String_Concat_3
-                          (StringLiteral_Does_not_contain_woid_,str1,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                          (StringLiteral_Does_not_contain_woid_,pSVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        method = (MethodInfo *)&UNK_?;
+        method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
+        wo = (WorldObjectClientRef **)&UNK_?;
         func_?();
       }
-      wo = (WorldObjectClientRef **)&UNK_?;
-      method = message;
+      method = (MethodInfo *)0x0;
+      alliedTeam = (MVTeam__Enum)&UNK_?;
+      wo = (WorldObjectClientRef **)pSVar3;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)message,(MethodInfo *)0x0);
-      method = (MethodInfo *)wo;
+                ((Object *)pSVar3,(MethodInfo *)0x0);
+      method = (MethodInfo *)0x0;
       *wo = (WorldObjectClientRef *)0x0;
-      wo = (WorldObjectClientRef **)&UNK_?;
+      alliedTeam = (MVTeam__Enum)&UNK_?;
       func_?();
     }
     else {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 == (MVWorldObjectClientManager *)0x0) goto code_?;
-      woID = 0;
-      woID = (int32_t)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                                (pMVar1,0,(MethodInfo *)0x0);
-      ppWVar3 = wo;
-      *wo = (WorldObjectClientRef *)woID;
+      pWVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                         (pMVar1,woID,(MethodInfo *)0x0);
+      ppWVar5 = wo;
+      *wo = pWVar4;
       func_?();
-      if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
-        pOVar4 = WorldObjectClientRef`1[System::Object]::
+      if (*ppWVar5 != (WorldObjectClientRef *)0x0) {
+        pOVar6 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                           ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                           ((WorldObjectClientRef_1_System_Object_ *)*ppWVar5,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
-        if (pOVar4 != (Object *)0x0) {
-          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar5 != (MVNetworkGame *)0x0) {
-            pMVar6 = (pMVar5->fields).teamManager;
-            if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
-              pOVar4 = WorldObjectClientRef`1[System::Object]::
+        if (pOVar6 != (Object *)0x0) {
+          pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar7 != (MVNetworkGame *)0x0) {
+            pMVar8 = (pMVar7->fields).teamManager;
+            if (*ppWVar5 != (WorldObjectClientRef *)0x0) {
+              pOVar6 = WorldObjectClientRef`1[System::Object]::
                        WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                 ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                 ((WorldObjectClientRef_1_System_Object_ *)*ppWVar5,
                                   MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                  );
-              if ((pOVar4 != (Object *)0x0) && (pMVar6 != (MVTeamManager *)0x0)) {
-                MVar7 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                                  (pMVar6,(int32_t)pOVar4[4].monitor,(MethodInfo *)0x0);
-                pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar5 != (MVNetworkGame *)0x0) &&
-                   (pMVar6 = (pMVar5->fields).teamManager, pMVar6 != (MVTeamManager *)0x0)) {
-                  iVar8 = MVTeamManager::MVTeamManager_TeamCount(pMVar6,(MethodInfo *)0x0);
-                  bVar9 = MVar7 != alliedTeam;
-                  if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
-                    pMVar10 = (MVWorldObjectClient *)
+              if ((pOVar6 != (Object *)0x0) && (pMVar8 != (MVTeamManager *)0x0)) {
+                MVar9 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
+                                  (pMVar8,(int32_t)pOVar6[4].monitor,(MethodInfo *)0x0);
+                pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar7 != (MVNetworkGame *)0x0) &&
+                   (pMVar8 = (pMVar7->fields).teamManager, pMVar8 != (MVTeamManager *)0x0)) {
+                  iVar10 = MVTeamManager::MVTeamManager_TeamCount(pMVar8,(MethodInfo *)0x0);
+                  if (*ppWVar5 != (WorldObjectClientRef *)0x0) {
+                    pMVar11 = (MVWorldObjectClient *)
                               WorldObjectClientRef`1[System::Object]::
                               WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                        ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                        ((WorldObjectClientRef_1_System_Object_ *)*ppWVar5,
                                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                         );
-                    if (pMVar10 != (MVWorldObjectClient *)0x0) {
-                      pIVar11 = MVWorldObjectClient::
+                    if (pMVar11 != (MVWorldObjectClient *)0x0) {
+                      pIVar12 = MVWorldObjectClient::
                                 MVWorldObjectClient_get_InteractionDataHandlerBase
-                                          (pMVar10,(MethodInfo *)0x0);
+                                          (pMVar11,(MethodInfo *)0x0);
                       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                         func_?(TypeInfo__UnityEngine__Object);
                       }
                       bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::
                               Object_1_op_Inequality
-                                        ((Object_1 *)pIVar11,(Object_1 *)0x0,(MethodInfo *)0x0);
+                                        ((Object_1 *)pIVar12,(Object_1 *)0x0,(MethodInfo *)0x0);
                       if (bVar2 == 0) {
-                        return 0;
+                        bVar2 = 0;
+code_?:
+                        return (MVar9 != alliedTeam || iVar10 < 2) & bVar2;
                       }
-                      if (*ppWVar3 != (WorldObjectClientRef *)0x0) {
-                        pMVar10 = (MVWorldObjectClient *)
+                      if (*ppWVar5 != (WorldObjectClientRef *)0x0) {
+                        pMVar11 = (MVWorldObjectClient *)
                                   WorldObjectClientRef`1[System::Object]::
                                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                            ((WorldObjectClientRef_1_System_Object_ *)*ppWVar3,
+                                            ((WorldObjectClientRef_1_System_Object_ *)*ppWVar5,
                                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                             );
-                        if (pMVar10 != (MVWorldObjectClient *)0x0) {
-                          pIVar11 = MVWorldObjectClient::
+                        if (pMVar11 != (MVWorldObjectClient *)0x0) {
+                          pIVar12 = MVWorldObjectClient::
                                     MVWorldObjectClient_get_InteractionDataHandlerBase
-                                              (pMVar10,(MethodInfo *)0x0);
-                          if (pIVar11 != (InteractionDataHandlerBase *)0x0) {
+                                              (pMVar11,(MethodInfo *)0x0);
+                          if (pIVar12 != (InteractionDataHandlerBase *)0x0) {
                             bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                                    Behaviour_get_enabled((Behaviour *)pIVar11,(MethodInfo *)0x0);
-                            return bVar2 & (iVar8 < 2 || bVar9);
+                                    Behaviour_get_enabled((Behaviour *)pIVar12,(MethodInfo *)0x0);
+                            goto code_?;
                           }
                         }
                       }
@@ -281,8 +282,8 @@ bool Assembly-CSharp.dll::OptimizedPerception::OptimizedPerception_GetValidTarge
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar2 = (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  bVar2 = (*pcVar13)();
   return bVar2;
 }
 

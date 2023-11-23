@@ -30,164 +30,165 @@ bool Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_CompareWith
   if (wo == (MVWorldObjectClient *)0x0) {
 code_?:
     func_?();
-code_?:
-    func_?();
     pMVar1 = extraout_EDX;
 code_?:
-    func_?(pMVar1);
-    pMVar1 = extraout_EDX_00;
+    func_?(pMVar1,unaff_EBX);
+    pMVar2 = extraout_EDX_00;
+code_?:
+    func_?(wo,pMVar2);
+    pMVar3 = extraout_EDX_01;
+code_?:
+    func_?(unaff_EDI,pMVar3);
+    pMVar2 = extraout_EDX_02;
+    pMVar4 = unaff_EBX;
   }
   else {
-    pMVar1 = (MVCubeModelInstance__Class *)TypeInfo__MVSentryGunBlueprint;
-    if (((TypeInfo__MVSentryGunBlueprint->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+    unaff_EDI = wo->klass;
+    pMVar2 = (MVCubeModelInstance__Class *)TypeInfo__MVSentryGunBlueprint;
+    if (((unaff_EDI->_1).naturalAligment < (TypeInfo__MVSentryGunBlueprint->_1).naturalAligment) ||
        ((MVSentryGunBlueprint__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSentryGunBlueprint->_1).naturalAligment - 1] ==
-        TypeInfo__MVSentryGunBlueprint)) {
-      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(wo->fields)._.data;
-      if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-         (wo = (MVWorldObjectClient *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (this_00,(Object *)StringLiteral_BlueprintData,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         ), wo == (MVWorldObjectClient *)0x0)) goto code_?;
-      pMVar1 = (MVCubeModelInstance__Class *)
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if ((*(byte *)(*(int *)wo + 0xb8) <
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment) ||
-         (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)wo + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-      goto code_?;
-      wo = (MVWorldObjectClient *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-           UIElements::TextureId]::
-           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                      (Object *)StringLiteral_ChildrenMap,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-      if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-      pMVar1 = (MVCubeModelInstance__Class *)
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if ((*(byte *)(*(int *)wo + 0xb8) <
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment) ||
-         (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)wo + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-      goto code_?;
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                         (Object *)StringLiteral_editableCubeModel,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+        (unaff_EDI->_1).typeHierarchy[(TypeInfo__MVSentryGunBlueprint->_1).naturalAligment - 1] !=
+        TypeInfo__MVSentryGunBlueprint)) goto code_?;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(wo->fields)._.data;
+    if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (wo = (MVWorldObjectClient *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (this_00,(Object *)StringLiteral_BlueprintData,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       ), wo == (MVWorldObjectClient *)0x0)) goto code_?;
+    pMVar2 = (MVCubeModelInstance__Class *)
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if ((*(byte *)(*(int *)wo + 0xb8) <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)wo + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    wo = (MVWorldObjectClient *)
+         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+         UIElements::TextureId]::
+         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                   ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
+                    (Object *)StringLiteral_ChildrenMap,
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                   );
+    if (wo == (MVWorldObjectClient *)0x0) goto code_?;
+    pMVar2 = (MVCubeModelInstance__Class *)
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if ((*(byte *)(*(int *)wo + 0xb8) <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)wo + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
+                       (Object *)StringLiteral_editableCubeModel,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
+    if (TVar5.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar7 = (int32_t *)func_?();
+    unaff_EBX = (MVSentryGun__Class *)*piVar7;
+    TVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
+                       (Object *)StringLiteral_sentryGun,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar8.m_Index);
+    if (TVar8.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar8.m_Index + 0x20) !=
+        (TypeInfo__System__Int32->_0).element_class) goto code_?;
+    piVar9 = (int *)func_?(TVar8.m_Index);
+    unaff_EDI = (MVWorldObjectClient__Class *)*piVar9;
+    wo = (MVWorldObjectClient *)TVar5;
+    if ((TVar5.m_Index == 0) ||
+       (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc) ==
+        (Dictionary_2_System_Int32_System_Object_ *)0x0)) goto code_?;
+    pMVar10 = unaff_EDI;
+    pMVar4 = (MVSentryGun__Class *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__get_Item
+                        (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc),
+                         (int32_t)unaff_EBX,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                         );
-      uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-      if (TVar2.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar4 = (int32_t *)func_?();
-      pMVar1 = (MVCubeModelInstance__Class *)*piVar4;
-      TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                         (Object *)StringLiteral_sentryGun,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar3 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
-      wo = (MVWorldObjectClient *)pMVar1;
-      if (TVar5.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
-          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar4 = (int32_t *)func_?(TVar5.m_Index);
-      key = *piVar4;
-      if ((TVar2.m_Index == 0) ||
-         (*(Dictionary_2_System_Int32_System_Object_ **)(TVar2.m_Index + 0xc) ==
-          (Dictionary_2_System_Int32_System_Object_ *)0x0)) goto code_?;
-      wo = (MVWorldObjectClient *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-           Dictionary_2_System_Int32_System_Object__get_Item
-                     (*(Dictionary_2_System_Int32_System_Object_ **)(TVar2.m_Index + 0xc),
-                      (int32_t)pMVar1,
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                     );
-      if (((MVCubeModelInstance__Class *)wo != (MVCubeModelInstance__Class *)0x0) &&
-         ((pIVar6 = (((MVCubeModelInstance__Class *)wo)->_0).image,
-          pMVar1 = TypeInfo__MVCubeModelInstance,
-          *(byte *)&pIVar6[4].assembly < (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
-          (*(MVCubeModelInstance__Class **)
-            ((pIVar6[2].typeCount - 4) +
-            (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) !=
-           TypeInfo__MVCubeModelInstance)))) goto code_?;
-      if (*(Dictionary_2_System_Int32_System_Object_ **)(TVar2.m_Index + 0xc) ==
+    if ((pMVar4 == (MVSentryGun__Class *)0x0) ||
+       ((pIVar11 = (pMVar4->_0).image, pMVar2 = TypeInfo__MVCubeModelInstance,
+        (TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar11[4].assembly &&
+        (unaff_EDI = pMVar10,
+        *(MVCubeModelInstance__Class **)
+         ((pIVar11[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4)
+        == TypeInfo__MVCubeModelInstance)))) {
+      unaff_EBX = pMVar4;
+      if (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc) ==
           (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
-      wo = (MVWorldObjectClient *)
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-           Dictionary_2_System_Int32_System_Object__get_Item
-                     (*(Dictionary_2_System_Int32_System_Object_ **)(TVar2.m_Index + 0xc),key,
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                     );
-      if (((MVCubeModelInstance__Class *)wo != (MVCubeModelInstance__Class *)0x0) &&
-         ((pIVar6 = (((MVCubeModelInstance__Class *)wo)->_0).image,
-          pMVar1 = (MVCubeModelInstance__Class *)TypeInfo__MVSentryGun,
-          *(byte *)&pIVar6[4].assembly < (TypeInfo__MVSentryGun->_1).naturalAligment ||
-          (*(MVSentryGun__Class **)
-            ((pIVar6[2].typeCount - 4) + (uint)(TypeInfo__MVSentryGun->_1).naturalAligment * 4) !=
-           TypeInfo__MVSentryGun)))) goto code_?;
-      pMVar1 = (MVCubeModelInstance__Class *)
-               MVBlueprintBase::MVBlueprintBase_GetChild
-                         ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0)
-      ;
-      if (pMVar1 == (MVCubeModelInstance__Class *)0x0) {
-        pMVar1 = (MVCubeModelInstance__Class *)0x0;
-code_?:
-        pMVar7 = MVBlueprintBase::MVBlueprintBase_GetChild
-                           ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
-        if (pMVar7 == (MVWorldObjectClient *)0x0) {
-          pMVar7 = (MVWorldObjectClient *)0x0;
-code_?:
-          if ((pMVar1 != (MVCubeModelInstance__Class *)0x0) &&
-             ((pMVar7 != (MVWorldObjectClient *)0x0 &&
-              (cVar8 = (*(code *)(pMVar7->klass->vtable).CompareWithKoGaMaPackage.method)(pMVar7),
-              cVar8 != '\0')))) {
-            bVar9 = (*(code *)(pMVar1->_0).image[0xc].metadataHandle)(pMVar1);
-            return bVar9;
+      unaff_EDI = (MVWorldObjectClient__Class *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                            (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc),
+                             (int32_t)unaff_EDI,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                            );
+      if ((unaff_EDI == (MVWorldObjectClient__Class *)0x0) ||
+         ((pOVar12 = (Object__Class *)(unaff_EDI->_0).image, pMVar3 = TypeInfo__MVSentryGun,
+          (TypeInfo__MVSentryGun->_1).naturalAligment <= (pOVar12->_1).naturalAligment &&
+          ((MVSentryGun__Class *)
+           (pOVar12->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
+           TypeInfo__MVSentryGun)))) {
+        wo = MVBlueprintBase::MVBlueprintBase_GetChild
+                       ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0);
+        if ((wo != (MVWorldObjectClient *)0x0) &&
+           ((unaff_EBX = (MVSentryGun__Class *)wo->klass, pMVar2 = TypeInfo__MVCubeModelInstance,
+            (unaff_EBX->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
+            ((MVCubeModelInstance__Class *)
+             (unaff_EBX->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1]
+             != TypeInfo__MVCubeModelInstance)))) goto code_?;
+        pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
+                            ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
+        if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
+           ((unaff_EBX = TypeInfo__MVSentryGun,
+            (TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment &&
+            ((MVSentryGun__Class *)
+             (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
+             TypeInfo__MVSentryGun)))) {
+          if ((wo != (MVWorldObjectClient *)0x0) &&
+             ((pMVar1 != (MVWorldObjectClient *)0x0 &&
+              (cVar13 = (*(code *)(pMVar1->klass->vtable).CompareWithKoGaMaPackage.method)
+                                 (pMVar1,unaff_EDI,TVar5.m_Index,insertedByProfileId,
+                                  (pMVar1->klass->vtable).Compare.methodPtr), cVar13 != '\0')))) {
+            bVar14 = (*(code *)(wo->klass->vtable).CompareWithKoGaMaPackage.method)
+                              (wo,pMVar4,TVar5.m_Index,insertedByProfileId,
+                               (wo->klass->vtable).Compare.methodPtr);
+            return bVar14;
           }
           return 0;
         }
-        wo = (MVWorldObjectClient *)pMVar1;
-        if (((TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar7->klass->_1).naturalAligment) &&
-           ((MVSentryGun__Class *)
-            (pMVar7->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-            TypeInfo__MVSentryGun)) goto code_?;
         goto code_?;
       }
-      pIVar6 = (pMVar1->_0).image;
-      wo = (MVWorldObjectClient *)TypeInfo__MVCubeModelInstance;
-      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar6[4].assembly) &&
-         (*(MVCubeModelInstance__Class **)
-           ((pIVar6[2].typeCount - 4) +
-           (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) ==
-          TypeInfo__MVCubeModelInstance)) goto code_?;
       goto code_?;
     }
   }
+  uVar6 = func_?(pMVar4,pMVar2);
 code_?:
-  uVar3 = func_?(wo,pMVar1);
-code_?:
-  func_?(uVar3);
-  pcVar10 = (code *)swi(3);
-  bVar9 = (*pcVar10)();
-  return bVar9;
+  func_?(uVar6);
+  pcVar15 = (code *)swi(3);
+  bVar14 = (*pcVar15)();
+  return bVar14;
 }
 
 
@@ -239,17 +240,18 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_InitializeC
   }
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
             (this->fields)._._._._.data;
-  if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-     (TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)StringLiteral_BlueprintData,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar1.m_Index == 0)) {
+  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
   }
   else {
+    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_BlueprintData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar1.m_Index == 0) goto code_?;
     if ((*(byte *)(*(int *)TVar1.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||
@@ -436,17 +438,18 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_InitializeI
   }
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
             (in_stack_1->fields)._._._.data;
-  if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)StringLiteral_BlueprintData,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar2.m_Index == 0)) {
+  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
   }
   else {
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_BlueprintData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index == 0) goto code_?;
     if ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) <
          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
          naturalAligment) ||

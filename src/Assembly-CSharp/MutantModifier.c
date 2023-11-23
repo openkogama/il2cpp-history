@@ -196,7 +196,7 @@ void Assembly-CSharp.dll::MutantModifier::MutantModifier_Update
           position.y = (float)uStack_9._4_4_;
           fStack_6 = (float)UnityEngine.PhysicsModule.dll::UnityEngine::Physics::
                             Physics_OverlapSphereNonAlloc_1
-                                      (position,fStack_6 * _UNK_?,pCVar11,layerMask,
+                                      (position,fStack_6 + fStack_6,pCVar11,layerMask,
                                        (MethodInfo *)0x0);
           unaff_EDI = (MVAvatarLocal *)0x0;
           if ((int)fStack_6 < 1) {

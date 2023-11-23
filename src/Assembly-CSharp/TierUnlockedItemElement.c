@@ -58,11 +58,11 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
             for (; (int)unaff_ESI < (int)pOVar5->max_length;
                 unaff_ESI = (Behaviour *)((int)&unaff_ESI->klass + 1)) {
               if ((Behaviour *)pOVar5->max_length <= unaff_ESI) goto code_?;
-              pPVar6 = (ParticleSystem__Class *)(unaff_EDI->_0).image;
-              if (pPVar6 == (ParticleSystem__Class *)0x0) goto code_?;
-              if ((bool)(pPVar6->_0).this_arg.attrs == 0) {
+              pIVar6 = (unaff_EDI->_0).image;
+              if (pIVar6 == (Il2CppImage *)0x0) goto code_?;
+              if (*(bool *)&pIVar6->nameToClassHashTable == 0) {
                 GreyOutObjectScript::GreyOutObjectScript_GreyIn
-                          ((GreyOutObjectScript *)pPVar6,(MethodInfo *)0x0);
+                          ((GreyOutObjectScript *)pIVar6,(MethodInfo *)0x0);
                 bVar4 = true;
               }
               unaff_EDI = (MVPickupOwner__Class *)&(unaff_EDI->_0).gc_desc;
@@ -73,23 +73,23 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
-              this_00 = (MVPickupOwner__Class *)
+              this_01 = (MVPickupOwner__Class *)
                         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                                   ((Object *)unaff_ESI,
                                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                   );
               pMVar1 = (this->fields).previewObject;
-              unaff_EDI = this_00;
+              unaff_EDI = this_01;
               if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
                  (pGVar2 = (pMVar1->fields).gameObject, pGVar2 != (GameObject *)0x0)) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar2,bVar3,(MethodInfo *)0x0);
                 unaff_ESI = (Behaviour *)0x0;
                 pBStack_7 = (Behaviour *)0x0;
-                if (this_00 != (MVPickupOwner__Class *)0x0) {
+                if (this_01 != (MVPickupOwner__Class *)0x0) {
                   pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                            GameObject_GetComponentsInChildren
-                                     ((GameObject *)this_00,
+                                     ((GameObject *)this_01,
                                       UnityEngine__MonoBehaviour__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MonoBehaviour>______
                                      );
                   uVar9 = 0;
@@ -131,21 +131,22 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                     }
                     pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                              GameObject_GetComponentsInChildren
-                                       ((GameObject *)this_00,
+                                       ((GameObject *)this_01,
                                         UnityEngine__ParticleSystem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::ParticleSystem>______
                                        );
-                    unaff_ESI = (Behaviour *)0x0;
+                    unaff_EDI = (MVPickupOwner__Class *)0x0;
                     if (pOVar8 != (Object__Array *)0x0) {
                       ppOVar10 = pOVar8->vector;
-                      for (; (int)unaff_ESI < (int)pOVar8->max_length;
-                          unaff_ESI = (Behaviour *)((int)&unaff_ESI->klass + 1)) {
-                        if ((Behaviour *)pOVar8->max_length <= unaff_ESI) goto code_?;
-                        unaff_EDI = (MVPickupOwner__Class *)*ppOVar10;
-                        if (unaff_EDI == (MVPickupOwner__Class *)0x0) goto code_?;
+                      for (; (int)unaff_EDI < (int)pOVar8->max_length;
+                          unaff_EDI = (MVPickupOwner__Class *)((int)&(unaff_EDI->_0).image + 1)) {
+                        if ((MVPickupOwner__Class *)pOVar8->max_length <= unaff_EDI)
+                        goto code_?;
+                        unaff_ESI = (Behaviour *)*ppOVar10;
+                        if (unaff_ESI == (Behaviour *)0x0) goto code_?;
                         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                        ParticleSystem_Stop_2((ParticleSystem *)unaff_EDI,(MethodInfo *)0x0);
+                        ParticleSystem_Stop_2((ParticleSystem *)unaff_ESI,(MethodInfo *)0x0);
                         pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                  Component_get_gameObject((Component *)unaff_EDI,(MethodInfo *)0x0)
+                                  Component_get_gameObject((Component *)unaff_ESI,(MethodInfo *)0x0)
                         ;
                         if (pGVar2 == (GameObject *)0x0) goto code_?;
                         pOVar8 = (Object__Array *)0x0;
@@ -155,7 +156,7 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                       }
                       pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                GameObject_GetComponentsInChildren
-                                         ((GameObject *)this_00,
+                                         ((GameObject *)this_01,
                                           UseInteractorVisualization__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UseInteractorVisualization>______
                                          );
                       unaff_ESI = (Behaviour *)0x0;
@@ -164,10 +165,10 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                         for (; (int)unaff_ESI < (int)pOVar8->max_length;
                             unaff_ESI = (Behaviour *)((int)&unaff_ESI->klass + 1)) {
                           if ((Behaviour *)pOVar8->max_length <= unaff_ESI) goto code_?;
-                          pPVar6 = (ParticleSystem__Class *)(unaff_EDI->_0).image;
-                          if (pPVar6 == (ParticleSystem__Class *)0x0) goto code_?;
+                          this_00 = (UseInteractorVisualization *)(unaff_EDI->_0).image;
+                          if (this_00 == (UseInteractorVisualization *)0x0) goto code_?;
                           UseInteractorVisualization::UseInteractorVisualization_Disable
-                                    ((UseInteractorVisualization *)pPVar6,(MethodInfo *)0x0);
+                                    (this_00,(MethodInfo *)0x0);
                           unaff_EDI = (MVPickupOwner__Class *)&(unaff_EDI->_0).gc_desc;
                         }
                         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -190,7 +191,7 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                                                   RotateLocal_MethodInfo__UnityEngine__GameObject__AddComponent<RotateLocal>__
                                                   ), pOVar12 != (Object *)0x0)) {
                             pOVar12[2].klass = (Object__Class *)0x428c0000;
-                            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                       Component_get_transform
                                                 ((Component *)pBStack_7,(MethodInfo *)0x0);
                             if (cRam_? == '\0') {
@@ -198,10 +199,10 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                               cRam_? = '\x01';
                             }
                             unaff_ESI = (Behaviour *)0x0;
-                            if (this_01 != (Transform *)0x0) {
+                            if (this_02 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_localPosition
-                                        (this_01,TypeInfo__UnityEngine__Vector3->static_fields->
+                                        (this_02,TypeInfo__UnityEngine__Vector3->static_fields->
                                                  zeroVector,(MethodInfo *)0x0);
                               (this->fields).cameraOffset.x =
                                    (this->fields).cameraOffset.x + _UNK_?;
@@ -214,14 +215,14 @@ Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_CreatePrev
                         else {
                           pOVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                     GameObject_AddComponent_1
-                                              ((GameObject *)this_00,
+                                              ((GameObject *)this_01,
                                                RotateLocal_MethodInfo__UnityEngine__GameObject__AddComponent<RotateLocal>__
                                               );
                           if (pOVar12 != (Object *)0x0) {
                             pOVar12[2].klass = (Object__Class *)0x428c0000;
 code_?:
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive((GameObject *)this_00,1,(MethodInfo *)0x0);
+                            GameObject_SetActive((GameObject *)this_01,1,(MethodInfo *)0x0);
                             if (bVar4) {
                               unaff_EDI = (MVPickupOwner__Class *)pOVar5->vector;
                               for (unaff_ESI = (Behaviour *)0x0;
@@ -229,14 +230,14 @@ code_?:
                                   unaff_ESI = (Behaviour *)((int)&unaff_ESI->klass + 1)) {
                                 if ((Behaviour *)pOVar5->max_length <= unaff_ESI)
                                 goto code_?;
-                                pPVar6 = (ParticleSystem__Class *)(unaff_EDI->_0).image;
-                                if (pPVar6 == (ParticleSystem__Class *)0x0) goto code_?;
+                                pIVar6 = (unaff_EDI->_0).image;
+                                if (pIVar6 == (Il2CppImage *)0x0) goto code_?;
                                 GreyOutObjectScript::GreyOutObjectScript_GreyOut
-                                          ((GreyOutObjectScript *)pPVar6,(MethodInfo *)0x0);
+                                          ((GreyOutObjectScript *)pIVar6,(MethodInfo *)0x0);
                                 unaff_EDI = (MVPickupOwner__Class *)&(unaff_EDI->_0).gc_desc;
                               }
                             }
-                            return (GameObject *)this_00;
+                            return (GameObject *)this_01;
                           }
                         }
                       }
@@ -533,30 +534,24 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void SetTeam(MVTeam) */
 
 void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
                (TierUnlockedItemElement *this,MVTeam__Enum team,MethodInfo *method)
 
 {
-  puVar1 = &stack0xfffffffc;
-  puVar2 = &stack0xfffffffc;
-  this_00 = (this->fields).teamRequirementImage;
+  pIVar1 = (this->fields).teamRequirementImage;
   (this->fields).team = team;
-  cVar3 = (int)this_00 < 0;
-  puVar4 = &stack0xfffffffc;
-  if (this_00 == (Image *)0x0) goto code_?;
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)this_00,(MethodInfo *)0x0);
-  cVar3 = (int)this_01 < 0;
-  puVar4 = &stack0xfffffffc;
-  if (this_01 == (GameObject *)0x0) goto code_?;
+  cVar2 = (int)pIVar1 < 0;
+  pTVar3 = this;
+  if (pIVar1 == (Image *)0x0) goto code_?;
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pIVar1,(MethodInfo *)0x0);
+  cVar2 = (int)this_00 < 0;
+  if (this_00 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_01,1,(MethodInfo *)0x0);
-  this = (TierUnlockedItemElement *)(this->fields).teamRequirementImage;
+            (this_00,1,(MethodInfo *)0x0);
+  pIVar1 = (this->fields).teamRequirementImage;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -567,70 +562,173 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       func_?();
     }
     colorStyle = 1.12104e-44;
-    __return_storage_ptr__ = &CStack_5;
+    __return_storage_ptr__ = &CStack_4;
     break;
   case MVTeam__Enum_Red:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.26117e-44;
-    __return_storage_ptr__ = &CStack_6;
-    puVar2 = &stack0xfffffffc;
+    __return_storage_ptr__ = &CStack_5;
     break;
   case MVTeam__Enum_Green:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.54143e-44;
-    __return_storage_ptr__ = &CStack_7;
-    puVar2 = &stack0xfffffffc;
+    __return_storage_ptr__ = (Color *)&stack0xffffffcc;
     break;
   case MVTeam__Enum_Yellow:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.4013e-44;
-    __return_storage_ptr__ = &CStack_8;
-    puVar2 = &stack0xfffffffc;
+    __return_storage_ptr__ = (Color *)&stack0xffffffbc;
     break;
   default:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     __return_storage_ptr__ = (Color *)&stack0xffffff9c;
-    puVar1 = &stack0xfffffffc;
     goto code_?;
   case MVTeam__Enum_None:
-    goto code_?;
-  }
-  while( true ) {
-    Styles::Styles_GetColor(__return_storage_ptr__,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-    cVar3 = (int)this < 0;
-    puVar4 = puVar2;
-    if ((Image *)this != (Image *)0x0) {
-      (*(code *)(((Image *)this)->klass->vtable).set_color.method)();
-      return;
-    }
-code_?:
-    cVar9 = '\0';
-    cVar10 = '\0';
-    func_?();
-    if (cVar9 == cVar3) break;
-    puVar1 = puVar4 + 1;
-    unaff_BL = '\0';
-code_?:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    __return_storage_ptr__ = (Color *)(puVar1 + -0x50);
+    __return_storage_ptr__ = (Color *)&stack0xffffffac;
 code_?:
     colorStyle = 3.64338e-44;
-    puVar2 = puVar1;
   }
-  puVar4[extraout_ECX * 4 + -0x7246efbd] =
-       puVar4[extraout_ECX * 4 + -0x7246efbd] + unaff_BL + '\x01' + cVar10;
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  Styles::Styles_GetColor(__return_storage_ptr__,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+  cVar2 = (int)pIVar1 < 0;
+  pTVar3 = (TierUnlockedItemElement *)0x0;
+  if (pIVar1 != (Image *)0x0) {
+    (*(code *)(pIVar1->klass->vtable).set_color.method)();
+    return;
+  }
+code_?:
+  cVar6 = '\0';
+  bVar7 = 0;
+  iVar8 = func_?();
+  if (cVar6 != cVar2) {
+    pcVar9 = (char *)(unaff_EBX + 0x56);
+    *pcVar9 = *pcVar9 + extraout_DL;
+    CStack_4.r = (float)&stack0xffffffb0;
+    puVar10 = &stack0xffffffb0;
+    if (*pcVar9 == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?(&TypeInfo__UnityEngine__Object);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
+                     );
+      uRam_? = 1;
+      puVar10 = (undefined1 *)CStack_4.r;
+    }
+    CStack_4.r = (float)puVar10;
+    CStack_5.a = 0.0;
+    pOStack_11 = (Object__Class *)0x0;
+    if ((method != (MethodInfo *)0x0) &&
+       (this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                  StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                  Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                            ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                              *)method,
+                             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Values__
+                            ),
+       this_01 !=
+       (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        *)0x0)) {
+      pDVar12 = mscorlib.dll::System::Collections::Generic::
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                           *)&stack0xffffffd4,this_01,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__GetEnumerator__
+                         );
+      CStack_5.r = 0.0;
+      CStack_4.a = 1.4013e-45;
+      tierShopItemData = (List_1_MVWorldObjectClient_ *)pDVar12->_currentValue;
+      CStack_5.g = (float)&pOStack_11;
+      while( true ) {
+        bVar13 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                            *)&pOStack_11,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__MoveNext__
+                          );
+        if (bVar13 == 0) {
+          CStack_4.a = -NAN;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    ((Object *)&pOStack_11,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dispose__
+                     ,in_stack_14);
+          *unaff_FS_OFFSET = CStack_4.g;
+          return;
+        }
+        original = (this->fields).previewImage;
+        pLVar15 = tierShopItemData;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          pLVar15 = (List_1_MVWorldObjectClient_ *)&UNK_?;
+          func_?();
+        }
+        pTVar3 = (TierUnlockedItemElement *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original,
+                             TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
+                            );
+        if ((pTVar3 == (TierUnlockedItemElement *)0x0) ||
+           (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pTVar3,(MethodInfo *)0x0),
+           this_02 == (Transform *)0x0)) break;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (this_02,(Transform *)(this->fields).objectPreviewerPrefab,0,(MethodInfo *)0x0);
+        TierUnlockedItemElement_Initialize
+                  (pTVar3,tierShopItemData,(int32_t)CStack_5.a,(MethodInfo *)0x0);
+        CStack_5.a = (float)((int)CStack_5.a + 1);
+        tierShopItemData = pLVar15;
+      }
+    }
+    func_?();
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
+    return;
+  }
+  bVar17 = (char)unaff_EBX + 1;
+  pbVar18 = (byte *)((int)pTVar3 * 3 + 0x7fb91043);
+  bVar19 = *pbVar18 + bVar17;
+  bVar20 = CARRY1(*pbVar18,bVar17) || CARRY1(bVar19,bVar7);
+  *pbVar18 = bVar19 + bVar7;
+  bVar7 = extraout_DH + extraout_DL;
+  bVar21 = CARRY1(extraout_DH,extraout_DL) || CARRY1(bVar7,bVar20);
+  cVar2 = bVar7 + bVar20;
+  if (cVar2 != '\0' &&
+      (SCARRY1(extraout_DH,extraout_DL) != SCARRY1(bVar7,bVar20)) == cVar2 < '\0') {
+    *(byte *)(unaff_EBX + -0x333ca219) = *(byte *)(unaff_EBX + -0x333ca219) | extraout_CL;
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
+    return;
+  }
+  pbVar18 = (byte *)(iVar8 * 5);
+  bVar20 = CARRY1(*pbVar18,extraout_CL) || CARRY1(*pbVar18 + extraout_CL,bVar21);
+  *pbVar18 = *pbVar18 + extraout_CL + bVar21;
+  cVar22 = (char)unaff_EBX + '\x03';
+  cVar6 = cVar22 + cVar2;
+  cVar23 = cVar6 + bVar20;
+  if (cVar23 == '\0' || (SCARRY1(cVar22,cVar2) != SCARRY1(cVar6,bVar20)) != cVar23 < '\0') {
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
+    return;
+  }
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

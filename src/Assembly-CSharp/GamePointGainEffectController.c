@@ -85,18 +85,19 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).gamePointsToInstantiate + newAddedGamePoints;
-  if (10 < iVar1) {
-    iVar1 = 10;
-  }
   (this->fields).gamePointsToInstantiate = iVar1;
-  iVar2 = (this->fields).currentGamePoints + newAddedGamePoints;
-  pLVar3 = (this->fields).gamePointGainEffectCurrentlyUsed;
-  (this->fields).currentGamePoints = iVar2;
-  if (pLVar3 != (List_1_GamePointGainEffect_ *)0x0) {
+  if (10 < iVar1) {
+    (this->fields).gamePointsToInstantiate = 10;
+  }
+  pLVar2 = (this->fields).gamePointGainEffectCurrentlyUsed;
+  iVar3 = (this->fields).currentGamePoints + newAddedGamePoints;
+  (this->fields).currentGamePoints = iVar3;
+  iVar1 = (this->fields).gamePointsToInstantiate;
+  if (pLVar2 != (List_1_GamePointGainEffect_ *)0x0) {
     pGVar4 = (this->fields).countController;
-    iVar5 = (pLVar3->fields)._size;
+    iVar5 = (pLVar2->fields)._size;
     if (pGVar4 != (GamePointGainEffectCountController *)0x0) {
-      (pGVar4->fields).endValue = iVar2;
+      (pGVar4->fields).endValue = iVar3;
       (pGVar4->fields).gainEffectTotalAmount = iVar5 + iVar1;
       (pGVar4->fields).startValue = (pGVar4->fields).currentGamePointAmountDisplayed;
       (pGVar4->fields).gainEffectAmountReached = 0;
@@ -130,12 +131,13 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
   }
   iVar1 = ((this->fields).gamePointsToInstantiate - (this->fields).currentGamePoints) +
           newGamePointsAmount;
-  if (10 < iVar1) {
-    iVar1 = 10;
-  }
   (this->fields).gamePointsToInstantiate = iVar1;
-  (this->fields).currentGamePoints = newGamePointsAmount;
+  if (10 < iVar1) {
+    (this->fields).gamePointsToInstantiate = 10;
+  }
   pLVar2 = (this->fields).gamePointGainEffectCurrentlyUsed;
+  (this->fields).currentGamePoints = newGamePointsAmount;
+  iVar1 = (this->fields).gamePointsToInstantiate;
   if (pLVar2 != (List_1_GamePointGainEffect_ *)0x0) {
     pGVar3 = (this->fields).countController;
     iVar4 = (pLVar2->fields)._size;
@@ -575,12 +577,13 @@ void Assembly-CSharp.dll::GamePointGainEffectController::
         cRam_? = '\x01';
       }
       iVar3 = ((this->fields).gamePointsToInstantiate - (this->fields).currentGamePoints) + iVar2;
-      if (10 < iVar3) {
-        iVar3 = 10;
-      }
       (this->fields).gamePointsToInstantiate = iVar3;
-      (this->fields).currentGamePoints = iVar2;
+      if (10 < iVar3) {
+        (this->fields).gamePointsToInstantiate = 10;
+      }
       pLVar4 = (this->fields).gamePointGainEffectCurrentlyUsed;
+      iVar3 = (this->fields).gamePointsToInstantiate;
+      (this->fields).currentGamePoints = iVar2;
       if (pLVar4 == (List_1_GamePointGainEffect_ *)0x0) goto code_?;
       pGVar5 = (this->fields).countController;
       iVar6 = (pLVar4->fields)._size;

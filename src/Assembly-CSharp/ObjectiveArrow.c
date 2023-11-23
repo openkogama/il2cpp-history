@@ -59,12 +59,10 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_Initialize
           VStack_3.x = (this->fields).arrowOffset.x;
           VStack_3.y = (this->fields).arrowOffset.y;
           VStack_3.z = (this->fields).arrowOffset.z;
-          uStack_7 = CONCAT44(startPos.y + VStack_3.y,startPos.x + VStack_3.x);
-          fStack_8 = startPos.z + VStack_3.z;
           if (pTVar1 != (Transform *)0x0) {
             value.y = startPos.y + VStack_3.y;
             value.x = startPos.x + VStack_3.x;
-            value.z = fStack_8;
+            value.z = startPos.z + VStack_3.z;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (pTVar1,value,(MethodInfo *)0x0);
             return;
@@ -96,17 +94,14 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_MoveInDirection
     uVar3._4_4_ = pVVar1->y;
     fVar4 = pVVar1->z;
     puVar5 = (undefined8 *)func_?(auStack_6,&dir,0);
-    VStack_2.x = (float)*puVar5;
-    VStack_2.y = (float)((ulonglong)*puVar5 >> 0x20);
+    VStack_2._0_8_ = *puVar5;
+    VStack_2.z = *(float *)(puVar5 + 1);
     uVar7 = (this->fields).arrowOffset.x;
     uVar8 = (this->fields).arrowOffset.y;
-    VStack_2.x = (float)uVar7 + (float)uVar3 + VStack_2.x * dist;
-    VStack_2.y = (float)uVar8 + (float)((ulonglong)uVar3 >> 0x20) + VStack_2.y * dist;
-    VStack_2.z = (this->fields).arrowOffset.z + fVar4 + *(float *)(puVar5 + 1) * dist;
     if (this_01 != (Transform *)0x0) {
-      value.y = VStack_2.y;
-      value.x = VStack_2.x;
-      value.z = VStack_2.z;
+      value.y = (float)uVar8 + (float)((ulonglong)uVar3 >> 0x20) + VStack_2.y * dist;
+      value.x = (float)uVar7 + (float)uVar3 + VStack_2.x * dist;
+      value.z = (this->fields).arrowOffset.z + fVar4 + VStack_2.z * dist;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this_01,value,(MethodInfo *)0x0);
       ObjectiveArrow_SetArrowBobbing(this,dist,(MethodInfo *)0x0);
@@ -230,58 +225,11 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_Update
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 + fVar1;
   (this->fields).animationTimer = fVar2;
-  if (fVar2 <= (this->fields).animationLerpTime) {
-    ObjectiveArrow_UpdateLerpAnimation(this,(MethodInfo *)0x0);
+  if ((this->fields).animationLerpTime < fVar2) {
+    ObjectiveArrow_UpdateArrowTransform(this,(MethodInfo *)0x0);
     return;
   }
-  pTVar3 = (this->fields).targetDropOff;
-  if (pTVar3 != (Transform *)0x0) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd0,pTVar3,(MethodInfo *)0x0);
-    uVar5 = pVVar4->x;
-    uVar6 = pVVar4->y;
-    pTVar3 = (this->fields).targetPickup;
-    if (pTVar3 != (Transform *)0x0) {
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&fStack_7,pTVar3,(MethodInfo *)0x0);
-      uVar8 = pVVar4->x;
-      uVar9 = pVVar4->y;
-      fStack_7 = (float)uVar5 - (float)uVar8;
-      puStack_10 = (undefined *)((float)uVar6 - (float)uVar9);
-      fVar11 = (float10)func_?(&stack0xffffffd0,0);
-      fVar2 = (this->fields).farPlane - _UNK_?;
-      fVar1 = (float)fVar11;
-      if (fVar2 <= (float)fVar11) {
-        fVar1 = fVar2;
-      }
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this,(MethodInfo *)0x0);
-      pTVar3 = (this->fields).targetPickup;
-      if (pTVar3 != (Transform *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&fStack_7,pTVar3,(MethodInfo *)0x0);
-        uVar12 = pVVar4->x;
-        uVar13 = pVVar4->y;
-        fVar2 = pVVar4->z;
-        puVar14 = (undefined8 *)func_?(&fStack_7,&stack0xffffffd0,0);
-        uVar15 = (this->fields).arrowOffset.x;
-        uVar16 = (this->fields).arrowOffset.y;
-        if (this_00 != (Transform *)0x0) {
-          value.y = (float)uVar16 + (float)uVar13 + (float)((ulonglong)*puVar14 >> 0x20) * fVar1;
-          value.x = (float)uVar15 + (float)uVar12 + (float)*puVar14 * fVar1;
-          value.z = (this->fields).arrowOffset.z + fVar2 + *(float *)(puVar14 + 1) * fVar1;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (this_00,value,(MethodInfo *)0x0);
-          ObjectiveArrow_SetArrowBobbing(this,fVar1,(MethodInfo *)0x0);
-          ObjectiveArrow_SetScaleFromDistance(this,fVar1,(MethodInfo *)0x0);
-          return;
-        }
-      }
-    }
-  }
-  func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  ObjectiveArrow_UpdateLerpAnimation(this,(MethodInfo *)0x0);
   return;
 }
 
@@ -295,7 +243,7 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_UpdateArrowTransform
   pTVar1 = (this->fields).targetDropOff;
   if (pTVar1 != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
     uVar3 = pVVar2->x;
     pTVar1 = (this->fields).targetPickup;
     if (pTVar1 != (Transform *)0x0) {
@@ -303,7 +251,7 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_UpdateArrowTransform
                          ((Vector3 *)&puStack_4,pTVar1,(MethodInfo *)0x0);
       uVar5 = pVVar2->x;
       puStack_4 = (undefined *)((float)uVar3 - (float)uVar5);
-      fVar6 = (float10)func_?(&stack0xffffffd0,0);
+      fVar6 = (float10)func_?(&stack0xffffffc8,0);
       fVar7 = (this->fields).farPlane - _UNK_?;
       dist = (float)fVar6;
       if (fVar7 <= (float)fVar6) {
@@ -318,12 +266,13 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_UpdateArrowTransform
         uVar8 = pVVar2->x;
         uVar9 = pVVar2->y;
         fVar7 = pVVar2->z;
-        puVar10 = (undefined8 *)func_?(&puStack_4,&stack0xffffffd0,0);
-        uVar11 = (this->fields).arrowOffset.x;
-        uVar12 = (this->fields).arrowOffset.y;
+        puVar10 = (undefined8 *)func_?(&puStack_4,&stack0xffffffc8,0);
+        fStack_11 = (float)((ulonglong)*puVar10 >> 0x20);
+        uVar12 = (this->fields).arrowOffset.x;
+        uVar13 = (this->fields).arrowOffset.y;
         if (this_00 != (Transform *)0x0) {
-          value.y = (float)uVar12 + (float)uVar9 + (float)((ulonglong)*puVar10 >> 0x20) * dist;
-          value.x = (float)uVar11 + (float)uVar8 + (float)*puVar10 * dist;
+          value.y = (float)uVar13 + (float)uVar9 + fStack_11 * dist;
+          value.x = (float)uVar12 + (float)uVar8 + (float)*puVar10 * dist;
           value.z = (this->fields).arrowOffset.z + fVar7 + *(float *)(puVar10 + 1) * dist;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                     (this_00,value,(MethodInfo *)0x0);
@@ -335,8 +284,8 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_UpdateArrowTransform
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

@@ -27,37 +27,44 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
   d.mid = auVar1._12_4_;
   d.ulomidLE._4_4_ = unaff_EDI;
   pIVar2 = mscorlib.dll::System::Decimal::Decimal_GetBits(d,unaff_ESI);
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
+  this = (Int32__Array *)
+         func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
              MethodInfo__System__Collections__Generic__List<unsigned_char>__List__);
+  uVar3 = 0;
   if (pIVar2 != (Int32__Array *)0x0) {
-    if ((int)pIVar2->max_length < 1) {
-      if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) {
-        pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::
-                 List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                           (this,
-                            MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__
-                           );
-        return (Byte__Array *)pMVar3;
-      }
+    piVar4 = pIVar2->vector;
+    for (; (int)uVar3 < (int)pIVar2->max_length; uVar3 = uVar3 + 1) {
+      if (pIVar2->max_length <= uVar3) goto code_?;
+      pBVar5 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_3
+                         (*piVar4,(MethodInfo *)0x0);
+      if (this == (Int32__Array *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Byte]::List_1_System_Byte__AddRange
+                ((List_1_System_Byte_ *)this,(IEnumerable_1_System_Byte_ *)pBVar5,
+                 MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
+                );
+      piVar4 = piVar4 + 1;
+      pIVar2 = this;
     }
-    else {
-      if (pIVar2->max_length == 0) goto code_?;
-      mscorlib.dll::System::BitConverter::BitConverter_GetBytes_3
-                (pIVar2->vector[0],(MethodInfo *)0x0);
+    if (this != (Int32__Array *)0x0) {
+      pMVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
+                         ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                           *)this,
+                          MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
+      return (Byte__Array *)pMVar6;
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pBVar5 = (Byte__Array *)(*pcVar4)();
+  pcVar7 = (code *)swi(3);
+  pBVar5 = (Byte__Array *)(*pcVar7)();
   return pBVar5;
 }
 

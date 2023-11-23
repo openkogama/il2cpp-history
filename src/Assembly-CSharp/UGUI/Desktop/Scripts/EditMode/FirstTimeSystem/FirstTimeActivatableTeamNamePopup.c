@@ -382,37 +382,37 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                   );
         (this->fields)._.isRegistered = 1;
       }
-      bVar3 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
-                        ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+      FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
+                ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                 GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
         this_01 = (this->fields).slots;
         if (this_01 != (InventorySlots *)0x0) {
           this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this_01,(MethodInfo *)0x0);
           if (this_03 != (Transform *)0x0) {
-            iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+            iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                               (this_03,(MethodInfo *)0x0);
-            pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar6 != (MVNetworkGame *)0x0) &&
-               (this_02 = (pMVar6->fields).teamManager, this_02 != (MVTeamManager *)0x0)) {
-              pLVar7 = MVTeamManager::MVTeamManager_GetTeamList(this_02,(MethodInfo *)0x0);
-              if (pLVar7 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
-                iVar8 = (pLVar7->fields)._size;
-                bVar9 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
+            pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar5 != (MVNetworkGame *)0x0) &&
+               (this_02 = (pMVar5->fields).teamManager, this_02 != (MVTeamManager *)0x0)) {
+              pLVar6 = MVTeamManager::MVTeamManager_GetTeamList(this_02,(MethodInfo *)0x0);
+              if (pLVar6 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
+                iVar7 = (pLVar6->fields)._size;
+                bVar8 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                                   ((this->fields).insideInventory,(MethodInfo *)0x0);
+                bVar9 = 0;
+                if (1 < iVar7) {
+                  bVar9 = bVar8 & bVar3 & bVar1;
+                }
                 bVar10 = 0;
-                if (1 < iVar8) {
-                  bVar10 = bVar9;
+                if (0 < iVar4) {
+                  bVar10 = 0x11;
                 }
-                bVar11 = 0;
-                if (0 < iVar5) {
-                  bVar11 = bVar10 & bVar4 & bVar1;
-                }
-                return bVar11 & bVar3 == 0;
+                return bVar9 & bVar10;
               }
             }
           }
@@ -420,8 +420,8 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
       }
     }
     func_?();
-    pcVar12 = (code *)swi(3);
-    bVar1 = (*pcVar12)();
+    pcVar11 = (code *)swi(3);
+    bVar1 = (*pcVar11)();
     return bVar1;
   }
   return 0;

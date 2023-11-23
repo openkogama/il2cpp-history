@@ -154,31 +154,33 @@ bool Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::
   pJVar1 = (this->fields).vehicleMotor;
   if (pJVar1 != (JetPackMotor *)0x0) {
     bVar2 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      thrust = 0;
+    bVar3 = 0;
+    if (bVar2 == 0) {
+      bVar3 = thrust;
     }
     if ((this->fields).leaveMode != 0) {
       pJVar1 = (this->fields).vehicleMotor;
       if (pJVar1 == (JetPackMotor *)0x0) goto code_?;
       bVar2 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar1,(MethodInfo *)0x0);
       if (bVar2 == 0) {
-        thrust = 1;
+        bVar3 = 1;
       }
     }
-    pMVar3 = (this->fields).owner;
-    if (pMVar3 != (MVJetPack *)0x0) {
-      cVar4 = (*(code *)(pMVar3->klass->vtable).get_IsDead.method)(pMVar3);
-      if (cVar4 != '\0') {
-        thrust = 0;
+    pMVar4 = (this->fields).owner;
+    if (pMVar4 != (MVJetPack *)0x0) {
+      cVar5 = (*(code *)(pMVar4->klass->vtable).get_IsDead.method)(pMVar4);
+      bVar2 = 0;
+      if (cVar5 == '\0') {
+        bVar2 = bVar3;
       }
-      return thrust;
+      return bVar2;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
-  return bVar2;
+  pcVar6 = (code *)swi(3);
+  bVar3 = (*pcVar6)();
+  return bVar3;
 }
 
 
@@ -231,168 +233,167 @@ Assembly-CSharp.dll::MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPac
     cRam_? = '\x01';
   }
   pIVar1 = MVJetPack_LocalObjectsJetPack_HandleWalkMode(this,movementMap,(MethodInfo *)0x0);
-  uVar2 = 0;
-  pIStack_3 = pIVar1;
+  movementMap._3_1_ = 0;
+  pIStack_2 = pIVar1;
   if (pIVar1 != (IInputToPlayerMovement *)0x0) {
-    bVar4 = func_?(1,TypeInfo__IInputToPlayerMovement,pIVar1);
-    uVar2 = (uint)bVar4;
+    movementMap._3_1_ = func_?(1,TypeInfo__IInputToPlayerMovement,pIVar1);
   }
-  pJVar5 = (this->fields).vehicleMotor;
-  if (pJVar5 != (JetPackMotor *)0x0) {
-    bVar6 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar5,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      uVar2 = 0;
+  pJVar3 = (this->fields).vehicleMotor;
+  if (pJVar3 != (JetPackMotor *)0x0) {
+    bVar4 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar3,(MethodInfo *)0x0);
+    bVar5 = 0;
+    if (bVar4 == 0) {
+      bVar5 = movementMap._3_1_;
     }
     if ((this->fields).leaveMode != 0) {
-      pJVar5 = (this->fields).vehicleMotor;
-      if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
-      bVar6 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar5,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        uVar2 = 1;
+      pJVar3 = (this->fields).vehicleMotor;
+      if (pJVar3 == (JetPackMotor *)0x0) goto code_?;
+      bVar4 = JetPackMotor::JetPackMotor_get_IsUnderWater(pJVar3,(MethodInfo *)0x0);
+      if (bVar4 == 0) {
+        bVar5 = 1;
       }
     }
-    pMVar7 = (this->fields).owner;
-    if (pMVar7 != (MVJetPack *)0x0) {
-      cVar8 = (*(code *)(pMVar7->klass->vtable).get_IsDead.method)
-                         (pMVar7,(pMVar7->klass->vtable).get_IsInSpawner.methodPtr);
-      if (cVar8 != '\0') {
-        uVar2 = 0;
+    pMVar6 = (this->fields).owner;
+    if (pMVar6 != (MVJetPack *)0x0) {
+      cVar7 = (*(code *)(pMVar6->klass->vtable).get_IsDead.method)
+                         (pMVar6,(pMVar6->klass->vtable).get_IsInSpawner.methodPtr);
+      uStack_8 = 0;
+      if (cVar7 == '\0') {
+        uStack_8 = (uint)bVar5;
       }
-      uStack_9 = uVar2;
-      MVJetPack_LocalObjectsJetPack_OverheatUpdate(this,(bool)uVar2,(MethodInfo *)0x0);
+      MVJetPack_LocalObjectsJetPack_OverheatUpdate(this,(bool)uStack_8,(MethodInfo *)0x0);
       if ((this->fields).walkMode == 0) {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Quaternion);
           cRam_? = '\x01';
         }
         movementMap._0_1_ = 0;
-        bVar6 = (bool)movementMap;
+        bVar4 = (bool)movementMap;
         movementMap._0_1_ = 0;
-        pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
-        pIVar11 = (IInputToPlayerMovement *)(pQVar10->identityQuaternion).x;
-        puVar12 = (undefined8 *)(pQVar10->identityQuaternion).y;
-        fVar13 = (pQVar10->identityQuaternion).z;
-        fVar14 = (pQVar10->identityQuaternion).w;
+        pQVar9 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        pIVar10 = (IInputToPlayerMovement *)(pQVar9->identityQuaternion).x;
+        puVar11 = (undefined8 *)(pQVar9->identityQuaternion).y;
+        fVar12 = (pQVar9->identityQuaternion).z;
+        fVar13 = (pQVar9->identityQuaternion).w;
         if (pIVar1 != (IInputToPlayerMovement *)0x0) {
           this_00 = (this->fields).mainCamera;
           if (this_00 == (Camera *)0x0) goto code_?;
-          pTStack_15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          pTStack_14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                  ((Component *)this_00,(MethodInfo *)0x0);
-          uVar16 = 0;
-          pIVar17 = pIVar1->klass;
-          uStack_18 = CONCAT44(pIVar17,(undefined4)uStack_18);
-          uStack_19 = 0;
-          uVar20._0_1_ = (pIVar17->_1).rank;
-          uVar20._1_1_ = (pIVar17->_1).minimumAlignment;
-          if (uVar20 != 0) {
+          uVar15 = 0;
+          pIVar16 = pIVar1->klass;
+          uStack_17 = CONCAT44(pIVar16,(undefined4)uStack_17);
+          uStack_18 = 0;
+          uVar19._0_1_ = (pIVar16->_1).rank;
+          uVar19._1_1_ = (pIVar16->_1).minimumAlignment;
+          if (uVar19 != 0) {
             do {
-              pIVar1 = pIStack_3;
-              if (pIVar17->interfaceOffsets[uVar16].interfaceType ==
+              pIVar1 = pIStack_2;
+              if (pIVar16->interfaceOffsets[uVar15].interfaceType ==
                   (Il2CppClass *)TypeInfo__IInputToPlayerMovement) {
-                ppMVar21 = &(&(pIStack_3->klass->vtable).get_Direction)
-                            [pIStack_3->klass->interfaceOffsets[uVar16].offset].method;
+                ppMVar20 = &(&(pIStack_2->klass->vtable).get_Direction)
+                            [pIStack_2->klass->interfaceOffsets[uVar15].offset].method;
                 goto code_?;
               }
-              uVar16 = uVar16 + 1;
-            } while (uVar16 < uVar20);
+              uVar15 = uVar15 + 1;
+            } while (uVar15 < uVar19);
           }
-          ppMVar21 = (MethodInfo **)func_?(pIVar1);
+          ppMVar20 = (MethodInfo **)func_?(pIVar1);
 code_?:
-          puVar12 = (undefined8 *)ppMVar21[1];
-          pIVar11 = pIVar1;
-          puVar22 = (ulonglong *)(*(code *)*ppMVar21)(auStack_23 + 4);
-          uStack_24 = *puVar22;
-          fVar25 = *(float *)(puVar22 + 1);
-          fStack_26 = fVar25;
-          uStack_18 = uStack_24;
-          fVar27 = (float10)func_?(&uStack_24,0);
-          pIStack_3 = (IInputToPlayerMovement *)(float)fVar27;
-          if (0.0 < (float)pIStack_3) {
-            if (pTStack_15 == (Transform *)0x0) goto code_?;
-            pQVar28 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                ((Quaternion *)auStack_23,pTStack_15,(MethodInfo *)0x0);
-            point.z = fVar25;
-            point.x = (float)(undefined4)uStack_18;
-            point.y = (float)uStack_18._4_4_;
-            pVVar29 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                                ((Vector3 *)(auStack_23 + 4),*pQVar28,point,(MethodInfo *)0x0);
-            fVar13 = 0.0;
-            uVar30._0_4_ = pVVar29->x;
-            uVar30._4_4_ = pVVar29->y;
-            fStack_26 = pVVar29->z;
-            puVar12 = &uStack_24;
-            pIVar11 = (IInputToPlayerMovement *)(auStack_23 + 4);
-            uStack_24 = uVar30 & 0xffffffff;
-            puVar22 = (ulonglong *)func_?();
-            uStack_18 = *puVar22;
-            fVar25 = *(float *)(puVar22 + 1);
+          puVar11 = (undefined8 *)ppMVar20[1];
+          pIVar10 = pIVar1;
+          puVar21 = (ulonglong *)(*(code *)*ppMVar20)(auStack_22 + 4);
+          uStack_23 = *puVar21;
+          fVar24 = *(float *)(puVar21 + 1);
+          fStack_25 = fVar24;
+          uStack_17 = uStack_23;
+          fVar26 = (float10)func_?(&uStack_23,0);
+          pIStack_2 = (IInputToPlayerMovement *)(float)fVar26;
+          if (0.0 < (float)pIStack_2) {
+            if (pTStack_14 == (Transform *)0x0) goto code_?;
+            pQVar27 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                ((Quaternion *)auStack_22,pTStack_14,(MethodInfo *)0x0);
+            point.z = fVar24;
+            point.x = (float)(undefined4)uStack_17;
+            point.y = (float)uStack_17._4_4_;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                                ((Vector3 *)(auStack_22 + 4),*pQVar27,point,(MethodInfo *)0x0);
+            fVar12 = 0.0;
+            uVar29._0_4_ = pVVar28->x;
+            uVar29._4_4_ = pVVar28->y;
+            fStack_25 = pVVar28->z;
+            puVar11 = &uStack_23;
+            pIVar10 = (IInputToPlayerMovement *)(auStack_22 + 4);
+            uStack_23 = uVar29 & 0xffffffff;
+            puVar21 = (ulonglong *)func_?();
+            uStack_17 = *puVar21;
+            fVar24 = *(float *)(puVar21 + 1);
           }
-          pJVar5 = (this->fields).vehicleMotor;
-          if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
-          puVar22 = (ulonglong *)
-                    (*(code *)(pJVar5->klass->vtable).get_Velocity.method)
-                              (auStack_23 + 4,pJVar5,
-                               (pJVar5->klass->vtable).get_IsMovementLocked.methodPtr);
-          uVar30 = *puVar22;
-          fStack_26 = *(float *)(puVar22 + 1);
-          uStack_24._0_4_ = (float)uVar30;
-          uStack_24._4_4_ = (float)(uVar30 >> 0x20);
-          uStack_24 = uVar30;
+          pJVar3 = (this->fields).vehicleMotor;
+          if (pJVar3 == (JetPackMotor *)0x0) goto code_?;
+          puVar21 = (ulonglong *)
+                    (*(code *)(pJVar3->klass->vtable).get_Velocity.method)
+                              (auStack_22 + 4,pJVar3,
+                               (pJVar3->klass->vtable).get_IsMovementLocked.methodPtr);
+          uVar29 = *puVar21;
+          fStack_25 = *(float *)(puVar21 + 1);
+          uStack_23._0_4_ = (float)uVar29;
+          uStack_23._4_4_ = (float)(uVar29 >> 0x20);
+          uStack_23 = uVar29;
           if ((_UNK_? <
-               uStack_24._4_4_ * uStack_24._4_4_ + (float)uStack_24 * (float)uStack_24 +
-               fStack_26 * fStack_26) || (movementMap._0_1_ = bVar6, (this->fields).wasFiring != 0)
+               uStack_23._4_4_ * uStack_23._4_4_ + (float)uStack_23 * (float)uStack_23 +
+               fStack_25 * fStack_25) || (movementMap._0_1_ = bVar4, (this->fields).wasFiring != 0)
              ) {
             this_01 = (this->fields).avatarPickupOwner;
             if (this_01 == (MVPickupOwner *)0x0) goto code_?;
-            pVVar29 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                                ((Vector3 *)(auStack_23 + 4),this_01,(MethodInfo *)0x0);
-            uVar31._0_4_ = pVVar29->x;
-            uVar31._4_4_ = pVVar29->y;
-            uStack_24 = uVar31 & 0xffffffff;
-            forward.z = pVVar29->z;
-            forward.x = (float)(int)(uVar31 & 0xffffffff);
-            forward.y = (float)(int)((uVar31 & 0xffffffff) >> 0x20);
-            pQVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+            pVVar28 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                                ((Vector3 *)(auStack_22 + 4),this_01,(MethodInfo *)0x0);
+            uVar30._0_4_ = pVVar28->x;
+            uVar30._4_4_ = pVVar28->y;
+            uStack_23 = uVar30 & 0xffffffff;
+            forward.z = pVVar28->z;
+            forward.x = (float)(int)(uVar30 & 0xffffffff);
+            forward.y = (float)(int)((uVar30 & 0xffffffff) >> 0x20);
+            pQVar27 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                                 ((Quaternion *)&stack0xffffffb8,forward,(MethodInfo *)0x0);
             movementMap._0_1_ = 1;
-            pIVar11 = (IInputToPlayerMovement *)pQVar28->x;
-            puVar12 = (undefined8 *)pQVar28->y;
-            fVar13 = pQVar28->z;
-            fVar14 = pQVar28->w;
+            pIVar10 = (IInputToPlayerMovement *)pQVar27->x;
+            puVar11 = (undefined8 *)pQVar27->y;
+            fVar12 = pQVar27->z;
+            fVar13 = pQVar27->w;
           }
-          pJVar5 = (this->fields).vehicleMotor;
-          if (pJVar5 == (JetPackMotor *)0x0) goto code_?;
-          (pJVar5->fields)._InputMoveDirection_k__BackingField.x = (float)(undefined4)uStack_18;
-          (pJVar5->fields)._InputMoveDirection_k__BackingField.y = (float)uStack_18._4_4_;
-          (pJVar5->fields)._InputMoveDirection_k__BackingField.z = fVar25;
-          uVar2 = uStack_9;
+          pJVar3 = (this->fields).vehicleMotor;
+          if (pJVar3 == (JetPackMotor *)0x0) goto code_?;
+          (pJVar3->fields)._InputMoveDirection_k__BackingField.x = (float)(undefined4)uStack_17;
+          (pJVar3->fields)._InputMoveDirection_k__BackingField.y = (float)uStack_17._4_4_;
+          (pJVar3->fields)._InputMoveDirection_k__BackingField.z = fVar24;
         }
-        pJVar5 = (this->fields).vehicleMotor;
-        if (pJVar5 != (JetPackMotor *)0x0) {
-          (pJVar5->fields)._Thrust_k__BackingField = (bool)uVar2;
-          pJVar5 = (this->fields).vehicleMotor;
-          if (pJVar5 != (JetPackMotor *)0x0) {
-            setQuaternion.y = (float)puVar12;
-            setQuaternion.x = (float)pIVar11;
-            setQuaternion.z = fVar13;
-            setQuaternion.w = fVar14;
+        pJVar3 = (this->fields).vehicleMotor;
+        if (pJVar3 != (JetPackMotor *)0x0) {
+          (pJVar3->fields)._Thrust_k__BackingField = (bool)uStack_8;
+          pJVar3 = (this->fields).vehicleMotor;
+          if (pJVar3 != (JetPackMotor *)0x0) {
+            setQuaternion.y = (float)puVar11;
+            setQuaternion.x = (float)pIVar10;
+            setQuaternion.z = fVar12;
+            setQuaternion.w = fVar13;
             JetPackMotor::JetPackMotor_FixedUpdateFunction
-                      (pJVar5,setQuaternion,(bool)movementMap,(MethodInfo *)0x0);
+                      (pJVar3,setQuaternion,(bool)movementMap,(MethodInfo *)0x0);
             return pIVar1;
           }
         }
       }
       else {
-        pMVar32 = (this->fields).vehicleUser;
-        if (pMVar32 != (MVAvatarLocal *)0x0) {
-          this_02 = (pMVar32->fields).avatarMotor;
-          pJVar5 = (this->fields).vehicleMotor;
-          if ((pJVar5 != (JetPackMotor *)0x0) &&
-             (pVVar29 = JetPackMotor::JetPackMotor_get_Impulses
-                                  ((Vector3 *)(auStack_23 + 4),pJVar5,(MethodInfo *)0x0),
+        pMVar31 = (this->fields).vehicleUser;
+        if (pMVar31 != (MVAvatarLocal *)0x0) {
+          this_02 = (pMVar31->fields).avatarMotor;
+          pJVar3 = (this->fields).vehicleMotor;
+          if ((pJVar3 != (JetPackMotor *)0x0) &&
+             (pVVar28 = JetPackMotor::JetPackMotor_get_Impulses
+                                  ((Vector3 *)(auStack_22 + 4),pJVar3,(MethodInfo *)0x0),
              this_02 != (AvatarMotor *)0x0)) {
             MVRigidBody::MVRigidBody_AddImpulse_1
-                      ((MVRigidBody *)this_02,*pVVar29,0,(MethodInfo *)0x0);
+                      ((MVRigidBody *)this_02,*pVVar28,0,(MethodInfo *)0x0);
             return pIVar1;
           }
         }
@@ -401,8 +402,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar33 = (code *)swi(3);
-  pIVar1 = (IInputToPlayerMovement *)(*pcVar33)();
+  pcVar32 = (code *)swi(3);
+  pIVar1 = (IInputToPlayerMovement *)(*pcVar32)();
   return pIVar1;
 }
 

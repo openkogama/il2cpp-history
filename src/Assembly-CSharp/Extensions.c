@@ -510,11 +510,9 @@ Assembly-CSharp.dll::Extensions::Extensions_FindChildRecursively
   pcStack_3 = pcVar4;
   transform_00 = (Transform__Class *)0x0;
   pIStack_5 = (Il2CppImage *)0x0;
-  this = (Transform__Class *)0x0;
   if (transform != (Transform *)0x0) {
     pIStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
                            (transform,(MethodInfo *)0x0);
-    this = (Transform__Class *)&pIStack_5;
     uStack_1._0_2_ = 1;
     uStack_1._2_1_ = 0;
     uStack_1._3_1_ = 0;
@@ -531,16 +529,16 @@ Assembly-CSharp.dll::Extensions::Extensions_FindChildRecursively
         goto code_?;
       }
       if ((pIStack_6 == (IEnumerator *)0x0) ||
-         (this = (Transform__Class *)
-                 func_?(1,TypeInfo__System__Collections__IEnumerator,pIStack_6),
-         this == (Transform__Class *)0x0)) break;
-      pTVar8 = (Transform__Class *)(this->_0).image;
+         (unaff_EDI = (Transform__Class *)
+                      func_?(1,TypeInfo__System__Collections__IEnumerator,pIStack_6),
+         unaff_EDI == (Transform__Class *)0x0)) break;
+      pTVar8 = (Transform__Class *)(unaff_EDI->_0).image;
       pTVar9 = TypeInfo__UnityEngine__Transform;
       if (((pTVar8->_1).naturalAligment < (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
          ((pTVar8->_1).typeHierarchy[(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
       a = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                    ((Object_1 *)this,(MethodInfo *)0x0);
+                    ((Object_1 *)unaff_EDI,(MethodInfo *)0x0);
       bVar10 = mscorlib.dll::System::String::String_op_Equality(a,child,(MethodInfo *)0x0);
       if (bVar10 != 0) goto code_?;
     }
@@ -551,7 +549,7 @@ code_?:
   uStack_1._2_1_ = 0xff;
   uStack_1._3_1_ = 0xff;
   func_?();
-  transform_00 = this;
+  transform_00 = unaff_EDI;
 code_?:
   uStack_1._0_2_ = 0xffff;
   uStack_1._2_1_ = 0xff;
@@ -568,7 +566,7 @@ code_?:
   }
   pIStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
                          (transform,(MethodInfo *)0x0);
-  this = (Transform__Class *)&pIStack_5;
+  unaff_EDI = (Transform__Class *)&pIStack_5;
   uStack_1._0_2_ = 4;
   uStack_1._2_1_ = 0;
   uStack_1._3_1_ = 0;
@@ -592,16 +590,12 @@ code_?:
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
-    if (transform_00 == (Transform__Class *)0x0) {
-      transform_00 = (Transform__Class *)0x0;
-    }
-    else {
-      this = *(Transform__Class **)&transform_00->_0;
-      pTVar8 = TypeInfo__UnityEngine__Transform;
-      if (((this->_1).naturalAligment < (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-         ((this->_1).typeHierarchy[(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-          (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
-    }
+    if ((transform_00 != (Transform__Class *)0x0) &&
+       ((unaff_EDI = *(Transform__Class **)&transform_00->_0,
+        pTVar8 = TypeInfo__UnityEngine__Transform,
+        (unaff_EDI->_1).naturalAligment < (TypeInfo__UnityEngine__Transform->_1).naturalAligment ||
+        ((unaff_EDI->_1).typeHierarchy[(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1]
+         != (Il2CppClass *)TypeInfo__UnityEngine__Transform)))) goto code_?;
     transform_00 = (Transform__Class *)
                    Extensions_FindChildRecursively
                              ((Transform *)transform_00,child,(MethodInfo *)0x0);
@@ -623,7 +617,7 @@ code_?:
   func_?();
   pTVar9 = extraout_EDX;
 code_?:
-  func_?(this,pTVar9);
+  func_?(unaff_EDI,pTVar9);
   pTVar8 = extraout_EDX_00;
 code_?:
   func_?(transform_00,pTVar8);

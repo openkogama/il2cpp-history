@@ -44,210 +44,210 @@ void Assembly-CSharp.dll::MVBody::MVBody_AlignModel
         cRam_? = '\x01';
       }
       pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
-      fVar8 = (pQVar7->identityQuaternion).x;
-      fVar9 = (pQVar7->identityQuaternion).y;
-      fStack_10 = (pQVar7->identityQuaternion).z;
-      fStack_11 = (pQVar7->identityQuaternion).w;
-      uVar12 = UnityEngine.IMGUIModule.dll::<PrivateImplementationDetails>::
+      VStack_8.x = (pQVar7->identityQuaternion).x;
+      VStack_8.y = (pQVar7->identityQuaternion).y;
+      VStack_8.z = (pQVar7->identityQuaternion).z;
+      fStack_9 = (pQVar7->identityQuaternion).w;
+      uVar10 = UnityEngine.IMGUIModule.dll::<PrivateImplementationDetails>::
                _PrivateImplementationDetails__5_ComputeStringHash(boneName,(MethodInfo *)0x0);
-      if (uVar12 < 0x7481398c) {
-        if (0x37914e64 < uVar12) {
-          if (uVar12 == 0x5f982365) {
-            bVar13 = mscorlib.dll::System::String::String_op_Equality
+      if (uVar10 < 0x7481398c) {
+        if (0x37914e64 < uVar10) {
+          if (uVar10 == 0x5f982365) {
+            bVar11 = mscorlib.dll::System::String::String_op_Equality
                                (boneName,StringLiteral_LLowLeg,(MethodInfo *)0x0);
-            if (bVar13 == 0) goto code_?;
+            if (bVar11 == 0) goto code_?;
             if (bone != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                                  ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-              uStack_15._0_4_ = pVVar14->x;
-              uStack_15._4_4_ = pVVar14->y;
-              fVar8 = pVVar14->z;
-              pVVar14 = (Vector3 *)&stack0xffffffb0;
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                  (&VStack_8,bone,(MethodInfo *)0x0);
+              uStack_13._0_4_ = pVVar12->x;
+              uStack_13._4_4_ = pVVar12->y;
+              fVar14 = pVVar12->z;
+              pVVar12 = &VStack_8;
               goto code_?;
             }
           }
           else {
-            if ((uVar12 != 0x7481398b) ||
-               (bVar13 = mscorlib.dll::System::String::String_op_Equality
-                                   (boneName,StringLiteral_LArm,(MethodInfo *)0x0), bVar13 == 0))
+            if ((uVar10 != 0x7481398b) ||
+               (bVar11 = mscorlib.dll::System::String::String_op_Equality
+                                   (boneName,StringLiteral_LArm,(MethodInfo *)0x0), bVar11 == 0))
             goto code_?;
             if (bone != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                  ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-              uStack_16._0_4_ = pVVar14->x;
-              uStack_16._4_4_ = pVVar14->y;
-              fStack_17 = pVVar14->z;
-              fVar18 = (float)((undefined4)uStack_16 ^
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                  (&VStack_8,bone,(MethodInfo *)0x0);
+              uStack_15._0_4_ = pVVar12->x;
+              uStack_15._4_4_ = pVVar12->y;
+              fStack_16 = pVVar12->z;
+              fVar17 = (float)((undefined4)uStack_15 ^
                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                               );
-              uStack_15 = CONCAT44(uStack_16._4_4_ ^
+              uStack_13 = CONCAT44(uStack_15._4_4_ ^
                                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                                   ,(undefined4)uStack_15);
-              VStack_19.z = (float)((uint)fStack_17 ^
+                                   ,(undefined4)uStack_13);
+              VStack_18.z = (float)((uint)fStack_16 ^
                                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                    );
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                                  ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-              uVar20 = pVVar14->x;
-              uVar21 = pVVar14->y;
-              fVar9 = pVVar14->z;
-              uVar22 = uStack_15._4_4_;
-              fVar8 = VStack_19.z;
-              uVar23 = uVar20;
-              uVar24 = uVar21;
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                  (&VStack_8,bone,(MethodInfo *)0x0);
+              uVar19 = pVVar12->x;
+              uVar20 = pVVar12->y;
+              fVar21 = pVVar12->z;
+              uVar22 = uStack_13._4_4_;
+              fVar14 = VStack_18.z;
+              uVar23 = uVar19;
+              uVar24 = uVar20;
               goto code_?;
             }
           }
           goto code_?;
         }
-        if (uVar12 == 0x36055caa) {
-          bVar13 = mscorlib.dll::System::String::String_op_Equality
+        if (uVar10 == 0x36055caa) {
+          bVar11 = mscorlib.dll::System::String::String_op_Equality
                              (boneName,StringLiteral_LUpLeg,(MethodInfo *)0x0);
-          if (bVar13 != 0) {
+          if (bVar11 != 0) {
             if (bone != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                                  ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-              uStack_15._0_4_ = pVVar14->x;
-              uStack_15._4_4_ = pVVar14->y;
-              fVar8 = pVVar14->z;
-              pVVar14 = (Vector3 *)&stack0xffffffb0;
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                                  (&VStack_8,bone,(MethodInfo *)0x0);
+              uStack_13._0_4_ = pVVar12->x;
+              uStack_13._4_4_ = pVVar12->y;
+              fVar14 = pVVar12->z;
+              pVVar12 = &VStack_8;
               goto code_?;
             }
             goto code_?;
           }
         }
-        else if ((uVar12 == 0x37914e64) &&
-                (bVar13 = mscorlib.dll::System::String::String_op_Equality
-                                    (boneName,StringLiteral_Torso,(MethodInfo *)0x0), bVar13 != 0))
+        else if ((uVar10 == 0x37914e64) &&
+                (bVar11 = mscorlib.dll::System::String::String_op_Equality
+                                    (boneName,StringLiteral_Torso,(MethodInfo *)0x0), bVar11 != 0))
         {
           if (bone == (Transform *)0x0) goto code_?;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                              ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-          uStack_16._0_4_ = pVVar14->x;
-          uStack_16._4_4_ = pVVar14->y;
-          fStack_17 = pVVar14->z;
-          fVar8 = (float)((undefined4)uStack_16 ^
+          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                              (&VStack_8,bone,(MethodInfo *)0x0);
+          uStack_15._0_4_ = pVVar12->x;
+          uStack_15._4_4_ = pVVar12->y;
+          fStack_16 = pVVar12->z;
+          fVar14 = (float)((undefined4)uStack_15 ^
                           __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-          uStack_15 = CONCAT44(uStack_16._4_4_ ^
+          uStack_13 = CONCAT44(uStack_15._4_4_ ^
                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                               ,(undefined4)uStack_15);
-          VStack_19.z = (float)((uint)fStack_17 ^
+                               ,(undefined4)uStack_13);
+          VStack_18.z = (float)((uint)fStack_16 ^
                                __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                );
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                              ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-          forward_00.y = (float)uStack_15._4_4_;
-          forward_00.x = fVar8;
-          forward_00.z = VStack_19.z;
+          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                              (&VStack_8,bone,(MethodInfo *)0x0);
+          forward_00.y = (float)uStack_13._4_4_;
+          forward_00.x = fVar14;
+          forward_00.z = VStack_18.z;
           pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                              ((Quaternion *)&stack0xffffffa0,forward_00,*pVVar14,(MethodInfo *)0x0)
+                              ((Quaternion *)&stack0xffffff90,forward_00,*pVVar12,(MethodInfo *)0x0)
           ;
-          fVar8 = pQVar25->x;
-          fVar9 = pQVar25->y;
-          fStack_10 = pQVar25->z;
-          fStack_11 = pQVar25->w;
+          VStack_8.x = pQVar25->x;
+          VStack_8.y = pQVar25->y;
+          VStack_8.z = pQVar25->z;
+          fStack_9 = pQVar25->w;
         }
       }
       else {
-        if (uVar12 < 0xa83422c6) {
-          if (uVar12 == 0x7597e72c) {
-            bVar13 = mscorlib.dll::System::String::String_op_Equality
+        if (uVar10 < 0xa83422c6) {
+          if (uVar10 == 0x7597e72c) {
+            bVar11 = mscorlib.dll::System::String::String_op_Equality
                                (boneName,StringLiteral_RUpLeg,(MethodInfo *)0x0);
-            if (bVar13 == 0) goto code_?;
+            if (bVar11 == 0) goto code_?;
             if (bone != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                                  (&VStack_19,bone,(MethodInfo *)0x0);
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                                  (&VStack_18,bone,(MethodInfo *)0x0);
               goto code_?;
             }
           }
           else {
-            if ((uVar12 != 0xa83422c5) ||
-               (bVar13 = mscorlib.dll::System::String::String_op_Equality
-                                   (boneName,StringLiteral_RArm,(MethodInfo *)0x0), bVar13 == 0))
+            if ((uVar10 != 0xa83422c5) ||
+               (bVar11 = mscorlib.dll::System::String::String_op_Equality
+                                   (boneName,StringLiteral_RArm,(MethodInfo *)0x0), bVar11 == 0))
             goto code_?;
             if (bone != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                  (&VStack_19,bone,(MethodInfo *)0x0);
-              uStack_16._0_4_ = pVVar14->x;
-              uStack_16._4_4_ = pVVar14->y;
-              fStack_17 = pVVar14->z;
-              fVar18 = (float)((undefined4)uStack_16 ^
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                  (&VStack_18,bone,(MethodInfo *)0x0);
+              uStack_15._0_4_ = pVVar12->x;
+              uStack_15._4_4_ = pVVar12->y;
+              fStack_16 = pVVar12->z;
+              fVar17 = (float)((undefined4)uStack_15 ^
                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                               );
-              uStack_15 = CONCAT44(uStack_16._4_4_ ^
+              uStack_13 = CONCAT44(uStack_15._4_4_ ^
                                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
-                                   ,(undefined4)uStack_15);
-              VStack_19.z = (float)((uint)fStack_17 ^
+                                   ,(undefined4)uStack_13);
+              VStack_18.z = (float)((uint)fStack_16 ^
                                    __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                                    );
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                                  ((Vector3 *)&stack0xffffffb0,bone,(MethodInfo *)0x0);
-              uStack_16._0_4_ = pVVar14->x;
-              uStack_16._4_4_ = pVVar14->y;
-              uVar23 = (undefined4)uStack_16 ^
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                  (&VStack_8,bone,(MethodInfo *)0x0);
+              uStack_15._0_4_ = pVVar12->x;
+              uStack_15._4_4_ = pVVar12->y;
+              uVar23 = (undefined4)uStack_15 ^
                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
-              uVar24 = uStack_16._4_4_ ^
+              uVar24 = uStack_15._4_4_ ^
                       __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field;
-              fVar9 = (float)((uint)pVVar14->z ^
+              fVar21 = (float)((uint)pVVar12->z ^
                               __0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field
                               );
-              uVar22 = uStack_15._4_4_;
-              fVar8 = VStack_19.z;
-              fStack_17 = fVar9;
+              uVar22 = uStack_13._4_4_;
+              fVar14 = VStack_18.z;
+              fStack_16 = fVar21;
               goto code_?;
             }
           }
           goto code_?;
         }
         b = StringLiteral_Head;
-        if (((uVar12 == 0xb2972ae3) || (b = StringLiteral_RLowLeg, uVar12 == 0xeb39ce13)) &&
-           (bVar13 = mscorlib.dll::System::String::String_op_Equality(boneName,b,(MethodInfo *)0x0),
-           bVar13 != 0)) {
+        if (((uVar10 == 0xb2972ae3) || (b = StringLiteral_RLowLeg, uVar10 == 0xeb39ce13)) &&
+           (bVar11 = mscorlib.dll::System::String::String_op_Equality(boneName,b,(MethodInfo *)0x0),
+           bVar11 != 0)) {
           if (bone == (Transform *)0x0) goto code_?;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                              (&VStack_19,bone,(MethodInfo *)0x0);
+          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                              (&VStack_18,bone,(MethodInfo *)0x0);
 code_?:
-          uStack_15._0_4_ = pVVar14->x;
-          uStack_15._4_4_ = pVVar14->y;
-          fVar8 = pVVar14->z;
-          pVVar14 = &VStack_19;
+          uStack_13._0_4_ = pVVar12->x;
+          uStack_13._4_4_ = pVVar12->y;
+          fVar14 = pVVar12->z;
+          pVVar12 = &VStack_18;
 code_?:
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                              (pVVar14,bone,(MethodInfo *)0x0);
-          uVar23 = (uint)pVVar14->x;
-          uVar24 = (uint)pVVar14->y;
-          fVar9 = pVVar14->z;
-          fVar18 = (float)uStack_15;
-          uVar22 = (int)((ulonglong)uStack_15 >> 0x20);
+          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                              (pVVar12,bone,(MethodInfo *)0x0);
+          uVar23 = (uint)pVVar12->x;
+          uVar24 = (uint)pVVar12->y;
+          fVar21 = pVVar12->z;
+          fVar17 = (float)uStack_13;
+          uVar22 = (int)((ulonglong)uStack_13 >> 0x20);
 code_?:
           forward.y = (float)uVar22;
-          forward.x = fVar18;
-          forward.z = fVar8;
+          forward.x = fVar17;
+          forward.z = fVar14;
           upwards.y = (float)uVar24;
           upwards.x = (float)uVar23;
-          upwards.z = fVar9;
+          upwards.z = fVar21;
           pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                              ((Quaternion *)&stack0xffffffa0,forward,upwards,(MethodInfo *)0x0);
-          fVar8 = pQVar25->x;
-          fVar9 = pQVar25->y;
-          fStack_10 = pQVar25->z;
-          fStack_11 = pQVar25->w;
+                              ((Quaternion *)&stack0xffffff90,forward,upwards,(MethodInfo *)0x0);
+          VStack_8.x = pQVar25->x;
+          VStack_8.y = pQVar25->y;
+          VStack_8.z = pQVar25->z;
+          fStack_9 = pQVar25->w;
         }
       }
 code_?:
-      uStack_16._0_4_ = (this->fields).modelScale.x;
-      uStack_16._4_4_ = (this->fields).modelScale.y;
-      fStack_17 = (this->fields).modelScale.z;
-      uStack_5 = CONCAT44((float)uStack_16._4_4_ * uStack_5._4_4_,
-                           (float)(undefined4)uStack_16 * (float)uStack_5);
-      fStack_6 = fStack_17 * fStack_6;
+      uStack_15._0_4_ = (this->fields).modelScale.x;
+      uStack_15._4_4_ = (this->fields).modelScale.y;
+      fStack_16 = (this->fields).modelScale.z;
+      uStack_5 = CONCAT44((float)uStack_15._4_4_ * uStack_5._4_4_,
+                           (float)(undefined4)uStack_15 * (float)uStack_5);
+      fStack_6 = fStack_16 * fStack_6;
       if ((model != (GameObject *)0x0) &&
          (pTVar26 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                               (model,(MethodInfo *)0x0), pTVar26 != (Transform *)0x0)) {
-        value.y = fVar9;
-        value.x = fVar8;
-        value.z = fStack_10;
-        value.w = fStack_11;
+        value.y = VStack_8.y;
+        value.x = VStack_8.x;
+        value.z = VStack_8.z;
+        value.w = fStack_9;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                   (pTVar26,value,(MethodInfo *)0x0);
         pTVar26 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -895,8 +895,8 @@ Assembly-CSharp.dll::MVBody::MVBody_CreateClone
           (MVBody *this,bool enableAllRenderers,bool hideEquippedItem,MethodInfo *method)
 
 {
-  bVar1 = hideEquippedItem;
-  _hideEquippedItem = (Object_1__Class *)(uint)hideEquippedItem;
+  bVar1 = enableAllRenderers;
+  _enableAllRenderers = (Object_1__Class *)(uint)enableAllRenderers;
   if (cRam_? == '\0') {
     func_?(&
                     AvatarAccessory__MethodInfo__UnityEngine__Component__GetComponentsInChildren<AvatarAccessory>______
@@ -923,164 +923,167 @@ Assembly-CSharp.dll::MVBody::MVBody_CreateClone
                      ((Object *)pGVar2,
                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                      );
-  if (pGVar2 != (GameObject *)0x0) {
+  if ((pGVar2 != (GameObject *)0x0) &&
+     (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+              (pTVar3,(Transform *)0x0,(MethodInfo *)0x0);
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar2,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                (pTVar3,(Transform *)0x0,(MethodInfo *)0x0);
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar2,(MethodInfo *)0x0);
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (pGVar2,(MethodInfo *)0x0);
-      if (this_00 != (Transform *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           ((Vector3 *)&stack0xffffffe8,this_00,(MethodInfo *)0x0);
-        uVar5._0_4_ = pVVar4->x;
-        uVar5._4_4_ = pVVar4->y;
-        fVar6 = pVVar4->z;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar8 = (pVVar7->upVector).x;
-        uVar9 = (pVVar7->upVector).y;
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar2,(MethodInfo *)0x0);
+    if (this_00 != (Transform *)0x0) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+      uVar5._0_4_ = pVVar4->x;
+      uVar5._4_4_ = pVVar4->y;
+      fVar6 = pVVar4->z;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar8 = (pVVar7->upVector).x;
+      uVar9 = (pVVar7->upVector).y;
+      if (pTVar3 != (Transform *)0x0) {
         value.y = (float)((ulonglong)uVar5 >> 0x20) + (float)uVar9 * _UNK_?;
         value.x = (float)uVar5 + (float)uVar8 * _UNK_?;
-        if (pTVar3 != (Transform *)0x0) {
-          value.z = fVar6 + (pVVar7->upVector).z * _UNK_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar3,value,(MethodInfo *)0x0);
-          pBVar10 = (BodyClone *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                             (pGVar2,
-                              BodyClone_MethodInfo__UnityEngine__GameObject__AddComponent<BodyClone>__
-                             );
-          (this->fields).bodyClone = pBVar10;
-          func_?();
-          pBVar10 = (this->fields).bodyClone;
-          if (pBVar10 != (BodyClone *)0x0) {
-            pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+        value.z = fVar6 + (pVVar7->upVector).z * _UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                  (pTVar3,value,(MethodInfo *)0x0);
+        pBVar10 = (BodyClone *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                           (pGVar2,
+                            BodyClone_MethodInfo__UnityEngine__GameObject__AddComponent<BodyClone>__
+                           );
+        (this->fields).bodyClone = pBVar10;
+        func_?();
+        pBVar10 = (this->fields).bodyClone;
+        if ((pBVar10 != (BodyClone *)0x0) &&
+           (pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                       Component_GetComponentsInChildren
                                 ((Component *)pBVar10,
                                  AvatarAccessory__MethodInfo__UnityEngine__Component__GetComponentsInChildren<AvatarAccessory>______
-                                );
-            if (pOVar11 != (Object__Array *)0x0) {
-              uVar12 = pOVar11->max_length - 1;
-              if (-1 < (int)uVar12) {
-                ppOVar13 = pOVar11->vector + (pOVar11->max_length - 1);
-                do {
-                  if (pOVar11->max_length <= uVar12) goto code_?;
-                  if ((Component *)*ppOVar13 == (Component *)0x0) goto code_?;
-                  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)*ppOVar13,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    _hideEquippedItem = TypeInfo__UnityEngine__Object;
-                    enableAllRenderers = 0xc9;
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                            ((Object_1 *)pGVar2,(MethodInfo *)0x0);
-                  ppOVar13 = ppOVar13 + -1;
-                  uVar12 = uVar12 - 1;
-                } while (-1 < (int)uVar12);
-                this = (MVBody *)0x0;
-                bVar1 = hideEquippedItem;
+                                ), pOVar11 != (Object__Array *)0x0)) {
+          uVar12 = pOVar11->max_length - 1;
+          if (-1 < (int)uVar12) {
+            ppOVar13 = pOVar11->vector + (pOVar11->max_length - 1);
+            do {
+              if (pOVar11->max_length <= uVar12) goto code_?;
+              if ((Component *)*ppOVar13 == (Component *)0x0) goto code_?;
+              pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)*ppOVar13,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                _enableAllRenderers = TypeInfo__UnityEngine__Object;
+                this = (MVBody *)&UNK_?;
+                func_?();
               }
-              hideEquippedItem = bVar1;
-              pBVar10 = (this->fields).bodyClone;
-              MVBody_GetAccessoryData(this,(MethodInfo *)0x0);
-              if (pBVar10 != (BodyClone *)0x0) {
-                if (cRam_? == '\0') {
-                  func_?();
-                  func_?();
-                  func_?();
-                  func_?();
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                x = (Object_1 *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                              ((Component *)pBVar10,
-                               MVBodyObject_MethodInfo__UnityEngine__Component__GetComponent<MVBodyObject>__
-                              );
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pGVar2 = (GameObject *)0x0;
-                bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                                  (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                accessoryData = TypeInfo__BodyAccessoriesController;
-                if (bVar1 == 0) {
-                  if (x == (Object_1 *)0x0) goto code_?;
-                  bodyData = x[3].klass;
-                  pBVar14 = (BodyAccessoriesController *)func_?();
-                  BodyAccessoriesController::BodyAccessoriesController__ctor
-                            (pBVar14,(int32_t)bodyData,(BodyData *)bodyData,
-                             (Dictionary_2_System_Object_System_Object_ *)accessoryData,1,
-                             (MethodInfo *)0x0);
-                  (pBVar10->fields).bodyAccessoriesController = pBVar14;
-                  pGVar2 = (GameObject *)&UNK_?;
-                  func_?();
-                  pBVar14 = (pBVar10->fields).bodyAccessoriesController;
-                  if (pBVar14 == (BodyAccessoriesController *)0x0) goto code_?;
-                  BodyAccessoriesController::BodyAccessoriesController_set_AccessoryMoveOverride
-                            (pBVar14,1,(MethodInfo *)0x0);
-                  pBVar14 = (pBVar10->fields).bodyAccessoriesController;
-                  if (pBVar14 == (BodyAccessoriesController *)0x0) goto code_?;
-                  BodyAccessoriesController::BodyAccessoriesController_RefreshAccessories
-                            (pBVar14,(Dictionary_2_System_Object_System_Object_ *)accessoryData,
-                             (MethodInfo *)0x0);
-                }
-                else {
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                            ((Object *)StringLiteral_Failed_to_get_MVBodyObject,(MethodInfo *)0x0);
-                }
-                if (enableAllRenderers != 0) {
-                  pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_GetComponentsInChildren
-                                      (pGVar2,
-                                       UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
-                                      );
-                  uVar12 = 0;
-                  if (pOVar11 == (Object__Array *)0x0) goto code_?;
-                  ppOVar13 = pOVar11->vector;
-                  for (; (int)uVar12 < (int)pOVar11->max_length; uVar12 = uVar12 + 1) {
-                    if (pOVar11->max_length <= uVar12) goto code_?;
-                    if ((Renderer *)*ppOVar13 == (Renderer *)0x0) goto code_?;
-                    pGVar2 = (GameObject *)&UNK_?;
-                    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                              ((Renderer *)*ppOVar13,1,(MethodInfo *)0x0);
-                    ppOVar13 = ppOVar13 + 1;
-                  }
-                }
-                if (hideEquippedItem != 0) {
-                  pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_GetComponentsInChildren
-                                      (pGVar2,
-                                       PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
-                                      );
-                  uVar12 = 0;
-                  if (pOVar11 == (Object__Array *)0x0) goto code_?;
-                  ppOVar13 = pOVar11->vector;
-                  for (; (int)uVar12 < (int)pOVar11->max_length; uVar12 = uVar12 + 1) {
-                    if (pOVar11->max_length <= uVar12) goto code_?;
-                    if ((Component *)*ppOVar13 == (Component *)0x0) goto code_?;
-                    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject((Component *)*ppOVar13,(MethodInfo *)0x0);
-                    if (this_01 == (GameObject *)0x0) goto code_?;
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (this_01,0,(MethodInfo *)0x0);
-                    ppOVar13 = ppOVar13 + 1;
-                  }
-                }
-                return pGVar2;
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                        ((Object_1 *)pGVar2,(MethodInfo *)0x0);
+              ppOVar13 = ppOVar13 + -1;
+              uVar12 = uVar12 - 1;
+              bVar1 = enableAllRenderers;
+            } while (-1 < (int)uVar12);
+          }
+          enableAllRenderers = bVar1;
+          this_01 = (Debug_2__Class **)0x0;
+          accessoryData = MVBody_GetAccessoryData(this,(MethodInfo *)0x0);
+          if (this != (MVBody *)0x0) {
+            if (cRam_? == '\0') {
+              func_?();
+              func_?();
+              this_01 = &TypeInfo__UnityEngine__Debug;
+              func_?();
+              func_?();
+              func_?();
+              cRam_? = '\x01';
+            }
+            x = (Object_1 *)
+                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                          ((Component *)this,
+                           MVBodyObject_MethodInfo__UnityEngine__Component__GetComponent<MVBodyObject>__
+                          );
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar1 == 0) {
+              if (x == (Object_1 *)0x0) goto code_?;
+              bodyData = x[3].klass;
+              pBVar14 = (BodyAccessoriesController *)func_?();
+              BodyAccessoriesController::BodyAccessoriesController__ctor
+                        (pBVar14,(int32_t)bodyData,(BodyData *)bodyData,accessoryData,1,
+                         (MethodInfo *)0x0);
+              this_01 = (Debug_2__Class **)&(this->fields)._._._._.itemId;
+              (this->fields)._._._._.itemId = (int32_t)pBVar14;
+              func_?();
+              pBVar14 = (BodyAccessoriesController *)(this->fields)._._._._.itemId;
+              if (pBVar14 == (BodyAccessoriesController *)0x0) goto code_?;
+              BodyAccessoriesController::BodyAccessoriesController_set_AccessoryMoveOverride
+                        (pBVar14,1,(MethodInfo *)0x0);
+              pBVar14 = (BodyAccessoriesController *)(this->fields)._._._._.itemId;
+              if (pBVar14 == (BodyAccessoriesController *)0x0) goto code_?;
+              BodyAccessoriesController::BodyAccessoriesController_RefreshAccessories
+                        (pBVar14,accessoryData,(MethodInfo *)0x0);
+            }
+            else {
+              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                        ((Object *)StringLiteral_Failed_to_get_MVBodyObject,(MethodInfo *)0x0);
+            }
+            if (enableAllRenderers != 0) {
+              this_01 = (Debug_2__Class **)
+                        UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+              ;
+              pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_GetComponentsInChildren
+                                  ((GameObject *)
+                                   UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                                   ,
+                                   UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                                  );
+              uVar12 = 0;
+              if (pOVar11 == (Object__Array *)0x0) goto code_?;
+              ppOVar13 = pOVar11->vector;
+              for (; (int)uVar12 < (int)pOVar11->max_length; uVar12 = uVar12 + 1) {
+                if (pOVar11->max_length <= uVar12) goto code_?;
+                this_01 = (Debug_2__Class **)*ppOVar13;
+                if ((MethodInfo *)this_01 == (MethodInfo *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
+                          ((Renderer *)this_01,1,(MethodInfo *)0x0);
+                ppOVar13 = ppOVar13 + 1;
               }
             }
+            if (hideEquippedItem != 0) {
+              this_01 = (Debug_2__Class **)
+                        PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
+              ;
+              pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_GetComponentsInChildren
+                                  ((GameObject *)
+                                   PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
+                                   ,
+                                   PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
+                                  );
+              uVar12 = 0;
+              if (pOVar11 == (Object__Array *)0x0) goto code_?;
+              ppOVar13 = pOVar11->vector;
+              for (; (int)uVar12 < (int)pOVar11->max_length; uVar12 = uVar12 + 1) {
+                if (pOVar11->max_length <= uVar12) goto code_?;
+                if ((Component *)*ppOVar13 == (Component *)0x0) goto code_?;
+                this_01 = (Debug_2__Class **)&UNK_?;
+                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)*ppOVar13,(MethodInfo *)0x0);
+                if (pGVar2 == (GameObject *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar2,0,(MethodInfo *)0x0);
+                ppOVar13 = ppOVar13 + 1;
+              }
+            }
+            return (GameObject *)(MethodInfo *)this_01;
           }
         }
       }
@@ -1331,7 +1334,7 @@ Assembly-CSharp.dll::MVBody::MVBody_GetAccessoryData(MVBody *this,MethodInfo *me
   if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     func_?();
     this = (MVBody *)0x0;
-    method = (MethodInfo *)extraout_EDX;
+    method = (MethodInfo *)unaff_EDI;
   }
   else {
     this = (MVBody *)

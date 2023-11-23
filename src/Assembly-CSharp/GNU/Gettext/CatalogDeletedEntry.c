@@ -365,7 +365,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).comment,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 

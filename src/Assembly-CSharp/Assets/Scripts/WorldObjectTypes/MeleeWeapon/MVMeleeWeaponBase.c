@@ -91,6 +91,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
   key = (Object *)
         func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,(int)&worldObjects + 3)
   ;
+  this_00.m_Index = 0;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     this_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
@@ -99,9 +100,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
     if (this_00.m_Index != 0) {
-      worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-      ;
+      method = (MethodInfo *)
+               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
       if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
            naturalAligment <= *(byte *)(*(int *)this_00.m_Index + 0xb8)) &&
          (*(Dictionary_2_System_Object_System_Object___Class **)
@@ -109,9 +109,10 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
            (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                  ->_1).naturalAligment * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+        method = 
+        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
         ;
+        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)StringLiteral_itemData;
         bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
@@ -125,8 +126,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
             func_?();
           }
           value = MeleeWeaponData::MeleeWeaponData_DefaultItemData((MethodInfo *)0x0);
-          method = (MethodInfo *)StringLiteral_itemData;
-          worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00;
+          worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
+          method = (MethodInfo *)this_00;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
                     ((Dictionary_2_System_Object_System_Object_ *)this_00.m_Index,
@@ -139,10 +140,11 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
       goto code_?;
     }
   }
-  worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
+  method = (MethodInfo *)&UNK_?;
   func_?();
-  worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)extraout_EDX;
+  method = (MethodInfo *)extraout_EDX;
 code_?:
+  worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00.m_Index;
   func_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

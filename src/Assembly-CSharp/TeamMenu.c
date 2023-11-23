@@ -125,7 +125,6 @@ code_?:
 void Assembly-CSharp.dll::TeamMenu::TeamMenu_Start(TeamMenu *this,MethodInfo *method)
 
 {
-  object_00 = this;
   if (cRam_? == '\0') {
     func_?(&
                     System__Linq__IOrderedEnumerable<TeamData>_MethodInfo__System__Linq__Enumerable__OrderBy<TeamData,_int>_System__Collections__Generic__IEnumerable<TeamData>__System__Func<TeamData,_int>_
@@ -146,97 +145,89 @@ void Assembly-CSharp.dll::TeamMenu::TeamMenu_Start(TeamMenu *this,MethodInfo *me
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<MV::WorldObject::MVTeam>);
     cRam_? = '\x01';
   }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_02 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_set_CamMaskMode
-              (this_02,(this->fields)._.cameraMaskMode,(MethodInfo *)0x0);
-    if ((this->fields)._.haveSetSelectedTeam == 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if (pMVar1 == (MVLocalPlayer *)0x0) goto code_?;
-      (this->fields)._.selectedTeam = (pMVar1->fields)._._Team_k__BackingField;
+  LobbyFlowMenu::LobbyFlowMenu_Start((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+    source = (TeamMenu_c__Class *)
+             MVTeamManager::MVTeamManager_GetTeamDatas
+                       (this_00,GameStatCounterType__Enum_Kill,(MethodInfo *)0x0);
+    if ((TypeInfo__TeamMenu____c->_1).cctor_finished_or_no_cctor == 0) {
+      source = TypeInfo__TeamMenu____c;
+      func_?();
     }
-    LobbyFlowMenu::LobbyFlowMenu_UpdateAvailableMenues((LobbyFlowMenu *)this,(MethodInfo *)0x0);
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar2 != (MVNetworkGame *)0x0) &&
-       (this_00 = (pMVar2->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-      source = MVTeamManager::MVTeamManager_GetTeamDatas
-                         (this_00,GameStatCounterType__Enum_Kill,(MethodInfo *)0x0);
+    this_02 = TypeInfo__TeamMenu____c->static_fields->__9__5_0;
+    if (this_02 == (Func_2_TeamData_Int32_ *)0x0) {
       if ((TypeInfo__TeamMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__TeamMenu____c);
       }
-      this_03 = TypeInfo__TeamMenu____c->static_fields->__9__5_0;
-      if (this_03 == (Func_2_TeamData_Int32_ *)0x0) {
-        if ((TypeInfo__TeamMenu____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__TeamMenu____c);
-        }
-        object = TypeInfo__TeamMenu____c->static_fields->__9;
-        this_03 = (Func_2_TeamData_Int32_ *)func_?(TypeInfo__System__Func<TeamData,_int>);
-        Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
-        Metadata::__Il2CppFullySharedGenericType]::
-        ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                  ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                   this_03,(Object *)object,MethodInfo__TeamMenu____c___Start_b__5_0_TeamData_,
-                   (MethodInfo *)0x0);
-        TypeInfo__TeamMenu____c->static_fields->__9__5_0 = this_03;
-        func_?(&TypeInfo__TeamMenu____c->static_fields->__9__5_0,this_03);
-      }
-      source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
-                            ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Int32_ *)this_03,
-                             System__Linq__IOrderedEnumerable<TeamData>_MethodInfo__System__Linq__Enumerable__OrderBy<TeamData,_int>_System__Collections__Generic__IEnumerable<TeamData>__System__Func<TeamData,_int>_
-                            );
-      this = (TeamMenu *)
-             System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
+      object = TypeInfo__TeamMenu____c->static_fields->__9;
+      this_02 = (Func_2_TeamData_Int32_ *)func_?(TypeInfo__System__Func<TeamData,_int>);
+      Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
+      Metadata::__Il2CppFullySharedGenericType]::
+      ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+                 (Object *)object,MethodInfo__TeamMenu____c___Start_b__5_0_TeamData_,
+                 (MethodInfo *)0x0);
+      TypeInfo__TeamMenu____c->static_fields->__9__5_0 = this_02;
+      func_?(&TypeInfo__TeamMenu____c->static_fields->__9__5_0,this_02);
+    }
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_OrderBy_3
+                          ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Int32_ *)this_02,
+                           System__Linq__IOrderedEnumerable<TeamData>_MethodInfo__System__Linq__Enumerable__OrderBy<TeamData,_int>_System__Collections__Generic__IEnumerable<TeamData>__System__Func<TeamData,_int>_
+                          );
+    pLVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
                        ((IEnumerable_1_System_Object_ *)source_00,
                         System__Collections__Generic__List<TeamData>_MethodInfo__System__Linq__Enumerable__ToList<TeamData>_System__Collections__Generic__IEnumerable<TeamData>_
                        );
-      this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-      if (this != (TeamMenu *)0x0) {
-        while( true ) {
-          if ((int)(this->fields)._._.m_CancellationTokenSource <= (int)this_06) {
-            return;
-          }
-          pTVar3 = (object_00->fields).teamPrefab;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pTVar3 = (TeamSelectButton *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)pTVar3,
-                              TeamSelectButton_MethodInfo__UnityEngine__Object__Instantiate<TeamSelectButton>_TeamSelectButton_
-                             );
-          teamData = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (this_06,(int32_t)this_06,
-                                MethodInfo__System__Collections__Generic__List<TeamData>__get_Item_int_
-                               );
-          this = (TeamMenu *)&UNK_?;
-          this_04 = (UnityAction_1_System_Int32Enum_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-          UnityAction_1_System_Int32Enum___ctor
-                    (this_04,(Object *)object_00,
-                     MethodInfo__TeamMenu__OnTeamSelected_MV__WorldObject__MVTeam_,(MethodInfo *)0x0
-                    );
-          if (pTVar3 == (TeamSelectButton *)0x0) break;
-          TeamSelectButton::TeamSelectButton_Initialize
-                    (pTVar3,(TeamData *)teamData,(UnityAction_1_MV_WorldObject_MVTeam_ *)this_04,
-                     (MethodInfo *)0x0);
-          this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pTVar3,(MethodInfo *)0x0);
-          this_01 = (object_00->fields).teamLayoutGroup;
-          if ((this_01 == (VerticalLayoutGroup *)0x0) ||
-             (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)this_01,(MethodInfo *)0x0),
-             this_05 == (Transform *)0x0)) break;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_05,parent,0,(MethodInfo *)0x0);
-          this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    ((int)&this_06->klass + 1);
+    this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+    if (pLVar2 != (List_1_System_Object_ *)0x0) {
+      while( true ) {
+        if ((pLVar2->fields)._size <= (int)this_05) {
+          return;
         }
+        pTVar3 = (this->fields).teamPrefab;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        pTVar3 = (TeamSelectButton *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)pTVar3,
+                            TeamSelectButton_MethodInfo__UnityEngine__Object__Instantiate<TeamSelectButton>_TeamSelectButton_
+                           );
+        teamData = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             (this_05,(int32_t)this_05,
+                              MethodInfo__System__Collections__Generic__List<TeamData>__get_Item_int_
+                             );
+        pLVar2 = (List_1_System_Object_ *)&UNK_?;
+        this_03 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?(
+                                 TypeInfo__UnityEngine__Events__UnityAction<MV::WorldObject::MVTeam>
+                                 );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+        UnityAction_1_System_Int32Enum___ctor
+                  (this_03,(Object *)this,
+                   MethodInfo__TeamMenu__OnTeamSelected_MV__WorldObject__MVTeam_,(MethodInfo *)0x0);
+        if (pTVar3 == (TeamSelectButton *)0x0) break;
+        TeamSelectButton::TeamSelectButton_Initialize
+                  (pTVar3,(TeamData *)teamData,(UnityAction_1_MV_WorldObject_MVTeam_ *)this_03,
+                   (MethodInfo *)0x0);
+        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pTVar3,(MethodInfo *)0x0);
+        this_01 = (this->fields).teamLayoutGroup;
+        if ((this_01 == (VerticalLayoutGroup *)0x0) ||
+           (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)this_01,(MethodInfo *)0x0), this_04 == (Transform *)0x0
+           )) break;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (this_04,parent,0,(MethodInfo *)0x0);
+        this_05 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  ((int)&this_05->klass + 1);
       }
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -473,6 +464,38 @@ code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
+  return;
+}
+
+
+/* TeamMenu() */
+
+void Assembly-CSharp.dll::TeamMenu::TeamMenu__ctor(TeamMenu *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__List__
+                   );
+    func_?(&TypeInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>)
+    ;
+    cRam_? = '\x01';
+  }
+  (this->fields)._.cameraMaskMode = 2;
+  this_00 = (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>
+                           );
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__List__
+            );
+  (this->fields)._.menuOrder = this_00;
+  func_?(&(this->fields)._.menuOrder,this_00);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

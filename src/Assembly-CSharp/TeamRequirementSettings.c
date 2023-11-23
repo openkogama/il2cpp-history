@@ -258,7 +258,7 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
       }
     }
   }
-  uRam_? = func_?();
+  func_?();
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
   return;
@@ -277,52 +277,51 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
     func_?(&TypeInfo__MV__WorldObject__MVTeam);
     cRam_? = '\x01';
   }
-  pTVar1 = this;
-  pOVar2 = (this->fields).currentOutline;
-  if ((pOVar2 != (Outline *)0x0) &&
+  this_03 = this;
+  pOVar1 = (this->fields).currentOutline;
+  if ((pOVar1 != (Outline *)0x0) &&
      (UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pOVar2,0,(MethodInfo *)0x0), unaff_EDI = value, value != (Object *)0x0
-     )) {
+                ((Behaviour *)pOVar1,0,(MethodInfo *)0x0), pOVar2 = value, value != (Object *)0x0))
+  {
     if ((value->klass->_0).element_class == (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) {
       puVar3 = (undefined4 *)func_?(value);
       switch(*puVar3) {
       case 0:
-        pOVar2 = (pTVar1->fields).outlineTeamBlue;
+        pOVar1 = (this_03->fields).outlineTeamBlue;
         break;
       case 1:
-        pOVar2 = (pTVar1->fields).outlineTeamRed;
+        pOVar1 = (this_03->fields).outlineTeamRed;
         break;
       case 2:
-        pOVar2 = (pTVar1->fields).outlineTeamGreen;
+        pOVar1 = (this_03->fields).outlineTeamGreen;
         break;
       case 3:
-        pOVar2 = (pTVar1->fields).outlineTeamYellow;
+        pOVar1 = (this_03->fields).outlineTeamYellow;
         break;
       default:
-        pOVar2 = (pTVar1->fields).outlineTeamNone;
+        pOVar1 = (this_03->fields).outlineTeamNone;
       }
-      (pTVar1->fields).currentOutline = pOVar2;
-      func_?(&(pTVar1->fields).currentOutline,pOVar2);
-      pOVar2 = (pTVar1->fields).currentOutline;
-      if (pOVar2 != (Outline *)0x0) {
-        pOVar4 = (Object *)0x0;
+      (this_03->fields).currentOutline = pOVar1;
+      func_?(&(this_03->fields).currentOutline,pOVar1);
+      pOVar1 = (this_03->fields).currentOutline;
+      if (pOVar1 != (Outline *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
-        this_00 = (pTVar1->fields).settingsBase;
+                  ((Behaviour *)pOVar1,1,(MethodInfo *)0x0);
+        this_00 = (this_03->fields).settingsBase;
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           key = (String *)TypeInfo__System__Convert;
           this = (TeamRequirementSettings *)&UNK_?;
           func_?();
         }
         key = (String *)0x0;
-        this = (TeamRequirementSettings *)unaff_EDI;
-        mscorlib.dll::System::Convert::Convert_ToInt32(unaff_EDI,(MethodInfo *)0x0);
+        this = (TeamRequirementSettings *)pOVar2;
+        mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
         key = (String *)&this;
         this = (TeamRequirementSettings *)TypeInfo__System__Int32;
-        unaff_EDI = pOVar4;
-        pOVar4 = (Object *)func_?();
+        pOVar2 = (Object *)func_?();
+        this_03 = (TeamRequirementSettings *)0x0;
         if (this_00 != (SettingsBase *)0x0) {
-          SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar4,(MethodInfo *)0x0);
+          SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar2,(MethodInfo *)0x0);
           return;
         }
       }
@@ -331,13 +330,84 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
       func_?(value,TypeInfo__MV__WorldObject__MVTeam);
     }
   }
-  uVar5 = func_?();
-  out(0x29,(int)uVar5);
-  uVar6 = in((short)((ulonglong)uVar5 >> 0x20));
-  piVar7 = (int *)(CONCAT31((int3)((ulonglong)uVar5 >> 8),uVar6) + (int)((ulonglong)uVar5 >> 0x20));
-  *piVar7 = *piVar7 - (int)unaff_EDI;
-  pcVar8 = (code *)swi(1);
-  (*pcVar8)();
+  uVar4 = func_?();
+  uVar5 = (undefined3)((ulonglong)uVar4 >> 8);
+  cVar6 = *(char *)(unaff_EBX + ((uint)uVar4 & 0xff));
+  if (extraout_ECX == 1 || cVar6 != '\x10') {
+    out(0x32,cVar6);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  uVar8 = CONCAT31(uVar5,cVar6) ^ 0xb5;
+  out((short)((ulonglong)uVar4 >> 0x20),uVar8);
+  pcVar9 = (char *)(CONCAT22((short)((uint)unaff_EBX >> 0x10),
+                             CONCAT11((byte)((uint)unaff_EBX >> 8) ^
+                                      *(byte *)(CONCAT31(uVar5,cVar6) +
+                                               (int)((ulonglong)uVar4 >> 0x20)),(char)unaff_EBX)) +
+                   -0x3f7bf73c);
+  *pcVar9 = *pcVar9 + (char)uVar8;
+  if (*pcVar9 == '\0') {
+    return;
+  }
+  pFVar10 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
+  if (pFVar10 != (FlagDebriefingControl *)0x0) {
+    if ((pFVar10->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+      pAVar11 = (pFVar10->fields).OnFlagDebriefingEnd;
+      (*(pAVar11->fields)._._.invoke_impl)((pAVar11->fields)._._.method_code);
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pIVar12 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar12 != (IPlayModeUI *)0x0) {
+      func_?(4,TypeInfo__IPlayModeUI,pIVar12);
+      *(undefined2 *)&(this_03->fields).buttonTeamGreenName = 0;
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_03,(MethodInfo *)0x0);
+      if (this_02 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_02,0,(MethodInfo *)0x0);
+        pOVar1 = (Outline *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        this_01 = (this_03->fields).buttonTeamYellow;
+        (this_03->fields).outlineTeamRed = pOVar1;
+        if (this_01 != (SettingsButton *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                    ((CanvasGroup *)this_01,0.0,(MethodInfo *)0x0);
+          pFVar10 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                             ((MethodInfo *)0x0);
+          if (pFVar10 != (FlagDebriefingControl *)0x0) {
+            fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                               ((MethodInfo *)0x0);
+            (pFVar10->fields).IsInFlagDebriefing = 0;
+            (pFVar10->fields).RunStartTime = fVar13;
+            if ((pFVar10->fields).OnFlagCountDownEnd != (Action *)0x0) {
+              pAVar11 = (pFVar10->fields).OnFlagCountDownEnd;
+              (*(pAVar11->fields)._._.invoke_impl)
+                        ((pAVar11->fields)._._.method_code,(pAVar11->fields)._._.method);
+            }
+            pGVar14 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                                ((MethodInfo *)0x0);
+            if ((pGVar14 != (GameEventManager *)0x0) &&
+               ((pGVar14->fields).AvatarCommandsPlayMode !=
+                (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+              key = (String *)0x0;
+              if (method->return_type != (Il2CppType *)0x0) {
+                this = *(TeamRequirementSettings **)&method->return_type[2].attrs;
+                (**(code **)&method->return_type[1].attrs)();
+              }
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

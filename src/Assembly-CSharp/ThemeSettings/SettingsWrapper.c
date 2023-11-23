@@ -1019,44 +1019,44 @@ Assembly-CSharp.dll::ThemeSettings::SettingsWrapper::SettingsWrapper_get_Setting
              MethodInfo__ThemeSettings__SettingsWrapper___get_SettingsUI_b__9_0_ThemeAttributes__ThemeAttribute_
              ,(MethodInfo *)0x0);
   if (this_00 != (List_1_ThemeAttributes_ThemeAttribute_ *)0x0) {
-    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__FindAll
-                        ((List_1_System_Object_ *)this_00,this_01,
-                         MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
-                        );
-    if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      this = (SettingsWrapper *)func_?();
+    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+             List_1_System_Object__FindAll
+                       ((List_1_System_Object_ *)this_00,this_01,
+                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__FindAll_System__Predicate<ThemeAttributes::ThemeAttribute>_
+                       );
+    if (pLVar1 != (List_1_System_Object_ *)0x0) {
+      this = (SettingsWrapper *)TypeInfo__UnityEngine__RectTransform;
+      pRVar2 = (RectTransform__Array *)func_?();
       index = 0;
-      pSVar1 = (SettingsWrapper *)&(this->fields).activeAttributeGroup;
+      iVar3 = 0x10;
       while( true ) {
-        pSVar2 = pSVar1;
-        if ((this_02->fields)._size <= (int)index) {
-          return (RectTransform__Array *)this;
+        if ((int)(this->fields).attributes <= (int)index) {
+          return pRVar2;
         }
-        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_02,index,
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this
+                           ,index,
                            MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__get_Item_int_
                           );
-        if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
-        pSVar4 = (SettingsWrapper__Class *)(**(code **)(*(int *)RVar3 + 0xe8))();
-        if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
-        if (*(uint *)((int)RVar3 + 0xc) <= index) goto code_?;
-        pSVar2->klass = pSVar4;
+        if (RVar4 == (RegexCharClass_SingleRange)0x0) break;
+        uVar5 = (**(code **)(*(int *)RVar4 + 0xe8))();
+        if (pRVar2 == (RectTransform__Array *)0x0) break;
+        if (pRVar2->max_length <= index) goto code_?;
+        *(undefined4 *)((int)pRVar2->vector + iVar3 + -0x10) = uVar5;
+        this = (SettingsWrapper *)((int)pRVar2->vector + iVar3 + -0x10);
         func_?();
         index = index + 1;
-        pSVar1 = (SettingsWrapper *)&pSVar2->monitor;
-        this = pSVar2;
+        iVar3 = iVar3 + 4;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  pRVar6 = (RectTransform__Array *)(*pcVar5)();
-  return pRVar6;
+  pcVar6 = (code *)swi(3);
+  pRVar2 = (RectTransform__Array *)(*pcVar6)();
+  return pRVar2;
 }
 

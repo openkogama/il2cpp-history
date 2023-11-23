@@ -846,27 +846,35 @@ ObscuredPrefs_DecryptQuaternionValue
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  puStack_1 = (undefined *)0x0;
+  uVar1 = 0;
+  uVar2 = 0;
+  uVar3 = 0;
+  uVar4 = 0;
+  uVar5 = 0;
+  uVar6 = 0;
   if (encryptedInput != (String *)0x0) {
-    uVar2 = mscorlib.dll::System::String::String_IndexOf(encryptedInput,0x3a,(MethodInfo *)0x0);
-    if (0x7fffffff < uVar2) {
+    uVar7 = mscorlib.dll::System::String::String_IndexOf(encryptedInput,0x3a,(MethodInfo *)0x0);
+    if (0x7fffffff < uVar7) {
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
           cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs);
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs,uVar5,uVar6,
+                        uVar1,uVar2,uVar3,uVar4);
       }
-      pBVar3 = ObscuredPrefs_DecryptData(key,encryptedInput,(MethodInfo *)0x0);
-      if (pBVar3 != (Byte__Array *)0x0) {
-        fVar4 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                          (pBVar3,0,(MethodInfo *)0x0);
-        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,4,(MethodInfo *)0x0);
-        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,8,(MethodInfo *)0x0);
-        puVar5 = &UNK_?;
-        fVar6 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                           (pBVar3,0xc,(MethodInfo *)0x0);
-        __return_storage_ptr__->x = fVar4;
-        __return_storage_ptr__->y = (float)puVar5;
-        __return_storage_ptr__->z = (float)pBVar3;
-        __return_storage_ptr__->w = fVar6;
+      pBVar8 = ObscuredPrefs_DecryptData(key,encryptedInput,(MethodInfo *)0x0);
+      if (pBVar8 != (Byte__Array *)0x0) {
+        method_00 = (MethodInfo *)
+                    mscorlib.dll::System::BitConverter::BitConverter_ToSingle
+                              (pBVar8,0,(MethodInfo *)0x0);
+        fVar9 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar8,4,method_00);
+        fVar10 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
+                           (pBVar8,8,(MethodInfo *)0x0);
+        fVar11 = 0.0;
+        fVar12 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
+                           (pBVar8,0xc,(MethodInfo *)0x0);
+        __return_storage_ptr__->x = fVar11;
+        __return_storage_ptr__->y = fVar9;
+        __return_storage_ptr__->z = fVar10;
+        __return_storage_ptr__->w = fVar12;
         return __return_storage_ptr__;
       }
 code_?:
@@ -878,40 +886,40 @@ code_?:
     }
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
         cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs);
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs,uVar5,uVar6,
+                      uVar1,uVar2,uVar3,uVar4);
     }
-    pSVar7 = ObscuredPrefs_DeprecatedDecryptValue(encryptedInput,(MethodInfo *)0x0);
-    bVar8 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar7,::StringLiteral__,(MethodInfo *)0x0);
-    if (bVar8 != 0) goto code_?;
+    pSVar13 = ObscuredPrefs_DeprecatedDecryptValue(encryptedInput,(MethodInfo *)0x0);
+    bVar14 = mscorlib.dll::System::String::String_op_Equality
+                      (pSVar13,::StringLiteral__,(MethodInfo *)0x0);
+    if (bVar14 != 0) goto code_?;
     if (::StringLiteral__ != (String *)0x0) {
       separator = mscorlib.dll::System::String::String_get_Chars
                             (::StringLiteral__,0,(MethodInfo *)0x0);
-      fVar4 = (float)(uint)separator;
-      if (pSVar7 != (String *)0x0) {
-        fVar6 = 0.0;
-        fVar9 = 0.0;
-        pSVar10 = mscorlib.dll::System::String::String_Split
-                           (pSVar7,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-        if (pSVar10 != (String__Array *)0x0) {
-          if (pSVar10->max_length != 0) {
-            mscorlib.dll::System::Single::Single_TryParse
-                      (pSVar10->vector[0],(float *)&puStack_1,(MethodInfo *)0x0);
-            if (1 < pSVar10->max_length) {
-              pSVar7 = pSVar10->vector[1];
+      if (pSVar13 != (String *)0x0) {
+        pSVar15 = mscorlib.dll::System::String::String_Split
+                           (pSVar13,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+        if (pSVar15 != (String__Array *)0x0) {
+          if (pSVar15->max_length != 0) {
+            result = (String__Class *)&stack0xfffffff8;
+            pSVar13 = pSVar15->vector[0];
+            mscorlib.dll::System::Single::Single_TryParse(pSVar13,(float *)result,(MethodInfo *)0x0);
+            if (1 < pSVar15->max_length) {
+              s = (String__Class *)pSVar15->vector[1];
+              value_00 = (MonitorData *)&UNK_?;
               mscorlib.dll::System::Single::Single_TryParse
-                        (pSVar7,(float *)&stack0xfffffff4,(MethodInfo *)0x0);
-              if (2 < pSVar10->max_length) {
+                        ((String *)s,(float *)&stack0xfffffff4,(MethodInfo *)0x0);
+              if (2 < pSVar15->max_length) {
+                pQVar16 = (Quaternion *)pSVar15->vector[2];
                 mscorlib.dll::System::Single::Single_TryParse
-                          (pSVar10->vector[2],(float *)&stack0xfffffff0,(MethodInfo *)0x0);
-                if (3 < pSVar10->max_length) {
+                          ((String *)pQVar16,(float *)&stack0xfffffff0,(MethodInfo *)0x0);
+                if (3 < pSVar15->max_length) {
                   mscorlib.dll::System::Single::Single_TryParse
-                            (pSVar10->vector[3],(float *)&stack0xffffffec,(MethodInfo *)0x0);
-                  puVar5 = puStack_1;
-                  puVar11 = puStack_1;
-                  value = fVar4;
-                  value_00 = fVar9;
-                  value_01 = fVar6;
+                            (pSVar15->vector[3],(float *)&stack0xffffffec,(MethodInfo *)0x0);
+                  pSVar17 = s;
+                  pMVar18 = value_00;
+                  pSVar19 = pSVar13;
+                  value = result;
                   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
@@ -924,43 +932,43 @@ code_?:
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  key_00 = ObscuredPrefs_EncryptKey(pSVar7,(MethodInfo *)0x0);
+                  key_00 = ObscuredPrefs_EncryptKey((String *)&stack0xfffffff0,(MethodInfo *)0x0);
                   if (cRam_? == '\0') {
                     func_?();
                     func_?();
                     cRam_? = '\x01';
                   }
-                  pBVar3 = (Byte__Array *)func_?();
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                                     ((float)puVar5,(MethodInfo *)0x0);
+                  pBVar8 = (Byte__Array *)func_?();
+                  pBVar20 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                                     ((float)s,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,0,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                                     (value_01,(MethodInfo *)0x0);
+                            ((Array *)pBVar20,0,(Array *)pBVar8,0,4,(MethodInfo *)0x0);
+                  pBVar20 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                                     ((float)value_00,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,4,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                                     (value_00,(MethodInfo *)0x0);
+                            ((Array *)pBVar20,0,(Array *)pBVar8,4,4,(MethodInfo *)0x0);
+                  pBVar20 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                                     ((float)value,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,8,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                                     (value,(MethodInfo *)0x0);
+                            ((Array *)pBVar20,0,(Array *)pBVar8,8,4,(MethodInfo *)0x0);
+                  pBVar20 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                                     ((float)pSVar19,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,0xc,4,(MethodInfo *)0x0);
+                            ((Array *)pBVar20,0,(Array *)pBVar8,0xc,4,(MethodInfo *)0x0);
                   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  pSVar7 = ObscuredPrefs_EncryptData
-                                     (pSVar7,pBVar3,ObscuredPrefs_DataType__Enum_Quaternion,
-                                      (MethodInfo *)0x0);
+                  pSVar19 = ObscuredPrefs_EncryptData
+                                     ((String *)&stack0xfffffff0,pBVar8,
+                                      ObscuredPrefs_DataType__Enum_Quaternion,(MethodInfo *)0x0);
                   UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetString
-                            (key_00,pSVar7,(MethodInfo *)0x0);
-                  _UNK_? = puVar11;
-                  _UNK_? = fVar6;
-                  _UNK_? = fVar9;
-                  _UNK_? = fVar4;
-                  return (Quaternion *)&UNK_?;
+                            (key_00,pSVar19,(MethodInfo *)0x0);
+                  pQVar16->x = (float)pSVar17;
+                  pQVar16->y = (float)pMVar18;
+                  ((String__Fields *)&pQVar16->z)->_stringLength = (int32_t)result;
+                  pQVar16->w = (float)pSVar13;
+                  return pQVar16;
                 }
               }
             }
@@ -973,9 +981,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  pQVar14 = (Quaternion *)(*pcVar13)();
-  return pQVar14;
+  pcVar21 = (code *)swi(3);
+  pQVar16 = (Quaternion *)(*pcVar21)();
+  return pQVar16;
 }
 
 
@@ -994,26 +1002,28 @@ Rect * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscu
     cRam_? = '\x01';
   }
   puStack_1 = (undefined *)0x0;
+  uVar2 = 0;
+  uVar3 = 0;
   if (encryptedInput != (String *)0x0) {
-    uVar2 = mscorlib.dll::System::String::String_IndexOf(encryptedInput,0x3a,(MethodInfo *)0x0);
-    if (0x7fffffff < uVar2) {
+    uVar4 = mscorlib.dll::System::String::String_IndexOf(encryptedInput,0x3a,(MethodInfo *)0x0);
+    if (0x7fffffff < uVar4) {
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
           cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs);
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs,uVar2,uVar3);
       }
-      pBVar3 = ObscuredPrefs_DecryptData(key,encryptedInput,(MethodInfo *)0x0);
-      if (pBVar3 != (Byte__Array *)0x0) {
-        fVar4 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                          (pBVar3,0,(MethodInfo *)0x0);
-        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,4,(MethodInfo *)0x0);
-        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar3,8,(MethodInfo *)0x0);
-        puVar5 = &UNK_?;
+      pBVar5 = ObscuredPrefs_DecryptData(key,encryptedInput,(MethodInfo *)0x0);
+      if (pBVar5 != (Byte__Array *)0x0) {
         fVar6 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
-                           (pBVar3,0xc,(MethodInfo *)0x0);
-        __return_storage_ptr__->m_XMin = fVar4;
-        __return_storage_ptr__->m_YMin = (float)puVar5;
-        __return_storage_ptr__->m_Width = (float)pBVar3;
-        __return_storage_ptr__->m_Height = fVar6;
+                          (pBVar5,0,(MethodInfo *)0x0);
+        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar5,4,(MethodInfo *)0x0);
+        mscorlib.dll::System::BitConverter::BitConverter_ToSingle(pBVar5,8,(MethodInfo *)0x0);
+        puVar7 = &UNK_?;
+        fVar8 = mscorlib.dll::System::BitConverter::BitConverter_ToSingle
+                           (pBVar5,0xc,(MethodInfo *)0x0);
+        __return_storage_ptr__->m_XMin = fVar6;
+        __return_storage_ptr__->m_YMin = (float)puVar7;
+        __return_storage_ptr__->m_Width = (float)pBVar5;
+        __return_storage_ptr__->m_Height = fVar8;
         return __return_storage_ptr__;
       }
 code_?:
@@ -1025,40 +1035,40 @@ code_?:
     }
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
         cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs);
+      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs,uVar2,uVar3);
     }
-    pSVar7 = ObscuredPrefs_DeprecatedDecryptValue(encryptedInput,(MethodInfo *)0x0);
-    bVar8 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar7,::StringLiteral__,(MethodInfo *)0x0);
-    if (bVar8 != 0) goto code_?;
+    pSVar9 = ObscuredPrefs_DeprecatedDecryptValue(encryptedInput,(MethodInfo *)0x0);
+    bVar10 = mscorlib.dll::System::String::String_op_Equality
+                      (pSVar9,::StringLiteral__,(MethodInfo *)0x0);
+    if (bVar10 != 0) goto code_?;
     if (::StringLiteral__ != (String *)0x0) {
       separator = mscorlib.dll::System::String::String_get_Chars
                             (::StringLiteral__,0,(MethodInfo *)0x0);
-      fVar4 = (float)(uint)separator;
-      if (pSVar7 != (String *)0x0) {
-        fVar6 = 0.0;
-        fVar9 = 0.0;
-        pSVar10 = mscorlib.dll::System::String::String_Split
-                           (pSVar7,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-        if (pSVar10 != (String__Array *)0x0) {
-          if (pSVar10->max_length != 0) {
+      fVar6 = (float)(uint)separator;
+      if (pSVar9 != (String *)0x0) {
+        fVar8 = 0.0;
+        fVar11 = 0.0;
+        pSVar12 = mscorlib.dll::System::String::String_Split
+                           (pSVar9,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+        if (pSVar12 != (String__Array *)0x0) {
+          if (pSVar12->max_length != 0) {
             mscorlib.dll::System::Single::Single_TryParse
-                      (pSVar10->vector[0],(float *)&puStack_1,(MethodInfo *)0x0);
-            if (1 < pSVar10->max_length) {
-              pSVar7 = pSVar10->vector[1];
+                      (pSVar12->vector[0],(float *)&puStack_1,(MethodInfo *)0x0);
+            if (1 < pSVar12->max_length) {
+              pSVar9 = pSVar12->vector[1];
               mscorlib.dll::System::Single::Single_TryParse
-                        (pSVar7,(float *)&stack0xfffffff4,(MethodInfo *)0x0);
-              if (2 < pSVar10->max_length) {
+                        (pSVar9,(float *)&stack0xfffffff4,(MethodInfo *)0x0);
+              if (2 < pSVar12->max_length) {
                 mscorlib.dll::System::Single::Single_TryParse
-                          (pSVar10->vector[2],(float *)&stack0xfffffff0,(MethodInfo *)0x0);
-                if (3 < pSVar10->max_length) {
+                          (pSVar12->vector[2],(float *)&stack0xfffffff0,(MethodInfo *)0x0);
+                if (3 < pSVar12->max_length) {
                   mscorlib.dll::System::Single::Single_TryParse
-                            (pSVar10->vector[3],(float *)&stack0xffffffec,(MethodInfo *)0x0);
-                  puVar5 = puStack_1;
-                  puVar11 = puStack_1;
-                  value = fVar4;
-                  value_00 = fVar9;
-                  value_01 = fVar6;
+                            (pSVar12->vector[3],(float *)&stack0xffffffec,(MethodInfo *)0x0);
+                  puVar7 = puStack_1;
+                  puVar13 = puStack_1;
+                  value = fVar6;
+                  value_00 = fVar11;
+                  value_01 = fVar8;
                   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
@@ -1071,42 +1081,42 @@ code_?:
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  key_00 = ObscuredPrefs_EncryptKey(pSVar7,(MethodInfo *)0x0);
+                  key_00 = ObscuredPrefs_EncryptKey(pSVar9,(MethodInfo *)0x0);
                   if (cRam_? == '\0') {
                     func_?();
                     func_?();
                     cRam_? = '\x01';
                   }
-                  pBVar3 = (Byte__Array *)func_?();
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                                     ((float)puVar5,(MethodInfo *)0x0);
+                  pBVar5 = (Byte__Array *)func_?();
+                  pBVar14 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                                     ((float)puVar7,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,0,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                            ((Array *)pBVar14,0,(Array *)pBVar5,0,4,(MethodInfo *)0x0);
+                  pBVar14 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
                                      (value_01,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,4,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                            ((Array *)pBVar14,0,(Array *)pBVar5,4,4,(MethodInfo *)0x0);
+                  pBVar14 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
                                      (value_00,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,8,4,(MethodInfo *)0x0);
-                  pBVar12 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
+                            ((Array *)pBVar14,0,(Array *)pBVar5,8,4,(MethodInfo *)0x0);
+                  pBVar14 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
                                      (value,(MethodInfo *)0x0);
                   mscorlib.dll::System::Buffer::Buffer_BlockCopy
-                            ((Array *)pBVar12,0,(Array *)pBVar3,0xc,4,(MethodInfo *)0x0);
+                            ((Array *)pBVar14,0,(Array *)pBVar5,0xc,4,(MethodInfo *)0x0);
                   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
                       cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  pSVar7 = ObscuredPrefs_EncryptData
-                                     (pSVar7,pBVar3,ObscuredPrefs_DataType__Enum_Rect,
+                  pSVar9 = ObscuredPrefs_EncryptData
+                                     (pSVar9,pBVar5,ObscuredPrefs_DataType__Enum_Rect,
                                       (MethodInfo *)0x0);
                   UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetString
-                            (key_00,pSVar7,(MethodInfo *)0x0);
-                  _UNK_? = puVar11;
+                            (key_00,pSVar9,(MethodInfo *)0x0);
+                  _UNK_? = puVar13;
+                  _UNK_? = fVar8;
+                  _UNK_? = fVar11;
                   _UNK_? = fVar6;
-                  _UNK_? = fVar9;
-                  _UNK_? = fVar4;
                   return (Rect *)&UNK_?;
                 }
               }
@@ -1120,9 +1130,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  pRVar14 = (Rect *)(*pcVar13)();
-  return pRVar14;
+  pcVar15 = (code *)swi(3);
+  pRVar16 = (Rect *)(*pcVar15)();
+  return pRVar16;
 }
 
 
@@ -1381,23 +1391,22 @@ Vector2 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
     if (bVar7 != 0) {
       return defaultValue;
     }
-    if (::StringLiteral__ != (String *)0x0) {
-      puVar8 = &UNK_?;
-      pSVar9 = ::StringLiteral__;
-      separator = mscorlib.dll::System::String::String_get_Chars
-                            (::StringLiteral__,0,(MethodInfo *)0x0);
-      if ((pSVar6 != (String *)0x0) &&
-         (pSVar10 = mscorlib.dll::System::String::String_Split
-                             (pSVar6,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0),
-         pSVar10 != (String__Array *)0x0)) {
-        if ((pSVar10->max_length != 0) &&
+    if ((::StringLiteral__ != (String *)0x0) &&
+       (pSVar8 = ::StringLiteral__,
+       separator = mscorlib.dll::System::String::String_get_Chars
+                             (::StringLiteral__,0,(MethodInfo *)0x0), pSVar6 != (String *)0x0)) {
+      value = &UNK_?;
+      pSVar9 = mscorlib.dll::System::String::String_Split
+                         (pSVar6,separator,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+      if (pSVar9 != (String__Array *)0x0) {
+        if ((pSVar9->max_length != 0) &&
            (mscorlib.dll::System::Single::Single_TryParse
-                      (pSVar10->vector[0],(float *)&stack0xfffffff8,(MethodInfo *)0x0),
-           1 < pSVar10->max_length)) {
+                      (pSVar9->vector[0],(float *)&stack0xfffffff8,(MethodInfo *)0x0),
+           1 < pSVar9->max_length)) {
           mscorlib.dll::System::Single::Single_TryParse
-                    (pSVar10->vector[1],(float *)&stack0xfffffff4,(MethodInfo *)0x0);
-          pSVar6 = pSVar9;
-          value = puVar8;
+                    (pSVar9->vector[1],(float *)&stack0xfffffff4,(MethodInfo *)0x0);
+          puVar10 = value;
+          pSVar6 = pSVar8;
           if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -1410,7 +1419,7 @@ Vector2 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
               cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          key_00 = ObscuredPrefs_EncryptKey((String *)(uint)separator,(MethodInfo *)0x0);
+          key_00 = ObscuredPrefs_EncryptKey((String *)0x0,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -1418,24 +1427,24 @@ Vector2 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
           }
           pBVar2 = (Byte__Array *)func_?();
           pBVar11 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                             ((float)pSVar9,(MethodInfo *)0x0);
+                             ((float)value,(MethodInfo *)0x0);
           mscorlib.dll::System::Buffer::Buffer_BlockCopy
                     ((Array *)pBVar11,0,(Array *)pBVar2,0,4,(MethodInfo *)0x0);
           pBVar11 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8
-                             ((float)value,(MethodInfo *)0x0);
+                             ((float)pSVar6,(MethodInfo *)0x0);
           mscorlib.dll::System::Buffer::Buffer_BlockCopy
                     ((Array *)pBVar11,0,(Array *)pBVar2,4,4,(MethodInfo *)0x0);
           if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredPrefs->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pSVar9 = ObscuredPrefs_EncryptData
-                             ((String *)(uint)separator,pBVar2,ObscuredPrefs_DataType__Enum_Vector2,
+          pSVar6 = ObscuredPrefs_EncryptData
+                             ((String *)0x0,pBVar2,ObscuredPrefs_DataType__Enum_Vector2,
                               (MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetString
-                    (key_00,pSVar9,(MethodInfo *)0x0);
-          VVar12.y = (float)puVar8;
-          VVar12.x = (float)pSVar6;
+                    (key_00,pSVar6,(MethodInfo *)0x0);
+          VVar12.y = (float)pSVar8;
+          VVar12.x = (float)puVar10;
           return VVar12;
         }
         goto code_?;

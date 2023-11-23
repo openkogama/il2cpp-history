@@ -453,6 +453,7 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_Update
                (MoveAnimation *this,MethodInfo *method)
 
 {
+  this_02 = this;
   if ((this->fields)._.testState == 2) {
     (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
     (this->fields)._.testState = 0;
@@ -461,25 +462,27 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_Update
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     this_00 = (this->fields)._.target;
     this_01 = (this->fields).animationCurve;
-    fVar1 = fVar1 - (this->fields).beginTime;
+    time = (MoveAnimation *)(fVar1 - (this->fields).beginTime);
     pfVar2 = &(this->fields).doneTime;
     fVar3 = (this->fields).direction.z;
-    fVar4 = (this->fields).direction.x;
-    fVar5 = (this->fields).direction.y;
-    if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
+    fVar1 = (this->fields).direction.x;
+    fVar4 = (this->fields).direction.y;
+    if (*pfVar2 <= (float)time && (float)time != *pfVar2) {
       if (this_01 == (AnimationCurve *)0x0) goto code_?;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                         (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
       if (this_00 == (Transform *)0x0) goto code_?;
-      value_00.y = fVar5 * fVar6;
-      value_00.x = fVar4 * fVar6;
-      value_00.z = fVar3 * fVar6;
+      value_00.y = fVar4 * fVar5;
+      value_00.x = fVar1 * fVar5;
+      value_00.z = fVar3 * fVar5;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                 (this_00,value_00,(MethodInfo *)0x0);
       (this->fields)._.state = 1;
       if ((this->fields)._.OnMoveAnimationStopped !=
           (MoveAnimationBase_OnMoveAnimationStoppedDelegate *)0x0) {
-        (*(((this->fields)._.OnMoveAnimationStopped)->fields)._._.invoke_impl)();
+        pMVar6 = (this->fields)._.OnMoveAnimationStopped;
+        time = (pMVar6->fields)._._.method;
+        (*(pMVar6->fields)._._.invoke_impl)((pMVar6->fields)._._.method_code);
       }
     }
     else {
@@ -490,16 +493,17 @@ code_?:
         (*pcVar7)();
         return;
       }
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (this_01,fVar1,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                        (this_01,(float)time,(MethodInfo *)0x0);
       if (this_00 == (Transform *)0x0) goto code_?;
-      value.y = fVar5 * fVar6;
-      value.x = fVar4 * fVar6;
-      value.z = fVar3 * fVar6;
+      value.y = fVar4 * fVar5;
+      value.x = fVar1 * fVar5;
+      value.z = fVar3 * fVar5;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                 (this_00,value,(MethodInfo *)0x0);
     }
-    MoveAnimation_EvaluateKeyFrameCallbacks(this,fVar1,(MethodInfo *)0x0);
+    this = time;
+    MoveAnimation_EvaluateKeyFrameCallbacks(this_02,(float)this,(MethodInfo *)0x0);
   }
   return;
 }

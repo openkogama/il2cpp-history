@@ -585,69 +585,23 @@ Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_GetSortedWorldObjectList
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)RVar1,
              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
   index_00 = 0;
-  if (unsortedList != (List_1_ISpawnRolePreviewObject_ *)0x0) {
+  if (unsortedList == (List_1_ISpawnRolePreviewObject_ *)0x0) {
 code_?:
-    do {
-      if ((unsortedList->fields)._size <= index_00) {
-        return (List_1_MVWorldObjectClient_ *)RVar1;
-      }
-      index = 0;
-      RVar1 = RVar2;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      break;
-      while( true ) {
-        if ((this_00->fields)._size <= index) break;
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           unsortedList,index_00,
-                           MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                          );
-        if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        bVar3 = func_?(2,TypeInfo__ISpawnRolePreviewObject,RVar2);
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,index,
-                           MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                          );
-        if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        bVar4 = func_?(2,TypeInfo__ISpawnRolePreviewObject);
-        if (bVar3 < bVar4) {
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             unsortedList,index_00,
-                             MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
-                            );
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Insert
-                    ((List_1_System_Object_ *)this_00,index,(Object *)RVar1,
-                     MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
-                    );
-          if (wos == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             wos,index_00,
-                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                            );
-          if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          RVar2 = RVar1;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Insert
-                    ((List_1_System_Object_ *)RVar1,index,(Object *)RVar1,
-                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
-                    );
-          index_00 = index_00 + 1;
-          goto code_?;
-        }
-        index = index + 1;
-        RVar1 = RVar2;
-      }
+    func_?();
+    pcVar3 = (code *)swi(3);
+    pLVar4 = (List_1_MVWorldObjectClient_ *)(*pcVar3)();
+    return pLVar4;
+  }
+code_?:
+  do {
+    if ((unsortedList->fields)._size <= index_00) {
+      return (List_1_MVWorldObjectClient_ *)RVar1;
+    }
+    index = 0;
+    RVar1 = RVar2;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    for (; index < (this_00->fields)._size; index = index + 1) {
       RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -655,34 +609,76 @@ code_?:
                          unsortedList,index_00,
                          MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
                         );
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)RVar2,
-                 MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
-                );
-      if (wos == (List_1_MVWorldObjectClient_ *)0x0) break;
-      item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)wos,
-                        index_00,
-                        MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                       );
-      if (RVar1 == (RegexCharClass_SingleRange)0x0) break;
-      RVar2 = (RegexCharClass_SingleRange)
-              MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-      ;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)RVar1,(Object *)item,
-                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                );
-      index_00 = index_00 + 1;
-    } while( true );
-  }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pLVar6 = (List_1_MVWorldObjectClient_ *)(*pcVar5)();
-  return pLVar6;
+      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      bVar5 = func_?(2,TypeInfo__ISpawnRolePreviewObject,RVar2);
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,index,
+                         MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                        );
+      if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      bVar6 = func_?(2,TypeInfo__ISpawnRolePreviewObject);
+      if (bVar5 < bVar6) {
+        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           unsortedList,index_00,
+                           MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                          );
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Insert
+                  ((List_1_System_Object_ *)this_00,index,(Object *)RVar1,
+                   MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Insert_int__ISpawnRolePreviewObject_
+                  );
+        if ((wos == (List_1_MVWorldObjectClient_ *)0x0) ||
+           (RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               wos,index_00,
+                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                              ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+        RVar2 = RVar1;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Insert
+                  ((List_1_System_Object_ *)RVar1,index,(Object *)RVar1,
+                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Insert_int__MVWorldObjectClient_
+                  );
+        index_00 = index_00 + 1;
+        goto code_?;
+      }
+      RVar1 = RVar2;
+    }
+    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       unsortedList,index_00,
+                       MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__get_Item_int_
+                      );
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)this_00,(Object *)RVar2,
+               MethodInfo__System__Collections__Generic__List<ISpawnRolePreviewObject>__Add_ISpawnRolePreviewObject_
+              );
+    if ((wos == (List_1_MVWorldObjectClient_ *)0x0) ||
+       (item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)wos,
+                          index_00,
+                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                         ), RVar1 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+    RVar2 = (RegexCharClass_SingleRange)
+            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+    ;
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              ((List_1_System_Object_ *)RVar1,(Object *)item,
+               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+              );
+    index_00 = index_00 + 1;
+  } while( true );
 }
 
 
@@ -944,7 +940,7 @@ code_?:
                  (this_00 = (pMVar11->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
                 bStack_28 = MVTeamManager::MVTeamManager_TeamHasSpawnPoints
                                       (this_00,(this->fields).shownTeam,(MethodInfo *)0x0);
-                pLStack_14 = (List_1_System_Object_ *)(uint)(bStack_28 != 0);
+                pLStack_14 = (List_1_System_Object_ *)(uint)bStack_28;
                 iVar27 = 0;
                 if (pLStack_16 != (List_1_MVWorldObjectClient_ *)0x0) {
                   for (; iVar27 < (pLStack_16->fields)._size; iVar27 = iVar27 + 1) {
@@ -3175,7 +3171,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu__ctor(SpawnRoleMenu *this
             );
   (this->fields).SelectionElementsList = this_00;
   func_?(&(this->fields).SelectionElementsList,this_00);
-  LobbyFlowMenu::LobbyFlowMenu__ctor((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+  LobbyStateController::LobbyStateController__ctor((LobbyStateController *)this,(MethodInfo *)0x0);
   return;
 }
 

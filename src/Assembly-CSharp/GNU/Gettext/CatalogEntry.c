@@ -419,7 +419,7 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetPluralStri
   (this->fields).plural = plural;
   func_?(&(this->fields).plural,plural);
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
-  (this->fields).hasPlural = bVar1 == 0;
+  (this->fields).hasPlural = bVar1 ^ 1;
   return;
 }
 
@@ -559,7 +559,7 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry__ctor
   (this->fields).plural = plural;
   func_?(&(this->fields).plural,plural);
   bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
-  (this->fields).hasPlural = bVar2 == 0;
+  (this->fields).hasPlural = bVar2 ^ 1;
   pLVar3 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -746,7 +746,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasCommen
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).comment,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 
@@ -758,7 +758,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasContex
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).context,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 
@@ -780,37 +780,40 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_IsTransla
     if (pCVar3 != (Catalog *)0x0) {
       iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
       if (iVar2 < iVar4) {
-        if ((this->fields).hasPlural == 0) {
-          pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).translations;
-          if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          goto code_?;
-          RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar5,0,
-                             MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                            );
-          bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                            ((String *)RVar6,(MethodInfo *)0x0);
-          pCVar3 = (Catalog *)(uint)(bVar7 == 0);
+        if ((this->fields).hasPlural != 0) {
+          return 0;
         }
-        else {
-          pCVar3 = (Catalog *)0x0;
+        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).translations;
+        if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar5,0,
+                           MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
+                          );
+        bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                          ((String *)RVar6,(MethodInfo *)0x0);
+        bVar8 = bVar7 ^ 1;
+        if (bVar8 == 0) {
+          return 0;
         }
       }
       else {
-        pCVar3 = (Catalog *)0x1;
+        bVar8 = 1;
       }
-      if (((char)pCVar3 == '\0') || ((this->fields).hasPlural == 0)) {
-code_?:
-        return (bool)pCVar3;
+      if ((this->fields).hasPlural == 0) {
+        return bVar8;
       }
       iVar2 = 0;
       pCVar3 = (this->fields).owner;
       while (pCVar3 != (Catalog *)0x0) {
         iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
-        if (iVar4 <= iVar2) goto code_?;
+        if (iVar4 <= iVar2) {
+          this._3_1_ = (bool)((uint)pCVar3 >> 0x18);
+          return this._3_1_;
+        }
         pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).translations;
         if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -833,8 +836,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar7 = (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  bVar7 = (*pcVar9)();
   return bVar7;
 }
 

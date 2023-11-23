@@ -13,8 +13,8 @@ Assembly-CSharp.dll::MVRotator+<>c__DisplayClass17_0::MVRotator_c_DisplayClass17
   pMVar1 = (this->fields).__4__this;
   if (pMVar1 != (MVRotator *)0x0) {
     cubeModel = (pMVar1->fields)._._CubeModel_k__BackingField;
-    maxCorner = (this->fields).max;
     minCorner = (this->fields).min;
+    maxCorner = (this->fields).max;
     this_00 = (ModelingBoxCountConstraint *)func_?(TypeInfo__ModelingBoxCountConstraint);
     ModelingBoxCountConstraint::ModelingBoxCountConstraint__ctor
               (this_00,(MVCubeModelBase *)cubeModel,minCorner,maxCorner,1,(MethodInfo *)0x0);

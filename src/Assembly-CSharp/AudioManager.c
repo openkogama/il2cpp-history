@@ -244,7 +244,7 @@ Assembly-CSharp.dll::AudioManager::AudioManager_Play
                             (*(AudioSource **)((int)item + 0xc),0x80,(MethodInfo *)0x0);
                   if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                     UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                              (*(AudioSource **)((int)item + 0xc),3.188063e-29,(MethodInfo *)0x0);
+                              (*(AudioSource **)((int)item + 0xc),3.189127e-29,(MethodInfo *)0x0);
                     if (*(AudioSource **)((int)item + 0xc) != (AudioSource *)0x0) {
                       UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
                       AudioSource_set_panStereo

@@ -1516,7 +1516,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0xe978);
+    func_?(0x81e0);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
@@ -1620,18 +1620,18 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleT
     fStack_8 = C.y - P.y;
     fStack_9 = C.z - P.z;
     fVar10 = r * r;
-    fStack_11 = (fStack_8 - fStack_2) * (fStack_5 - fStack_1) -
-                (fVar7 - fStack_1) * (fStack_6 - fStack_2);
-    uStack_12 = CONCAT44((fVar7 - fStack_1) * (fVar4 - fStack_3) -
-                         (fStack_9 - fStack_3) * (fStack_5 - fStack_1),
-                         (fStack_9 - fStack_3) * (fStack_6 - fStack_2) -
-                         (fStack_8 - fStack_2) * (fVar4 - fStack_3));
+    fStack_11 = (fStack_5 - fStack_1) * (fStack_8 - fStack_2) -
+                (fStack_6 - fStack_2) * (fVar7 - fStack_1);
+    uStack_12 = CONCAT44((fVar4 - fStack_3) * (fVar7 - fStack_1) -
+                         (fStack_5 - fStack_1) * (fStack_9 - fStack_3),
+                         (fStack_6 - fStack_2) * (fStack_9 - fStack_3) -
+                         (fVar4 - fStack_3) * (fStack_8 - fStack_2));
     fStack_13 = fStack_11;
     puVar14 = (undefined8 *)func_?(auStack_15,&uStack_12,0);
     fVar16 = *(float *)(puVar14 + 1);
-    fStack_17 = (float)*puVar14;
-    fStack_18 = (float)((ulonglong)*puVar14 >> 0x20);
-    fVar19 = fStack_18 * fStack_2 + fStack_17 * fStack_1 + fVar16 * fStack_3;
+    fStack_17 = (float)((ulonglong)*puVar14 >> 0x20);
+    fStack_18 = (float)*puVar14;
+    fVar19 = fStack_2 * fStack_17 + fStack_1 * fStack_18 + fStack_3 * fVar16;
     fVar20 = fStack_2 * fStack_2 + fStack_1 * fStack_1 + fStack_3 * fStack_3;
     fVar21 = fStack_6 * fStack_2 + fStack_5 * fStack_1 + fVar4 * fStack_3;
     fVar22 = fStack_8 * fStack_2 + fVar7 * fStack_1 + fStack_9 * fStack_3;
@@ -1639,42 +1639,42 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleT
     fVar24 = fStack_8 * fStack_6 + fVar7 * fStack_5 + fStack_9 * fVar4;
     fVar25 = fStack_8 * fStack_8 + fVar7 * fVar7 + fStack_9 * fStack_9;
     fVar26 = fStack_5 - fStack_1;
-    fVar27 = fStack_6 - fStack_2;
-    fVar28 = fVar4 - fStack_3;
+    fVar27 = fVar4 - fStack_3;
+    fVar28 = fStack_6 - fStack_2;
     fVar29 = fStack_8 - fStack_6;
     fVar30 = fVar7 - fStack_5;
     fVar31 = fStack_9 - fVar4;
     fVar32 = fStack_2 - fStack_8;
     fVar33 = fStack_1 - fVar7;
     fVar34 = fStack_3 - fStack_9;
-    fVar35 = fVar27 * fVar27 + fVar26 * fVar26 + fVar28 * fVar28;
-    fVar36 = fVar29 * fVar29 + fVar30 * fVar30 + fVar31 * fVar31;
-    fVar37 = fVar32 * fVar32 + fVar33 * fVar33 + fVar34 * fVar34;
+    fVar35 = fVar26 * fVar26 + fVar28 * fVar28 + fVar27 * fVar27;
+    fVar36 = fVar30 * fVar30 + fVar29 * fVar29 + fVar31 * fVar31;
+    fVar37 = fVar33 * fVar33 + fVar32 * fVar32 + fVar34 * fVar34;
     fVar38 = fVar21 - fVar20;
-    fVar39 = fStack_2 * fVar35 - fVar27 * fVar38;
-    fVar26 = fStack_1 * fVar35 - fVar26 * fVar38;
-    fVar38 = fStack_3 * fVar35 - fVar28 * fVar38;
-    fVar27 = fVar24 - fVar23;
-    fVar40 = fStack_5 * fVar36 - fVar30 * fVar27;
-    fVar28 = fStack_6 * fVar36 - fVar29 * fVar27;
-    fVar30 = fVar4 * fVar36 - fVar31 * fVar27;
-    fVar27 = fVar22 - fVar25;
-    fVar29 = fVar7 * fVar37 - fVar33 * fVar27;
-    fVar32 = fStack_8 * fVar37 - fVar32 * fVar27;
-    fVar34 = fStack_9 * fVar37 - fVar34 * fVar27;
-    fStack_41 = (float)((ulonglong)*puVar14 >> 0x20);
-    fStack_42 = (float)*puVar14;
-    return ((((fStack_41 * fStack_18 + fStack_42 * fStack_17 + fVar16 * fVar16) * fVar10 <
+    fVar39 = fStack_1 * fVar35 - fVar38 * fVar26;
+    fVar26 = fStack_2 * fVar35 - fVar38 * fVar28;
+    fVar38 = fStack_3 * fVar35 - fVar38 * fVar27;
+    fVar28 = fVar24 - fVar23;
+    fVar27 = fStack_6 * fVar36 - fVar28 * fVar29;
+    fVar29 = fStack_5 * fVar36 - fVar28 * fVar30;
+    fVar30 = fVar4 * fVar36 - fVar28 * fVar31;
+    fVar28 = fVar22 - fVar25;
+    fVar33 = fVar7 * fVar37 - fVar28 * fVar33;
+    fVar32 = fStack_8 * fVar37 - fVar28 * fVar32;
+    fVar34 = fStack_9 * fVar37 - fVar28 * fVar34;
+    fStack_40 = (float)((ulonglong)*puVar14 >> 0x20);
+    fStack_41 = (float)*puVar14;
+    return ((((fStack_40 * fStack_17 + fStack_41 * fStack_18 + fVar16 * fVar16) * fVar10 <
               fVar19 * fVar19 ||
-             ((fVar37 * fVar10 * fVar37 < fVar32 * fVar32 + fVar29 * fVar29 + fVar34 * fVar34 &&
-               0.0 < (fStack_6 * fVar37 - fVar32) * fVar32 + (fStack_5 * fVar37 - fVar29) * fVar29 +
+             ((fVar37 * fVar10 * fVar37 < fVar32 * fVar32 + fVar33 * fVar33 + fVar34 * fVar34 &&
+               0.0 < (fStack_6 * fVar37 - fVar32) * fVar32 + (fStack_5 * fVar37 - fVar33) * fVar33 +
                      (fVar4 * fVar37 - fVar34) * fVar34 ||
-              fVar36 * fVar10 * fVar36 < fVar28 * fVar28 + fVar40 * fVar40 + fVar30 * fVar30 &&
-              0.0 < (fStack_2 * fVar36 - fVar28) * fVar28 + (fStack_1 * fVar36 - fVar40) * fVar40 +
-                    (fStack_3 * fVar36 - fVar30) * fVar30) ||
-             fVar35 * fVar10 * fVar35 < fVar39 * fVar39 + fVar26 * fVar26 + fVar38 * fVar38 &&
-             0.0 < (fStack_8 * fVar35 - fVar39) * fVar39 + (fVar7 * fVar35 - fVar26) * fVar26 +
-                   (fStack_9 * fVar35 - fVar38) * fVar38)) ||
+              fVar35 * fVar10 * fVar35 < fVar26 * fVar26 + fVar39 * fVar39 + fVar38 * fVar38 &&
+              0.0 < (fStack_8 * fVar35 - fVar26) * fVar26 + (fVar7 * fVar35 - fVar39) * fVar39 +
+                    (fStack_9 * fVar35 - fVar38) * fVar38) ||
+             fVar36 * fVar10 * fVar36 < fVar27 * fVar27 + fVar29 * fVar29 + fVar30 * fVar30 &&
+             0.0 < (fStack_2 * fVar36 - fVar27) * fVar27 + (fStack_1 * fVar36 - fVar29) * fVar29 +
+                   (fStack_3 * fVar36 - fVar30) * fVar30)) ||
             fVar10 < fVar25 && (fVar25 < fVar24 && fVar25 < fVar22)) ||
            fVar10 < fVar23 && (fVar23 < fVar24 && fVar23 < fVar21)) ||
            fVar10 < fVar20 && (fVar20 < fVar22 && fVar20 < fVar21);
@@ -1694,7 +1694,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
   }
-  bVar1 = 0;
+  iStack_1 = 0;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1728,7 +1728,9 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
       }
       uVar2 = 0;
       pFVar6 = TypeInfo__MV__WorldObject__CubeBase->static_fields->faceFlagsArray;
-      if (pFVar6 != (FaceFlags__Enum__Array *)0x0) goto code_?;
+      if (pFVar6 == (FaceFlags__Enum__Array *)0x0) goto code_?;
+      iVar3 = 0;
+      iVar7 = iStack_1;
       goto code_?;
     }
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
@@ -1754,12 +1756,13 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 code_?:
+  iStack_1 = iVar7;
   if ((int)pFVar6->max_length <= (int)uVar2) {
-    return bVar1 & 1;
+    return (byte)iVar3 & 1;
   }
   if (pFVar6->max_length <= uVar2) goto code_?;
   cube = (Cube *)CONCAT31(cube._1_3_,*(undefined1 *)((int)pFVar6->vector + uVar2));
@@ -1774,59 +1777,61 @@ code_?:
   MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
             (&TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners,
              &TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace,face,(MethodInfo *)0x0);
-  pMStack_9 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-  fStack_10 = (pMStack_9->localElipsoidPosition).x + _UNK_?;
-  pVVar4 = pMStack_9->cachedFace;
-  fStack_11 = (pMStack_9->localElipsoidPosition).y;
-  fStack_12 = (pMStack_9->localElipsoidPosition).z;
+  pMStack_10 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+  fStack_11 = (pMStack_10->localElipsoidPosition).x + _UNK_?;
+  pVVar4 = pMStack_10->cachedFace;
+  fStack_12 = (pMStack_10->localElipsoidPosition).y;
+  fStack_13 = (pMStack_10->localElipsoidPosition).z;
   if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
   if ((pVVar4->max_length == 0) || (pVVar4->max_length < 4)) goto code_?;
-  p2_00.y = fStack_11;
-  p2_00.x = fStack_10;
-  p2_00.z = fStack_12;
-  bVar8 = MathFunctions::MathFunctions_LineFacet
-                    (pMStack_9->localElipsoidPosition,p2_00,pVVar4->vector[0],pVVar4->vector[3],
-                     TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace->vector[2],
-                     &VStack_5,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
-    bVar1 = bVar1 + 1;
+  p2_00.y = fStack_12;
+  p2_00.x = fStack_11;
+  p2_00.z = fStack_13;
+  bVar9 = MathFunctions::MathFunctions_LineFacet
+                    (pMStack_10->localElipsoidPosition,p2_00,pVVar4->vector[0],pVVar4->vector[3],
+                     pVVar4->vector[2],&VStack_5,(MethodInfo *)0x0);
+  iVar3 = iStack_1 + 1;
+  if (bVar9 == 0) {
+    iVar3 = iStack_1;
   }
+  iStack_1 = iVar3;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
-  pMVar13 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-  uStack_14._0_4_ = (pMVar13->localElipsoidPosition).x;
-  uStack_14._4_4_ = (pMVar13->localElipsoidPosition).y;
-  pMStack_9 = (MVElipsoidOverlapCheck__StaticFields *)(pMVar13->localElipsoidPosition).z;
-  if (TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)
+  pMVar14 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+  uStack_15._0_4_ = (pMVar14->localElipsoidPosition).x;
+  uStack_15._4_4_ = (pMVar14->localElipsoidPosition).y;
+  pMStack_10 = (MVElipsoidOverlapCheck__StaticFields *)(pMVar14->localElipsoidPosition).z;
+  if (((TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0) ||
+      (func_?(&uStack_16,2),
+      TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)) ||
+     (func_?(&uStack_17,1),
+     TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0))
   goto code_?;
-  func_?(&uStack_15,2);
-  if (TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)
-  goto code_?;
-  func_?(&uStack_16,1);
-  if (TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)
-  goto code_?;
-  func_?(&uStack_17,0);
-  p2.y = fStack_11;
-  p2.x = fStack_10;
-  p1.z = (float)pMStack_9;
-  p1.x = (float)(undefined4)uStack_14;
-  p1.y = (float)uStack_14._4_4_;
-  p2.z = fStack_12;
-  pa.z = fStack_18;
-  pa.x = (float)(undefined4)uStack_15;
-  pa.y = (float)uStack_15._4_4_;
-  pb.z = fStack_19;
-  pb.x = (float)(undefined4)uStack_16;
-  pb.y = (float)uStack_16._4_4_;
-  pc.z = fStack_20;
-  pc.x = (float)(undefined4)uStack_17;
-  pc.y = (float)uStack_17._4_4_;
-  bVar8 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_5,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
-    bVar1 = bVar1 + 1;
-  }
+  func_?(&uStack_18,0);
   uVar2 = uVar2 + 1;
+  p2.y = fStack_12;
+  p2.x = fStack_11;
+  p1.z = (float)pMStack_10;
+  p1.x = (float)(undefined4)uStack_15;
+  p1.y = (float)uStack_15._4_4_;
+  p2.z = fStack_13;
+  pa.z = fStack_19;
+  pa.x = (float)(undefined4)uStack_16;
+  pa.y = (float)uStack_16._4_4_;
+  pb.z = fStack_20;
+  pb.x = (float)(undefined4)uStack_17;
+  pb.y = (float)uStack_17._4_4_;
+  pc.z = fStack_21;
+  pc.x = (float)(undefined4)uStack_18;
+  pc.y = (float)uStack_18._4_4_;
+  bVar9 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_5,(MethodInfo *)0x0);
+  iVar3 = iStack_1 + 1;
+  iVar7 = iStack_1 + 1;
+  if (bVar9 == 0) {
+    iVar3 = iStack_1;
+    iVar7 = iStack_1;
+  }
   goto code_?;
 code_?:
   func_?();
@@ -1910,20 +1915,20 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
                          (&VStack_7,chunk,(MethodInfo *)0x0);
       VStack_9.x = pVVar13->x;
       VStack_9.y = pVVar13->y;
-      fVar16 = pVVar13->z * _UNK_?;
-      fVar17 = VStack_9.x * _UNK_?;
-      fVar18 = VStack_9.y * _UNK_?;
-      VStack_9.z = fVar16;
+      VStack_9.z = pVVar13->z;
+      fVar16 = VStack_9.x * _UNK_?;
+      fVar17 = VStack_9.y * _UNK_?;
+      fVar18 = VStack_9.z * _UNK_?;
       if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
         uStack_4 = TypeInfo__SharedCollisionFunctions;
         func_?();
       }
-      localSpaceBounds.m_Extents.z = fVar16;
-      localSpaceBounds.m_Extents.y = fVar18;
+      localSpaceBounds.m_Extents.z = fVar18;
+      localSpaceBounds.m_Extents.y = fVar17;
       localSpaceBounds.m_Center.z = (float)puVar15;
       localSpaceBounds.m_Center.x = (float)(int)uVar14;
       localSpaceBounds.m_Center.y = (float)(int)((ulonglong)uVar14 >> 0x20);
-      localSpaceBounds.m_Extents.x = fVar17;
+      localSpaceBounds.m_Extents.x = fVar16;
       SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds
                 (&IStack_11,&IStack_12,localSpaceBounds,(MethodInfo *)0x0);
       IVar10.z = IStack_11.z;
@@ -1953,13 +1958,13 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
               z = (int)IStack_1.z;
               if (z <= iVar20) {
                 do {
-                  fVar16 = VStack_9.z;
+                  fVar18 = VStack_9.z;
                   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__MV__WorldObject__IntVector);
                     x = iStack_22;
                   }
                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            ((IntVector *)&puStack_3,x,(int32_t)fVar16,z,(MethodInfo *)0x0);
+                            ((IntVector *)&puStack_3,x,(int32_t)fVar18,z,(MethodInfo *)0x0);
                   puVar15 = puStack_3;
                   iStack_23 = (int16_t)uStack_4;
                   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
