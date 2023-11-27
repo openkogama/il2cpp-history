@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.160489e-29;
-              value.x = (float)uVar4 * 4.160489e-29;
-              value.z = (pVVar3->oneVector).z * 4.160489e-29;
+              value.y = (float)uVar5 * 4.1605178e-29;
+              value.x = (float)uVar4 * 4.1605178e-29;
+              value.z = (pVVar3->oneVector).z * 4.1605178e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1570,21 +1570,27 @@ code_?:
     return (MVWorldObjectClient *)0x0;
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    cVar2 = '\0';
-    iVar3 = func_?();
-    out(5,(char)iVar3);
-    *(char *)(iVar3 + -0x4aefacfb) = *(char *)(iVar3 + -0x4aefacfb) + extraout_DH + cVar2;
-    pcVar4 = (code *)swi(3);
-    pMVar5 = (MVWorldObjectClient *)(*pcVar4)();
-    return pMVar5;
+  uVar2 = (undefined2)((uint)in_stack_3 >> 0x10);
+  if (this_00 == (MVWorldObjectClientManager *)0x0) {
+code_?:
+    bVar4 = 0;
+    pbVar5 = (byte *)func_?();
+    bVar6 = *pbVar5;
+    bVar7 = *pbVar5;
+    *pbVar5 = bVar7 + extraout_DL + bVar4;
+    cRam_? = cRam_? + extraout_DL +
+                   (CARRY1(bVar6,extraout_DL) || CARRY1(bVar7 + extraout_DL,bVar4));
+    pcVar8 = (code *)swi(3);
+    pMVar9 = (MVWorldObjectClient *)(*pcVar8)(CONCAT22(uVar2,in_ES));
+    return pMVar9;
   }
+  this = (MVWorldObjectClient *)
+         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                   (this_00,(this->fields)._.groupId,(MethodInfo *)0x0);
+  uVar2 = (undefined2)((uint)in_stack_3 >> 0x10);
+  if (this == (MVWorldObjectClient *)0x0) goto code_?;
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_6;
+  unaff_EBP = in_stack_10;
   unaff_ESI = pMVar1;
   goto code_?;
 }

@@ -151,8 +151,12 @@ Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue
     }
   }
   func_?();
+  *(uint *)(unaff_EDI + 0x10) = ~*(uint *)(unaff_EDI + 0x10);
+  *(byte *)(unaff_EDI + 0x10) = ~*(byte *)(unaff_EDI + 0x10);
+  *(byte *)(unaff_EDI + 0x10) = ~*(byte *)(unaff_EDI + 0x10);
+  *(byte *)(unaff_EDI + 0x10) = ~*(byte *)(unaff_EDI + 0x10);
   pcVar8 = (code *)swi(3);
-  pBVar4 = (Byte__Array *)(*pcVar8)(unaff_EDI,unaff_EDI,unaff_EDI,unaff_EDI);
+  pBVar4 = (Byte__Array *)(*pcVar8)();
   return pBVar4;
 }
 

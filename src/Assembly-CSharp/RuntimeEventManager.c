@@ -364,7 +364,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
         }
       }
       if ((this_00->fields)._._.type == 8) {
-        voxelHit.face._0_2_ = 0x330a;
+        voxelHit.face._0_2_ = 0x334a;
         voxelHit.face._2_2_ = 0x1055;
         worldPos.y = fVar8;
         worldPos.x = (float)&stack0xffffffe8;
@@ -449,7 +449,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
                          MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_
                          ,(MethodInfo *)0x0);
               CVar17 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube
-                                ((CubeBase *)CONCAT22(uStack_7,uVar6),4.2047188e-29,this_01,
+                                ((CubeBase *)CONCAT22(uStack_7,uVar6),4.204738e-29,this_01,
                                  (MethodInfo *)0x0);
               if (CVar17 == CubeDamageState__Enum_NoDamage) {
                 return 0;

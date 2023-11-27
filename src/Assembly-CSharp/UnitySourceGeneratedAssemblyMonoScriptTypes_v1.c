@@ -10,7 +10,7 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Byte);
-    func_?(&_549410FFF0FE6221EA2B35A54EF5C79DC8E42DF0379C774499876C63455CB2B4_Field);
+    func_?(&::_37778F460B49DDB0D687D4A3AF120F11AB1D255D249EE3A63A2E0F4F60EC52EF_Field);
     func_?(&A951BFE9DBF3628CB6D287A0DA4AC343ABF6D8DA2B17EF287F06773C1A638B26_Field);
     cRam_? = '\x01';
   }
@@ -25,10 +25,10 @@ UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get
              ,(MethodInfo *)0x0);
   __return_storage_ptr__->FilePathsData = pBVar1;
   func_?(__return_storage_ptr__,pBVar1);
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x11530);
+  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x11521);
   mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
             ((Array *)pBVar1,
-             __549410FFF0FE6221EA2B35A54EF5C79DC8E42DF0379C774499876C63455CB2B4_Field,
+             __37778F460B49DDB0D687D4A3AF120F11AB1D255D249EE3A63A2E0F4F60EC52EF_Field,
              (MethodInfo *)0x0);
   __return_storage_ptr__->TypesData = pBVar1;
   func_?(&__return_storage_ptr__->TypesData,pBVar1);

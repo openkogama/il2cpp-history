@@ -23,8 +23,6 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ActivateLaserForDuration
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void ApplyMaterialForState() */
 
 void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
@@ -34,83 +32,82 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer_ApplyMaterialForState
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
   pLVar2 = this;
   if (pMVar1 == (MaterialLoader *)0x0) goto code_?;
-  pMVar3 = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
-  (this->fields).currentCubeMaterial = pMVar3;
-  func_?(&(this->fields).currentCubeMaterial,pMVar3);
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  (this->fields).currentCubeMaterial = (pMVar1->fields)._CubeModelMaterial_k__BackingField;
+  func_?();
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   unaff_ESI = pLVar2;
-  if ((pMVar4 == (MVNetworkGame *)0x0) ||
-     (this_00 = (pMVar4->fields)._MaterialRepository_k__BackingField,
+  if ((pMVar3 == (MVNetworkGame *)0x0) ||
+     (this_00 = (pMVar3->fields)._MaterialRepository_k__BackingField,
      this_00 == (MVMaterialRepository *)0x0)) goto code_?;
   unaff_EDI = MVMaterialRepository::MVMaterialRepository_GetMaterial
                         (this_00,(pLVar2->fields).currentCubeMaterialId,(MethodInfo *)0x0);
   switch((pLVar2->fields).state) {
   case 0:
-    pRVar5 = (pLVar2->fields).cubeRenderer;
-    if (((pRVar5 != (Renderer *)0x0) &&
+    pRVar4 = (pLVar2->fields).cubeRenderer;
+    if (((pRVar4 != (Renderer *)0x0) &&
         (UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                   (pRVar5,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
+                   (pRVar4,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
         unaff_EDI != (MVMaterial *)0x0)) &&
-       (pMVar6 = (pLVar2->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
+       (pMVar5 = (pLVar2->fields).cubeMeshFilter, pMVar5 != (MeshFilter *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
-                (pMVar6,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+                (pMVar5,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
       return;
     }
     break;
   case 1:
-    pRVar5 = (pLVar2->fields).cubeRenderer;
-    if (pRVar5 == (Renderer *)0x0) break;
-    pMVar3 = (pLVar2->fields).insertingMaterial;
+    pRVar4 = (pLVar2->fields).cubeRenderer;
+    if (pRVar4 == (Renderer *)0x0) break;
+    value_00 = (pLVar2->fields).insertingMaterial;
     goto code_?;
   case 2:
   case 5:
   case 6:
-    pRVar5 = (pLVar2->fields).cubeRenderer;
-    if (((pRVar5 != (Renderer *)0x0) &&
+    pRVar4 = (pLVar2->fields).cubeRenderer;
+    if (((pRVar4 != (Renderer *)0x0) &&
         (UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                   (pRVar5,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
+                   (pRVar4,(pLVar2->fields).currentCubeMaterial,(MethodInfo *)0x0),
         unaff_EDI != (MVMaterial *)0x0)) &&
-       (pMVar6 = (pLVar2->fields).cubeMeshFilter, pMVar6 != (MeshFilter *)0x0)) {
+       (pMVar5 = (pLVar2->fields).cubeMeshFilter, pMVar5 != (MeshFilter *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
-                (pMVar6,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
-      fVar7 = (pLVar2->fields).beamEditColor.g;
-      fVar8 = (pLVar2->fields).beamEditColor.b;
-      fVar9 = (pLVar2->fields).beamEditColor.a;
+                (pMVar5,(unaff_EDI->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+      fVar6 = (pLVar2->fields).beamEditColor.g;
+      fVar7 = (pLVar2->fields).beamEditColor.b;
+      fVar8 = (pLVar2->fields).beamEditColor.a;
       (pLVar2->fields).beamColor.r = (pLVar2->fields).beamEditColor.r;
-      (pLVar2->fields).beamColor.g = fVar7;
-      (pLVar2->fields).beamColor.b = fVar8;
-      (pLVar2->fields).beamColor.a = fVar9;
+      (pLVar2->fields).beamColor.g = fVar6;
+      (pLVar2->fields).beamColor.b = fVar7;
+      (pLVar2->fields).beamColor.a = fVar8;
       return;
     }
     break;
   case 3:
-    pRVar5 = (pLVar2->fields).cubeRenderer;
-    if (pRVar5 == (Renderer *)0x0) break;
-    pMVar3 = (pLVar2->fields).transformingMaterial;
+    pRVar4 = (pLVar2->fields).cubeRenderer;
+    if (pRVar4 == (Renderer *)0x0) break;
+    value_00 = (pLVar2->fields).transformingMaterial;
 code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-              (pRVar5,pMVar3,(MethodInfo *)0x0);
-    fVar7 = (pLVar2->fields).beamObjectColor.g;
-    fVar8 = (pLVar2->fields).beamObjectColor.b;
-    fVar9 = (pLVar2->fields).beamObjectColor.a;
+              (pRVar4,value_00,(MethodInfo *)0x0);
+    fVar6 = (pLVar2->fields).beamObjectColor.g;
+    fVar7 = (pLVar2->fields).beamObjectColor.b;
+    fVar8 = (pLVar2->fields).beamObjectColor.a;
     (pLVar2->fields).beamColor.r = (pLVar2->fields).beamObjectColor.r;
-    (pLVar2->fields).beamColor.g = fVar7;
-    (pLVar2->fields).beamColor.b = fVar8;
-    (pLVar2->fields).beamColor.a = fVar9;
+    (pLVar2->fields).beamColor.g = fVar6;
+    (pLVar2->fields).beamColor.b = fVar7;
+    (pLVar2->fields).beamColor.a = fVar8;
 code_?:
     return;
   case 4:
-    pRVar5 = (pLVar2->fields).cubeRenderer;
-    if (pRVar5 != (Renderer *)0x0) {
+    pRVar4 = (pLVar2->fields).cubeRenderer;
+    if (pRVar4 != (Renderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                (pRVar5,(pLVar2->fields).deleteMaterial,(MethodInfo *)0x0);
-      fVar7 = (pLVar2->fields).beamDeleteColor.g;
-      fVar8 = (pLVar2->fields).beamDeleteColor.b;
-      fVar9 = (pLVar2->fields).beamDeleteColor.a;
+                (pRVar4,(pLVar2->fields).deleteMaterial,(MethodInfo *)0x0);
+      fVar6 = (pLVar2->fields).beamDeleteColor.g;
+      fVar7 = (pLVar2->fields).beamDeleteColor.b;
+      fVar8 = (pLVar2->fields).beamDeleteColor.a;
       (pLVar2->fields).beamColor.r = (pLVar2->fields).beamDeleteColor.r;
-      (pLVar2->fields).beamColor.g = fVar7;
-      (pLVar2->fields).beamColor.b = fVar8;
-      (pLVar2->fields).beamColor.a = fVar9;
+      (pLVar2->fields).beamColor.g = fVar6;
+      (pLVar2->fields).beamColor.b = fVar7;
+      (pLVar2->fields).beamColor.a = fVar8;
       return;
     }
     break;
@@ -118,20 +115,24 @@ code_?:
     goto code_?;
   }
 code_?:
-  bVar10 = false;
-  uVar11 = func_?();
-  pcVar12 = (char *)((ulonglong)uVar11 >> 0x20);
-  bVar13 = (byte)uVar11;
-  if (!bVar10) {
-    pcVar12 = (char *)((int)uVar11 + 0x16e8119b);
-    *pcVar12 = *pcVar12 + bVar13;
-    return;
-  }
-  *(char *)(extraout_ECX + 0x1a10543b) = *(char *)(extraout_ECX + 0x1a10543b) + unaff_BH + bVar10;
-  *pcVar12 = *pcVar12 + unaff_BL + (char)((ulonglong)uVar11 >> 8) + (bVar13 < 0x54) + (bVar13 < 0x54);
-  in((short)((ulonglong)uVar11 >> 0x20));
+  uVar9 = func_?();
+  pcVar10 = (char *)CONCAT31((int3)((uint)unaff_EBX >> 8),0x3b);
+  bVar11 = (byte)uVar9;
+  *pcVar10 = *pcVar10 + (char)((ushort)uVar9 >> 8) + (bVar11 < 0x54);
+  pbVar12 = &stack0xfffffff0 + (int)unaff_EDI;
+  bVar13 = (byte)((uint)extraout_EDX >> 8);
+  bVar14 = *pbVar12 + bVar13;
+  bVar15 = CARRY1(*pbVar12,bVar13) || CARRY1(bVar14,bVar11 < 0x54);
+  *pbVar12 = bVar14 + (bVar11 < 0x54);
+  pbVar12 = (byte *)(extraout_EDX + 0x3c);
+  bVar14 = *pbVar12;
+  bVar11 = *pbVar12;
+  *pbVar12 = bVar11 + 0x3b + bVar15;
+  *(char *)(extraout_EDX + 0x3c) =
+       *(char *)(extraout_EDX + 0x3c) + ';' + (0xc4 < bVar14 || CARRY1(bVar11 + 0x3b,bVar15));
+  in((short)extraout_EDX);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte,&stack0xfffffff4);
+    func_?(&TypeInfo__System__Byte,&stack0xffffffe8);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                    );
@@ -162,8 +163,8 @@ code_?:
       (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
      ) {
     func_?();
-    pcVar14 = (code *)swi(3);
-    (*pcVar14)();
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
     return;
   }
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::

@@ -311,7 +311,7 @@ code_?:
                     mscorlib.dll::System::Array::Array_GetEnumerator(pAVar22,(MethodInfo *)0x0);
           pTVar21 = (Type *)0x0;
           while (pIVar23 != (IEnumerator__Class *)0x0) {
-            uVar24 = 0xc7ed;
+            uVar24 = 0xc84d;
             uVar25 = 0x1056;
             pIVar23 = TypeInfo__System__Collections__IEnumerator;
             cVar26 = func_?();
@@ -1008,7 +1008,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = -0x2bd0;
+          iVar7 = -0x2b70;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection
                               ((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,
                                (MethodInfo *)0x0);

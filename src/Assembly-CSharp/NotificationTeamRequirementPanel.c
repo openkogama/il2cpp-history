@@ -33,13 +33,13 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
       goto code_?;
       pIVar6 = (Int32Enum__Enum *)func_?(team);
       pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar6,
-                           method_00);
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,*pIVar6,method_00)
+      ;
       if (pTVar2 != (Text *)0x0) {
         (*(code *)(pTVar2->klass->vtable).set_text.method)
-                  (pTVar2,pOVar7,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
-                  );
+                  (pTVar2,pOVar7,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         pMVar5 = TypeInfo__MV__WorldObject__MVTeam;
         if ((team->klass->_0).element_class != (TypeInfo__MV__WorldObject__MVTeam->_0).element_class
            ) goto code_?;
@@ -88,32 +88,13 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
-  cVar9 = func_?(team,pMVar5);
-  bVar10 = ((uint)this->klass & 1) != 0;
-  this->klass = (NotificationTeamRequirementPanel__Class *)((int)this->klass >> 1);
-  bVar11 = *extraout_EDX;
-  bVar12 = *extraout_EDX + (byte)extraout_EDX;
-  *extraout_EDX = bVar12 + bVar10;
-  bVar13 = (byte)extraout_ECX_00 & 0x1f;
-  cVar14 = *(char *)&this->klass;
-  *(char *)&this->klass = *(char *)&this->klass >> bVar13;
-  bVar15 = (extraout_ECX_00 & 0x1f) == 0;
-  bVar16 = bVar15 * (CARRY1(bVar11,(byte)extraout_EDX) || CARRY1(bVar12,bVar10)) |
-           !bVar15 * ((cVar14 >> bVar13 - 1 & 1U) != 0);
-  bVar11 = *extraout_EDX;
-  bVar17 = (byte)(extraout_ECX_00 >> 8);
-  bVar12 = *extraout_EDX + bVar17;
-  *extraout_EDX = bVar12 + bVar16;
-  bVar13 = (byte)extraout_ECX_00 & 0x1f;
-  cVar14 = *(char *)&this->klass;
-  *(char *)&this->klass = *(char *)&this->klass >> bVar13;
-  bVar15 = (extraout_ECX_00 & 0x1f) == 0;
-  extraout_EDX[-0x2e] =
-       extraout_EDX[-0x2e] + cVar9 +
-       (bVar15 * (CARRY1(bVar11,bVar17) || CARRY1(bVar12,bVar16)) |
-       !bVar15 * ((cVar14 >> bVar13 - 1 & 1U) != 0));
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  uVar9 = 0x103e;
+  func_?(team,pMVar5);
+  func_?(CONCAT22(uVar9,in_CS));
+  *(char *)&this->klass = *(char *)&this->klass >> (extraout_CL & 0x1f);
+  *(char *)&this->klass = *(char *)&this->klass >> (extraout_CL & 0x1f);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

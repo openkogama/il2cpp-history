@@ -695,7 +695,7 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
             (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
         puVar16 = (undefined1 *)func_?();
         value = TypeInfo__MVPlayer;
-        BStack_17 = CONCAT31(0x10518e,*puVar16);
+        BStack_17 = CONCAT31(0x10518f,*puVar16);
         this_02 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1
                   (this_02,actorNumber,profileID,(int32_t)pMVar5,pSStack_11,BStack_17,
