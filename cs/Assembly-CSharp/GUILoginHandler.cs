@@ -77,6 +77,7 @@ public class GUILoginHandler : MonoBehaviour
 	private void SetupServerDropdown(int savedChoice);
 	public void OnProfileDropdownChanged();
 	public void OnPlanetDropdownChanged();
+	public void Embedded(bool isEmbedded);
 	public void OnEmbeddedSiteDropdownChanged();
 	private void SetupPlanetID();
 	private void SetupProfileID();
@@ -86,7 +87,6 @@ public class GUILoginHandler : MonoBehaviour
 	public void EnterPlayOnClick();
 	public void EnterEditOnClick();
 	public void EnterCharacterEditOnClick();
-	public void Embedded(bool isEmbedded);
 	public void Caching();
 	public void TouchMode();
 	private void StartGame(MVGameMode gameMode);
@@ -95,8 +95,8 @@ public class GUILoginHandler : MonoBehaviour
 	private string GetPrefOrDefault(string prefName, string target);
 	private string UpdateIfChanged(string prefName, string current, string target);
 	[CompilerGenerated]
-	private void _SetupPlanetID_b__29_0(string value);
+	private void _SetupPlanetID_b__30_0(string value);
 	[CompilerGenerated]
-	private void _SetupProfileID_b__30_0(string value);
+	private void _SetupProfileID_b__31_0(string value);
 }
 

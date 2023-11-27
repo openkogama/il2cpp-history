@@ -9,7 +9,7 @@ using Assets.Scripts.AdIntegration;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-namespace Assets.Scripts.AdIntegration.Dummy
+namespace AdIntegration.Dummy
 {
 	public class DummyAdManager : IAdManager, IUpdatecontrollerSubscriberUpdate
 	{
@@ -18,6 +18,7 @@ namespace Assets.Scripts.AdIntegration.Dummy
 		private float startTime;
 		private readonly float delay;
 		private bool rewarded;
+		private EmbeddedSiteConfigData siteData;
 		private bool timeoutAsEnabled;
 		private int timeoutSuccessDelay;
 	

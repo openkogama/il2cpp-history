@@ -384,14 +384,14 @@ code_?:
           piVar16 = (int *)&stack0xffffffd8;
           fVar17 = 0.0;
           while (pAVar15 != (Action_1_System_Collections_Generic_List_1_MV_WorldObject_Link_ *)0x0) {
-            uVar1 = 0xf329;
+            uVar1 = 0xf379;
             uVar2 = 0x1054;
             cVar18 = func_?();
             if (cVar18 == '\0') {
               iVar19 = func_?();
               *piVar16 = iVar19;
               if (iVar19 != 0) {
-                uVar1 = 0xf6e2;
+                uVar1 = 0xf732;
                 uVar2 = 0x1054;
                 func_?();
               }

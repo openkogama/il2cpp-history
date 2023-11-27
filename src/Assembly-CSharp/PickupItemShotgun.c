@@ -118,7 +118,7 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_OnFire(PickupItem
         uVar16 = uStack_15;
         iVar17 = iStack_14;
         pMVar1 = (this->fields)._._.owner;
-        if (pMVar1 == (MVPickupOwner *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
         uStack_4._0_4_ = (pMVar1->fields).lookOrigin.x;
         uStack_4._4_4_ = (pMVar1->fields).lookOrigin.y;
         fStack_18 = (pMVar1->fields).lookOrigin.z;
@@ -130,12 +130,12 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_OnFire(PickupItem
           func_?(TypeInfo__PickupItemShotgun);
         }
         pSVar21 = TypeInfo__PickupItemShotgun->static_fields->offsetsX;
-        if (pSVar21 == (Single__Array *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pSVar21 == (Single__Array *)0x0) goto code_?;
         if (pSVar21->max_length <= uVar16) goto code_?;
         fVar5 = *(float *)((int)pSVar21->vector + iVar17 + -0x10);
         fVar22 = (this->fields).spread;
         pSVar21 = TypeInfo__PickupItemShotgun->static_fields->offsetsY;
-        if (pSVar21 == (Single__Array *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pSVar21 == (Single__Array *)0x0) goto code_?;
         if (pSVar21->max_length <= uVar16) goto code_?;
         fVar23 = *(float *)((int)pSVar21->vector + iVar17 + -0x10);
         fVar24 = (this->fields).spread;
@@ -147,11 +147,11 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_OnFire(PickupItem
         uVar25 = pVVar2->y;
         fVar5 = pVVar2->z;
         pTVar26 = (this->fields)._._.muzzlePoint;
-        if (pTVar26 == (Transform *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pTVar26 == (Transform *)0x0) goto code_?;
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)(auStack_7 + 4),pTVar26,(MethodInfo *)0x0);
         this_01 = Bullet::Bullet_CreateBullet(PoolEnums__Enum_ShotgunBullet,*pVVar2,(MethodInfo *)0x0);
         pBVar27 = TypeInfo__Bullet__OnHitDelegate;
-        if (this_01 == (Bullet *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (this_01 == (Bullet *)0x0) goto code_?;
         pBVar28 = (this_01->fields).onHit;
         pBVar29 = (BulletThrowingStar_OnHitDelegate *)func_?();
         BulletThrowingStar+OnHitDelegate::BulletThrowingStar_OnHitDelegate__ctor(pBVar29,(Object *)this,MethodInfo__PickupItemShotgun__OnBulletHit_VoxelHit__UnityEngine__Ray_,(MethodInfo *)0x0);
@@ -209,12 +209,12 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_OnFire(PickupItem
           func_?();
         }
         pMVar1 = (this->fields)._._.owner;
-        if (pMVar1 == (MVPickupOwner *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
         fVar22 = MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpeed(pMVar1,(this->fields).bulletSpeed,(MethodInfo *)0x0);
         fStack_18 = (this->fields).maxRange;
         pMVar1 = (this->fields)._._.owner;
         uStack_4 = CONCAT44(fVar22,(undefined4)uStack_4);
-        if (pMVar1 == (MVPickupOwner *)0x0) goto MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_;
+        if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
         ignoreWoIDs = (HashSet_1_System_Int32_ *)func_?(7,pMVar1);
         lineOfFire.m_Origin.z = (float)uVar30;
         lineOfFire.m_Origin.x = (float)(int)uVar31;
@@ -286,10 +286,10 @@ code_?:
       }
     }
   }
-MethodInfo__System__Collections__Concurrent__ConcurrentDictionary<System::Object,_System::Object>__System_Collections_IDictionary_Add_System__Object__System__Object_:
+code_?:
   uStack_10 = func_?();
 code_?:
-  VStack_3.z = (float)&MethodInfo__System__Collections__Generic__ArraySortHelper<SpawnRolesSkillDataManager::SkillData>__DownHeap_SpawnRolesSkillDataManager__SkillData_____int__int__int__System__Comparison<SpawnRolesSkillDataManager::SkillData>_;
+  VStack_3.z = (float)&UNK_?;
   func_?();
 code_?:
   func_?();

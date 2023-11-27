@@ -273,7 +273,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
         }
       }
       if ((this_00->fields)._._.type == 8) {
-        voxelHit.face._0_2_ = 0x330a;
+        voxelHit.face._0_2_ = 0x334a;
         voxelHit.face._2_2_ = 0x1055;
         worldPos.y = fVar8;
         worldPos.x = (float)&stack0xffffffe8;
@@ -321,7 +321,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
               object = (pMVar16->fields)._MaterialRepository_k__BackingField;
               this_01 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)func_?();
               mscorlib.dll::System::Func`2[Byte,MV::WorldObject::PhysicalProperties]::Func_2_Byte_MV_WorldObject_PhysicalProperties___ctor(this_01,(Object *)object,MethodInfo__MVMaterialRepository__GetMaterialPhysicalProperties_unsigned_char_,(MethodInfo *)0x0);
-              CVar17 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube((CubeBase *)CONCAT22(uStack_7,uVar6),4.2047188e-29,this_01,(MethodInfo *)0x0);
+              CVar17 = RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRemoveCube((CubeBase *)CONCAT22(uStack_7,uVar6),4.204738e-29,this_01,(MethodInfo *)0x0);
               if (CVar17 == CubeDamageState__Enum_NoDamage) {
                 return 0;
               }

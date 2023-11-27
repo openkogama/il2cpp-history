@@ -1,26 +1,52 @@
 
 /* Void InitializeAdConfigSettings(AdConfigSettings) */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_InitializeAdConfigSettings(DummyAdManager *this,AdConfigSettings *config,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_InitializeAdConfigSettings(DummyAdManager *this,AdConfigSettings *config,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (config != (AdConfigSettings *)0x0) {
+    iVar1 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.siteEnum;
+    bVar2 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.showTouristPromotion;
+    bVar3 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowsOpenInNewTab;
+    bVar4 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowsRedirectToWebpage;
+    bVar5 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowsModals;
+    bVar6 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.integratedSdk;
+    bVar7 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowsFallbackAds;
+    bVar8 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.showPlayButtonAd;
+    bVar9 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideGoldShop;
+    bVar10 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.allowInHouseAds;
+    bVar11 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
+    bVar12 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp;
+    bVar13 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon;
+    (this->fields).siteData.sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
+    (this->fields).siteData.siteEnum = iVar1;
+    (this->fields).siteData.showTouristPromotion = bVar2;
+    (this->fields).siteData.allowsOpenInNewTab = bVar3;
+    (this->fields).siteData.allowsRedirectToWebpage = bVar4;
+    (this->fields).siteData.allowsModals = bVar5;
+    (this->fields).siteData.integratedSdk = bVar6;
+    (this->fields).siteData.allowsFallbackAds = bVar7;
+    (this->fields).siteData.showPlayButtonAd = bVar8;
+    (this->fields).siteData.hideGoldShop = bVar9;
+    (this->fields).siteData.allowInHouseAds = bVar10;
+    (this->fields).siteData.removeFullscreenButton = bVar11;
+    (this->fields).siteData.hideSignUp = bVar12;
+    (this->fields).siteData.noPlayButtonVideoIcon = bVar13;
+    func_?(&(this->fields).siteData,0);
     (this->fields).timeoutAsEnabled = (config->fields)._AdTimeoutAsSuccess_k__BackingField;
     (this->fields).timeoutSuccessDelay = (config->fields)._AdTimeoutAsSuccessDelay_k__BackingField;
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
 
 /* Void InitializeCallbackManager(IAdUIManager) */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_InitializeCallbackManager(DummyAdManager *this,IAdUIManager *handler,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_InitializeCallbackManager(DummyAdManager *this,IAdUIManager *handler,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -39,7 +65,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 /* Void RequestInterstitial(Action`1[Assets.Scripts.AdIntegration.InterstitialAdResult], AdContext) */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_RequestInterstitial(DummyAdManager *this,Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *interstitialCallback,AdContext__Enum context,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_RequestInterstitial(DummyAdManager *this,Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *interstitialCallback,AdContext__Enum context,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -94,7 +120,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 /* Void RequestRewardedAd(Action`1[Assets.Scripts.AdIntegration.RewardedAdResult], AdContext) */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_RequestRewardedAd(DummyAdManager *this,Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *rewardedAdCallback,AdContext__Enum context,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_RequestRewardedAd(DummyAdManager *this,Action_1_Assets_Scripts_AdIntegration_RewardedAdResult_ *rewardedAdCallback,AdContext__Enum context,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -149,7 +175,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 /* Void UpdateControllerUpdate() */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_UpdateControllerUpdate(DummyAdManager *this,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_UpdateControllerUpdate(DummyAdManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -224,7 +250,7 @@ code_?:
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar10,(MethodInfo *)0x0);
       if ((((pDVar1->fields).rewarded != 0) && ((pDVar1->fields).timeoutAsEnabled != 0)) && (this = (DummyAdManager *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), (float)(pDVar1->fields).timeoutSuccessDelay <= (float)this - (pDVar1->fields).startTime)) {
-        Web::WebAdManager::WebAdManager_AdLog_1(StringLiteral_DummyAdManager___UpdateControlle,(MethodInfo *)0x0);
+        Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_AdLog_1(StringLiteral_DummyAdManager___UpdateControlle,(MethodInfo *)0x0);
       }
       if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Boolean);
@@ -276,7 +302,7 @@ code_?:
 
 /* DummyAdManager() */
 
-void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager__ctor(DummyAdManager *this,MethodInfo *method)
+void Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager__ctor(DummyAdManager *this,MethodInfo *method)
 
 {
   (this->fields).delay = 1.5;
@@ -287,7 +313,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager:
 
 /* String get_RewardedAdNotAvailableText() */
 
-String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_RewardedAdNotAvailableText(DummyAdManager *this,MethodInfo *method)
+String * Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_RewardedAdNotAvailableText(DummyAdManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -301,7 +327,7 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 /* TimeSpan get_TimeSinceLastAd() */
 
-TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastAd(DummyAdManager *this,MethodInfo *method)
+TimeSpan Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastAd(DummyAdManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -317,7 +343,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 /* TimeSpan get_TimeSinceLastInterstitial() */
 
-TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastInterstitial(DummyAdManager *this,MethodInfo *method)
+TimeSpan Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastInterstitial(DummyAdManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -333,7 +359,7 @@ TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdMana
 
 /* TimeSpan get_TimeSinceLastRewarded() */
 
-TimeSpan Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastRewarded(DummyAdManager *this,MethodInfo *method)
+TimeSpan Assembly-CSharp.dll::AdIntegration::Dummy::DummyAdManager::DummyAdManager_get_TimeSinceLastRewarded(DummyAdManager *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

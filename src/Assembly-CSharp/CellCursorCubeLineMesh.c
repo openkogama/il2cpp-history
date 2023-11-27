@@ -238,7 +238,7 @@ void Assembly-CSharp.dll::CellCursorCubeLineMesh::CellCursorCubeLineMesh__ctor(C
                     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
                       func_?();
                     }
-                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines(mesh,(Vector3__Array *)&UNK_?,3.863416e-29,(MethodInfo *)0x0);
+                    SharedCubeFunctions::SharedCubeFunctions_AddCubeMeshCubeLines(mesh,(Vector3__Array *)&UNK_?,3.8634305e-29,(MethodInfo *)0x0);
                     return;
                   }
                 }

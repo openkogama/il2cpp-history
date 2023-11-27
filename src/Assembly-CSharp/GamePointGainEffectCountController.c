@@ -102,12 +102,11 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
         fVar8 = 1.0;
       }
       pTVar3 = (this->fields).transformToSlide;
-      iStack_9 = uVar7;
       if (pTVar3 != (Transform *)0x0) {
-        value_00.y = (float)uVar7;
-        value_00.x = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
-        value_00.z = pVVar5->z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value_00,(MethodInfo *)0x0);
+        value.y = (float)uVar7;
+        value.x = (fVar1 - (float)uVar6) * fVar8 + (float)uVar6;
+        value.z = pVVar5->z;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value,(MethodInfo *)0x0);
         if (fVar4 <= 1.0) {
           return;
         }
@@ -124,19 +123,18 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     fVar4 = (this->fields).slideMoveAmount;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
-      uVar10 = pVVar5->x;
-      uVar11 = pVVar5->y;
-      fVar12 = 0.0;
-      if ((0.0 <= fVar8) && (fVar12 = fVar8, 1.0 < fVar8)) {
-        fVar12 = 1.0;
+      uVar9 = pVVar5->x;
+      uVar10 = pVVar5->y;
+      fVar11 = 0.0;
+      if ((0.0 <= fVar8) && (fVar11 = fVar8, 1.0 < fVar8)) {
+        fVar11 = 1.0;
       }
       pTVar3 = (this->fields).transformToSlide;
-      iStack_9 = uVar11;
       if (pTVar3 != (Transform *)0x0) {
-        value_01.y = (float)uVar11;
-        value_01.x = ((fVar4 + fVar1) - (float)uVar10) * fVar12 + (float)uVar10;
-        value_01.z = pVVar5->z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value_01,(MethodInfo *)0x0);
+        value_00.y = (float)uVar10;
+        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.z = pVVar5->z;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value_00,(MethodInfo *)0x0);
         if (fVar8 <= 1.0) {
           return;
         }
@@ -146,24 +144,8 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     }
   }
   func_?();
-  if (*(Transform **)(iStack_9 + 0x14) != (Transform *)0x0) {
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffcc,*(Transform **)(iStack_9 + 0x14),(MethodInfo *)0x0);
-    uVar13 = pVVar5->y;
-    if (*(Transform **)(iStack_9 + 0x14) != (Transform *)0x0) {
-      value.y = (float)uVar13;
-      value.x = *(float *)(iStack_9 + 0x40) + *(float *)(iStack_9 + 0x18);
-      value.z = pVVar5->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(*(Transform **)(iStack_9 + 0x14),value,(MethodInfo *)0x0);
-      *(undefined4 *)(iStack_9 + 0x4c) = 1;
-      *(undefined4 *)(iStack_9 + 0x44) = 0;
-      *(undefined4 *)(iStack_9 + 0x48) = 0;
-      return;
-    }
-  }
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
