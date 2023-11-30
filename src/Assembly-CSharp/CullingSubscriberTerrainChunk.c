@@ -375,7 +375,7 @@ void Assembly-CSharp.dll::CullingSubscriberTerrainChunk::CullingSubscriberTerrai
     auVar4._0_8_ = in_stack_2._0_8_;
     auVar4._8_4_ = &TypeInfo__CullingApiWrapper;
     auVar5._8_12_ = auVar4._8_12_;
-    auVar5._0_8_ = 0x1035218700000000;
+    auVar5._0_8_ = 0x103521b700000000;
     func_?();
     auVar1 = auVar5._0_16_;
     cRam_? = '\x01';

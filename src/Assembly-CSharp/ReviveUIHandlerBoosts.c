@@ -498,10 +498,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    method_00 = unaff_EDI;
     value = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     if (value != (Object *)0x0) {
       value[1].monitor = (MonitorData *)this;
       func_?(&value[1].monitor,this);
@@ -518,7 +517,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
       func_?(value + 1,pOVar1);
       pOVar1 = value[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
@@ -564,11 +562,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  cVar4 = '\0';
-  uVar5 = func_?();
-  pcVar6 = (char *)((int)&unaff_EDI[-0x115ec27].fields._.continueButton + 3);
-  *pcVar6 = (*pcVar6 - extraout_CL) - cVar4;
-  out((short)((uint6)uVar5 >> 0x20),(int)uVar5);
+  func_?();
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

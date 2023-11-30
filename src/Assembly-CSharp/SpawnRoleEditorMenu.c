@@ -296,8 +296,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void ChangeTeamImageColor(MVTeam) */
 
 void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamImageColor
@@ -345,19 +343,17 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     colorStyle = ColorStyle__Enum_OffGray;
   }
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
+  bVar4 = 0;
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    uVar4 = func_?();
-    out(0xe4,(int)uVar4);
-    piVar5 = (int *)in(0x3b);
-    *(char *)(unaff_EDI + -0x1b) =
-         *(char *)(unaff_EDI + -0x1b) + unaff_BL + (9 < ((byte)uVar4 & 0xf) | in_AF);
-    if (*piVar5 < (int)((ulonglong)uVar4 >> 0x20)) {
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
-    }
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
+    bVar5 = func_?();
+    puVar6 = (uint *)in(0x3b);
+    *(char *)(unaff_EDI + -0x1b) = *(char *)(unaff_EDI + -0x1b) + unaff_BH + (0x99 < bVar5 | bVar4);
+    in(0x3b);
+    *(char *)(unaff_EDI + -0x33efc41b) =
+         *(char *)(unaff_EDI + -0x33efc41b) + unaff_BH + (extraout_EDX < *puVar6);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
   CStack_3.r = pCVar2->a;

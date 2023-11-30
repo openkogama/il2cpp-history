@@ -34,9 +34,13 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
     }
     cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
     if (cVar3 != '\0') {
+      (this->fields).isInUI = 1;
+      (this->fields).wentToGameFromUI = 0;
       return;
     }
   }
+  (this->fields).wentToGameFromUI = (this->fields).isInUI;
+  (this->fields).isInUI = 0;
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
@@ -90,7 +94,9 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
       return;
     }
   }
-  (this->fields).fire = 1;
+  if ((this->fields).wentToGameFromUI == 0) {
+    (this->fields).fire = 1;
+  }
   return;
 }
 

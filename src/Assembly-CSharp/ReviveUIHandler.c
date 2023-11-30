@@ -1091,7 +1091,9 @@ void Assembly-CSharp.dll::ReviveUIHandler::ReviveUIHandler_OnRewardedAdWatched
   }
   func_?();
 code_?:
+  func_?();
   uRam_? = func_?();
+  func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;

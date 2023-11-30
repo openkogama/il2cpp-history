@@ -16,6 +16,8 @@ public class InputToInGameAction
 	private bool drop;
 	private bool holster;
 	private bool ignorePickupOwner;
+	private bool isInUI;
+	private bool wentToGameFromUI;
 
 	// Properties
 	public bool IgnorePickupOwner { get; set; }

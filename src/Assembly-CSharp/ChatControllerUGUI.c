@@ -539,7 +539,7 @@ code_?:
                                  ((Component *)pRVar7,(MethodInfo *)0x0),
              pGVar8 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar8,0xa8,(MethodInfo *)0x0);
+                      (pGVar8,200,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -1694,7 +1694,7 @@ code_?:
     }
     msgType = msgType & 0xffffff;
     pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(byte *)((int)&msgType + 3));
-    unaff_ESI = message;
+    data = message;
     if (message != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
@@ -1724,7 +1724,7 @@ code_?:
               return;
             }
             text = ChatControllerUGUI_FormatTeamChatMessage
-                             ((ChatControllerUGUI *)0x0,unaff_ESI,(MethodInfo *)0x0);
+                             ((ChatControllerUGUI *)0x0,data,(MethodInfo *)0x0);
             ChatControllerUGUI_AddLine((ChatControllerUGUI *)0x0,text,(MethodInfo *)0x0);
             return;
           }
@@ -1780,94 +1780,13 @@ code_?:
   }
   uVar8 = func_?();
 code_?:
-  iVar12 = (int)uVar8;
-  uVar13 = func_?(uVar8);
-  out((short)((uint6)uVar13 >> 0x20),(int)uVar13);
-  puVar14 = (undefined4 *)(iVar12 + -4);
-  *(undefined1 **)(iVar12 + -4) = &stack0xfffffffc;
-  if (cRam_? == '\0') {
-    *(MethodInfo ***)(iVar12 + -8) =
-         &MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__;
-    puVar15 = (undefined1 *)(iVar12 + -0xc);
-    *(undefined **)(iVar12 + -0xc) = &UNK_?;
-    func_?();
-    *(MethodInfo ***)(puVar15 + -4) =
-         &
-         MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
-    ;
-    puVar16 = puVar15 + -8;
-    *(undefined **)(puVar15 + -8) = &UNK_?;
-    func_?();
-    puVar14 = (undefined4 *)(puVar16 + 8);
-    cRam_? = '\x01';
-  }
-  puVar14[-1] = (int)&unaff_ESI->klass +
-                (uint)((byte)(((byte)uVar13 & 0xf2) * (char)unaff_EDI | 0xf0) < 0x10) + extraout_ECX
-  ;
-  puVar14[-2] = unaff_EDI;
-  iVar12 = *(int *)(iVar12 + 4);
-  iVar17 = *(int *)(iVar12 + 0x20);
-  puVar18 = puVar14 + -2;
-  if (iVar17 != 0) {
-    puVar14[-3] = MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Dequeue__;
-    puVar14[-4] = iVar17;
-    puVar14[-5] = &UNK_?;
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-             Queue_1_System_Object__Dequeue
-                       ((Queue_1_System_Object_ *)puVar14[-4],(MethodInfo *)puVar14[-3]);
-    iVar17 = *(int *)(iVar12 + 0x20);
-    puVar18 = puVar14;
-    if (iVar17 != 0) {
-      puVar14[-1] = 
-      MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Enqueue_UnityEngine__UI__Text_
-      ;
-      puVar14[-2] = pOVar1;
-      puVar14[-3] = iVar17;
-      puVar14[-4] = &UNK_?;
-      mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-      Queue_1_System_Object__Enqueue
-                ((Queue_1_System_Object_ *)puVar14[-3],(Object *)puVar14[-2],
-                 (MethodInfo *)puVar14[-1]);
-      puVar18 = puVar14 + 3;
-      if (pOVar1 != (Object *)0x0) {
-        puVar14[2] = 0;
-        puVar14[1] = pOVar1;
-        *puVar14 = &UNK_?;
-        pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)puVar14[1],(MethodInfo *)puVar14[2]);
-        puVar18 = puVar14 + 5;
-        if (pTVar19 != (Transform *)0x0) {
-          puVar14[4] = 0;
-          puVar14[3] = 0;
-          puVar14[2] = *(undefined4 *)(iVar12 + 0x44);
-          puVar14[1] = pTVar19;
-          *puVar14 = &UNK_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    ((Transform *)puVar14[1],(Transform *)puVar14[2],*(bool *)(puVar14 + 3),
-                     (MethodInfo *)puVar14[4]);
-          puVar14[4] = 0;
-          puVar14[3] = pOVar1;
-          puVar14[2] = &UNK_?;
-          pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)puVar14[3],(MethodInfo *)puVar14[4]);
-          puVar18 = puVar14 + 0xb;
-          if (pTVar19 != (Transform *)0x0) {
-            puVar14[10] = 0;
-            puVar14[9] = pTVar19;
-            puVar14[8] = &UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                      ((Transform *)puVar14[9],(MethodInfo *)puVar14[10]);
-            return;
-          }
-        }
-      }
-    }
-  }
-  *(undefined **)((int)puVar18 + -4) = &UNK_?;
-  func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
-  return;
+  uVar12 = func_?(uVar8);
+  uVar13 = (undefined2)((uint6)uVar12 >> 0x20);
+  uVar14 = in(uVar13);
+  *(undefined1 *)&unaff_EDI->klass = uVar14;
+  out(uVar13,(int)uVar12);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

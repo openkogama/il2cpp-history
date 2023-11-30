@@ -12,9 +12,15 @@ using System.Runtime.CompilerServices;
 public class MVSoundEmitter : MVLogicObject, ILogicWorldObject
 {
 	// Fields
-	private SoundEmitterObject soundEmitterObject;
-	private SoundLoader soundLoader;
-	private const string defaultUrl = "AmbientAudio/Nature/kgm_amb_forest.unity3d";
+	private readonly SoundEmitterObject soundEmitterObject;
+	private readonly SoundLoader soundLoader;
+	private const string DefaultUrl = "AmbientAudio/Nature/kgm_amb_forest.unity3d";
+	private const string DataKeyURL = "url";
+	private const string DataKeyVolume = "volume";
+	private const string DataKeyPitch = "pitch";
+	private const string DataKeyLoop = "loop";
+	private const string DataKeyRange = "range";
+	private const string DataKeyMute = "mute";
 	[CompilerGenerated]
 	private IInputSignalReceiver _InputSignalReceiver_k__BackingField;
 

@@ -284,9 +284,9 @@ code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                       ((Object_1 *)pAVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    if (bVar4 == 0) {
       bVar4 = MVSoundEmitter_ShouldPlay(this,(MethodInfo *)0x0);
       if (bVar4 != 0) {
         pSVar1 = (this->fields).soundEmitterObject;
@@ -644,40 +644,42 @@ bool Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_ShouldPlay
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                    );
     func_?(&TypeInfo__IInputSignalReceiver);
     func_?(&StringLiteral_mute);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields)._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_mute,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+  pOStack_1 = (Object *)0x0;
+  this_00 = (this->fields)._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      (this_00,(Object *)StringLiteral_mute,&pOStack_1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                       );
-    if (TVar1.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-      pcVar2 = (char *)func_?();
-      if (*pcVar2 != '\0') {
+    if (bVar2 != 0) {
+      if (pOStack_1 == (Object *)0x0) goto code_?;
+      if ((pOStack_1->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+      goto code_?;
+      pcVar3 = (char *)func_?();
+      if (*pcVar3 != '\0') {
         return 0;
       }
-      if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-        cVar3 = func_?(1,TypeInfo__IInputSignalReceiver);
-        return cVar3 != '\0';
-      }
+    }
+    if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
+      pOStack_1 = (Object *)0x1;
+      bVar2 = func_?();
+      return bVar2;
     }
   }
-  TVar1.m_Index = func_?();
 code_?:
-  func_?(TVar1.m_Index);
+  func_?();
+code_?:
+  func_?();
   pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 
 
@@ -690,6 +692,9 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                   );
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                    );
@@ -712,144 +717,142 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_UpdateSound
                     ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+      func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_soundEmitterObject_is_null,(MethodInfo *)0x0);
     return;
   }
   pSVar1 = (this->fields).soundEmitterObject;
-  if (pSVar1 != (SoundEmitterObject *)0x0) {
-    this_00 = (pSVar1->fields).audioSource;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+  if (pSVar1 == (SoundEmitterObject *)0x0) goto code_?;
+  this_00 = (pSVar1->fields).audioSource;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)StringLiteral_audioSource_for_soundEmitterObje,(MethodInfo *)0x0);
-      return;
-    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)StringLiteral_audioSource_for_soundEmitterObje,(MethodInfo *)0x0);
+    return;
+  }
+  pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._._._.data
+  ;
+  if (((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+      (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (pDVar3,(Object *)StringLiteral_volume,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         ), this_00 == (AudioSource *)0x0)) || (TVar4.m_Index == 0))
+  goto code_?;
+  if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+      (TypeInfo__System__Single->_0).element_class) {
+    pfVar5 = (float *)func_?();
+    UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
+              (this_00,*pfVar5,(MethodInfo *)0x0);
     pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._._._.data;
-    if (((pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
-        (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar3,(Object *)StringLiteral_volume,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           ), this_00 != (AudioSource *)0x0)) && (TVar4.m_Index != 0)) {
-      pIVar5 = (Int32__Class *)TypeInfo__System__Single;
+    if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+       (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar3,(Object *)StringLiteral_pitch,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          ), TVar4.m_Index == 0)) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      pfVar5 = (float *)func_?();
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
+                (this_00,*pfVar5,(MethodInfo *)0x0);
+      this_01 = (this->fields)._._._.data;
+      if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                        (this_01,(Object *)StringLiteral_loop,(Object **)&stack0xfffffff8,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                        );
+      if (bVar2 != 0) {
+        if ((Object *)TVar4.m_Index == (Object *)0x0) goto code_?;
+        if ((((Object *)TVar4.m_Index)->klass->_0).element_class !=
+            (TypeInfo__System__Boolean->_0).element_class) {
+          TVar4.m_Index = func_?(TVar4.m_Index);
+          goto code_?;
+        }
+        pbVar6 = (bool *)func_?();
+        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
+                  (this_00,*pbVar6,(MethodInfo *)0x0);
+      }
+      UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_rolloffMode
+                (this_00,AudioRolloffMode__Enum_Custom,(MethodInfo *)0x0);
+      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                            (pDVar3,(Object *)StringLiteral_range,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            ), TVar4.m_Index == 0)) goto code_?;
       if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-          (TypeInfo__System__Single->_0).element_class) {
-        pfVar6 = (float *)func_?();
-        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_volume
-                  (this_00,*pfVar6,(MethodInfo *)0x0);
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar7 = (int *)func_?();
+        iVar8 = *piVar7;
+        fVar9 = _UNK_?;
+        if (((iVar8 != 0) && (fVar9 = _UNK_?, iVar8 != 1)) &&
+           (fVar9 = _UNK_?, iVar8 != 2)) {
+          fVar9 = _UNK_?;
+        }
+        UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_minDistance
+                  (this_00,fVar9,(MethodInfo *)0x0);
         pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                  (this->fields)._._._.data;
         if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
            (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                     Object,UnityEngine::UIElements::TextureId]::
                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (pDVar3,(Object *)StringLiteral_pitch,
+                              (pDVar3,(Object *)StringLiteral_range,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                               ), TVar4.m_Index == 0)) goto code_?;
-        pIVar5 = (Int32__Class *)TypeInfo__System__Single;
         if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-            (TypeInfo__System__Single->_0).element_class) {
-          pfVar6 = (float *)func_?(TVar4.m_Index);
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
-                    (this_00,*pfVar6,(MethodInfo *)0x0);
-          pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                   (this->fields)._._._.data;
-          if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-             (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                (pDVar3,(Object *)StringLiteral_loop,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                ), TVar4.m_Index == 0)) goto code_?;
-          pIVar5 = (Int32__Class *)TypeInfo__System__Boolean;
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-              (TypeInfo__System__Boolean->_0).element_class) {
-            pbVar7 = (bool *)func_?(TVar4.m_Index);
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                      (this_00,*pbVar7,(MethodInfo *)0x0);
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_rolloffMode
-                      (this_00,AudioRolloffMode__Enum_Custom,(MethodInfo *)0x0);
-            pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                     (this->fields)._._._.data;
-            if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-               (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  (pDVar3,(Object *)StringLiteral_range,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  ), TVar4.m_Index == 0)) goto code_?;
-            pIVar5 = TypeInfo__System__Int32;
-            if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar8 = (int *)func_?(TVar4.m_Index);
-              iVar9 = *piVar8;
-              fVar10 = _UNK_?;
-              if (((iVar9 != 0) && (fVar10 = _UNK_?, iVar9 != 1)) &&
-                 (fVar10 = _UNK_?, iVar9 != 2)) {
-                fVar10 = _UNK_?;
-              }
-              UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_minDistance
-                        (this_00,fVar10,(MethodInfo *)0x0);
-              pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields)._._._.data;
-              if ((pDVar3 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-                 (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,UnityEngine::UIElements::TextureId]::
-                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                    (pDVar3,(Object *)StringLiteral_range,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                    ), TVar4.m_Index == 0)) goto code_?;
-              pIVar5 = TypeInfo__System__Int32;
-              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-                  (TypeInfo__System__Int32->_0).element_class) {
-                piVar8 = (int *)func_?(TVar4.m_Index);
-                iVar9 = *piVar8;
-                fVar10 = _UNK_?;
-                if (((iVar9 != 0) && (fVar10 = _UNK_?, iVar9 != 1)) &&
-                   (fVar10 = _UNK_?, iVar9 != 2)) {
-                  fVar10 = _UNK_?;
-                }
-                UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_maxDistance
-                          (this_00,fVar10,(MethodInfo *)0x0);
-                bVar2 = MVSoundEmitter_ShouldPlay(this,(MethodInfo *)0x0);
-                bVar11 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::
-                        AudioSource_get_isPlaying(this_00,(MethodInfo *)0x0);
-                if (bVar2 == bVar11) {
-                  return;
-                }
-                bVar2 = MVSoundEmitter_ShouldPlay(this,(MethodInfo *)0x0);
-                if (bVar2 == 0) {
-                  UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
-                            (this_00,(MethodInfo *)0x0);
-                  return;
-                }
-                UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
-                          (this_00,(MethodInfo *)0x0);
-                return;
-              }
-            }
+            (TypeInfo__System__Int32->_0).element_class) {
+          piVar7 = (int *)func_?();
+          iVar8 = *piVar7;
+          fVar9 = _UNK_?;
+          if (((iVar8 != 0) && (fVar9 = _UNK_?, iVar8 != 1)) &&
+             (fVar9 = _UNK_?, iVar8 != 2)) {
+            fVar9 = _UNK_?;
           }
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_maxDistance
+                    (this_00,fVar9,(MethodInfo *)0x0);
+          bVar2 = MVSoundEmitter_ShouldPlay(this,(MethodInfo *)0x0);
+          bVar10 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_isPlaying
+                            (this_00,(MethodInfo *)0x0);
+          if (bVar2 == bVar10) {
+            return;
+          }
+          bVar2 = MVSoundEmitter_ShouldPlay(this,(MethodInfo *)0x0);
+          if (bVar2 == 0) {
+            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Stop_1
+                      (this_00,(MethodInfo *)0x0);
+            return;
+          }
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play
+                    (this_00,(MethodInfo *)0x0);
+          return;
         }
       }
-      func_?(TVar4.m_Index,pIVar5);
     }
   }
 code_?:
+  func_?(TVar4.m_Index);
+code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -114,7 +114,7 @@ bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
             value_00.hiddenValue = (short)((uint)uVar1 >> 0x10);
             iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                     ObscuredShort::ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-            if (-0x586f < iVar5) {
+            if (-0x585f < iVar5) {
               return 1;
             }
           }

@@ -3550,7 +3550,7 @@ code_?:
               bVar9 = 0;
               unaff_EDI = (RegexCharClass_SingleRange)this;
               if (iVar39 != 0) {
-                bVar26 = 9;
+                bVar26 = 0x1c;
                 this_11 = (MVAvatarLocal *)func_?(unaff_ESI,TypeInfo__MVAvatarLocal,1,0);
                 MVAvatarLocal::MVAvatarLocal_LeaveVehicle(this_11,bVar26,(MethodInfo *)unaff_ESI);
                 pMVar15 = (this->fields).networkGame;
@@ -5002,108 +5002,100 @@ code_?:
   uVar99 = (uint)((ulonglong)uVar98 >> 0x20);
   iVar39 = (int)uVar98;
   uVar100 = iVar39 - 1;
-  bVar101 = (byte)((uint)extraout_ECX_02 >> 8);
-  bVar102 = (byte)uVar100;
-  bVar103 = (byte)((uint)unaff_EBX >> 8);
+  bVar101 = (byte)uVar100;
+  bVar102 = (byte)((ulonglong)uVar98 >> 0x20);
   if (uVar100 != 0 && 0 < iVar39) {
+    bVar103 = *unaff_EBX;
     bVar104 = *unaff_EBX;
-    bVar105 = *unaff_EBX;
-    *unaff_EBX = bVar105 + bVar102 + bVar9;
-    *(byte *)(iVar39 + 0xf) =
-         *(byte *)(iVar39 + 0xf) << 1 | (CARRY1(bVar104,bVar102) || CARRY1(bVar105 + bVar102,bVar9));
+    *unaff_EBX = bVar104 + bVar102 + bVar9;
+    bVar105 = *(byte *)(iVar39 + 0xf);
+    *(byte *)(iVar39 + 0xf) = bVar105 << 1 | (CARRY1(bVar103,bVar102) || CARRY1(bVar104 + bVar102,bVar9))
+    ;
     puVar106 = (undefined2 *)segment(in_DS,(short)unaff_EBX + unaff_ESI.First + 0x10);
     *puVar106 = in_SS;
-    pbVar64 = (byte *)(uVar99 + uVar100 + -0x73);
-    bVar104 = *pbVar64;
-    bVar9 = *pbVar64;
-    *pbVar64 = bVar9 + bVar102 + CARRY4(uVar99,uVar100);
-    uVar107 = iVar39 + 0xf;
-    pbVar64 = (byte *)(uVar107 + uVar100 + -0x7194efb0 +
-                      CONCAT22((short)((uint)extraout_ECX_02 >> 0x10),
-                               CONCAT11(bVar101 + (char)extraout_ECX_02 +
-                                        (CARRY1(bVar104,bVar102) ||
-                                        CARRY1(bVar9 + bVar102,CARRY4(uVar99,uVar100))),
-                                        (char)extraout_ECX_02)) * 8);
-    bVar9 = *pbVar64;
-    bVar101 = *pbVar64;
-    *pbVar64 = bVar101 + bVar103 + CARRY4(uVar107,uVar100);
-    *(MonitorData *)((int)unaff_EDI + -0x71) =
-         (MonitorData)
-         ((char)*(MonitorData *)((int)unaff_EDI + -0x71) + bVar102 +
-         (CARRY1(bVar9,bVar103) || CARRY1(bVar101 + bVar103,CARRY4(uVar107,uVar100))));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    uVar107 = (uint)((bVar105 & 0x80) != 0);
+    pcVar68 = (char *)(uVar99 + uVar100 + uVar107 + -0x73);
+    *pcVar68 = *pcVar68 + bVar101 + (CARRY4(uVar99,uVar100) || CARRY4(uVar99 + uVar100,uVar107));
+    return;
   }
   pbVar64 = (byte *)((int)unaff_ESI + -0x24efaf81);
-  bVar104 = *pbVar64;
-  bVar105 = *pbVar64 + bVar101;
-  bVar19 = CARRY1(*pbVar64,bVar101) || CARRY1(bVar105,bVar9);
-  *pbVar64 = bVar105 + bVar9;
-  if (*pbVar64 == 0 || (SCARRY1(bVar104,bVar101) != SCARRY1(bVar105,bVar9)) != (char)*pbVar64 < '\0') {
+  bVar103 = *pbVar64;
+  bVar104 = *pbVar64 + extraout_CH;
+  bVar19 = CARRY1(*pbVar64,extraout_CH) || CARRY1(bVar104,bVar9);
+  *pbVar64 = bVar104 + bVar9;
+  if (*pbVar64 == 0 ||
+      (SCARRY1(bVar103,extraout_CH) != SCARRY1(bVar104,bVar9)) != (char)*pbVar64 < '\0') {
     pbVar64 = (byte *)(iVar39 + -0x6befaf81);
     bVar9 = *pbVar64;
-    bVar101 = *pbVar64;
-    *pbVar64 = bVar101 + bVar103 + bVar19;
-    *(int *)(iVar39 + 0xf) =
-         (int)(&UNK_? +
-              (uint)(CARRY1(bVar9,bVar103) || CARRY1(bVar101 + bVar103,bVar19)) +
-              *(int *)(iVar39 + 0xf));
-    bVar101 = *unaff_EBX;
+    bVar103 = (byte)((uint)unaff_EBX >> 8);
+    bVar102 = *pbVar64 + bVar103;
+    *pbVar64 = bVar102 + bVar19;
+    puVar108 = (uint *)(iVar39 + 0xf);
+    uVar109 = (uint)(CARRY1(bVar9,bVar103) || CARRY1(bVar102,bVar19));
+    uVar107 = *puVar108;
+    uVar110 = *puVar108;
+    *puVar108 = (uint)(&UNK_? + uVar110 + uVar109);
+    uVar107 = (uint)(0xefaf7d8f < uVar107 || CARRY4((uint)(&UNK_? + uVar110),uVar109));
+    bVar19 = CARRY4(uVar99,uVar100) || CARRY4(uVar99 + uVar100,uVar107);
+    iVar111 = uVar99 + uVar100 + uVar107;
     bVar9 = *unaff_EBX;
-    *unaff_EBX = bVar9 + bVar102 + CARRY4(uVar99,uVar100);
+    bVar103 = (byte)iVar111;
+    bVar102 = *unaff_EBX + bVar103;
+    *unaff_EBX = bVar102 + bVar19;
     *(byte *)(iVar39 + 0xf) =
-         *(byte *)(iVar39 + 0xf) << 1 |
-         (CARRY1(bVar101,bVar102) || CARRY1(bVar9 + bVar102,CARRY4(uVar99,uVar100)));
+         *(byte *)(iVar39 + 0xf) << 1 | (CARRY1(bVar9,bVar103) || CARRY1(bVar102,bVar19));
     bVar19 = (uVar100 & 1) != 0;
     pbVar64 = (byte *)(iVar39 + 0xf);
+    bVar102 = *pbVar64;
     bVar9 = *pbVar64;
-    bVar101 = *pbVar64;
-    *pbVar64 = bVar101 + 0x1f + bVar19;
+    *pbVar64 = bVar9 + 0x1f + bVar19;
     puVar108 = (uint *)(iVar39 + 0xf);
-    uVar109 = (uint)(0xe0 < bVar9 || CARRY1(bVar101 + 0x1f,bVar19));
+    uVar110 = (uint)(0xe0 < bVar102 || CARRY1(bVar9 + 0x1f,bVar19));
+    uVar99 = *puVar108;
     uVar107 = *puVar108;
-    uVar110 = *puVar108;
-    *puVar108 = (uVar110 - 0x29) + uVar109;
+    *puVar108 = (uVar107 - 0x29) + uVar110;
     puVar108 = (uint *)(iVar39 + 0xf);
-    uVar109 = (uint)(0x28 < uVar107 || CARRY4(uVar110 - 0x29,uVar109));
+    uVar110 = (uint)(0x28 < uVar99 || CARRY4(uVar107 - 0x29,uVar110));
+    uVar99 = *puVar108;
     uVar107 = *puVar108;
-    uVar110 = *puVar108;
-    *puVar108 = uVar110 + 3 + uVar109;
+    *puVar108 = uVar107 + 0x13 + uVar110;
     *(byte *)(iVar39 + 0xf) =
-         *(byte *)(iVar39 + 0xf) << 1 | (0xfffffffc < uVar107 || CARRY4(uVar110 + 3,uVar109));
+         *(byte *)(iVar39 + 0xf) << 1 | (0xffffffec < uVar99 || CARRY4(uVar107 + 0x13,uVar110));
     *(MonitorData *)unaff_EDI = *(MonitorData *)unaff_ESI;
     pbVar64 = (byte *)((int)unaff_ESI + (uint)((uVar100 & 0x400) != 0) * -2 + -0x78f5efaf);
     bVar9 = *pbVar64;
-    *pbVar64 = *pbVar64 + bVar102;
-    iVar111 = CONCAT22((short)(uVar100 >> 0x10),
-                      CONCAT11((char)(uVar100 >> 8) + bVar102 + CARRY1(bVar9,bVar102),bVar102));
+    *pbVar64 = *pbVar64 + bVar101;
+    iVar112 = CONCAT22((short)(uVar100 >> 0x10),
+                      CONCAT11((char)(uVar100 >> 8) + bVar101 + CARRY1(bVar9,bVar101),bVar101));
     LOCK();
-    iVar39 = *(int *)(iVar111 + 0x10);
-    *(int *)(iVar111 + 0x10) = uVar99 + uVar100;
+    iVar39 = *(int *)(iVar112 + 0x10);
+    *(int *)(iVar112 + 0x10) = iVar111;
     UNLOCK();
-    uVar112 = (undefined1)iVar39;
-    *(undefined1 *)(iVar111 + 0x10) = uVar112;
-    *(undefined1 *)(iVar111 + 0x10) = uVar112;
-    *(int *)(iVar111 + 0x10) = iVar39;
-    pcVar113 = (code *)swi(3);
-    (*pcVar113)();
+    uVar113 = (undefined1)iVar39;
+    *(undefined1 *)(iVar112 + 0x10) = uVar113;
+    *(undefined1 *)(iVar112 + 0x10) = uVar113;
+    *(int *)(iVar112 + 0x10) = iVar39;
+    pcVar114 = (code *)swi(3);
+    (*pcVar114)();
     return;
   }
+  bVar9 = *unaff_EBX;
   bVar101 = *unaff_EBX;
-  bVar9 = *unaff_EBX;
-  *unaff_EBX = bVar9 + bVar102 + bVar19;
+  *unaff_EBX = bVar101 + bVar102 + bVar19;
   bVar103 = *(byte *)(iVar39 + 0xf);
-  *(byte *)(iVar39 + 0xf) = bVar103 << 1 | (CARRY1(bVar101,bVar102) || CARRY1(bVar9 + bVar102,bVar19));
-  bVar101 = (bVar103 & 0x80) != 0;
-  pcVar113 = (code *)swi(0x8d);
-  iVar39 = (*pcVar113)();
+  *(byte *)(iVar39 + 0xf) = bVar103 << 1 | (CARRY1(bVar9,bVar102) || CARRY1(bVar101 + bVar102,bVar19));
+  bVar102 = (bVar103 & 0x80) != 0;
+  pcVar114 = (code *)swi(0x8d);
+  iVar39 = (*pcVar114)();
   bVar9 = *unaff_EBX;
-  bVar102 = *unaff_EBX + (byte)iVar39;
-  *unaff_EBX = bVar102 + bVar101;
+  bVar101 = *unaff_EBX;
+  *unaff_EBX = bVar101 + extraout_DL + bVar102;
   *(byte *)(iVar39 + 0x10) =
-       *(byte *)(iVar39 + 0x10) << 1 | (CARRY1(bVar9,(byte)iVar39) || CARRY1(bVar102,bVar101));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+       *(byte *)(iVar39 + 0x10) << 1 |
+       (CARRY1(bVar9,extraout_DL) || CARRY1(bVar101 + extraout_DL,bVar102));
+  pcVar114 = (code *)swi(3);
+  (*pcVar114)();
+  return;
 }
 
 
