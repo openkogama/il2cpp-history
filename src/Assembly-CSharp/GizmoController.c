@@ -43,7 +43,6 @@ void Assembly-CSharp.dll::GizmoController::GizmoController_Handle(GizmoControlle
       pEVar6 = (this->fields).editorStateMachine;
       if (pEVar6 != (EditorStateMachine *)0x0) {
         pDVar7 = (pEVar6->fields)._.data;
-        unaff_EBP = &action;
         pSStack_1 = TypeInfo__System__Single;
         action = 0x41700000;
         pOVar8 = (Object *)func_?();
@@ -185,25 +184,9 @@ joined_?:
   default:
     return;
   }
-  cVar10 = '\0';
   func_?();
-  bVar11 = (byte)((uint)in_stack_12 >> 8);
-  *(char *)(in_stack_12 + -0x2a) = *(char *)(in_stack_12 + -0x2a) + bVar11 + cVar10;
-  uVar13 = (undefined3)((uint)in_stack_12 >> 8);
-  bVar14 = (char)in_stack_12 - 0x28;
-  pbVar15 = (byte *)CONCAT31(uVar13,bVar14);
-  bVar16 = *pbVar15;
-  *(undefined2 *)pbVar15 = in_FPUControlWord;
-  pbVar17 = (byte *)((int)unaff_EBP + -0x30efc727);
-  bVar18 = CARRY1(*pbVar17,bVar11) || CARRY1(*pbVar17 + bVar11,bVar16 < 0xd7);
-  *pbVar17 = *pbVar17 + bVar11 + (bVar16 < 0xd7);
-  *(undefined2 *)pbVar15 = in_FPUControlWord;
-  bVar11 = (byte)((action & (uint)pbVar15) >> 8);
-  bVar16 = bVar14 + bVar11;
-  *(undefined2 *)CONCAT31(uVar13,bVar16 + bVar18) = in_FPUControlWord;
-  cRam_? = cRam_? + (char)(action & (uint)pbVar15) + (CARRY1(bVar14,bVar11) || CARRY1(bVar16,bVar18));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar10 = (code *)swi(1);
+  (*pcVar10)();
   return;
 }
 

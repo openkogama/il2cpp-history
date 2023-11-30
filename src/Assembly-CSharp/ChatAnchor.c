@@ -32,8 +32,6 @@ bool Assembly-CSharp.dll::ChatAnchor::ChatAnchor_BindAttachedBubble(ChatAnchor *
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Vector3 HandleOfScreenChatBubble(Camera, Vector3) */
 
 Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(Vector3 *__return_storage_ptr__,ChatAnchor *this,Camera *camera,Vector3 adjustedPosition,MethodInfo *method)
@@ -98,8 +96,9 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
                                 adjustedPosition.y = (float)&puStack_4;
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
-                                  if ((3.542519e-29 < (float)puVar8) || (puVar8 = puVar14, (float)puVar14 < 3.542519e-29)) {
-                                    adjustedPosition.x = (float)puVar8;
+                                  puVar5 = puVar8;
+                                  if ((3.5425288e-29 < (float)puVar8) || (puVar5 = puVar14, (float)puVar14 < 3.5425288e-29)) {
+                                    adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
                                   if ((fVar7 <= (float)&puStack_4) && (adjustedPosition.y = (float)&puStack_4, fVar10 < (float)&puStack_4)) {
@@ -112,20 +111,28 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble(V
                                   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToViewportPoint_1((Vector3 *)&stack0xffffffd4,camera,*pVVar11,(MethodInfo *)0x0);
                                   uVar16 = pVVar11->x;
                                   uVar17 = pVVar11->y;
-                                  if ((((0.0 < pVVar11->z) && (0.0 < (float)uVar16)) && ((float)uVar16 < 1.0)) && ((0.0 < (float)uVar17 && ((float)uVar17 < 1.0)))) {
-code_?:
-                                    pRVar2->klass = (RectTransform__Class *)adjustedPosition.x;
-                                    pRVar2->monitor = (MonitorData *)adjustedPosition.y;
-                                    (pRVar2->fields)._._._.m_CachedPtr = pTVar3;
-                                    return (Vector3 *)pRVar2;
+                                  if ((((pVVar11->z <= 0.0) || ((float)uVar16 <= 0.0)) || (1.0 <= (float)uVar16)) || (((float)uVar17 <= 0.0 || (1.0 <= (float)uVar17)))) {
+                                    pCVar1 = (this->fields).AttachedBubble;
+                                    puStack_4 = (undefined *)uVar16;
+                                    if (pCVar1 == (ChatBubble *)0x0) goto code_?;
+                                    switch((pCVar1->fields).ExtenderDock) {
+                                    case 0:
+                                      adjustedPosition.y = fVar7;
+                                      break;
+                                    case 1:
+                                      adjustedPosition.x = (float)puVar8;
+                                      break;
+                                    case 2:
+                                      adjustedPosition.x = (float)puVar14;
+                                      break;
+                                    case 3:
+                                      adjustedPosition.y = fVar10;
+                                    }
                                   }
-                                  pCVar1 = (this->fields).AttachedBubble;
-                                  puStack_4 = (undefined *)uVar16;
-                                  if (pCVar1 != (ChatBubble *)0x0) {
-                                    uVar18 = (pCVar1->fields).ExtenderDock;
-                                    if (3 < uVar18) goto code_?;
-                                    goto code_?;
-                                  }
+                                  pRVar2->klass = (RectTransform__Class *)adjustedPosition.x;
+                                  pRVar2->monitor = (MonitorData *)adjustedPosition.y;
+                                  (pRVar2->fields)._._._.m_CachedPtr = pTVar3;
+                                  return (Vector3 *)pRVar2;
                                 }
                               }
                             }
@@ -142,12 +149,11 @@ code_?:
       }
     }
   }
-  uVar18 = func_?();
-  *(byte *)(unaff_EBX + 0x307703f8) = *(byte *)(unaff_EBX + 0x307703f8) ^ (byte)uVar18;
 code_?:
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  pVVar11 = (Vector3 *)(**(code **)(&UNK_? + uVar18 * 4))();
+  uVar18 = func_?();
+  uRam_? = CONCAT22((short)((uint)uVar18 >> 0x10),CONCAT11(*(undefined1 *)(unaff_EBX + -0x5c6eefcd),(char)uVar18));
+  pcVar19 = (code *)swi(3);
+  pVVar11 = (Vector3 *)(*pcVar19)();
   return pVVar11;
 }
 
