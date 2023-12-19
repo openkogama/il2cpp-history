@@ -325,12 +325,12 @@ code_?:
     }
   }
 code_?:
-  uVar15 = func_?();
-  puVar16 = (undefined1 *)((int)&this_02[0x1d2a2b]._1.flags + 3);
-  *puVar16 = *puVar16 + (char)(uVar15 >> 8) + (uVar15 < 0x3d919710);
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  func_?();
+  puVar15 = &this_02[0x1d2a2b]._1.token;
+  *(char *)puVar15 = (char)*puVar15 + (char)(extraout_ECX >> 8) + (extraout_ECX < 0x3d929710);
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

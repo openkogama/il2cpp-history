@@ -35,6 +35,8 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	protected List<GameMeterVisualEffect> gameMeterVisualEffects;
 	[SerializeField]
 	private List<TierProgressData> tierProgressDataList;
+	[SerializeField]
+	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	private const float interpolationDuration = 2f;
 	private const int avatarHeadImageWidth = 128;
 	private const int avatarHeadImageHeight = 128;
@@ -47,6 +49,7 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	private float interpolationStartTime;
 	private AvatarPreviewer headPreviewer;
 	private Transform previewHeadRoot;
+	private bool hideSignUp;
 
 	// Nested types
 	[Serializable]
@@ -74,20 +77,20 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass23_0
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
 		public GameObject informationPopup;
 
 		// Constructors
-		public __c__DisplayClass23_0();
+		public __c__DisplayClass25_0();
 
 		// Methods
 		internal void _OnActiveProgressBarClicked_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _ScaleAndFadeLockForTier_d__43 : IEnumerator<object>
+	private sealed class _ScaleAndFadeLockForTier_d__45 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -103,7 +106,7 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 
 		// Constructors
 		[DebuggerHidden]
-		public _ScaleAndFadeLockForTier_d__43(int __1__state);
+		public _ScaleAndFadeLockForTier_d__45(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -139,7 +142,7 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	private void HandleUnlockedTiersProgressBars();
 	private void UpdateEditModeDisabledProgressBars();
 	private void UpdateProgressBar(GamePassTier progressBarToUpdate, int playerGamePoints);
-	[IteratorStateMachine(typeof(_ScaleAndFadeLockForTier_d__43))]
+	[IteratorStateMachine(typeof(_ScaleAndFadeLockForTier_d__45))]
 	private IEnumerator ScaleAndFadeLockForTier(int tier);
 	private void SetLockedStateForTier(int tier, bool tierUnlocked);
 	private void ActivateBar(int barIndex);

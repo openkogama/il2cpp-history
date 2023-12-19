@@ -534,8 +534,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void SetTeam(MVTeam) */
 
 void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTeam
@@ -544,14 +542,10 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
 {
   pIVar1 = (this->fields).teamRequirementImage;
   (this->fields).team = team;
-  cVar2 = (int)pIVar1 < 0;
-  bVar3 = true;
-  if (pIVar1 == (Image *)0x0) goto code_?;
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)pIVar1,(MethodInfo *)0x0);
-  cVar2 = (int)this_00 < 0;
-  bVar3 = true;
-  if (this_00 == (GameObject *)0x0) goto code_?;
+  if ((pIVar1 == (Image *)0x0) ||
+     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pIVar1,(MethodInfo *)0x0), this_00 == (GameObject *)0x0))
+  goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
             (this_00,1,(MethodInfo *)0x0);
   pIVar1 = (this->fields).teamRequirementImage;
@@ -565,85 +559,62 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       func_?();
     }
     colorStyle = 1.12104e-44;
-    pCVar4 = &CStack_5;
+    pCVar2 = &CStack_3;
     break;
   case MVTeam__Enum_Red:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.26117e-44;
-    pCVar4 = &CStack_6;
+    pCVar2 = &CStack_4;
     break;
   case MVTeam__Enum_Green:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.54143e-44;
-    pCVar4 = &CStack_7;
+    pCVar2 = &CStack_5;
     break;
   case MVTeam__Enum_Yellow:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     colorStyle = 1.4013e-44;
-    pCVar4 = &CStack_8;
+    pCVar2 = &CStack_6;
     break;
   default:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar4 = (Color *)&stack0xffffff9c;
+    pCVar2 = (Color *)&stack0xffffff9c;
     goto code_?;
   case MVTeam__Enum_None:
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar4 = &CStack_9;
+    pCVar2 = &CStack_7;
 code_?:
     colorStyle = 3.64338e-44;
   }
-  pCVar4 = Styles::Styles_GetColor(pCVar4,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-  CStack_9.r = pCVar4->a;
-  cVar2 = (int)pIVar1 < 0;
-  bVar3 = pIVar1 == (Image *)0x0;
-  this = (TierUnlockedItemElement *)0x0;
-  if (!bVar3) {
-    CStack_9.g = (float)(pIVar1->klass->vtable).get_raycastTarget.methodPtr;
-    (*(code *)(pIVar1->klass->vtable).set_color.method)();
+  pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+  CStack_7.r = pCVar2->a;
+  if (pIVar1 != (Image *)0x0) {
+    pIVar8 = pIVar1->klass;
+    CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
+    (*(code *)(pIVar8->vtable).set_color.method)();
     return;
   }
 code_?:
-  cVar10 = '\0';
-  bVar11 = 0;
-  CStack_9.g = (float)&UNK_?;
+  CStack_7.g = (float)&UNK_?;
   func_?();
-  if (bVar3 || cVar10 != cVar2) {
-    bVar12 = (byte)extraout_CX;
-    bVar13 = extraout_AH + bVar12;
-    bVar3 = CARRY1(extraout_AH,bVar12) || CARRY1(bVar13,bVar11);
-    if ((byte)(bVar13 + bVar11) == '\0' ||
-        (SCARRY1(extraout_AH,bVar12) != SCARRY1(bVar13,bVar11)) != (char)(bVar13 + bVar11) < '\0') {
-      bVar13 = (byte)((ushort)extraout_CX >> 8);
-      bVar11 = bVar12 + bVar13;
-      if ((byte)(bVar11 + bVar3) == '\0' ||
-          (SCARRY1(bVar12,bVar13) != SCARRY1(bVar11,bVar3)) != (char)(bVar11 + bVar3) < '\0') {
-        *(char *)(team + MVTeam__Enum_Red) =
-             *(char *)(team + MVTeam__Enum_Red) + *(char *)team +
-             (CARRY1(bVar12,bVar13) || CARRY1(bVar11,bVar3));
-        *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + '<';
-        *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + '#';
-        *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x34;
-        pcVar14 = (code *)swi(3);
-        (*pcVar14)();
-        return;
-      }
-      goto code_?;
-    }
-  }
-  *(undefined1 *)&this[-1].fields.rootTransform = 0;
-code_?:
-  CStack_9.g = (float)&UNK_?;
-  func_?();
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + 'l';
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x77;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x5a;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x24;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x3d;
+  *(char *)(unaff_EBX + 0x10) = *(char *)(unaff_EBX + 0x10) + -0x34;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -563,8 +563,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     return;
   }
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
+  return;
 }
 
 

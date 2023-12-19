@@ -136,13 +136,15 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
                GameStatCounterType__Enum statType,int32_t excludedActorNr,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  pIStack_3 = (Il2CppClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = (int)&pIStack_3;
-  puStack_4 = &stack0xffffffa4;
-  pOVar5 = unaff_ESI;
-  puVar6 = &stack0xffffffa4;
+  puVar1 = &stack0xfffffffc;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffffa4;
+  method_00 = unaff_EDI;
+  pOVar6 = unaff_ESI;
+  puVar7 = &stack0xffffffa4;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
@@ -166,105 +168,112 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
                     MethodInfo__System__Collections__Generic__KeyValuePair<int,_ActorCounter>__get_Value__
                    );
     cRam_? = '\x01';
-    puVar6 = puStack_4;
+    puVar7 = puStack_5;
   }
-  puStack_4 = puVar6;
-  auStack_7._24_4_ = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  _Stack_34.rgctx_data = (Il2CppRGCTXData *)0x0;
-  _Stack_30.genericMethod = (Il2CppGenericMethod *)0x0;
-  uStack_8 = 0;
-  uStack_9._0_2_ = 0;
-  uStack_9._2_2_ = 0;
-  uStack_9._4_2_ = 0;
-  uStack_9._6_1_ = 0;
-  uStack_9._7_1_ = 0;
+  puStack_5 = puVar7;
+  byAscending = (bool)pOVar6;
+  DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_8._version = 0;
+  DStack_8._index = 0;
+  DStack_8._current.key = 0;
+  DStack_8._16_8_ = 0;
   *score = 0;
   this_00 = (this->fields).teamCounters;
-  if (this_00 != (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) {
-    pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
+  if (((this_00 != (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)0x0) &&
+      (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,team,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_TeamCounter>__get_Item_MV__WorldObject__MVTeam_
+                          ), pOVar6 != (Object *)0x0)) &&
+     (pOVar9 = pOVar6[1].klass, pOVar9 != (Object__Class *)0x0)) {
+    method_00 = (MethodInfo *)auStack_10;
+    pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)pOVar9,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
                        );
-    if ((pOVar10 != (Object *)0x0) && (this_02 = pOVar10[1].klass, this_02 != (Object__Class *)0x0)) {
-      method_00 = (MethodInfo *)auStack_7;
-      unaff_EBX = 
-      MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__;
-      pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-               Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                          method_00,(Dictionary_2_System_UInt32_System_Object_ *)this_02,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_ActorCounter>__GetEnumerator__
-                         );
-      unaff_ESI = (Object__Class *)(auStack_7 + 0x18);
-      uStack_12 = 0;
-      auStack_7._24_4_ = pDVar11->_dictionary;
-      _Stack_34 = (_union_154)pDVar11->_version;
-      _Stack_30 = (_union_155)pDVar11->_index;
-      uStack_8 = (pDVar11->_current).key;
-      uStack_9 = *(undefined8 *)&(pDVar11->_current).value;
-      uStack_1 = 1;
-      pOStack_13 = unaff_ESI;
-      while( true ) {
-        do {
-          bVar14 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-                  Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                             (auStack_7 + 0x18),
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
-                            );
-          if (bVar14 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                      ((Object *)unaff_ESI,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
-                       ,method_00);
-            *unaff_FS_OFFSET = (int)pIStack_3;
-            return;
+    unaff_ESI = (Object *)(auStack_10 + 0x18);
+    uStack_12 = 0;
+    DStack_8._dictionary = pDVar11->_dictionary;
+    DStack_8._version = pDVar11->_version;
+    DStack_8._index = pDVar11->_index;
+    DStack_8._current.key = (pDVar11->_current).key;
+    DStack_8._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
+    uStack_2 = 1;
+    pOStack_13 = unaff_ESI;
+    while( true ) {
+      do {
+        bVar14 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                           (auStack_10 + 0x18),
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__MoveNext__
+                          );
+        byAscending = (bool)pOVar9;
+        if (bVar14 == 0) {
+          uStack_2 = 0xffffffff;
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                    (unaff_ESI,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ActorCounter>__Dispose__
+                     ,method_00);
+          *unaff_FS_OFFSET = uStack_4;
+          return;
+        }
+      } while (DStack_8._current.key == excludedActorNr);
+      unaff_EDI = (MethodInfo *)excludedActorNr;
+      if (DStack_8._current.value == (Object *)0x0) break;
+      iVar15 = *(int *)((int)DStack_8._current.value + 8);
+      if (0 < iVar15) {
+        switch(statType & 0xff) {
+        case GameStatCounterType__Enum_Kill:
+        case GameStatCounterType__Enum_Collectible:
+        case GameStatCounterType__Enum_OculusKill:
+          if (*score < iVar15) {
+            *score = iVar15;
           }
-        } while (uStack_8 == excludedActorNr);
-        unaff_EDI = excludedActorNr;
-        pOVar5 = this_02;
-        if ((int)uStack_9 == 0) break;
-        iVar15 = *(int *)((int)uStack_9 + 8);
-        if (0 < iVar15) {
-          switch(statType & 0xff) {
-          case GameStatCounterType__Enum_Kill:
-          case GameStatCounterType__Enum_Collectible:
-          case GameStatCounterType__Enum_OculusKill:
-            if (*score < iVar15) {
-              *score = iVar15;
-            }
-            break;
-          case GameStatCounterType__Enum_Flag:
-          case GameStatCounterType__Enum_TimeAttackFlag:
-            if (((*score < 0) || (iVar15 < *score)) || (*score == 0)) {
-              *score = iVar15;
-            }
+          break;
+        case GameStatCounterType__Enum_Flag:
+        case GameStatCounterType__Enum_TimeAttackFlag:
+          if (((*score < 0) || (iVar15 < *score)) || (*score == 0)) {
+            *score = iVar15;
           }
         }
       }
     }
   }
-  uVar16 = func_?();
-  uVar17 = (undefined2)((uint6)uVar16 >> 0x20);
-  uVar18 = (undefined4)uVar16;
-  out(uVar17,uVar18);
-  out(uVar17,uVar18);
-  out(uVar17,uVar18);
+  bVar16 = 0;
+  func_?();
+  bVar17 = CARRY1(*extraout_EDX,unaff_BL) || CARRY1(*extraout_EDX + unaff_BL,bVar16);
+  *extraout_EDX = *extraout_EDX + unaff_BL + bVar16;
+  bVar16 = extraout_CL + (byte)extraout_EDX;
+  bVar18 = CARRY1(extraout_CL,(byte)extraout_EDX) || CARRY1(bVar16,bVar17);
+  bVar16 = bVar16 + bVar17;
+  uVar19 = (ulonglong)CONCAT14(bVar18,DStack_8._current.value) << 1;
+  bVar17 = (uVar19 & 0x100000000) != 0;
+  bVar20 = *(char *)&unaff_EDI->methodPointer + bVar16;
+  bVar21 = CARRY1(*(byte *)&unaff_EDI->methodPointer,bVar16) || CARRY1(bVar20,bVar17);
+  *(byte *)&unaff_EDI->methodPointer = bVar20 + bVar17;
+  uVar19 = (ulonglong)CONCAT14(bVar21,(uint)uVar19 | (uint)bVar18) << 1;
+  DStack_8._current.value = (Object *)((uint)uVar19 | (uint)bVar21);
+  *extraout_EDX = *extraout_EDX + unaff_BL + ((uVar19 & 0x100000000) != 0);
+  pOVar6 = unaff_ESI;
+  puVar7 = &stack0xfffffffc;
+  pOVar22 = unaff_ESI;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__HighScores,&stack0xfffffffc);
+    func_?(&TypeInfo__HighScores,&stack0xfffffffc,unaff_ESI);
     cRam_? = '\x01';
+    puVar7 = puVar1;
   }
-  teamCounters = ((Dictionary_2_System_UInt32_System_Object___Fields *)&(pOVar5->_0).name)->_buckets
-  ;
-  this_01 = (HighScores *)func_?(TypeInfo__HighScores,unaff_EDI + 5,unaff_ESI);
+  bVar14 = (bool)pOVar22;
+  pOVar9 = pOVar6[1].klass;
+  this_01 = (HighScores *)func_?(TypeInfo__HighScores,unaff_EDI,unaff_ESI);
   HighScores::HighScores__ctor
-            (this_01,(GameStatCounterType__Enum)unaff_EBX,
-             (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)teamCounters,auStack_7[0],
-             auStack_7._4_4_,auStack_7[8],(MethodInfo *)0x0);
+            (this_01,(GameStatCounterType__Enum)puVar7,
+             (Dictionary_2_MV_WorldObject_MVTeam_TeamCounter_ *)pOVar9,bVar14,
+             (WinningConditionPresentStyle__Enum)method_00,byAscending,(MethodInfo *)0x0);
   return;
 }
 

@@ -27,7 +27,7 @@ public class ModelCursor
 	private void HandleLaserMovingEdge(CubePickingInfo movingEdgeCube, GameObject targetGameObject);
 	protected void HandleLaser(CubePickingInfo movingEdgeCube, CubePickingInfo selectedCube, GameObject targetGameObject, BuildState buildState, bool addCube);
 	public void SetErrorCursor(IntVector iPos, GameObject targetGameObject, bool showUnlockNotification);
-	public static void ShowUnlockMaterialNotification();
+	public static void ShowUnlockMaterialNotification(bool useIt = false, NotificationLifetime lifetime = NotificationLifetime.Low);
 	public virtual void Remove();
 }
 

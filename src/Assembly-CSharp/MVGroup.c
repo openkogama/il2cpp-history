@@ -269,7 +269,7 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeBoundsForWOs
                   (&BStack_4,point,(MethodInfo *)0x0);
         point_00.y = BStack_3.m_Extents.y + fVar8;
         point_00.x = fVar7 + (pBVar2->m_Center).x;
-        point_00.z = BStack_3.m_Extents.z + 3.5110786e-29;
+        point_00.z = BStack_3.m_Extents.z + 3.5111942e-29;
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
                   (&BStack_4,point_00,(MethodInfo *)0x0);
       }

@@ -2244,7 +2244,7 @@ bool Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_LayerScan_1
 {
   if (cRam_? == '\0') {
     func_?();
-    in_stack_1 = 0xcce8;
+    in_stack_1 = 0xddc0;
     in_stack_2 = 0x119b;
     in_stack_3 = 0x1859;
     in_stack_4 = 0x1025;
@@ -3686,7 +3686,7 @@ void Assembly-CSharp.dll::MVSweptElipsoidCheck::MVSweptElipsoidCheck_MoveAxisAli
       fStack_16 = VStack_3.z;
       if (cRam_? == '\0') {
         VStack_3.x = 3.258252e-29;
-        VStack_3.y = 2.4587905e-28;
+        VStack_3.y = 2.4598285e-28;
         func_?();
         cRam_? = '\x01';
         uVar10 = _UNK_?;

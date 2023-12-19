@@ -227,9 +227,8 @@ joined_?:
     return;
   }
   func_?();
-  pcVar10 = (code *)swi(1);
-  (*pcVar10)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

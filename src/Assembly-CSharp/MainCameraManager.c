@@ -1297,7 +1297,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Init
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     func_?(&StringLiteral_UXElementSecondary);
     func_?(&StringLiteral_Logic);
     func_?(&StringLiteral_CamRotateTarget);
@@ -1309,7 +1309,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Init
   iVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_UXElement,(MethodInfo *)0x0);
   uVar3 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                    (::StringLiteral_Preview,(MethodInfo *)0x0);
+                    (StringLiteral_Preview,(MethodInfo *)0x0);
   uVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_Hidden,(MethodInfo *)0x0);
   uVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer

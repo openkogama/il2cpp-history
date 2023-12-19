@@ -33,30 +33,30 @@ public class DesktopCubeModelingController : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__8_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__8_2;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__9_0;
-		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__10_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__9_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__9_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__10_0;
+		public static ExecuteEvents.EventFunction<IModalPopupCreator> __9__11_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _PublishCallback_b__8_0(IModalPopupCreator x, BaseEventData y);
-		internal void _PublishCallback_b__8_2(IUIStack x, BaseEventData y);
-		internal void _OnPublishPlanetFinished_b__9_0(IUIStack x, BaseEventData y);
-		internal void _TakeScreenshot_b__10_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PublishCallback_b__9_0(IModalPopupCreator x, BaseEventData y);
+		internal void _PublishCallback_b__9_2(IUIStack x, BaseEventData y);
+		internal void _OnPublishPlanetFinished_b__10_0(IUIStack x, BaseEventData y);
+		internal void _TakeScreenshot_b__11_0(IModalPopupCreator x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass8_0
+	private sealed class __c__DisplayClass9_0
 	{
 		// Fields
 		public string errorText;
 
 		// Constructors
-		public __c__DisplayClass8_0();
+		public __c__DisplayClass9_0();
 
 		// Methods
 		internal void _PublishCallback_b__3(IModalPopupCreator x, BaseEventData y);
@@ -68,13 +68,14 @@ public class DesktopCubeModelingController : MonoBehaviour
 	// Methods
 	public void Initialize(CubeModelingStateMachine cubeModelingStateMachine);
 	public void SetMaterial(byte materialId);
+	public void SwitchToDefaultTool();
 	public void PublishGame();
 	public void PublishCallback(bool confirmed, ConfirmationPopup popup);
 	private void OnPublishPlanetFinished(string completionMessage);
 	public void TakeScreenshot();
 	[CompilerGenerated]
-	private void _PublishGame_b__7_0(IModalPopupCreator x, BaseEventData y);
+	private void _PublishGame_b__8_0(IModalPopupCreator x, BaseEventData y);
 	[CompilerGenerated]
-	private void _PublishCallback_b__8_1(string errorText);
+	private void _PublishCallback_b__9_1(string errorText);
 }
 

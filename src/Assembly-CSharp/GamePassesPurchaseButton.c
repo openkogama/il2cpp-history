@@ -23,9 +23,9 @@ void Assembly-CSharp.dll::GamePassesPurchaseButton::GamePassesPurchaseButton_Hid
 }
 
 
-/* Void Initialize(GamePassTier) */
+/* Boolean Initialize(GamePassTier) */
 
-void Assembly-CSharp.dll::GamePassesPurchaseButton::GamePassesPurchaseButton_Initialize
+bool Assembly-CSharp.dll::GamePassesPurchaseButton::GamePassesPurchaseButton_Initialize
                (GamePassesPurchaseButton *this,GamePassTier__Enum tierToDisplay,MethodInfo *method)
 
 {
@@ -104,14 +104,21 @@ code_?:
             }
             pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
             if (pPVar1 != (PlayerPlanetData *)0x0) {
-              if ((pPVar1->fields).gamePassTier != (object->fields).tierDisplayed) {
-                return;
-              }
-              pTVar7 = (object->fields).toggleButton;
-              if (pTVar7 != (ToggleButtonAnimation *)0x0) {
+              if ((pPVar1->fields).gamePassTier == (object->fields).tierDisplayed) {
+                pTVar7 = (object->fields).toggleButton;
+                if (pTVar7 == (ToggleButtonAnimation *)0x0) goto code_?;
                 ToggleButtonAnimation::ToggleButtonAnimation_SetToggleOnWithoutInterpolation
                           (pTVar7,(MethodInfo *)0x0);
-                return;
+              }
+code_?:
+              pBVar5 = (object->fields).purchaseButton;
+              if ((pBVar5 != (Button *)0x0) &&
+                 (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pBVar5,(MethodInfo *)0x0),
+                 pGVar6 != (GameObject *)0x0)) {
+                bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_activeSelf(pGVar6,(MethodInfo *)0x0);
+                return bVar8;
               }
             }
           }
@@ -125,11 +132,11 @@ code_?:
         method_00 = (MethodInfo *)0x0;
         pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pBVar5,(MethodInfo *)0x0);
-        value = (bool)pBVar5;
+        bVar8 = (bool)pBVar5;
         if (pGVar6 != (GameObject *)0x0) {
 code_?:
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar6,value,method_00);
+                    (pGVar6,bVar8,method_00);
           goto code_?;
         }
       }
@@ -142,22 +149,22 @@ code_?:
                        );
         cRam_? = '\x01';
       }
-      pTVar8 = (object->fields).priceText;
+      pTVar9 = (object->fields).priceText;
       pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                          ((Dictionary_2_System_ByteEnum_System_Object_ *)this_01,tierToDisplay,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                          );
       if ((pOVar2 != (Object *)0x0) &&
-         (pSVar9 = mscorlib.dll::System::Int32::Int32_ToString
-                             ((Int32 *)(pOVar2 + 2),(MethodInfo *)0x0), pTVar8 != (Text *)0x0)) {
-        (*(code *)(pTVar8->klass->vtable).set_text.method)
-                  (pTVar8,pSVar9,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
+         (pSVar10 = mscorlib.dll::System::Int32::Int32_ToString
+                              ((Int32 *)(pOVar2 + 2),(MethodInfo *)0x0), pTVar9 != (Text *)0x0)) {
+        (*(code *)(pTVar9->klass->vtable).set_text.method)
+                  (pTVar9,pSVar10,(pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
+                  );
         pGVar6 = (object->fields).freeTryButton;
         if (pGVar6 != (GameObject *)0x0) {
           method_00 = (MethodInfo *)0x0;
-          value = 1;
+          bVar8 = 1;
           goto code_?;
         }
       }
@@ -185,7 +192,7 @@ code_?:
            pGVar6 != (GameObject *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar6,1,(MethodInfo *)0x0);
-          pTVar8 = (object->fields).disabledPriceText;
+          pTVar9 = (object->fields).disabledPriceText;
           pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                              ((Dictionary_2_System_ByteEnum_System_Object_ *)this_01,
@@ -196,8 +203,8 @@ code_?:
                              );
           if ((pOVar2 != (Object *)0x0) &&
              (mscorlib.dll::System::Int32::Int32_ToString((Int32 *)(pOVar2 + 2),(MethodInfo *)0x0),
-             pTVar8 != (Text *)0x0)) {
-            (*(code *)(pTVar8->klass->vtable).set_text.method)();
+             pTVar9 != (Text *)0x0)) {
+            (*(code *)(pTVar9->klass->vtable).set_text.method)();
             goto code_?;
           }
         }
@@ -205,69 +212,69 @@ code_?:
       goto code_?;
     }
 code_?:
-    pAVar10 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    pNVar11 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    pAVar11 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar11,(Object *)object,MethodInfo__GamePassesPurchaseButton__UpdatePriceText__,
+              (pNVar12,(Object *)object,MethodInfo__GamePassesPurchaseButton__UpdatePriceText__,
                (MethodInfo *)0x0);
-    pAVar10 = (Action *)
+    pAVar11 = (Action *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar10,(Delegate *)pNVar11,(MethodInfo *)0x0);
-    if (pAVar10 == (Action *)0x0) {
+                        ((Delegate *)pAVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
+    if (pAVar11 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
       func_?();
-      pAVar10 = TypeInfo__GamePassProgressionController->static_fields->
+      pAVar11 = TypeInfo__GamePassProgressionController->static_fields->
                 OnGamePassesProgressionUpdate;
-      pNVar11 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar11,(Object *)object,MethodInfo__GamePassesPurchaseButton__UpdatePriceText__,
+                (pNVar12,(Object *)object,MethodInfo__GamePassesPurchaseButton__UpdatePriceText__,
                  (MethodInfo *)0x0);
-      pAVar10 = (Action *)
+      pAVar11 = (Action *)
                 mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar10,(Delegate *)pNVar11,(MethodInfo *)0x0);
-      if (pAVar10 == (Action *)0x0) {
+                          ((Delegate *)pAVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
+      if (pAVar11 == (Action *)0x0) {
         TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
              (Action *)0x0;
-code_?:
-        func_?();
-        return;
       }
-      pAVar12 = (Action *)0x0;
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar12 = pAVar10;
+      else {
+        pAVar13 = (Action *)0x0;
+        if (pAVar11->klass == TypeInfo__System__Action) {
+          pAVar13 = pAVar11;
+        }
+        if (pAVar13 == (Action *)0x0) goto code_?;
+        TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
+             pAVar13;
+        pAVar13 = (Action *)0x0;
+        if (pAVar11->klass == TypeInfo__System__Action) {
+          pAVar13 = pAVar11;
+        }
+        if (pAVar13 == (Action *)0x0) goto code_?;
       }
-      if (pAVar12 == (Action *)0x0) goto code_?;
-      TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
-           pAVar12;
-      pAVar12 = (Action *)0x0;
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar12 = pAVar10;
-      }
-      if (pAVar12 != (Action *)0x0) goto code_?;
+      func_?();
+      goto code_?;
     }
-    else {
-      pAVar12 = (Action *)0x0;
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar12 = pAVar10;
-      }
-      if (pAVar12 == (Action *)0x0) goto code_?;
-      TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar12;
-      pAVar12 = (Action *)0x0;
-      if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar12 = pAVar10;
-      }
-      if (pAVar12 != (Action *)0x0) goto code_?;
+    pAVar13 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar13 = pAVar11;
     }
+    if (pAVar13 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar13;
+    pAVar13 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar13 = pAVar11;
+    }
+    if (pAVar13 != (Action *)0x0) goto code_?;
   }
+code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
+  pcVar14 = (code *)swi(3);
+  bVar8 = (*pcVar14)();
+  return bVar8;
 }
 
 

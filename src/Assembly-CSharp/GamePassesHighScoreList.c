@@ -1287,7 +1287,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Start
                    );
     func_?(&TypeInfo__GamePassesHighScoreUpdateManager);
     func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                    GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
@@ -1442,60 +1442,78 @@ code_?:
   if (this_00 != (EmbeddedPlayerConfig *)0x0) {
     pEVar12 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                         ((EmbeddedSiteConfigData *)&pLStack_10,this_00,(MethodInfo *)0x0);
-    if ((pEVar12->allowsModals == 0) && (pEVar12->allowsOpenInNewTab == 0)) {
-      uVar13._0_1_ = pEVar12->showTouristPromotion;
-      uVar13._1_1_ = pEVar12->allowsOpenInNewTab;
-      uVar13._2_1_ = pEVar12->allowsRedirectToWebpage;
-      uVar13._3_1_ = pEVar12->allowsModals;
-      uVar13 = uVar13 >> 0x10 & 0xff;
+    uVar13 = pEVar12->hideSignUp;
+    uVar14._0_1_ = pEVar12->showTouristPromotion;
+    uVar14._1_1_ = pEVar12->allowsOpenInNewTab;
+    uVar14._2_1_ = pEVar12->allowsRedirectToWebpage;
+    uVar14._3_1_ = pEVar12->allowsModals;
+    uVar15._0_1_ = pEVar12->integratedSdk;
+    uVar15._1_1_ = pEVar12->allowsFallbackAds;
+    uVar15._2_1_ = pEVar12->showPlayButtonAd;
+    uVar15._3_1_ = pEVar12->hideGoldShop;
+    if (uVar13 == '\0') {
+      if ((pEVar12->allowsModals == 0) && (pEVar12->allowsOpenInNewTab == 0)) {
+        uVar16._0_1_ = pEVar12->showTouristPromotion;
+        uVar16._1_1_ = pEVar12->allowsOpenInNewTab;
+        uVar16._2_1_ = pEVar12->allowsRedirectToWebpage;
+        uVar16._3_1_ = pEVar12->allowsModals;
+        uVar16 = uVar16 >> 0x10 & 0xff;
+      }
+      else {
+        uVar16 = 1;
+      }
+      bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+      if ((bVar8 & -(uVar16 != 0)) != 0) {
+        value = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
+                  (value,ExceptionArgument__Enum_obj,method_00);
+        original = (this->fields).touristInformationPopup;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object,uVar14,uVar15);
+        }
+        pOVar17 = (Object__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)original,
+                             GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
+                            );
+        if (value != (Object *)0x0) {
+          value[1].klass = pOVar17;
+          func_?(value + 1,pOVar17);
+          pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                              );
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                     MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (pGVar9,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
+        }
+        goto code_?;
+      }
     }
     else {
-      uVar13 = 1;
-    }
-    bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-    if ((bVar8 & -(uVar13 != 0)) != 0) {
-      value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_55
-                (value,ExceptionArgument__Enum_obj,method_00);
-      pGVar9 = (this->fields).touristInformationPopup;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      pOVar14 = (Object__Class *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pGVar9,
-                           UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                          );
-      if (value == (Object *)0x0) goto code_?;
-      value[1].klass = pOVar14;
-      func_?(value + 1,pOVar14);
-      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar9,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
+      MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

@@ -239,7 +239,7 @@ Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_Create_2
     func_?(&TypeInfo__UnityEngine__RenderTexture);
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__String);
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     func_?(&StringLiteral__Item_);
     func_?(&StringLiteral__woID_);
     func_?(&StringLiteral_Preview__0__RenderCam);
@@ -270,7 +270,7 @@ Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_Create_2
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
                 ((Object_1 *)pGVar2,pSVar5,(MethodInfo *)0x0);
       iVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                         (::StringLiteral_Preview,(MethodInfo *)0x0);
+                         (StringLiteral_Preview,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                 (pGVar2,iVar6,(MethodInfo *)0x0);
       this = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
@@ -322,7 +322,7 @@ Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_Create_2
                                  (MethodInfo *)0x0);
                       pCVar8 = (pOVar3->fields).previewCam;
                       iVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::
-                               LayerMask_NameToLayer(::StringLiteral_Preview,(MethodInfo *)0x0);
+                               LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
                       if (pCVar8 != (Camera *)0x0) {
                         UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
                                   (pCVar8,1 << ((byte)iVar6 & 0x1f),(MethodInfo *)0x0);
@@ -914,7 +914,7 @@ void Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_OnPostRender
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_3
-              (transfrom,::StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
+              (transfrom,StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);
@@ -932,7 +932,7 @@ void Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_OnPreCull
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._PreviewGameObject_k__BackingField;
@@ -943,7 +943,7 @@ void Assembly-CSharp.dll::ObjectPreviewer::ObjectPreviewer_OnPreCull
          (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
                   UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (::StringLiteral_Preview,(MethodInfo *)0x0);
+                      (StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
     return;
   }

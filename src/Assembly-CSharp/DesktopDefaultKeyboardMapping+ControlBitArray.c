@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping+ControlBitArray::
     cRam_? = '\x01';
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x35,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x36,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
   (this->fields).controlDown = this_00;
   func_?(method_00,this_00);
@@ -124,7 +124,7 @@ code_?:
         uVar7 = ctrl >> 5;
         if (uVar7 < pIVar6->max_length) {
           pIVar6->vector[uVar7] =
-               pIVar6->vector[uVar7] & ~(1 << (ctrl & KogamaControls__Enum_ToggleDrawPlane));
+               pIVar6->vector[uVar7] & ~(1 << (ctrl & KogamaControls__Enum_CreateNewModel));
           piVar8 = &(pBVar1->fields)._version;
           *piVar8 = *piVar8 + 1;
           return;
@@ -136,7 +136,7 @@ code_?:
       uVar7 = ctrl >> 5;
       if (uVar7 < pIVar6->max_length) {
         pIVar6->vector[uVar7] =
-             pIVar6->vector[uVar7] | 1 << (ctrl & KogamaControls__Enum_ToggleDrawPlane);
+             pIVar6->vector[uVar7] | 1 << (ctrl & KogamaControls__Enum_CreateNewModel);
         piVar8 = &(pBVar1->fields)._version;
         *piVar8 = *piVar8 + 1;
         return;

@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
-     LaserPointer_DoDeactivateLaserAfterDuration_d_46_MoveNext
-               (LaserPointer_DoDeactivateLaserAfterDuration_d_46 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__47::
+     LaserPointer_DoDeactivateLaserAfterDuration_d_47_MoveNext
+               (LaserPointer_DoDeactivateLaserAfterDuration_d_47 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -34,22 +34,28 @@ bool Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
       (this->fields).__1__state = 1;
       return 1;
     }
+    pAVar8 = (pLVar2->fields).OnLaserActive;
     (pLVar2->fields).activeDuration = 0.0;
     (pLVar2->fields).isActive = 0;
+    if (pAVar8 != (Action_2_Boolean_Boolean_ *)0x0) {
+      (*(pAVar8->fields)._._.invoke_impl)
+                ((pAVar8->fields)._._.method_code,(pLVar2->fields).isLocal,0,
+                 (pAVar8->fields)._._.method);
+    }
     return 0;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
-     LaserPointer_DoDeactivateLaserAfterDuration_d_46_System_Collections_IEnumerator_Reset
-               (LaserPointer_DoDeactivateLaserAfterDuration_d_46 *this,MethodInfo *method)
+void Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__47::
+     LaserPointer_DoDeactivateLaserAfterDuration_d_47_System_Collections_IEnumerator_Reset
+               (LaserPointer_DoDeactivateLaserAfterDuration_d_47 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -57,7 +63,7 @@ void Assembly-CSharp.dll::LaserPointer+<DoDeactivateLaserAfterDuration>d__46::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__46__System_Collections_IEnumerator_Reset__
+                  MethodInfo__LaserPointer___DoDeactivateLaserAfterDuration_d__47__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

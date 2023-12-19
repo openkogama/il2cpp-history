@@ -346,14 +346,19 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   bVar4 = 0;
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    bVar5 = func_?();
-    puVar6 = (uint *)in(0x3b);
-    *(char *)(unaff_EDI + -0x1b) = *(char *)(unaff_EDI + -0x1b) + unaff_BH + (0x99 < bVar5 | bVar4);
-    in(0x3b);
-    *(char *)(unaff_EDI + -0x33efc41b) =
-         *(char *)(unaff_EDI + -0x33efc41b) + unaff_BH + (extraout_EDX < *puVar6);
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
+    uVar5 = func_?();
+    bVar6 = (byte)uVar5;
+    bVar4 = 0x99 < bVar6 | bVar4;
+    cVar7 = bVar6 + (9 < (bVar6 & 0xf) | in_AF) * '\x06' + bVar4 * '`';
+    out(0x3b,cVar7);
+    *(char *)(unaff_EDI + -0x1a) = *(char *)(unaff_EDI + -0x1a) + unaff_BH + bVar4;
+    out(0x3b,cVar7);
+    *(char *)(unaff_EDI + -0x33efc41a) =
+         *(char *)(unaff_EDI + -0x33efc41a) + unaff_BH +
+         ((uint)((ulonglong)uVar5 >> 0x20) < *(uint *)CONCAT31((int3)((ulonglong)uVar5 >> 8),cVar7))
+    ;
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
     return;
   }
   CStack_3.r = pCVar2->a;

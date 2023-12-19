@@ -143,8 +143,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
-  pHVar3 = (HighScores *)func_?();
-  return pHVar3;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -272,7 +273,8 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
-  pHVar3 = (HighScores *)func_?();
-  return pHVar3;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

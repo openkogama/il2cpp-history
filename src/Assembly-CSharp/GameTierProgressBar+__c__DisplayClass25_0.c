@@ -1,9 +1,9 @@
 
 /* Void <OnActiveProgressBarClicked>b__0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::GameTierProgressBar+<>c__DisplayClass23_0::
-     GameTierProgressBar_c_DisplayClass23_0__OnActiveProgressBarClicked_b__0
-               (GameTierProgressBar_c_DisplayClass23_0 *this,IUIStack *x,BaseEventData *y,
+void Assembly-CSharp.dll::GameTierProgressBar+<>c__DisplayClass25_0::
+     GameTierProgressBar_c_DisplayClass25_0__OnActiveProgressBarClicked_b__0
+               (GameTierProgressBar_c_DisplayClass25_0 *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 
 {

@@ -348,41 +348,46 @@ void Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+  this_00 = (TierUnlockedItemElement *)
             TierUnlockAccessItemsPopup_GetSortedData(this,tierShopData,(MethodInfo *)0x0);
   tierShopData = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0;
-  pLStack_1 = this_00;
-  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+  pVVar1 = (VisualTreeAsset *)this;
+  pTStack_2 = this_00;
+  if (this_00 != (TierUnlockedItemElement *)0x0) {
     while( true ) {
-      if ((this_00->fields)._size <= (int)tierShopData) {
+      if ((((List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00)->fields)._size <=
+          (int)tierShopData) {
         return;
       }
       original = (this->fields).tierUnlockedItemElementPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       unaff_ESI = (TierUnlockedItemElement *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original,
                              TierUnlockedItemElement_MethodInfo__UnityEngine__Object__Instantiate<TierUnlockedItemElement>_TierUnlockedItemElement_
                             );
+      pVVar1 = (VisualTreeAsset *)this;
       if ((unaff_ESI == (TierUnlockedItemElement *)0x0) ||
          (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)unaff_ESI,(MethodInfo *)0x0),
          this_01 == (Transform *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                 (this_01,(this->fields).itemElementContainer,0,(MethodInfo *)0x0);
-      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                VisualTreeAsset+UsingEntry]::
-                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                          (&VStack_3,this_00,(int32_t)tierShopData,
-                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
-                          );
-      uStack_4._0_4_ = pVVar2->alias;
-      uStack_4._4_4_ = pVVar2->path;
-      pVVar5 = pVVar2->asset;
+      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+UsingEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                         (&VStack_4,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00,
+                          (int32_t)tierShopData,
+                          MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                         );
+      uStack_5._0_4_ = pVVar3->alias;
+      uStack_5._4_4_ = pVVar3->path;
+      pVVar1 = pVVar3->asset;
       pIVar6 = (unaff_ESI->fields).teamRequirementImage;
-      (unaff_ESI->fields).team = (int32_t)pVVar5;
+      (unaff_ESI->fields).team = (int32_t)pVVar1;
       if ((pIVar6 == (Image *)0x0) ||
          (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)pIVar6,(MethodInfo *)0x0), this_02 == (GameObject *)0x0)
@@ -394,7 +399,7 @@ void Assembly-CSharp.dll::TierUnlockAccessItemsPopup::TierUnlockAccessItemsPopup
         func_?(&TypeInfo__Styles);
         cRam_? = '\x01';
       }
-      switch(pVVar5) {
+      switch(pVVar1) {
       case (VisualTreeAsset *)0x0:
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
@@ -438,19 +443,22 @@ code_?:
         colorStyle = ColorStyle__Enum_OffWhite;
       }
       pCVar7 = Styles::Styles_GetColor(pCVar7,colorStyle,(MethodInfo *)0x0);
-      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0;
+      this_00 = (TierUnlockedItemElement *)0x0;
       if (pIVar6 == (Image *)0x0) break;
       (*(code *)(pIVar6->klass->vtable).set_color.method)
-                (pIVar6,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a);
-      this_00 = pLStack_1;
-      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                VisualTreeAsset+UsingEntry]::
-                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                          (&VStack_14,pLStack_1,(int32_t)tierShopData,
-                           MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
-                          );
-      uStack_15._0_4_ = pVVar2->alias;
-      uStack_15._4_4_ = pVVar2->path;
+                (pIVar6,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
+                 (pIVar6->klass->vtable).get_raycastTarget.methodPtr);
+      this_00 = pTStack_2;
+      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+UsingEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                         (&VStack_14,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pTStack_2,
+                          (int32_t)tierShopData,
+                          MethodInfo__System__Collections__Generic__List<TierUnlockAccessItemsPopup::AccessItemData>__get_Item_int_
+                         );
+      uStack_15._0_4_ = pVVar3->alias;
+      uStack_15._4_4_ = pVVar3->path;
       TierUnlockedItemElement::TierUnlockedItemElement_Initialize
                 (unaff_ESI,(List_1_MVWorldObjectClient_ *)uStack_15._4_4_,(int32_t)tierShopData,
                  (MethodInfo *)0x0);
@@ -458,23 +466,33 @@ code_?:
                      ((int)&tierShopData->klass + 1);
     }
   }
-  uVar16 = func_?();
-  uVar17 = (uint)((ulonglong)uVar16 >> 0x20);
-  puVar18 = (uint *)((int)&(this_00->fields)._version + (int)uVar16 * 2);
-  uVar19 = *puVar18;
-  *puVar18 = *puVar18 - uVar17;
-  ppIVar20 = &unaff_ESI[1].fields.objectPreviewerPrefab;
-  bVar21 = (byte)((ulonglong)uVar16 >> 8);
-  bVar22 = CARRY1(*(byte *)ppIVar20,bVar21) || CARRY1(*(char *)ppIVar20 + bVar21,uVar19 < uVar17);
-  *(byte *)ppIVar20 = *(char *)ppIVar20 + bVar21 + (uVar19 < uVar17);
-  pbVar23 = (byte *)((int)&this_00[-0x2d4a7dd].fields._size + 2);
-  bVar24 = *pbVar23;
-  bVar25 = *pbVar23 + (byte)uVar16;
-  *pbVar23 = bVar25 + bVar22;
-  pcVar26 = (char *)((int)uVar16 + -0x33efbcac);
-  *pcVar26 = *pcVar26 + bVar21 + (CARRY1(bVar24,(byte)uVar16) || CARRY1(bVar25,bVar22));
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  bVar16 = 0;
+  uVar17 = func_?();
+  bVar18 = (byte)((ushort)extraout_CX >> 8);
+  bVar19 = CARRY1((byte)extraout_CX,bVar18) || CARRY1((byte)extraout_CX + bVar18,bVar16);
+  bVar20 = (byte)uVar17;
+  bVar18 = *(char *)&unaff_ESI->klass + bVar20;
+  bVar21 = CARRY1(*(byte *)&unaff_ESI->klass,bVar20) || CARRY1(bVar18,bVar19);
+  *(byte *)&unaff_ESI->klass = bVar18 + bVar19;
+  pbVar22 = (byte *)((int)&((List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_00)->
+                           klass + 3);
+  bVar16 = (byte)((ulonglong)uVar17 >> 8);
+  bVar18 = *pbVar22 + bVar16;
+  bVar19 = CARRY1(*pbVar22,bVar16) || CARRY1(bVar18,bVar21);
+  *pbVar22 = bVar18 + bVar21;
+  uStack_15 = CONCAT44(pVVar1,(undefined4)uStack_15);
+  bVar23 = (char)this_00 + 4;
+  pbVar22 = (byte *)((int)&pVVar1[1].fields._._.m_CachedPtr +
+                    (int)((ulonglong)uVar17 >> 0x20) * 2 + 3);
+  bVar18 = *pbVar22;
+  bVar16 = *pbVar22 + bVar23;
+  *pbVar22 = bVar16 + bVar19;
+  pcVar24 = (char *)((int)uVar17 + 0x57);
+  *pcVar24 = *pcVar24 + bVar20 + (CARRY1(bVar18,bVar23) || CARRY1(bVar16,bVar19));
+  pcVar25 = (code *)swi(3);
+  pVStack_26 = pVVar1;
+  pTStack_2 = unaff_ESI;
+  (*pcVar25)();
   return;
 }
 

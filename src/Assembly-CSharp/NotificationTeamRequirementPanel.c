@@ -91,8 +91,10 @@ code_?:
   uVar9 = 0x103e;
   func_?(team,pMVar5);
   func_?(CONCAT22(uVar9,in_CS));
-  *(char *)&this->klass = *(char *)&this->klass >> (extraout_CL & 0x1f);
-  *(char *)&this->klass = *(char *)&this->klass >> (extraout_CL & 0x1f);
+  this->klass = (NotificationTeamRequirementPanel__Class *)
+                ((int)this->klass >> (extraout_CL & 0x1f));
+  this->klass = (NotificationTeamRequirementPanel__Class *)
+                ((int)this->klass >> (extraout_CL & 0x1f));
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;

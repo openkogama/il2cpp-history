@@ -14,8 +14,8 @@ public class MVBuildModeAvatarRemote : MVBuildModeAvatar, ISpawnRoleRemote
 {
 	// Fields
 	private LaserPointer laserPointer;
-	private AvatarRemoteBuildMode avatarRemoteBuildMode;
-	private DynamicCullingHandler cullingHandler;
+	private readonly AvatarRemoteBuildMode avatarRemoteBuildMode;
+	private readonly DynamicCullingHandler cullingHandler;
 
 	// Properties
 	int ISpawnRoleRemote.Id { get; }
@@ -25,6 +25,7 @@ public class MVBuildModeAvatarRemote : MVBuildModeAvatar, ISpawnRoleRemote
 
 	// Methods
 	public override void Initialize();
+	private void HandleLaserActive(bool isLocal, bool isActive);
 	public override void Destroy();
 	public void Activate(int idFrom, Vector3 position, Quaternion rotation);
 	public void DeActivate(int idTo);

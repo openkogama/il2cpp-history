@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewer::InventoryItemPreviewer_Initial
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__String);
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     func_?(&StringLiteral__Item_);
     func_?(&StringLiteral__woID_);
     func_?(&StringLiteral_Preview__0__RenderCam);
@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewer::InventoryItemPreviewer_Initial
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
         value_02 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                             (::StringLiteral_Preview,(MethodInfo *)0x0);
+                             (StringLiteral_Preview,(MethodInfo *)0x0);
         if (pDStack_2 != (Dictionary_2_MVWorldObjectDocumentationType_System_Single_ *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
                     ((GameObject *)pDStack_2,value_02,(MethodInfo *)0x0);
@@ -674,7 +674,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewer::InventoryItemPreviewer_OnPostR
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_3
-              (transfrom,::StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
+              (transfrom,StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);
@@ -692,7 +692,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewer::InventoryItemPreviewer_OnPreCu
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._PreviewGameObject_k__BackingField;
@@ -703,7 +703,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewer::InventoryItemPreviewer_OnPreCu
          (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
                   UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
     layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (::StringLiteral_Preview,(MethodInfo *)0x0);
+                      (StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
     return;
   }

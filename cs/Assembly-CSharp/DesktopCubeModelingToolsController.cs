@@ -13,9 +13,9 @@ using UnityEngine.UI;
 public class DesktopCubeModelingToolsController : MonoBehaviour
 {
 	// Fields
-	private CubeModelingStateMachine cubeModelingStateMachine;
 	[SerializeField]
 	private Button defaultTool;
+	[Header("Buttons")]
 	[SerializeField]
 	protected Button editCube;
 	[SerializeField]
@@ -23,9 +23,13 @@ public class DesktopCubeModelingToolsController : MonoBehaviour
 	[SerializeField]
 	protected Button paintCube;
 	[SerializeField]
+	protected Button pickCubeColor;
+	[Header("Settings")]
+	[SerializeField]
 	private float disabledAlpha;
 	[SerializeField]
 	private float enabledAlpha;
+	private CubeModelingStateMachine cubeModelingStateMachine;
 	[CompilerGenerated]
 	private CubeModelingEvent _ActiveTool_k__BackingField;
 
@@ -46,11 +50,14 @@ public class DesktopCubeModelingToolsController : MonoBehaviour
 	public void Select(CubeModelingEvent tool);
 	public void SetAllToTransparent();
 	private void SetAlpha(Image image, float alpha);
+	public void SwitchToDefaultTool();
 	[CompilerGenerated]
-	private void _SetupButtons_b__13_0();
+	private void _SetupButtons_b__14_0();
 	[CompilerGenerated]
-	private void _SetupButtons_b__13_1();
+	private void _SetupButtons_b__14_1();
 	[CompilerGenerated]
-	private void _SetupButtons_b__13_2();
+	private void _SetupButtons_b__14_2();
+	[CompilerGenerated]
+	private void _SetupButtons_b__14_3();
 }
 

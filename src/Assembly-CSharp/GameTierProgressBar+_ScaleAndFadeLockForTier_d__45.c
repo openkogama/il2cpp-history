@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::GameTierProgressBar+<ScaleAndFadeLockForTier>d__43::
-     GameTierProgressBar_ScaleAndFadeLockForTier_d_43_MoveNext
-               (GameTierProgressBar_ScaleAndFadeLockForTier_d_43 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::GameTierProgressBar+<ScaleAndFadeLockForTier>d__45::
+     GameTierProgressBar_ScaleAndFadeLockForTier_d_45_MoveNext
+               (GameTierProgressBar_ScaleAndFadeLockForTier_d_45 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -103,9 +103,9 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::GameTierProgressBar+<ScaleAndFadeLockForTier>d__43::
-     GameTierProgressBar_ScaleAndFadeLockForTier_d_43_System_Collections_IEnumerator_Reset
-               (GameTierProgressBar_ScaleAndFadeLockForTier_d_43 *this,MethodInfo *method)
+void Assembly-CSharp.dll::GameTierProgressBar+<ScaleAndFadeLockForTier>d__45::
+     GameTierProgressBar_ScaleAndFadeLockForTier_d_45_System_Collections_IEnumerator_Reset
+               (GameTierProgressBar_ScaleAndFadeLockForTier_d_45 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -113,7 +113,7 @@ void Assembly-CSharp.dll::GameTierProgressBar+<ScaleAndFadeLockForTier>d__43::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__43__System_Collections_IEnumerator_Reset__
+                  MethodInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

@@ -108,7 +108,26 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
               (*(code *)(pIVar2->klass->vtable).set_color.method)
                         (pIVar2,uStack_5,uStack_6,uStack_7,fVar3,
                          (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
-              return;
+              pBVar1 = (this->fields).pickCubeColor;
+              if (pBVar1 != (Button *)0x0) {
+                pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                                   ((Selectable *)pBVar1,(MethodInfo *)0x0);
+                fVar3 = (this->fields).disabledAlpha;
+                if (pIVar2 != (Image *)0x0) {
+                  puVar4 = (undefined4 *)
+                           (*(code *)(pIVar2->klass->vtable).get_color.method)
+                                     (&uStack_5,pIVar2,(pIVar2->klass->vtable).set_color.methodPtr)
+                  ;
+                  uStack_5 = *puVar4;
+                  uStack_6 = puVar4[1];
+                  uStack_7 = puVar4[2];
+                  fStack_8 = fVar3;
+                  (*(code *)(pIVar2->klass->vtable).set_color.method)
+                            (pIVar2,uStack_5,uStack_6,uStack_7,fVar3,
+                             (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
+                  return;
+                }
+              }
             }
           }
         }
@@ -159,17 +178,20 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 
 {
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
-  if (cubeTool == CubeModelingEvent__Enum_EditCubes) {
+  switch(cubeTool) {
+  case CubeModelingEvent__Enum_EditCubes:
     this_00 = (this->fields).editCube;
-  }
-  else if (cubeTool == CubeModelingEvent__Enum_DeleteCubes) {
+    break;
+  case CubeModelingEvent__Enum_DeleteCubes:
     this_00 = (this->fields).deletecube;
-  }
-  else {
-    if (cubeTool != CubeModelingEvent__Enum_PaintCubes) {
-      return;
-    }
+    break;
+  case CubeModelingEvent__Enum_PaintCubes:
     this_00 = (this->fields).paintCube;
+    break;
+  default:
+    goto code_?;
+  case CubeModelingEvent__Enum_ColorPicker:
+    this_00 = (this->fields).pickCubeColor;
   }
   if (this_00 != (Button *)0x0) {
     pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
@@ -183,13 +205,14 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
       uStack_6 = puVar5[2];
       pIStack_4 = pIStack_2;
       (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+code_?:
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 
@@ -241,9 +264,10 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_0__);
-    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_1__);
-    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_2__);
+    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_0__);
+    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_1__);
+    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_2__);
+    func_?(&MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_3__);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
@@ -255,7 +279,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (pNVar3,(Object *)this,
-               MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_0__,
+               MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_0__,
                (MethodInfo *)0x0);
     if (pUVar2 != (UnityEvent *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
@@ -268,7 +292,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (pNVar3,(Object *)this,
-                   MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_1__,
+                   MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_1__,
                    (MethodInfo *)0x0);
         if (pUVar2 != (UnityEvent *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
@@ -281,12 +305,27 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
                       (pNVar3,(Object *)this,
-                       MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__13_2__,
+                       MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_2__,
                        (MethodInfo *)0x0);
             if (pUVar2 != (UnityEvent *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                         (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-              return;
+              pBVar1 = (this->fields).pickCubeColor;
+              if (pBVar1 != (Button *)0x0) {
+                pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+                pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                         func_?(TypeInfo__UnityEngine__Events__UnityAction);
+                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                NavMesh_OnNavMeshPreUpdate__ctor
+                          (pNVar3,(Object *)this,
+                           MethodInfo__DesktopCubeModelingToolsController___SetupButtons_b__14_3__,
+                           (MethodInfo *)0x0);
+                if (pUVar2 != (UnityEvent *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::
+                  UnityEvent_AddListener(pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+                  return;
+                }
+              }
             }
           }
         }
@@ -347,14 +386,14 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
           func_?(&TypeInfo__System__Object);
           cRam_? = '\x01';
         }
-        if (*(bool *)&(unityEventBase->fields).cubeModelingStateMachine != 0) {
+        if (*(bool *)&(unityEventBase->fields).defaultTool != 0) {
           this_00 = (((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_PersistentCalls;
           if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
           PersistentCallGroup_Initialize
                     (this_00,(((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_Calls,
                      (UnityEventBase *)unityEventBase,(MethodInfo *)0x0);
-          *(bool *)&(unityEventBase->fields).cubeModelingStateMachine = 0;
+          *(bool *)&(unityEventBase->fields).defaultTool = 0;
         }
         pIVar7 = (((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_Calls;
         if (pIVar7 == (InvokableCallList *)0x0) goto code_?;
@@ -451,13 +490,13 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                                pBVar5,iVar9,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
                               );
-            if ((unityEventBase->fields).defaultTool == (Button *)0x0) {
+            if ((unityEventBase->fields).editCube == (Button *)0x0) {
               pBVar5 = (Button *)func_?(TypeInfo__System__Object,0);
-              (unityEventBase->fields).defaultTool = pBVar5;
-              func_?(&(unityEventBase->fields).defaultTool,pBVar5);
+              (unityEventBase->fields).editCube = pBVar5;
+              func_?(&(unityEventBase->fields).editCube,pBVar5);
             }
             if (RVar12 == (RegexCharClass_SingleRange)0x0) break;
-            pBVar5 = (unityEventBase->fields).defaultTool;
+            pBVar5 = (unityEventBase->fields).editCube;
             func_?(4,RVar12);
             iVar9 = iVar9 + 1;
           }
@@ -477,6 +516,148 @@ code_?:
   func_?(pOVar2,pCVar3);
   pcVar13 = (code *)swi(3);
   (*pcVar13)();
+  return;
+}
+
+
+/* Void SwitchToDefaultTool() */
+
+void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
+     DesktopCubeModelingToolsController_SwitchToDefaultTool
+               (DesktopCubeModelingToolsController *this,MethodInfo *method)
+
+{
+  pBVar1 = (this->fields).defaultTool;
+  if (pBVar1 != (Button *)0x0) {
+    unityEventBase = (DesktopCubeModelingToolsController *)(pBVar1->fields).m_OnClick;
+    if (unityEventBase == (DesktopCubeModelingToolsController *)0x0) {
+      return;
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?(&TypeInfo__System__Object);
+      cRam_? = '\x01';
+    }
+    if (*(bool *)&(unityEventBase->fields).defaultTool != 0) {
+      this_00 = (((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_PersistentCalls;
+      if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
+      PersistentCallGroup_Initialize
+                (this_00,(((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_Calls,
+                 (UnityEventBase *)unityEventBase,(MethodInfo *)0x0);
+      *(bool *)&(unityEventBase->fields).defaultTool = 0;
+    }
+    pIVar2 = (((UnityEvent__Fields *)&(unityEventBase->fields)._)->_).m_Calls;
+    if (pIVar2 != (InvokableCallList *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      this = unityEventBase;
+      if ((pIVar2->fields).m_NeedsUpdate != 0) {
+        pLVar3 = (pIVar2->fields).m_ExecutingCalls;
+        if (pLVar3 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
+        iVar4 = (pLVar3->fields)._size;
+        piVar5 = &(pLVar3->fields)._version;
+        *piVar5 = *piVar5 + 1;
+        (pLVar3->fields)._size = 0;
+        if (0 < iVar4) {
+          mscorlib.dll::System::Array::Array_Clear
+                    ((Array *)(pLVar3->fields)._items,0,iVar4,(MethodInfo *)0x0);
+        }
+        pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
+        if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__AddRange
+                  (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_PersistentCalls,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
+                  );
+        pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
+        if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
+        this = (DesktopCubeModelingToolsController *)
+               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
+        ;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__AddRange
+                  (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_RuntimeCalls,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
+                  );
+        (pIVar2->fields).m_NeedsUpdate = 0;
+      }
+      pBVar1 = (Button *)(pIVar2->fields).m_ExecutingCalls;
+      iVar4 = 0;
+      if (pBVar1 != (Button *)0x0) {
+        while( true ) {
+          while( true ) {
+            while( true ) {
+              pDVar7 = this;
+              if ((int)(pBVar1->fields)._._._.m_CancellationTokenSource <= iVar4) {
+                return;
+              }
+              RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)pBVar1,iVar4,
+                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                                );
+              if (((RVar8 == (RegexCharClass_SingleRange)0x0) ||
+                  (*(byte *)(*(int *)RVar8 + 0xb8) <
+                   (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
+                 (unityEventBase = this,
+                 *(InvokableCall__Class **)
+                  (*(int *)(*(int *)RVar8 + 100) + -4 +
+                  (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
+                 TypeInfo__UnityEngine__Events__InvokableCall)) break;
+              this = (DesktopCubeModelingToolsController *)0x0;
+              UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                        ((InvokableCall *)RVar8,(MethodInfo *)0x0);
+              iVar4 = iVar4 + 1;
+              unityEventBase = pDVar7;
+            }
+            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pBVar1,
+                       iVar4,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                      );
+            this = (DesktopCubeModelingToolsController *)
+                   TypeInfo__UnityEngine__Events__InvokableCall;
+            this_01 = (InvokableCall *)func_?();
+            if (this_01 == (InvokableCall *)0x0) break;
+            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                      (this_01,(MethodInfo *)0x0);
+            iVar4 = iVar4 + 1;
+          }
+          RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             pBVar1,iVar4,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                            );
+          if ((unityEventBase->fields).editCube == (Button *)0x0) {
+            pBVar1 = (Button *)func_?();
+            (unityEventBase->fields).editCube = pBVar1;
+            func_?();
+          }
+          if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
+          pBVar1 = (unityEventBase->fields).editCube;
+          func_?();
+          iVar4 = iVar4 + 1;
+        }
+      }
+    }
+  }
+code_?:
+  uVar9 = func_?(&stack0xffffffec);
+  func_?(uVar9);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8168);
+    func_?(0x9240);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -287,41 +287,28 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_CanRemov
           (CubeModelingStateMachine *this,CubePickingInfo *requestedCube,MethodInfo *method)
 
 {
-  uVar1 = (undefined2)((uint)unaff_EBP >> 0x10);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IModelingConstraint);
     cRam_? = '\x01';
   }
   if (requestedCube != (CubePickingInfo *)0x0) {
-    uVar2._0_2_ = (requestedCube->fields).iLocalPos.x;
-    uVar2._2_2_ = (requestedCube->fields).iLocalPos.y;
-    iVar3 = (requestedCube->fields).iLocalPos.z;
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar4 != (MVNetworkGame *)0x0) &&
-        (pCVar5 = (requestedCube->fields).cube, pCVar5 != (Cube *)0x0)) &&
-       (this_00 = (pMVar4->fields)._MaterialRepository_k__BackingField,
-       this_00 != (MVMaterialRepository *)0x0)) {
-      bVar6 = MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked
-                        (this_00,(pCVar5->fields)._.faceMaterials,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return CanPerformCubeActionResult__Enum_UnlockMaterial;
+    pMVar1 = (this->fields)._TargetCubeModel_k__BackingField;
+    if (pMVar1 != (MVCubeModelBase *)0x0) {
+      if ((((pMVar1->fields)._.interactionFlags & 4) == 0) &&
+         ((this->fields).constraint != (IModelingConstraint *)0x0)) {
+        uVar2._0_2_ = (requestedCube->fields).iLocalPos.x;
+        uVar2._2_2_ = (requestedCube->fields).iLocalPos.y;
+        cVar3 = func_?(1,TypeInfo__IModelingConstraint,(this->fields).constraint,uVar2,
+                                (requestedCube->fields).iLocalPos.z);
+        return (uint)(cVar3 == '\0');
       }
-      pMVar7 = (this->fields)._TargetCubeModel_k__BackingField;
-      if (pMVar7 != (MVCubeModelBase *)0x0) {
-        if ((((pMVar7->fields)._.interactionFlags & 4) == 0) &&
-           ((this->fields).constraint != (IModelingConstraint *)0x0)) {
-          cVar8 = func_?(1,TypeInfo__IModelingConstraint,(this->fields).constraint,uVar2,
-                                  CONCAT22(uVar1,iVar3));
-          return (uint)(cVar8 == '\0');
-        }
-        return CanPerformCubeActionResult__Enum_Yes;
-      }
+      return CanPerformCubeActionResult__Enum_Yes;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  CVar10 = (*pcVar9)();
-  return CVar10;
+  pcVar4 = (code *)swi(3);
+  CVar5 = (*pcVar4)();
+  return CVar5;
 }
 
 
@@ -334,31 +321,22 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_CanRepla
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((((pMVar1 != (MVNetworkGame *)0x0) && (requestedCube != (CubePickingInfo *)0x0)) &&
-      (pCVar2 = (requestedCube->fields).cube, pCVar2 != (Cube *)0x0)) &&
-     (pMVar3 = (pMVar1->fields)._MaterialRepository_k__BackingField,
-     pMVar3 != (MVMaterialRepository *)0x0)) {
-    bVar4 = MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked
-                      (pMVar3,(pCVar2->fields)._.faceMaterials,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar3 = (pMVar1->fields)._MaterialRepository_k__BackingField,
-         pMVar3 == (MVMaterialRepository *)0x0)) goto code_?;
-      bVar4 = MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked_1
-                        (pMVar3,0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        return CanPerformCubeActionResult__Enum_Yes;
-      }
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields)._MaterialRepository_k__BackingField,
+     this_00 != (MVMaterialRepository *)0x0)) {
+    bVar2 = MVMaterialRepository::MVMaterialRepository_IsMaterialUnlocked_1
+                      (this_00,materialId,(MethodInfo *)0x0);
+    CVar3 = CanPerformCubeActionResult__Enum_UnlockMaterial;
+    if (bVar2 != 0) {
+      CVar3 = CanPerformCubeActionResult__Enum_Yes;
     }
-    return CanPerformCubeActionResult__Enum_UnlockMaterial;
+    return CVar3;
   }
-code_?:
-  uVar5 = func_?(&stack0xfffffff4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  CVar7 = (*pcVar6)();
-  return CVar7;
+  uVar4 = func_?(&stack0xfffffff4);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  CVar3 = (*pcVar5)();
+  return CVar3;
 }
 
 
@@ -466,7 +444,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x81e0);
+    func_?(0x92b8);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {

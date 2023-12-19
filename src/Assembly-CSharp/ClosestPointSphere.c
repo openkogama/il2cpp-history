@@ -24,7 +24,7 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                            (&VStack_3,pTVar1,(MethodInfo *)0x0);
         uVar4 = pVVar2->x;
-        fVar5 = (float)uVar4 + 4.2523654e-29;
+        fVar5 = (float)uVar4 + 4.2533717e-29;
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
@@ -38,7 +38,7 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
           uVar9 = *puVar7;
           fVar10 = *(float *)(puVar7 + 1);
           __return_storage_ptr__->x = fVar5 + (float)uVar9 * fVar8;
-          __return_storage_ptr__->y = (float)((ulonglong)uVar9 >> 0x20) * fVar8 + 4.2524163e-29;
+          __return_storage_ptr__->y = (float)((ulonglong)uVar9 >> 0x20) * fVar8 + 4.2534226e-29;
           __return_storage_ptr__->z = (float)this + fVar10 * fVar8;
           return __return_storage_ptr__;
         }

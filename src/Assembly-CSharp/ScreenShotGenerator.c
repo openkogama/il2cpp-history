@@ -415,7 +415,7 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UnityEngine__RenderTexture);
     func_?(&TypeInfo__UnityEngine__Texture2D);
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).genTexture;
@@ -463,7 +463,7 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_InitCamera
                         (pCVar4,1.0,(MethodInfo *)0x0);
               pCVar4 = (this->fields).shotCamera;
               iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                                (::StringLiteral_Preview,(MethodInfo *)0x0);
+                                (StringLiteral_Preview,(MethodInfo *)0x0);
               if (pCVar4 != (Camera *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
                           (pCVar4,1 << ((byte)iVar5 & 0x1f),(MethodInfo *)0x0);

@@ -73,12 +73,12 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7458);
+    func_?(0x8530);
     func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0x82d0);
+    func_?(0x93a8);
     cRam_? = '\x01';
   }
   pCVar1 = TypeInfo__CubeModelTool->static_fields;
@@ -132,17 +132,20 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
           a.y = uVar8;
           a.x = uVar7;
           iVar9 = (pCVar6->fields).iLocalPos.z;
+          uVar10 = (undefined1)iVar9;
+          uVar11 = (undefined1)((ushort)iVar9 >> 8);
           pCVar6 = (this->fields).cubeNotToBeDeleted;
-          uVar10._0_2_ = (pCVar6->fields).iLocalPos.x;
-          uVar10._2_2_ = (pCVar6->fields).iLocalPos.y;
-          iVar11 = (pCVar6->fields).iLocalPos.z;
+          uVar12._0_2_ = (pCVar6->fields).iLocalPos.x;
+          uVar12._2_2_ = (pCVar6->fields).iLocalPos.y;
+          iVar9 = (pCVar6->fields).iLocalPos.z;
           if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          a.z = iVar9;
-          b.z = iVar11;
-          b.x = (short)uVar10;
-          b.y = (short)((uint)uVar10 >> 0x10);
+          a.z._1_1_ = uVar11;
+          a.z._0_1_ = uVar10;
+          b.z = iVar9;
+          b.x = (short)uVar12;
+          b.y = (short)((uint)uVar12 >> 0x10);
           bVar3 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
                              (a,b,(MethodInfo *)0x0);
           if (bVar3 == 0) goto code_?;
@@ -153,76 +156,78 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
                   (e,(pCVar6->fields).iLocalPos,AudioActions__Enum_CubeRemoved,(MethodInfo *)0x0);
         pCVar6 = (e->fields)._SelectedCube_k__BackingField;
         if ((pCVar6 == (CubePickingInfo *)0x0) ||
-           (pMVar12 = (e->fields)._TargetCubeModel_k__BackingField, pMVar12 == (MVCubeModelBase *)0x0)
+           (pMVar13 = (e->fields)._TargetCubeModel_k__BackingField, pMVar13 == (MVCubeModelBase *)0x0)
            ) goto code_?;
         MVCubeModelBase::MVCubeModelBase_RemoveCube
-                  (pMVar12,(pCVar6->fields).iLocalPos,(MethodInfo *)0x0);
+                  (pMVar13,(pCVar6->fields).iLocalPos,(MethodInfo *)0x0);
         pCVar6 = CubeModelingStateMachine::CubeModelingStateMachine_DoPicking(e,(MethodInfo *)0x0);
         (this->fields).cubeNotToBeDeleted = pCVar6;
         cVar4 = '\x10';
         func_?((short)&(this->fields).cubeNotToBeDeleted);
-        pMVar12 = (e->fields)._TargetCubeModel_k__BackingField;
-        if (pMVar12 == (MVCubeModelBase *)0x0) goto code_?;
-        cubeCount = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar12,(MethodInfo *)0x0);
+        pMVar13 = (e->fields)._TargetCubeModel_k__BackingField;
+        if (pMVar13 == (MVCubeModelBase *)0x0) goto code_?;
+        cubeCount = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar13,(MethodInfo *)0x0);
         CubeModelTool::CubeModelTool_SendCubeEvent
                   (cubeCount,EditCubeChange__Enum_CubeDeleted,(MethodInfo *)0x0);
       }
       else if (CVar5 == CanPerformCubeActionResult__Enum_UnlockMaterial) {
         if ((this->fields).deleteCursor == (DeleteCursor *)0x0) goto code_?;
-        ModelCursor::ModelCursor_ShowUnlockMaterialNotification((MethodInfo *)0x0);
+        cVar4 = '\0';
+        ModelCursor::ModelCursor_ShowUnlockMaterialNotification
+                  (0,NotificationLifetime__Enum_Low,(MethodInfo *)0x0);
       }
     }
   }
 code_?:
-  pDVar13 = (this->fields).deleteCursor;
+  pDVar14 = (this->fields).deleteCursor;
   pCVar6 = (e->fields)._SelectedCube_k__BackingField;
-  pMVar12 = (e->fields)._TargetCubeModel_k__BackingField;
-  if (pDVar13 != (DeleteCursor *)0x0) {
+  pMVar13 = (e->fields)._TargetCubeModel_k__BackingField;
+  if (pDVar14 != (DeleteCursor *)0x0) {
     if (cVar4 != '\0') {
-      pGVar14 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar14 == (GameEventManager *)0x0) ||
-          (pGVar15 = (pGVar14->fields).AvatarCommandsBuildMode,
-          pGVar15 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
-         (pGVar16 = (pGVar15->fields).LaserCommands,
-         pGVar16 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
+      pGVar15 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar15 == (GameEventManager *)0x0) ||
+          (pGVar16 = (pGVar15->fields).AvatarCommandsBuildMode,
+          pGVar16 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
+         (pGVar17 = (pGVar16->fields).LaserCommands,
+         pGVar17 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
       goto code_?;
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-                (pGVar16,0.2,(MethodInfo *)0x0);
+                (pGVar17,0.2,(MethodInfo *)0x0);
     }
     if (pCVar6 == (CubePickingInfo *)0x0) {
-      pCVar17 = (pDVar13->fields).deleteCursor;
-      if (pCVar17 != (CellCursor *)0x0) {
-        CellCursor::CellCursor_set_Active(pCVar17,0,(MethodInfo *)0x0);
+      pCVar18 = (pDVar14->fields).deleteCursor;
+      if (pCVar18 != (CellCursor *)0x0) {
+        CellCursor::CellCursor_set_Active(pCVar18,0,(MethodInfo *)0x0);
         return;
       }
     }
     else {
-      pGVar14 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar14 != (GameEventManager *)0x0) &&
-          (pGVar15 = (pGVar14->fields).AvatarCommandsBuildMode,
-          pGVar15 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (pGVar16 = (pGVar15->fields).LaserCommands,
-         pGVar16 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+      pGVar15 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar15 != (GameEventManager *)0x0) &&
+          (pGVar16 = (pGVar15->fields).AvatarCommandsBuildMode,
+          pGVar16 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (pGVar17 = (pGVar16->fields).LaserCommands,
+         pGVar17 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                  (pGVar16,(pCVar6->fields).point,(MethodInfo *)0x0);
-        pCVar17 = (pDVar13->fields).deleteCursor;
-        if (pCVar17 != (CellCursor *)0x0) {
-          CellCursor::CellCursor_set_Active(pCVar17,1,(MethodInfo *)0x0);
-          uVar18._0_2_ = (pCVar6->fields).iLocalPos.x;
-          uVar18._2_2_ = (pCVar6->fields).iLocalPos.y;
-          if (pMVar12 != (MVCubeModelBase *)0x0) {
-            pCVar17 = (pDVar13->fields).deleteCursor;
-            cubeGameObject = (pMVar12->fields)._.gameObject;
-            if (pCVar17 != (CellCursor *)0x0) {
-              pIVar19 = &(pCVar6->fields).iLocalPos;
-              uVar20 = pIVar19->y;
-              this_00 = CellCursor::CellCursor_GetCellCursor(pCVar17,*pIVar19,(MethodInfo *)0x0);
+                  (pGVar17,(pCVar6->fields).point,(MethodInfo *)0x0);
+        pCVar18 = (pDVar14->fields).deleteCursor;
+        if (pCVar18 != (CellCursor *)0x0) {
+          CellCursor::CellCursor_set_Active(pCVar18,1,(MethodInfo *)0x0);
+          uVar19._0_2_ = (pCVar6->fields).iLocalPos.x;
+          uVar19._2_2_ = (pCVar6->fields).iLocalPos.y;
+          if (pMVar13 != (MVCubeModelBase *)0x0) {
+            pCVar18 = (pDVar14->fields).deleteCursor;
+            cubeGameObject = (pMVar13->fields)._.gameObject;
+            if (pCVar18 != (CellCursor *)0x0) {
+              pIVar20 = &(pCVar6->fields).iLocalPos;
+              uVar21 = pIVar20->y;
+              this_00 = CellCursor::CellCursor_GetCellCursor(pCVar18,*pIVar20,(MethodInfo *)0x0);
               if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-                position.z = uVar20;
-                position.x = (short)uVar18;
-                position.y = (short)((uint)uVar18 >> 0x10);
+                position.z = uVar21;
+                position.x = (short)uVar19;
+                position.y = (short)((uint)uVar19 >> 0x10);
                 CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
                           (this_00,position,cubeGameObject,(MethodInfo *)0x0);
                 return;
@@ -235,8 +240,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

@@ -400,38 +400,45 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor
     (this->fields)._SubscriptionRules_k__BackingField = this_01;
     func_?(&(this->fields)._SubscriptionRules_k__BackingField,this_01);
     if (profileID < 1) {
-      pSVar2 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
-      pUVar3 = (this->fields)._UserProfileData_k__BackingField;
-      if ((pUVar3 == (UserProfileData *)0x0) ||
-         (this_00 = (pUVar3->fields).UserName, this_00 == (String *)0x0)) goto code_?;
-      pSVar2 = mscorlib.dll::System::String::String_Replace_1
-                         (this_00,StringLiteral_Tourist,pSVar2,(MethodInfo *)0x0);
-      (pUVar3->fields).UserName = pSVar2;
-      func_?(&(pUVar3->fields).UserName,pSVar2);
+      pUVar2 = (this->fields)._UserProfileData_k__BackingField;
+      if ((pUVar2 == (UserProfileData *)0x0) ||
+         (pSVar3 = (pUVar2->fields).UserName, pSVar3 == (String *)0x0)) goto code_?;
+      bVar4 = mscorlib.dll::System::String::String_Contains
+                        (pSVar3,StringLiteral_Tourist,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        pSVar3 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
+        pUVar2 = (this->fields)._UserProfileData_k__BackingField;
+        if ((pUVar2 == (UserProfileData *)0x0) ||
+           (this_00 = (pUVar2->fields).UserName, this_00 == (String *)0x0)) goto code_?;
+        pSVar3 = mscorlib.dll::System::String::String_Replace_1
+                           (this_00,StringLiteral_Tourist,pSVar3,(MethodInfo *)0x0);
+        (pUVar2->fields).UserName = pSVar3;
+        func_?(&(pUVar2->fields).UserName,pSVar3);
+      }
     }
     (this->fields)._RegionCode_k__BackingField = regionCode;
     func_?(&(this->fields)._RegionCode_k__BackingField,regionCode);
     if (isReady == 0) {
       if (((observer != 0) && ((this->fields).playerState != 3)) &&
          ((this->fields).playerState = 3, (this->fields).OnObserve != (UnityAction *)0x0)) {
-        pUVar4 = (this->fields).OnObserve;
-        (*(pUVar4->fields)._._.invoke_impl)
-                  ((pUVar4->fields)._._.method_code,(pUVar4->fields)._._.method);
+        pUVar5 = (this->fields).OnObserve;
+        (*(pUVar5->fields)._._.invoke_impl)
+                  ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
       }
     }
     else if (((this->fields).playerState != 1) &&
             ((this->fields).playerState = 1, (this->fields).OnResume != (UnityAction *)0x0)) {
-      pUVar4 = (this->fields).OnResume;
-      (*(pUVar4->fields)._._.invoke_impl)
-                ((pUVar4->fields)._._.method_code,(pUVar4->fields)._._.method);
+      pUVar5 = (this->fields).OnResume;
+      (*(pUVar5->fields)._._.invoke_impl)
+                ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
       return;
     }
     return;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

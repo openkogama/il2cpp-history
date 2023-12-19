@@ -43,7 +43,7 @@ public class GamePassesPurchaseButton : MonoBehaviour
 	public GamePassesPurchaseButton();
 
 	// Methods
-	public void Initialize(GamePassTier tierToDisplay);
+	public bool Initialize(GamePassTier tierToDisplay);
 	public void OnTestButtonPressed();
 	public void OnDisabledButtonPressed();
 	public void SetFreeTryActivated(bool isActive);

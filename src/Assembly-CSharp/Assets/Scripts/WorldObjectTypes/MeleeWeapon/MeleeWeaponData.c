@@ -382,7 +382,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeW
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__String);
     func_?(&::_0C9D4E2E140EFE455891ACB53ECA876F500D5100E778EBD63B0F0471E68444EF_Field);
-    func_?(&::_6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field);
+    func_?(&_6D6ED29E7B71395FD414437CC70BAB636F696CFEACF98E9AAFA4492C3E3F8719_Field);
     func_?(&StringLiteral_none);
     func_?(&StringLiteral_Damage);
     func_?(&StringLiteral_slash);

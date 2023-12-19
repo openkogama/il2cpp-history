@@ -16,6 +16,9 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsControllerEditModeTerrain::
     func_?(&
                     MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_2__
                    );
+    func_?(&
+                    MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_3__
+                   );
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
@@ -58,7 +61,22 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsControllerEditModeTerrain::
             if (pUVar2 != (UnityEvent *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                         (pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
-              return;
+              pBVar1 = (this->fields)._.pickCubeColor;
+              if (pBVar1 != (Button *)0x0) {
+                pUVar2 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+                pNVar3 = (NavMesh_OnNavMeshPreUpdate *)
+                         func_?(TypeInfo__UnityEngine__Events__UnityAction);
+                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                NavMesh_OnNavMeshPreUpdate__ctor
+                          (pNVar3,(Object *)this,
+                           MethodInfo__DesktopCubeModelingToolsControllerEditModeTerrain___SetupButtons_b__0_3__
+                           ,(MethodInfo *)0x0);
+                if (pUVar2 != (UnityEvent *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::
+                  UnityEvent_AddListener(pUVar2,(UnityAction *)pNVar3,(MethodInfo *)0x0);
+                  return;
+                }
+              }
             }
           }
         }
@@ -109,6 +127,20 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsControllerEditModeTerrain::
 {
   DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetToolActive
             ((DesktopCubeModelingToolsController *)this,CubeModelingEvent__Enum_PaintCubes,
+             (MethodInfo *)0x0);
+  return;
+}
+
+
+/* Void <SetupButtons>b__0_3() */
+
+void Assembly-CSharp.dll::DesktopCubeModelingToolsControllerEditModeTerrain::
+     DesktopCubeModelingToolsControllerEditModeTerrain__SetupButtons_b__0_3
+               (DesktopCubeModelingToolsControllerEditModeTerrain *this,MethodInfo *method)
+
+{
+  DesktopCubeModelingToolsController::DesktopCubeModelingToolsController_SetToolActive
+            ((DesktopCubeModelingToolsController *)this,CubeModelingEvent__Enum_ColorPicker,
              (MethodInfo *)0x0);
   return;
 }

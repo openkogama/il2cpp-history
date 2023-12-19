@@ -83,25 +83,27 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_OnMaterialCha
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).desktopCubeModelingController;
+  x = (this->fields).desktopCubeModelingController;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pDVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pDVar1 = (this->fields).desktopCubeModelingController;
-    if (pDVar1 == (DesktopCubeModelingController *)0x0) {
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    this_00 = (DesktopCubeModelingControllerCubeTutorial *)
+              (this->fields).desktopCubeModelingController;
+    if (this_00 == (DesktopCubeModelingControllerCubeTutorial *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    DesktopCubeModelingController::DesktopCubeModelingController_SetMaterial
-              (pDVar1,id,(MethodInfo *)0x0);
+    DesktopCubeModelingControllerCubeTutorial::
+    DesktopCubeModelingControllerCubeTutorial_DoSetMaterial(this_00,id,(MethodInfo *)0x0);
   }
-  if ((this->fields).materialChange != (UnityAction_1_System_Byte_ *)0x0) {
-    (*(((this->fields).materialChange)->fields)._._.invoke_impl)();
+  pUVar3 = (this->fields).materialChange;
+  if (pUVar3 != (UnityAction_1_System_Byte_ *)0x0) {
+    (*(pUVar3->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -131,36 +133,41 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_OnMaterialCli
   if (this_00 != (CubeModelingStateMachine *)0x0) {
     CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
               (this_00,materialID,(MethodInfo *)0x0);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    if ((TypeInfo__MaterialsController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    callbackFunction = TypeInfo__MaterialsController____c->static_fields->__9__16_0;
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    this_01 = (this->fields).desktopCubeModelingController;
+    if (this_01 != (DesktopCubeModelingController *)0x0) {
+      DesktopCubeModelingController::DesktopCubeModelingController_SwitchToDefaultTool
+                (this_01,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__MaterialsController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      object = TypeInfo__MaterialsController____c->static_fields->__9;
-      callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__MaterialsController____c___OnMaterialClicked_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      TypeInfo__MaterialsController____c->static_fields->__9__16_0 = callbackFunction;
-      func_?(&TypeInfo__MaterialsController____c->static_fields->__9__16_0,callbackFunction
-                     );
+      callbackFunction = TypeInfo__MaterialsController____c->static_fields->__9__16_0;
+      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__MaterialsController____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        object = TypeInfo__MaterialsController____c->static_fields->__9;
+        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+                   MethodInfo__MaterialsController____c___OnMaterialClicked_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__MaterialsController____c->static_fields->__9__16_0 = callbackFunction;
+        func_?();
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    return;
   }
   func_?();
   pcVar1 = (code *)swi(3);
