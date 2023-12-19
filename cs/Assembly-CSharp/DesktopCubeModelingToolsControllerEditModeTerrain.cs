@@ -21,5 +21,7 @@ public class DesktopCubeModelingToolsControllerEditModeTerrain : DesktopCubeMode
 	private void _SetupButtons_b__0_1();
 	[CompilerGenerated]
 	private void _SetupButtons_b__0_2();
+	[CompilerGenerated]
+	private void _SetupButtons_b__0_3();
 }
 

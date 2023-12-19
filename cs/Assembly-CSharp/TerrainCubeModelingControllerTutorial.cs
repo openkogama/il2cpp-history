@@ -13,11 +13,11 @@ using UnityEngine.UI;
 public class TerrainCubeModelingControllerTutorial : MonoBehaviour
 {
 	// Fields
-	private MaterialsController materialsController;
 	[SerializeField]
 	private RawImage materialsButtonImage;
 	[SerializeField]
 	private DesktopCubeModelingToolsController desktopCubeModelingController;
+	private MaterialsController materialsController;
 
 	// Constructors
 	public TerrainCubeModelingControllerTutorial();

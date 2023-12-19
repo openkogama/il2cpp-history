@@ -16,6 +16,8 @@ public class CloseApp : MonoBehaviour
 	// Fields
 	[SerializeField]
 	private ConfirmationPopup closeAppPopupPrefab;
+	[SerializeField]
+	private bool hideEmbeddedWebgl;
 
 	// Nested types
 	[Serializable]
@@ -24,24 +26,24 @@ public class CloseApp : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static UnityAction<bool, ConfirmationPopup> __9__1_0;
+		public static UnityAction<bool, ConfirmationPopup> __9__2_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Close_b__1_0(bool confirmation, ConfirmationPopup popup);
+		internal void _Close_b__2_0(bool confirmation, ConfirmationPopup popup);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass1_0
+	private sealed class __c__DisplayClass2_0
 	{
 		// Fields
 		public UnityAction<bool, ConfirmationPopup> quit;
 
 		// Constructors
-		public __c__DisplayClass1_0();
+		public __c__DisplayClass2_0();
 
 		// Methods
 		internal void _Close_b__1(IModalPopupCreator x, BaseEventData y);

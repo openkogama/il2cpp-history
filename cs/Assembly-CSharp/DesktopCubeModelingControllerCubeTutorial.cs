@@ -17,9 +17,6 @@ using UnityEngine.UI;
 public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 {
 	// Fields
-	private byte defaultMaterial;
-	private CubeModelingStateMachine cubeModelingStateMachine;
-	private MaterialsController materialsController;
 	[SerializeField]
 	private RawImage materialsButtonImage;
 	[SerializeField]
@@ -36,6 +33,9 @@ public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 	private DesktopCubeModelingToolsController desktopCubeModelingToolsController;
 	[SerializeField]
 	private FirstTimeEvent exitFirstTimeEvent;
+	private byte defaultMaterial;
+	private CubeModelingStateMachine cubeModelingStateMachine;
+	private MaterialsController materialsController;
 	private bool paintHasBeenActivated;
 
 	// Nested types
@@ -79,6 +79,6 @@ public class DesktopCubeModelingControllerCubeTutorial : MonoBehaviour
 	private IEnumerator OverRideIfDefaultMaterial();
 	private void OnDestroy();
 	[CompilerGenerated]
-	private void _OnFirstTimeState_b__12_0(IUIStack x, BaseEventData y);
+	private void _OnFirstTimeState_b__13_0(IUIStack x, BaseEventData y);
 }
 
