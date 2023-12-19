@@ -358,11 +358,12 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_02,(Object *)this,MethodInfo__ThemePreviewSettingsMenu__OnPurchaseResponse_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_,(MethodInfo *)0x0);
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
   if (pDVar2 == (Delegate *)0x0) {
-    *(undefined4 *)(unaff_EBX + 0xb4) = 0;
+    unaff_EBX[2].fields.topArea = (RectTransform *)0x0;
     iVar3 = 0;
 code_?:
     func_?();
     this_00 = (this->fields).openPopup;
+    unaff_EBX = this;
     if (this_00 != (ConfirmationPopup *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Pop(this_00,(MethodInfo *)0x0);
       switch(iVar3) {
@@ -472,23 +473,33 @@ code_?:
       return;
     }
 code_?:
+    bVar7 = 0;
     func_?();
   }
   else {
+    pTVar8 = unaff_EBX;
+    pRVar9 = (RectTransform *)func_?();
+    bVar7 = 0;
+    unaff_EBX = this;
+    if (pRVar9 == (RectTransform *)0x0) goto code_?;
+    pTVar8[2].fields.topArea = pRVar9;
     iVar3 = func_?();
-    if (iVar3 == 0) goto code_?;
-    *(int *)(unaff_EBX + 0xb4) = iVar3;
-    iVar3 = func_?();
+    bVar7 = 0;
     if (iVar3 != 0) goto code_?;
   }
   func_?();
 code_?:
-  uVar7 = func_?();
-  out((short)((ulonglong)uVar7 >> 0x20),(int)uVar7);
-  pcVar8 = (char *)((int)((ulonglong)uVar7 >> 0x20) + -2);
-  *pcVar8 = *pcVar8 + (char)((ulonglong)uVar7 >> 0x28);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  cVar10 = func_?();
+  cRam_? = cRam_? + '\x01';
+  pbVar11 = (byte *)((int)&unaff_EBX[-0xf51bb2].fields._._.m_CancellationTokenSource + 2);
+  bVar12 = *pbVar11;
+  bVar13 = (byte)((uint)unaff_EBX >> 8);
+  bVar14 = *pbVar11 + bVar13;
+  *pbVar11 = bVar14 + bVar7;
+  cRam_? = cRam_? + '\x01';
+  *(char *)(extraout_EDX + -1) = *(char *)(extraout_EDX + -1) + cVar10 + (CARRY1(bVar12,bVar13) || CARRY1(bVar14,bVar7));
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

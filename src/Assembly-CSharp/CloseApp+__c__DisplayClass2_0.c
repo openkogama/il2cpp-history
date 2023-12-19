@@ -1,7 +1,7 @@
 
 /* Void <Close>b__1(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::CloseApp+<>c__DisplayClass1_0::CloseApp_c_DisplayClass1_0__Close_b__1(CloseApp_c_DisplayClass1_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::CloseApp+<>c__DisplayClass2_0::CloseApp_c_DisplayClass2_0__Close_b__1(CloseApp_c_DisplayClass2_0 *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

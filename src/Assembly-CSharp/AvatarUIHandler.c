@@ -169,7 +169,7 @@ code_?:
     if ((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) goto code_?;
     pAVar5 = (pMVar9->fields).OnPlayerListChanged;
     pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar6,(Object *)&UNK_?,pvRam0418168f,(MethodInfo *)0x0);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar6,(Object *)&UNK_?,pvRam14b4168f,(MethodInfo *)0x0);
     pAVar5 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
     if (pAVar5 == (Action *)0x0) {
       (pMVar9->fields).OnPlayerListChanged = (Action *)0x0;

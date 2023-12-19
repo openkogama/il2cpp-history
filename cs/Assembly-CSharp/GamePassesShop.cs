@@ -10,6 +10,7 @@ using Assets.Scripts.AdIntegration;
 using MV.Common;
 using MV.WorldObject;
 using MV.WorldObject.GamePassSystem;
+using UGUI.Framework.Scripts.Shared.GamePasses;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -68,7 +69,7 @@ public class GamePassesShop : MonoBehaviour
 	[SerializeField]
 	private GameObject gameTierProgressObject;
 	[SerializeField]
-	private GameObject statusFooterObject;
+	private GamePassesShopStatusFooter statusFooterObject;
 	[SerializeField]
 	private GamePassesShopContentCuller contentCuller;
 	[SerializeField]

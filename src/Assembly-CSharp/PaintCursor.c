@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::PaintCursor::PaintCursor_UnlockMaterialToRemove(PaintC
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if ((pPVar1 != (PrefabPool *)0x0) && (this_00 != (CellCursor *)0x0)) {
     CellCursor::CellCursor_ChangeMaterial(this_00,(pPVar1->fields).cellCursorErrorMaterial,(MethodInfo *)0x0);
-    ModelCursor::ModelCursor_ShowUnlockMaterialNotification((MethodInfo *)0x0);
+    ModelCursor::ModelCursor_ShowUnlockMaterialNotification(0,NotificationLifetime__Enum_Low,(MethodInfo *)0x0);
     return;
   }
   func_?();

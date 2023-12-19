@@ -10,7 +10,7 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::ScreenSh
     func_?(&TypeInfo__ScreenShotGenerator);
     func_?(&TypeInfo__SharedCubeFunctions);
     func_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
@@ -80,7 +80,7 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::ScreenSh
         func_?();
       }
       layersToChange.m_Mask = (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)TypeInfo__ScreenShotGenerator->static_fields->renderLayers,(MethodInfo *)0x0);
-      layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(::StringLiteral_Preview,(MethodInfo *)0x0);
+      layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
       LayerUtil::LayerUtil_SetLayerRecursively_2(pTVar3,layersToChange,layer,(MethodInfo *)0x0);
       this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);

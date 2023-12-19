@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::TerrainCubeModelingControllerTutorial::TerrainCubeMode
       if (this_04 != (CubeModelingStateMachine *)0x0) {
         materialId = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId(this_04,(MethodInfo *)0x0);
         cubeModelingStateMachine = (CubeModelingStateMachine *)CONCAT31((int3)((uint)this_04 >> 8),materialId);
-        this_00 = (RawImage *)materialsController[1].fields._.m_CancellationTokenSource;
+        this_00 = materialsController[1].fields._._._._.m_CachedPtr;
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar4 != (MVNetworkGame *)0x0) && (this_01 = (pMVar4->fields)._MaterialRepository_k__BackingField, this_01 != (MVMaterialRepository *)0x0)) {
           pMVar5 = MVMaterialRepository::MVMaterialRepository_GetMaterial(this_01,materialId,(MethodInfo *)0x0);

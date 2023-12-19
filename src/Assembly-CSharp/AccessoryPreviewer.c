@@ -198,7 +198,7 @@ void Assembly-CSharp.dll::AccessoryPreviewer::AccessoryPreviewer_Initialize(Acce
     func_?(&UnityEngine__Camera_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Camera>__);
     func_?(&TypeInfo__UnityEngine__RenderTexture);
     func_?(&TypeInfo__System__Single);
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     func_?(&StringLiteral_RenderCam_Preview__0_);
     func_?(&StringLiteral_Preview_);
     cRam_? = '\x01';
@@ -211,7 +211,7 @@ void Assembly-CSharp.dll::AccessoryPreviewer::AccessoryPreviewer_Initialize(Acce
     pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name((Object_1 *)woGameObjectCopy,(MethodInfo *)0x0);
     pSVar3 = mscorlib.dll::System::String::String_Format(StringLiteral_RenderCam_Preview__0_,(Object *)pSVar3,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name((Object_1 *)pGVar1,pSVar3,(MethodInfo *)0x0);
-    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(::StringLiteral_Preview,(MethodInfo *)0x0);
+    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(pGVar1,iVar4,(MethodInfo *)0x0);
     this_00 = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_9(this_00,textureWidth,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,(MethodInfo *)0x0);
@@ -246,7 +246,7 @@ void Assembly-CSharp.dll::AccessoryPreviewer::AccessoryPreviewer_Initialize(Acce
                   if (pCVar6 != (Camera *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_aspect(pCVar6,(float)textureWidth / (float)textureHeight,(MethodInfo *)0x0);
                     pCVar6 = (this->fields).previewCam;
-                    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(::StringLiteral_Preview,(MethodInfo *)0x0);
+                    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
                     if (pCVar6 != (Camera *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask(pCVar6,1 << ((byte)iVar4 & 0x1f),(MethodInfo *)0x0);
                       pCVar6 = (this->fields).previewCam;
@@ -490,7 +490,7 @@ void Assembly-CSharp.dll::AccessoryPreviewer::AccessoryPreviewer_OnPostRender(Ac
   this_00 = (this->fields).previewGameObject;
   if (this_00 != (GameObject *)0x0) {
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
-    LayerUtil::LayerUtil_SetLayerRecursively_3(transfrom,::StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
+    LayerUtil::LayerUtil_SetLayerRecursively_3(transfrom,StringLiteral_Preview,StringLiteral_Hidden,(MethodInfo *)0x0);
     return;
   }
   uVar1 = func_?(&stack0xfffffff0);
@@ -507,14 +507,14 @@ void Assembly-CSharp.dll::AccessoryPreviewer::AccessoryPreviewer_OnPreCull(Acces
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral_Preview);
+    func_?(&StringLiteral_Preview);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).previewGameObject;
   if (this_00 != (GameObject *)0x0) {
     transfrom = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(this_00,(MethodInfo *)0x0);
     layersToChange.m_Mask = (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_AsRef_1((Void *)(this->fields).layersToRender,(MethodInfo *)0x0);
-    layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(::StringLiteral_Preview,(MethodInfo *)0x0);
+    layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Preview,(MethodInfo *)0x0);
     LayerUtil::LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer,(MethodInfo *)0x0);
     return;
   }

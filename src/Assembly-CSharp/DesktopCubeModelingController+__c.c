@@ -1,7 +1,7 @@
 
-/* Void <OnPublishPlanetFinished>b__9_0(IUIStack, BaseEventData) */
+/* Void <OnPublishPlanetFinished>b__10_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__OnPublishPlanetFinished_b__9_0(DesktopCubeModelingController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__OnPublishPlanetFinished_b__10_0(DesktopCubeModelingController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -25,9 +25,9 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModeling
 }
 
 
-/* Void <PublishCallback>b__8_0(IModalPopupCreator, BaseEventData) */
+/* Void <PublishCallback>b__9_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__PublishCallback_b__8_0(DesktopCubeModelingController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__PublishCallback_b__9_0(DesktopCubeModelingController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +51,9 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModeling
 }
 
 
-/* Void <PublishCallback>b__8_2(IUIStack, BaseEventData) */
+/* Void <PublishCallback>b__9_2(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__PublishCallback_b__8_2(DesktopCubeModelingController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__PublishCallback_b__9_2(DesktopCubeModelingController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -77,9 +77,9 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModeling
 }
 
 
-/* Void <TakeScreenshot>b__10_0(IModalPopupCreator, BaseEventData) */
+/* Void <TakeScreenshot>b__11_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__TakeScreenshot_b__10_0(DesktopCubeModelingController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::DesktopCubeModelingController_c__TakeScreenshot_b__11_0(DesktopCubeModelingController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

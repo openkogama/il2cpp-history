@@ -19,7 +19,7 @@ public class GamePassesHighScoreList : MonoBehaviour
 	[SerializeField]
 	private GamePassesHighScoreElement highScoreElementPrefab;
 	[SerializeField]
-	private GameObject touristInformationPopup;
+	private GamePassesTouristInformationPopup touristInformationPopup;
 	[SerializeField]
 	private Transform contentList;
 	[SerializeField]
@@ -78,7 +78,7 @@ public class GamePassesHighScoreList : MonoBehaviour
 	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
-		public GameObject informationPopup;
+		public GamePassesTouristInformationPopup informationPopup;
 
 		// Constructors
 		public __c__DisplayClass15_0();

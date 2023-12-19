@@ -691,7 +691,6 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
           func_?(TypeInfo__UnityEngine__Object);
         }
         pOVar2 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_02,SpawnRoleEditorMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleEditorMenu>_SpawnRoleEditorMenu_);
-        unaff_EDI = (MVWorldObject__Class *)this;
         if (pOVar1 != (Object *)0x0) {
           pOVar1[1].klass = pOVar2;
           func_?();
@@ -716,7 +715,6 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
         }
         pOVar4 = (ObjectTransparencySettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pOVar4,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_);
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-        unaff_EDI = (MVWorldObject__Class *)0x0;
         if (pOVar4 != (ObjectTransparencySettings *)0x0) {
           UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings::ObjectTransparencySettings_Initialize(pOVar4,0,pGVar3,(MethodInfo *)0x0);
           return;
@@ -731,7 +729,6 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       }
       pCVar5 = (CameraBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar5,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
       if (pCVar5 != (CameraBoxSettings *)0x0) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings::CameraBoxSettings_Initialize(pCVar5,0,pGVar3,(MethodInfo *)0x0);
         return;
@@ -746,7 +743,6 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       }
       pGVar6 = (GameCoinChestSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar6,GameCoinChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GameCoinChestSettings>_GameCoinChestSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
       if (pGVar6 != (GameCoinChestSettings *)0x0) {
         GameCoinChestSettings::GameCoinChestSettings_Initialize(pGVar6,0,pGVar3,(MethodInfo *)0x0);
         return;
@@ -781,7 +777,6 @@ code_?:
             }
             pDVar11 = (DoorSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pDVar11,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_);
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-            unaff_EDI = (MVWorldObject__Class *)0x0;
             if (pDVar11 != (DoorSettings *)0x0) {
               UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings::DoorSettings_Initialize(pDVar11,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
               return;
@@ -800,11 +795,9 @@ code_?:
         cRam_? = '\x01';
       }
       pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      unaff_EDI = unaff_EDI;
-      if ((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,woID,(MethodInfo *)0x0), unaff_EDI = unaff_EDI, pMVar8 != (MVWorldObject *)0x0)) {
+      if ((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,woID,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) {
         if (((pMVar8->klass->_1).naturalAligment < (TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint->_1).naturalAligment) || ((MVEditablePickupItemBaseBlueprint__Class *)(pMVar8->klass->_1).typeHierarchy[(TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint->_1).naturalAligment - 1] != TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBaseBlueprint)) goto code_?;
         pLVar9 = pMVar8[2].fields.outputLinkRefs;
-        unaff_EDI = unaff_EDI;
         if (pLVar9 != (List_1_MV_WorldObject_Link_ *)0x0) {
           pOVar1 = pLVar9[10].fields._syncRoot;
           if (pOVar1 == (Object *)0x8) {
@@ -815,7 +808,6 @@ code_?:
             pMVar12 = (MeleeWeaponSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pMVar12,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__MeleeWeapons__MeleeWeaponSettings_);
             pLVar10 = (pLVar9->fields)._items;
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-            unaff_EDI = (MVWorldObject__Class *)this;
             if (pMVar12 != (MeleeWeaponSettings *)0x0) {
               UGUI::Desktop::Scripts::EditMode::SettingsBoxes::MeleeWeapons::MeleeWeaponSettings::MeleeWeaponSettings_Initialize(pMVar12,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
               return;
@@ -832,7 +824,6 @@ code_?:
             pCVar13 = (CostumeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar13,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Costume__CostumeSettings_);
             pLVar10 = (pLVar9->fields)._items;
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-            unaff_EDI = (MVWorldObject__Class *)this;
             if (pCVar13 != (CostumeSettings *)0x0) {
               UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Costume::CostumeSettings::CostumeSettings_Initialize(pCVar13,(int32_t)pLVar10,pGVar3,(MethodInfo *)0x0);
               return;
@@ -848,7 +839,6 @@ code_?:
       }
       pTVar14 = (TeamEditorSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar14,TeamEditorSettings_MethodInfo__UnityEngine__Object__Instantiate<TeamEditorSettings>_TeamEditorSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
       if (pTVar14 != (TeamEditorSettings *)0x0) {
         TeamEditorSettings::TeamEditorSettings_Initialize(pTVar14,0,pGVar3,(MethodInfo *)0x0);
         return;
@@ -861,7 +851,6 @@ code_?:
       }
       pTVar15 = (TriggerCubeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar15,TriggerCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<TriggerCubeSettings>_TriggerCubeSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
       if (pTVar15 != (TriggerCubeSettings *)0x0) {
         TriggerCubeSettings::TriggerCubeSettings_Initialize(pTVar15,0,pGVar3,(MethodInfo *)0x0);
         return;
@@ -873,7 +862,7 @@ code_?:
         func_?(TypeInfo__UnityEngine__Object);
       }
       pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,ShootablePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<ShootablePlateSettings>_ShootablePlateSettings_);
-      unaff_EDI = (MVWorldObject__Class *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       if (pOVar1 != (Object *)0x0) {
         if (cRam_? == '\0') {
           func_?();
@@ -883,24 +872,22 @@ code_?:
           cRam_? = '\x01';
         }
         if (pOVar1[2].klass != (Object__Class *)0x0) {
-          pMVar16 = (MVWorldObject__Class *)0x0;
-          SettingsBase::SettingsBase_Initialize((SettingsBase *)pOVar1[2].klass,0,(GameObject *)unaff_EDI,MVWorldObjectDocumentationType__Enum_ShootableButton,(MethodInfo *)0x0);
+          SettingsBase::SettingsBase_Initialize((SettingsBase *)pOVar1[2].klass,0,pGVar3,MVWorldObjectDocumentationType__Enum_ShootableButton,(MethodInfo *)0x0);
           pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          unaff_EDI = pMVar16;
-          if (((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) && (pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data, pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-            TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar17,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+          if (((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) && (pDVar16 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data, pDVar16 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+            TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar16,(Object *)StringLiteral_duration,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
             if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            unaff_EDI = (MVWorldObject__Class *)mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+            provider = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
             if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__System__Convert);
             }
-            value_00 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar18.m_Index,(IFormatProvider *)unaff_EDI,(MethodInfo *)0x0);
+            value_01 = mscorlib.dll::System::Convert::Convert_ToSingle((Object *)TVar17.m_Index,(IFormatProvider *)provider,(MethodInfo *)0x0);
             if ((SettingsSlider *)pOVar1[2].monitor != (SettingsSlider *)0x0) {
-              SettingsSlider::SettingsSlider_Initialize((SettingsSlider *)pOVar1[2].monitor,StringLiteral_duration,value_00,0.5,30.0,(MethodInfo *)0x0);
+              SettingsSlider::SettingsSlider_Initialize((SettingsSlider *)pOVar1[2].monitor,StringLiteral_duration,value_01,0.5,30.0,(MethodInfo *)0x0);
               if (pOVar1[3].klass != (Object__Class *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_duration,value_00,(MethodInfo *)0x0);
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_duration,value_01,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -913,9 +900,9 @@ code_?:
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      unaff_EDI = (MVWorldObject__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_00,LeverSettings_MethodInfo__UnityEngine__Object__Instantiate<LeverSettings>_LeverSettings_);
+      pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_00,LeverSettings_MethodInfo__UnityEngine__Object__Instantiate<LeverSettings>_LeverSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
+      if (pOVar1 == (Object *)0x0) break;
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -925,69 +912,64 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-      if (pTVar19 == (Toggle *)0x0) break;
-      SettingsBase::SettingsBase_Initialize((SettingsBase *)pTVar19,0,pGVar3,MVWorldObjectDocumentationType__Enum_Lever,(MethodInfo *)0x0);
+      if (pOVar1[2].klass == (Object__Class *)0x0) break;
+      SettingsBase::SettingsBase_Initialize((SettingsBase *)pOVar1[2].klass,0,pGVar3,MVWorldObjectDocumentationType__Enum_Lever,(MethodInfo *)0x0);
       pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if ((pMVar7 == (MVWorldObjectClientManager *)0x0) || (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 == (MVWorldObject *)0x0)) break;
-      pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data;
-      unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
-      if ((pDVar17 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || ((TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar17,(Object *)StringLiteral_beginActivated,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), unaff_EDI == (MVWorldObject__Class *)0x0 || (TVar18.m_Index == 0)))) break;
-      if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar20 = (bool *)func_?();
-        SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)unaff_EDI,StringLiteral_beginActivated,*pbVar20,(MethodInfo *)0x0);
+      pDVar16 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data;
+      pSVar18 = (SettingsToggle *)pOVar1[2].monitor;
+      if ((pDVar16 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) || ((TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar16,(Object *)StringLiteral_beginActivated,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar18 == (SettingsToggle *)0x0 || (TVar17.m_Index == 0)))) break;
+      if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
+        pbVar19 = (bool *)func_?();
+        SettingsToggle::SettingsToggle_Initialize(pSVar18,StringLiteral_beginActivated,*pbVar19,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
     case WorldObjectType__Enum_CollectTheItemDropOff:
-      pCVar21 = (this->fields).collectTheItemDropoffSettingsPrefab;
+      pCVar20 = (this->fields).collectTheItemDropoffSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pCVar21 = (CollectTheItemDropoffSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar21,CollectTheItemDropoffSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemDropoffSettings>_CollectTheItemDropoffSettings_);
+      pCVar20 = (CollectTheItemDropoffSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar20,CollectTheItemDropoffSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemDropoffSettings>_CollectTheItemDropoffSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pCVar21 != (CollectTheItemDropoffSettings *)0x0) {
-        CollectTheItemDropoffSettings::CollectTheItemDropoffSettings_Initialize(pCVar21,0,pGVar3,(MethodInfo *)0x0);
+      if (pCVar20 != (CollectTheItemDropoffSettings *)0x0) {
+        CollectTheItemDropoffSettings::CollectTheItemDropoffSettings_Initialize(pCVar20,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_CollectTheItemCollectable:
-      pCVar22 = (this->fields).collectTheItemSettingsPrefab;
+      pCVar21 = (this->fields).collectTheItemSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pCVar22 = (CollectTheItemSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar22,CollectTheItemSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemSettings>_CollectTheItemSettings_);
+      pCVar21 = (CollectTheItemSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar21,CollectTheItemSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemSettings>_CollectTheItemSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pCVar22 != (CollectTheItemSettings *)0x0) {
-        CollectTheItemSettings::CollectTheItemSettings_Initialize(pCVar22,0,pGVar3,(MethodInfo *)0x0);
+      if (pCVar21 != (CollectTheItemSettings *)0x0) {
+        CollectTheItemSettings::CollectTheItemSettings_Initialize(pCVar21,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_WindTurbine:
-      pWVar23 = (this->fields).windTurbineSettingsPrefab;
+      pWVar22 = (this->fields).windTurbineSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pWVar23 = (WindTurbineSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pWVar23,WindTurbineSettings_MethodInfo__UnityEngine__Object__Instantiate<WindTurbineSettings>_WindTurbineSettings_);
+      pWVar22 = (WindTurbineSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pWVar22,WindTurbineSettings_MethodInfo__UnityEngine__Object__Instantiate<WindTurbineSettings>_WindTurbineSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pWVar23 != (WindTurbineSettings *)0x0) {
-        WindTurbineSettings::WindTurbineSettings_Initialize(pWVar23,0,pGVar3,(MethodInfo *)0x0);
+      if (pWVar22 != (WindTurbineSettings *)0x0) {
+        WindTurbineSettings::WindTurbineSettings_Initialize(pWVar22,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_GlobalSoundEmitter:
-      pGVar24 = (this->fields).globalSoundEmitterSettingsPrefab;
+      pGVar23 = (this->fields).globalSoundEmitterSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pGVar24 = (GlobalSoundEmitterSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar24,GlobalSoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<GlobalSoundEmitterSettings>_GlobalSoundEmitterSettings_);
+      pGVar23 = (GlobalSoundEmitterSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar23,GlobalSoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<GlobalSoundEmitterSettings>_GlobalSoundEmitterSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pGVar24 != (GlobalSoundEmitterSettings *)0x0) {
-        GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_Initialize(pGVar24,0,pGVar3,(MethodInfo *)0x0);
+      if (pGVar23 != (GlobalSoundEmitterSettings *)0x0) {
+        GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_Initialize(pGVar23,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -997,9 +979,9 @@ code_?:
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      unaff_EDI = (MVWorldObject__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_01,GamePointChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GamePointChestSettings>_GamePointChestSettings_);
+      pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_01,GamePointChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GamePointChestSettings>_GamePointChestSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      if (unaff_EDI != (MVWorldObject__Class *)0x0) {
+      if (pOVar1 != (Object *)0x0) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -1009,27 +991,24 @@ code_?:
           func_?();
           cRam_? = '\x01';
         }
-        pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-        if (pTVar19 != (Toggle *)0x0) {
-          SettingsBase::SettingsBase_Initialize_1((SettingsBase *)pTVar19,0,pGVar3,StringLiteral_Crystal_Reward,(MethodInfo *)0x0);
+        if (pOVar1[2].klass != (Object__Class *)0x0) {
+          SettingsBase::SettingsBase_Initialize_1((SettingsBase *)pOVar1[2].klass,0,pGVar3,StringLiteral_Crystal_Reward,(MethodInfo *)0x0);
           pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          if (((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) && (pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data, pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-            bVar25 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar17,(Object *)StringLiteral_gamePointAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-            if (bVar25 == 0) {
-              pOVar1 = (Object *)func_?();
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)pDVar17,(Object *)StringLiteral_gamePointAmount,pOVar1,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
+          if (((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) && (pDVar16 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data, pDVar16 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
+            bVar24 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar16,(Object *)StringLiteral_gamePointAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+            if (bVar24 == 0) {
+              value_00 = (Object *)func_?();
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add((Dictionary_2_System_Object_System_Object_ *)pDVar16,(Object *)StringLiteral_gamePointAmount,value_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
             }
-            TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar17,(Object *)StringLiteral_gamePointAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-            if (TVar18.m_Index != 0) {
-              if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
-              piVar26 = (int32_t *)func_?();
-              this_00 = *(SettingsSlider **)&(unaff_EDI->_0).byval_arg.attrs;
-              if (this_00 != (SettingsSlider *)0x0) {
-                value = *piVar26;
-                SettingsSlider::SettingsSlider_Initialize_1(this_00,StringLiteral_gamePointAmount,value,2,100,(MethodInfo *)0x0);
-                this_01 = (SettingsInputFieldSlider *)(unaff_EDI->_0).this_arg.data.typeHandle;
-                if (this_01 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_01,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
+            TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar16,(Object *)StringLiteral_gamePointAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+            if (TVar17.m_Index != 0) {
+              if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+              piVar25 = (int32_t *)func_?();
+              if ((SettingsSlider *)pOVar1[2].monitor != (SettingsSlider *)0x0) {
+                value = *piVar25;
+                SettingsSlider::SettingsSlider_Initialize_1((SettingsSlider *)pOVar1[2].monitor,StringLiteral_gamePointAmount,value,2,100,(MethodInfo *)0x0);
+                if (pOVar1[3].klass != (Object__Class *)0x0) {
+                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -1042,29 +1021,27 @@ code_?:
   }
   if ((int)worldObjectType < 0xe) {
     if (worldObjectType == WorldObjectType__Enum_PointLight) {
-      pPVar27 = (this->fields).pointLightSettingsPrefab;
+      pPVar26 = (this->fields).pointLightSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pPVar27 = (PointLightSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar27,PointLightSettings_MethodInfo__UnityEngine__Object__Instantiate<PointLightSettings>_PointLightSettings_);
+      pPVar26 = (PointLightSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar26,PointLightSettings_MethodInfo__UnityEngine__Object__Instantiate<PointLightSettings>_PointLightSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pPVar27 != (PointLightSettings *)0x0) {
-        PointLightSettings::PointLightSettings_Initialize(pPVar27,0,pGVar3,(MethodInfo *)0x0);
+      if (pPVar26 != (PointLightSettings *)0x0) {
+        PointLightSettings::PointLightSettings_Initialize(pPVar26,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
     else {
       if (worldObjectType != WorldObjectType__Enum_SoundEmitter) goto code_?;
-      pSVar28 = (this->fields).soundEmitterSettingsPrefab;
+      pSVar27 = (this->fields).soundEmitterSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pSVar28 = (SoundEmitterSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar28,SoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<SoundEmitterSettings>_SoundEmitterSettings_);
+      pSVar27 = (SoundEmitterSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar27,SoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<SoundEmitterSettings>_SoundEmitterSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pSVar28 != (SoundEmitterSettings *)0x0) {
-        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar28,0,pGVar3,(MethodInfo *)0x0);
+      if (pSVar27 != (SoundEmitterSettings *)0x0) {
+        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar27,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
@@ -1072,15 +1049,14 @@ code_?:
   }
   switch(worldObjectType) {
   case WorldObjectType__Enum_ToggleBox:
-    pTVar29 = (this->fields).toggleBoxSettingsPrefab;
+    pTVar28 = (this->fields).toggleBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pTVar29 = (ToggleBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar29,ToggleBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<ToggleBoxSettings>_ToggleBoxSettings_);
+    pTVar28 = (ToggleBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar28,ToggleBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<ToggleBoxSettings>_ToggleBoxSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pTVar29 != (ToggleBoxSettings *)0x0) {
-      ToggleBoxSettings::ToggleBoxSettings_Initialize(pTVar29,0,pGVar3,(MethodInfo *)0x0);
+    if (pTVar28 != (ToggleBoxSettings *)0x0) {
+      ToggleBoxSettings::ToggleBoxSettings_Initialize(pTVar28,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1097,62 +1073,58 @@ code_?:
   case WorldObjectType__Enum_PickupItemRailGun:
   case WorldObjectType__Enum_PickupItemSpawner:
 code_?:
-    pSVar30 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-    pSVar30 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_WorldObjectType__,pSVar30,StringLiteral__has_no_settings_dialogue_,(MethodInfo *)0x0);
+    pSVar29 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+    pSVar29 = mscorlib.dll::System::String::String_Concat_4(StringLiteral_WorldObjectType__,pSVar29,StringLiteral__has_no_settings_dialogue_,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar30,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar29,(MethodInfo *)0x0);
     return;
   case WorldObjectType__Enum_TextMsg:
-    pMVar31 = (this->fields).messageBoxSettingsPrefab;
+    pMVar30 = (this->fields).messageBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pMVar31 = (MessageBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pMVar31,MessageBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<MessageBoxSettings>_MessageBoxSettings_);
+    pMVar30 = (MessageBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pMVar30,MessageBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<MessageBoxSettings>_MessageBoxSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pMVar31 != (MessageBoxSettings *)0x0) {
-      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar31,0,pGVar3,(MethodInfo *)0x0);
+    if (pMVar30 != (MessageBoxSettings *)0x0) {
+      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar30,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Fire:
-    pFVar32 = (this->fields).fireSettingsPrefab;
+    pFVar31 = (this->fields).fireSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pFVar32 = (FireSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pFVar32,FireSettings_MethodInfo__UnityEngine__Object__Instantiate<FireSettings>_FireSettings_);
+    pFVar31 = (FireSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pFVar31,FireSettings_MethodInfo__UnityEngine__Object__Instantiate<FireSettings>_FireSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pFVar32 != (FireSettings *)0x0) {
-      FireSettings::FireSettings_Initialize(pFVar32,0,pGVar3,(MethodInfo *)0x0);
+    if (pFVar31 != (FireSettings *)0x0) {
+      FireSettings::FireSettings_Initialize(pFVar31,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Smoke:
-    pSVar33 = (this->fields).smokeSettingsPrefab;
+    pSVar32 = (this->fields).smokeSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar33 = (SmokeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar33,SmokeSettings_MethodInfo__UnityEngine__Object__Instantiate<SmokeSettings>_SmokeSettings_);
+    pSVar32 = (SmokeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar32,SmokeSettings_MethodInfo__UnityEngine__Object__Instantiate<SmokeSettings>_SmokeSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar33 != (SmokeSettings *)0x0) {
-      SmokeSettings::SmokeSettings_Initialize(pSVar33,0,pGVar3,(MethodInfo *)0x0);
+    if (pSVar32 != (SmokeSettings *)0x0) {
+      SmokeSettings::SmokeSettings_Initialize(pSVar32,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_TimeTrigger:
-    pTVar34 = (this->fields).timeTriggerSettingsPrefab;
+    pTVar33 = (this->fields).timeTriggerSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pTVar34 = (TimeTriggerSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar34,TimeTriggerSettings_MethodInfo__UnityEngine__Object__Instantiate<TimeTriggerSettings>_TimeTriggerSettings_);
+    pTVar33 = (TimeTriggerSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pTVar33,TimeTriggerSettings_MethodInfo__UnityEngine__Object__Instantiate<TimeTriggerSettings>_TimeTriggerSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pTVar34 != (TimeTriggerSettings *)0x0) {
-      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar34,0,pGVar3,(MethodInfo *)0x0);
+    if (pTVar33 != (TimeTriggerSettings *)0x0) {
+      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar33,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1161,9 +1133,9 @@ code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    unaff_EDI = (MVWorldObject__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_03,PressurePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<PressurePlateSettings>_PressurePlateSettings_);
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original_03,PressurePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<PressurePlateSettings>_PressurePlateSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    if (unaff_EDI != (MVWorldObject__Class *)0x0) {
+    if (pOVar1 != (Object *)0x0) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -1173,17 +1145,16 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      pTVar19 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
-      if (pTVar19 != (Toggle *)0x0) {
-        SettingsBase::SettingsBase_Initialize((SettingsBase *)pTVar19,0,pGVar3,MVWorldObjectDocumentationType__Enum_PressurePlate,(MethodInfo *)0x0);
+      if (pOVar1[2].klass != (Object__Class *)0x0) {
+        SettingsBase::SettingsBase_Initialize((SettingsBase *)pOVar1[2].klass,0,pGVar3,MVWorldObjectDocumentationType__Enum_PressurePlate,(MethodInfo *)0x0);
         pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((pMVar7 != (MVWorldObjectClientManager *)0x0) && (pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,0,(MethodInfo *)0x0), pMVar8 != (MVWorldObject *)0x0)) {
-          pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data;
-          unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
-          if ((pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) && ((TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar17,(Object *)StringLiteral_hide,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), unaff_EDI != (MVWorldObject__Class *)0x0 && (TVar18.m_Index != 0)))) {
-            if (*(Il2CppClass **)(*(int *)TVar18.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
-              pbVar20 = (bool *)func_?();
-              SettingsToggle::SettingsToggle_Initialize((SettingsToggle *)unaff_EDI,StringLiteral_hide,*pbVar20,(MethodInfo *)0x0);
+          pDVar16 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar8->fields).data;
+          pSVar18 = (SettingsToggle *)pOVar1[2].monitor;
+          if ((pDVar16 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) && ((TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar16,(Object *)StringLiteral_hide,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_), pSVar18 != (SettingsToggle *)0x0 && (TVar17.m_Index != 0)))) {
+            if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {
+              pbVar19 = (bool *)func_?();
+              SettingsToggle::SettingsToggle_Initialize(pSVar18,StringLiteral_hide,*pbVar19,(MethodInfo *)0x0);
               return;
             }
             goto code_?;
@@ -1193,15 +1164,14 @@ code_?:
     }
     break;
   case WorldObjectType__Enum_Skybox:
-    pSVar35 = (this->fields).skyboxSettingsPrefab;
+    pSVar34 = (this->fields).skyboxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar35 = (SkyboxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar35,SkyboxSettings_MethodInfo__UnityEngine__Object__Instantiate<SkyboxSettings>_SkyboxSettings_);
+    pSVar34 = (SkyboxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar34,SkyboxSettings_MethodInfo__UnityEngine__Object__Instantiate<SkyboxSettings>_SkyboxSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar35 != (SkyboxSettings *)0x0) {
-      SkyboxSettings::SkyboxSettings_Initialize(pSVar35,0,pGVar3,(MethodInfo *)0x0);
+    if (pSVar34 != (SkyboxSettings *)0x0) {
+      SkyboxSettings::SkyboxSettings_Initialize(pSVar34,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1209,41 +1179,38 @@ code_?:
   case WorldObjectType__Enum_SpawnPointGreen:
   case WorldObjectType__Enum_SpawnPointYellow:
   case WorldObjectType__Enum_SpawnPointBlue:
-    pSVar36 = (this->fields).spawnPointSettingsPrefab;
+    pSVar35 = (this->fields).spawnPointSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pSVar36 = (SpawnPointSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar36,SpawnPointSettings_MethodInfo__UnityEngine__Object__Instantiate<SpawnPointSettings>_SpawnPointSettings_);
+    pSVar35 = (SpawnPointSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pSVar35,SpawnPointSettings_MethodInfo__UnityEngine__Object__Instantiate<SpawnPointSettings>_SpawnPointSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pSVar36 != (SpawnPointSettings *)0x0) {
-      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar36,0,pGVar3,(MethodInfo *)0x0);
+    if (pSVar35 != (SpawnPointSettings *)0x0) {
+      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar35,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_ModelToggle:
-    pOVar37 = (this->fields).objectEnablerPrefab;
+    pOVar36 = (this->fields).objectEnablerPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pOVar37 = (ObjectEnablerSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pOVar37,ObjectEnablerSettings_MethodInfo__UnityEngine__Object__Instantiate<ObjectEnablerSettings>_ObjectEnablerSettings_);
+    pOVar36 = (ObjectEnablerSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pOVar36,ObjectEnablerSettings_MethodInfo__UnityEngine__Object__Instantiate<ObjectEnablerSettings>_ObjectEnablerSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pOVar37 != (ObjectEnablerSettings *)0x0) {
-      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar37,0,pGVar3,(MethodInfo *)0x0);
+    if (pOVar36 != (ObjectEnablerSettings *)0x0) {
+      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar36,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_WaterPlane:
-    pWVar38 = (this->fields).waterBoxSettingsPrefab;
+    pWVar37 = (this->fields).waterBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pWVar38 = (WaterBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pWVar38,WaterBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<WaterBoxSettings>_WaterBoxSettings_);
+    pWVar37 = (WaterBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pWVar37,WaterBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<WaterBoxSettings>_WaterBoxSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pWVar38 != (WaterBoxSettings *)0x0) {
-      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar38,0,pGVar3,(MethodInfo *)0x0);
+    if (pWVar37 != (WaterBoxSettings *)0x0) {
+      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar37,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1251,28 +1218,27 @@ code_?:
     SettingsFactory_CreateBlueprintSettings(this,woID,(MethodInfo *)0x0);
     return;
   case WorldObjectType__Enum_PulseBox:
-    pPVar39 = (this->fields).pulseBoxPrefab;
+    pPVar38 = (this->fields).pulseBoxPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pPVar39 = (PulseBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar39,PulseBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<PulseBoxSettings>_PulseBoxSettings_);
+    pPVar38 = (PulseBoxSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pPVar38,PulseBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<PulseBoxSettings>_PulseBoxSettings_);
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (MVWorldObject__Class *)0x0;
-    if (pPVar39 != (PulseBoxSettings *)0x0) {
-      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar39,0,pGVar3,(MethodInfo *)0x0);
+    if (pPVar38 != (PulseBoxSettings *)0x0) {
+      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar38,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   default:
     switch(worldObjectType) {
     case WorldObjectType__Enum_PickupCubeGun:
-      unaff_EDI = (MVWorldObject__Class *)(this->fields).cubeGunSettingsPrefab;
+      pCVar39 = (this->fields).cubeGunSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      this_02 = (CubeGunSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)unaff_EDI,CubeGunSettings_MethodInfo__UnityEngine__Object__Instantiate<CubeGunSettings>_CubeGunSettings_);
-      if (this_02 != (CubeGunSettings *)0x0) {
-        CubeGunSettings::CubeGunSettings_Initialize(this_02,0,(this->fields).materialsController,(MethodInfo *)0x0);
+      pCVar39 = (CubeGunSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar39,CubeGunSettings_MethodInfo__UnityEngine__Object__Instantiate<CubeGunSettings>_CubeGunSettings_);
+      if (pCVar39 != (CubeGunSettings *)0x0) {
+        CubeGunSettings::CubeGunSettings_Initialize(pCVar39,0,(this->fields).materialsController,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -1290,20 +1256,17 @@ code_?:
         MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         break;
       }
-      unaff_EDI = pMVar8->klass;
-      if (((unaff_EDI->_1).naturalAligment < (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) || ((MVWorldObjectSpawnerVehicle__Class *)(unaff_EDI->_1).typeHierarchy[(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] != TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
+      if (((pMVar8->klass->_1).naturalAligment < (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) || ((MVWorldObjectSpawnerVehicle__Class *)(pMVar8->klass->_1).typeHierarchy[(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] != TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
       pMVar7 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar7 == (MVWorldObjectClientManager *)0x0) break;
-      unaff_EDI = (MVWorldObject__Class *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,pMVar8[2].fields.ownerActorNr,(MethodInfo *)0x0);
-      this_03 = (VehicleBaseSettings *)0x0;
-      if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
-      pCVar40 = (CultureInfo__Class *)(unaff_EDI->_0).image;
-      if (((TypeInfo__MVVehicleBase->_1).naturalAligment <= (pCVar40->_1).naturalAligment) && ((MVVehicleBase__Class *)(pCVar40->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] == TypeInfo__MVVehicleBase)) {
-        iVar41 = func_?();
+      pMVar8 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar7,pMVar8[2].fields.ownerActorNr,(MethodInfo *)0x0);
+      this_00 = (VehicleBaseSettings *)0x0;
+      if (pMVar8 == (MVWorldObject *)0x0) break;
+      if (((TypeInfo__MVVehicleBase->_1).naturalAligment <= (pMVar8->klass->_1).naturalAligment) && ((MVVehicleBase__Class *)(pMVar8->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] == TypeInfo__MVVehicleBase)) {
+        iVar40 = func_?();
         pOVar1 = pORam0000009b;
-        unaff_EDI = (MVWorldObject__Class *)0x2b;
-        if (iVar41 < 0x1b) {
-          if (iVar41 == 0x19) {
+        if (iVar40 < 0x1b) {
+          if (iVar40 == 0x19) {
             pOVar1 = pORam00000097;
             method_01 = UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HoverCraftSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -1312,7 +1275,7 @@ code_?:
             }
           }
           else {
-            if (iVar41 != 0x1a) goto code_?;
+            if (iVar40 != 0x1a) goto code_?;
             pOVar1 = pORam0000009f;
             method_01 = UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -1321,9 +1284,9 @@ code_?:
             }
           }
 code_?:
-          this_03 = (VehicleBaseSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4(pOVar1,method_01);
+          this_00 = (VehicleBaseSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4(pOVar1,method_01);
         }
-        else if ((iVar41 == 0x1f) || (iVar41 == 0x22)) {
+        else if ((iVar40 == 0x1f) || (iVar40 == 0x22)) {
           method_01 = UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -1335,96 +1298,90 @@ code_?:
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar25 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar25 == 0) {
+        bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+        if (bVar24 == 0) {
           return;
         }
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x2b,(MethodInfo *)0x0);
-        if (this_03 != (VehicleBaseSettings *)0x0) {
-          UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleBaseSettings::VehicleBaseSettings_Initialize(this_03,woID,pGVar3,(MethodInfo *)0x0);
+        if (this_00 != (VehicleBaseSettings *)0x0) {
+          UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleBaseSettings::VehicleBaseSettings_Initialize(this_00,woID,pGVar3,(MethodInfo *)0x0);
           return;
         }
         break;
       }
       goto code_?;
     case WorldObjectType__Enum_RoundCube:
-      pRVar42 = (this->fields).roundCubeSettingsPrefab;
+      pRVar41 = (this->fields).roundCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pRVar42 = (RoundCubeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pRVar42,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_);
+      pRVar41 = (RoundCubeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pRVar41,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pRVar42 != (RoundCubeSettings *)0x0) {
-        UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings::RoundCubeSettings_Initialize(pRVar42,0,pGVar3,(MethodInfo *)0x0);
+      if (pRVar41 != (RoundCubeSettings *)0x0) {
+        UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings::RoundCubeSettings_Initialize(pRVar41,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_AdvancedGhost:
-      pOVar43 = (this->fields).oculusSettingsPrefab;
+      pOVar42 = (this->fields).oculusSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar43 = (OculusSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pOVar43,OculusSettings_MethodInfo__UnityEngine__Object__Instantiate<OculusSettings>_OculusSettings_);
+      pOVar42 = (OculusSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pOVar42,OculusSettings_MethodInfo__UnityEngine__Object__Instantiate<OculusSettings>_OculusSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pOVar43 != (OculusSettings *)0x0) {
-        OculusSettings::OculusSettings_Initialize(pOVar43,0,pGVar3,(MethodInfo *)0x0);
+      if (pOVar42 != (OculusSettings *)0x0) {
+        OculusSettings::OculusSettings_Initialize(pOVar42,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_KillLimit:
-      pKVar44 = (this->fields).killLimitSettingsPrefab;
+      pKVar43 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pKVar44 = (KillLimitSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pKVar44,KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_);
+      pKVar43 = (KillLimitSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pKVar43,KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      pSVar30 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pKVar44 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize(pKVar44,0,pGVar3,pSVar30,(MethodInfo *)0x0);
+      pSVar29 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
+      if (pKVar43 != (KillLimitSettings *)0x0) {
+        KillLimitSettings::KillLimitSettings_Initialize(pKVar43,0,pGVar3,pSVar29,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_OculusKillLimit:
-      pKVar44 = (this->fields).killLimitSettingsPrefab;
+      pKVar43 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pKVar44 = (KillLimitSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pKVar44,KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_);
+      pKVar43 = (KillLimitSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pKVar43,KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      pSVar30 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pKVar44 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize(pKVar44,0,pGVar3,pSVar30,(MethodInfo *)0x0);
+      pSVar29 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
+      if (pKVar43 != (KillLimitSettings *)0x0) {
+        KillLimitSettings::KillLimitSettings_Initialize(pKVar43,0,pGVar3,pSVar29,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_CountingCube:
-      pCVar45 = (this->fields).countingCubeSettingsPrefab;
+      pCVar44 = (this->fields).countingCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pCVar45 = (CountingCubeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar45,CountingCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<CountingCubeSettings>_CountingCubeSettings_);
+      pCVar44 = (CountingCubeSettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pCVar44,CountingCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<CountingCubeSettings>_CountingCubeSettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pCVar45 != (CountingCubeSettings *)0x0) {
-        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar45,0,pGVar3,(MethodInfo *)0x0);
+      if (pCVar44 != (CountingCubeSettings *)0x0) {
+        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar44,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     default:
       if (worldObjectType != WorldObjectType__Enum_WorldObjectSpawnerVehicleEnergy) goto code_?;
-      pVVar46 = (this->fields).vehicleEnergySettingsPrefab;
+      pVVar45 = (this->fields).vehicleEnergySettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pVVar46 = (VehicleEnergySettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pVVar46,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_);
+      pVVar45 = (VehicleEnergySettings *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pVVar45,UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergySettings_);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (MVWorldObject__Class *)0x0;
-      if (pVVar46 != (VehicleEnergySettings *)0x0) {
-        UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings::VehicleEnergySettings_Initialize(pVVar46,0,pGVar3,(MethodInfo *)0x0);
+      if (pVVar45 != (VehicleEnergySettings *)0x0) {
+        UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings::VehicleEnergySettings_Initialize(pVVar45,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
@@ -1437,9 +1394,6 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar47 = (code *)swi(0xa8);
-  uVar48 = (*pcVar47)();
-  (unaff_EDI->_0).image = (Il2CppImage *)(uVar48 ^ 0x89103aab);
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }
